@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_e448df2f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-28T12:29:51Z",
+      "side": 1,
+      "message": "thanks. :)",
+      "parentUuid": "7ad32947_f30b1c7c",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_936aa819",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-27T22:48:57Z",
       "side": 1,
       "message": "should probably just use uuid.uuid4().hex here, we don\u0027t need to pass \u0027fake\u0027",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_84d00b55",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2260,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-28T12:29:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ad32947_936aa819",
       "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_24cff7b1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2293,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-28T12:29:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ad32947_537410fc",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_d35ee075",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2015-04-27T22:48:57Z",
       "side": 1,
       "message": "append \u0027?parents_as_ids\u0027",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_4458b3fa",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-28T12:29:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ad32947_d35ee075",
       "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_0473db81",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-28T12:29:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ad32947_734eecc2",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_534bf0b0",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2015-04-27T22:48:57Z",
       "side": 1,
       "message": "how about test for non-existing project_id?",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_04fabbbd",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-28T12:29:51Z",
+      "side": 1,
+      "message": "sure, I\u0027ll add some more tests.",
+      "parentUuid": "7ad32947_534bf0b0",
       "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
