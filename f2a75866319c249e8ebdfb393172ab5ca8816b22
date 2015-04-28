@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_e1269f15",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-28T04:07:41Z",
+      "side": 1,
+      "message": "nit: extra comma",
+      "revId": "f2a75866319c249e8ebdfb393172ab5ca8816b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_01119bac",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-28T04:07:41Z",
+      "side": 1,
+      "message": "good job, not mangling and just passing the original value",
+      "revId": "f2a75866319c249e8ebdfb393172ab5ca8816b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
