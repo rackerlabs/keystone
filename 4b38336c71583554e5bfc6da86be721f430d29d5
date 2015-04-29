@@ -16,6 +16,24 @@
       "revId": "4b38336c71583554e5bfc6da86be721f430d29d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_ef59fa8f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-29T18:15:28Z",
+      "side": 1,
+      "message": "Do you mean you think I should pull it up into the parent?",
+      "parentUuid": "3acd31a7_5ef1c2cc",
+      "revId": "4b38336c71583554e5bfc6da86be721f430d29d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
