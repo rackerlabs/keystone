@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ad0253b_f1242db0",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:15:29Z",
+      "side": 1,
+      "message": "maybe change the order ot parameters i.e. put user_domain after user. We are changing the signature either way.You could also rename it to user_domain_name.",
+      "revId": "e3a4e3454132d5d7b1490d60d84b4aa8b55c5f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_916cd99d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:15:29Z",
+      "side": 1,
+      "message": "maybe move this block of code in closer to the block where user attribute is prepared.",
+      "revId": "e3a4e3454132d5d7b1490d60d84b4aa8b55c5f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_31ee2523",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3075,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:15:29Z",
+      "side": 1,
+      "message": "nit: two spaces between \u0027as\u0027 and \u0027project\u0027",
+      "revId": "e3a4e3454132d5d7b1490d60d84b4aa8b55c5f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_f1f78df3",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3094,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:15:29Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "e3a4e3454132d5d7b1490d60d84b4aa8b55c5f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_b1da3577",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3137,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:15:29Z",
+      "side": 1,
+      "message": "same",
+      "revId": "e3a4e3454132d5d7b1490d60d84b4aa8b55c5f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_71e49d3a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3163,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:15:29Z",
+      "side": 1,
+      "message": "same",
+      "revId": "e3a4e3454132d5d7b1490d60d84b4aa8b55c5f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
