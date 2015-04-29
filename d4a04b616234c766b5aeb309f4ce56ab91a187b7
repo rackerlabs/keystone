@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ad0253b_79792393",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:38:28Z",
+      "side": 1,
+      "message": "I think the logic here is wrong:\n\n1) The for loop will essentially only store the last saml.AttributeValue object in the saml.Attribute() object. It should rather be attribute.attribute_value.append(attribute_value).\n\n2) If this passed the tests it means some test are missing.\n\n3) If you look at the old code for complex attributes (like roles) we store list, where where for a simple one we don\u0027t. You function doesn\u0027t seem to reflect this (at list i think it wouldn\u0027t mean if it was written as you had intended to). Probably some type checking is required here.",
+      "revId": "d4a04b616234c766b5aeb309f4ce56ab91a187b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
