@@ -16,6 +16,24 @@
       "revId": "d4a04b616234c766b5aeb309f4ce56ab91a187b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_13f6888f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-29T13:29:24Z",
+      "side": 1,
+      "message": "thanks for the review, I did notice this before, somehow I managed to upload the wrong patch.\n\nusing .append() here seems to generate valid assertions: http://paste.openstack.org/show/212077/",
+      "parentUuid": "5ad0253b_79792393",
+      "revId": "d4a04b616234c766b5aeb309f4ce56ab91a187b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
