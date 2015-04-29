@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_ba1fc95a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T14:34:24Z",
+      "side": 1,
+      "message": "When I click on the link it points me to a Congress bp. I am not sure whether it was intended.",
+      "revId": "fd469781f979ec927d28344a63d4f8cb9afc737d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
