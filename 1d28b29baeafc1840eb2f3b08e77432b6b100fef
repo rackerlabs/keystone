@@ -16,6 +16,24 @@
       "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_efafb392",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-29T21:15:14Z",
+      "side": 0,
+      "message": "I was already in this code and when I saw it I was immediately annoyed.",
+      "parentUuid": "bab921fb_85919af3",
+      "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
