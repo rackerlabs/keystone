@@ -16,6 +16,24 @@
       "revId": "fd469781f979ec927d28344a63d4f8cb9afc737d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_baf22905",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-04-29T14:36:44Z",
+      "side": 1,
+      "message": "nope it isn\u0027t, we had an older blueprint but launchpad doesn\u0027t pull from the older releases :(",
+      "parentUuid": "3acd31a7_ba1fc95a",
+      "revId": "fd469781f979ec927d28344a63d4f8cb9afc737d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
