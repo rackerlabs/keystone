@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_ef869312",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-29T21:16:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab921fb_48b4e480",
+      "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab921fb_48106459",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-25T01:51:43Z",
       "side": 1,
       "message": "pep8 not happy:\n\n2015-04-25 00:16:32.131 | ./keystone/common/wsgi.py:237:9: E124 closing bracket does not match visual indentation\n2015-04-25 00:16:32.131 |         )\n2015-04-25 00:16:32.131 |         ^",
+      "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_8f76ff3c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-29T21:16:06Z",
+      "side": 1,
+      "message": "This is actually doing away with the rebase.",
+      "parentUuid": "bab921fb_48106459",
       "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
