@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_a66fa891",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-29T19:49:54Z",
+      "side": 1,
+      "message": "should this be returning Validation 400 error?",
+      "revId": "e2bddefa9a4be10ae2ac9fb682789a223cf0b2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
