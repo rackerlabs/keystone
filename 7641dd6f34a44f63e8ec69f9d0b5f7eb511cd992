@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ad0253b_919f395f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-29T09:14:42Z",
+      "side": 1,
+      "message": "you could rename it to project_domain_name",
+      "revId": "7641dd6f34a44f63e8ec69f9d0b5f7eb511cd992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
