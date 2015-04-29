@@ -16,6 +16,24 @@
       "revId": "e2bddefa9a4be10ae2ac9fb682789a223cf0b2a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_46dd7413",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-29T19:55:17Z",
+      "side": 1,
+      "message": "Ericson Santos put a comment in a previous patch, explain why we can\u0027t return a 400 error here: \n\n\"We\u0027ve created the tests in the controller level expecting 404, because get_project in ProjectV3 controller is wrapped by \"@controller.protected()\", so inside this method, there is another get_project request https://github.com/openstack/keystone/blob/master/keystone/resource/controllers.py#L197 and this request will return a 404, even if we return a 400 in the controller level.\nBut I think, in this case, raise a ProjectNotFound is more appropriate than a ValidationError. What do you think?\"",
+      "parentUuid": "3acd31a7_a66fa891",
+      "revId": "e2bddefa9a4be10ae2ac9fb682789a223cf0b2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
