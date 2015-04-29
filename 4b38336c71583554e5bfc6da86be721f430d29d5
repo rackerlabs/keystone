@@ -34,6 +34,24 @@
       "revId": "4b38336c71583554e5bfc6da86be721f430d29d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_80da5377",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-04-29T19:24:01Z",
+      "side": 1,
+      "message": "no, I mean the parent changes should be here",
+      "parentUuid": "3acd31a7_ef59fa8f",
+      "revId": "4b38336c71583554e5bfc6da86be721f430d29d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
