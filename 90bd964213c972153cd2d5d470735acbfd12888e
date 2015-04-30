@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_c465d845",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-30T16:48:24Z",
+      "side": 1,
+      "message": "nit s/this/This\n\nI think that this more then a comment, this can be a note.",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_4452e868",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-30T16:48:24Z",
+      "side": 1,
+      "message": "maybe s/-/. ?",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
