@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_5142a53f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-30T18:10:45Z",
+      "side": 1,
+      "message": "following the pattern of the others parameters here... isn\u0027t it considered the same type as str when the docstring is parsed?",
+      "parentUuid": "3acd31a7_3e0a5b27",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_39115553",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 12
@@ -47,6 +65,24 @@
       "writtenOn": "2015-04-30T16:00:35Z",
       "side": 1,
       "message": "move this up after user.",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_313f29b6",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-30T18:10:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_39115553",
       "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_f148915d",
+        "filename": "keystone/tests/unit/saml2/signed_saml2_assertion.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-30T18:10:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_5942d13f",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_b987a560",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 12
@@ -81,6 +135,24 @@
       "writtenOn": "2015-04-30T16:00:35Z",
       "side": 1,
       "message": "this is a bad idea since then it\u0027s impossible to test that the correct domain was used.",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_d1823552",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3031,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-30T18:10:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_b987a560",
       "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
