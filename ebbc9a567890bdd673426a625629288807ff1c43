@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_350f23e3",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T12:17:11Z",
+      "side": 1,
+      "message": "seems like _get_results_as_dict should change to accept an iterator.",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_15e2e703",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T12:17:11Z",
+      "side": 1,
+      "message": "iterator doesn\u0027t work here?",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_f5a3eb9c",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T12:17:11Z",
+      "side": 1,
+      "message": "revert the whitespace change",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_d5c7cf43",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T12:17:11Z",
+      "side": 1,
+      "message": "this says it takes an iterable, but it obviously doesn\u0027t.",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
