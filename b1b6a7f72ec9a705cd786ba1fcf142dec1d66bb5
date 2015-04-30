@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_9e128f61",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T16:00:35Z",
+      "side": 1,
+      "message": "at some point you just pass in the token_ref.",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_3e0a5b27",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T16:00:35Z",
+      "side": 1,
+      "message": "python type is str",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_39115553",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T16:00:35Z",
+      "side": 1,
+      "message": "move this up after user.",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_5942d13f",
+        "filename": "keystone/tests/unit/saml2/signed_saml2_assertion.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T16:00:35Z",
+      "side": 1,
+      "message": "Use a different value than the project if that\u0027s possible otherwise the tests won\u0027t verify that the user domain was used rather than the project domain.",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_b987a560",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3031,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T16:00:35Z",
+      "side": 1,
+      "message": "this is a bad idea since then it\u0027s impossible to test that the correct domain was used.",
+      "revId": "b1b6a7f72ec9a705cd786ba1fcf142dec1d66bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
