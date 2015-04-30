@@ -52,6 +52,24 @@
       "revId": "e2bddefa9a4be10ae2ac9fb682789a223cf0b2a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_2ddc7711",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-30T14:57:18Z",
+      "side": 1,
+      "message": "I agree. In this case a 404 is the right thing because the /projects/{project_id} resource doesn\u0027t exist.",
+      "parentUuid": "3acd31a7_46dd7413",
+      "revId": "e2bddefa9a4be10ae2ac9fb682789a223cf0b2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
