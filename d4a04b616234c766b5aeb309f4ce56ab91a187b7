@@ -34,6 +34,24 @@
       "revId": "d4a04b616234c766b5aeb309f4ce56ab91a187b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0cc8ab54",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-30T09:48:55Z",
+      "side": 1,
+      "message": "yeah, i checked it too: http://cdn.pasteraw.com/3fv8v9xmxlkhtfue1yjaaocb44vuxuz",
+      "parentUuid": "5ad0253b_13f6888f",
+      "revId": "d4a04b616234c766b5aeb309f4ce56ab91a187b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
