@@ -16,6 +16,24 @@
       "revId": "be75cba8b71c5fbd2464d85af623804a3af0628a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_65bb9b73",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-30T19:44:38Z",
+      "side": 1,
+      "message": "My comment above refers to the check just below: L 70.",
+      "parentUuid": "3acd31a7_e5e20b9f",
+      "revId": "be75cba8b71c5fbd2464d85af623804a3af0628a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
