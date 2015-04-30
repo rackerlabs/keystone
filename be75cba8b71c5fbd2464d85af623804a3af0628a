@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_e5e20b9f",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-30T19:42:22Z",
+      "side": 1,
+      "message": "We do not need this check anymore.\n\nIt could be kept for the case one called load_auth_methods more than once, but it is not possible since the check at L 47 does not allow it.",
+      "revId": "be75cba8b71c5fbd2464d85af623804a3af0628a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
