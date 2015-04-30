@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Doug Hellmann <doug@doughellmann.com>
+Workflow+1: Doug Hellmann <doug@doughellmann.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 30 Apr 2015 15:47:17 +0000
+Reviewed-on: https://review.openstack.org/179079
+Project: openstack/keystone
+Branch: refs/heads/stable/kilo
