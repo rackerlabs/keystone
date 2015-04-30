@@ -18,7 +18,6 @@ import mock
 from oslo_utils import timeutils
 from testtools import matchers
 
-from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 from keystone import exception
 from keystone.tests import unit as tests
@@ -113,10 +112,6 @@ def _matches(event, token_values):
 
 
 class RevokeTests(object):
-
-    def setUp(self):
-        super(RevokeTests, self).setUp()
-        self.revoke_api = revoke.Manger()
 
     def test_list(self):
         self.revoke_api.revoke_by_user(user_id=1)
