@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_f34adc82",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T15:46:22Z",
+      "side": 1,
+      "message": "this should be passed as project_domain_name to match the function parameter name.",
+      "revId": "fa844bc88edb417f9513d19c749886a61d7b26ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_b3446474",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T15:46:22Z",
+      "side": 1,
+      "message": "the type in python is str",
+      "revId": "fa844bc88edb417f9513d19c749886a61d7b26ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_1e355fd9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2994,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T15:46:22Z",
+      "side": 1,
+      "message": "this should be a random name if that\u0027s possible. Otherwise add a comment why this needs to be Default.",
+      "revId": "fa844bc88edb417f9513d19c749886a61d7b26ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
