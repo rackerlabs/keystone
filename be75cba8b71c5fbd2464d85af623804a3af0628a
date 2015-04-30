@@ -34,6 +34,24 @@
       "revId": "be75cba8b71c5fbd2464d85af623804a3af0628a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_455f7f41",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-30T19:47:44Z",
+      "side": 1,
+      "message": "You could still have the same method come from 2 different plugins, since the plugin can either be imported by full class name or by method name.",
+      "parentUuid": "3acd31a7_65bb9b73",
+      "revId": "be75cba8b71c5fbd2464d85af623804a3af0628a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
