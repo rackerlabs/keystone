@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_3416def1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-01T17:33:08Z",
+      "side": 1,
+      "message": "(nit) s/ldappol/ldappool",
+      "revId": "44785ab59c6ac04af4fc67ae35283f1d33d1ba90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
