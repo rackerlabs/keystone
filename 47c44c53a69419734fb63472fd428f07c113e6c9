@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_90594c5d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-01T01:34:55Z",
+      "side": 1,
+      "message": "++ nice catch Lin\n\nNice to know this.",
+      "parentUuid": "5aa745d1_fc51c00f",
+      "revId": "47c44c53a69419734fb63472fd428f07c113e6c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aa745d1_7c3ed0b9",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 1
@@ -64,6 +82,23 @@
       "writtenOn": "2015-04-16T00:42:05Z",
       "side": 1,
       "message": "Same here keep _()",
+      "revId": "47c44c53a69419734fb63472fd428f07c113e6c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_b021e8b6",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-01T01:34:55Z",
+      "side": 1,
+      "message": "Yes, this one, as it is just using the message for logging, _LE is pretty appropriate.",
       "revId": "47c44c53a69419734fb63472fd428f07c113e6c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
