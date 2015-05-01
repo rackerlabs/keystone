@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_c6226b01",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-05-01T10:52:29Z",
+      "side": 1,
+      "message": "I\u0027ve shortened it.  The comment was initially to justify this approach over the one taken in the initial endpoint filtering extension.  I don\u0027t really think it\u0027s necessary so I\u0027ve made it more concise.",
+      "parentUuid": "3acd31a7_c465d845",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_4452e868",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-30T16:48:24Z",
       "side": 1,
       "message": "maybe s/-/. ?",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_a621affd",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-05-01T10:52:29Z",
+      "side": 1,
+      "message": "Done by removal.",
+      "parentUuid": "3acd31a7_4452e868",
       "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_667a77f3",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-05-01T10:52:29Z",
+      "side": 1,
+      "message": "Yes.  Ambiguous, I agree.  I\u0027ve changed the comment to me more literal.",
+      "parentUuid": "3acd31a7_366270ae",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_510616cf",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2015-05-01T06:08:54Z",
       "side": 1,
       "message": "Aha, I think the name of this testcase could be more accurate.\nHere, the only difference I see with this testcase \"test_catalog_get_v3_catalog_domain_scoped_token\" is `return_all_endpoints_if_no_filter` flag is set to false, both of the case we want it to return `unfiltered_catalog` instead of *no* unfiltered_catalog, am I right? something more, I am thinking whether we can combine two case together.",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_068743d8",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-05-01T10:52:29Z",
+      "side": 1,
+      "message": "Yes, I\u0027ve consolidated the tests into one.  In order to avoid duplicating all the assertions over two catalogs I\u0027ve added a function within the method.  Ugly really but better than this I reckon.  Thanks for picking up on this.",
+      "parentUuid": "3acd31a7_510616cf",
       "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
