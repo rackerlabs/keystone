@@ -127,13 +127,14 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
         user_id = uuid.uuid4().hex
         # If the URL has no 'tenant_id' to substitute, we will skip the
-        # endpoint which contains this kind of URL.
+        # endpoint which requires this to format the url correctly.
+        # If the service contains no endpoints then it will be skipped in turn.
+        # So a service that contains only endpoints requiring tenant_id to be
+        # formatted will be omitted from the catalog in the absence of a
+        # tenant_id.  So there should only be one service in the expected
+        # catalog.
         catalog_ref = self.catalog_api.get_v3_catalog(user_id, tenant_id=None)
         exp_catalog = [
-            {'endpoints': [],
-             'type': 'compute',
-             'name': "'Compute Service'",
-             'id': '2'},
             {'endpoints': [
                 {'interface': 'admin',
                  'region': 'RegionOne',
@@ -148,6 +149,23 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'name': "'Identity Service'",
              'id': '1'}]
         self.assert_catalogs_equal(exp_catalog, catalog_ref)
+
+    def test_get_v2_catalog_ignores_endpoints_with_invalid_urls(self):
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which requires this to format the url correctly.
+        # If the service contains no endpoints then it will be skipped in turn.
+        # So a service that contains only endpoints requiring tenant_id to be
+        # formatted will be omitted from the catalog in the absence of a
+        # tenant_id.  So there should only be one service in the expected
+        # catalog.
+        catalog_ref = self.catalog_api.get_catalog(user_id, tenant_id=None)
+
+        expected = self.DEFAULT_FIXTURE.copy()
+        # the compute service should not be listed as it requires tenant
+        # substitution - so remove it from the expected catalog
+        del expected['RegionOne']['compute']
+        self.assertDictEqual(expected, catalog_ref)
 
     def test_list_regions_filtered_by_parent_region_id(self):
         self.skipTest('Templated backend does not support hints')
