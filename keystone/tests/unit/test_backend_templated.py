@@ -60,7 +60,7 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
 
     def test_get_catalog(self):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
-        self.assertDictEqual(catalog_ref, self.DEFAULT_FIXTURE)
+        self.assertDictEqual(self.DEFAULT_FIXTURE, catalog_ref)
 
     def test_catalog_ignored_malformed_urls(self):
         # both endpoints are in the catalog
@@ -80,7 +80,8 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_get_v3_catalog_endpoint_disabled(self):
         self.skipTest("Templated backend doesn't have disabled endpoints")
 
-    def assert_catalogs_equal(self, expected, observed):
+    def assert_v3_catalogs_equal(self, expected, observed):
+        self.assertEqual(len(expected), len(observed))
         for e, o in zip(sorted(expected), sorted(observed)):
             expected_endpoints = e.pop('endpoints')
             observed_endpoints = o.pop('endpoints')
@@ -118,18 +119,19 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'type': 'identity',
              'name': "'Identity Service'",
              'id': '1'}]
-        self.assert_catalogs_equal(exp_catalog, catalog_ref)
+        self.assert_v3_catalogs_equal(exp_catalog, catalog_ref)
 
-    def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
+    def test_get_v3_catalog_ignores_endpoints_with_invalid_urls(self):
         user_id = uuid.uuid4().hex
         # If the URL has no 'tenant_id' to substitute, we will skip the
-        # endpoint which contains this kind of URL.
+        # endpoint which requires this to format the url correctly.
+        # If the service contains no endpoints then it will be skipped in turn.
+        # So a service that contains only endpoints requiring tenant_id to be
+        # formatted will be omitted from the catalog in the absence of a
+        # tenant_id.  So there should only be one service in the expected
+        # catalog.
         catalog_ref = self.catalog_api.get_v3_catalog(user_id, tenant_id=None)
         exp_catalog = [
-            {'endpoints': [],
-             'type': 'compute',
-             'name': "'Compute Service'",
-             'id': '2'},
             {'endpoints': [
                 {'interface': 'admin',
                  'region': 'RegionOne',
@@ -143,7 +145,24 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'type': 'identity',
              'name': "'Identity Service'",
              'id': '1'}]
-        self.assert_catalogs_equal(exp_catalog, catalog_ref)
+        self.assert_v3_catalogs_equal(exp_catalog, catalog_ref)
+
+    def test_get_v2_catalog_ignores_endpoints_with_invalid_urls(self):
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which requires this to format the url correctly.
+        # If the service contains no endpoints then it will be skipped in turn.
+        # So a service that contains only endpoints requiring tenant_id to be
+        # formatted will be omitted from the catalog in the absence of a
+        # tenant_id.  So there should only be one service in the expected
+        # catalog.
+        catalog_ref = self.catalog_api.get_catalog(user_id, tenant_id=None)
+
+        expected = self.DEFAULT_FIXTURE.copy()
+        # the compute service should not be listed as it requires tenant
+        # substitution - so remove it from the expected catalog
+        del expected['RegionOne']['compute']
+        self.assertDictEqual(expected, catalog_ref)
 
     def test_list_regions_filtered_by_parent_region_id(self):
         self.skipTest('Templated backend does not support hints')
