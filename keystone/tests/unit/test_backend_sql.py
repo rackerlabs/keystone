@@ -864,12 +864,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
     _enabled_default_to_true_when_creating_endpoint = True
 
     def test_catalog_ignored_malformed_urls(self):
-        service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-        }
+        service = self.create_service_dict()
         self.catalog_api.create_service(service['id'], service.copy())
 
         malformed_url = "http://192.168.1.104:8774/v2/$(tenant)s"
@@ -887,12 +882,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertEqual({}, catalog)
 
     def test_get_catalog_with_empty_public_url(self):
-        service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-        }
+        service = self.create_service_dict()
         self.catalog_api.create_service(service['id'], service.copy())
 
         endpoint = {
@@ -913,12 +903,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertIsNone(catalog_endpoint.get('internalURL'))
 
     def test_create_endpoint_region_404(self):
-        service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-        }
+        service = self.create_service_dict()
         self.catalog_api.create_service(service['id'], service.copy())
 
         endpoint = {
@@ -971,12 +956,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         }
         self.catalog_api.create_region(child_region)
         # create a service
-        service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-        }
+        service = self.create_service_dict()
         self.catalog_api.create_service(service['id'], service)
 
         # create an endpoint attached to the service and child region
@@ -1004,6 +984,133 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertRaises(exception.RegionDeletionError,
                           self.catalog_api.delete_region,
                           region['id'])
+
+    def create_service_dict(self):
+        tenant_sub_service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        return tenant_sub_service
+
+    def create_endpoint_dict(self, service_id=None,
+                             interface=None, url_pattern=None, region_id=None):
+        public_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': region_id,
+            'service_id': service_id,
+            'interface': interface,
+            'url': url_pattern,
+        }
+        return public_endpoint
+
+    def create_test_endpoints(self, region_id=None):
+
+        tenant_sub_service = self.create_service_dict()
+        self.catalog_api.create_service(tenant_sub_service['id'],
+                                        tenant_sub_service.copy())
+        public_endpoint = self.create_endpoint_dict(
+            service_id=tenant_sub_service['id'],
+            interface='public',
+            url_pattern='http://localhost:8774/v1.1/$(tenant_id)s',
+            region_id=region_id)
+        self.catalog_api.create_endpoint(public_endpoint['id'],
+                                         public_endpoint.copy())
+        admin_endpoint = self.create_endpoint_dict(
+            service_id=tenant_sub_service['id'],
+            url_pattern='http://localhost:8774/v1.1/$(tenant_id)s',
+            interface='admin',
+            region_id=region_id)
+        self.catalog_api.create_endpoint(admin_endpoint['id'],
+                                         admin_endpoint.copy())
+        internal_endpoint = self.create_endpoint_dict(
+            service_id=tenant_sub_service['id'],
+            interface='admin',
+            url_pattern='http://localhost:8774/v1.1/$(tenant_id)s',
+            region_id=region_id)
+        self.catalog_api.create_endpoint(internal_endpoint['id'],
+                                         internal_endpoint.copy())
+
+        port_sub_service = self.create_service_dict()
+        self.catalog_api.create_service(port_sub_service['id'],
+                                        port_sub_service.copy())
+        valid_public_endpoint = self.create_endpoint_dict(
+            service_id=port_sub_service['id'],
+            interface='public',
+            url_pattern='http://localhost:$(public_port)s/v2.0',
+            region_id=region_id)
+        self.catalog_api.create_endpoint(valid_public_endpoint['id'],
+                                         valid_public_endpoint.copy())
+        valid_admin_endpoint = self.create_endpoint_dict(
+            service_id=port_sub_service['id'],
+            interface='admin',
+            url_pattern='http://localhost:$(admin_port)s/v2.0',
+            region_id=region_id)
+        self.catalog_api.create_endpoint(valid_admin_endpoint['id'],
+                                         valid_admin_endpoint.copy())
+
+        return port_sub_service, valid_admin_endpoint, valid_public_endpoint
+
+    def test_get_v3_catalog_ignores_endpoints_with_invalid_urls(self):
+        """Check catalog scope
+
+         Ensure for domain scoped token that catalog omits services that
+         require project scope for url formatting
+         """
+
+        service, admin_endpoint, public_endpoint = self.create_test_endpoints()
+
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which contains this kind of URL, if the service contains
+        # no endpoints then it will be skipped in turn.  So a service that
+        # contains only endpoints requiring tenant_id to be formatted will be
+        # omitted from the catalog in the absence of a tenant_id - in this case
+        # the 'tenant_sub_service'.
+        catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id=None)
+        self.assertEqual(1, len(catalog))
+        self.assertEqual(service['name'], catalog[0]['name'])
+        self.assertEqual(service['type'], catalog[0]['type'])
+        self.assertEqual(service['id'], catalog[0]['id'])
+        endpoint_id_list = [endpoint['id']
+                            for endpoint in catalog[0]['endpoints']]
+        self.assertTrue(public_endpoint['id'] in endpoint_id_list)
+        self.assertTrue(admin_endpoint['id'] in endpoint_id_list)
+
+    def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
+        """Check catalog scope
+
+         Ensure for domain scoped token that catalog omits services that
+         require project scope for url formatting
+         """
+        region = {
+            'id': uuid.uuid4().hex,
+            'description': 'test_region',
+            'extra': {},
+        }
+        self.catalog_api.create_region(region)
+
+        service, admin_endpoint, public_endpoint = self.create_test_endpoints(
+            region_id=region['id'])
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which contains this kind of URL, if the service contains
+        # no endpoints then it will be skipped in turn.  So a service that
+        # contains only endpoints requiring tenant_id to be formatted will be
+        # omitted from the catalog in the absence of a tenant_id - in this case
+        # the 'tenant_sub_service'.
+        catalog = self.catalog_api.get_catalog(user_id, tenant_id=None)
+
+        catalog_service = catalog[region['id']][service['type']]
+
+        self.assertEqual(1, len(catalog))
+        self.assertEqual(service['name'], catalog_service['name'])
+        self.assertEqual(public_endpoint['id'], catalog_service['id'])
+        self.assertEqual(public_endpoint['url'].replace('$(', '%(') %
+                         {'public_port': '5000'}, catalog_service['publicURL'])
+        self.assertEqual(admin_endpoint['url'].replace('$(', '%(') %
+                         {'admin_port': '35357'}, catalog_service['adminURL'])
 
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
