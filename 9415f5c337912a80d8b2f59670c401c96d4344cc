@@ -33,6 +33,24 @@
       "revId": "9415f5c337912a80d8b2f59670c401c96d4344cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_54fdda38",
+        "filename": "keystone/tests/unit/tests/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-01T17:49:38Z",
+      "side": 1,
+      "message": "We could either remove this test or put it within the above one and do\n\n    for exception in (exc.SAWarning, DeprecationWarning)\n\nIf we decide for doing this, we could do in the followon patch, which refactors this test.",
+      "parentUuid": "3acd31a7_54215afa",
+      "revId": "9415f5c337912a80d8b2f59670c401c96d4344cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
