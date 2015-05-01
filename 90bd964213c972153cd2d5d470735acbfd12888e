@@ -33,6 +33,40 @@
       "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_366270ae",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-01T06:08:54Z",
+      "side": 1,
+      "message": "what\u0027s the meaning of lot here? just curious :-)",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_510616cf",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-01T06:08:54Z",
+      "side": 1,
+      "message": "Aha, I think the name of this testcase could be more accurate.\nHere, the only difference I see with this testcase \"test_catalog_get_v3_catalog_domain_scoped_token\" is `return_all_endpoints_if_no_filter` flag is set to false, both of the case we want it to return `unfiltered_catalog` instead of *no* unfiltered_catalog, am I right? something more, I am thinking whether we can combine two case together.",
+      "revId": "90bd964213c972153cd2d5d470735acbfd12888e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
