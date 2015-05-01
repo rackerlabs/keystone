@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_6896c0f1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 0,
+      "message": "I\u0027d rather build_auth_context was changed to handle the complexity rather than making this method more complex.",
+      "revId": "13e52952fc98db847de5ed65b9043eb1340dc452",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,701 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_ed21c24e",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "In Kilo this feature isn\u0027t even experimental.\n\nAlso, why is it experimental an unsupported?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_2dde9a3f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"running\" to \"to be running\"\n\nThe document shouldn\u0027t say that Apache is required if this will work in any web container.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_adf2aad0",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "the doc shouldn\u0027t say it must be optional if it can also be required.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_8d1c8ec2",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "I think it will be easier for some deployers if trusted_issuer didn\u0027t have to be set because they already set up a trusted CA in their httpd config file. So there should be an option to not have a trusted issuer configured in keystone.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_2d0d7a90",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"an DN\" to \"a DN\"\n\nDoes it have to be a DN?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_4d8c3635",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "the formatting here is going to be lost when the document is rendered. Fix up the rst.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_2db1fae1",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"a IdP\" to \"an IdP\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_6dded212",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"indentity\" to \"identity\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0d02be6f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"contains\" to \"contain\"\n\nRemove \"And\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_edf9c281",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "this isn\u0027t an ini file, it\u0027s python.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_6d2c9202",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "it\u0027s x509 according to earlier docs.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0d399e41",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"An user\" to \"A user\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_6d193288",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "This should be auth_token middleware.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0d3f5ed7",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "auth_token",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_8d2b6e94",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "These aren\u0027t config options.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0824ecac",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "the formatting here isn\u0027t going to make it to the sample config file.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_4851c40d",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "get config frop oslo_config.cfg rather than keystone.common.config.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_28a68810",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "Let\u0027s fix the code so that we don\u0027t need to do this then.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_c8ab94d5",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"contains\" to \"contain\"\n\nThis says it \"should\", but what if it doesn\u0027t?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_28f448f0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "mapping is json rather than a dict already? this seems wrong.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_c8d95485",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "This debug seems excessive.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_08ce2cb4",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "why are we having to do this? shouldn\u0027t the federation api be able to do this for us?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_28420811",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": ".get(\u0027user\u0027) might return None, in which case the next call to .get is just going to fail.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_6806c0cf",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "Is it safe to send this message back to the client?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_2827a865",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "Is this a validation error or a config error?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_48d78423",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "seems like we should be able to call get_user_by_name and pass an option that requires that the user is enabled.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_28b568ed",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change , to .",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_089d0c59",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "let\u0027s fix this so that you don\u0027t have to pass in extras if there aren\u0027t any.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_88eebcb2",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"not containing\" to \"does not contain\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_682c8002",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"True is\" to \"True if\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_280d6890",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "This should be a warning and provide enough information so that an admin can fix it.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_687a40f3",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "is this supposed to return?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_e8277010",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "use issuer_attribute since this code went to the trouble to get it.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_c83b9437",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "seems like there should be an audit event for this.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_68bda067",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "use the config fixture.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_e8b1b090",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "change \"idp_is\" to \"idp_id\"",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_c85a7450",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "what\u0027s the None magic value for? give it a name.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_e82650cd",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "should be able to pass a dict into make_request to set the environ.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_c8083430",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "these lines are copy-pasted a lot, suggest create a function to reduce duplication.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0e007500",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "use the config fixture.",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_6e0fe92e",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T15:51:04Z",
+      "side": 1,
+      "message": "where is SSL_CLIENT_S_DN_CN coming from?",
+      "revId": "71e708e0222612aa3edd70214522f0d78071edd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
