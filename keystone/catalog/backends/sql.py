@@ -379,13 +379,13 @@ class Catalog(catalog.CatalogDriverV8):
 
                 yield endpoint
 
-        # TODO(davechen): If there is service with no endpoints, we should skip
-        # the service instead of keeping it in the catalog, see bug #1436704.
         def make_v3_service(svc):
             eps = list(make_v3_endpoints(svc.endpoints))
-            service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
-            service['name'] = svc.extra.get('name', '')
-            return service
+            if eps:
+                return {'endpoints': eps,
+                        'id': svc.id,
+                        'type': svc.type,
+                        'name': svc.extra.get('name', '')}
 
         def add_endpoint_to_filtered_catalog(filtered_catalog,
                                              service,
@@ -410,7 +410,11 @@ class Catalog(catalog.CatalogDriverV8):
                         endpoint_lookup_dict[endpoint['id']] = new_endpoint
             return endpoint_lookup_dict
 
-        unfiltered_catalog = [make_v3_service(svc) for svc in all_services]
+        unfiltered_catalog = []
+        for svc in all_services:
+            catalog_service = make_v3_service(svc)
+            if catalog_service:
+                unfiltered_catalog.append(catalog_service)
 
         # If this is a domain scoped token then return the unfiltered catalog.
         # Otherwise if there are no endpoints associated with the project
