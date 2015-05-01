@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_fcd4d6bd",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 2198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:25:33Z",
+      "side": 1,
+      "message": "nit: \n\n    def test_cannot_create_projects_with_same_name_and_domain_id(self):\n\nif we have the room for it.",
+      "revId": "c9584f81b90fc56f77b1f56170f8272b98b0e9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_7ca68654",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 2266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:25:33Z",
+      "side": 1,
+      "message": "Do we have a test case that tests the golden path?",
+      "revId": "c9584f81b90fc56f77b1f56170f8272b98b0e9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
