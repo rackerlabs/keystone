@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_68a240b0",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_trust_redelegation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T15:41:05Z",
+      "side": 1,
+      "message": "this is only used in one place, do we need a variable for it?",
+      "revId": "c269dd97e66753023d237b1ab31b25f87ce3d426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_e87d301d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T15:41:05Z",
+      "side": 1,
+      "message": "can\u0027t we just make a copy here?",
+      "revId": "c269dd97e66753023d237b1ab31b25f87ce3d426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
