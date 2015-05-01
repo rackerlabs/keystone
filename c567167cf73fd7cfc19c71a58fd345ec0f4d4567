@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3acd31a7_b74c3771",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "couldn\u0027t this just be changed to: \n\n    if ref.get(\u0027is_domain\u0027):\n\nthen we should only be executing the def _normalize_is_domain_project_domain_id method \nwhen \u0027is_domain\u0027 is True, right?",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_af377be2",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 55
@@ -13,6 +30,159 @@
       "writtenOn": "2015-05-01T01:35:22Z",
       "side": 1,
       "message": "what is the TODO here?   It looks like just a note.",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_57860366",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "should we include some ids in the message?",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_377dc76e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_b791d79b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "if the project_id isn\u0027t assigned, this will fail on a KeyError.",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_f74cef43",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "If you want, you could roll this in to the previous comment: \n\n    # NOTE(rodrigods, lbragstad): ...",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_576283ae",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 2151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "overridden*",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_9716dbef",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 2252,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "Should we assert that the ref.get(\u0027parent_id\u0027) is in fact parent[\u0027id\u0027]?",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_f7962f4b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "this test case is running the same code as the test case above, yet they have different names but the same outcome?",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_179d2b59",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "Could simplify the following with: \n\n    for domain_id in [None, uuid.uuid4().hex]:\n        request_to_validate \u003d {\u0027name\u0027: self.project_name,\n                               \u0027domain_id\u0027: domain_id}\n        self.create_project_validator.validate(request_to_validate)",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_37b147e2",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:56:30Z",
+      "side": 1,
+      "message": "the same comment can be applied here.",
       "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
