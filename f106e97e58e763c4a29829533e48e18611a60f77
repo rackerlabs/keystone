@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_bc69be27",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 0,
+      "message": "Shouldn\u0027t this get moved to https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_upgrade.py",
+      "revId": "f106e97e58e763c4a29829533e48e18611a60f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

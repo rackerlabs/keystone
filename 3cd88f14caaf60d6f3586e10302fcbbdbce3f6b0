@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_5c050a78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "broken link to the blueprint?",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_5c13cab8",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_endpoint_policy_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "Should this be accepting any Exception or should we be looking for something in particular?",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_1c0d5290",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_endpoint_policy_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "Is there a way to check the schema of a particular table? Maybe an alternative to this would be to ensure the schema of the endpoint_policy table matches what we need it to and use that to determine if we need to run the migration or not.",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_dc27da10",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "s/the//",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_bc22deff",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_9c2162fe",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "Keystone* \n\nmaybe make this message point to where the database control is.",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_5c7aaaf2",
+        "filename": "keystone/contrib/endpoint_policy/migrate_repo/versions/001_add_endpoint_policy_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T13:13:50Z",
+      "side": 1,
+      "message": "same comments here as in the previous module.",
+      "revId": "3cd88f14caaf60d6f3586e10302fcbbdbce3f6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
