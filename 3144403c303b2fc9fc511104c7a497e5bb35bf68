@@ -34,6 +34,24 @@
       "revId": "3144403c303b2fc9fc511104c7a497e5bb35bf68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_91a02ea1",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-01T06:21:04Z",
+      "side": 0,
+      "message": "okay, as long as we remove that logic in the controller.",
+      "parentUuid": "bab921fb_bdd39203",
+      "revId": "3144403c303b2fc9fc511104c7a497e5bb35bf68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
