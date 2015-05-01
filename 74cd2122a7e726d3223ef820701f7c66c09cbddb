@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_37a6e053",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T18:32:59Z",
+      "side": 1,
+      "message": "this should be subject_domain_name so we know it\u0027s for the subject.",
+      "revId": "74cd2122a7e726d3223ef820701f7c66c09cbddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_91dee46b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T18:32:59Z",
+      "side": 1,
+      "message": "no need for a variable here since this value isn\u0027t reused, and the thing it\u0027s assigned to makes it obvious what it is.",
+      "revId": "74cd2122a7e726d3223ef820701f7c66c09cbddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_778578ab",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2992,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T18:32:59Z",
+      "side": 1,
+      "message": "change this to SUBJECT_DOMAIN so it\u0027s obvious it\u0027s associated with SUBJECT\n\nAlso, add a comment where this value is coming from. Otherwise use a random value.",
+      "revId": "74cd2122a7e726d3223ef820701f7c66c09cbddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_775a1852",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2995,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T18:32:59Z",
+      "side": 1,
+      "message": "add a comment where this value is coming from. Otherwise use a random value.",
+      "revId": "74cd2122a7e726d3223ef820701f7c66c09cbddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_57303c01",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 3056,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T18:32:59Z",
+      "side": 1,
+      "message": "do we really need to assert the order that the attributes are in? fix this to look up the attribute in the doc.",
+      "revId": "74cd2122a7e726d3223ef820701f7c66c09cbddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_a20cf03b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 3160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-01T18:32:59Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment. Comments should explain why something is being done.",
+      "revId": "74cd2122a7e726d3223ef820701f7c66c09cbddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
