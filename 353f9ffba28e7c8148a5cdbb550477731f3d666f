@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_0e2755b7",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_add_timestamp_to_project_and_role.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T16:04:11Z",
+      "side": 1,
+      "message": "We don\u0027t support downgrades anymore do we?",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0e5f55e6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T16:04:11Z",
+      "side": 1,
+      "message": "do we test downgrades anymore?",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
