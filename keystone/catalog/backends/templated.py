@@ -17,6 +17,7 @@ import os.path
 
 from oslo_config import cfg
 from oslo_log import log
+import six
 
 from keystone.catalog.backends import kvs
 from keystone.catalog import core
@@ -120,7 +121,8 @@ class Catalog(kvs.Catalog):
 
         """
         substitutions = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+            itertools.chain(six.iteritems(CONF),
+                            six.iteritems(CONF.eventlet_server)))
         substitutions.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:
@@ -129,15 +131,13 @@ class Catalog(kvs.Catalog):
             silent_keyerror_failures = ['tenant_id']
 
         catalog = {}
-        # TODO(davechen): If there is service with no endpoints, we should
-        # skip the service instead of keeping it in the catalog.
-        # see bug #1436704.
-        for region, region_ref in self.templates.items():
+
+        for region, region_ref in six.iteritems(self.templates):
             catalog[region] = {}
-            for service, service_ref in region_ref.items():
+            for service, service_ref in six.iteritems(region_ref):
                 service_data = {}
                 try:
-                    for k, v in service_ref.items():
+                    for k, v in six.iteritems(service_ref):
                         formatted_value = core.format_url(
                             v, substitutions,
                             silent_keyerror_failures=silent_keyerror_failures)
@@ -145,6 +145,9 @@ class Catalog(kvs.Catalog):
                             service_data[k] = formatted_value
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
-                catalog[region][service] = service_data
+                if (service_data.get('adminURL')
+                        or service_data.get('publicURL')
+                        or service_data.get('internalURL')):
+                    catalog[region][service] = service_data
 
         return catalog
