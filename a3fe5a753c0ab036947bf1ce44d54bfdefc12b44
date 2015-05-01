@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_37682087",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3784,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-01T18:26:16Z",
+      "side": 1,
+      "message": "++ Domain role assignments on a third domain should not be affected.",
+      "parentUuid": "da9b358b_69ee07ee",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_29bfdfd1",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 11
@@ -170,6 +188,24 @@
       "writtenOn": "2015-03-30T00:47:37Z",
       "side": 1,
       "message": "add a comment why the LDAP backend works this way",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_d7ab2c88",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-01T18:26:16Z",
+      "side": 1,
+      "message": "Just to make clear, LDAP does not support delete/updates on domain.",
+      "parentUuid": "da9b358b_29bfdfd1",
       "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
