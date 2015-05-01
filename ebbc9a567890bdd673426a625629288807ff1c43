@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_d75a1350",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T14:13:48Z",
+      "side": 1,
+      "message": "looks like it should... \n\nhttp://cdn.pasteraw.com/lx7lurx3roxooka05pgdu7ihl013zi9",
+      "parentUuid": "3acd31a7_15e2e703",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_f5a3eb9c",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 3
@@ -64,6 +82,24 @@
       "writtenOn": "2015-04-30T12:17:11Z",
       "side": 1,
       "message": "this says it takes an iterable, but it obviously doesn\u0027t.",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_522a917f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-01T14:13:48Z",
+      "side": 1,
+      "message": "++ \n\ncould change iterable to keys?",
+      "parentUuid": "3acd31a7_d5c7cf43",
       "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
