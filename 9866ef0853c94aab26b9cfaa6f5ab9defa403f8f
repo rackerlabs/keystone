@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_e0ead60e",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-02T21:05:51Z",
+      "side": 1,
+      "message": "Do we need to maintain this attribute ? It is not used in the superclass and no longer here with the removal below.",
+      "revId": "9866ef0853c94aab26b9cfaa6f5ab9defa403f8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
