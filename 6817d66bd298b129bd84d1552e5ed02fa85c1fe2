@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_0e350af6",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-05-02T00:59:24Z",
+      "side": 1,
+      "message": "Because you add the full driver names to setup.cfg they will be found by stevedore. This means that you won\u0027t see a deprecation warning for using the full names for those drivers. \n\nIs this what we want?",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
