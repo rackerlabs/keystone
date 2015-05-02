@@ -16,6 +16,24 @@
       "revId": "9866ef0853c94aab26b9cfaa6f5ab9defa403f8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_60224654",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-02T22:04:58Z",
+      "side": 1,
+      "message": "Actually it looks like it is used by auth controller.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L65",
+      "parentUuid": "3acd31a7_e0ead60e",
+      "revId": "9866ef0853c94aab26b9cfaa6f5ab9defa403f8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
