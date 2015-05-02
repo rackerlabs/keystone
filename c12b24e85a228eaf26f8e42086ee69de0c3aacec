@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_80456218",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-02T21:25:10Z",
+      "side": 1,
+      "message": "I think we should check if the provided plugin is supported. If it isnt\u0027t we should raise an exception, instead of expecting a python error when accessing this key (or when loading the driver, as it was before).",
+      "revId": "c12b24e85a228eaf26f8e42086ee69de0c3aacec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
