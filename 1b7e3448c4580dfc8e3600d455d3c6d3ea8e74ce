@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_a0273e63",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-02T22:01:57Z",
+      "side": 1,
+      "message": "As I said in the parent patch, I think we should add a check to ensure plugin is in CONF.auth.  If it isn\u0027t, we should raise an exception instead of expect a keyerror.",
+      "revId": "1b7e3448c4580dfc8e3600d455d3c6d3ea8e74ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
