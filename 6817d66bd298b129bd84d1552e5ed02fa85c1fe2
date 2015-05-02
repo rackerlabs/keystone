@@ -34,6 +34,23 @@
       "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_80f7a2f4",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-02T21:15:56Z",
+      "side": 1,
+      "message": "Isn\u0027t there a way to ensure subclasses will override this method ? Maybe adding a check in the load_driver() method.\n\nIf this isn\u0027t overridden, we get an error when calling stevedore.DriverManager.\n\nSee lines 29-30 of http://paste.openstack.org/show/214745/",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
