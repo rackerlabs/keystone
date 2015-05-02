@@ -16,6 +16,24 @@
       "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_1f053279",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-02T13:36:00Z",
+      "side": 1,
+      "message": "For now it will only complain about the custom drivers. The renaming of the keystone drivers is done in https://review.openstack.org/#/c/166622/ .",
+      "parentUuid": "3acd31a7_0e350af6",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
