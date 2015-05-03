@@ -19,7 +19,6 @@ msgstr ""
 "Generated-By: Babel 1.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: keystone/catalog/backends/templated.py:106
 #, python-format
 msgid "Unable to open template file %s"
 msgstr "Impossible d'ouvrir le fichier modèle %s"
