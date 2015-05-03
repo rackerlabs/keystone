@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_b4277c63",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-05-03T15:02:27Z",
+      "side": 1,
+      "message": "py34 already exists here",
+      "revId": "3a6cd0982a156bef4fa0e512bf0355b70d6ccfc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
