@@ -627,6 +627,96 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertFalse(self._does_index_exist('assignment',
                                                     'assignment_role_id_fkey'))
 
+    def test_endpoint_fk_ondelete_cascade(self):
+        self.upgrade(72)
+        DEFAULT_REGION = "RegionOne"
+        ENDPOINT_TABLE_NAME = 'endpoint'
+        SERVICE_TABLE_NAME = 'service'
+        endpoint_table = sqlalchemy.Table(ENDPOINT_TABLE_NAME,
+                                          self.metadata,
+                                          autoload=True)
+        service_table = sqlalchemy.Table(SERVICE_TABLE_NAME,
+                                         self.metadata,
+                                         autoload=True)
+        session = self.Session()
+
+        def add_service():
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex
+            }
+
+            self.insert_dict(session, SERVICE_TABLE_NAME, service)
+
+            return service_id
+
+        def add_endpoint(service_id, region):
+            endpoint_id = uuid.uuid4().hex
+
+            endpoint = {
+                'id': endpoint_id,
+                'interface': uuid.uuid4().hex[:8],
+                'service_id': service_id,
+                'url': uuid.uuid4().hex,
+                'region_id': region
+            }
+            self.insert_dict(session, ENDPOINT_TABLE_NAME, endpoint)
+
+            return endpoint_id
+
+        def delete_service(service_id):
+            delete = service_table.delete().where(
+                service_table.c.id == service_id)
+            session.execute(delete)
+            session.commit()
+
+        # create one arbitrary service and two associated endpoints
+        service_id = add_service()
+        add_endpoint(service_id, DEFAULT_REGION)
+        add_endpoint(service_id, DEFAULT_REGION)
+
+        self.assertEqual(2, session.query(endpoint_table).
+                         filter_by(service_id=service_id).count())
+
+        if self.engine.name == "sqlite":
+            # SQLite database doesn't enforce FK constraint by default
+            delete_service(service_id)
+            # The service could be removed successfully
+            self.assertEqual(0, session.query(service_table).
+                             filter_by(id=service_id).count())
+            # But the endpoint will be the orphan in the DB
+            self.assertEqual(2, session.query(endpoint_table).
+                             filter_by(service_id=service_id).count())
+
+        # engine is DB2, MYSQL, or PostgreSQL
+        else:
+            # remove service which references with endpoints
+            # will raise exception
+            self.assertRaises(db_exception.DBError,
+                              delete_service,
+                              service_id)
+
+            self.assertEqual(2, session.query(endpoint_table).
+                             filter_by(service_id=service_id).count())
+
+        self.upgrade(73)
+
+        # SQLite database doesn't enforce FK constraint by default
+        if self.engine.name == "sqlite":
+            pass
+
+        # engine is DB2, MYSQL, or PostgreSQL
+        else:
+            # there are still two endpoints associated with the service
+            self.assertEqual(2, session.query(endpoint_table).
+                             filter_by(service_id=service_id).count())
+
+            # remove the service will remove all the associated endpoints
+            delete_service(service_id)
+            self.assertEqual(0, session.query(endpoint_table).
+                             filter_by(service_id=service_id).count())
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
