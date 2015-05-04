@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_19d0961e",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-04T18:59:14Z",
+      "side": 1,
+      "message": "We could, but then we\u0027d just be moving the list() into it. Either way is fine.",
+      "parentUuid": "3acd31a7_350f23e3",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_15e2e703",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_19977649",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-04T18:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_15e2e703",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_f5a3eb9c",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 3
@@ -100,6 +136,24 @@
       "writtenOn": "2015-05-01T14:33:18Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "3acd31a7_f5a3eb9c",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_39391242",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-04T18:59:14Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "3acd31a7_f5a3eb9c",
       "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -153,6 +207,24 @@
       "writtenOn": "2015-05-01T14:33:18Z",
       "side": 1,
       "message": "++ It\u0027s small and related enough so *could* be changed in this patch IMO.",
+      "parentUuid": "3acd31a7_522a917f",
+      "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_83b78fd7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-04T18:59:14Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "3acd31a7_522a917f",
       "revId": "ebbc9a567890bdd673426a625629288807ff1c43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
