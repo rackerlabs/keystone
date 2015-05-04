@@ -79,7 +79,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
                            nullable=True,
                            default=None)
     service_id = sql.Column(sql.String(64),
-                            sql.ForeignKey('service.id'),
+                            sql.ForeignKey('service.id',
+                                           ondelete='CASCADE'),
                             nullable=False)
     url = sql.Column(sql.Text(), nullable=False)
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
