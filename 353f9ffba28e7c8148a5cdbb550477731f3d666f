@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3acd31a7_8c0a3020",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "Please revert unrelated change.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_ac2a8c7c",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_add_timestamp_to_project_and_role.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "We already have a migration 066, the next one should be 073.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_0e2755b7",
         "filename": "keystone/common/sql/migrate_repo/versions/066_add_timestamp_to_project_and_role.py",
         "patchSetId": 19
@@ -19,6 +53,58 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_b11c2378",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_add_timestamp_to_project_and_role.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "No we don\u0027t, please remove this.",
+      "parentUuid": "3acd31a7_0e2755b7",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_8c2110a2",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "Please revert unrelated change.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_6c2474ae",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "Please revert unrelated change.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_0e5f55e6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 19
@@ -30,6 +116,41 @@
       "writtenOn": "2015-05-01T16:04:11Z",
       "side": 1,
       "message": "do we test downgrades anymore?",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_1108772b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "No, this test should be removed as well.",
+      "parentUuid": "3acd31a7_0e5f55e6",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_ec688489",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-04T11:22:03Z",
+      "side": 1,
+      "message": "You could at least assert \u0027created_at\u0027 and \u0027updated_at\u0027 contain valid content.",
       "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
