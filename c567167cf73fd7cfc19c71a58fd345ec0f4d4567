@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_9816e7a5",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Yes. I\u0027ll update the code.",
+      "parentUuid": "3acd31a7_b74c3771",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_af377be2",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 55
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-01T01:35:22Z",
       "side": 1,
       "message": "what is the TODO here?   It looks like just a note.",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_1892d757",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "We will remove this TODO, we already discuss this in a previous patch. thanks.",
+      "parentUuid": "3acd31a7_af377be2",
       "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_d8e1ff9b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_57860366",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_377dc76e",
         "filename": "keystone/resource/core.py",
         "patchSetId": 55
@@ -64,6 +118,24 @@
       "writtenOn": "2015-05-01T13:56:30Z",
       "side": 1,
       "message": "same comment here.",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_38047348",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_377dc76e",
       "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_9bd70123",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_b791d79b",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_f74cef43",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 55
@@ -98,6 +188,24 @@
       "writtenOn": "2015-05-01T13:56:30Z",
       "side": 1,
       "message": "If you want, you could roll this in to the previous comment: \n\n    # NOTE(rodrigods, lbragstad): ...",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_5bb849e5",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_f74cef43",
       "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_dbc45960",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 2151,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_576283ae",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_9716dbef",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 55
@@ -132,6 +258,24 @@
       "writtenOn": "2015-05-01T13:56:30Z",
       "side": 1,
       "message": "Should we assert that the ref.get(\u0027parent_id\u0027) is in fact parent[\u0027id\u0027]?",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_7bac25a0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 2252,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_9716dbef",
       "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_bbc87d23",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "No, this test covers both behaviors. maybe I can create two different tests for this.",
+      "parentUuid": "3acd31a7_f7962f4b",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_179d2b59",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 55
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_7bd2e5d3",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_179d2b59",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_37b147e2",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 55
@@ -183,6 +363,24 @@
       "writtenOn": "2015-05-01T13:56:30Z",
       "side": 1,
       "message": "the same comment can be applied here.",
+      "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_5bd5e9b6",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-04T13:59:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_37b147e2",
       "revId": "c567167cf73fd7cfc19c71a58fd345ec0f4d4567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
