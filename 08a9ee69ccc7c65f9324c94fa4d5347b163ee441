@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_35b7bff6",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-05-05T08:16:44Z",
+      "side": 1,
+      "message": "I\u0027m not sure if this is right. In the case where we the top level project (which is acting as a domain) and a project in its hierarchy that share the same name....if the user does not specify the is_domain attribute in the scope we want to default to the project that is NOT the domain (to keep compatibility with how it works now). Given that you can have two such projects..wouldn\u0027t this method fail in the query.one() step since it would get two results?",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_55aebb81",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-05-05T08:16:44Z",
+      "side": 1,
+      "message": "is this a related change?",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_f5af0728",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-05-05T08:16:44Z",
+      "side": 1,
+      "message": "we should modify the unit tests so that we test this extra parameter...",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_95f0d368",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-05-05T08:16:44Z",
+      "side": 1,
+      "message": "This needs to be updated...",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
