@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_11a3a2b3",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-05T18:00:49Z",
+      "side": 1,
+      "message": "You could simply call\n\n    self.get(\u0027/projects/%s\u0027 % project_id, auth\u003dself.auth, expected_status\u003dexception.ForbiddenAction.code)\n\ninstead of having an additional private method for this.",
+      "revId": "4459554dbd21a983a94ce40c6916e6b8a75f355d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_71941642",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-05T18:00:49Z",
+      "side": 1,
+      "message": "Ditto, could simply be:\n\n    self.get(\u0027/projects/%s\u0027 % project_id, auth\u003dself.auth)\n\nas the default expected status for get is 200.\nSee https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L513-L517",
+      "revId": "4459554dbd21a983a94ce40c6916e6b8a75f355d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
