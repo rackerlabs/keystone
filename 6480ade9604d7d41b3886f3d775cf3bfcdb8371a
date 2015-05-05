@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_81df7d0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-05T03:26:18Z",
+      "side": 1,
+      "message": "This may not tie directly with that bp, looks more likely the changing of the topic.",
+      "parentUuid": "3acd31a7_c6097933",
+      "revId": "6480ade9604d7d41b3886f3d775cf3bfcdb8371a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_7450d65e",
         "filename": "keystone/tests/unit/tests/test_core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-01T17:48:45Z",
       "side": 1,
       "message": "As said in the parent patch, this test isn\u0027t adding any value.\n\nThe test_sa_warning above tests the same, doesn\u0027t it ?\n\nWe could either remove this test or put it within the above one and do\n\n    for exception in (exc.SAWarning, DeprecationWarning)",
+      "revId": "6480ade9604d7d41b3886f3d775cf3bfcdb8371a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_c1e335a3",
+        "filename": "keystone/tests/unit/tests/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-05T03:26:18Z",
+      "side": 1,
+      "message": "++\nfocus on different warnings, but both is instance of Warning.",
+      "parentUuid": "3acd31a7_7450d65e",
       "revId": "6480ade9604d7d41b3886f3d775cf3bfcdb8371a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
