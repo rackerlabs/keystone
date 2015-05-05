@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_b1d3ced4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1806,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-05T18:12:21Z",
+      "side": 1,
+      "message": "The code in this with statement below is duplicated from the code in the else statement at line 1816.\n\nPlease change it to be:\n\n    if conn is None:\n        conn \u003d self.get_connection()\n    try:\n        ...",
+      "revId": "25d77f7691792d496de8fdaf6e48f00c067b44f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_11f04266",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1876,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-05T18:12:21Z",
+      "side": 1,
+      "message": "Use self.get_connection() instead of self.get_connection",
+      "revId": "25d77f7691792d496de8fdaf6e48f00c067b44f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
