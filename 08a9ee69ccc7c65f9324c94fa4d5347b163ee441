@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_b04cf69e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-05T12:38:32Z",
+      "side": 1,
+      "message": "So, I will change the the default value to False, so if the user does not specify the is_domain attibute, we will return the project with is_domain flag disable.",
+      "parentUuid": "3acd31a7_35b7bff6",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_55aebb81",
         "filename": "keystone/resource/core.py",
         "patchSetId": 50
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-05T08:16:44Z",
       "side": 1,
       "message": "is this a related change?",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_0bca5f4e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-05T12:38:32Z",
+      "side": 1,
+      "message": "Not with this patch... I think that this code was merge in the rebase... I take a look on that.",
+      "parentUuid": "3acd31a7_55aebb81",
       "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_505da277",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-05T12:38:32Z",
+      "side": 1,
+      "message": "Ok, I will do that.",
+      "parentUuid": "3acd31a7_f5af0728",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_95f0d368",
         "filename": "keystone/resource/core.py",
         "patchSetId": 50
@@ -64,6 +118,24 @@
       "writtenOn": "2015-05-05T08:16:44Z",
       "side": 1,
       "message": "This needs to be updated...",
+      "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_5047e276",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-05T12:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_95f0d368",
       "revId": "08a9ee69ccc7c65f9324c94fa4d5347b163ee441",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
