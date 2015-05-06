@@ -42,6 +42,9 @@ TIMESTAMP_END = 9
 class TokenFormatter(object):
     """Packs and unpacks payloads into tokens for transport."""
 
+    def __init__(self):
+        self._crypto = None
+
     @property
     def crypto(self):
         """Return a cryptography instance.
@@ -55,13 +58,18 @@ class TokenFormatter(object):
         ``encrypt(plaintext)`` and ``decrypt(ciphertext)``.
 
         """
+        if self._crypto is not None:
+            return self._crypto
+
         keys = utils.load_keys()
 
         if not keys:
             raise exception.KeysNotFound()
 
         fernet_instances = [fernet.Fernet(key) for key in utils.load_keys()]
-        return fernet.MultiFernet(fernet_instances)
+        self._crypto = fernet.MultiFernet(fernet_instances)
+
+        return self._crypto
 
     def pack(self, payload):
         """Pack a payload for transport as a token."""
