@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aca2d91_2a469e23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-06T21:45:09Z",
+      "side": 1,
+      "message": "\u0027with keywords\u0027 sounds confusing because we don\u0027t do any mapping with keywords. it\u0027s all positional. unfortunately i don\u0027t have a better suggestion right now.",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_4a7c3a72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-06T21:45:09Z",
+      "side": 1,
+      "message": "(nit) newline here",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_aa698e8d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-06T21:45:09Z",
+      "side": 1,
+      "message": "It would be nice if we had context here to show what rule was broken.",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_ca03aab7",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-06T21:45:09Z",
+      "side": 1,
+      "message": "It\u0027s unfortunate that we can\u0027t catch some of these errors on the way in with some extra smart validation. That way it\u0027s not a runtime user error.",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_0fc5348d",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 3
