@@ -51,6 +51,23 @@
       "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_9493b0a3",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-05-06T12:28:01Z",
+      "side": 1,
+      "message": "abc.abstractproperty maybe?",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
