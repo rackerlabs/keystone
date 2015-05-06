@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_a75e9274",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-06T04:48:50Z",
+      "side": 0,
+      "message": "Same here, why it was removed ?\nShouldn\u0027t it be a different bug ? The one you are solving here is to replace GitHub by git.openstack.org",
+      "revId": "bbb2b3298f40a7ec96dd39e07eba22da9b102085",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

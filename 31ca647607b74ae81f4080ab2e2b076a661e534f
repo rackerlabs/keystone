@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_a787b2d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-06T04:48:50Z",
+      "side": 1,
+      "message": "Why? Add a description to this change (not only a title).",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_2774c2fb",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-06T04:48:50Z",
+      "side": 1,
+      "message": "Your commit message said \u0027doc: replace GitHub by git.openstack.org\u0027, this isn\u0027t related to github. Please only do what you are supposed to do in this patch.",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
