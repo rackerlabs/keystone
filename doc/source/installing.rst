@@ -42,7 +42,7 @@ Clone the Keystone repository:
 
 .. code-block:: bash
 
-    $ git clone http://github.com/openstack/keystone.git
+    $ git clone https://git.openstack.org/openstack/keystone.git
     $ cd keystone
 
 Install the Keystone web service:
@@ -84,10 +84,6 @@ but all of the core OpenStack projects.
 
 .. _DEVSTACK: http://devstack.org/
 
-The script with the latest examples of initializing data in Keystone is a
-bash script called keystone_data.sh_
-
-.. _keystone_data.sh: https://github.com/openstack-dev/devstack/blob/master/files/keystone_data.sh
 
 Installing from packages: Ubuntu
 --------------------------------
