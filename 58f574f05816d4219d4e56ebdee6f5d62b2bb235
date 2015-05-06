@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_41aa0172",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-05-06T10:33:32Z",
+      "side": 1,
+      "message": "this line conflicts with...",
+      "revId": "58f574f05816d4219d4e56ebdee6f5d62b2bb235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_a1caf54d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-05-06T10:33:32Z",
+      "side": 1,
+      "message": "... this line",
+      "revId": "58f574f05816d4219d4e56ebdee6f5d62b2bb235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_01cc0934",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-05-06T10:33:32Z",
+      "side": 1,
+      "message": "unrelated \u0027/\u0027 in the end",
+      "revId": "58f574f05816d4219d4e56ebdee6f5d62b2bb235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
