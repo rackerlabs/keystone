@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_fc11bdb0",
+        "filename": "keystone/openstack/common/CURRENT_SYNC_REF",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-06T05:34:48Z",
+      "side": 1,
+      "message": "Some comments here to indicate the hex value here is the commit id expected to be synced with, either in the developing.rst or here is fine.",
+      "revId": "99b6df34ec5fc3569d72432da87701b82e06fa58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_e2d7d821",
+        "filename": "tools/sync_oslo.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-06T05:34:48Z",
+      "side": 1,
+      "message": "seems like there is hard requirement that keystone dir and oslo-incubator must be in the same directory, should also point this out in the developing.rst?",
+      "revId": "99b6df34ec5fc3569d72432da87701b82e06fa58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_022c1449",
+        "filename": "tools/sync_oslo.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-06T05:34:48Z",
+      "side": 1,
+      "message": "may need to cover new added files here, or change the message below to indicate there is no changes to the existed files.",
+      "revId": "99b6df34ec5fc3569d72432da87701b82e06fa58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
