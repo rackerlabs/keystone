@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_878956cd",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1867,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-06T04:53:24Z",
+      "side": 1,
+      "message": "Tests are failing, change \u0027self.get_connection\u0027 to \u0027self.get_connection()\u0027\n\nDon\u0027t forget the ()",
+      "revId": "46caca4b02c519ea344595233367d325c50251ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_c7e74eab",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1869,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-06T04:53:24Z",
+      "side": 1,
+      "message": "This line is too long, making pep8 to fail:\n\n./keystone/common/ldap/core.py:1869:80: E501 line too long (85 \u003e 79 characters)",
+      "revId": "46caca4b02c519ea344595233367d325c50251ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
