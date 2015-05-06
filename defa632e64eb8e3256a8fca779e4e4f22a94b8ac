@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_0052b067",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-05-06T17:04:21Z",
+      "side": 1,
+      "message": "Isn\u0027t the dirver name \"ldap\" too generic?",
+      "revId": "defa632e64eb8e3256a8fca779e4e4f22a94b8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
