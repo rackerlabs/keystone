@@ -68,6 +68,40 @@
       "revId": "58f574f05816d4219d4e56ebdee6f5d62b2bb235",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_16b9d1e9",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-06T20:50:12Z",
+      "side": 1,
+      "message": "should have changed GitHub to \"gerrit git\" or something otherwise it just says keystone is sourced in keystone.",
+      "revId": "58f574f05816d4219d4e56ebdee6f5d62b2bb235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_56bf49d0",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-06T20:50:12Z",
+      "side": 1,
+      "message": "1) space is missing after \"in\"\n\n2) should have changed GitHub to \"gerrit git\" or something otherwise it just says keystone is sourced in keystone.",
+      "revId": "58f574f05816d4219d4e56ebdee6f5d62b2bb235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
