@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_fc09b8de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-06T07:37:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aca2d91_a248c088",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_2774c2fb",
         "filename": "README.rst",
         "patchSetId": 1
@@ -72,6 +90,42 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_fced3826",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-06T07:37:22Z",
+      "side": 1,
+      "message": "done, I will update the commit message and include this.",
+      "parentUuid": "1aca2d91_2774c2fb",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_8d7735d4",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-06T07:37:22Z",
+      "side": 1,
+      "message": "yeah, I personally think the recommended link of openstack developer documentation is the latter :), it is just to keep it usable that the old link can redirect to the http://docs.openstack.org/developer/keystone/.",
+      "parentUuid": "1aca2d91_42c44c3f",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_22d8301d",
         "filename": "README.rst",
         "patchSetId": 1
@@ -89,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_bc5b402e",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-06T07:37:22Z",
+      "side": 1,
+      "message": "AFAK, the git.openstack.org is the official home for OpenStack git repos, and hosted by the OpenStack infrastructure team. but both the github and git.openstack.org is mirror of openstack source code, so this change is not necessary, it is up to reviewers\u0027 opinions :)\n\nthe related wiki page:\nhttps://wiki.openstack.org/wiki/Getting_The_Code\n\n\nactually, there are already some patches have done this change, see:\nhttps://review.openstack.org/#/c/107596/\nhttps://review.openstack.org/#/c/155320/\nhttps://review.openstack.org/#/c/63860/\nhttps://review.openstack.org/#/c/38177/",
+      "parentUuid": "1aca2d91_22d8301d",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_a2a3204f",
         "filename": "doc/source/community.rst",
         "patchSetId": 1
@@ -100,6 +172,24 @@
       "writtenOn": "2015-05-06T05:56:26Z",
       "side": 1,
       "message": "Does that means Github will be deprecated to host keystone source?",
+      "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_3c69708c",
+        "filename": "doc/source/community.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-06T07:37:22Z",
+      "side": 1,
+      "message": "no, please see my previous reply inline :)",
+      "parentUuid": "1aca2d91_a2a3204f",
       "revId": "31ca647607b74ae81f4080ab2e2b076a661e534f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

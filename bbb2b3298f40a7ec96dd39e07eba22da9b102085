@@ -16,6 +16,24 @@
       "revId": "bbb2b3298f40a7ec96dd39e07eba22da9b102085",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_ad10b1a9",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-06T07:37:22Z",
+      "side": 0,
+      "message": "removed this because the keystone_data.sh didn\u0027t exist in devstack now, I will change this in another patch, thanks.",
+      "parentUuid": "1aca2d91_a75e9274",
+      "revId": "bbb2b3298f40a7ec96dd39e07eba22da9b102085",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
