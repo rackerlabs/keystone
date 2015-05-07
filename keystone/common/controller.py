@@ -162,7 +162,11 @@ def protected(callback=None):
 
 def filterprotected(*filters):
     """Wraps filtered API calls with role based access controls (RBAC)."""
+    return filterprotected_with_callback(None, *filters)
 
+
+def filterprotected_with_callback(callback, *filters):
+    """Wraps filtered API calls with role based access controls (RBAC)."""
     def _filterprotected(f):
         @functools.wraps(f)
         def wrapper(self, context, **kwargs):
@@ -191,6 +195,9 @@ def filterprotected(*filters):
                 # Now any formal url parameters
                 for key in kwargs:
                     target[key] = kwargs[key]
+
+                if callback is not None:
+                    target['target'] = callback(self, context, **kwargs)
 
                 self.policy_api.enforce(creds,
                                         action,

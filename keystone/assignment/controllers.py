@@ -774,9 +774,18 @@ class RoleAssignmentV3(controller.V3Controller):
             msg = _('Specify a user or group, not both')
             raise exception.ValidationError(msg)
 
-    @controller.filterprotected('group.id', 'role.id',
-                                'scope.domain.id', 'scope.project.id',
-                                'scope.OS-INHERIT:inherited_to', 'user.id')
+    def _check_list_role_assignments(self, context):
+        project_id = context['query_string'].get('scope.project.id')
+        target = {}
+        if project_id is not None:
+            target['project'] = self.assignment_api.get_project(
+                context['query_string']['scope.project.id'])
+        return target
+
+    @controller.filterprotected_with_callback(
+        _check_list_role_assignments,
+        'group.id', 'role.id', 'scope.domain.id', 'scope.project.id',
+        'scope.OS-INHERIT:inherited_to', 'user.id')
     def list_role_assignments(self, context, filters):
 
         # TODO(henry-nash): This implementation uses the standard filtering
