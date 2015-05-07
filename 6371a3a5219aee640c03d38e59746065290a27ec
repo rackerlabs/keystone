@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_9a94c4e2",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-07T13:49:36Z",
+      "side": 1,
+      "message": "++ for logging the broken rule",
+      "parentUuid": "1aca2d91_5a274cb6",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_ca03aab7",
         "filename": "keystone/exception.py",
         "patchSetId": 3
