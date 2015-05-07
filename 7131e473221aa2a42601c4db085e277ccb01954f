@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_e7032541",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-07T13:31:55Z",
+      "side": 1,
+      "message": "According to the bug description we should have a kind of \"cache invalidation\" here after some time.\n\nBut I don\u0027t think this key is usually changed? So a Keystone restart in order to reload it is acceptable?",
+      "revId": "7131e473221aa2a42601c4db085e277ccb01954f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
