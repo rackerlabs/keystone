@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_61fed839",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-05-07T17:26:24Z",
+      "side": 1,
+      "message": "seems this method would be more useful if it also return the object created?\n\n\nOtherwise, this method is seems like more of  _assert_add_project_to_hierarchy()",
+      "revId": "cdd2f7545e21c64b611b1964be117fced211f08f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_611c9813",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-05-07T17:26:24Z",
+      "side": 1,
+      "message": "nit: easier to read positive check. Would prefer to swap the condition:\n\n\"None if is_domain else domain_id\"",
+      "revId": "cdd2f7545e21c64b611b1964be117fced211f08f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_61cdb85c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-05-07T17:26:24Z",
+      "side": 1,
+      "message": "nit: This violates: H405  multi line docstring summary not separated with an empty line\n\nNot sure if we want to add more violation.",
+      "revId": "cdd2f7545e21c64b611b1964be117fced211f08f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
