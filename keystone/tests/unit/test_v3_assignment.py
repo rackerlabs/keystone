@@ -19,6 +19,7 @@ from six.moves import range
 
 from keystone.common import controller
 from keystone import exception
+from keystone.policy.backends import rules
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
 
@@ -2805,6 +2806,81 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, ud_entity)
         self.assertRoleAssignmentInListResponse(r, gd_entity)
 
+    def test_filtered_role_assignments_for_subtree(self):
+        """Call ``GET /role_assignments?scope.domain.id=id&include_subtree``.
+
+        Test Plan:
+
+        - Create a role
+        - Create a domain with a user, group and project
+        - Assign the role to user for the domain and project
+        - Assign the role to the group for domain and project
+          return all four assignments
+
+        """
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.role_api.create_role(role['id'], role)
+
+        domain = self.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        user = self.new_user_ref(domain_id=domain['id'])
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+        group = self.new_group_ref(domain_id=domain['id'])
+        group = self.identity_api.create_group(group)
+        project = self.new_project_ref(domain_id=domain['id'])
+        self.resource_api.create_project(project['id'], project)
+
+        # assign the role to user for both domain and project
+        self.assignment_api.create_grant(
+            role['id'], user_id=user['id'], domain_id=domain['id'])
+        self.assignment_api.create_grant(
+            role['id'], user_id=user['id'], project_id=project['id'])
+
+        # assign the role to group for both domain and project
+        self.assignment_api.create_grant(
+            role['id'], group_id=group['id'], domain_id=domain['id'])
+        self.assignment_api.create_grant(
+            role['id'], group_id=group['id'], project_id=project['id'])
+
+        # Now use the list role assignments api to get a list of
+        # roles on the domain - should get back the four roles
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s&include_subtree' % (
+                domain['id']))
+        r = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   expected_length=4,
+                                                   resource_url=collection_url)
+        ud_entity = _build_role_assignment_entity(
+            domain_id=domain['id'], user_id=user['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        gd_entity = _build_role_assignment_entity(
+            domain_id=domain['id'], group_id=group['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        up_entity = _build_role_assignment_entity(
+            project_id=project['id'], user_id=user['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        gp_entity = _build_role_assignment_entity(
+            project_id=project['id'], group_id=group['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        self.assertRoleAssignmentInListResponse(r, ud_entity)
+        self.assertRoleAssignmentInListResponse(r, gd_entity)
+        self.assertRoleAssignmentInListResponse(r, up_entity)
+        self.assertRoleAssignmentInListResponse(r, gp_entity)
+
+        # if we don't use 'include_subtree' we should only get the domain
+        # assignments only
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s' % (domain['id']))
+        r = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   expected_length=2,
+                                                   resource_url=collection_url)
+        self.assertRoleAssignmentInListResponse(r, ud_entity)
+        self.assertRoleAssignmentInListResponse(r, gd_entity)
+
     def _setup_hierarchical_projects_scenario(self):
         """Creates basic hierarchical projects scenario.
 
@@ -3234,3 +3310,167 @@ class AssignmentV3toV2MethodsTestCase(tests.TestCase):
         self.assertDictEqual(self.project1, self.expected_project)
         self.assertDictEqual(self.project2, self.expected_project)
         self.assertDictEqual(self.project3, self.expected_project)
+
+
+class V3DomainAdminAssignmentTestCase(test_v3.RestfulTestCase):
+    """Test role assignment capabilities with domain admin."""
+
+    def setUp(self):
+        """Setup for v3 Cloud Policy Sample Test Cases.
+
+        The following data is created:
+
+        - Two domains: domainA and domainB, each with one project, projectA
+          and projectB respectively.
+        - domainA has two users, domainA_admin and domainA_user
+        - domainB has two users, domainB_admin and domainB_user
+        - domainA_admin has the 'admin' role on domainA
+        - domainA_user has a non-admin role on both projectA and projectB
+        - domainB_admin has the 'admin' role on domainB
+        - domainB_user has a non-admin role on projectB
+
+        We test role assignment api from cloud sample policy file for domain
+        admin to make sure the sample is valid and that we correctly enforce
+        it.
+
+        """
+        # Ensure that test_v3.RestfulTestCase doesn't load its own
+        # sample data, which would make checking the results of our
+        # tests harder
+        super(V3DomainAdminAssignmentTestCase, self).setUp()
+
+        # Finally, switch to the v3 sample policy file
+        self.addCleanup(rules.reset)
+        rules.reset()
+        self.config_fixture.config(
+            group='oslo_policy',
+            policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
+
+    def load_sample_data(self):
+        # Start by creating a couple of domains
+        self._populate_default_domain()
+        self.domainA = self.new_domain_ref()
+        self.resource_api.create_domain(self.domainA['id'], self.domainA)
+        self.domainB = self.new_domain_ref()
+        self.resource_api.create_domain(self.domainB['id'], self.domainB)
+
+        # create the domain projectss
+        self.domainA_project = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.resource_api.create_project(self.domainA_project['id'],
+                                         self.domainA_project)
+        self.domainB_project = self.new_project_ref(
+            domain_id=self.domainB['id'])
+        self.resource_api.create_project(self.domainB_project['id'],
+                                         self.domainB_project)
+
+        # domainA users
+        self.domainA_admin_user = self.new_user_ref(
+            domain_id=self.domainA['id'])
+        password = uuid.uuid4().hex
+        self.domainA_admin_user['password'] = password
+        self.domainA_admin_user = (
+            self.identity_api.create_user(self.domainA_admin_user))
+        self.domainA_admin_user['password'] = password
+
+        self.domainA_user = self.new_user_ref(domain_id=self.domainA['id'])
+        password = uuid.uuid4().hex
+        self.domainA_user['password'] = password
+        self.doaminA_user = self.identity_api.create_user(self.domainA_user)
+        self.domainA_user['password'] = password
+
+        # domainB users
+        self.domainB_admin_user = self.new_user_ref(
+            domain_id=self.domainB['id'])
+        password = uuid.uuid4().hex
+        self.domainB_admin_user['password'] = password
+        self.domainB_admin_user = (
+            self.identity_api.create_user(self.domainB_admin_user))
+        self.domainB_admin_user['password'] = password
+
+        self.domainB_user = self.new_user_ref(domain_id=self.domainB['id'])
+        password = uuid.uuid4().hex
+        self.domainB_user['password'] = password
+        self.doaminB_user = self.identity_api.create_user(self.domainB_user)
+        self.domainB_user['password'] = password
+
+        # do the role assignments
+        self.admin_role = {'id': uuid.uuid4().hex, 'name': 'admin'}
+        self.role_api.create_role(self.admin_role['id'], self.admin_role)
+        self.role = self.new_role_ref()
+        self.role_api.create_role(self.role['id'], self.role)
+
+        self.assignment_api.create_grant(self.admin_role['id'],
+                                         user_id=self.domainA_admin_user['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.admin_role['id'],
+                                         user_id=self.domainB_admin_user['id'],
+                                         domain_id=self.domainB['id'])
+        self.assignment_api.create_grant(self.role['id'],
+                                         user_id=self.domainA_user['id'],
+                                         project_id=self.domainA_project['id'])
+        self.assignment_api.create_grant(self.role['id'],
+                                         user_id=self.domainA_user['id'],
+                                         project_id=self.domainB_project['id'])
+        self.assignment_api.create_grant(self.role['id'],
+                                         user_id=self.domainB_user['id'],
+                                         project_id=self.domainB_project['id'])
+
+    def test_domain_admin_list_role_assignments_for_subtree(self):
+        # authenticate as domain admin for domainB
+        admin_auth = self.build_authentication_request(
+            user_id=self.domainB_admin_user['id'],
+            password=self.domainB_admin_user['password'],
+            domain_id=self.domainB['id'])
+        admin_token = self.get_requested_token(admin_auth)
+
+        # Now use the list role assignments api to get a list of
+        # roles on the domain - should get back the 3 roles
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s&include_subtree' % (
+                self.domainB['id']))
+        r = self.get(collection_url, token=admin_token)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   expected_length=3,
+                                                   resource_url=collection_url)
+        domainB_admin_entity = _build_role_assignment_entity(
+            domain_id=self.domainB['id'],
+            user_id=self.domainB_admin_user['id'],
+            role_id=self.admin_role['id'],
+            inherited_to_projects=False)
+        domainA_user_project_entity = _build_role_assignment_entity(
+            project_id=self.domainB_project['id'],
+            user_id=self.domainA_user['id'],
+            role_id=self.role['id'], inherited_to_projects=False)
+        domainB_user_project_entity = _build_role_assignment_entity(
+            project_id=self.domainB_project['id'],
+            user_id=self.domainB_user['id'],
+            role_id=self.role['id'], inherited_to_projects=False)
+        self.assertRoleAssignmentInListResponse(r, domainB_admin_entity)
+        self.assertRoleAssignmentInListResponse(r, domainA_user_project_entity)
+        self.assertRoleAssignmentInListResponse(r, domainB_user_project_entity)
+
+        # if we don't use 'include_subtree' we should only get the domain
+        # assignments only
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s' % (self.domainB['id']))
+        r = self.get(collection_url, token=admin_token)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   expected_length=1,
+                                                   resource_url=collection_url)
+        self.assertRoleAssignmentInListResponse(r, domainB_admin_entity)
+
+    def test_domain_admin_list_assignments_for_another_domain_failed(self):
+        # authenticate as domain admin for domainB
+        admin_auth = self.build_authentication_request(
+            user_id=self.domainB_admin_user['id'],
+            password=self.domainB_admin_user['password'],
+            domain_id=self.domainB['id'])
+        admin_token = self.get_requested_token(admin_auth)
+
+        # domain admin for domain B should not be able to list role
+        # assignment for domain A
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s&include_subtree' % (
+                self.domainA['id']))
+        r = self.get(collection_url, token=admin_token, expected_status=403)
