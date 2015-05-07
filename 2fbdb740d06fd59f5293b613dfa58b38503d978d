@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_f02e34f9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-07T16:25:43Z",
+      "side": 1,
+      "message": "super big nit: we could add the project id in here: \n\n    \u0027Project %s is already a domain, unable to assign domain ID\u0027 % project[\u0027id\u0027] \n\nor something like that.\n\nThis could be done in a subsequent patch.",
+      "revId": "2fbdb740d06fd59f5293b613dfa58b38503d978d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_10bd3068",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-07T16:25:43Z",
+      "side": 1,
+      "message": "nit: \n\n    \u0027cannot create a project within domain %(domain_id), which is different than its parent...\u0027\n\nagain, i\u0027m good if this is done in a separate patch.",
+      "revId": "2fbdb740d06fd59f5293b613dfa58b38503d978d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_f0663428",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-07T16:25:43Z",
+      "side": 1,
+      "message": "lets see if we can put the project id in this message as well.",
+      "revId": "2fbdb740d06fd59f5293b613dfa58b38503d978d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
