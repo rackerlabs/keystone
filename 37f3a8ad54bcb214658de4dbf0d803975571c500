@@ -16,6 +16,24 @@
       "revId": "37f3a8ad54bcb214658de4dbf0d803975571c500",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_e3d0cc55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-05-07T03:41:37Z",
+      "side": 1,
+      "message": "yeah, a bit long, but not block, you can see there are many cases like this \\o/",
+      "parentUuid": "1aca2d91_18c5733b",
+      "revId": "37f3a8ad54bcb214658de4dbf0d803975571c500",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
