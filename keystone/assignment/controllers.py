@@ -25,6 +25,7 @@ from six.moves import urllib
 
 from keystone.assignment import schema
 from keystone.common import controller
+from keystone.common import driver_hints
 from keystone.common import dependency
 from keystone.common import validation
 from keystone import exception
@@ -774,6 +775,19 @@ class RoleAssignmentV3(controller.V3Controller):
             msg = _('Specify a user or group, not both')
             raise exception.ValidationError(msg)
 
+    def _add_role_assignment_target_hierarchy(self, refs):
+        # add the target hierarchy so we can properly authorize them
+        for ref in refs:
+            if 'domain' in ref['scope']:
+                ref['hierarchy'] = ref['scope']['domain']['id']
+            else:
+                # TODO(gyee): lookup the materialized path here
+                project_ref = self.resource_api.get_project(
+                    ref['scope']['project']['id'])
+                # construct the materialized path here for now
+                ref['hierarchy'] = '%s.%s' % (project_ref['domain_id'],
+                                              project_ref['id'])
+
     @controller.filterprotected('group.id', 'role.id',
                                 'scope.domain.id', 'scope.project.id',
                                 'scope.OS-INHERIT:inherited_to', 'user.id')
@@ -817,7 +831,34 @@ class RoleAssignmentV3(controller.V3Controller):
             formatted_refs = self._expand_indirect_assignments(context,
                                                                formatted_refs)
 
-        return self.wrap_collection(context, formatted_refs, hints=hints)
+        if 'include_subtree' in params and params.get('scope.domain.id'):
+            # NOTE(gyee): this means we need to return all the role
+            # assignments for the targets in the given domain. To do this,
+            # we need to add the "hierarchy" attribute in the ref, use it for
+            # athorization check, then strip it out. This is inefficient
+            # because we need to do (possibly recursive) lookup for each
+            # project target right now. We can improve it later by storing the
+            # materialized path in the 'target' field.
+            self._add_role_assignment_target_hierarchy(formatted_refs)
+
+            # now do the partial match on the hierarchy
+            hints = driver_hints.Hints()
+            hints.add_filter('hierarchy',
+                             params.get('scope.domain.id'),
+                             comparator='contains')
+
+            # let wrap_collection do its thing
+            assignment_collections = self.wrap_collection(
+                context, formatted_refs, hints=hints)
+
+            # now strip the "hierarchy" attribute from the refs before
+            # returning them
+            for ref in assignment_collections[self.collection_name]:
+                del ref['hierarchy']
+
+            return assignment_collections
+        else:
+            return self.wrap_collection(context, formatted_refs, hints=hints)
 
     @controller.protected()
     def get_role_assignment(self, context):
