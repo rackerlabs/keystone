@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_3a16d0a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-07T13:45:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aca2d91_4a7c3a72",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_aa698e8d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-05-06T21:45:09Z",
       "side": 1,
       "message": "It would be nice if we had context here to show what rule was broken.",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_5a274cb6",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-07T13:45:56Z",
+      "side": 1,
+      "message": "I was thinking about that, but won\u0027t it expose too many details to an average user? We can consider logging rule, values, but I don\u0027t think this should be part of the error message returned to the user.\nWhatever we do, let\u0027s do this in a followup patch.",
+      "parentUuid": "1aca2d91_aa698e8d",
       "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_3ad49045",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-07T13:45:56Z",
+      "side": 1,
+      "message": "It is, but i think we cannot fix it easily with current design.\nIMHO sooner or later we will grow to have  language with easy, but strict syntax, formal specification.",
+      "parentUuid": "1aca2d91_ca03aab7",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_0fc5348d",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 3
@@ -81,6 +135,24 @@
       "writtenOn": "2015-05-06T21:10:50Z",
       "side": 1,
       "message": "(nit) s/maping/mapping",
+      "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_9af3a49e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-07T13:45:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aca2d91_0fc5348d",
       "revId": "6371a3a5219aee640c03d38e59746065290a27ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
