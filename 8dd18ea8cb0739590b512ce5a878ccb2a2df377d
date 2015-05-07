@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_3a2a507f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-07T13:36:32Z",
+      "side": 1,
+      "message": "you may specify the driver (since it is a single one), differently from the previous patch set",
+      "revId": "8dd18ea8cb0739590b512ce5a878ccb2a2df377d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
