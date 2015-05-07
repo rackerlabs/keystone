@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_c75a6950",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-07T13:34:59Z",
+      "side": 1,
+      "message": "You may refer here the actual configuration pointing that there really is a [database] section",
+      "revId": "276c63e36ebcea83d654d7844f96d7252f8acc0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
