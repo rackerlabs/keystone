@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_333036e8",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-05-07T16:38:39Z",
+      "side": 1,
+      "message": "alternative.   \n\n\"Provides a means to authorize client operations with in Keystone by using...\"",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
