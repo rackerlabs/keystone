@@ -2805,6 +2805,81 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, ud_entity)
         self.assertRoleAssignmentInListResponse(r, gd_entity)
 
+    def test_filtered_role_assignments_for_subtree(self):
+        """Call ``GET /role_assignments?scope.domain.id=id&include_subtree``.
+
+        Test Plan:
+
+        - Create a role
+        - Create a domain with a user, group and project
+        - Assign the role to user for the domain and project
+        - Assign the role to the group for domain and project
+          return all four assignments
+
+        """
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.role_api.create_role(role['id'], role)
+
+        domain = self.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        user = self.new_user_ref(domain_id=domain['id'])
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+        group = self.new_group_ref(domain_id=domain['id'])
+        group = self.identity_api.create_group(group)
+        project = self.new_project_ref(domain_id=domain['id'])
+        self.resource_api.create_project(project['id'], project)
+
+        # assign the role to user for both domain and project
+        self.assignment_api.create_grant(
+            role['id'], user_id=user['id'], domain_id=domain['id'])
+        self.assignment_api.create_grant(
+            role['id'], user_id=user['id'], project_id=project['id'])
+
+        # assign the role to group for both domain and project
+        self.assignment_api.create_grant(
+            role['id'], group_id=group['id'], domain_id=domain['id'])
+        self.assignment_api.create_grant(
+            role['id'], group_id=group['id'], project_id=project['id'])
+
+        # Now use the list role assignments api to get a list of
+        # roles on the domain - should get back the four roles
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s&include_subtree' % (
+                domain['id']))
+        r = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   expected_length=4,
+                                                   resource_url=collection_url)
+        ud_entity = _build_role_assignment_entity(
+            domain_id=domain['id'], user_id=user['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        gd_entity = _build_role_assignment_entity(
+            domain_id=domain['id'], group_id=group['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        up_entity = _build_role_assignment_entity(
+            project_id=project['id'], user_id=user['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        gp_entity = _build_role_assignment_entity(
+            project_id=project['id'], group_id=group['id'],
+            role_id=role['id'], inherited_to_projects=False)
+        self.assertRoleAssignmentInListResponse(r, ud_entity)
+        self.assertRoleAssignmentInListResponse(r, gd_entity)
+        self.assertRoleAssignmentInListResponse(r, up_entity)
+        self.assertRoleAssignmentInListResponse(r, gp_entity)
+
+        # if we don't use 'include_subtree' we should only get the domain
+        # assignments only
+        collection_url = (
+            '/role_assignments?scope.domain.id=%s' % (domain['id']))
+        r = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   expected_length=2,
+                                                   resource_url=collection_url)
+        self.assertRoleAssignmentInListResponse(r, ud_entity)
+        self.assertRoleAssignmentInListResponse(r, gd_entity)
+
     def _setup_hierarchical_projects_scenario(self):
         """Creates basic hierarchical projects scenario.
 
