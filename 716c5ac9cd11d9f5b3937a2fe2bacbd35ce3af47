@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_c55a4f2a",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8005
+      },
+      "writtenOn": "2015-05-07T20:46:51Z",
+      "side": 1,
+      "message": "Looked into this, and it looks like webob already has some in-flight reviews that will implement this sort of thing, so I may want to hold off and see what they do.\n\nIn the meantime, given that Paste is already a Keystone dependency, have you considered just using http://pythonpaste.org/deploy/modules/config.html#paste.deploy.config.PrefixMiddleware ?",
+      "parentUuid": "3ab451fb_267957fd",
+      "revId": "716c5ac9cd11d9f5b3937a2fe2bacbd35ce3af47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_7af09d67",
         "filename": "keystone/api/common/controller.py",
         "patchSetId": 21
