@@ -212,6 +212,22 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         r = self.get(url_by_name, auth=self.auth,
                      expected_status=exception.UserNotFound.code)
 
+    def test_get_user_by_owner(self):
+        """GET /users/{id} (match target)
+        Verify that user info can be checked by the owner.
+        """
+
+        new_policy = {'identity:get_user': [["user_id:%(user_id)s"]]}
+        self._set_policy(new_policy)
+
+        auth = self.build_authentication_request(
+            user_id=self.user1['id'],
+            password=self.user1['password'])
+
+        url_by_name = '/users/%s' % self.user1['id']
+        r = self.get(url_by_name, auth=auth)
+        self.assertEqual(self.user1['id'], r.result['user']['id'])
+
     def test_revoke_grant_protected_match_target(self):
         """DELETE /domains/{id}/users/{id}/roles/{id} (match target)
 
