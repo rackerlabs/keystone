@@ -16,6 +16,24 @@
       "revId": "7131e473221aa2a42601c4db085e277ccb01954f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_7d78948f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T15:09:14Z",
+      "side": 1,
+      "message": "the key will be subject to change depending on the deployers security requirements, which could vary.",
+      "parentUuid": "1aca2d91_e7032541",
+      "revId": "7131e473221aa2a42601c4db085e277ccb01954f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
