@@ -16,6 +16,24 @@
       "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_3d5c5cec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16217
+      },
+      "writtenOn": "2015-05-08T15:13:18Z",
+      "side": 1,
+      "message": "In my case, I have about 4200 users.",
+      "parentUuid": "1aca2d91_ee0643cd",
+      "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
