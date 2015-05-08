@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aca2d91_2d5b1856",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-08T11:01:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_b4866ed9",
+      "revId": "9415f5c337912a80d8b2f59670c401c96d4344cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_54215afa",
         "filename": "keystone/tests/unit/tests/test_core.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "We could either remove this test or put it within the above one and do\n\n    for exception in (exc.SAWarning, DeprecationWarning)\n\nIf we decide for doing this, we could do in the followon patch, which refactors this test.",
       "parentUuid": "3acd31a7_54215afa",
+      "revId": "9415f5c337912a80d8b2f59670c401c96d4344cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_319812c0",
+        "filename": "keystone/tests/unit/tests/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-08T11:01:05Z",
+      "side": 1,
+      "message": "I actually like the fact that they are separate tests with unique names.",
+      "parentUuid": "3acd31a7_54fdda38",
       "revId": "9415f5c337912a80d8b2f59670c401c96d4344cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
