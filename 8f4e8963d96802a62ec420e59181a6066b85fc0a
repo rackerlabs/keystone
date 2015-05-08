@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_8030ae9f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:50:13Z",
+      "side": 1,
+      "message": "I think this could benefit in readability by being broken out into two separate tests: \n\nhttp://cdn.pasteraw.com/8m7sgookyqtvbxsscelizlpkpsm9o59",
+      "revId": "8f4e8963d96802a62ec420e59181a6066b85fc0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
