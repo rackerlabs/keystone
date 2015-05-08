@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_1ac1ab80",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:03:52Z",
+      "side": 1,
+      "message": "this should be passed as a kwarg since it is defined that way in the method signature: \n\n    self.resource_api.get_project_by_name(project_name, domain_ref[\u0027id\u0027], is_domain\u003dis_domain):",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_7a59bffd",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:03:52Z",
+      "side": 1,
+      "message": "is_domain reads like it\u0027s a boolean, should it default to False?",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_9a093be0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:03:52Z",
+      "side": 1,
+      "message": "Do we need this if we default the value of is_domain to False? Or is that a bad idea?",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_da1693f0",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:03:52Z",
+      "side": 1,
+      "message": "same comment applies here.",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_1ae40b0b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 2262,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:03:52Z",
+      "side": 1,
+      "message": "according to the tests, it looks like we only ever pass True or False as is_domain.",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
