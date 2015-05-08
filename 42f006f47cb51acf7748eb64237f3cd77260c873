@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_25744c66",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:25:23Z",
+      "side": 1,
+      "message": "this method (clean.domain_enabled()) accepts type ints as values for boolean, which is something I think we (as in Keystone) are trying to get away from.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/clean.py#L47-L50\n\nSInce we don\u0027t allow end users the ability to pass enabled as 0 or 1 via the jsonschema validation API: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/validation/parameter_types.py#L14-L17\n\nMaybe an alternative to this would be to provide an internal jsonschema for domains still and only do that check here. This might be good because it would allow us to move away from keystone/clean.py in a subsequent patch.",
+      "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_7a3c1fe2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:25:23Z",
+      "side": 1,
+      "message": "nit: is the whitespace needed here?",
+      "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_858c4036",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-08T13:25:23Z",
+      "side": 1,
+      "message": "nit: \n\ns/FK/foreign_key/",
+      "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
