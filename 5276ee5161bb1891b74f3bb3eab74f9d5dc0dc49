@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_ad20879c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-09T19:42:43Z",
+      "side": 1,
+      "message": "don\u0027t reformat these lines. it\u0027ll just make for more conflicts.",
+      "revId": "5276ee5161bb1891b74f3bb3eab74f9d5dc0dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae975fb_d1782492",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-09T19:42:43Z",
+      "side": 1,
+      "message": "suggest give a name to the \u0027assignment\u0027 and \u0027inherited\u0027 magic strings so that reviewers know what they are.",
+      "revId": "5276ee5161bb1891b74f3bb3eab74f9d5dc0dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae975fb_91729cac",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-09T19:42:43Z",
+      "side": 1,
+      "message": "suggest remove comments where the code is clear, or make the code clear enough that no comment is needed.",
+      "revId": "5276ee5161bb1891b74f3bb3eab74f9d5dc0dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
