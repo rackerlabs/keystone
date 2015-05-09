@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_e21f5306",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-09T00:21:03Z",
+      "side": 1,
+      "message": "I tried to follow the instructions from this link to install the Moonshot daily key like -\n$ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B18F7887\nIt failed me, and I looked up from the server, I did not see this key named B18F7887. \nI\u0027m not sure if that name is out-dated or this patch may need to have more instructions for the update for that?",
+      "revId": "e475f4d56f4e221a4f511e7c0bf12f2ef7ef7916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
