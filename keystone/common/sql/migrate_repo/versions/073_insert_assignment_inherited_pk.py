@@ -85,6 +85,23 @@ def upgrade(migrate_engine):
 
         # Finally, rename the new table to the original assignment table name
         new_assignment_table.rename(ASSIGNMENT_TABLE_NAME)
+    elif migrate_engine.name == 'ibm_db_sa':
+        # Recreate the existing constraint, marking the inherited column as PK
+        # for DB2.
+
+        # Due to a bug in the DB2 sqlalchemy dialect, Column.alter() tries to
+        # create the primary key on just the column, which is going to fail due
+        # to having duplicate values. The workaround here skips doing the
+        # Column.alter. This causes a warning message since the metadata is
+        # out of sync. We can remove this workaround once the DB2 sqlalchemy
+        # dialect is fixed.
+        # DB2 Issue: https://code.google.com/p/ibm-db/issues/detail?id=173
+
+        migrate.PrimaryKeyConstraint(table=assignment_table).drop()
+        migrate.PrimaryKeyConstraint(
+            assignment_table.c.type, assignment_table.c.actor_id,
+            assignment_table.c.target_id, assignment_table.c.role_id,
+            assignment_table.c.inherited).create()
     else:
         # Recreate the existing constraint, marking the inherited column as PK
         migrate.PrimaryKeyConstraint(table=assignment_table).drop()
