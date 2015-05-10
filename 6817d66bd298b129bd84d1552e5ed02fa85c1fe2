@@ -68,6 +68,24 @@
       "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_69f629d9",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-10T15:05:26Z",
+      "side": 1,
+      "message": "If this isn\u0027t overridden then you\u0027ll get an error when calling stevedore.DriverManager, so it\u0027s already ensured that subclasses set the property.",
+      "parentUuid": "3acd31a7_80f7a2f4",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
