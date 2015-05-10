@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9af37de9_7e95bd3e",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-10T14:17:38Z",
+      "side": 1,
+      "message": "dict().values() isn\u0027t a built-in like zip or map. also... shouldn\u0027t need list() here?",
+      "revId": "853ca56771e7008e84766016df1c281c46bbc320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
