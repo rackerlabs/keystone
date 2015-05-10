@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9af37de9_3b69828c",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-05-10T23:30:49Z",
+      "side": 1,
+      "message": "ah, i see what you did there.",
+      "parentUuid": "3acd31a7_1f053279",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_80f7a2f4",
         "filename": "keystone/common/manager.py",
         "patchSetId": 17
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "If this isn\u0027t overridden then you\u0027ll get an error when calling stevedore.DriverManager, so it\u0027s already ensured that subclasses set the property.",
       "parentUuid": "3acd31a7_80f7a2f4",
+      "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_5b0326b9",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-05-10T23:30:49Z",
+      "side": 1,
+      "message": "meh, the people who see this are going to be driver writers and they will know as soon as they try and load a driver without this set they did something wrong.",
+      "parentUuid": "1aca2d91_9493b0a3",
       "revId": "6817d66bd298b129bd84d1552e5ed02fa85c1fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
