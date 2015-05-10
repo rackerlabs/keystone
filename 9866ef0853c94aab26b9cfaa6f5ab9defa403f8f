@@ -34,6 +34,24 @@
       "revId": "9866ef0853c94aab26b9cfaa6f5ab9defa403f8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_49db651c",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-10T15:38:06Z",
+      "side": 1,
+      "message": "This is removed later in https://review.openstack.org/#/c/171906/",
+      "parentUuid": "3acd31a7_60224654",
+      "revId": "9866ef0853c94aab26b9cfaa6f5ab9defa403f8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
