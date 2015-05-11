@@ -1,0 +1,9 @@
+Code-Review+2: Jamie Lennox <jamielennox@redhat.com>
+Code-Review+2: Marek Denis <marek.denis@cern.ch>
+Workflow+1: Marek Denis <marek.denis@cern.ch>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 11 May 2015 11:18:42 +0000
+Reviewed-on: https://review.openstack.org/166622
+Project: openstack/keystone
+Branch: refs/heads/master
