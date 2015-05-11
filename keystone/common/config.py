@@ -813,19 +813,15 @@ FILE_OPTIONS = {
     ],
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,
-                    help='Default auth methods.'),
+                    help='Allowed authentication methods.'),
         cfg.StrOpt('password',
-                   default='keystone.auth.plugins.password.Password',
                    help='The password auth plugin module.'),
         cfg.StrOpt('token',
-                   default='keystone.auth.plugins.token.Token',
                    help='The token auth plugin module.'),
         # deals with REMOTE_USER authentication
         cfg.StrOpt('external',
-                   default='keystone.auth.plugins.external.DefaultDomain',
                    help='The external (REMOTE_USER) auth plugin module.'),
         cfg.StrOpt('oauth1',
-                   default='keystone.auth.plugins.oauth1.OAuth',
                    help='The oAuth1.0 auth plugin module.'),
     ],
     'paste_deploy': [
