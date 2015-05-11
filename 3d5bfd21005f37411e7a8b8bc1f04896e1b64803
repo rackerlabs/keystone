@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9af37de9_d67240ad",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5795,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-11T12:20:47Z",
+      "side": 1,
+      "message": "which backend? maybe there should be \u0027the\u0027 instead of \u0027this\u0027 ?",
+      "revId": "3d5bfd21005f37411e7a8b8bc1f04896e1b64803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_3682ac53",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5798,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-11T12:20:47Z",
+      "side": 1,
+      "message": "Do they? If they really do why not enforce it? \nAs a check i removed overriding method from test_backend_sql and tests passed.",
+      "revId": "3d5bfd21005f37411e7a8b8bc1f04896e1b64803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_5669b08a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5802,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-11T12:20:47Z",
+      "side": 1,
+      "message": "Can we add some more docs to this method? It may be confusing why 256 was choosen (and not 257 or 512).",
+      "revId": "3d5bfd21005f37411e7a8b8bc1f04896e1b64803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
