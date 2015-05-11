@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9af37de9_614bd8b1",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-11T08:28:56Z",
+      "side": 1,
+      "message": "I have a feeling that there should be /v3/OS-FEDERATION/websso/{protocol} used.",
+      "revId": "a069bb9bdc1785afc18aaae244cb61d056ded8a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
