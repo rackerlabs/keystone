@@ -327,9 +327,9 @@ class TestCase(BaseTestCase):
             methods = ['external', 'password', 'token', ]
             if not method_classes:
                 method_classes = dict(
-                    external='keystone.auth.plugins.external.DefaultDomain',
-                    password='keystone.auth.plugins.password.Password',
-                    token='keystone.auth.plugins.token.Token',
+                    external='default',
+                    password='default',
+                    token='default',
                 )
         self.config_fixture.config(group='auth', methods=methods)
         common_cfg.setup_authentication()

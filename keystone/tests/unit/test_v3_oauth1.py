@@ -244,9 +244,9 @@ class OAuthFlowTests(OAuth1Tests):
     def auth_plugin_config_override(self):
         methods = ['password', 'token', 'oauth1']
         method_classes = {
-            'password': 'keystone.auth.plugins.password.Password',
-            'token': 'keystone.auth.plugins.token.Token',
-            'oauth1': 'keystone.auth.plugins.oauth1.OAuth',
+            'password': 'default',
+            'token': 'default',
+            'oauth1': 'default',
         }
         super(OAuthFlowTests, self).auth_plugin_config_override(
             methods, **method_classes)

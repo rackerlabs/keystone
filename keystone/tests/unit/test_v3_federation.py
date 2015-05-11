@@ -1992,7 +1992,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
     def auth_plugin_config_override(self):
         methods = ['saml2']
-        method_classes = {'saml2': 'keystone.auth.plugins.saml2.Saml2'}
+        method_classes = {'saml2': 'default'}
         super(FederatedTokenTests, self).auth_plugin_config_override(
             methods, **method_classes)
 
@@ -2912,9 +2912,9 @@ class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin):
     def auth_plugin_config_override(self):
         methods = ['saml2', 'token', 'password']
         method_classes = dict(
-            password='keystone.auth.plugins.password.Password',
-            token='keystone.auth.plugins.token.Token',
-            saml2='keystone.auth.plugins.saml2.Saml2')
+            password='default',
+            token='default',
+            saml2='default')
         super(FernetFederatedTokenTests,
               self).auth_plugin_config_override(methods, **method_classes)
         self.config_fixture.config(group='token', provider='fernet')
@@ -2973,8 +2973,8 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
     def auth_plugin_config_override(self):
         methods = ['saml2', 'token']
         method_classes = dict(
-            token='keystone.auth.plugins.token.Token',
-            saml2='keystone.auth.plugins.saml2.Saml2')
+            token='default',
+            saml2='default')
         super(FederatedTokenTests,
               self).auth_plugin_config_override(methods, **method_classes)
 
