@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da1255d7_e911f5b0",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-11T23:57:13Z",
+      "side": 1,
+      "message": "Sorry, but I don\u0027t know if I get it, If the user don\u0027t configure the auth plugin option, the user can authenticate using a password \"default\", or a token \"default\". This is right?",
+      "revId": "0295ad676f0f8ad708056d5d44df5ef37f11283e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
