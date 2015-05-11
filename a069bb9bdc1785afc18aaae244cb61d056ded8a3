@@ -16,6 +16,24 @@
       "revId": "a069bb9bdc1785afc18aaae244cb61d056ded8a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad8896b_f1dc421a",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-11T16:44:44Z",
+      "side": 1,
+      "message": "this feels incomplete, i think you are referencing the protocol specific auth handler, but it just feels out of place here",
+      "parentUuid": "9af37de9_614bd8b1",
+      "revId": "a069bb9bdc1785afc18aaae244cb61d056ded8a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
