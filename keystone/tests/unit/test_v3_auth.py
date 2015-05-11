@@ -1593,7 +1593,7 @@ class TestAuthExternalLegacyDefaultDomain(test_v3.RestfulTestCase):
     def auth_plugin_config_override(self):
         super(TestAuthExternalLegacyDefaultDomain,
               self).auth_plugin_config_override(
-            external='keystone.auth.plugins.external.LegacyDefaultDomain')
+            external='LegacyDefaultDomain')
 
     def test_remote_user_no_realm(self):
         self.config_fixture.config(group='auth', methods=['external'])
@@ -1620,7 +1620,7 @@ class TestAuthExternalLegacyDomain(test_v3.RestfulTestCase):
 
     def auth_plugin_config_override(self):
         super(TestAuthExternalLegacyDomain, self).auth_plugin_config_override(
-            external='keystone.auth.plugins.external.LegacyDomain')
+            external='LegacyDomain')
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
@@ -1670,8 +1670,7 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
     def config_overrides(self):
         super(TestAuthExternalDomain, self).config_overrides()
         self.kerberos = False
-        self.auth_plugin_config_override(
-            external='keystone.auth.plugins.external.Domain')
+        self.auth_plugin_config_override(external='Domain')
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
@@ -1727,8 +1726,7 @@ class TestAuthKerberos(TestAuthExternalDomain):
         super(TestAuthKerberos, self).config_overrides()
         self.kerberos = True
         self.auth_plugin_config_override(
-            methods=['kerberos', 'password', 'token'],
-            kerberos='keystone.auth.plugins.external.KerberosDomain')
+            methods=['kerberos', 'password', 'token'])
 
 
 class TestAuth(test_v3.RestfulTestCase):
