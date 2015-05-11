@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad8896b_0860bb34",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-05-11T19:08:17Z",
+      "side": 1,
+      "message": "even Saml2 is deprecated I think",
+      "revId": "f4dcb6897d2f06030f0e7f1ba2426f19fdb3c9c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
