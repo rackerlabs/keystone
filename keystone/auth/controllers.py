@@ -21,6 +21,7 @@ from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
 import six
+import stevedore
 
 from keystone.common import controller
 from keystone.common import dependency
@@ -29,6 +30,7 @@ from keystone import config
 from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _, _LI, _LW
+from keystone.openstack.common import versionutils
 from keystone.resource import controllers as resource_controllers
 
 
@@ -41,6 +43,26 @@ AUTH_METHODS = {}
 AUTH_PLUGINS_LOADED = False
 
 
+def load_auth_method(method):
+    plugin_name = CONF.auth[method]
+    try:
+        namespace = 'keystone.auth.%s' % method
+        driver_manager = stevedore.DriverManager(namespace, plugin_name,
+                                                 invoke_on_load=True)
+        return driver_manager.driver
+    except RuntimeError:
+        # Ignore failure to load driver using stevedore and continue on.
+        pass
+
+    @versionutils.deprecated(as_of=versionutils.deprecated.LIBERTY,
+                             in_favor_of='entrypoints',
+                             what='direct import of driver')
+    def _load_using_import(plugin_name):
+        return importutils.import_object(plugin_name)
+
+    return _load_using_import(plugin_name)
+
+
 def load_auth_methods():
     global AUTH_PLUGINS_LOADED
 
@@ -51,9 +73,7 @@ def load_auth_methods():
     # have setup all the appropriate configuration options we may need.
     config.setup_authentication()
     for plugin in set(CONF.auth.methods):
-        plugin_class = CONF.auth[plugin]
-        driver = importutils.import_object(plugin_class)
-        AUTH_METHODS[plugin] = driver
+        AUTH_METHODS[plugin] = load_auth_method(plugin)
     AUTH_PLUGINS_LOADED = True
 
 
