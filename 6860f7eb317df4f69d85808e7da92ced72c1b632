@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ad58531_dcba79c0",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-05-11T21:42:42Z",
+      "side": 1,
+      "message": "I really like the idea of a callback! See if you can make it consistent with the get_member_from_driver() approach in line 120-125.",
+      "revId": "6860f7eb317df4f69d85808e7da92ced72c1b632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
