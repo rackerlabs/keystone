@@ -274,20 +274,20 @@
 # From keystone
 #
 
-# Default auth methods. (list value)
+# Allowed authentication methods. (list value)
 #methods = external,password,token,oauth1
 
 # The password auth plugin module. (string value)
-#password = keystone.auth.plugins.password.Password
+#password = <None>
 
 # The token auth plugin module. (string value)
-#token = keystone.auth.plugins.token.Token
+#token = <None>
 
 # The external (REMOTE_USER) auth plugin module. (string value)
-#external = keystone.auth.plugins.external.DefaultDomain
+#external = <None>
 
 # The oAuth1.0 auth plugin module. (string value)
-#oauth1 = keystone.auth.plugins.oauth1.OAuth
+#oauth1 = <None>
 
 
 [cache]
@@ -382,62 +382,6 @@
 # Maximum number of entities that will be returned in a catalog collection.
 # (integer value)
 #list_limit = <None>
-
-
-[cors]
-
-#
-# From oslo.middleware
-#
-
-# Indicate whether this resource may be shared with the domain received in the
-# requests "origin" header. (string value)
-#allowed_origin = <None>
-
-# Indicate that the actual request can include user credentials (boolean value)
-#allow_credentials = true
-
-# Indicate which headers are safe to expose to the API. Defaults to HTTP Simple
-# Headers. (list value)
-#expose_headers = Content-Type,Cache-Control,Content-Language,Expires,Last-Modified,Pragma
-
-# Maximum cache age of CORS preflight requests. (integer value)
-#max_age = 3600
-
-# Indicate which methods can be used during the actual request. (list value)
-#allow_methods = GET,POST,PUT,DELETE,OPTIONS
-
-# Indicate which header field names may be used during the actual request.
-# (list value)
-#allow_headers = Content-Type,Cache-Control,Content-Language,Expires,Last-Modified,Pragma
-
-
-[cors.subdomain]
-
-#
-# From oslo.middleware
-#
-
-# Indicate whether this resource may be shared with the domain received in the
-# requests "origin" header. (string value)
-#allowed_origin = <None>
-
-# Indicate that the actual request can include user credentials (boolean value)
-#allow_credentials = true
-
-# Indicate which headers are safe to expose to the API. Defaults to HTTP Simple
-# Headers. (list value)
-#expose_headers = Content-Type,Cache-Control,Content-Language,Expires,Last-Modified,Pragma
-
-# Maximum cache age of CORS preflight requests. (integer value)
-#max_age = 3600
-
-# Indicate which methods can be used during the actual request. (list value)
-#allow_methods = GET,POST,PUT,DELETE,OPTIONS
-
-# Indicate which header field names may be used during the actual request.
-# (list value)
-#allow_headers = Content-Type,Cache-Control,Content-Language,Expires,Last-Modified,Pragma
 
 
 [cors]
