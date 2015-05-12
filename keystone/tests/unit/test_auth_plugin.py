@@ -47,9 +47,6 @@ class TestAuthPlugin(tests.SQLDriverOverrides, tests.TestCase):
     def config_overrides(self):
         super(TestAuthPlugin, self).config_overrides()
         method_opts = {
-            'external': 'keystone.auth.plugins.external.DefaultDomain',
-            'password': 'keystone.auth.plugins.password.Password',
-            'token': 'keystone.auth.plugins.token.Token',
             METHOD_NAME:
                 'keystone.tests.unit.test_auth_plugin.SimpleChallengeResponse',
         }
@@ -108,8 +105,7 @@ class TestAuthPlugin(tests.SQLDriverOverrides, tests.TestCase):
 
     def test_duplicate_method(self):
         # Having the same method twice doesn't cause load_auth_methods to fail.
-        self.auth_plugin_config_override(
-            methods=['external', 'external'])
+        self.auth_plugin_config_override(methods=['external', 'external'])
         self.clear_auth_plugin_registry()
         auth.controllers.load_auth_methods()
         self.assertIn('external', auth.controllers.AUTH_METHODS)
