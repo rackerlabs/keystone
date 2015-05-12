@@ -1590,13 +1590,10 @@ class TestAuthExternalDisabled(test_v3.RestfulTestCase):
 class TestAuthExternalLegacyDefaultDomain(test_v3.RestfulTestCase):
     content_type = 'json'
 
-    def config_overrides(self):
-        super(TestAuthExternalLegacyDefaultDomain, self).config_overrides()
-        self.auth_plugin_config_override(
-            methods=['external', 'password', 'token'],
-            external='keystone.auth.plugins.external.LegacyDefaultDomain',
-            password='keystone.auth.plugins.password.Password',
-            token='keystone.auth.plugins.token.Token')
+    def auth_plugin_config_override(self):
+        super(TestAuthExternalLegacyDefaultDomain,
+              self).auth_plugin_config_override(
+            external='keystone.auth.plugins.external.LegacyDefaultDomain')
 
     def test_remote_user_no_realm(self):
         self.config_fixture.config(group='auth', methods='external')
@@ -1621,13 +1618,9 @@ class TestAuthExternalLegacyDefaultDomain(test_v3.RestfulTestCase):
 class TestAuthExternalLegacyDomain(test_v3.RestfulTestCase):
     content_type = 'json'
 
-    def config_overrides(self):
-        super(TestAuthExternalLegacyDomain, self).config_overrides()
-        self.auth_plugin_config_override(
-            methods=['external', 'password', 'token'],
-            external='keystone.auth.plugins.external.LegacyDomain',
-            password='keystone.auth.plugins.password.Password',
-            token='keystone.auth.plugins.token.Token')
+    def auth_plugin_config_override(self):
+        super(TestAuthExternalLegacyDomain, self).auth_plugin_config_override(
+            external='keystone.auth.plugins.external.LegacyDomain')
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
@@ -1678,10 +1671,7 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         super(TestAuthExternalDomain, self).config_overrides()
         self.kerberos = False
         self.auth_plugin_config_override(
-            methods=['external', 'password', 'token'],
-            external='keystone.auth.plugins.external.Domain',
-            password='keystone.auth.plugins.password.Password',
-            token='keystone.auth.plugins.token.Token')
+            external='keystone.auth.plugins.external.Domain')
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
@@ -1738,9 +1728,7 @@ class TestAuthKerberos(TestAuthExternalDomain):
         self.kerberos = True
         self.auth_plugin_config_override(
             methods=['kerberos', 'password', 'token'],
-            kerberos='keystone.auth.plugins.external.KerberosDomain',
-            password='keystone.auth.plugins.password.Password',
-            token='keystone.auth.plugins.token.Token')
+            kerberos='keystone.auth.plugins.external.KerberosDomain')
 
 
 class TestAuth(test_v3.RestfulTestCase):
@@ -2606,10 +2594,7 @@ class TestAuthJSONExternal(test_v3.RestfulTestCase):
 
     def config_overrides(self):
         super(TestAuthJSONExternal, self).config_overrides()
-        self.config_fixture.config(group='auth', methods='')
-
-    def auth_plugin_config_override(self, methods=None, **method_classes):
-        self.config_fixture.config(group='auth', methods='')
+        self.config_fixture.config(group='auth', methods=[])
 
     def test_remote_user_no_method(self):
         api = auth.controllers.Auth()
