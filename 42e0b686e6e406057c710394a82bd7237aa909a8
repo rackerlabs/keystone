@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_b656b604",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-12T04:55:56Z",
+      "side": 1,
+      "message": "suggestion:\n\n  Most target objects (except token) have an `id` and a `name`...",
+      "revId": "42e0b686e6e406057c710394a82bd7237aa909a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
