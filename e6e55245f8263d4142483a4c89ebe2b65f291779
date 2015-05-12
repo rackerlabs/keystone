@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_2648535b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-05-12T09:03:39Z",
+      "side": 1,
+      "message": "\u0027entrypoints in setup.cfg\u0027 make it clearly.",
+      "revId": "e6e55245f8263d4142483a4c89ebe2b65f291779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_e6d47b48",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-05-12T09:03:39Z",
+      "side": 1,
+      "message": "\u0027direct import of driver using importlib\u0027",
+      "revId": "e6e55245f8263d4142483a4c89ebe2b65f291779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
