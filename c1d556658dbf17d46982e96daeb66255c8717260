@@ -16,6 +16,24 @@
       "revId": "c1d556658dbf17d46982e96daeb66255c8717260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_249babcb",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-12T09:30:51Z",
+      "side": 1,
+      "message": "@Lance, address it in this patch(https://review.openstack.org/#/c/182205/)",
+      "parentUuid": "1aca2d91_80166ea5",
+      "revId": "c1d556658dbf17d46982e96daeb66255c8717260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
