@@ -51,6 +51,24 @@
       "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_de1233b4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1807,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-05-12T23:33:40Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "9a0c5dc1_a5aad917",
+      "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
