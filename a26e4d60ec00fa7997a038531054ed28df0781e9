@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_18b47af0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-12T14:21:52Z",
+      "side": 1,
+      "message": "Turns out this makes get_project_by_name() blow up: \n\nhttp://cdn.pasteraw.com/d09b8ohopempuoquehcd5on9b29zzm4\n\nThis has been raised with the dogpile community [0].\n\n[0] https://bitbucket.org/zzzeek/dogpile.cache/issue/24/cache-invalidation-for-class-or-instance",
+      "parentUuid": "1aca2d91_9a093be0",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_da1693f0",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 51
