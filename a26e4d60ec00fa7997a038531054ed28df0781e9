@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_de9593e4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-05-12T23:40:25Z",
+      "side": 1,
+      "message": "see my comment on the resource_api.",
+      "parentUuid": "1aca2d91_1ac1ab80",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_7a59bffd",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 51
@@ -30,6 +48,41 @@
       "writtenOn": "2015-05-08T13:03:52Z",
       "side": 1,
       "message": "is_domain reads like it\u0027s a boolean, should it default to False?",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_be9adf12",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-05-12T23:40:25Z",
+      "side": 1,
+      "message": "See my comment on resource_api",
+      "parentUuid": "1aca2d91_7a59bffd",
+      "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_1efd6b3a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-05-12T23:40:25Z",
+      "side": 1,
+      "message": "This cannot be a KWARG with @MEMOIZE.\n\nDue to the way decorators see arguments and how python handles default args, you cannot memoize with default arguments (or pass as KWARGS).\n\nThis is because if \"is_domain\" is not passed directly on the call, the variable is just applied to locals() and is never seen by the memoizer. This results in a case where the cached value is hard to determine (and/or may be stale depending on cache stores).\n\nThe second issue is that kwargs can be in any order, and the arg processing for the key-generator needs to be consistent, in dogpile parlance: get_project_by_name(self, tenant_name\u003d\u0027foo\u0027, domain_id\u003d\u0027foo\u0027, is_domain\u003dTrue) and get_project_by_name(self, domain_id\u003d\u0027foo\u0027, is_domain\u003dTrue, tenant_name\u003d\u0027foo\u0027) are different cache keys, making invalidation near impossible. In python, those two method calls are the same thing.\n\nThere are approaches to solve this, but stack inspection, argspec inspection, etc can end up becoming expensive and prone to errors if done incorrectly.  It is much easier/safer to just memoize with positional args only.",
       "revId": "a26e4d60ec00fa7997a038531054ed28df0781e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
