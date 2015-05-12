@@ -157,6 +157,24 @@
       "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_91f95350",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-05-12T21:42:26Z",
+      "side": 1,
+      "message": "do you really want a warning in the logs every time someone provides bad input? :-/ i think the other one should be removed, or at least reduced in severity.",
+      "parentUuid": "3a961159_aa7011db",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
