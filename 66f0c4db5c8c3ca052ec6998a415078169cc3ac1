@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_cd8cfd37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-12T02:28:42Z",
+      "side": 1,
+      "message": "tag the DocImpact",
+      "revId": "66f0c4db5c8c3ca052ec6998a415078169cc3ac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_0db6953d",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-12T02:28:42Z",
+      "side": 1,
+      "message": "suggest to deprecate the extension instead of some warning here, therefore, we can remove it entirely after several relaese?",
+      "revId": "66f0c4db5c8c3ca052ec6998a415078169cc3ac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_0d8d757b",
+        "filename": "keystone/contrib/endpoint_policy/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-12T02:28:42Z",
+      "side": 1,
+      "message": "use `versionutils.deprecated`?",
+      "revId": "66f0c4db5c8c3ca052ec6998a415078169cc3ac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_8dce05b3",
+        "filename": "keystone/endpoint_policy/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-12T02:28:42Z",
+      "side": 1,
+      "message": "2015?",
+      "revId": "66f0c4db5c8c3ca052ec6998a415078169cc3ac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_2dc83974",
+        "filename": "setup.cfg",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-12T02:28:42Z",
+      "side": 1,
+      "message": "suggest to revert . to :, didn\u0027t see any reason to do this.",
+      "revId": "66f0c4db5c8c3ca052ec6998a415078169cc3ac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
