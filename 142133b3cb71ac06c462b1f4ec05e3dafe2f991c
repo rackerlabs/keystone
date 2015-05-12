@@ -34,6 +34,23 @@
       "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_a5aad917",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1807,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-12T20:14:38Z",
+      "side": 1,
+      "message": "You are no longer getting the benefit of the context manager for all of the other cases you don\u0027t explicitly pass in a connection. Under high load the connections may not be properly cleaned up. Were you able to test for this?",
+      "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
