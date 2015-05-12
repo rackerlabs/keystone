@@ -324,6 +324,15 @@ drives the entire configuration to achieve basic functional testing.
 For the functional tests, an in-memory key-value store or in-memory sqlite
 database is used to keep the tests fast.
 
+.. NOTE::
+    SQLite database doesn't enforce Foreign Key constraint by default, so any
+    test against foreign key may potentially fail if SQLite database is used
+    and without properly collation.
+    For example, table A has a foreign key which refers to the primary key in
+    another table B, but the entry in the table B holds the primary key could
+    be deleted successfully and thus the entry(ies) with the corresponding
+    foreign key in table A will be the orphan in the DB.
+
 Within the tests directory, the general structure of the backend tests is a
 basic set of tests represented under a test class, and then subclasses of those
 tests under other classes with different configurations to drive different
