@@ -105,6 +105,23 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_4786aeba",
+        "filename": "keystone/tests/unit/backend/role/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-12T01:13:22Z",
+      "side": 1,
+      "message": "Why you need to invert the parameters order?\n\nthis comment repeat in all the class.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_0e5f55e6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 19
@@ -151,6 +168,23 @@
       "writtenOn": "2015-05-04T11:22:03Z",
       "side": 1,
       "message": "You could at least assert \u0027created_at\u0027 and \u0027updated_at\u0027 contain valid content.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_87eca690",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-12T01:13:22Z",
+      "side": 1,
+      "message": "I totally agree with this changes, but this is a related change or maybe this can be done in a different patch?",
       "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
