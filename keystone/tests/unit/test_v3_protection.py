@@ -954,6 +954,33 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         # other than its own domain or not
         self._test_project_management(self.domainA['id'])
 
+    def test_list_user_projects(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            domain_id=self.domainA['id'])
+
+        url = '/users/%s/projects' % self.just_a_user['id']
+        result = self.get(url, auth=self.auth)
+        self.assertEqual(1, len(result.json['projects']))
+
+        # There are no disabled projects
+        url = '/users/%s/projects?enabled=False' % self.just_a_user['id']
+        result = self.get(url, auth=self.auth)
+        self.assertEqual(0, len(result.json['projects']))
+
+        # Try looking for projects with a non-existent domain_id
+        url = '/users/%s/projects?domain_id=%s' % (self.just_a_user['id'],
+                                                   uuid.uuid4().hex)
+        result = self.get(url, auth=self.auth)
+        self.assertEqual(0, len(result.json['projects']))
+
+        # Now try a valid one
+        url = '/users/%s/projects?domain_id=%s' % (self.just_a_user['id'],
+                                                   self.domainA['id'])
+        result = self.get(url, auth=self.auth)
+        self.assertEqual(1, len(result.json['projects']))
+
     def test_domain_grants(self):
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
