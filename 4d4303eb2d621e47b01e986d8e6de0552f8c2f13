@@ -16,6 +16,24 @@
       "revId": "4d4303eb2d621e47b01e986d8e6de0552f8c2f13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_1e2782b7",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1858,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-13T19:22:37Z",
+      "side": 1,
+      "message": "++ please run at least pep8 before submitting, but preferably the unit tests too",
+      "parentUuid": "9a0c5dc1_8308bf2e",
+      "revId": "4d4303eb2d621e47b01e986d8e6de0552f8c2f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
