@@ -33,6 +33,24 @@
       "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_7868e887",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-13T12:53:34Z",
+      "side": 1,
+      "message": "The comment above states why assertNotIn is correct here. This is testing the debug\u003dFalse case. I would not share the code here.",
+      "parentUuid": "9a0c5dc1_de00eeac",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
