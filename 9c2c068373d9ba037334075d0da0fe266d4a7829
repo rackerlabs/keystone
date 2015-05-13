@@ -52,6 +52,24 @@
       "revId": "9c2c068373d9ba037334075d0da0fe266d4a7829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_26f2969b",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15750
+      },
+      "writtenOn": "2015-05-13T23:26:56Z",
+      "side": 1,
+      "message": "I did make the change, I can see it right above here.\n\nAre you talking about the \u003c\u003e versus the {} ?\n\nThanks.",
+      "parentUuid": "9a0c5dc1_14ae672e",
+      "revId": "9c2c068373d9ba037334075d0da0fe266d4a7829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
