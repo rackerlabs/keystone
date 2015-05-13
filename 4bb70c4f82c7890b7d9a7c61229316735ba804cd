@@ -16,6 +16,23 @@
       "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_de00eeac",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-05-13T06:09:46Z",
+      "side": 1,
+      "message": "assertNotIn?\nI think you want \u0027assertIn\u0027 as you use in test_auth_scoped_token_bad_project_with_debug fucntion.\n\nIn my option, these two test cases share most of the code, why not define a common function which accept a argument as debug switch?\n\nAnd for compare two strings, why not use assertEqual?",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
