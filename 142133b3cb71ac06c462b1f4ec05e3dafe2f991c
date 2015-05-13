@@ -69,6 +69,24 @@
       "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_097897f1",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1807,
+      "author": {
+        "id": 16217
+      },
+      "writtenOn": "2015-05-13T00:26:59Z",
+      "side": 1,
+      "message": "Thank for your comment. \n\nThen I think I just need to make this function like this....\n\nif conn is None:\n    with self.get_connection() as conn:\n        .... \n        try:\n        except\n        else:\nelse:\n    try:\n    except\n    else:\n\n\nLet me know if there\u0027s a better way!",
+      "parentUuid": "9a0c5dc1_a5aad917",
+      "revId": "142133b3cb71ac06c462b1f4ec05e3dafe2f991c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
