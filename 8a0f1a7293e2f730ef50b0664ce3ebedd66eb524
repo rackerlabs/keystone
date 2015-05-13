@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_f6d05c55",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1816,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-13T17:24:16Z",
+      "side": 1,
+      "message": "I haven\u0027t thought through all of the implications of this change, but the logic here is a little different. In the previous version the \u0027if\u0027 statement would prevent the code in the try-except from executing. In the new version this is no longer the case.\n\nI think a simple way to fix this would be change the \u0027if\u0027 to:\n\n    if self._get_enabled(object_id, conn):\n        return\n\nand outdent the \u0027modlist \u003d ...\u0027 statement once.",
+      "revId": "8a0f1a7293e2f730ef50b0664ce3ebedd66eb524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
