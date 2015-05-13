@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_8308bf2e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1858,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-13T19:21:39Z",
+      "side": 1,
+      "message": "There a problem with this indentation, you need to fix that.",
+      "revId": "4d4303eb2d621e47b01e986d8e6de0552f8c2f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
