@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_af04eb14",
+        "filename": "keystone/backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-13T01:36:29Z",
+      "side": 1,
+      "message": "seems like you should be able to get the list of drivers from dependency -- e.g., dependency.get_providers() returns this dict.",
+      "revId": "51da2be215461cecacc3310a1cc5570ddcac2ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab921fb_1d56415c",
         "filename": "keystone/tests/unit/common/test_injection.py",
         "patchSetId": 2
