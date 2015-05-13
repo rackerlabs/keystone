@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_0a2f44f7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-13T17:57:01Z",
+      "side": 1,
+      "message": "i get yout point here, but I don\u0027t know how to check because I don\u0027t know if we need to check this here, since this is already validate before.\n\nDo you have ant suggestions?",
+      "parentUuid": "1aca2d91_25744c66",
+      "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_7a3c1fe2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_ca380c40",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-13T17:57:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aca2d91_7a3c1fe2",
+      "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_858c4036",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 21
@@ -47,6 +83,24 @@
       "writtenOn": "2015-05-08T13:25:23Z",
       "side": 1,
       "message": "nit: \n\ns/FK/foreign_key/",
+      "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_6a4a40c7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-13T17:57:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aca2d91_858c4036",
       "revId": "42f006f47cb51acf7748eb64237f3cd77260c873",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
