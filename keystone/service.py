@@ -103,7 +103,7 @@ def v3_app_factory(global_conf, **local_conf):
     sub_routers = []
     _routers = []
 
-    router_modules = [assignment, auth, catalog, credential, identity, policy,
+    router_modules = [auth, assignment, catalog, credential, identity, policy,
                       resource]
     if CONF.trust.enabled:
         router_modules.append(trust)
