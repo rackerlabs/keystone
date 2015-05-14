@@ -982,6 +982,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
+        driver.get_user(user_id)
         ref_list = driver.list_groups_for_user(entity_id, hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.GROUP)
