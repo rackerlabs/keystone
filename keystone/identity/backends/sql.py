@@ -125,6 +125,8 @@ class Identity(identity.Driver):
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):
+        import traceback
+        traceback.print_stack()
         user_ref = session.query(User).get(user_id)
         if not user_ref:
             raise exception.UserNotFound(user_id=user_id)
@@ -217,7 +219,6 @@ class Identity(identity.Driver):
         # here, this is left as future enhancement and until then we leave
         # it for the controller to do for us.
         session = sql.get_session()
-        self.get_user(user_id)
         query = session.query(Group).join(UserGroupMembership)
         query = query.filter(UserGroupMembership.user_id == user_id)
         return [g.to_dict() for g in query]
