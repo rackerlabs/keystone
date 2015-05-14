@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a016987_89cefdb2",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T00:12:05Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if we didn\u0027t put bug #s for every test. The commit message already has the bug #.",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_299f0961",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T00:12:05Z",
+      "side": 1,
+      "message": "give a name to the {} magic value so reviewers know what it is.",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_c993d54e",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T00:12:05Z",
+      "side": 1,
+      "message": "lines 297-305 is essentially assertRaisesRegexp -- https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertRaisesRegexp",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_69a3c19f",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T00:12:05Z",
+      "side": 1,
+      "message": "we\u0027ve got 2 tests with the same docstring... suggest add some text to differentiate. (or just remove the docstring since the name makes the point of the test obvious enough)",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_2a3d892b",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 5
