@@ -445,6 +445,23 @@
     },
     {
       "key": {
+        "uuid": "7a016987_7ba11ca9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-05-14T23:00:54Z",
+      "side": 1,
+      "message": "There\u0027s no need for this option. We are checking for trusted issuer one way or the other because their are linked to the identity providers. Please remove this option.",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_0fa0979e",
         "filename": "keystone/common/config.py",
         "patchSetId": 26
