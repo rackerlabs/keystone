@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_7b2c92ab",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T14:25:49Z",
+      "side": 1,
+      "message": "this should be done in tests.TestCase addCleanup so that all the tests clean up after themselves, then this test doesn\u0027t need to try to clean up after other tests.",
+      "revId": "8cfb74bf7657463d066db39d5252ba530409f6fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_1bb6be8a",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T14:25:49Z",
+      "side": 1,
+      "message": "this is changing behavior in non-backwards compatible way.",
+      "revId": "8cfb74bf7657463d066db39d5252ba530409f6fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_3e528814",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T14:25:49Z",
+      "side": 1,
+      "message": "can this be split out to its own commit? I think we should do this even if we can\u0027t switch to pecan. Also, it\u0027ll make this patch smaller.",
+      "revId": "8cfb74bf7657463d066db39d5252ba530409f6fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_9ee73c40",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T14:25:49Z",
+      "side": 1,
+      "message": "give a name to the None argument so we know what it\u0027s for.",
+      "revId": "8cfb74bf7657463d066db39d5252ba530409f6fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
