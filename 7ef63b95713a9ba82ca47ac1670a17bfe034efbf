@@ -189,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_20a229af",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-14T00:14:45Z",
+      "side": 1,
+      "message": "that\u0027s right. It doesn\u0027t have to be configurable. But just in case someone wants a different name, and that was actually a suggestion from a previous commnet.",
+      "parentUuid": "9a0c5dc1_6f5dd3e8",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_0f6d3798",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 26
@@ -580,6 +598,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_4f30a601",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-14T00:14:45Z",
+      "side": 1,
+      "message": "I think it should be an ? :)",
+      "parentUuid": "9a0c5dc1_af098b97",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_6f039374",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 26
@@ -665,6 +701,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_abc035e1",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-14T00:14:45Z",
+      "side": 1,
+      "message": "yep, that\u0027s cleaner.",
+      "parentUuid": "9a0c5dc1_ef4663be",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_cfc71f11",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 26
@@ -693,6 +747,24 @@
       "writtenOn": "2015-05-13T02:18:51Z",
       "side": 1,
       "message": "issuer_attri ? this needs a test.",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_6bba3d70",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-14T00:14:45Z",
+      "side": 1,
+      "message": "I should.",
+      "parentUuid": "9a0c5dc1_ef4b03af",
       "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -733,6 +805,24 @@
     },
     {
       "key": {
+        "uuid": "9a0c5dc1_cea257ae",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-14T00:14:45Z",
+      "side": 1,
+      "message": "that config option defaults to SSL_CLIENT_I_DN, so there is actually no need for this validation.",
+      "parentUuid": "9a0c5dc1_8fe8077e",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_eff9c34e",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 26
@@ -744,6 +834,24 @@
       "writtenOn": "2015-05-13T02:18:51Z",
       "side": 1,
       "message": "I don\u0027t understand the response to my comment in patch set 3... line 308 has \"issuer_attribute \u003d CONF.tokenless_auth.issuer_attribute\", so CONF.tokenless_auth.trusted_issuer can be replaced with issuer_attribute here.",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0c5dc1_917da070",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-14T00:14:45Z",
+      "side": 1,
+      "message": "ok, sorry for the confusion here. what it basically does here is to:\n1. find the Issuer(client_issuer) from the client certificate referenced from env by \"CONF.tokenless_auth.issuer_attribute\"(SSL_CLIENT_I_DN)\n2. compare the Issuer(client_isser) if it matches with one of the trusted issuers defined in keystone.conf as the option \u0027trusted_issuer\u0027\n\nSSL_CLIENT_I_DN is always the attribute name in the env that references to the certificate\u0027s Issuer.\n\nFor example:\nenv \u003d { ...\n           \"SSL_CLIENT_I_DN\": \"CN\u003djohn,OU\u003dkeystone,O\u003dopenstack\"\n           ....\n          }\n\nkeystone.conf has the following defined:\ntrusted_isser\u003dCN\u003djohn,OU\u003dkeystone,O\u003dopenstack\ntrusted_isser\u003dCN\u003dmary,OU\u003deng,O\u003dabc\n\nthe client_issuer is trusted as it matches with an entry in keystone.conf.\n\nhope this clears the confusion.",
+      "parentUuid": "9a0c5dc1_eff9c34e",
       "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
