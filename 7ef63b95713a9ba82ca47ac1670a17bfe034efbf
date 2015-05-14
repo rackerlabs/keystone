@@ -616,6 +616,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_b94b27b0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T18:55:35Z",
+      "side": 1,
+      "message": "http://git.openstack.org/cgit/openstack/openstack-manuals/tree/doc/common/section_keystone-concepts-user-management.xml#n13 -- OpenStack convention is to use \"a user\". I haven\u0027t seen any examples using \"an user\".",
+      "parentUuid": "9a0c5dc1_4f30a601",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_6f039374",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 26
@@ -713,6 +731,23 @@
       "side": 1,
       "message": "yep, that\u0027s cleaner.",
       "parentUuid": "9a0c5dc1_ef4663be",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_d9c4a341",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-14T18:55:35Z",
+      "side": 1,
+      "message": "this is used in an exception and not to LOG.warning(), so change _LW() to _().",
       "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
