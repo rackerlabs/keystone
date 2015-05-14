@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_7d580d57",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-05-14T12:23:25Z",
+      "side": 1,
+      "message": "that\u0027s intentional... makes it easier to maintain dictionaries in the long run.",
+      "parentUuid": "7ad32947_e1269f15",
+      "revId": "f2a75866319c249e8ebdfb393172ab5ca8816b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_01119bac",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
