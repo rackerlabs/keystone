@@ -524,6 +524,9 @@ FILE_OPTIONS = {
                         'in a policy collection.'),
     ],
     'endpoint_filter': [
+        cfg.BoolOpt('enabled',
+                    default=True,
+                    help='Enable endpoint_filter functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
                    help='Endpoint Filter backend driver'),
