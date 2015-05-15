@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_81b582ce",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-15T02:41:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a016987_89cefdb2",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_299f0961",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2015-05-14T00:12:05Z",
       "side": 1,
       "message": "lines 297-305 is essentially assertRaisesRegexp -- https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertRaisesRegexp",
+      "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_21c5ae3b",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-15T02:41:34Z",
+      "side": 1,
+      "message": "how this line work in different translations? They affect the tests?",
+      "parentUuid": "7a016987_c993d54e",
       "revId": "4bb70c4f82c7890b7d9a7c61229316735ba804cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
