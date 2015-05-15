@@ -18,7 +18,7 @@ from keystone.catalog import controllers as catalog_controllers
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
-from keystone.contrib.endpoint_filter import schema
+from keystone.endpoint_filter import schema
 from keystone import exception
 from keystone import notifications
 from keystone import resource
