@@ -21,18 +21,15 @@ from testtools import matchers
 from keystone.tests.unit import test_v3
 
 
-class TestExtensionCase(test_v3.RestfulTestCase):
-
-    EXTENSION_NAME = 'endpoint_filter'
-    EXTENSION_TO_ADD = 'endpoint_filter_extension'
+class EndpointFilterTestCase(test_v3.RestfulTestCase):
 
     def config_overrides(self):
-        super(TestExtensionCase, self).config_overrides()
+        super(EndpointFilterTestCase, self).config_overrides()
         self.config_fixture.config(
             group='catalog', driver='endpoint_filter.sql')
 
     def setUp(self):
-        super(TestExtensionCase, self).setUp()
+        super(EndpointFilterTestCase, self).setUp()
         self.default_request_url = (
             '/OS-EP-FILTER/projects/%(project_id)s'
             '/endpoints/%(endpoint_id)s' % {
@@ -40,7 +37,7 @@ class TestExtensionCase(test_v3.RestfulTestCase):
                 'endpoint_id': self.endpoint_id})
 
 
-class EndpointFilterCRUDTestCase(TestExtensionCase):
+class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
 
     def test_create_endpoint_project_association(self):
         """PUT /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
@@ -243,7 +240,7 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
         self.assertValidEndpointListResponse(r, expected_length=0)
 
 
-class EndpointFilterTokenRequestTestCase(TestExtensionCase):
+class EndpointFilterTokenRequestTestCase(EndpointFilterTestCase):
 
     def test_project_scoped_token_using_endpoint_filter(self):
         """Verify endpoints from project scoped token filtered."""
@@ -458,7 +455,7 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
                          auth_catalog.result['catalog'])
 
 
-class JsonHomeTests(TestExtensionCase, test_v3.JsonHomeTestMixin):
+class JsonHomeTests(EndpointFilterTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-EP-FILTER/'
         '1.0/rel/endpoint_projects': {
@@ -529,7 +526,7 @@ class JsonHomeTests(TestExtensionCase, test_v3.JsonHomeTestMixin):
     }
 
 
-class EndpointGroupCRUDTestCase(TestExtensionCase):
+class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
 
     DEFAULT_ENDPOINT_GROUP_BODY = {
         'endpoint_group': {
