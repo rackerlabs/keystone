@@ -1,4 +1,4 @@
-# Copyright 2014 IBM Corp.
+# Copyright 2013 OpenStack Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -19,414 +19,272 @@ from oslo_log import log
 import six
 
 from keystone.common import dependency
+from keystone.common import extension
 from keystone.common import manager
 from keystone import exception
-from keystone.i18n import _, _LE, _LW
 
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
+extension_data = {
+    'name': 'OpenStack Keystone Endpoint Filter API',
+    'namespace': 'http://docs.openstack.org/identity/api/ext/'
+                 'OS-EP-FILTER/v1.0',
+    'alias': 'OS-EP-FILTER',
+    'updated': '2013-07-23T12:00:0-00:00',
+    'description': 'OpenStack Keystone Endpoint Filter API.',
+    'links': [
+        {
+            'rel': 'describedby',
+            # TODO(ayoung): needs a description
+            'type': 'text/html',
+            'href': 'https://github.com/openstack/identity-api/blob/master'
+                    '/openstack-identity-api/v3/src/markdown/'
+                    'identity-api-v3-os-ep-filter-ext.md',
+        }
+    ]}
+extension.register_admin_extension(extension_data['alias'], extension_data)
 
-@dependency.provider('endpoint_policy_api')
-@dependency.requires('catalog_api', 'policy_api')
+
+@dependency.provider('endpoint_filter_api')
 class Manager(manager.Manager):
-    """Default pivot point for the Endpoint Policy backend.
+    """Default pivot point for the Endpoint Filter backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
     dynamically calls the backend.
 
     """
 
-    driver_namespace = 'keystone.endpoint_policy'
+    driver_namespace = 'keystone.endpoint_filter'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.endpoint_policy.driver)
-
-    def _assert_valid_association(self, endpoint_id, service_id, region_id):
-        """Assert that the association is supported.
-
-        There are three types of association supported:
-
-        - Endpoint (in which case service and region must be None)
-        - Service and region (in which endpoint must be None)
-        - Service (in which case endpoint and region must be None)
-
-        """
-        if (endpoint_id is not None and
-                service_id is None and region_id is None):
-            return
-        if (service_id is not None and region_id is not None and
-                endpoint_id is None):
-            return
-        if (service_id is not None and
-                endpoint_id is None and region_id is None):
-            return
-
-        raise exception.InvalidPolicyAssociation(endpoint_id=endpoint_id,
-                                                 service_id=service_id,
-                                                 region_id=region_id)
-
-    def create_policy_association(self, policy_id, endpoint_id=None,
-                                  service_id=None, region_id=None):
-        self._assert_valid_association(endpoint_id, service_id, region_id)
-        self.driver.create_policy_association(policy_id, endpoint_id,
-                                              service_id, region_id)
-
-    def check_policy_association(self, policy_id, endpoint_id=None,
-                                 service_id=None, region_id=None):
-        self._assert_valid_association(endpoint_id, service_id, region_id)
-        self.driver.check_policy_association(policy_id, endpoint_id,
-                                             service_id, region_id)
-
-    def delete_policy_association(self, policy_id, endpoint_id=None,
-                                  service_id=None, region_id=None):
-        self._assert_valid_association(endpoint_id, service_id, region_id)
-        self.driver.delete_policy_association(policy_id, endpoint_id,
-                                              service_id, region_id)
-
-    def list_endpoints_for_policy(self, policy_id):
-
-        def _get_endpoint(endpoint_id, policy_id):
-            try:
-                return self.catalog_api.get_endpoint(endpoint_id)
-            except exception.EndpointNotFound:
-                msg = _LW('Endpoint %(endpoint_id)s referenced in '
-                          'association for policy %(policy_id)s not found.')
-                LOG.warning(msg, {'policy_id': policy_id,
-                                  'endpoint_id': endpoint_id})
-                raise
-
-        def _get_endpoints_for_service(service_id, endpoints):
-            # TODO(henry-nash): Consider optimizing this in the future by
-            # adding an explicit list_endpoints_for_service to the catalog API.
-            return [ep for ep in endpoints if ep['service_id'] == service_id]
-
-        def _get_endpoints_for_service_and_region(
-                service_id, region_id, endpoints, regions):
-            # TODO(henry-nash): Consider optimizing this in the future.
-            # The lack of a two-way pointer in the region tree structure
-            # makes this somewhat inefficient.
-
-            def _recursively_get_endpoints_for_region(
-                region_id, service_id, endpoint_list, region_list,
-                    endpoints_found, regions_examined):
-                """Recursively search down a region tree for endpoints.
-
-                :param region_id: the point in the tree to examine
-                :param service_id: the service we are interested in
-                :param endpoint_list: list of all endpoints
-                :param region_list: list of all regions
-                :param endpoints_found: list of matching endpoints found so
-                                        far - which will be updated if more are
-                                        found in this iteration
-                :param regions_examined: list of regions we have already looked
-                                         at - used to spot illegal circular
-                                         references in the tree to avoid never
-                                         completing search
-                :returns: list of endpoints that match
-
-                """
-
-                if region_id in regions_examined:
-                    msg = _LE('Circular reference or a repeated entry found '
-                              'in region tree - %(region_id)s.')
-                    LOG.error(msg, {'region_id': ref.region_id})
-                    return
-
-                regions_examined.append(region_id)
-                endpoints_found += (
-                    [ep for ep in endpoint_list if
-                     ep['service_id'] == service_id and
-                     ep['region_id'] == region_id])
-
-                for region in region_list:
-                    if region['parent_region_id'] == region_id:
-                        _recursively_get_endpoints_for_region(
-                            region['id'], service_id, endpoints, regions,
-                            endpoints_found, regions_examined)
-
-            endpoints_found = []
-            regions_examined = []
-
-            # Now walk down the region tree
-            _recursively_get_endpoints_for_region(
-                region_id, service_id, endpoints, regions,
-                endpoints_found, regions_examined)
-
-            return endpoints_found
-
-        matching_endpoints = []
-        endpoints = self.catalog_api.list_endpoints()
-        regions = self.catalog_api.list_regions()
-        for ref in self.driver.list_associations_for_policy(policy_id):
-            if ref.get('endpoint_id') is not None:
-                matching_endpoints.append(
-                    _get_endpoint(ref['endpoint_id'], policy_id))
-                continue
-
-            if (ref.get('service_id') is not None and
-                    ref.get('region_id') is None):
-                matching_endpoints += _get_endpoints_for_service(
-                    ref['service_id'], endpoints)
-                continue
-
-            if (ref.get('service_id') is not None and
-                    ref.get('region_id') is not None):
-                matching_endpoints += (
-                    _get_endpoints_for_service_and_region(
-                        ref['service_id'], ref['region_id'],
-                        endpoints, regions))
-                continue
-
-            msg = _LW('Unsupported policy association found - '
-                      'Policy %(policy_id)s, Endpoint %(endpoint_id)s, '
-                      'Service %(service_id)s, Region %(region_id)s, ')
-            LOG.warning(msg, {'policy_id': policy_id,
-                              'endpoint_id': ref['endpoint_id'],
-                              'service_id': ref['service_id'],
-                              'region_id': ref['region_id']})
-
-        return matching_endpoints
-
-    def get_policy_for_endpoint(self, endpoint_id):
-
-        def _get_policy(policy_id, endpoint_id):
-            try:
-                return self.policy_api.get_policy(policy_id)
-            except exception.PolicyNotFound:
-                msg = _LW('Policy %(policy_id)s referenced in association '
-                          'for endpoint %(endpoint_id)s not found.')
-                LOG.warning(msg, {'policy_id': policy_id,
-                                  'endpoint_id': endpoint_id})
-                raise
-
-        def _look_for_policy_for_region_and_service(endpoint):
-            """Look in the region and its parents for a policy.
-
-            Examine the region of the endpoint for a policy appropriate for
-            the service of the endpoint. If there isn't a match, then chase up
-            the region tree to find one.
-
-            """
-            region_id = endpoint['region_id']
-            regions_examined = []
-            while region_id is not None:
-                try:
-                    ref = self.driver.get_policy_association(
-                        service_id=endpoint['service_id'],
-                        region_id=region_id)
-                    return ref['policy_id']
-                except exception.PolicyAssociationNotFound:
-                    pass
-
-                # There wasn't one for that region & service, let's
-                # chase up the region tree
-                regions_examined.append(region_id)
-                region = self.catalog_api.get_region(region_id)
-                region_id = None
-                if region.get('parent_region_id') is not None:
-                    region_id = region['parent_region_id']
-                    if region_id in regions_examined:
-                        msg = _LE('Circular reference or a repeated entry '
-                                  'found in region tree - %(region_id)s.')
-                        LOG.error(msg, {'region_id': region_id})
-                        break
-
-        # First let's see if there is a policy explicitly defined for
-        # this endpoint.
-
-        try:
-            ref = self.driver.get_policy_association(endpoint_id=endpoint_id)
-            return _get_policy(ref['policy_id'], endpoint_id)
-        except exception.PolicyAssociationNotFound:
-            pass
-
-        # There wasn't a policy explicitly defined for this endpoint, so
-        # now let's see if there is one for the Region & Service.
-
-        endpoint = self.catalog_api.get_endpoint(endpoint_id)
-        policy_id = _look_for_policy_for_region_and_service(endpoint)
-        if policy_id is not None:
-            return _get_policy(policy_id, endpoint_id)
-
-        # Finally, just check if there is one for the service.
-        try:
-            ref = self.driver.get_policy_association(
-                service_id=endpoint['service_id'])
-            return _get_policy(ref['policy_id'], endpoint_id)
-        except exception.PolicyAssociationNotFound:
-            pass
-
-        msg = _('No policy is associated with endpoint '
-                '%(endpoint_id)s.') % {'endpoint_id': endpoint_id}
-        raise exception.NotFound(msg)
+        super(Manager, self).__init__(CONF.endpoint_filter.driver)
 
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
-    """Interface description for an Endpoint Policy driver."""
+    """Interface description for an Endpoint Filter driver."""
 
     @abc.abstractmethod
-    def create_policy_association(self, policy_id, endpoint_id=None,
-                                  service_id=None, region_id=None):
-        """Creates a policy association.
+    def add_endpoint_to_project(self, endpoint_id, project_id):
+        """Create an endpoint to project association.
 
-        :param policy_id: identity of policy that is being associated
-        :type policy_id: string
         :param endpoint_id: identity of endpoint to associate
         :type endpoint_id: string
-        :param service_id: identity of the service to associate
-        :type service_id: string
-        :param region_id: identity of the region to associate
-        :type region_id: string
-        :returns: None
-
-        There are three types of association permitted:
-
-        - Endpoint (in which case service and region must be None)
-        - Service and region (in which endpoint must be None)
-        - Service (in which case endpoint and region must be None)
+        :param project_id: identity of the project to be associated with
+        :type project_id: string
+        :raises: keystone.exception.Conflict,
+        :returns: None.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def check_policy_association(self, policy_id, endpoint_id=None,
-                                 service_id=None, region_id=None):
-        """Checks existence a policy association.
+    def remove_endpoint_from_project(self, endpoint_id, project_id):
+        """Removes an endpoint to project association.
 
-        :param policy_id: identity of policy that is being associated
-        :type policy_id: string
-        :param endpoint_id: identity of endpoint to associate
+        :param endpoint_id: identity of endpoint to remove
         :type endpoint_id: string
-        :param service_id: identity of the service to associate
-        :type service_id: string
-        :param region_id: identity of the region to associate
-        :type region_id: string
-        :raises: keystone.exception.PolicyAssociationNotFound if there is no
-                 match for the specified association
-        :returns: None
+        :param project_id: identity of the project associated with
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def delete_policy_association(self, policy_id, endpoint_id=None,
-                                  service_id=None, region_id=None):
-        """Deletes a policy association.
+    def check_endpoint_in_project(self, endpoint_id, project_id):
+        """Checks if an endpoint is associated with a project.
 
-        :param policy_id: identity of policy that is being associated
-        :type policy_id: string
-        :param endpoint_id: identity of endpoint to associate
+        :param endpoint_id: identity of endpoint to check
         :type endpoint_id: string
-        :param service_id: identity of the service to associate
-        :type service_id: string
-        :param region_id: identity of the region to associate
-        :type region_id: string
-        :returns: None
+        :param project_id: identity of the project associated with
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def get_policy_association(self, endpoint_id=None,
-                               service_id=None, region_id=None):
-        """Gets the policy for an explicit association.
+    def list_endpoints_for_project(self, project_id):
+        """List all endpoints associated with a project.
 
-        This method is not exposed as a public API, but is used by
-        get_policy_for_endpoint().
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :returns: a list of identity endpoint ids or an empty list.
 
-        :param endpoint_id: identity of endpoint
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_projects_for_endpoint(self, endpoint_id):
+        """List all projects associated with an endpoint.
+
+        :param endpoint_id: identity of endpoint to check
         :type endpoint_id: string
-        :param service_id: identity of the service
-        :type service_id: string
-        :param region_id: identity of the region
-        :type region_id: string
-        :raises: keystone.exception.PolicyAssociationNotFound if there is no
-                 match for the specified association
-        :returns: dict containing policy_id
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_associations_for_policy(self, policy_id):
-        """List the associations for a policy.
-
-        This method is not exposed as a public API, but is used by
-        list_endpoints_for_policy().
-
-        :param policy_id: identity of policy
-        :type policy_id: string
-        :returns: List of association dicts
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_endpoints_for_policy(self, policy_id):
-        """List all the endpoints using a given policy.
-
-        :param policy_id: identity of policy that is being associated
-        :type policy_id: string
-        :returns: list of endpoints that have an effective association with
-                  that policy
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_policy_for_endpoint(self, endpoint_id):
-        """Get the appropriate policy for a given endpoint.
-
-        :param endpoint_id: identity of endpoint
-        :type endpoint_id: string
-        :returns: Policy entity for the endpoint
-
+        :returns: a list of projects or an empty list.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
     def delete_association_by_endpoint(self, endpoint_id):
-        """Removes all the policy associations with the specific endpoint.
+        """Removes all the endpoints to project association with endpoint.
 
         :param endpoint_id: identity of endpoint to check
         :type endpoint_id: string
         :returns: None
 
         """
-        raise exception.NotImplemented()  # pragma: no cover
+        raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def delete_association_by_service(self, service_id):
-        """Removes all the policy associations with the specific service.
+    def delete_association_by_project(self, project_id):
+        """Removes all the endpoints to project association with project.
 
-        :param service_id: identity of endpoint to check
-        :type service_id: string
+        :param project_id: identity of the project to check
+        :type project_id: string
         :returns: None
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def create_endpoint_group(self, endpoint_group):
+        """Create an endpoint group.
+
+        :param endpoint_group: endpoint group to create
+        :type endpoint_group: dictionary
+        :raises: keystone.exception.Conflict,
+        :returns: an endpoint group representation.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def delete_association_by_region(self, region_id):
-        """Removes all the policy associations with the specific region.
+    def get_endpoint_group(self, endpoint_group_id):
+        """Get an endpoint group.
 
-        :param region_id: identity of endpoint to check
-        :type region_id: string
-        :returns: None
+        :param endpoint_group_id: identity of endpoint group to retrieve
+        :type endpoint_group_id: string
+        :raises: exception.NotFound
+        :returns: an endpoint group representation.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def delete_association_by_policy(self, policy_id):
-        """Removes all the policy associations with the specific policy.
+    def update_endpoint_group(self, endpoint_group_id, endpoint_group):
+        """Update an endpoint group.
 
-        :param policy_id: identity of endpoint to check
-        :type policy_id: string
+        :param endpoint_group_id: identity of endpoint group to retrieve
+        :type endpoint_group_id: string
+        :param endpoint_group: A full or partial endpoint_group
+        :type endpoint_group: dictionary
+        :raises: exception.NotFound
+        :returns: an endpoint group representation.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_endpoint_group(self, endpoint_group_id):
+        """Delete an endpoint group.
+
+        :param endpoint_group_id: identity of endpoint group to delete
+        :type endpoint_group_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def add_endpoint_group_to_project(self, endpoint_group_id, project_id):
+        """Adds an endpoint group to project association.
+
+        :param endpoint_group_id: identity of endpoint to associate
+        :type endpoint_group_id: string
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: keystone.exception.Conflict,
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_endpoint_group_in_project(self, endpoint_group_id, project_id):
+        """Get endpoint group to project association.
+
+        :param endpoint_group_id: identity of endpoint group to retrieve
+        :type endpoint_group_id: string
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: a project endpoint group representation.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_endpoint_groups(self):
+        """List all endpoint groups.
+
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_endpoint_groups_for_project(self, project_id):
+        """List all endpoint group to project associations for a project.
+
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_projects_associated_with_endpoint_group(self, endpoint_group_id):
+        """List all projects associated with endpoint group.
+
+        :param endpoint_group_id: identity of endpoint to associate
+        :type endpoint_group_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def remove_endpoint_group_from_project(self, endpoint_group_id,
+                                           project_id):
+        """Remove an endpoint to project association.
+
+        :param endpoint_group_id: identity of endpoint to associate
+        :type endpoint_group_id: string
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_endpoint_group_association_by_project(self, project_id):
+        """Remove endpoint group to project associations.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
         :returns: None
 
         """

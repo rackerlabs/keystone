@@ -38,6 +38,7 @@ def run_apidoc(app):
     source_dir = path.join(app.srcdir, 'api')
     ignores = [
         path.join(package_dir, 'contrib', 'endpoint_policy'),
+        path.join(package_dir, 'contrib', 'endpoint_filter')
     ]
     apidoc.main(['apidoc', package_dir, '-f',
                  '-H', 'Keystone Modules',
