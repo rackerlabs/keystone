@@ -651,6 +651,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_9f35c4db",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-05-15T17:45:51Z",
+      "side": 1,
+      "message": "yeah, fair enough.",
+      "parentUuid": "7a016987_b94b27b0",
+      "revId": "7ef63b95713a9ba82ca47ac1670a17bfe034efbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_6f039374",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 26
