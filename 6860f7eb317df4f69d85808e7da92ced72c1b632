@@ -16,6 +16,24 @@
       "revId": "6860f7eb317df4f69d85808e7da92ced72c1b632",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_9f527a12",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-05-15T10:38:04Z",
+      "side": 1,
+      "message": "I like the idea of callback, too! But this patch make the callback has inconsistent meaning with the callback of @protected. \n\nHow about this:\n\nchange arguments name: callback -\u003e target_callback\n\n# keep current logic to generate target\n\nif hasattr(self, \u0027get_member_from_driver\u0027) ...\n\nif callable(target_callback):\n    target.update(self, target, context, **kwargs)\n\n# call policy enforcer",
+      "parentUuid": "5ad58531_dcba79c0",
+      "revId": "6860f7eb317df4f69d85808e7da92ced72c1b632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
