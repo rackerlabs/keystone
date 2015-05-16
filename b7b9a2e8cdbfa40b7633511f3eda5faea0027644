@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_92780bc6",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2015-05-16T14:53:49Z",
+      "side": 1,
+      "message": "Oops, docbook doesn\u0027t consider lib/ part of the target name here. Needs quoting.",
+      "revId": "b7b9a2e8cdbfa40b7633511f3eda5faea0027644",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
