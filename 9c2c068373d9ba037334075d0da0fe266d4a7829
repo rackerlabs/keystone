@@ -88,6 +88,24 @@
       "revId": "9c2c068373d9ba037334075d0da0fe266d4a7829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_39b13448",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15750
+      },
+      "writtenOn": "2015-05-17T22:50:11Z",
+      "side": 1,
+      "message": "There are two URLs here:\n\n1.\n`/v3/auth/OS-FEDERATION/websso/\u003cprotocol\u003e`\nwhich is correct, I just tried it out with \u003cprotocol\u003e substituted.\n\n2.\n/v3/OS-FEDERATION/identity_providers/\u003cidp\u003e/protocols/\u003cprotocol\u003e/auth\nThis is also correct, I have just tried it out (with the \u003cidp\u003e and \u003cprotocol\u003e substituted).\n\nSo can you please confirm what you\u0027re talking about? Everything looks fine to me.\n\nThanks.",
+      "parentUuid": "7a016987_014752bc",
+      "revId": "9c2c068373d9ba037334075d0da0fe266d4a7829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
