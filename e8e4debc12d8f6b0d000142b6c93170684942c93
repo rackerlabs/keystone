@@ -16,6 +16,24 @@
       "revId": "e8e4debc12d8f6b0d000142b6c93170684942c93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_00d0251e",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-18T18:35:01Z",
+      "side": 1,
+      "message": "I don\u0027t have any data for that. My understanding is that in a live system auth routes are by far the most hit routes. If we can point to some references for this I\u0027d be happy to update.",
+      "parentUuid": "7a016987_657392e8",
+      "revId": "e8e4debc12d8f6b0d000142b6c93170684942c93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
