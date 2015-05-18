@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_574cc56f",
+        "filename": "keystone/backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-18T23:21:15Z",
+      "side": 1,
+      "message": "This has already been changed in a future commit.",
+      "parentUuid": "bab921fb_fdf4ad87",
+      "revId": "51da2be215461cecacc3310a1cc5570ddcac2ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_af04eb14",
         "filename": "keystone/backends.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-13T01:36:29Z",
       "side": 1,
       "message": "seems like you should be able to get the list of drivers from dependency -- e.g., dependency.get_providers() returns this dict.",
+      "revId": "51da2be215461cecacc3310a1cc5570ddcac2ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_773d81ba",
+        "filename": "keystone/backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-18T23:21:15Z",
+      "side": 1,
+      "message": "I like it explicit and I\u0027m planning on removing dependency in a future commit.",
+      "parentUuid": "9a0c5dc1_af04eb14",
       "revId": "51da2be215461cecacc3310a1cc5570ddcac2ab1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
