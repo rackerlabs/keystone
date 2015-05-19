@@ -106,6 +106,24 @@
       "revId": "9c2c068373d9ba037334075d0da0fe266d4a7829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_b67f58aa",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15750
+      },
+      "writtenOn": "2015-05-19T01:21:49Z",
+      "side": 1,
+      "message": "OK I\u0027ve chatted to Marek on IRC and I\u0027ve established that the 2nd URL here is only used for API access. Because this completely misled me when I first started playing with this stuff, what I\u0027ve done is moved that part of the change to a NOTE at the bottom of the section and explicitly referred to the API settings for Location, as they must match the settings for websso - this tripped me up initially and is the main reason for me making this change. Please see next patch set!",
+      "parentUuid": "7a016987_39b13448",
+      "revId": "9c2c068373d9ba037334075d0da0fe266d4a7829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
