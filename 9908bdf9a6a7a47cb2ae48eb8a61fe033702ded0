@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_3aa56d46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2015-05-20T09:47:38Z",
+      "side": 1,
+      "message": "Put full URL otherwise review.o.o renders it wrong\nhttps://github.com/rohe/pysaml2/commit/9af3252035484f4a8c624eba0f35b68280d43fd2",
+      "revId": "9908bdf9a6a7a47cb2ae48eb8a61fe033702ded0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
