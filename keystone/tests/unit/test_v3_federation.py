@@ -26,7 +26,10 @@ import saml2
 from saml2 import saml
 from saml2 import sigver
 from six.moves import range, urllib, zip
-import xmldsig
+from oslo_utils import importutils
+xmldsig = importutils.try_import("xmldsig")
+if not xmldsig:
+    xmldsig = importutils.try_import("saml2.xmldsig")
 
 from keystone.auth import controllers as auth_controllers
 from keystone.auth.plugins import mapped
