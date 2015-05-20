@@ -26,7 +26,7 @@ from saml2 import saml
 from saml2 import samlp
 from saml2.schema import soapenv
 from saml2 import sigver
-import xmldsig
+from saml2 import xmldsig
 
 from keystone import exception
 from keystone.i18n import _, _LE
