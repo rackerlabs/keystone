@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_2e0d1de8",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-20T22:20:57Z",
+      "side": 1,
+      "message": "we always rely on the newest pysaml release, so we should try the \"new way\" first.\nSuggested swapping the import lines (first saml.xmldsig, later xmlsdig if the former failed)",
+      "revId": "d4dcef5098b9f10a239449e05301a7db8410cdb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
