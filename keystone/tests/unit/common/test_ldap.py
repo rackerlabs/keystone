@@ -21,6 +21,7 @@ import mock
 from oslo_config import cfg
 from testtools import matchers
 
+from keystone.common import driver_hints
 from keystone.common import ldap as ks_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone.tests import unit as tests
@@ -496,3 +497,52 @@ class CommonLdapTestCase(tests.BaseTestCase):
             py_result = ks_ldap.convert_ldap_result(result)
             # The user name should still be a string value.
             self.assertEqual(user_name, py_result[0][1]['user_name'][0])
+
+
+class LDAPFilterQueryCompositionTest(tests.TestCase):
+    """These test cases test LDAP filter generation."""
+
+    def setUp(self):
+        super(LDAPFilterQueryCompositionTest, self).setUp()
+        self.config_fixture.config(group='ldap',
+                                   url='ldap://localhost')
+
+        # create base_ldap object and inject an attribute mapping
+        self.base_ldap = ks_ldap.BaseLdap(CONF)
+        self.base_ldap.attribute_mapping = {
+            'password': 'userPassword',
+            'enabled': 'enabled',
+            'default_project_id': None,
+            'name': 'sn',
+            'email': 'mail'
+        }
+        self.base_ldap.get_connection()
+
+    def test_filter_with_query_and_no_hints_set(self):
+        hints = driver_hints.Hints()
+        query = ("(&(objectclass=groupOfNames)(member=cn=aaaaaa,ou=People"
+                 ",dc=local,dc=lan))")
+        self.assertEqual(query,
+                         self.base_ldap.filter_query(hints=hints, query=query))
+
+    def test_filter_with_empty_query_and_hints_set(self):
+        hints = driver_hints.Hints()
+        hints.add_filter(name=u'name',
+                         value=u'testuser',
+                         comparator='equals',
+                         case_sensitive=False)
+        self.assertEqual("(&(sn=testuser))",
+                         self.base_ldap.filter_query(hints=hints))
+
+    def test_filter_with_both_query_and_hints_set(self):
+        hints = driver_hints.Hints()
+        query = ("(&(objectClass=groupOfNames)(member=cn=aaaaaa,ou=People"
+                 ",dc=local,dc=lan))")
+        expected_result = ("(&(&(objectClass=groupOfNames)(member=cn=aaaaaa,"
+                           "ou=People,dc=local,dc=lan))(sn=testuser))")
+        hints.add_filter(name=u'name',
+                         value=u'testuser',
+                         comparator='equals',
+                         case_sensitive=False)
+        self.assertEqual(expected_result,
+                         self.base_ldap.filter_query(hints=hints, query=query))
