@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_3eaf762b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-21T23:03:33Z",
+      "side": 1,
+      "message": "The title should make it clear that this is fixing a bug.",
+      "revId": "a6b100721f6f700ebe9591507d779b7ccd2e26ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_de34e2fc",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-21T23:03:33Z",
+      "side": 1,
+      "message": "remove the comment it\u0027s obvious. Comments should say why the code is here.",
+      "revId": "a6b100721f6f700ebe9591507d779b7ccd2e26ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_7e3deedb",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-21T23:03:33Z",
+      "side": 1,
+      "message": "add a comment why \"aaaaaa\" was chosen, and why the rest of these values were chosen.",
+      "revId": "a6b100721f6f700ebe9591507d779b7ccd2e26ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_3e0bf62b",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-21T23:03:33Z",
+      "side": 1,
+      "message": "add a comment why \"testuser\" was chosen. If this testuser string is the same as the testuser string at line 531, make a variable so that it\u0027s self-documenting.",
+      "revId": "a6b100721f6f700ebe9591507d779b7ccd2e26ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_de1bc27f",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-21T23:03:33Z",
+      "side": 1,
+      "message": "add a comment why \"aaaaaa\" was chosen, and why the rest of these values were chosen.",
+      "revId": "a6b100721f6f700ebe9591507d779b7ccd2e26ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
