@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_65ce7d64",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-05-21T21:13:48Z",
+      "side": 1,
+      "message": "don\u0027t need certdir",
+      "revId": "363d7dc795094050518273247bee17e219249971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_c5bc11bd",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-05-21T21:13:48Z",
+      "side": 1,
+      "message": "you don\u0027t need tls_cacertdir if use_tls is false",
+      "revId": "363d7dc795094050518273247bee17e219249971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
