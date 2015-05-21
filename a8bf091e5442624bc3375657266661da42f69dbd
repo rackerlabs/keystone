@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_1b760c3e",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-21T22:04:51Z",
+      "side": 1,
+      "message": "nit: remove this whiteline.",
+      "revId": "a8bf091e5442624bc3375657266661da42f69dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_7b118003",
+        "filename": "keystone/tests/unit/test_access_info.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-21T22:04:51Z",
+      "side": 1,
+      "message": "can use self.assertRaise() here, instead force a error?",
+      "revId": "a8bf091e5442624bc3375657266661da42f69dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_3be66815",
+        "filename": "keystone/tests/unit/test_access_info.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-05-21T22:04:51Z",
+      "side": 1,
+      "message": "why not return directly\n return access_info.Domain(dom_data[\u0027id\u0027], dom_data[\u0027name\u0027])",
+      "revId": "a8bf091e5442624bc3375657266661da42f69dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
