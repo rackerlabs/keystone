@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_f44d7d9a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T00:38:49Z",
+      "side": 1,
+      "message": "suggest use @functools.wraps",
+      "revId": "701eba8538a1dee2e978dbee689d2efa1c74b931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_b43a65e5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T00:38:49Z",
+      "side": 1,
+      "message": "isn\u0027t this what\u0027s being changed? the class doesn\u0027t have to be a provider.",
+      "revId": "701eba8538a1dee2e978dbee689d2efa1c74b931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_943d29df",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T00:38:49Z",
+      "side": 1,
+      "message": "seems like this should be an error now, just like it\u0027s an error if event_callbacks isn\u0027t a dict.",
+      "revId": "701eba8538a1dee2e978dbee689d2efa1c74b931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
