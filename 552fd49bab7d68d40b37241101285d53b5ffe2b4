@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_bd48fab3",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "this should be in config_overrides like the other tests do.",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_f894408b",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "remove this comment it doesn\u0027t add anything.",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_3deaca74",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "why does this test need an attribute mapping? add a comment.\n\n # Override the default attribute mapping so the tests can use it.",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_7805f00e",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "(nit) change \"return\" to \"returned\"",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_183efcc0",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "so I think this is referring to the \u0027name\u0027 in the attribute mapping configured in setUp, use a variable so that it\u0027s obvious.",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_78885071",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "should have been changed to query \u003d uuid.uuid4().hex like the other places?",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_586d94ca",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-22T17:53:22Z",
+      "side": 1,
+      "message": "similar comment here -- I think this is referring to the \u0027name\u0027 in the attribute mapping configured in setUp, use a variable so that it\u0027s obvious.",
+      "revId": "552fd49bab7d68d40b37241101285d53b5ffe2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
