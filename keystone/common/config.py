@@ -24,14 +24,12 @@ _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
 
 FILE_OPTIONS = {
     None: [
-        cfg.StrOpt('admin_token', secret=True, default='ADMIN',
+        cfg.StrOpt('admin_token', secret=True,
                    help='A "shared secret" that can be used to bootstrap '
                         'Keystone. This "token" does not represent a user, '
-                        'and carries no explicit authorization. To disable '
-                        'in production (highly recommended), remove '
-                        'AdminTokenAuthMiddleware from your paste '
-                        'application pipelines (for example, in '
-                        'keystone-paste.ini).'),
+                        'and carries no explicit authorization. It is '
+                        'highly recommended to keep it disabled in '
+                        'production.'),
         cfg.StrOpt('public_endpoint',
                    help='The base public endpoint URL for Keystone that is '
                         'advertised to clients (NOTE: this does NOT affect '

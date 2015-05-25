@@ -116,6 +116,10 @@ class TestAuthInfo(test_v3.AuthTestMixin, testcase.TestCase):
 
 
 class TokenAPITests(object):
+    def config_overrides(self):
+        super(TokenAPITests, self).config_overrides()
+        self.config_fixture.config(admin_token='ADMIN')
+
     # Why is this not just setUP? Because TokenAPITests is not a test class
     # itself. If TokenAPITests became a subclass of the testcase, it would get
     # called by the enumerate-tests-in-file code. The way the functions get
@@ -437,6 +441,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestPKITokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='pki')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestPKITokenAPIs, self).setUp()
@@ -507,6 +512,7 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestUUIDTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='uuid')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestUUIDTokenAPIs, self).setUp()
@@ -3015,6 +3021,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             provider='pki',
             revoke_by_id=False)
         self.config_fixture.config(group='trust', enabled=True)
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestTrustAuth, self).setUp()
