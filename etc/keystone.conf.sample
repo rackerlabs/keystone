@@ -5,11 +5,10 @@
 #
 
 # A "shared secret" that can be used to bootstrap Keystone. This "token" does
-# not represent a user, and carries no explicit authorization. To disable in
-# production (highly recommended), remove AdminTokenAuthMiddleware from your
-# paste application pipelines (for example, in keystone-paste.ini). (string
-# value)
-#admin_token = ADMIN
+# not represent a user, and carries no explicit authorization. It is
+# highly recommended to keep it disabled in
+# production. (string value)
+#admin_token = <None>
 
 # The base public endpoint URL for Keystone that is advertised to clients
 # (NOTE: this does NOT affect how Keystone listens for connections). Defaults
