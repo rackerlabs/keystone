@@ -20,6 +20,7 @@ from keystone.tests import unit as tests
 
 
 CONF = cfg.CONF
+CONF.admin_token = "ADMIN"
 
 
 def make_request(**kwargs):
