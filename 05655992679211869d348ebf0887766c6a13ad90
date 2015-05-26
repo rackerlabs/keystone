@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_3bdcc445",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-26T21:47:00Z",
+      "side": 1,
+      "message": "I agree it should go in a separate patch, if we are going to fix this.\n\nAnd yes, as far as I know, we are deprecating assignment LDAP support in Liberty.",
+      "parentUuid": "da9b358b_e0ee8a8a",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_9904d415",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 32
@@ -48,6 +66,24 @@
       "writtenOn": "2015-03-30T23:24:40Z",
       "side": 1,
       "message": "What do these formatting changes have to do with the performance improvements?",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_fb7bcc27",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-26T21:47:00Z",
+      "side": 1,
+      "message": "Actually, this includes the performance improvement by passing the filters directly to drivers.\n\nAlso, it puts the business logic (expanding inherited and group role assignments) at the correct level, i.e, the manager.\n\nOnce we have that logic at the manager level, it needs to have a way to represent expanded role assignments to the controller level, which is responsible for formatting the results.\n\nSo this formatting changes are implied by the refactoring being done here.",
+      "parentUuid": "da9b358b_9904d415",
       "revId": "05655992679211869d348ebf0887766c6a13ad90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
