@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "7a016987_3b6cc407",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-26T22:04:47Z",
+      "side": 1,
+      "message": "isn\u0027t this now the .listener() mechanism?",
+      "revId": "701eba8538a1dee2e978dbee689d2efa1c74b931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_943d29df",
         "filename": "keystone/notifications.py",
         "patchSetId": 6
