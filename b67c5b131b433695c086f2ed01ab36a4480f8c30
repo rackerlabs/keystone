@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_fab40383",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-26T09:14:49Z",
+      "side": 1,
+      "message": "Just submitted a patch to remove these deprecated method.\nhttps://review.openstack.org/#/c/185541/",
+      "parentUuid": "7a016987_323085e8",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_524ae156",
         "filename": "setup.cfg",
         "patchSetId": 6
