@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "7a016987_7bb59cce",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-26T21:50:46Z",
+      "side": 1,
+      "message": "avoid updating sample conf by default.\nwe always try to do that in a separate patch, just update config.py",
+      "revId": "cc3b19c2b33e460b20d60b6d4f5ba223a63af1b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_5cbd5a01",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
