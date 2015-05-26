@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_f2ec2d2b",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-26T08:06:16Z",
+      "side": 1,
+      "message": "Since `CONF.auth.password` and `CONF.auth.token` don\u0027t has default value anymore, we need test it with other config which has default value.",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_323085e8",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-26T08:06:16Z",
+      "side": 1,
+      "message": "Shall we keep these deprecated method here? if so, why we not define `ExternalDefault` and `ExternalDomain`, if not, we need ignore `LegacyDefaultDomain` and `LegacyDomain` too.\n\nAnd we may need some testcases around this namespace since there is multiple plugins for this namespace.",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_524ae156",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-26T08:06:16Z",
+      "side": 1,
+      "message": "why we not define this entrypoint in the `keystone.auth.external` instead?  checked from the code, kerberos is also a external method. Seems like the change like this will have little impact on the existing testcase, but it looks a little weird.",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
