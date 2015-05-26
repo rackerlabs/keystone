@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "7a016987_986cdb09",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3acd31a7_8c0a3020",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_b84e7794",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "revert this too",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_ac2a8c7c",
         "filename": "keystone/common/sql/migrate_repo/versions/066_add_timestamp_to_project_and_role.py",
         "patchSetId": 19
@@ -71,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_182fcba2",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_add_timestamp_to_project_and_role.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3acd31a7_b11c2378",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_8c2110a2",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 19
@@ -82,6 +135,24 @@
       "writtenOn": "2015-05-04T11:22:03Z",
       "side": 1,
       "message": "Please revert unrelated change.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_f82bcf92",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3acd31a7_8c2110a2",
       "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +176,41 @@
     },
     {
       "key": {
+        "uuid": "7a016987_b81c3778",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3acd31a7_6c2474ae",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_9b08552a",
+        "filename": "keystone/tests/unit/backend/role/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "This is wrong. If you are doing this just to use assert* methods then they should be moved out of the ModelBase class and maybe into functions.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_4786aeba",
         "filename": "keystone/tests/unit/backend/role/core.py",
         "patchSetId": 19
@@ -116,6 +222,23 @@
       "writtenOn": "2015-05-12T01:13:22Z",
       "side": 1,
       "message": "Why you need to invert the parameters order?\n\nthis comment repeat in all the class.",
+      "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_db25adae",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-26T23:28:47Z",
+      "side": 1,
+      "message": "Same thing here",
       "revId": "353f9ffba28e7c8148a5cdbb550477731f3d666f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
