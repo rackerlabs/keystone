@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "7a016987_7fafbe7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-05-27T05:53:17Z",
+      "side": 1,
+      "message": "Seems valid.  The docs highly recommend disabling the admin_token after bootstrapping. \n\nSee http://docs.openstack.org/developer/keystone/configuringservices.html#admin-token",
+      "parentUuid": "7a016987_2949338f",
+      "revId": "cc3b19c2b33e460b20d60b6d4f5ba223a63af1b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_df4592b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-05-27T05:53:17Z",
+      "side": 1,
+      "message": "Agreed, this is messy for deployers.",
+      "revId": "cc3b19c2b33e460b20d60b6d4f5ba223a63af1b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_7bb59cce",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
