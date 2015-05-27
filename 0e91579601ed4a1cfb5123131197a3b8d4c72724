@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_3fadad88",
+        "filename": "keystone/contrib/endpoint_policy/migrate_repo/versions/001_add_endpoint_policy_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-27T15:57:12Z",
+      "side": 1,
+      "message": "This is the same error as the one in migration_helpers.py\n\nMaybe we could have a common error and use it in both places (since we will be migrating other extensions as well, and it could probably be used there).",
+      "revId": "0e91579601ed4a1cfb5123131197a3b8d4c72724",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
