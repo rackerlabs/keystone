@@ -319,7 +319,7 @@ class UnscopedPayload(BasePayload):
         :returns: the payload of an unscoped token
 
         """
-        b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
@@ -335,7 +335,7 @@ class UnscopedPayload(BasePayload):
                  audit_ids
 
         """
-        user_id = cls.convert_uuid_bytes_to_hex(payload[0])
+        user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
         expires_at_str = cls._convert_int_to_time_string(payload[2])
         audit_ids = list(map(provider.base64_encode, payload[3]))
@@ -357,7 +357,7 @@ class DomainScopedPayload(BasePayload):
         :returns: the payload of a domain-scoped token
 
         """
-        b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         try:
             b_domain_id = cls.convert_uuid_hex_to_bytes(domain_id)
@@ -381,7 +381,7 @@ class DomainScopedPayload(BasePayload):
                  expires_at_str, and audit_ids
 
         """
-        user_id = cls.convert_uuid_bytes_to_hex(payload[0])
+        user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
         try:
             domain_id = cls.convert_uuid_bytes_to_hex(payload[2])
@@ -412,9 +412,9 @@ class ProjectScopedPayload(BasePayload):
         :returns: the payload of a project-scoped token
 
         """
-        b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
-        b_project_id = cls.convert_uuid_hex_to_bytes(project_id)
+        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                            audit_ids))
@@ -429,9 +429,9 @@ class ProjectScopedPayload(BasePayload):
                  expires_at_str, and audit_ids
 
         """
-        user_id = cls.convert_uuid_bytes_to_hex(payload[0])
+        user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
-        project_id = cls.convert_uuid_bytes_to_hex(payload[2])
+        project_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
         expires_at_str = cls._convert_int_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
 
@@ -455,9 +455,9 @@ class TrustScopedPayload(BasePayload):
         :returns: the payload of a trust-scoped token
 
         """
-        b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
-        b_project_id = cls.convert_uuid_hex_to_bytes(project_id)
+        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
         b_trust_id = cls.convert_uuid_hex_to_bytes(trust_id)
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
@@ -475,9 +475,9 @@ class TrustScopedPayload(BasePayload):
                   expires_at_str, audit_ids, and trust_id
 
         """
-        user_id = cls.convert_uuid_bytes_to_hex(payload[0])
+        user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
-        project_id = cls.convert_uuid_bytes_to_hex(payload[2])
+        project_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
         expires_at_str = cls._convert_int_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
         trust_id = cls.convert_uuid_bytes_to_hex(payload[5])
@@ -504,7 +504,7 @@ class FederatedPayload(BasePayload):
 
         """
         def pack_group_ids(group_dict):
-            return cls.convert_uuid_hex_to_bytes(group_dict['id'])
+            return cls.attempt_convert_uuid_hex_to_bytes(group_dict['id'])
 
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
@@ -530,7 +530,7 @@ class FederatedPayload(BasePayload):
 
         """
         def unpack_group_ids(group_id_in_bytes):
-            group_id = cls.convert_uuid_bytes_to_hex(group_id_in_bytes)
+            group_id = cls.attempt_convert_uuid_bytes_to_hex(group_id_in_bytes)
             return {'id': group_id}
 
         user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
