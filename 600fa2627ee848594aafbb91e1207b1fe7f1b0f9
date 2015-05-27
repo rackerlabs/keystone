@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_1aa56203",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-27T15:23:36Z",
+      "side": 1,
+      "message": "Is this related to a bug or a blueprint?",
+      "revId": "600fa2627ee848594aafbb91e1207b1fe7f1b0f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_9a4b9259",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-27T15:23:36Z",
+      "side": 1,
+      "message": "this should be tested.",
+      "revId": "600fa2627ee848594aafbb91e1207b1fe7f1b0f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
