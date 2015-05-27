@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_093e42da",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1656,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-27T14:49:53Z",
+      "side": 1,
+      "message": "couldn\u0027t find a difference between the actual code in the tests from this class and the others. Wouldn\u0027t be the case to have a base test class where just the \"config_overrides\" method changes?",
+      "revId": "34ad4bd9f9474d5efa4d3353639983e9d9c0abec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
