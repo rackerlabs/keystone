@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_434d3c71",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-27T12:58:45Z",
+      "side": 1,
+      "message": "why we use set here? it\u0027s simple enough, tuple is okay.",
+      "revId": "9fd72c91d1a7ec21bae8f23b2bdb1281f71d29d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
