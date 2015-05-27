@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_1f6a0a1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-05-27T05:55:42Z",
+      "side": 1,
+      "message": "s/remove it in keystone/removes it in Liberty.",
+      "revId": "c6502456d246306a8776a8a5573f17157ee4d989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
