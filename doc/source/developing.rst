@@ -165,11 +165,16 @@ authentication.  The default value "ADMIN" is from the ``admin_token``
 option in the ``[DEFAULT]`` section in ``etc/keystone.conf``.
 
 Once run, you can see the sample data that has been created by using the
-`python-keystoneclient`_ command-line interface:
+openstackclient command-line interface:
 
 .. code-block:: bash
 
-    $ tools/with_venv.sh keystone --os-token ADMIN --os-endpoint http://127.0.0.1:35357/v2.0/ user-list
+    $ tools/with_venv.sh openstack --os-token ADMIN --os-endpoint http://127.0.0.1:35357/v2.0/ user list
+
+The openstackclient can be installed using the following:
+
+.. code-block:: bash
+    $ pip install python-openstackclient
 
 Filtering responsibilities between controllers and drivers
 ----------------------------------------------------------
