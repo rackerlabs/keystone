@@ -320,7 +320,7 @@ token for ``BETA`` once the SAML assertion is sent.
     $ curl -s -X PUT \
       -H "X-Auth-Token: $OS_TOKEN" \
       -H "Content-Type: application/json" \
-      -d '{"service_provider": {"auth_url": "http://beta.example.com:5000/v3/OS-FEDERATION/identity_providers/beta/protocols/saml2/auth", "sp_url": "https://example.com:5000/Shibboleth.sso/SAML2/ECP"}' \
+      -d '{"service_provider": {"auth_url": "http://beta.example.com:5000/v3/OS-FEDERATION/identity_providers/beta/protocols/saml2/auth", "sp_url": "https://example.com:5000/Shibboleth.sso/SAML2/ECP", "enabled": true}' \
       http://localhost:5000/v3/service_providers/BETA | python -mjson.tool
 
 Testing it all out
