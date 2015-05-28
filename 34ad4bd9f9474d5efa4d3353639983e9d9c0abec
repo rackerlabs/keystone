@@ -16,6 +16,24 @@
       "revId": "34ad4bd9f9474d5efa4d3353639983e9d9c0abec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_06d736ee",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1656,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-28T01:40:11Z",
+      "side": 1,
+      "message": "Rodrigo, it\u0027s not just a \"config_overrides\" changes in those testcases, we shouldnot provide a remote domain, and all the references with the remote domain should be changed to the reference with default domain instead.\n\nThe input is great, let me see whether some refactoring  work could be done here.",
+      "parentUuid": "7a016987_093e42da",
+      "revId": "34ad4bd9f9474d5efa4d3353639983e9d9c0abec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
