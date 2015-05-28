@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 2015.2.0.dev171\n"
+"Project-Id-Version: keystone 2015.2.0.dev217\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-05-15 06:07+0000\n"
+"POT-Creation-Date: 2015-05-28 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,21 +88,20 @@ msgstr ""
 msgid "Server error"
 msgstr ""
 
-#: keystone/contrib/endpoint_policy/core.py:132
-#: keystone/contrib/endpoint_policy/core.py:231
-#, python-format
-msgid ""
-"Circular reference or a repeated entry found in region tree - "
-"%(region_id)s."
-msgstr ""
-
-#: keystone/contrib/federation/idp.py:423
+#: keystone/contrib/federation/idp.py:426
 #, python-format
 msgid "Error when signing assertion, reason: %(reason)s"
 msgstr ""
 
 #: keystone/contrib/oauth1/core.py:136
 msgid "Cannot retrieve Authorization headers"
+msgstr ""
+
+#: keystone/endpoint_policy/core.py:132 keystone/endpoint_policy/core.py:231
+#, python-format
+msgid ""
+"Circular reference or a repeated entry found in region tree - "
+"%(region_id)s."
 msgstr ""
 
 #: keystone/openstack/common/loopingcall.py:95
