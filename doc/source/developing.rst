@@ -165,7 +165,7 @@ authentication.  The default value "ADMIN" is from the ``admin_token``
 option in the ``[DEFAULT]`` section in ``etc/keystone.conf``.
 
 Once run, you can see the sample data that has been created by using the
-`python-keystoneclient`_ command-line interface:
+`python-openstackclient`_ command-line interface:
 
 .. code-block:: bash
 
