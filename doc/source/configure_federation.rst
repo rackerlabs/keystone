@@ -326,16 +326,16 @@ token for ``BETA`` once the SAML assertion is sent.
 Testing it all out
 ------------------
 
-Lastly, if a scoped token and a Service Provider region are presented to
-Keystone, the result will be a full SAML Assertion, signed by the IdP
-Keystone, specifically intended for the Service Provider Keystone.
+Lastly, if a scoped token and a Service Provider scope are presented to
+Keystone, the result will be a full SAML Assertion, signed by the IdP Keystone,
+specifically intended for the Service Provider Keystone.
 
 .. code-block:: bash
 
     $ curl -s -X POST \
       -H "Content-Type: application/json" \
       -d '{"auth": {"scope": {"service_provider": {"id": "BETA"}}, "identity": {"token": {"id": "d793d935b9c343f783955cf39ee7dc3c"}, "methods": ["token"]}}}' \
-      http://localhost:5000/v3/auth/OS-FEDERATION/saml2
+      http://localhost:5000/v3/auth/OS-FEDERATION/saml2/ecp
 
 At this point the SAML Assertion can be sent to the Service Provider Keystone
 using the provided ``auth_url`` in the ``X-Auth-Url`` header present in the
