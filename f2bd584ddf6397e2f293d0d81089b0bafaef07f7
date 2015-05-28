@@ -16,6 +16,23 @@
       "revId": "f2bd584ddf6397e2f293d0d81089b0bafaef07f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_f66ef02d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-28T16:01:13Z",
+      "side": 1,
+      "message": "Are we supposed to log token values?",
+      "revId": "f2bd584ddf6397e2f293d0d81089b0bafaef07f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
