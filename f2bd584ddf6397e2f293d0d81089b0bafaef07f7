@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_b6e2b89e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-05-28T16:01:09Z",
+      "side": 1,
+      "message": "don\u0027t log the token itself, log the length.. and maaaybe a hash of it, if you really want to include it? there\u0027s some code somewhere (maybe in the client?) to do hashes in a consistent way",
+      "revId": "f2bd584ddf6397e2f293d0d81089b0bafaef07f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
