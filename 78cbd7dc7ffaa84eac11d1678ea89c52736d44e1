@@ -87,6 +87,24 @@
       "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_8c88c072",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-28T21:39:16Z",
+      "side": 1,
+      "message": "Fixed in next push.",
+      "parentUuid": "7a016987_537f0b17",
+      "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
