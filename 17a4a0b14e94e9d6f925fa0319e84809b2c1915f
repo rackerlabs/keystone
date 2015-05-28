@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_e09e2953",
+        "filename": "keystone/contrib/endpoint_policy/migrate_repo/versions/001_add_endpoint_policy_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-28T14:28:04Z",
+      "side": 1,
+      "message": "This statement will be executed directly, and thus, `gate-keystone-docs` will failed at this point, suggest to run this statement conditionally. Do it when upgrade is invoked?",
+      "revId": "17a4a0b14e94e9d6f925fa0319e84809b2c1915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
