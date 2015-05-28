@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_4cbd36d6",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-05-28T15:41:46Z",
+      "side": 1,
+      "message": "other than the addition of audit_ids, this was just as correct before the change as it is after. the response may be scoped or unscoped, as the description states",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_4c92d64c",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-05-28T15:41:46Z",
+      "side": 1,
+      "message": "other than the addition of audit ids (and two is correct here), there\u0027s no reason this should be an unscoped token",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
