@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_846bf4b8",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-05-28T23:16:28Z",
+      "side": 1,
+      "message": "might be useful to add a note above that SP are disabled default that\u0027s why were passing \"enabled\": true here.",
+      "revId": "9e48075edc3c8d2cb2614ee50b4a88da763916dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
