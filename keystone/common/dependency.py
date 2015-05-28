@@ -309,3 +309,4 @@ def reset():
     _REGISTRY.clear()
     _future_dependencies.clear()
     _future_optionals.clear()
+    _factories.clear()
