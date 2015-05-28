@@ -33,6 +33,24 @@
       "revId": "600fa2627ee848594aafbb91e1207b1fe7f1b0f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_4164f8e3",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2015-05-28T02:04:19Z",
+      "side": 1,
+      "message": "is keystone testing the policy.json file? Could you show me an example?",
+      "parentUuid": "7a016987_9a4b9259",
+      "revId": "600fa2627ee848594aafbb91e1207b1fe7f1b0f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
