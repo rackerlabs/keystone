@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_8aff9600",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-28T13:35:27Z",
+      "side": 1,
+      "message": "no bp?",
+      "revId": "d2d0b4bba50a4dd8a980e31f630d1261fc6b9850",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_87954fe5",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-28T13:35:27Z",
+      "side": 1,
+      "message": "what about service_providers?",
+      "revId": "d2d0b4bba50a4dd8a980e31f630d1261fc6b9850",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_4744f772",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-28T13:35:27Z",
+      "side": 1,
+      "message": "ServiceProviders too :)",
+      "revId": "d2d0b4bba50a4dd8a980e31f630d1261fc6b9850",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
