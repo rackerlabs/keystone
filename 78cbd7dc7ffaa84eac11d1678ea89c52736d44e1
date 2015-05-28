@@ -69,6 +69,24 @@
       "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_537f0b17",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-28T20:15:17Z",
+      "side": 1,
+      "message": "if the server is just doing weird stuff then I\u0027m ok with a skip. The comment needs to be accurate though -- in this case it seems like we\u0027re skipping because the server would raise not implemented, not that it exhibits weird behavior that we don\u0027t really care about.",
+      "parentUuid": "7a016987_807ac786",
+      "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
