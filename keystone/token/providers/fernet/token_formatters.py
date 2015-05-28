@@ -25,7 +25,7 @@ from six.moves import map, urllib
 
 from keystone.auth import plugins as auth_plugins
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LW
 from keystone.token import provider
 from keystone.token.providers.fernet import utils
 
@@ -150,6 +150,11 @@ class TokenFormatter(object):
         versioned_payload = (version,) + payload
         serialized_payload = msgpack.packb(versioned_payload)
         token = self.pack(serialized_payload)
+
+        if len(token) > 255:
+            LOG.warning(_LW('Fernet token created with length of %d '
+                            'characters, which exceeds 255 characters'),
+                        len(token))
 
         return token
 
