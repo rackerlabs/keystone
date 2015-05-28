@@ -326,9 +326,9 @@ token for ``BETA`` once the SAML assertion is sent.
 Testing it all out
 ------------------
 
-Lastly, if a scoped token and a Service Provider region are presented to
-Keystone, the result will be a full SAML Assertion, signed by the IdP
-Keystone, specifically intended for the Service Provider Keystone.
+Lastly, if a scoped token and a Service Provider scope are presented to
+Keystone the result will be a full SAML Assertion, signed by the IdP Keystone,
+specifically intended for the Service Provider Keystone.
 
 .. code-block:: bash
 
