@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Dave Walker <email@daviey.com>
+Workflow+1: Dave Walker <email@daviey.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+1: Iury Gregory Melo Ferreira <iurygregory@gmail.com>
+Code-Review+1: dane-fichter <dane.fichter@jhuapl.edu>
+Submitted-by: Jenkins
+Submitted-at: Thu, 28 May 2015 13:36:49 +0000
+Reviewed-on: https://review.openstack.org/177670
+Project: openstack/keystone
+Branch: refs/heads/stable/kilo
