@@ -151,6 +151,10 @@ class TokenFormatter(object):
         serialized_payload = msgpack.packb(versioned_payload)
         token = self.pack(serialized_payload)
 
+        if len(token) > 255:
+            LOG.warning(_LW('Fernet token created exceeding 255 characters in '
+                            'length: %s'), token)
+
         return token
 
     def validate_token(self, token):
