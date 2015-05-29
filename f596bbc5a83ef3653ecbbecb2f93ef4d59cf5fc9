@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_fa659544",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-05-29T10:35:09Z",
+      "side": 1,
+      "message": "We are not limiting token size; but just warning in the case it is longer than 255 chars.\n\nWhy 255 ? 255 is commonly the max that fits in the index field of a database table.\n\nIt can be longer in some cases, but in general they are limited to that value. As example, see:\n\n\"The length of a CHAR column is fixed to the length that you declare when you create the table. The length can be any value from 0 to 255.\"\n\nhttps://dev.mysql.com/doc/refman/5.7/en/char.html",
+      "parentUuid": "7a016987_ae6b66b8",
+      "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_931e986e",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
