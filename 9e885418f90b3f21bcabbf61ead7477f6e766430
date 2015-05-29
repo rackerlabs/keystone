@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_ff2eaa8a",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T08:35:44Z",
+      "side": 1,
+      "message": "There will be no service catalog returned regardless the existing token is scoped or unscoped.",
+      "revId": "9e885418f90b3f21bcabbf61ead7477f6e766430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
