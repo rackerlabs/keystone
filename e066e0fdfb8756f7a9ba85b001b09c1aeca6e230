@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a016987_b313d4b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-29T03:00:38Z",
+      "side": 1,
+      "message": "\"long\" isn\u0027t defined anywhere, could add a message to explain the intent of this change? like in the suggestion given in the token_formatters.py file.",
+      "revId": "e066e0fdfb8756f7a9ba85b001b09c1aeca6e230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_137bc829",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 3
