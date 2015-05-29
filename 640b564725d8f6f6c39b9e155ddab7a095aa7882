@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_cef457f2",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-29T12:16:38Z",
+      "side": 1,
+      "message": "with current design i actually do not have  any better idea how to workaround this :/",
+      "parentUuid": "7a016987_981f3b5b",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_3a67f026",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
