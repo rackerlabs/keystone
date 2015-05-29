@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_d329b09c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-29T03:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_b313d4b7",
+      "revId": "e066e0fdfb8756f7a9ba85b001b09c1aeca6e230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_137bc829",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-29T02:50:51Z",
       "side": 1,
       "message": "Why not 512 ? 1024 ?\n\nI think a comment would help maintainability, and ease the comprehension by people still getting familiar with this code.\n\nDiscussing on IRC with dstanek and ayoung, we agreed that 255 is the max because needs to fit in the index field of a database table. Even if they aren\u0027t persisted in Keystone, they might be elsewhere, and the goal is to make them small enough to fit in those fields.",
+      "revId": "e066e0fdfb8756f7a9ba85b001b09c1aeca6e230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_536f00fc",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-05-29T03:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_137bc829",
       "revId": "e066e0fdfb8756f7a9ba85b001b09c1aeca6e230",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
