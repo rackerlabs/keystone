@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_387903c9",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T02:22:43Z",
+      "side": 1,
+      "message": "Steve, I talked with the Dolph, maybe the reason here is we need a default scope then we can get back the service catalog, config a default project, assign a role and so on... these is not explicitly pointed out in the doc. \n*default scope* is actually a little bit ambiguous.",
+      "parentUuid": "7a016987_ac2f0aa0",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_4c92d64c",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2015-05-28T15:49:59Z",
       "side": 1,
       "message": "i\u0027d prefer the service catalog in this example please",
+      "parentUuid": "7a016987_4c92d64c",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_38b22395",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T02:22:43Z",
+      "side": 1,
+      "message": "so, at least, we will give some comment here that this example is for *default scope*, or else, there will be no service catalog returned by default.",
       "parentUuid": "7a016987_4c92d64c",
       "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
