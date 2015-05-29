@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_0f64a9b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T13:46:24Z",
+      "side": 1,
+      "message": "reference",
+      "revId": "c24b3f4419dffa1512b22721c0f9b79894a34aae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_cfb571ed",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T13:46:24Z",
+      "side": 1,
+      "message": "This sounds strange to me. The only reason the result is an ECP assertion is because you are requesting it.",
+      "revId": "c24b3f4419dffa1512b22721c0f9b79894a34aae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
