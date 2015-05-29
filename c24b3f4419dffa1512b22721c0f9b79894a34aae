@@ -51,6 +51,24 @@
       "revId": "c24b3f4419dffa1512b22721c0f9b79894a34aae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_daf3ee71",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T15:36:33Z",
+      "side": 1,
+      "message": "Not really. I\u0027m not sure what you are trying to say. The phrase \"if a scoped token...result will be a full ECP SAML Assertion\" is only true if you are going to the ECP url. I think this section should make it clear that it is about testing ECP.",
+      "parentUuid": "7a016987_61cfb156",
+      "revId": "c24b3f4419dffa1512b22721c0f9b79894a34aae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
