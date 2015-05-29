@@ -87,6 +87,23 @@
       "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_12571f5b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-05-29T22:27:45Z",
+      "side": 1,
+      "message": "I am not convinced this is something the operator can do anything about. This is likely a Log Info. We have long had issues with long tokens, this is nothing new.\n\nWarning seems excessively high here.",
+      "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
