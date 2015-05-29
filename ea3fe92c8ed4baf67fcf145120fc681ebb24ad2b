@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a016987_bce5c709",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-29T19:17:36Z",
+      "side": 1,
+      "message": "wrap this with:\n\n  `openstackclient`_\n\nand somewhere else add the line:\n\n  .. _`openstackclient`: https://git.openstack.org/cgit/openstack/python-openstackclient",
+      "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_9cee8beb",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-29T19:17:36Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_ce7569cb",
         "filename": "doc/source/developing.rst",
         "patchSetId": 6
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_5c75b395",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-29T19:17:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a016987_ce7569cb",
+      "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_ce2329bc",
         "filename": "doc/source/developing.rst",
         "patchSetId": 6
@@ -30,6 +82,23 @@
       "writtenOn": "2015-05-29T18:26:26Z",
       "side": 1,
       "message": "I think we should use with_venv.sh to install pip too. As written this will install it globally on the machine, but we document running the command with with_venv.sh.",
+      "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_dccf637d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-05-29T19:17:36Z",
+      "side": 1,
+      "message": "drop \"The\" and write it as \"openstackclient\"",
       "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
