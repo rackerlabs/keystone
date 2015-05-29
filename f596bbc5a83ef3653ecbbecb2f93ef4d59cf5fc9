@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a016987_ae6b66b8",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T05:58:47Z",
+      "side": 1,
+      "message": "I am not positive on 255 characters limitation.\n\nmysql has this claim about it\u0027s index size limitation, \u0027By default, an index key for a single-column index can be up to 767 bytes\u0027.\n\nSo, is it appropriate to thrown such a warning when mysql is in use? not object to this change but we may consider how many characters is really safe.",
+      "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_931e986e",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
