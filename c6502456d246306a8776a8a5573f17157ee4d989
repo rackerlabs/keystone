@@ -34,6 +34,24 @@
       "revId": "c6502456d246306a8776a8a5573f17157ee4d989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_1505d778",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T15:52:41Z",
+      "side": 1,
+      "message": "actually it should read: \"This change removed it from keystone\"",
+      "parentUuid": "7a016987_2eb0f28a",
+      "revId": "c6502456d246306a8776a8a5573f17157ee4d989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
