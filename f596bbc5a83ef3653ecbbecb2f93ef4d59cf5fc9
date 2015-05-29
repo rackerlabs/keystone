@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_d50bbfd3",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T15:46:50Z",
+      "side": 1,
+      "message": "I think this is a good compromise. The mentioned 767 isn\u0027t entirely correct. \n\n\"Prefix support and lengths of prefixes (where supported) are storage engine dependent. For example, a prefix can be up to 1000 bytes long for MyISAM tables, and 767 bytes for InnoDB tables. The NDBCLUSTER storage engine does not support prefixes (see Section 17.1.5.6, “Unsupported or Missing Features in MySQL Cluster”).\"\n\nAnd that is MySQL...other datastores may be different.",
+      "parentUuid": "7a016987_a927d510",
+      "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_931e986e",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
