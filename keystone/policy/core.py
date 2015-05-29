@@ -29,6 +29,7 @@ CONF = cfg.CONF
 
 
 @dependency.provider('policy_api')
+@dependency.requires('catalog_api', 'endpoint_policy_api')
 class Manager(manager.Manager):
     """Default pivot point for the Policy backend.
 
@@ -67,6 +68,18 @@ class Manager(manager.Manager):
 
     @manager.response_truncated
     def list_policies(self, hints=None):
+        if hints:
+            url_hint = [h for h in hints.filters if h['name'] == 'url']
+            if url_hint:
+                # If there is a filter for service endpoint URL, retrieve the
+                # correspondent endpoint and return its policy, if associated.
+                endpoints = self.catalog_api.list_endpoints(hints=hints)
+                if endpoints:
+                    policy = self.endpoint_policy_api.get_policy_for_endpoint(
+                        endpoints[0]['id'])
+                    return [policy]
+                return []
+
         # NOTE(henry-nash): Since the advantage of filtering or list limiting
         # of policies at the driver level is minimal, we leave this to the
         # caller.

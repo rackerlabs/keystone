@@ -44,6 +44,21 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         r = self.get('/policies')
         self.assertValidPolicyListResponse(r, ref=self.policy)
 
+    def test_list_policies_by_url(self):
+        """Call ``GET /policies?url=<endpoint_url>``."""
+
+        endpoint = self.new_endpoint_ref(self.service['id'], enabled=True)
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+        url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+               '/endpoints/%(endpoint_id)s') % {
+                   'policy_id': self.policy['id'],
+                   'endpoint_id': endpoint['id']}
+        self.put(url)
+
+        r = self.get('/policies?url=%s' % endpoint['url'])
+        self.assertValidPolicyListResponse(r, ref=self.policy)
+
     def test_get_policy(self):
         """Call ``GET /policies/{policy_id}``."""
         r = self.get(
