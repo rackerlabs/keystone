@@ -16,6 +16,24 @@
       "revId": "c2f1995de5d7f410c992f7ff8a9ce6628a884101",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_01500bd3",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-05-29T06:48:49Z",
+      "side": 1,
+      "message": "good point, bbut maybe let\u0027s try using SAML ECP assertion? ECP stands for \"Enhanced Client or Proxy\" and we wrap assertions with SOAP.\nLet\u0027s also be very specific which keystone we mean, and almost always specify whether this is local/idp keystone or remote/service provider.",
+      "parentUuid": "7a016987_abe598a4",
+      "revId": "c2f1995de5d7f410c992f7ff8a9ce6628a884101",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
