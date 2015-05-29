@@ -55,6 +55,42 @@
     },
     {
       "key": {
+        "uuid": "7a016987_bf9b9217",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_ac2f0aa0",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_dfc88e24",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T08:35:38Z",
+      "side": 1,
+      "message": "As we talk in the IRC, it think it make sense to get service catalog if there is *default scope* for the user, although I cannot make it happen in my sides (assignment, role etc. is correct though).",
+      "parentUuid": "7a016987_4cbd36d6",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_4c92d64c",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 1
@@ -102,6 +138,24 @@
       "side": 1,
       "message": "so, at least, we will give some comment here that this example is for *default scope*, or else, there will be no service catalog returned by default.",
       "parentUuid": "7a016987_4c92d64c",
+      "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_dfbd2e69",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-29T08:35:38Z",
+      "side": 1,
+      "message": "@Steve, we should ignore service catalog in this case, pls check my inline comment in the next PS, thanks.",
+      "parentUuid": "7a016987_8c2a0e8f",
       "revId": "1469cb820a1ad19ddaf048637ccb446c3d6187be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
