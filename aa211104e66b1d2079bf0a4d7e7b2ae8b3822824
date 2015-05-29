@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_cff9e081",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T21:43:35Z",
+      "side": 1,
+      "message": "What does this block have to do with adding a unique constraint?",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_6fbe6caf",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_constraint_endpoint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T21:43:35Z",
+      "side": 1,
+      "message": "(nit) add newline here",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_4fde1012",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_constraint_endpoint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T21:43:35Z",
+      "side": 1,
+      "message": "(nit) remove newline here",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_8f4648be",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T21:43:35Z",
+      "side": 1,
+      "message": "I don\u0027t think this should be a server error. It should be some sort of 4XX. Probably a validation error.",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
