@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_ce7569cb",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T18:26:26Z",
+      "side": 1,
+      "message": "I tried building the docs locally and it failed because there needs to be a space above the pip install line.",
+      "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_ce2329bc",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-05-29T18:26:26Z",
+      "side": 1,
+      "message": "I think we should use with_venv.sh to install pip too. As written this will install it globally on the machine, but we document running the command with with_venv.sh.",
+      "revId": "ea3fe92c8ed4baf67fcf145120fc681ebb24ad2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
