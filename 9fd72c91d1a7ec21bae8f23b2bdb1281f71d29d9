@@ -34,6 +34,24 @@
       "revId": "9fd72c91d1a7ec21bae8f23b2bdb1281f71d29d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_3356c45c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-29T03:02:40Z",
+      "side": 1,
+      "message": "actually, I believe this should be a \"frozenset\"?",
+      "parentUuid": "7a016987_e1e9a41b",
+      "revId": "9fd72c91d1a7ec21bae8f23b2bdb1281f71d29d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
