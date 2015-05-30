@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 2015.2.0.dev171\n"
+"Project-Id-Version: keystone 2015.2.0.dev221\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-05-15 06:07+0000\n"
+"POT-Creation-Date: 2015-05-30 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -463,7 +463,7 @@ msgstr ""
 msgid "Method not callable: %s"
 msgstr ""
 
-#: keystone/assignment/controllers.py:107 keystone/identity/controllers.py:69
+#: keystone/assignment/controllers.py:107 keystone/identity/controllers.py:71
 #: keystone/resource/controllers.py:78
 msgid "Name field is required and cannot be empty"
 msgstr ""
@@ -959,42 +959,37 @@ msgstr ""
 msgid "Endpoint Group Project Association not found"
 msgstr ""
 
-#: keystone/contrib/endpoint_policy/core.py:261
-#, python-format
-msgid "No policy is associated with endpoint %(endpoint_id)s."
-msgstr ""
-
-#: keystone/contrib/federation/controllers.py:290
+#: keystone/contrib/federation/controllers.py:274
 msgid "Missing entity ID from environment"
 msgstr ""
 
-#: keystone/contrib/federation/controllers.py:298
+#: keystone/contrib/federation/controllers.py:282
 msgid "Request must have an origin query parameter"
 msgstr ""
 
-#: keystone/contrib/federation/controllers.py:312
+#: keystone/contrib/federation/controllers.py:296
 #, python-format
 msgid "%(host)s is not a trusted dashboard host"
 msgstr ""
 
-#: keystone/contrib/federation/controllers.py:342
+#: keystone/contrib/federation/controllers.py:326
 msgid "Use a project scoped token when attempting to create a SAML assertion"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:467
+#: keystone/contrib/federation/idp.py:470
 #, python-format
 msgid "Cannot open certificate %(cert_file)s. Reason: %(reason)s"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:534
+#: keystone/contrib/federation/idp.py:537
 msgid "Ensure configuration option idp_entity_id is set."
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:537
+#: keystone/contrib/federation/idp.py:540
 msgid "Ensure configuration option idp_sso_endpoint is set."
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:557
+#: keystone/contrib/federation/idp.py:560
 msgid ""
 "idp_contact_type must be one of: [technical, other, support, "
 "administrative or billing."
@@ -1123,11 +1118,16 @@ msgstr ""
 msgid "Failed to validate token"
 msgstr ""
 
-#: keystone/identity/controllers.py:72
+#: keystone/endpoint_policy/core.py:261
+#, python-format
+msgid "No policy is associated with endpoint %(endpoint_id)s."
+msgstr ""
+
+#: keystone/identity/controllers.py:74
 msgid "Enabled field must be a boolean"
 msgstr ""
 
-#: keystone/identity/controllers.py:98
+#: keystone/identity/controllers.py:100
 msgid "Enabled field should be a boolean"
 msgstr ""
 
