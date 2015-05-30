@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_0476b205",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T14:46:04Z",
+      "side": 1,
+      "message": "This does assert that 200 is returned, since that\u0027s the default.",
+      "parentUuid": "7a016987_bc2cf24a",
+      "revId": "680848613557a83d24bb99865f67c91a9433510d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_787c66b5",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
