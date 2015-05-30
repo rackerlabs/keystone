@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_048fd275",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:38:07Z",
+      "side": 1,
+      "message": "change \"for pure\" to \"a pure\"",
+      "revId": "58e5fb6379cda58b719a861e889b4e573c8dd9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
