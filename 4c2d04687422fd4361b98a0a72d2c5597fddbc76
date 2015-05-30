@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_41613c04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "change \"This\" to \"The pysaml2\"",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_215c004a",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "consistently use one import per line.\n\nAlso, should be importing modules rather than symbols.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_0157c426",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "this should be in a separate section per OpenStack guidelines.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_e1514831",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "add a comment why this wouldn\u0027t be available.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_41281c9a",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "I thought the templates typically used %HOST% for replacement.\n\nAlso, add a comment that this is meant to be replaced.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_012ea4a4",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "Add a comment that this is meant to be replaced.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_c133ec12",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "indentation here is off.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_a136b000",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "remove commented-out code.",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_813974f4",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T13:03:37Z",
+      "side": 1,
+      "message": "remove confusing comment",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
