@@ -36,12 +36,4 @@ from keystone.common import environment
 # entry point.
 def main():
     environment.use_stdlib()
-
-    dev_conf = os.path.join(possible_topdir,
-                            'etc',
-                            'keystone.conf')
-    config_files = None
-    if os.path.exists(dev_conf):
-        config_files = [dev_conf]
-
-    cli.main(argv=sys.argv, config_files=config_files)
+    cli.main(argv=sys.argv)
