@@ -36,4 +36,4 @@ from keystone.server import eventlet as eventlet_server
 
 # entry point.
 def main():
-    eventlet_server.run(possible_topdir)
+    eventlet_server.run()
