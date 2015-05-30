@@ -41,6 +41,7 @@ MIGRATED_EXTENSIONS = ['endpoint_policy',
                        'federation',
                        'oauth1',
                        'revoke',
+                       'endpoint_filter'
                        ]
 
 

@@ -711,6 +711,29 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
 
+    def test_endpoint_filter_upgrade(self):
+        def assert_v1_tables():
+            self.assertTableColumns('project_endpoint',
+                                    ['endpoint_id', 'project_id'])
+            self.assertTableDoesNotExist('endpoint_group')
+            self.assertTableDoesNotExist('project_endpoint_group')
+
+        def assert_v2_tables():
+            self.assertTableColumns('project_endpoint',
+                                    ['endpoint_id', 'project_id'])
+            self.assertTableColumns('endpoint_group',
+                                    ['id', 'name', 'description', 'filters'])
+            self.assertTableColumns('project_endpoint_group',
+                                    ['endpoint_group_id', 'project_id'])
+
+        self.assertTableDoesNotExist('project_endpoint')
+        self.upgrade(85)
+        assert_v1_tables()
+        self.assertTableColumns('project_endpoint',
+                                ['endpoint_id', 'project_id'])
+        self.upgrade(86)
+        assert_v2_tables()
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
