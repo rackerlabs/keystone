@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_0480f289",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T16:37:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_5c6d1798",
+      "revId": "953623b29becf4c94fbd859399182429867b15a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_fc25e3ad",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-27T15:39:43Z",
       "side": 1,
       "message": "Should we be logging something here? It might make the deprecation error below a little more clear since it\u0027s not completely clear to the user that we are trying Stevedore first, failing, and using a deprecated utility.",
+      "revId": "953623b29becf4c94fbd859399182429867b15a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_2793f05c",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-05-30T16:37:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_fc25e3ad",
       "revId": "953623b29becf4c94fbd859399182429867b15a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
