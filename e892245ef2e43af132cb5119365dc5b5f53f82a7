@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_03da2f4b",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-05-30T00:57:01Z",
+      "side": 1,
+      "message": "urlparse(0 to make it safe as a parameter",
+      "revId": "e892245ef2e43af132cb5119365dc5b5f53f82a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_23c08b4f",
+        "filename": "keystone/tests/unit/test_v3_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-05-30T00:57:01Z",
+      "side": 1,
+      "message": "urlencodeded",
+      "revId": "e892245ef2e43af132cb5119365dc5b5f53f82a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
