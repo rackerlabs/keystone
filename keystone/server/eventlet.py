@@ -14,7 +14,6 @@
 #    under the License.
 
 import logging
-import os
 import socket
 
 from oslo_concurrency import processutils
@@ -119,17 +118,9 @@ def configure_threading():
     environment.use_eventlet(monkeypatch_thread)
 
 
-def run(possible_topdir):
-    dev_conf = os.path.join(possible_topdir,
-                            'etc',
-                            'keystone.conf')
-    config_files = None
-    if os.path.exists(dev_conf):
-        config_files = [dev_conf]
-
+def run():
     common.configure(
         version=pbr.version.VersionInfo('keystone').version_string(),
-        config_files=config_files,
         pre_setup_logging_fn=configure_threading)
 
     paste_config = config.find_paste_config()
