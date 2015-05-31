@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_3824310b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-05-31T04:00:39Z",
+      "side": 1,
+      "message": "`--config-file` can be used to specify a config file but we load \u0027keystone.conf\u0027 for example in the code as the default config, imo `--config-file option` is not a reason we should remove the default loading of config files? but oslo_config maybe a good reason to drop this.",
+      "revId": "8511a4a5e4ecc2ec4251757fd31c02dbf50e0e90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
