@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_98332562",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-05-31T04:27:08Z",
+      "side": 1,
+      "message": "stevedore looks like it provides a great API!",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_18da9517",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-05-31T04:27:08Z",
+      "side": 1,
+      "message": "So you created a private function so that you had a way to use the versions decorator. Very nice!  I\u0027m gonna remember that!",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_d8c99d27",
+        "filename": "keystone/tests/unit/auth/test_controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-05-31T04:27:08Z",
+      "side": 1,
+      "message": "This is a really cool test case!  Looks like you set stevedore.DriverManager to throw a RuntimeError via mockpatch so you can test  the fallback case.  I love how you added this into the existing testcase.  This is serious craftsmanship!",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_785bc986",
+        "filename": "keystone/tests/unit/auth/test_controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-05-31T04:27:08Z",
+      "side": 1,
+      "message": "Nice comment! Very helpful",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
