@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "7a016987_78a06942",
+        "filename": "keystone/tests/unit/auth/test_controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-05-31T04:35:43Z",
+      "side": 1,
+      "message": "I feel like we should be stubbing the returns with stevedore\u0027s inbuilt test objects:\n\nhttps://github.com/openstack/stevedore/blob/master/stevedore/driver.py#L53",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_d8c99d27",
         "filename": "keystone/tests/unit/auth/test_controllers.py",
         "patchSetId": 7
