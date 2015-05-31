@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_e8b804ca",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-31T14:52:03Z",
+      "side": 1,
+      "message": "isn\u0027t always used? in the load_auth_method() the first attempt is to always use stevedore first",
+      "parentUuid": "7a016987_f8a33941",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_98332562",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
@@ -30,6 +48,23 @@
       "writtenOn": "2015-05-31T04:27:08Z",
       "side": 1,
       "message": "stevedore looks like it provides a great API!",
+      "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_28c3bc39",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-05-31T14:52:03Z",
+      "side": 1,
+      "message": "why not extract this to a private method as too (lines 49 - 51)? the code would look much cleaner.",
       "revId": "b94e835ad3ce1bb105b5551a9e8441875fe3d65c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
