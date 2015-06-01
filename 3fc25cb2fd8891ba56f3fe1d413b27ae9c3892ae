@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_8bb4b1d1",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-01T16:27:17Z",
+      "side": 1,
+      "message": "`openstackclient`_",
+      "revId": "3fc25cb2fd8891ba56f3fe1d413b27ae9c3892ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
