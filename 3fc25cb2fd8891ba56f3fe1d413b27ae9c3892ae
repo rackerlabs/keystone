@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_0b1d61bd",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-01T16:29:12Z",
+      "side": 1,
+      "message": "two spaces here (after the prompt) and after .sh",
+      "revId": "3fc25cb2fd8891ba56f3fe1d413b27ae9c3892ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_2bdb7d1d",
         "filename": "tools/sample_data.sh",
         "patchSetId": 7
