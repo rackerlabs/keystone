@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_f60e60e4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-06-01T23:25:59Z",
+      "side": 1,
+      "message": "nit: this comment is going to be confusing when we come back to it later - 30% of what? it\u0027s more a review comment than a code comment.",
+      "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
