@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_94b529ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "s/A/In?",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_34c79565",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "d/,\ns/specifiec/specific",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_f48a1d1a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "DocImpact: Configuration value will need to be documented.",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_d4096196",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "Didn\u0027t see any difference between this router and ...",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_f4069d84",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "... this.",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_f42d7dfe",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "Need to remove the blank space between \u0027default\u0027 and \u0027association\u0027, \u0027a\u0027 and \u0027policy\u0027.",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_141a59c6",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "what does this mean? I think this is only for debugging purpose?",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_34767506",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "s/in it policy/in it policy association",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_6fd416eb",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "Nice comments! so we know why we didn\u0027t remove this testcase instead.",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_afe56edc",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "This docstring is identical with ...",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_2fc3be39",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:46:58Z",
+      "side": 1,
+      "message": "... this docstring, obviously, they two testcases are used to test different scenarios, we need rename the docstring here.",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
