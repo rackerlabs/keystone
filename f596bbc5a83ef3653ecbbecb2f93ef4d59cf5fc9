@@ -121,6 +121,24 @@
       "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_428d9e2f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-01T15:23:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_12571f5b",
+      "revId": "f596bbc5a83ef3653ecbbecb2f93ef4d59cf5fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
