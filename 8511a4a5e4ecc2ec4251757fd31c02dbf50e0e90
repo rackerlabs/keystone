@@ -16,6 +16,24 @@
       "revId": "8511a4a5e4ecc2ec4251757fd31c02dbf50e0e90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_39ac308b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2015-06-01T01:23:10Z",
+      "side": 1,
+      "message": "yes, this change has removed the process that generate the config file path in keystone code, like this: /opt/stack/keystone/etc/keystone.conf (in a devstack environment)\n\nI meant oslo_config lib can load config file specified by \"--config-file\" without explicit config file path.",
+      "parentUuid": "7a016987_3824310b",
+      "revId": "8511a4a5e4ecc2ec4251757fd31c02dbf50e0e90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
