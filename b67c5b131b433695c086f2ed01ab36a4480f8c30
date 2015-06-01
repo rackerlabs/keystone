@@ -102,6 +102,24 @@
       "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_0224490a",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T14:20:41Z",
+      "side": 1,
+      "message": "Seems not, since here need different namespace to distinguish each plugin.",
+      "parentUuid": "7a016987_49c46f5e",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
