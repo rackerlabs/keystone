@@ -16,6 +16,57 @@
       "revId": "3fc25cb2fd8891ba56f3fe1d413b27ae9c3892ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_2bdb7d1d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-01T16:28:28Z",
+      "side": 1,
+      "message": "openstackclient* one word",
+      "revId": "3fc25cb2fd8891ba56f3fe1d413b27ae9c3892ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_abe64de6",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-01T16:28:28Z",
+      "side": 1,
+      "message": "should the last bit be lower cased for consistency?",
+      "revId": "3fc25cb2fd8891ba56f3fe1d413b27ae9c3892ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_2b493dd1",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-01T16:28:28Z",
+      "side": 1,
+      "message": "CINDER_PASSWORD and NEUTRON_PASSWORD are not used, do we need them?",
+      "revId": "3fc25cb2fd8891ba56f3fe1d413b27ae9c3892ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
