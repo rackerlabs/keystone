@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_6f053644",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:58:50Z",
+      "side": 1,
+      "message": "This is for V2 compatibility?",
+      "parentUuid": "7a016987_d4096196",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_f4069d84",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 8
@@ -132,6 +150,24 @@
       "writtenOn": "2015-06-01T04:46:58Z",
       "side": 1,
       "message": "s/in it policy/in it policy association",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_af9d6e0b",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T04:58:50Z",
+      "side": 1,
+      "message": "s/in it policy/in policy association",
+      "parentUuid": "7a016987_34767506",
       "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
