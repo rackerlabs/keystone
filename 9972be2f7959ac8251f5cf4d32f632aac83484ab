@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_4ce605b1",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-01T08:19:55Z",
+      "side": 1,
+      "message": "Removed these snippet of code since it seems irrelevant.",
+      "parentUuid": "7a016987_6f053644",
+      "revId": "9972be2f7959ac8251f5cf4d32f632aac83484ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_f4069d84",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 8
