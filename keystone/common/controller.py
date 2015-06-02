@@ -232,9 +232,10 @@ class V2Controller(wsgi.Application):
 
         """
         if 'domain' in ref:
-            if ref['domain'].get('id') != CONF.identity.default_domain_id:
-                raise exception.Unauthorized(
-                    _('Non-default domain is not supported'))
+            if isinstance(ref['domain'], dict):
+                if ref['domain'].get('id') != CONF.identity.default_domain_id:
+                    raise exception.Unauthorized(
+                        _('Non-default domain is not supported'))
             del ref['domain']
         return ref
 
