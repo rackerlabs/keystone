@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_229b8ecb",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-02T01:52:15Z",
+      "side": 1,
+      "message": "Technically speaking we should still say bad user or password here as well, this prevents leaking information back out such as \"this is a valid user so keep trying bad passwords\". Indicating the passed in ID is a totally reasonable change and should happen.",
+      "revId": "16a26083bc78932e8097cf0eceec2bf1548a1a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_425faa0e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-02T01:52:15Z",
+      "side": 1,
+      "message": "See Above comment about leaking information out to the API. Please keep this generic/the same message everywhere.",
+      "revId": "16a26083bc78932e8097cf0eceec2bf1548a1a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
