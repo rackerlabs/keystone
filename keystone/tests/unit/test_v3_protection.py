@@ -399,9 +399,9 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
             password=self.just_a_user['password'])
         token = self.get_requested_token(auth)
 
-        # FIXME(blk-u): remove expected_status=403.
         self.get('/auth/tokens', token=token,
-                 headers={'X-Subject-Token': token}, expected_status=403)
+                 headers={'X-Subject-Token': token},
+                 expected_status=exception.ForbiddenAction.code)
 
     def test_user_validate_user_token(self):
         # A user can validate one of their own tokens.
@@ -415,9 +415,9 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
         token1 = self.get_requested_token(auth)
         token2 = self.get_requested_token(auth)
 
-        # FIXME(blk-u): remove expected_status=403.
         self.get('/auth/tokens', token=token1,
-                 headers={'X-Subject-Token': token2}, expected_status=403)
+                 headers={'X-Subject-Token': token2},
+                 expected_status=exception.ForbiddenAction.code)
 
     def test_user_validate_other_user_token_rejected(self):
         # A user cannot validate another user's token.
@@ -434,7 +434,8 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
         user2_token = self.get_requested_token(user2_auth)
 
         self.get('/auth/tokens', token=user1_token,
-                 headers={'X-Subject-Token': user2_token}, expected_status=403)
+                 headers={'X-Subject-Token': user2_token},
+                 expected_status=exception.ForbiddenAction.code)
 
     def test_admin_validate_user_token(self):
         # An admin can validate a user's token.
@@ -502,7 +503,7 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
 
         self.head('/auth/tokens', token=user1_token,
                   headers={'X-Subject-Token': user2_token},
-                  expected_status=403)
+                  expected_status=exception.ForbiddenAction.code)
 
     def test_admin_check_user_token(self):
         # An admin can check a user's token.
@@ -564,7 +565,7 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
 
         self.delete('/auth/tokens', token=user1_token,
                     headers={'X-Subject-Token': user2_token},
-                    expected_status=403)
+                    expected_status=exception.ForbiddenAction.code)
 
     def test_admin_revoke_user_token(self):
         # An admin can revoke a user's token.
@@ -984,9 +985,9 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
             password=self.just_a_user['password'])
         token = self.get_requested_token(auth)
 
-        # FIXME(blk-u): remove expected_status=403.
         self.get('/auth/tokens', token=token,
-                 headers={'X-Subject-Token': token}, expected_status=403)
+                 headers={'X-Subject-Token': token},
+                 expected_status=exception.ForbiddenAction.code)
 
     def test_user_validate_user_token(self):
         # A user can validate one of their own tokens.
@@ -1000,9 +1001,9 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         token1 = self.get_requested_token(auth)
         token2 = self.get_requested_token(auth)
 
-        # FIXME(blk-u): remove expected_status=403.
         self.get('/auth/tokens', token=token1,
-                 headers={'X-Subject-Token': token2}, expected_status=403)
+                 headers={'X-Subject-Token': token2},
+                 expected_status=exception.ForbiddenAction.code)
 
     def test_user_validate_other_user_token_rejected(self):
         # A user cannot validate another user's token.
@@ -1019,7 +1020,8 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         user2_token = self.get_requested_token(user2_auth)
 
         self.get('/auth/tokens', token=user1_token,
-                 headers={'X-Subject-Token': user2_token}, expected_status=403)
+                 headers={'X-Subject-Token': user2_token},
+                 expected_status=exception.ForbiddenAction.code)
 
     def test_admin_validate_user_token(self):
         # An admin can validate a user's token.
@@ -1081,7 +1083,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         self.head('/auth/tokens', token=user1_token,
                   headers={'X-Subject-Token': user2_token},
-                  expected_status=403)
+                  expected_status=exception.ForbiddenAction.code)
 
     def test_admin_check_user_token(self):
         # An admin can check a user's token.
@@ -1143,7 +1145,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         self.delete('/auth/tokens', token=user1_token,
                     headers={'X-Subject-Token': user2_token},
-                    expected_status=403)
+                    expected_status=exception.ForbiddenAction.code)
 
     def test_admin_revoke_user_token(self):
         # An admin can revoke a user's token.
