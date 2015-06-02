@@ -16,6 +16,24 @@
       "revId": "f6c01dd1673b290578e9fff063e27104412ffeda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_86dd9f16",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-02T14:47:14Z",
+      "side": 0,
+      "message": "++",
+      "parentUuid": "5afe65bd_6b794cfc",
+      "revId": "f6c01dd1673b290578e9fff063e27104412ffeda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
