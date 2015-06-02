@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_1e8a1dc0",
+        "filename": "keystone/contrib/endpoint_policy/migrate_repo/versions/001_add_endpoint_policy_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-02T13:29:16Z",
+      "side": 1,
+      "message": "Why not just delete this migration?",
+      "revId": "382207b1bcda8eb8d921e10874689642d349f902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
