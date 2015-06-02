@@ -27,6 +27,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import strutils
+from oslo_utils import timeutils
 import passlib.hash
 import six
 from six import moves
@@ -469,3 +470,20 @@ class WhiteListedItemFilter(object):
         if name not in self._whitelist:
             raise KeyError
         return self._data[name]
+
+
+_ISO8601_TIME_FORMAT_SUBSECOND = '%Y-%m-%dT%H:%M:%S.%f'
+_ISO8601_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S'
+
+
+def isotime(at=None, subsecond=False):
+    """Stringify time in ISO 8601 format."""
+
+    if not at:
+        at = timeutils.utcnow()
+    st = at.strftime(_ISO8601_TIME_FORMAT
+                     if not subsecond
+                     else _ISO8601_TIME_FORMAT_SUBSECOND)
+    tz = at.tzinfo.tzname(None) if at.tzinfo else 'UTC'
+    st += ('Z' if tz == 'UTC' else tz)
+    return st
