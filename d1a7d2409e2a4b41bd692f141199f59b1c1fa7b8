@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_e7b34809",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-02T01:23:47Z",
+      "side": 1,
+      "message": "why not do this now?",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_c7b84ce8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-02T01:23:47Z",
+      "side": 1,
+      "message": "suggest use @functools.wraps",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_87cb7472",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-02T01:23:47Z",
+      "side": 1,
+      "message": "isn\u0027t this what\u0027s being changed? the class doesn\u0027t have to be a provider.",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_47c57c59",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-02T01:23:47Z",
+      "side": 1,
+      "message": "isn\u0027t this now the .listener() mechanism?",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_07a664c1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-02T01:23:47Z",
+      "side": 1,
+      "message": "seems like this should be an error now, just like it\u0027s an error if event_callbacks isn\u0027t a dict.",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
