@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Chenhong Liu <liuchenhong@unitedstack.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 02 Jun 2015 01:47:23 +0000
+Reviewed-on: https://review.openstack.org/131255
+Project: openstack/keystone
+Branch: refs/heads/master
