@@ -247,8 +247,6 @@ class BaseTestCase(oslotest.BaseTestCase):
         self.useFixture(mockpatch.PatchObject(logging.Handler, 'handleError',
                                               side_effect=BadLog))
 
-        warnings.filterwarnings('error', category=DeprecationWarning,
-                                module='^keystone\\.')
         warnings.simplefilter('error', exc.SAWarning)
         self.addCleanup(warnings.resetwarnings)
 
