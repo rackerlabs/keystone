@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_55651343",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-02T14:06:39Z",
+      "side": 1,
+      "message": "Should the order here be switched? Should be (expected, observed)",
+      "revId": "1b8eb01dce8ec6ecb949a9b8b1257e2bd6605959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_d5510364",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-02T14:06:39Z",
+      "side": 1,
+      "message": "Should the order here be switched? Should be (expected, observed)",
+      "revId": "1b8eb01dce8ec6ecb949a9b8b1257e2bd6605959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_55ccf334",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-02T14:06:39Z",
+      "side": 1,
+      "message": "Should the order here be switched? Should be (expected, observed)",
+      "revId": "1b8eb01dce8ec6ecb949a9b8b1257e2bd6605959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
