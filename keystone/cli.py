@@ -544,6 +544,60 @@ class SamlIdentityProviderMetadata(BaseApp):
         print(metadata.to_string())
 
 
+class MappingEngineTester(BaseApp):
+    """Execute mapping engine locally."""
+
+    name = 'mapping_engine'
+
+    @staticmethod
+    def read_blob_file_contents(path):
+        with open(path) as file:
+            blob = file.read().strip()
+        return blob
+
+    @staticmethod
+    def normalize_assertion(assertion):
+        assertion = assertion.split("\n")
+        assertion = {line.split(':', 1) for line in assertion}
+        return assertion
+
+    @classmethod
+    def main(cls):
+        def validate_options():
+            if not all([CONF.rules, CONF.input]):
+                raise ValueError(_("Options --input and --rules "
+                                   "must be specified"))
+
+        validate_options()
+
+        from keystone.contrib.federation import utils as mapping_engine
+        rules = MappingEngineTester.read_blob_file_contents(CONF.rules)
+        mapping_engine.validate_mapping_structure(rules)
+
+        import pdb; pdb.set_trace()
+
+#        assertion = MappingEngineTester.read_domain_configs_from_files(
+#            CONF.input)
+#        assertion = MappingEngineTester.normalize_input(assertion)
+#
+#        rp = mapping_engine.RuleProcessor(rules)
+
+        print(rp.process(assertion))
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(MappingEngineTester,
+                       cls).add_argument_parser(subparsers)
+
+        parser.add_argument('--rules', default=None,
+                            help=("Path to the file with "
+                                  "rules to be executed."))
+        parser.add_argument('--input', default=None,
+                            help="Path to the file with input attributes.")
+
+        return parser
+
+
 CMDS = [
     DbSync,
     DbVersion,
@@ -551,6 +605,7 @@ CMDS = [
     FernetRotate,
     FernetSetup,
     MappingPurge,
+    MappingEngineTester,
     PKISetup,
     SamlIdentityProviderMetadata,
     SSLSetup,
