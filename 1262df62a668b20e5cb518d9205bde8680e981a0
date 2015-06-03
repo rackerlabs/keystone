@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_8a47c24a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-03T06:28:02Z",
+      "side": 1,
+      "message": "The title doesn\u0027t describe the specific of the change,  should this be something like \"Don\u0027t query db if criteria longer than col length\"  or just mention about the length issue?",
+      "revId": "1262df62a668b20e5cb518d9205bde8680e981a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_ef5be8f4",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-03T06:28:02Z",
+      "side": 1,
+      "message": "nice to have: would be nice to use column_attr too for consistency of naming variables",
+      "revId": "1262df62a668b20e5cb518d9205bde8680e981a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
