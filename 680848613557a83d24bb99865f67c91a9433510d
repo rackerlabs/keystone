@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_2a27ae65",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-03T06:35:26Z",
+      "side": 1,
+      "message": "For 200 response, we don\u0027t seem to explicitly specify the expected_status\u003d200.\n\nThis is consistent with other tests, looks good to me.",
+      "parentUuid": "7a016987_0476b205",
+      "revId": "680848613557a83d24bb99865f67c91a9433510d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_787c66b5",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
