@@ -899,6 +899,42 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         self._test_grants('projects', self.project['id'])
 
+    def test_list_role_assignment_of_domain(self):
+        # domainA admin can list role assignment of a domain
+        self.auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+
+        collection_url = (
+            '/role_assignments?scope.domain.id=%(domain_id)s' % {
+                'domain_id': self.domainA['id']
+            })
+        self.get(collection_url, auth=self.auth)
+
+        # domainA user can not list role assignment of a domain
+
+    def test_list_role_assignment_of_domain_by_domain_admin(self):
+        pass
+
+    def test_list_role_assignment_of_project(self):
+        # domainA admin can list role assignment of a project
+        self.auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+
+        collection_url = (
+            '/role_assignments?scope.project.id=%(project_id)s' % {
+                'project_id': self.project['id']
+            })
+        self.get(collection_url, auth=self.auth)
+
+        # domainA user can not list role assignment of a project
+
+    def test_list_role_assignment_of_project_by_domain_admin(self):
+        pass
+
     def test_cloud_admin(self):
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
