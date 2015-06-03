@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_93dc91e5",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-03T13:31:16Z",
+      "side": 1,
+      "message": "I added comments. I don\u0027t think it\u0027s worth it to switch to isoformat.",
+      "parentUuid": "5afe65bd_ef8648da",
+      "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_7bcfb97f",
         "filename": "keystone/common/utils.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "There is!",
       "parentUuid": "5afe65bd_3847fa4c",
+      "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_b3a2ed49",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-03T13:31:16Z",
+      "side": 1,
+      "message": "By copying the code here we can switch to the alternative in steps.",
+      "parentUuid": "5afe65bd_b30c2d3c",
       "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
