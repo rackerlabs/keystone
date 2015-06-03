@@ -16,6 +16,24 @@
       "revId": "386054847e3434122a5070f2894908ff437d901e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_4eab0c1e",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-03T13:49:34Z",
+      "side": 1,
+      "message": "oslo.utils.timeutils.isotime is deprecated. If someone tried to switch to using oslo.utils.timeutils.isotime 1) reviewers would say not to use deprecated function, and 2) it wouldn\u0027t pass our unit tests since the tests fail if you use deprecated function.",
+      "parentUuid": "5afe65bd_2e8c507e",
+      "revId": "386054847e3434122a5070f2894908ff437d901e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
