@@ -16,6 +16,23 @@
       "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_7bcfb97f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-06-03T08:29:44Z",
+      "side": 1,
+      "message": "This is totally the wrong way of doing it.",
+      "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
