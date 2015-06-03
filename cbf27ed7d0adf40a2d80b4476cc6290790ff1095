@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_ef8648da",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-03T06:20:38Z",
+      "side": 1,
+      "message": "Let\u0027s add some comments here as what it said in the commit message. So it will be more clear why we not use datetime.datetime.isoformat() instead.\n\nAnd maybe also TODO annotation somewhere to indicate keystone will switch to use datetime.datetime.isoformat() step by step?",
+      "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
