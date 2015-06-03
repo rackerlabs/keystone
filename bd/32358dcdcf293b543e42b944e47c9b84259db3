@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: Matt Riedemann <mriedem@us.ibm.com>
+Workflow+1: Matt Riedemann <mriedem@us.ibm.com>
+Code-Review+1: zhangguoqing <zhang.guoqing@99cloud.net>
+Submitted-by: Jenkins
+Submitted-at: Wed, 03 Jun 2015 16:10:18 +0000
+Reviewed-on: https://review.openstack.org/173122
+Project: openstack/keystone
+Branch: refs/heads/stable/juno
