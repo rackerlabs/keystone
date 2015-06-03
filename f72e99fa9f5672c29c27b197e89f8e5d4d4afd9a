@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_fb9ba9c7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-03T08:25:26Z",
+      "side": 1,
+      "message": "Does this patch related to this bug? The request still rejected inside the decorator.",
+      "revId": "f72e99fa9f5672c29c27b197e89f8e5d4d4afd9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
