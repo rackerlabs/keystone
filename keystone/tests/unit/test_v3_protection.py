@@ -776,6 +776,16 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.delete(member_url, auth=self.auth,
                     expected_status=status_no_data)
 
+    def _test_list_assignments(self, scope, scope_id, expected=None):
+        status_OK, status_created, status_no_data = self._stati(expected)
+
+        collection_url = (
+            '/role_assignments?scope.%(scope)s.id=%(scope_id)s' % {
+                'scope': scope,
+                'scope_id': scope_id,
+            })
+        self.get(collection_url, auth=self.auth, expected_status=status_OK)
+
     def test_user_management(self):
         # First, authenticate with a user that does not have the domain
         # admin role - shouldn't be able to do much.
@@ -898,6 +908,56 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
             domain_id=self.domainA['id'])
 
         self._test_grants('projects', self.project['id'])
+
+    def test_cloud_admin_list_assignments_of_domain(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.cloud_admin_user['id'],
+            password=self.cloud_admin_user['password'],
+            domain_id=self.admin_domain['id'])
+
+        self._test_list_assignments('domain', self.domainA['id'])
+
+    def test_domain_admin_list_assignments_of_domain(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+
+        self._test_list_assignments('domain', self.domainA['id'])
+
+    def test_domain_user_list_assignments_of_domain_failed(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            domain_id=self.domainA['id'])
+
+        self._test_list_assignments('domain', self.domainA['id'], expected=403)
+
+    def test_cloud_admin_list_assignments_of_project(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.cloud_admin_user['id'],
+            password=self.cloud_admin_user['password'],
+            domain_id=self.admin_domain['id'])
+
+        self._test_list_assignments('project', self.project['id'])
+
+    @tests.utils.wip('waiting on bug #1437407')
+    def test_domain_admin_list_assignments_of_project(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+
+        self._test_list_assignments('project', self.project['id'])
+
+    def test_domain_user_list_assignments_of_project_failed(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            domain_id=self.domainA['id'])
+
+        self._test_list_assignments('project', self.project['id'],
+                                    expected=403)
 
     def test_cloud_admin(self):
         self.auth = self.build_authentication_request(
