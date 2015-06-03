@@ -33,6 +33,24 @@
       "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_3847fa4c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-03T13:05:53Z",
+      "side": 1,
+      "message": "like, oslo timeutils\u0027 decision to deprecate code without a viable alternative?",
+      "parentUuid": "5afe65bd_7bcfb97f",
+      "revId": "cbf27ed7d0adf40a2d80b4476cc6290790ff1095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
