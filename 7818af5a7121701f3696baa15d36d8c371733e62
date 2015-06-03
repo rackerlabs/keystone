@@ -16,6 +16,41 @@
       "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_b59f7a02",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5803
+      },
+      "writtenOn": "2015-06-03T10:59:50Z",
+      "side": 1,
+      "message": "30% can be for the full token get op, for the time spent just in the crypt the improvement is much higher.",
+      "parentUuid": "5afe65bd_f60e60e4",
+      "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_95d47ebd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5803
+      },
+      "writtenOn": "2015-06-03T10:59:50Z",
+      "side": 1,
+      "message": "Not glib, it is glibc default, (glibc also can be compiled to use other library for doing the actual crypt).\n\nglibc is default C library, glib is the base library for GTK/GNOME based things, or just for applications which likes its `data model`.",
+      "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
