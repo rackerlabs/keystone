@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_111c1811",
+        "filename": "etc/policy.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-03T14:22:23Z",
+      "side": 1,
+      "message": "As to the API: get_user, what we need is user_id then we can get this user\u0027s information.\n\nIf we want to get the user information based on the user_name as what it said in the commit message then we still need to update the rule of API: list_users which is not acceptable.\n\nSo, iiuc, the commit message, want to get the user information based on user name is not achievable, not sure if this is what you want.",
+      "revId": "44949637107bdb94094b491b955c770204008ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
