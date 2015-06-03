@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_2e8c507e",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-03T13:42:20Z",
+      "side": 1,
+      "message": "Do we need to add a NOTE or TODO to this method to explain why we are assuming oslo.timeutils code in Keystone? I feel like a comment would prevent someone from coming along down the road and refactoring this.",
+      "revId": "386054847e3434122a5070f2894908ff437d901e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
