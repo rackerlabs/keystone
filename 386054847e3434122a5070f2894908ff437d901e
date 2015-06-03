@@ -34,6 +34,23 @@
       "revId": "386054847e3434122a5070f2894908ff437d901e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_34e4a20b",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-03T14:33:04Z",
+      "side": 1,
+      "message": "Nice comments. I think these comments will help to prevent someone refactoring these code.",
+      "revId": "386054847e3434122a5070f2894908ff437d901e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
