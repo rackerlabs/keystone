@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_df02fa0a",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-06-03T19:55:40Z",
+      "side": 1,
+      "message": "webob.request.Request already unquote (decode) the URL passed as query string when we call req.params at [1].\n\n[1] http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/wsgi.py#n198",
+      "parentUuid": "7a016987_03da2f4b",
+      "revId": "e892245ef2e43af132cb5119365dc5b5f53f82a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_23c08b4f",
         "filename": "keystone/tests/unit/test_v3_policy.py",
         "patchSetId": 1
