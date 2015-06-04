@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_a7c9e4ae",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-04T19:17:06Z",
+      "side": 1,
+      "message": "This help text is the same as the subject_alt_names configuration option added below. Is there anyway that we could differentiate it if both config options are used for different purposes? If they aren\u0027t used for different purposes then should they be collapsed?",
+      "revId": "2ec9e8fbf2bf2e057e8f7b325f60f60e5a51cc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_07bb1810",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-04T19:17:06Z",
+      "side": 1,
+      "message": "This is using the CONF.ssl.subject_alt_names from the config, right? Are the CONF.signing.subject_alt_names used anywhere in this patch?",
+      "revId": "2ec9e8fbf2bf2e057e8f7b325f60f60e5a51cc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
