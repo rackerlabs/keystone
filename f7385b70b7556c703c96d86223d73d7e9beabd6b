@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_d871e177",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-06-04T07:54:20Z",
+      "side": 1,
+      "message": "While this change clearly passes the gating checks and fixes the bug, I do not have deep enough understanding of routing  to know if this is the right fix. I would appreciate confirmation from the reviewers.",
+      "revId": "f7385b70b7556c703c96d86223d73d7e9beabd6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
