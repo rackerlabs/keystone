@@ -16,6 +16,24 @@
       "revId": "f7385b70b7556c703c96d86223d73d7e9beabd6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4710f04e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-04T19:08:05Z",
+      "side": 1,
+      "message": "oh, wow! i bet this is the correct fix based on the history of the behavior (predating the recent regression). this code was introduced in essex, and the behavior seen in the bug has existed since then as well.\n\ngreat find!",
+      "parentUuid": "5afe65bd_d871e177",
+      "revId": "f7385b70b7556c703c96d86223d73d7e9beabd6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
