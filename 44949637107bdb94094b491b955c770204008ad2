@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_d208a32f",
+        "filename": "etc/policy.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-04T06:24:06Z",
+      "side": 1,
+      "message": "I think you maybe able to something like this\n\n  \"match_domain_id_and_username\": \"target.token.user.domain.id:%(domain_id)s and target.token.user.name: %(name)s\",\n  \"identity:list_users\": \"rule_admin_required or rule:match_domain_id_and_username\",\n\nIn your request, you\u0027ll need to specify both domain_id and name in query params. i.e.\n\n  GET /v3/users?domain_id\u003did\u0026name\u003dusername",
+      "revId": "44949637107bdb94094b491b955c770204008ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_91136866",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
