@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 04 Jun 2015 02:11:41 +0000
+Reviewed-on: https://review.openstack.org/172329
+Project: openstack/keystone
+Branch: refs/heads/master
