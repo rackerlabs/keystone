@@ -893,6 +893,12 @@ class AuthWithTrust(AuthTest):
                           self.create_trust, self.sample_data,
                           self.trustor['name'], expires_at="Z")
 
+    def test_create_trust_expires_older_than_now(self):
+        self.assertRaises(exception.ValidationExpirationError,
+                          self.create_trust, self.sample_data,
+                          self.trustor['name'],
+                          expires_at="2010-06-04T08:44:31.999999Z")
+
     def test_create_trust_without_project_id(self):
         """Verify that trust can be created without project id and
         token can be generated with that trust.
