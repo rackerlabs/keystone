@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_7e84155d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3315,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-04T08:56:05Z",
+      "side": 1,
+      "message": "You don\u0027t have to add this class here, you can find one in test_v3_protection.py, which has done setUp() and load_sample_data(), and I just expand it in https://review.openstack.org/#/c/187899/",
+      "revId": "cd6a3151a69e0515001fd23fb036d2cd86a01cc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
