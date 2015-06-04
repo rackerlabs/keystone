@@ -16,6 +16,24 @@
       "revId": "cd6a3151a69e0515001fd23fb036d2cd86a01cc4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_b84f2f6a",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3315,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-04T16:23:48Z",
+      "side": 1,
+      "message": "Excellent! Thanks for adding the tests. Can you please combine the tests here with you have?\n\n  1. add the response checks to your patch. i.e. self.assertValidRoleAssignmentListResponse, self.assertRoleAssignmentInListResponse, etc.\n  2. make 187899 a dependent of this patch\n\nI\u0027ll remove these tests in favor of yours.\n\nThanks!",
+      "parentUuid": "5afe65bd_7e84155d",
+      "revId": "cd6a3151a69e0515001fd23fb036d2cd86a01cc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
