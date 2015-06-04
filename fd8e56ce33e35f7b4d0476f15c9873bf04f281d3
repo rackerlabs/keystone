@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_2f02d2b4",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-04T17:08:44Z",
+      "side": 1,
+      "message": "no need for this method because your collection_url will be different for each test. We aslo need the response to do further assertion checks.",
+      "revId": "fd8e56ce33e35f7b4d0476f15c9873bf04f281d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_cfc1fe55",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 918,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-04T17:08:44Z",
+      "side": 1,
+      "message": "need to make sure the response is correct. i.e.\n\nself.assertValidRoleAssignmentListResponse\nself.assertRoleAssignmentInListResponse\n\nsee https://review.openstack.org/#/c/180846/5/keystone/tests/unit/test_v3_assignment.py\n\nneed to do that for all the tests",
+      "revId": "fd8e56ce33e35f7b4d0476f15c9873bf04f281d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
