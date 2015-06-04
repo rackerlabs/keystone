@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_fe5fee3e",
+        "filename": "etc/policy.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2015-06-04T02:39:42Z",
+      "side": 1,
+      "message": "That is really sad news.",
+      "parentUuid": "5afe65bd_111c1811",
+      "revId": "44949637107bdb94094b491b955c770204008ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_91136866",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-03T14:26:13Z",
       "side": 1,
       "message": "IIUC, in this testcase, you can only pass a user id instead of user name, if you do in that way, API: list_users is called instead of get_user.",
+      "revId": "44949637107bdb94094b491b955c770204008ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_210d6737",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2015-06-04T02:39:42Z",
+      "side": 1,
+      "message": "Got it. Thanks.",
+      "parentUuid": "5afe65bd_91136866",
       "revId": "44949637107bdb94094b491b955c770204008ad2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
