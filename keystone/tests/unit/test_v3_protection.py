@@ -585,8 +585,8 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
                     headers={'X-Subject-Token': user_token})
 
 
-class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
-    """Test policy enforcement of the sample v3 cloud policy file."""
+class IdentityTestFuturePolicySample(test_v3.RestfulTestCase):
+    """Test policy enforcement of the future policy file."""
 
     def setUp(self):
         """Setup for v3 Cloud Policy Sample Test Cases.
@@ -611,14 +611,14 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         # Ensure that test_v3.RestfulTestCase doesn't load its own
         # sample data, which would make checking the results of our
         # tests harder
-        super(IdentityTestv3CloudPolicySample, self).setUp()
+        super(IdentityTestFuturePolicySample, self).setUp()
 
         # Finally, switch to the v3 sample policy file
         self.addCleanup(rules.reset)
         rules.reset()
         self.config_fixture.config(
             group='oslo_policy',
-            policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
+            policy_file=tests.dirs.etc('policy.future.json'))
 
     def load_sample_data(self):
         # Start by creating a couple of domains
