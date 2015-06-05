@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_9f72a47b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-05T01:49:54Z",
+      "side": 1,
+      "message": "Remove \"Input\"\n\nChange \"shouldn\u0027t\" to \"must not\"\n\nChange \"older than\" to \"before\"",
+      "revId": "808abb9d5765cb262c0175a334ef43b68e578a62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
