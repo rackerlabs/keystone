@@ -1224,11 +1224,11 @@ List of object attributes:
     * target.token.user_id
     * target.token.user.domain.id
 
-The default policy.json file supplied provides a somewhat basic example of API
-protection, and does not assume any particular use of domains. For multi-domain
-configuration installations where, for example, a cloud provider wishes to
-allow administration of the contents of a domain to be delegated, it is
-recommended that the supplied policy.v3cloudsample.json is used as a basis for
+The default ``policy.json`` file supplied provides a somewhat basic example of
+API protection, and does not assume any particular use of domains. For
+multi-domain configuration installations where, for example, a cloud provider
+wishes to allow administration of the contents of a domain to be delegated, it
+is recommended that the supplied ``policy.future.json`` is used as a basis for
 creating a suitable production policy file. This example policy file also shows
 the use of an admin_domain to allow a cloud provider to enable cloud
 administrators to have wider access across the APIs.
@@ -1236,8 +1236,8 @@ administrators to have wider access across the APIs.
 A clean installation would need to perhaps start with the standard policy file,
 to allow creation of the admin_domain with the first users within it. The
 domain_id of the admin domain would then be obtained and could be pasted into a
-modified version of policy.v3cloudsample.json which could then be enabled as
-the main policy file.
+modified version of ``policy.future.json`` which could then be enabled as the
+main policy file.
 
 .. _`prepare your deployment`:
 

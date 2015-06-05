@@ -220,12 +220,12 @@ class PolicyJsonTestCase(tests.TestCase):
 
     def test_json_examples_have_matching_entries(self):
         policy_keys = self._load_entries(tests.dirs.etc('policy.json'))
-        cloud_policy_keys = self._load_entries(
-            tests.dirs.etc('policy.v3cloudsample.json'))
+        future_policy_keys = self._load_entries(
+            tests.dirs.etc('policy.future.json'))
 
         policy_extra_keys = ['admin_or_token_subject',
                              'token_subject', ]
-        expected_policy_keys = list(cloud_policy_keys) + policy_extra_keys
+        expected_policy_keys = list(future_policy_keys) + policy_extra_keys
         diffs = set(policy_keys).difference(set(expected_policy_keys))
 
         self.assertThat(diffs, matchers.Equals(set()))
