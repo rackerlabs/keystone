@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_07209b9a",
+        "filename": "etc/policy.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2015-06-05T13:09:26Z",
+      "side": 1,
+      "message": "Thank you very much, guang-yee. I did learnt a lot from your sample. My understanding is that by specifying this kind of a rule, we are forcing the generation of a token and validate the request via the token. We\u0027ll need a domain id because the username cannot be guaranteed uniqueness ...\n\nMaybe I should go with what Dolph suggested in the original bug report -- check the token body directly, the user_id is there.",
+      "parentUuid": "5afe65bd_d208a32f",
+      "revId": "44949637107bdb94094b491b955c770204008ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_91136866",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
