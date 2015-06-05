@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_570f5ae1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-05T15:47:41Z",
+      "side": 1,
+      "message": "I don\u0027t understand the we don\u0027t fully support multi-tenant \"admin\" isolation part. That policy should be capable of facilitating \"domain admin\" functionality.",
+      "revId": "2b49c52a650e6395fbd086f5d346bb8f0511d19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
