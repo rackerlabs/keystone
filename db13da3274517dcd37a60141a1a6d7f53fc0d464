@@ -16,6 +16,24 @@
       "revId": "db13da3274517dcd37a60141a1a6d7f53fc0d464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_dd06cb1f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-05T16:46:42Z",
+      "side": 1,
+      "message": "That one is pretty tough to address right now because authorization check was done prior to entering this code. Workaround is for domain admin to list all the role assignments in the subtree, cache the result locally, and then lookup project assignments in its local cache. Probably more efficient that way anyway. Role assignments are fairly static so my guess is that user experience won\u0027t be impacted that much with this approach.\n\nTo support domain admin lookup project assignment for a given project, we may have to overhaul the role assignment APIs. Perhaps something like,\n\nGET /v3/projects/id/role_assignments?include_subtree",
+      "parentUuid": "3afb71cf_ba0d6e39",
+      "revId": "db13da3274517dcd37a60141a1a6d7f53fc0d464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
