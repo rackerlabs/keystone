@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_ba0d6e39",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-05T02:14:34Z",
+      "side": 1,
+      "message": "I am not sure about your plan to fix this bug, \n\nGET /v3/role_assignments?scope.project.id\u003dproject_id\n\nThis still failed with your patch.",
+      "revId": "db13da3274517dcd37a60141a1a6d7f53fc0d464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
