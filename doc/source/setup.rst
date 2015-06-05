@@ -159,15 +159,13 @@ forget to activate it:
 .. code-block:: bash
 
     $ source .venv/bin/activate
-    $ python
 
-You should then be able to `import keystone` from your Python shell
-without issue:
+You should then be able to `import keystone` using Python without issue:
 
-.. code-block:: python
+.. code-block:: bash
 
-    >>> import keystone
-    >>>
 
-If you can import Keystone successfully, you should be ready to move on to
-:doc:`developing`.
+    $ python -c "import keystone"
+
+If you can import Keystone without a traceback, you should be ready to move on
+to :doc:`developing`.
