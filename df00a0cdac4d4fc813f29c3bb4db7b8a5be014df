@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_3ddb957e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-05T22:01:12Z",
+      "side": 1,
+      "message": "++ keystone-manage",
+      "parentUuid": "3afb71cf_c32029fa",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_c31a6917",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -149,6 +167,74 @@
       "writtenOn": "2015-06-05T18:58:20Z",
       "side": 1,
       "message": "\u0027",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_7d110dac",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-05T22:01:12Z",
+      "side": 1,
+      "message": "use required\u003dTrue here and get rid of validate options:\nhttps://docs.python.org/3/library/argparse.html#required",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_7d5fcd72",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-05T22:01:12Z",
+      "side": 1,
+      "message": "i don\u0027t know how much we gain out of this option",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_dd5ec1e8",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-05T22:01:12Z",
+      "side": 1,
+      "message": "this needs a better definition",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_fd529ddc",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-05T22:01:12Z",
+      "side": 1,
+      "message": "oh i like this",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
