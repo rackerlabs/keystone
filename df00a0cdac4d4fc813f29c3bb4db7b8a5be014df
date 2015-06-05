@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_e3f685d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "I think from \u0027User must...\u0027 down to the end of this message should actually be included in documentation somewhere.",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c32029fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "keystone-all or keystone-manage?",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c31a6917",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "i18n?",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_83d35138",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "same",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_23b93dea",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "(nit) these 2 lines could very easily be one",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c3c82977",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "i18n? and surround with \u0027 so you don\u0027t need the \\",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_83a111ac",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "\u0027",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_63305557",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "why not have the split function do this too?",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_e33c4531",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-05T18:58:20Z",
+      "side": 1,
+      "message": "\u0027",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
