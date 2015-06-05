@@ -112,6 +112,11 @@ def _build_role_assignment_entity(link=None, **attribs):
     return entity
 
 
+# TODO(chenhong): It's better to put this helper function in
+# a new class, just like AuthTestMixin.
+build_role_assignment_entity = _build_role_assignment_entity
+
+
 class AssignmentTestCase(test_v3.RestfulTestCase):
     """Test domains, projects, roles and role assignments."""
 
