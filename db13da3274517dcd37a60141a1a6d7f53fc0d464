@@ -34,6 +34,24 @@
       "revId": "db13da3274517dcd37a60141a1a6d7f53fc0d464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_575ce524",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-06T14:10:20Z",
+      "side": 1,
+      "message": "I see. What do you think about Priti\u0027s patch which using a callback to add extra information to target?",
+      "parentUuid": "3afb71cf_dd06cb1f",
+      "revId": "db13da3274517dcd37a60141a1a6d7f53fc0d464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
