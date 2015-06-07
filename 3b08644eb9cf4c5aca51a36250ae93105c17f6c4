@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_52162cf2",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-07T14:15:52Z",
+      "side": 0,
+      "message": "if you set client_socket_timeout to 0 (no timeout) then we need to call server() with socket_timeout\u003dNone according to the docs http://eventlet.net/doc/modules/wsgi.html#eventlet.wsgi.server",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
