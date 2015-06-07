@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_754c7270",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-07T14:42:41Z",
+      "side": 1,
+      "message": "the commit message should either have a cherry-picked-from line or an explanation why this isn\u0027t being cherry-picked from or fixed in master first.",
+      "revId": "a48ec99aca651fe8afb3fb17ce546b2181749eb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
