@@ -16,6 +16,40 @@
       "revId": "2b49c52a650e6395fbd086f5d346bb8f0511d19c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_52198c78",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-07T14:05:18Z",
+      "side": 1,
+      "message": "how about policy.domainadmin.template.json ?",
+      "revId": "2b49c52a650e6395fbd086f5d346bb8f0511d19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_324e1070",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-07T14:05:18Z",
+      "side": 1,
+      "message": "change \"modified\" to \"production\" ?\n\nIf \"production\" is used then I\u0027d remove everything after and including \"which could...\"",
+      "revId": "2b49c52a650e6395fbd086f5d346bb8f0511d19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
