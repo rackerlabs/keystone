@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_bb6e5b2d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-06-07T21:14:59Z",
+      "side": 1,
+      "message": "I don\u0027t now what benefit this extra comma brings. I have seen this in other places as well, and I am always wondering why to keep them.",
+      "revId": "20479e73e9bccf5b57c8ab5225ca83466d2c3a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
