@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_9cbb67e5",
+        "filename": "rally-jobs/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-08T23:58:01Z",
+      "side": 1,
+      "message": "I would remove the extra * here because you are referring to the directory.",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_dcc9df79",
+        "filename": "rally-jobs/extra/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-08T23:58:01Z",
+      "side": 1,
+      "message": "Rally - also remove the extra *",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_7c09cbdc",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-08T23:58:01Z",
+      "side": 1,
+      "message": "What do you mean by \u0027there is no difference\u0027?",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_dcbf9ff9",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-08T23:58:01Z",
+      "side": 1,
+      "message": "Is this saying we should try not to use plugins?",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
