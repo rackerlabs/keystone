@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_9a3b769c",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-08T18:01:40Z",
+      "side": 1,
+      "message": "their*",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_da47ae49",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-08T18:01:40Z",
+      "side": 1,
+      "message": "i think it\u0027s fine to keep this, but the help option should be improved",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_5af73ef5",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-08T18:01:40Z",
+      "side": 1,
+      "message": "\"A prefix used for each environment variable in the assertion. For example, all environment variables may have the prefix ASDF_.\"",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_3ac6c29a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-08T18:01:40Z",
+      "side": 1,
+      "message": "\"Enable debug messages from the mapping engine\"",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
