@@ -17,13 +17,13 @@
 import abc
 
 from oslo_config import cfg
+from oslo_log import versionutils
 import six
 
 from keystone import auth
 from keystone.common import dependency
 from keystone import exception
 from keystone.i18n import _
-from keystone.openstack.common import versionutils
 
 
 CONF = cfg.CONF
