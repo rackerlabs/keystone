@@ -16,6 +16,23 @@
       "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_0510424d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-08T21:12:38Z",
+      "side": 1,
+      "message": "token_data never changes, might be the case to add it in a global var to avoid copying it in every recursion?",
+      "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
