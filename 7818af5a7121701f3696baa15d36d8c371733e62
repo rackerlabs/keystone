@@ -69,6 +69,23 @@
       "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_48809146",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-08T21:29:49Z",
+      "side": 1,
+      "message": "Please do not -1 for a typo like this. If it is a serious issue please propose a followup patch correcting it or post a subsequent update. A -1 for a typo like this is not helpful and just causes delays. The other comments of 30% of what is an acceptible request. to fix.",
+      "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
