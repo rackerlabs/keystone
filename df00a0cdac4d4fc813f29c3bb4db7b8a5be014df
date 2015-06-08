@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_cccf1c7e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_c31a6917",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_83d35138",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -82,6 +100,24 @@
       "writtenOn": "2015-06-05T18:58:20Z",
       "side": 1,
       "message": "same",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8cc9247b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_83d35138",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_6cc4a85e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_23b93dea",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_c3c82977",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -116,6 +170,24 @@
       "writtenOn": "2015-06-05T18:58:20Z",
       "side": 1,
       "message": "i18n? and surround with \u0027 so you don\u0027t need the \\",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ac918054",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_c3c82977",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_4c89ec25",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_83a111ac",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_63305557",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -150,6 +240,24 @@
       "writtenOn": "2015-06-05T18:58:20Z",
       "side": 1,
       "message": "why not have the split function do this too?",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ec9c185f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "now it\u0027s doing that.",
+      "parentUuid": "3afb71cf_63305557",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_6ca9487b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_e33c4531",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_7d110dac",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -184,6 +310,24 @@
       "writtenOn": "2015-06-05T22:01:12Z",
       "side": 1,
       "message": "use required\u003dTrue here and get rid of validate options:\nhttps://docs.python.org/3/library/argparse.html#required",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_0cb1b4e1",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_7d110dac",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_acf4e086",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "i don\u0027t think anybody would use it on a daily basis, but since parameters from the assertinon are usually packed with whole bunch of other env parameters in keystone process and we also support such option in server maybe somebody will find a use for that. However, I will not be a die hard supporter for this option. If you insist, i can delete it.",
+      "parentUuid": "3afb71cf_7d5fcd72",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_dd5ec1e8",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -224,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_2c2fd0f7",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "i will improve it once noone really opposes to this option.",
+      "parentUuid": "3afb71cf_dd5ec1e8",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_fd529ddc",
         "filename": "keystone/cli.py",
         "patchSetId": 3
@@ -235,6 +415,24 @@
       "writtenOn": "2015-06-05T22:01:12Z",
       "side": 1,
       "message": "oh i like this",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4cde8c12",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T06:45:42Z",
+      "side": 1,
+      "message": "++ :-)",
+      "parentUuid": "3afb71cf_fd529ddc",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
