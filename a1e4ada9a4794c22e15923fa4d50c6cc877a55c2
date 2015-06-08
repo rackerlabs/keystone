@@ -33,6 +33,24 @@
       "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_517dd86c",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-08T23:00:05Z",
+      "side": 1,
+      "message": "surely you don\u0027t actually mean a global variable?\n\nbut besides, token_data is never copied.",
+      "parentUuid": "3afb71cf_0510424d",
+      "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
