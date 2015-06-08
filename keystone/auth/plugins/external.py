@@ -17,6 +17,7 @@
 import abc
 
 from oslo_config import cfg
+from oslo_log import versionutils
 import six
 
 from keystone import auth
