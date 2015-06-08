@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_62decc40",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-08T20:54:48Z",
+      "side": 1,
+      "message": "i know it\u0027s not new here, but these should probably be tuples",
+      "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
