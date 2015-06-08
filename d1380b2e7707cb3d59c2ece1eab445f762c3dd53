@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_6f36c8e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "/of/for?",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_54303f01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "s/not/no",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_afa840dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "I am fine with the statement, but I personally think testcase is not the root cause of a bug.",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_3e45a4b2",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "I am lost here, you meant to put function: _build_role_assignment_entity in class: AuthTestMixin? why we do that?",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_7491fb51",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "Basically, the reference data here is the same with the previous one in test_cloud_admin_list_assignments_of_domain.\n\nSuggest to provide one new testcase to test that domain_admin_user (only the admin in the domain A) cannot list assignments in domain B, so it would be more clear in my opinion.",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_341ca3c0",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "s/domainA_user_entity/project_user_entity",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_f47ccbec",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "s/domainA_user_entity/project_user_entity",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_f485eb58",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "s/domainA_user_entity/project_user_entity",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_74921ba1",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-08T14:32:13Z",
+      "side": 1,
+      "message": "s/domainA_user_entity/project_user_entity",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
