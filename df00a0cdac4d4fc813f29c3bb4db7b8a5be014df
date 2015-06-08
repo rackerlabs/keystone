@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_a704f9bf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T07:14:38Z",
+      "side": 1,
+      "message": "i updated keystone-manage.rst but only by adding main option \u0027mapping_engine\u0027.",
+      "parentUuid": "3afb71cf_e3f685d6",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_c32029fa",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "++ keystone-manage",
       "parentUuid": "3afb71cf_c32029fa",
+      "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2c16b0a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-08T07:14:38Z",
+      "side": 1,
+      "message": "keystone-manage of course.",
+      "parentUuid": "3afb71cf_3ddb957e",
       "revId": "df00a0cdac4d4fc813f29c3bb4db7b8a5be014df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
