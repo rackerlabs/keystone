@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3afb71cf_a2896428",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-08T20:53:08Z",
+      "side": 1,
+      "message": "Is there a blueprint associated with this?",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_e1199d7a",
         "filename": "keystone/cli.py",
         "patchSetId": 4
@@ -30,6 +47,40 @@
       "writtenOn": "2015-06-08T18:01:40Z",
       "side": 1,
       "message": "their*",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_e21bdc19",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-08T20:53:08Z",
+      "side": 1,
+      "message": "s/sepatator/separator",
+      "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_a2d4c41f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-08T20:53:08Z",
+      "side": 1,
+      "message": "as a list",
       "revId": "83128f98826ee330d48ad7a21ceb9b38d2348716",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
