@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_c389db76",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T15:41:49Z",
+      "side": 1,
+      "message": "A client should be coded to do something like\n\n  requests.get(\n    json_home.get_resource(\u0027identity_provider_protocol_auth\u0027).replace(\n       identity_provider\u003d\u0027myidp\u0027, protocol\u003d\u0027myprotocol\u0027))\n\nbut since identity_provider is now idp_id and protocol is now protocol_id that\u0027s not going to work anymore.",
+      "parentUuid": "3afb71cf_b0cf4328",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_cd3eac8b",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 3
