@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_3cb0cc89",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-09T16:48:54Z",
+      "side": 1,
+      "message": "Made a new CR for it: https://review.openstack.org/189810",
+      "parentUuid": "3afb71cf_62decc40",
+      "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_0510424d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 4
