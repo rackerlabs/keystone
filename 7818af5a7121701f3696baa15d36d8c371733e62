@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_890aef77",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-06-09T13:21:42Z",
+      "side": 1,
+      "message": "The point here initially is when this conversation is all long forgotten and the new default of 10000 has been in place a year or so when you read this comment you have no idea what you\u0027ve saved 30% of.\n\nI\u0027m fine with the comment about passlib and glibc as relative values But the first bit only makes sense in the context of this review, not the code itself.",
+      "parentUuid": "3afb71cf_89554ffb",
+      "revId": "7818af5a7121701f3696baa15d36d8c371733e62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_95d47ebd",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
