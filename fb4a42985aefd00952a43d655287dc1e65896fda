@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_57ea41dc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "I agree, I\u0027ll rewrite the comment.\n\nthe \"none check\", need to be here, since this method is called here: https://review.openstack.org/#/c/158372/54/keystone/auth/controllers.py \n\nDo you see a better implementation for this case?",
+      "parentUuid": "3afb71cf_e9ede3b7",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_8deaf4aa",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 54
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-09T15:31:08Z",
       "side": 1,
       "message": "nit: s/be replicated/are replicated/",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_97a9d992",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_8deaf4aa",
       "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_b206231b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 2208,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "hum... the essential is the same, here we just dealing with the problem in a hierarchy. I didn\u0027t have seen this other test before, can I remove this test?",
+      "parentUuid": "3afb71cf_8d479476",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_d054ffff",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 54
@@ -64,6 +118,24 @@
       "writtenOn": "2015-06-09T15:31:08Z",
       "side": 1,
       "message": "are we updating the domain name or the project name?",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_527fef14",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "Since i\u0027m creating a project with is_domain\u003dTrue, and following the ayoung suggestion in the previous patch, I decide to change the name to represent a domain. What do you think?",
+      "parentUuid": "3afb71cf_d054ffff",
       "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_32a3539f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "you\u0027re right.",
+      "parentUuid": "3afb71cf_90ea07ab",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_d08f5f28",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 54
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_f2d6dbef",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "I agree, I\u0027ll add this behavior in the test.",
+      "parentUuid": "3afb71cf_d08f5f28",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_70fb0b7a",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 54
@@ -115,6 +223,24 @@
       "writtenOn": "2015-06-09T15:31:08Z",
       "side": 1,
       "message": "nit: s/be replicated/are replicated/",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_32f8f37a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 2184,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-09T17:22:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_70fb0b7a",
       "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
