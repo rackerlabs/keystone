@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_e6286588",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-09T16:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_6f36c8e8",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_54303f01",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-08T14:32:13Z",
       "side": 1,
       "message": "s/not/no",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c62d6996",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-09T16:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_54303f01",
       "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_a61eed5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-09T16:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_afa840dc",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_3e45a4b2",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_26f0bdc8",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-09T16:09:07Z",
+      "side": 1,
+      "message": "Well, I think this function now become a public function not just used in test_v3_assignment.py\n\nBut it\u0027s fine to remove the comment now.",
+      "parentUuid": "3afb71cf_3e45a4b2",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_7491fb51",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2015-06-08T14:32:13Z",
       "side": 1,
       "message": "Basically, the reference data here is the same with the previous one in test_cloud_admin_list_assignments_of_domain.\n\nSuggest to provide one new testcase to test that domain_admin_user (only the admin in the domain A) cannot list assignments in domain B, so it would be more clear in my opinion.",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_668c75da",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-09T16:09:07Z",
+      "side": 1,
+      "message": "The reference data is different with preview one. Domain_admin can only operate on its own domain, but cloud_admin can operate on all domains. I think it\u0027s reasonable to keep this test case.\n\nI do agree with you to provide a new test case to test domain_admin_user cannot list assignments in domain B. But the naming in this class is ugly and need to be refactoring firstly.. self.domain_admin_user and self.just_a_user need to be renamed to self.domainA_admin and self.domainA_user. I\u0027m plan to refactoring firstly, and then add those test cases.",
+      "parentUuid": "3afb71cf_7491fb51",
       "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
