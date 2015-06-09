@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_d0f51f57",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-09T15:34:17Z",
+      "side": 1,
+      "message": "... but it\u0027s the same URL.",
+      "parentUuid": "3afb71cf_ad3ff085",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_8d44341b",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 3
