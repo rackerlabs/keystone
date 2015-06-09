@@ -20,6 +20,7 @@ import testtools
 
 from keystone.models import builder
 from keystone.models import core
+from keystone.models import formatter
 
 
 class ModelTestCase(testtools.TestCase):
@@ -58,16 +59,39 @@ class ModelTestCase(testtools.TestCase):
         self.assertIsNotNone(access)
         self.assert_deep_match(access_data_unscoped['token'], access)
 
+    def test_builder_unscoped_core_to_token_data(self):
+        director = builder.PythonDirector()
+        access = director.construct(access_data_unscoped)
+        self.assertIsNotNone(access)
+        self.assert_deep_match(access_data_unscoped['token'], access)
+        token_data = formatter.Formatter.get_token_data_v3(access)
+        self.assert_deep_match(token_data['token'], access)
+
     def test_builder_project_scoped(self):
         director = builder.PythonDirector()
         access = director.construct(access_data_project_scoped)
         self.assertIsNotNone(access)
         self.assert_deep_match(access_data_project_scoped['token'], access)
 
+    def test_builder_project_scoped_core_to_token_data(self):
+        director = builder.PythonDirector()
+        access = director.construct(access_data_project_scoped)
+        self.assertIsNotNone(access)
+        self.assert_deep_match(access_data_project_scoped['token'], access)
+        token_data = formatter.Formatter.get_token_data_v3(access)
+        self.assert_deep_match(token_data['token'], access)
+
     def test_builder_domain_scoped_domain(self):
         director = builder.PythonDirector()
         access = director.construct(access_data_domain_scoped)
         self.assertIsNotNone(access)
+
+    def test_builder_domain_scoped_domain_core_to_token_data(self):
+        director = builder.PythonDirector()
+        access = director.construct(access_data_domain_scoped)
+        self.assertIsNotNone(access)
+        token_data = formatter.Formatter.get_token_data_v3(access)
+        self.assert_deep_match(token_data['token'], access)
 
     def assert_list_match(self, first, second):
         index = 0
