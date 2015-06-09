@@ -69,6 +69,24 @@
       "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_45385d3d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-09T12:36:02Z",
+      "side": 1,
+      "message": "++ Dolph, just meant for the variable not being copied over recursion calls which makes it no-reentrant (as Alexander pointed out).\n\nYou are right Alexander, forgot to consider this case, thanks for the clarification.",
+      "parentUuid": "3afb71cf_23b7a4f6",
+      "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
