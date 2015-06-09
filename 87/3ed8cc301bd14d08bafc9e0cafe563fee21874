@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 09 Jun 2015 11:44:58 +0000
+Reviewed-on: https://review.openstack.org/185855
+Project: openstack/keystone
+Branch: refs/heads/master
