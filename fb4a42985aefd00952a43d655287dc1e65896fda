@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_e9ede3b7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "I think this comment is a bit confusing...since if the caller doesn\u0027t specify is_domain, then it will default to False.  I think the point you are making is that if the caller explicitly passes None in, then we want to override it to False.\n\nI wonder if it would be better to do the \"None check\" in the controller?  Open to either way.",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8deaf4aa",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "nit: s/be replicated/are replicated/",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8d479476",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 2208,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "is this test any different to the existing: test_create_duplicate_project_name_fails() ?",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d054ffff",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "are we updating the domain name or the project name?",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_90ea07ab",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "not sure that is the List url....",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d08f5f28",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "Should we also be checking that if you don\u0027t specify is_domain in the list call, that it defaults to False (just like the auth scope)...since otherwise when domains become projects, you\u0027ll get an extra project in the list (I\u0027m kind of assuming that we don\u0027t want that to happen - but maybe I\u0027m wrong)?",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_70fb0b7a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 2184,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-09T15:31:08Z",
+      "side": 1,
+      "message": "nit: s/be replicated/are replicated/",
+      "revId": "fb4a42985aefd00952a43d655287dc1e65896fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
