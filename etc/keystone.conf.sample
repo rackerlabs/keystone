@@ -195,6 +195,7 @@
 #
 
 # Size of RPC connection pool. (integer value)
+# Deprecated group/name - [DEFAULT]/rpc_conn_pool_size
 #rpc_conn_pool_size = 30
 
 # ZeroMQ bind address. Should be a wildcard (*), an ethernet interface, or IP.
@@ -275,20 +276,20 @@
 # From keystone
 #
 
-# Default auth methods. (list value)
+# Allowed authentication methods. (list value)
 #methods = external,password,token,oauth1
 
-# The password auth plugin module. (string value)
-#password = keystone.auth.plugins.password.Password
+# Entrypoint for the password auth plugin module. (string value)
+#password = <None>
 
-# The token auth plugin module. (string value)
-#token = keystone.auth.plugins.token.Token
+# Entrypoint for the token auth plugin module. (string value)
+#token = <None>
 
-# The external (REMOTE_USER) auth plugin module. (string value)
-#external = keystone.auth.plugins.external.DefaultDomain
+# Entrypoint for the external (REMOTE_USER) auth plugin module. (string value)
+#external = <None>
 
-# The oAuth1.0 auth plugin module. (string value)
-#oauth1 = keystone.auth.plugins.oauth1.OAuth
+# Entrypoint for the oAuth1.0 auth plugin module. (string value)
+#oauth1 = <None>
 
 
 [cache]
@@ -1342,6 +1343,16 @@
 # Deprecated group/name - [DEFAULT]/amqp_auto_delete
 #amqp_auto_delete = false
 
+# Send a single AMQP reply to call message. The current behaviour since oslo-
+# incubator is to send two AMQP replies - first one with the payload, a second
+# one to ensure the other have finish to send the payload. We are going to
+# remove it in the N release, but we must keep backward compatible at the same
+# time. This option provides such compatibility - it defaults to False in
+# Liberty and can be turned on for early adopters with a new installations or
+# for testing. Please note, that this option will be removed in M release.
+# (boolean value)
+#send_single_reply = false
+
 # Qpid broker hostname. (string value)
 # Deprecated group/name - [DEFAULT]/qpid_hostname
 #qpid_hostname = localhost
@@ -1404,6 +1415,16 @@
 # Auto-delete queues in AMQP. (boolean value)
 # Deprecated group/name - [DEFAULT]/amqp_auto_delete
 #amqp_auto_delete = false
+
+# Send a single AMQP reply to call message. The current behaviour since oslo-
+# incubator is to send two AMQP replies - first one with the payload, a second
+# one to ensure the other have finish to send the payload. We are going to
+# remove it in the N release, but we must keep backward compatible at the same
+# time. This option provides such compatibility - it defaults to False in
+# Liberty and can be turned on for early adopters with a new installations or
+# for testing. Please note, that this option will be removed in M release.
+# (boolean value)
+#send_single_reply = false
 
 # SSL version to use (valid only if SSL enabled). Valid values are TLSv1 and
 # SSLv23. SSLv2, SSLv3, TLSv1_1, and TLSv1_2 may be available on some
