@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_d71e5862",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T00:27:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_29037378",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_f2ec2d2b",
         "filename": "keystone/tests/unit/test_config.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-26T08:06:16Z",
       "side": 1,
       "message": "Since `CONF.auth.password` and `CONF.auth.token` don\u0027t has default value anymore, we need test it with other config which has default value.",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_974ea06d",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T00:27:31Z",
+      "side": 1,
+      "message": "This is testing the default config value for the plugins, which is now None. There\u0027s no need to test that oslo.config works correctly.",
+      "parentUuid": "7a016987_f2ec2d2b",
       "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_b75e3c10",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T00:27:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_fab40383",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_524ae156",
         "filename": "setup.cfg",
         "patchSetId": 6
@@ -82,6 +136,24 @@
       "writtenOn": "2015-05-26T08:06:16Z",
       "side": 1,
       "message": "why we not define this entrypoint in the `keystone.auth.external` instead?  checked from the code, kerberos is also a external method. Seems like the change like this will have little impact on the existing testcase, but it looks a little weird.",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_779fa4b4",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T00:27:31Z",
+      "side": 1,
+      "message": "I\u0027m not changing this.",
+      "parentUuid": "7a016987_524ae156",
       "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +188,24 @@
       "writtenOn": "2015-06-01T14:20:41Z",
       "side": 1,
       "message": "Seems not, since here need different namespace to distinguish each plugin.",
+      "parentUuid": "7a016987_49c46f5e",
+      "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_b7b51c32",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T00:27:31Z",
+      "side": 1,
+      "message": "Investigate it and then provide the answer yourself.",
       "parentUuid": "7a016987_49c46f5e",
       "revId": "b67c5b131b433695c086f2ed01ab36a4480f8c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
