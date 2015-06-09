@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_b0cf4328",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-09T15:33:24Z",
+      "side": 1,
+      "message": "yes, but that\u0027s intended to drive discovery... i don\u0027t see how this would break a client.",
+      "parentUuid": "3afb71cf_ed3968a5",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_cd3eac8b",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 3
