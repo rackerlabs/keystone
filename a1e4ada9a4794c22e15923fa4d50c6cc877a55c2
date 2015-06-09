@@ -51,6 +51,24 @@
       "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_23b7a4f6",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-09T09:21:44Z",
+      "side": 1,
+      "message": "This will make _search non-reentrant - I always try to avoid it. Never know when somebody run your code using multi-threaded setup :)",
+      "parentUuid": "3afb71cf_0510424d",
+      "revId": "a1e4ada9a4794c22e15923fa4d50c6cc877a55c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
