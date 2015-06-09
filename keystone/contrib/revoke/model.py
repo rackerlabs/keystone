@@ -18,7 +18,7 @@ from keystone.common import utils
 
 # The set of attributes common between the RevokeEvent
 # and the dictionaries created from the token Data.
-_NAMES = ['trust_id',
+_NAMES = ('trust_id',
           'consumer_id',
           'access_token_id',
           'audit_id',
@@ -27,32 +27,32 @@ _NAMES = ['trust_id',
           'domain_id',
           'project_id',
           'user_id',
-          'role_id']
+          'role_id')
 
 
 # Additional arguments for creating a RevokeEvent
-_EVENT_ARGS = ['issued_before', 'revoked_at']
+_EVENT_ARGS = ('issued_before', 'revoked_at')
 
 # Names of attributes in the RevocationEvent, including "virtual" attributes.
 # Virtual attributes are those added based on other values.
-_EVENT_NAMES = _NAMES + ['domain_scope_id']
+_EVENT_NAMES = _NAMES + ('domain_scope_id',)
 
 # Values that will be in the token data but not in the event.
 # These will compared with event values that have different names.
 # For example: both trustor_id and trustee_id are compared against user_id
-_TOKEN_KEYS = ['identity_domain_id',
+_TOKEN_KEYS = ('identity_domain_id',
                'assignment_domain_id',
                'issued_at',
                'trustor_id',
-               'trustee_id']
+               'trustee_id')
 
 # Alternative names to be checked in token for every field in
 # revoke tree.
 ALTERNATIVES = {
-    'user_id': ['user_id', 'trustor_id', 'trustee_id'],
-    'domain_id': ['identity_domain_id', 'assignment_domain_id'],
+    'user_id': ('user_id', 'trustor_id', 'trustee_id'),
+    'domain_id': ('identity_domain_id', 'assignment_domain_id'),
     # For a domain-scoped token, the domain is in assignment_domain_id.
-    'domain_scope_id': ['assignment_domain_id', ],
+    'domain_scope_id': ('assignment_domain_id', ),
 }
 
 
