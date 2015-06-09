@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_ed3968a5",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T15:10:24Z",
+      "side": 1,
+      "message": "this gets put into the json home document which is part of the public api.",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_cd3eac8b",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T15:10:24Z",
+      "side": 1,
+      "message": "this gets put into the json home document which is part of the public api.",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ad3ff085",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T15:10:24Z",
+      "side": 1,
+      "message": "This is part of the public API and it\u0027s changing.",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8d44341b",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-09T15:10:24Z",
+      "side": 1,
+      "message": "This shows that the public API is changing.",
+      "revId": "10c8f738495211d4dc79052b780352a0dbbc4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
