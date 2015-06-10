@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_496f0cfc",
+        "filename": "keystone/tests/unit/auth/test_controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T19:38:57Z",
+      "side": 1,
+      "message": "any reason to not just use the stevedore namespace imported above and just reference: \n\n    stevedore.extension",
+      "revId": "97a28e1d7020141ec36e5a868ec4045bbf8e03fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
