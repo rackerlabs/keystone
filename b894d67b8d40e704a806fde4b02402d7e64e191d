@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_17d25428",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T16:06:29Z",
+      "side": 1,
+      "message": "When using oslo_config.cfg we usually do something like the following: \n\n    CONF \u003d cfg.CONF\n\nat the top of the file (at least in Keystone). Here is an example; \n\nhttps://github.com/openstack/keystone/blob/84726910c7d04992a82df1717f1960da1ec6f786/keystone/assignment/core.py#L34",
+      "revId": "b894d67b8d40e704a806fde4b02402d7e64e191d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_57dc4c45",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T16:06:29Z",
+      "side": 1,
+      "message": "We usually reference CONF values like:\n\n    CONF.saml.relay_state_prefix",
+      "revId": "b894d67b8d40e704a806fde4b02402d7e64e191d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
