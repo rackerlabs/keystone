@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3afb71cf_fb09fa84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-10T08:39:33Z",
+      "side": 1,
+      "message": "so, this claim is not strictly correct, pls check my comments in the code.",
+      "revId": "817702567f48c5add4d28c58c96ad3970a4ddb41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_bbb14249",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 11
