@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_bbb14249",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-10T08:28:13Z",
+      "side": 1,
+      "message": "The reason why this is not passed the tempest testcase is, unicode is instance of string types but not an instance of binary type in python2.",
+      "revId": "817702567f48c5add4d28c58c96ad3970a4ddb41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
