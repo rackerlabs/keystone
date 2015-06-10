@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_b3a85421",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-10T03:02:05Z",
+      "side": 1,
+      "message": "What I meant is *reference* data is indetical with the previous one, so I\u0027d like to see some differentiation,  this is why another testcase (admin role in domain A cannot list role assignments in domain B is needed). The testcase here is meaningful indeed but is not clear enough to prove the concept.\n\nRefactoring is a nice to have thing but not must, actually, we can just let domain_admin_user to try to list assignment in the domain B and check what\u0027s happened is enough.\n\nLet me know if I miss something.",
+      "parentUuid": "3afb71cf_668c75da",
+      "revId": "d1380b2e7707cb3d59c2ece1eab445f762c3dd53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_341ca3c0",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
