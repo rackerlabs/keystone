@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_843de990",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T19:45:09Z",
+      "side": 1,
+      "message": "Done\n\nhttps://review.openstack.org/#/c/190318/",
+      "parentUuid": "3afb71cf_a49ea5b6",
+      "revId": "67e0ba5ee2108731050e26f7b4dd6c8d3dab118d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_847a8986",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-10T19:42:54Z",
       "side": 1,
       "message": "constantly* ?",
+      "revId": "67e0ba5ee2108731050e26f7b4dd6c8d3dab118d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8464c9b8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T19:45:09Z",
+      "side": 1,
+      "message": "Done \n\nhttps://review.openstack.org/#/c/190318/",
+      "parentUuid": "3afb71cf_847a8986",
       "revId": "67e0ba5ee2108731050e26f7b4dd6c8d3dab118d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
