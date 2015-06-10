@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_ab668d4e",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-06-10T11:44:54Z",
+      "side": 1,
+      "message": "Need to urllib unquote the filter value!\nFor some reason this is already being done somehow (webob.request.Request ? see my comment on the previous patch), but not when we I made an external request within a devstack env.",
+      "revId": "223e30fe527ebadb6cf1c5478d72c095d5b92f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
