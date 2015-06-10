@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_f861e4d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T18:39:21Z",
+      "side": 1,
+      "message": "This part feels like a separate change. I\u0027m not sure how much Keystone should be validating URLs outside of jsonschema, but I\u0027m not sure it belongs with this commit.",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d8fd08b2",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T18:39:21Z",
+      "side": 1,
+      "message": "nit: \n\nShould be able to do the same with: \n\n    if not eps:\n        return",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_18f7208c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T18:39:21Z",
+      "side": 1,
+      "message": "nit: suggest following the multiline pep8 convention; \n\nhttps://www.python.org/dev/peps/pep-0257/#multi-line-docstrings\n\nwhere the first line consists of a summary and then more detail can be added after the new line. \n\n    def test_my_awesome_feature(self):\n    \"\"\"Raise an exception if bar is None.\n\n    If variable bar is ...\n\n    \"\"\"",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_b8636c41",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1099,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T18:39:21Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_18016038",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T18:39:21Z",
+      "side": 1,
+      "message": "Could some of the reference generation be shared between these two tests? Some of the test_v3 test modules have reference generation methods, I wonder if they could be used here instead of making more of them?",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
