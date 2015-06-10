@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_23e628e8",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_endpoint_filtering_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T21:23:18Z",
+      "side": 1,
+      "message": "strange formatting?",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_a3da1815",
+        "filename": "keystone/common/sql/migrate_repo/versions/074_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T21:23:18Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c3f6348e",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T21:23:18Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2334e847",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T21:23:18Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
