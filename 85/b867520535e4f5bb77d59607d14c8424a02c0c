@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Chenhong Liu <liuchenhong@unitedstack.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 10 Jun 2015 22:46:26 +0000
+Reviewed-on: https://review.openstack.org/182032
+Project: openstack/keystone
+Branch: refs/heads/master
