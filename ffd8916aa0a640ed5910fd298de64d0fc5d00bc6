@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_57f20c07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T16:00:05Z",
+      "side": 1,
+      "message": "Same comments apply here: \n\nhttps://review.openstack.org/#/c/174388/1//COMMIT_MSG",
+      "revId": "ffd8916aa0a640ed5910fd298de64d0fc5d00bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_377e706a",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/006_fix_token_tables_engine.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T16:00:05Z",
+      "side": 1,
+      "message": "I think the same comment from a similar review should apply here: \n\nhttps://review.openstack.org/#/c/174388/1/keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_endpoint_groups_mysql_engine.py\n\nWe should try and find a way to test this.",
+      "revId": "ffd8916aa0a640ed5910fd298de64d0fc5d00bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
