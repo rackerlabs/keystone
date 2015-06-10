@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_34a1ce46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T15:57:39Z",
+      "side": 1,
+      "message": "Is there a link to where this is mentioned? Suggest removing the \u0027and this was mentioned in model description as well\u0027 part if we don\u0027t have a link to extra context.",
+      "revId": "77bc002cb9e177f09b20a5d37c3d44422d9bf6b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_14b4927d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T15:57:39Z",
+      "side": 1,
+      "message": "What do we want it to be?",
+      "revId": "77bc002cb9e177f09b20a5d37c3d44422d9bf6b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d7339cf4",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_endpoint_groups_mysql_engine.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-10T15:57:39Z",
+      "side": 1,
+      "message": "Is there a way to test this? Can we create the project_endpoint_group table with something other than the InnoDB engine and call an assertion after upgrade to know that it was changed?",
+      "revId": "77bc002cb9e177f09b20a5d37c3d44422d9bf6b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
