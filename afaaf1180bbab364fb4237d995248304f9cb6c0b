@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af86dd1_a943f96b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-11T22:30:41Z",
+      "side": 1,
+      "message": "this will leave xmldsig as None if the import fails, which will be pretty confusing I think.",
+      "revId": "afaaf1180bbab364fb4237d995248304f9cb6c0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
