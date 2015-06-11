@@ -16,6 +16,24 @@
       "revId": "97a28e1d7020141ec36e5a868ec4045bbf8e03fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_67eb05dd",
+        "filename": "keystone/tests/unit/auth/test_controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-11T01:12:03Z",
+      "side": 1,
+      "message": "Since stevedore doesn\u0027t include \"extension\" in its __all__ [1], stevedore.extension isn\u0027t guaranteed to be available. It would only be available if another module happened to import it.\n\n[1] http://git.openstack.org/cgit/openstack/stevedore/tree/stevedore/__init__.py#n3",
+      "parentUuid": "3afb71cf_496f0cfc",
+      "revId": "97a28e1d7020141ec36e5a868ec4045bbf8e03fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
