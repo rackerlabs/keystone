@@ -21,13 +21,13 @@ from oslo_utils import timeutils
 import six
 
 from keystone import assignment
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import validation
 from keystone import exception
-from keystone.i18n import _
-from keystone.models import token_model
+from keystone.i18n import _, _LW
 from keystone import notifications
 from keystone.trust import schema
 
@@ -64,13 +64,14 @@ class TrustV3(controller.V3Controller):
         return super(TrustV3, cls).base_url(context, path=path)
 
     def _get_user_id(self, context):
-        if 'token_id' in context:
-            token_id = context['token_id']
-            token_data = self.token_provider_api.validate_token(token_id)
-            token_ref = token_model.KeystoneToken(token_id=token_id,
-                                                  token_data=token_data)
-            return token_ref.user_id
-        return None
+        try:
+            auth_context = (context['environment'][
+                            authorization.AUTH_CONTEXT_ENV])
+            token_ref = auth_context['token']
+        except KeyError:
+            LOG.warning(_LW("Couldn't find the auth context"))
+            return None
+        return token_ref.user_id
 
     def get_trust(self, context, trust_id):
         user_id = self._get_user_id(context)

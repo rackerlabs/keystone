@@ -37,16 +37,20 @@ import sys
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
+from oslo_log import log
 from oslo_serialization import jsonutils
 import six
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
-from keystone.i18n import _
-from keystone.models import token_model
+from keystone.i18n import _, _LW
+
+
+LOG = log.getLogger(__name__)
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'credential_api',
@@ -320,13 +324,12 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
 
         """
         try:
-            token_data = self.token_provider_api.validate_token(
-                context['token_id'])
-        except exception.TokenNotFound as e:
-            raise exception.Unauthorized(e)
-
-        token_ref = token_model.KeystoneToken(token_id=context['token_id'],
-                                              token_data=token_data)
+            auth_context = (context['environment']
+                            [authorization.AUTH_CONTEXT_ENV])
+            token_ref = auth_context['token']
+        except KeyError:
+            LOG.warning(_LW("Couldn't find the auth context"))
+            raise exception.Unauthorized()
 
         if token_ref.user_id != user_id:
             raise exception.Forbidden(_('Token belongs to another user'))

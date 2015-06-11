@@ -33,6 +33,7 @@ import six
 import webob.dec
 import webob.exc
 
+from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import json_home
 from keystone.common import utils
@@ -300,12 +301,12 @@ class Application(BaseApplication):
 
         if not context['is_admin']:
             try:
-                user_token_ref = token_model.KeystoneToken(
-                    token_id=context['token_id'],
-                    token_data=self.token_provider_api.validate_token(
-                        context['token_id']))
-            except exception.TokenNotFound as e:
-                raise exception.Unauthorized(e)
+                auth_context = (context['environment']
+                                [authorization.AUTH_CONTEXT_ENV])
+                user_token_ref = auth_context['token']
+            except KeyError:
+                LOG.warning(_LW("Couldn't find the auth context"))
+                raise exception.Unauthorized()
 
             validate_token_bind(context, user_token_ref)
             creds = copy.deepcopy(user_token_ref.metadata)
@@ -364,16 +365,13 @@ class Application(BaseApplication):
             LOG.debug(('will not lookup trust as the request auth token is '
                        'either absent or it is the system admin token'))
             return None
-
         try:
-            token_data = self.token_provider_api.validate_token(
-                context['token_id'])
-        except exception.TokenNotFound:
-            LOG.warning(_LW('Invalid token in _get_trust_id_for_request'))
+            auth_context = (context['environment']
+                            [authorization.AUTH_CONTEXT_ENV])
+            token_ref = auth_context['token']
+        except KeyError:
+            LOG.warning(_LW("Couldn't find the auth context"))
             raise exception.Unauthorized()
-
-        token_ref = token_model.KeystoneToken(token_id=context['token_id'],
-                                              token_data=token_data)
         return token_ref.trust_id
 
     @classmethod

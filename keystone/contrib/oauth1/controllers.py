@@ -15,21 +15,23 @@
 """Extensions supporting OAuth1."""
 
 from oslo_config import cfg
+from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone.contrib.oauth1 import core as oauth1
 from keystone.contrib.oauth1 import validator
 from keystone import exception
-from keystone.i18n import _
-from keystone.models import token_model
+from keystone.i18n import _, _LW
 from keystone import notifications
 
 
 CONF = cfg.CONF
+LOG = log.getLogger(__name__)
 
 
 @notifications.internal(notifications.INVALIDATE_USER_OAUTH_CONSUMER_TOKENS,
@@ -84,10 +86,13 @@ class ConsumerCrudV3(controller.V3Controller):
 
     @controller.protected()
     def delete_consumer(self, context, consumer_id):
-        user_token_ref = token_model.KeystoneToken(
-            token_id=context['token_id'],
-            token_data=self.token_provider_api.validate_token(
-                context['token_id']))
+        try:
+            auth_context = (context['environment'][
+                            authorization.AUTH_CONTEXT_ENV])
+            user_token_ref = auth_context['token']
+        except KeyError:
+            LOG.warning(_LW("Couldn't find the auth context"))
+            raise exception.Unauthorized()
         payload = {'user_id': user_token_ref.user_id,
                    'consumer_id': consumer_id}
         _emit_user_oauth_consumer_token_invalidate(payload)
@@ -382,10 +387,13 @@ class OAuthControllerV3(controller.V3Controller):
             authed_roles.add(role['id'])
 
         # verify the authorizing user has the roles
-        user_token = token_model.KeystoneToken(
-            token_id=context['token_id'],
-            token_data=self.token_provider_api.validate_token(
-                context['token_id']))
+        try:
+            auth_context = (context['environment'][
+                            authorization.AUTH_CONTEXT_ENV])
+            user_token = auth_context['token']
+        except KeyError:
+            LOG.warning(_LW("Couldn't find the auth context"))
+            raise exception.Unauthorized()
         user_id = user_token.user_id
         project_id = req_token['requested_project_id']
         user_roles = self.assignment_api.get_roles_for_user_and_project(
