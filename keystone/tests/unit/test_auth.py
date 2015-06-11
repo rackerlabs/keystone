@@ -115,6 +115,15 @@ class AuthTest(tests.TestCase):
 
         return self.assertDictEqual(normalize(a), normalize(b))
 
+    def _create_auth_context(self, token_id):
+        token_ref = token_model.KeystoneToken(
+            token_id=token_id,
+            token_data=self.token_provider_api.validate_token(token_id))
+        auth_context = authorization.token_to_auth_context(token_ref)
+        return {'environment': {authorization.AUTH_CONTEXT_ENV: auth_context},
+                'token_id': token_id,
+                'host_url': HOST_URL}
+
 
 class AuthBadRequests(AuthTest):
     def test_no_external_auth(self):
@@ -805,15 +814,6 @@ class AuthWithTrust(AuthTest):
         super(AuthWithTrust, self).config_overrides()
         self.config_fixture.config(group='trust', enabled=True)
 
-    def _create_auth_context(self, token_id):
-        token_ref = token_model.KeystoneToken(
-            token_id=token_id,
-            token_data=self.token_provider_api.validate_token(token_id))
-        auth_context = authorization.token_to_auth_context(token_ref)
-        return {'environment': {authorization.AUTH_CONTEXT_ENV: auth_context},
-                'token_id': token_id,
-                'host_url': HOST_URL}
-
     def create_trust(self, trust_data, trustor_name, expires_at=None,
                      impersonation=True):
         username = trustor_name
@@ -913,8 +913,8 @@ class AuthWithTrust(AuthTest):
 
     def test_get_trust(self):
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
-        context = {'token_id': unscoped_token['access']['token']['id'],
-                   'host_url': HOST_URL}
+        context = self._create_auth_context(
+            unscoped_token['access']['token']['id'])
         new_trust = self.trust_controller.create_trust(
             context, trust=self.sample_data)['trust']
         trust = self.trust_controller.get_trust(context,

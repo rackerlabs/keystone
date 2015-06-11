@@ -691,17 +691,11 @@ class V3Controller(wsgi.Application):
             return context['query_string'].get('domain_id')
 
         try:
-            token_ref = token_model.KeystoneToken(
-                token_id=context['token_id'],
-                token_data=self.token_provider_api.validate_token(
-                    context['token_id']))
+            auth_context = (context['environment']
+                            [authorization.AUTH_CONTEXT_ENV])
+            token_ref = auth_context['token']
         except KeyError:
-            raise exception.ValidationError(
-                _('domain_id is required as part of entity'))
-        except (exception.TokenNotFound,
-                exception.UnsupportedTokenVersionException):
-            LOG.warning(_LW('Invalid token found while getting domain ID '
-                            'for list request'))
+            LOG.warning(_LW("Couldn't find the auth context"))
             raise exception.Unauthorized()
 
         if token_ref.domain_scoped:
@@ -725,18 +719,11 @@ class V3Controller(wsgi.Application):
         # a v3 protected call).  However, this optimization is probably not
         # worth the duplication of state
         try:
-            token_ref = token_model.KeystoneToken(
-                token_id=context['token_id'],
-                token_data=self.token_provider_api.validate_token(
-                    context['token_id']))
+            auth_context = (context['environment']
+                            [authorization.AUTH_CONTEXT_ENV])
+            token_ref = auth_context['token']
         except KeyError:
-            # This might happen if we use the Admin token, for instance
-            raise exception.ValidationError(
-                _('A domain-scoped token must be used'))
-        except (exception.TokenNotFound,
-                exception.UnsupportedTokenVersionException):
-            LOG.warning(_LW('Invalid token found while getting domain ID '
-                            'for list request'))
+            LOG.warning(_LW("Couldn't find the auth context"))
             raise exception.Unauthorized()
 
         if token_ref.domain_scoped:
