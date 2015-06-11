@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_a75c5d4b",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-11T01:35:42Z",
+      "side": 1,
+      "message": "use\n\n from keystone import catalog\n\nthe pattern is that the __init__.py imports core.*",
+      "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c728799c",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-11T01:35:42Z",
+      "side": 1,
+      "message": "this should be using stevedore now, so driver should be just \u0027templated\u0027",
+      "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
