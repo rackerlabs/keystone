@@ -933,8 +933,8 @@ class AuthWithTrust(AuthTest):
 
     def test_get_trust(self):
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
-        context = {'token_id': unscoped_token['access']['token']['id'],
-                   'host_url': HOST_URL}
+        context = self._create_auth_context(
+            unscoped_token['access']['token']['id'])
         new_trust = self.trust_controller.create_trust(
             context, trust=self.sample_data)['trust']
         trust = self.trust_controller.get_trust(context,
