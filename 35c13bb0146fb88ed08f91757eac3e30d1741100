@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_2f7b94bf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-11T11:40:39Z",
+      "side": 1,
+      "message": "I think you\u0027re reading \u0027may\u0027 differently to how I meant it.  I meant \u0027may\u0027 not in the sense that the url might be odd - but in the sense that it cannot be formatted due to the absence of a value.  You\u0027re right in a way that there are two changes but they are so closely related - removing endpoints without valid urls and removing services without endpoints - that it makes sense to put them together.\n\nI\u0027ve changed the commit message to attempt clarification.",
+      "parentUuid": "3afb71cf_f861e4d3",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_d8fd08b2",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-10T18:39:21Z",
       "side": 1,
       "message": "nit: \n\nShould be able to do the same with: \n\n    if not eps:\n        return",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_0ff1f86a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-11T11:40:39Z",
+      "side": 1,
+      "message": "I\u0027ve taken care of this but actually by reversing the condition and returning explicitly only once and then with a dict rather than initialising \u0027service\u0027 to a dict and returning that.",
+      "parentUuid": "3afb71cf_d8fd08b2",
       "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_8f70480c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-11T11:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_18f7208c",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_b8636c41",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 9
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_4f76d006",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1099,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-11T11:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_b8636c41",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_18016038",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 9
@@ -81,6 +153,24 @@
       "writtenOn": "2015-06-10T18:39:21Z",
       "side": 1,
       "message": "Could some of the reference generation be shared between these two tests? Some of the test_v3 test modules have reference generation methods, I wonder if they could be used here instead of making more of them?",
+      "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2f71540c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-11T11:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_18016038",
       "revId": "35c13bb0146fb88ed08f91757eac3e30d1741100",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
