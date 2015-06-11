@@ -24,12 +24,12 @@ from oslo_log import log
 from six.moves import urllib
 
 from keystone.assignment import schema
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
 from keystone import exception
 from keystone.i18n import _, _LW
-from keystone.models import token_model
 from keystone import notifications
 
 
@@ -52,13 +52,12 @@ class TenantAssignment(controller.V2Controller):
 
         """
         try:
-            token_data = self.token_provider_api.validate_token(
-                context['token_id'])
-            token_ref = token_model.KeystoneToken(token_id=context['token_id'],
-                                                  token_data=token_data)
-        except exception.NotFound as e:
-            LOG.warning(_LW('Authentication failed: %s'), e)
-            raise exception.Unauthorized(e)
+            auth_context = (context['environment']
+                            [authorization.AUTH_CONTEXT_ENV])
+            token_ref = auth_context['token']
+        except KeyError:
+            LOG.warning(_LW("Couldn't find the auth context"))
+            raise exception.Unauthorized()
 
         tenant_refs = (
             self.assignment_api.list_projects_for_user(token_ref.user_id))
