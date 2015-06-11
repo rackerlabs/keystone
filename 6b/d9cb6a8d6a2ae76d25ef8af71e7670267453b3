@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Submitted-by: Jenkins
+Submitted-at: Thu, 11 Jun 2015 03:18:20 +0000
+Reviewed-on: https://review.openstack.org/188799
+Project: openstack/keystone
+Branch: refs/heads/master
