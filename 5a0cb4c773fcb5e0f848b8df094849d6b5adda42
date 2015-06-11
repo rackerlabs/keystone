@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_bfeb2078",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 90
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-11T17:56:27Z",
+      "side": 1,
+      "message": "This comment kinda belong with the get_sql_modules method now.",
+      "revId": "5a0cb4c773fcb5e0f848b8df094849d6b5adda42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_df6b7cf0",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 90
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-11T17:56:27Z",
+      "side": 1,
+      "message": "Add a FIXME here with a name, so that we can track it a little easier.",
+      "revId": "5a0cb4c773fcb5e0f848b8df094849d6b5adda42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_9f7624d7",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 90
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-11T17:56:27Z",
+      "side": 1,
+      "message": "same comment applies here",
+      "revId": "5a0cb4c773fcb5e0f848b8df094849d6b5adda42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_7f7368e8",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 90
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-11T17:56:27Z",
+      "side": 1,
+      "message": "and here.",
+      "revId": "5a0cb4c773fcb5e0f848b8df094849d6b5adda42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
