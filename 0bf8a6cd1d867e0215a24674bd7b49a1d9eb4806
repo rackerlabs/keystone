@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_2a05d40f",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_endpoint_filtering_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T03:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_23e628e8",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_a3da1815",
         "filename": "keystone/common/sql/migrate_repo/versions/074_add_endpoint_groups.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-10T21:23:18Z",
       "side": 1,
       "message": "same comment here.",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4a02500b",
+        "filename": "keystone/common/sql/migrate_repo/versions/074_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T03:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_a3da1815",
       "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_c70f5935",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T03:06:38Z",
+      "side": 1,
+      "message": "Ah, I did it intentionally, see: https://wiki.openstack.org/wiki/Documentation/Conventions",
+      "parentUuid": "3afb71cf_c3f6348e",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_2334e847",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 1
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_6700a502",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T03:06:38Z",
+      "side": 1,
+      "message": "same here",
+      "parentUuid": "3afb71cf_2334e847",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_0a57b8ca",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 1
@@ -98,6 +170,24 @@
       "writtenOn": "2015-06-11T01:45:22Z",
       "side": 1,
       "message": "what\u0027s the meaning of this change ?",
+      "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_4f0360b9",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T03:06:38Z",
+      "side": 1,
+      "message": "pls check 073_add_endpoint_filtering_table.py, we need migrate_engine there.",
+      "parentUuid": "3afb71cf_0a57b8ca",
       "revId": "0bf8a6cd1d867e0215a24674bd7b49a1d9eb4806",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
