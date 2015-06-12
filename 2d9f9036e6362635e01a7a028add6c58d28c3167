@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af86dd1_910cd743",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T08:22:12Z",
+      "side": 1,
+      "message": "Is it possible to get some KeyError exception here?",
+      "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_f51f7659",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T08:22:12Z",
+      "side": 1,
+      "message": "Same here, we\u0027d better to throw KeyError here for consistency.",
+      "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_352cee49",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T08:22:12Z",
+      "side": 1,
+      "message": "revert it back, no changes here",
+      "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_358f4e25",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T08:22:12Z",
+      "side": 1,
+      "message": "Didn\u0027t see any benifit from this refactoring, but it\u0027s a little heavy via calling \u0027_create_auth_context\u0027 instead.",
+      "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
