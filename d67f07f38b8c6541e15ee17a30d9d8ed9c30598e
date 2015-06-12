@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af86dd1_d6beaefe",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-12T17:29:24Z",
+      "side": 1,
+      "message": "both tests inherit from the same class, what do you think about moving this method to the super class (not necessarily is RestfulTestCase)?",
+      "revId": "d67f07f38b8c6541e15ee17a30d9d8ed9c30598e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_f6f52a83",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-12T17:29:24Z",
+      "side": 1,
+      "message": "what is domainB? Suggest to rename the test to specify that it is testing that a domain_admin can\u0027t list role assignments of a different domain\n\nalso, suggest to change \"failed\" to \"fails\" here and in the other occurrences below",
+      "revId": "d67f07f38b8c6541e15ee17a30d9d8ed9c30598e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
