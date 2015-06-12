@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af86dd1_0cbc566b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-12T02:40:12Z",
+      "side": 1,
+      "message": "I think DocImpact should be noted here since this is a new CLI argument.",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
