@@ -16,6 +16,23 @@
       "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_ea6c2d0a",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-12T11:56:37Z",
+      "side": 0,
+      "message": "+1",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
