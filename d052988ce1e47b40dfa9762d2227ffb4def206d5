@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af86dd1_6903afb9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1865,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-12T10:20:44Z",
+      "side": 1,
+      "message": "s/renabling/re-enabling",
+      "revId": "d052988ce1e47b40dfa9762d2227ffb4def206d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
