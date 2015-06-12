@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af86dd1_2a1245b5",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-12T11:53:16Z",
+      "side": 1,
+      "message": "provide a new line after fake_get_user function.",
+      "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
