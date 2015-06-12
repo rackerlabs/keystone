@@ -16,6 +16,24 @@
       "revId": "8b2d14c0e04652e56ab0b5a27218a3647a7f9d66",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af86dd1_98cbd772",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-12T08:47:15Z",
+      "side": 1,
+      "message": "Seems like this is not a correct way to fix the bug in keystone since this patch failed py27",
+      "parentUuid": "1a6ced46_d631970c",
+      "revId": "8b2d14c0e04652e56ab0b5a27218a3647a7f9d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
