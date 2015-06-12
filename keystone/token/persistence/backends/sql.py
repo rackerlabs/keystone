@@ -277,7 +277,7 @@ class Token(token.persistence.Driver):
                                         expiry_time)
             row_count = delete_query.delete(synchronize_session=False)
             total_removed += row_count
-            LOG.debug('Removed %d total expired tokens', total_removed)
+            LOG.debug('Removed %d total expired tokens', row_count)
 
         session.flush()
         LOG.info(_LI('Total expired tokens removed: %d'), total_removed)
