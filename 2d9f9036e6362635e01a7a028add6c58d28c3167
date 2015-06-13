@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_6cc1642e",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-13T06:58:15Z",
+      "side": 1,
+      "message": "emm, seems like there will be other unittest referenced with this function in the future.",
+      "parentUuid": "1af86dd1_c9da8c78",
+      "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af86dd1_358f4e25",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 2
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "The unit test had to be modified to include auth_context in the context object that we pass to the code-under-test to match the changes made therein.",
       "parentUuid": "1af86dd1_358f4e25",
+      "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_aca0cc91",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-13T06:58:15Z",
+      "side": 1,
+      "message": "I am fine with it, but I think the unittest here not intends to test how context is built up but something relevant with trust.\n\nIf we want to test the around auth_context, we may create a new testcase?",
+      "parentUuid": "1af86dd1_290fe0e2",
       "revId": "2d9f9036e6362635e01a7a028add6c58d28c3167",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
