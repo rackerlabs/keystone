@@ -42,6 +42,15 @@ class SensitiveConfig(sql.ModelBase, sql.ModelDictMixin):
         return d
 
 
+SQL_MUTEX = 'SQL'
+
+
+class ConfigMutex(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'config_mutex'
+    mutex = sql.Column(sql.String(64), primary_key=True)
+    domain_id = sql.Column(sql.String(64), nullable=False)
+
+
 class DomainConfig(resource.DomainConfigDriverV8):
 
     def choose_table(self, sensitive):
@@ -116,4 +125,30 @@ class DomainConfig(resource.DomainConfigDriverV8):
                 query = query.filter_by(group=group)
                 if option:
                     query = query.filter_by(option=option)
+            query.delete(False)
+
+    def obtain_config_sql_mutex(self, domain_id):
+        try:
+            with sql.transaction() as session:
+                ref = ConfigMutex(mutex=SQL_MUTEX, domain_id=domain_id)
+                session.add(ref)
+            return True
+        except sql.DBDuplicateEntry:
+            pass
+        return False
+
+    def read_config_sql_mutex(self):
+        with sql.transaction() as session:
+            ref = session.query(ConfigMutex).get(SQL_MUTEX)
+            if not ref:
+                raise exception.ConfigSQLMutexNotFound()
+        return ref.domain_id
+
+    def free_config_sql_mutex(self, domain_id):
+        """Silently delete any mutex for the domain specified."""
+
+        with sql.transaction() as session:
+            query = session.query(ConfigMutex)
+            query = query.filter_by(mutex=SQL_MUTEX)
+            query = query.filter_by(domain_id=domain_id)
             query.delete(False)
