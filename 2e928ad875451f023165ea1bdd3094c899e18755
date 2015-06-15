@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_0fe8a30f",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-15T13:31:26Z",
+      "side": 1,
+      "message": "This was the test that failed in the bug report but it doesn\u0027t look like we are using a time_fixture here like we are in the other tests.",
+      "revId": "2e928ad875451f023165ea1bdd3094c899e18755",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
