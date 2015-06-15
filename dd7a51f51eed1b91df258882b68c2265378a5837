@@ -16,6 +16,23 @@
       "revId": "dd7a51f51eed1b91df258882b68c2265378a5837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_80e7a0e3",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2791,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-15T14:20:44Z",
+      "side": 1,
+      "message": "This should raise an error similar to: \n\nhttp://cdn.pasteraw.com/puvteb7ewhh1dmhh40e9094tgv63zzi\n\nDoes it matter if we do something like; \n\n    self.assertRaises(exception.NotFound,\n                      self.identity_api.list_users,\n                      domain[\u0027id\u0027])\n\nJust so it\u0027s a little more apparent that the test is failing on something that it shouldn\u0027t be?",
+      "revId": "dd7a51f51eed1b91df258882b68c2265378a5837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
