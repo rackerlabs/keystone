@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_8949088e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-15T16:22:31Z",
+      "side": 0,
+      "message": "setUp is no longer required, since the PKI test class\u0027 setup method works fine for the child class",
+      "revId": "2bb4593266a5905679b5a4b3e0058383fbb9c1c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_a9316c0d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-15T16:22:31Z",
+      "side": 0,
+      "message": "The UUID test class is no longer inheriting an irrelevant test",
+      "revId": "2bb4593266a5905679b5a4b3e0058383fbb9c1c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

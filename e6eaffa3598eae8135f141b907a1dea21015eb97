@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_897268e4",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-15T16:22:31Z",
+      "side": 1,
+      "message": "PKIZ tests now just inherit from the PKI tests.",
+      "revId": "e6eaffa3598eae8135f141b907a1dea21015eb97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_495c604b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-15T16:22:31Z",
+      "side": 1,
+      "message": "the PKIZ test class just needs to use a different verify method",
+      "revId": "e6eaffa3598eae8135f141b907a1dea21015eb97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
