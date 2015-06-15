@@ -549,3 +549,29 @@ class DomainConfigTests(object):
             {},
             self.domain_config_api.get_config_with_sensitive_info(
                 self.domain['id']))
+
+    def test_sql_mutex(self):
+        self.domain_config_api.obtain_config_sql_mutex(self.domain['id'])
+        self.domain_config_api.free_config_sql_mutex(self.domain['id'])
+
+        # Make sure that once someone has it, nobody else can get it.
+        # This includes the domain who already has it.
+        self.domain_config_api.obtain_config_sql_mutex(self.domain['id'])
+        self.assertFalse(
+            self.domain_config_api.obtain_config_sql_mutex(self.domain['id']))
+
+        # Make sure we can read who does have it
+        self.assertEqual(
+            self.domain['id'],
+            self.domain_config_api.read_config_sql_mutex())
+
+        # Make sure freeing it is silent if the domain specified doesn't
+        # have the mutex
+        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain2['id'], domain2)
+        self.domain_config_api.free_config_sql_mutex(domain2['id'])
+
+        # If nobody has the mutex, then reading should raise NotFound
+        self.domain_config_api.free_config_sql_mutex(self.domain['id'])
+        self.assertRaises(exception.ConfigSQLMutexNotFound,
+                          self.domain_config_api.read_config_sql_mutex)

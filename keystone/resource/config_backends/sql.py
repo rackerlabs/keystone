@@ -117,3 +117,15 @@ class DomainConfig(resource.DomainConfigDriverV8):
                 if option:
                     query = query.filter_by(option=option)
             query.delete(False)
+
+    # Naive implementations of the V9 sql mutex methods. These just assume if
+    # you ask, you get the mutex.
+
+    def obtain_config_sql_mutex(self, domain_id):
+        return True
+
+    def read_config_sql_mutex(self):
+        raise exception.ConfigSQLMutexNotFound()
+
+    def free_config_sql_mutex(self, domain_id):
+        pass
