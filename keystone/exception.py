@@ -357,6 +357,14 @@ class DomainConfigNotFound(NotFound):
                        'configuration for domain %(domain_id)s')
 
 
+class ConfigRegistrationNotFound(Error):
+    # This is used internally between the domain config backend and the
+    # manager, so should not escape to the client - but in case it did, it
+    # should end up as a 500 error.
+    message_format = _('Nobody currently holds the registration specified')
+    code = 500
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s")
