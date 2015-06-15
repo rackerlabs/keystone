@@ -456,6 +456,7 @@ class Manager(manager.Manager):
         # Delete any database stored domain config
         self.domain_config_api.delete_config_options(domain_id)
         self.domain_config_api.delete_config_options(domain_id, sensitive=True)
+        self.domain_config_api.free_sql_mutex(domain_id)
         # TODO(henry-nash): Although the controller will ensure deletion of
         # all users & groups within the domain (which will cause all
         # assignments for those users/groups to also be deleted), there

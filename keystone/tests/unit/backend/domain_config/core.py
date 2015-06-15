@@ -549,3 +549,16 @@ class DomainConfigTests(object):
             {},
             self.domain_config_api.get_config_with_sensitive_info(
                 self.domain['id']))
+
+    def test_sql_mutex(self):
+        self.domain_config_api.obtain_sql_mutex(self.domain['id'])
+        self.domain_config_api.free_sql_mutex(self.domain['id'])
+        self.domain_config_api.obtain_sql_mutex(self.domain['id'])
+        # Check we can get our own mutex
+        self.domain_config_api.obtain_sql_mutex(self.domain['id'])
+        # Now ensure attempting a mutex on another domain fails
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain['id'], domain)
+        self.assertFalse(
+            self.domain_config_api.obtain_sql_mutex(domain['id']))
+        self.domain_config_api.free_sql_mutex(self.domain['id'])

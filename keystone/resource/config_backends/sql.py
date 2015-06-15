@@ -42,6 +42,15 @@ class SensitiveConfig(sql.ModelBase, sql.ModelDictMixin):
         return d
 
 
+class ConfigMutex(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'config_mutex'
+    mutex = sql.Column(sql.String(64), primary_key=True)
+    domain_id = sql.Column(sql.String(64), nullable=False)
+
+
+SQL_MUTEX = 'SQL'
+
+
 class DomainConfig(resource.DomainConfigDriver):
 
     def choose_table(self, sensitive):
@@ -117,3 +126,44 @@ class DomainConfig(resource.DomainConfigDriver):
                 if option:
                     query = query.filter_by(option=option)
             query.delete(False)
+
+    # SQL Mutex methods
+
+    def _create_sql_mutex(self, session, domain_id):
+        ref = ConfigMutex(mutex=SQL_MUTEX, domain_id=domain_id)
+        session.add(ref)
+
+    def obtain_sql_mutex(self, domain_id):
+        try:
+            with sql.transaction() as session:
+                self._create_sql_mutex(session, domain_id)
+            return True
+        except sql.DBDuplicateEntry:
+            # OK, so someone already has the mutex, before we give up we
+            # should check that it isn't our own domain.
+            try:
+                with sql.transaction() as session:
+                    ref = session.query(ConfigMutex).get(SQL_MUTEX)
+                    domain_with_mutex = ref.domain_id
+            except sql.NotFound:
+                # Just maybe another process deleted it, so try and grab it
+                try:
+                    with sql.transaction() as session:
+                        self._create_sql_mutex(session, domain_id)
+                        domain_with_mutex = domain_id
+                except sql.DBDuplicateEntry:
+                    return False
+        return domain_with_mutex == domain_id
+
+    def read_sql_mutex(self):
+        with sql.transaction() as session:
+            ref = session.query(ConfigMutex).get(SQL_MUTEX)
+            if not ref:
+                raise exception.NotFound
+        return ref.domain_id
+
+    def free_sql_mutex(self, domain_id):
+        with sql.transaction() as session:
+            ref = session.query(ConfigMutex).get(SQL_MUTEX)
+            if ref:
+                session.delete(ref)

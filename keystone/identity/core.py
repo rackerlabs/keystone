@@ -177,19 +177,46 @@ class DomainConfigs(dict):
 
     def _load_config_from_database(self, domain_id, specific_config):
 
-        def _assert_not_sql_driver(domain_id, new_config):
-            """Ensure this is not an sql driver.
+        def _assert_no_more_than_one_sql_driver(domain_id, new_config):
+            """Ensure adding driver doesn't push us over the limit of 1
 
-            Due to multi-threading safety concerns, we do not currently support
-            the setting of a specific identity driver to sql via the Identity
-            API.
+            Due to multi-process safety concerns, we use a mutex to ensure
+            two processes aren't trying to add a driver at the same time
 
             """
-            if new_config['driver'].is_sql:
-                reason = _('Domain specific sql drivers are not supported via '
-                           'the Identity API. One is specified in '
-                           '/domains/%s/config') % domain_id
-                raise exception.InvalidDomainConfig(reason=reason)
+            if not new_config['driver'].is_sql:
+                self.domain_config_api.free_sql_mutex(domain_id)
+                return
+
+            if self.domain_config_api.obtain_sql_mutex(domain_id):
+                # We got the mutex, so we are good to go
+                return
+
+            # We failed to get the mutex, which means another domain has it.
+            # Before we give up, we should check that this domain is valid, so
+            # that we self heal the failure of a domain delete to remove the
+            # mutex.
+
+            try:
+                domain_with_mutex = self.domain_config_api.read_sql_mutex()
+            except exception.NotFound:
+                # Looks like another process got in an freed it...let's try
+                # and grab it again
+                if self.domain_config_api.obtain_sql_mutex(domain_id):
+                    # We got this time, so we are good to go
+                    return
+
+            try:
+                self.resource_api.get_domain(domain_with_mutex)
+            except exception.DomainNotFound:
+                # Free the orphaned mutex, then try and get ours again
+                self.domain_config_api.free_sql_mutex(domain_with_mutex)
+                if self.domain_config_api.obtain_sql_mutex(domain_id):
+                    # We got this time, so we are good to go
+                    return
+
+            details = _('Config API entity at /domains/%s/config') % domain_id
+            raise exception.MultipleSQLDriversInConfig(source=details)
 
         domain_config = {}
         domain_config['cfg'] = cfg.ConfigOpts()
@@ -205,7 +232,7 @@ class DomainConfigs(dict):
 
         domain_config['cfg_overrides'] = specific_config
         domain_config['driver'] = self._load_driver(domain_config)
-        _assert_not_sql_driver(domain_id, domain_config)
+        _assert_no_more_than_one_sql_driver(domain_id, domain_config)
         self[domain_id] = domain_config
 
     def _setup_domain_drivers_from_database(self, standard_driver,
