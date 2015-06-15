@@ -87,6 +87,24 @@
       "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_75c82056",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-15T14:07:46Z",
+      "side": 1,
+      "message": "There have been cases in the past where we\u0027ve added documentation \"around\" keystone-manage to our in-tree configuration docs.\n\nhttps://github.com/openstack/keystone/blob/2bb4593266a5905679b5a4b3e0058383fbb9c1c5/doc/source/configuration.rst#token-provider",
+      "parentUuid": "fa32b979_94a60dc0",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
