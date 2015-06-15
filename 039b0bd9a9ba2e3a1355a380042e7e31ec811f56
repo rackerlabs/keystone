@@ -51,6 +51,24 @@
       "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_3409412d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-15T11:43:24Z",
+      "side": 1,
+      "message": "do you have any idea on where we can add some more detailed docs?",
+      "parentUuid": "fa32b979_fe6f3a90",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
