@@ -636,6 +636,30 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'enabled', 'domain_id', 'parent_id',
                                  'is_domain'])
 
+    def test_add_config_sql_mutex(self):
+        config_mutex = 'config_mutex'
+        self.upgrade(67)
+        self.assertTableDoesNotExist(config_mutex)
+        self.upgrade(68)
+        self.assertTableColumns(config_mutex, ['mutex', 'domain_id'])
+
+    def test_confirm_config_sql_mutex(self):
+        config_mutex = 'config_mutex'
+        self.upgrade(75)
+        self.assertTableColumns(config_mutex, ['mutex', 'domain_id'])
+
+    def test_confirm_config_sql_mutex_added(self):
+        # Ensure that an installation which did not take the backport of the
+        # config mutex table is supported.
+        config_mutex = 'config_mutex'
+        self.upgrade(74)
+        config_table = sqlalchemy.Table(config_mutex, self.metadata,
+                                        autoload=True)
+        config_table.drop()
+        self.assertTableDoesNotExist(config_mutex)
+        self.upgrade(75)
+        self.assertTableColumns(config_mutex, ['mutex', 'domain_id'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

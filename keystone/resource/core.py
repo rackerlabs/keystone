@@ -463,6 +463,7 @@ class Manager(manager.Manager):
         # Delete any database stored domain config
         self.domain_config_api.delete_config_options(domain_id)
         self.domain_config_api.delete_config_options(domain_id, sensitive=True)
+        self.domain_config_api.free_config_sql_mutex(domain_id)
         # TODO(henry-nash): Although the controller will ensure deletion of
         # all users & groups within the domain (which will cause all
         # assignments for those users/groups to also be deleted), there
@@ -1359,6 +1360,41 @@ class DomainConfigDriver(object):
         :param option: optional option name. If group is None, then this
                        parameter is ignored
         :param sensitive: whether the option is sensitive
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def obtain_config_sql_mutex(self, domain_id):
+        """Try and grab the sql mutex for a domain.
+
+        :param domain_id: the domain required
+
+        :returns: True if the mutex was obtained, False otherwise. Failing to
+                  get the mutex means that someone already has it (which could
+                  even be the domain being requested).
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def read_config_sql_mutex(self):
+        """Get the domain ID of who holds the mutex.
+
+        :returns: domain_id of who holds the mutex.
+        :raises: keystone.exception.ConfigSQLMutexNotFound: nobody has
+                 the mutex.
+
+        """
+
+    @abc.abstractmethod
+    def free_config_sql_mutex(self, domain_id):
+        """Free the mutex if it is held by the domain specified.
+
+        If the specified domain holds the mutex then free it, if it does not
+        hold the mutex then do nothing - no exception is raised.
+
+        :param domain_id: the domain in question
 
         """
         raise exception.NotImplemented()  # pragma: no cover
