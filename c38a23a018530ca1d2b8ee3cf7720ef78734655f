@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_a718b385",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-15T16:57:31Z",
+      "side": 1,
+      "message": "Why do I care how many were removed this time through the loop? I can tell this from the existing message since it\u0027s just the difference from the last log message. Also, isn\u0027t it the same value every time?",
+      "revId": "c38a23a018530ca1d2b8ee3cf7720ef78734655f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
