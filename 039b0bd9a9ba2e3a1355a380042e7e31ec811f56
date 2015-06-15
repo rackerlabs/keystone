@@ -69,6 +69,24 @@
       "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_94a60dc0",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-15T11:51:03Z",
+      "side": 1,
+      "message": "not really :( thought about the DocString but...\n\nMaybe add there until we figure out a better place to put it (in a follow up patch, of course)",
+      "parentUuid": "fa32b979_3409412d",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
