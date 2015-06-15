@@ -16,6 +16,41 @@
       "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_5ee98619",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-15T11:01:08Z",
+      "side": 1,
+      "message": "it is already updating the docs, not sure if DocImpact is needed in this kind of situation.",
+      "parentUuid": "1af86dd1_0cbc566b",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_fe6f3a90",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-15T11:01:08Z",
+      "side": 1,
+      "message": "I think you need to provide an example of such mapping file somewhere (although you have a great help text in the --input arg)",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
