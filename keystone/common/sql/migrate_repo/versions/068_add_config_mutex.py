@@ -10,9 +10,18 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-# This is a placeholder for Kilo backports. Do not use this number for new
-# Liberty work. New Liberty work starts after all the placeholders.
+import sqlalchemy as sql
 
 
 def upgrade(migrate_engine):
-    pass
+    meta = sql.MetaData()
+    meta.bind = migrate_engine
+
+    mutex_table = sql.Table(
+        'config_mutex',
+        meta,
+        sql.Column('mutex', sql.String(64), primary_key=True),
+        sql.Column('domain_id', sql.String(64), nullable=False),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
+    mutex_table.create(migrate_engine, checkfirst=True)

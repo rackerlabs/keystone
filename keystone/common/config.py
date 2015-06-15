@@ -458,7 +458,8 @@ FILE_OPTIONS = {
     ],
     'domain_config': [
         cfg.StrOpt('driver',
-                   default='sql',
+                   default='keystone.resource.config_backends.sql.'
+                           'DomainConfigV9',
                    help='Entrypoint for the domain config backend driver in '
                         'the keystone.resource.domain_config namespace.'),
         cfg.BoolOpt('caching', default=True,
