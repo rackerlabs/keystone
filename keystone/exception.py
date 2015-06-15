@@ -357,6 +357,10 @@ class DomainConfigNotFound(NotFound):
                        'configuration for domain %(domain_id)s')
 
 
+class ConfigRegistrationNotFound(NotFound):
+    message_format = _('Nobody currently holds the registration specified')
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s")

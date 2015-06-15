@@ -44,6 +44,14 @@ MEMOIZE = cache.get_memoization_decorator(section='identity')
 DOMAIN_CONF_FHEAD = 'keystone.'
 DOMAIN_CONF_FTAIL = '.conf'
 
+# The number of times we will attempt to get register a domain to
+# use the SQL driver, if we find that another process is locking/freeing
+# at the same time as us.
+REGISTRATION_ATTEMPTS = 10
+
+# Config Registration Types
+SQL_DRIVER = 'SQL'
+
 
 def filter_user(user_ref):
     """Filter out private items in a user dict.
@@ -67,7 +75,7 @@ def filter_user(user_ref):
     return user_ref
 
 
-@dependency.requires('domain_config_api')
+@dependency.requires('domain_config_api', 'resource_api')
 class DomainConfigs(dict):
     """Discover, store and provide access to domain specific configs.
 
@@ -95,7 +103,7 @@ class DomainConfigs(dict):
 
     def _assert_no_more_than_one_sql_driver(self, domain_id, new_config,
                                             config_file=None):
-        """Ensure there is more than one sql driver.
+        """Ensure there is no more than one sql driver.
 
         Check to see if the addition of the driver in this new config
         would cause there to now be more than one sql driver.
@@ -108,6 +116,12 @@ class DomainConfigs(dict):
                 (self.driver.is_sql or self._any_sql)):
             # The addition of this driver would cause us to have more than
             # one sql driver, so raise an exception.
+
+            # TODO(henry-nash): This method is only used in the file-based
+            # case, so has no need to worry about the database/API case. That
+            # code should be removed, and this method perhaps moved inside
+            # _load_config_from_file(). This is raised as bug #1466772.
+
             if not config_file:
                 config_file = _('Database at /domains/%s/config') % domain_id
             raise exception.MultipleSQLDriversInConfig(source=config_file)
@@ -177,19 +191,76 @@ class DomainConfigs(dict):
 
     def _load_config_from_database(self, domain_id, specific_config):
 
-        def _assert_not_sql_driver(domain_id, new_config):
-            """Ensure this is not an sql driver.
+        def _assert_no_more_than_one_sql_driver(domain_id, new_config):
+            """Ensure adding driver doesn't push us over the limit of 1
 
-            Due to multi-threading safety concerns, we do not currently support
-            the setting of a specific identity driver to sql via the Identity
-            API.
+            Due to multi-process safety concerns, we use specific config
+            backend methods to serialise use of SQL driver across multiple
+            Keystone processes
 
             """
-            if new_config['driver'].is_sql:
-                reason = _('Domain specific sql drivers are not supported via '
-                           'the Identity API. One is specified in '
-                           '/domains/%s/config') % domain_id
-                raise exception.InvalidDomainConfig(reason=reason)
+            if not new_config['driver'].is_sql:
+                self.domain_config_api.free_config_registration(domain_id)
+                return
+
+            # To ensure we are the only SQL driver, we attempt to get and hold
+            # a register of our use of SQL. If we get it we know we are good,
+            # if we fail to get it then we should:
+            #
+            # - First check if another process has registered for SQL for our
+            #   domain, in which case we also fine
+            # - If a different domain has it, we should check that this domain
+            #   is still valid, in case, for example, domain deletion somehow
+            #   failed to remove its registration (i.e. we self heal for these
+            #   kinds of issues).
+
+            domain_registered = 'Unknown'
+            for x in range(REGISTRATION_ATTEMPTS):
+                if self.domain_config_api.obtain_config_registration(
+                        domain_id, SQL_DRIVER):
+                    # We registered our use, so we are good to go
+                    return
+
+                # We failed to registered our use, let's find out who is
+                # using it
+                try:
+                    domain_registered = (
+                        self.domain_config_api.read_config_registration(
+                            SQL_DRIVER))
+                except exception.ConfigRegistrationNotFound:
+                    # Looks like another process got in and freed it...let's
+                    # try and grab it again
+                    continue
+
+                if (domain_registered == domain_id):
+                    # Another process already grabbed it for us, so we are fine
+                    return
+
+                # So we don't have it, but someone else does...let's check that
+                # this domain is still valid
+                try:
+                    self.resource_api.get_domain(domain_registered)
+                except exception.DomainNotFound:
+                    # Free the orphaned registration, then try and then try and
+                    # get ours again
+                    self.domain_config_api.free_config_registration(
+                        domain_registered, type=SQL_DRIVER)
+                    continue
+
+                # The domain is valid, so we really do have an attempt at more
+                # than one SQL driver.
+                details = (
+                    _('Config API entity at /domains/%s/config') % domain_id)
+                raise exception.MultipleSQLDriversInConfig(source=details)
+
+            # We fell out of the loop without either registering our domain or
+            # being able to find who has it...either we were very very very
+            # unlucky or something is awry.
+            msg = _('Exceeded attempts to register domain %(domain)s to use '
+                    'the SQL driver, the last  domain that appears to have '
+                    'had it is %(last_domain)s, giving up') % {
+                        'domain': domain_id, 'last_domain': domain_registered}
+            raise exception.UnexpectedError(msg)
 
         domain_config = {}
         domain_config['cfg'] = cfg.ConfigOpts()
@@ -207,7 +278,7 @@ class DomainConfigs(dict):
 
         domain_config['cfg_overrides'] = specific_config
         domain_config['driver'] = self._load_driver(domain_config)
-        _assert_not_sql_driver(domain_id, domain_config)
+        _assert_no_more_than_one_sql_driver(domain_id, domain_config)
         self[domain_id] = domain_config
 
     def _setup_domain_drivers_from_database(self, standard_driver,
