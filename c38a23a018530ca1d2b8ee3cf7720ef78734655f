@@ -34,6 +34,24 @@
       "revId": "c38a23a018530ca1d2b8ee3cf7720ef78734655f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_18a460a4",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-15T17:40:02Z",
+      "side": 1,
+      "message": "The \"Total expired tokens removed\" isn\u0027t redundant -- it tells me as a developer that the loop is completed. It\u0027s logged at INFO level rather than DEBUG, so I wouldn\u0027t expect to see the progress messages unless I was debugging.",
+      "parentUuid": "fa32b979_785d6ce8",
+      "revId": "c38a23a018530ca1d2b8ee3cf7720ef78734655f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
