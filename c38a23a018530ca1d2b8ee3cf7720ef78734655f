@@ -16,6 +16,24 @@
       "revId": "c38a23a018530ca1d2b8ee3cf7720ef78734655f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_785d6ce8",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-15T17:34:11Z",
+      "side": 1,
+      "message": "Brant, so according to the comment, its \"roughly equal\".\n\nhttps://review.openstack.org/#/c/191157/3/keystone/token/persistence/backends/sql.py#L57\n\nSo its roughly the same every time I suppose? Having two \"total\" token removed messages seem redundant.",
+      "parentUuid": "fa32b979_a718b385",
+      "revId": "c38a23a018530ca1d2b8ee3cf7720ef78734655f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
