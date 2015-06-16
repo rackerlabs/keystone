@@ -16,6 +16,24 @@
       "revId": "2e928ad875451f023165ea1bdd3094c899e18755",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_1045096f",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-16T00:23:06Z",
+      "side": 1,
+      "message": "With the change to setUp, both the tokens generated here will get the same timestamp no matter how long the test takes, so the assertEqualTokens will always pass.",
+      "parentUuid": "fa32b979_0fe8a30f",
+      "revId": "2e928ad875451f023165ea1bdd3094c899e18755",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
