@@ -33,6 +33,24 @@
       "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_cf44d475",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-06-16T07:39:05Z",
+      "side": 0,
+      "message": "In keystone.common.config, A value of \u00270\u0027 means wait forever.\nIn eventlet.wsgi.server, Default None means wait forever.\nso \"or None\" is necessary",
+      "parentUuid": "1af86dd1_ea6c2d0a",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
