@@ -16,6 +16,23 @@
       "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_28677626",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-16T09:25:35Z",
+      "side": 1,
+      "message": "The fake is not correct.\n\nidentity_api::get_user should return something like this,\n{\u0027name\u0027: u\u0027nova\u0027, \u0027domain_id\u0027: u\u0027default\u0027, \u0027enabled\u0027: True, u\u0027email\u0027: None, \u0027id\u0027: u\u0027e9fe8ca1c6b34b69955f170d4713c550\u0027}.\n\nI\u0027d like there is no misleading here although the value returned is not used in this case.",
+      "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
