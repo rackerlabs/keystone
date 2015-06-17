@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_1cb703f6",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T17:59:03Z",
+      "side": 1,
+      "message": "I don\u0027t think you want to use this base class. It creates an instance of the fixture that is never used. You actually should create an instance of the fixture in the \u0027for\u0027 loop of the test.",
+      "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_5cf02bfe",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T17:59:03Z",
+      "side": 1,
+      "message": "So we are basically writing 51 directories during this test?",
+      "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_5c334bab",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T17:59:03Z",
+      "side": 1,
+      "message": "Why do all of this work why you can just create the fixture each time?",
+      "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_3fe0bc95",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 2
@@ -13,6 +64,57 @@
       "writtenOn": "2015-06-17T17:25:45Z",
       "side": 1,
       "message": "+1, nice comment.",
+      "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_9aceb62b",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T17:59:03Z",
+      "side": 1,
+      "message": "No xrange in Py3",
+      "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_daef5e85",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T17:59:03Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_baea9a72",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T17:59:03Z",
+      "side": 1,
+      "message": "and here",
       "revId": "048e4167cebcd4dec648c0ebcea50bf487affffb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
