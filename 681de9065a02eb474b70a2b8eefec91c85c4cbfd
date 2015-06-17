@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_7f2404c4",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-17T17:29:45Z",
+      "side": 1,
+      "message": "the +1 results in the wrong \"number_of_keys_to_purge\" but results in the correct slice of excess_keys below.\n\nthe behavior is correct, the variable name is a lie.",
+      "revId": "681de9065a02eb474b70a2b8eefec91c85c4cbfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
