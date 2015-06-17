@@ -1,0 +1,239 @@
+..
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    use this file except in compliance with the License. You may obtain a copy
+    of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    License for the specific language governing permissions and limitations
+    under the License.
+
+===================================
+Mapping Combinations for Federation
+===================================
+
+Description
+-----------
+
+The mapping engine can be tested before creating a federated setup.
+It can be tested with the keystone-manage command:
+
+.. code-block:: bash
+
+    $ keystone-manage --mapping_engine --rules <file> --input <file>
+
+--rules will be the path to the file with the rules which will be
+executed. The file must be a proper JSON structure with the top-level
+key 'rules' and all corresponding values being a list.
+
+--input will be the path to a file containing the input attributes.
+
+For the rest of this doc, we can assume --input is:
+::
+
+    ``HTTP_OIDC_EMAIL``: me@example.com
+    ``HTTP_OIDC_GROUPIDS``: cn=IBM_Canada_Lab;cn=IBM_USA_Lab
+
+Supported Mapping Rules
+-----------------------
+
+Mappings support 5 different types of rules:
+
+``empty``: The rule is matched to all claims containing the remote attribute type.
+
+``any_one_of``: The rule is matched only if any of the specified strings appear
+in the remote attribute type.
+
+``not_any_of``: The rule is not matched if any of the specified strings appear
+in the remote attribute type.
+
+``blacklist``: The rule allows all except specified specified set of groups
+
+``whitelist``: The rules allows specified set of groups
+
+You can combine multiple rules in a single mapping.
+The schema that needs to be followed for the mapping rules can be seen
+in the :doc:`mapping_schema` page.
+
+Supported Mappings Examples
+---------------------------
+
+The following are all examples of supported mapping rule types.
+empty:
+~~~~~~
+
+.. code-block:: json
+
+    {
+        "rules": [
+            {
+                "local": [
+                    {
+                        "group": {
+                            "id": "0cd5e9"
+                        }
+                    }
+                ],
+                "remote": [
+                    {
+                        "type": "HTTP_OIDC_GROUPIDS"
+                    }
+                ]
+            }
+        ]
+    }
+
+other rules:
+~~~~~~~~~~~~
+
+In ``<other_rule>`` please supply one of the following:
+``any_one_of``, ``not_any_of``, ``blacklist``, or ``whitelist``.
+
+.. code-block:: json
+
+    {
+        "rules": [
+            {
+                "local": [
+                    {
+                        "group": {
+                            "id": "0cd5e9"
+                        }
+                    }
+                ],
+                "remote": [
+                    {
+                        "type": "HTTP_OIDC_GROUPIDS",
+                        "<other_rule>": [
+                            "HTTP_OIDC_EMAIL"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+
+.. NOTE::
+
+    group names and users can also be provided in the local section.
+
+.. code-block:: json
+
+    "local": [
+        {
+            "user": {
+                "name": "{0}"
+            }
+        }
+    ]
+
+.. code-block:: json
+
+    "local": [
+        {
+            "group": {
+                "name": "developer_group",
+                "domain": {
+                    "id": "abc1234"
+                }
+            }
+        }
+    ]
+
+
+
+Output:
+-------
+
+If a mapping is valid you will receive the following output.
+
+.. code-block:: json
+
+    {
+      "group_ids": [<group_ids>],
+      "user": {
+        "domain": {
+          "id": "Federated" or "<local>"
+        },
+        "type": "ephemeral" or "<local>",
+        "name": "<local>",
+        "id": "<local>"
+      },
+      "group_names": [<group_names>]
+    }
+
+``<local>``: If the user has domain specified, the user is treated as existing in the backend,
+hence the server will fetch user details (id, name, roles, groups). ``<local>`` will be replaced
+by the user's information.
+
+``Federated``: If no domain is specified in the local rule,
+user is deemed ephemeral and becomes a member of service domain named Federated.
+
+``ephemeral``: A user that does not exist in the backend.
+
+.. NOTE::
+
+    group_ids and/or group_names will only be displayed if they were set in the rules under local, otherwise
+    they will be empty.
+
+Combinations:
+-------------
+
+Combinations of the Supported Mappings can also be done.
+
+``empty``, ``any_one_of``, and ``not_any_of`` can all be used in the same mapping.
+``any_one_of`` and ``not_any_of`` are mutually exclusive. ``whitelist`` and ``blacklist`` cannot be used together.
+
+.. code-block:: json
+
+    {
+        "rules": [
+            {
+                "local": [
+                    {
+                        "group": {
+                            "id": "0cd5e9"
+                        }
+                    },
+                ],
+                "remote": [
+                    {
+                        "type": "Email"
+                    },
+                    {
+                        "type": "cn=IBM_Canada_Lab",
+                        "not_any_of": [
+                            ".*@naww.com$"
+                        ],
+                        "regex": True
+                    },
+                    {
+                        "type": "cn=IBM_USA_Lab",
+                        "any_one_of": [
+                            ".*@yeah.com$"
+                        ]
+                        "regex": True
+                    }
+                ]
+            }
+        ]
+    }
+
+As before group names and users can also be provided in the local section.
+
+This allows any user with the following claim information:
+
+.. code-block:: json
+
+     {"Email":"<any_name>@yeah.com"}
+     {"cn=IBM_USA_Lab":"<any_name>@yeah.com"}
+     {"cn=IBM_Canada_Lab":"<any_name>@yeah.com"}
+
+::
+
+    any claim containing the key Email.
+    any claim containing key cn=IBM_Canada_Lab that doesn't have the value <any_name>@naww.com will be allowed.
+    any claim containing key cn=IBM_USA_Lab that has value <any_name>@yeah.com will be allowed.
