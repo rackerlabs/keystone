@@ -11,6 +11,9 @@
 # under the License.
 
 import datetime
+import os
+import shutil
+import tempfile
 import uuid
 
 from oslo_utils import timeutils
@@ -23,17 +26,20 @@ from keystone.tests.unit import ksfixtures
 from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
+from keystone.token.providers.fernet import utils as fernet_utils
 
 
 CONF = config.CONF
 
 
-class TestFernetTokenProvider(tests.TestCase):
+class TestFernet(tests.TestCase):
     def setUp(self):
-        super(TestFernetTokenProvider, self).setUp()
+        super(TestFernet, self).setUp()
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
         self.provider = fernet.Provider()
 
+
+class TestFernetTokenProvider(TestFernet):
     def test_get_token_id_raises_not_implemented(self):
         """Test that an exception is raised when calling _get_token_id."""
         token_data = {}
@@ -330,3 +336,46 @@ class TestPayloads(tests.TestCase):
                          federated_info['idp_id'])
         self.assertEqual(exp_federated_info['protocol_id'],
                          federated_info['protocol_id'])
+
+
+class TestFernetKeyRotation(TestFernet):
+    def fernet_reset(self):
+        directory = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, directory)
+        self.config_fixture.config(group='fernet_tokens',
+                                   key_repository=directory)
+
+        fernet_utils.create_key_directory()
+        fernet_utils.initialize_key_repository()
+
+    def fernet_rotate(self):
+        fernet_utils.rotate_keys()
+
+    @property
+    def key_repository_size(self):
+        """The number of keys in the key repository."""
+        return len(os.listdir(CONF.fernet_tokens.key_repository))
+
+    def test_rotation(self):
+        # Simulate every rotation strategy up to "rotating once a week while
+        # maintaining a year's worth of keys."
+        for max_active_keys in xrange(2, 52 + 1):
+            self.config_fixture.config(group='fernet_tokens',
+                                       max_active_keys=max_active_keys)
+
+            # Ensure that resetting the key repository always results in 2
+            # active keys.
+            self.fernet_reset()
+            self.assertEqual(2, self.key_repository_size)
+
+            # Rotate the keys just enough times to fully populate the key
+            # repository.
+            for rotation in xrange(max_active_keys - 2):
+                self.fernet_rotate()
+            self.assertEqual(max_active_keys, self.key_repository_size)
+
+            # Rotate an additional number of times to ensure that we maintain
+            # the desired number of active keys.
+            for rotation in xrange(1, 10):
+                self.fernet_rotate()
+                self.assertEqual(self.key_repository_size, max_active_keys)
