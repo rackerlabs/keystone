@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_e80b8322",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-17T14:43:39Z",
+      "side": 1,
+      "message": "is this still valid?",
+      "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
