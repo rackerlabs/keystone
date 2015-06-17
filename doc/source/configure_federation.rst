@@ -51,7 +51,7 @@ To enable federation, you'll need to:
 
 1. Run Keystone under Apache, rather than using ``keystone-all``.
 2. Configure Apache to use a federation capable authentication method.
-3. Enable ``OS-FEDERATION`` extension.
+3. Configure ``OS-FEDERATION`` in keystone.
 
 Configure Apache to use a federation capable authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,8 +62,8 @@ Using Shibboleth and OpenID Connect are documented so far.
 * To use Shibboleth, follow the steps outlined at: `Setup Shibboleth`_.
 * To use OpenID Connect, follow the steps outlined at: `Setup OpenID Connect`_.
 
-.. _`Setup Shibboleth`: extensions/shibboleth.html
-.. _`Setup OpenID Connect`: extensions/openidc.html
+.. _`Setup Shibboleth`: federation/shibboleth.html
+.. _`Setup OpenID Connect`: federation/openidc.html
 
 Configure Keystone and Horizon for Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,23 +71,32 @@ Configure Keystone and Horizon for Single Sign-On
 * To configure horizon to access a federated keystone,
   follow the steps outlined at: `Keystone Federation and Horizon`_.
 
-.. _`Keystone Federation and Horizon`: extensions/websso.html
+.. _`Keystone Federation and Horizon`: federation/websso.html
 
-Enable the ``OS-FEDERATION`` extension
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Follow the steps outlined at: `Enabling Federation Extension`_.
-
-.. _`Enabling Federation Extension`: extensions/federation.html
-
-Configuring Federation
-----------------------
+Configuring Federation in keystone
+-----------------------------------
 
 Now that the Identity Provider and Keystone are communicating we can start to
-configure the ``OS-FEDERATION`` extension.
+configure ``OS-FEDERATION``.
 
-1. Add local Keystone groups and roles
-2. Add Identity Provider(s), Mapping(s), and Protocol(s)
+1. Configure authentication drivers in ``keystone.conf``
+2. Add local Keystone groups and roles
+3. Add Identity Provider(s), Mapping(s), and Protocol(s)
+
+Configure authentication drivers in ``keystone.conf``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add the authentication methods to the ``[auth]`` section in ``keystone.conf``.
+Names should be equal to protocol names added via Identity API v3. Here we used
+examples ``saml2`` and ``oidc``. Authentication drivers should point to
+``keystone.auth.plugins.mapped.Mapped``
+
+.. code-block:: bash
+
+       [auth]
+       methods = external,password,token,saml2,oidc
+       saml2 = keystone.auth.plugins.mapped.Mapped
+       oidc = keystone.auth.plugins.mapped.Mapped
 
 Create Keystone groups and assign roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -250,6 +259,17 @@ Keystone as an Identity Provider (IdP)
     This feature is experimental and unsupported in Juno (with several issues
     that will not be backported). These issues have been fixed and this feature
     is considered stable and supported as of the Kilo release.
+
+.. NOTE::
+
+    This feature requies installed xmlsec1 tool via your distribution packaging
+    system (for instance apt or yum)
+
+    Example for apt:
+
+    .. code-block:: bash
+
+            $ apt-get install xmlsec1
 
 Configuration Options
 ---------------------
