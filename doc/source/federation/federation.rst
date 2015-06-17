@@ -45,3 +45,15 @@ To enable the federation:
 
        [pipeline:api_v3]
        pipeline = sizelimit url_normalize build_auth_context token_auth admin_token_auth json_body ec2_extension_v3 s3_extension simple_cert_extension revoke_extension federation_extension service_v3
+
+
+============================
+Keystone2Keystone Federation
+============================
+
+For keystone acting as an Identity Provider it is required to manually install
+``xmlsec1`` binary.
+
+.. code-block:: bash
+
+        $ apt-get install xmlsec1
