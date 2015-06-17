@@ -82,6 +82,8 @@ class AuthContext(dict):
         if key in self.IDENTITY_ATTRIBUTES and key in self:
             existing_val = self[key]
             if key == 'expires_at':
+                if val is None:
+                    raise Exception('Token expiration is required.')
                 # special treatment for 'expires_at', we are going to take
                 # the earliest expiration instead.
                 if existing_val != val:
@@ -360,13 +362,18 @@ class Auth(controller.V3Controller):
             method_names += auth_context.get('method_names', [])
             # make sure the list is unique
             method_names = list(set(method_names))
-            expires_at = auth_context.get('expires_at')
+            from keystone.token import provider
+            expires_at = auth_context.get(
+                'expires_at',
+                provider.default_expire_time())
             # NOTE(morganfainberg): define this here so it is clear what the
             # argument is during the issue_v3_token provider call.
             metadata_ref = None
 
             token_audit_id = auth_context.get('audit_id')
 
+            if expires_at is None:
+                raise Exception('Token expiration is required.')
             (token_id, token_data) = self.token_provider_api.issue_v3_token(
                 auth_context['user_id'], method_names, expires_at, project_id,
                 domain_id, auth_context, trust, metadata_ref, include_catalog,

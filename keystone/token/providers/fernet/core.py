@@ -9,9 +9,11 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import datetime
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_utils import timeutils
 
 from keystone.common import dependency
 from keystone.contrib import federation
@@ -24,6 +26,12 @@ from keystone.token.providers.fernet import token_formatters as tf
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+
+def truncate_microseconds(dt):
+    """Set datetime.microseconds to zero."""
+    # Because dt.microsecond is immutable, we have to subtract it off.
+    return dt - datetime.timedelta(microseconds=dt.microsecond)
 
 
 @dependency.requires('trust_api')
@@ -66,6 +74,11 @@ class Provider(common.BaseProvider):
 
         audit_ids = provider.audit_info(parent_audit_id)
 
+        # Drop the microseconds from the expiration and creation timestamps,
+        # as that's how they'll be stored in the Fernet token anyway.
+        token_ref['expires'] = truncate_microseconds(token_ref['expires'])
+        created_at = truncate_microseconds(timeutils.utcnow())
+
         # Get v3 token data and exclude building v3 specific catalog. This is
         # due to the fact that the V2TokenDataHelper.format_token() method
         # doesn't build any of the token_reference from other Keystone APIs.
@@ -80,7 +93,20 @@ class Provider(common.BaseProvider):
             project_id=project_id,
             token=token_ref,
             include_catalog=False,
+            expires=token_ref['expires'],
+            issued_at=created_at,
             audit_info=audit_ids)
+
+        # print('v3 token data: %s' % v3_token_data)
+
+        if ('project' in v3_token_data['token'] and
+                v3_token_data['token']['project']['domain']['id'] !=
+                CONF.identity.default_domain_id):
+            raise exception.Unauthorized(
+                _('Unable to issue a v2 token for a project in a non-default '
+                  'domain.'))
+
+        # print('v3 token roles: %s' % v3_token_data['token'].get('roles'))
 
         expires_at = v3_token_data['token']['expires_at']
         token_id = self.token_formatter.create_token(user_id, expires_at,
@@ -90,6 +116,8 @@ class Provider(common.BaseProvider):
         # Convert v3 to v2 token data and build v2 catalog
         token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
                                                               v3_token_data)
+
+        print('v2 token roles: %s' % token_data['access']['user']['roles'])
 
         return token_id, token_data
 
@@ -172,6 +200,10 @@ class Provider(common.BaseProvider):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
             federated_dict = self._build_federated_info(token_ref)
+
+        # Drop the microseconds from the expiration and creation timestamps,
+        # as that's how they'll be stored in the Fernet token anyway.
+        expires_at = truncate_microseconds(expires_at)
 
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,

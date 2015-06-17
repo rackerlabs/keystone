@@ -328,6 +328,8 @@ class Manager(manager.Manager):
                        project_id=None, domain_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True,
                        parent_audit_id=None):
+        if expires_at is None:
+            raise Exception('Expiration is required.')
         token_id, token_data = self.driver.issue_v3_token(
             user_id, method_names, expires_at, project_id, domain_id,
             auth_context, trust, metadata_ref, include_catalog,

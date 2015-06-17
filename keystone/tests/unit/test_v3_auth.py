@@ -268,8 +268,8 @@ class TokenAPITests(object):
         # just need to make sure the non fraction part agrees
         self.assertIn(v2_token['access']['token']['expires'][:-1],
                       token_data['token']['expires_at'])
-        self.assertEqual(v2_token['access']['user']['roles'][0]['id'],
-                         token_data['token']['roles'][0]['id'])
+        self.assertEqual(v2_token['access']['user']['roles'][0]['name'],
+                         token_data['token']['roles'][0]['name'])
 
     def test_v2_v3_unscoped_token_intermix(self):
         body = {
@@ -521,6 +521,17 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         token_id = resp.headers.get('X-Subject-Token')
         self.assertIn('expires_at', token_data['token'])
         self.assertFalse(cms.is_asn1_token(token_id))
+
+
+class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+    def config_overrides(self):
+        super(TestFernetTokenAPIs, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    def setUp(self):
+        super(TestFernetTokenAPIs, self).setUp()
+        self.doSetUp()
 
 
 class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
