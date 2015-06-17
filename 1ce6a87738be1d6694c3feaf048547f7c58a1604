@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_a801fb39",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-17T14:56:29Z",
+      "side": 0,
+      "message": "Lines 29-35 were still useful\n\nedit: oh i see, they were moved",
+      "revId": "1ce6a87738be1d6694c3feaf048547f7c58a1604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
