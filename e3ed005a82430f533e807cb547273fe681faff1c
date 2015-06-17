@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_f632765d",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T19:58:59Z",
+      "side": 1,
+      "message": "The Federation what? Seems like something is missing here...",
+      "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e80b8322",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 4
@@ -49,6 +66,24 @@
       "side": 1,
       "message": "someone else can confirm, but I believe that I haven\u0027t removed this when was making the deployment to write: http://rodrigods.com/it-is-time-to-play-with-keystone-to-keystone-federation-in-kilo/",
       "parentUuid": "fa32b979_a8aedbe3",
+      "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_36f0de66",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T19:58:59Z",
+      "side": 1,
+      "message": "I didn\u0027t remove it when I was testing, but that was quite a while ago.  If it shouldn\u0027t be there should we remove it from the example above?",
+      "parentUuid": "fa32b979_28dacb4c",
       "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
