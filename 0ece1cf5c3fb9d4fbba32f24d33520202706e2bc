@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_a2dcba73",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-17T14:18:36Z",
+      "side": 1,
+      "message": "s/Keystone/keystone",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_82df3668",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-17T14:18:36Z",
+      "side": 1,
+      "message": "s/Keystone/keystone",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c23e9e8a",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-17T14:18:36Z",
+      "side": 1,
+      "message": "this isn\u0027t already configured since federation is no longer an extension?",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_82741668",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-17T14:18:36Z",
+      "side": 1,
+      "message": "this isn\u0027t already configured since federation is no longer an extension?",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
