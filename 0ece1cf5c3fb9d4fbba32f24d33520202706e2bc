@@ -85,6 +85,24 @@
       "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c2e53ea4",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-17T14:25:04Z",
+      "side": 1,
+      "message": "no: https://github.com/openstack/keystone/blob/master/etc/keystone-paste.ini\n\nMy understanding is that while federation is not an extension, we don\u0027t really need to make users have it enabled by default. I might be wrong, though.",
+      "parentUuid": "fa32b979_82741668",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
