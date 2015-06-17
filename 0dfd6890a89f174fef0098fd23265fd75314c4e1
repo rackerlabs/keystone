@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_82ef28e8",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T18:36:17Z",
+      "side": 1,
+      "message": "six is a third-party and not a stdlib module",
+      "revId": "0dfd6890a89f174fef0098fd23265fd75314c4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
