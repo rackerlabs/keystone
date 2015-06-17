@@ -33,6 +33,23 @@
       "revId": "b894d67b8d40e704a806fde4b02402d7e64e191d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c36556b5",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-06-17T07:57:25Z",
+      "side": 1,
+      "message": "+1 \n\nif hasattr(CONF,\u0027saml\u0027) else \u0027ss:mem:\u0027)",
+      "revId": "b894d67b8d40e704a806fde4b02402d7e64e191d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
