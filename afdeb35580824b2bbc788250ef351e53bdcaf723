@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_747e741a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-17T13:54:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_116a9aee",
+      "revId": "afdeb35580824b2bbc788250ef351e53bdcaf723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_542fb087",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-17T13:52:42Z",
       "side": 1,
       "message": "s/To enable the federation/To configure federation",
+      "revId": "afdeb35580824b2bbc788250ef351e53bdcaf723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_d484200c",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-17T13:54:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_542fb087",
       "revId": "afdeb35580824b2bbc788250ef351e53bdcaf723",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
