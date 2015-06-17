@@ -137,8 +137,9 @@ A mapping is a list of rules. The only Identity API objects that will support ma
 and users.
 
 Mapping adds a set of rules to map federation protocol attributes to Identity API objects.
-An Identity Provider has exactly one mapping specified per protocol.
+More information on rules can be found on the :doc:`mapping_combinations` page.
 
+An Identity Provider has exactly one mapping specified per protocol.
 Mapping objects can be used multiple times by different combinations of Identity Provider and Protocol.
 
 More information on mapping can be found `here
