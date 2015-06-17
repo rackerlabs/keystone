@@ -11,6 +11,7 @@
 # under the License.
 
 import datetime
+import hashlib
 import os
 import six
 import uuid
@@ -341,10 +342,53 @@ class TestFernetKeyRotation(tests.TestCase):
         """The number of keys in the key repository."""
         return len(os.listdir(CONF.fernet_tokens.key_repository))
 
+    @property
+    def key_repository_signature(self):
+        """Create a "thumbprint" of the current key repository.
+
+        Because key files are renamed, this produces a hash of the contents of
+        the key files, ignoring their filenames.
+
+        The resulting signature can be used, for example, to ensure that you
+        have a unique set of keys after you perform a key rotation (taking a
+        static set of keys, and simply shuffling them, would fail such a test).
+
+        """
+        # Load the keys into a list.
+        keys = fernet_utils.load_keys()
+
+        # Sort the list of keys by the keys themselves (they were previously
+        # sorted by filename).
+        keys.sort()
+
+        # Create the thumbprint using all keys in the repository.
+        signature = hashlib.sha1()
+        for key in keys:
+            signature.update(key)
+        return signature.hexdigest()
+
+    def assertUniqueRepositoryState(self, key_repo_signatures):
+        """Ensures that the current key repo state has not been seen before."""
+        # This is assigned to a variable because it takes some work to
+        # calculate.
+        signature = self.key_repository_signature
+
+        # Ensure the signature is not in the set of previously seen signatures.
+        self.assertNotIn(signature, key_repo_signatures)
+        self.assertNotIn(key_repo_signatures, signature)
+
+        # Add the signature to the set of repository signatures to validate
+        # that we don't see it again later.
+        key_repo_signatures.add(signature)
+
     def test_rotation(self):
         # Initializing a key repository results in this many keys. We don't
         # support max_active_keys being set any lower.
         min_active_keys = 2
+
+        # A collection of all previously-seen signatures of the key
+        # repository's contents.
+        key_repo_signatures = set()
 
         # Simulate every rotation strategy up to "rotating once a week while
         # maintaining a year's worth of keys."
@@ -356,15 +400,18 @@ class TestFernetKeyRotation(tests.TestCase):
             # active keys.
             self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
             self.assertEqual(min_active_keys, self.key_repository_size)
+            self.assertUniqueRepositoryState(key_repo_signatures)
 
             # Rotate the keys just enough times to fully populate the key
             # repository.
             for rotation in six.moves.range(max_active_keys - min_active_keys):
                 fernet_utils.rotate_keys()
+                self.assertUniqueRepositoryState(key_repo_signatures)
             self.assertEqual(max_active_keys, self.key_repository_size)
 
             # Rotate an additional number of times to ensure that we maintain
             # the desired number of active keys.
             for rotation in six.moves.range(10):
                 fernet_utils.rotate_keys()
+                self.assertUniqueRepositoryState(key_repo_signatures)
                 self.assertEqual(self.key_repository_size, max_active_keys)
