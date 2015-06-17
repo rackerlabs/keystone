@@ -51,7 +51,7 @@ To enable federation, you'll need to:
 
 1. Run Keystone under Apache, rather than using ``keystone-all``.
 2. Configure Apache to use a federation capable authentication method.
-3. Enable ``OS-FEDERATION`` extension.
+3. Configure ``OS-FEDERATION`` in Keystone.
 
 Configure Apache to use a federation capable authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,8 +62,8 @@ Using Shibboleth and OpenID Connect are documented so far.
 * To use Shibboleth, follow the steps outlined at: `Setup Shibboleth`_.
 * To use OpenID Connect, follow the steps outlined at: `Setup OpenID Connect`_.
 
-.. _`Setup Shibboleth`: extensions/shibboleth.html
-.. _`Setup OpenID Connect`: extensions/openidc.html
+.. _`Setup Shibboleth`: federation/shibboleth.html
+.. _`Setup OpenID Connect`: federation/openidc.html
 
 Configure Keystone and Horizon for Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,20 +71,20 @@ Configure Keystone and Horizon for Single Sign-On
 * To configure horizon to access a federated keystone,
   follow the steps outlined at: `Keystone Federation and Horizon`_.
 
-.. _`Keystone Federation and Horizon`: extensions/websso.html
+.. _`Keystone Federation and Horizon`: federation/websso.html
 
-Enable the ``OS-FEDERATION`` extension
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable the ``OS-FEDERATION``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the steps outlined at: `Enabling Federation Extension`_.
+Follow the steps outlined at: `Enabling Federation`_.
 
-.. _`Enabling Federation Extension`: extensions/federation.html
+.. _`Enabling Federation`: federation/federation.html
 
-Configuring Federation
-----------------------
+Configuring Federation in Keystone
+-----------------------------------
 
 Now that the Identity Provider and Keystone are communicating we can start to
-configure the ``OS-FEDERATION`` extension.
+configure the ``OS-FEDERATION``.
 
 1. Add local Keystone groups and roles
 2. Add Identity Provider(s), Mapping(s), and Protocol(s)
