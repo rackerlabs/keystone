@@ -24,7 +24,7 @@ To configure federation:
    ``keystone.conf`` is set (it should be by default). For example::
 
        [federation]
-       driver = keystone.contrib.federation.backends.sql.Federation
+       driver = sql
 
 2. Add the ``saml2`` and/or ``oidc`` authentication methods to the ``[auth]``
    section in ``keystone.conf``::
