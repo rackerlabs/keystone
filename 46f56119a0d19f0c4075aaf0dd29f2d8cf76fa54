@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_2285fc05",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-17T18:37:55Z",
+      "side": 1,
+      "message": "I don\u0027t like the +1 magic number, but I\u0027m OK with it as -is",
+      "revId": "46f56119a0d19f0c4075aaf0dd29f2d8cf76fa54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
