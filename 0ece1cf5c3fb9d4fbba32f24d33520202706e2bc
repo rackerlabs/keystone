@@ -103,6 +103,24 @@
       "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_221f4a6d",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-17T14:28:51Z",
+      "side": 1,
+      "message": "its there already in the v3 pipeline https://github.com/openstack/keystone/blob/master/etc/keystone-paste.ini#L82",
+      "parentUuid": "fa32b979_c2e53ea4",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
