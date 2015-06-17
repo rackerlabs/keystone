@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_7d22d753",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-17T14:33:22Z",
+      "side": 1,
+      "message": "so I believe this should be an extra step in the end of this section",
+      "parentUuid": "fa32b979_bd1dbf63",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_82741668",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 3
