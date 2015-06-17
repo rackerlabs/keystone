@@ -16,6 +16,24 @@
       "revId": "46f56119a0d19f0c4075aaf0dd29f2d8cf76fa54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_ebce0f2c",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-06-17T19:42:04Z",
+      "side": 1,
+      "message": "the variable name here is still a bit of a lie, which makes the +1 suspicious (as it\u0027s for slicing, not really increasing the number of keys to purge... but this totally works (per the testing in the subsequent patch). with tests, we can refactor this later :)",
+      "parentUuid": "fa32b979_2285fc05",
+      "revId": "46f56119a0d19f0c4075aaf0dd29f2d8cf76fa54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
