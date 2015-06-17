@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_bd1dbf63",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-17T14:29:46Z",
+      "side": 1,
+      "message": "technically it\u0027s not configure, the sql backend is the default that we provide, it may be overridden by another backend the deployer chooses",
+      "parentUuid": "fa32b979_c23e9e8a",
+      "revId": "0ece1cf5c3fb9d4fbba32f24d33520202706e2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_82741668",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 3
