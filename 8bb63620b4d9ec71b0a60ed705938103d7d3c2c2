@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_54122958",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1162,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-18T07:46:17Z",
+      "side": 0,
+      "message": "we got no chance and no possbility in the future that this constant is not set in config.py? seems it\u0027s more safe if keeping this instead of rely on what\u0027s it\u0027s defined in the config.py.",
+      "revId": "8bb63620b4d9ec71b0a60ed705938103d7d3c2c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
