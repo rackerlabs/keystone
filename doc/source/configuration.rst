@@ -1300,7 +1300,11 @@ through the normal REST API. At the moment, the following calls are supported:
 
 * ``db_sync``: Sync the database.
 * ``db_version``: Print the current migration version of the database.
+* ``domain_config_upload``: Upload domain configuration file.
+* ``fernet_rotate``: Rotate keys in the Fernet key repository.
+* ``fernet_setup``: Setup a Fernet key repository.
 * ``mapping_purge``: Purge the identity mapping table.
+* ``mapping_engine``: Test your federation mapping rules.
 * ``pki_setup``: Initialize the certificates used to sign tokens.
 * ``saml_idp_metadata``: Generate identity provider metadata.
 * ``ssl_setup``: Generate certificates for SSL.
