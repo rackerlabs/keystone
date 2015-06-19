@@ -439,8 +439,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def test_create_user_password_not_logged(self):
         # When a user is created, the password isn't logged at any level.
 
-        # FIXME(blk-u): This doesn't work as expected, see bug 1465922
-
         log_fix = self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
 
         ref = self.new_user_ref(domain_id=self.domain_id)
@@ -448,8 +446,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             '/users',
             body={'user': ref})
 
-        # This should be assert*Not*In, see bug 1465922
-        self.assertIn(ref['password'], log_fix.output)
+        self.assertNotIn(ref['password'], log_fix.output)
 
 
 class IdentityV3toV2MethodsTestCase(tests.TestCase):
