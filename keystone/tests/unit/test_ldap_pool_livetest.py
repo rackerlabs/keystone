@@ -50,7 +50,6 @@ class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
 
     def config_overrides(self):
         super(LiveLDAPPoolIdentity, self).config_overrides()
-        self.config_fixture.config(group='identity', driver='ldap')
 
     def test_assert_connector_used_not_fake_ldap_pool(self):
         handler = ldap_core._get_connection(CONF.ldap.url, use_pool=True)

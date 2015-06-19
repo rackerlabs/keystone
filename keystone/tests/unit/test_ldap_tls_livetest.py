@@ -46,7 +46,6 @@ class LiveTLSLDAPIdentity(test_ldap_livetest.LiveLDAPIdentity):
 
     def config_overrides(self):
         super(LiveTLSLDAPIdentity, self).config_overrides()
-        self.config_fixture.config(group='identity', driver='ldap')
 
     def test_tls_certfile_demand_option(self):
         self.config_fixture.config(group='ldap',
