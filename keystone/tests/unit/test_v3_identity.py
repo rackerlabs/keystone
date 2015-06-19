@@ -12,8 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import logging
 import uuid
 
+import fixtures
 from oslo_config import cfg
 from testtools import matchers
 
@@ -433,6 +435,21 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``DELETE /groups/{group_id}``."""
         self.delete('/groups/%(group_id)s' % {
             'group_id': self.group_id})
+
+    def test_create_user_password_not_logged(self):
+        # When a user is created, the password isn't logged at any level.
+
+        # FIXME(blk-u): This doesn't work as expected, see bug 1465922
+
+        log_fix = self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
+
+        ref = self.new_user_ref(domain_id=self.domain_id)
+        self.post(
+            '/users',
+            body={'user': ref})
+
+        # This should be assert*Not*In, see bug 1465922
+        self.assertIn(ref['password'], log_fix.output)
 
 
 class IdentityV3toV2MethodsTestCase(tests.TestCase):
