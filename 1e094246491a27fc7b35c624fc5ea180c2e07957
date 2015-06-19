@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_b1b115e2",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-19T03:08:24Z",
+      "side": 1,
+      "message": "this row is failing because the second column should be  \u003d\u003d\u003d",
+      "revId": "1e094246491a27fc7b35c624fc5ea180c2e07957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
