@@ -16,7 +16,7 @@
 
 import copy
 import uuid
-
+import six
 import ldap
 import mock
 from oslo_config import cfg
@@ -1348,7 +1348,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
     def test_wrong_ldap_scope(self):
         self.config_fixture.config(group='ldap', query_scope=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
+        six.assertRaisesRegex(
             ValueError,
             'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
             identity.backends.ldap.Identity)
@@ -1356,7 +1356,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_wrong_alias_dereferencing(self):
         self.config_fixture.config(group='ldap',
                                    alias_dereferencing=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
+        six.assertRaisesRegex(
             ValueError,
             'Invalid LDAP deref option: %s\.' % CONF.ldap.alias_dereferencing,
             identity.backends.ldap.Identity)
