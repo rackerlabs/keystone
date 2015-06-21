@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_8c3a81e6",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-21T07:42:05Z",
+      "side": 1,
+      "message": "this should be POST /v3/domains instead.",
+      "revId": "b55e36bf09ba66b8a21fd280f8ebf88825fae503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
