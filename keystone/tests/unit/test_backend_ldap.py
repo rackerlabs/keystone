@@ -20,6 +20,7 @@ import uuid
 import ldap
 import mock
 from oslo_config import cfg
+import six
 from six.moves import range
 from testtools import matchers
 
@@ -1348,17 +1349,18 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
     def test_wrong_ldap_scope(self):
         self.config_fixture.config(group='ldap', query_scope=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
-            ValueError,
-            'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
+        six.assertRaisesRegex(
+            self, ValueError,
+            u'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
             identity.backends.ldap.Identity)
 
     def test_wrong_alias_dereferencing(self):
         self.config_fixture.config(group='ldap',
                                    alias_dereferencing=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
-            ValueError,
-            'Invalid LDAP deref option: %s\.' % CONF.ldap.alias_dereferencing,
+        six.assertRaisesRegex(
+            self, ValueError,
+            u'Invalid LDAP deref option: %s\.' %
+            CONF.ldap.alias_dereferencing,
             identity.backends.ldap.Identity)
 
     def test_is_dumb_member(self):

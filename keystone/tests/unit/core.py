@@ -17,7 +17,6 @@ import atexit
 import functools
 import logging
 import os
-import re
 import shutil
 import socket
 import sys
@@ -522,33 +521,6 @@ class TestCase(BaseTestCase):
 
     def assertNotEmpty(self, l):
         self.assertTrue(len(l))
-
-    def assertRaisesRegexp(self, expected_exception, expected_regexp,
-                           callable_obj, *args, **kwargs):
-        """Asserts that the message in a raised exception matches a regexp.
-        """
-        try:
-            callable_obj(*args, **kwargs)
-        except expected_exception as exc_value:
-            if isinstance(expected_regexp, six.string_types):
-                expected_regexp = re.compile(expected_regexp)
-
-            if isinstance(exc_value.args[0], unicode):
-                if not expected_regexp.search(unicode(exc_value)):
-                    raise self.failureException(
-                        '"%s" does not match "%s"' %
-                        (expected_regexp.pattern, unicode(exc_value)))
-            else:
-                if not expected_regexp.search(str(exc_value)):
-                    raise self.failureException(
-                        '"%s" does not match "%s"' %
-                        (expected_regexp.pattern, str(exc_value)))
-        else:
-            if hasattr(expected_exception, '__name__'):
-                excName = expected_exception.__name__
-            else:
-                excName = str(expected_exception)
-            raise self.failureException("%s not raised" % excName)
 
     @property
     def ipv6_enabled(self):
