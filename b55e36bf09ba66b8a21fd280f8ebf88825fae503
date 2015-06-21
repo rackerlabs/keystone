@@ -16,6 +16,24 @@
       "revId": "b55e36bf09ba66b8a21fd280f8ebf88825fae503",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_321dcebd",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-21T12:18:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_8c3a81e6",
+      "revId": "b55e36bf09ba66b8a21fd280f8ebf88825fae503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
