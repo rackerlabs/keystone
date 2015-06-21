@@ -15,13 +15,14 @@
 # under the License.
 
 import copy
-import uuid
-
 import ldap
 import mock
 from oslo_config import cfg
-from six.moves import range
 from testtools import matchers
+import uuid
+
+import six
+from six.moves import range
 
 from keystone.common import cache
 from keystone.common import ldap as common_ldap
@@ -1348,16 +1349,16 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
     def test_wrong_ldap_scope(self):
         self.config_fixture.config(group='ldap', query_scope=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
-            ValueError,
+        six.assertRaisesRegex(
+            self, ValueError,
             'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
             identity.backends.ldap.Identity)
 
     def test_wrong_alias_dereferencing(self):
         self.config_fixture.config(group='ldap',
                                    alias_dereferencing=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
-            ValueError,
+        six.assertRaisesRegex(
+            self, ValueError,
             'Invalid LDAP deref option: %s\.' % CONF.ldap.alias_dereferencing,
             identity.backends.ldap.Identity)
 
