@@ -29,31 +29,24 @@ exclude_dirs:
     - '/tests/'
 
 profiles:
-    keystone_conservative:
+    gate:
         include:
             - blacklist_calls
             - blacklist_imports
-            - request_with_no_cert_validation
+            - crypto_random
             - exec_used
-            - set_bad_file_permissions
-            - subprocess_popen_with_shell_equals_true
             - linux_commands_wildcard_injection
-            - ssl_with_bad_version
-
-
-    keystone_verbose:
-        include:
-            - blacklist_calls
-            - blacklist_imports
             - request_with_no_cert_validation
-            - exec_used
             - set_bad_file_permissions
-            - hardcoded_tmp_directory
-            - subprocess_popen_with_shell_equals_true
-            - any_other_function_with_shell_equals_true
-            - linux_commands_wildcard_injection
-            - ssl_with_bad_version
+            - shell_injection
             - ssl_with_bad_defaults
+            - ssl_with_bad_version
+            - ssl_with_no_version
+            - subprocess_popen_with_shell_equals_true
+
+            # These are not used because they are very prone to false positives
+            # - hardcoded_password
+            # - hardcoded_sql_expressions
 
 blacklist_calls:
     bad_name_sets:
@@ -85,6 +78,9 @@ blacklist_calls:
         - urllib_urlopen:
             qualnames: [urllib.urlopen, urllib.urlretrieve, urllib.URLopener, urllib.FancyURLopener, urllib2.urlopen, urllib2.Request]
             message: "Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected."
+        - paramiko_injection:
+            qualnames: [paramiko.exec_command, paramiko.invoke_shell]
+            message: "Paramiko exec_command() and invoke_shell() usage may expose command injection vulnerabilities and should be reviewed."
 
 shell_injection:
     # Start a process using the subprocess module, or one of its wrappers.
@@ -106,6 +102,10 @@ blacklist_imports:
             imports: [telnetlib]
             level: ERROR
             message: "Telnet is considered insecure. Use SSH or some other encrypted protocol."
+        - info_libs:
+            imports: [pickle, cPickle, Crypto]
+            level: INFO
+            message: "Consider possible security implications associated with {module} module."
 
 hardcoded_password:
     word_list: "wordlist/default-passwords"
@@ -119,16 +119,3 @@ ssl_with_bad_version:
         - 'PROTOCOL_TLSv1'  # strict option
         - 'SSLv3_METHOD'    # strict option
         - 'TLSv1_METHOD'    # strict option
-
-password_config_option_not_marked_secret:
-    function_names:
-        - oslo.config.cfg.StrOpt
-        - oslo_config.cfg.StrOpt
-
-execute_with_run_as_root_equals_true:
-    function_names:
-        - ceilometer.utils.execute
-        - cinder.utils.execute
-        - neutron.agent.linux.utils.execute
-        - nova.utils.execute
-        - nova.utils.trycmd
