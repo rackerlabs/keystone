@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_486765b7",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-22T15:05:26Z",
+      "side": 1,
+      "message": "seems this is not correct, currently, the APIs are `update_domain_config`, `update_domain_config_group`, `update_domain_config_only`, after checking in the source only `update_domain_config` is protected by the policy.\nsee: https://github.com/openstack/keystone/blob/master/keystone/resource/routers.py#L67, and https://github.com/openstack/keystone/blob/master/keystone/resource/controllers.py#L169\n\nI am not sure whether this is by design, but this is what it is in the code base.\n\nso, this mapping should be like this:\nidentity:update_domain_config               PATCH /v3/domains/{domain_id}/config/{group}/{option}",
+      "revId": "90ed26263b92fad76c5b7dbfedf91c5c2572972c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
