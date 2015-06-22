@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_d1e9e0b8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Good idea. I have moved it to another keystone/doc/mapping_schema.rst and added a link.",
+      "parentUuid": "fa32b979_e72ebba4",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_02486d5a",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
@@ -30,6 +48,41 @@
       "writtenOn": "2015-06-22T08:54:56Z",
       "side": 1,
       "message": "either make a big warning, that for brevity you are presenting excerpts from the mapping rules, or make the complete. For instance this mapping rule would not work (a HTTP 401 Unauthorized would be returned) because the \u0027local\u0027 section doesn\u0027t define users\u0027 identity (id, or {name, domain} )\n\nThis applies to all the rules.",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_11666829",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "I have listed the different types of items that can be provided in the local section.\n\nI don\u0027t think that users\u0027 identity is required. I have done mappings as follows:\n\n{\n    \"mapping\": {\n        \"rules\": [\n            {\n                \"local\": [\n                    {\n                        \"group\": {\n                            \"id\": \"\u003cgroup_id\u003e\"\n                        }\n                    }\n                ],\n                \"remote\": [\n                    {\n                        \"type\": \"HTTP_OIDC_ISS\",\n                        \"any_one_of\": [\n                            \"accounts.google.com\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}\n\nand they have been tested.\n\nQuestion: what does the {0} in:\n\"local\": [\n        {\n            \"user\": {\n                \"name\": \"{0}\"\n            }\n        }\n    ]\n\nmean and how is the user used?",
+      "parentUuid": "fa32b979_02486d5a",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_a2088829",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Put all mapping types into one, since it was very repetitive.",
       "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_2f02200a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Added an example for using username",
+      "parentUuid": "fa32b979_c29fe5b2",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e28f8973",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
@@ -64,6 +135,24 @@
       "writtenOn": "2015-06-22T08:54:56Z",
       "side": 1,
       "message": "it\u0027s either \u0027Federated\u0027 or a name of an existing domain, not \"local\" - make it \u003cname\u003e or something indicating this will be substituted with a real name.\nAlso, domain can be (as usuall) identified by id or name.",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2f29c089",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Changed it to \u003clocal\u003e.\nProvided more info into it.",
+      "parentUuid": "fa32b979_e28f8973",
       "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_cf1ff459",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "fa32b979_a2cf41b2",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_22c49190",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
@@ -98,6 +205,41 @@
       "writtenOn": "2015-06-22T08:54:56Z",
       "side": 1,
       "message": "\"A user does not exist in the backend\" ?",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_3d501dd4",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Fixed Wording.",
+      "parentUuid": "fa32b979_22c49190",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_6fd6e8f2",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Removed this section completely and added all samples in one.",
       "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +297,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_f2709fa6",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "empty, any_one_of, and not_any_of can be used in the same rule.\nSee: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/mapping_fixtures.py#L48-L65\n\nblacklist and whitelist cannot be in the same rule:\nhttps://github.com/openstack/keystone-specs/blob/master/specs/kilo/mapping-enhancements.rst",
+      "parentUuid": "fa32b979_02738d4e",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e2c78962",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
@@ -166,6 +326,41 @@
       "writtenOn": "2015-06-22T08:54:56Z",
       "side": 1,
       "message": "missing \u0027user\u0027",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_52762b3f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "User is a possible case, but shouldn\u0027t be needed. I added a Note.",
+      "parentUuid": "fa32b979_e2c78962",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c5a4b309",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T19:35:41Z",
+      "side": 1,
+      "message": "Added to this TODO. Please review.",
       "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
