@@ -16,6 +16,24 @@
       "revId": "90ed26263b92fad76c5b7dbfedf91c5c2572972c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_abe62be6",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T15:21:23Z",
+      "side": 1,
+      "message": "update_domain_config_group(), etc., call update_domain_config() which has the protected wrapper, so they\u0027re all protected by the update_domain_config rule.",
+      "parentUuid": "fa32b979_486765b7",
+      "revId": "90ed26263b92fad76c5b7dbfedf91c5c2572972c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
