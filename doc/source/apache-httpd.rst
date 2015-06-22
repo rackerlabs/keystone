@@ -43,14 +43,11 @@ Update the file to match your system configuration. Note the following:
 
 * Make sure the correct log directory is used. Some distributions put httpd
   server logs in the ``apache2`` directory and some in the ``httpd`` directory.
+* Update the ``WSGIScriptAlias`` and ``Directory`` values to the directory that
+  keystone is installed to (for example, use
+  ``/usr/local/lib/python2.7/dist-packages/keystone/httpd`` if this is where
+  keystone is installed).
 * Enable TLS by supplying the correct certificates.
-
-Create the directory ``/var/www/cgi-bin/keystone/``. You can either hardlink or
-softlink the files ``main`` and ``admin`` to the file ``keystone.py`` in this
-directory. For a distribution-appropriate place, it should probably be copied
-to::
-
-    /usr/share/openstack/keystone/httpd/keystone.py
 
 Keystone's primary configuration file (``etc/keystone.conf``) and the
 PasteDeploy configuration file (``etc/keystone-paste.ini``) must be readable to
