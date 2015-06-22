@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f5d89781",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-22T14:00:33Z",
+      "side": 1,
+      "message": "(nit) s/Keystone/keystone",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_553703b0",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-22T14:00:33Z",
+      "side": 1,
+      "message": "Should this be in the extensions.rst file?",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
