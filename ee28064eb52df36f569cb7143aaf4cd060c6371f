@@ -16,6 +16,24 @@
       "revId": "ee28064eb52df36f569cb7143aaf4cd060c6371f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_eb91969b",
+        "filename": "config-generator/keystone.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T17:45:03Z",
+      "side": 1,
+      "message": "keystone doesn\u0027t use periodic_task or sslutils. I don\u0027t think we have a need for those libraries.",
+      "parentUuid": "fa32b979_f072e5e2",
+      "revId": "ee28064eb52df36f569cb7143aaf4cd060c6371f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
