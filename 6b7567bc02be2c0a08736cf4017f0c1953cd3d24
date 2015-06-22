@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_59e08e96",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "I\u0027m guessing this section was supposed to be removed, since you don\u0027t have to enable it anymore.",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_1d58b955",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 5
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_d9ea5e74",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "remove \"the\"",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_553703b0",
         "filename": "doc/source/extensions.rst",
         "patchSetId": 5
@@ -47,6 +81,109 @@
       "writtenOn": "2015-06-22T14:00:33Z",
       "side": 1,
       "message": "Should this be in the extensions.rst file?",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_d9a1fe47",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "since federation isn\u0027t an extension, this should be moved somewhere else.",
+      "parentUuid": "fa32b979_553703b0",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b9b51a7f",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "Remove the copyright since you don\u0027t work for the foundation.",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_598e4ed1",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "remove \"the\"",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b93afae5",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "Deployers don\u0027t need to do this. The driver has a default.",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b96c3a09",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "this should be just \"sql\"",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_790c7242",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-22T20:16:54Z",
+      "side": 1,
+      "message": "how does somebody know which to add?",
       "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
