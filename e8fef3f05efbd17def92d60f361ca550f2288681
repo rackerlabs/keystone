@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_51715043",
+        "filename": "keystone/clean.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-06-22T15:51:53Z",
+      "side": 1,
+      "message": "the message printed here will look weird on py3. The change doesn\u0027t really fix anything, so I suggest to revert",
+      "revId": "e8fef3f05efbd17def92d60f361ca550f2288681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
