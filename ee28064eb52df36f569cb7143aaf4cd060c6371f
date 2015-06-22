@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f072e5e2",
+        "filename": "config-generator/keystone.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-22T14:24:37Z",
+      "side": 1,
+      "message": "i guess we don\u0027t want to expose periodic_task or sslutils? https://github.com/openstack/oslo.service/blob/master/setup.cfg#L31-L34",
+      "revId": "ee28064eb52df36f569cb7143aaf4cd060c6371f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
