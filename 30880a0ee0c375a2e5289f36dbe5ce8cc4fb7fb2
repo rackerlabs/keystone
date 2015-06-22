@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_9c7fe165",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T21:26:57Z",
+      "side": 1,
+      "message": "Hey Marek,\n\nI tested it actually authenticating with google+.  I believe mappings previously required user, but not anymore.",
+      "parentUuid": "fa32b979_19e1a39a",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_a2088829",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
