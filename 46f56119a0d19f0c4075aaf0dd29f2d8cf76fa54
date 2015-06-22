@@ -51,6 +51,24 @@
       "revId": "46f56119a0d19f0c4075aaf0dd29f2d8cf76fa54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b41f5f5a",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-22T20:15:56Z",
+      "side": 1,
+      "message": "++ I agree, Brant has a patch proposed that we can iterate over until we find something that makes more sense. \n\nhttps://review.openstack.org/#/c/194335/",
+      "parentUuid": "fa32b979_ebce0f2c",
+      "revId": "46f56119a0d19f0c4075aaf0dd29f2d8cf76fa54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
