@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_1781788f",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-06-22T16:34:48Z",
+      "side": 1,
+      "message": "I suggest to rename the method. The function is destructive for key_repo_signatures, while other assert* functions are not for their arguments.",
+      "revId": "fdb55a52aaa526962f2f05f0229bfb318c198d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
