@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_e72ebba4",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "i am just wondering whether such schemas are a good way to put it in a first place. We know jsonschema, most people probably don\u0027t so they may get scared after seeing such thing. How about either moving somewhere to the bottom or adding a link to external resource (also in the keystone/doc scope) with schema presented and explained?",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_02486d5a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "either make a big warning, that for brevity you are presenting excerpts from the mapping rules, or make the complete. For instance this mapping rule would not work (a HTTP 401 Unauthorized would be returned) because the \u0027local\u0027 section doesn\u0027t define users\u0027 identity (id, or {name, domain} )\n\nThis applies to all the rules.",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c29fe5b2",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "yeah, with the examples presented above there is no clue how user was created.",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e28f8973",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "it\u0027s either \u0027Federated\u0027 or a name of an existing domain, not \"local\" - make it \u003cname\u003e or something indicating this will be substituted with a real name.\nAlso, domain can be (as usuall) identified by id or name.",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_a2cf41b2",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "same comment for \"local\" vs \u003cname\u003e",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_22c49190",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "\"A user does not exist in the backend\" ?",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_62405908",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e2f0e9cb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "Well, yes and no. They will be transformed to canonical structure of the groups, but eventually it will be transformed to group ids and this is how a user will see them in the resulting token: https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/utils.py#L289 later called here: https://github.com/openstack/keystone/blob/master/keystone/auth/plugins/mapped.py#L205",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_02738d4e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "this needs to be checked but my bet is that keywords cannot be used withing same RULE.",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e2c78962",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T08:54:56Z",
+      "side": 1,
+      "message": "missing \u0027user\u0027",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
