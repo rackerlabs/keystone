@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_19e1a39a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T21:19:38Z",
+      "side": 1,
+      "message": "Let me guess: by saying \u0027testing\u0027 you mean you used keystone-manage and assumed the rules are ok as they don\u0027t compained? If so, I actually should thank you as this got me thinking i need to fix keystone-manage.",
+      "parentUuid": "fa32b979_19ee83b4",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_a2088829",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
