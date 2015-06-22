@@ -15,7 +15,6 @@ import os
 import uuid
 
 from oslo_utils import timeutils
-import six
 
 from keystone.common import config
 from keystone.common import utils
@@ -348,7 +347,7 @@ class TestFernetKeyRotation(tests.TestCase):
 
         # Simulate every rotation strategy up to "rotating once a week while
         # maintaining a year's worth of keys."
-        for max_active_keys in six.moves.range(min_active_keys, 52 + 1):
+        for max_active_keys in range(min_active_keys, 52 + 1):
             self.config_fixture.config(group='fernet_tokens',
                                        max_active_keys=max_active_keys)
 
@@ -359,12 +358,12 @@ class TestFernetKeyRotation(tests.TestCase):
 
             # Rotate the keys just enough times to fully populate the key
             # repository.
-            for rotation in six.moves.range(max_active_keys - min_active_keys):
+            for rotation in range(max_active_keys - min_active_keys):
                 fernet_utils.rotate_keys()
             self.assertEqual(max_active_keys, self.key_repository_size)
 
             # Rotate an additional number of times to ensure that we maintain
             # the desired number of active keys.
-            for rotation in six.moves.range(10):
+            for rotation in range(10):
                 fernet_utils.rotate_keys()
                 self.assertEqual(self.key_repository_size, max_active_keys)

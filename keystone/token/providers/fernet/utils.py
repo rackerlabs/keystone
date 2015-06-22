@@ -208,13 +208,11 @@ def rotate_keys(keystone_user_id=None, keystone_group_id=None):
 
     # purge excess keys
     keys = sorted(key_files.keys())
-    number_of_keys_to_purge = max(
-        0, len(key_files) - CONF.fernet_tokens.max_active_keys + 1)
-    if number_of_keys_to_purge > 0:
-        excess_keys = keys[:number_of_keys_to_purge]
-        LOG.info(_LI('Excess keys to purge: %s'), excess_keys)
-        for i in excess_keys:
-            os.remove(key_files[i])
+    while len(keys) > (CONF.fernet_tokens.max_active_keys - 1):
+        index_to_purge = keys.pop()
+        key_to_purge = key_files[index_to_purge]
+        LOG.info(_LI('Excess key to purge: %s'), key_to_purge)
+        os.remove(key_to_purge)
 
 
 def load_keys():
