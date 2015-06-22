@@ -105,6 +105,23 @@
       "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_3c6ed52f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-22T21:40:12Z",
+      "side": 1,
+      "message": "JSON parsing will not allow a json containing regex to be validated.\nexample: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/mapping_fixtures.py#L466-L499\n\nWill fail because of the regex.",
+      "revId": "039b0bd9a9ba2e3a1355a380042e7e31ec811f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
