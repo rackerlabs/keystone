@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_1d58b955",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-22T17:23:09Z",
+      "side": 1,
+      "message": "same as @ line 54",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_553703b0",
         "filename": "doc/source/extensions.rst",
         "patchSetId": 5
