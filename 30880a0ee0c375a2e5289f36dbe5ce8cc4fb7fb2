@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_19ee83b4",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T21:17:52Z",
+      "side": 1,
+      "message": "Can you explain how exactly did you test those mappings? Did you actually authenticate using those rules? \nI am almost sure there is something itchy here -\u003d either somehow oidc plugin sets REMOTE_USER or  some other rules are setting user_id. https://github.com/openstack/keystone/blob/master/keystone/auth/plugins/mapped.py#L213",
+      "parentUuid": "fa32b979_11666829",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_a2088829",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
