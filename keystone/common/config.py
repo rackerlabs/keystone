@@ -823,7 +823,7 @@ FILE_OPTIONS = {
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,
                     help='Default auth methods.'),
-        cfg.StrOpt('password',
+        cfg.StrOpt('password',  # nosec
                    default='keystone.auth.plugins.password.Password',
                    help='The password auth plugin module.'),
         cfg.StrOpt('token',
