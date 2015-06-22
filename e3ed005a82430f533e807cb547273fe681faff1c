@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_8120f1f8",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T12:51:13Z",
+      "side": 1,
+      "message": "changed to \"Federation authentication\"",
+      "parentUuid": "fa32b979_f632765d",
+      "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e80b8322",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 4
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "I didn\u0027t remove it when I was testing, but that was quite a while ago.  If it shouldn\u0027t be there should we remove it from the example above?",
       "parentUuid": "fa32b979_28dacb4c",
+      "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_612e0dfc",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T12:51:13Z",
+      "side": 1,
+      "message": "ok, removing for now.",
+      "parentUuid": "fa32b979_36f0de66",
       "revId": "e3ed005a82430f533e807cb547273fe681faff1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
