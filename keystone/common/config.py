@@ -841,7 +841,7 @@ FILE_OPTIONS = {
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,
                     help='Allowed authentication methods.'),
-        cfg.StrOpt('password',
+        cfg.StrOpt('password',  # nosec
                    help='Entrypoint for the password auth plugin module in '
                         'the keystone.auth.password namespace.'),
         cfg.StrOpt('token',
