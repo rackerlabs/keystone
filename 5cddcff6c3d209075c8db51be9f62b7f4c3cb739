@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_46c75712",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-22T14:53:26Z",
+      "side": 1,
+      "message": "this is technically already done by default: https://github.com/openstack/keystone/blob/master/etc/keystone-paste.ini#L82 but might be useful for someone who has upgraded",
+      "revId": "5cddcff6c3d209075c8db51be9f62b7f4c3cb739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
