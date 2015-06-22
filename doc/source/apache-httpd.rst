@@ -31,21 +31,22 @@ Running Keystone in HTTPD
 Files
 -----
 
-Copy the file httpd/wsgi-keystone.conf to the appropriate location for your
-Apache server, most likely::
+Copy the ``httpd/wsgi-keystone.conf`` sample configuration file to the
+appropriate location for your Apache server, most likely
+``/etc/apache2/sites-available/``. Then enable the site by creating a symlink to
+it in ``/etc/apache2/sites-enabled/``::
 
-    /etc/httpd/conf.d/wsgi-keystone.conf
+  ln -s ../sites-available/keystone.conf /etc/apache2/sites-enabled/
 
-Update this file to match your system configuration (for example, some
-distributions put httpd logs in the ``apache2`` directory and some in the
-``httpd`` directory; also, enable TLS).
+Update the file to match your system. Note the following:
 
-Create the directory ``/var/www/cgi-bin/keystone/``. You can either hardlink or
-softlink the files ``main`` and ``admin`` to the file ``keystone.py`` in this
-directory. For a distribution appropriate place, it should probably be copied
-to::
-
-    /usr/share/openstack/keystone/httpd/keystone.py
+* Make sure the correct log directory is used. Some distributions put httpd
+  server logs in the ``httpd`` directory and some in the ``apache2`` directory.
+* Update the WSGIScriptAlias and Directory values to the directory that
+  keystone is installed to (for example, use
+  ``/usr/local/lib/python2.7/dist-packages/keystone/httpd`` if this is where
+  keystone is installed).
+* Enable TLS by supplying the correct certificates.
 
 Keystone's primary configuration file (``etc/keystone.conf``) and the
 PasteDeploy configuration file (``etc/keystone-paste.ini``) must be readable to
