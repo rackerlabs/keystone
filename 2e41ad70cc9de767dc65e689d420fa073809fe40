@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_fd65d51c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-22T17:22:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_7efc98b7",
+      "revId": "2e41ad70cc9de767dc65e689d420fa073809fe40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_7eea58dc",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-19T19:49:05Z",
       "side": 1,
       "message": "This is really the only one that\u0027s valuable. I can see what you did by looking at the code. This one seems to be the why and that\u0027s what should be highlighted in a commit message.",
+      "revId": "2e41ad70cc9de767dc65e689d420fa073809fe40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_dd625116",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-22T17:22:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_7eea58dc",
       "revId": "2e41ad70cc9de767dc65e689d420fa073809fe40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_3d46dd4f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-22T17:22:47Z",
+      "side": 1,
+      "message": "It\u0027s always in there as it\u0027s added at line 386.\n\nDone.",
+      "parentUuid": "3afb71cf_9eacf49f",
+      "revId": "2e41ad70cc9de767dc65e689d420fa073809fe40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_7e7ff814",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 19
@@ -64,6 +118,24 @@
       "writtenOn": "2015-06-19T19:49:05Z",
       "side": 1,
       "message": "So we expect the \u0027id\u0027 to be set to None sometimes?",
+      "revId": "2e41ad70cc9de767dc65e689d420fa073809fe40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_6272807e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-06-22T17:22:47Z",
+      "side": 1,
+      "message": "No, it just might not be in the lookup dict.  In which case we add it.",
+      "parentUuid": "3afb71cf_7e7ff814",
       "revId": "2e41ad70cc9de767dc65e689d420fa073809fe40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
