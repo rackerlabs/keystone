@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_0a4cdf6e",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 11861
+      },
+      "writtenOn": "2015-06-22T22:24:33Z",
+      "side": 1,
+      "message": "\"hardcoded_password\" and \"hardcoded_sql_expressions\" are very prone to false positives, that\u0027s why I didn\u0027t include them before.\n\nI didn\u0027t include crypto_random because in some cases non cryptographic random numbers are fine, and Bandit doesn\u0027t have any way to do know, which would force people to put a #nosec in their code anywhere they are using non cryptographically generated random.",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_8a7c6f73",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 11861
+      },
+      "writtenOn": "2015-06-22T22:24:33Z",
+      "side": 1,
+      "message": "I\u0027d also add the new Paramiko check, you can find the definition in stackforge Bandit.",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_4a974790",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 11861
+      },
+      "writtenOn": "2015-06-22T22:24:33Z",
+      "side": 1,
+      "message": "Info on a gate will still cause a failure, unless you set the -ll threshold.",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
