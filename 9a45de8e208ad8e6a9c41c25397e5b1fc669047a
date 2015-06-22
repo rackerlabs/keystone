@@ -16,6 +16,24 @@
       "revId": "9a45de8e208ad8e6a9c41c25397e5b1fc669047a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e1abfd1c",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-22T12:55:21Z",
+      "side": 1,
+      "message": "federation related examples were always Debian based only. If you are not okay with that I suggest approving this (for consistency) and proposing follow-up patch adding yum-based examples everywhere.",
+      "parentUuid": "fa32b979_b6794eca",
+      "revId": "9a45de8e208ad8e6a9c41c25397e5b1fc669047a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
