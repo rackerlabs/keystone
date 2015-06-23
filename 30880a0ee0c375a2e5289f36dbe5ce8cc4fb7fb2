@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_ad2fff3c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-23T08:46:05Z",
+      "side": 1,
+      "message": "and what user_id did it have? There was some user_id, right? What was that if you didn\u0027t specify it? I bet the mod_auth_oidc sets REMOTE_USER. Then, I can agree user section in the mapping rules is not required. But in my opinion a REMOTE_USER set by some external plugins is not a default situation (it shouldn\u0027t be) and for sure we cannot say that not setting \u0027user\u0027 not defined in the mapping will work always. \nHowever, if you think I am wrong can you point me to the code that will automatically set user_id and not really complain when the user is missing? The only place I can spot is https://github.com/openstack/keystone/blob/master/keystone/auth/plugins/mapped.py#L213 and there the only place to fetch apart from the mapping is REMOTE_USER.",
+      "parentUuid": "fa32b979_9c7fe165",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_a2088829",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
@@ -369,6 +387,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_0da4eba3",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-23T08:46:05Z",
+      "side": 1,
+      "message": "Ok, i think we need to go slightly deeper and start with some definitions. \nWhat is the rule? Is this a dictionary with two keys \u0027local\u0027 and \u0027remote\u0027 or a list being a value of \u0027remote\u0027 or an element of such list? \nI claim that within one element one cannot put more than one keyword, and looks like we agree on that.\nI strongly suggest adding definitions at the top of the document.\nHappy to discuss this on IRC.",
+      "parentUuid": "fa32b979_f2709fa6",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e2c78962",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
@@ -398,6 +434,24 @@
       "side": 1,
       "message": "User is a possible case, but shouldn\u0027t be needed. I added a Note.",
       "parentUuid": "fa32b979_e2c78962",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_eda8a779",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-23T08:46:05Z",
+      "side": 1,
+      "message": "In testing scenario or in general?",
+      "parentUuid": "fa32b979_52762b3f",
       "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
