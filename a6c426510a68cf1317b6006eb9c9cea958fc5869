@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_d966b4ba",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-23T14:49:35Z",
+      "side": 1,
+      "message": "this should be 74? i wonder why it passed given it wasn\u0027t fully upgraded?",
+      "revId": "a6c426510a68cf1317b6006eb9c9cea958fc5869",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
