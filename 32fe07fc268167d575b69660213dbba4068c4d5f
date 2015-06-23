@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_5e004266",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-23T18:33:31Z",
+      "side": 1,
+      "message": "FIxed",
+      "parentUuid": "fa32b979_f8262715",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_b8aadf17",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_dea4524c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-23T18:33:31Z",
+      "side": 1,
+      "message": "Added.",
+      "parentUuid": "fa32b979_98f11b6d",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_532374a7",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 7
@@ -64,6 +100,24 @@
       "writtenOn": "2015-06-23T09:04:54Z",
       "side": 1,
       "message": "\"ephemeral\" or \"local\"\n\n(\"local\" is not an attribute here)",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_de29b29c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-23T18:33:31Z",
+      "side": 1,
+      "message": "Hey Rodrigo,\n\nusing \u003c\u003e with local. Below it explains that local is replaced by the user information.",
+      "parentUuid": "fa32b979_532374a7",
       "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_e01ad06e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-23T18:33:31Z",
+      "side": 1,
+      "message": "Good idea. It has been added in the newest patch.",
+      "parentUuid": "fa32b979_f3dde870",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_d3ec64f5",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 7
@@ -98,6 +170,24 @@
       "writtenOn": "2015-06-23T09:04:54Z",
       "side": 1,
       "message": "some of the attributes in the schema can be not straight forward to understand. What do you think about providing a help section that will briefly explain these attributes?\n\nFor example, what means \"additionalProperties\": False ?",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_a91353b7",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-23T18:33:31Z",
+      "side": 1,
+      "message": "Added information about additionalProperties. Should I add info on all aspects of how a json schema works?",
+      "parentUuid": "fa32b979_d3ec64f5",
       "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
