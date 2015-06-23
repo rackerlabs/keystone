@@ -1755,6 +1755,9 @@ class BaseLdap(object):
                 satisfied_filters.append(filter_)
 
         if filter_list:
+            if query is None:
+                # make sure query is a string
+                query = ''
             query = u'(&%s%s)' % (query, ''.join(filter_list))
 
         # Remove satisfied filters, then the caller will know remaining filters
