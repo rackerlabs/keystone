@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_93e9071d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 14867
+      },
+      "writtenOn": "2015-06-23T02:06:52Z",
+      "side": 1,
+      "message": "I missed this one.\nDone",
+      "parentUuid": "fa32b979_3364bbe3",
+      "revId": "d811522a6bca1f36ccaa0fcbeaf53c576e60e4dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_d3622fd8",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-23T02:01:15Z",
       "side": 1,
       "message": "this is not relevant any more",
+      "revId": "d811522a6bca1f36ccaa0fcbeaf53c576e60e4dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b3ec4b2a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 14867
+      },
+      "writtenOn": "2015-06-23T02:06:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_d3622fd8",
       "revId": "d811522a6bca1f36ccaa0fcbeaf53c576e60e4dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
