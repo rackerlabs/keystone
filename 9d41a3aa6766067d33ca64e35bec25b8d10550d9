@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_abb375e8",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-23T00:32:24Z",
+      "side": 1,
+      "message": "projects won\u0027t be able to make use of the paramiko check until bandit does another PyPi release.",
+      "parentUuid": "fa32b979_8a7c6f73",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_4a974790",
         "filename": "bandit.yaml",
         "patchSetId": 1
