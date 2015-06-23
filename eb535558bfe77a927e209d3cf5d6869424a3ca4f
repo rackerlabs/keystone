@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_7e12ffb5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:25:11Z",
+      "side": 1,
+      "message": "remove extra space",
+      "revId": "eb535558bfe77a927e209d3cf5d6869424a3ca4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
