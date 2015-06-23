@@ -16,6 +16,24 @@
       "revId": "e8fef3f05efbd17def92d60f361ca550f2288681",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_d3346fdf",
+        "filename": "keystone/clean.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 14867
+      },
+      "writtenOn": "2015-06-23T01:59:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_51715043",
+      "revId": "e8fef3f05efbd17def92d60f361ca550f2288681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
