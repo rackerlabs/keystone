@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_1b1b9ecb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-23T22:47:01Z",
+      "side": 1,
+      "message": "i think we can keep backwards compatibility by writing this as:\n\n  \"type\": [\"boolean\", \"string\"]",
+      "revId": "55dd2cba199a2bb61bcccbbe50f6e7d1432ca59c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_bb7ab2ef",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-23T22:47:01Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "55dd2cba199a2bb61bcccbbe50f6e7d1432ca59c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_fb903aef",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-23T22:47:01Z",
+      "side": 1,
+      "message": "if you keep this as a string, you\u0027ll need to evaluate what the string says. writing this as `if regex:` will always evaluated to a logical true because python evaluates strings to true if they have any content.\n\n  \u003e\u003e\u003e x\u003d\"False\"\n  \u003e\u003e\u003e if x: print(\"hello\")\n  ... \n  hello",
+      "revId": "55dd2cba199a2bb61bcccbbe50f6e7d1432ca59c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
