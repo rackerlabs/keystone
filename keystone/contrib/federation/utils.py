@@ -86,7 +86,7 @@ MAPPING_SCHEMA = {
                     "type": "array"
                 },
                 "regex": {
-                    "type": "boolean"
+                    "type": "string"
                 }
             }
         },
@@ -102,7 +102,7 @@ MAPPING_SCHEMA = {
                     "type": "array"
                 },
                 "regex": {
-                    "type": "boolean"
+                    "type": "string"
                 }
             }
         },
@@ -674,7 +674,7 @@ class RuleProcessor(object):
 
         for requirement in requirements:
             requirement_type = requirement['type']
-            regex = requirement.get('regex', False)
+            regex = requirement.get('regex', 'False')
 
             any_one_values = requirement.get(self._EvalType.ANY_ONE_OF)
             if any_one_values is not None:
@@ -744,7 +744,7 @@ class RuleProcessor(object):
         :param eval_type: determine how to evaluate requirements
         :type eval_type: string
         :param regex: perform evaluation with regex
-        :type regex: boolean
+        :type regex: string
         :param assertion: dict of attributes from the IdP
         :type assertion: dict
 
