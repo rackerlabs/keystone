@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_5eae1b99",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:21:35Z",
+      "side": 1,
+      "message": "not sure if it is clear to the user that this is a namespace",
+      "revId": "c3d339d43103ac8d1bd6def186c0664b26298822",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
