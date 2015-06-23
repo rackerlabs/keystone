@@ -144,6 +144,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_7e618638",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-23T18:33:38Z",
+      "side": 1,
+      "message": "I will continue to look into this.",
+      "parentUuid": "fa32b979_ad2fff3c",
+      "revId": "30880a0ee0c375a2e5289f36dbe5ce8cc4fb7fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_a2088829",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 6
