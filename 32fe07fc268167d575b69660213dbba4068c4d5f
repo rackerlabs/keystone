@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f8262715",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:04:54Z",
+      "side": 1,
+      "message": "s/specified specified/specified",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b8aadf17",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:04:54Z",
+      "side": 1,
+      "message": "this direct mapping only appears for the first time here. This can be a bit confusing, mostly because we can use {0}, {1}... Suggest to add a section about this kind of mapping",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_98f11b6d",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:04:54Z",
+      "side": 1,
+      "message": "add another example using the domain name?",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_532374a7",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:04:54Z",
+      "side": 1,
+      "message": "\"ephemeral\" or \"local\"\n\n(\"local\" is not an attribute here)",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_f3dde870",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:04:54Z",
+      "side": 1,
+      "message": "suggest to add an extra section for mappings with more than one rule",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_d3ec64f5",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-23T09:04:54Z",
+      "side": 1,
+      "message": "some of the attributes in the schema can be not straight forward to understand. What do you think about providing a help section that will briefly explain these attributes?\n\nFor example, what means \"additionalProperties\": False ?",
+      "revId": "32fe07fc268167d575b69660213dbba4068c4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
