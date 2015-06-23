@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_66190688",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 11861
+      },
+      "writtenOn": "2015-06-23T13:54:57Z",
+      "side": 1,
+      "message": "I don\u0027t think that\u0027s true because it\u0027s defined in config, the code is included as part of the \"blacklist_calls\" plugin.",
+      "parentUuid": "fa32b979_abb375e8",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_4a974790",
         "filename": "bandit.yaml",
         "patchSetId": 1
