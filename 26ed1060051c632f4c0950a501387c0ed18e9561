@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_9033e413",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-24T15:47:54Z",
+      "side": 1,
+      "message": "ok, so today we accept two formats but the keystone-manage only accepts one, right?\n\ncould you provide a paste of the difference of both being used? didn\u0027t get it by the commit message",
+      "revId": "26ed1060051c632f4c0950a501387c0ed18e9561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_90c9a428",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-24T15:47:54Z",
+      "side": 1,
+      "message": "both*",
+      "revId": "26ed1060051c632f4c0950a501387c0ed18e9561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
