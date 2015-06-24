@@ -18,8 +18,16 @@ from keystone.server import wsgi as wsgi_server
 # NOTE(blk-u): The next line allows the docs to build. when this is run in
 # mod_wsgi, the name is like _mod_wsgi_<something>. When docs try to build the
 # name is like keystone.httpd.admin.
-if __name__.startswith('_mod_wsgi'):
 
+application = None
+
+
+def main():
+    if not __name__.startswith('_mod_wsgi'):
+        raise Exception(
+            "This is designed to be run under mod_wsgi, not directly")
+
+    global application
     # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
     # The following is a reference to Python Paste Deploy documentation
     # http://pythonpaste.org/deploy/
