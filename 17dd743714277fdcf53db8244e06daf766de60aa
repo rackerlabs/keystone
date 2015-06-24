@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_3dbbef10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "This is also addressing bug #1441733.  Making my patch (https://review.openstack.org/#/c/172245/) redundant.",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_7d73b780",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "Why was this changed to a devstack path?",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_5d66f3bb",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "devstack path",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_3d69af8c",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "Devstack path.",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_1d0b8bd7",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "devstack path",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_1d3dcb8e",
+        "filename": "keystone/httpd/admin.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "Technically this is a new file, shouldn\u0027t this be 2015?",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_bd3dbf8f",
+        "filename": "keystone/httpd/public.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-24T05:04:14Z",
+      "side": 1,
+      "message": "I think 2015 since this is a new file.",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
