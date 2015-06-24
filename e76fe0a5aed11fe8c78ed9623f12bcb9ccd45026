@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_d1e5fc08",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-06-24T12:51:55Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be (max_active_keys, self.key_repository_size) instead?",
+      "revId": "e76fe0a5aed11fe8c78ed9623f12bcb9ccd45026",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
