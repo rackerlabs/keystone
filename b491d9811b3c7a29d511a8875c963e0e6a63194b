@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f2aca2ee",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-24T23:50:55Z",
+      "side": 1,
+      "message": "this file doesn\u0027t exist either",
+      "revId": "b491d9811b3c7a29d511a8875c963e0e6a63194b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_529d4eba",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-24T23:50:55Z",
+      "side": 1,
+      "message": "CONTRIBUTING.rst",
+      "revId": "b491d9811b3c7a29d511a8875c963e0e6a63194b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
