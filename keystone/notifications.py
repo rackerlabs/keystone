@@ -308,6 +308,11 @@ def notify_event_callbacks(service, resource_type, operation, payload):
                 cb(service, resource_type, operation, payload)
 
 
+def get_transport():
+    """Return transport object."""
+    return oslo_messaging.get_transport(CONF)
+
+
 def _get_notifier():
     """Return a notifier object.
 
