@@ -16,6 +16,24 @@
       "revId": "a6c426510a68cf1317b6006eb9c9cea958fc5869",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_34d8ec1d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-24T02:43:00Z",
+      "side": 1,
+      "message": "Steve, as you know, for the same reason, it\u0027s sqlite in place instead of SQL. Just assume SQL could be enabled manually.",
+      "parentUuid": "fa32b979_d966b4ba",
+      "revId": "a6c426510a68cf1317b6006eb9c9cea958fc5869",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
