@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_117ffae0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-24T02:05:15Z",
+      "side": 1,
+      "message": "this sentence needs to be tweaked, i think you are missing a word or two here",
+      "revId": "67249b879acbb712a9b629e2c37681f3381d8192",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
