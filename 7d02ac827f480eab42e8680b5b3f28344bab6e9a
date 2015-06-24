@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_e86e0aff",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-06-24T15:07:43Z",
+      "side": 1,
+      "message": "Keep the signature the same, please.",
+      "revId": "7d02ac827f480eab42e8680b5b3f28344bab6e9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_4a55abf7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-06-24T15:07:43Z",
+      "side": 1,
+      "message": "this shhould be wrpeedby by an if block based on the conf file for revoke by id.",
+      "revId": "7d02ac827f480eab42e8680b5b3f28344bab6e9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
