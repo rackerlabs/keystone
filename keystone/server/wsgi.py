@@ -26,6 +26,7 @@ oslo_i18n.enable_lazy()
 
 
 from keystone.common import environment
+from keystone.common import profiler
 from keystone import config
 from keystone.server import common
 from keystone import service as keystone_service
@@ -49,4 +50,7 @@ def initialize_application(name):
 
     _unused, application = common.setup_backends(
         startup_application_fn=loadapp)
+
+    profiler.setup(name)
+
     return application
