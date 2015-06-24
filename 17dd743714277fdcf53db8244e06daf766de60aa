@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_05a242fc",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2750
+      },
+      "writtenOn": "2015-06-24T11:27:07Z",
+      "side": 1,
+      "message": "@Eric - Because, that was the whole point. See ML - http://lists.openstack.org/pipermail/openstack-dev/2015-June/067147.html",
+      "parentUuid": "fa32b979_7d73b780",
+      "revId": "17dd743714277fdcf53db8244e06daf766de60aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_5d66f3bb",
         "filename": "httpd/wsgi-keystone.conf",
         "patchSetId": 6
