@@ -6,11 +6,9 @@ include LICENSE
 include HACKING.rst
 include README.rst
 include openstack-common.conf
-include run_tests.py
 include run_tests.sh
 include setup.cfg
 include setup.py
-include TODO
 include tox.ini
 include etc/*
 include httpd/*
