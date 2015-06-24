@@ -241,7 +241,10 @@ class ServiceV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.service_update, 'service')
-    def update_service(self, context, service_id, service):
+    def update_service(self, context, service_id, service=None):
+        if not service:
+            raise exception.ValidationError(attribute='service',
+                                            target='request body')
         self._require_matching_id(service_id, service)
         initiator = notifications._get_request_audit_info(context)
         ref = self.catalog_api.update_service(service_id, service, initiator)

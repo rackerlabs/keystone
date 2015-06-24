@@ -15,9 +15,11 @@
 import copy
 import uuid
 
+import six
 from testtools import matchers
 
 from keystone import catalog
+from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_v3
@@ -401,6 +403,35 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             'service_id': self.service_id},
             body={'service': service})
         self.assertValidServiceResponse(r, service)
+
+    def test_update_service_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = catalog.controllers.ServiceV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_service,
+                              dict(is_admin=True),
+                              self.service_id)
+
+        # explicitly verify that the error message shows that a *service* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find service in request body',
+            six.text_type(e))
+
+    def test_update_service_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = catalog.controllers.ServiceV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_service,
+                              dict(is_admin=True),
+                              self.service_id,
+                              {})
+
+        # explicitly verify that the error message shows that a *service* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find service in request body',
+            six.text_type(e))
 
     def test_delete_service(self):
         """Call ``DELETE /services/{service_id}``."""
