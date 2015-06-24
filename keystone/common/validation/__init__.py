@@ -27,11 +27,11 @@ def validated(request_body_schema, resource_to_validate):
 
     """
     schema_validator = validators.SchemaValidator(request_body_schema)
-
     def add_validator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
-            if resource_to_validate in kwargs:
+            if resource_to_validate in kwargs and kwargs.get(
+                'resource_to_validate'):
                 schema_validator.validate(kwargs[resource_to_validate])
             return func(*args, **kwargs)
         return wrapper
