@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_b1316e5b",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-24T02:09:37Z",
+      "side": 1,
+      "message": "there is a error on this line \"ImportError: cannot import name versionutils\"",
+      "revId": "882b9a8f9de6f1215dc64f3eac2d7615bd9e094b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_91d9caf5",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-24T02:09:37Z",
+      "side": 1,
+      "message": "I think that you can change a little bit this code, maybe call self.create_service() here and set the service_id were.",
+      "revId": "882b9a8f9de6f1215dc64f3eac2d7615bd9e094b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_f1ee168a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-24T02:09:37Z",
+      "side": 1,
+      "message": "With that change, we don\u0027t need to create a new service here, only create the endpoint.",
+      "revId": "882b9a8f9de6f1215dc64f3eac2d7615bd9e094b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b1e40ea8",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-24T02:09:37Z",
+      "side": 1,
+      "message": "same here and in the others create_service() below.",
+      "revId": "882b9a8f9de6f1215dc64f3eac2d7615bd9e094b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
