@@ -469,6 +469,10 @@ require that these messages are descriptive and accurate.
     def test():
         pass
 
+.. NOTE::
+   Another strategy is to not use the wip decorator and instead show how the
+   code currently incorrectly works. Which strategy is chosen is up to the
+   developer.
 
 Generating Updated Sample Config File
 -------------------------------------
@@ -477,9 +481,14 @@ Keystone's sample configuration file ``etc/keystone.conf.sample`` is automatical
 generated based upon all of the options available within Keystone. These options
 are sourced from the many files around Keystone as well as some external libraries.
 
-If new options are added, primarily located in ``keystone.common.config``, a new
-sample configuration file needs to be generated. To generate a new sample configuration
-to be included in a commit run:
+If new options are added or changed, primarily located in
+:py:mod:`keystone.common.config`, a new sample configuration file needs to be
+generated. This can be done either in the commit that changes the config
+options or in a separate commit at the developer's discretion. Note that if the
+config file update is in the same commit as the developer may have to resolve
+merge conflicts more often.
+
+To generate a new sample configuration to be included in a commit run:
 
 .. code-block:: bash
 
