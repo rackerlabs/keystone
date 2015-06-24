@@ -1603,6 +1603,19 @@
 #list_limit = <None>
 
 
+[profiler]
+
+#
+# From keystone
+#
+
+# If False fully disable profiling feature. (boolean value)
+#enabled = false
+
+# If False doesn't trace SQL requests. (boolean value)
+#trace_sqlalchemy = false
+
+
 [resource]
 
 #

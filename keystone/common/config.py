@@ -1097,6 +1097,12 @@ FILE_OPTIONS = {
                     deprecated_for_removal=True,
                     help='Require client certificate.'),
     ],
+    'profiler': [
+        cfg.BoolOpt("enabled", default=False,
+                    help='If False fully disable profiling feature.'),
+        cfg.BoolOpt("trace_sqlalchemy", default=False,
+                    help="If False doesn't trace SQL requests.")
+    ],
 }
 
 
