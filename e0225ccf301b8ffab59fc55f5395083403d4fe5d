@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_91aeaa2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-06-24T02:12:27Z",
+      "side": 1,
+      "message": "There is some blueprint that you can reference this change?",
+      "revId": "e0225ccf301b8ffab59fc55f5395083403d4fe5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
