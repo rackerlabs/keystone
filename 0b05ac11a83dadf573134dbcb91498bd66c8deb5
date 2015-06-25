@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_1ed9f021",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-25T16:03:51Z",
+      "side": 1,
+      "message": "isn\u0027t this a list? [...]",
+      "revId": "0b05ac11a83dadf573134dbcb91498bd66c8deb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_de1388b6",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-25T16:03:51Z",
+      "side": 1,
+      "message": "suggest to add a sentence to say you shouldn\u0027t specify it (despite the example below)",
+      "revId": "0b05ac11a83dadf573134dbcb91498bd66c8deb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_9eb3c099",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-25T16:03:51Z",
+      "side": 1,
+      "message": "all examples with \"user\" so far use \"{0}\", maybe use one somewhere where you specify the username.\n\nalso, I miss an example of the usage of other indexes like {1}, {2}... This isn\u0027t always straight forward to understand",
+      "revId": "0b05ac11a83dadf573134dbcb91498bd66c8deb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_1e2d70a7",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-06-25T16:03:51Z",
+      "side": 1,
+      "message": "great explanation!",
+      "revId": "0b05ac11a83dadf573134dbcb91498bd66c8deb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
