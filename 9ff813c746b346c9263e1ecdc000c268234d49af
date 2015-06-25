@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_44b101df",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-25T07:11:08Z",
+      "side": 1,
+      "message": "while this is a fine test, should we maybe also test via the router, in terms of doing a self.patch() body\u0027{\u0027service\u0027: {}}, which is closer to simulating the user situation?",
+      "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
