@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_cbe97db9",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 20
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-25T19:47:44Z",
+      "side": 1,
+      "message": "Config should not be in the paste-ini for keystone",
+      "revId": "e69fc4b1c5db5e0361cad1854b60edc90608d064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
