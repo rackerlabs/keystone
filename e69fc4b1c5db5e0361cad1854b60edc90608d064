@@ -16,6 +16,24 @@
       "revId": "e69fc4b1c5db5e0361cad1854b60edc90608d064",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_8b3a9533",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 20
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2015-06-25T19:49:24Z",
+      "side": 1,
+      "message": "Morgan, \n\nFully agree on this. When I finish relocation, I will work on new versions of osprofiler that doesn\u0027t require changes in api-paste.ini.",
+      "parentUuid": "fa32b979_cbe97db9",
+      "revId": "e69fc4b1c5db5e0361cad1854b60edc90608d064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
