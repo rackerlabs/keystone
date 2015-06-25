@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_290db8e7",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-25T10:28:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_f5d89781",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_59e08e96",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 5
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_09f794d3",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-25T10:28:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_1d58b955",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_d9ea5e74",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 5
@@ -64,6 +100,24 @@
       "writtenOn": "2015-06-22T20:16:54Z",
       "side": 1,
       "message": "remove \"the\"",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c9fc4cb7",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-25T10:28:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_d9ea5e74",
       "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_29013505",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-25T10:28:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_598e4ed1",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_b93afae5",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 5
@@ -156,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_a9154540",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-25T10:28:08Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "fa32b979_b93afae5",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_b96c3a09",
         "filename": "doc/source/federation/federation.rst",
         "patchSetId": 5
@@ -167,6 +257,24 @@
       "writtenOn": "2015-06-22T20:16:54Z",
       "side": 1,
       "message": "this should be just \"sql\"",
+      "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_29285585",
+        "filename": "doc/source/federation/federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-25T10:28:08Z",
+      "side": 1,
+      "message": "this is being fixed in a followup patch.",
+      "parentUuid": "fa32b979_b96c3a09",
       "revId": "6b7567bc02be2c0a08736cf4017f0c1953cd3d24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
