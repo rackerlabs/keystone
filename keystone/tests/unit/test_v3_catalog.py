@@ -304,6 +304,19 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.assertValidServiceResponse(r, ref)
         self.assertIs(True, r.result['service']['enabled'])
 
+    def test_create_service_no_request_body(self):
+        """Call ``POST /services``."""
+        self.controller = catalog.controllers.ServiceV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_service,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that a *service* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find service in request body',
+            six.text_type(e))
+
     def test_create_service_enabled_false(self):
         """Call ``POST /services``."""
         ref = self.new_service_ref()
