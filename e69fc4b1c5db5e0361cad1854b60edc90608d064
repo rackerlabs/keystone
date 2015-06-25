@@ -34,6 +34,23 @@
       "revId": "e69fc4b1c5db5e0361cad1854b60edc90608d064",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2b47c9bd",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-25T19:49:34Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to do this here, you could do this in the common.profiler",
+      "revId": "e69fc4b1c5db5e0361cad1854b60edc90608d064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
