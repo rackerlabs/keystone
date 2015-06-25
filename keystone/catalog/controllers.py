@@ -222,7 +222,10 @@ class ServiceV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.service_create, 'service')
-    def create_service(self, context, service):
+    def create_service(self, context, service=None):
+        if not service:
+            raise exception.ValidationError(attribute='service',
+                                            target='request body')
         ref = self._assign_unique_id(self._normalize_dict(service))
         initiator = notifications._get_request_audit_info(context)
         ref = self.catalog_api.create_service(ref['id'], ref, initiator)
