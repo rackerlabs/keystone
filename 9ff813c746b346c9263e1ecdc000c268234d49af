@@ -16,6 +16,24 @@
       "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_689885c0",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-25T14:34:22Z",
+      "side": 1,
+      "message": "@henry, good question. Actually, this patch can only fix the case when there is no body but not the case of when the body is *empty*.\n\nself.patch() is not used in this case since we want to capture exactly what\u0027s the error message is.\n\nCurrently, the exception thrown out when the body is *empty* is from class: `jsonschema.validators.extend` which is out of our control, \nsee: https://github.com/openstack/keystone/blob/master/keystone/common/validation/validators.py#L42\n\nWe can do something to improve it when the request body is empty, this need some change in wsgi.py, but change it will impact a lot of existed testcase.\n\nPossibly, a follow up patch will be proposed to address the case when the body is *empty* beside none if necessary and the refactoring for all of the impacted testcase.\n\nyour thoughts, pls?",
+      "parentUuid": "fa32b979_44b101df",
+      "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
