@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_2fb24a07",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-26T16:13:40Z",
+      "side": 1,
+      "message": "I think this documentation isn\u0027t super clear. I also don\u0027t think we install the httpd files in /usr/local/...",
+      "revId": "9406d13a64b0370449070fca34b7ef5d47d54828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
