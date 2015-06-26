@@ -19,6 +19,7 @@ import functools
 import logging
 
 from dogpile.cache.backends import memcached as memcached_backend
+from oslo_log import versionutils
 
 from keystone.common.cache import _memcache_pool
 
@@ -27,6 +28,11 @@ LOG = logging.getLogger(__name__)
 
 
 # Helper to ease backend refactoring
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.memcache_pool',
+    remove_in=+1,
+    what='keystone.common.cache.backends.memcache_pool')
 class ClientProxy(object):
     def __init__(self, client_pool):
         self.client_pool = client_pool
@@ -39,6 +45,11 @@ class ClientProxy(object):
         return functools.partial(self._run_method, name)
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.memcache_pool',
+    remove_in=+1,
+    what='keystone.common.cache.backends.memcache_pool')
 class PooledMemcachedBackend(memcached_backend.MemcachedBackend):
     # Composed from GenericMemcachedBackend's and MemcacheArgs's __init__
     def __init__(self, arguments):
