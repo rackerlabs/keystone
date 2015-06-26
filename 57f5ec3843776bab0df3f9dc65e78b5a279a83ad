@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_ae9e7c52",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-26T02:31:36Z",
+      "side": 1,
+      "message": "nit: remove extra comma and space, for consistency with single item array on line 343",
+      "revId": "57f5ec3843776bab0df3f9dc65e78b5a279a83ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
