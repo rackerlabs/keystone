@@ -17,12 +17,12 @@
 import abc
 import copy
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
 
-from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import exception
@@ -32,9 +32,9 @@ from keystone.token import utils
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='token')
+MEMOIZE = cache.get_memoization_decorator(CONF, section='token')
 REVOCATION_MEMOIZE = cache.get_memoization_decorator(
-    section='token', expiration_section='revoke')
+    CONF, section='token', expiration_section='revoke')
 
 
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',

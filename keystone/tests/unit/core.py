@@ -284,7 +284,7 @@ class TestCase(BaseTestCase):
             group='cache',
             backend='dogpile.cache.memory',
             enabled=True,
-            proxies=['keystone.tests.unit.test_cache.CacheIsolatingProxy'])
+            proxies=['oslo_cache.tests.test_cache.CacheIsolatingProxy'])
         self.config_fixture.config(
             group='catalog',
             driver='templated',
