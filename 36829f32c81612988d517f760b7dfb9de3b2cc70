@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_d561ec12",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-06-26T18:13:20Z",
+      "side": 1,
+      "message": "Your right about this. Didn\u0027t realize it till now.\nI changed up this section a bit.",
+      "parentUuid": "fa32b979_88027408",
+      "revId": "36829f32c81612988d517f760b7dfb9de3b2cc70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_6824d0b1",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 11
