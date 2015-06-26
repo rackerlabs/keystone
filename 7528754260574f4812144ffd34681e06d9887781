@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_2bea50ad",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "Should be ``POST",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_063f4188",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "Make sure that comment start with Upper case latter.\n\nPlease fix other occurrences of the same in this file.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_4bc55408",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "Since the user ??\n\nI think either this line is not complete or it was placed by mistake.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_cb008438",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "No need of new line here.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2bb9f079",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "No need of new line here.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2b7010dc",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "IMO you can remove new line here as well.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_ab7c20b6",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2b47b078",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_0b398cf2",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "No need of new line.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_eb20e8b2",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_eb07881b",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_6602cd0b",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e60edd31",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_66296d89",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "a new line is required here for better code visibility.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c63879d7",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_66772da0",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "new line is required for better visibility.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e6aa5dd2",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_a6b45535",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_067ae177",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_a68bf567",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_06f18101",
+        "filename": "keystone/tests/unit/test_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-06-26T10:13:46Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "7528754260574f4812144ffd34681e06d9887781",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
