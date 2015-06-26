@@ -19,10 +19,10 @@ import uuid
 
 from dogpile.cache import api
 from dogpile.cache import region as dp_region
+from oslo_cache.backends import mongo
 import six
 from six.moves import range
 
-from keystone.common.cache.backends import mongo
 from keystone import exception
 from keystone.tests import unit as tests
 
