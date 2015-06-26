@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_663dd4ba",
+        "filename": "keystone/tests/unit/common/test_connection_pool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-26T19:08:28Z",
+      "side": 1,
+      "message": "there should be a follow-on patch that doesn\u0027t do this since we shouldn\u0027t be importing private symbols.",
+      "revId": "90f6e2d1cc2f429a6cca8bd3aed36de28ded3255",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
