@@ -12,8 +12,11 @@
 # limitations under the License.
 
 import fixtures
+from oslo_cache import core as cache
+from oslo_config import cfg
 
-from keystone.common import cache
+
+CONF = cfg.CONF
 
 
 class Cache(fixtures.Fixture):
@@ -29,8 +32,9 @@ class Cache(fixtures.Fixture):
 
         # NOTE(morganfainberg):  The only way to reconfigure the CacheRegion
         # object on each setUp() call is to remove the .backend property.
-        if cache.REGION.is_configured:
-            del cache.REGION.backend
+        cache_region = cache.create_region()
+        if cache_region.is_configured:
+            del cache_region.backend
 
         # ensure the cache region instance is setup
-        cache.configure_cache_region(cache.REGION)
+        cache.configure_cache_region(CONF, cache_region)

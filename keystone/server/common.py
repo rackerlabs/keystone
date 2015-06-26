@@ -1,4 +1,3 @@
-
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
 #    a copy of the License at
@@ -11,10 +10,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-
 from oslo_config import cfg
 
 from keystone import backends
+from keystone.common.cache import core as keystone_cache
 from keystone.common import dependency
 from keystone.common import sql
 from keystone import config
@@ -38,6 +37,7 @@ def configure(version=None, config_files=None,
 
 def setup_backends(load_extra_backends_fn=lambda: {},
                    startup_application_fn=lambda: None):
+    keystone_cache.configure_cache()
     drivers = backends.load_backends()
     drivers.update(load_extra_backends_fn())
     res = startup_application_fn()

@@ -10,10 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
+
 from keystone import assignment
 from keystone import auth
 from keystone import catalog
-from keystone.common import cache
 from keystone.contrib import endpoint_filter
 from keystone.contrib import federation
 from keystone.contrib import oauth1
@@ -27,11 +28,10 @@ from keystone import token
 from keystone import trust
 
 
+CONF = cfg.CONF
+
+
 def load_backends():
-
-    # Configure and build the cache
-    cache.configure_cache_region(cache.REGION)
-
     # Ensure that the identity driver is created before the assignment manager
     # and that the assignment driver is created before the resource manager.
     # The default resource driver depends on assignment, which in turn
