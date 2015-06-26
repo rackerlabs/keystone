@@ -19,6 +19,7 @@ from six.moves import range
 
 from keystone.common import controller
 from keystone import exception
+from keystone import resource
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
 
@@ -612,6 +613,19 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': {}}, expected_status=400)
 
+    def test_create_project_no_request_body(self):
+        """Call ``POST /projects``."""
+        self.controller = resource.controllers.ProjectV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_project,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that a *project* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find project in request body',
+            six.text_type(e))
+
     def _create_projects_hierarchy(self, hierarchy_size=1):
         """Creates a single-branched project hierarchy with the specified size.
 
@@ -1026,6 +1040,20 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': leaf_project['id']},
             body={'project': leaf_project},
             expected_status=403)
+
+    def test_update_project_no_request_body(self):
+        """Call ``PATCH /projects/{project_id}``."""
+        self.controller = resource.controllers.ProjectV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_project,
+                              dict(is_admin=True),
+                              self.project_id)
+
+        # explicitly verify that the error message shows that a *project* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find project in request body',
+            six.text_type(e))
 
     def test_disable_leaf_project(self):
         """Call ``PATCH /projects/{project_id}``."""
