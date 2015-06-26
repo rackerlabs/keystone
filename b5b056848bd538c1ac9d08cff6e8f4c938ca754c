@@ -16,6 +16,24 @@
       "revId": "b5b056848bd538c1ac9d08cff6e8f4c938ca754c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_4250b55e",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-26T22:27:58Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "fa32b979_8607b817",
+      "revId": "b5b056848bd538c1ac9d08cff6e8f4c938ca754c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
