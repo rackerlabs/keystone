@@ -13,7 +13,10 @@
 
 import fixtures
 
-from keystone.common import cache
+from oslo_cache import core as cache
+from oslo_config import cfg
+
+CONF = cfg.CONF
 
 
 class Cache(fixtures.Fixture):
@@ -33,4 +36,4 @@ class Cache(fixtures.Fixture):
             del cache.REGION.backend
 
         # ensure the cache region instance is setup
-        cache.configure_cache_region(cache.REGION)
+        cache.configure_cache_region(CONF, cache.REGION)
