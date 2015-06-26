@@ -13,7 +13,13 @@
 
 import functools
 
+from oslo_log import log
+
 from keystone.common.validation import validators
+from keystone import exception
+
+
+LOG = log.getLogger(__name__)
 
 
 def validated(request_body_schema, resource_to_validate):
@@ -31,6 +37,13 @@ def validated(request_body_schema, resource_to_validate):
     def add_validator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
+            # `resource_to_validate` is not passed in or passed with an empty
+            # value will raise the exception to indicate the request body is
+            # needed.
+            LOG.debug('resource to be validated: "%s"', resource_to_validate)
+            if not kwargs.get(resource_to_validate, None):
+                raise exception.ValidationError(attribute=resource_to_validate,
+                                                target='request body')
             if resource_to_validate in kwargs:
                 schema_validator.validate(kwargs[resource_to_validate])
             return func(*args, **kwargs)
