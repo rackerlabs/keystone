@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f759b15c",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-26T08:53:13Z",
+      "side": 0,
+      "message": "where is this section documented now? do we still need the API Specification for Federation anymore, if so, let\u0027s provided these info somewhere.",
+      "revId": "a70b514ed9aa1ccb4084e85fb7d342daabd337ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
