@@ -10,10 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_cache import core as cache
+
 from keystone import assignment
 from keystone import auth
 from keystone import catalog
-from keystone.common import cache
 from keystone.contrib import endpoint_filter
 from keystone.contrib import federation
 from keystone.contrib import oauth1

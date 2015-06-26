@@ -20,12 +20,12 @@ import datetime
 import sys
 import uuid
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
 
-from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import exception
