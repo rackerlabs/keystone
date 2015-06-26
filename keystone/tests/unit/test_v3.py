@@ -15,6 +15,7 @@
 import datetime
 import uuid
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
@@ -23,7 +24,7 @@ from testtools import matchers
 
 from keystone import auth
 from keystone.common import authorization
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules
@@ -168,7 +169,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def load_backends(self):
         # ensure the cache region instance is setup
-        cache.configure_cache_region(cache.REGION)
+        cache.configure_cache_region(CONF, common_cache.CACHE_REGION)
 
         super(RestfulTestCase, self).load_backends()
 
