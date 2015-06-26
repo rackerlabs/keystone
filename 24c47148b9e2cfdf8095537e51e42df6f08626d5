@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_d05cb34e",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-26T09:49:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_b7724910",
+      "revId": "24c47148b9e2cfdf8095537e51e42df6f08626d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_d7f6ed8f",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_1039bbf2",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-26T09:49:35Z",
+      "side": 1,
+      "message": "i don\u0027t understand what you are suggesting here.",
+      "parentUuid": "fa32b979_d7f6ed8f",
+      "revId": "24c47148b9e2cfdf8095537e51e42df6f08626d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_57297df1",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_d00a7327",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-26T09:49:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_57297df1",
+      "revId": "24c47148b9e2cfdf8095537e51e42df6f08626d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_97e5c539",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -99,6 +153,24 @@
       "writtenOn": "2015-06-26T08:53:13Z",
       "side": 1,
       "message": "nits: s/requies/requires and `requires installed xmlsec1` sound weird, more like `requires to install xmlsec1`?",
+      "revId": "24c47148b9e2cfdf8095537e51e42df6f08626d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_0b074c19",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-26T09:49:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_97e5c539",
       "revId": "24c47148b9e2cfdf8095537e51e42df6f08626d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
