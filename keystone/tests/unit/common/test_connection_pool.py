@@ -13,13 +13,13 @@
 import threading
 import time
 
+from oslo_cache import _memcache_pool 
 import mock
 import six
 from six.moves import queue
 import testtools
 from testtools import matchers
 
-from keystone.common.cache import _memcache_pool
 from keystone import exception
 from keystone.tests.unit import core
 
