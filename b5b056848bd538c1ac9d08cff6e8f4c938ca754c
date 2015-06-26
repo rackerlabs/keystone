@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_8607b817",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-26T19:06:05Z",
+      "side": 0,
+      "message": "Please add to commit message that setUp is also never invoked, otherwise it would fail trying to instantiate some misterios \"Manger\" :)",
+      "revId": "b5b056848bd538c1ac9d08cff6e8f4c938ca754c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
