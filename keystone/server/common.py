@@ -11,7 +11,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-
+from oslo_cache import core as cache
 from oslo_config import cfg
 
 from keystone import backends
@@ -21,6 +21,7 @@ from keystone import config
 
 
 CONF = cfg.CONF
+CACHE_REGION = None
 
 
 def configure(version=None, config_files=None,
@@ -38,8 +39,16 @@ def configure(version=None, config_files=None,
 
 def setup_backends(load_extra_backends_fn=lambda: {},
                    startup_application_fn=lambda: None):
+    
     drivers = backends.load_backends()
     drivers.update(load_extra_backends_fn())
     res = startup_application_fn()
     drivers.update(dependency.resolve_future_dependencies())
     return drivers, res
+
+
+def configure_cache():
+    # Configure and build the cache
+    global CACHE_REGION
+    CACHE_REGION = cache.create_region()
+    cache.configure_cache_region(CONF, CACHE_REGION)
