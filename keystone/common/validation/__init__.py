@@ -14,6 +14,7 @@
 import functools
 
 from keystone.common.validation import validators
+from keystone import exception
 
 
 def validated(request_body_schema, resource_to_validate):
@@ -25,12 +26,18 @@ def validated(request_body_schema, resource_to_validate):
     :param request_body_schema: a schema to validate the resource reference
     :param resource_to_validate: the reference to validate
 
+    :raises keystone.exception.ValidationError: when resource_to_validate is
+            not passed in or passed with an empty value.
+
     """
     schema_validator = validators.SchemaValidator(request_body_schema)
 
     def add_validator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
+            if not kwargs.get(resource_to_validate):
+                raise exception.ValidationError(attribute=resource_to_validate,
+                                                target='request body')
             if resource_to_validate in kwargs:
                 schema_validator.validate(kwargs[resource_to_validate])
             return func(*args, **kwargs)
