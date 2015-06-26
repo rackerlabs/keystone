@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_4ed9f021",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-06-26T02:36:49Z",
+      "side": 1,
+      "message": "\"same commit as the developer..\" sounds weird,  should it be \"same commit,  the developer\" ?",
+      "revId": "832bb51c06f58cff9a63b5aea00600f459f5f99f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
