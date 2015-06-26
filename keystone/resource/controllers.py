@@ -198,7 +198,10 @@ class ProjectV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.project_create, 'project')
-    def create_project(self, context, project):
+    def create_project(self, context, project=None):
+        if not project:
+            raise exception.ValidationError(attribute='project',
+                                            target='request body')
         ref = self._assign_unique_id(self._normalize_dict(project))
         ref = self._normalize_domain_id(context, ref)
         initiator = notifications._get_request_audit_info(context)
@@ -268,7 +271,10 @@ class ProjectV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.project_update, 'project')
-    def update_project(self, context, project_id, project):
+    def update_project(self, context, project_id, project=None):
+        if not project:
+            raise exception.ValidationError(attribute='project',
+                                            target='request body')
         self._require_matching_id(project_id, project)
         self._require_matching_domain_id(
             project_id, project, self.resource_api.get_project)
