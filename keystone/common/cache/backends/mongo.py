@@ -18,6 +18,7 @@ import datetime
 from dogpile.cache import api
 from dogpile.cache import util as dp_util
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
 import six
@@ -30,6 +31,11 @@ NO_VALUE = api.NO_VALUE
 LOG = log.getLogger(__name__)
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.mongo',
+    remove_in=+1,
+    what='keystone.common.cache.backends.mongo')
 class MongoCacheBackend(api.CacheBackend):
     """A MongoDB based caching backend implementing dogpile backend APIs.
 
@@ -195,6 +201,11 @@ class MongoCacheBackend(api.CacheBackend):
         self.client.delete_multi(keys)
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.mongo',
+    remove_in=+1,
+    what='keystone.common.cache.backends.mongo')
 class MongoApi(object):
     """Class handling MongoDB specific functionality.
 
@@ -478,6 +489,11 @@ class MongoApi(object):
                                            **self.meth_kwargs)
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.mongo',
+    remove_in=+1,
+    what='keystone.common.cache.backends.mongo')
 @six.add_metaclass(abc.ABCMeta)
 class AbstractManipulator(object):
     """Abstract class with methods which need to be implemented for custom
@@ -522,6 +538,11 @@ class AbstractManipulator(object):
         return False
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.mongo',
+    remove_in=+1,
+    what='keystone.common.cache.backends.mongo')
 class BaseTransform(AbstractManipulator):
     """Base transformation class to store and read dogpile cached data
     from MongoDB.
