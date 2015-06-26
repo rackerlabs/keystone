@@ -15,13 +15,14 @@
 import abc
 import datetime
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import timeutils
 import six
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
@@ -54,7 +55,8 @@ EXTENSION_DATA = {
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
-MEMOIZE = cache.get_memoization_decorator(section='revoke')
+MEMOIZE = cache.get_memoization_decorator(CONF, common_cache.CACHE_REGION,
+                                          group='revoke')
 
 
 def revoked_before_cutoff_time():

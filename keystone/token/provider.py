@@ -20,12 +20,13 @@ import datetime
 import sys
 import uuid
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import exception
@@ -38,7 +39,8 @@ from keystone.token import utils
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='token')
+MEMOIZE = cache.get_memoization_decorator(CONF, common_cache.CACHE_REGION,
+                                          group='token')
 
 # NOTE(morganfainberg): This is for compatibility in case someone was relying
 # on the old location of the UnsupportedTokenVersionException for their code.
