@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_0fc74365",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-26T17:17:33Z",
+      "side": 1,
+      "message": "It would be handy to have a link here to details below.",
+      "revId": "90ed26263b92fad76c5b7dbfedf91c5c2572972c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_486765b7",
         "filename": "doc/source/policy_mapping.rst",
         "patchSetId": 6
