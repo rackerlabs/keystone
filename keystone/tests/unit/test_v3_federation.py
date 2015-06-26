@@ -1274,7 +1274,7 @@ class MappingCRUDTests(FederationTests):
         self.assertIsNotNone(entity.get('id'))
         self.assertIsNotNone(entity.get('rules'))
         if ref:
-            self.assertEqual(jsonutils.loads(entity['rules']), ref['rules'])
+            self.assertEqual(entity['rules'], ref['rules'])
         return entity
 
     def _create_default_mapping_entry(self):
