@@ -30,6 +30,8 @@ function usage {
     echo "  -P, --no-pep8            Don't run flake8"
     echo "  -c, --coverage           Generate coverage report"
     echo "  -h, --help               Print this usage message"
+    echo "  -l, --log                Generate log file from test output - only writes failed tests by default"
+    echo "  -a, --log-all            Log all data to log file"
     echo ""
     echo "Note: with no options specified, the script will try to run the tests in a virtual environment,"
     echo "      If no virtualenv is found, the script will ask if you would like to create one.  If you "
@@ -49,6 +51,8 @@ function process_option {
         -8|--8) short_flake8=1;;
         -P|--no-pep8) no_flake8=1;;
         -c|--coverage) coverage=1;;
+        -l|--log) do_log=1;;
+        -a|--log-all) log_all=1;;
         -*) testropts="$testropts $1";;
         *) testrargs="$testrargs $1"
     esac
@@ -68,6 +72,8 @@ short_flake8=0
 no_flake8=0
 coverage=0
 update=0
+do_log=0
+log_all=0
 
 for arg in "$@"; do
     process_option $arg
@@ -86,9 +92,29 @@ function run_tests {
     if [ $failfast -eq 1 ]; then
         testrargs="$testrargs -- --failfast"
     fi
+
+    set +e
     ${wrapper} $TESTRTESTS --testr-args="$testropts $testrargs" | \
         ${wrapper} subunit-2to1 | \
         ${wrapper} tools/colorizer.py
+    RESULT=$?
+    set -e
+
+    if [ "${RESULT}" -ne 0 ]; then
+        exit ${RESULT}
+    fi
+
+    if [ $do_log -eq 1 ]; then
+        echo "Creating log file..."
+
+        if [ $log_all -eq 0 ]; then
+            ${wrapper}  testr last --subunit | subunit-filter --error > run_tests.log
+        else
+            ${wrapper}  testr last --subunit > run_tests.log
+        fi
+
+        echo "Done"
+    fi
 }
 
 function run_flake8 {
