@@ -52,6 +52,24 @@
       "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_b2980c1d",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-26T13:38:54Z",
+      "side": 1,
+      "message": "@henry, you are right! pls expect a following up patch to fix it. I will address them in another patch after a serial fixing proposal, mock that is a good idea, but may not solve the issue if we don\u0027t change current IMPL, pls hold on. I am going to fix it, thanks.",
+      "parentUuid": "fa32b979_f08457b2",
+      "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
