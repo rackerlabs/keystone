@@ -16,6 +16,24 @@
       "revId": "832bb51c06f58cff9a63b5aea00600f459f5f99f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_eff6a28f",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-26T16:18:23Z",
+      "side": 1,
+      "message": "for me it\u0027s unclear too, may be you\u0027ve just missed something: \"...in the same commit as the sample file update the developer...\"",
+      "parentUuid": "fa32b979_4ed9f021",
+      "revId": "832bb51c06f58cff9a63b5aea00600f459f5f99f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
