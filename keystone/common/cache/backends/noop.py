@@ -13,11 +13,17 @@
 # under the License.
 
 from dogpile.cache import api
+from oslo_log import versionutils
 
 
 NO_VALUE = api.NO_VALUE
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.LIBERTY,
+    in_favor_of='oslo_cache.backends.noop',
+    remove_in=+1,
+    what='keystone.common.cache.backends.noop')
 class NoopCacheBackend(api.CacheBackend):
     """A no op backend as a default caching backend.
 
