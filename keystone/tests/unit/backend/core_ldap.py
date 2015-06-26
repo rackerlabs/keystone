@@ -12,9 +12,9 @@
 
 import ldap
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 
-from keystone.common import cache
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone.tests import unit as tests
