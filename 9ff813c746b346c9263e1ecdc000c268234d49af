@@ -34,6 +34,24 @@
       "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_f08457b2",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-26T09:44:21Z",
+      "side": 1,
+      "message": "Thanks for the explanation. Although I realise it might quite a lot of work, I\u0027d have thought we should be able to catch the error somehow, even if we have to mock something out.  However, if that is too complex, then I understand.  If we are going to leave it like this, however, we need to change the docstring, since we are not calling PATCH in this test method.",
+      "parentUuid": "fa32b979_689885c0",
+      "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
