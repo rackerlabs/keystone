@@ -13,6 +13,8 @@
 
 import uuid
 
+import six
+
 from keystone.assignment import schema as assignment_schema
 from keystone.catalog import schema as catalog_schema
 from keystone.common import validation
@@ -94,6 +96,41 @@ _VALID_FILTERS = [{'interface': 'admin'},
                    'interface': 'internal'}]
 
 _INVALID_FILTERS = ['some string', 1, 0, True, False]
+
+
+class ValidationDecoratorTestCase(unit.BaseTestCase):
+
+    @validation.validated(entity_create, 'entity')
+    def create_entity(self, entity):
+        pass
+
+    @validation.validated(entity_update, 'entity')
+    def update_entity(self, entity_id, entity):
+        pass
+
+    def _assert_entity_fails(self, method, *args, **kwargs):
+        e = self.assertRaises(exception.ValidationError, method,
+                              *args, **kwargs)
+
+        self.assertIn('Expecting to find entity in request body',
+                      six.text_type(e))
+
+    def test_create_entity_no_request_body_with_decorator(self):
+        """Test the case when request body is not provided."""
+        self._assert_entity_fails(self.create_entity)
+
+    def test_create_entity_empty_request_body_with_decorator(self):
+        """Test the case when client passing in an empty entity reference."""
+        self._assert_entity_fails(self.create_entity, entity={})
+
+    def test_update_entity_no_request_body_with_decorator(self):
+        """Test the case when request body is not provided."""
+        self._assert_entity_fails(self.update_entity, uuid.uuid4().hex)
+
+    def test_update_entity_empty_request_body_with_decorator(self):
+        """Test the case when client passing in an empty entity reference."""
+        self._assert_entity_fails(self.update_entity, uuid.uuid4().hex,
+                                  entity={})
 
 
 class EntityValidationTestCase(unit.BaseTestCase):
@@ -275,15 +312,28 @@ class EntityValidationTestCase(unit.BaseTestCase):
         # test the invalid email value
         request_to_validate = {'name': self.resource_name,
                                'email': 'some invalid email value'}
-        self.create_entity_with_id_args(uuid.uuid4().hex, request_to_validate)
-        self.assertRaises(exception.SchemaValidationError,
+        # request body passed as positional argument will not be caught by
+        # validation, thus, ValidationError exception will be raised
+        # by the validation.
+        self.assertRaises(exception.ValidationError,
+                          self.create_entity_with_id_args,
+                          uuid.uuid4().hex,
+                          request_to_validate)
+
+        self.assertRaises(exception.ValidationError,
                           self.create_entity_with_id_kwargs,
                           uuid.uuid4().hex,
                           request_to_validate)
 
         # test the empty request body
-        self.create_entity_with_id_args(uuid.uuid4().hex, {})
-        self.assertRaises(exception.SchemaValidationError,
+        # request body passed as positional argument will not be caught by
+        # validation, thus, ValidationError exception will be raised
+        # by the validation.
+        self.assertRaises(exception.ValidationError,
+                          self.create_entity_with_id_args,
+                          uuid.uuid4().hex,
+                          {})
+        self.assertRaises(exception.ValidationError,
                           self.create_entity_with_id_kwargs,
                           uuid.uuid4().hex,
                           {})
