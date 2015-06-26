@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_78d4a5bc",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-26T13:54:47Z",
+      "side": 1,
+      "message": "@Marek, I meant reword somehow to distinguish between `external,password,token` and `saml2, oidc`.\n\nMaybe `Add the authentication methods (saml2,oidc etc.) to the ... `?\n\nJust a soft suggestion, it\u0027s okay as it is, thanks.",
+      "parentUuid": "fa32b979_1039bbf2",
+      "revId": "24c47148b9e2cfdf8095537e51e42df6f08626d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_57297df1",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
