@@ -17,11 +17,12 @@
 import abc
 
 from oslo_config import cfg
+from oslo_cache import core as cache
 from oslo_log import log
 from oslo_log import versionutils
 import six
 
-from keystone.common import cache
+from keystone.server import common as common_cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -33,7 +34,8 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='role')
+MEMOIZE = cache.get_memoization_decorator(CONF, common_cache.CACHE_REGION,
+                                          group='role')
 
 
 def deprecated_to_role_api(f):

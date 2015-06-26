@@ -49,4 +49,5 @@ def initialize_application(name):
 
     _unused, application = common.setup_backends(
         startup_application_fn=loadapp)
+    common.configure_cache()
     return application

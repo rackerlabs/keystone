@@ -17,11 +17,12 @@
 
 import abc
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import cache
+from keystone import backends
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -34,7 +35,8 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='catalog')
+MEMOIZE = cache.get_memoization_decorator(CONF, backends.CACHE_REGION,
+                                          group='catalog')
 
 
 def format_url(url, substitutions, silent_keyerror_failures=None):

@@ -19,12 +19,13 @@ import functools
 import os
 import uuid
 
+from oslo_cache import core as oslo_cache
 from oslo_config import cfg
 from oslo_log import log
 import six
 
+from keystone.common.cache import core as cache
 from keystone import clean
-from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -39,7 +40,8 @@ CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
 
-MEMOIZE = cache.get_memoization_decorator(section='identity')
+MEMOIZE = oslo_cache.get_memoization_decorator(CONF, cache.get_cache_region(),
+                                               group='identity')
 
 DOMAIN_CONF_FHEAD = 'keystone.'
 DOMAIN_CONF_FTAIL = '.conf'

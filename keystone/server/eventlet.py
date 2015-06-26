@@ -153,4 +153,5 @@ def run(possible_topdir):
 
     _unused, servers = common.setup_backends(
         startup_application_fn=create_servers)
+    common.configure_cache()
     serve(*servers)
