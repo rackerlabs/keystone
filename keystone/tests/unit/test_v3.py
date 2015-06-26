@@ -15,6 +15,7 @@
 import datetime
 import uuid
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
@@ -23,7 +24,6 @@ from testtools import matchers
 
 from keystone import auth
 from keystone.common import authorization
-from keystone.common import cache
 from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules

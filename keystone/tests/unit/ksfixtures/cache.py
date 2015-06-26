@@ -13,7 +13,7 @@
 
 import fixtures
 
-from keystone.common import cache
+from oslo_cache import core as cache
 
 
 class Cache(fixtures.Fixture):
