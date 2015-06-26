@@ -14,11 +14,12 @@
 
 import abc
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -30,7 +31,8 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='resource')
+MEMOIZE = cache.get_memoization_decorator(CONF, common_cache.CACHE_REGION,
+                                          group='resource')
 
 
 def calc_default_domain():
@@ -807,10 +809,9 @@ class ResourceDriverV8(object):
             raise exception.DomainNotFound(domain_id=domain_id)
 
 
-Driver = manager.create_legacy_driver(ResourceDriverV8)
-
-
-MEMOIZE_CONFIG = cache.get_memoization_decorator(section='domain_config')
+MEMOIZE_CONFIG = cache.get_memoization_decorator(CONF,
+                                                 common_cache.CACHE_REGION,
+                                                 group='domain_config')
 
 
 @dependency.provider('domain_config_api')

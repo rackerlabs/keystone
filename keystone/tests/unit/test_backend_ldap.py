@@ -19,13 +19,14 @@ import uuid
 
 import ldap
 import mock
+from oslo_cache import core as cache
 from oslo_config import cfg
 import pkg_resources
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone import exception
@@ -2311,7 +2312,7 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, unit.SQLDriverOverrides,
         super(LdapIdentitySqlAssignment, self).setUp()
         self.ldapdb.clear()
         self.load_backends()
-        cache.configure_cache_region(cache.REGION)
+        cache.configure_cache_region(CONF, common_cache.CACHE_REGION)
 
         sqldb.recreate()
         self.load_fixtures(default_fixtures)

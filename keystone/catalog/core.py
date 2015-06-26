@@ -18,11 +18,12 @@
 import abc
 import itertools
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -35,7 +36,8 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='catalog')
+MEMOIZE = cache.get_memoization_decorator(CONF, common_cache.CACHE_REGION,
+                                          group='catalog')
 WHITELISTED_PROPERTIES = [
     'tenant_id', 'user_id', 'public_bind_host', 'admin_bind_host',
     'compute_host', 'admin_port', 'public_port',

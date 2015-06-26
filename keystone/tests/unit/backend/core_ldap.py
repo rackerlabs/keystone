@@ -12,9 +12,10 @@
 
 import ldap
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone.tests import unit
@@ -113,7 +114,7 @@ class BaseBackendLdapIdentitySqlEverythingElse(unit.SQLDriverOverrides):
         super(BaseBackendLdapIdentitySqlEverythingElse, self).setUp()
         self.clear_database()
         self.load_backends()
-        cache.configure_cache_region(cache.REGION)
+        cache.configure_cache_region(CONF, common_cache.CACHE_REGION)
 
         sqldb.recreate()
         self.load_fixtures(default_fixtures)

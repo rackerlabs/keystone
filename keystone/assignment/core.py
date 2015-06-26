@@ -17,11 +17,12 @@
 import abc
 import copy
 
+from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import cache
+from keystone.common.cache import core as common_cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -33,7 +34,8 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(section='role')
+MEMOIZE = cache.get_memoization_decorator(CONF, common_cache.CACHE_REGION,
+                                          group='role')
 
 
 @dependency.provider('assignment_api')
