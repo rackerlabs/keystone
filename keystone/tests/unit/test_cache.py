@@ -19,9 +19,9 @@ import uuid
 from dogpile.cache import api
 from dogpile.cache import proxy
 import mock
+from oslo_cache import core as cache
 from oslo_config import cfg
 
-from keystone.common import cache
 from keystone import exception
 from keystone.tests import unit as tests
 
