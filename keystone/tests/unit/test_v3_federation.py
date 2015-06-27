@@ -20,7 +20,6 @@ from lxml import etree
 import mock
 from oslo_config import cfg
 from oslo_log import log
-from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslotest import mockpatch
 import saml2
