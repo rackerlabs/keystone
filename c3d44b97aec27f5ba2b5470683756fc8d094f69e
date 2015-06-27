@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_7a7b21bf",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-27T01:27:09Z",
+      "side": 1,
+      "message": "would be nice to keep the imports grouped together",
+      "revId": "c3d44b97aec27f5ba2b5470683756fc8d094f69e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
