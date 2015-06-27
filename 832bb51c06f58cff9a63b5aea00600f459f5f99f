@@ -34,6 +34,40 @@
       "revId": "832bb51c06f58cff9a63b5aea00600f459f5f99f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_21e9e5b7",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-27T15:10:13Z",
+      "side": 1,
+      "message": "Better as:\n\nNote that if the config file update is in the same commit, the developer may have to resolve merge conflicts more often.",
+      "revId": "832bb51c06f58cff9a63b5aea00600f459f5f99f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_412ae9e8",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-27T15:10:13Z",
+      "side": 1,
+      "message": "...commit, run:",
+      "revId": "832bb51c06f58cff9a63b5aea00600f459f5f99f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
