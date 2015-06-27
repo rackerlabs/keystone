@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_03114c04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-27T04:21:07Z",
+      "side": 1,
+      "message": "s/warnin/warning",
+      "revId": "daecabcda752004b760c5be5a4a3a4d5471554db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
