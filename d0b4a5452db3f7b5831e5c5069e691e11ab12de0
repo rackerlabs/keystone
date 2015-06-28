@@ -33,6 +33,24 @@
       "revId": "d0b4a5452db3f7b5831e5c5069e691e11ab12de0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_d1a00045",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-28T17:07:06Z",
+      "side": 1,
+      "message": "No. If the trust data is populated, the data must be there or it is an invalid token.",
+      "parentUuid": "fa32b979_309b6d68",
+      "revId": "d0b4a5452db3f7b5831e5c5069e691e11ab12de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
