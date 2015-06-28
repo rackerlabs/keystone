@@ -16,6 +16,24 @@
       "revId": "8bb63620b4d9ec71b0a60ed705938103d7d3c2c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_ee80c14b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T15:23:39Z",
+      "side": 0,
+      "message": "I don\u0027t know what\u0027s going to happen in the future. If we\u0027re going to follow this policy consistently we\u0027d have a lot of code to change.",
+      "parentUuid": "fa32b979_54122958",
+      "revId": "8bb63620b4d9ec71b0a60ed705938103d7d3c2c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
