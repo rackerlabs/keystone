@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_4e99ad78",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T15:40:50Z",
+      "side": 1,
+      "message": "Removed \"hardcoded_password\" and \"hardcoded_sql_expressions\" from this list and documented why exluded.\n\nI\u0027d like to leave crypto_random because for keystone I think we should make developers think about whether it\u0027s used in crypto or non-crypto context.",
+      "parentUuid": "fa32b979_0a4cdf6e",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_8a7c6f73",
         "filename": "bandit.yaml",
         "patchSetId": 1
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_aeae397f",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T15:40:50Z",
+      "side": 1,
+      "message": "Travis - where do I find the definition?",
+      "parentUuid": "fa32b979_8a7c6f73",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_4a974790",
         "filename": "bandit.yaml",
         "patchSetId": 1
@@ -83,6 +119,24 @@
       "writtenOn": "2015-06-22T22:24:33Z",
       "side": 1,
       "message": "Info on a gate will still cause a failure, unless you set the -ll threshold.",
+      "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_ce837d02",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T15:40:50Z",
+      "side": 1,
+      "message": "good. don\u0027t use pickle.",
+      "parentUuid": "fa32b979_4a974790",
       "revId": "9d41a3aa6766067d33ca64e35bec25b8d10550d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
