@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_e3feec04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T23:24:16Z",
+      "side": 1,
+      "message": "(nit) change \"they\" to \"the\"",
+      "revId": "fdb55a52aaa526962f2f05f0229bfb318c198d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_1781788f",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 4
@@ -13,6 +30,24 @@
       "writtenOn": "2015-06-22T16:34:48Z",
       "side": 1,
       "message": "I suggest to rename the method. The function is destructive for key_repo_signatures, while other assert* functions are not for their arguments.",
+      "revId": "fdb55a52aaa526962f2f05f0229bfb318c198d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_431a3870",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T23:24:16Z",
+      "side": 1,
+      "message": "Boris - propose a separate commit with the rename you have in mind.\n\nAlso, do we really have to pass around key_repo_signatures? suggest make an instance property. Or create a testools.Matcher.",
+      "parentUuid": "fa32b979_1781788f",
       "revId": "fdb55a52aaa526962f2f05f0229bfb318c198d53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
