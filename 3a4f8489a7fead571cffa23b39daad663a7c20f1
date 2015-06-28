@@ -16,6 +16,24 @@
       "revId": "3a4f8489a7fead571cffa23b39daad663a7c20f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2e578927",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T16:04:17Z",
+      "side": 1,
+      "message": "This was added with https://github.com/openstack/keystone/commit/c72616335717450edaa95f4ecb046f9e68692deb",
+      "parentUuid": "fa32b979_9dece293",
+      "revId": "3a4f8489a7fead571cffa23b39daad663a7c20f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
