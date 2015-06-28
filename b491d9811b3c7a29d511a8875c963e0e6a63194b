@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_8e71f5e0",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T16:02:03Z",
+      "side": 1,
+      "message": "I think this file is generated.",
+      "parentUuid": "fa32b979_f2aca2ee",
+      "revId": "b491d9811b3c7a29d511a8875c963e0e6a63194b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_529d4eba",
         "filename": "MANIFEST.in",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-24T23:50:55Z",
       "side": 1,
       "message": "CONTRIBUTING.rst",
+      "revId": "b491d9811b3c7a29d511a8875c963e0e6a63194b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2e80e98a",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-28T16:02:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_529d4eba",
       "revId": "b491d9811b3c7a29d511a8875c963e0e6a63194b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
