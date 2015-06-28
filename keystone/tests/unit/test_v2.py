@@ -1496,3 +1496,45 @@ class TestFernetTokenProviderV2(RestfulTestCase):
             path=path,
             token=CONF.admin_token,
             expected_status=200)
+
+    def test_rescoped_tokens_maintain_original_expiration(self):
+        project_ref = self.new_project_ref()
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        self.assignment_api.add_role_to_user_and_project(self.user_foo['id'],
+                                                         project_ref['id'],
+                                                         self.role_admin['id'])
+        resp = self.public_request(
+            method='POST',
+
+            path='/v2.0/tokens',
+            body={
+                'auth': {
+                    'tenantName': project_ref['name'],
+                    'passwordCredentials': {
+                        'username': self.user_foo['name'],
+                        'password': self.user_foo['password']
+                    }
+                }
+            },
+            expected_status=200)
+        original_token = resp.result['access']['token']['id']
+        original_expiration = resp.result['access']['token']['expires']
+
+        resp = self.public_request(
+            method='POST',
+
+            path='/v2.0/tokens',
+            body={
+                'auth': {
+                    'tenantName': project_ref['name'],
+                    'token': {
+                        'id': original_token,
+                    }
+                }
+            },
+            expected_status=200)
+        rescoped_token = resp.result['access']['token']['id']
+        rescoped_expiration = resp.result['access']['token']['expires']
+        self.assertNotEqual(original_token, rescoped_token)
+        self.assertEqual(original_expiration[:original_expiration.find('.')],
+                         rescoped_expiration[:rescoped_expiration.find('.')])
