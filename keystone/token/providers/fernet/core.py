@@ -51,6 +51,11 @@ class Provider(common.BaseProvider):
         if token_ref.get('bind'):
             raise exception.NotImplemented()
 
+        metadata_ref = token_ref.get('metadata', {})
+        trust_ref = None
+        if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
+            trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
+
         user_id = token_ref['user']['id']
         # Default to password since methods not provided by token_ref
         method_names = ['password']
@@ -80,7 +85,9 @@ class Provider(common.BaseProvider):
             project_id=project_id,
             token=token_ref,
             include_catalog=False,
-            audit_info=audit_ids)
+            audit_info=audit_ids,
+            trust=trust_ref
+        )
 
         expires_at = v3_token_data['token']['expires_at']
         token_id = self.token_formatter.create_token(user_id, expires_at,
@@ -211,9 +218,9 @@ class Provider(common.BaseProvider):
          federated_info, created_at,
          expires_at) = self.token_formatter.validate_token(token_ref)
 
-        if trust_id or domain_id or federated_info:
-            msg = _('This is not a v2.0 Fernet token. Use v3 for trust, '
-                    'domain, or federated tokens.')
+        if domain_id or federated_info:
+            msg = _('This is not a v2.0 Fernet token. Use v3 for domain, or '
+                    'federated tokens.')
             raise exception.Unauthorized(msg)
 
         v3_token_data = self.v3_token_data_helper.get_token_data(

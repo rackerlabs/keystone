@@ -87,6 +87,15 @@ class V2TokenDataHelper(object):
         metadata['is_admin'] = 0
         token_data['metadata'] = metadata
 
+        if 'OS-TRUST:trust' in token:
+            v3_trust_data = token['OS-TRUST:trust']
+            token_data['trust'] = {
+                'trustee_user_id': v3_trust_data['trustee_user']['id'],
+                'id': v3_trust_data['id'],
+                'trustor_user_id': v3_trust_data['trustor_user']['id'],
+                'impersonation': v3_trust_data['impersonation']
+            }
+
         return {'access': token_data}
 
     @classmethod
