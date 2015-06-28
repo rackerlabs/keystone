@@ -17,7 +17,6 @@ from keystone.common import dependency
 from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _
-from keystone.token import provider
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
 
@@ -51,54 +50,33 @@ class Provider(common.BaseProvider):
         if token_ref.get('bind'):
             raise exception.NotImplemented()
 
-        metadata_ref = token_ref.get('metadata', {})
-        trust_ref = None
-        if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
-            trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
+        return super(Provider, self).issue_v2_token(token_ref,
+                                                    roles_ref,
+                                                    catalog_ref)
 
-        user_id = token_ref['user']['id']
-        # Default to password since methods not provided by token_ref
-        method_names = ['password']
-        project_id = None
-        # Verify that tenant is not None in token_ref
-        if token_ref.get('tenant'):
-            project_id = token_ref['tenant']['id']
-
-        parent_audit_id = token_ref.get('parent_audit_id')
-        # If parent_audit_id is defined then a token authentication was made
-        if parent_audit_id:
-            method_names.append('token')
-
-        audit_ids = provider.audit_info(parent_audit_id)
-
-        # Get v3 token data and exclude building v3 specific catalog. This is
-        # due to the fact that the V2TokenDataHelper.format_token() method
-        # doesn't build any of the token_reference from other Keystone APIs.
-        # Instead, it builds it from what is persisted in the token reference.
-        # Here we are going to leverage the V3TokenDataHelper.get_token_data()
-        # method written for V3 because it goes through and populates the token
-        # reference dynamically. Once we have a V3 token reference, we can
-        # attempt to convert it to a V2 token response.
-        v3_token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names,
-            project_id=project_id,
-            token=token_ref,
-            include_catalog=False,
-            audit_info=audit_ids,
-            trust=trust_ref
-        )
-
-        expires_at = v3_token_data['token']['expires_at']
-        token_id = self.token_formatter.create_token(user_id, expires_at,
-                                                     audit_ids,
-                                                     methods=method_names,
-                                                     project_id=project_id)
-        # Convert v3 to v2 token data and build v2 catalog
-        token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
-                                                              v3_token_data)
-
-        return token_id, token_data
+    def _get_token_id(self, token_data):
+        # TODO(morganfainberg): Convert this over to use the common-model
+        # form internally instead of the specific v2/v3 logic
+        if 'access' in token_data:
+            # Extract data from a v2 token format
+            access_data = token_data['access']
+            expires_at = access_data['token']['expires']
+            user_id = access_data['user']['id']
+            audit_ids = access_data['token']['audit_ids']
+            project_id = access_data['token'].get('tenant', {}).get('id')
+            method_names = ['password']
+        else:
+            # Extract data from v3 token format
+            expires_at = token_data['expires_at']
+            user_id = token_data['user']['id']
+            audit_ids = token_data['audit_ids']
+            project_id = token_data['project']['id']
+            method_names = token_data['methods']
+        return self.token_formatter.create_token(user_id,
+                                                 expires_at,
+                                                 audit_ids,
+                                                 methods=method_names,
+                                                 project_id=project_id)
 
     def _build_federated_info(self, token_data):
         """Extract everything needed for federated tokens.
@@ -232,8 +210,9 @@ class Provider(common.BaseProvider):
             token=token_ref,
             include_catalog=False,
             audit_info=audit_ids)
-        return self.v2_token_data_helper.v3_to_v2_token(token_ref,
-                                                        v3_token_data)
+        token_data = self.v2_token_data_helper.v3_to_v2_token(v3_token_data)
+        token_data['access']['token']['id'] = token_ref
+        return token_data
 
     def validate_v3_token(self, token):
         """Validate a V3 formatted token.
@@ -265,12 +244,3 @@ class Provider(common.BaseProvider):
             trust=trust_ref,
             token=token_dict,
             audit_info=audit_ids)
-
-    def _get_token_id(self, token_data):
-        """Generate the token_id based upon the data in token_data.
-
-        :param token_data: token information
-        :type token_data: dict
-        :raises keystone.exception.NotImplemented: when called
-        """
-        raise exception.NotImplemented()

@@ -21,6 +21,7 @@ import six
 from keystone.common import utils
 from keystone import exception
 from keystone.tests import unit as tests
+from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
 
 
@@ -161,8 +162,16 @@ class KvsTokenCacheInvalidation(tests.TestCase,
                                 test_backend.TokenCacheInvalidation):
     def setUp(self):
         super(KvsTokenCacheInvalidation, self).setUp()
+        self.useFixture(database.Database())
         self.load_backends()
         self._create_test_data()
+
+    def _create_test_data(self):
+        self.resource_api.create_domain(
+            domain_id=test_backend.DEFAULT_DOMAIN_ID,
+            domain={'id': test_backend.DEFAULT_DOMAIN_ID,
+                    'name': test_backend.DEFAULT_DOMAIN_ID})
+        super(KvsTokenCacheInvalidation, self)._create_test_data()
 
     def config_overrides(self):
         super(KvsTokenCacheInvalidation, self).config_overrides()

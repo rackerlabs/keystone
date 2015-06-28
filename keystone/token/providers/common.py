@@ -38,13 +38,12 @@ CONF = cfg.CONF
 class V2TokenDataHelper(object):
     """Creates V2 token data."""
 
-    def v3_to_v2_token(self, token_id, v3_token_data):
+    def v3_to_v2_token(self, v3_token_data):
         token_data = {}
         # Build v2 token
         v3_token = v3_token_data['token']
 
         token = {}
-        token['id'] = token_id
         token['expires'] = v3_token.get('expires_at')
         token['issued_at'] = v3_token.get('issued_at')
         token['audit_ids'] = v3_token.get('audit_ids')
@@ -56,6 +55,10 @@ class V2TokenDataHelper(object):
             token['tenant'] = common_controller.V2Controller.filter_domain_id(
                 tenant)
         token_data['token'] = token
+
+        # Token Bind Data
+        if 'bind' in v3_token:
+            token['bind'] = v3_token['bind']
 
         # Build v2 user
         v3_user = v3_token['user']
@@ -493,8 +496,56 @@ class BaseProvider(provider.Provider):
         if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
             trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
 
-        token_data = self.v2_token_data_helper.format_token(
-            token_ref, roles_ref, catalog_ref, trust_ref)
+        metadata_ref = token_ref.get('metadata', {})
+        trust_ref = None
+        if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
+            trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
+
+        user_id = token_ref['user']['id']
+        # Default to password since methods not provided by token_ref
+        method_names = ['password']
+        project_id = None
+        # Verify that tenant is not None in token_ref
+        if token_ref.get('tenant'):
+            project_id = token_ref['tenant']['id']
+
+        parent_audit_id = token_ref.get('parent_audit_id')
+        # If parent_audit_id is defined then a token authentication was made
+        if parent_audit_id:
+            method_names.append('token')
+
+        bind = None
+        if 'bind' in token_ref and token_ref['bind']:
+            bind = token_ref['bind']
+
+        expires = None
+        if 'expires' in token_ref and token_ref['expires']:
+            expires = token_ref['expires']
+
+        audit_ids = provider.audit_info(parent_audit_id)
+
+        # Get v3 token data and exclude building v3 specific catalog. This is
+        # due to the fact that the V2TokenDataHelper.format_token() method
+        # doesn't build any of the token_reference from other Keystone APIs.
+        # Instead, it builds it from what is persisted in the token reference.
+        # Here we are going to leverage the V3TokenDataHelper.get_token_data()
+        # method written for V3 because it goes through and populates the token
+        # reference dynamically. Once we have a V3 token reference, we can
+        # attempt to convert it to a V2 token response.
+        v3_token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            method_names,
+            project_id=project_id,
+            token=token_ref,
+            include_catalog=False,
+            audit_info=audit_ids,
+            trust=trust_ref,
+            bind=bind,
+            expires=expires
+        )
+
+        # Convert v3 to v2 token data and build v2 catalog
+        token_data = self.v2_token_data_helper.v3_to_v2_token(v3_token_data)
         token_id = self._get_token_id(token_data)
         token_data['access']['token']['id'] = token_id
         return token_id, token_data

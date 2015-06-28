@@ -26,6 +26,7 @@ from testtools import matchers
 from keystone import assignment
 from keystone import auth
 from keystone.common import authorization
+from keystone.common import utils as ks_utils
 from keystone import config
 from keystone import exception
 from keystone.models import token_model
@@ -569,7 +570,13 @@ class AuthWithToken(AuthTest):
             self.assertThat(revoke_events, matchers.HasLength(1))
             revoke_event = revoke_events[0].to_dict()
             self.assertIn('expires_at', revoke_event)
-            self.assertEqual(unscoped_token_2['access']['token']['expires'],
+            # Trim Microseconds off, the revocation events only ever check to
+            # the nearest microsecond
+            token_expires_at = timeutils.normalize_time(
+                timeutils.parse_isotime(
+                    unscoped_token['access']['token']['expires']))
+            token_expires_at = token_expires_at.replace(microsecond=0)
+            self.assertEqual(ks_utils.isotime(token_expires_at),
                              revoke_event['expires_at'])
 
             self.assertRaises(exception.TokenNotFound,
@@ -600,7 +607,13 @@ class AuthWithToken(AuthTest):
             self.assertThat(revoke_events, matchers.HasLength(2))
             revoke_event = revoke_events[1].to_dict()
             self.assertIn('expires_at', revoke_event)
-            self.assertEqual(unscoped_token_2['access']['token']['expires'],
+            # Trim Microseconds off, the revocation events only ever check to
+            # the nearest microsecond
+            token_expires_at = timeutils.normalize_time(
+                timeutils.parse_isotime(
+                    unscoped_token_2['access']['token']['expires']))
+            token_expires_at = token_expires_at.replace(microsecond=0)
+            self.assertEqual(ks_utils.isotime(token_expires_at),
                              revoke_event['expires_at'])
 
             self.assertRaises(exception.TokenNotFound,
