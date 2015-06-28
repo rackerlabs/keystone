@@ -92,8 +92,8 @@ class Provider(common.BaseProvider):
                                                      methods=method_names,
                                                      project_id=project_id)
         # Convert v3 to v2 token data and build v2 catalog
-        token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
-                                                              v3_token_data)
+        token_data = self.v2_token_data_helper.v3_to_v2_token(v3_token_data)
+        token_data['access']['token']['id'] = token_id
 
         return token_id, token_data
 
@@ -229,8 +229,9 @@ class Provider(common.BaseProvider):
             token=token_ref,
             include_catalog=False,
             audit_info=audit_ids)
-        return self.v2_token_data_helper.v3_to_v2_token(token_ref,
-                                                        v3_token_data)
+        token_data = self.v2_token_data_helper.v3_to_v2_token(v3_token_data)
+        token_data['access']['token']['id'] = token_ref
+        return token_data
 
     def validate_v3_token(self, token):
         """Validate a V3 formatted token.
