@@ -17,6 +17,8 @@ import uuid
 
 from testtools import matchers
 
+from webtest.app import AppError
+
 from keystone import catalog
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import database
@@ -616,6 +618,48 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.assertNotIn('legacy_endpoint_id', endpoint_v3)
 
         self.assertEqual(endpoint_v2['region'], endpoint_v3['region_id'])
+
+    def test_deleting_endpoint_with_space_in_url(self):
+        # add a space to all urls (intentional "i d" to test bug)
+        url_with_space = "http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"
+
+        # create a v3 endpoint ref, and then tweak it back to a v2-style ref
+        ref = self.new_endpoint_ref(service_id=self.service['id'])
+        del ref['id']
+        del ref['interface']
+        ref['publicurl'] = url_with_space
+        ref['internalurl'] = url_with_space
+        ref['adminurl'] = url_with_space
+        ref['region'] = ref['region_id']
+        del ref['region_id']
+
+        # create the endpoint on v2 (using a v3 token)
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/endpoints',
+            token=self.get_scoped_token(),
+            body={'endpoint': ref})
+
+        # get the v3 endpoint
+        r = self.get('/endpoints')
+        endpoints = self.assertValidEndpointListResponse(r)
+        endpoint_v3 = endpoints.pop()
+
+        # delete the endpoint
+        self.delete(
+            '/endpoints/%(endpoint_id)s' % {
+                'endpoint_id': endpoint_v3['id']})
+
+        # make sure it's deleted (GET shouldn't work)
+        try:
+            r = self.get(
+                '/endpoints/%(endpoint_id)s' % {
+                    'endpoint_id': endpoint_v3['id']})
+            raise ValueError('An endpoint was supposed to\
+                                be deleted, but wasn''t.')
+        except AppError:
+            pass
+            # error is expected because the endpoint isn't there
 
 
 class TestCatalogAPISQL(tests.TestCase):
