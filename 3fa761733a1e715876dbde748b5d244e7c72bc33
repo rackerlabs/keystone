@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_1fdb037e",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1539,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-29T16:49:12Z",
+      "side": 1,
+      "message": "This is going to fail, because of the following: \n\n    \u003e original_expiration\n    u\u00272015-06-29T17:25:52.853542Z\u0027\n    \u003e rescoped_expiration\n    u\u00272015-06-29T17:25:52.000000Z\u0027\n\nThese are valid, as described here https://bugs.launchpad.net/keystone/+bug/1459790",
+      "revId": "3fa761733a1e715876dbde748b5d244e7c72bc33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
