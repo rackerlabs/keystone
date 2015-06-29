@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_1c0a3127",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-29T16:44:17Z",
+      "side": 1,
+      "message": "It needs to be tested that expiration time is maintained. Also I haven\u0027t find such test in the commit chain.",
+      "revId": "1ba3efb1541d5ce463e73eddfe0392f3bba077a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
