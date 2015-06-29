@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_b117a6a2",
+        "filename": "bandit.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-29T19:27:41Z",
+      "side": 1,
+      "message": "You could probably remove this since Keystone doesn\u0027t have any pyw files.",
+      "revId": "3098f56817940e32d7f6198058404ceaf453a83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_b1c1e6e6",
+        "filename": "bandit.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-06-29T19:27:41Z",
+      "side": 1,
+      "message": "Currently by default, this plugin doesn\u0027t find anything because wordlist/default-passwords file isn\u0027t bundled with bandit.\n\nhttps://bugs.launchpad.net/bandit/+bug/1451575",
+      "revId": "3098f56817940e32d7f6198058404ceaf453a83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
