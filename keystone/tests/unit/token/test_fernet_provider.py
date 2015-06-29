@@ -44,8 +44,8 @@ class TestFernetTokenProvider(tests.TestCase):
 
     def test_invalid_v3_token_raises_404(self):
         self.assertRaises(
-            exception.TokenNotFound,
-            self.provider.validate_v3_token,
+            exception.ValidationError,
+            self.provider.validate_v3_non_persistent_token_id,
             uuid.uuid4().hex)
 
     def test_invalid_v2_token_raises_404(self):

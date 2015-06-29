@@ -229,30 +229,30 @@ class Manager(manager.Manager):
             return self.check_revocation_v3(token)
 
     def validate_v3_token(self, token_id):
-        unique_id = utils.generate_unique_id(token_id)
         # NOTE(lbragstad): Only go to persistent storage if we have a token to
         # fetch from the backend. If the Fernet token provider is being used
         # this step isn't necessary. The Fernet token reference is persisted in
         # the token_id, so in this case set the token_ref as the identifier of
         # the token.
         if not self._needs_persistence:
-            token_ref = token_id
+            token_ref = self.validate_v3_non_persistent_token_id(token_id)
         else:
+            unique_id = utils.generate_unique_id(token_id)
             # NOTE(morganfainberg): Ensure we never use the long-form token_id
             # (PKI) as part of the cache_key.
             token_ref = self._persistence.get_token(unique_id)
-        token = self._validate_v3_token(token_ref)
-        self._is_valid_token(token)
-        return token
+            token_ref = self.validate_v3_token_reference(token_ref)
+        self._is_valid_token(token_ref)
+        return token_ref
 
     @MEMOIZE
     def _validate_token(self, token_id):
         if not self._needs_persistence:
-            return self.driver.validate_v3_token(token_id)
+            return self.driver.validate_v3_non_persistent_token_id(token_id)
         token_ref = self._persistence.get_token(token_id)
         version = self.driver.get_token_version(token_ref)
         if version == self.V3:
-            return self.driver.validate_v3_token(token_ref)
+            return self.driver.validate_v3_token_reference(token_ref)
         elif version == self.V2:
             return self.driver.validate_v2_token(token_ref)
         raise exception.UnsupportedTokenVersionException()
@@ -553,7 +553,18 @@ class Provider(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def validate_v3_token(self, token_ref):
+    def validate_v3_non_persistent_token_id(self, token_id):
+        """Validate the given V3 token id and return the token_data.
+
+        :param token_id: the token id
+        :type token_id: string
+        :returns: token data
+        :raises: keystone.exception.TokenNotFound
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def validate_v3_token_reference(self, token_ref):
         """Validate the given V3 token and return the token_data.
 
         :param token_ref: the token reference
