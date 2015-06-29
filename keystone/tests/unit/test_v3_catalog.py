@@ -601,7 +601,9 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # a v2 endpoint is not quite the same concept as a v3 endpoint, so they
         # receive different identifiers
-        self.assertNotEqual(endpoint_v2['id'], endpoint_v3['id'])
+        v2_id = endpoint_v2['id']
+        v3_id = endpoint_v3['id']
+        self.assertNotEqual(v2_id, v3_id)
 
         # v2 has a publicurl; v3 has a url + interface type
         self.assertEqual(ref['publicurl'], endpoint_v3['url'])
@@ -616,6 +618,27 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.assertNotIn('legacy_endpoint_id', endpoint_v3)
 
         self.assertEqual(endpoint_v2['region'], endpoint_v3['region_id'])
+
+        # test for bug 1098564 -- endpoint didn't delete with a space in a url
+        # add a space to all urls
+        url_with_space = "http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"
+        ref['publicurl'] = url_with_space
+        ref['internalurl'] = url_with_space
+        ref['adminurl'] = url_with_space
+        endpoint_v3['url'] = url_with_space
+        # get the size of the endpoint list before deleting
+        r = self.get('/endpoints')
+        endpoints = self.assertValidEndpointListResponse(r)
+        length_before = len(endpoints)
+        # delete the endpoint
+        self.delete(
+            '/endpoints/%(endpoint_id)s' % {
+                'endpoint_id': v3_id})
+        r = self.get('/endpoints')
+        # make sure it was deleted properly (list should shrink by 1)
+        endpoints = self.assertValidEndpointListResponse(r)
+        length_after = len(endpoints)
+        self.assertEqual(length_after, length_before - 1)
 
 
 class TestCatalogAPISQL(tests.TestCase):
