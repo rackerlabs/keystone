@@ -16,7 +16,6 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
-from oslo_utils import timeutils
 import six
 from six.moves.urllib import parse
 
@@ -70,11 +69,20 @@ class V2TokenDataHelper(object):
                 'impersonation': v3_trust_data['impersonation']
             }
 
+        # Maintain Token Bind Data
+        if 'bind' in v3_token and v3_token['bind']:
+            token['bind'] = v3_token['bind']
+
         # Set user roles
         user['roles'] = []
         role_ids = []
+
         for role in v3_token.get('roles', []):
             user['roles'].append(role)
+            # Append the role ID to the metadata roles list, because we need
+            # to (for some reason) represent roles in at *least* 3 places in v2
+            # tokens
+            role_ids.append(role['id'])
         user['roles_links'] = []
 
         token_data['user'] = user
@@ -95,69 +103,6 @@ class V2TokenDataHelper(object):
         token_data['metadata'] = metadata
 
         return {'access': token_data}
-
-    @classmethod
-    def format_token(cls, token_ref, roles_ref=None, catalog_ref=None,
-                     trust_ref=None):
-        audit_info = None
-        user_ref = token_ref['user']
-        metadata_ref = token_ref['metadata']
-        if roles_ref is None:
-            roles_ref = []
-        expires = token_ref.get('expires', provider.default_expire_time())
-        if expires is not None:
-            if not isinstance(expires, six.text_type):
-                expires = utils.isotime(expires)
-
-        token_data = token_ref.get('token_data')
-        if token_data:
-            token_audit = token_data.get(
-                'access', token_data).get('token', {}).get('audit_ids')
-            audit_info = token_audit
-
-        if audit_info is None:
-            audit_info = provider.audit_info(token_ref.get('parent_audit_id'))
-
-        o = {'access': {'token': {'id': token_ref['id'],
-                                  'expires': expires,
-                                  'issued_at': timeutils.strtime(),
-                                  'audit_ids': audit_info
-                                  },
-                        'user': {'id': user_ref['id'],
-                                 'name': user_ref['name'],
-                                 'username': user_ref['name'],
-                                 'roles': roles_ref,
-                                 'roles_links': metadata_ref.get('roles_links',
-                                                                 [])
-                                 }
-                        }
-             }
-        if 'bind' in token_ref:
-            o['access']['token']['bind'] = token_ref['bind']
-        if 'tenant' in token_ref and token_ref['tenant']:
-            token_ref['tenant']['enabled'] = True
-            o['access']['token']['tenant'] = token_ref['tenant']
-        if catalog_ref is not None:
-            o['access']['serviceCatalog'] = V2TokenDataHelper.format_catalog(
-                catalog_ref)
-        if metadata_ref:
-            if 'is_admin' in metadata_ref:
-                o['access']['metadata'] = {'is_admin':
-                                           metadata_ref['is_admin']}
-            else:
-                o['access']['metadata'] = {'is_admin': 0}
-        if 'roles' in metadata_ref:
-            o['access']['metadata']['roles'] = metadata_ref['roles']
-        if CONF.trust.enabled and trust_ref:
-            o['access']['trust'] = {'trustee_user_id':
-                                    trust_ref['trustee_user_id'],
-                                    'id': trust_ref['id'],
-                                    'trustor_user_id':
-                                    trust_ref['trustor_user_id'],
-                                    'impersonation':
-                                    trust_ref['impersonation']
-                                    }
-        return o
 
     @classmethod
     def format_catalog(cls, catalog_ref):
@@ -491,8 +436,48 @@ class BaseProvider(provider.Provider):
         if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
             trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
 
-        token_data = self.v2_token_data_helper.format_token(
-            token_ref, roles_ref, catalog_ref, trust_ref)
+        user_id = token_ref['user']['id']
+        # Default to password since methods not provided by token_ref
+        method_names = ['password']
+        project_id = None
+        # Verify that tenant is not None in token_ref
+        if token_ref.get('tenant'):
+            project_id = token_ref['tenant']['id']
+
+        # maintain expiration time across rescopes
+        expires = token_ref.get('expires', provider.default_expire_time())
+
+        bind = None
+        if 'bind' in token_ref:
+            bind = token_ref['bind']
+
+        parent_audit_id = token_ref.get('parent_audit_id')
+        # If parent_audit_id is defined then a token authentication was made
+        if parent_audit_id:
+            method_names.append('token')
+
+        audit_ids = provider.audit_info(parent_audit_id)
+
+        # Get v3 token data and exclude building v3 specific catalog. This is
+        # due to the fact that the V2TokenDataHelper.format_token() method
+        # doesn't build any of the token_reference from other Keystone APIs.
+        # Instead, it builds it from what is persisted in the token reference.
+        # Here we are going to leverage the V3TokenDataHelper.get_token_data()
+        # method written for V3 because it goes through and populates the token
+        # reference dynamically. Once we have a V3 token reference, we can
+        # attempt to convert it to a V2 token response.
+        v3_token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            method_names,
+            project_id=project_id,
+            token=token_ref,
+            include_catalog=False,
+            audit_info=audit_ids,
+            expires=expires,
+            trust=trust_ref,
+            bind=bind
+        )
+        token_data = self.v2_token_data_helper.v3_to_v2_token(v3_token_data)
         token_id = self._get_token_id(token_data)
         token_data['access']['token']['id'] = token_id
         return token_id, token_data
