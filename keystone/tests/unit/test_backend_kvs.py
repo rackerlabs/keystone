@@ -22,6 +22,7 @@ from keystone.common import utils
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_backend
+from keystone.tests.unit import test_backend_sql
 
 
 CONF = cfg.CONF
@@ -157,12 +158,10 @@ class KvsCatalog(tests.TestCase, test_backend.CatalogTests):
         self.skipTest("kvs backend doesn't support filtering")
 
 
-class KvsTokenCacheInvalidation(tests.TestCase,
-                                test_backend.TokenCacheInvalidation):
-    def setUp(self):
-        super(KvsTokenCacheInvalidation, self).setUp()
-        self.load_backends()
-        self._create_test_data()
+# NOTE(morganfainberg): Everything else needs to be SQL, so inherit from the
+# SQL Backend that does the proper setup and just override the token driver as
+# KVS
+class KvsTokenCacheInvalidation(test_backend_sql.SqlTokenCacheInvalidation):
 
     def config_overrides(self):
         super(KvsTokenCacheInvalidation, self).config_overrides()

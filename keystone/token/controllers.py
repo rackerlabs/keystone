@@ -191,6 +191,11 @@ class Auth(controller.V2Controller):
         self._restrict_scope(token_model_ref)
         user_id = token_model_ref.user_id
         tenant_id = self._get_project_id_from_auth(auth)
+        # NOTE(morganfainberg): The V3 Token issuance handles swapping the
+        # user_id in the token scope if there is an impersonation trust
+        # used.
+        current_user_ref = self.identity_api.get_user(user_id)
+
 
         if not CONF.trust.enabled and 'trust_id' in auth:
             raise exception.Forbidden('Trusts are disabled.')
@@ -215,16 +220,9 @@ class Auth(controller.V2Controller):
                 raise exception.Forbidden()
             trustee_user_ref = self.identity_api.get_user(
                 trust_ref['trustee_user_id'])
-            if not trustee_user_ref['enabled']:
+            if not (trust_ref['trustee_user_id'] != current_user_ref['id'] or
+                        current_user_ref['enabled']):
                 raise exception.Forbidden()
-
-            if trust_ref['impersonation'] is True:
-                current_user_ref = trustor_user_ref
-            else:
-                current_user_ref = trustee_user_ref
-
-        else:
-            current_user_ref = self.identity_api.get_user(user_id)
 
         metadata_ref = {}
         tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(

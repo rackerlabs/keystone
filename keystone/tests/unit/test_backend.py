@@ -4238,11 +4238,16 @@ class TokenTests(object):
 
 class TokenCacheInvalidation(object):
     def _create_test_data(self):
-        self.user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        user_data = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                      'password': uuid.uuid4().hex,
                      'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
-        self.tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
+        tenant_data = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
+        self.user = self.identity_api.create_user(user_data)
+        self.tenant = self.resource_api.create_project(
+            tenant_id=tenant_data['id'], tenant=tenant_data)
+        self.assignment_api.add_user_to_project(self.tenant['id'],
+                                                self.user['id'])
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
