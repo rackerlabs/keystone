@@ -590,6 +590,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # test the endpoint on v3
         r = self.get('/endpoints')
+
         endpoints = self.assertValidEndpointListResponse(r)
         self.assertEqual(1, len(endpoints))
         endpoint_v3 = endpoints.pop()
@@ -616,6 +617,55 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.assertNotIn('legacy_endpoint_id', endpoint_v3)
 
         self.assertEqual(endpoint_v2['region'], endpoint_v3['region_id'])
+
+    def test_deleting_endpoint_with_space_in_url(self):
+        # clear the v3 endpoint so we only have endpoints created on v2
+        self.delete(
+            '/endpoints/%(endpoint_id)s' % {
+                'endpoint_id': self.endpoint_id})
+
+        # add a space to all urls (intentional "i d" to test bug)
+        url_with_space = "http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"
+
+        # create a v3 endpoint ref, and then tweak it back to a v2-style ref
+        ref = self.new_endpoint_ref(service_id=self.service['id'])
+        del ref['id']
+        del ref['interface']
+        ref['publicurl'] = ref.pop('url')
+        ref['internalurl'] = None
+        ref['region'] = ref['region_id']
+        del ref['region_id']
+
+        # create the endpoint on v2 (using a v3 token)
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/endpoints',
+            token=self.get_scoped_token(),
+            body={'endpoint': ref})
+        endpoint_v2 = r.result['endpoint']
+
+        # test the endpoint on v3
+        r = self.get('/endpoints')
+        endpoints = self.assertValidEndpointListResponse(r)
+        self.assertEqual(1, len(endpoints))
+        endpoint_v3 = endpoints.pop()
+
+
+        # get the size of the endpoint list before deleting
+        r = self.get('/endpoints')
+        endpoints = self.assertValidEndpointListResponse(r)
+        length_before = len(endpoints)
+
+        # delete the endpoint
+        self.delete(
+            '/endpoints/%(endpoint_id)s' % {
+                'endpoint_id': endpoint_v3['id']})
+        r = self.get('/endpoints')
+
+        # make sure it was deleted properly (list should shrink by 1)
+        endpoints = self.assertValidEndpointListResponse(r)
+        length_after = len(endpoints)
+        self.assertEqual(length_before - 1, length_after)
 
 
 class TestCatalogAPISQL(tests.TestCase):
