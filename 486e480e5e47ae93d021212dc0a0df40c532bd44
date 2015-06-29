@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_7d8910ca",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-29T07:59:20Z",
+      "side": 1,
+      "message": "So my understanding is that you simply don\u0027t want to validate id, as id\u0027s value is not a subject of validation?",
+      "revId": "486e480e5e47ae93d021212dc0a0df40c532bd44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
