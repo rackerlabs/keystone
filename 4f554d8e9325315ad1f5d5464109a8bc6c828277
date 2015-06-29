@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_529e5557",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1959,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-29T21:41:44Z",
+      "side": 1,
+      "message": "These should be changed to assertIs rather than assertEqual since the value needs to be a bool.",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
