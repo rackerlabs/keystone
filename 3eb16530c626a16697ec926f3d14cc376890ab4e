@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_4d255aa9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-29T22:29:37Z",
+      "side": 1,
+      "message": "since this is done in _add_role_to_user_and_project_adapter there\u0027s no need to do it here, it\u0027ll just get checked twice.",
+      "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af86dd1_2a1245b5",
         "filename": "keystone/tests/unit/test_v2_controller.py",
         "patchSetId": 17
