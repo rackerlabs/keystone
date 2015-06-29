@@ -52,7 +52,7 @@ class TestFernetTokenProvider(unit.TestCase):
         token_id = uuid.uuid4().hex
         e = self.assertRaises(
             exception.TokenNotFound,
-            self.provider.validate_v3_token,
+            self.provider.validate_non_persistent_token,
             token_id)
         self.assertIn(token_id, u'%s' % e)
 
