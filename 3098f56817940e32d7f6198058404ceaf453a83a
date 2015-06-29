@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e3b0058e",
+        "filename": "bandit.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-29T19:54:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_b117a6a2",
+      "revId": "3098f56817940e32d7f6198058404ceaf453a83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_b1c1e6e6",
         "filename": "bandit.yaml",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-29T19:27:41Z",
       "side": 1,
       "message": "Currently by default, this plugin doesn\u0027t find anything because wordlist/default-passwords file isn\u0027t bundled with bandit.\n\nhttps://bugs.launchpad.net/bandit/+bug/1451575",
+      "revId": "3098f56817940e32d7f6198058404ceaf453a83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0323a9be",
+        "filename": "bandit.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-29T19:54:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_b1c1e6e6",
       "revId": "3098f56817940e32d7f6198058404ceaf453a83a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
