@@ -43,7 +43,7 @@ class TestFernetTokenProvider(tests.TestCase):
     def test_invalid_v3_token_raises_401(self):
         self.assertRaises(
             exception.Unauthorized,
-            self.provider.validate_v3_token,
+            self.provider.validate_v3_token_id,
             uuid.uuid4().hex)
 
     def test_invalid_v2_token_raises_401(self):
