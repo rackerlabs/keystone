@@ -70,6 +70,24 @@
       "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ed3ec0b7",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-29T15:06:44Z",
+      "side": 1,
+      "message": "I think there are three different failing cases to this.\n\n    1.) not sending a request body\n    2.) sending an empty request body\n    3.) sending a empty service request body\n\nWhich should all provider some sort of feedback to the user. Case 3 is the only one that does currently. \n\nhttp://cdn.pasteraw.com/awg47u10vnqxp93iisxcwbll5wx7pw1\n\nI think the first two cases should be tested in this patch.",
+      "parentUuid": "fa32b979_689885c0",
+      "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
