@@ -706,7 +706,34 @@ class BaseProvider(provider.Provider):
             LOG.exception(_LE('Failed to validate token'))
             raise exception.TokenNotFound(e)
 
-    def validate_v3_token(self, token_ref):
+    def validate_v3_non_persistent_token_id(self, token_id):
+        (user_id, methods, audit_ids, domain_id, project_id, trust_id,
+            federated_info, created_at, expires_at) = (
+                self.token_formatter.validate_token(token_id))
+
+        token_dict = None
+        trust_ref = None
+        if federated_info:
+            token_dict = self._rebuild_federated_info(federated_info, user_id)
+            if project_id or domain_id:
+                self._rebuild_federated_token_roles(token_dict, federated_info,
+                                                    user_id, project_id,
+                                                    domain_id)
+        if trust_id:
+            trust_ref = self.trust_api.get_trust(trust_id)
+
+        return self.v3_token_data_helper.get_token_data(
+            user_id,
+            method_names=methods,
+            domain_id=domain_id,
+            project_id=project_id,
+            issued_at=created_at,
+            expires=expires_at,
+            trust=trust_ref,
+            token=token_dict,
+            audit_info=audit_ids)
+
+    def validate_v3_token_reference(self, token_ref):
         # FIXME(gyee): performance or correctness? Should we return the
         # cached token or reconstruct it? Obviously if we are going with
         # the cached token, any role, project, or domain name changes
