@@ -304,7 +304,7 @@
 [cache]
 
 #
-# From keystone
+# From oslo.cache
 #
 
 # Prefix for building the configuration dictionary for the cache region. This
@@ -321,7 +321,7 @@
 # (keystone.cache.memcache_pool) or Redis (dogpile.cache.redis) be used in
 # production deployments.  Small workloads (single process) like devstack can
 # use the dogpile.cache.memory backend. (string value)
-#backend = keystone.common.cache.noop
+#backend = oslo_cache.noop
 
 # Arguments supplied to the backend module. Specify this option once per
 # argument to be passed to the dogpile.cache backend. Example format:
