@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_a862d4d6",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-29T22:27:28Z",
+      "side": 1,
+      "message": "(nit) use single quotes",
+      "revId": "efde1a308b4822a540a078e56f3824fc8951cf3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
