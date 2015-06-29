@@ -216,47 +216,53 @@ class ProjectV3(controller.V3Controller):
         refs = self.resource_api.list_projects(hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
 
-    def _expand_project_ref(self, context, ref):
-        params = context['query_string']
-
-        parents_as_list = 'parents_as_list' in params and (
-            self.query_filter_is_true(params['parents_as_list']))
-        parents_as_ids = 'parents_as_ids' in params and (
-            self.query_filter_is_true(params['parents_as_ids']))
-
-        subtree_as_list = 'subtree_as_list' in params and (
-            self.query_filter_is_true(params['subtree_as_list']))
-        subtree_as_ids = 'subtree_as_ids' in params and (
-            self.query_filter_is_true(params['subtree_as_ids']))
-
+    def _assert_mutual_exclusive_query_params(self, query_params):
         # parents_as_list and parents_as_ids are mutually exclusive
-        if parents_as_list and parents_as_ids:
+        if query_params['parents_as_list'] and query_params['parents_as_ids']:
             msg = _('Cannot use parents_as_list and parents_as_ids query '
                     'params at the same time.')
             raise exception.ValidationError(msg)
 
         # subtree_as_list and subtree_as_ids are mutually exclusive
-        if subtree_as_list and subtree_as_ids:
+        if query_params['subtree_as_list'] and query_params['subtree_as_ids']:
             msg = _('Cannot use subtree_as_list and subtree_as_ids query '
                     'params at the same time.')
             raise exception.ValidationError(msg)
 
-        user_id = self.get_auth_context(context).get('user_id')
+    def _get_query_params(self, context):
+        params = context['query_string']
 
-        if parents_as_list:
+        def _get_boolean_param(query):
+            return query in params and (
+                self.query_filter_is_true(params[query]))
+
+        query_params = {}
+        query_params['parents_as_list'] = _get_boolean_param('parents_as_list')
+        query_params['parents_as_ids'] = _get_boolean_param('parents_as_ids')
+        query_params['subtree_as_list'] = _get_boolean_param('subtree_as_list')
+        query_params['subtree_as_ids'] = _get_boolean_param('subtree_as_ids')
+
+        return query_params
+
+    def _expand_project_ref(self, context, ref):
+        user_id = self.get_auth_context(context).get('user_id')
+        query_params = self._get_query_params(context)
+        self._assert_mutual_exclusive_query_params(query_params)
+
+        if query_params['parents_as_list']:
             parents = self.resource_api.list_project_parents(
                 ref['id'], user_id)
             ref['parents'] = [ProjectV3.wrap_member(context, p)
                               for p in parents]
-        elif parents_as_ids:
+        elif query_params['parents_as_ids']:
             ref['parents'] = self.resource_api.get_project_parents_as_ids(ref)
 
-        if subtree_as_list:
+        if query_params['subtree_as_list']:
             subtree = self.resource_api.list_projects_in_subtree(
                 ref['id'], user_id)
             ref['subtree'] = [ProjectV3.wrap_member(context, p)
                               for p in subtree]
-        elif subtree_as_ids:
+        elif query_params['subtree_as_ids']:
             ref['subtree'] = self.resource_api.get_projects_in_subtree_as_ids(
                 ref['id'])
 
