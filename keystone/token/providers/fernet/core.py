@@ -166,37 +166,6 @@ class Provider(common.BaseProvider):
         return self.v2_token_data_helper.v3_to_v2_token(token_ref,
                                                         v3_token_data)
 
-    def validate_v3_token(self, token):
-        """Validate a V3 formatted token.
-
-        :param token: a string describing the token to validate
-        :returns: the token data
-        :raises keystone.exception.Unauthorized: if token format version isn't
-                                                 supported
-
-        """
-        (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-            federated_info, created_at, expires_at) = (
-                self.token_formatter.validate_token(token))
-
-        token_dict = None
-        trust_ref = None
-        if federated_info:
-            token_dict = self._rebuild_federated_info(federated_info, user_id)
-        if trust_id:
-            trust_ref = self.trust_api.get_trust(trust_id)
-
-        return self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names=methods,
-            domain_id=domain_id,
-            project_id=project_id,
-            issued_at=created_at,
-            expires=expires_at,
-            trust=trust_ref,
-            token=token_dict,
-            audit_info=audit_ids)
-
     def _get_token_id(self, token_data):
         """Generate the token_id based upon the data in token_data.
 
