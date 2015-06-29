@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_7c79fdfb",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-29T16:37:48Z",
+      "side": 1,
+      "message": "I\u0027d rather leave it explicit. It breaks nothing and makes the code a bit more readable.",
+      "revId": "d2115c7f708f81ffdece25fafec4458ae7be4542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
