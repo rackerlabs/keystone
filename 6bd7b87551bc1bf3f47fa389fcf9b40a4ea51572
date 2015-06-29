@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_4dba4ce3",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-06-29T15:10:56Z",
+      "side": 1,
+      "message": "I think we should add some tests showing nothing being passed to Keystone in a POST /v3/services call and asserting Keystone returns some useful info. We should do the same with an empty request. Validation of the service reference itself is done in the keystone/common/validation layer.\n\nhttp://cdn.pasteraw.com/ccnwm22dr9150hbvwpki2ceso7rlsbf",
+      "revId": "6bd7b87551bc1bf3f47fa389fcf9b40a4ea51572",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
