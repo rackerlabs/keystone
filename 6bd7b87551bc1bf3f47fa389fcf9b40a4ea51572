@@ -16,6 +16,24 @@
       "revId": "6bd7b87551bc1bf3f47fa389fcf9b40a4ea51572",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3e3589f6",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-30T09:55:18Z",
+      "side": 1,
+      "message": "see my reply in PS2, pls.",
+      "parentUuid": "ba3cc151_4dba4ce3",
+      "revId": "6bd7b87551bc1bf3f47fa389fcf9b40a4ea51572",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
