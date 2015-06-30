@@ -1,0 +1,480 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_505e2a13",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "federation attributes* (not federation protocol attributes)",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_304cc66f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "restrict this to 80 characters or less",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9036f2e5",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "use \u0027javascript\u0027 instead of \u0027json\u0027",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_70b00e44",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "top-level key of a mapping",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_508cea7e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "top-level list of rules",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_30c92679",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "a representation of Identity API attributes",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_30c5a63b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "use up the full 80 characters in a line",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_aa44e973",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "``--rules``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_b0e776e3",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "`rules`, drop the rest of the sentence after `rules`",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_30ae0686",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "``--input``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_aa3b89ea",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "``--input``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_10642247",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "remove \u0027Example is shown below.\u0027 as it\u0027s not shown immediately below",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_10cbc21f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "use up all 80 characters in a line",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d39c845f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "remove the :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6d691bbe",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "The number in braces {} are indicies, they map in order. For example:",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_939fdc4f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "remove :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_138c2c34",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "remove :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_734c9842",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "use up all 80 chars!",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_335610d3",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "spilling over, try and limit to 80 characters",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_936efc94",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "no need for a : at the end here",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_336db098",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "lower case E for expressions\n\nRegular expressions can be used in a mapping by specifying the ``regex`` key, and setting it to ``True``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_33f290d3",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "no need for : here",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_93911c55",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "spillover",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_93ca7c6d",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "remove :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d3aec497",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "remove \u0027that\u0027",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2d4f93be",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "JSON*",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ad83a3cb",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "so \u0027json\u0027 isn\u0027t a supported code-block, but \u0027javascript\u0027 is, suggest renaming them all to \u0027javascript\u0027",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_cdeb8777",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-06-30T15:40:23Z",
+      "side": 1,
+      "message": "maybe combine the two sentences?\n\nBy setting ``additionalProperties`` to False, Keystone will not accept any other keys in the JSON mapping. only ``type``, ``whitelist``, ``blacklist``, ``any_one_of```, ``not_any_of``, and ``regex`` are supported.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
