@@ -88,6 +88,24 @@
       "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1ebd2568",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-06-30T09:53:50Z",
+      "side": 1,
+      "message": "@Lance, thanks for the comments, in the case of updating service as what this patch intends to fix, we can provide the testcase for 1.), 2.)\n\nhttp://paste.openstack.org/show/327911/\n\nThe 3.) case, you know, may need some change in the validation layer, \n\nsee: https://review.openstack.org/#/c/195001/1/keystone/common/validation/__init__.py, this may fix the issue, but it will impact a lot of existing testcases, \n\nsee: http://logs.openstack.org/01/195001/1/check/gate-keystone-python27/e6d4940/console.html.gz#_2015-06-24_09_17_00_749\n\nSo, this is why I going to split the fixing into two part and let the 3.) be address after a serial patches.",
+      "parentUuid": "ba3cc151_ed3ec0b7",
+      "revId": "9ff813c746b346c9263e1ecdc000c268234d49af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
