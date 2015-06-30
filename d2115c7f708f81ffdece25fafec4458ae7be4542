@@ -34,6 +34,24 @@
       "revId": "d2115c7f708f81ffdece25fafec4458ae7be4542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4dba21c2",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-06-30T12:03:51Z",
+      "side": 1,
+      "message": "Well, let\u0027s clean the mess later then.",
+      "parentUuid": "ba3cc151_f590a997",
+      "revId": "d2115c7f708f81ffdece25fafec4458ae7be4542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
