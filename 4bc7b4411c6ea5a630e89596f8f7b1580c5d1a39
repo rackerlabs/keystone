@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_c0d101cf",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-30T18:58:17Z",
+      "side": 1,
+      "message": "suggest \u0027test_deleting_endpoint_with_space_in_url\u0027",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_00efe987",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-30T18:58:17Z",
+      "side": 1,
+      "message": "If you are disproving the bug then I think you can delete the comment.",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_40597159",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-30T18:58:17Z",
+      "side": 1,
+      "message": "Should you be saving this to the database? And if you are you probably want to do this after line 623.",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
