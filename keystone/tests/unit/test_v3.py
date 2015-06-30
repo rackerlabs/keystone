@@ -54,6 +54,7 @@ class AuthTestMixin(object):
                 scope_data['project']['name'] = project_name
                 if is_domain is not None:
                     scope_data['project']['is_domain'] = is_domain
+                    scope_data['is_domain'] = is_domain
                 if project_domain_id or project_domain_name:
                     project_domain_json = {}
                     if project_domain_id:
