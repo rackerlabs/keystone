@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_80cbf952",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-06-30T18:47:53Z",
+      "side": 1,
+      "message": "I\u0027d argue that we should just say it should be in the same commit.",
+      "revId": "b0d0f3655bec43ffe2ed85d95c85e0ee89be4fe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
