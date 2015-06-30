@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_02a0789e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-30T01:58:07Z",
+      "side": 1,
+      "message": "I don\u0027t agree with this. Most of the ways I have installed Keystone will put the *.ini in /etc/keystone because it really is a config file.",
+      "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
