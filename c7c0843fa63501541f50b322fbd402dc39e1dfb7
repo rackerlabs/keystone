@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_d420e79d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T17:19:32Z",
+      "side": 1,
+      "message": "this should remain uppercase since it\u0027s a title.\n\nOtherwise you should also lowercase federation.",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_6dccf035",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 7
@@ -31,6 +48,91 @@
       "side": 1,
       "message": "No, this as of Juno, Keystone IdP (see below) is stable as of Kilo, so the docs are ok :-)",
       "parentUuid": "ba3cc151_6dccf035",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d4578700",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T17:19:32Z",
+      "side": 1,
+      "message": "this should remain uppercase since it\u0027s a title.\n\nOtherwise you should also lowercase federation.",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_546377dc",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T17:19:32Z",
+      "side": 1,
+      "message": "suggest change ``OS-FEDERATION`` to keystone federation throughout this doc. I don\u0027t thin OS-FEDERATION exists anymore.",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_54913798",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T17:19:32Z",
+      "side": 1,
+      "message": "The last sentence can be removed since this is the default given stevedore support for auth.",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_34ed9325",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T17:19:32Z",
+      "side": 1,
+      "message": "these last 2 lines should be removed given stevedore support.",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f4cdebb7",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T17:19:32Z",
+      "side": 1,
+      "message": "change \"to install\" to \"installation of the\"",
       "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
