@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ab608436",
+        "filename": "run_tests.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 14760
+      },
+      "writtenOn": "2015-06-30T06:16:50Z",
+      "side": 1,
+      "message": "What is purpose of doing \u0027set +e\u0027 and \u0027set -e\u0027 if going to exit anyway?\n\nShouldn\u0027t this be down below after the the errors are logged?",
+      "revId": "1ae7096ab6ffbcd127dc24a42622188384735b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
