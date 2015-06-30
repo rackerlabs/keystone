@@ -50,6 +50,24 @@
       "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_db857207",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T19:13:05Z",
+      "side": 1,
+      "message": "Thank you for the comments. I don\u0027t think I would need to save anything to any database, would I? I\u0027m just testing making the endpoint and then deleting it.",
+      "parentUuid": "ba3cc151_40597159",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
