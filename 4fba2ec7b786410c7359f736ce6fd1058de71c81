@@ -16,6 +16,24 @@
       "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ce3156a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-30T07:06:11Z",
+      "side": 1,
+      "message": "I agree with David. I\u0027ve seen chef/puppet/ansible scripts modifying paste.ini so the filters and pipelines are definitely *configurable*.\n\nI would think the only thing that needs to be backward compatible are the public APIs. Everything else should be deployer/operator options.",
+      "parentUuid": "ba3cc151_02a0789e",
+      "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
