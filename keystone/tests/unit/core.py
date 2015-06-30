@@ -27,6 +27,7 @@ import fixtures
 from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 from oslo_log import log
+import oslo_policy.opts
 import oslotest.base as oslotest
 from oslotest import mockpatch
 import six
@@ -49,7 +50,6 @@ from keystone import config
 from keystone import controllers
 from keystone import exception
 from keystone import notifications
-from keystone.policy.backends import rules
 from keystone.server import common
 from keystone import service
 from keystone.tests.unit import ksfixtures
@@ -77,7 +77,7 @@ TMPDIR = _calc_tmpdir()
 
 CONF = cfg.CONF
 log.register_options(CONF)
-rules.init()
+oslo_policy.opts._register(CONF)
 
 IN_MEM_DB_CONN_STRING = 'sqlite://'
 
