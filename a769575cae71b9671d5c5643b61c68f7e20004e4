@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_52995c1e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T13:01:38Z",
+      "side": 1,
+      "message": "The message suggest server does some sanity checks, while it doesn\u0027t do anything more that it used to do.",
+      "revId": "a769575cae71b9671d5c5643b61c68f7e20004e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
