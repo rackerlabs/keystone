@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_88423b0f",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T21:25:53Z",
+      "side": 1,
+      "message": "Would I not keep it \"delete\" rather than \"deleting\" for the reason that all the functions above and below this use that format? For example I see \"create\", \"test,\" \"update,\" and \"delete.\"",
+      "parentUuid": "ba3cc151_c0d101cf",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_00efe987",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-30T18:58:17Z",
       "side": 1,
       "message": "If you are disproving the bug then I think you can delete the comment.",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c83843a3",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T21:25:53Z",
+      "side": 1,
+      "message": "Thanks. That will be done in the next patch set.",
+      "parentUuid": "ba3cc151_00efe987",
       "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
