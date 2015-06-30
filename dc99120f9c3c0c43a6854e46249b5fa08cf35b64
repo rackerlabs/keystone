@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_89b55def",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T22:17:45Z",
+      "side": 1,
+      "message": "Comma after \"next\"",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_a9eb81af",
         "filename": "doc/source/developing.rst",
         "patchSetId": 5
@@ -53,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_69cb3973",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T22:17:45Z",
+      "side": 1,
+      "message": "Now navigate to the devstack directory. It will most likely be``/home/stack/devstack``",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e91669a6",
         "filename": "doc/source/developing.rst",
         "patchSetId": 5
@@ -70,6 +104,40 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_49a515a0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T22:17:45Z",
+      "side": 1,
+      "message": "Finally, run --\u003e Now, run",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a9b4e1d0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T22:17:45Z",
+      "side": 1,
+      "message": "Remove everything explaining screen, maybe replace with \"You can refer to http://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/ for a comprehensive tutorial on the linux \"screen\" command\n\nRemember, this is aimed towards developers, not high school interns. Most devs will certainly know of the screen command.",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_291d31bd",
         "filename": "doc/source/developing.rst",
         "patchSetId": 5
@@ -81,6 +149,40 @@
       "writtenOn": "2015-06-30T22:06:51Z",
       "side": 1,
       "message": "trailing space",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_896ebdff",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T22:17:45Z",
+      "side": 1,
+      "message": "Maybe make it more eloquent/readable? It should be a table. Copy and paste from \nhttp://pastebin.com/eBVz7Ngw",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_db3568da",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T22:17:45Z",
+      "side": 1,
+      "message": "Refer to ``developing.rst`` to startup Keystone.",
       "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
