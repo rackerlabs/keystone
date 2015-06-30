@@ -44,15 +44,35 @@ needed.
 Running Keystone
 ----------------
 
-To run the Keystone Admin and API server instances, use:
+Once you have a working Devstack environment installed,
+you first need to change the user to `stack` so run ``sudo su stack``
 
-.. code-block:: bash
+Next you need to navigate to the keystone directory
+by typing ``cd /opt/stack/keystone`` into a putty or terminal window.
 
-    $ tools/with_venv.sh bin/keystone-all
+Then, you need to install files nesessary for starting keystone:
+ ``sudo python tools/install_venv.py``
 
-This runs Keystone with the configuration the etc/ directory of the project.
-See :doc:`configuration` for details on how Keystone is configured. By default,
-Keystone is configured with SQL backends.
+Now navigate to the devstack directory. ``cd /home/stack/devstack``
+
+Run the command ``./rejoin-stack.sh`` If it prompts you
+to run ``stack.sh`` do so, but refer to these steps when
+you try to connect again.
+
+When you run ``./rejoin-stack.sh`` you should get an error.
+(This is a good thing!) In the error message there will be
+a part that looks like `...../dev/pts/[port]` Use this port number
+in the following command: ``sudo chown stack /dev/pts/[port]``.
+You need to do this so that the stack user has permission to
+actually startup Keystone.
+
+Finally, run ``./rejoin-stack.sh``
+
+You are now in the screen windows.
+ If you do ``ctrl + a`` then ``shift + "`` you will be in the tab view
+ of all the screens. This shows all the processes running in your
+ Devstack environment. For example, Key, is the keystone log,
+ and shell is basically the "command prompt" or "terminal" of Devstack.
 
 
 Interacting with Keystone
@@ -509,11 +529,7 @@ development environment, there's a couple of things you need to do.
 This will generate .mo files like keystone/locale/[lang]/LC_MESSAGES/[lang].mo
 
 2. When running Keystone, set the ``KEYSTONE_LOCALEDIR`` environment variable
-   to the keystone/locale directory. For example:
-
-.. code-block:: bash
-
-   $ KEYSTONE_LOCALEDIR=/opt/stack/keystone/keystone/locale keystone-all
+   to the keystone/locale directory. 
 
 Now you can get a translated error response:
 
