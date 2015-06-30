@@ -51,6 +51,24 @@
       "revId": "3a4f8489a7fead571cffa23b39daad663a7c20f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c9de1e6d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-06-30T14:18:45Z",
+      "side": 1,
+      "message": "Marek - The tests show how the code currently works. The tests pass but the tests are showing that the current behavior is wrong. As in, the tests show that the operation fails when it should work or vice-versa.",
+      "parentUuid": "ba3cc151_494e8e70",
+      "revId": "3a4f8489a7fead571cffa23b39daad663a7c20f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
