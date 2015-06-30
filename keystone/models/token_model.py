@@ -204,6 +204,11 @@ class KeystoneToken(dict):
         raise exception.UnexpectedError()
 
     @property
+    def is_domain(self):
+        if self.version is V3:
+            return self['is_domain']
+
+    @property
     def project_scoped(self):
         if self.version is V3:
             return 'project' in self
