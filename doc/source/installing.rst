@@ -56,7 +56,7 @@ system. The following commands should be available on the command-line path:
 
 * ``keystone`` the Keystone client, used to interact with Keystone
 * ``keystone-manage`` used to bootstrap Keystone data
-* ``keystone-all`` used to run the Keystone services
+* ``Devstack`` used to startup Keystone
 
 You will find sample configuration files in ``etc/``:
 
@@ -67,12 +67,7 @@ You will find sample configuration files in ``etc/``:
 * ``default_catalog.templates``
 
 From here, refer to :doc:`configuration` to choose which backend drivers to
-enable and use. Once configured, you should be able to run Keystone by issuing
-the command:
-
-.. code-block:: bash
-
-    $ keystone-all
+enable and use. Refer to developing.rst to startup Keystone.
 
 By default, this will show logging on the console from which it was started.
 Once started, you can initialize data in Keystone for use with the rest of
