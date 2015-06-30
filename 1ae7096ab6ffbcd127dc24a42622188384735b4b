@@ -16,6 +16,23 @@
       "revId": "1ae7096ab6ffbcd127dc24a42622188384735b4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9f74d69c",
+        "filename": "run_tests.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-06-30T08:03:09Z",
+      "side": 1,
+      "message": "\u003e?  log will be overwritten，I think it should be changed to \u0027\u003e\u003e\u0027.",
+      "revId": "1ae7096ab6ffbcd127dc24a42622188384735b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
