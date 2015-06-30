@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_0ba8901e",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-06-30T06:22:06Z",
+      "side": 1,
+      "message": "Please remove this test for now as this bug depends on new API spec.\n\nhttps://review.openstack.org/#/c/187045/\n\nWe can add this test later after the new API is implemented.",
+      "revId": "a62ab1992222df44a1fb17e55d7877e16bda193d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
