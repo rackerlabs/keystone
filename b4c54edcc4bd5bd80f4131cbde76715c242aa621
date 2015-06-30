@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_5a10794e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17075
+      },
+      "writtenOn": "2015-06-30T20:44:49Z",
+      "side": 1,
+      "message": "Mention that the rejoin-stack script isn\u0027t needed, only optional",
+      "revId": "b4c54edcc4bd5bd80f4131cbde76715c242aa621",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
