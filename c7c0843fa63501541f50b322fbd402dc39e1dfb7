@@ -16,6 +16,24 @@
       "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2414a142",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T07:27:20Z",
+      "side": 1,
+      "message": "No, this as of Juno, Keystone IdP (see below) is stable as of Kilo, so the docs are ok :-)",
+      "parentUuid": "ba3cc151_6dccf035",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
