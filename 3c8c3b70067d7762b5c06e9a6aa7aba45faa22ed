@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_8313fc65",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T21:34:56Z",
+      "side": 1,
+      "message": "It looks like there\u0027s extra space between \"you\" and \"first.\"",
+      "revId": "3c8c3b70067d7762b5c06e9a6aa7aba45faa22ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ee03cf0b",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T21:34:56Z",
+      "side": 1,
+      "message": "I would add a period at the end.",
+      "revId": "3c8c3b70067d7762b5c06e9a6aa7aba45faa22ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ae24e7ae",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T21:34:56Z",
+      "side": 1,
+      "message": "Within error  message  --\u003e In the error message",
+      "revId": "3c8c3b70067d7762b5c06e9a6aa7aba45faa22ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4e43db42",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T21:34:56Z",
+      "side": 1,
+      "message": "in the following command --\u003e in the following command:",
+      "revId": "3c8c3b70067d7762b5c06e9a6aa7aba45faa22ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
