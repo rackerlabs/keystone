@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_6135b4d8",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-06-30T10:28:44Z",
+      "side": 1,
+      "message": "Do not import objects, only modules",
+      "revId": "a62ab1992222df44a1fb17e55d7877e16bda193d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0c809f45",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-06-30T10:28:44Z",
+      "side": 1,
+      "message": "we already have _build_role_assignment_query_url in test_v3_assignment.py. I suggest using it.",
+      "revId": "a62ab1992222df44a1fb17e55d7877e16bda193d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_0ba8901e",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 7
