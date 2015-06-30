@@ -41,19 +41,67 @@ The defaults are enough to get you going, but you can make any changes if
 needed.
 
 
-Running Keystone
-----------------
+Running Keystone using Eventlet
+-------------------------------
+To install the virtual environment, input this command in keystone directory:
 
-To run the Keystone Admin and API server instances, use:
+``sudo python tools/install_venv.py``
 
-.. code-block:: bash
+Start Keystone services using the command:
+``keystone-all``
 
-    $ tools/with_venv.sh bin/keystone-all
+Stop the process using ``Ctrl+C``
 
-This runs Keystone with the configuration the etc/ directory of the project.
-See :doc:`configuration` for details on how Keystone is configured. By default,
-Keystone is configured with SQL backends.
+Running Keystone under HTTP in Ubuntu
+-------------------------------------
 
+To install the virtual environment, input this command in keystone directory:
+
+``sudo python tools/install_venv.py``
+
+Install the MySQL packages:
+
+``apt-get install -y mysql-server python-mysqldb`` 
+
+Once you have a confgured mysql database, enter the following:
+
+``sudo systemctl start openstack-keystone.service && sudo systemctl enable openstack-keystone.service``
+
+Create the keystone service:
+
+``keystone service-create --name=keystone --type=identity --description="Keystone Identity Service"``
+
+Now create a keystone endpoint:
+
+``keystone endpoint-create --service=keystone --publicurl=http://10.0.0.1:5000/v2.0 --internalurl=http://10.0.0.1:5000/v2.0 --adminurl=http://10.0.0.1:35357/v2.0``
+
+Unset the exported values:
+
+``unset OS_SERVICE_TOKEN``
+``unset OS_SERVICE_ENDPOINT``
+
+Create a file named creds and add the following lines:
+
+``export OS_USERNAME=admin
+export OS_PASSWORD=ADMIN
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=http://10.0.0.1:35357/v2.0``
+
+Source the file
+
+``source creds``
+
+Finally, test the keystone setup
+
+``keystone token-get
+keystone user-list``
+
+Running Keystone under HTTP in Fedora
+-------------------------------------
+
+Once you have configured Keystone and set up a keystonerc file, you can start and enable Keystone service:
+
+``sudo systemctl start openstack-keystone.service && sudo systemctl enable openstack-keystone.service``
 
 Interacting with Keystone
 -------------------------
@@ -218,6 +266,7 @@ individual drivers as part of the Hints list object. A driver should try and
 honor any such limit if possible, but if it is unable to do so then it may
 ignore it (and the truncation of the returned list of entities will happen at
 the controller level).
+
 
 Identity entity ID management between controllers and drivers
 -------------------------------------------------------------
@@ -509,11 +558,7 @@ development environment, there's a couple of things you need to do.
 This will generate .mo files like keystone/locale/[lang]/LC_MESSAGES/[lang].mo
 
 2. When running Keystone, set the ``KEYSTONE_LOCALEDIR`` environment variable
-   to the keystone/locale directory. For example:
-
-.. code-block:: bash
-
-   $ KEYSTONE_LOCALEDIR=/opt/stack/keystone/keystone/locale keystone-all
+   to the keystone/locale directory.
 
 Now you can get a translated error response:
 
