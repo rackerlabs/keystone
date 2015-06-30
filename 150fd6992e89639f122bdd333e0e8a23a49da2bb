@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_59141543",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T16:01:15Z",
+      "side": 1,
+      "message": "Thanks. I\u0027ll update this.",
+      "parentUuid": "ba3cc151_83832acc",
+      "revId": "150fd6992e89639f122bdd333e0e8a23a49da2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_3ae59808",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 1
