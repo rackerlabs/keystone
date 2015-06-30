@@ -305,9 +305,10 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['parent_id'] = parent_id
         return ref
 
-    def new_user_ref(self, domain_id, project_id=None):
+    def new_user_ref(self, domain_id=None, project_id=None):
         ref = self.new_ref()
-        ref['domain_id'] = domain_id
+        if domain_id:
+            ref['domain_id'] = domain_id
         ref['email'] = uuid.uuid4().hex
         ref['password'] = uuid.uuid4().hex
         if project_id:

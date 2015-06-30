@@ -102,6 +102,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref['domain_id'] = CONF.identity.default_domain_id
         return self.assertValidUserResponse(r, ref)
 
+    def test_create_user_with_static_admin_token(self):
+        """Call ``POST /users`` with static admin_token.
+
+        We should not be able to create a user using admin_token since it is
+        not a domain-scoped token.
+
+        """
+	ref = self.new_user_ref()
+        self.post('/users', body={'user': ref}, token=CONF.admin_token,
+                  expected_status=exception.ValidationError.code)
+
     def test_create_user_400(self):
         """Call ``POST /users``."""
         self.post('/users', body={'user': {}}, expected_status=400)
