@@ -104,6 +104,24 @@
       "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4e419ba8",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-06-30T21:45:21Z",
+      "side": 1,
+      "message": "Your endpoints don\u0027t have the space in the database so I wouldn\u0027t expect these tests to fail. If you want to test what the bug is claiming then you need to store the URL with the space in the database.",
+      "parentUuid": "ba3cc151_db857207",
+      "revId": "4bc7b4411c6ea5a630e89596f8f7b1580c5d1a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
