@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ad0f23e0",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "i think keystone-manage will expect top level key \u0027rules\u0027\nhttps://github.com/openstack/keystone/blob/master/keystone/cli.py#L593",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_70b00e44",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -64,6 +81,23 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "top-level key of a mapping",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ad0c0395",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "keystone-manage will not accept this.",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +149,23 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "use up the full 80 characters in a line",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8d69ff27",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "keystone-manage mapping_engine, drop \u0027--\u0027",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +257,91 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_4de1b799",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "let\u0027s be super verbose - specify, that with that keyword the condition result is boolean (true/false), not the argument passed as input.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0df2cf6f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "let\u0027s be super verbose - specify, that with that keyword the condition result is boolean (true/false), not the argument passed as input.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6d8a7bc1",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "let\u0027s be super verbose - specify, that with that keyword the condition result  argument(s) passed as input minus what was matched in the blacklist.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_edbc4b6e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "let\u0027s be super verbose - specify, that with that keyword the condition result  argument(s) passed as input and was also present in the whitelist.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8d21ffb6",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "for blacklist/whitelist also specify that those conditions can actually be used in a direct mapping ({0}, {1} etc), while this doesn\u0027t work for conditions with any_one_of, not_any_of keywords.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_10cbc21f",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -217,6 +353,23 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "use up all 80 characters in a line",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_50306ae8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "Please specify that rules are additive - if i have 3 rules and I sucees only in rules 1,3 i will be granted permisions specified by rules 1,3.\n\nAt the same time we must mention, that one must sucees in all the remote: conditions of a rule.",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +410,23 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_f0373eae",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "specify that currently they MUST be \u0027;\u0027 separated.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_939fdc4f",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -268,6 +438,57 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "remove :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_be0f4787",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "i think blacklist/whitelist in this example is inappropriate - those keywords are for direct mapping (to be used with {0}, {1} etc). In the provided example literally everybody will be granted access to group id 0cd5ed. If a user doesn\u0027t have HTTP_OIDC_EMAIL specified a value of HTTP_OIDC_GROUPIDS this value will simply not be passed. I think the more appropriate example would be \u003cother_condition\u003e set to any_one_of or it\u0027s counterpart, while you may want to add similar with local rule set to group: { \u0027id\u0027: {1} } and then blacklist/whitelist in the \u0027remote\u0027",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_906ef294",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "\"if the user_name attribute is missing when...\"",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_90911255",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "for the completeness, please add an example while you map to group id. It will give a full spectrum of available options.",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +512,40 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_fe638f3f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "This will be literally either \"ephemeral\" or \"local\"",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3ee1f79a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "\u003clocal\u003e doesn\u0027t make much sense with regard to explanation below. It may be confusing.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_734c9842",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -302,6 +557,23 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "use up all 80 chars!",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1efd133a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "``local`` - user that exists in the backend.",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +631,40 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_fe4dcf99",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "this is a value from your examples at the top of the document, while it should be attribute name.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d9ffc5ff",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "this is inconsistent with the example you provided at the top, as this looks like a group name.....",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_33f290d3",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -404,6 +710,23 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "remove :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d9ba65e1",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T16:07:08Z",
+      "side": 1,
+      "message": "it\u0027s worth explaining that:\n\nin two rules you can specify more than one effective user identification but only the first one will be considered and another ignored (order from the top to the bottom), as well as explain that since rules are additive one can spcdy one user identificatin and this will also work. \nAnd the last, let\u0027s suggest that the best way is to make separate rule for just user and others for groups.",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
