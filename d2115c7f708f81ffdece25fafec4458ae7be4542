@@ -16,6 +16,24 @@
       "revId": "d2115c7f708f81ffdece25fafec4458ae7be4542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f590a997",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-06-30T04:30:50Z",
+      "side": 1,
+      "message": "It actually will require a much much much bigger refactor to resolve this as the entire V3 pipeline assumes the V3 provider enforces this. Leaving the explicit here does break either the entire trust token issuance for impersonation or requires lifting all of that logic higher in the v3 issuance pipeline as well.\n\nI went for the least impactful version to V3 tokens (v2 tokens on on life support until V2 is removed, which is on the horizon).",
+      "parentUuid": "ba3cc151_7c79fdfb",
+      "revId": "d2115c7f708f81ffdece25fafec4458ae7be4542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
