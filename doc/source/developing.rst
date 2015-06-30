@@ -44,16 +44,43 @@ needed.
 Running Keystone
 ----------------
 
-To run the Keystone Admin and API server instances, use:
+`Running Keystone using Eventlet`
 
-.. code-block:: bash
+Start Keystone services using the command:
+ ``Keystone-all`` 
 
-    $ tools/with_venv.sh bin/keystone-all
+Stop the process using ``Ctrl+C``
 
-This runs Keystone with the configuration the etc/ directory of the project.
-See :doc:`configuration` for details on how Keystone is configured. By default,
-Keystone is configured with SQL backends.
+`Running Keystone using Devstack`
 
+Once you have a working Devstack environment installed,
+you first need to change the user to stack so run ``sudo su - stack``
+
+Next, you need to navigate to the keystone directory
+by typing ``cd /opt/stack/keystone`` into a terminal window.
+
+Then, you need to install files necessary for starting keystone:
+ ``sudo python tools/install_venv.py``
+
+Now navigate to the devstack directory. ``cd /home/stack/devstack``
+
+Run the command ``./rejoin-stack.sh`` If it prompts you
+to run ``stack.sh`` do so, but refer to these steps when
+you try to connect again.
+
+When you run ``./rejoin-stack.sh`` you should get an error.
+(This is a good thing!) In the error message there will be
+a part that looks like ...../dev/pts/[port] Use this port number
+in the following command: ``sudo chown stack /dev/pts/[port]``.
+You need to do this so that the stack user has permission to connect to the
+'screen' terminal.
+
+Now, run ``./rejoin-stack.sh``
+
+You are now viewing the Openstack windows through the ``screen`` program.
+ <C-a> then <s-"> will open the tab view, showing the devstack environment.
+ The ``Key`` tab is the keystone log.
+ The ``Shell`` tab is the Openstack shell.
 
 Interacting with Keystone
 -------------------------
@@ -218,6 +245,7 @@ individual drivers as part of the Hints list object. A driver should try and
 honor any such limit if possible, but if it is unable to do so then it may
 ignore it (and the truncation of the returned list of entities will happen at
 the controller level).
+
 
 Identity entity ID management between controllers and drivers
 -------------------------------------------------------------
@@ -509,11 +537,7 @@ development environment, there's a couple of things you need to do.
 This will generate .mo files like keystone/locale/[lang]/LC_MESSAGES/[lang].mo
 
 2. When running Keystone, set the ``KEYSTONE_LOCALEDIR`` environment variable
-   to the keystone/locale directory. For example:
-
-.. code-block:: bash
-
-   $ KEYSTONE_LOCALEDIR=/opt/stack/keystone/keystone/locale keystone-all
+   to the keystone/locale directory.
 
 Now you can get a translated error response:
 
