@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_1b43d043",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-06-30T22:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_29c1b12e",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_89b55def",
         "filename": "doc/source/developing.rst",
         "patchSetId": 5
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_db4c8872",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-06-30T22:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_a9eb81af",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e908a993",
         "filename": "doc/source/developing.rst",
         "patchSetId": 5
@@ -64,6 +100,24 @@
       "writtenOn": "2015-06-30T22:06:51Z",
       "side": 1,
       "message": "s/nesessary/necessary/",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_fb470c49",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-06-30T22:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_e908a993",
       "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +152,24 @@
       "writtenOn": "2015-06-30T22:06:51Z",
       "side": 1,
       "message": "s/actually startup Keystone/connect to the \u0027screen\u0027 terminal/",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9b75a099",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-06-30T22:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_e91669a6",
       "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -149,6 +221,24 @@
       "writtenOn": "2015-06-30T22:06:51Z",
       "side": 1,
       "message": "trailing space",
+      "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5b6f18c5",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-06-30T22:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_291d31bd",
       "revId": "dc99120f9c3c0c43a6854e46249b5fa08cf35b64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
