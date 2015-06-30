@@ -51,6 +51,24 @@
       "revId": "150fd6992e89639f122bdd333e0e8a23a49da2bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_aab62988",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-06-30T16:00:35Z",
+      "side": 1,
+      "message": "I intentionally made this \"i d\" with a space because that\u0027s what the whole bug report is about, and hence the title \"endpoint didn\u0027t delete with a space in a url.\" I thought the variable name and its comment directly above would made that clear. Let me know if I should add something else, too.",
+      "parentUuid": "ba3cc151_3ae59808",
+      "revId": "150fd6992e89639f122bdd333e0e8a23a49da2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
