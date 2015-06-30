@@ -228,6 +228,8 @@ class V3TokenDataHelper(object):
             token_data['domain'] = self._get_filtered_domain(domain_id)
         if project_id:
             token_data['project'] = self._get_filtered_project(project_id)
+            project_ref = self.resource_api.get_project(project_id)
+            token_data['is_domain'] = project_ref['is_domain']
 
     def _get_roles_for_user(self, user_id, domain_id, project_id):
         roles = []
