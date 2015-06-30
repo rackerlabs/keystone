@@ -34,6 +34,23 @@
       "revId": "3a4f8489a7fead571cffa23b39daad663a7c20f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_494e8e70",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-06-30T14:16:08Z",
+      "side": 1,
+      "message": "i am not sure if i understand it correctly a developer can submit a patch where he will add a tests that exposes broken logic in the code and expect it to fail tests?",
+      "revId": "3a4f8489a7fead571cffa23b39daad663a7c20f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
