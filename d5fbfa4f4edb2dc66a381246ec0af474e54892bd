@@ -16,6 +16,24 @@
       "revId": "d5fbfa4f4edb2dc66a381246ec0af474e54892bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_beb9877b",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-06-30T15:59:10Z",
+      "side": 1,
+      "message": "I think these test cases belong to this file and this class since they test code againest the policy.v3cloudsample.json. Other way, I think the functionality I used from test_v3_assignment should be made global accessable between test cases in different files, but we don\u0027t need to do this in this change.",
+      "parentUuid": "ba3cc151_1003c20e",
+      "revId": "d5fbfa4f4edb2dc66a381246ec0af474e54892bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
