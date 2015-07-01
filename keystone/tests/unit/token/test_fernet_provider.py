@@ -38,7 +38,8 @@ class TestFernetTokenProvider(tests.TestCase):
         self.provider = fernet.Provider()
 
     def test_supports_bind_authentication_returns_false(self):
-        self.assertFalse(self.provider._supports_bind_authentication)
+        result = self.provider._supports_bind()
+        self.assertFalse(result)
 
     def test_invalid_v3_token_raises_401(self):
         self.assertRaises(
