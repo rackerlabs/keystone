@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_6e0d46e7",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T20:13:30Z",
+      "side": 1,
+      "message": "Here\u0027s a dumb question...do we actually need to define this? It looks like six already does this: http://pythonhosted.org/six/#six.assertRaisesRegex\n\nIs there any reason not to use it? I think we can rename the method to assertRaisesRegex (like Python 3) and use six\u0027s implementation.",
+      "revId": "719aa9c1beb427480b2f31c14380ca1376348aa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
