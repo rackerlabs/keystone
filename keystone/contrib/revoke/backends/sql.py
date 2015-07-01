@@ -82,7 +82,7 @@ class Revoke(revoke.Driver):
 
     def list_events(self, last_fetch=None):
         self._prune_expired_events()
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         query = session.query(RevocationEvent).order_by(
             RevocationEvent.revoked_at)
 

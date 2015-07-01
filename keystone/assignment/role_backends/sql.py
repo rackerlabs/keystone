@@ -26,7 +26,7 @@ class Role(assignment.RoleDriver):
 
     @sql.truncated
     def list_roles(self, hints):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             query = session.query(RoleTable)
             refs = sql.filter_limit_query(RoleTable, query, hints)
             return [ref.to_dict() for ref in refs]
@@ -35,7 +35,7 @@ class Role(assignment.RoleDriver):
         if not ids:
             return []
         else:
-            with sql.transaction() as session:
+            with sql.transaction(use_slave=True) as session:
                 query = session.query(RoleTable)
                 query = query.filter(RoleTable.id.in_(ids))
                 role_refs = query.all()
@@ -48,7 +48,7 @@ class Role(assignment.RoleDriver):
         return ref
 
     def get_role(self, role_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             return self._get_role(session, role_id).to_dict()
 
     @sql.handle_conflicts(conflict_type='role')

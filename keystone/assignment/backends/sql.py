@@ -59,7 +59,7 @@ class Assignment(keystone_assignment.Driver):
         return 'sql'
 
     def list_user_ids_for_project(self, tenant_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             query = session.query(RoleAssignment.actor_id)
             query = query.filter_by(type=AssignmentType.USER_PROJECT)
             query = query.filter_by(target_id=tenant_id)
@@ -77,7 +77,7 @@ class Assignment(keystone_assignment.Driver):
 
         # We aren't given a session when called by the manager directly.
         if session is None:
-            session = sql.get_session()
+            session = sql.get_session(use_slave=True)
 
         q = session.query(RoleAssignment)
 
@@ -133,7 +133,7 @@ class Assignment(keystone_assignment.Driver):
     def list_grant_role_ids(self, user_id=None, group_id=None,
                             domain_id=None, project_id=None,
                             inherited_to_projects=False):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             q = session.query(RoleAssignment.role_id)
             q = q.filter(RoleAssignment.actor_id == (user_id or group_id))
             q = q.filter(RoleAssignment.target_id == (project_id or domain_id))
@@ -152,7 +152,7 @@ class Assignment(keystone_assignment.Driver):
     def check_grant_role_id(self, role_id, user_id=None, group_id=None,
                             domain_id=None, project_id=None,
                             inherited_to_projects=False):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             try:
                 q = self._build_grant_filter(
                     session, role_id, user_id, group_id, domain_id, project_id,
@@ -193,7 +193,7 @@ class Assignment(keystone_assignment.Driver):
             RoleAssignment.inherited == inherited,
             RoleAssignment.actor_id.in_(actors))
 
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             query = session.query(RoleAssignment.target_id).filter(
                 sql_constraints).distinct()
 
@@ -209,7 +209,7 @@ class Assignment(keystone_assignment.Driver):
 
     def list_domain_ids_for_user(self, user_id, group_ids, hints,
                                  inherited=False):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             query = session.query(RoleAssignment.target_id)
             filters = []
 
@@ -245,7 +245,7 @@ class Assignment(keystone_assignment.Driver):
             RoleAssignment.inherited == false(),
             RoleAssignment.actor_id.in_(group_ids))
 
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             query = session.query(RoleAssignment.role_id).filter(
                 sql_constraints).distinct()
         return [role.role_id for role in query.all()]
@@ -285,7 +285,7 @@ class Assignment(keystone_assignment.Driver):
         sql_constraints = sqlalchemy.and_(
             sql_constraints, RoleAssignment.actor_id.in_(group_ids))
 
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             # NOTE(morganfainberg): Only select the columns we actually care
             # about here, in this case role_id.
             query = session.query(RoleAssignment.role_id).filter(
@@ -308,7 +308,7 @@ class Assignment(keystone_assignment.Driver):
             RoleAssignment.inherited == inherited,
             RoleAssignment.actor_id.in_(group_ids))
 
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             query = session.query(RoleAssignment.target_id).filter(
                 group_sql_conditions).distinct()
         return [x.target_id for x in query.all()]
@@ -361,7 +361,7 @@ class Assignment(keystone_assignment.Driver):
                 assignment['inherited_to_projects'] = 'projects'
             return assignment
 
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             refs = session.query(RoleAssignment).all()
             return [denormalize_role(ref) for ref in refs]
 
