@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a28605d9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-01T18:53:25Z",
+      "side": 1,
+      "message": "Done, see https://review.openstack.org/#/c/197699/",
+      "parentUuid": "ba3cc151_c239c9a5",
+      "revId": "89051852c593005579224370e3ec7f7125dae19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_62f9ddc6",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 8
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e2672d4b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-01T18:53:25Z",
+      "side": 1,
+      "message": "It is, but I was just playing it safe, I can respin",
+      "parentUuid": "ba3cc151_62f9ddc6",
+      "revId": "89051852c593005579224370e3ec7f7125dae19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_ff6a6680",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 8
@@ -100,6 +136,24 @@
       "writtenOn": "2015-07-01T18:20:11Z",
       "side": 1,
       "message": "This will need to be extended to handle V2 tokens as well. but that can come when we need it.",
+      "revId": "89051852c593005579224370e3ec7f7125dae19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c2c9c927",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-01T18:53:25Z",
+      "side": 1,
+      "message": "Yep, I have a feeling this is going to be split up into _exract_v2_token_data and _extract_v3_token_data methods and _get_token_id will just call to what one is appropriate depending on what type of token we\u0027re dealing with.",
+      "parentUuid": "ba3cc151_ff6a6680",
       "revId": "89051852c593005579224370e3ec7f7125dae19a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
