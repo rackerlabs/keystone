@@ -37,6 +37,10 @@ class Provider(common.BaseProvider):
         """Should the token be written to a backend."""
         return False
 
+    def _supports_bind(self):
+        """Determine if bind authentication is supported by the provider."""
+        return False
+
     def _build_federated_info(self, token_data):
         """Extract everything needed for federated tokens.
 
@@ -167,11 +171,3 @@ class Provider(common.BaseProvider):
                                                  project_id=project_id,
                                                  trust_id=trust_id,
                                                  federated_info=federated_info)
-
-    @property
-    def _supports_bind_authentication(self):
-        """Return if the token provider supports bind authentication methods.
-
-        :returns: False
-        """
-        return False
