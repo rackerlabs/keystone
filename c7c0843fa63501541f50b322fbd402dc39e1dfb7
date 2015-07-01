@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_2db76c87",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T08:35:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_d420e79d",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_6dccf035",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 7
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_adab7c1c",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T08:35:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_d4578700",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_546377dc",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 7
@@ -82,6 +118,24 @@
       "writtenOn": "2015-06-30T17:19:32Z",
       "side": 1,
       "message": "suggest change ``OS-FEDERATION`` to keystone federation throughout this doc. I don\u0027t thin OS-FEDERATION exists anymore.",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3021ff9f",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T08:35:56Z",
+      "side": 1,
+      "message": "i changed it, however we still have a \u0027namespace\u0027 in our URL, so I doubt OS-FEDERATION just disappears...?",
+      "parentUuid": "ba3cc151_546377dc",
       "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_9051eb10",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T08:35:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_54913798",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_34ed9325",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 7
@@ -122,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_50028370",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T08:35:56Z",
+      "side": 1,
+      "message": "btw, setup.cfg has openid, not oidc, so I will tweak this doc.",
+      "parentUuid": "ba3cc151_34ed9325",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f4cdebb7",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 7
@@ -133,6 +223,24 @@
       "writtenOn": "2015-06-30T17:19:32Z",
       "side": 1,
       "message": "change \"to install\" to \"installation of the\"",
+      "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_30a6df10",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T08:35:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_f4cdebb7",
       "revId": "c7c0843fa63501541f50b322fbd402dc39e1dfb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
