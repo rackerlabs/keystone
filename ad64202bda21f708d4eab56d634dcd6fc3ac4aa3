@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_695b2f2f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_505e2a13",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_304cc66f",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "restrict this to 80 characters or less",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_293e87b8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_304cc66f",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e9473f49",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_9036f2e5",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_ad0f23e0",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "i think keystone-manage will expect top level key \u0027rules\u0027\nhttps://github.com/openstack/keystone/blob/master/keystone/cli.py#L593",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c9635bdb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "This document is about rules. Changed it to top level being rules.",
+      "parentUuid": "ba3cc151_ad0f23e0",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,42 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a9edb726",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "ba3cc151_ad0c0395",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e98c1f81",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "ba3cc151_70b00e44",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_508cea7e",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -115,6 +223,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "top-level list of rules",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_09df036a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_508cea7e",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_8932330f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Not sure what to put here.",
+      "parentUuid": "ba3cc151_30c92679",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_30c5a63b",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -149,6 +293,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "use up the full 80 characters in a line",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2948c72c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_30c5a63b",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_c956fbd1",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_8d69ff27",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_aa44e973",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -183,6 +363,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "``--rules``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8906b3cc",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_aa44e973",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ecff4da8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_b0e776e3",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_30ae0686",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -217,6 +433,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "``--input``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a90937df",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_30ae0686",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_892d5348",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_aa3b89ea",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_10642247",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -251,6 +503,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "remove \u0027Example is shown below.\u0027 as it\u0027s not shown immediately below",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a930579f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_10642247",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_eced0df0",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_4de1b799",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_0df2cf6f",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -285,6 +573,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "let\u0027s be super verbose - specify, that with that keyword the condition result is boolean (true/false), not the argument passed as input.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6cb81de6",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_0df2cf6f",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_6c86dd14",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_6d8a7bc1",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_edbc4b6e",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_8cb7a1d7",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_edbc4b6e",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_8d21ffb6",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -336,6 +678,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "for blacklist/whitelist also specify that those conditions can actually be used in a direct mapping ({0}, {1} etc), while this doesn\u0027t work for conditions with any_one_of, not_any_of keywords.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e8c63967",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Added a note",
+      "parentUuid": "ba3cc151_8d21ffb6",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -376,6 +736,42 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_49274b64",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_10cbc21f",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_7d565ecf",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Added this to the section in the bottom.",
+      "parentUuid": "ba3cc151_50306ae8",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d39c845f",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -387,6 +783,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "remove the :",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_692a4f2e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_d39c845f",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +824,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_69e1effd",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_6d691bbe",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f0373eae",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -421,6 +853,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "specify that currently they MUST be \u0027;\u0027 separated.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a98cd735",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_f0373eae",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -444,6 +894,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_c977db38",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_939fdc4f",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_be0f4787",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -455,6 +923,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "i think blacklist/whitelist in this example is inappropriate - those keywords are for direct mapping (to be used with {0}, {1} etc). In the provided example literally everybody will be granted access to group id 0cd5ed. If a user doesn\u0027t have HTTP_OIDC_EMAIL specified a value of HTTP_OIDC_GROUPIDS this value will simply not be passed. I think the more appropriate example would be \u003cother_condition\u003e set to any_one_of or it\u0027s counterpart, while you may want to add similar with local rule set to group: { \u0027id\u0027: {1} } and then blacklist/whitelist in the \u0027remote\u0027",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_825501fb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "This has been resolved. I changed \"HTTP_OIDC_EMAIL\" to be an actual email.",
+      "parentUuid": "ba3cc151_be0f4787",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -478,6 +964,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_09a5c3a0",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_906ef294",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_90911255",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -489,6 +993,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "for the completeness, please add an example while you map to group id. It will give a full spectrum of available options.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_29ce875a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_90911255",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -512,6 +1034,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a9085792",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_138c2c34",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_fe638f3f",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -523,6 +1063,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "This will be literally either \"ephemeral\" or \"local\"",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_09faa375",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Changed to \"local\"",
+      "parentUuid": "ba3cc151_fe638f3f",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -546,6 +1104,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e91c1fc3",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Changed this to include more information.",
+      "parentUuid": "ba3cc151_3ee1f79a",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_734c9842",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -557,6 +1133,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "use up all 80 chars!",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a964d748",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_734c9842",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -580,6 +1174,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_695ecf77",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Replaced ``\u003clocal\u003e`` with ``local``",
+      "parentUuid": "ba3cc151_1efd133a",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_335610d3",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -591,6 +1203,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "spilling over, try and limit to 80 characters",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2951a762",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_335610d3",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -614,6 +1244,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e94adfab",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_936efc94",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_336db098",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -625,6 +1273,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "lower case E for expressions\n\nRegular expressions can be used in a mapping by specifying the ``regex`` key, and setting it to ``True``",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c994bbe3",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_336db098",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -648,6 +1314,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_2c6f7593",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Made more consistent with the rest of the document.",
+      "parentUuid": "ba3cc151_fe4dcf99",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d9ffc5ff",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -659,6 +1343,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "this is inconsistent with the example you provided at the top, as this looks like a group name.....",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4c5999fd",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Made more consistent with the rest of the documentation.",
+      "parentUuid": "ba3cc151_d9ffc5ff",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -682,6 +1384,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_69ba4f70",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_33f290d3",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_93911c55",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -693,6 +1413,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "spillover",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_29ad2731",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_93911c55",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -716,6 +1454,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_496e6b02",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_93ca7c6d",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d9ba65e1",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 12
@@ -727,6 +1483,24 @@
       "writtenOn": "2015-06-30T16:07:08Z",
       "side": 1,
       "message": "it\u0027s worth explaining that:\n\nin two rules you can specify more than one effective user identification but only the first one will be considered and another ignored (order from the top to the bottom), as well as explain that since rules are additive one can spcdy one user identificatin and this will also work. \nAnd the last, let\u0027s suggest that the best way is to make separate rule for just user and others for groups.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0257b126",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Good Idea. I reworded and added this.",
+      "parentUuid": "ba3cc151_d9ba65e1",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -750,6 +1524,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a94e1794",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_d3aec497",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_2d4f93be",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 12
@@ -761,6 +1553,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "JSON*",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_af905e44",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_2d4f93be",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -784,6 +1594,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_cf93624e",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_ad83a3cb",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_cdeb8777",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 12
@@ -795,6 +1623,24 @@
       "writtenOn": "2015-06-30T15:40:23Z",
       "side": 1,
       "message": "maybe combine the two sentences?\n\nBy setting ``additionalProperties`` to False, Keystone will not accept any other keys in the JSON mapping. only ``type``, ``whitelist``, ``blacklist``, ``any_one_of```, ``not_any_of``, and ``regex`` are supported.",
+      "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8fd55aba",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-01T19:28:53Z",
+      "side": 1,
+      "message": "I was thinking, if we combine them we may confuse the reader with which additional Properties in the schema we are referring to. I think there should just be a specific example. I altered it either way to make it easier to understand. We can talk about it.",
+      "parentUuid": "ba3cc151_cdeb8777",
       "revId": "ad64202bda21f708d4eab56d634dcd6fc3ac4aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
