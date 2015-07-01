@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a2eb7012",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-07-01T15:18:19Z",
+      "side": 1,
+      "message": "Even though Devstack might not be useful to some people it could be useful to some. So I will keep it and just add the three other ways",
+      "parentUuid": "ba3cc151_e563e5da",
+      "revId": "24d2651d409d0ecb18862e75e14ba5ca5ebc7722",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_8580d947",
         "filename": "doc/source/installing.rst",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-01T01:50:10Z",
       "side": 1,
       "message": "i dont think you want to refer end-users to notes on how to develop new keystone features.",
+      "revId": "24d2651d409d0ecb18862e75e14ba5ca5ebc7722",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_02301ce7",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 17074
+      },
+      "writtenOn": "2015-07-01T15:18:19Z",
+      "side": 1,
+      "message": "There are other references within the docs in which it refers end-users to look someplace else for the info.",
+      "parentUuid": "ba3cc151_8580d947",
       "revId": "24d2651d409d0ecb18862e75e14ba5ca5ebc7722",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
