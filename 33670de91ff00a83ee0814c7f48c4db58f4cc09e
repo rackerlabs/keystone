@@ -33,6 +33,40 @@
       "revId": "33670de91ff00a83ee0814c7f48c4db58f4cc09e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_37547851",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-01T17:25:48Z",
+      "side": 1,
+      "message": "use the entrypoint -- this should be kvs",
+      "revId": "33670de91ff00a83ee0814c7f48c4db58f4cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_57cfbc28",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-01T17:25:48Z",
+      "side": 1,
+      "message": "use the entrypoint -- this should be uuid",
+      "revId": "33670de91ff00a83ee0814c7f48c4db58f4cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
