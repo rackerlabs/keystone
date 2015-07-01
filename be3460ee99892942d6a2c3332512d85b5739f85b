@@ -33,6 +33,24 @@
       "revId": "be3460ee99892942d6a2c3332512d85b5739f85b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_35b574ed",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-01T06:40:22Z",
+      "side": 1,
+      "message": "David, seems we can\u0027t. Please see https://review.openstack.org/#/c/188796/, logs from patchsets 1 and 2.",
+      "parentUuid": "ba3cc151_d1dc6714",
+      "revId": "be3460ee99892942d6a2c3332512d85b5739f85b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
