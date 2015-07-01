@@ -520,7 +520,9 @@ class BaseProvider(provider.Provider):
 
     def issue_v2_token(self, token_ref, roles_ref=None,
                        catalog_ref=None):
-        if token_ref.get('bind') and not self._supports_bind_authentication:
+        # NOTE(lbragstad): Check to make sure the token provider being used
+        # actually supports bind authentication.
+        if token_ref.get('bind') and not self._supports_bind():
             msg = _('The configured token provider does not support bind '
                     'authentication.')
             raise exception.NotImplemented(message=msg)
@@ -547,7 +549,7 @@ class BaseProvider(provider.Provider):
         if auth_context and auth_context.get('bind'):
             # NOTE(lbragstad): Check if the token provider being used actually
             # supports bind authentication methods before proceeding.
-            if not self._supports_bind_authentication:
+            if not self._supports_bind():
                 raise exception.NotImplemented(_(
                     'The configured token provider does not support bind '
                     'authentication.'))
