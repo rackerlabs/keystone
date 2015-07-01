@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_e563e5da",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-01T01:50:10Z",
+      "side": 1,
+      "message": "as dstanek says, we shouldn\u0027t necessary document how to run devstack, since few real deployments will use that.\n\nyou could instead update this section with references of how to run keystone with eventlet and under http in both ubuntu and fedora",
+      "revId": "24d2651d409d0ecb18862e75e14ba5ca5ebc7722",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8580d947",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-01T01:50:10Z",
+      "side": 1,
+      "message": "i dont think you want to refer end-users to notes on how to develop new keystone features.",
+      "revId": "24d2651d409d0ecb18862e75e14ba5ca5ebc7722",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
