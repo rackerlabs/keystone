@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_3fb20e4d",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1539,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-01T18:17:56Z",
+      "side": 1,
+      "message": "are we good with this? \n\n    \u003e original_expiration\n    u\u00272015-06-29T17:25:52.853542Z\u0027\n    \u003e original_expiration[:original_expiration.find(\u0027.\u0027)]\n    u\u00272015-06-29T17:25:52\u0027",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
