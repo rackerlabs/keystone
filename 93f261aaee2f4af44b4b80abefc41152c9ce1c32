@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_306b2df3",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-01T14:10:51Z",
+      "side": 1,
+      "message": "did you try to run this in a not English env? Tests should not be translated, but we never know :)",
+      "revId": "93f261aaee2f4af44b4b80abefc41152c9ce1c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
