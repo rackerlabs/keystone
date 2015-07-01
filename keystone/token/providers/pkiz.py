@@ -46,12 +46,8 @@ class Provider(common.BaseProvider):
             LOG.exception(ERROR_MESSAGE)
             raise exception.UnexpectedError(ERROR_MESSAGE)
 
-    @property
-    def _supports_bind_authentication(self):
-        """Return if the token provider supports bind authentication methods.
-
-        :returns: True
-        """
+    def _supports_bind(self):
+        """Determine if bind authentication is supported by the provider."""
         return True
 
     def needs_persistence(self):
