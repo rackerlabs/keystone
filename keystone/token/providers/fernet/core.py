@@ -169,9 +169,9 @@ class Provider(common.BaseProvider):
                                                  federated_info=federated_info)
 
     @property
-    def _supports_bind_authentication(self):
-        """Return if the token provider supports bind authentication methods.
+    def _supports_bind(self):
+        """The Fernet token provider doesn't support bind authentication.
 
-        :returns: False
+        :raises keystone.exception.NotImplemented:
         """
-        return False
+        raise exception.NotImplemented()
