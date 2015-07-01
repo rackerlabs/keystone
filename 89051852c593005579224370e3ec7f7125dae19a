@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_627c7d1f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4036,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-01T18:49:56Z",
+      "side": 1,
+      "message": "yeah wtf? :)",
+      "parentUuid": "ba3cc151_5fdd926d",
+      "revId": "89051852c593005579224370e3ec7f7125dae19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_df6522b5",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 8
@@ -30,6 +48,41 @@
       "writtenOn": "2015-07-01T18:20:11Z",
       "side": 1,
       "message": "suggest moving this down a layer, if you use an @property you could make the @property raise notImplemented. the @property can also be an @abstractproperty on the base class.",
+      "revId": "89051852c593005579224370e3ec7f7125dae19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c239c9a5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-01T18:49:56Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba3cc151_df6522b5",
+      "revId": "89051852c593005579224370e3ec7f7125dae19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_62f9ddc6",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-01T18:49:56Z",
+      "side": 1,
+      "message": "why not token_data[\u0027token\u0027][\u0027user\u0027][\u0027id\u0027]? Isn\u0027t user ID mandatory?",
       "revId": "89051852c593005579224370e3ec7f7125dae19a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
