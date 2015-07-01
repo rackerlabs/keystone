@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e93e388b",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-01T17:35:34Z",
+      "side": 1,
+      "message": "This space is necessary to keep the imports divided up correctly.",
+      "parentUuid": "ba3cc151_499964c3",
+      "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_298c207e",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 6
