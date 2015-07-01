@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ea74fb68",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-01T12:50:33Z",
+      "side": 0,
+      "message": "the old value needs to still work.",
+      "revId": "9bf9d278cb7dfb4408499a3d8b5f88a33ef4a58e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
