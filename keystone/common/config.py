@@ -26,7 +26,7 @@ FILE_OPTIONS = {
     None: [
         cfg.StrOpt('admin_token', secret=True, default='ADMIN',
                    help='A "shared secret" that can be used to bootstrap '
-                        'Keystone. This "token" does not represent a user, '
+                        'Kestone. This "token" does not represent a user, '
                         'and carries no explicit authorization. To disable '
                         'in production (highly recommended), remove '
                         'AdminTokenAuthMiddleware from your paste '

@@ -4,7 +4,7 @@
 # From keystone
 #
 
-# A "shared secret" that can be used to bootstrap Keystone. This "token" does
+# A "shared secret" that can be used to bootstrap Kestone. This "token" does
 # not represent a user, and carries no explicit authorization. To disable in
 # production (highly recommended), remove AdminTokenAuthMiddleware from your
 # paste application pipelines (for example, in keystone-paste.ini). (string
