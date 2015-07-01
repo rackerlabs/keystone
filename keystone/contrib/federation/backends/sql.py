@@ -185,18 +185,18 @@ class Federation(core.Driver):
             raise exception.IdentityProviderNotFound(idp_id=remote_id)
 
     def list_idps(self):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             idps = session.query(IdentityProviderModel)
         idps_list = [idp.to_dict() for idp in idps]
         return idps_list
 
     def get_idp(self, idp_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             idp_ref = self._get_idp(session, idp_id)
         return idp_ref.to_dict()
 
     def get_idp_from_remote_id(self, remote_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             ref = self._get_idp_from_remote_id(session, remote_id)
         return ref.to_dict()
 
@@ -242,12 +242,12 @@ class Federation(core.Driver):
         return proto_ref.to_dict()
 
     def get_protocol(self, idp_id, protocol_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             protocol_ref = self._get_protocol(session, idp_id, protocol_id)
         return protocol_ref.to_dict()
 
     def list_protocols(self, idp_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             q = session.query(FederationProtocolModel)
             q = q.filter_by(idp_id=idp_id)
         protocols = [protocol.to_dict() for protocol in q]
@@ -286,12 +286,12 @@ class Federation(core.Driver):
             session.delete(mapping_ref)
 
     def list_mappings(self):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             mappings = session.query(MappingModel)
         return [x.to_dict() for x in mappings]
 
     def get_mapping(self, mapping_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             mapping_ref = self._get_mapping(session, mapping_id)
         return mapping_ref.to_dict()
 
@@ -310,7 +310,7 @@ class Federation(core.Driver):
         return mapping_ref.to_dict()
 
     def get_mapping_from_idp_and_protocol(self, idp_id, protocol_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             protocol_ref = self._get_protocol(session, idp_id, protocol_id)
             mapping_id = protocol_ref.mapping_id
             mapping_ref = self._get_mapping(session, mapping_id)
@@ -337,13 +337,13 @@ class Federation(core.Driver):
         return sp_ref
 
     def list_sps(self):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             sps = session.query(ServiceProviderModel)
         sps_list = [sp.to_dict() for sp in sps]
         return sps_list
 
     def get_sp(self, sp_id):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             sp_ref = self._get_sp(session, sp_id)
         return sp_ref.to_dict()
 
@@ -358,7 +358,7 @@ class Federation(core.Driver):
         return sp_ref.to_dict()
 
     def get_enabled_service_providers(self):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             service_providers = session.query(ServiceProviderModel)
             service_providers = service_providers.filter_by(enabled=True)
         return service_providers

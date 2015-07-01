@@ -88,7 +88,7 @@ class Token(token.persistence.Driver):
     def get_token(self, token_id):
         if token_id is None:
             raise exception.TokenNotFound(token_id=token_id)
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         token_ref = session.query(TokenModel).get(token_id)
         if not token_ref or not token_ref.valid:
             raise exception.TokenNotFound(token_id=token_id)
@@ -169,7 +169,7 @@ class Token(token.persistence.Driver):
                 return False
 
     def _list_tokens_for_trust(self, trust_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -183,7 +183,7 @@ class Token(token.persistence.Driver):
         return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -199,7 +199,7 @@ class Token(token.persistence.Driver):
 
     def _list_tokens_for_consumer(self, user_id, consumer_id):
         tokens = []
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         with session.begin():
             now = timeutils.utcnow()
             query = session.query(TokenModel)
@@ -225,7 +225,7 @@ class Token(token.persistence.Driver):
             return self._list_tokens_for_user(user_id, tenant_id)
 
     def list_revoked_tokens(self):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel.id, TokenModel.expires)

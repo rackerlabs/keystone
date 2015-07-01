@@ -184,18 +184,20 @@ def cleanup():
     _engine_facade = None
 
 
-def get_engine():
-    return _get_engine_facade().get_engine()
+def get_engine(use_slave=False):
+    return _get_engine_facade().get_engine(use_slave=use_slave)
 
 
-def get_session(expire_on_commit=False):
-    return _get_engine_facade().get_session(expire_on_commit=expire_on_commit)
+def get_session(expire_on_commit=False, use_slave=False):
+    return _get_engine_facade().get_session(expire_on_commit=expire_on_commit,
+                                            use_slave=use_slave)
 
 
 @contextlib.contextmanager
-def transaction(expire_on_commit=False):
+def transaction(expire_on_commit=False, use_slave=False):
     """Return a SQLAlchemy session in a scoped transaction."""
-    session = get_session(expire_on_commit=expire_on_commit)
+    session = get_session(expire_on_commit=expire_on_commit,
+                          use_slave=use_slave)
     with session.begin():
         yield session
 
