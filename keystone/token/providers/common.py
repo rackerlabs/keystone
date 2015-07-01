@@ -478,8 +478,12 @@ class BaseProvider(provider.Provider):
 
     def issue_v2_token(self, token_ref, roles_ref=None,
                        catalog_ref=None):
-        if token_ref.get('bind') and not self._supports_bind_authentication:
-            raise exception.NotImplemented()
+        if token_ref.get('bind'):
+            # NOTE(lbragstad): Check to make sure the token provider being used
+            # actually supports bind authentication. If it doesn't, a
+            # NotImplemented exception will be raised by the provider's
+            # _supports_bind() method.
+            self._supports_bind
 
         metadata_ref = token_ref['metadata']
         trust_ref = None

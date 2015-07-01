@@ -19,8 +19,10 @@ class TestUuidTokenProvider(tests.TestCase):
         super(TestUuidTokenProvider, self).setUp()
         self.provider = uuid.Provider()
 
-    def test_supports_bind_authentication_returns_true(self):
-        self.assertTrue(self.provider._supports_bind_authentication)
+    def test_supports_bind_authentication_does_not_raise_not_implemented(self):
+        # NOTE(lbragstad): This shouldn't raise a NotImplemented error since
+        # the UUID token provider support bind authentication.
+        self.provider._supports_bind
 
     def test_need_persistence_return_true(self):
         self.assertTrue(self.provider.needs_persistence)
