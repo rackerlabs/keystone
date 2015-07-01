@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_134aa1ac",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T20:33:47Z",
+      "side": 1,
+      "message": "this should be grouped with testtools since they are both third-party, but i don\u0027t think it is needed. See below.",
+      "parentUuid": "ba3cc151_e93e388b",
+      "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_298c207e",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 6
@@ -48,6 +66,75 @@
       "writtenOn": "2015-07-01T17:33:47Z",
       "side": 1,
       "message": "Your notes should be more specific",
+      "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f3fa9d42",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T20:33:47Z",
+      "side": 1,
+      "message": "this is OK since it is a common pattern in this file",
+      "parentUuid": "ba3cc151_298c207e",
+      "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6c430f43",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T20:33:47Z",
+      "side": 1,
+      "message": "If you get the endpoint out of the previous POST you don\u0027t even need this block at all.",
+      "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2c1bc774",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T20:33:47Z",
+      "side": 1,
+      "message": "You could also shorted this line I describe below and it would fit on one line and not be any less readable.",
+      "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0e2b5a95",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T20:33:47Z",
+      "side": 1,
+      "message": "You don\u0027t have to do a try-except here. The self.get() method takes an expected status so you can tell it to expect a 404. Lines 654-663 can be replaced with:\n\nself.get(\u0027/endpoints/%s\u0027 % endpoint_v3[\u0027id\u0027], expected_status\u003d404)\n\n* no need for \u0027r \u003d \u0027 since we don\u0027t use it\n* i prefer %s over %(name)s when there is only 1 thing",
       "revId": "1cc95817066dace80dd70c2eed866d97436dc145",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
