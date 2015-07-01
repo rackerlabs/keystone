@@ -24,7 +24,7 @@ _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
 
 FILE_OPTIONS = {
     None: [
-        cfg.StrOpt('admin_token', secret=True, default='ADMIN',
+        cfg.StrOpt('admn_token', secret=True, default='ADMIN',
                    help='A "shared secret" that can be used to bootstrap '
                         'Keystone. This "token" does not represent a user, '
                         'and carries no explicit authorization. To disable '
