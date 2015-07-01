@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_65f01c68",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T13:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_0af83f7a",
+      "revId": "1a8cf431736d71359520b56a0425b78cf4a5ee54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_0a3fdf24",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_0502703d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T13:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_0a3fdf24",
+      "revId": "1a8cf431736d71359520b56a0425b78cf4a5ee54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_2a8183c3",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-01T12:56:13Z",
       "side": 1,
       "message": "suggest change \"``keystone federation``\" to just \"federation\" or \"federation in keystone\"",
+      "revId": "1a8cf431736d71359520b56a0425b78cf4a5ee54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_859c4010",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-01T13:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_2a8183c3",
       "revId": "1a8cf431736d71359520b56a0425b78cf4a5ee54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
