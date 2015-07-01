@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_826c21d1",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-01T18:38:37Z",
+      "side": 1,
+      "message": "This test may need to refactor when we decided to disallow rescoping using a scoped token. There were security concerns with rescoping using a scoped token.\n\nMay want to consider change recoping from an unscoped token to reflect the real world use case.",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_3fb20e4d",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 3
