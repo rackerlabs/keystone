@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_c0069a1b",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T22:06:55Z",
+      "side": 1,
+      "message": "Should this be a subheading?",
+      "revId": "997a60a3bf1428f310fc4cbd64239de79aaec756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_40328af3",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T22:06:55Z",
+      "side": 1,
+      "message": "caps like this won\u0027t work and is there a reason why you changed the command? this is assuming that the package has been installed on the system or that they already have a venv created.",
+      "revId": "997a60a3bf1428f310fc4cbd64239de79aaec756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a0127655",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T22:06:55Z",
+      "side": 1,
+      "message": "...along with this one",
+      "revId": "997a60a3bf1428f310fc4cbd64239de79aaec756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0076c2a3",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T22:06:55Z",
+      "side": 1,
+      "message": "You can\u0027t do this before you run line 89 below. Or are you having them run keystone-all first, then do all this stuff?",
+      "revId": "997a60a3bf1428f310fc4cbd64239de79aaec756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
