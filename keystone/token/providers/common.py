@@ -637,6 +637,23 @@ class BaseProvider(provider.Provider):
 
     def validate_v2_token(self, token_ref):
         try:
+            if (not self.needs_persistence() and
+                    hasattr(self, 'token_formatter')):
+                (user_id, methods, audit_ids, domain_id, project_id, trust_id,
+                    federated_info, created_at, expires_at) = (
+                        self.token_formatter.validate_token(token_ref))
+                v3_token_data = self.v3_token_data_helper.get_token_data(
+                    user_id,
+                    methods,
+                    project_id=project_id,
+                    expires=expires_at,
+                    include_catalog=False,
+                    audit_info=audit_ids)
+                token_data = self.v2_token_data_helper.v3_to_v2_token(
+                    token_ref, v3_token_data)['access']['token']
+                return token_data
+
+
             self._assert_is_not_federation_token(token_ref)
             self._assert_default_domain(token_ref)
             # FIXME(gyee): performance or correctness? Should we return the

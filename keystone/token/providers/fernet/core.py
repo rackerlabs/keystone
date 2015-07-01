@@ -83,38 +83,6 @@ class Provider(common.BaseProvider):
         token_dict['user']['name'] = user_id
         return token_dict
 
-    # FIXME(lbragstad): Consolidate this into BaseProvider.validate_v2_token()
-    def validate_v2_token(self, token_ref):
-        """Validate a V2 formatted token.
-
-        :param token_ref: reference describing the token to validate
-        :returns: the token data
-        :raises keystone.exception.Unauthorized: if v3 token is used
-
-        """
-        (user_id, methods,
-         audit_ids, domain_id,
-         project_id, trust_id,
-         federated_info, created_at,
-         expires_at) = self.token_formatter.validate_token(token_ref)
-
-        if trust_id or domain_id or federated_info:
-            msg = _('This is not a v2.0 Fernet token. Use v3 for trust, '
-                    'domain, or federated tokens.')
-            raise exception.Unauthorized(msg)
-
-        v3_token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            methods,
-            project_id=project_id,
-            expires=expires_at,
-            issued_at=created_at,
-            token=token_ref,
-            include_catalog=False,
-            audit_info=audit_ids)
-        return self.v2_token_data_helper.v3_to_v2_token(token_ref,
-                                                        v3_token_data)
-
     def _extract_v2_token_data(self, token_data):
         user_id = token_data['access']['user']['id']
         expires_at = token_data['access']['token']['expires']
