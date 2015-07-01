@@ -16,6 +16,24 @@
       "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_caa57747",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-01T12:58:03Z",
+      "side": 1,
+      "message": "I could put that in a separate commit since this is how the code worked to begin with... also, I\u0027m not sure what to do in the case of an exception here other than to abort.",
+      "parentUuid": "ba3cc151_01926f57",
+      "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
