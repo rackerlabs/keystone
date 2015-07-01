@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_51137766",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T00:09:33Z",
+      "side": 1,
+      "message": "revert this unrelated whitespace change",
+      "revId": "8af6b6ec28c519ab177f9b86a2ec98d61c7e5502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_11272fcb",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T00:09:33Z",
+      "side": 1,
+      "message": "Why?",
+      "revId": "8af6b6ec28c519ab177f9b86a2ec98d61c7e5502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_94832d56",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T00:09:33Z",
+      "side": 1,
+      "message": "what is the point of this block? to test that the above operation failed?",
+      "revId": "8af6b6ec28c519ab177f9b86a2ec98d61c7e5502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3410214e",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T00:09:33Z",
+      "side": 1,
+      "message": "extra newline here",
+      "revId": "8af6b6ec28c519ab177f9b86a2ec98d61c7e5502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_34aca1ec",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T00:09:33Z",
+      "side": 1,
+      "message": "if you follow the suggestion below you don\u0027t need this block at all",
+      "revId": "8af6b6ec28c519ab177f9b86a2ec98d61c7e5502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f45e3911",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-01T00:09:33Z",
+      "side": 1,
+      "message": "Instead of counting the endpoints why not \u0027GET\u0027 the one you just deleted. Then you don\u0027t need lines 665-669 at all.",
+      "revId": "8af6b6ec28c519ab177f9b86a2ec98d61c7e5502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
