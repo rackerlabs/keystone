@@ -90,7 +90,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 class Catalog(catalog.Driver):
     # Regions
     def list_regions(self, hints):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         regions = session.query(Region)
         regions = sql.filter_limit_query(Region, regions, hints)
         return [s.to_dict() for s in list(regions)]
@@ -142,7 +142,7 @@ class Catalog(catalog.Driver):
         return False
 
     def get_region(self, region_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         return self._get_region(session, region_id).to_dict()
 
     def delete_region(self, region_id):
@@ -180,7 +180,7 @@ class Catalog(catalog.Driver):
     # Services
     @sql.truncated
     def list_services(self, hints):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         services = session.query(Service)
         services = sql.filter_limit_query(Service, services, hints)
         return [s.to_dict() for s in list(services)]
@@ -192,7 +192,7 @@ class Catalog(catalog.Driver):
         return ref
 
     def get_service(self, service_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         return self._get_service(session, service_id).to_dict()
 
     def delete_service(self, service_id):
@@ -244,12 +244,12 @@ class Catalog(catalog.Driver):
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
     def get_endpoint(self, endpoint_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         return self._get_endpoint(session, endpoint_id).to_dict()
 
     @sql.truncated
     def list_endpoints(self, hints):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         endpoints = session.query(Endpoint)
         endpoints = sql.filter_limit_query(Endpoint, endpoints, hints)
         return [e.to_dict() for e in list(endpoints)]
@@ -293,7 +293,7 @@ class Catalog(catalog.Driver):
         else:
             silent_keyerror_failures = ['tenant_id']
 
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         endpoints = (session.query(Endpoint).
                      options(sql.joinedload(Endpoint.service)).
                      filter(Endpoint.enabled == true()).all())
@@ -351,7 +351,7 @@ class Catalog(catalog.Driver):
         else:
             silent_keyerror_failures = ['tenant_id']
 
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         services = (session.query(Service).filter(Service.enabled == true()).
                     options(sql.joinedload(Service.endpoints)).
                     all())

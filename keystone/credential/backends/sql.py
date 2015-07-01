@@ -43,14 +43,14 @@ class Credential(credential.Driver):
 
     @sql.truncated
     def list_credentials(self, hints):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         credentials = session.query(CredentialModel)
         credentials = sql.filter_limit_query(CredentialModel,
                                              credentials, hints)
         return [s.to_dict() for s in credentials]
 
     def list_credentials_for_user(self, user_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         query = session.query(CredentialModel)
         refs = query.filter_by(user_id=user_id).all()
         return [ref.to_dict() for ref in refs]
@@ -62,7 +62,7 @@ class Credential(credential.Driver):
         return ref
 
     def get_credential(self, credential_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         return self._get_credential(session, credential_id).to_dict()
 
     @sql.handle_conflicts(conflict_type='credential')

@@ -152,13 +152,13 @@ class Trust(trust.Driver):
 
     @sql.handle_conflicts(conflict_type='trust')
     def list_trusts(self):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         trusts = session.query(TrustModel).filter_by(deleted_at=None)
         return [trust_ref.to_dict() for trust_ref in trusts]
 
     @sql.handle_conflicts(conflict_type='trust')
     def list_trusts_for_trustee(self, trustee_user_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         trusts = (session.query(TrustModel).
                   filter_by(deleted_at=None).
                   filter_by(trustee_user_id=trustee_user_id))
@@ -166,7 +166,7 @@ class Trust(trust.Driver):
 
     @sql.handle_conflicts(conflict_type='trust')
     def list_trusts_for_trustor(self, trustor_user_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         trusts = (session.query(TrustModel).
                   filter_by(deleted_at=None).
                   filter_by(trustor_user_id=trustor_user_id))

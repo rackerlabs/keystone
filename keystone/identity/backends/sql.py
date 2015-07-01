@@ -96,7 +96,7 @@ class Identity(identity.Driver):
 
     # Identity interface
     def authenticate(self, user_id, password):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         user_ref = None
         try:
             user_ref = self._get_user(session, user_id)
@@ -119,7 +119,7 @@ class Identity(identity.Driver):
 
     @sql.truncated
     def list_users(self, hints):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         query = session.query(User)
         user_refs = sql.filter_limit_query(User, query, hints)
         return [identity.filter_user(x.to_dict()) for x in user_refs]
@@ -131,11 +131,11 @@ class Identity(identity.Driver):
         return user_ref
 
     def get_user(self, user_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         return identity.filter_user(self._get_user(session, user_id).to_dict())
 
     def get_user_by_name(self, user_name, domain_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         query = session.query(User)
         query = query.filter_by(name=user_name)
         query = query.filter_by(domain_id=domain_id)
@@ -178,7 +178,7 @@ class Identity(identity.Driver):
                                             group_id=group_id))
 
     def check_user_in_group(self, user_id, group_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         self.get_group(group_id)
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
@@ -216,7 +216,7 @@ class Identity(identity.Driver):
         # occurrence to filter on more than the user_id already being used
         # here, this is left as future enhancement and until then we leave
         # it for the controller to do for us.
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         self.get_user(user_id)
         query = session.query(Group).join(UserGroupMembership)
         query = query.filter(UserGroupMembership.user_id == user_id)
@@ -228,7 +228,7 @@ class Identity(identity.Driver):
         # occurrence to filter on more than the group_id already being used
         # here, this is left as future enhancement and until then we leave
         # it for the controller to do for us.
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         self.get_group(group_id)
         query = session.query(User).join(UserGroupMembership)
         query = query.filter(UserGroupMembership.group_id == group_id)
@@ -259,7 +259,7 @@ class Identity(identity.Driver):
 
     @sql.truncated
     def list_groups(self, hints):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         query = session.query(Group)
         refs = sql.filter_limit_query(Group, query, hints)
         return [ref.to_dict() for ref in refs]
@@ -271,11 +271,11 @@ class Identity(identity.Driver):
         return ref
 
     def get_group(self, group_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         return self._get_group(session, group_id).to_dict()
 
     def get_group_by_name(self, group_name, domain_id):
-        session = sql.get_session()
+        session = sql.get_session(use_slave=True)
         query = session.query(Group)
         query = query.filter_by(name=group_name)
         query = query.filter_by(domain_id=domain_id)

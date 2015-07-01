@@ -74,14 +74,14 @@ class DomainConfig(resource.DomainConfigDriver):
         return ref
 
     def get_config_option(self, domain_id, group, option, sensitive=False):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             ref = self._get_config_option(session, domain_id, group, option,
                                           sensitive)
         return ref.to_dict()
 
     def list_config_options(self, domain_id, group=None, option=None,
                             sensitive=False):
-        with sql.transaction() as session:
+        with sql.transaction(use_slave=True) as session:
             config_table = self.choose_table(sensitive)
             query = session.query(config_table)
             query = query.filter_by(domain_id=domain_id)
