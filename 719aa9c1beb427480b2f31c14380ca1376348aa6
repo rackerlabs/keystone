@@ -16,6 +16,24 @@
       "revId": "719aa9c1beb427480b2f31c14380ca1376348aa6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ba2ef789",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 14867
+      },
+      "writtenOn": "2015-07-02T17:12:50Z",
+      "side": 1,
+      "message": "Yes , you are right we could you that. Kindly confirm the change :\n\n{code}\n\ndef assertRaisesRegex(self, expected_exception, expected_regexp,callable_obj, *args, **kwargs):\n\n   six.assertRaisesRegex(self, expected_exception,\nexpected_regexp, callable_obj, *args, **kwargs)\n\n{code}\n\nRight ?",
+      "parentUuid": "ba3cc151_6e0d46e7",
+      "revId": "719aa9c1beb427480b2f31c14380ca1376348aa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
