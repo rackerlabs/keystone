@@ -16,6 +16,24 @@
       "revId": "5945b786f7dea9240644e0185865d1c875457167",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1d0efde4",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-02T17:12:39Z",
+      "side": 1,
+      "message": "++\nit should be in oslo",
+      "parentUuid": "ba3cc151_985a5029",
+      "revId": "5945b786f7dea9240644e0185865d1c875457167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
