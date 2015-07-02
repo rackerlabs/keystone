@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_260c5740",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-02T00:23:03Z",
+      "side": 1,
+      "message": "might give some hint that admin token is in use?",
+      "revId": "8d9b57eb476fb30a260077f277b446d3546584c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_05eee6b3",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-02T00:23:03Z",
+      "side": 1,
+      "message": "Good catch, :)",
+      "revId": "8d9b57eb476fb30a260077f277b446d3546584c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
