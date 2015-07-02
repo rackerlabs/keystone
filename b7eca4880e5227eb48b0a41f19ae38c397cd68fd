@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_95a179fa",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-02T21:45:59Z",
+      "side": 1,
+      "message": "these are v2 specific, right? For v3 we only care about endpoint[\u0027url\u0027], right? \n\nhttps://github.com/openstack/keystone/blob/0d84009c0cfa07219730973160422bb7cb898f17/keystone/catalog/schema.py#L83\n\nIt looks like the regular expression we use for url validation doesn\u0027t catch spaces\n\nhttp://cdn.pasteraw.com/64dxhtndsbjut7q87gc0aucjqhr0vq3\n\nI wonder if we should include a regular expression for url validation that doesn\u0027t allow for the creation of urls with spaces in the string?",
+      "revId": "b7eca4880e5227eb48b0a41f19ae38c397cd68fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
