@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_081b24cb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-02T15:43:59Z",
+      "side": 1,
+      "message": "Same as in ps12.",
+      "parentUuid": "ba3cc151_8788a1c6",
+      "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_c7ea2974",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-02T03:07:10Z",
       "side": 1,
       "message": "`UserName`",
+      "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c80bfcd4",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-02T15:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_c7ea2974",
       "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e88fe072",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-02T15:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_27a8b51f",
+      "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_47a5b944",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 13
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a850f80b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-02T15:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_47a5b944",
+      "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_076a51ee",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 13
@@ -81,6 +153,24 @@
       "writtenOn": "2015-07-02T03:07:10Z",
       "side": 1,
       "message": "code-block: javascript",
+      "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c82c5c9b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-02T15:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_076a51ee",
       "revId": "7959536226e361f83664ccb5109a2cbb03b92d09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
