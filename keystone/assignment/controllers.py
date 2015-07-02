@@ -288,7 +288,10 @@ class RoleV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.role_create, 'role')
-    def create_role(self, context, role):
+    def create_role(self, context, role=None):
+        if not role:
+            raise exception.ValidationError(attribute='role',
+                                            target='request body')
         if role['name'] == CONF.member_role_name:
             # Use the configured member role ID when creating the configured
             # member role name. This avoids the potential of creating a
@@ -317,7 +320,10 @@ class RoleV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.role_update, 'role')
-    def update_role(self, context, role_id, role):
+    def update_role(self, context, role_id, role=None):
+        if not role:
+            raise exception.ValidationError(attribute='role',
+                                            target='request body')
         self._require_matching_id(role_id, role)
         initiator = notifications._get_request_audit_info(context)
         ref = self.role_api.update_role(role_id, role, initiator)

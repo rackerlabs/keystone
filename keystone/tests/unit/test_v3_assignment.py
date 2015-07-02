@@ -17,6 +17,7 @@ from oslo_config import cfg
 import six
 from six.moves import range
 
+from keystone import assignment as keystone_assignment
 from keystone.common import controller
 from keystone import exception
 from keystone import resource
@@ -1165,6 +1166,33 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``POST /roles``."""
         self.post('/roles', body={'role': {}}, expected_status=400)
 
+    def test_create_role_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = keystone_assignment.controllers.RoleV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_role,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *role* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find role in request body',
+            six.text_type(e))
+
+    def test_create_role_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = keystone_assignment.controllers.RoleV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_role,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *role* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find role in request body',
+            six.text_type(e))
+
     def test_list_roles(self):
         """Call ``GET /roles``."""
         resource_url = '/roles'
@@ -1186,6 +1214,35 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             'role_id': self.role_id},
             body={'role': ref})
         self.assertValidRoleResponse(r, ref)
+
+    def test_update_role_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = keystone_assignment.controllers.RoleV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_role,
+                              dict(is_admin=True),
+                              self.role_id)
+
+        # explicitly verify that the error message shows that *role* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find role in request body',
+            six.text_type(e))
+
+    def test_update_role_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = keystone_assignment.controllers.RoleV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_role,
+                              dict(is_admin=True),
+                              self.role_id,
+                              {})
+
+        # explicitly verify that the error message shows that *role* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find role in request body',
+            six.text_type(e))
 
     def test_delete_role(self):
         """Call ``DELETE /roles/{role_id}``."""
