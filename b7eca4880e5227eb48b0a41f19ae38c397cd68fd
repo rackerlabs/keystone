@@ -16,6 +16,24 @@
       "revId": "b7eca4880e5227eb48b0a41f19ae38c397cd68fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5500d165",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-02T21:59:07Z",
+      "side": 1,
+      "message": "Yes those are v2-specific. I add a space for good measure. Suppressing spaces in URLs would be a good idea, but it\u0027s beyond the scope of this patch. I can submit that as a wishlist.",
+      "parentUuid": "ba3cc151_95a179fa",
+      "revId": "b7eca4880e5227eb48b0a41f19ae38c397cd68fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
