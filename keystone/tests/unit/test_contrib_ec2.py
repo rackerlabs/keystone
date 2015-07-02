@@ -193,3 +193,13 @@ class TestCredentialEc2(tests.TestCase):
         self.assertRaises(exception.Unauthorized,
                           self.controller.check_signature,
                           creds_ref, sig_ref)
+
+    def test_check_non_admin_user(self):
+        """Checking a user's ec2 credentials causes
+            an uncaught error if he/she is not an admin."""
+        # make a non-admin user
+        user = {'is_admin': False, 'token_id': uuid.uuid4().hex}
+
+        # see if keystone.exception.Unauthorized is raised
+        # when checking if the non-admin user is an admin
+        self.controller._is_admin(user)
