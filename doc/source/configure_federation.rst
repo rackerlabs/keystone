@@ -56,14 +56,16 @@ To enable federation, you'll need to:
 Configure Apache to use a federation capable authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are many ways to configure Federation in the Apache HTTPD server.
-Using Shibboleth and OpenID Connect are documented so far.
+There are many ways to configure Federation in the Apache HTTPD server.  Using
+Shibboleth, OpenID Connect, and mod_auth_mellon are documented so far.
 
 * To use Shibboleth, follow the steps outlined at: `Setup Shibboleth`_.
 * To use OpenID Connect, follow the steps outlined at: `Setup OpenID Connect`_.
+* To use mod_auth_mellon, follow the steps outlined at: `Setup mod_auth_mellon`_.
 
 .. _`Setup Shibboleth`: federation/shibboleth.html
 .. _`Setup OpenID Connect`: federation/openidc.html
+.. _`Setup mod_auth_mellon`: federation/mellon.html
 
 Configure keystone and Horizon for Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
