@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_fdad59e9",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 16975
+      },
+      "writtenOn": "2015-07-02T17:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_1e1b5acb",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_5e6c8234",
         "filename": "doc/source/installing.rst",
         "patchSetId": 9
@@ -132,6 +150,24 @@
       "writtenOn": "2015-07-02T16:26:09Z",
       "side": 1,
       "message": "i don\u0027t think you want to tell people reading installing.rst (end users) to refer to developing.rst (for developers)",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ddb2d54b",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 16975
+      },
+      "writtenOn": "2015-07-02T17:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_5e6c8234",
       "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
