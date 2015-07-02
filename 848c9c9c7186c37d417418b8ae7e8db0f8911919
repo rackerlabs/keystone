@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_254c239d",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-02T09:54:32Z",
+      "side": 1,
+      "message": "silly mistake here, it should be kwargs.get(resource_to_validate) instead, but this impact a lot of existing testcase as well.",
+      "revId": "848c9c9c7186c37d417418b8ae7e8db0f8911919",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
