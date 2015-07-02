@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_f9e490ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "The summary line should be 50 characters or less: https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_199a946e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "This is not true. It is absoluting installed when Keystone is installed. The bin/keystone-all script was removed from the codebase in favor of using entry points, but the functionality is very much still available. In fact it won\u0027t be removed until at least M.",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_be982e1d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "have you actually tried this? what keystone-all does it use? right now since you are not activating the environment it won\u0027t use the one from the venv you just created.",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_7e43866c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "we have a place (apache-httpd.rst) for this. if you think that is lacking you should submit a separate review to update that doc.",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1e011a06",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "revert extra whitespace",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_b99e08b7",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "We still need to provide an example of how to do this even if the command is different.",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1e1b5acb",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "You\u0027re missing keystone-all and you should not mention devstack here at all.",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5e6c8234",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-02T16:26:09Z",
+      "side": 1,
+      "message": "i don\u0027t think you want to tell people reading installing.rst (end users) to refer to developing.rst (for developers)",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
