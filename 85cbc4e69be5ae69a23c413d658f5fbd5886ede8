@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_0219dfd6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-02T03:47:00Z",
+      "side": 1,
+      "message": "what\u0027s admin/auth means here? thinking it should be admin instead.",
+      "revId": "85cbc4e69be5ae69a23c413d658f5fbd5886ede8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e27abbf0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-02T03:47:00Z",
+      "side": 1,
+      "message": "d/`a`",
+      "revId": "85cbc4e69be5ae69a23c413d658f5fbd5886ede8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_22f0a390",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-02T03:47:00Z",
+      "side": 1,
+      "message": "suggest to assert the endpoint has been added successfully here, then we can safely fetch the value from the response, and it will be more clear that the endpoints could be indeed added to DB, and thus prove your comments in that bug is correct.",
+      "revId": "85cbc4e69be5ae69a23c413d658f5fbd5886ede8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
