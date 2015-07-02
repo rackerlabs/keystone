@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_c5bc45bd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-02T15:29:44Z",
+      "side": 0,
+      "message": "This documentation should instead be moved into admin token middleware. Have it log a warning if it\u0027s in the paste pipeline.",
+      "revId": "ffa15c9e4933e93bae5d45886a70ce45e4d99bdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

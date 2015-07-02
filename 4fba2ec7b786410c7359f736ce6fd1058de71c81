@@ -34,6 +34,57 @@
       "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e5b8692c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-02T15:29:44Z",
+      "side": 1,
+      "message": "we can\u0027t break a customer\u0027s paste.ini on upgrades without the normal deprecation period.\n\nwhile I don\u0027t agree with the reasoning I agree with the change since it\u0027ll provide for better security since it will be harder to do the wrong thing here.",
+      "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_85007d67",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-02T15:29:44Z",
+      "side": 1,
+      "message": "I think we should treat an empty string same as leaving it unset since that would be safer. Change \"CONF.admin_token is not None\" to \"CONF.admin_token\"\n\nAlso, this function should just return if CONF.admin_token isn\u0027t set since that would be more efficient.\n\n if not CONF.admin_token:\n     return",
+      "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a5ca6119",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-02T15:29:44Z",
+      "side": 1,
+      "message": "this line is correct but AuthContextMiddleware is wrong... it should be checking checking context.get(\u0027is_admin\u0027, False) rather than checking the token is the admin token again.",
+      "revId": "4fba2ec7b786410c7359f736ce6fd1058de71c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
