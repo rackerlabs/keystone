@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_d5cfef26",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-07-03T09:56:39Z",
+      "side": 1,
+      "message": "IMO you should rephrase the paragraph as below (because here \u0027We\u0027 can be interpreted for normal user as well):\n\nAdmin should not be able to create user using admin_token since it is not a domain-scoped token.",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
