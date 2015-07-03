@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_0303d00e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-03T16:30:43Z",
+      "side": 1,
+      "message": "Actually there are two % ...",
+      "parentUuid": "ba3cc151_00674626",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_004e6696",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2015-07-03T16:29:28Z",
       "side": 1,
       "message": "This way it will find itself, won\u0027t it ?\nI\u0027d suggest creating a pattern as for query_descendants, it would be like :\n\n    pattern \u003d \"%s%s%\" % (self.DELIMITER, self.path)\n\nMakes sense ?",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_830fe02d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-03T16:30:43Z",
+      "side": 1,
+      "message": "To be consistent with my previous comment ...\n\n    pattern \u003d \"%s%s\" % (self.DELIMITER, self.path)",
+      "parentUuid": "ba3cc151_004e6696",
       "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
