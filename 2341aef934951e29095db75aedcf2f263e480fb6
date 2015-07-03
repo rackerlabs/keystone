@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e13cbde2",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-03T08:23:04Z",
+      "side": 1,
+      "message": "I also don\u0027t know what \"OpenID Connect\" does in this list, but I understand this. \nMaybe we can fix it here and mark this in the commit message?",
+      "parentUuid": "ba3cc151_74a15ef7",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_4bfb4a47",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-03T07:31:05Z",
       "side": 1,
       "message": "why is there a \u0027keystone\u0027 after :5000?",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_412ec9a5",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-03T08:23:04Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba3cc151_4bfb4a47",
       "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
