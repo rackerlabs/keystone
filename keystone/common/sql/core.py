@@ -464,3 +464,46 @@ def handle_conflicts(conflict_type='object'):
 
         return wrapper
     return decorator
+
+
+class MaterializedPathMixin(object):
+    """Materialized path mixin for SQL models.
+
+    Implement tree structure based purely on materialized path concept.
+
+    Adds 'path' text field to the host model.
+    Requires string 'id' field (adjustable) in the host model.
+    Requires string 'parent_id' field (adjustable) in the host model.
+    """
+
+    # These may be overloaded in subclasses to reflect actual column names
+    # and options
+    ID_COLUMN = 'id'
+    PARENT_COLUMN = 'parent_id'
+    DELIMITER = '/'
+    WILDCARD = '%'
+
+    @declarative.declared_attr
+    def __tablename__(cls):
+        return cls.__name__.lower()
+
+    @declarative.declared_attr
+    def path(self):
+        return sql.Column(sql.Text, nullable=False, index=True)
+
+    def query_descendants(self, session):
+        class_ = self.__class__
+        pattern = ''.join((self.path, self.DELIMITER, self.WILDCARD))
+
+        query = session.query(class_)
+        query = query.filter(class_.path.like(pattern)).order_by(class_.path)
+        return query
+
+    def query_ancestors(self, session):
+        class_ = self.__class__
+        id_column = getattr(class_, self.ID_COLUMN)
+        id_set = self.path.split(self.DELIMITER)
+
+        query = session.query(class_)
+        query = query.filter(id_column.in_(id_set)).order_by(class_.path)
+        return query
