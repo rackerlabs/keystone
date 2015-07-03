@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_74a15ef7",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-03T07:31:05Z",
+      "side": 1,
+      "message": "would be nice to use a proper name instead of the module name (mod_auth_mellon), i just don\u0027t know the proper name :)",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4bfb4a47",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-03T07:31:05Z",
+      "side": 1,
+      "message": "why is there a \u0027keystone\u0027 after :5000?",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
