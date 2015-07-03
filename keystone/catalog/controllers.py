@@ -174,7 +174,10 @@ class RegionV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.region_create, 'region')
-    def create_region(self, context, region):
+    def create_region(self, context, region=None):
+        if not region:
+            raise exception.ValidationError(attribute='region',
+                                            target='request body')
         ref = self._normalize_dict(region)
 
         if not ref.get('id'):
@@ -199,7 +202,10 @@ class RegionV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.region_update, 'region')
-    def update_region(self, context, region_id, region):
+    def update_region(self, context, region_id, region=None):
+        if not region:
+            raise exception.ValidationError(attribute='region',
+                                            target='request body')
         self._require_matching_id(region_id, region)
         initiator = notifications._get_request_audit_info(context)
         ref = self.catalog_api.update_region(region_id, region, initiator)
@@ -300,7 +306,10 @@ class EndpointV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.endpoint_create, 'endpoint')
-    def create_endpoint(self, context, endpoint):
+    def create_endpoint(self, context, endpoint=None):
+        if not endpoint:
+            raise exception.ValidationError(attribute='endpoint',
+                                            target='request body')
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
         ref = self._validate_endpoint_region(ref, context)
         initiator = notifications._get_request_audit_info(context)
@@ -320,7 +329,10 @@ class EndpointV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.endpoint_update, 'endpoint')
-    def update_endpoint(self, context, endpoint_id, endpoint):
+    def update_endpoint(self, context, endpoint_id, endpoint=None):
+        if not endpoint:
+            raise exception.ValidationError(attribute='endpoint',
+                                            target='request body')
         self._require_matching_id(endpoint_id, endpoint)
 
         endpoint = self._validate_endpoint_region(endpoint.copy(), context)

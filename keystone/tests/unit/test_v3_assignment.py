@@ -166,6 +166,33 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``POST /domains``."""
         self.post('/domains', body={'domain': {}}, expected_status=400)
 
+    def test_create_domain_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = resource.controllers.DomainV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_domain,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *domain* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find domain in request body',
+            six.text_type(e))
+
+    def test_create_domain_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = resource.controllers.DomainV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_domain,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *domain* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find domain in request body',
+            six.text_type(e))
+
     def test_list_domains(self):
         """Call ``GET /domains``."""
         resource_url = '/domains'
@@ -187,6 +214,35 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain_id},
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+
+    def test_update_domain_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = resource.controllers.DomainV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_domain,
+                              dict(is_admin=True),
+                              self.domain_id)
+
+        # explicitly verify that the error message shows that *domain* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find domain in request body',
+            six.text_type(e))
+
+    def test_update_domain_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = resource.controllers.DomainV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_domain,
+                              dict(is_admin=True),
+                              self.domain_id,
+                              {})
+
+        # explicitly verify that the error message shows that *domain* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find domain in request body',
+            six.text_type(e))
 
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""

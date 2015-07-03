@@ -15,9 +15,11 @@
 import copy
 import uuid
 
+import six
 from testtools import matchers
 
 from keystone import catalog
+from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_v3
@@ -186,6 +188,33 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'region': ref},
             expected_status=400)
 
+    def test_create_region_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = catalog.controllers.RegionV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_region,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *region* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find region in request body',
+            six.text_type(e))
+
+    def test_create_region_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = catalog.controllers.RegionV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_region,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *region* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find region in request body',
+            six.text_type(e))
+
     def test_list_regions(self):
         """Call ``GET /regions``."""
         r = self.get('/regions')
@@ -258,6 +287,35 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         # an empty string before storing in the backend.
         region['description'] = ''
         self.assertValidRegionResponse(r, region)
+
+    def test_update_region_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = catalog.controllers.RegionV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_region,
+                              dict(is_admin=True),
+                              self.region_id)
+
+        # explicitly verify that the error message shows that *region* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find region in request body',
+            six.text_type(e))
+
+    def test_update_region_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = catalog.controllers.RegionV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_region,
+                              dict(is_admin=True),
+                              self.region_id,
+                              {})
+
+        # explicitly verify that the error message shows that *region* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find region in request body',
+            six.text_type(e))
 
     def test_delete_region(self):
         """Call ``DELETE /regions/{region_id}``."""
@@ -498,6 +556,33 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         ref["url"] = ''
         self.post('/endpoints', body={'endpoint': ref}, expected_status=400)
 
+    def test_create_endpoint_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = catalog.controllers.EndpointV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_endpoint,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *endpoint* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find endpoint in request body',
+            six.text_type(e))
+
+    def test_create_endpoint_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = catalog.controllers.EndpointV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_endpoint,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *endpoint* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find endpoint in request body',
+            six.text_type(e))
+
     def test_get_endpoint(self):
         """Call ``GET /endpoints/{endpoint_id}``."""
         r = self.get(
@@ -557,6 +642,35 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                 'endpoint_id': self.endpoint_id},
             body={'endpoint': {'enabled': 'kitties'}},
             expected_status=400)
+
+    def test_update_endpoint_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = catalog.controllers.EndpointV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_endpoint,
+                              dict(is_admin=True),
+                              self.endpoint_id)
+
+        # explicitly verify that the error message shows that *endpoint* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find endpoint in request body',
+            six.text_type(e))
+
+    def test_update_endpoint_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = catalog.controllers.EndpointV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_endpoint,
+                              dict(is_admin=True),
+                              self.endpoint_id,
+                              {})
+
+        # explicitly verify that the error message shows that *endpoint* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find endpoint in request body',
+            six.text_type(e))
 
     def test_delete_endpoint(self):
         """Call ``DELETE /endpoints/{endpoint_id}``."""

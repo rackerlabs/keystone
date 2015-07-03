@@ -15,10 +15,12 @@
 import uuid
 
 from oslo_config import cfg
+import six
 from testtools import matchers
 
 from keystone.common import controller
 from keystone import exception
+from keystone import identity
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
 
@@ -55,6 +57,33 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             '/users',
             body={'user': ref})
         return self.assertValidUserResponse(r, ref)
+
+    def test_create_user_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = identity.controllers.UserV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_user,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *user* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find user in request body',
+            six.text_type(e))
+
+    def test_create_user_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = identity.controllers.UserV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_user,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *user* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find user in request body',
+            six.text_type(e))
 
     def test_create_user_without_domain(self):
         """Call ``POST /users`` without specifying domain.
@@ -274,6 +303,35 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'user': user})
         self.assertValidUserResponse(r, user)
 
+    def test_update_user_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = identity.controllers.UserV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_user,
+                              dict(is_admin=True),
+                              self.user_id)
+
+        # explicitly verify that the error message shows that *user* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find user in request body',
+            six.text_type(e))
+
+    def test_update_user_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = identity.controllers.UserV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_user,
+                              dict(is_admin=True),
+                              self.user_id,
+                              {})
+
+        # explicitly verify that the error message shows that *user* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find user in request body',
+            six.text_type(e))
+
     def test_admin_password_reset(self):
         # bootstrap a user as admin
         user_ref = self.new_user_ref(domain_id=self.domain['id'])
@@ -387,6 +445,33 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'group': ref})
         return self.assertValidGroupResponse(r, ref)
 
+    def test_create_group_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = identity.controllers.GroupV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_group,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *group* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find group in request body',
+            six.text_type(e))
+
+    def test_create_group_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = identity.controllers.GroupV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_group,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *group* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find group in request body',
+            six.text_type(e))
+
     def test_create_group_400(self):
         """Call ``POST /groups``."""
         self.post('/groups', body={'group': {}}, expected_status=400)
@@ -428,6 +513,35 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'group_id': group['id']},
             body={'group': group})
         self.assertValidGroupResponse(r, group)
+
+    def test_update_group_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = identity.controllers.GroupV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_group,
+                              dict(is_admin=True),
+                              self.group_id)
+
+        # explicitly verify that the error message shows that *group* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find group in request body',
+            six.text_type(e))
+
+    def test_update_group_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = identity.controllers.GroupV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_group,
+                              dict(is_admin=True),
+                              self.group_id,
+                              {})
+
+        # explicitly verify that the error message shows that *group* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find group in request body',
+            six.text_type(e))
 
     def test_delete_group(self):
         """Call ``DELETE /groups/{group_id}``."""

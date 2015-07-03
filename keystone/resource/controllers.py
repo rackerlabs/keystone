@@ -114,7 +114,10 @@ class DomainV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.domain_create, 'domain')
-    def create_domain(self, context, domain):
+    def create_domain(self, context, domain=None):
+        if not domain:
+            raise exception.ValidationError(attribute='domain',
+                                            target='request body')
         ref = self._assign_unique_id(self._normalize_dict(domain))
         initiator = notifications._get_request_audit_info(context)
         ref = self.resource_api.create_domain(ref['id'], ref, initiator)
@@ -133,7 +136,10 @@ class DomainV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.domain_update, 'domain')
-    def update_domain(self, context, domain_id, domain):
+    def update_domain(self, context, domain_id, domain=None):
+        if not domain:
+            raise exception.ValidationError(attribute='domain',
+                                            target='request body')
         self._require_matching_id(domain_id, domain)
         initiator = notifications._get_request_audit_info(context)
         ref = self.resource_api.update_domain(domain_id, domain, initiator)

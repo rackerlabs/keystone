@@ -208,7 +208,10 @@ class UserV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.user_create, 'user')
-    def create_user(self, context, user):
+    def create_user(self, context, user=None):
+        if not user:
+            raise exception.ValidationError(attribute='user',
+                                            target='request body')
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
         ref = self._normalize_domain_id(context, ref)
@@ -245,7 +248,10 @@ class UserV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.user_update, 'user')
-    def update_user(self, context, user_id, user):
+    def update_user(self, context, user_id, user=None):
+        if not user:
+            raise exception.ValidationError(attribute='user',
+                                            target='request body')
         return self._update_user(context, user_id, user)
 
     @controller.protected(callback=_check_user_and_group_protection)
@@ -294,7 +300,10 @@ class GroupV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.group_create, 'group')
-    def create_group(self, context, group):
+    def create_group(self, context, group=None):
+        if not group:
+            raise exception.ValidationError(attribute='group',
+                                            target='request body')
         # The manager layer will generate the unique ID for groups
         ref = self._normalize_dict(group)
         ref = self._normalize_domain_id(context, ref)
@@ -323,7 +332,10 @@ class GroupV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.group_update, 'group')
-    def update_group(self, context, group_id, group):
+    def update_group(self, context, group_id, group=None):
+        if not group:
+            raise exception.ValidationError(attribute='group',
+                                            target='request body')
         self._require_matching_id(group_id, group)
         self._require_matching_domain_id(
             group_id, group, self.identity_api.get_group)

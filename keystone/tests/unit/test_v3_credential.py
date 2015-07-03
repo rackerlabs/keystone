@@ -14,12 +14,14 @@
 
 import hashlib
 import json
+import six
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 from oslo_config import cfg
 from testtools import matchers
 
+from keystone import credential
 from keystone import exception
 from keystone.tests.unit import test_v3
 
@@ -106,6 +108,33 @@ class CredentialTestCase(CredentialBaseTestCase):
             body={'credential': ref})
         self.assertValidCredentialResponse(r, ref)
 
+    def test_create_credential_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = credential.controllers.CredentialV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_credential,
+                              dict(is_admin=True))
+
+        # explicitly verify that the error message shows that *credential* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find credential in request body',
+            six.text_type(e))
+
+    def test_create_credential_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = credential.controllers.CredentialV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.create_credential,
+                              dict(is_admin=True),
+                              {})
+
+        # explicitly verify that the error message shows that *credential* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find credential in request body',
+            six.text_type(e))
+
     def test_get_credential(self):
         """Call ``GET /credentials/{credential_id}``."""
         r = self.get(
@@ -124,6 +153,35 @@ class CredentialTestCase(CredentialBaseTestCase):
                 'credential_id': self.credential_id},
             body={'credential': ref})
         self.assertValidCredentialResponse(r, ref)
+
+    def test_update_credential_no_request_body(self):
+        """Expecting to see useful info when request body is not provided."""
+        self.controller = credential.controllers.CredentialV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_credential,
+                              dict(is_admin=True),
+                              self.credential_id)
+
+        # explicitly verify that the error message shows that *credential* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find credential in request body',
+            six.text_type(e))
+
+    def test_update_credential_empty_request_body(self):
+        """Expecting to see useful info when sending an empty request body."""
+        self.controller = credential.controllers.CredentialV3()
+        e = self.assertRaises(exception.ValidationError,
+                              self.controller.update_credential,
+                              dict(is_admin=True),
+                              self.credential_id,
+                              {})
+
+        # explicitly verify that the error message shows that *credential* is
+        # not in the request body.
+        self.assertIn(
+            'Expecting to find credential in request body',
+            six.text_type(e))
 
     def test_delete_credential(self):
         """Call ``DELETE /credentials/{credential_id}``."""

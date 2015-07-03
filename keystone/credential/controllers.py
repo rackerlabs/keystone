@@ -62,7 +62,10 @@ class CredentialV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.credential_create, 'credential')
-    def create_credential(self, context, credential):
+    def create_credential(self, context, credential=None):
+        if not credential:
+            raise exception.ValidationError(attribute='credential',
+                                            target='request body')
         trust_id = self._get_trust_id_for_request(context)
         ref = self._assign_unique_id(self._normalize_dict(credential),
                                      trust_id)
@@ -97,7 +100,10 @@ class CredentialV3(controller.V3Controller):
 
     @controller.protected()
     @validation.validated(schema.credential_update, 'credential')
-    def update_credential(self, context, credential_id, credential):
+    def update_credential(self, context, credential_id, credential=None):
+        if not credential:
+            raise exception.ValidationError(attribute='credential',
+                                            target='request body')
         self._require_matching_id(credential_id, credential)
 
         ref = self.credential_api.update_credential(credential_id, credential)
