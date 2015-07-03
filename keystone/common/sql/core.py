@@ -464,3 +464,27 @@ def handle_conflicts(conflict_type='object'):
 
         return wrapper
     return decorator
+
+
+class MPMixin(object):
+    """Materialized path mixin for SQL models."""
+
+    DELIMITER = '.'
+
+    path = sql.Column(sql.Text, nullable=False, index=True)
+
+    def query_descendants(self, session):
+        class_ = self.__class__
+        pattern = "%s%s%%" % (self.path, self.DELIMITER)
+
+        query = session.query(class_)
+        query = query.filter(class_.path.like(pattern)).order_by(class_.path)
+        return query
+
+    def query_ancestors(self, session):
+        class_ = self.__class__
+        id_set = self.path.split(self.DELIMITER)
+
+        query = session.query(class_)
+        query = query.filter(class_.id.in_(id_set)).order_by(class_.path)
+        return query
