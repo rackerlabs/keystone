@@ -14,7 +14,9 @@
 from sqlalchemy.ext import declarative
 
 from keystone.common import sql
+from keystone import exception
 from keystone.tests import unit as tests
+from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import utils
 
 
@@ -50,3 +52,149 @@ class TestModelDictMixin(tests.BaseTestCase):
         m = TestModel(id=expected['id'], text=expected['text'])
         m.extra = 'this should not be in the dictionary'
         self.assertEqual(m.to_dict(), expected)
+
+
+class ExampleMPModel(ModelBase, sql.MaterializedPathMixin):
+    """Model to test materialized path mix-in"""
+
+    __tablename__ = 'testmpmodel'
+    ID_COLUMN = 'test_id'
+    PARENT_COLUMN = 'test_parent_id'
+    attributes = [ID_COLUMN, PARENT_COLUMN, 'text']
+
+    test_id = sql.Column(sql.String(64), primary_key=True, unique=True)
+    test_parent_id = sql.Column(sql.String(64), nullable=True)
+    text = sql.Column(sql.String(64), nullable=False)
+
+
+class TestMaterializedPath(tests.SQLDriverOverrides, tests.TestCase):
+
+    def setUp(self):
+        super(TestMaterializedPath, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+
+        ExampleMPModel.__table__.create(sql.get_engine())
+
+        # Creating a tree with attached branch
+        self.tree = self._create_branch()
+        # Create a branch to attach
+        self.attached = self._create_branch()
+        session = sql.get_session()
+        query = session.query(ExampleMPModel)
+        descendants = query.filter(self.tree.descendants_filter)
+        # Attach the branch to the first tree leaf
+        # NOTE(amakarov): any leaf will go, the first is just the easiest one
+        with session.begin():
+            self.attached.parent = descendants.first()
+
+    def config_files(self):
+        config_files = super(TestMaterializedPath, self).config_files()
+        config_files.append(tests.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def _create_node(self):
+        """Test node creation shortcut"""
+        return ExampleMPModel(test_id=utils.new_uuid(), text=utils.new_uuid())
+
+    def _create_branch(self):
+        """Create a branch"""
+        session = sql.get_session()
+        with session.begin():
+            a = self._create_node()
+            b = self._create_node()
+            c = self._create_node()
+            b.parent = a
+            c.parent = a
+            session.add_all([a, b, c])
+        return a
+
+    def test_append_branch(self):
+        """Branch appended to the tree, path adjusted accordingly"""
+        self.assertEqual(self.tree.test_id, self.attached.parent.path)
+        expected_path = ExampleMPModel.DELIMITER.join((
+            self.tree.test_id, self.attached.parent.test_id
+        ))
+        self.assertEqual(expected_path, self.attached.path)
+
+        session = sql.get_session()
+        query = session.query(ExampleMPModel)
+        leaf = query.filter(self.attached.descendants_filter).first()
+        expected_path = ExampleMPModel.DELIMITER.join((
+            self.tree.test_id, self.attached.parent.test_id,
+            self.attached.test_id
+        ))
+        self.assertEqual(expected_path, leaf.path)
+
+    def test_cyclic_reference(self):
+        """Tree has no cycles"""
+
+        def make_cycle():
+            self.tree.parent = self.attached
+
+        self.assertRaises(exception.ValidationError, make_cycle)
+
+    def test_delete_branch(self):
+        """Branch is removed from the tree"""
+        session = sql.get_session()
+        descendants = session.query(ExampleMPModel).filter(
+            self.attached.descendants_filter)
+
+        self.attached.delete_tree()
+
+        self.assertEqual(0, descendants.count())
+
+    def test_detach_branch(self):
+        """Branch is separated"""
+        self.attached.parent = None
+        session = sql.get_session()
+        query = session.query(ExampleMPModel)
+        self.assertEqual(
+            2, query.filter(self.attached.descendants_filter).count())
+
+        expected_path = self.attached.test_id
+        leaves = query.filter(self.attached.descendants_filter).all()
+        for leaf in leaves:
+            self.assertEqual(expected_path, leaf.path)
+
+    def test_load(self):
+
+        from datetime import datetime
+
+        DEPTH = 6
+
+        session = sql.get_session()
+        query = session.query(ExampleMPModel)
+
+        for _ in range(DEPTH):
+            descendants = query.filter(self.tree.descendants_filter)
+            for leaf in list(descendants.all()):
+                attached = self._create_branch()
+                attached.parent = leaf
+
+        print("Total:", query.count())
+
+        start = datetime.now()
+
+        descendants = query.filter(self.tree.descendants_filter)
+        node_ids = [i.test_id for i in descendants]
+
+        print("MP:", datetime.now()-start)
+        print("Nodes:", len(node_ids))
+
+        start = datetime.now()
+
+        id_query = session.query(ExampleMPModel.test_id)
+        ids = [i.test_id for i in
+               id_query.filter(ExampleMPModel.test_parent_id == self.tree.test_id)]
+        node_ids = list()
+        while ids:
+            node_ids.extend(ids)
+            ids = [i.test_id for i in
+                   id_query.filter(ExampleMPModel.test_parent_id.in_(ids))]
+
+        print("AL:", datetime.now()-start)
+        print("Nodes:", len(node_ids))
+
+        None[0]
+
