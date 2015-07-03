@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e624bab3",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-03T17:17:16Z",
+      "side": 1,
+      "message": "I\u0027ve thought about it: mixin is used in conjunction with another base, so it\u0027s a good idea to have it short.",
+      "parentUuid": "ba3cc151_802116b7",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_00674626",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_463006e9",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-03T17:17:16Z",
+      "side": 1,
+      "message": "It will produce pattern \u0027uuid.%\u0027 to be used in sql \u0027like\u0027 filter. Just double-checked it :)",
+      "parentUuid": "ba3cc151_0303d00e",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_004e6696",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
@@ -83,6 +119,24 @@
       "side": 1,
       "message": "To be consistent with my previous comment ...\n\n    pattern \u003d \"%s%s\" % (self.DELIMITER, self.path)",
       "parentUuid": "ba3cc151_004e6696",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e6991ad2",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-03T17:17:16Z",
+      "side": 1,
+      "message": "Yes, if the path includes self, then it will be returned among the others.",
+      "parentUuid": "ba3cc151_830fe02d",
       "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
