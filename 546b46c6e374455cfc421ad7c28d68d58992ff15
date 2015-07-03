@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_802116b7",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-03T16:29:28Z",
+      "side": 1,
+      "message": "One looking at this name won\u0027t understand it easily, I wouldn\u0027t be afraid to put the whole name and call it MaterializedPathMixin, improving clarity.",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_00674626",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-03T16:29:28Z",
+      "side": 1,
+      "message": "What is the last % for ?",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_004e6696",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-03T16:29:28Z",
+      "side": 1,
+      "message": "This way it will find itself, won\u0027t it ?\nI\u0027d suggest creating a pattern as for query_descendants, it would be like :\n\n    pattern \u003d \"%s%s%\" % (self.DELIMITER, self.path)\n\nMakes sense ?",
+      "revId": "546b46c6e374455cfc421ad7c28d68d58992ff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
