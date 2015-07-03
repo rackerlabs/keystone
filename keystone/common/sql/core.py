@@ -31,6 +31,8 @@ from oslo_serialization import jsonutils
 import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
+from sqlalchemy.ext import hybrid
+from sqlalchemy import func
 from sqlalchemy.orm.attributes import flag_modified, InstrumentedAttribute
 from sqlalchemy import types as sql_types
 
@@ -464,3 +466,133 @@ def handle_conflicts(conflict_type='object'):
 
         return wrapper
     return decorator
+
+
+class MaterializedPathMixin(object):
+    """Materialized path mixin for SQL models.
+
+    :param path: added field, contains generated materialized path
+    :type path: string
+    :param id: identifier field, required to be present in the model being
+               extended
+    :type id: string
+    :param parent_id: identifier of the parent field, required to be present in
+                      the model being extended
+    :type parent_id: string
+
+    Implements tree structure based purely on materialized path concept.
+    Adds 'path' text field to the host model.
+    Requires string 'id' field (adjustable) in the model being extended.
+    Requires string 'parent_id' field (adjustable) in the model being extended.
+    Requires 'parent' and 'path' fields NOT to be in the model being extended
+    in order to avoid naming conflict.
+    """
+
+    # These may be overloaded in subclasses to reflect actual column names
+    # and options
+    ID_COLUMN = 'id'
+    PARENT_COLUMN = 'parent_id'
+    DELIMITER = '/'
+    WILDCARD = '%'
+
+    @declarative.declared_attr
+    def __tablename__(cls):
+        return cls.__name__.lower()
+
+    @declarative.declared_attr
+    def path(self):
+        """Field to store the ancestry chain"""
+        return sql.Column('path', sql.Text, default='', index=True)
+
+    @property
+    def descendants_filter(self):
+        """Descendants of the current node"""
+        if self.path:
+            pattern = ''.join((self.path, self.DELIMITER,
+                               getattr(self, self.ID_COLUMN), self.WILDCARD))
+        else:
+            pattern = ''.join((getattr(self, self.ID_COLUMN), self.WILDCARD))
+        return type(self).path.like(pattern)
+
+    @property
+    def ancestors_filter(self):
+        """Filter to find all ancestors of the node"""
+        id_column = getattr(type(self), self.ID_COLUMN)
+        id_set = self.path.split(self.DELIMITER)
+        return id_column.in_(id_set)
+
+    def delete_tree(self):
+        """Delete the node and it's subtree"""
+        session = get_session()
+        with session.begin():
+            statement = sql.delete(type(self).__table__,
+                                   self.descendants_filter)
+            session.execute(statement)
+            session.delete(self)
+
+    @hybrid.hybrid_property
+    def parent(self):
+        """The node instance referenced by node's parent column"""
+        parent_id = getattr(self, self.PARENT_COLUMN, None)
+        filter_by = {self.ID_COLUMN: parent_id}
+        query = get_session().query(type(self))
+        return query.filter_by(**filter_by).first()
+
+    @parent.setter
+    def parent(self, value):
+        """Attach the node and it's subtree to the new parent"""
+        # set own parent id and calculate a new path value
+        if value is None:
+            # move the node to the top
+            setattr(self, self.PARENT_COLUMN, None)
+            new_path = ''
+        elif isinstance(value, type(self)):
+            if value.path and getattr(self, self.ID_COLUMN) in value.path:
+                msg = _("Cyclic parent references are not allowed")
+                raise exception.ValidationError(msg)
+            parent_id = getattr(value, self.ID_COLUMN)
+            setattr(self, self.PARENT_COLUMN, parent_id)
+            if value.path:
+                new_path = self.DELIMITER.join([value.path, parent_id])
+            else:
+                new_path = parent_id
+        else:
+            msg = _("Incompatible parent node model")
+            raise ValueError(msg)
+
+        # Perform subtree operations
+        self._update_path(new_path)
+
+    @parent.expression
+    def parent(self):
+        """The parent column object to be used in querying"""
+        return getattr(type(self), self.PARENT_COLUMN, None)
+
+    def _update_path(self, new_path):
+        # Update descendants
+        path_column = type(self).path
+        id_value = getattr(self, self.ID_COLUMN)
+
+        # Path replacement preparation
+        if self.path:
+            subtree_old_path = self.DELIMITER.join((self.path, id_value))
+        else:
+            subtree_old_path = id_value
+        if new_path:
+            subtree_new_path = self.DELIMITER.join((new_path, id_value))
+        else:
+            subtree_new_path = id_value
+
+        # Replacement function for query
+        path_func = func.replace(path_column,
+                                 subtree_old_path, subtree_new_path)
+
+        # Perform the update
+        statement = sql.update(type(self).__table__,
+                               self.descendants_filter,
+                               {path_column: path_func})
+        get_session().execute(statement)
+
+        # Only now we can update own path
+        # as the old one was used to get descendants
+        self.path = new_path
