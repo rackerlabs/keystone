@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_bb6ec094",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 2210,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T17:25:57Z",
+      "side": 1,
+      "message": "nit: as per previous comments, I think I\u0027d prefer this be called something like \" test_update_name_of_project_acting_as_a_domain\" or similar",
+      "revId": "1ed3d8ba9a8bb69d2e912062f90c99594e8b0769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_fb120809",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T17:25:57Z",
+      "side": 1,
+      "message": "I don\u0027t think we support this is now, do we?",
+      "revId": "1ed3d8ba9a8bb69d2e912062f90c99594e8b0769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_bbf560cc",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T17:25:57Z",
+      "side": 1,
+      "message": "rather than assume there are 2 existing ones, it would be better to list projects initially to find out how many there are then add that number to 4 in the test below.  This make the test more robust.",
+      "revId": "1ed3d8ba9a8bb69d2e912062f90c99594e8b0769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5b0214b6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T17:25:57Z",
+      "side": 1,
+      "message": "likewise",
+      "revId": "1ed3d8ba9a8bb69d2e912062f90c99594e8b0769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
