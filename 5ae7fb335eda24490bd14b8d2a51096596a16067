@@ -16,6 +16,24 @@
       "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e7291139",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-04T04:07:59Z",
+      "side": 1,
+      "message": "Rajesh,\n\nThe code-under-test only checks that the token specified in the call is the admin_token. It does not (and cannot) do anymore checks to see if the caller is truly the admin. So, if a non-admin somehow gets to know the secret admin_token value, he can make an API call as an admin. Thus, changing \"we\" to \"Admin\" is incorrect, in addition to being a nit.",
+      "parentUuid": "ba3cc151_d5cfef26",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
