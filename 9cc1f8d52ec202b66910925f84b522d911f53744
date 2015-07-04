@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_e0cd77b8",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "maybe slight improvement in the wording, perhaps: \"LDAP does not support projects with....\"",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_203b5f9e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "So I assume the rule is that projects acting as a domain have their project_id and domain_id to be the same? Does this check mean that the caller can\u0027t set the themselves but must (just for projects acting as a domain) leave domain_id unset?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_406b0386",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "maybe reword for clarity, I was expecting us to be checking is_domain in this method given this comment.  I think what you mean is:\n\n\"Called when is_domain is false, hence the project must contain...\"",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e0125709",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "is there a case when a regular projects doesn\u0027t have a parent ref? Won\u0027t all project that exists before this change all have their parent set to the project acting as their domain?  Or maybe that\u0027s a change in a follow on patch when we ditch the domain table?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_80da6be8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "I think somewhere we need a good long comment block that explains the rules for what we expect in domainId, project_id, parent_id with is_domain set to both True and False....it\u0027s hard to keep this in your head.  Maybe a block at the start of the project methods?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e0b7b7f3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "so disabling a project acting as a domain does not require the tree underneath it to have already been disabled?  I assume this is to keep compatibility with current domain functionality? If so, maybe a comment to this effect would be good here/",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_00873b13",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "in which case?  I thought we just said a caller must set the domain_id to Null? Are you trying to say both should be Null, or that the code will set them both to the same value?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e00fb786",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 2999,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "this seems odd....so we are changing the exception raised in the current case (since, by definition, is_domain is effectively False in today\u0027s code)....shouldn\u0027t that be in a separate patch?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_604ac7ae",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-04T15:01:05Z",
+      "side": 1,
+      "message": "I note that we use the create_project validator for both these tests (whereas the one you are replacing used the update_project validator).  Is there a reason for this?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
