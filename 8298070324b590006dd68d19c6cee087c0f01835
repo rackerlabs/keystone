@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_0aed1c8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-04T08:58:33Z",
+      "side": 1,
+      "message": "This is not necessary but it harmless to keep it here.",
+      "revId": "8298070324b590006dd68d19c6cee087c0f01835",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
