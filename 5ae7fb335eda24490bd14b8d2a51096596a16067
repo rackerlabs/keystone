@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_cae5f4dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-04T07:56:35Z",
+      "side": 1,
+      "message": "This issue not restrict in user creation but also in creating a group, and maybe other entities in keystone as well.\n\nI filed a bug here: https://bugs.launchpad.net/keystone/+bug/1471385, feel free to take it if you have interests.",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8a404c37",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-04T07:56:35Z",
+      "side": 1,
+      "message": "once your patch got merged, code here and in L90~92 could be cleaned up, but this is a seperated thing, keep it as is, and would be addressed in a following up patch.",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4a4a4457",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-04T07:56:35Z",
+      "side": 1,
+      "message": "suggest to use admin token here.\n\nscoped token, unscoped token, and admin token is more accurate here.",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6a47084c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-04T07:56:35Z",
+      "side": 1,
+      "message": "s/admin_token/admin token.\n\nThere is something funny here, actually, you can create a user using admin token but just make sure that domain id is passed into req body.\n\npls check the code in `common/controller.py`, \n\nsee: https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L755-L757\n\nYour change in that file is make sense, but the docstring may misleading here, so pls update the docstring to make it more accurate.\n\nsee: http://paste.openstack.org/show/341294/",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d5cfef26",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 3
