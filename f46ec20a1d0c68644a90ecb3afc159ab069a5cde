@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ecf6d0f8",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-05T07:37:32Z",
+      "side": 1,
+      "message": "Remove the property decorators then you your assertion will pass.",
+      "revId": "f46ec20a1d0c68644a90ecb3afc159ab069a5cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_31edef25",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-05T07:37:32Z",
+      "side": 1,
+      "message": "nits: NotImplemented",
+      "revId": "f46ec20a1d0c68644a90ecb3afc159ab069a5cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8cdce475",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-05T07:37:32Z",
+      "side": 1,
+      "message": "Actually, we needn\u0027t this workaround anymore if you remove the property decorator.",
+      "revId": "f46ec20a1d0c68644a90ecb3afc159ab069a5cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0ce8d415",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-05T07:37:32Z",
+      "side": 1,
+      "message": "why @property decorator is used here? I cannot figure out the reason we use need it as a property",
+      "revId": "f46ec20a1d0c68644a90ecb3afc159ab069a5cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2ced9825",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-05T07:37:32Z",
+      "side": 1,
+      "message": "same here and other place in the pkiz and pki.",
+      "revId": "f46ec20a1d0c68644a90ecb3afc159ab069a5cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
