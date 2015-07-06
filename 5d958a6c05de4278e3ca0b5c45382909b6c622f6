@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_4e48e62d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2015-07-06T18:41:29Z",
+      "side": 1,
+      "message": "Suffixing \u0027(mod_auth_mellon)\u0027 so often seems to be overkill. Is it not sufficient to just refer to this in mellon.rst?",
+      "revId": "5d958a6c05de4278e3ca0b5c45382909b6c622f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2e4b222d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2015-07-06T18:41:29Z",
+      "side": 1,
+      "message": "Suffixing \u0027(mod_auth_mellon)\u0027 so often seems to be overkill. Is it not sufficient to just refer to this in mellon.rst?",
+      "revId": "5d958a6c05de4278e3ca0b5c45382909b6c622f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6e404a08",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2015-07-06T18:41:29Z",
+      "side": 1,
+      "message": "Suffixing \u0027(mod_auth_mellon)\u0027 so often seems to be overkill. Is it not sufficient to just refer to this in mellon.rst?",
+      "revId": "5d958a6c05de4278e3ca0b5c45382909b6c622f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
