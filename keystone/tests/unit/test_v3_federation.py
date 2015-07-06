@@ -3318,7 +3318,8 @@ class SAMLGenerationTests(FederationTests):
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['scope']
 
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_invalid_token_body(self):
         """Test that missing the token in request body raises an exception.
@@ -3332,7 +3333,8 @@ class SAMLGenerationTests(FederationTests):
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['identity']['token']
 
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_sp_not_found(self):
         """Test SAML generation with an invalid service provider ID.
@@ -3693,7 +3695,7 @@ class ServiceProviderTests(FederationTests):
         """Update immutable attributes in service provider.
 
         In this particular case the test will try to change ``id`` attribute.
-        The server should return an HTTP 403 error code.
+        The server should return an HTTP 400 error code.
 
         """
         new_sp_ref = {'id': uuid.uuid4().hex}

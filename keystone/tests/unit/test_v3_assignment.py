@@ -162,9 +162,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
 
-    def test_create_domain_400(self):
+    def test_create_domain_empty_domain_reference_errorcode(self):
         """Call ``POST /domains``."""
-        self.post('/domains', body={'domain': {}}, expected_status=400)
+        self.post('/domains', body={'domain': {}},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_domain_no_request_body(self):
         """Expecting to see useful info when request body is not provided."""
@@ -661,14 +662,16 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
 
-    def test_create_project_400(self):
+    def test_create_project_empty_project_reference_errorcode(self):
         """Call ``POST /projects``."""
-        self.post('/projects', body={'project': {}}, expected_status=400)
+        self.post('/projects', body={'project': {}},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_project_invalid_domain_id(self):
         """Call ``POST /projects``."""
         self.new_project_ref(domain_id=uuid.uuid4().hex)
-        self.post('/projects', body={'project': {}}, expected_status=400)
+        self.post('/projects', body={'project': {}},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_project_no_request_body(self):
         """Expecting to see useful info when request body is not provided."""
@@ -1218,9 +1221,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             body={'role': ref})
         return self.assertValidRoleResponse(r, ref)
 
-    def test_create_role_400(self):
+    def test_create_role_empty_role_reference_errorcode(self):
         """Call ``POST /roles``."""
-        self.post('/roles', body={'role': {}}, expected_status=400)
+        self.post('/roles', body={'role': {}},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_role_no_request_body(self):
         """Expecting to see useful info when request body is not provided."""

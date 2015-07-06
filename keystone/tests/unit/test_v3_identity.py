@@ -131,9 +131,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref['domain_id'] = CONF.identity.default_domain_id
         return self.assertValidUserResponse(r, ref)
 
-    def test_create_user_400(self):
+    def test_create_user_empty_user_reference_errorcode(self):
         """Call ``POST /users``."""
-        self.post('/users', body={'user': {}}, expected_status=400)
+        self.post('/users', body={'user': {}},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_list_users(self):
         """Call ``GET /users``."""
@@ -472,9 +473,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'Expecting to find group in request body',
             six.text_type(e))
 
-    def test_create_group_400(self):
+    def test_create_group_empty_group_reference_errorcode(self):
         """Call ``POST /groups``."""
-        self.post('/groups', body={'group': {}}, expected_status=400)
+        self.post('/groups', body={'group': {}},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_list_groups(self):
         """Call ``GET /groups``."""

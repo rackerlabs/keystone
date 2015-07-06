@@ -259,7 +259,8 @@ class CredentialTestCase(CredentialBaseTestCase):
         # Assert 400 status for bad request with missing project_id
         self.post(
             '/credentials',
-            body={'credential': ref}, expected_status=400)
+            body={'credential': ref},
+            expected_status=exception.SchemaValidationError.code)
 
     def test_create_ec2_credential_with_invalid_blob(self):
         """Call ``POST /credentials`` for creating ec2

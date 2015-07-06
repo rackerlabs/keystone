@@ -384,19 +384,22 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         """Call ``POST /services``."""
         ref = self.new_service_ref()
         ref['enabled'] = 'True'
-        self.post('/services', body={'service': ref}, expected_status=400)
+        self.post('/services', body={'service': ref},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_service_enabled_str_false(self):
         """Call ``POST /services``."""
         ref = self.new_service_ref()
         ref['enabled'] = 'False'
-        self.post('/services', body={'service': ref}, expected_status=400)
+        self.post('/services', body={'service': ref},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_service_enabled_str_random(self):
         """Call ``POST /services``."""
         ref = self.new_service_ref()
         ref['enabled'] = 'puppies'
-        self.post('/services', body={'service': ref}, expected_status=400)
+        self.post('/services', body={'service': ref},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_list_services(self):
         """Call ``GET /services``."""
@@ -506,7 +509,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.post(
             '/endpoints',
             body={'endpoint': ref},
-            expected_status=400)
+            expected_status=exception.SchemaValidationError.code)
 
     def test_create_endpoint_enabled_str_false(self):
         """Call ``POST /endpoints`` with enabled: 'False'."""
@@ -515,7 +518,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.post(
             '/endpoints',
             body={'endpoint': ref},
-            expected_status=400)
+            expected_status=exception.SchemaValidationError.code)
 
     def test_create_endpoint_enabled_str_random(self):
         """Call ``POST /endpoints`` with enabled: 'puppies'."""
@@ -524,13 +527,14 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.post(
             '/endpoints',
             body={'endpoint': ref},
-            expected_status=400)
+            expected_status=exception.SchemaValidationError.code)
 
     def test_create_endpoint_with_invalid_region_id(self):
         """Call ``POST /endpoints``."""
         ref = self.new_endpoint_ref(service_id=self.service_id)
         ref["region_id"] = uuid.uuid4().hex
-        self.post('/endpoints', body={'endpoint': ref}, expected_status=400)
+        self.post('/endpoints', body={'endpoint': ref},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_endpoint_with_region(self):
         """EndpointV3 creates the region before creating the endpoint, if
@@ -554,7 +558,8 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         """Call ``POST /endpoints``."""
         ref = self.new_endpoint_ref(service_id=self.service_id)
         ref["url"] = ''
-        self.post('/endpoints', body={'endpoint': ref}, expected_status=400)
+        self.post('/endpoints', body={'endpoint': ref},
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_endpoint_no_request_body(self):
         """Expecting to see useful info when request body is not provided."""
@@ -625,7 +630,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/endpoints/%(endpoint_id)s' % {
                 'endpoint_id': self.endpoint_id},
             body={'endpoint': {'enabled': 'True'}},
-            expected_status=400)
+            expected_status=exception.SchemaValidationError.code)
 
     def test_update_endpoint_enabled_str_false(self):
         """Call ``PATCH /endpoints/{endpoint_id}`` with enabled: 'False'."""
@@ -633,7 +638,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/endpoints/%(endpoint_id)s' % {
                 'endpoint_id': self.endpoint_id},
             body={'endpoint': {'enabled': 'False'}},
-            expected_status=400)
+            expected_status=exception.SchemaValidationError.code)
 
     def test_update_endpoint_enabled_str_random(self):
         """Call ``PATCH /endpoints/{endpoint_id}`` with enabled: 'kitties'."""
@@ -641,7 +646,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/endpoints/%(endpoint_id)s' % {
                 'endpoint_id': self.endpoint_id},
             body={'endpoint': {'enabled': 'kitties'}},
-            expected_status=400)
+            expected_status=exception.SchemaValidationError.code)
 
     def test_update_endpoint_no_request_body(self):
         """Expecting to see useful info when request body is not provided."""

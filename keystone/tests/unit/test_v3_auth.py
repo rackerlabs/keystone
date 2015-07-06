@@ -3125,7 +3125,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
         self.post('/OS-TRUST/trusts',
                   body={'trust': ref},
-                  expected_status=400)
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_invalid_trust_request_without_trustee(self):
         ref = self.new_trust_ref(
@@ -3138,7 +3138,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
         self.post('/OS-TRUST/trusts',
                   body={'trust': ref},
-                  expected_status=400)
+                  expected_status=exception.SchemaValidationError.code)
 
     def test_create_unlimited_use_trust(self):
         # by default trusts are unlimited in terms of tokens that can be
