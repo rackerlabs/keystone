@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_e864554a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-06T17:00:41Z",
+      "side": 1,
+      "message": "What\u0027s the need to emphasize mod_auth_mellon?",
+      "revId": "e154b4399d67f7bb38e27185c7809915781f23e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_970b687d",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 2
