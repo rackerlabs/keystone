@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_8cecaff4",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-06T22:57:50Z",
+      "side": 1,
+      "message": "change validation to have an option to require request body.",
+      "parentUuid": "ba3cc151_6d813e4d",
+      "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f24a0927",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
