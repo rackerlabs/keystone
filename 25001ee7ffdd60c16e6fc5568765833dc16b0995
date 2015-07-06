@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_58c8a574",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T21:09:19Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba3cc151_ffa64252",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_ba2a087d",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-06T20:23:57Z",
       "side": 1,
       "message": "will Melon receive all calls intended to keystone v3? How will this work?",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1b9bf7ca",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T21:09:19Z",
+      "side": 1,
+      "message": "Yes, I think this is different from Shib in that it basically proxies all requests: https://github.com/UNINETT/mod_auth_mellon/wiki/GenericSetup#configuring-mod_auth_mellon",
+      "parentUuid": "ba3cc151_ba2a087d",
       "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
