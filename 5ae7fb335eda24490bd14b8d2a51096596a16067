@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_95a35d4f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-06T18:29:09Z",
+      "side": 1,
+      "message": "Done. I had used admin_token since that is the name of the property in keystone.conf file.",
+      "parentUuid": "ba3cc151_4a4a4457",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_6a47084c",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 3
@@ -64,6 +82,24 @@
       "writtenOn": "2015-07-04T07:56:35Z",
       "side": 1,
       "message": "s/admin_token/admin token.\n\nThere is something funny here, actually, you can create a user using admin token but just make sure that domain id is passed into req body.\n\npls check the code in `common/controller.py`, \n\nsee: https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L755-L757\n\nYour change in that file is make sense, but the docstring may misleading here, so pls update the docstring to make it more accurate.\n\nsee: http://paste.openstack.org/show/341294/",
+      "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_95483d89",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-06T18:29:09Z",
+      "side": 1,
+      "message": "Done. I did notice that the same bug exists for some of the other operations also and was planning to file bugs for the same. Thanks for spotting it. I assigned it to myself.",
+      "parentUuid": "ba3cc151_6a47084c",
       "revId": "5ae7fb335eda24490bd14b8d2a51096596a16067",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
