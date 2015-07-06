@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ae5df2ed",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T18:42:01Z",
+      "side": 0,
+      "message": "I think the simple answer to this bug is to just remove \u0027bin/\u0027 from the command. This will make with_env.sh use the keystone-all from the virtualenv that it created.",
+      "revId": "88e819a648dfe5aed9f5d6cf89a15919d983884f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
