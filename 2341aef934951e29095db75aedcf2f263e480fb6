@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_11be88ff",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-06T15:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_6ec7f545",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_4bfb4a47",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 1
@@ -138,6 +156,24 @@
       "side": 1,
       "message": "The example is valid. http://keystone.fqdn:5000/keystone is an entity id. It just looks weird.",
       "parentUuid": "ba3cc151_4bfb4a47",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_b1455c18",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-06T15:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_412ec9a5",
       "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
