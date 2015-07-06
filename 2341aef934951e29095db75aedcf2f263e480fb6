@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_2e732d4f",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-06T15:30:38Z",
+      "side": 1,
+      "message": "\u003e I also don\u0027t know what \"OpenID Connect\" does in this list, but I understand this. Maybe we can fix it here and mark this in the commit message?\n\nWhat exactly would you like me to do here?",
+      "parentUuid": "ba3cc151_e13cbde2",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6ec7f545",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-06T15:30:38Z",
+      "side": 1,
+      "message": "How about this::\n\n    \". . . and Mellon (mod_auth_mellon) are documented . . .\"",
+      "parentUuid": "ba3cc151_74a15ef7",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_4bfb4a47",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 1
