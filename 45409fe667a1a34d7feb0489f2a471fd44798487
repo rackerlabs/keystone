@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_48ba2870",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-06T15:17:08Z",
+      "side": 1,
+      "message": "pls see my reply to David, L201 in this patch.",
+      "parentUuid": "ba3cc151_ed246ec7",
+      "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_3c028a70",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 4
