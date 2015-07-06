@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_1c59c68e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T14:12:58Z",
+      "side": 1,
+      "message": "Why isn\u0027t the validation already raising an error here?",
+      "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3c028a70",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T14:12:58Z",
+      "side": 1,
+      "message": "Since these tests are not restful test cases they don\u0027t belong in this test class. Maybe a better place would be something in keystone.tests.unit.resource or something like that.",
+      "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
