@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_31694c8c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T15:39:18Z",
+      "side": 1,
+      "message": "I\u0027ll post an alternative patch that shows how this can be done in the validation. This doesn\u0027t belong here.",
+      "parentUuid": "ba3cc151_48ba2870",
+      "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_3c028a70",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 4
