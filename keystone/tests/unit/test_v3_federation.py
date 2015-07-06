@@ -26,6 +26,7 @@ from oslotest import mockpatch
 import saml2
 from saml2 import saml
 from saml2 import sigver
+from six.moves import http_client
 from six.moves import range, urllib, zip
 xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
@@ -848,7 +849,7 @@ class FederatedIdentityProviderTests(FederationTests):
         body['remote_ids'] = [uuid.uuid4().hex,
                               repeated_remote_id]
         self.put(url, body={'identity_provider': body},
-                 expected_status=409)
+                 expected_status=http_client.CONFLICT)
 
     def test_create_idp_remote_empty(self):
         """Creates an IdP with empty remote_ids."""
@@ -975,7 +976,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.put(url, body={'identity_provider': body},
                  expected_status=201)
         self.put(url, body={'identity_provider': body},
-                 expected_status=409)
+                 expected_status=http_client.CONFLICT)
 
     def test_get_idp(self):
         """Create and later fetch IdP."""
@@ -1000,7 +1001,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.assertIsNotNone(idp_id)
 
         url = self.base_url(suffix=idp_id)
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_delete_existing_idp(self):
         """Create and later delete IdP.
@@ -1014,7 +1015,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.assertIsNotNone(idp_id)
         url = self.base_url(suffix=idp_id)
         self.delete(url)
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_delete_idp_also_deletes_assigned_protocols(self):
         """Deleting an IdP will delete its assigned protocol."""
@@ -1040,7 +1041,7 @@ class FederatedIdentityProviderTests(FederationTests):
         # removing IdP will remove the assigned protocol as well
         self.assertEqual(1, len(self.federation_api.list_protocols(idp_id)))
         self.delete(idp_url)
-        self.get(idp_url, expected_status=404)
+        self.get(idp_url, expected_status=http_client.NOT_FOUND)
         self.assertEqual(0, len(self.federation_api.list_protocols(idp_id)))
 
     def test_delete_nonexisting_idp(self):
@@ -1050,7 +1051,7 @@ class FederatedIdentityProviderTests(FederationTests):
         """
         idp_id = uuid.uuid4().hex
         url = self.base_url(suffix=idp_id)
-        self.delete(url, expected_status=404)
+        self.delete(url, expected_status=http_client.NOT_FOUND)
 
     def test_update_idp_mutable_attributes(self):
         """Update IdP's mutable parameters."""
@@ -1091,7 +1092,7 @@ class FederatedIdentityProviderTests(FederationTests):
     def test_update_idp_immutable_attributes(self):
         """Update IdP's immutable parameters.
 
-        Expect HTTP 403 code.
+        Expect 403 code.
 
         """
         default_resp = self._create_default_idp()
@@ -1105,7 +1106,8 @@ class FederatedIdentityProviderTests(FederationTests):
         body['protocols'] = [uuid.uuid4().hex, uuid.uuid4().hex]
 
         url = self.base_url(suffix=idp_id)
-        self.patch(url, body={'identity_provider': body}, expected_status=403)
+        self.patch(url, body={'identity_provider': body},
+                   expected_status=http_client.FORBIDDEN)
 
     def test_update_nonexistent_idp(self):
         """Update nonexistent IdP
@@ -1119,7 +1121,7 @@ class FederatedIdentityProviderTests(FederationTests):
         body['enabled'] = False
         body = {'identity_provider': body}
 
-        self.patch(url, body=body, expected_status=404)
+        self.patch(url, body=body, expected_status=http_client.NOT_FOUND)
 
     def test_assign_protocol_to_idp(self):
         """Assign a protocol to existing IdP."""
@@ -1157,7 +1159,7 @@ class FederatedIdentityProviderTests(FederationTests):
         kwargs = {'expected_status': 201}
         resp, idp_id, proto = self._assign_protocol_to_idp(proto='saml2',
                                                            url=url, **kwargs)
-        kwargs = {'expected_status': 409}
+        kwargs = {'expected_status': http_client.CONFLICT}
         resp, idp_id, proto = self._assign_protocol_to_idp(idp_id=idp_id,
                                                            proto='saml2',
                                                            validate=False,
@@ -1171,7 +1173,7 @@ class FederatedIdentityProviderTests(FederationTests):
         """
 
         idp_id = uuid.uuid4().hex
-        kwargs = {'expected_status': 404}
+        kwargs = {'expected_status': http_client.NOT_FOUND}
         self._assign_protocol_to_idp(proto='saml2',
                                      idp_id=idp_id,
                                      validate=False,
@@ -1248,7 +1250,7 @@ class FederatedIdentityProviderTests(FederationTests):
         url = url % {'idp_id': idp_id,
                      'protocol_id': proto}
         self.delete(url)
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=http_client.NOT_FOUND)
 
 
 class MappingCRUDTests(FederationTests):
@@ -1313,7 +1315,7 @@ class MappingCRUDTests(FederationTests):
         url = url % {'mapping_id': str(mapping_id)}
         resp = self.delete(url)
         self.assertResponseStatus(resp, 204)
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_mapping_get(self):
         url = self.MAPPING_URL + '%(mapping_id)s'
@@ -1336,70 +1338,73 @@ class MappingCRUDTests(FederationTests):
 
     def test_delete_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.delete(url, expected_status=404)
+        self.delete(url, expected_status=http_client.NOT_FOUND)
 
     def test_get_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_create_mapping_bad_requirements(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_BAD_REQ})
 
     def test_create_mapping_no_rules(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_NO_RULES})
 
     def test_create_mapping_no_remote_objects(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_NO_REMOTE})
 
     def test_create_mapping_bad_value(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_BAD_VALUE})
 
     def test_create_mapping_missing_local(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
 
     def test_create_mapping_missing_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_TYPE})
 
     def test_create_mapping_wrong_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_WRONG_TYPE})
 
     def test_create_mapping_extra_remote_properties_not_any_of(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF
-        self.put(url, expected_status=400, body={'mapping': mapping})
+        self.put(url, expected_status=http_client.BAD_REQUEST,
+                 body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_any_one_of(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF
-        self.put(url, expected_status=400, body={'mapping': mapping})
+        self.put(url, expected_status=http_client.BAD_REQUEST,
+                 body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_just_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE
-        self.put(url, expected_status=400, body={'mapping': mapping})
+        self.put(url, expected_status=http_client.BAD_REQUEST,
+                 body={'mapping': mapping})
 
     def test_create_mapping_empty_map(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': {}})
 
     def test_create_mapping_extra_rules_properties(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=400,
+        self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
 
     def test_create_mapping_with_blacklist_and_whitelist(self):
@@ -1411,7 +1416,8 @@ class MappingCRUDTests(FederationTests):
         """
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_AND_BLACKLIST
-        self.put(url, expected_status=400, body={'mapping': mapping})
+        self.put(url, expected_status=http_client.BAD_REQUEST,
+                 body={'mapping': mapping})
 
 
 class MappingRuleEngineTests(FederationTests):
@@ -2207,14 +2213,14 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         self.federation_api.update_idp(self.IDP, enabled_false)
         self.v3_authenticate_token(
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER,
-            expected_status=403)
+            expected_status=http_client.FORBIDDEN)
 
     def test_scope_to_bad_project(self):
         """Scope unscoped token with a project we don't have access to."""
 
         self.v3_authenticate_token(
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER,
-            expected_status=401)
+            expected_status=http_client.UNAUTHORIZED)
 
     def test_scope_to_project_multiple_times(self):
         """Try to scope the unscoped token multiple times.
@@ -2254,7 +2260,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         """Try to scope token from non-existent unscoped token."""
         self.v3_authenticate_token(
             self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN,
-            expected_status=404)
+            expected_status=http_client.NOT_FOUND)
 
     def test_issue_token_from_rules_without_user(self):
         api = auth_controllers.Auth()
@@ -2310,7 +2316,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         """Try to scope to a domain that has no direct roles."""
         self.v3_authenticate_token(
             self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER,
-            expected_status=401)
+            expected_status=http_client.UNAUTHORIZED)
 
     def test_list_projects(self):
         urls = ('/OS-FEDERATION/projects', '/auth/projects')
@@ -3259,7 +3265,7 @@ class SAMLGenerationTests(FederationTests):
         with mock.patch.object(keystone_idp, '_sign_assertion',
                                return_value=self.signed_assertion):
             self.post(self.SAML_GENERATION_ROUTE, body=body,
-                      expected_status=403)
+                      expected_status=http_client.FORBIDDEN)
 
     def test_generate_saml_route(self):
         """Test that the SAML generation endpoint produces XML.
@@ -3322,7 +3328,8 @@ class SAMLGenerationTests(FederationTests):
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['scope']
 
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=http_client.BAD_REQUEST)
 
     def test_invalid_token_body(self):
         """Test that missing the token in request body raises an exception.
@@ -3336,7 +3343,8 @@ class SAMLGenerationTests(FederationTests):
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['identity']['token']
 
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=http_client.BAD_REQUEST)
 
     def test_sp_not_found(self):
         """Test SAML generation with an invalid service provider ID.
@@ -3347,7 +3355,8 @@ class SAMLGenerationTests(FederationTests):
         sp_id = uuid.uuid4().hex
         token_id = self._fetch_valid_token()
         body = self._create_generate_saml_request(token_id, sp_id)
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=404)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=http_client.NOT_FOUND)
 
     def test_sp_disabled(self):
         """Try generating assertion for disabled Service Provider."""
@@ -3359,7 +3368,8 @@ class SAMLGenerationTests(FederationTests):
         token_id = self._fetch_valid_token()
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=403)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=http_client.FORBIDDEN)
 
     def test_token_not_found(self):
         """Test that an invalid token in the request body raises an exception.
@@ -3371,7 +3381,8 @@ class SAMLGenerationTests(FederationTests):
         token_id = uuid.uuid4().hex
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
-        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=404)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  expected_status=http_client.NOT_FOUND)
 
     def test_generate_ecp_route(self):
         """Test that the ECP generation endpoint produces XML.
@@ -3643,7 +3654,7 @@ class ServiceProviderTests(FederationTests):
 
     def test_get_service_provider_fail(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_create_service_provider(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
@@ -3682,7 +3693,7 @@ class ServiceProviderTests(FederationTests):
         sp = self.sp_ref()
         sp[uuid.uuid4().hex] = uuid.uuid4().hex
         self.put(url, body={'service_provider': sp},
-                 expected_status=400)
+                 expected_status=http_client.BAD_REQUEST)
 
     def test_list_service_providers(self):
         """Test listing of service provider objects.
@@ -3749,21 +3760,21 @@ class ServiceProviderTests(FederationTests):
         new_sp_ref = {'id': uuid.uuid4().hex}
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=400)
+                   expected_status=http_client.BAD_REQUEST)
 
     def test_update_service_provider_unknown_parameter(self):
         new_sp_ref = self.sp_ref()
         new_sp_ref[uuid.uuid4().hex] = uuid.uuid4().hex
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=400)
+                   expected_status=http_client.BAD_REQUEST)
 
     def test_update_service_provider_404(self):
         new_sp_ref = self.sp_ref()
         new_sp_ref['description'] = uuid.uuid4().hex
         url = self.base_url(suffix=uuid.uuid4().hex)
         self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=404)
+                   expected_status=http_client.NOT_FOUND)
 
     def test_update_sp_relay_state(self):
         """Update an SP with custome relay state."""
@@ -3783,7 +3794,7 @@ class ServiceProviderTests(FederationTests):
 
     def test_delete_service_provider_404(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
-        self.delete(url, expected_status=404)
+        self.delete(url, expected_status=http_client.NOT_FOUND)
 
 
 class WebSSOTests(FederatedTokenTests):
