@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_1f7766d5",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T20:14:40Z",
+      "side": 1,
+      "message": "Now that you have made this a kwarg, we\u0027ll need to really fix the things that call new_user_ref to specify it as a kwarg.... or maybe a better way would be to not change this at all and delete the key from the resulting data structure in the test.",
+      "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_245ee145",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T20:14:40Z",
+      "side": 1,
+      "message": "(nit) The static word is a little strange. Suggest \u0027test_create_user_with_admin_token_and_no_domain\u0027",
+      "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1fb0c68a",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T20:14:40Z",
+      "side": 1,
+      "message": "Should there also be a test where None is explicitly passed in?",
+      "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
