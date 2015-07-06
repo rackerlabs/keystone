@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ff1c02c3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-06T20:12:31Z",
+      "side": 1,
+      "message": "\"unicode\" isn\u0027t available in Python 3.\n\nSuggest \"if isinstance(token_ref, (six.binary_type, six.text_type))\"",
+      "revId": "c64c8d6cd70eaccb76ccfc39a1db1db02a3bee9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
