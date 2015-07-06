@@ -16,6 +16,24 @@
       "revId": "d7b47147ed8a98927d893d1912c10f8e8e2578b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_889fd0b3",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-06T15:07:57Z",
+      "side": 1,
+      "message": "sure, it\u0027s possible, pls check the bug desc and the testcase pls.",
+      "parentUuid": "ba3cc151_addae615",
+      "revId": "d7b47147ed8a98927d893d1912c10f8e8e2578b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
