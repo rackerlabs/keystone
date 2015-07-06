@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_2d081628",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-06T14:51:17Z",
+      "side": 1,
+      "message": "It is better to have a brief description here for reader not to dig deeper if he doesn\u0027t need details.",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_669403e8",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 14
