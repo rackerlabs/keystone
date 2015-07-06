@@ -122,6 +122,24 @@
       "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0e76693e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-06T15:29:37Z",
+      "side": 1,
+      "message": "Tried but no found any place which is better to accommodate this kind of testcase. Only difference here is these testcases is not restful testcase but this is not exclude explicitly by the name of this file.\n\nAny other concerns for these testcase?",
+      "parentUuid": "ba3cc151_3c028a70",
+      "revId": "45409fe667a1a34d7feb0489f2a471fd44798487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
