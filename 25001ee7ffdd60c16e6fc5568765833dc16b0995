@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ffa64252",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-06T20:23:57Z",
+      "side": 1,
+      "message": "can you add a meaningful message or either remove this?",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ba2a087d",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-06T20:23:57Z",
+      "side": 1,
+      "message": "will Melon receive all calls intended to keystone v3? How will this work?",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1a41b439",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-06T20:23:57Z",
+      "side": 1,
+      "message": "this means that we can only have one identity provider, or we may set a wildcard here?",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9ab944ef",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-06T20:23:57Z",
+      "side": 1,
+      "message": "is this really necessary? I believe that you may say where to find this metadata and the IdP can get it in the way it wants (by accessing the URL or by a local copy of it)",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_bad76822",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-06T20:23:57Z",
+      "side": 1,
+      "message": "the SP Apache?",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
