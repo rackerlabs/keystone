@@ -51,6 +51,24 @@
       "revId": "1ae7096ab6ffbcd127dc24a42622188384735b4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_08f179cd",
+        "filename": "run_tests.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 17055
+      },
+      "writtenOn": "2015-07-06T16:51:19Z",
+      "side": 1,
+      "message": "I implemented the fix suggested by Malani in patch set 4 which should address your concerns as well.",
+      "parentUuid": "ba3cc151_9f74d69c",
+      "revId": "1ae7096ab6ffbcd127dc24a42622188384735b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
