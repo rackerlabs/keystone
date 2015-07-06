@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_9c4de8c6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-07-06T06:41:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_5911b2ae",
+      "revId": "e228f604b0b7316bec58a13f7fb72bb755ee078b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d925c20a",
         "filename": "keystone/tests/unit/utils.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-06T05:35:02Z",
       "side": 1,
       "message": "this seems like the wrong place to me, not because it\u0027s wrong but because we have a bunch of functions like this and they currenlty live in test_v3.py so we should keep them together.",
+      "revId": "e228f604b0b7316bec58a13f7fb72bb755ee078b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3cd5bcb8",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-07-06T06:41:00Z",
+      "side": 1,
+      "message": "OK. I move these functions to test_v3.py, put them in class TestAuthMixin.",
+      "parentUuid": "ba3cc151_d925c20a",
       "revId": "e228f604b0b7316bec58a13f7fb72bb755ee078b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
