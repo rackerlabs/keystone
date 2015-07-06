@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_addae615",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-06T14:59:06Z",
+      "side": 1,
+      "message": "Is this possible?",
+      "revId": "d7b47147ed8a98927d893d1912c10f8e8e2578b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
