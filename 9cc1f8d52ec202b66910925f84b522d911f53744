@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_729a79c7",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_e0cd77b8",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_203b5f9e",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 62
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-04T15:01:05Z",
       "side": 1,
       "message": "So I assume the rule is that projects acting as a domain have their project_id and domain_id to be the same? Does this check mean that the caller can\u0027t set the themselves but must (just for projects acting as a domain) leave domain_id unset?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_92edbd27",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "Yes, that\u0027s it. If it is a subdomain, the parent domain must be identified by parent_id.",
+      "parentUuid": "ba3cc151_203b5f9e",
       "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_f2a2099a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_406b0386",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e0125709",
         "filename": "keystone/resource/core.py",
         "patchSetId": 62
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-04T15:01:05Z",
       "side": 1,
       "message": "is there a case when a regular projects doesn\u0027t have a parent ref? Won\u0027t all project that exists before this change all have their parent set to the project acting as their domain?  Or maybe that\u0027s a change in a follow on patch when we ditch the domain table?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_92161da6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "No, it\u0027ll always have a parent ref. And you\u0027re correct, all projects will be children of their domains from here: https://review.openstack.org/#/c/143763/59/keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py\nAt this point, we\u0027re just checking if the user passed a parent_id that belongs to the same domain as it does.",
+      "parentUuid": "ba3cc151_e0125709",
       "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_cd73aa14",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "Ok. Will do it right here in this patch",
+      "parentUuid": "ba3cc151_80da6be8",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e0b7b7f3",
         "filename": "keystone/resource/core.py",
         "patchSetId": 62
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-04T15:01:05Z",
       "side": 1,
       "message": "so disabling a project acting as a domain does not require the tree underneath it to have already been disabled?  I assume this is to keep compatibility with current domain functionality? If so, maybe a comment to this effect would be good here/",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a2166c53",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_e0b7b7f3",
       "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a2874cd6",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "the latter. The code will set them both to this case. I\u0027ll rephrase",
+      "parentUuid": "ba3cc151_00873b13",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e00fb786",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 62
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_edf78e8a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 2999,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "I guess the ForbiddenAction was wrong all the time. A ValidationError fits better in this case to me... We are kind of modifying the restriction in this patch, so I think it\u0027s the right place to modify this.",
+      "parentUuid": "ba3cc151_e00fb786",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_604ac7ae",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 62
@@ -149,6 +293,24 @@
       "writtenOn": "2015-07-04T15:01:05Z",
       "side": 1,
       "message": "I note that we use the create_project validator for both these tests (whereas the one you are replacing used the update_project validator).  Is there a reason for this?",
+      "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_430c4242",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-06T17:21:31Z",
+      "side": 1,
+      "message": "There is not. The test name is wrong. I\u0027ll fix it.",
+      "parentUuid": "ba3cc151_604ac7ae",
       "revId": "9cc1f8d52ec202b66910925f84b522d911f53744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
