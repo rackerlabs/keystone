@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_669403e8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "double \u0027are\u0027",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_863587f8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "this should be more like:\n\ngroups: {\n    \u0027name\u0027: {1}\n    \u0027domain\u0027:  {\n         \u0027id\u0027: \u0027\u003cdomainid\u003e\u0027\n     }\n}\n\n\ngroups identified by names must have corresponding domain they belong to.",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_79d4a446",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "UserName is just an ordinary attribute, we use it widely in our tests, but it could be anything. To be honest parameters names are strongly connected with the configuration of corresponding apache modules. \nI suggest changing to something like:\n\n\" If the user id or name is not mapped, the server tries to get user\u0027s name from env variable REMOTE_USER\"",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d9c37089",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "local should be probably decorated with some RsT structure like parenthesis or sth?",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f9f514cb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "put local and ephemeral together, as they correspond to eatch other. Move domain description somewhere else and make a comment about mapping to a existing user/domain.",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_99f088cb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "this will actually not work, as in the mapping rule you are watching attribute called HTTP_OIDC_GROUPIDS.",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1c40e606",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "Suppoerted Mapping are used here and only once in the whole document. What are these?",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_b9c0ec2b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "Sorry, this sentence doesn\u0027t make much sense to me.\nI suggest changing to:\n\n\"Combinations of `empty``, ``any_one_of``, ``not_any_of`` [...] cannot be used multiple times withing a CONDITION\"",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f98514ad",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "We don\u0027t use Email in the mapping rules, I guess you should change either Email to UseRName ot UserName to Email.",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5c250eac",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-06T14:10:26Z",
+      "side": 1,
+      "message": "Great description! Clear and  concise!",
+      "revId": "b70781718924c0014d91e6a20f5e47716ce92cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
