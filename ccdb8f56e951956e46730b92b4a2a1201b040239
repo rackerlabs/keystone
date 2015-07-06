@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a210aca9",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 16975
+      },
+      "writtenOn": "2015-07-06T18:08:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_1e011a06",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_b99e08b7",
         "filename": "doc/source/developing.rst",
         "patchSetId": 9
@@ -98,6 +116,24 @@
       "writtenOn": "2015-07-02T16:26:09Z",
       "side": 1,
       "message": "We still need to provide an example of how to do this even if the command is different.",
+      "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_22901cec",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 16975
+      },
+      "writtenOn": "2015-07-06T18:08:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_b99e08b7",
       "revId": "ccdb8f56e951956e46730b92b4a2a1201b040239",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
