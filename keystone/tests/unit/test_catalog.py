@@ -14,6 +14,8 @@
 
 import uuid
 
+from six.moves import http_client
+
 from keystone import catalog
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import database
@@ -115,16 +117,20 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         self.assertNotIn("internalurl", response.result['endpoint'])
 
     def test_endpoint_create_with_null_publicurl(self):
-        self._endpoint_create(expected_status=400, publicurl=None)
+        self._endpoint_create(expected_status=http_client.BAD_REQUEST,
+                              publicurl=None)
 
     def test_endpoint_create_with_empty_publicurl(self):
-        self._endpoint_create(expected_status=400, publicurl='')
+        self._endpoint_create(expected_status=http_client.BAD_REQUEST,
+                              publicurl='')
 
     def test_endpoint_create_with_null_service_id(self):
-        self._endpoint_create(expected_status=400, service_id=None)
+        self._endpoint_create(expected_status=http_client.BAD_REQUEST,
+                              service_id=None)
 
     def test_endpoint_create_with_empty_service_id(self):
-        self._endpoint_create(expected_status=400, service_id='')
+        self._endpoint_create(expected_status=http_client.BAD_REQUEST,
+                              service_id='')
 
     def test_endpoint_create_with_valid_url(self):
         """Create endpoint with valid URL should be tested, too."""
@@ -159,7 +165,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case one: publicurl, internalurl and adminurl are
         # all invalid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=invalid_url,
                                   internalurl=invalid_url,
                                   adminurl=invalid_url)
@@ -167,7 +173,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case two: publicurl, internalurl are invalid
         # and adminurl is valid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=invalid_url,
                                   internalurl=invalid_url,
                                   adminurl=valid_url)
@@ -175,7 +181,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case three: publicurl, adminurl are invalid
         # and internalurl is valid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=invalid_url,
                                   internalurl=valid_url,
                                   adminurl=invalid_url)
@@ -183,7 +189,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case four: internalurl, adminurl are invalid
         # and publicurl is valid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=valid_url,
                                   internalurl=invalid_url,
                                   adminurl=invalid_url)
@@ -191,7 +197,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case five: publicurl is invalid, internalurl
         # and adminurl are valid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=invalid_url,
                                   internalurl=valid_url,
                                   adminurl=valid_url)
@@ -199,7 +205,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case six: internalurl is invalid, publicurl
         # and adminurl are valid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=valid_url,
                                   internalurl=invalid_url,
                                   adminurl=valid_url)
@@ -207,7 +213,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         # Case seven: adminurl is invalid, publicurl
         # and internalurl are valid
         for invalid_url in invalid_urls:
-            self._endpoint_create(expected_status=400,
+            self._endpoint_create(expected_status=http_client.BAD_REQUEST,
                                   publicurl=valid_url,
                                   internalurl=valid_url,
                                   adminurl=invalid_url)
