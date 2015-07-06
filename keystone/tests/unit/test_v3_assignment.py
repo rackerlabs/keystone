@@ -657,9 +657,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
     def test_create_project(self):
         """Call ``POST /projects``."""
         ref = self.new_project_ref(domain_id=self.domain_id)
-        r = self.post(
-            '/projects',
-            body={'project': ref})
+        r = self.post('/projects', body={'project': ref})
         self.assertValidProjectResponse(r, ref)
 
     def test_create_project_empty_project_reference_errorcode(self):
@@ -669,8 +667,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
     def test_create_project_invalid_domain_id(self):
         """Call ``POST /projects``."""
-        self.new_project_ref(domain_id=uuid.uuid4().hex)
-        self.post('/projects', body={'project': {}},
+        ref = self.new_project_ref(domain_id=uuid.uuid4().hex)
+        self.post('/projects', body={'project': ref},
                   expected_status=exception.SchemaValidationError.code)
 
     def test_create_project_no_request_body(self):
