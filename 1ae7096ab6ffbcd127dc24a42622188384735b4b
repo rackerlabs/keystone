@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ddc031e3",
+        "filename": "run_tests.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 17055
+      },
+      "writtenOn": "2015-07-06T16:48:39Z",
+      "side": 1,
+      "message": "Moved to end of script in patch set 3.",
+      "parentUuid": "ba3cc151_ab608436",
+      "revId": "1ae7096ab6ffbcd127dc24a42622188384735b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_9f74d69c",
         "filename": "run_tests.sh",
         "patchSetId": 2
