@@ -69,6 +69,42 @@
       "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_902b8033",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-06T11:40:54Z",
+      "side": 1,
+      "message": "Also see lines 45-47.",
+      "parentUuid": "ba3cc151_412ec9a5",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f0168cf0",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-06T11:40:54Z",
+      "side": 1,
+      "message": "The example is valid. http://keystone.fqdn:5000/keystone is an entity id. It just looks weird.",
+      "parentUuid": "ba3cc151_4bfb4a47",
+      "revId": "2341aef934951e29095db75aedcf2f263e480fb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
