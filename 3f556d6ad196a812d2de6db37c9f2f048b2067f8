@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_eb30e1ea",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-06T11:57:30Z",
+      "side": 1,
+      "message": "please do not update this file by yourself, it will be updated by one of the core reviewers some time later.",
+      "revId": "3f556d6ad196a812d2de6db37c9f2f048b2067f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
