@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_c29e2263",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-06T11:08:35Z",
+      "side": 1,
+      "message": "unrelated change",
+      "revId": "021c7ee68208f80705442088d3f28c9025958e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
