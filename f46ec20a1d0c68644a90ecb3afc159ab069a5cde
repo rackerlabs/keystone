@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_c41cd579",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-06T19:50:31Z",
+      "side": 1,
+      "message": "It seemed to make sense having this as a property since the function doesn\u0027t take any arguments to determine if it should or shouldn\u0027t raise an exception.",
+      "parentUuid": "ba3cc151_0ce8d415",
+      "revId": "f46ec20a1d0c68644a90ecb3afc159ab069a5cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_2ced9825",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 4
