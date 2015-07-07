@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_5fbde4d5",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-07T01:43:23Z",
+      "side": 1,
+      "message": "Whitespace only changes should be in a separate commit.",
+      "revId": "e62fb69a77c46af283269a8e87e254d86ae9779a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
