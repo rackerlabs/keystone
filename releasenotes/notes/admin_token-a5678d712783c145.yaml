@@ -1,0 +1,8 @@
+---
+upgrade:
+  - The ``keystone-paste.ini`` must be updated to put the ``admin_token_auth``
+    middleware before ``build_auth_context``. See the sample
+    ``keystone-paste.ini`` for the correct ``pipeline`` value. Having
+    ``admin_token_auth`` after ``build_auth_context`` is deprecated and will
+    not be supported in a future release.
+
