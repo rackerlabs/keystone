@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_c6f2689a",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-07T17:09:57Z",
+      "side": 1,
+      "message": "s/has/have/",
+      "revId": "e415571e6071d6f55e8eeeb8f2bb5cfe3cfd5ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0627f012",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-07T17:09:57Z",
+      "side": 1,
+      "message": "This should fail hacking: http://docs.openstack.org/developer/hacking/#docstrings\n\nMake sure you run \u0027tox -e pep8\u0027 before resubmitting.",
+      "revId": "e415571e6071d6f55e8eeeb8f2bb5cfe3cfd5ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8660e036",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-07T17:09:57Z",
+      "side": 1,
+      "message": "Nothing is checking to see if the exception is actually raised so this comment isn\u0027t accurate.",
+      "revId": "e415571e6071d6f55e8eeeb8f2bb5cfe3cfd5ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
