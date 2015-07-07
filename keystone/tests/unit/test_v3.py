@@ -14,8 +14,10 @@
 
 import uuid
 
+import mock
 from oslo_config import cfg
 import oslo_context.context
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 from six.moves import http_client
@@ -1154,12 +1156,26 @@ class AuthContextMiddlewareTestCase(RestfulTestCase):
         self.assertEqual(overridden_context,
                          req.environ.get(authorization.AUTH_CONTEXT_ENV))
 
-    def test_admin_token_auth_context(self):
-        # test to make sure AuthContextMiddleware does not attempt to build
-        # auth context if the incoming auth token is the special admin token
+    def test_admin_auth_context(self):
+        # test to make sure AuthContextMiddleware does not attempt to build the
+        # auth context if the admin_token middleware indicates it's admin
+        # already.
+        token_id = uuid.uuid4().hex  # token doesn't matter.
+        # the admin_token middleware sets is_admin in the context.
+        extra_environ = {middleware.CONTEXT_ENV: {'is_admin': True}}
+        req = self._middleware_request(token_id, extra_environ)
+        auth_context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertDictEqual({}, auth_context)
+
+    @mock.patch.object(versionutils, 'report_deprecated_feature')
+    def test_admin_token_auth_context_deprecated(self, mock_report_deprecated):
+        # For backwards compatibility AuthContextMiddleware will check that the
+        # admin token (as configured in the CONF file) is present and not
+        # attempt to build the auth context. This is deprecated.
         req = self._middleware_request(CONF.admin_token)
         auth_context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
         self.assertDictEqual({}, auth_context)
+        self.assertEqual(1, mock_report_deprecated.call_count)
 
     def test_unscoped_token_auth_context(self):
         unscoped_token = self.get_unscoped_token()
