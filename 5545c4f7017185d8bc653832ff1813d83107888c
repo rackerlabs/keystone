@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_84623bd7",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 14760
+      },
+      "writtenOn": "2015-07-07T06:13:02Z",
+      "side": 1,
+      "message": "What is purpose of doing \u0027set +e\u0027 if just going to exit if get a failing result?\n\nAs it is, if there is a failing test the code just exits here and no logs are saved.  I would think if there is a failure we would want to save the logs.\n\nSo I would suggest moving this if block to after the saving of the log file.",
+      "revId": "5545c4f7017185d8bc653832ff1813d83107888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_3537dfb1",
         "filename": "run_tests.sh",
         "patchSetId": 4
