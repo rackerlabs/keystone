@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_7266a72a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1758,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-07T23:16:57Z",
+      "side": 1,
+      "message": "Why not move this check up to the filter_query() method? Maybe line 1689.\n\n    query \u003d query or \u0027\u0027\n\nRight now we are doing this check in a loop, very far away from where the variable initially enters the method.",
+      "revId": "2988e92184f3636cbdce55bda1e80a614a78e625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
