@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_d003ec40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16277
+      },
+      "writtenOn": "2015-07-07T23:54:20Z",
+      "side": 1,
+      "message": "commit message title should not be longer than 50 chars",
+      "revId": "99b1fefcc42e451f9adee90080bd54fe9c2ef3d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
