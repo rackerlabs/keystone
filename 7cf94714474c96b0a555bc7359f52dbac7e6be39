@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_3f63401c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-07T05:37:17Z",
+      "side": 1,
+      "message": "I decided to follow your second suggestion. Deleting the domain id in the test makes the test intent clearer.",
+      "parentUuid": "ba3cc151_1f7766d5",
+      "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_245ee145",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ff6cf809",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-07T05:37:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_245ee145",
+      "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_1fb0c68a",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-06T20:14:40Z",
       "side": 1,
       "message": "Should there also be a test where None is explicitly passed in?",
+      "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0909662c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-07T05:37:17Z",
+      "side": 1,
+      "message": "With \u0027None\u0027 as the value for domain_id, we get a 400 bad request with the message \"Invalid input for field \u0027domain_id\u0027. The value is \u0027None\u0027.\" Since this is not related to admin token, I don\u0027t think we need a separate test.",
+      "parentUuid": "ba3cc151_1fb0c68a",
       "revId": "7cf94714474c96b0a555bc7359f52dbac7e6be39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
