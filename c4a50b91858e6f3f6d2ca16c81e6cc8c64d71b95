@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_2a0d1c3e",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-07-07T16:30:21Z",
+      "side": 1,
+      "message": "(NIT): You should be a bit more defensive here and ensure that attrs_checked is a set (or similar) that .add will work on",
+      "revId": "c4a50b91858e6f3f6d2ca16c81e6cc8c64d71b95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
