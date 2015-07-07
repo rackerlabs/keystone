@@ -33,6 +33,24 @@
       "revId": "5545c4f7017185d8bc653832ff1813d83107888c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2fcbee54",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 17055
+      },
+      "writtenOn": "2015-07-07T15:59:01Z",
+      "side": 1,
+      "message": "I agree, it would be nice to have the ability to keep many previous versions of the log file.  However, I think having different files makes comparing to tests much easier.  Perhaps I could implement a system that added an option to either create a separate log file or just append the new log to a master list.  But maybe that is getting complicated.  The other thing is that with the -a option, logs can be 50+ MB which, in one file, becomes unwieldy very quickly.  Given these considerations, what would you suggest?",
+      "parentUuid": "ba3cc151_3537dfb1",
+      "revId": "5545c4f7017185d8bc653832ff1813d83107888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
