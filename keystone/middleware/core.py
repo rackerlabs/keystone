@@ -170,15 +170,13 @@ class AuthContextMiddleware(wsgi.Middleware):
     """Build the authentication context from the request auth token."""
 
     def _build_auth_context(self, request):
-        token_id = request.headers.get(AUTH_TOKEN_HEADER).strip()
 
-        if token_id == CONF.admin_token:
-            # NOTE(gyee): no need to proceed any further as the special admin
-            # token is being handled by AdminTokenAuthMiddleware. This code
-            # will not be impacted even if AdminTokenAuthMiddleware is removed
-            # from the pipeline as "is_admin" is default to "False". This code
-            # is independent of AdminTokenAuthMiddleware.
+        if request.environ.get(CONTEXT_ENV, {}).get('is_admin', False):
+            # NOTE(gyee): no need to proceed any further as we already know
+            # this is an admin request.
             return {}
+
+        token_id = request.headers.get(AUTH_TOKEN_HEADER).strip()
 
         context = {'token_id': token_id}
         context['environment'] = request.environ

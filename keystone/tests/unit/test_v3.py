@@ -1288,8 +1288,11 @@ class AuthContextMiddlewareTestCase(RestfulTestCase):
 
     def test_admin_token_auth_context(self):
         # test to make sure AuthContextMiddleware does not attempt to build
-        # auth context if the incoming auth token is the special admin token
-        req = self._mock_request_object(CONF.admin_token)
+        # auth context if the admin_token middleware indicates it's admin
+        # already.
+
+        req = self._mock_request_object(uuid.uuid4().hex)
+        req.environ[middleware.CONTEXT_ENV] = {'is_admin': True}
         application = None
         middleware.AuthContextMiddleware(application).process_request(req)
         self.assertDictEqual(req.environ.get(authorization.AUTH_CONTEXT_ENV),
