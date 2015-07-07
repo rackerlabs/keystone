@@ -719,6 +719,10 @@ class V3Controller(wsgi.Application):
         being used.
 
         """
+        if context.get('is_admin', False):
+            raise exception.ValidationError(
+                _('The admin token is not a domain-scoped token.'))
+
         # We could make this more efficient by loading the domain_id
         # into the context in the wrapper function above (since
         # this version of normalize_domain will only be called inside
@@ -729,10 +733,6 @@ class V3Controller(wsgi.Application):
                 token_id=context['token_id'],
                 token_data=self.token_provider_api.validate_token(
                     context['token_id']))
-        except KeyError:
-            # This might happen if we use the Admin token, for instance
-            raise exception.ValidationError(
-                _('A domain-scoped token must be used'))
         except (exception.TokenNotFound,
                 exception.UnsupportedTokenVersionException):
             LOG.warning(_LW('Invalid token found while getting domain ID '
