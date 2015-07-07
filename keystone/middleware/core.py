@@ -174,14 +174,22 @@ class AuthContextMiddleware(wsgi.Middleware):
     """Build the authentication context from the request auth token."""
 
     def _build_auth_context(self, request):
+
+        if request.environ.get(CONTEXT_ENV, {}).get('is_admin', False):
+            # NOTE(gyee): no need to proceed any further as we already know
+            # this is an admin request.
+            return {}
+
         token_id = request.headers.get(AUTH_TOKEN_HEADER).strip()
 
         if token_id == CONF.admin_token:
-            # NOTE(gyee): no need to proceed any further as the special admin
-            # token is being handled by AdminTokenAuthMiddleware. This code
-            # will not be impacted even if AdminTokenAuthMiddleware is removed
-            # from the pipeline as "is_admin" is default to "False". This code
-            # is independent of AdminTokenAuthMiddleware.
+            versionutils.report_deprecated_feature(
+                LOG,
+                _LW('Auth context checking for the admin token is deprecated '
+                    'as of the Mitaka release and will be removed in the O '
+                    'release. Update keystone-paste.ini so that admin_token_'
+                    'auth is before build_auth_context in the paste '
+                    'pipelines.'))
             return {}
 
         context = {'token_id': token_id}
