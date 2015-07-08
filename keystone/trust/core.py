@@ -148,8 +148,9 @@ class Manager(manager.Manager):
                      'max_count': max_redelegation_count})
             # Decline remaining_uses
             if 'remaining_uses' in trust:
-                exception.ValidationError(_('remaining_uses must not be set '
-                                            'if redelegation is allowed'))
+                raise exception.ValidationError(_('remaining_uses must not be '
+                                                'set if redelegation is '
+                                                'allowed'))
 
         if redelegated_trust:
             trust['redelegated_trust_id'] = redelegated_trust['id']
