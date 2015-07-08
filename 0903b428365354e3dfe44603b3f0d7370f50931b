@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_8003b241",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-08T15:25:24Z",
+      "side": 1,
+      "message": "Please either make a link here or provide a path to common.py from the project root - it looks weird as it is :)",
+      "revId": "0903b428365354e3dfe44603b3f0d7370f50931b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
