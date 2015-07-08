@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_3813ebb9",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T21:48:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5afe65bd_e7b34809",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_c7b84ce8",
         "filename": "keystone/notifications.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-02T01:23:47Z",
       "side": 1,
       "message": "suggest use @functools.wraps",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f87fc3dc",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T21:48:36Z",
+      "side": 1,
+      "message": "I was trying to not change the code much, but I\u0027ve made this change.",
+      "parentUuid": "5afe65bd_c7b84ce8",
       "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_9871d70e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T21:48:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5afe65bd_87cb7472",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_47c57c59",
         "filename": "keystone/notifications.py",
         "patchSetId": 7
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_5866ef51",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T21:48:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5afe65bd_47c57c59",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_07a664c1",
         "filename": "keystone/notifications.py",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2015-06-02T01:23:47Z",
       "side": 1,
       "message": "seems like this should be an error now, just like it\u0027s an error if event_callbacks isn\u0027t a dict.",
+      "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_259c23bf",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T21:48:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5afe65bd_07a664c1",
       "revId": "d1a7d2409e2a4b41bd692f141199f59b1c1fa7b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
