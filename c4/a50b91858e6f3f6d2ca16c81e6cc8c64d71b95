@@ -1,0 +1,15 @@
+Verified+2: Jenkins
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Nathan Kinder <nkinder@redhat.com>
+Code-Review+1: Alexey Miroshkin <alexey.miroshkin@ru.ibm.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Submitted-by: Jenkins
+Submitted-at: Wed, 08 Jul 2015 00:52:48 +0000
+Reviewed-on: https://review.openstack.org/198270
+Project: openstack/keystone
+Branch: refs/heads/master
