@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_c22d4947",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-08T17:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_9904d415",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_f671a178",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 32
@@ -101,6 +119,24 @@
       "writtenOn": "2015-05-26T22:21:05Z",
       "side": 1,
       "message": "This also has to be moved up since it\u0027s a stdlib import.",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_42fb79c1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-08T17:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_f671a178",
       "revId": "05655992679211869d348ebf0887766c6a13ad90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
