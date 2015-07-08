@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ca525735",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-08T03:44:55Z",
+      "side": 1,
+      "message": "Yeah, seems strange to have David\u0027s patch at all when you can simply update your docstring.",
+      "parentUuid": "ba3cc151_cabed7ad",
+      "revId": "5403e56a2188d1360e9569ca7cf818fabc2b34e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_aaf91350",
         "filename": "keystone/tests/unit/test_contrib_ec2.py",
         "patchSetId": 6
