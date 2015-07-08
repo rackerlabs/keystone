@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_3261ca39",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T20:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_c728799c",
+      "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_5e8602dc",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2015-06-17T06:54:19Z",
       "side": 1,
       "message": "Those config is redundant, see: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L288",
+      "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_32c8ea21",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T20:30:31Z",
+      "side": 1,
+      "message": "They won\u0027t be forever and this particular test case needs to ensure it\u0027s using the correct driver. If the default changes these test may (and probably will) still pass.",
+      "parentUuid": "fa32b979_5e8602dc",
       "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_d2d97ef4",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T20:30:31Z",
+      "side": 1,
+      "message": "test_backend.CatalogTests",
+      "parentUuid": "fa32b979_3e58de89",
+      "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_1e54fa50",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2015-06-17T06:54:19Z",
       "side": 1,
       "message": "The blank line here is intentional?",
+      "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_52cd6e2f",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T20:30:31Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "fa32b979_1e54fa50",
       "revId": "cd7212c38b1d68dd29586902571f13d73747f345",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
