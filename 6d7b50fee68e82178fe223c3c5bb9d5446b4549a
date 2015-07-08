@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_4c0e523c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 58
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-08T13:33:14Z",
+      "side": 1,
+      "message": "In the first one, we could create two is_domain projects with diferent names, since the domain_id will be always different for is_domain projects.",
+      "parentUuid": "ba3cc151_781569e3",
+      "revId": "6d7b50fee68e82178fe223c3c5bb9d5446b4549a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_fa7df0b1",
         "filename": "keystone/common/sql/migrate_repo/versions/075_update_project_name_constraint.py",
         "patchSetId": 58
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_5f127258",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_update_project_name_constraint.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-08T13:33:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_fa7df0b1",
+      "revId": "6d7b50fee68e82178fe223c3c5bb9d5446b4549a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_5890a595",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 58
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-07T15:28:31Z",
       "side": 1,
       "message": "This test needs a more descriptive name or a docstring saying why this will fail. Also is \"project_name\" correct? It looks like it modifieds domain_name.",
+      "revId": "6d7b50fee68e82178fe223c3c5bb9d5446b4549a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9359d137",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-08T13:33:14Z",
+      "side": 1,
+      "message": "Yes, the name is correct... is an \"is_doman_project\". I\u0027ll add a docstring",
+      "parentUuid": "ba3cc151_5890a595",
       "revId": "6d7b50fee68e82178fe223c3c5bb9d5446b4549a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
