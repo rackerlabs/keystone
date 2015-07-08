@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_022fbc88",
+        "filename": "keystone/tests/unit/ksfixtures/cache.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-08T09:01:42Z",
+      "side": 1,
+      "message": "fixtures is third party lib.",
+      "revId": "202aac0b4182097a3822e969c0b3fb2d5ce65abc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9c3d7291",
+        "filename": "keystone/tests/unit/ksfixtures/cache.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-08T09:01:42Z",
+      "side": 1,
+      "message": "need one more blank line here.",
+      "revId": "202aac0b4182097a3822e969c0b3fb2d5ce65abc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
