@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_1024e9c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-08T07:13:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_99482f5e",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_99690f8f",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_6d324212",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-08T07:13:59Z",
+      "side": 1,
+      "message": "As the TODO comment in the code you refer to says, we should ideally throw an exception for non domain-scoped tokens and that we are using the default domain only as a temporary fix for some failing tempest tests. These tests do not use admin token, so I see no reason why we should use the default domain for it (the admin can always specify the default domain explicitly while creating the user if he/she wants). We cannot claim consistency as a reason either since the admin token is a special-case token (i.e. not fernet/PKI/UUID)",
+      "parentUuid": "ba3cc151_99690f8f",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_39cc83ba",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-08T01:26:46Z",
       "side": 1,
       "message": "this change is unrelated and should be a in a separate commit.",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d000c104",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-08T07:13:59Z",
+      "side": 1,
+      "message": "Done. Please review https://review.openstack.org/#/c/199420/",
+      "parentUuid": "ba3cc151_39cc83ba",
       "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
