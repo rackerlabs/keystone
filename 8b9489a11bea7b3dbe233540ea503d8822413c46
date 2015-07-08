@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_6159e934",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-08T08:13:30Z",
+      "side": 1,
+      "message": "prefer to add the reason to change this? cannnot see from the commit the reason to make this change.\n\nmaybe, \u0027the private function only invoked by the create API instead of list API\u0027.",
+      "revId": "8b9489a11bea7b3dbe233540ea503d8822413c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
