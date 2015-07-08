@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_cccb3ba3",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T13:58:57Z",
+      "side": 0,
+      "message": "I think we\u0027re going to need to keep these around (deprecated) for backwards-compatibility.",
+      "revId": "0d84009c0cfa07219730973160422bb7cb898f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ece95f1b",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T13:58:57Z",
+      "side": 0,
+      "message": "I think we need to keep this. We need to register the old names so that they continue to work, but are deprecated.",
+      "revId": "0d84009c0cfa07219730973160422bb7cb898f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
