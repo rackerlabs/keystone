@@ -16,6 +16,24 @@
       "revId": "cd14af6398a71d7af880bd311c37c5cb3fa09130",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_decd0431",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:21:06Z",
+      "side": 1,
+      "message": "also, remove \"raised\" since this is implied by the context.",
+      "parentUuid": "ba3cc151_7ebe38af",
+      "revId": "cd14af6398a71d7af880bd311c37c5cb3fa09130",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
