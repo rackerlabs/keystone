@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_791e8b71",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T01:52:36Z",
+      "side": 1,
+      "message": "use existing file?",
+      "revId": "64c1d45e80c27e7fb3ad10546b59a60d07514421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a41aaa6d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T01:52:36Z",
+      "side": 1,
+      "message": "use tempfile.NamedTemporaryFile since it\u0027s easier to work with.\n\nhttps://docs.python.org/2/library/tempfile.html#tempfile.NamedTemporaryFile",
+      "revId": "64c1d45e80c27e7fb3ad10546b59a60d07514421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
