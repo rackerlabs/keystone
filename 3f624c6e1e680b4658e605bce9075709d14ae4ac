@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_ee9076ef",
+        "filename": "keystone/backends.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T13:57:41Z",
+      "side": 1,
+      "message": "Does the application really need to specify cache.REGION? Maybe the application should have to make its own REGION instead.\n\nmaybe the call should be like...\n\n region \u003d cache.create_cache_region(CONF)\n\nand then you have to pass the region on wherever cache.REGION is needed.\n\nOtherwise, oslo.cache documentation must say that the application needs to do this.",
+      "revId": "3f624c6e1e680b4658e605bce9075709d14ae4ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
