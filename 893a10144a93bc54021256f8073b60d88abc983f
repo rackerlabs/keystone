@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_59b6ee3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "this bp is not approved.",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_390bead7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "what\u0027s the difference between an attribute and a property?",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f9aca2a0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "it would be more obvious if the dictionary was passed to the listener. e.g., \n\n\n @listener({\n   notifications.ACTIONS.created: {\n     \u0027user\u0027: self._user_created_callback,\n...\n\nalthough then I suppose you couldn\u0027t reference self. Maybe I\u0027d be better off wrapping the methods instead.",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d97f5edd",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "use :data:`.ACTIONS`",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_54b6b33e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "register_event_callbacks is going to fail in an obvious way if there\u0027s no event_callbacks, so this check is excessive.",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_79009202",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "the attribute existence was checked above, so put this check there too.\n\nAlternatively, just remove this since it\u0027s going to be pretty obvious why this failed.",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d4c6439b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "another check that seems excessive.",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_741417e8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "this is asking for items()",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d4a723ba",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "there\u0027s all these unnecessary checks and then here it\u0027s ok to have an empty list or string or 0 or False? weird.",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_14a26bae",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:49:10Z",
+      "side": 1,
+      "message": "suggest use collections.Iterable ?",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
