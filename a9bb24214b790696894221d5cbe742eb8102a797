@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_857f60df",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T04:15:59Z",
+      "side": 1,
+      "message": "It looks like you changed the other test file to not use this at all. If that\u0027s the case then just delete this. We should pick one way to do it and commit to it.",
+      "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c54328ae",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T04:15:59Z",
+      "side": 1,
+      "message": "This should be in the third-party section: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
