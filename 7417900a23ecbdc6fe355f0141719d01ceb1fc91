@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_46c71b98",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-08T08:04:39Z",
+      "side": 1,
+      "message": "\u0027These tests do not use admin token\u0027, assume once up a time these tempest test didn\u0027t use domain-scoped token or specify the domain-id neither, thus, we need the workaround here.",
+      "parentUuid": "ba3cc151_6d324212",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_39cc83ba",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
