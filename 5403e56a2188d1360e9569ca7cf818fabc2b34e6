@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_d59ada61",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T14:57:43Z",
+      "side": 1,
+      "message": "You can say that about any follow up patch. It just depends on how many times you want to keep making minor changes and re-uploading...",
+      "parentUuid": "ba3cc151_ca525735",
+      "revId": "5403e56a2188d1360e9569ca7cf818fabc2b34e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_6b430a14",
         "filename": "keystone/tests/unit/test_contrib_ec2.py",
         "patchSetId": 6
