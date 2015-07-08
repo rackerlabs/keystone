@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_99482f5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T01:26:46Z",
+      "side": 1,
+      "message": "change \"user creation\" to \"user creation without specifying the domain\"\n\nchange \"admin_token\" to \"admin token\"",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_99690f8f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T01:26:46Z",
+      "side": 1,
+      "message": "the code below shows that the user doesn\u0027t need to present a domain-scoped token since the server will use the default domain ID instead. So either the error message is unclear or the code is incorrect.\n\nThe code should be changed so that rather than raising an exception use the default domain id instead.",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_39cc83ba",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T01:26:46Z",
+      "side": 1,
+      "message": "this change is unrelated and should be a in a separate commit.",
+      "revId": "7417900a23ecbdc6fe355f0141719d01ceb1fc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
