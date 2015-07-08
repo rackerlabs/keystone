@@ -52,6 +52,23 @@
       "revId": "5403e56a2188d1360e9569ca7cf818fabc2b34e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_aaf91350",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-08T03:40:53Z",
+      "side": 1,
+      "message": "I will revert the try-except and change this comment to:\n\n# check if user is admin \\n # no exceptions should be raised\n\nPlease let me know if there are any objections before I submit this change for review tomorrow. (The \\n is not of course going to be replaced with a new line. I just can\u0027t separate lines in this editor.)",
+      "revId": "5403e56a2188d1360e9569ca7cf818fabc2b34e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
