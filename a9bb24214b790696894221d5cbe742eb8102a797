@@ -33,6 +33,57 @@
       "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ba463ebe",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16277
+      },
+      "writtenOn": "2015-07-08T05:42:03Z",
+      "side": 1,
+      "message": "+1 david",
+      "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3a322e5f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1351,
+      "author": {
+        "id": 16277
+      },
+      "writtenOn": "2015-07-08T05:42:03Z",
+      "side": 1,
+      "message": "looks like you forgot to add \u0027self\u0027 here before \u0027ValueError\u0027",
+      "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_fa4046a7",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1359,
+      "author": {
+        "id": 16277
+      },
+      "writtenOn": "2015-07-08T05:42:03Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
