@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_49e872e2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1351,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-08T16:37:23Z",
+      "side": 1,
+      "message": "That was what my comment was about on the other module. If we just use the six module directly we can remove our method completely.",
+      "parentUuid": "ba3cc151_3a322e5f",
+      "revId": "a9bb24214b790696894221d5cbe742eb8102a797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_fa4046a7",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 7
