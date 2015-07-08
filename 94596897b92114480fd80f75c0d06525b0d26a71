@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_3e0bd0d7",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:14:10Z",
+      "side": 1,
+      "message": "This isn\u0027t valid rst, see http://sphinx-doc.org/domains.html#info-field-lists\n\nCorrect would be like\n\n :raises keystone.exception.Unauthorized: \u003cunder what condition\u003e\n :raises keystone.exception.Forbidden: \u003cunder what condition\u003e\n\nthe text above should be in the \u003cunder what condition\u003e",
+      "revId": "94596897b92114480fd80f75c0d06525b0d26a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_be1e000a",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-08T23:14:10Z",
+      "side": 1,
+      "message": "this is over indented. follow the existing convention.",
+      "revId": "94596897b92114480fd80f75c0d06525b0d26a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
