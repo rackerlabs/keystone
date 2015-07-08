@@ -34,6 +34,24 @@
       "revId": "5403e56a2188d1360e9569ca7cf818fabc2b34e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_cabed7ad",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-08T03:31:37Z",
+      "side": 1,
+      "message": "I take that back. David\u0027s patch depends on mine and will fix my \"raises\" format after mine goes through, so it would be silly for me to copy to David\u0027s format. Now that you know this, I would appreciate it if you changed your -1 back to a +1.",
+      "parentUuid": "ba3cc151_ca1497ea",
+      "revId": "5403e56a2188d1360e9569ca7cf818fabc2b34e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
