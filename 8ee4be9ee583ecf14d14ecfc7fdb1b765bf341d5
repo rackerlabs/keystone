@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_a44d6e3f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-09T13:17:57Z",
+      "side": 1,
+      "message": "s/project own/project\u0027s own/",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e496163d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-09T13:17:57Z",
+      "side": 1,
+      "message": "While I agree this is what we have spec\u0027d so far....in reality, if you specify parent_id I don\u0027t see why you should have to specify domain_id....since it is implicit. This would requires an API change however....I\u0027m going to post a quick bp/api request change for this.",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_84194ad3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 2999,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-09T13:17:57Z",
+      "side": 1,
+      "message": "As per my comment on the previous patch, I think I\u0027d ideally prefer this in a separate patch (one that this perhaps was dependant on)",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
