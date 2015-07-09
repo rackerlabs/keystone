@@ -74,6 +74,7 @@ class TestCredentialEc2(tests.TestCase):
         Host is bound with a port, generally, the port here is not the
         standard port for the protocol, like '80' for HTTP and port 443
         for HTTPS, the port is not omitted by the client library.
+
         """
         access = self.blob['access']
         secret = self.blob['secret']
@@ -109,6 +110,7 @@ class TestCredentialEc2(tests.TestCase):
 
         Since "credentials['host']" is not set by client library but is
         taken from "req.host", so caused the differences.
+
         """
         access = self.blob['access']
         secret = self.blob['secret']
@@ -197,9 +199,9 @@ class TestCredentialEc2(tests.TestCase):
     def test_check_non_admin_user(self):
         """Checking if user is admin causes uncaught error.
 
-           When checking if a user is an admin,
-           keystone.exception.Unauthorized is raised but
-           not caught if the user is not an admin.
+        When checking if a user is an admin, keystone.exception.Unauthorized
+        is raised but not caught if the user is not an admin.
+
         """
         # make a non-admin user
         context = {'is_admin': False, 'token_id': uuid.uuid4().hex}
