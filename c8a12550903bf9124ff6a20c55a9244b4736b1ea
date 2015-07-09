@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_b9912849",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-09T07:50:53Z",
+      "side": 1,
+      "message": "....this looks like a valid change, docstrings should have a blank line before the closes \"\"\"",
+      "parentUuid": "ba3cc151_5949fc2f",
+      "revId": "c8a12550903bf9124ff6a20c55a9244b4736b1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f95330e0",
         "filename": "keystone/tests/unit/test_contrib_ec2.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-09T07:46:10Z",
       "side": 1,
       "message": "looks either unrelated or not needed",
+      "revId": "c8a12550903bf9124ff6a20c55a9244b4736b1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f9749036",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-09T07:50:53Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba3cc151_f95330e0",
       "revId": "c8a12550903bf9124ff6a20c55a9244b4736b1ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
