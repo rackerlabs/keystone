@@ -16,6 +16,24 @@
       "revId": "42eb0f2129034d62ce6f2604829706924063c493",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_7c139965",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-09T01:44:55Z",
+      "side": 1,
+      "message": "this used to be enforced by hacking, but the later version removed the check.",
+      "parentUuid": "ba3cc151_b6a07943",
+      "revId": "42eb0f2129034d62ce6f2604829706924063c493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
