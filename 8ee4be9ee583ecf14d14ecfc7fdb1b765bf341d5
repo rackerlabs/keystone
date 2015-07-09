@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_90e40e0d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-09T19:48:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_a44d6e3f",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e496163d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 63
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_90d88ef0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-09T19:48:21Z",
+      "side": 1,
+      "message": "As Rodrigo said, for we can, for non is_domain projects, the parent_id might not be the domain_id. But I agree with you that we need an api change for this",
+      "parentUuid": "ba3cc151_ea381ff0",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_84194ad3",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 63
@@ -65,6 +101,24 @@
       "writtenOn": "2015-07-09T13:17:57Z",
       "side": 1,
       "message": "As per my comment on the previous patch, I think I\u0027d ideally prefer this in a separate patch (one that this perhaps was dependant on)",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ab5527c2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 2999,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-09T19:48:21Z",
+      "side": 1,
+      "message": "ok, I\u0027ll do this in a separate patch.",
+      "parentUuid": "ba3cc151_84194ad3",
       "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
