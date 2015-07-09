@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_aba8e020",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-09T12:44:17Z",
+      "side": 1,
+      "message": "Good catch, thx.",
+      "parentUuid": "ba3cc151_baa6f7a8",
+      "revId": "c8a12550903bf9124ff6a20c55a9244b4736b1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f95330e0",
         "filename": "keystone/tests/unit/test_contrib_ec2.py",
         "patchSetId": 2
