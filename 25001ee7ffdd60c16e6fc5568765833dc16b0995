@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_d9dad377",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-09T14:54:47Z",
+      "side": 1,
+      "message": "Is there something that needs clarification in this doc about this topic?  Looking at shibboleth.rst, there is nothing more in that document about this topic.",
+      "parentUuid": "ba3cc151_3eb909cc",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_1a41b439",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 4
@@ -125,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_796aa782",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-09T14:54:47Z",
+      "side": 1,
+      "message": "Is there something that needs clarification in this doc about this topic?  Looking at shibboleth.rst, there is nothing more in that document about this topic.",
+      "parentUuid": "ba3cc151_9e3ff524",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_9ab944ef",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 4
@@ -136,6 +172,24 @@
       "writtenOn": "2015-07-06T20:23:57Z",
       "side": 1,
       "message": "is this really necessary? I believe that you may say where to find this metadata and the IdP can get it in the way it wants (by accessing the URL or by a local copy of it)",
+      "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_992d2b91",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-09T14:54:47Z",
+      "side": 1,
+      "message": "I\u0027m not sure what you mean.  Are you asking if it is necessary that the IdP has the SP metadata?  The answer is yes.\n\nAre you asking if it is necessary to upload the SP metadata file to the IdP using curl?   The answer is no, that\u0027s why I said \"For example:\".",
+      "parentUuid": "ba3cc151_9ab944ef",
       "revId": "25001ee7ffdd60c16e6fc5568765833dc16b0995",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
