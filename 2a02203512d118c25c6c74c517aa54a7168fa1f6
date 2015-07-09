@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_60a17295",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2015-07-09T23:52:41Z",
+      "side": 1,
+      "message": "Lowercased \"Idp\" (see comment below)",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_008bc61f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2015-07-09T23:52:41Z",
+      "side": 1,
+      "message": "This is really nitpicky of me, but I was a little thrown off by the IdP acronym and had to think about whether it was an \"Identity Provider\" or \"Intrusion Detection and Prevention\" facillity.  So to be nitpicky, you might fix all instances of \"Idp\" to \"IdP\" (see above line) and add a definition for IdP at the Definitions section at the top of the file.",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c05cfe7f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2015-07-09T23:52:41Z",
+      "side": 1,
+      "message": "Is the IdP name also specified in this parameter?  This help string indicates it is.",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e0eb427a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2015-07-09T23:52:41Z",
+      "side": 1,
+      "message": "nitpick: enviornment should be environment",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
