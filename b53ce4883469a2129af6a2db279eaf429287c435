@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_56e99be4",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:14:15Z",
+      "side": 1,
+      "message": "This looks a little strange in the resulting HTML. Is it supposed to look like that?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_11e55d36",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:14:15Z",
+      "side": 1,
+      "message": "(nit) i think the code here should be wrapped in `` ``.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
