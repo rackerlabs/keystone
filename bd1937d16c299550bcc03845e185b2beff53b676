@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_b717faa1",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-09T02:12:47Z",
+      "side": 1,
+      "message": "Is the word \"correctly\" needed? Templated backend really don\u0027t support write operations anyway.",
+      "revId": "bd1937d16c299550bcc03845e185b2beff53b676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
