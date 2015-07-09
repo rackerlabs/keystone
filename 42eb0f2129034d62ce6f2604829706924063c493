@@ -34,6 +34,24 @@
       "revId": "42eb0f2129034d62ce6f2604829706924063c493",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d732bef1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-09T01:45:43Z",
+      "side": 1,
+      "message": "since hacking doesn\u0027t enforce it now, I\u0027m fine leaving the period there.",
+      "parentUuid": "ba3cc151_7c139965",
+      "revId": "42eb0f2129034d62ce6f2604829706924063c493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
