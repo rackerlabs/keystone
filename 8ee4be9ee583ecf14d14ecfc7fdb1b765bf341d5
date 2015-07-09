@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ea381ff0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-09T13:50:04Z",
+      "side": 1,
+      "message": "Henry, the parent_id is not necessarily the domain_id",
+      "parentUuid": "ba3cc151_e496163d",
+      "revId": "8ee4be9ee583ecf14d14ecfc7fdb1b765bf341d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_84194ad3",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 63
