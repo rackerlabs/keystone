@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_e04a625b",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "Is this message targeted at developers or users? If it\u0027s for users we probably don\u0027t want it to have something like: \"\u003ctype \u0027something\u0027\u003e\" in the message.",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8091169d",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "Is this really a Forbidden operation? Feels more like a validation error. Forbidden errors are usually associated with the server denying a client request because of credential or other auth issues: https://tools.ietf.org/html/rfc7231#section-6.5.3",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e034a2ad",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "Is there any reason why this logic isn\u0027t part of the manager?",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_80bfd6fb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "Same thing here about forbidden",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4050eed4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "I don\u0027t there is a case where parent_ref won\u0027t be a dictionary. Is there any reason why you check if it\u0027s truthy?",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_60c89257",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "This message doesn\u0027t really make sense. I\u0027ll chew on this for a bit and see if I can figure out what it is saying.",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_60709274",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "Same thing here about project_ref",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_60cf3258",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "what happens if tenant doesn\u0027t have an \u0027is_domain\u0027 key, but original_tenant does? it should still fail right?",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c085decf",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-09T23:26:42Z",
+      "side": 1,
+      "message": "s/Controller/controller/",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
