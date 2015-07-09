@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_1a3fd8b4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-09T11:23:43Z",
+      "side": 1,
+      "message": "add a comment here about the token request behavior",
+      "revId": "601803cf4ed1b5d17c38da26212dc4f46ff1e1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_57e9b97d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 2241,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-09T11:23:43Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "601803cf4ed1b5d17c38da26212dc4f46ff1e1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_573c59e0",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-09T11:23:43Z",
+      "side": 1,
+      "message": "isn\u0027t False the default already?",
+      "revId": "601803cf4ed1b5d17c38da26212dc4f46ff1e1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
