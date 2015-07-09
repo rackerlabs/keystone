@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_8414f19f",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-09T10:57:57Z",
+      "side": 1,
+      "message": "Ya know.....I\u0027m going to have to slap myself down hard! I can\u0027t see that either! I\u0027d swear this used to be the guideline, but it sure ain\u0027t there now. Looking through keystone code, however, we do seem to follow that convention (most of the time!) - but if this isn\u0027t a strict rule, then I\u0027d agree that changing it probably isn\u0027t the right thing.",
+      "parentUuid": "ba3cc151_baa6f7a8",
+      "revId": "c8a12550903bf9124ff6a20c55a9244b4736b1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f95330e0",
         "filename": "keystone/tests/unit/test_contrib_ec2.py",
         "patchSetId": 2
