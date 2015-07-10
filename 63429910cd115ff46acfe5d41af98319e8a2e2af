@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_9cef16e9",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-10T18:04:18Z",
+      "side": 1,
+      "message": "i\u0027m not sure this indirection buys you any benefit?",
+      "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5c5c2ef0",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-10T18:04:18Z",
+      "side": 1,
+      "message": "++",
+      "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_fcc9827a",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-10T18:04:18Z",
+      "side": 1,
+      "message": "++",
+      "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_01926f57",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 3
@@ -49,6 +100,24 @@
       "side": 1,
       "message": "admins should be aware of that, so big red warning in the logs should do the job.",
       "parentUuid": "ba3cc151_caa57747",
+      "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_bcb45a35",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-10T18:04:18Z",
+      "side": 1,
+      "message": "you\u0027re going to get a big error in the logs without adding a try/except anyway",
+      "parentUuid": "ba3cc151_3eb5accf",
       "revId": "63429910cd115ff46acfe5d41af98319e8a2e2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
