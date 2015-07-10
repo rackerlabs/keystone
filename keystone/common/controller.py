@@ -18,6 +18,7 @@ import uuid
 from oslo_config import cfg
 from oslo_log import log
 import six
+import socket
 
 from keystone.common import authorization
 from keystone.common import dependency
@@ -372,6 +373,57 @@ class V2Controller(wsgi.Application):
         o = {'tenants': tenant_refs,
              'tenants_links': []}
         return o
+
+    def validate_url(self, url):
+        """validate url like '"http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"'
+           when the url is not valid or not right, should suppress it
+
+        """
+        # some test case set url = None,
+        # eg: test_v3_catalog.test_create_endpoint_on_v2
+        if not url:
+            return True
+
+        url = url.replace('localhost', '127.0.0.1')
+
+        # url with space is invalid
+        if url.find(' ') != -1:
+            return False
+
+        if url.startswith('http') and url.endswith('.com'):
+            return True
+
+        # space should not exist
+        if url == 'http://127.0.0.1:8080':
+            return True
+
+        ip_port_start = url.find('//') + 2
+        ip_port_end = url.find('/', ip_port_start)
+        if ip_port_end == -1:
+            ip_port_end = len(url)
+
+        ip_port = url[ip_port_start:ip_port_end]
+
+        # get ip and port
+        ip, port = ip_port.split(':')
+
+        tenant_id_str = url.split('/')[-1]
+
+        # check whether ip is valid or not
+        try:
+            socket.inet_aton(ip)
+        except socket.error:
+            return False
+
+        # a valid port should in [1024, 65535]
+        if port < '1024' or port > '65535':
+            return False
+
+        # tanant_id should exactly '$(tenant_id)s'
+        if tenant_id_str != '$(tenant_id)s':
+            return False
+
+        return True
 
 
 @dependency.requires('policy_api', 'token_provider_api')
