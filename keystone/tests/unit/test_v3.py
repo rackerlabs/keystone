@@ -290,7 +290,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         del ref['enabled']  # enabled is optional
         ref['interface'] = interface
         ref['service_id'] = service_id
-        ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
+        ref['url'] = 'https://127.0.0.1'
         ref['region_id'] = self.region_id
         ref.update(kwargs)
         return ref

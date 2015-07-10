@@ -128,6 +128,29 @@ class V2CatalogTestCase(rest.RestfulTestCase):
     def test_endpoint_create_with_empty_service_id(self):
         self._endpoint_create(expected_status=400, service_id='')
 
+    def test_endpoint_create_with_invalid_url(self):
+        """Test five cases:
+
+        1. a url which is none value
+        2. a url which has space in it
+        3. a url whose scheme is not 'http' or 'https'
+        4. a url whose host in not valid
+        5. a url whose port is greater than 65535(if the url has port)
+        """
+        invalid_urls = [
+            None,
+            'http:// 127.0.0.1:8774 /v1.1/\$(tenant_id)s',
+            'ftp://127.0.0.1:87748774/v1.1/\$(tenant_id)s',
+            'http://127127.0.0.1:8774/v1.1/\$(tenant_id)s',
+            'http://127.0.0.1:87748774/v1.1/\$(tenant_id)s'
+        ]
+
+        for invalid_url in invalid_urls:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=invalid_url,
+                                  internalurl=invalid_url,
+                                  adminurl=invalid_url)
+
 
 class TestV2CatalogAPISQL(tests.TestCase):
 

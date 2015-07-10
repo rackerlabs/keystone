@@ -13,6 +13,8 @@
 #    under the License.
 
 import functools
+from six.moves.urllib import parse
+import socket
 import uuid
 
 from oslo_config import cfg
@@ -372,6 +374,76 @@ class V2Controller(wsgi.Application):
         o = {'tenants': tenant_refs,
              'tenants_links': []}
         return o
+
+    def validate_url(self, url):
+        """Validate url like '"http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"'
+
+        When the url is not valid or not right, should suppress it
+
+        The invalid urls are as follows:
+        1. a url which is none value
+        2. a url which has space in it
+        3. a url whose scheme is not 'http' or 'https'
+        4. a url whose host in not valid
+        5. a url whose port is greater than 65535(if the url has port)
+        """
+        # valid url should not be None
+        if not url:
+            return False
+
+        # url with space is invalid
+        if url.find(' ') != -1:
+            return False
+
+        # parse url and analyze the result
+        res = parse.urlparse(url)
+        scheme = res.scheme
+        netloc = res.netloc
+        path = res.path
+
+        # scheme should be http or https
+        if scheme != 'http' and scheme != 'https':
+            return False
+
+        # check whether netloc is invalid or not
+        port = None
+        if netloc and netloc.find(':') != -1:
+            netloc, port = netloc.split(':')
+
+        try:
+            socket.gethostbyname(netloc)
+        except Exception:
+            LOG.warning('%s is not a valid host or ip.' % netloc)
+            return False
+
+        if port and int(port) > 65535:
+            return False
+
+        # check whether the property in the path is exactly the same
+        # with that in the WHITELISTED_PROPERTIES below
+        WHITELISTED_PROPERTIES = [
+            'tenant_id', 'user_id', 'public_bind_host', 'admin_bind_host',
+            'compute_host', 'admin_port', 'public_port',
+            'public_endpoint', 'admin_endpoint', ]
+
+        if path:
+            # /v1.1/\$(tenant_i d)s will split to be [/v1.1, $(tenant_i d)s]
+            # check the second one
+            path_element = path.split('\\')
+
+            # if path == '/v1.1' is ok too
+            if len(path_element) == 1:
+                return True
+
+            property_str = path_element[-1]
+            for one_property in WHITELISTED_PROPERTIES:
+                if property_str.find('$(%s)s' % one_property) != -1:
+                    return True
+                else:
+                    continue
+            return False
+
+        return True
 
 
 @dependency.requires('policy_api', 'token_provider_api')
