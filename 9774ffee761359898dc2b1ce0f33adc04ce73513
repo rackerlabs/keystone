@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_3145ccb2",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-10T20:33:39Z",
+      "side": 1,
+      "message": "This is a hard-coded path applicable only to devstack.",
+      "revId": "9774ffee761359898dc2b1ce0f33adc04ce73513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f115249b",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-10T20:33:39Z",
+      "side": 1,
+      "message": "This is a hard-coded path applicable only to devstack.",
+      "revId": "9774ffee761359898dc2b1ce0f33adc04ce73513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_b1a23c4a",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-10T20:33:39Z",
+      "side": 1,
+      "message": "s/continuechecker/continue_checker",
+      "revId": "9774ffee761359898dc2b1ce0f33adc04ce73513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_51017038",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-10T20:33:39Z",
+      "side": 1,
+      "message": "escape sequences should not be used unless you know you\u0027re on a tty.\nsys.stdout.isatty()\n\nBut in this case, I don\u0027t think its necessary anyway.",
+      "revId": "9774ffee761359898dc2b1ce0f33adc04ce73513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_71acb435",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-10T20:33:39Z",
+      "side": 1,
+      "message": "why not use the \u0027with\u0027 context",
+      "revId": "9774ffee761359898dc2b1ce0f33adc04ce73513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
