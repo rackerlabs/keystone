@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_3985ce06",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T12:21:44Z",
+      "side": 1,
+      "message": "\"in the face of ambiguity refuse the temptation to guess\" - I thought we decided that this would lead to an error? How can we validate scope data if we are guessing?",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d924e20f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T12:21:44Z",
+      "side": 1,
+      "message": "Does this mean that a user can\u0027t access an is_domain project from V2? Do we have a test showing that we expect a 404 from this?",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
