@@ -41,9 +41,9 @@ class ClientDrivenSqlTestCase(test_v2_keystoneclient.ClientDrivenTestCase):
 
         endpoint_region = uuid.uuid4().hex
         invalid_service_id = uuid.uuid4().hex
-        endpoint_publicurl = uuid.uuid4().hex
-        endpoint_internalurl = uuid.uuid4().hex
-        endpoint_adminurl = uuid.uuid4().hex
+        endpoint_publicurl = 'http://localhost:8080'
+        endpoint_internalurl = 'http://localhost:8080'
+        endpoint_adminurl = 'http://localhost:8080'
 
         # a non-existent service ID should trigger a 400
         self.assertRaises(client_exceptions.BadRequest,
@@ -261,9 +261,9 @@ class ClientDrivenSqlTestCase(test_v2_keystoneclient.ClientDrivenTestCase):
                           client.endpoints.create,
                           region=uuid.uuid4().hex,
                           service_id=uuid.uuid4().hex,
-                          publicurl=uuid.uuid4().hex,
-                          adminurl=uuid.uuid4().hex,
-                          internalurl=uuid.uuid4().hex)
+                          publicurl='http://localhost:8080',
+                          adminurl='http://localhost:8080',
+                          internalurl='http://localhost:8080')
 
     def test_endpoint_delete_404(self):
         client = self.get_client(admin=True)
