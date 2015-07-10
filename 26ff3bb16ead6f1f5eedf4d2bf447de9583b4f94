@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_3eb4ccd2",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-10T14:25:41Z",
+      "side": 1,
+      "message": "you should check if the url does NOT start with \"http\" and return false from that,  if you return true it won\u0027t actually check validity of the url, it is just checking the syntax.  Also your url will not always end with \".com\".   Can you have other top-level domains, other than \".com\"?",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_6d34f0fa",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
