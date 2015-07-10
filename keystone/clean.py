@@ -12,10 +12,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import log
 import six
+from six.moves.urllib import parse
 
 from keystone import exception
 from keystone.i18n import _
+
+
+LOG = log.getLogger(__name__)
 
 
 def check_length(property_name, value, min_length=1, max_length=64):
@@ -57,6 +62,42 @@ def check_name(property_name, name, min_length=1, max_length=64):
     check_length('%s name' % property_name, name,
                  min_length=min_length, max_length=max_length)
     return name
+
+
+def check_endpoint_url(url, whitelist):
+    """Validate url like '"http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"'
+
+    When the url is not valid, should suppress it
+
+    The invalid urls are as follows:
+    1. a url which is None
+    2. a url which has space, you can't use www.go o gle.com to search
+    3. substitutions should be in the whitelist
+    """
+    # valid url should not be None
+    if not url:
+        return False
+
+    # url with space is invalid
+    if ' ' in url:
+        return False
+
+    # check whether the property in the path is exactly the same
+    # with that in the WHITELISTED_PROPERTIES below
+    WHITELISTED_PROPERTIES = {}
+    for property in whitelist:
+        WHITELISTED_PROPERTIES[property] = property
+
+    path = parse.urlparse(url).path
+    if path:
+        path = path.replace('$', '%')
+        try:
+            path = path % WHITELISTED_PROPERTIES
+        except Exception:
+            LOG.warning('The path: %s has error.', path)
+            return False
+
+    return True
 
 
 def domain_name(name):
