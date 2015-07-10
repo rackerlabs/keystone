@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_797ca4eb",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T17:52:50Z",
+      "side": 1,
+      "message": "Yes, that\u0027s exactly what Henry explained.",
+      "parentUuid": "ba3cc151_d23d972d",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_efcc7863",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 60
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "I think that\u0027s right, you shouldn\u0027t be able to see an is_domain project via V2.",
       "parentUuid": "ba3cc151_d924e20f",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5993e000",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T17:52:50Z",
+      "side": 1,
+      "message": "In v2, I think the user should only be able to see the first level of projects under the is_domain project default (current behaviour, I suppose)",
+      "parentUuid": "ba3cc151_3c861cdc",
       "revId": "98136830a633aa20442091527a350ce30dade648",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
