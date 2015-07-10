@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_5a1535e3",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T02:59:35Z",
+      "side": 1,
+      "message": "Since _normalize_domain_id is called here, we kust kept doing the same domain_id treatment here, this time for the is_domain\u003dtrue projects",
+      "parentUuid": "ba3cc151_4ff7b959",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_80bfd6fb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -213,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_1ad32d61",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T02:59:35Z",
+      "side": 1,
+      "message": "actually, no... we assume that project_ref is valid, but not parent_ref",
+      "parentUuid": "ba3cc151_2f7fd5ac",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60c89257",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -260,6 +296,24 @@
       "side": 1,
       "message": "I think what you just said or something similar is much more clear.",
       "parentUuid": "ba3cc151_c984290d",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_da438512",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T02:59:35Z",
+      "side": 1,
+      "message": "that sentence in the code is the result of some improvements... we intended to show the id of the project which has the feature enabled",
+      "parentUuid": "ba3cc151_cf3d09df",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -319,6 +373,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_1ad6cd27",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T02:59:35Z",
+      "side": 1,
+      "message": "I\u0027ll check on this one deeper",
+      "parentUuid": "ba3cc151_cf14294f",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60cf3258",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -366,6 +438,24 @@
       "side": 1,
       "message": "Is there a test for that?",
       "parentUuid": "ba3cc151_e90fad89",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3a6ab182",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T02:59:35Z",
+      "side": 1,
+      "message": "any project update (only the name, for example) that does not include is_domain in the body is a test for that, I guess",
+      "parentUuid": "ba3cc151_2f04b516",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
