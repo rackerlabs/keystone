@@ -51,6 +51,24 @@
       "revId": "265a836f5efdc8684c0f46a8608247231ab639a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_39706edc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T12:24:46Z",
+      "side": 1,
+      "message": "Forbidden means that we are denying access to a resource due to credentials or auth issues. This is definitely not the case here. See https://tools.ietf.org/html/rfc7231#section-6.5.3",
+      "parentUuid": "ba3cc151_6cf7205a",
+      "revId": "265a836f5efdc8684c0f46a8608247231ab639a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
