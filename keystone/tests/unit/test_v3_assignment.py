@@ -14,7 +14,6 @@ import random
 import uuid
 
 from oslo_config import cfg
-import six
 from six.moves import range
 
 from keystone.common import controller
@@ -36,7 +35,7 @@ def _build_role_assignment_query_url(effective=False, **filters):
 
     query_params = '?effective' if effective else ''
 
-    for k, v in six.iteritems(filters):
+    for k, v in filters.items():
         query_params += '?' if not query_params else '&'
 
         if k == 'inherited_to_projects':
