@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_efcc7863",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-10T12:56:02Z",
+      "side": 1,
+      "message": "to dstanek\u0027s point, I think this should return Not found if the project has is_domain\u003dTrue",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d924e20f",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 60
@@ -48,6 +65,24 @@
       "writtenOn": "2015-07-10T12:21:44Z",
       "side": 1,
       "message": "Does this mean that a user can\u0027t access an is_domain project from V2? Do we have a test showing that we expect a 404 from this?",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_3c861cdc",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-10T12:56:02Z",
+      "side": 1,
+      "message": "I think that\u0027s right, you shouldn\u0027t be able to see an is_domain project via V2.",
+      "parentUuid": "ba3cc151_d924e20f",
       "revId": "98136830a633aa20442091527a350ce30dade648",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
