@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_263fdb88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-10T17:15:33Z",
+      "side": 1,
+      "message": "I suppose, it will be enough if you just specify the location: \"in project creation\"",
+      "revId": "265a836f5efdc8684c0f46a8608247231ab639a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_a25a2180",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
