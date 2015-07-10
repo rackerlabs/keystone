@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_cd5c1c4f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "http://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8d7ff4aa",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "So None and \u0027\u0027 are valid URLs?",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2db9087a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "why? the logic below is broken.",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6d34f0fa",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "why are you not using urlparse instead of doing this logic?",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ade0b897",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "What about names?",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ed680024",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "Why? I can run on port 80 if I want to!",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_0d58c489",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:35:34Z",
+      "side": 1,
+      "message": "tenant_id?",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
