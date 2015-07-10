@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_e76b42b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-07-10T11:40:56Z",
+      "side": 1,
+      "message": "IMO ApiImpact tag is required here as you are raising Unauthorized error in keystone/contrib/oauth1/controllers.py module.",
+      "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
