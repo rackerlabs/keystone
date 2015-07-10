@@ -91,6 +91,7 @@ class Endpoint(controller.V2Controller):
         return {'endpoints': list(legacy_endpoints.values())}
 
     @controller.v2_deprecated
+    @validation.validated(schema.endpoint_create_v2, 'endpoint')
     def create_endpoint(self, context, endpoint):
         """Create three v3 endpoint refs based on a legacy ref."""
         self.assert_admin(context)
