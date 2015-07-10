@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_85e7c445",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-10T15:43:07Z",
+      "side": 1,
+      "message": "create --\u003e creating",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a5d3e85e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-10T15:43:07Z",
+      "side": 1,
+      "message": "create --\u003e creating",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_655ba0f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-10T15:43:07Z",
+      "side": 1,
+      "message": "should be --\u003e it is now",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d08ee878",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-10T15:43:07Z",
+      "side": 1,
+      "message": "This also closes your duplicate bug https://bugs.launchpad.net/keystone/+bug/1473267, but I don\u0027t know if you would put that in the commit message.",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_cd5c1c4f",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
@@ -132,6 +200,40 @@
       "writtenOn": "2015-07-10T13:35:34Z",
       "side": 1,
       "message": "tenant_id?",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_25227802",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-10T15:43:07Z",
+      "side": 1,
+      "message": "I\u0027m not sure if endpoints can have endpoint_id in them, but if they can then you should check to make sure endpoint_id is exactly endpoint_id in the same way you make sure tenant_id is exactly tenant_id.",
+      "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_70b7dcf5",
+        "filename": "keystone/tests/unit/test_v2_keystoneclient_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17073
+      },
+      "writtenOn": "2015-07-10T15:43:07Z",
+      "side": 1,
+      "message": "You may also want to take a look at test cases in test_v3_catalog.py that use uuid. example: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_catalog.py#L573-L580",
       "revId": "26ff3bb16ead6f1f5eedf4d2bf447de9583b4f94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
