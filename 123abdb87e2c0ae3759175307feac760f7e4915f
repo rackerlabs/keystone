@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e9600d10",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "it\u0027s for developers, I guess. same behavior as the method above",
+      "parentUuid": "ba3cc151_e04a625b",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_8091169d",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 64
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-09T23:26:42Z",
       "side": 1,
       "message": "Is this really a Forbidden operation? Feels more like a validation error. Forbidden errors are usually associated with the server denying a client request because of credential or other auth issues: https://tools.ietf.org/html/rfc7231#section-6.5.3",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c99bc965",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "you\u0027re right. I\u0027ll fix this here: https://review.openstack.org/#/c/200295/1",
+      "parentUuid": "ba3cc151_8091169d",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_09bf7161",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "that\u0027s because for is_domain projects, the user cannot pass domain_id, once the domain_id will be its own project id",
+      "parentUuid": "ba3cc151_e034a2ad",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_80bfd6fb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-09T23:26:42Z",
       "side": 1,
       "message": "Same thing here about forbidden",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_29ab5577",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "you\u0027re right. I\u0027ll fix this here: https://review.openstack.org/#/c/200295/1",
+      "parentUuid": "ba3cc151_80bfd6fb",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_294cb5c7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "it can be None, in L114... The case where the is_domain project is root",
+      "parentUuid": "ba3cc151_4050eed4",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60c89257",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-09T23:26:42Z",
       "side": 1,
       "message": "This message doesn\u0027t really make sense. I\u0027ll chew on this for a bit and see if I can figure out what it is saying.",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c984290d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "is_domain projects can only be created under is_domain projects, or no project, which means it\u0027ll be root",
+      "parentUuid": "ba3cc151_60c89257",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e9924dfc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "you mean parent_ref, right? I don\u0027t think we need it at this point, but we\u0027ll be assuming that the database is consistent",
+      "parentUuid": "ba3cc151_60709274",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60cf3258",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_e90fad89",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "I don\u0027t think it should. If tenant doesn\u0027t have, it means that \u0027is_domain\u0027 attribute won\u0027t be updated. So, the flow goes on...",
+      "parentUuid": "ba3cc151_60cf3258",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_c085decf",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 64
@@ -149,6 +293,24 @@
       "writtenOn": "2015-07-09T23:26:42Z",
       "side": 1,
       "message": "s/Controller/controller/",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_69cf1d58",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-10T01:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_c085decf",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
