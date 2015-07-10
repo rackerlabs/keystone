@@ -52,6 +52,24 @@
       "revId": "7be3a32940c13a6199ab0f28b8884493257ac633",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_99e3baa4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-10T12:20:41Z",
+      "side": 1,
+      "message": "I don\u0027t think that this change requires a bugreport or a bp. This is a very small local refactoring.",
+      "parentUuid": "ba3cc151_e77fc215",
+      "revId": "7be3a32940c13a6199ab0f28b8884493257ac633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
