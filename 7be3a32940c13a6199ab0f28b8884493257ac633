@@ -16,6 +16,24 @@
       "revId": "7be3a32940c13a6199ab0f28b8884493257ac633",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c13ceec1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 16165
+      },
+      "writtenOn": "2015-07-10T10:58:25Z",
+      "side": 1,
+      "message": "I don\u0027t think this change is related to a bug. And, why did you think this change need to be describe by a bp?",
+      "parentUuid": "ba3cc151_f8da074b",
+      "revId": "7be3a32940c13a6199ab0f28b8884493257ac633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
