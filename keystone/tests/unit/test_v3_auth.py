@@ -34,6 +34,7 @@ from keystone.policy.backends import rules
 from keystone.tests import unit as tests
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -142,7 +143,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(path=path,
-                           token='ADMIN',
+                           token=CONF.admin_token,
                            method='GET',
                            expected_status=401)
 
@@ -188,7 +189,7 @@ class TokenAPITests(object):
 
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(path=path,
-                           token='ADMIN',
+                           token=CONF.admin_token,
                            method='GET')
 
     def test_v3_v2_intermix_domain_scoped_token_failed(self):
@@ -205,7 +206,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(path=path,
-                           token='ADMIN',
+                           token=CONF.admin_token,
                            method='GET',
                            expected_status=401)
 
@@ -219,7 +220,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(path=path,
-                           token='ADMIN',
+                           token=CONF.admin_token,
                            method='GET',
                            expected_status=401)
 
@@ -234,7 +235,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         resp = self.admin_request(path=path,
-                                  token='ADMIN',
+                                  token=CONF.admin_token,
                                   method='GET')
         v2_token = resp.result
         self.assertEqual(v2_token['access']['user']['id'],
@@ -258,7 +259,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         resp = self.admin_request(path=path,
-                                  token='ADMIN',
+                                  token=CONF.admin_token,
                                   method='GET')
         v2_token = resp.result
         self.assertEqual(v2_token['access']['user']['id'],
@@ -480,7 +481,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         token = cms.cms_hash_token(token)
         path = '/v2.0/tokens/%s' % (token)
         resp = self.admin_request(path=path,
-                                  token='ADMIN',
+                                  token=CONF.admin_token,
                                   method='GET')
         v2_token = resp.result
         self.assertEqual(v2_token['access']['user']['id'],
@@ -520,6 +521,38 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         token_id = resp.headers.get('X-Subject-Token')
         self.assertIn('expires_at', token_data['token'])
         self.assertFalse(cms.is_asn1_token(token_id))
+
+
+class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+    def config_overrides(self):
+        super(TestFernetTokenAPIs, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    def setUp(self):
+        super(TestFernetTokenAPIs, self).setUp()
+        self.doSetUp()
+
+    @test_utils.wip('Failing due to bug 1459790.')
+    def test_v3_v2_token_intermix(self):
+        super(TestFernetTokenAPIs, self).test_v3_v2_token_intermix()
+
+    @test_utils.wip('Failing due to bug 1459790.')
+    def test_v3_v2_unscoped_token_intermix(self):
+        super(TestFernetTokenAPIs, self).test_v3_v2_unscoped_token_intermix()
+
+    @test_utils.wip('Failing due to bug 1459790.')
+    def test_v2_v3_token_intermix(self):
+        super(TestFernetTokenAPIs, self).test_v2_v3_token_intermix()
+
+    @test_utils.wip('Failing due to bug 1459790.')
+    def test_rescoping_token(self):
+        super(TestFernetTokenAPIs, self).test_rescoping_token()
+
+    @test_utils.wip('Failing due to bug 1475762.')
+    def test_v3_v2_intermix_non_default_project_failed(self):
+        super(TestFernetTokenAPIs,
+              self).test_v3_v2_intermix_non_default_project_failed()
 
 
 class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
@@ -3339,7 +3372,8 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token='ADMIN', method='GET', expected_status=401)
+            path=path, token=CONF.admin_token,
+            method='GET', expected_status=401)
 
     def test_v3_v2_intermix_trustor_not_in_default_domaini_failed(self):
         ref = self.new_trust_ref(
@@ -3371,7 +3405,8 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token='ADMIN', method='GET', expected_status=401)
+            path=path, token=CONF.admin_token,
+            method='GET', expected_status=401)
 
     def test_v3_v2_intermix_project_not_in_default_domaini_failed(self):
         # create a trustee in default domain to delegate stuff to
@@ -3410,7 +3445,8 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token='ADMIN', method='GET', expected_status=401)
+            path=path, token=CONF.admin_token,
+            method='GET', expected_status=401)
 
     def test_v3_v2_intermix(self):
         # create a trustee in default domain to delegate stuff to
@@ -3448,7 +3484,8 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token='ADMIN', method='GET', expected_status=200)
+            path=path, token=CONF.admin_token,
+            method='GET', expected_status=200)
 
     def test_exercise_trust_scoped_token_without_impersonation(self):
         ref = self.new_trust_ref(

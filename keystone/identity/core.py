@@ -23,8 +23,8 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone import clean
 from keystone.common import cache
+from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -364,6 +364,7 @@ def exception_translated(exception_type):
     return _exception_translated
 
 
+@notifications.listener
 @dependency.provider('identity_api')
 @dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
                      'resource_api', 'revoke_api')

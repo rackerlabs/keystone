@@ -35,6 +35,10 @@ from keystone import notifications
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(section='catalog')
+WHITELISTED_PROPERTIES = [
+    'tenant_id', 'user_id', 'public_bind_host', 'admin_bind_host',
+    'compute_host', 'admin_port', 'public_port',
+    'public_endpoint', 'admin_endpoint', ]
 
 
 def format_url(url, substitutions, silent_keyerror_failures=None):
@@ -47,12 +51,6 @@ def format_url(url, substitutions, silent_keyerror_failures=None):
     :returns: a formatted URL
 
     """
-
-    WHITELISTED_PROPERTIES = [
-        'tenant_id', 'user_id', 'public_bind_host', 'admin_bind_host',
-        'compute_host', 'admin_port', 'public_port',
-        'public_endpoint', 'admin_endpoint', ]
-
     substitutions = utils.WhiteListedItemFilter(
         WHITELISTED_PROPERTIES,
         substitutions)
