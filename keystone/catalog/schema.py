@@ -96,3 +96,17 @@ endpoint_update = {
     'minProperties': 1,
     'additionalProperties': True
 }
+
+_endpoint_properties_v2 = {
+    'service_id': {
+        'type': 'string'
+    },
+    'publicurl': parameter_types.endpoint_url
+}
+
+endpoint_create_v2 = {
+    'type': 'object',
+    'properties': _endpoint_properties_v2,
+    'required': ['service_id', 'publicurl'],
+    'additionalProperties': True
+}
