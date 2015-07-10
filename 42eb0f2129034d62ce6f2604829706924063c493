@@ -52,6 +52,23 @@
       "revId": "42eb0f2129034d62ce6f2604829706924063c493",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c3d3a8d4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:01:43Z",
+      "side": 1,
+      "message": "the message should say what was wrong with the token.",
+      "revId": "42eb0f2129034d62ce6f2604829706924063c493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
