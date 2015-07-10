@@ -34,6 +34,23 @@
       "revId": "265a836f5efdc8684c0f46a8608247231ab639a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6cf7205a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-10T08:58:11Z",
+      "side": 1,
+      "message": "Rather than exception.ValidationError, I think exception.Forbidden is better in this context.\n\nMaybe there is some points I didn\u0027t catch, add it in the commit message or comments here,thx.",
+      "revId": "265a836f5efdc8684c0f46a8608247231ab639a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
