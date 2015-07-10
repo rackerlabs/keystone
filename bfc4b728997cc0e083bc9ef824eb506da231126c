@@ -16,6 +16,41 @@
       "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_bca54c48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-10T12:42:17Z",
+      "side": 1,
+      "message": "Unauthorized was raised before by the function, that is replaced now. I don\u0027t think ApiImpact is needed.",
+      "parentUuid": "ba3cc151_e76b42b8",
+      "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_7ce024cd",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-10T12:42:17Z",
+      "side": 1,
+      "message": "since the patch is in merge conflict...\nis there any reason to move the function here? If no, it should be put back where it was.",
+      "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
