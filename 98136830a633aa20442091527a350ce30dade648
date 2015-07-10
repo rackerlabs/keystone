@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_5c80c049",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-10T12:30:06Z",
+      "side": 1,
+      "message": "The argument for doing it this way is that we are preserving the existing functionality - i.e. if, today, you have a domain called \"test\" containing a project called \"test\", if you request a token by project name, you will always get the project, not the domain.",
+      "parentUuid": "ba3cc151_3985ce06",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d924e20f",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 60
