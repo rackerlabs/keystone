@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_d23d972d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T13:15:05Z",
+      "side": 1,
+      "message": "Henry talked me off of the ledge for this one. I was worried that a user could have a script that scopes to project X, but in the mean time X was turned into a domain with a new sub-project X, the wrong project id would be returned. It turns out in this case that the only way to change project domain-ness is to delete and recreate with that feature.",
+      "parentUuid": "ba3cc151_5c80c049",
+      "revId": "98136830a633aa20442091527a350ce30dade648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_efcc7863",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 60
