@@ -667,7 +667,7 @@ class TestCatalogAPISQL(tests.TestCase):
             'description': uuid.uuid4().hex,
             'interface': uuid.uuid4().hex[:8],
             'service_id': service_id,
-            'url': uuid.uuid4().hex,
+            'url': 'http://127.0.0.1:8080',
             'region': uuid.uuid4().hex,
         }
 
@@ -768,7 +768,7 @@ class TestCatalogAPISQLRegions(tests.TestCase):
             'description': uuid.uuid4().hex,
             'interface': uuid.uuid4().hex[:8],
             'service_id': service_id,
-            'url': uuid.uuid4().hex,
+            'url': 'http://127.0.0.1:8080',
             'region_id': uuid.uuid4().hex,
         }
 

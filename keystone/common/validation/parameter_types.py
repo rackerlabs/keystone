@@ -57,6 +57,14 @@ url = {
     'pattern': '[a-zA-Z0-9+.-]+:.+'
 }
 
+endpoint_url = {
+    'type': 'string',
+    'minLength': 0,
+    'maxLength': 225,
+    'pattern': '%s%s' % ('^(https?:\/\/[a-zA-Z0-9_+%-]+(\.[a-zA-Z0-9+\_%-]',
+                         '+)*(:[0-9]{1,5})?(\/[a-zA-Z0-9+()?#~=&\._%-]*)*)?$')
+}
+
 email = {
     'type': 'string',
     'format': 'email'
