@@ -93,6 +93,20 @@ class Endpoint(controller.V2Controller):
     @controller.v2_deprecated
     def create_endpoint(self, context, endpoint):
         """Create three v3 endpoint refs based on a legacy ref."""
+        # when the url is invalid, we should suppress the request
+        urls = []
+        if endpoint.get('publicurl'):
+            urls.append(endpoint['publicurl'])
+        if endpoint.get('adminurl'):
+            urls.append(endpoint['adminurl'])
+        if endpoint.get('internalurl'):
+            urls.append(endpoint['internalurl'])
+
+        # if any url is invalid, raise exception.ValidationURLError
+        for url in urls:
+            if not self.validate_url(url):
+                raise exception.ValidationURLError()
+
         self.assert_admin(context)
 
         # according to the v2 spec publicurl is mandatory
