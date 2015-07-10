@@ -2,6 +2,261 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_a6da324a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "what is an identity API object?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2674e234",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "put keystone-manage in `` , also should be ``keystone-manage mapping_engine``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c6009669",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "the fact that we need this separate documentation says that the mapping_engine subcommand documentation isn\u0027t good enough.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_66242a0e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "lowercase example\n\nalso, should coobine : and :: here and use :: at the end of this line.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e676fa0b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "this should be a list and not a preformatted section.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_06cafe1a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "is this referring to line 203?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_46f7a659",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "is this referring to line 239?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e6927afc",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "put REMOTE_USER in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_46a56645",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "multiple groups? how?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c646567b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "should be : at end of line.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_660aea29",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "don\u0027t we also need the group domain?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_69115d53",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "Put Federated in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_097771a0",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "if this matches partial string then .* isn\u0027t needed.\n\nAlso, since . is a special character in regex it needs to be escaped.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c9598937",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "put 0cd5e9, HTTP_OIDC_GROUPIDS, cn\u003dIBM_Canada_Lab;cn\u003dIBM_USA_Lab in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c9cc29be",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "this should be a list not preformatted.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_56e99be4",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -13,6 +268,23 @@
       "writtenOn": "2015-07-09T23:14:15Z",
       "side": 1,
       "message": "This looks a little strange in the resulting HTML. Is it supposed to look like that?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_49b9f914",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:44:42Z",
+      "side": 1,
+      "message": "I assume this is supposed to be a list not preformatted.",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
