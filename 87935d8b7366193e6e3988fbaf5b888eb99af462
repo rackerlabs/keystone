@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_86912e9d",
+        "filename": "rally-jobs/keystone.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-10T00:15:38Z",
+      "side": 1,
+      "message": "I think we need to leave existing tests alone so that we can compare results across releases.",
+      "revId": "87935d8b7366193e6e3988fbaf5b888eb99af462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
