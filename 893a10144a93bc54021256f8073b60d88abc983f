@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_033649e7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-10T19:20:12Z",
+      "side": 1,
+      "message": "like, an attribute with @property",
+      "parentUuid": "ba3cc151_390bead7",
+      "revId": "893a10144a93bc54021256f8073b60d88abc983f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f9aca2a0",
         "filename": "keystone/notifications.py",
         "patchSetId": 8
