@@ -70,6 +70,24 @@
       "revId": "7be3a32940c13a6199ab0f28b8884493257ac633",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_5c868017",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T12:36:58Z",
+      "side": 1,
+      "message": "The commit message in this case has enough of the \u0027why\u0027. No need for a bug report to refactor tests. It\u0027s also somewhat frowned upon since bug reports are used to generate the changelog and not many users will case about changes like this.",
+      "parentUuid": "ba3cc151_e77fc215",
+      "revId": "7be3a32940c13a6199ab0f28b8884493257ac633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
