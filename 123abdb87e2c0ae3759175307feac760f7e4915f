@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_4ff7b959",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T02:42:18Z",
+      "side": 1,
+      "message": "No, I mean since this isn\u0027t really web logic why not put it in the manager?",
+      "parentUuid": "ba3cc151_09bf7161",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_80bfd6fb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -177,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_2f7fd5ac",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T02:42:18Z",
+      "side": 1,
+      "message": "If that\u0027s the case then L116 is broken because it assumes that it has a valid dictionary.",
+      "parentUuid": "ba3cc151_294cb5c7",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60c89257",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -206,6 +242,24 @@
       "side": 1,
       "message": "is_domain projects can only be created under is_domain projects, or no project, which means it\u0027ll be root",
       "parentUuid": "ba3cc151_60c89257",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_cf3d09df",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T02:42:18Z",
+      "side": 1,
+      "message": "I think what you just said or something similar is much more clear.",
+      "parentUuid": "ba3cc151_c984290d",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -247,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_cf14294f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T02:42:18Z",
+      "side": 1,
+      "message": "Yeah, I mean parent_ref. This is similar to above where this should be a valid dictionary already.",
+      "parentUuid": "ba3cc151_e9924dfc",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60cf3258",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -276,6 +348,24 @@
       "side": 1,
       "message": "I don\u0027t think it should. If tenant doesn\u0027t have, it means that \u0027is_domain\u0027 attribute won\u0027t be updated. So, the flow goes on...",
       "parentUuid": "ba3cc151_60cf3258",
+      "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_2f04b516",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-10T02:42:18Z",
+      "side": 1,
+      "message": "Is there a test for that?",
+      "parentUuid": "ba3cc151_e90fad89",
       "revId": "123abdb87e2c0ae3759175307feac760f7e4915f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
