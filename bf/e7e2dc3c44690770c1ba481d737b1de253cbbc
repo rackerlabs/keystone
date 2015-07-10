@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Submitted-by: Jenkins
+Submitted-at: Fri, 10 Jul 2015 00:49:34 +0000
+Reviewed-on: https://review.openstack.org/199338
+Project: openstack/keystone
+Branch: refs/heads/master
