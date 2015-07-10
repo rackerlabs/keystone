@@ -476,3 +476,9 @@ class OAuthHeadersMissingError(UnexpectedError):
                              'HTTPd or Apache, ensure WSGIPassAuthorization '
                              'is set to On.')
     title = 'Error retrieving OAuth headers'
+
+
+class ValidationURLError(Error):
+    message_format = _('Cannot create an endpoint with an invalid URL')
+    code = 400
+    title = 'Bad Request'

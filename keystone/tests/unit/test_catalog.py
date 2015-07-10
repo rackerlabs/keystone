@@ -128,6 +128,13 @@ class V2CatalogTestCase(rest.RestfulTestCase):
     def test_endpoint_create_with_empty_service_id(self):
         self._endpoint_create(expected_status=400, service_id='')
 
+    def test_endpoint_create_with_invalid_url(self):
+        invalid_url = 'http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s'
+        self._endpoint_create(expected_status=400,
+                              publicurl=invalid_url,
+                              internalurl=invalid_url,
+                              adminurl=invalid_url)
+
 
 class TestV2CatalogAPISQL(tests.TestCase):
 
