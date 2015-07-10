@@ -13,11 +13,13 @@
 #    under the License.
 
 import functools
+from urlparse import urlparse
 import uuid
 
 from oslo_config import cfg
 from oslo_log import log
 import six
+import socket
 
 from keystone.common import authorization
 from keystone.common import dependency
@@ -372,6 +374,50 @@ class V2Controller(wsgi.Application):
         o = {'tenants': tenant_refs,
              'tenants_links': []}
         return o
+
+    def validate_url(self, url):
+        """Validate url like '"http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"'
+
+           When the url is not valid or not right, should suppress it
+        """
+        # valid url should not be None
+        if not url:
+            return False
+
+        # url with space is invalid
+        if url.find(' ') != -1:
+            return False
+
+        # parse url and analyze the result
+        res = urlparse(url)
+        scheme = res.scheme
+        netloc = res.netloc
+        path = res.path
+
+        # scheme should be http or https
+        if scheme != 'http' and scheme != 'https':
+            return False
+
+        # check whether netloc is invalid or not
+        port = None
+        if netloc and netloc.find(':') != -1:
+            netloc, port = netloc.split(':')
+
+        try:
+            socket.gethostbyname(netloc)
+        except Exception:
+            return False
+
+        if port and int(port) > 65535:
+            return False
+
+        # check whether tenant_id or endpoint_id exist
+        if (path and
+            (path.find('$(tenant_id)s') != -1
+             or path.find('$(endpoint_id)s') != -1)):
+            return True
+
+        return True
 
 
 @dependency.requires('policy_api', 'token_provider_api')
