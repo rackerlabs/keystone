@@ -128,6 +128,32 @@ class V2CatalogTestCase(rest.RestfulTestCase):
     def test_endpoint_create_with_empty_service_id(self):
         self._endpoint_create(expected_status=400, service_id='')
 
+    def test_endpoint_create_with_invalid_url(self):
+        """Test some invalid cases:
+
+        1. a url which is none value
+        2. a url which has space in it
+        3. substitutions is exactly right
+        """
+        INVALID_URLS = [
+            '', None,
+            'http://127.0.0.1:8774/v1.1/\$(tenant_i d)s'
+            'http://127.0.0.1:8774/v1.1/\$(user_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(compute_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_e ndpoint)s'
+        ]
+
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=invalid_url,
+                                  internalurl=invalid_url,
+                                  adminurl=invalid_url)
+
 
 class TestV2CatalogAPISQL(tests.TestCase):
 
