@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_34e5e6a7",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "what about V3 endpoint creation? address in this commit or another?",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_b4e7b6ab",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "IIUC, update endpoint should have the same issue.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_342f26a3",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "Do not import objects, only modules\nsee: http://docs.openstack.org/developer/hacking/#imports",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_948632b8",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "socket is python lib, it\u0027s not belonged here.\nsee: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_34f2c69b",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "Expect more details in the docstring about which cases are not rights.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_8841363c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "log some info when exception happens here.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_28d82a53",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "why focus on the tenant_id and endpoint_id,\nsee: https://github.com/openstack/keystone/blob/master/keystone/catalog/core.py#L51-L54, all of them are valid substitution.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e82a422c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-11T08:04:45Z",
+      "side": 1,
+      "message": "I think the code logic here is wrong, it will always True start from here, see your code at the end of this method, so what\u0027s the purpose of the validation here, the method will return True even the check here is negative.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
