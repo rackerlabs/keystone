@@ -87,6 +87,24 @@
       "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d31054ab",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-11T02:52:31Z",
+      "side": 1,
+      "message": "I don\u0027t think it should be done at all. It is the exact opposite of my philosophy of moving things closer to where they are used.",
+      "parentUuid": "ba3cc151_0d9d240a",
+      "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
