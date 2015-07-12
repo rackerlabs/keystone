@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_d4103051",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-12T08:46:48Z",
+      "side": 1,
+      "message": "try this: six.moves.urllib?",
+      "revId": "c288e7d6ea428dc88e9a39543c56135de4c2617b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_34ff1c03",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-12T08:46:48Z",
+      "side": 1,
+      "message": "this is over indented, see L325 in this file for example.",
+      "revId": "c288e7d6ea428dc88e9a39543c56135de4c2617b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
