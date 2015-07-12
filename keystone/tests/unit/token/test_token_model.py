@@ -257,7 +257,7 @@ class TestKeystoneTokenModel(core.TestCase):
         token_model.KeystoneToken(token_id=uuid.uuid4().hex,
                                   token_data=self.v2_sample_token)
 
-        self.assertRaises(exception.UnexpectedError,
+        self.assertRaises(exception.Unauthorized,
                           token_model.KeystoneToken,
                           token_id=uuid.uuid4().hex,
                           token_data=self.v3_sample_token)

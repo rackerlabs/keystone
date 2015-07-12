@@ -58,8 +58,8 @@ class KeystoneToken(dict):
                                            mode=CONF.token.hash_algorithm)
 
         if self.project_scoped and self.domain_scoped:
-            raise exception.UnexpectedError(_('Found invalid token: scoped to '
-                                              'both project and domain.'))
+            raise exception.Unauthorized(_('Found invalid token: scoped to '
+                                           'both project and domain.'))
 
     def __repr__(self):
         desc = ('<%(type)s (audit_id=%(audit_id)s, '
