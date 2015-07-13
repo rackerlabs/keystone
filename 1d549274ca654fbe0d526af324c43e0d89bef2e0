@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_dce00afd",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "Delete this if the change bellow is applied.",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fcd38e36",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "To keep the convention of leaning away from the six package would db_results.values() work instead of  six.itervalues(db_results).  Looking at the documentation of six, itervalues() is just calling dictionary.values()",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fc04ee7e",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "Delete this if the bellow changes are applied.",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fce94e1b",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "To get rid of the package six, could we use filtered_endpoints.values() ?",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_bcf3c609",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "Would filters.keys() work here?  Please let me know if this is wrong.",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_7cd21e02",
+        "filename": "keystone/tests/unit/test_cache_backend_mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "If the bellow updates apply you can delete this.",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_8140dfa6",
+        "filename": "keystone/tests/unit/test_cache_backend_mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "To keep the convention of removing the package six self._documents.values() ?",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_1ce192d0",
+        "filename": "keystone/tests/unit/test_cache_backend_mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-13T22:10:26Z",
+      "side": 1,
+      "message": "self._documents.values()",
+      "revId": "1d549274ca654fbe0d526af324c43e0d89bef2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
