@@ -170,7 +170,7 @@ class RegionV3(controller.V3Controller):
                       'url_id': region_id,
                       'ref_id': region['id']})
         region['id'] = region_id
-        return self.create_region(context, region)
+        return self.create_region(context, region=region)
 
     @controller.protected()
     @validation.validated(schema.region_create, 'region')
