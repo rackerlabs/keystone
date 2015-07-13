@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_e95e7fe8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "ba3cc151_a6da324a",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_2674e234",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "put keystone-manage in `` , also should be ``keystone-manage mapping_engine``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_8a21e6fd",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_2674e234",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_2a021a70",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "I agree, this should only be supported in one area. Marek does show a good help screen.\n\n--rules RULES    Path to the file with rules to be executed. Content must be a proper JSON structure, with a top-level key \u0027rules\u0027 and corresponding value being a list.\n--input INPUT    Path to the file with input attributes. The content consists of \u0027:\u0027 separated parameter names and their values. There is only one key-value pair per line. A \u0027;\u0027 in the value is a separator and then a value is treated as a list. Example: EMAIL: me@example.com LOGIN: me GROUPS: group1;group2;group3",
+      "parentUuid": "9a41bdd9_7ded57ee",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_66242a0e",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -100,6 +154,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "lowercase example\n\nalso, should coobine : and :: here and use :: at the end of this line.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_13e53308",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_66242a0e",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_131e930c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_e676fa0b",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_06cafe1a",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -134,6 +224,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "is this referring to line 203?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_532bbb30",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Yup, added a comment.",
+      "parentUuid": "ba3cc151_06cafe1a",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_b30327b8",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Yup, added a comment.",
+      "parentUuid": "ba3cc151_46f7a659",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e6927afc",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -168,6 +294,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "put REMOTE_USER in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_930aa3d1",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_e6927afc",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_ea3672e6",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Have yet to see this done.\nPlease confirm if the following is accurate.\n\n{\n    \"group\": {\n        \"id\": [\"89678b\", \"abcdefg\"]\n    }\n}",
+      "parentUuid": "ba3cc151_46a56645",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_c646567b",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -202,6 +364,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "should be : at end of line.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_335877fa",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_c646567b",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +423,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_efca046e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Thanks for the hint! Updated",
+      "parentUuid": "9a41bdd9_6724f40c",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_69115d53",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -254,6 +452,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "Put Federated in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_b35567c7",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_69115d53",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +493,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_2f0d4c37",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": ".* should be fine since:\n\n\".\" is any char except newline\n\"*\" is zero or more of the preceding element.\n\nJust trying to show regex syntax and trying to keep it consistent with /keystone/tests/unit/mapping_fixtures.py",
+      "parentUuid": "ba3cc151_097771a0",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_c9598937",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -288,6 +522,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "put 0cd5e9, HTTP_OIDC_GROUPIDS, cn\u003dIBM_Canada_Lab;cn\u003dIBM_USA_Lab in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_b3e7a73f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_c9598937",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -311,6 +563,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_34ba816f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": ".* should be fine since:\n\n\".\" is any char except newline\n\"*\" is zero or more of the preceding element.\n\nJust trying to show regex syntax and trying to keep it consistent with /keystone/tests/unit/mapping_fixtures.py",
+      "parentUuid": "9a41bdd9_fd01676b",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_5df3b39e",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -328,6 +598,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_14b73d87",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": ".* should be fine since:\n\n\".\" is any char except newline\n\"*\" is zero or more of the preceding element.\n\nJust trying to show regex syntax and trying to keep it consistent with /keystone/tests/unit/mapping_fixtures.py",
+      "parentUuid": "9a41bdd9_5df3b39e",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_c9cc29be",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -339,6 +627,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "this should be a list not preformatted.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_93ee2321",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Changed to a list.",
+      "parentUuid": "ba3cc151_c9cc29be",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -379,6 +685,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_53817b49",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Changed to a List.",
+      "parentUuid": "ba3cc151_49b9f914",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_11e55d36",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 15
@@ -390,6 +714,24 @@
       "writtenOn": "2015-07-09T23:14:15Z",
       "side": 1,
       "message": "(nit) i think the code here should be wrapped in `` ``.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_185c704a",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-13T16:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_11e55d36",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
