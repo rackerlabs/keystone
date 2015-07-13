@@ -16,6 +16,24 @@
       "revId": "3f624c6e1e680b4658e605bce9075709d14ae4ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e55a2550",
+        "filename": "keystone/backends.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-13T16:33:25Z",
+      "side": 1,
+      "message": "being addressed here: https://review.openstack.org/#/c/199793/3",
+      "parentUuid": "ba3cc151_ee9076ef",
+      "revId": "3f624c6e1e680b4658e605bce9075709d14ae4ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
