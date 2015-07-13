@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_ed878b5f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-13T07:21:35Z",
+      "side": 1,
+      "message": "I did that because I thought I remembered someone saying that write based LDAP of all objects was also deprecated.  If that\u0027s not accurate, I\u0027ll gladly undo those changes.",
+      "parentUuid": "9a41bdd9_e97c6022",
+      "revId": "57f3d6619beefb0349e9abced5ab78ab0b13857d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_69b610de",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
