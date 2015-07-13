@@ -14,6 +14,7 @@
 import uuid
 
 from keystone.assignment import schema as assignment_schema
+from keystone import catalog
 from keystone.catalog import schema as catalog_schema
 from keystone.common import validation
 from keystone.common.validation import parameter_types
@@ -109,6 +110,16 @@ class EntityValidationTestCase(unit.BaseTestCase):
             entity_create)
         self.update_schema_validator = validators.SchemaValidator(
             entity_update)
+
+    def create_entity_with_id_args(self, entity_id, entity):
+        self.create_entity(entity)
+
+    def create_entity_with_id_kwargs(self, entity_id, entity):
+        self.create_entity(entity=entity)
+
+    @validation.validated(entity_create, 'entity')
+    def create_entity(self, entity):
+        pass
 
     def test_create_entity_with_all_valid_parameters_validates(self):
         """Validate all parameter values against test schema."""
@@ -245,6 +256,38 @@ class EntityValidationTestCase(unit.BaseTestCase):
         request_to_validate = {'name': self.resource_name,
                                'id_string': None}
         self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_entity_with_id_as_argument(self):
+        """Exception raised when passing with a invalid reference data.
+
+        This test mimic the case when the API is invoked by another function
+        with 'id' as the input argument, such as
+        `keystone.catalog.controllers.RegionV3.create_region_with_id`.
+
+        The resource to be validated passed as positional argument will pass
+        the validation although the reference value is invalid, since the
+        validation is simply missed with the current code logic, but will
+        raise exception if pass as dict.
+        """
+        # TODO(davechen) Currently, the validation fetch the resource to be
+        # validated from the python dictionary instead of the positional
+        # argument, validation should change the logic to fetch the resource
+        # more wisely.
+        # test the invalid email value
+        request_to_validate = {'name': self.resource_name,
+                               'email': 'some invalid email value'}
+        self.create_entity_with_id_args(uuid.uuid4().hex, request_to_validate)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_entity_with_id_kwargs,
+                          uuid.uuid4().hex,
+                          request_to_validate)
+
+        # test the empty request body
+        self.create_entity_with_id_args(uuid.uuid4().hex, {})
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_entity_with_id_kwargs,
+                          uuid.uuid4().hex,
+                          {})
 
     def test_update_entity_with_no_parameters_fails(self):
         """At least one parameter needs to be present for an update."""
@@ -808,6 +851,21 @@ class RegionValidationTestCase(unit.BaseTestCase):
         """Validate create region request with extra values."""
         request_to_validate = {'other_attr': uuid.uuid4().hex}
         self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_create_with_id_fails_with_invalid_value(self):
+        """Validate create region with invalid values."""
+        self.controller = catalog.controllers.RegionV3()
+        request_to_validate = {'id': 12345,
+                               'description': 'US East Region',
+                               'parent_region_id': uuid.uuid4().hex}
+
+        # test the case when the request id is not string type which is
+        # restricted by the region schema validation.
+        self.assertRaises(exception.SchemaValidationError,
+                          self.controller.create_region_with_id,
+                          dict(is_admin=True),
+                          12345,
+                          region=request_to_validate)
 
     def test_validate_region_update_succeeds(self):
         """Test that we validate a region update request."""
