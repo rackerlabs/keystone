@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_7ded57ee",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-13T12:46:57Z",
+      "side": 1,
+      "message": "If this is supposed to be an explanation of mapping language grammar then leave it at that. Let\u0027s not duplicate documentation for the keystone-manage mapping_engine command, otherwise we\u0027ll just have to maintain the same thing in 2 places. It would be better to link to the existing documentation.",
+      "parentUuid": "9a41bdd9_e7eec421",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_66242a0e",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -270,6 +288,40 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "put 0cd5e9, HTTP_OIDC_GROUPIDS, cn\u003dIBM_Canada_Lab;cn\u003dIBM_USA_Lab in ``",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fd01676b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-13T12:46:57Z",
+      "side": 1,
+      "message": "if this matches partial string then .* isn\u0027t needed.\n\nAlso, since . is a special character in regex it needs to be escaped.",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_5df3b39e",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-13T12:46:57Z",
+      "side": 1,
+      "message": "if this matches partial string then .* isn\u0027t needed.\n\nAlso, since . is a special character in regex it needs to be escaped.",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
