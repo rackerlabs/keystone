@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_973b5cd1",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:14:02Z",
+      "side": 1,
+      "message": "(nit) i think these comments in all of the methods are overkill. the methods docstring is enough to say what is happening.",
+      "revId": "4e57a98a0ee5bb3f55252c0d61b3b234fd0a73bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d7ca44a1",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:14:02Z",
+      "side": 1,
+      "message": "(nit) since the methods are virtually identical you can probably do something like:\n\n  def _assert_entity_fails(self, entity):\n      e \u003d ...\n      self.assertIn(...)\n\nand call it from your methods using:\n\n  self._assert_entity_fails({})",
+      "revId": "4e57a98a0ee5bb3f55252c0d61b3b234fd0a73bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
