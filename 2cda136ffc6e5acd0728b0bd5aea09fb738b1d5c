@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_97b11c92",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "This is a third party module and should be in the next section.",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_b721c0b6",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "put the example later in the docstring.",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_57595459",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "delete \u0027or not right\u0027",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_374e1097",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "None",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_da7ca974",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_5707141c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_da3b49ea",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "Is there any value to checking that the host has a valid network address here?",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_1a9c51bf",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "more pythonic would be:\n\n  if \u0027 \u0027 in url:",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_1a4e916f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "don\u0027t use % in log statements only use a comma",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_9a4ce143",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "we should definitely not copy the list. if we do then we\u0027ll have to remember to change it in both places",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_7aa9dd7a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "This doesn\u0027t make any sense. Is /v1.1/$(tenant_i d)s/xyz a valid URL?",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_9a038142",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-13T12:36:58Z",
+      "side": 1,
+      "message": "Why not turn the WHITELISTED_PROPERTIES list into a dictionary and then you can do something like (You\u0027ll have to convert $ to % first...):\n\n  url % WHITELISTED_PROPERTIES\n\nThis will raise a KeyError if a substitution is not found.\n\nThis will also catch the case where a user uses %(not_found)s in their URL.  If the key doesn\u0027t exist the URL is invalid.",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
