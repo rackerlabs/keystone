@@ -16,6 +16,24 @@
       "revId": "4730d829c0877936d3e668daf357b20e7b608547",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_69885023",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 916,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-13T07:04:11Z",
+      "side": 0,
+      "message": "Without this change, the test would fail. The new code-under-test no longer searches for \u0027token_id\u0027; it now looks for the auth_context itself.",
+      "parentUuid": "ba3cc151_bc1b0cca",
+      "revId": "4730d829c0877936d3e668daf357b20e7b608547",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -105,6 +105,24 @@
       "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_09f744d4",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-13T07:04:11Z",
+      "side": 1,
+      "message": "Done. For some reason, I thought that the test I modified (test_get_trust()) and this method were in peer-subclasses. But looks like they are not. So, moved this method back to its original location.",
+      "parentUuid": "9a41bdd9_d31054ab",
+      "revId": "bfc4b728997cc0e083bc9ef824eb506da231126c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
