@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_2b06a9ce",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-13T13:11:58Z",
+      "side": 1,
+      "message": "We relaxed the initial scheme requirements for urls once already [0] in order to support ipv6 [1]. I\u0027m not sure we\u0027re ready to tighten it back up. Not to mention I think this builds too much validation logic outside of the module that we already have to do this [2]. \n\n\n[0] https://github.com/openstack/keystone/blob/c387a9353ed8c06428e2ee8b1fbfe71e3b60a737/keystone/common/validation/parameter_types.py#L50-L58\n\n[1] https://github.com/openstack/keystone/commit/7fa6e92c441644c0d990e79a78692b786d88acec\n\n[2] https://github.com/openstack/keystone/tree/c387a9353ed8c06428e2ee8b1fbfe71e3b60a737/keystone/common/validation",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_b721c0b6",
         "filename": "keystone/common/controller.py",
         "patchSetId": 9
