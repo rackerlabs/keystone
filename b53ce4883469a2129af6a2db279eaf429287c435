@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_e7eec421",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-13T09:35:54Z",
+      "side": 1,
+      "message": "this documentation is an explanation of not-so-simple mapping language gramar and keystone-manage is used here as an example to execute maping engine. \nI wouldn\u0027t expect explaining mapping language in a mapping_engine subcommand help message.",
+      "parentUuid": "ba3cc151_c6009669",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_66242a0e",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 15
@@ -183,6 +201,24 @@
       "writtenOn": "2015-07-10T00:44:42Z",
       "side": 1,
       "message": "don\u0027t we also need the group domain?",
+      "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_6724f40c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-13T09:35:54Z",
+      "side": 1,
+      "message": "We do: https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/utils.py#L559-L578 and we will show it. \n\nHint for Fernando: Update docs so users know there are group names with domains.",
+      "parentUuid": "ba3cc151_660aea29",
       "revId": "b53ce4883469a2129af6a2db279eaf429287c435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
