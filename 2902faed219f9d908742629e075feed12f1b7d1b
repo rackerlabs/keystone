@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_c9726511",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-14T16:41:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_abde100f",
+      "revId": "2902faed219f9d908742629e075feed12f1b7d1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_4bc74445",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-14T07:06:10Z",
       "side": 1,
       "message": "group_names wil be a list of dictionaries grouped per domain, for instance for input https://gist.github.com/zaccone/bcb3c4d221e9bd4d8364 and rules https://gist.github.com/zaccone/fc8a9f89f1ef41f74572 the result is: https://gist.github.com/zaccone/48d2d42ad2287e241751",
+      "revId": "2902faed219f9d908742629e075feed12f1b7d1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e428b0e4",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-14T16:41:18Z",
+      "side": 1,
+      "message": "Thanks for the info. I updated it and put 2 different domains in the example, that way the user can see multiple domains can be displayed.",
+      "parentUuid": "9a41bdd9_4bc74445",
       "revId": "2902faed219f9d908742629e075feed12f1b7d1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
