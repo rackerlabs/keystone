@@ -18,7 +18,7 @@ from oslo_log import log
 import six
 
 from keystone.common import dependency
-from keystone.contrib.oauth1 import core as oauth1
+from keystone.common.oauth1 import core as oauth1
 from keystone import exception
 
 

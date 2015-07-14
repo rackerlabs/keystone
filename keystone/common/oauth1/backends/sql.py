@@ -20,9 +20,9 @@ from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 import six
 
+from keystone.common.oauth1 import core
 from keystone.common import sql
 from keystone.common import utils
-from keystone.contrib.oauth1 import core
 from keystone import exception
 from keystone.i18n import _
 
