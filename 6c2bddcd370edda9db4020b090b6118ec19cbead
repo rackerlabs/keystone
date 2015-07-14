@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_ee6e5c2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-14T11:31:02Z",
+      "side": 1,
+      "message": "this needs at least a bug or blueprint. a short paragraph describing why we are making this change would also be helpful",
+      "revId": "6c2bddcd370edda9db4020b090b6118ec19cbead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
