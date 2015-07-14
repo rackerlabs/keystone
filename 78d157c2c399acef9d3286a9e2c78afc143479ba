@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_eb4f38bb",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-14T07:13:07Z",
+      "side": 1,
+      "message": "I believe the right term is requirements files.\n\nhttps://pip.readthedocs.org/en/1.1/requirements.html",
+      "revId": "78d157c2c399acef9d3286a9e2c78afc143479ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
