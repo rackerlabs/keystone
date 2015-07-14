@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_988024c2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-14T16:01:20Z",
+      "side": 0,
+      "message": "this is not about type checking.\n\nI wonder why the tests still pass after it is changed.",
+      "revId": "6881a76b3f2a5c95283a5ff93093b3f2e1adf3e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
