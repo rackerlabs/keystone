@@ -20,7 +20,7 @@ from oslo_serialization import jsonutils
 from pycadf import cadftaxonomy
 from six.moves import urllib
 
-from keystone.contrib import oauth1
+from keystone.common import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone.contrib.oauth1 import core
 from keystone import exception
