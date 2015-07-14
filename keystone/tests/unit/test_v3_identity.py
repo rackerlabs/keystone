@@ -393,6 +393,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``POST /groups``."""
         self.post('/groups', body={'group': {}}, expected_status=400)
 
+    def test_create_group_without_domain_id(self):
+        """Call ``POST /groups``."""
+        self.post('/groups', body={'group': 'test_group'}, expected_status=400)
+
     def test_list_groups(self):
         """Call ``GET /groups``."""
         resource_url = '/groups'
