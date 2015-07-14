@@ -55,7 +55,7 @@ _group_properties = {
 group_create = {
     'type': 'object',
     'properties': _group_properties,
-    'required': ['name'],
+    'required': ['name', 'domain_id'],
     'additionalProperties': True
 }
 
