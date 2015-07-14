@@ -21,8 +21,8 @@ from oslo_utils import timeutils
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
-from keystone.contrib.oauth1 import core as oauth1
-from keystone.contrib.oauth1 import validator
+from keystone.common.oauth1 import core as oauth1
+from keystone.common.oauth1 import validator
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model

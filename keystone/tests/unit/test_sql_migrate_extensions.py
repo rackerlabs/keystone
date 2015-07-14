@@ -35,11 +35,11 @@ import uuid
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import utils
 
+from keystone.common import oauth1
 from keystone.contrib import endpoint_filter
 from keystone.contrib import endpoint_policy
 from keystone.contrib import example
 from keystone.contrib import federation
-from keystone.contrib import oauth1
 from keystone.contrib import revoke
 from keystone.tests.unit import test_sql_upgrade
 

@@ -18,8 +18,8 @@ from oslo_utils import timeutils
 from keystone import auth
 from keystone.common import controller
 from keystone.common import dependency
-from keystone.contrib.oauth1 import core as oauth
-from keystone.contrib.oauth1 import validator
+from keystone.common.oauth1 import core as oauth
+from keystone.common.oauth1 import validator
 from keystone import exception
 from keystone.i18n import _
 
