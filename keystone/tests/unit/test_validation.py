@@ -1701,7 +1701,8 @@ class GroupValidationTestCase(unit.BaseTestCase):
 
     def test_validate_group_create_succeeds(self):
         """Validate create group requests."""
-        request_to_validate = {'name': self.group_name}
+        request_to_validate = {'name': self.group_name,
+                               'domain_id': uuid.uuid4().hex}
         self.create_group_validator.validate(request_to_validate)
 
     def test_validate_group_create_succeeds_with_all_parameters(self):
@@ -1728,6 +1729,7 @@ class GroupValidationTestCase(unit.BaseTestCase):
     def test_validate_group_create_succeeds_with_extra_parameters(self):
         """Validate extra attributes on group create requests."""
         request_to_validate = {'name': self.group_name,
+                               'domain_id': uuid.uuid4().hex,
                                'other_attr': uuid.uuid4().hex}
         self.create_group_validator.validate(request_to_validate)
 
