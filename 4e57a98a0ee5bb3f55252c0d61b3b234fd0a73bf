@@ -33,6 +33,24 @@
       "revId": "4e57a98a0ee5bb3f55252c0d61b3b234fd0a73bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_0146fdbe",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-14T08:13:57Z",
+      "side": 1,
+      "message": "@David, thanks for the comments here, If another commit is needed I will address them, or address them in the separate patch if this patch would got merging.",
+      "parentUuid": "9a41bdd9_d7ca44a1",
+      "revId": "4e57a98a0ee5bb3f55252c0d61b3b234fd0a73bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
