@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_c256b729",
+        "filename": "keystone/backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-07-14T17:54:25Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this line now be moved up to the other keystone.common entry?",
+      "revId": "911116301fc8be43ecc50633a7403f9188244526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
