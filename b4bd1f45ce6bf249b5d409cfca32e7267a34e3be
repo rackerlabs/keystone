@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_987fc9aa",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-07-14T14:54:16Z",
+      "side": 1,
+      "message": "Is this a valid value for \u0027group\u0027?  You wouldn\u0027t need to create a group that doesn\u0027t have an ID then set that as the value of \u0027group\u0027?",
+      "revId": "b4bd1f45ce6bf249b5d409cfca32e7267a34e3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
