@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_d06acfec",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-15T13:18:48Z",
+      "side": 1,
+      "message": "capitalize \u0027c\u0027 or small inital character in other occurrence for the consistency",
+      "revId": "3523871756934822d6d1d4624992cd763658f6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_90b20793",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-15T13:18:48Z",
+      "side": 1,
+      "message": "pls remove \"body\u003dbody\", the testcase intends to verify the v2 token doesn\u0027t work instead of the user/password authentication not work.",
+      "revId": "3523871756934822d6d1d4624992cd763658f6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
