@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_0d457d44",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T14:05:00Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be taking this step yet. We already have a module (keystone/clean.py) that is used to validate the v2.0 code path. I don\u0027t think we need to have two different validation techniques scattered across two API versions, mixed and matched.\n\nIf we\u0027re going to be using jsonschema to validate the v2.0, we should prepare the current validation module (keystone/clean.py) to be removed. We should also be using one schema validation framework on all Keystone v2.0 entities to be consistent. I don\u0027t think it\u0027s right to use jsonschema to validate *some* things in v2.0 and not other things. \n\nThe current validation implementation was introduced per each v3 entity [0]. \n\n\n[0] https://review.openstack.org/#/c/96266/",
+      "revId": "9786b5c0a0bfc990e4f796abaad499afc4b53bc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_8a7c13ed",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 13
