@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_f9534e15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-15T08:43:26Z",
+      "side": 1,
+      "message": "s/it is now suppressed/these invalid url should be suppressed",
+      "revId": "a0c48be60cda0a753a09ea519e0fd821091e8079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_59e91ae5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-15T08:43:26Z",
+      "side": 1,
+      "message": "The above commit message is not correct.\n\nThis issue also existing in V3 API, pls use openstack CLI for V3 API, this issue not restricted in the client command but the CURL as well.\n\nPls remove V2 API and keystone command stuff in the commit message, and I belive the issue also existed in other APIs, such as update API.\n\nIf you only want to address partial of the bug, pls change Closes-Bug to Partial-Bug, that will looks better.\n\nI think it\u0027s better to understand what\u0027s Lance\u0027s comments meant in the PS9, and maybe a better approach could be figured out.",
+      "revId": "a0c48be60cda0a753a09ea519e0fd821091e8079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
