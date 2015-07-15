@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_8a7c13ed",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T13:59:00Z",
+      "side": 1,
+      "message": "What is the source of this regex? I don\u0027t like the idea of making one up because we run the risk of false positives. Also this is no longer valid: http://127.0.0.1:8774/v1.1/%(tenant_id)s",
+      "revId": "9786b5c0a0bfc990e4f796abaad499afc4b53bc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
