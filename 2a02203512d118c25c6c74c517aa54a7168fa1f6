@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_5f92394d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-15T19:04:40Z",
+      "side": 1,
+      "message": "guang needs to be added as co-author",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60a17295",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 32
@@ -64,6 +81,40 @@
       "writtenOn": "2015-07-09T23:52:41Z",
       "side": 1,
       "message": "nitpick: enviornment should be environment",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_7f8e1d2f",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-15T19:04:40Z",
+      "side": 1,
+      "message": "group these together",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_3f841509",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-15T19:04:40Z",
+      "side": 1,
+      "message": "add comments here",
       "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
