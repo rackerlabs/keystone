@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_7892ae4d",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_0856b905",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_08f23906",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-15T20:36:08Z",
       "side": 1,
       "message": "If the user id and name are not specified in the mapping, the server tries [...]",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e5713b0d",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_08f23906",
       "revId": "08b106413340bae632efd71522d8b5a686e99515",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_58b6caf9",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "I see. gotcha.",
+      "parentUuid": "9a41bdd9_889e4961",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_4892814d",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 17
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-15T20:36:08Z",
       "side": 1,
       "message": "so, even if empty they will still be displayed :P",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_a5bc93bb",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "gotcha :)/. I\u0027ll remove this",
+      "parentUuid": "9a41bdd9_4892814d",
       "revId": "08b106413340bae632efd71522d8b5a686e99515",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_25e64315",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_3359ae35",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_938f5a74",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 17
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_42afbd7c",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_938f5a74",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_5361d2a7",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 17
@@ -115,6 +223,24 @@
       "writtenOn": "2015-07-15T20:36:08Z",
       "side": 1,
       "message": "UserType, not Email.",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_2294f940",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-07-15T22:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_5361d2a7",
       "revId": "08b106413340bae632efd71522d8b5a686e99515",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
