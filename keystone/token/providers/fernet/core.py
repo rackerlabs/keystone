@@ -106,11 +106,22 @@ class Provider(common.BaseProvider):
             federation.FEDERATION, {}).get('identity_provider', {}).get('id')
         protocol_id = token_data['token'].get('user', {}).get(
             federation.FEDERATION, {}).get('protocol', {}).get('id')
-        if not group_ids:
-            group_ids = list()
-        if group_ids:
+        project_id = token_data['token'].get('project', {}).get('id')
+        domain_id = token_data['token'].get('domain', {}).get('id')
+        # NOTE(lbragstad): If we have a set of group_ids without a project_id
+        # or a domain_id, then we are dealing with an FederatedUnscopedPayload.
+        # If we don't have a set of group_ids but we *do* have a domain_id or a
+        # project_id, then we're dealing with a FederatedDomainScopedPayload or
+        # a FederatedProjectScopedPayload. If we don't include this
+        # information, token validation will fail when validating a
+        # FederatedDomainScopedPayload or a FederatedProjectScopedPayload
+        # because the user won't have the proper roles.
+        if group_ids and not (project_id or domain_id):
             federated_dict = dict(group_ids=group_ids, idp_id=idp_id,
                                   protocol_id=protocol_id)
+            return federated_dict
+        elif not group_ids and (project_id or domain_id):
+            federated_dict = dict(idp_id=idp_id, protocol_id=protocol_id)
             return federated_dict
         return None
 
