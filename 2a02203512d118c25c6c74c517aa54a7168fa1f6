@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_829b8a17",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "(nit) These two sentences sound clunky. Maybe combine them like: Make sure to enable SSL and have client authentication (``SSLVerifyClient``) set as ``optional`` to allow....",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_60a17295",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 32
@@ -83,6 +100,108 @@
       "side": 1,
       "message": "Agreed. IdP that is.",
       "parentUuid": "ba3cc151_008bc61f",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_ed112753",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "Why are we not just using the hex digest instead of base64 here?",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_cd3d43c5",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "I can\u0027t parse this first sentence.",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4d50530b",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "s/And t/T/",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_0d7b2b7c",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 32
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "Should this end in a -?",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_eddb677a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "True",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_ffc8ed56",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "should there be an \u0027or\u0027 here so the two examples are seen as separate?",
       "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -159,6 +278,91 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_7f0a9d8b",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "(nit) newline",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4d6133a8",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "A later refactoring may be to unnest these nested \u0027if\u0027 statements.",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_adc23f51",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "Why is this _LW? It should be _",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_cd754364",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "Don\u0027t use %!",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4dbdb3d6",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "Why is this _LW? It should just be _",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_7f8e1d2f",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 32
@@ -194,6 +398,23 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_820aaa88",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "no %!",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_3f841509",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 32
@@ -223,6 +444,23 @@
       "side": 1,
       "message": "will do",
       "parentUuid": "9a41bdd9_3f841509",
+      "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_5fbd59d6",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T19:57:47Z",
+      "side": 1,
+      "message": "(nit) newline",
       "revId": "2a02203512d118c25c6c74c517aa54a7168fa1f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
