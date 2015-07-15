@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_6ad3cfd5",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T14:05:07Z",
+      "side": 1,
+      "message": "We currently don\u0027t use the jsonschema validation framework in Keystone to validate the v2.0 api. I think there is some other work that needs to be addressed before we start pulling the v2 schema validation under the jsonschema umbrella. One of those things would probably be to consolidate all the v2.0 validation logic into the same layer, which is something I attempted before but didn\u0027t have the bandwidth to finish it [0].\n\n\nI don\u0027t think we should just add v2.0 schemas to the current jsonschema implementation without cleaning things up first. \n\n\n[0] https://review.openstack.org/#/c/132095/",
+      "revId": "030ea322c6ebb8f1d8d84e807b6762aeaffe7ee4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_6aeaef75",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T14:05:07Z",
+      "side": 1,
+      "message": "why change this exactly?",
+      "revId": "030ea322c6ebb8f1d8d84e807b6762aeaffe7ee4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
