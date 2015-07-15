@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_666c6308",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-15T16:30:46Z",
+      "side": 0,
+      "message": "in a follow up, we should rename this to Unscoped",
+      "revId": "e517baf5f094570853056223627e62834325b10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_c9530016",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-15T16:30:46Z",
+      "side": 0,
+      "message": "guess this had a typo to begin with: https://review.openstack.org/#/c/202178/",
+      "revId": "e517baf5f094570853056223627e62834325b10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
