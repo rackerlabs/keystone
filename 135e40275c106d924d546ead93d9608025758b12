@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_f37a6623",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T20:37:51Z",
+      "side": 1,
+      "message": "we need to go through this same process in _rebuild_federated_info()",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_8833a9f5",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
