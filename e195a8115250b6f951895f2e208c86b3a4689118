@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_ca33fbf4",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T13:52:11Z",
+      "side": 1,
+      "message": "nit: probably could make it random",
+      "revId": "e195a8115250b6f951895f2e208c86b3a4689118",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_ea459f42",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T13:52:11Z",
+      "side": 1,
+      "message": "nit: probably could make it random",
+      "revId": "e195a8115250b6f951895f2e208c86b3a4689118",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_aa7a3786",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T13:52:11Z",
+      "side": 1,
+      "message": "nit: probably could make it random",
+      "revId": "e195a8115250b6f951895f2e208c86b3a4689118",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
