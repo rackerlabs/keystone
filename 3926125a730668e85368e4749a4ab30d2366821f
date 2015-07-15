@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_8685e7cf",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T16:23:24Z",
+      "side": 1,
+      "message": "trailing \u0027p\u0027?",
+      "revId": "3926125a730668e85368e4749a4ab30d2366821f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
