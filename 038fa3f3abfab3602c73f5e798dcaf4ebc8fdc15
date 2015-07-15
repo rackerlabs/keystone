@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_87ec0e2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T13:37:01Z",
+      "side": 1,
+      "message": "The regular expression that you see in the current code base [0] was put in place so that we could support ipv6 [1]. If the current implementation is in fact terribly wrong, we\u0027ll need to make sure what we replace it with does regress. \n\n\n[0] https://github.com/openstack/keystone/blob/e517baf5f094570853056223627e62834325b10b/keystone/common/validation/parameter_types.py#L54-L57\n\n[1] https://bugs.launchpad.net/keystone/+bug/1386376",
+      "parentUuid": "9a41bdd9_4e2ae82d",
+      "revId": "038fa3f3abfab3602c73f5e798dcaf4ebc8fdc15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_ba596f5c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
