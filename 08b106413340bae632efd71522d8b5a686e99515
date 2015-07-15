@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_0856b905",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "Why OS_* here where in rules you read FirstName, LastName, Email parameters.....",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_08f23906",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "If the user id and name are not specified in the mapping, the server tries [...]",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_889e4961",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "you are mixing two things here.\n\nPlease specify and explain \"type\" parameter:\n\ntype:\nlocal - \nephemeral -\n\nand later specify service domain \u0027Federated\u0027.",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4892814d",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "so, even if empty they will still be displayed :P",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_3359ae35",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "remove this code block, imho it doesn\u0027t bring anything and is more confusing.",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_938f5a74",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "[...] cannot be repeated withing same condition.",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_5361d2a7",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-15T20:36:08Z",
+      "side": 1,
+      "message": "UserType, not Email.",
+      "revId": "08b106413340bae632efd71522d8b5a686e99515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
