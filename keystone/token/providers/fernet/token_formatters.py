@@ -135,8 +135,8 @@ class TokenFormatter(object):
                 audit_ids,
                 federated_info)
         elif federated_info:
-            version = FederatedPayload.version
-            payload = FederatedPayload.assemble(
+            version = FederatedUnscopedPayload.version
+            payload = FederatedUnscopedPayload.assemble(
                 user_id,
                 methods,
                 expires_at,
@@ -211,9 +211,9 @@ class TokenFormatter(object):
         elif version == TrustScopedPayload.version:
             (user_id, methods, project_id, expires_at, audit_ids, trust_id) = (
                 TrustScopedPayload.disassemble(payload))
-        elif version == FederatedPayload.version:
+        elif version == FederatedUnscopedPayload.version:
             (user_id, methods, expires_at, audit_ids, federated_info) = (
-                FederatedPayload.disassemble(payload))
+                FederatedUnscopedPayload.disassemble(payload))
         elif version == FederatedProjectScopedPayload.version:
             (user_id, methods, project_id, expires_at, audit_ids,
              federated_info) = FederatedProjectScopedPayload.disassemble(
@@ -524,7 +524,7 @@ class TrustScopedPayload(BasePayload):
                 trust_id)
 
 
-class FederatedPayload(BasePayload):
+class FederatedUnscopedPayload(BasePayload):
     version = 4
 
     @classmethod
