@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_7fd61d50",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1500,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-15T19:19:00Z",
+      "side": 1,
+      "message": "why is this test specific to fernet?",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_ff930d59",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-15T19:19:00Z",
+      "side": 1,
+      "message": "remove blank line",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_826c21d1",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 3
@@ -19,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_bf99057b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-15T19:19:00Z",
+      "side": 1,
+      "message": "remove blank line",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_3fb20e4d",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 3
@@ -30,6 +81,41 @@
       "writtenOn": "2015-07-01T18:17:56Z",
       "side": 1,
       "message": "are we good with this? \n\n    \u003e original_expiration\n    u\u00272015-06-29T17:25:52.853542Z\u0027\n    \u003e original_expiration[:original_expiration.find(\u0027.\u0027)]\n    u\u00272015-06-29T17:25:52\u0027",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_3f0e558c",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1539,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-15T19:19:00Z",
+      "side": 1,
+      "message": "This should be more explicit and also have a comment what\u0027s going on here.",
+      "parentUuid": "ba3cc151_3fb20e4d",
+      "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_bf29059d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-15T19:19:00Z",
+      "side": 1,
+      "message": "remove \", provider.default_expire_time()\" and just let get_token_data pick the expires time if there is none.",
       "revId": "1f67b8667e835dfe9ef7ac388f2a74da9943026a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
