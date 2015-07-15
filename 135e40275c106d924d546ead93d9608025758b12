@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_8833a9f5",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T20:11:33Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to map to what the assemble methods returns.",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4877e19f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-15T20:11:33Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
