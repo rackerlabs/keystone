@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_61f21208",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-15T15:13:03Z",
+      "side": 1,
+      "message": "why move uuid? it\u0027s standard lib.",
+      "revId": "90d3acb97e046ea7c455e6af36655bb878c3e7ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e1bdc202",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-15T15:13:03Z",
+      "side": 1,
+      "message": "six and six.moves should be bundled with testtools and oslo_config",
+      "revId": "90d3acb97e046ea7c455e6af36655bb878c3e7ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
