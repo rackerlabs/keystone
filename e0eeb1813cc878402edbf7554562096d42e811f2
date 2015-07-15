@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_a14d7a9b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-15T15:24:05Z",
+      "side": 0,
+      "message": "Why did you move this? it\u0027s stdlib",
+      "revId": "e0eeb1813cc878402edbf7554562096d42e811f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
