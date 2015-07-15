@@ -2907,6 +2907,27 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin):
     AUTH_METHOD = 'token'
 
+    def _check_scoped_token_attributes(self, token):
+        def xor_project_domain(token_keys):
+            return sum(('project' in token_keys, 'domain' in token_keys)) % 2
+
+        for obj in ('user', 'catalog', 'expires_at', 'issued_at',
+                    'methods', 'roles'):
+            self.assertIn(obj, token)
+        # Check for either project or domain
+        if not xor_project_domain(list(token.keys())):
+            raise AssertionError("You must specify either"
+                                 "project or domain.")
+
+        self.assertIn('OS-FEDERATION', token['user'])
+        os_federation = token['user']['OS-FEDERATION']
+        self.assertEqual(self.IDP, os_federation['identity_provider']['id'])
+        self.assertEqual(self.PROTOCOL, os_federation['protocol']['id'])
+        self.assertListEqual(sorted(['groups',
+                                     'identity_provider',
+                                     'protocol']),
+                             sorted(os_federation.keys()))
+
     def load_fixtures(self, fixtures):
         super(FernetFederatedTokenTests, self).load_fixtures(fixtures)
         self.load_federation_sample_data()
