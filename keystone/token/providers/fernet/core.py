@@ -107,13 +107,23 @@ class Provider(common.BaseProvider):
                 'identity_provider', {}).get('id')
         protocol_id = token_data['token'].get('user', {}).get(
             federation_constants.FEDERATION, {}).get('protocol', {}).get('id')
-        if not group_ids:
-            group_ids = list()
-        if group_ids:
-            federated_dict = dict(group_ids=group_ids, idp_id=idp_id,
-                                  protocol_id=protocol_id)
-            return federated_dict
-        return None
+        # If we don't have an identity provider ID and a protocol ID, it's safe
+        # to assume we aren't dealing with a federated token.
+        if not (idp_id and protocol_id):
+            return None
+
+        # NOTE(lbragstad): If we have a set of group_ids without a project_id
+        # or a domain_id, then we are dealing with an FederatedUnscopedPayload.
+        # If we don't have a set of group_ids but we *do* have a domain_id or a
+        # project_id, then we're dealing with a FederatedDomainScopedPayload or
+        # a FederatedProjectScopedPayload. If we don't include this
+        # information, token validation will fail when validating a
+        # FederatedDomainScopedPayload or a FederatedProjectScopedPayload
+        # because the user won't have the proper roles.
+
+        federated_dict = {'group_ids': group_ids, 'idp_id': idp_id,
+                          'protocol_id': protocol_id}
+        return federated_dict
 
     def _rebuild_federated_info(self, federated_dict, user_id):
         """Format federated information into the token reference.
@@ -125,17 +135,25 @@ class Provider(common.BaseProvider):
         V3TokenDataHelper.
 
         """
-        g_ids = federated_dict['group_ids']
+        g_ids = federated_dict.get('group_ids', [])
         idp_id = federated_dict['idp_id']
         protocol_id = federated_dict['protocol_id']
-        federated_info = dict(groups=g_ids,
-                              identity_provider=dict(id=idp_id),
-                              protocol=dict(id=protocol_id))
-        token_dict = {'user': {
-            federation_constants.FEDERATION: federated_info}}
+        federated_info = dict()
+        federated_info['groups'] = g_ids
+        federated_info['identity_provider'] = dict(id=idp_id)
+        federated_info['protocol'] = dict(id=protocol_id)
+        token_dict = {'user':
+                      {federation_constants.FEDERATION: federated_info}}
         token_dict['user']['id'] = user_id
         token_dict['user']['name'] = user_id
         return token_dict
+
+    def _rebuild_federated_token_roles(self, federated_dict, user_id,
+                                       project_id, domain_id):
+            group_ids = [x['id'] for x in federated_dict['group_ids']]
+            roles = self.v3_token_data_helper._populate_roles_for_groups(
+                group_ids, project_id, domain_id, user_id)
+            return {'roles': roles}
 
     def validate_v2_token(self, token_ref):
         """Validate a V2 formatted token.
@@ -185,6 +203,11 @@ class Provider(common.BaseProvider):
         trust_ref = None
         if federated_info:
             token_dict = self._rebuild_federated_info(federated_info, user_id)
+        if federated_info and (project_id or domain_id):
+            token_dict.update(
+                self._rebuild_federated_token_roles(federated_info,
+                                                    user_id, project_id,
+                                                    domain_id))
         if trust_id:
             trust_ref = self.trust_api.get_trust(trust_id)
 
@@ -216,6 +239,18 @@ class Provider(common.BaseProvider):
             trust_id=token_data['token'].get('OS-TRUST:trust', {}).get('id'),
             federated_info=self._build_federated_info(token_data)
         )
+
+    def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
+        token_data = super(Provider, self)._handle_mapped_tokens(auth_context,
+                                                                 project_id,
+                                                                 domain_id)
+        if 'groups' not in token_data['user'][federation_constants.FEDERATION]:
+            group_ids = auth_context['group_ids']
+            token_data['user'][federation_constants.FEDERATION].update({
+                'groups': [{'id': x} for x in group_ids]
+            })
+
+        return token_data
 
     @property
     def _supports_bind_authentication(self):
