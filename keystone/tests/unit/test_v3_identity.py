@@ -206,7 +206,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         domainB = self.new_domain_ref()
         domainB = self.resource_api.create_domain(domainB['id'], domainB)
 
-        # assign group to domainA
+        # assign the group to domainA
         group_ref = self.new_group_ref(domain_id=domainA['id'])
         group = self.identity_api.create_group(group_ref)
         roleA = self.new_role_ref()
@@ -215,7 +215,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                                          group_id=group['id'],
                                          domain_id=domainA['id'])
 
-        # assign user to domainB
+        # assign the user to domainB
         user_ref = self.new_user_ref(domain_id=domainB['id'])
         user = self.identity_api.create_user(user_ref)
         roleB = self.new_role_ref()
