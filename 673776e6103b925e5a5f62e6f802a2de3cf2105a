@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_8bc4c35f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-16T21:39:42Z",
+      "side": 0,
+      "message": "this should have been .get(\u0027groups\u0027, list()) in L104 above previously",
+      "revId": "673776e6103b925e5a5f62e6f802a2de3cf2105a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

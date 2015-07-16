@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_aba2e798",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-16T21:39:42Z",
+      "side": 1,
+      "message": "what if the list of group_ids is empty and it\u0027s an unscoped token? then idp_id and protocol_id are discarded just because the user wasn\u0027t mapped into anything and we return None",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_8bc0432c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-16T21:39:42Z",
+      "side": 1,
+      "message": "it seems like this should be the first check before any of the scope stuff.\n\n  if not (idp_id and protocol_id): return None",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_0b02f36f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-16T21:39:42Z",
+      "side": 1,
+      "message": "if you\u0027re going to do .get(), provide a default of an empty list at least?",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_eb330f61",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-16T21:39:42Z",
+      "side": 1,
+      "message": "if you have an empty list of groups, does this need to be conditional?",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
