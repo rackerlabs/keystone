@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Marek Denis <marek.denis@cern.ch>
+Workflow+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: Alberto Murillo <powerbsd@yahoo.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 16 Jul 2015 00:02:44 +0000
+Reviewed-on: https://review.openstack.org/202178
+Project: openstack/keystone
+Branch: refs/heads/master
