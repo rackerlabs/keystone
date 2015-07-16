@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_91b5da32",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "(nit) within",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f17a2677",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "s/a/an/",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d1d92285",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "javascript? it\u0027s awesome that this looks OK when rendered.",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_11ceaab4",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "Is this a fully qualified path?",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_51be72d5",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": ", but",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_b1cd7e88",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "Python",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_91a95a7e",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "yield",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_51baf2c1",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "example",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_71da9619",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "issuer",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_71761608",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "Don\u0027t know if it should or shouldn\u0027t be internationalized, should it? Usually this is the attribute name which should not be translated. Here we are also using an English \u0027or\u0027.",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_115eaa76",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "true or True?",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f1422668",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "Can this be moved into the \u0027if\u0027?",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f1e6a6af",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "IdP?",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_542f40f6",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:31:47Z",
+      "side": 1,
+      "message": "This was to make the string URL safe, but I don\u0027t think that it does.... http://paste.openstack.org/show/381582/",
+      "revId": "ddc2c8a69507e8f2eecfa77c3d7101ccf676abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
