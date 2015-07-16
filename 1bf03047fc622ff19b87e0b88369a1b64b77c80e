@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_b76ed394",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-16T17:38:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_f736ad01",
+      "revId": "1bf03047fc622ff19b87e0b88369a1b64b77c80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_d7a369b0",
         "filename": "keystone/trust/core.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-07-16T13:21:46Z",
       "side": 1,
       "message": "yep, there is no difference if we make this as the condition.\n.get will return the same value regardless the key existing with None or key is not existing at all.",
+      "revId": "1bf03047fc622ff19b87e0b88369a1b64b77c80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fc476075",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-16T17:38:06Z",
+      "side": 1,
+      "message": "The two conditions are different. The original one ensures that \u0027remaining_uses\u0027 is not even defined in the trust. My change allows it being defined as long as it is set to None. In the spec, a value of \u0027None\u0027 is the same as unlimited. So, this slight relaxation is still consistent with the spec.\n\nI simplified the check as per Dave\u0027s comment but it is still different from the original condition as explained above.\n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\n$ python\n\nPython 2.7.6 (default, Jun 22 2015, 17:58:13)\n\n[GCC 4.8.2] on linux2\n\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n\n\u003e\u003e\u003e trust\u003ddict()\n\n\u003e\u003e\u003e trust[\u0027remaining_uses\u0027] \u003d None\n\n\u003e\u003e\u003e if \u0027remaining_uses\u0027 in trust:\n\n...    print \"Original condition raises Exception\"\n\n...\n\nOriginal condition raises Exception\n\n\u003e\u003e\u003e if trust.get(\u0027remaining_uses\u0027) is not None:\n\n...    print \"New condition raises Exception\"\n\n...\n\n\u003e\u003e\u003e",
+      "parentUuid": "9a41bdd9_d7a369b0",
       "revId": "1bf03047fc622ff19b87e0b88369a1b64b77c80e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
