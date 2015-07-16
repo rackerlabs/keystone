@@ -198,6 +198,36 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group_id, 'user_id': self.user['id']})
 
+    def test_add_user_to_group_of_different_domain(self):
+        """Call ``PUT /groups/{group_id}/users/{user_id}``."""
+        # create tow domain
+        domainA = self.new_domain_ref()
+        domainA = self.resource_api.create_domain(domainA['id'], domainA)
+        domainB = self.new_domain_ref()
+        domainB = self.resource_api.create_domain(domainB['id'], domainB)
+
+        # assign the group to domainA
+        group_ref = self.new_group_ref(domain_id=domainA['id'])
+        group = self.identity_api.create_group(group_ref)
+        roleA = self.new_role_ref()
+        self.role_api.create_role(roleA['id'], roleA)
+        self.assignment_api.create_grant(roleA['id'],
+                                         group_id=group['id'],
+                                         domain_id=domainA['id'])
+
+        # assign the user to domainB
+        user_ref = self.new_user_ref(domain_id=domainB['id'])
+        user = self.identity_api.create_user(user_ref)
+        roleB = self.new_role_ref()
+        self.role_api.create_role(roleB['id'], roleB)
+        self.assignment_api.create_grant(roleB['id'],
+                                         user_id=user['id'],
+                                         domain_id=domainB['id'])
+
+        self.put('/groups/%(group_id)s/users/%(user_id)s' %
+                 {'group_id': group['id'], 'user_id': user['id']},
+                 expected_status=500)
+
     def test_list_groups_for_user(self):
         """Call ``GET /users/{user_id}/groups``."""
 

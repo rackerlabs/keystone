@@ -476,3 +476,8 @@ class OAuthHeadersMissingError(UnexpectedError):
                              'HTTPd or Apache, ensure WSGIPassAuthorization '
                              'is set to On.')
     title = 'Error retrieving OAuth headers'
+
+
+class AddUserToGroupCrossDomainError(UnexpectedError):
+    message_format = _('''Forbidden add user from one domain to another'''
+                       '''domain's group''')
