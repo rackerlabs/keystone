@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_754e223c",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-16T09:47:35Z",
+      "side": 1,
+      "message": "so this could be very chatty (i.e. fill the logs!!), are we sure we need to log every call here?",
+      "revId": "7854f9950c8ece189731a7aa6a1ea9ac04ca25cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
