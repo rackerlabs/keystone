@@ -250,6 +250,15 @@ class UserV3(controller.V3Controller):
 
     @controller.protected(callback=_check_user_and_group_protection)
     def add_user_to_group(self, context, user_id, group_id):
+        """Cannot add a user from one domain to another domain's group"""
+        user = self.identity_api.get_user(user_id)
+        group = self.identity_api.get_group(group_id)
+        user_domain_id = user['domain_id']
+        group_domain_id = group['domain_id']
+
+        if user_domain_id != group_domain_id:
+            raise exception.UserToGroupNotOneDomainError()
+
         self.identity_api.add_user_to_group(user_id, group_id)
 
     @controller.protected(callback=_check_user_and_group_protection)
