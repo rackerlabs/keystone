@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_15bc76b9",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-16T09:55:03Z",
+      "side": 1,
+      "message": "nit: s/mimic/mimics/",
+      "revId": "740c75c61271ca0e7f6353967ba1282512493d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_95ae462c",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-16T09:55:03Z",
+      "side": 1,
+      "message": "it set of feel like this comment is a repetition of the paragraph in the docstring above (or is that different?).  If it is a duplicate, and you plan to fix this problem with the TODO, then I would say it should not be duplicated in the doctoring (so that when you fix it, just the TODO goes away).",
+      "revId": "740c75c61271ca0e7f6353967ba1282512493d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
