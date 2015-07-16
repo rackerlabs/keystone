@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_d7a369b0",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-07-16T12:53:07Z",
+      "side": 1,
+      "message": "I don\u0027t think there is any need to change the condition.\n\nThe output will be same, but the former is more readable.",
+      "revId": "1bf03047fc622ff19b87e0b88369a1b64b77c80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
