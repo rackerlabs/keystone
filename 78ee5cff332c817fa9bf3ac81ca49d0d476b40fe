@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_12030d78",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-16T18:17:52Z",
+      "side": 1,
+      "message": "done. Good catch!",
+      "parentUuid": "9a41bdd9_737628da",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_3380a08b",
         "filename": "keystone/common/config.py",
         "patchSetId": 36
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-16T15:16:03Z",
       "side": 1,
       "message": "trusted_issuer",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f201c96b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-16T18:17:52Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9a41bdd9_3380a08b",
       "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_72ee19b6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-16T18:17:52Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9a41bdd9_7324e8c5",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_2e6117d4",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 36
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-16T15:16:03Z",
       "side": 1,
       "message": "this could also raise an Assertion error when the domain is disabled, so the warning msg \"\u0027User is disabled.\" is not accurate",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_2d6274ae",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-07-16T18:17:52Z",
+      "side": 1,
+      "message": "well, user is effectively disabled so the error msg is sorta correct. :) I think the message is consistent with the rest.",
+      "parentUuid": "9a41bdd9_2e6117d4",
       "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
