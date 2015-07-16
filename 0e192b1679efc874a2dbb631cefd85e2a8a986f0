@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_175e9a76",
+        "filename": "dsvm/federation/devstack/extras.d/20-keystone-federation.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:58:04Z",
+      "side": 1,
+      "message": "No, I\u0027ll change the comment to make it clearer that it\u0027s not an issue. I\u0027ll just say it\u0027s a no-op.",
+      "parentUuid": "9a80dd14_6957ee26",
+      "revId": "0e192b1679efc874a2dbb631cefd85e2a8a986f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_bc284286",
         "filename": "dsvm/federation/devstack/lib/keystone-federation",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-18T18:55:16Z",
       "side": 1,
       "message": "should these be commented out or removed?",
+      "revId": "0e192b1679efc874a2dbb631cefd85e2a8a986f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_97e14a9d",
+        "filename": "dsvm/federation/devstack/lib/keystone-federation",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:58:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_bc284286",
       "revId": "0e192b1679efc874a2dbb631cefd85e2a8a986f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
