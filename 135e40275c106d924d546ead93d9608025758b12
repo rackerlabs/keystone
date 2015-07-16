@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_94695228",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T15:55:03Z",
+      "side": 1,
+      "message": "This needs to be revisited. This, as it stands now, will attempt to build a federated_dict with an idp of None and a protocol of None because of lines 105 and 107. We need to have a better way of determining if we\u0027re dealing with a federated context or not. \n\nBecause those values are there and the fact that they are None will cause this all to fail in the token_formatters.",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_f37a6623",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 4
