@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_c85bc3f5",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T14:49:13Z",
+      "side": 1,
+      "message": "trusted_issuer",
+      "revId": "0eb105e2f81d7e9a6a55e50d78d591c944b89b63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_286b4f87",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T14:49:13Z",
+      "side": 1,
+      "message": "trusted_issuer",
+      "revId": "0eb105e2f81d7e9a6a55e50d78d591c944b89b63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_088c4b34",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T14:49:13Z",
+      "side": 1,
+      "message": "yield",
+      "revId": "0eb105e2f81d7e9a6a55e50d78d591c944b89b63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_c8850308",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T14:49:13Z",
+      "side": 1,
+      "message": "extra --",
+      "revId": "0eb105e2f81d7e9a6a55e50d78d591c944b89b63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4872534b",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T14:49:13Z",
+      "side": 1,
+      "message": "certfile",
+      "revId": "0eb105e2f81d7e9a6a55e50d78d591c944b89b63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_f20d72e8",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 35
