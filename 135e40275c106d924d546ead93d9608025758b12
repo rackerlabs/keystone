@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_ab3bd437",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T16:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_94695228",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_f37a6623",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-15T20:37:51Z",
       "side": 1,
       "message": "we need to go through this same process in _rebuild_federated_info()",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4b4808cd",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T16:28:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_f37a6623",
       "revId": "135e40275c106d924d546ead93d9608025758b12",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_4b1fa8b7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T16:28:35Z",
+      "side": 1,
+      "message": "disregard... I confused myself...",
+      "parentUuid": "9a41bdd9_8833a9f5",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_4877e19f",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-15T20:11:33Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "135e40275c106d924d546ead93d9608025758b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_cb8178c5",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T16:28:35Z",
+      "side": 1,
+      "message": "ditto to being confused...",
+      "parentUuid": "9a41bdd9_4877e19f",
       "revId": "135e40275c106d924d546ead93d9608025758b12",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
