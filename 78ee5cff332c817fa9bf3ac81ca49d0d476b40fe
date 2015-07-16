@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_737628da",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T15:16:03Z",
+      "side": 1,
+      "message": "trusted_issuer",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_3380a08b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T15:16:03Z",
+      "side": 1,
+      "message": "trusted_issuer",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_7324e8c5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T15:16:03Z",
+      "side": 1,
+      "message": "missing space at the end",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_2e6117d4",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-16T15:16:03Z",
+      "side": 1,
+      "message": "this could also raise an Assertion error when the domain is disabled, so the warning msg \"\u0027User is disabled.\" is not accurate",
+      "revId": "78ee5cff332c817fa9bf3ac81ca49d0d476b40fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
