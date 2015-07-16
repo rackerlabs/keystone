@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_32bd1ad8",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-16T04:59:16Z",
+      "side": 1,
+      "message": "you could also use:\n\n  ref \u003d self.new_group_ref(uuid.uuid4().hex)\n  del ref[\u0027domain_id\u0027]\n\njust another option.",
+      "revId": "5a63dbdf073a398c94bac9cf9b40529969e90a15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
