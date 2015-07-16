@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_633f3fb4",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T13:50:43Z",
+      "side": 1,
+      "message": "why are we doing this for v2 if it\u0027s deprecated?",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_c862e83d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T13:50:43Z",
+      "side": 1,
+      "message": "this would be confusing for the user because you\u0027re not telling them *what* url is invalid.",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_0880d089",
+        "filename": "keystone/clean.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T13:50:43Z",
+      "side": 1,
+      "message": "this is catching everything if it goes wrong, we should look for a specific exception and build for that case",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_2829149b",
+        "filename": "keystone/clean.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-16T13:50:43Z",
+      "side": 1,
+      "message": "i\u0027d suggest re-raising the exception instead of just logging it.",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
