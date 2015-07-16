@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_b476ccd6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-16T19:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_41613c04",
+      "revId": "4c2d04687422fd4361b98a0a72d2c5597fddbc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_215c004a",
         "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
         "patchSetId": 7
