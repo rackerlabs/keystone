@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_3e4872b2",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-16T12:27:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_754e223c",
+      "revId": "7854f9950c8ece189731a7aa6a1ea9ac04ca25cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_f5c9d226",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-16T09:53:14Z",
       "side": 1,
       "message": "...so is this satisfying the TODO above...or is that  separate problem?",
+      "revId": "7854f9950c8ece189731a7aa6a1ea9ac04ca25cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4170fb3f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-16T12:27:15Z",
+      "side": 1,
+      "message": "Henry, right, these comments are saying different things.\n\nTODO above mean only dict passed will be recoginized by the validation, so the schema validation will be missed if we haven\u0027t passed the request body as dict.\n\nThe comments here just want to explain why we need to update the testcase to raise the exception.  The reason is the change in  `common.validation.__init__.py` in this patch will detect that the **kwargs is None, so it will raise the exception instead of let it simply pass the validation. Thus, this doesn\u0027t mean we address the TODO above. I add this comments in order to not make the change here looks surprise.\n\nI know this is a little bit obscured, but hope the explaination here make it more clear.\n\n\nRegards.",
+      "parentUuid": "9a41bdd9_f5c9d226",
       "revId": "7854f9950c8ece189731a7aa6a1ea9ac04ca25cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
