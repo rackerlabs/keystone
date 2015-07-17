@@ -24,15 +24,15 @@ from keystone import assignment
 from keystone import auth
 from keystone import catalog
 from keystone.common import wsgi
-from keystone import controllers
 from keystone import credential
 from keystone import endpoint_policy
 from keystone import identity
 from keystone import policy
 from keystone import resource
-from keystone import routers
 from keystone import token
 from keystone import trust
+from keystone.version import controllers
+from keystone.version import routers
 
 
 CONF = cfg.CONF
