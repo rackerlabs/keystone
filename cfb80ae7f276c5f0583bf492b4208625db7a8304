@@ -67,6 +67,23 @@
       "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_a13f4cd5",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-07-17T12:11:58Z",
+      "side": 1,
+      "message": "there is no need of new line.",
+      "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
