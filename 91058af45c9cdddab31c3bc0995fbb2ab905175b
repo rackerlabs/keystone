@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_ec9ea462",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "it would be cool to have a link to a doc about certificate and key management. Or a brief explanation for testing.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_cce160d2",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "(nit) 2 spaces here, not sure that they affect anything",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f96bc483",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "(nit) I think that coercion to list is not necessary.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d91600a7",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "If roles are None, line 139 will fail with \"TypeError: \u0027NoneType\u0027 object is not iterable\". Either this check needs to be reworked or line 139.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_19e228a0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "this looks not tested. There is a test about user being disabled, but no test about domain being disabled.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_99487889",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "this \"user id is None or ...\" is not really human-readable. I suggest to tell something like \"due to not provided either user id, or user name with domain id, or user name with domain name\"",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_ec4a2455",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "why is this configuration error? I would not make a new exception for this kind of error. I suggest to take a look how it is being dealt with when a user provides non-existing attribute for, say, user_create.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_2c96cc94",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "why is this function required? Why can\u0027t we use identity_api\u0027s assert_user_enabled directly?",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_0cbbc80f",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "I don\u0027t really like this craft of exceptions. What is it for?",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_16e2f79f",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "this seems to be not tested. I would like to see a test that would show that with provided issuer_attribute not in trusted_issuer list validation fails.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_56ff1f34",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "the loop should be replaced with \"if client_issuer in CONF.tokenless_auth.trusted_issuer: return True\".",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_39136c5e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "Sorry for probably dumb question, but should not we raise Unauthorized exception here if neither token nor client certificate was provided? Before the change _build_auth_context() would raise that exception if the token is wrong. However, the tests are passing...",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_bc9a0fc4",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "(nit) single quotes should be here",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fcc73762",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "If rules will not be passed, TypeError will be here. I understand that it\u0027s for test only, but lets not make any confusion here.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_3c26ff16",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "Could you please add some description of the parameters? I don\u0027t quite understand from the code what \"exception_expected\" means.\n\nEdit: after reading code below I understand what it\u0027s for. This function needs to be either documented or split into 2 functions.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_87a49808",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-17T13:45:41Z",
+      "side": 1,
+      "message": "(nit) just move it to the next line. First I thought that the dot in the end of the line is a comma and tried looking for MAPPING_WITH_USERNAME_AND_DOMAINNAME constant on top of the module. This line and other lines below.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
