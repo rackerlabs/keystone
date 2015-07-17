@@ -68,8 +68,8 @@ INITIAL_TABLE_STRUCTURE = {
         'id', 'name', 'enabled', 'extra',
     ],
     'endpoint': [
-        'id', 'legacy_endpoint_id', 'interface', 'region', 'service_id', 'url',
-        'enabled', 'extra',
+        'id', 'legacy_endpoint_id', 'interface', 'region_id', 'service_id',
+        'url', 'enabled', 'extra',
     ],
     'group': [
         'id', 'domain_id', 'name', 'description', 'extra',
@@ -104,11 +104,14 @@ INITIAL_TABLE_STRUCTURE = {
         'user_id', 'group_id',
     ],
     'region': [
-        'id', 'description', 'parent_region_id', 'extra',
+        'id', 'description', 'parent_region_id', 'url', 'extra',
     ],
     'assignment': [
         'type', 'actor_id', 'target_id', 'role_id', 'inherited',
     ],
+    'id_mapping': [
+        'public_id', 'domain_id', 'local_id', 'entity_type',
+    ]
 }
 
 
@@ -310,114 +313,6 @@ class SqlUpgradeTests(SqlMigrateBase):
         insert = this_table.insert().values(**d)
         session.execute(insert)
         session.commit()
-
-    def test_id_mapping(self):
-        self.upgrade(50)
-        self.assertTableDoesNotExist('id_mapping')
-        self.upgrade(51)
-        self.assertTableExists('id_mapping')
-
-    def test_region_url_upgrade(self):
-        self.upgrade(52)
-        self.assertTableColumns('region',
-                                ['id', 'description', 'parent_region_id',
-                                 'extra', 'url'])
-
-    def test_endpoint_region_upgrade_columns(self):
-        self.upgrade(53)
-        self.assertTableColumns('endpoint',
-                                ['id', 'legacy_endpoint_id', 'interface',
-                                 'service_id', 'url', 'extra', 'enabled',
-                                 'region_id'])
-        region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
-        self.assertEqual(255, region_table.c.id.type.length)
-        self.assertEqual(255, region_table.c.parent_region_id.type.length)
-        endpoint_table = sqlalchemy.Table('endpoint',
-                                          self.metadata,
-                                          autoload=True)
-        self.assertEqual(255, endpoint_table.c.region_id.type.length)
-
-    def test_endpoint_region_migration(self):
-        self.upgrade(52)
-        session = self.Session()
-        _small_region_name = '0' * 30
-        _long_region_name = '0' * 255
-        _clashing_region_name = '0' * 70
-
-        def add_service():
-            service_id = uuid.uuid4().hex
-
-            service = {
-                'id': service_id,
-                'type': uuid.uuid4().hex
-            }
-
-            self.insert_dict(session, 'service', service)
-
-            return service_id
-
-        def add_endpoint(service_id, region):
-            endpoint_id = uuid.uuid4().hex
-
-            endpoint = {
-                'id': endpoint_id,
-                'interface': uuid.uuid4().hex[:8],
-                'service_id': service_id,
-                'url': uuid.uuid4().hex,
-                'region': region
-            }
-            self.insert_dict(session, 'endpoint', endpoint)
-
-            return endpoint_id
-
-        _service_id_ = add_service()
-        add_endpoint(_service_id_, region=_long_region_name)
-        add_endpoint(_service_id_, region=_long_region_name)
-        add_endpoint(_service_id_, region=_clashing_region_name)
-        add_endpoint(_service_id_, region=_small_region_name)
-        add_endpoint(_service_id_, region=None)
-
-        # upgrade to 53
-        session.close()
-        self.upgrade(53)
-        session = self.Session()
-        self.metadata.clear()
-
-        region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
-        self.assertEqual(1, session.query(region_table).
-                         filter_by(id=_long_region_name).count())
-        self.assertEqual(1, session.query(region_table).
-                         filter_by(id=_clashing_region_name).count())
-        self.assertEqual(1, session.query(region_table).
-                         filter_by(id=_small_region_name).count())
-
-        endpoint_table = sqlalchemy.Table('endpoint',
-                                          self.metadata,
-                                          autoload=True)
-        self.assertEqual(5, session.query(endpoint_table).count())
-        self.assertEqual(2, session.query(endpoint_table).
-                         filter_by(region_id=_long_region_name).count())
-        self.assertEqual(1, session.query(endpoint_table).
-                         filter_by(region_id=_clashing_region_name).count())
-        self.assertEqual(1, session.query(endpoint_table).
-                         filter_by(region_id=_small_region_name).count())
-
-    def test_add_actor_id_index(self):
-        self.upgrade(53)
-        self.upgrade(54)
-        table = sqlalchemy.Table('assignment', self.metadata, autoload=True)
-        index_data = [(idx.name, list(idx.columns.keys()))
-                      for idx in table.indexes]
-        self.assertIn(('ix_actor_id', ['actor_id']), index_data)
-
-    def test_token_user_id_and_trust_id_index_upgrade(self):
-        self.upgrade(54)
-        self.upgrade(55)
-        table = sqlalchemy.Table('token', self.metadata, autoload=True)
-        index_data = [(idx.name, list(idx.columns.keys()))
-                      for idx in table.indexes]
-        self.assertIn(('ix_token_user_id', ['user_id']), index_data)
-        self.assertIn(('ix_token_trust_id', ['trust_id']), index_data)
 
     def test_project_parent_id_upgrade(self):
         self.upgrade(61)
