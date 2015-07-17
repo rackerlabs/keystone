@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_fe01813a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-07-17T04:13:31Z",
+      "side": 1,
+      "message": "v2 is frozen - not deprecated (the decorator is a hold-over). This is a serious enough ux issue I\u0027m ok with it landing in general though.",
+      "parentUuid": "9a41bdd9_633f3fb4",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_c862e83d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-16T13:50:43Z",
       "side": 1,
       "message": "this would be confusing for the user because you\u0027re not telling them *what* url is invalid.",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_def83d4c",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-07-17T04:13:31Z",
+      "side": 1,
+      "message": "I agree, This likely should be strictly a validation error not a ValidationURLError",
+      "parentUuid": "9a41bdd9_c862e83d",
       "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
