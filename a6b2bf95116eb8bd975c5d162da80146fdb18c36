@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_95493091",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5859,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-07-17T07:08:13Z",
+      "side": 1,
+      "message": "\u0027hints\u003dhints\u0027 is better",
+      "revId": "a6b2bf95116eb8bd975c5d162da80146fdb18c36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
