@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_4f6a221c",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 17185
+      },
+      "writtenOn": "2015-07-17T14:01:51Z",
+      "side": 1,
+      "message": "I\u0027d suggest you to use self.region[\u0027id\u0027] here, so this string doesn\u0027t seem magical :)\n\nSo line 143 should be:\n\n    self.region \u003d dict(id\u003d\"RegionOne\")",
+      "revId": "e4a519c45a977605f47a3aa0cc364f06cb2ac6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_0f4bbab1",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 17185
+      },
+      "writtenOn": "2015-07-17T14:01:51Z",
+      "side": 1,
+      "message": "same comment  as test_catalog.py",
+      "revId": "e4a519c45a977605f47a3aa0cc364f06cb2ac6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
