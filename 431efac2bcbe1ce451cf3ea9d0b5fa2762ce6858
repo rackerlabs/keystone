@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_d211e005",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-17T23:24:00Z",
+      "side": 1,
+      "message": "better to read the number of existing projects before we do this and add 4 to it....makes the test more robust....",
+      "revId": "431efac2bcbe1ce451cf3ea9d0b5fa2762ce6858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
