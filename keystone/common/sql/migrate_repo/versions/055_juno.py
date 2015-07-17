@@ -20,6 +20,7 @@ from sqlalchemy import orm
 from keystone.assignment.backends import sql as assignment_sql
 from keystone.common import sql as ks_sql
 from keystone.common.sql import migration_helpers
+from keystone.identity.mapping_backends import mapping
 
 
 LOG = log.getLogger(__name__)
@@ -64,7 +65,7 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(length=64), primary_key=True),
         sql.Column('legacy_endpoint_id', sql.String(length=64)),
         sql.Column('interface', sql.String(length=8), nullable=False),
-        sql.Column('region', sql.String(length=255)),
+        sql.Column('region_id', sql.String(length=255)),
         sql.Column('service_id', sql.String(length=64), nullable=False),
         sql.Column('url', sql.Text, nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
@@ -177,9 +178,10 @@ def upgrade(migrate_engine):
     region = sql.Table(
         'region',
         meta,
-        sql.Column('id', sql.String(64), primary_key=True),
+        sql.Column('id', sql.String(255), primary_key=True),
         sql.Column('description', sql.String(255), nullable=False),
-        sql.Column('parent_region_id', sql.String(64), nullable=True),
+        sql.Column('parent_region_id', sql.String(255), nullable=True),
+        sql.Column('url', sql.String(255), nullable=True),
         sql.Column('extra', sql.Text()),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
@@ -202,11 +204,27 @@ def upgrade(migrate_engine):
         mysql_engine='InnoDB',
         mysql_charset='utf8')
 
+    mapping_table = sql.Table(
+        'id_mapping',
+        meta,
+        sql.Column('public_id', sql.String(64), primary_key=True),
+        sql.Column('domain_id', sql.String(64), nullable=False),
+        sql.Column('local_id', sql.String(64), nullable=False),
+        sql.Column('entity_type', sql.Enum(
+            mapping.EntityType.USER,
+            mapping.EntityType.GROUP,
+            name='entity_type'),
+            nullable=False),
+        sql.UniqueConstraint('domain_id', 'local_id', 'entity_type'),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
+
     # create all tables
     tables = [credential, domain, endpoint, group,
               policy, project, role, service,
               token, trust, trust_role, user,
-              user_group_membership, region, assignment]
+              user_group_membership, region, assignment,
+              mapping_table]
 
     for table in tables:
         try:
@@ -234,6 +252,13 @@ def upgrade(migrate_engine):
     sql.Index('ix_token_expires', token.c.expires).create()
     sql.Index('ix_token_expires_valid', token.c.expires,
               token.c.valid).create()
+    sql.Index('ix_actor_id', assignment.c.actor_id).create()
+    sql.Index('ix_token_user_id', token.c.user_id).create()
+    sql.Index('ix_token_trust_id', token.c.trust_id).create()
+    # NOTE(breton): the indexes were named 'service_id' and 'group_id' in
+    # 050_fk_consistent_indexes.py
+    sql.Index('service_id', endpoint.c.service_id).create()
+    sql.Index('group_id', user_group_membership.c.group_id).create()
 
     fkeys = [
         {'columns': [endpoint.c.service_id],
@@ -260,7 +285,11 @@ def upgrade(migrate_engine):
          'name': 'fk_project_domain_id'},
 
         {'columns': [assignment.c.role_id],
-         'references': [role.c.id]}
+         'references': [role.c.id]},
+
+        {'columns': [endpoint.c.region_id],
+         'references': [region.c.id],
+         'name': 'fk_endpoint_region_id'},
     ]
 
     for fkey in fkeys:
