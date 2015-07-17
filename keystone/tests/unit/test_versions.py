@@ -23,8 +23,8 @@ from oslo_serialization import jsonutils
 from testtools import matchers as tt_matchers
 
 from keystone.common import json_home
-from keystone import controllers
 from keystone.tests import unit as tests
+from keystone.version import controllers
 
 
 CONF = cfg.CONF
