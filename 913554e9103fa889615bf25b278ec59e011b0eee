@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_5ed50db7",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-17T04:15:39Z",
+      "side": 1,
+      "message": "So, in that case do we raise an exception since there not a whole lot we can do for the user? I believe we require group IDs for unscoped federated tokens to work, right?",
+      "parentUuid": "9a41bdd9_aba2e798",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_8bc0432c",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-16T21:39:42Z",
       "side": 1,
       "message": "it seems like this should be the first check before any of the scope stuff.\n\n  if not (idp_id and protocol_id): return None",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_9ec075e2",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-17T04:15:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_8bc0432c",
       "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_5ebaed6f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-17T04:15:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_0b02f36f",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_eb330f61",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-16T21:39:42Z",
       "side": 1,
       "message": "if you have an empty list of groups, does this need to be conditional?",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_a103de0c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-17T04:15:39Z",
+      "side": 1,
+      "message": "When we have project or domain scoped federated tokens, groups are not included in the response. The groups are only returned in the response when we are getting an unscoped federated token. \n\nI believe if we remove the conditional here we will be exposing groups for all federated token responses (unscoped, domain-scoped, and project-scoped), even if it is just an empty list, which isn\u0027t what we do today. I think Marek has a follow on patch for asserting group IDs in responses where we expect an unscoped federated token and vice versa for project and domain scoped federated tokens.",
+      "parentUuid": "9a41bdd9_eb330f61",
       "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
