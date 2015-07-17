@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_c6fdb43c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-17T20:20:50Z",
+      "side": 1,
+      "message": "This line and the duplicate of it in the next block is confusing since they are worded slightly different....maybe just have one (more detailed) paragraph here (or maybe in the docstring above):\n\n\"Inherited\" can have three values:\n\n True - List those assignments marked as inherited\n False - List those assignments not marked as inherited\n Non - List all the assignments, irrespective of inheritance",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_4f9bf0c9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-17T20:20:50Z",
+      "side": 1,
+      "message": "I think we should explain this in more detail, i.e.:\n\nWhen we expand out inherited roles, group assignments will turn into user assignments and inherited assignments on a domain will turn into project assignments - so if we are filtering explicitly on either of these two types of entity, the list is guaranteed to be empty.",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_6fa4b4b8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-17T20:20:50Z",
+      "side": 1,
+      "message": "maybe s/direct/user/\n\nsince direct might be thought of as distinct from inherited",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_067f1c67",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-17T20:20:50Z",
+      "side": 1,
+      "message": "(opinion): I find this use of f() most confusing than we are gaining here.",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
