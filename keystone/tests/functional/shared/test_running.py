@@ -13,37 +13,37 @@
 import requests
 import testtools.matchers
 
+from keystone.tests.functional import core as functests
+
 
 is_multiple_choices = testtools.matchers.Equals(
     requests.status_codes.codes.multiple_choices)
 is_ok = testtools.matchers.Equals(requests.status_codes.codes.ok)
 
-admin_url = 'http://localhost:35357'
-public_url = 'http://localhost:5000'
 versions = ('v2.0', 'v3')
 
 
-class TestServerRunning(testtools.TestCase):
+class TestServerRunning(functests.BaseTestCase):
 
     def test_admin_responds_with_multiple_choices(self):
-        resp = requests.get(admin_url)
+        resp = requests.get(self.ADMIN_URL)
         self.assertThat(resp.status_code, is_multiple_choices)
 
     def test_admin_versions(self):
         for version in versions:
-            resp = requests.get(admin_url + '/' + version)
+            resp = requests.get(self.ADMIN_URL + '/' + version)
             self.assertThat(
                 resp.status_code,
                 testtools.matchers.Annotate(
                     'failed for version %s' % version, is_ok))
 
     def test_public_responds_with_multiple_choices(self):
-        resp = requests.get(public_url)
+        resp = requests.get(self.PUBLIC_URL)
         self.assertThat(resp.status_code, is_multiple_choices)
 
     def test_public_versions(self):
         for version in versions:
-            resp = requests.get(public_url + '/' + version)
+            resp = requests.get(self.PUBLIC_URL + '/' + version)
             self.assertThat(
                 resp.status_code,
                 testtools.matchers.Annotate(
