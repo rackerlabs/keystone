@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_9daa8984",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-18T00:07:21Z",
+      "side": 1,
+      "message": "Conceptually this could return an is_domain project in the list (i.e.  a domain that is a child of the default domain, which was created via the v3 api).  We need to strip any such projects from the list.",
+      "revId": "94c21bb56c1c4372d9fd7e39c73a582566ded6eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_ddd25134",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-18T00:07:21Z",
+      "side": 1,
+      "message": "Although a corner case - you shouldn\u0027t able to update an is_domain project via the v2 API...i.e. if you get the tenant_id via the v3 API and then issued a v2 call to update it, that should fail.",
+      "revId": "94c21bb56c1c4372d9fd7e39c73a582566ded6eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_fdd5d51a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-18T00:07:21Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "94c21bb56c1c4372d9fd7e39c73a582566ded6eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
