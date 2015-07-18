@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_38710b45",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-18T00:52:05Z",
+      "side": 1,
+      "message": "This is not needed any more. If I miss something and it is needed, it should be oslo_log.",
+      "revId": "03d9e4d63868d1eca561dade6db4d7c841e27e57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_7877933b",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-18T00:52:05Z",
+      "side": 1,
+      "message": "This is not needed any more.",
+      "revId": "03d9e4d63868d1eca561dade6db4d7c841e27e57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d8049fc7",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-18T00:52:05Z",
+      "side": 1,
+      "message": "remove_in should be added. I suggest remove_in\u003d+2.",
+      "revId": "03d9e4d63868d1eca561dade6db4d7c841e27e57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_98c937af",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-18T00:52:05Z",
+      "side": 1,
+      "message": "padding should be fixed",
+      "revId": "03d9e4d63868d1eca561dade6db4d7c841e27e57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
