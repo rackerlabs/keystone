@@ -16,6 +16,24 @@
       "revId": "75ea1402abffbd8d31c9afcfbb7589b8cdeb2462",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_57c42b3f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-19T19:29:45Z",
+      "side": 1,
+      "message": "yes, it does. that\u0027s because the hierarchy using is_domain projects is not totally implemented at this point. It\u0027ll just happen at the \"honor operations\" patch where the migration of domains to the project table will be done. The right thing to do might be moving this patch do be dependent on the \u0027honor\u0027 one",
+      "parentUuid": "3a50d1a3_91c16683",
+      "revId": "75ea1402abffbd8d31c9afcfbb7589b8cdeb2462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
