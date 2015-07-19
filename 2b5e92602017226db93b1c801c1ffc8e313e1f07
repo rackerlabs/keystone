@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_9dd049cb",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-19T09:57:46Z",
+      "side": 1,
+      "message": "...this would be None, if we went ahead with the new proposal.",
+      "revId": "2b5e92602017226db93b1c801c1ffc8e313e1f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d84c9f78",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-19T09:57:46Z",
+      "side": 1,
+      "message": "I assume, therefore that once we have gone through all the projects, we\u0027ll be left with all the is_domain projects with the parent_id still set to None?  I think that\u0027s the right answer....but how does that square with the constraints on that attribute.  Is this a nullable FK?",
+      "revId": "2b5e92602017226db93b1c801c1ffc8e313e1f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
