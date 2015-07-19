@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_f713f70b",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-19T19:03:45Z",
+      "side": 1,
+      "message": "yes, I\u0027m working on this",
+      "parentUuid": "9a41bdd9_9dd049cb",
+      "revId": "2b5e92602017226db93b1c801c1ffc8e313e1f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_d84c9f78",
         "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
         "patchSetId": 61
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-19T09:57:46Z",
       "side": 1,
       "message": "I assume, therefore that once we have gone through all the projects, we\u0027ll be left with all the is_domain projects with the parent_id still set to None?  I think that\u0027s the right answer....but how does that square with the constraints on that attribute.  Is this a nullable FK?",
+      "revId": "2b5e92602017226db93b1c801c1ffc8e313e1f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_37315fa3",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-19T19:03:45Z",
+      "side": 1,
+      "message": "Actually, the parent_id was never a problem. It we are pointing to a column that is not nullable. What might come to be a problem is the fact that domain_id is now nullable, once the root is_domain projects will have no domain_id. Do you have any suggestions to work on that?",
+      "parentUuid": "9a41bdd9_d84c9f78",
       "revId": "2b5e92602017226db93b1c801c1ffc8e313e1f07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
