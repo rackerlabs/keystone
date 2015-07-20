@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_b24a2f82",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-20T19:51:08Z",
+      "side": 1,
+      "message": "it\u0027s currently liberty, not kilo",
+      "revId": "c2958c7d679e1442cbde7abc7720b74d42d61311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
