@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_4c69d9bd",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "will try to include a link.",
+      "parentUuid": "9a41bdd9_ec9ea462",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_cce160d2",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 40
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "(nit) 2 spaces here, not sure that they affect anything",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ec87855f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "looks like they are not affecting anything but will remove them.",
+      "parentUuid": "9a41bdd9_cce160d2",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8c8281ff",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "good catch, but I will double check with test.",
+      "parentUuid": "9a41bdd9_f96bc483",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_d91600a7",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 40
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "If roles are None, line 139 will fail with \"TypeError: \u0027NoneType\u0027 object is not iterable\". Either this check needs to be reworked or line 139.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2cf00d90",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "good catch.",
+      "parentUuid": "9a41bdd9_d91600a7",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8c35a147",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "will add the test",
+      "parentUuid": "9a41bdd9_19e228a0",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_99487889",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 40
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "this \"user id is None or ...\" is not really human-readable. I suggest to tell something like \"due to not provided either user id, or user name with domain id, or user name with domain name\"",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_cc7969fe",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "you got the point.",
+      "parentUuid": "9a41bdd9_99487889",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_6cae1530",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "sure. will see how it\u0027s been done.",
+      "parentUuid": "9a41bdd9_ec4a2455",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_2c96cc94",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 40
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "why is this function required? Why can\u0027t we use identity_api\u0027s assert_user_enabled directly?",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8c3b61eb",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "true",
+      "parentUuid": "9a41bdd9_2c96cc94",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0c07511d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "will have it included",
+      "parentUuid": "9a41bdd9_16e2f79f",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_56ff1f34",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 40
@@ -183,6 +345,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "the loop should be replaced with \"if client_issuer in CONF.tokenless_auth.trusted_issuer: return True\".",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4769b2bd",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "you got it.",
+      "parentUuid": "9a41bdd9_56ff1f34",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_99b95eec",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "that\u0027s a good question, the last line will not be reached and that should have been in the if and elif blocks.\nThere should be no exception raised as it is one of the modules in the pipline, if a AUTH_CONTEXT_ENV is not set here, it will try the rest of modules in the pipline. but why it\u0027s passing the tests, I will need to take another look at it.",
+      "parentUuid": "9a41bdd9_39136c5e",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_bc9a0fc4",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 40
@@ -217,6 +415,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "(nit) single quotes should be here",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_39cfea80",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "good catch.",
+      "parentUuid": "9a41bdd9_bc9a0fc4",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_99b07ef6",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "sure.",
+      "parentUuid": "9a41bdd9_fcc73762",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_3c26ff16",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 40
@@ -257,6 +491,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_99871e0f",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "sure, will include some descriptions.",
+      "parentUuid": "9a41bdd9_3c26ff16",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_87a49808",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 40
@@ -268,6 +520,24 @@
       "writtenOn": "2015-07-17T13:45:41Z",
       "side": 1,
       "message": "(nit) just move it to the next line. First I thought that the dot in the end of the line is a comma and tried looking for MAPPING_WITH_USERNAME_AND_DOMAINNAME constant on top of the module. This line and other lines below.",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d9e286d5",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-20T18:56:00Z",
+      "side": 1,
+      "message": "I will see what I can improve the formatting here.",
+      "parentUuid": "9a41bdd9_87a49808",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
