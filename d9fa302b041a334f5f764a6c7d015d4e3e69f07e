@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_c4cab94f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T14:47:39Z",
+      "side": 1,
+      "message": "I think this becomes nullable...",
+      "revId": "d9fa302b041a334f5f764a6c7d015d4e3e69f07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8434b1de",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T14:47:39Z",
+      "side": 1,
+      "message": "I think what we need here is that IF parent_id is specified, then we don\u0027t touch whatever domain_id is set to.  Then in the manager we process this we decide how to user parent_id/domain_id (including checking that if BOTH have been specified, then they imply the same domain).",
+      "revId": "d9fa302b041a334f5f764a6c7d015d4e3e69f07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c98974cc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T14:47:39Z",
+      "side": 1,
+      "message": "So a few things here:\n\n1) You should be able to just pass parent_id and not domain_id....in which case you need to find the closest ancestors acting as a domain and that will be the domain_id (see: https://review.openstack.org/#/c/200624/). OK, I agree, technically that API clarification has not merged, but it will be done in the next few days, so let\u0027s get this right first time.\n\n2) The setting of domain_id will be the same, irrespective of whether the project is acting as a domain",
+      "revId": "d9fa302b041a334f5f764a6c7d015d4e3e69f07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
