@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_14274cb7",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:28:31Z",
+      "side": 1,
+      "message": "...in a previous comment you had stated that this was fixed in the path on which this is dependant...but I don\u0027t quite see how that could be done...I\u0027m probably missing the obvious....",
+      "parentUuid": "3a50d1a3_f16d2333",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_511177ab",
         "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
         "patchSetId": 62
