@@ -2,6 +2,380 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_00663fed",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "needs docstring",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dbc12830",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "what\u0027s method? Needs docstring",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5bec38c7",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "what\u0027s user_info? Needs docstring",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_76ffc901",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "/me doesn\u0027t know",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1ba1d094",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "it is not used anywhere in this module",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c055b71d",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "you return obj here, but for not in assert_datetime. Why?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_60186385",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "see above comment about return in assert_datetime",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9b52c012",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "Deprecated since version \u003e: 1.5.0 Use utcnow(), datetime.datetime.isoformat() or datetime.strftime() instead.\n\nAlso I suggest to perform timeutils.strtime() lazily. It is pretty slow and I don\u0027t want it to run without a reason. Though it\u0027s not a blocker for the first iteration, TODO(breton): ... would be enough",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_808d6f33",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "I dislike this mangling with internal python properties and suggest to just have a self._dict.",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_20ca5ba2",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "return self.__dict__.get(attr)",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1b6b1020",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "Everyone is going to forget to lock it. Maybe it should lock automatically on __init__? This could be controlled by lock\u003dTrue parameter.\n\nlock() is used only once in the builder. Do you even need it?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a090ab96",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "needs docstring.\n\nAlso, why only these 2 parameters?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_36ddc142",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "everywhere (expected, actual) should be used",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dbee08ec",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "core_models would be a better name",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dbc5a85b",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "this should be inherited from oslotest",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fb7c2422",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "argument order should be (expected, actual)",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5bb0b8f4",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "use assertRaises here",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fbe74410",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "use assertRaises here",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d6b6dd3c",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "why no i1, i2 in zip(first, second)?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_963cd594",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "needs docstring",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_56cf2db0",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "`elif isinstance(v, dict)` or something like that would be more explicit",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_360f01e3",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:33:43Z",
+      "side": 1,
+      "message": "this and below should be capslocked",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_3b584cfa",
         "filename": "keystone/tests/unit/test_model.py",
         "patchSetId": 6
