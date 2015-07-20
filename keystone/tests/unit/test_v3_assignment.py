@@ -68,11 +68,56 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertValidDomainResponse(r, ref)
 
         # ensure the name is uppercase
+        ref = self.new_domain_ref()
         ref['name'] = ref['name'].upper()
         r = self.post(
             '/domains',
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+
+    def test_create_domain_duplicate_id_conflict(self):
+        """Call `POST /domains`` twice with upper() and lower() cased name."""
+        ref = self.new_domain_ref()
+
+        # ensure the name is lowercase
+        ref['name'] = ref['name'].lower()
+        r = self.post(
+            '/domains',
+            body={'domain': ref})
+        self.assertValidDomainResponse(r, ref)
+
+        # Reuse the Ref to get the same ID
+        ref['name'] = ref['name'].upper()
+        r = self.post(
+            '/domains',
+            body={'domain': ref}, expected_status=409)
+
+    def test_create_delete_create_domain_id(self):
+        """Call `POST /domains`` twice with upper() and lower() cased name."""
+        ref = self.new_domain_ref()
+
+        # ensure the name is lowercase
+        ref['name'] = ref['name'].lower()
+        r = self.post(
+            '/domains',
+            body={'domain': ref})
+        self.assertValidDomainResponse(r, ref)
+        self.domain_id = ref['id']
+
+        # Now disable the new domain and delete it
+        ref['enabled'] = False
+        r = self.patch('/domains/%(domain_id)s' % {
+            'domain_id': self.domain_id},
+            body={'domain': {'enabled': False}})
+        self.assertValidDomainResponse(r, ref)
+        self.delete('/domains/%(domain_id)s' % {
+            'domain_id': self.domain_id})
+
+        ref = self.new_domain_ref()
+        ref['id'] = self.domain_id
+        r = self.post(
+            '/domains',
+            body={'domain': ref})
 
     def test_create_domain_400(self):
         """Call ``POST /domains``."""
@@ -520,6 +565,48 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
     def test_create_project_400(self):
         """Call ``POST /projects``."""
         self.post('/projects', body={'project': {}}, expected_status=400)
+
+    def test_create_project_duplicate_id_conflict(self):
+
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+
+        # Reuse the Ref to get the same ID
+        ref['name'] = ref['name'].upper()
+
+        r = self.post(
+            '/projects',
+            body={'project': ref}, expected_status=409)
+
+    def test_create_delte_create_project_id(self):
+
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+
+        self.project_id = ref['id']
+
+        self.delete(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id})
+
+        """Call ``GET /projects/{project_id}``."""
+        r = self.get(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id},
+            expected_status=404)
+
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref['id'] = self.project_id
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
 
     def test_create_project_invalid_domain_id(self):
         """Call ``POST /projects``."""
