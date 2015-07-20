@@ -207,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_e6e244d5",
+        "filename": "keystone/models/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T17:39:09Z",
+      "side": 1,
+      "message": "++, you are right.",
+      "parentUuid": "3a50d1a3_9bddd944",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_1b6b1020",
         "filename": "keystone/models/core.py",
         "patchSetId": 6
