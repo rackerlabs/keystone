@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ec2b0581",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-20T18:03:14Z",
+      "side": 1,
+      "message": "very detailed doc, private method doesn\u0027t get included in the doc though :)",
+      "revId": "3be46c864afa8bb755891338e7d34a7e473b9caa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
