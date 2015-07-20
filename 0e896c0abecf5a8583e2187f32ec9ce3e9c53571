@@ -16,6 +16,24 @@
       "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_366e21ca",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-07-20T15:29:40Z",
+      "side": 1,
+      "message": "Iterate through the collection on line 32 to do this logic without having a second list.",
+      "parentUuid": "3a50d1a3_400e8735",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
