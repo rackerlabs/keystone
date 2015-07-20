@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_71be1001",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-20T04:21:01Z",
+      "side": 1,
+      "message": "create _OLD and _NEW here? to be consistent with routers.py.",
+      "revId": "3927b7534eb7486dca7e7e253b859a11dc505cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_91bb9c0e",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-20T04:21:01Z",
+      "side": 1,
+      "message": "in remove_in\u003d2",
+      "revId": "3927b7534eb7486dca7e7e253b859a11dc505cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
