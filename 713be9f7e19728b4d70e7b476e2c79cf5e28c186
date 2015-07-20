@@ -16,6 +16,24 @@
       "revId": "713be9f7e19728b4d70e7b476e2c79cf5e28c186",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9da4dfa6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-20T23:28:27Z",
+      "side": 1,
+      "message": "Henry, from the spec (http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-trust-ext.html), its not very clear whether \u0027remaining_uses\u0027 *value* must not be set or whether \u0027remaining_uses\u0027 *key* itself must not be set. \n\nGiven many tests (I think 9 of them) assumed that it was okay to have \u0027remaining_uses\u0027 key, I thought of fixing the logic in the code since it didn\u0027t break the spec. Also, I wasn\u0027t sure if there are already other clients who are doing such similar checks and if not relaxing this feature could break their code.",
+      "parentUuid": "3a50d1a3_de9fc45d",
+      "revId": "713be9f7e19728b4d70e7b476e2c79cf5e28c186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
