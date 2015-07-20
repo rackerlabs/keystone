@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f16d2333",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:26:06Z",
+      "side": 1,
+      "message": "still think this should be None, here....",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_511177ab",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:26:06Z",
+      "side": 1,
+      "message": "should be set to None, now...",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b158fb57",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:26:06Z",
+      "side": 1,
+      "message": "is the idea that we lift this restriction once at the end of the set of patches....or does this stay this way?",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1123efbe",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:26:06Z",
+      "side": 1,
+      "message": "should be None...",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
