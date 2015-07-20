@@ -101,19 +101,16 @@ class Provider(common.BaseProvider):
 
         """
         group_ids = token_data['token'].get('user', {}).get(
-            federation_constants.FEDERATION, {}).get('groups')
+            federation_constants.FEDERATION, {}).get('groups', [])
         idp_id = token_data['token'].get('user', {}).get(
             federation_constants.FEDERATION, {}).get(
                 'identity_provider', {}).get('id')
         protocol_id = token_data['token'].get('user', {}).get(
             federation_constants.FEDERATION, {}).get('protocol', {}).get('id')
-        if not group_ids:
-            group_ids = list()
-        if group_ids:
-            federated_dict = dict(group_ids=group_ids, idp_id=idp_id,
-                                  protocol_id=protocol_id)
-            return federated_dict
-        return None
+
+        if idp_id and protocol_id:
+            return dict(
+                group_ids=group_ids, idp_id=idp_id, protocol_id=protocol_id)
 
     def _rebuild_federated_info(self, federated_dict, user_id):
         """Format federated information into the token reference.
