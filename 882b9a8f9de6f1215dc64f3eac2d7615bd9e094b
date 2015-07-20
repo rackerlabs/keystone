@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_ddd4b148",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-07-20T11:28:47Z",
+      "side": 1,
+      "message": "I see what you\u0027re suggesting but I\u0027m not sure that there is a significant advantage.  One line less code in each test and it all becomes less explicit.  We also run into complexity within this method if we\u0027re creating a second endpoint for an already created service as I do at lines 645 and 646",
+      "parentUuid": "fa32b979_91d9caf5",
+      "revId": "882b9a8f9de6f1215dc64f3eac2d7615bd9e094b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_f1ee168a",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 20
