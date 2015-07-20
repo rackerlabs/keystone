@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_fe7e40ad",
+        "filename": "keystone/common/sql/migrate_repo/versions/078_drop_domain_table.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:24:32Z",
+      "side": 1,
+      "message": "does sqlite really not support table dropping?",
+      "revId": "2d78697a385177b4358e56d6687c3a60f7a4bd61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
