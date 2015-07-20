@@ -16,6 +16,24 @@
       "revId": "c5b6efaa1eec27686e1496ae05287a8c5cad7da9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d84a8783",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-20T17:12:03Z",
+      "side": 1,
+      "message": "docs reflect routes from real methods/functions.",
+      "parentUuid": "3a50d1a3_18c9cf78",
+      "revId": "c5b6efaa1eec27686e1496ae05287a8c5cad7da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
