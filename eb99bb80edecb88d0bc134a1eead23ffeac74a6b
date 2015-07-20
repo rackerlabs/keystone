@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0ce671b4",
+        "filename": "dsvm/federation/devstack/lib/keystone-federation",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-20T18:22:32Z",
+      "side": 1,
+      "message": "this piece fails for me when I run it locally: \n\n    dirname: invalid option -- \u0027b\u0027",
+      "revId": "eb99bb80edecb88d0bc134a1eead23ffeac74a6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
