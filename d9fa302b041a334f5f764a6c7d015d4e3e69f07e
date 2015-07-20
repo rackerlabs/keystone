@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_7d7ecce5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-20T16:47:26Z",
+      "side": 1,
+      "message": "it is done in the next patch (Change project name constraint)",
+      "parentUuid": "3a50d1a3_c4cab94f",
+      "revId": "d9fa302b041a334f5f764a6c7d015d4e3e69f07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_8434b1de",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 70
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-20T14:47:39Z",
       "side": 1,
       "message": "I think what we need here is that IF parent_id is specified, then we don\u0027t touch whatever domain_id is set to.  Then in the manager we process this we decide how to user parent_id/domain_id (including checking that if BOTH have been specified, then they imply the same domain).",
+      "revId": "d9fa302b041a334f5f764a6c7d015d4e3e69f07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d58fb021",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-20T16:47:26Z",
+      "side": 1,
+      "message": "agreed. I\u0027ll do that",
+      "parentUuid": "3a50d1a3_8434b1de",
       "revId": "d9fa302b041a334f5f764a6c7d015d4e3e69f07e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
