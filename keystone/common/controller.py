@@ -20,6 +20,7 @@ from oslo_log import log
 from oslo_utils import strutils
 import six
 
+from keystone import clean
 from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -678,6 +679,17 @@ class V3Controller(wsgi.Application):
         """Generates and assigns a unique identifier to a reference."""
         ref = ref.copy()
         ref['id'] = uuid.uuid4().hex
+        return ref
+
+    def _default_unique_id(self, ref):
+        """Generates and assigns a unique identifier to a reference.
+        Only performed if the reference does not arelady have an id.
+        """
+        ref = ref.copy()
+        if 'id' not in ref or not ref['id']:
+            ref['id'] = uuid.uuid4().hex
+        else:
+            clean.check_uuid(ref['id'])
         return ref
 
     def _get_domain_id_for_list_request(self, context):

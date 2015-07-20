@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import re
 import six
 
 from keystone import exception
@@ -48,6 +49,15 @@ def check_enabled(property_name, enabled):
     # Allow int and it's subclass bool
     check_type('%s enabled' % property_name, enabled, int, 'boolean')
     return bool(enabled)
+
+
+uuid_re = re.compile("[0-9a-f]{32}")
+
+
+def check_uuid(identifier):
+    if uuid_re.search(identifier) is None:
+        msg = _('Specified Identifier is not valid')
+        raise exception.ValidationError(message=msg)
 
 
 def check_name(property_name, name, min_length=1, max_length=64):
