@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_9de5d8a9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T14:52:43Z",
+      "side": 1,
+      "message": "does this do the right thing?  Won\u0027t it leave is_domain projects in v3 format in the list?",
+      "revId": "400c3a4c86d16e6c4584550a511c755a9827e5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9d4e38c0",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T14:52:43Z",
+      "side": 1,
+      "message": "copy \u0026 paste error?",
+      "revId": "400c3a4c86d16e6c4584550a511c755a9827e5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
