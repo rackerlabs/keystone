@@ -34,6 +34,109 @@
       "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9b6880f7",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-20T15:35:55Z",
+      "side": 1,
+      "message": "It\u0027s not. I would replace all of this code with three explicit calls to the validator.",
+      "parentUuid": "3a50d1a3_400e8735",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3609412d",
+        "filename": "keystone/clean.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-20T15:35:55Z",
+      "side": 1,
+      "message": "Instead of returning True or False why isn\u0027t this just raising a validation error when it needs to?",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5625eda8",
+        "filename": "keystone/clean.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-20T15:35:55Z",
+      "side": 1,
+      "message": "(nit) lowercase this since this isn\u0027t a constant. also this whole thing boils down to:\n\n  whitelist \u003d dict((v, v) for v in whitelist)",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_36caa1a2",
+        "filename": "keystone/clean.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-20T15:35:55Z",
+      "side": 1,
+      "message": "This still hasn\u0027t been updated. I mentioned in a previous revision that you need to wrap the string here with the _LW i18n helper.",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f620b94b",
+        "filename": "keystone/tests/unit/test_v2_keystoneclient_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-20T15:35:55Z",
+      "side": 1,
+      "message": "Do we need to change all of the tests too? it\u0027s nice to use uuid\u0027s in tests because it prevents tests from interacting badly when the use the same values for things.",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_16e52508",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-20T15:35:55Z",
+      "side": 1,
+      "message": "do we need to change this one?",
+      "revId": "0e896c0abecf5a8583e2187f32ec9ce3e9c53571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
