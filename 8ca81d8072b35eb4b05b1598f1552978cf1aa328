@@ -34,6 +34,24 @@
       "revId": "8ca81d8072b35eb4b05b1598f1552978cf1aa328",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d146e7be",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T15:54:51Z",
+      "side": 1,
+      "message": "oh, it was here before the patch. Ok.",
+      "parentUuid": "3a50d1a3_31262b69",
+      "revId": "8ca81d8072b35eb4b05b1598f1552978cf1aa328",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
