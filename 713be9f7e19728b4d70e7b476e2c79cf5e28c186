@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_de9fc45d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-20T21:14:31Z",
+      "side": 1,
+      "message": "This *sounds* like we are weakening our testing...rather than changing the tests to be correct...is that true?",
+      "revId": "713be9f7e19728b4d70e7b476e2c79cf5e28c186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
