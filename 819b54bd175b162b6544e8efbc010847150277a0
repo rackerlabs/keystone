@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_15abd81e",
+        "filename": "keystone/tests/unit/token/test_pki_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T16:53:51Z",
+      "side": 1,
+      "message": "_supports_bind is not a property, but a method. I suggest to use not assertTrue, but assertEqual(True, self.provider._supports_bind())",
+      "revId": "819b54bd175b162b6544e8efbc010847150277a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_558ac0c0",
+        "filename": "keystone/tests/unit/token/test_pkiz_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T16:53:51Z",
+      "side": 1,
+      "message": "_supports_bind is not a property, but a method. I suggest to use not assertTrue, but assertEqual(True, self.provider._supports_bind())",
+      "revId": "819b54bd175b162b6544e8efbc010847150277a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5503a042",
+        "filename": "keystone/tests/unit/token/test_uuid_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-20T16:53:51Z",
+      "side": 1,
+      "message": "_supports_bind is not a property, but a method. I suggest to use not assertTrue, but assertEqual(True, self.provider._supports_bind())",
+      "revId": "819b54bd175b162b6544e8efbc010847150277a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
