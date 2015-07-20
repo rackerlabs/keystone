@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8274acfd",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-20T07:27:51Z",
+      "side": 1,
+      "message": "correct, empty group_ids should result in Unauthorized() exception.",
+      "parentUuid": "9a41bdd9_5ed50db7",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_8bc0432c",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 5
@@ -101,6 +119,23 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "9a41bdd9_0b02f36f",
+      "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_02d65cc5",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-20T07:27:51Z",
+      "side": 1,
+      "message": "replace dict() with {} ?",
       "revId": "913554e9103fa889615bf25b278ec59e011b0eee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
