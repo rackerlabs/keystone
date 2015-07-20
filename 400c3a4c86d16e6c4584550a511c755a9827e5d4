@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_cdd5e043",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-20T20:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_9de5d8a9",
+      "revId": "400c3a4c86d16e6c4584550a511c755a9827e5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9d4e38c0",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 70
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_ede77c3e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-20T20:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_9d4e38c0",
+      "revId": "400c3a4c86d16e6c4584550a511c755a9827e5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_e072337c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 70
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-20T15:01:12Z",
       "side": 1,
       "message": "What happens if someone updates the domain_id (assuming the CONF domain_id_immutable options is False)....won\u0027t that mean that we need change the parent_id?  Which would mean you are effectively \"moving\" a project in the hierarchy....which I\u0027m not sure we want to support.  I\u0027d suggest that if hierarchy is enabled then we make domain_id immutable.",
+      "revId": "400c3a4c86d16e6c4584550a511c755a9827e5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_cd63a0b0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-20T20:01:26Z",
+      "side": 1,
+      "message": "that\u0027s true. I\u0027ll do that",
+      "parentUuid": "3a50d1a3_e072337c",
       "revId": "400c3a4c86d16e6c4584550a511c755a9827e5d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
