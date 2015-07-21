@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_7dc4735e",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-21T00:28:29Z",
+      "side": 1,
+      "message": "using list(group_ids) is fine in this case.",
+      "parentUuid": "3a50d1a3_8c8281ff",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_d91600a7",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 40
@@ -247,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_bd78bb2c",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-21T00:28:29Z",
+      "side": 1,
+      "message": "In face, it is actually a configuration error because the issuer is missing from the request environment. This attribute is required. If it is missing, most likely the configuration is wrong.",
+      "parentUuid": "3a50d1a3_6cae1530",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_2c96cc94",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 40
@@ -334,6 +370,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_5ddc1712",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-21T00:28:29Z",
+      "side": 1,
+      "message": "this actually has already been in test \u0027test_client_issuer_not_trusted\u0027",
+      "parentUuid": "3a50d1a3_0c07511d",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_56ff1f34",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 40
@@ -398,6 +452,24 @@
       "side": 1,
       "message": "that\u0027s a good question, the last line will not be reached and that should have been in the if and elif blocks.\nThere should be no exception raised as it is one of the modules in the pipline, if a AUTH_CONTEXT_ENV is not set here, it will try the rest of modules in the pipline. but why it\u0027s passing the tests, I will need to take another look at it.",
       "parentUuid": "9a41bdd9_39136c5e",
+      "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e820c39d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-21T00:28:29Z",
+      "side": 1,
+      "message": "shoot, I overlooked my own code! what I have there is fine. request.environ will be set when if or elif block satisfies. Else, it will return.\nAnd the reason that it does not raise exception remains the same reason that I stated from my previous comment. This module does not set the request.environ, that leaves the chance for the other modules in the pipeline to set it up. Or the request will not be authorized eventually if noone sets it up.",
+      "parentUuid": "3a50d1a3_99b95eec",
       "revId": "91058af45c9cdddab31c3bc0995fbb2ab905175b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
