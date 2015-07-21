@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_c8086730",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-21T00:15:08Z",
+      "side": 1,
+      "message": "seems like we\u0027d be able to change these references to oslo_cache?",
+      "revId": "7a085ff981072f8afb7ff00623e0d736635afc0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_48f21771",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-21T00:15:08Z",
+      "side": 1,
+      "message": "common_cache",
+      "revId": "7a085ff981072f8afb7ff00623e0d736635afc0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_68fd9339",
+        "filename": "keystone/server/common.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-21T00:15:08Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "7a085ff981072f8afb7ff00623e0d736635afc0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_887d7fb3",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-21T00:15:08Z",
+      "side": 1,
+      "message": "this is referencing a private symbol.",
+      "revId": "7a085ff981072f8afb7ff00623e0d736635afc0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
