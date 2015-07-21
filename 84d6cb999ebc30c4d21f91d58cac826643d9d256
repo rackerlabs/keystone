@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_3a51110f",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-21T02:57:09Z",
+      "side": 1,
+      "message": "my bad. I must\u0027ve confused the patches. Done",
+      "parentUuid": "3a50d1a3_14274cb7",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_511177ab",
         "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
         "patchSetId": 62
@@ -48,6 +66,24 @@
       "writtenOn": "2015-07-20T21:26:06Z",
       "side": 1,
       "message": "should be set to None, now...",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fa5ac929",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-21T02:57:09Z",
+      "side": 1,
+      "message": "actually, no... these root projects will be under the is_domain\u003dTrue projects and will have domain_id as their domain_id  and parent_id",
+      "parentUuid": "3a50d1a3_511177ab",
       "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_9eba9209",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-21T02:57:09Z",
+      "side": 1,
+      "message": "I\u0027ll check on this one",
+      "parentUuid": "3a50d1a3_b158fb57",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_1123efbe",
         "filename": "keystone/resource/core.py",
         "patchSetId": 62
@@ -82,6 +136,24 @@
       "writtenOn": "2015-07-20T21:26:06Z",
       "side": 1,
       "message": "should be None...",
+      "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9bbaa409",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-21T02:57:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_1123efbe",
       "revId": "84d6cb999ebc30c4d21f91d58cac826643d9d256",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
