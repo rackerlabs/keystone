@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_046fe82b",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-21T18:09:40Z",
+      "side": 1,
+      "message": "space after period here",
+      "revId": "0a7a03836835b32a45236013e3d3d1bbd82399dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e44afcab",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-21T18:09:40Z",
+      "side": 1,
+      "message": "nit: space after period here",
+      "revId": "0a7a03836835b32a45236013e3d3d1bbd82399dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
