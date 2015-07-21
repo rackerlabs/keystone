@@ -16,6 +16,23 @@
       "revId": "ca12ede747e21f338f78b5fd5b05c30d7a28f774",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_de857aad",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-07-21T03:18:31Z",
+      "side": 1,
+      "message": "config_file is not an optional parameter of \u0027_assert_no_more_than_one_sql_driver\u0027 anymore, so it\u0027s enough to have \u0027file_list\u0027 as the last argument, instead of the named config_file\u003dfile_list.",
+      "revId": "ca12ede747e21f338f78b5fd5b05c30d7a28f774",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
