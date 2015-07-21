@@ -504,5 +504,5 @@ def binary_to_pem(binary_data, pem_type='cert'):
     :returns: string -- PEM formatted text
 
     """
-    base64_text = base64.b64encode(binary_data)
+    base64_text = base64.b64encode(binary_data.encode('utf-8')).decode('utf-8')
     return base64_to_pem(base64_text, pem_type)
