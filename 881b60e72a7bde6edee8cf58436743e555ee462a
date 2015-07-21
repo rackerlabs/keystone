@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c547b749",
+        "filename": "keystone/clean.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-21T19:57:36Z",
+      "side": 1,
+      "message": "please don\u0027t raise a warning for this. operators do not need to be awoken in the middle of the night because end users made a bad request.",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_659ca3c0",
+        "filename": "keystone/clean.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-21T19:57:36Z",
+      "side": 1,
+      "message": "same",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a5baab21",
+        "filename": "keystone/clean.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-21T19:57:36Z",
+      "side": 1,
+      "message": "what Exception, exactly? be more specific",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_25a69b10",
+        "filename": "keystone/clean.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-21T19:57:36Z",
+      "side": 1,
+      "message": "same",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_45808746",
+        "filename": "keystone/exception.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-21T19:57:36Z",
+      "side": 1,
+      "message": "URLValidationError would read more naturally.\n\nalso, this should extend ValidationError and share it\u0027s code and title. it should also be moved to follow ValidationError in this file",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_739a3b65",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 18
