@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_92a02845",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-21T13:41:36Z",
+      "side": 1,
+      "message": ":param dict context: looks fine to me. The docs we should be using for reference are http://sphinx-doc.org/domains.html#python-signatures , not stackoverflow.",
+      "parentUuid": "3a50d1a3_5597fc8f",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b5b9a07b",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 5
