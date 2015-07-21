@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f8edcaef",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-21T14:54:44Z",
+      "side": 1,
+      "message": "we are only doing this for the v2 api? Is this going to cause an inconsistency if v2 returns invalid for a specific url and v3 won\u0027t because it\u0027s not using the same validation framework?",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_78021a71",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-21T14:54:44Z",
+      "side": 1,
+      "message": "can we add a test that creates an endpoint with the v3 api and the v3 api using the same url, and assert they are consistent?",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_18a516a1",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-21T14:54:44Z",
+      "side": 1,
+      "message": "step 3 isn\u0027t done here, is it?",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
