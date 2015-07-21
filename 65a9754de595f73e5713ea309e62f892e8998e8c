@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_2091d099",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-21T09:24:56Z",
+      "side": 1,
+      "message": "\u0027\u0027\u0027 is also used in other place in this file, see L424 and L361.\nThe doc generated from the source looks okay, but I am not sure if there is any recommendation in any of spec about it.",
+      "parentUuid": "3a50d1a3_fa4dd799",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5597fc8f",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
