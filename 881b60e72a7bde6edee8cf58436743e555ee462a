@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_739a3b65",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-07-21T15:09:16Z",
+      "side": 1,
+      "message": "i\u0027d like to see a test where the substitution works, \n\nand maybe another test where only admin_url fails with a space",
+      "revId": "881b60e72a7bde6edee8cf58436743e555ee462a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_78021a71",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 18
