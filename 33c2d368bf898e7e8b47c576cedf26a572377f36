@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c459005c",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-21T18:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_e5222101",
+      "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_05e94d80",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c4302004",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-21T18:12:15Z",
+      "side": 1,
+      "message": "Did you see nkinder\u0027s comments earlier in this review about this topic?",
+      "parentUuid": "3a50d1a3_05e94d80",
+      "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a502d909",
         "filename": "doc/source/federation/mellon.rst",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-21T06:33:32Z",
       "side": 1,
       "message": "This is example of some sort of IdP and I would avoid such examples, because this is  IdP specific thing. YOu ma give some reerences to external docs. Otherwise typical admin/users trying to execute those commands and will end up frustrated as we make him upload \"something to somewhere\" not even saying what is that (honestly I don\u0027t know wha IdP it is - FreeIPA + ipsilon I guess?)",
+      "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8419b88a",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-07-21T18:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_a502d909",
       "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
