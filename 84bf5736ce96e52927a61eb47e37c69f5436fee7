@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_195bd155",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-07-21T17:54:08Z",
+      "side": 1,
+      "message": "No, it is related;  the old code reused the domain_id, but was not explicitly testing that.  This maintains the meaning of the old test, but forces it to drop the old domain_id.",
+      "parentUuid": "3a50d1a3_d0fd3e3b",
+      "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b33bdc9b",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b9309d02",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-07-21T17:54:08Z",
+      "side": 1,
+      "message": "Doesn\u0027t really matter here, just gives it a different name for the test.  Probably should uuid the name.",
+      "parentUuid": "3a50d1a3_b33bdc9b",
+      "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_53105801",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-21T17:08:10Z",
       "side": 1,
       "message": "Doc copied from above tests... probably must be fixed ..",
+      "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_19099131",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-07-21T17:54:08Z",
+      "side": 1,
+      "message": "same fix;  use uuids for name to force them to be different.",
+      "parentUuid": "3a50d1a3_53105801",
       "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
