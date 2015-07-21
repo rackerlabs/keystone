@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_fa4dd799",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-21T09:09:31Z",
+      "side": 1,
+      "message": "please use \"\"\", not \u0027\u0027\u0027",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5597fc8f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-21T09:09:31Z",
+      "side": 1,
+      "message": "this is not correct syntax. Please use\n\n:param context: ..., :type param: dict\n\nas described on http://stackoverflow.com/questions/5334531/python-documentation-standard-for-docstring",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b5b9a07b",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-21T09:09:31Z",
+      "side": 1,
+      "message": "() are not necessary after Unauthorized. http://paste.openstack.org/show/394927/.\n\nIt means that with your patchset exception raised by get_token_ref is not being caught (or is not raised at all), however the tests still pass. Could you please check, that this works as expected and write a test for it?",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_7a36a7e8",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 5
