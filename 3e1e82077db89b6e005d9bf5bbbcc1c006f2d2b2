@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b9f2ddd0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-21T17:51:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_c6fdb43c",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_4f9bf0c9",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 34
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_79bbf5e5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-21T17:51:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_4f9bf0c9",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_6fa4b4b8",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 34
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-17T20:20:50Z",
       "side": 1,
       "message": "maybe s/direct/user/\n\nsince direct might be thought of as distinct from inherited",
+      "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_99be01d3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-21T17:51:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_6fa4b4b8",
       "revId": "3e1e82077db89b6e005d9bf5bbbcc1c006f2d2b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
