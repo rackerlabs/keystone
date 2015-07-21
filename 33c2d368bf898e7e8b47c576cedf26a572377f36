@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_e5222101",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-21T06:33:32Z",
+      "side": 1,
+      "message": "you are comparing apples and oranges. Both shibboleth and mellon are for SAML. \n\nSuggested changes so we reflect that we currently have docs for two major federation protocols:\n\nOpenID Connect (mod_auth_oidc)\nSAML (mod_shib and mod_mellon).\n\nThis comment applies to all the document.",
+      "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_05e94d80",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-21T06:33:32Z",
+      "side": 1,
+      "message": "Have you tested this setup?\nDo we really want to touch /v3 whole namespace here?",
+      "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a502d909",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-21T06:33:32Z",
+      "side": 1,
+      "message": "This is example of some sort of IdP and I would avoid such examples, because this is  IdP specific thing. YOu ma give some reerences to external docs. Otherwise typical admin/users trying to execute those commands and will end up frustrated as we make him upload \"something to somewhere\" not even saying what is that (honestly I don\u0027t know wha IdP it is - FreeIPA + ipsilon I guess?)",
+      "revId": "33c2d368bf898e7e8b47c576cedf26a572377f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
