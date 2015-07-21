@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_501e2764",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-21T09:58:10Z",
+      "side": 1,
+      "message": "what\u0027s this for? I don\u0027t see any mention of it in the commit description",
+      "revId": "24f77f424dcb96555a7e13588cb81b1200613caf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
