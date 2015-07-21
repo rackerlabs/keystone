@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_d0fd3e3b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-21T17:08:10Z",
+      "side": 1,
+      "message": "Why are we changing this ? It\u0027s an unrelated test, isn\u0027t it ?",
+      "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b33bdc9b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-21T17:08:10Z",
+      "side": 1,
+      "message": "So Keystone isn\u0027t case sensitive..",
+      "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_53105801",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-07-21T17:08:10Z",
+      "side": 1,
+      "message": "Doc copied from above tests... probably must be fixed ..",
+      "revId": "84bf5736ce96e52927a61eb47e37c69f5436fee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
