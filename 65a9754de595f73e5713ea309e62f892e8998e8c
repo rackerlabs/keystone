@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_7a36a7e8",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-21T08:36:49Z",
+      "side": 1,
+      "message": "maybe we need fallback to build the KeystoneToken if we cannot get the token_ref from AuthContextMiddleware?\n\nSince AuthContextMiddleware in the pipeline is before service, this may not necessary.",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
