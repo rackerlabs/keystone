@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_7e9466e1",
+        "filename": "keystone/tests/unit/common/test_pemutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-07-21T03:18:18Z",
+      "side": 1,
+      "message": "data_str ?  why not change it to self.data ?",
+      "revId": "414882e58ee8a699d6c4eeb7816d67728e6edd2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
