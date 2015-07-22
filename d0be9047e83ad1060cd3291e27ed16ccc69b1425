@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_480f2237",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 72
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "Maybe reword to: Provide the underpinnings for allowing a project to act as a domain. Subsequent follow-on patches will build on this to provide full domain operations on such projects.",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a8b9067b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 72
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "In this patch I think we are providing manager support for creating a project specifying a parent_id but not a domain_id, but we will leave the controller code in place that requires a domain_id.  This code will be removed once the follow-on patch that ensures all projects are part of hierarchies wis merged (provide link to it...)",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_483de2c2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "I suggest we drop the phrasing of \"with the domain feature..\", the words we use in the Identity spec are \"project acting as a domain\"",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_052ee3a4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "While this sentence will eventually be true, I don\u0027t think it is true with this patch - since I can always create a regular project without a parent, I think?",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_054823cb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "maybe not call this _normalize_domain_id() so as not to confuse with the controller method.  Perhaps, _find_domain_id()?",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e8bdceb7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "this comment (although correct) is a bit hard to understand since it is the opposite of the test below.  How about something like:\n\n\"In order to disable a regular project, all its children must already be disabled. However, to keep compatibility with the existing domain behaviour, we allow a project acting as a domain to be disabled irrespective of the state of its children. The act of disabling such a project will cause its children to be disabled.\"",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a85b46f5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 1,
+      "message": "...acting as a domain...",
+      "revId": "d0be9047e83ad1060cd3291e27ed16ccc69b1425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

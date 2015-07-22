@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_a1c92a28",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:57:59Z",
+      "side": 0,
+      "message": "I think we still need to leave this call for now....so we don\u0027t break existing functionality....but agree with your comment that we can\u0027t really support the passing of just parent_id until after domain operations are supported on the project table.",
+      "revId": "c387a9353ed8c06428e2ee8b1fbfe71e3b60a737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
