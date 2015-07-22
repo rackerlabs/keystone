@@ -16,6 +16,24 @@
       "revId": "996c2dbbfbd0067058317b21cc103316f68730a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_79b2ee07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T10:38:26Z",
+      "side": 1,
+      "message": "what for? It\u0027s just a refactoring, and bugreports will be used to generate a list of changes.",
+      "parentUuid": "3a50d1a3_80f51658",
+      "revId": "996c2dbbfbd0067058317b21cc103316f68730a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
