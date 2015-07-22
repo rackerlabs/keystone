@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_e14c12ca",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-22T07:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7b78e92b",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5597fc8f",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
@@ -125,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_619d6209",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-22T07:13:18Z",
+      "side": 1,
+      "message": "I created a test for this in a separate patch. (Please see - https://review.openstack.org/#/c/204461/). I verified that the new test fails with Unauthorized() but pass with Unauthorized.",
+      "parentUuid": "3a50d1a3_b5b9a07b",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_7a36a7e8",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 5
@@ -136,6 +172,24 @@
       "writtenOn": "2015-07-21T08:36:49Z",
       "side": 1,
       "message": "maybe we need fallback to build the KeystoneToken if we cannot get the token_ref from AuthContextMiddleware?\n\nSince AuthContextMiddleware in the pipeline is before service, this may not necessary.",
+      "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e17f32a9",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-07-22T07:13:18Z",
+      "side": 1,
+      "message": "As the patch description says, AuthContextMiddleware is one of the earliest middlewares in the pipeline, and so we can assume that the auth context has been built by the time control reaches this code.",
+      "parentUuid": "3a50d1a3_7a36a7e8",
       "revId": "65a9754de595f73e5713ea309e62f892e8998e8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
