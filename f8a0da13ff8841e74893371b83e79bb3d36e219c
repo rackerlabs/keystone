@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f3eff684",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:24:20Z",
+      "side": 1,
+      "message": "not used anywhere",
+      "revId": "f8a0da13ff8841e74893371b83e79bb3d36e219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_73dd26df",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:24:20Z",
+      "side": 1,
+      "message": "not used anywhere",
+      "revId": "f8a0da13ff8841e74893371b83e79bb3d36e219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_33f0fe90",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:24:20Z",
+      "side": 1,
+      "message": "need a comma after v3",
+      "revId": "f8a0da13ff8841e74893371b83e79bb3d36e219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_131942d7",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:24:20Z",
+      "side": 1,
+      "message": "we have is_ok for this kind of assertions, don\u0027t we?",
+      "revId": "f8a0da13ff8841e74893371b83e79bb3d36e219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d3851acf",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:24:20Z",
+      "side": 1,
+      "message": "CRUD or RUD? Test name says rud",
+      "revId": "f8a0da13ff8841e74893371b83e79bb3d36e219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
