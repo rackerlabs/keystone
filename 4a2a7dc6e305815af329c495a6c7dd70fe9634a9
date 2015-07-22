@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_3d1f526d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-22T20:24:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_2c1aca7d",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9f153e41",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 73
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-22T19:38:46Z",
       "side": 1,
       "message": "s/has the domain feature disabled/is not acting as a domain (is_domain\u003dFalse)/",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dd0f4e37",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-22T20:24:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_9f153e41",
       "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_62c21936",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-22T20:24:31Z",
+      "side": 1,
+      "message": "yes, it should. The root is_domain\u003dTrue project has parent_id and domain_id None",
+      "parentUuid": "3a50d1a3_5f49f65e",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_df798683",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 73
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_02ea35ac",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-22T20:24:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_df798683",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5f749634",
         "filename": "keystone/resource/core.py",
         "patchSetId": 73
@@ -81,6 +153,24 @@
       "writtenOn": "2015-07-22T19:38:46Z",
       "side": 1,
       "message": "is this meant to be joined up with the previous paragraph?",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fd59ea35",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-22T20:24:31Z",
+      "side": 1,
+      "message": "yes,  it is... removed",
+      "parentUuid": "3a50d1a3_5f749634",
       "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
