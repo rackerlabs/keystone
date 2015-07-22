@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ed188377",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T09:02:57Z",
+      "side": 1,
+      "message": "aren\u0027t we in Liberty now?",
+      "revId": "1901d377aae3acc687a78b241f35dced05e897ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
