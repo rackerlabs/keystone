@@ -19,6 +19,7 @@ from oslo_config import cfg
 from keystone import config
 from keystone import exception
 from keystone.tests import unit as tests
+from keystone.tests.unit.ksfixtures import database
 
 
 CONF = cfg.CONF
@@ -62,6 +63,8 @@ class DeprecatedTestCase(tests.TestCase):
         # Options in [sql] were moved to [database] in Icehouse for the change
         # to use oslo-incubator's db.sqlalchemy.sessions.
 
+        database.initialize_sql_session()
+        
         self.assertEqual('sqlite://deprecated', CONF.database.connection)
         self.assertEqual(54321, CONF.database.idle_timeout)
 
@@ -78,5 +81,7 @@ class DeprecatedOverrideTestCase(tests.TestCase):
         # Options in [sql] were moved to [database] in Icehouse for the change
         # to use oslo-incubator's db.sqlalchemy.sessions.
 
+        database.initialize_sql_session()
+        
         self.assertEqual('sqlite://new', CONF.database.connection)
         self.assertEqual(65432, CONF.database.idle_timeout)
