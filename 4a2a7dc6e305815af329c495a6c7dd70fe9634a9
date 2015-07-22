@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_2c1aca7d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:38:46Z",
+      "side": 1,
+      "message": "perhaps better worded:....inside a domain, where one is acting as a domain (is_domain\u003dTrue) and the other....",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9f153e41",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:38:46Z",
+      "side": 1,
+      "message": "s/has the domain feature disabled/is not acting as a domain (is_domain\u003dFalse)/",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5f49f65e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:38:46Z",
+      "side": 1,
+      "message": "parent_id should be nullable as well?  Not sure where this should have been set that way?",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_df798683",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:38:46Z",
+      "side": 1,
+      "message": "do we need to re-read the project again?",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5f749634",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:38:46Z",
+      "side": 1,
+      "message": "is this meant to be joined up with the previous paragraph?",
+      "revId": "4a2a7dc6e305815af329c495a6c7dd70fe9634a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
