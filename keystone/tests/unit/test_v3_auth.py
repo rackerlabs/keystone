@@ -565,7 +565,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
 
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.userAdminA['id'],
-                                         domain_id=self.domainA['id'])
+                                         project_id=self.domainA['id'])
 
     def config_overrides(self):
         super(TestTokenRevokeSelfAndAdmin, self).config_overrides()
@@ -586,7 +586,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
             self.build_authentication_request(
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
-                domain_name=self.domainA['name']))
+                project_id=self.domainA['id']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=adminA_token)
@@ -620,7 +620,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
             self.build_authentication_request(
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
-                domain_name=self.domainA['name']))
+                project_name=self.domainA['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=adminA_token)

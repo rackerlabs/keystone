@@ -657,15 +657,15 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         # The cloud admin just gets the admin role
         self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.cloud_admin_user['id'],
-                                         domain_id=self.admin_domain['id'])
+                                         project_id=self.admin_domain['id'])
 
         # Assign roles to the domain
         self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.domain_admin_user['id'],
-                                         domain_id=self.domainA['id'])
+                                         project_id=self.domainA['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
-                                         domain_id=self.domainA['id'])
+                                         project_id=self.domainA['id'])
 
         # Create and assign roles to the project
         self.project = self.new_project_ref(domain_id=self.domainA['id'])
@@ -771,7 +771,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_user_management(
             self.domainA['id'], expected=exception.ForbiddenAction.code)
@@ -780,7 +780,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_user_management(self.domainA['id'])
 
@@ -790,7 +790,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
 
         self._test_user_management(self.domainA['id'])
 
@@ -800,7 +800,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_project_management(
             self.domainA['id'], expected=exception.ForbiddenAction.code)
@@ -814,7 +814,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_project_management(self.domainA['id'])
 
@@ -822,7 +822,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
 
         # Check whether cloud admin can operate a domain
         # other than its own domain or not
@@ -832,7 +832,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_grants('domains', self.domainA['id'],
                           expected=exception.ForbiddenAction.code)
@@ -841,7 +841,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_grants('domains', self.domainA['id'])
 
@@ -856,7 +856,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
 
         self._test_grants('domains', self.domainA['id'])
 
@@ -884,7 +884,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_grants('projects', self.project['id'])
 
@@ -892,21 +892,21 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
 
         collection_url = self.build_role_assignment_query_url(
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
         r = self.get(collection_url, auth=self.auth)
         self.assertValidRoleAssignmentListResponse(
             r, expected_length=2, resource_url=collection_url)
 
         domainA_admin_entity = self.build_role_assignment_entity(
-            domain_id=self.domainA['id'],
+            project_id=self.domainA['id'],
             user_id=self.domain_admin_user['id'],
             role_id=self.admin_role['id'],
             inherited_to_projects=False)
         domainA_user_entity = self.build_role_assignment_entity(
-            domain_id=self.domainA['id'],
+            project_id=self.domainA['id'],
             user_id=self.just_a_user['id'],
             role_id=self.role['id'],
             inherited_to_projects=False)
@@ -918,21 +918,21 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
         r = self.get(collection_url, auth=self.auth)
         self.assertValidRoleAssignmentListResponse(
             r, expected_length=2, resource_url=collection_url)
 
         domainA_admin_entity = self.build_role_assignment_entity(
-            domain_id=self.domainA['id'],
+            project_id=self.domainA['id'],
             user_id=self.domain_admin_user['id'],
             role_id=self.admin_role['id'],
             inherited_to_projects=False)
         domainA_user_entity = self.build_role_assignment_entity(
-            domain_id=self.domainA['id'],
+            project_id=self.domainA['id'],
             user_id=self.just_a_user['id'],
             role_id=self.role['id'],
             inherited_to_projects=False)
@@ -944,7 +944,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
             domain_id=self.domainB['id'])
@@ -954,7 +954,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
             domain_id=self.domainA['id'])
@@ -964,7 +964,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
 
         collection_url = self.build_role_assignment_query_url(
             project_id=self.project['id'])
@@ -991,7 +991,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
             project_id=self.project['id'])
@@ -1017,7 +1017,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
             project_id=self.project['id'])
@@ -1027,7 +1027,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
 
         self._test_domain_management(
             expected=exception.ForbiddenAction.code)
@@ -1035,7 +1035,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
 
         self._test_domain_management()
 
@@ -1043,7 +1043,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
         entity_url = '/domains/%s' % self.domainA['id']
         self.get(entity_url, auth=self.auth, expected_status=200)
 
@@ -1154,7 +1154,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         admin_auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_domain['id'])
         admin_token = self.get_requested_token(admin_auth)
 
         user_auth = self.build_authentication_request(
@@ -1216,7 +1216,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         admin_auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
         admin_token = self.get_requested_token(admin_auth)
 
         user_auth = self.build_authentication_request(
@@ -1278,7 +1278,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         admin_auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            project_id=self.domainA['id'])
         admin_token = self.get_requested_token(admin_auth)
 
         user_auth = self.build_authentication_request(
