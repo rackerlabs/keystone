@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b774e467",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-22T18:16:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7e7310b2",
+      "revId": "49313b0805cac9d0a6d1fde12127e5adc0822b6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_7e81d049",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-20T21:08:35Z",
       "side": 1,
       "message": "in v3, can is_domain be anything other than True or False?",
+      "revId": "49313b0805cac9d0a6d1fde12127e5adc0822b6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9750c8d5",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-22T18:16:57Z",
+      "side": 1,
+      "message": "just in domain scoped tokens",
+      "parentUuid": "3a50d1a3_7e81d049",
       "revId": "49313b0805cac9d0a6d1fde12127e5adc0822b6c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
