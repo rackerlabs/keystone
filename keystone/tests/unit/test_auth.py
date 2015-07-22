@@ -945,6 +945,21 @@ class AuthWithTrust(AuthTest):
         for role in new_trust['roles']:
             self.assertIn(role['id'], role_ids)
 
+    def test_get_trust_without_auth_context(self):
+        """Verify that a trust cannot be retrieved when the auth context is
+        missing.
+        """
+        unscoped_token = self.get_unscoped_token(self.trustor['name'])
+        context = self._create_auth_context(
+            unscoped_token['access']['token']['id'])
+        new_trust = self.trust_controller.create_trust(
+            context, trust=self.sample_data)['trust']
+        # Delete the auth context before calling get_trust().
+        del context['environment'][authorization.AUTH_CONTEXT_ENV]
+        self.assertRaises(exception.Forbidden,
+                          self.trust_controller.get_trust, context,
+                          new_trust['id'])
+
     def test_create_trust_no_impersonation(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'],
                                       expires_at=None, impersonation=False)
