@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0cd4aeba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 73
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:26:39Z",
+      "side": 1,
+      "message": "I think we can drop the \"maybe reword to:\" bit!!",
+      "revId": "347eb4e58811347ad8a333d01de94432bf6dd864",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6c91b2f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 73
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:26:39Z",
+      "side": 1,
+      "message": "I suggest we drop this paragraph - it feels too low level to be in a commit comment and this explanation should be covered in the docstrings or comments in the code.",
+      "revId": "347eb4e58811347ad8a333d01de94432bf6dd864",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ccafa628",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 73
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:26:39Z",
+      "side": 1,
+      "message": "s/We leave/However, we leave/",
+      "revId": "347eb4e58811347ad8a333d01de94432bf6dd864",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ecb38298",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 73
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-22T19:26:39Z",
+      "side": 1,
+      "message": "s/was merged/is merged/",
+      "revId": "347eb4e58811347ad8a333d01de94432bf6dd864",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
