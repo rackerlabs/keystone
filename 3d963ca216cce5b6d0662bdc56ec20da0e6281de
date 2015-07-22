@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_994a5325",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:51:33Z",
+      "side": 1,
+      "message": "who sets this variable?",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b9f06ffe",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-22T12:51:33Z",
+      "side": 1,
+      "message": "this should use request_headers defined above",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
