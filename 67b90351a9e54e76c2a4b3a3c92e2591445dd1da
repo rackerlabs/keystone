@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_42335dab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-22T19:52:42Z",
+      "side": 1,
+      "message": "You don\u0027t need to copy the lines you deleted here, but I\u0027d like to see an explanation of why they were causing the failure.",
+      "revId": "67b90351a9e54e76c2a4b3a3c92e2591445dd1da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_82b96517",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-22T19:52:42Z",
+      "side": 1,
+      "message": "This line is too long. See https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure for reference. On a side note I\u0027m not sure it\u0027s valuable if you address my comment above.",
+      "revId": "67b90351a9e54e76c2a4b3a3c92e2591445dd1da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
