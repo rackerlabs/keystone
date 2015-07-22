@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_a424c6c4",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-22T13:15:32Z",
+      "side": 1,
+      "message": "you, when you want to run this testsuite on you local machine with your devstack.",
+      "parentUuid": "3a50d1a3_994a5325",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b9f06ffe",
         "filename": "keystone/tests/functional/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-22T12:51:33Z",
       "side": 1,
       "message": "this should use request_headers defined above",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a40b6629",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-22T13:15:32Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "3a50d1a3_b9f06ffe",
       "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
