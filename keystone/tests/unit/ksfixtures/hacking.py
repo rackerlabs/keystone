@@ -365,10 +365,10 @@ class HackingLogging(fixtures.Fixture):
                 LOG = logging.getLogger()
 
                 # ensure the correct helper is being used
-                LOG.warn(_LI('this should cause an error'))
+                LOG.warn(_LW('this should cause an error'))
 
                 # debug should not allow any helpers either
-                LOG.debug(_LI('this should cause an error'))
+                LOG.debug('this should cause an error')
             """,
             'expected_errors': [
                 (4, 9, 'K006'),
