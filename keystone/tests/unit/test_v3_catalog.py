@@ -617,26 +617,34 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         self.assertEqual(endpoint_v2['region'], endpoint_v3['region_id'])
 
-    def test_deleting_endpoint_with_space_in_url(self):
-        # create a v3 endpoint ref
-        ref = self.new_endpoint_ref(service_id=self.service['id'])
+    def test_endpoint_create_with_invalid_url(self):
+        """Test some invalid cases:
 
-        # add a space to all urls (intentional "i d" to test bug)
-        url_with_space = "http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"
-        ref['publicurl'] = url_with_space
-        ref['internalurl'] = url_with_space
-        ref['adminurl'] = url_with_space
-        ref['url'] = url_with_space
+        1. a url which is none value
+        2. a url which has space in it
+        3. substitutions is not exactly right
+        """
+        INVALID_URLS = [
+            '', None,
+            'http://127.0.0.1:8774/v1.1/\$(tenant_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(user_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(compute_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(sth_strange)s'
+        ]
 
-        # add the endpoint to the database
-        r = self.post('/endpoints', body={'endpoint': ref})
-        endpoint = r.result['endpoint']
+        ref = self.new_endpoint_ref(self.service_id)
 
-        # delete the endpoint
-        self.delete('/endpoints/%s' % endpoint['id'])
-
-        # make sure it's deleted (GET should return 404)
-        self.get('/endpoints/%s' % endpoint['id'], expected_status=404)
+        for invalid_url in INVALID_URLS:
+            ref['url'] = invalid_url
+            self.post('/endpoints',
+                      body={'endpoint': ref},
+                      expected_status=400)
 
 
 class TestCatalogAPISQL(tests.TestCase):

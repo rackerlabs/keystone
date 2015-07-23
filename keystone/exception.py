@@ -84,6 +84,15 @@ class ValidationError(Error):
     title = 'Bad Request'
 
 
+class URLValidationError(ValidationError):
+    message_format = _('Cannot create an endpoint with an invalid URL:'
+                       ' %(url)s')
+
+
+class URLIsNoneError(ValidationError):
+    message_format = _('URL should not be None, please give it a value')
+
+
 class SchemaValidationError(ValidationError):
     # NOTE(lbragstad): For whole OpenStack message consistency, this error
     # message has been written in a format consistent with WSME.
