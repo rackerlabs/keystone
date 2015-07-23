@@ -400,6 +400,7 @@ class Manager(manager.Manager):
         return [r for r in self.driver.list_role_assignments()
                 if r['role_id'] == role_id]
 
+    # notification will trigger token revocation for (user, role, project)
     @notifications.role_assignment('deleted')
     def _remove_role_from_user_and_project_adapter(self, role_id, user_id=None,
                                                    group_id=None,
@@ -414,7 +415,6 @@ class Manager(manager.Manager):
 
         self.driver.remove_role_from_user_and_project(user_id, project_id,
                                                       role_id)
-        self.identity_api.emit_invalidate_user_token_persistence(user_id)
         self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
                                         project_id=project_id)
 

@@ -207,11 +207,11 @@ class Manager(manager.Manager):
         self.revoke(model.RevokeEvent(domain_id=domain_id, role_id=role_id))
 
     @MEMOIZE
-    def _get_revoke_tree(self):
+    def _get_revoke_container(self):
         events = self.driver.list_events()
-        revoke_tree = model.RevokeTree(revoke_events=events)
+        revoke_container = model.RevokeList(revoke_events=events)
 
-        return revoke_tree
+        return revoke_container
 
     def check_token(self, token_values):
         """Checks the values from a token against the revocation list
@@ -223,12 +223,12 @@ class Manager(manager.Manager):
         :raises exception.TokenNotFound: if the token is invalid
 
          """
-        if self._get_revoke_tree().is_revoked(token_values):
+        if self._get_revoke_container().is_revoked(token_values):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def revoke(self, event):
         self.driver.revoke(event)
-        self._get_revoke_tree.invalidate(self)
+        self._get_revoke_container.invalidate(self)
 
 
 @six.add_metaclass(abc.ABCMeta)
