@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_fa653044",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-23T18:11:15Z",
+      "side": 1,
+      "message": "this definitely does not need to log an exception... info at best.",
+      "revId": "8eb21118f27d34e4813f822bb89655c83953d86b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9a58ac8b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-23T18:11:15Z",
+      "side": 1,
+      "message": "same",
+      "revId": "8eb21118f27d34e4813f822bb89655c83953d86b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
