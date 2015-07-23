@@ -145,11 +145,14 @@ class Provider(common.BaseProvider):
         :raises keystone.exception.Unauthorized: if v3 token is used
 
         """
-        (user_id, methods,
-         audit_ids, domain_id,
-         project_id, trust_id,
-         federated_info, created_at,
-         expires_at) = self.token_formatter.validate_token(token_ref)
+        try:
+            (user_id, methods,
+             audit_ids, domain_id,
+             project_id, trust_id,
+             federated_info, created_at,
+             expires_at) = self.token_formatter.validate_token(token_ref)
+        except exception.ValidationError as e:
+            raise exception.TokenNotFound(e)
 
         if trust_id or domain_id or federated_info:
             msg = _('This is not a v2.0 Fernet token. Use v3 for trust, '
@@ -177,9 +180,12 @@ class Provider(common.BaseProvider):
                                                  supported
 
         """
-        (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-            federated_info, created_at, expires_at) = (
-                self.token_formatter.validate_token(token))
+        try:
+            (user_id, methods, audit_ids, domain_id, project_id, trust_id,
+                federated_info, created_at, expires_at) = (
+                    self.token_formatter.validate_token(token))
+        except exception.ValidationError as e:
+            raise exception.TokenNotFound(e)
 
         token_dict = None
         trust_ref = None
