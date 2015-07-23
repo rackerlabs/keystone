@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_dccf2954",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-23T13:42:42Z",
+      "side": 1,
+      "message": "why didn\u0027t we consider domain_id here?",
+      "revId": "49a61ad810b89f68550d7e51bd4920f0250dc54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1ce911b7",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-23T13:42:42Z",
+      "side": 1,
+      "message": "you forgot to pass domain_id. \nI wonder whether we should also make sure domain_id XOR project_id \u003d\u003d 1, so we pass only one value, not two.\n\nhow about inline function:\n\ndef xor(project_id\u003dNone, domain_id\u003dNone):\n     if sum([project_id, domain_id]) % 2 !\u003d 1:\n         raise exception.ValidationError(\u0027please scope to one\u0027)",
+      "revId": "49a61ad810b89f68550d7e51bd4920f0250dc54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3c15ed9a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-23T13:42:42Z",
+      "side": 1,
+      "message": "what about domain_id ?",
+      "revId": "49a61ad810b89f68550d7e51bd4920f0250dc54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
