@@ -88,6 +88,23 @@
       "revId": "32879c83bc5eb10b212c0d264189607dddb517cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2ff11f95",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-23T16:42:14Z",
+      "side": 1,
+      "message": "this should be done as part of setUp, not as part of the test itself",
+      "revId": "32879c83bc5eb10b212c0d264189607dddb517cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
