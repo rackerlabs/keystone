@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_dacd0232",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-23T04:32:58Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this string be put in _(.... ) so its translated?",
+      "revId": "0b3ef9b4c15c3c15ecbe58fb96d54a901eac42a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
