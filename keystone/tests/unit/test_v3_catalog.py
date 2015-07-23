@@ -629,14 +629,40 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         ref['url'] = url_with_space
 
         # add the endpoint to the database
-        r = self.post('/endpoints', body={'endpoint': ref})
-        endpoint = r.result['endpoint']
+        self.catalog_api.create_endpoint(ref['id'], ref)
 
         # delete the endpoint
-        self.delete('/endpoints/%s' % endpoint['id'])
+        self.delete('/endpoints/%s' % ref['id'])
 
         # make sure it's deleted (GET should return 404)
-        self.get('/endpoints/%s' % endpoint['id'], expected_status=404)
+        self.get('/endpoints/%s' % ref['id'], expected_status=404)
+
+    def test_endpoint_create_with_invalid_url(self):
+        """Test some invalid cases:
+
+        1. a url which has space in it
+        2. substitutions is not exactly right
+        """
+        INVALID_URLS = [
+            'http://127.0.0.1:8774/v1.1/\$(tenant_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(user_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(compute_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(sth_strange)s'
+        ]
+
+        ref = self.new_endpoint_ref(self.service_id)
+
+        for invalid_url in INVALID_URLS:
+            ref['url'] = invalid_url
+            self.post('/endpoints',
+                      body={'endpoint': ref},
+                      expected_status=400)
 
 
 class TestCatalogAPISQL(tests.TestCase):
