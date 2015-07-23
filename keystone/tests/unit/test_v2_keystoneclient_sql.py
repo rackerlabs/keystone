@@ -41,9 +41,9 @@ class ClientDrivenSqlTestCase(test_v2_keystoneclient.ClientDrivenTestCase):
 
         endpoint_region = uuid.uuid4().hex
         invalid_service_id = uuid.uuid4().hex
-        endpoint_publicurl = uuid.uuid4().hex
-        endpoint_internalurl = uuid.uuid4().hex
-        endpoint_adminurl = uuid.uuid4().hex
+        endpoint_publicurl = 'http://127.0.0.1:8080'
+        endpoint_internalurl = 'http://127.0.0.1:8080'
+        endpoint_adminurl = 'http://127.0.0.1:8080'
 
         # a non-existent service ID should trigger a 400
         self.assertRaises(client_exceptions.BadRequest,

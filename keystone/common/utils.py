@@ -31,6 +31,7 @@ from oslo_utils import timeutils
 import passlib.hash
 import six
 from six import moves
+from six.moves.urllib import parse
 
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
@@ -504,3 +505,29 @@ def isotime(at=None, subsecond=False):
 def strtime():
     at = timeutils.utcnow()
     return at.strftime(timeutils.PERFECT_TIME_FORMAT)
+
+
+def check_endpoint_url(url, whitelist):
+    """Validate url like '"http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"'
+
+    When the url is not valid, should reject it
+
+    The invalid urls are as follows:
+    1. a url which has space, you can't use www.go o gle.com to search
+    2. substitutions should be in the whitelist
+    """
+    # url with space is invalid
+    if ' ' in url:
+        raise exception.URLValidationError(url)
+
+    # check whether the property in the path is exactly the same
+    # with that in the whitelist below
+    whitelist = {v: v for v in whitelist}
+
+    path = parse.urlparse(url).path
+    if path:
+        path = path.replace('$', '%')
+        try:
+            path = path % whitelist
+        except KeyError:
+            raise exception.URLValidationError(url)
