@@ -63,7 +63,7 @@ class MemcachedLock(object):
             elif not wait:
                 return False
             else:
-                sleep_time = random.random()
+                sleep_time = random.random() / 100
                 time.sleep(sleep_time)
         raise exception.UnexpectedError(
             _('Maximum lock attempts on %s occurred.') % self.key)
@@ -87,7 +87,7 @@ class MemcachedBackend(object):
         self.no_expiry_hashed_keys = set()
 
         self.lock_timeout = arguments.pop('lock_timeout', None)
-        self.max_lock_attempts = arguments.pop('max_lock_attempts', 15)
+        self.max_lock_attempts = arguments.pop('max_lock_attempts', 1500)
         # NOTE(morganfainberg): Remove distributed locking from the arguments
         # passed to the "real" backend if it exists.
         arguments.pop('distributed_lock', None)
