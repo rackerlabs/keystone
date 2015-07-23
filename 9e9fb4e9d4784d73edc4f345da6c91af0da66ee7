@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_9d50ca33",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:57:43Z",
+      "side": 1,
+      "message": "the docstring should be changed, *no* more than one sql driver.",
+      "revId": "9e9fb4e9d4784d73edc4f345da6c91af0da66ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3d3ad6e7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:57:43Z",
+      "side": 1,
+      "message": "cause there to be more than..., remove \"now\".",
+      "revId": "9e9fb4e9d4784d73edc4f345da6c91af0da66ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
