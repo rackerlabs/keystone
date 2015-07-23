@@ -16,6 +16,23 @@
       "revId": "0b3ef9b4c15c3c15ecbe58fb96d54a901eac42a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1934d547",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-07-23T06:15:02Z",
+      "side": 1,
+      "message": "+1\n\nraise exception.NotImplemented(\n    message\u003d_(\u0027The configured token provider does not support bind \u0027\n                        \u0027authentication\u0027))",
+      "revId": "0b3ef9b4c15c3c15ecbe58fb96d54a901eac42a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
