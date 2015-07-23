@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_5c29eb88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "nits: backend",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fc11d752",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "nits: backend",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7c05c70e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "Closes-Bug: #",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ab4303ae",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "suggest to move this into config, so end user can customize this value.",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_90767204",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "nits: Ensure there is *no* more than...",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_65f44a5a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "the expection here show me that \u0027The Keystone domain-specific configuration has specified more than one SQL driver ...\", is that correct? or we need override the message here?",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d9618d06",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "Is it possible to make the mutext more general? so it\u0027s not restricted in the domain config and the column is not necessary domain_id but some other entities like user or group? then we can reuse with in other situation.",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2b285332",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "not sure if the cloumn domain_id need a FK reference with domain table?",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fd6b0eb5",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": "we need aslo silent here or some message could be given?",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ea490932",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-23T08:47:07Z",
+      "side": 1,
+      "message": ":raises: keystone.exception.ConfigSQLMutexNotFound for consistency",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
