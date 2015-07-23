@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_5eb8e629",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "we don\u0027t need to deprecate internal classes.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1eec9e28",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "this should be a subclass of oslo_cache.backends.memcache_pool and then remove the impl.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3eef1a1f",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "subclass oslo_cache.backends.mongo",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1ed33e61",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "no need to deprecate internal classes.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9ec74e95",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "no need to deprecate internal classes.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_de3f1685",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "no need to deprecate internal classes.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3e64fab6",
+        "filename": "keystone/common/cache/backends/noop.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "subclass oslo_cache.backends.noop and remove the implementation.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1e081ed9",
+        "filename": "keystone/common/cache/backends/noop.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "the docs should also say it\u0027s deprecated.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_feb532ec",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "keystone.common.cache.noop isn\u0027t used or usable anymore, so can\u0027t we just remove them already rather than deprecating?",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9e70ae0c",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "oslo_cache.tests isn\u0027t part of the public interface for oslo_cache. If applications have a use for it then this should be moved someplace public.\n\nI think it would be best to provide a fixture.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3ec2bae9",
+        "filename": "keystone/tests/unit/ksfixtures/cache.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T14:35:46Z",
+      "side": 1,
+      "message": "we might also want to provide a test fixture for cache in general that cleans up after itself.",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
