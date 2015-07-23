@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ea1ee90a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T07:33:20Z",
+      "side": 1,
+      "message": "Now that we do this, we can remove my comment above, because this is now much more efficient.",
+      "revId": "b6adc9c353b33bed21bb7201ddabea3a42782b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
