@@ -629,14 +629,56 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         ref['url'] = url_with_space
 
         # add the endpoint to the database
-        r = self.post('/endpoints', body={'endpoint': ref})
-        endpoint = r.result['endpoint']
+        self.catalog_api.create_endpoint(ref['id'], ref)
 
         # delete the endpoint
-        self.delete('/endpoints/%s' % endpoint['id'])
+        self.delete('/endpoints/%s' % ref['id'])
 
         # make sure it's deleted (GET should return 404)
-        self.get('/endpoints/%s' % endpoint['id'], expected_status=404)
+        self.get('/endpoints/%s' % ref['id'], expected_status=404)
+
+    def test_endpoint_create_with_valid_url(self):
+        """Create endpoint with valid url should be tested,too."""
+        # list one valid url is enough, no need to list too much
+        valid_url = 'http://127.0.0.1:8774/v1.1/$(tenant_id)s'
+
+        ref = self.new_endpoint_ref(self.service_id)
+        ref['url'] = valid_url
+        self.post('/endpoints',
+                  body={'endpoint': ref},
+                  expected_status=201)
+
+    def test_endpoint_create_with_invalid_url(self):
+        """Test some invalid cases:
+
+        1. a url which has space in it
+        2. substitutions is not exactly right
+        """
+        invalid_urls = [
+            # space in the URL
+            'http://127.0.0.1:8774/ v1.1/',
+            'http://127.0.0.1:8774/v1.1/$(tenant_i d)s',
+
+            # using a substitution that is not whitelisted - KeyError
+            'http://127.0.0.1:8774/v1.1/$(nonexistent)s',
+
+            # invalid formatting - ValueError
+            'http://127.0.0.1:8774/v1.1/$(tenant_id)',
+            'http://127.0.0.1:8774/v1.1/$(tenant_id)t',
+            'http://127.0.0.1:8774/v1.1/$(tenant_id',
+
+            # invalid type specifier - TypeError
+            # admin_url is a string not an int
+            'http://127.0.0.1:8774/v1.1/$(admin_url)d',
+        ]
+
+        ref = self.new_endpoint_ref(self.service_id)
+
+        for invalid_url in invalid_urls:
+            ref['url'] = invalid_url
+            self.post('/endpoints',
+                      body={'endpoint': ref},
+                      expected_status=400)
 
 
 class TestCatalogAPISQL(tests.TestCase):
