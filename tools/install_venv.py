@@ -20,7 +20,7 @@
 """
 virtualenv installation script
 """
-
+from __future__ import print_function
 import os
 import sys
 
@@ -46,7 +46,7 @@ def print_help():
 
     Also, make test will automatically use the virtualenv.
     """
-    print help
+    print(help)
 
 
 def main(argv):
