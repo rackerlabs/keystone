@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0ec229e9",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7a0e2ee6",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9a11ba06",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-23T04:28:04Z",
       "side": 1,
       "message": "maybe replace hidden here with encapsulated.",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_aeb45581",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_9a11ba06",
       "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_ceb76183",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_ba2fd63d",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_3a24265c",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-23T04:28:04Z",
       "side": 1,
       "message": "s/2/two",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6e996dc3",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_3a24265c",
       "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_cef441f2",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_1aeccaf1",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_3fead174",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0e954931",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "The audience for this isn\u0027t setting up keystone, they\u0027re just consuming tokens.",
+      "parentUuid": "3a50d1a3_3fead174",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5acd7283",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -115,6 +223,24 @@
       "writtenOn": "2015-07-23T04:28:04Z",
       "side": 1,
       "message": "Maybe better to state \"Default\" since that\u0027s the domain name, whereas \"default\" is the domain id.",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ee06dd84",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Removed the quotes. The default domain doesn\u0027t need to be called \"Default\".",
+      "parentUuid": "3a50d1a3_5acd7283",
       "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0ecd4930",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7f1e1971",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9ae9bab9",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -218,6 +362,24 @@
       "writtenOn": "2015-07-23T04:28:04Z",
       "side": 1,
       "message": "\"... where there\u0027s an option for that supports...\" - sounds awkward",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8e8719b4",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-23T16:00:58Z",
+      "side": 1,
+      "message": "propose an alternative.",
+      "parentUuid": "3a50d1a3_9ae9bab9",
       "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
