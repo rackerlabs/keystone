@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f0c81657",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "just checking (as per my previous comment): this already allows null values due to the fact that nullable\u003dTrue is the default?",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_706406b8",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "(opionion): I personally prefer to use a comment to provide a rationale for the code.  E.g. I would prefer we say:\n\n\"Projects acting as a domain should not be visible via v2\", as opposed to the comments effectively repeating he wording of the test we are about to make (i.e. is_domain is True\").\n\nAlthough in this case the difference is rather trivial, it makes for better understanding of code",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d06b9ab5",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "perhaps more precisely, the wording is: In \"Projects acting as a domain should not be visible via v2\"",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_90751233",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_50922a4d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_306f5efd",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 2240,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "we should probably check that the domain_id was correctly set to the domain of the parent...maybe that needs to be a separate test....",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7decde29",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "Is there enough testing here now domain_id is nullable.  E.g. creating two top level domain\u003dTrue projects of the same name...both of which would have no domainID?",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7da4deb8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 2213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T08:42:21Z",
+      "side": 1,
+      "message": "not sure this is the right test....isn\u0027t the clash between two projects at the same \"level\" one acting as a domain and one not (since the parent is NOT in the same domain as the children)?",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
