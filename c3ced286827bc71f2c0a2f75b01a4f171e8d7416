@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_fabbf0c1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-23T18:04:06Z",
+      "side": 1,
+      "message": "this seems to be handling a bug caused elsewhere, rather than fixing the bug itself. a reference should already be a dict... *never* just a string. can we fix the source of this instead?",
+      "revId": "c3ced286827bc71f2c0a2f75b01a4f171e8d7416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
