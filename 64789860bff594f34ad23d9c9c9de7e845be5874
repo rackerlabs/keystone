@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_fd569fcc",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "yes, exactly. Since HMT, we have parent_id\u003dNone por root projects",
+      "parentUuid": "3a50d1a3_f0c81657",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_706406b8",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 74
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-23T08:42:21Z",
       "side": 1,
       "message": "(opionion): I personally prefer to use a comment to provide a rationale for the code.  E.g. I would prefer we say:\n\n\"Projects acting as a domain should not be visible via v2\", as opposed to the comments effectively repeating he wording of the test we are about to make (i.e. is_domain is True\").\n\nAlthough in this case the difference is rather trivial, it makes for better understanding of code",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6fbe56af",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_706406b8",
       "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0fe0f2cb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_d06b9ab5",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_90751233",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 74
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-23T08:42:21Z",
       "side": 1,
       "message": "ditto",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6fec16bb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_90751233",
       "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_2f312e5a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_50922a4d",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_306f5efd",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 74
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-23T08:42:21Z",
       "side": 1,
       "message": "we should probably check that the domain_id was correctly set to the domain of the parent...maybe that needs to be a separate test....",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b2f6018d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 2240,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Ok. I\u0027ll create it in the next patch, which is where domain operations are replicated.",
+      "parentUuid": "3a50d1a3_306f5efd",
       "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_2505cd0f",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7decde29",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_7da4deb8",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 74
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-23T08:42:21Z",
       "side": 1,
       "message": "not sure this is the right test....isn\u0027t the clash between two projects at the same \"level\" one acting as a domain and one not (since the parent is NOT in the same domain as the children)?",
+      "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_121b3582",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 74
+      },
+      "lineNbr": 2213,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-23T14:05:01Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right. Done",
+      "parentUuid": "3a50d1a3_7da4deb8",
       "revId": "64789860bff594f34ad23d9c9c9de7e845be5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
