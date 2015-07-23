@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_3fead174",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T07:18:21Z",
+      "side": 1,
+      "message": "Maybe add: \"Due to the fact that the keystone architecture allows a different backend for Identity (I.e. User and Groups) to that of Assignments (Projects, Roles etc.), this means that while you can source your users and groups from different LDAPs based on their domain, all Projects, Roles etc. can reside in a keystone SQL database.  This is a common operating model.\"",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5acd7283",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -121,6 +138,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_7f0a998b",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T07:18:21Z",
+      "side": 1,
+      "message": "and that\u0027s not true....we do allow the default domain to be LDAP.",
+      "parentUuid": "3a50d1a3_baa4b6b9",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_1a712a44",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -149,6 +184,23 @@
       "writtenOn": "2015-07-23T01:28:37Z",
       "side": 1,
       "message": "e.g., what?",
+      "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7f1e1971",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-23T07:18:21Z",
+      "side": 1,
+      "message": "probably remove LDAP from the example here",
       "revId": "8192a9ba4b4f094fecf951f884d70bbf23772748",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
