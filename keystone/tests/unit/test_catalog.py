@@ -128,6 +128,86 @@ class V2CatalogTestCase(rest.RestfulTestCase):
     def test_endpoint_create_with_empty_service_id(self):
         self._endpoint_create(expected_status=400, service_id='')
 
+    def test_endpoint_create_with_invalid_url(self):
+        """Test some invalid cases:
+
+        1. a url which is none value
+        2. a url which has space in it
+        3. substitutions is not exactly right
+        """
+        INVALID_URLS = [
+            '', None,
+            'http://127.0.0.1:8774/v1.1/\$(tenant_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(user_i d)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_bind_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(compute_h ost)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_p ort)s',
+            'http://127.0.0.1:8774/v1.1/\$(public_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(admin_e ndpoint)s',
+            'http://127.0.0.1:8774/v1.1/\$(sth_strange)s'
+        ]
+
+        # list one valid url is enough, no need to list too much
+        VALID_URL = 'http://127.0.0.1:8774/v1.1/\$(tenant_id)s'
+
+        # Case one: publichurl, internalurl and adminurl are
+        # all invalid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=invalid_url,
+                                  internalurl=invalid_url,
+                                  adminurl=invalid_url)
+
+        # Case two: publicurl, internalurl are invalid
+        # and adminurl is valid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=invalid_url,
+                                  internalurl=invalid_url,
+                                  adminurl=VALID_URL)
+
+        # Case three: publicurl, adminurl are invalid
+        # and internalurl is valid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=invalid_url,
+                                  internalurl=VALID_URL,
+                                  adminurl=invalid_url)
+
+        # Case four: internalurl, adminurl are invalid
+        # and publicurl is valid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=VALID_URL,
+                                  internalurl=invalid_url,
+                                  adminurl=invalid_url)
+
+        # Case five: publicurl is invalid, internelurl
+        # and adminurl are valid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=invalid_url,
+                                  internalurl=VALID_URL,
+                                  adminurl=VALID_URL)
+
+        # Case six: internalurl is invalid, publicurl
+        # and adminurl are valid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=VALID_URL,
+                                  internalurl=invalid_url,
+                                  adminurl=VALID_URL)
+
+        # Case seven: adminurl is invalid, publicurl
+        # and internalurl are valid
+        for invalid_url in INVALID_URLS:
+            self._endpoint_create(expected_status=400,
+                                  publicurl=VALID_URL,
+                                  internalurl=VALID_URL,
+                                  adminurl=invalid_url)
+
 
 class TestV2CatalogAPISQL(tests.TestCase):
 

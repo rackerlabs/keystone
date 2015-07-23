@@ -17,7 +17,9 @@ import uuid
 
 import six
 
+from keystone.catalog import core
 from keystone.catalog import schema
+from keystone.common import clean
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -99,6 +101,14 @@ class Endpoint(controller.V2Controller):
         self._require_attribute(endpoint, 'publicurl')
         # service_id is necessary
         self._require_attribute(endpoint, 'service_id')
+
+        # we should check publicurl, adminurl, internalurl
+        # if invalid, we should raise an exception to suppress
+        # the request
+        for interface in INTERFACES:
+            if endpoint.get(interface + 'url'):
+                clean.check_endpoint_url(endpoint[interface + 'url'],
+                                         core.WHITELISTED_PROPERTIES)
 
         initiator = notifications._get_request_audit_info(context)
 
@@ -301,6 +311,8 @@ class EndpointV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.endpoint_create, 'endpoint')
     def create_endpoint(self, context, endpoint):
+        clean.check_endpoint_url(endpoint['url'],
+                                 core.WHITELISTED_PROPERTIES)
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
         ref = self._validate_endpoint_region(ref, context)
         initiator = notifications._get_request_audit_info(context)
