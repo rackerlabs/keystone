@@ -34,6 +34,24 @@
       "revId": "32879c83bc5eb10b212c0d264189607dddb517cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b9d60b4d",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 15519
+      },
+      "writtenOn": "2015-07-23T00:58:51Z",
+      "side": 1,
+      "message": "i\u0027ve try with tests.ksfixtures.database.initialize_sql_session() and work",
+      "parentUuid": "3a50d1a3_59082728",
+      "revId": "32879c83bc5eb10b212c0d264189607dddb517cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
