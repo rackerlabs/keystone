@@ -20,6 +20,7 @@ import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db import options
+import six
 from six.moves import range
 import sqlalchemy
 from sqlalchemy import exc
@@ -851,9 +852,13 @@ class SqlDecorators(unit.TestCase):
         self.assertEqual('a', tt.col)
 
     def test_non_ascii_init(self):
-        # NOTE(I159): Non ASCII characters must cause UnicodeDecodeError
-        # if encoding is not provided explicitly.
-        self.assertRaises(UnicodeDecodeError, FakeTable, col='Я')
+        # NOTE(I159): On python 2, non ASCII characters must cause
+        # UnicodeDecodeError if encoding is not provided explicitly.
+        if six.PY2:
+            self.assertRaises(UnicodeDecodeError, FakeTable, col='Я')
+        else:
+            # There's no UnicodeDecodeError on python 3.
+            pass
 
     def test_conflict_happend(self):
         self.assertRaises(exception.Conflict, FakeTable().insert)
