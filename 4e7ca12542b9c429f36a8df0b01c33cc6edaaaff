@@ -16,6 +16,24 @@
       "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c61148b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-24T17:36:57Z",
+      "side": 1,
+      "message": "Sorry, I don\u0027t have any data left. But if you are interested, have a look at keystone/token/persistence/backends/kvs.py: def _update_user_token_list for example. This is the function that uses the lock. Wrap it into time counter somehow and get a token. You\u0027ll see that it takes some microseconds to complete.\n\nPlease note that the change does not reduce total max waiting time -- it\u0027s still ~15 seconds.",
+      "parentUuid": "3a50d1a3_377878f8",
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
