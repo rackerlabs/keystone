@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_8e54d2ca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "do we check that at least one of these is set?",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2e2a5e2d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "maybe better wording would be \"...Since its parent is acting as a domain...\"",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f508c52f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "...and has no children of its own (i.e. we are just supporting the situation that would have existed before we has is_domain projects)",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d8406038",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "I think you mean \"domain_id\" not \u0027domain\u0027 ?",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1857a8cb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "it\u0027s a bit confusing when we something use tenant.get(\u0027domain_id\u0027) and other times, \u0027domain_id\" in tenant (see check above).....I suggest we stick to one way or the other",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b8c4745f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "Where do we check that changing the domain_id is only supported for direct children of a domain?",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_38baa46f",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "Comments, in general, shouldn\u0027t reference old and new version of keystone code (that\u0027s what git is for).  So the comment should be simply say:\n\nCheck the uniqueness constraint of (name, domain_id, is_domain)",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4b879c12",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "why bother assigning this to a variable...why not just assign it in the dict, and then reference it from there?",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2bced0b4",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "don\u0027t need this",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ebc0e87e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2216,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "don\u0027t need this",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6b6298af",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2217,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "don\u0027t need this (it\u0027s the default)",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ebf548cb",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2219,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "don\u0027t need this",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6b861867",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2224,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "is there a reason to have this variable...we only seem to use it once...",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d85dc049",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2234,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "I don\u0027t really understand this TODO....and I\u0027m not sure it adds a lot anyway....",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ab8c2080",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2236,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "same here, regarding variable use",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2bf7b0f6",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "....and here...",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4e81ea4c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "There are probably a few extra tests we should add, e.g.:\n\n- another top level domain project with a different name is OK\n- another 2nd level domain project with a different name is OK\n- another 2nd level regular project with the same name is OK",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b8a9d47d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 2257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:31:49Z",
+      "side": 1,
+      "message": "I think this test (for optional domain_id) at the manager level should be in the previous patch, which is where support for it was introduced.",
+      "revId": "dc5ab63d28fd29d6d0b204a4da67b38c3c1f9c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
