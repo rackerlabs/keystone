@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_d525890a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T08:45:27Z",
+      "side": 1,
+      "message": "I don\u0027t think parent_id can be None here can it? At least not the way it is currently called.  And if it where none, then parent_ref[\u0027domain_id\u0027] is going to blow up at the end of the method, I think.",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_954dc1c6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T08:45:27Z",
+      "side": 1,
+      "message": "I think this loop needs to take account of the fact that at the time of this patch, not all projects are in a full hierarchy....i.e. the parent might be regular project with no parent (but it\u0027s domain_id WILL be set).",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_ab0d15ea",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 75
