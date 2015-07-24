@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_e9c6b048",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T10:01:03Z",
+      "side": 1,
+      "message": "you don\u0027t need to give us a file by file commentary of what you changes....that\u0027s what gerrit/git can show us!",
+      "revId": "b00d5baaed0eb30f19e6b80c911a577d9d76f6c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e99f904e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T10:01:03Z",
+      "side": 1,
+      "message": "you don\u0027t need this in a commit message",
+      "revId": "b00d5baaed0eb30f19e6b80c911a577d9d76f6c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
