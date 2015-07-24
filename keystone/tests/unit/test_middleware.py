@@ -117,3 +117,23 @@ class JsonBodyMiddlewareTest(tests.TestCase):
         middleware.JsonBodyMiddleware(None).process_request(req)
         params = req.environ.get(middleware.PARAMS_ENV, {})
         self.assertEqual({}, params)
+
+
+class XmlBodyMiddlewaresTest(tests.TestCase):
+    def test_v1_has_an_application(self):
+        fake_app = object()
+        filter = middleware.XmlBodyMiddleware(fake_app)
+        self.assertTrue(hasattr(filter, 'application'))
+        self.assertEqual(fake_app, filter.application)
+
+    def test_v2_has_an_application(self):
+        fake_app = object()
+        filter = middleware.XmlBodyMiddlewareV2(fake_app)
+        self.assertTrue(hasattr(filter, 'application'))
+        self.assertEqual(fake_app, filter.application)
+
+    def test_v3_has_an_application(self):
+        fake_app = object()
+        filter = middleware.XmlBodyMiddlewareV3(fake_app)
+        self.assertTrue(hasattr(filter, 'application'))
+        self.assertEqual(fake_app, filter.application)
