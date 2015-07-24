@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_1e13ec5d",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 43
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-24T22:21:47Z",
+      "side": 1,
+      "message": "good catch! I intended to use SSLCACertificatePath",
+      "parentUuid": "3a50d1a3_28d1d2fb",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_7ad06ec9",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 43
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-24T21:23:29Z",
       "side": 1,
       "message": "remove extra \"-\"",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9e25bcaf",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 43
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-24T22:21:47Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "3a50d1a3_7ad06ec9",
       "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_9ecffcb2",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-24T22:21:47Z",
+      "side": 1,
+      "message": "yep, you got it!",
+      "parentUuid": "3a50d1a3_41968295",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a15c26ee",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 43
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-24T18:07:37Z",
       "side": 1,
       "message": "everywhere else we use federation_constants",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fe688089",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-24T22:21:47Z",
+      "side": 1,
+      "message": "yep, will get that fixed.",
+      "parentUuid": "3a50d1a3_a15c26ee",
       "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_feff20a8",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-24T22:21:47Z",
+      "side": 1,
+      "message": "yep, agree.",
+      "parentUuid": "3a50d1a3_c1b932ee",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_219c9668",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 43
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-24T18:07:37Z",
       "side": 1,
       "message": "looks much better, thank you",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1e20cc48",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-24T22:21:47Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "3a50d1a3_219c9668",
       "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
