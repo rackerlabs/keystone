@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_32ef0ab2",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-24T16:16:00Z",
+      "side": 1,
+      "message": "The \"payload\" actually refers to the message part of the fernet token. self.crypto.decrypt() verifies the fernet token HMAC, decrypts the message/payload, and returns the integrity-verified payload. All that to say that the proposed validation error message is slightly misleading: it\u0027s not a valid fernet token for some reason (we haven\u0027t tried to recognize the payload itself yet): it might not be a fernet token at all, it might be encrypted with a key that we don\u0027t trust, the HMAC integrity verification might have failed, etc.\n\ntl;dr I think if you change the word \"payload\" to \"token,\" then it\u0027ll be perfectly accurate.",
+      "revId": "ca72c853a857aaea0f7a7604c979227bd43376fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
