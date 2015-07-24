@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_4e5faa75",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:57:57Z",
+      "side": 1,
+      "message": "It might be better to indicate what the None parameter is doing here and whether it is relevant, e.g.:\n\n# parent_id is not relevant in each of clashing is_domain projects\nparent_id \u003d None\nself.get_project_by_name(name, None, True)",
+      "revId": "9c27054625638f373dadc931331f56d5998d8521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a9b50832",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T09:57:57Z",
+      "side": 1,
+      "message": "Given that with this patch domain methods always read from the project table, I\u0027m not quite sure why we both keeping the domain table up to date? I\u0027m also concerned that we might create a domain entry, but then fail the project create (since the checks are different)...",
+      "revId": "9c27054625638f373dadc931331f56d5998d8521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
