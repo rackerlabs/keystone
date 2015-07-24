@@ -20,9 +20,11 @@ import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db import options
+import six
 from six.moves import range
 import sqlalchemy
 from sqlalchemy import exc
+import testtools
 from testtools import matchers
 
 from keystone.common import driver_hints
@@ -850,6 +852,7 @@ class SqlDecorators(unit.TestCase):
         tt = FakeTable(col='a')
         self.assertEqual('a', tt.col)
 
+    @testtools.skipUnless(six.PY2, "test specific to Python 2")
     def test_non_ascii_init(self):
         # NOTE(I159): Non ASCII characters must cause UnicodeDecodeError
         # if encoding is not provided explicitly.
