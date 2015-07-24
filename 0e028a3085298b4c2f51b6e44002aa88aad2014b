@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_e80c783d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-07-24T03:24:53Z",
+      "side": 1,
+      "message": "Change to iterate throug the list like this.\n\n\nfor interface in INTERFACES:\n    if endpoint.get(interface + \u0027url\u0027):\n            clean.check_endpoint_url(endpoint[interface + \u0027url\u0027],\n                                     core.WHITELISTED_PROPERTIES)",
+      "revId": "0e028a3085298b4c2f51b6e44002aa88aad2014b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
