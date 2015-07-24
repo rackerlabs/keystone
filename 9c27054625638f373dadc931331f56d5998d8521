@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_cdf2c06f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-24T22:26:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_4e5faa75",
+      "revId": "9c27054625638f373dadc931331f56d5998d8521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a9b50832",
         "filename": "keystone/resource/core.py",
         "patchSetId": 64
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-24T09:57:57Z",
       "side": 1,
       "message": "Given that with this patch domain methods always read from the project table, I\u0027m not quite sure why we both keeping the domain table up to date? I\u0027m also concerned that we might create a domain entry, but then fail the project create (since the checks are different)...",
+      "revId": "9c27054625638f373dadc931331f56d5998d8521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5eb3b40a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-24T22:26:45Z",
+      "side": 1,
+      "message": "We tried to make each patch as granular as possible. The removal of domain references is made in the next patch. I\u0027ll try to say that in the commit message.",
+      "parentUuid": "3a50d1a3_a9b50832",
       "revId": "9c27054625638f373dadc931331f56d5998d8521",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
