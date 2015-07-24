@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_dd3ff585",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T07:15:19Z",
+      "side": 1,
+      "message": "maybe _len isn\u0027t a good suffix....maybe \"initial_number_is_domain_true\"?",
+      "revId": "074fb6d5b46e2afad0932e8a554545c989c7bc6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5de68545",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T07:15:19Z",
+      "side": 1,
+      "message": "beginning?",
+      "revId": "074fb6d5b46e2afad0932e8a554545c989c7bc6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1dcf9db4",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-24T07:15:19Z",
+      "side": 1,
+      "message": "not sure I understand this line",
+      "revId": "074fb6d5b46e2afad0932e8a554545c989c7bc6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
