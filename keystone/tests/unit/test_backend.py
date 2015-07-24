@@ -19,6 +19,7 @@ import uuid
 
 from keystoneclient.common import cms
 import mock
+from nose.tools import nottest
 from oslo_config import cfg
 from oslo_utils import timeutils
 import six
@@ -335,6 +336,7 @@ class AssignmentTestHelperMixin(object):
             self.assignment_api.create_grant(**args)
         return test_data
 
+    @nottest
     def execute_assignment_tests(self, test_plan, test_data):
         """Execute the test plan, based on the created test_data."""
 
@@ -392,6 +394,7 @@ class AssignmentTestHelperMixin(object):
             results = self.assignment_api.list_role_assignments(**args)
             check_results(test['results'], results, len(args))
 
+    @nottest
     def execute_assignment_test_plan(self, test_plan):
         """Create entities, assignments and execute the test plan.
 
@@ -4769,7 +4772,7 @@ class TokenTests(object):
 
     def _test_predictable_revoked_pki_token_id(self, hash_fn):
         token_id = self._create_token_id()
-        token_id_hash = hash_fn(token_id).hexdigest()
+        token_id_hash = hash_fn(token_id.encode('utf-8')).hexdigest()
         token = {'user': {'id': uuid.uuid4().hex}}
 
         self.token_provider_api._persistence.create_token(token_id, token)
