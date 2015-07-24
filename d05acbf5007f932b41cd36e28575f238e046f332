@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_41968295",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-24T18:07:37Z",
+      "side": 1,
+      "message": "everywhere else it is used as federation_constants",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a15c26ee",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-24T18:07:37Z",
+      "side": 1,
+      "message": "everywhere else we use federation_constants",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c1b932ee",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-24T18:07:37Z",
+      "side": 1,
+      "message": "nope, it didn\u0027t fix the issue: http://paste.openstack.org/show/405385/",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_219c9668",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-24T18:07:37Z",
+      "side": 1,
+      "message": "looks much better, thank you",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
