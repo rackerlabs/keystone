@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_28d1d2fb",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 43
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-24T21:23:29Z",
+      "side": 1,
+      "message": "should be SSLCACertificateFile or SSLCACertificatePath",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7ad06ec9",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 43
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-24T21:23:29Z",
+      "side": 1,
+      "message": "remove extra \"-\"",
+      "revId": "d05acbf5007f932b41cd36e28575f238e046f332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_41968295",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 43
