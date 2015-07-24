@@ -4769,7 +4769,7 @@ class TokenTests(object):
 
     def _test_predictable_revoked_pki_token_id(self, hash_fn):
         token_id = self._create_token_id()
-        token_id_hash = hash_fn(token_id).hexdigest()
+        token_id_hash = hash_fn(token_id.encode('utf-8')).hexdigest()
         token = {'user': {'id': uuid.uuid4().hex}}
 
         self.token_provider_api._persistence.create_token(token_id, token)
