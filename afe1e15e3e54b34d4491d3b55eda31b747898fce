@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8793494f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-24T17:38:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_6951400e",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_d525890a",
         "filename": "keystone/resource/core.py",
         "patchSetId": 75
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-24T08:45:27Z",
       "side": 1,
       "message": "I don\u0027t think parent_id can be None here can it? At least not the way it is currently called.  And if it where none, then parent_ref[\u0027domain_id\u0027] is going to blow up at the end of the method, I think.",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_479d4158",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-24T17:38:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_d525890a",
       "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_1589a2ca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-24T17:38:24Z",
+      "side": 1,
+      "message": "you are right, actually we don\u0027t need a loop here. At this point, the domain_id is the parent\u0027s domain_id.",
+      "parentUuid": "3a50d1a3_954dc1c6",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_ab0d15ea",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 75
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_ddae00e7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 2184,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-24T17:38:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_ab0d15ea",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_4b51f1d7",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 75
@@ -81,6 +153,24 @@
       "writtenOn": "2015-07-24T07:18:12Z",
       "side": 1,
       "message": "still don\u0027t understand why this is here...all this is doing is making the test skip if it fails....and I don\u0027t understand why we expect it to fail...",
+      "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1d08e827",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 2264,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-24T17:38:24Z",
+      "side": 1,
+      "message": "actually this fails because we are setting the domain_id to be parent\u0027s id, this isn\u0027t possible yet since the domain_id column still points to the domain table",
+      "parentUuid": "3a50d1a3_4b51f1d7",
       "revId": "afe1e15e3e54b34d4491d3b55eda31b747898fce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
