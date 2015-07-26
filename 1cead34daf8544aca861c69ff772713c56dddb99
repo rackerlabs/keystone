@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_656131a8",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-26T08:46:44Z",
+      "side": 1,
+      "message": "++\n\nThis might be looks like,\n@versionutils.deprecated(\n    versionutils.deprecated.LIBERTY,\n    in_favor_of\u003d\u0027oslo_cache.backends.memcache_pool.PooledMemcachedBackend\u0027,\n    remove_in\u003d+1,\n    what\u003d\u0027keystone.common.cache.backends.memcache_pool.PooledMemcachedBackend\u0027)",
+      "parentUuid": "3a50d1a3_1eec9e28",
+      "revId": "1cead34daf8544aca861c69ff772713c56dddb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_3eef1a1f",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 24
