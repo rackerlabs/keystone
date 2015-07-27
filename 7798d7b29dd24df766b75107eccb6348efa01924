@@ -16,6 +16,24 @@
       "revId": "7798d7b29dd24df766b75107eccb6348efa01924",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0ce61c15",
+        "filename": "test-requirements-py3.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2015-07-27T23:28:58Z",
+      "side": 1,
+      "message": "AFAICT whitespace changes started showing up after https://review.openstack.org/198145",
+      "parentUuid": "3a50d1a3_85f1ddcf",
+      "revId": "7798d7b29dd24df766b75107eccb6348efa01924",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
