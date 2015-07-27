@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_060b5e2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-07-27T21:12:48Z",
+      "side": 1,
+      "message": "It doesn\u0027t matter whether the file is large or small. Duplicate copy is always bad and some one will forget to make change in another.\n\nBetter options is for the documentation to use soft link.\n\nMake 2 soft links admin and main to point to keystone-wsgi.conf is way better then having 2 copies",
+      "revId": "26b3f9a514f39f72ea643984d09b664851bbea00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9b3107f0",
         "filename": "httpd/wsgi-keystone.conf",
         "patchSetId": 10
