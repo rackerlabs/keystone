@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_33c7b799",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-27T21:46:29Z",
+      "side": 1,
+      "message": "i just realized the above code won\u0027t run for two reasons: it\u0027s trying to bind a single socket twice, and it\u0027s also trying to pass a bound socket to be used in config...\n\nso, maybe i\u0027m overthinking this.\n\ninstead, can you just pass public_port\u003d0 and admin_port\u003d0 below?",
+      "parentUuid": "3a50d1a3_734e9f70",
+      "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_e6178852",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 2
