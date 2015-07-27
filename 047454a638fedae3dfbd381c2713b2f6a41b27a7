@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_aa1d9a67",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-27T19:13:37Z",
+      "side": 1,
+      "message": "this is now asserting that the collection is truthy, and thus *not* empty",
+      "revId": "047454a638fedae3dfbd381c2713b2f6a41b27a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
