@@ -16,6 +16,24 @@
       "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_de024109",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2015-07-27T09:28:19Z",
+      "side": 1,
+      "message": "I wrote a similar test like test_admin_version_v3_eventlet, because in case of eventlets there is only v3 public app. Then I found this test, checked that this line was changed this March by David and decided that it reflects the eventlets setup. Now I\u0027ve checked David\u0027s patch and found it was just refactoring. So I checked when this behavior was introduced and it was always there https://review.openstack.org/#/c/23642/5/tests/test_versions.py \nI\u0027m going to open a separate bug for this and introduce my test as part of #1381961",
+      "parentUuid": "3a50d1a3_e6178852",
+      "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
