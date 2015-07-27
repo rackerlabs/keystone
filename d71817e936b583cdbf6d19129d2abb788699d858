@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_a0b3a009",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-27T02:12:40Z",
+      "side": 1,
+      "message": "\u0027http://127.0.0.1:8774/v1.1/\\$(sth_strange)s\u0027 should be here too.",
+      "revId": "d71817e936b583cdbf6d19129d2abb788699d858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
