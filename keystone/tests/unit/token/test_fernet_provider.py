@@ -11,6 +11,7 @@
 # under the License.
 
 import datetime
+import os
 import uuid
 
 from oslo_utils import timeutils
@@ -22,6 +23,7 @@ from keystone.tests.unit import ksfixtures
 from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
+from keystone.token.providers.fernet import utils as fernet_utils
 
 
 CONF = config.CONF
@@ -181,3 +183,30 @@ class TestPayloads(tests.TestCase):
         self.assertEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertEqual(exp_trust_id, trust_id)
+
+
+class TestFernetKeyRotation(tests.TestCase):
+    def test_non_numeric_files(self):
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+        evil_file = os.path.join(CONF.fernet_tokens.key_repository, '99.bak')
+        with open(evil_file, 'w'):
+            pass
+        fernet_utils.rotate_keys()
+        self.assertTrue(os.path.isfile(evil_file))
+        keys = 0
+        for x in os.listdir(CONF.fernet_tokens.key_repository):
+            if x == '99.bak':
+                continue
+            keys += 1
+        self.assertEqual(3, keys)
+
+
+class TestLoadKeys(tests.TestCase):
+    def test_non_numeric_files(self):
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+        evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
+        with open(evil_file, 'w'):
+            pass
+        keys = fernet_utils.load_keys()
+        self.assertEqual(2, len(keys))
+        self.assertTrue(len(keys[0]))
