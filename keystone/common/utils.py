@@ -145,6 +145,47 @@ def check_password(password, hashed):
     return passlib.hash.sha512_crypt.verify(password_utf8, hashed)
 
 
+def check_length(property_name, value, min_length=1, max_length=64):
+    if len(value) < min_length:
+        if min_length == 1:
+            msg = _("%s cannot be empty.") % property_name
+        else:
+            msg = (_("%(property_name)s cannot be less than "
+                   "%(min_length)s characters.") % dict(
+                       property_name=property_name, min_length=min_length))
+        raise exception.ValidationError(msg)
+    if len(value) > max_length:
+        msg = (_("%(property_name)s should not be greater than "
+               "%(max_length)s characters.") % dict(
+                   property_name=property_name, max_length=max_length))
+
+        raise exception.ValidationError(msg)
+
+
+def check_type(property_name, value, expected_type, display_expected_type):
+    if not isinstance(value, expected_type):
+        msg = (_("%(property_name)s is not a "
+                 "%(display_expected_type)s") % dict(
+                     property_name=property_name,
+                     display_expected_type=display_expected_type))
+        raise exception.ValidationError(msg)
+
+
+def check_enabled(property_name, enabled):
+    # Allow int and it's subclass bool
+    check_type('%s enabled' % property_name, enabled, int, 'boolean')
+    return bool(enabled)
+
+
+def check_name(property_name, name, min_length=1, max_length=64):
+    check_type('%s name' % property_name, name, six.string_types,
+               'str or unicode')
+    name = name.strip()
+    check_length('%s name' % property_name, name,
+                 min_length=min_length, max_length=max_length)
+    return name
+
+
 def attr_as_boolean(val_attr):
     """Returns the boolean value, decoded from a string.
 

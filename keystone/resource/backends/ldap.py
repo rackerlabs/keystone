@@ -17,10 +17,10 @@ import uuid
 from oslo_config import cfg
 from oslo_log import log
 
-from keystone.common import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
+from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import ldap as ldap_identity
@@ -117,7 +117,7 @@ class Resource(resource.Driver):
     def create_project(self, tenant_id, tenant):
         self.project.check_allow_create()
         self._validate_parent_project_is_none(tenant)
-        tenant['name'] = clean.project_name(tenant['name'])
+        tenant['name'] = utils.check_name('Project', tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
@@ -130,7 +130,7 @@ class Resource(resource.Driver):
         self.project.check_allow_update()
         tenant = self._validate_default_domain(tenant)
         if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
+            tenant['name'] = utils.check_name('Project', tenant['name'])
         return self._set_default_attributes(
             self.project.update(tenant_id, tenant))
 

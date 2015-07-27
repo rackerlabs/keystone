@@ -19,10 +19,10 @@ from oslo_log import log
 import six
 
 from keystone.common import cache
-from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone.common import utils
 from keystone.contrib.federation import constants as federation_constants
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
@@ -85,7 +85,7 @@ class Manager(manager.Manager):
     def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant['enabled'] = utils.check_enabled('Project', tenant['enabled'])
         tenant.setdefault('description', '')
         tenant.setdefault('parent_id', None)
 
@@ -199,7 +199,8 @@ class Manager(manager.Manager):
                 action=_('Update of `parent_id` is not allowed.'))
 
         if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+            tenant['enabled'] = utils.check_enabled('Project',
+                                                    tenant['enabled'])
 
         # NOTE(rodrigods): for the current implementation we only allow to
         # disable a project if all projects below it in the hierarchy are
@@ -389,7 +390,7 @@ class Manager(manager.Manager):
             raise exception.Forbidden(_('Multiple domains are not supported'))
         self.assert_domain_not_federated(domain_id, domain)
         domain.setdefault('enabled', True)
-        domain['enabled'] = clean.domain_enabled(domain['enabled'])
+        domain['enabled'] = utils.check_enabled('Domain', domain['enabled'])
         ret = self.driver.create_domain(domain_id, domain)
 
         notifications.Audit.created(self._DOMAIN, domain_id, initiator)
@@ -420,7 +421,8 @@ class Manager(manager.Manager):
         self.assert_domain_not_federated(domain_id, domain)
         original_domain = self.driver.get_domain(domain_id)
         if 'enabled' in domain:
-            domain['enabled'] = clean.domain_enabled(domain['enabled'])
+            domain['enabled'] = utils.check_enabled('Domain',
+                                                    domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
         notifications.Audit.updated(self._DOMAIN, domain_id, initiator)
         # disable owned users & projects when the API user specifically set

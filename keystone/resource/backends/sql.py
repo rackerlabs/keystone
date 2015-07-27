@@ -13,8 +13,8 @@
 from oslo_config import cfg
 from oslo_log import log
 
-from keystone.common import clean
 from keystone.common import sql
+from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _LE
 from keystone import resource as keystone_resource
@@ -138,7 +138,7 @@ class Resource(keystone_resource.Driver):
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
     def create_project(self, tenant_id, tenant):
-        tenant['name'] = clean.project_name(tenant['name'])
+        tenant['name'] = utils.check_name('Project', tenant['name'])
         with sql.transaction() as session:
             tenant_ref = Project.from_dict(tenant)
             session.add(tenant_ref)
@@ -147,7 +147,7 @@ class Resource(keystone_resource.Driver):
     @sql.handle_conflicts(conflict_type='project')
     def update_project(self, tenant_id, tenant):
         if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
+            tenant['name'] = utils.check_name('Project', tenant['name'])
 
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)

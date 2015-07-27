@@ -24,10 +24,10 @@ from oslo_log import log
 import six
 
 from keystone.common import cache
-from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
@@ -729,9 +729,9 @@ class Manager(manager.Manager):
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
         user = user_ref.copy()
-        user['name'] = clean.user_name(user['name'])
+        user['name'] = utils.check_name('User', user['name'], max_length=255)
         user.setdefault('enabled', True)
-        user['enabled'] = clean.user_enabled(user['enabled'])
+        user['enabled'] = utils.check_enabled('User', user['enabled'])
         domain_id = user['domain_id']
         self.resource_api.get_domain(domain_id)
 
@@ -802,9 +802,10 @@ class Manager(manager.Manager):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
         if 'name' in user:
-            user['name'] = clean.user_name(user['name'])
+            user['name'] = utils.check_name('User', user['name'],
+                                            max_length=255)
         if 'enabled' in user:
-            user['enabled'] = clean.user_enabled(user['enabled'])
+            user['enabled'] = utils.check_enabled('User', user['enabled'])
         if 'domain_id' in user:
             self.resource_api.get_domain(user['domain_id'])
         if 'id' in user:

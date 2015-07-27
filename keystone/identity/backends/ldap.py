@@ -20,10 +20,10 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
+from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone import identity
@@ -124,7 +124,7 @@ class Identity(identity.Driver):
 
     def create_group(self, group_id, group):
         self.group.check_allow_create()
-        group['name'] = clean.group_name(group['name'])
+        group['name'] = utils.check_name('Group', group['name'])
         return common_ldap.filter_entity(self.group.create(group))
 
     def get_group(self, group_id):
@@ -138,7 +138,7 @@ class Identity(identity.Driver):
     def update_group(self, group_id, group):
         self.group.check_allow_update()
         if 'name' in group:
-            group['name'] = clean.group_name(group['name'])
+            group['name'] = utils.check_name('Group', group['name'])
         return common_ldap.filter_entity(self.group.update(group_id, group))
 
     def delete_group(self, group_id):
