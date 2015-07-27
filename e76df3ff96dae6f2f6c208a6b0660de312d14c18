@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_4fb741d8",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-27T19:07:31Z",
+      "side": 1,
+      "message": "the KeyRepository fixture creates a primary and a staged key",
+      "parentUuid": "3a50d1a3_2c00c365",
+      "revId": "e76df3ff96dae6f2f6c208a6b0660de312d14c18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0f093984",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-27T19:07:31Z",
+      "side": 1,
+      "message": "_LI shouldn\u0027t be passed to warn -- use _LW\n\nalso, perhaps the warning should include a comment about how the filename was expected to be an integer?",
+      "revId": "e76df3ff96dae6f2f6c208a6b0660de312d14c18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_4cd18f56",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 1
@@ -47,6 +82,23 @@
       "writtenOn": "2015-07-27T18:43:16Z",
       "side": 1,
       "message": "I don\u0027t think we need this pass statement here, since we already have a valid comman here inside this except block (the LOG.warn...)",
+      "revId": "e76df3ff96dae6f2f6c208a6b0660de312d14c18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0f8059be",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-27T19:07:31Z",
+      "side": 1,
+      "message": "same",
       "revId": "e76df3ff96dae6f2f6c208a6b0660de312d14c18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
