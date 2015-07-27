@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_2dd30861",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-27T03:58:26Z",
+      "side": 1,
+      "message": "s/suppress/reject",
+      "revId": "568fd8d58e2c6b796a323629df9a6bb9fdad0ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ad46381f",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-27T03:58:26Z",
+      "side": 1,
+      "message": "This method doesn\u0027t belong here, should be in the utils.py. I have this patch under review, https://review.openstack.org/#/c/205886/, not sure whether this can happen, but the method provided is definitely not here.",
+      "revId": "568fd8d58e2c6b796a323629df9a6bb9fdad0ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
