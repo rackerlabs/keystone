@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_611cb013",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 11708
+      },
+      "writtenOn": "2015-07-27T09:49:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_e0f3ef9d",
+      "revId": "b9eae39ab9e9f4e3ce54a98ef7c0cc2ecae759bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_c0f8337f",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_2116a8f1",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 11708
+      },
+      "writtenOn": "2015-07-27T09:49:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_c0f8337f",
+      "revId": "b9eae39ab9e9f4e3ce54a98ef7c0cc2ecae759bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a0ede7b8",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-26T12:52:58Z",
       "side": 1,
       "message": "It\u0027s the token not correct, right? so why we need change the Unauthorized exception to ValidationError? token, Unauthorized, 401 looks more accurate, anything I didn\u0027t catch?",
+      "revId": "b9eae39ab9e9f4e3ce54a98ef7c0cc2ecae759bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a1295839",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 11708
+      },
+      "writtenOn": "2015-07-27T09:49:55Z",
+      "side": 1,
+      "message": "Token is invalid at first. Then we\u0027re catching this exception just like it was done with UUID https://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L677",
+      "parentUuid": "3a50d1a3_a0ede7b8",
       "revId": "b9eae39ab9e9f4e3ce54a98ef7c0cc2ecae759bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
