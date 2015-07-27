@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_d3b9cfcc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-27T12:45:44Z",
+      "side": 1,
+      "message": "I don\u0027t think this is true anymore.",
+      "revId": "b49ad6b376e4345b3024fc75a63749bb14d2aa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b379a3fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-27T12:45:44Z",
+      "side": 1,
+      "message": "Since the bug is about substitutions I don\u0027t know why you need to remove working tests. If you broke the tests then you broke the behavior too.",
+      "revId": "b49ad6b376e4345b3024fc75a63749bb14d2aa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_13ee57b4",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-27T12:45:44Z",
+      "side": 0,
+      "message": "To me these test cases imply that we support a null (or None) URL. Why are we changing this?",
+      "revId": "a9c794ae5edee2cf7fce70ea9bdbd8ab7ae35682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
