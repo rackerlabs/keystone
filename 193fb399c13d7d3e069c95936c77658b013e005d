@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_89ea3aab",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-27T13:19:50Z",
+      "side": 1,
+      "message": "shouldn\u0027t set the default attributes in the ref?",
+      "revId": "193fb399c13d7d3e069c95936c77658b013e005d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8938fa3e",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-27T13:19:50Z",
+      "side": 1,
+      "message": "you are not ignoring the domain_id anymore",
+      "revId": "193fb399c13d7d3e069c95936c77658b013e005d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2940c6a4",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-27T13:19:50Z",
+      "side": 1,
+      "message": "isn\u0027t htruta?",
+      "revId": "193fb399c13d7d3e069c95936c77658b013e005d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c915a29b",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-27T13:19:50Z",
+      "side": 1,
+      "message": "set default attributes?",
+      "revId": "193fb399c13d7d3e069c95936c77658b013e005d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e9209ef9",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-27T13:19:50Z",
+      "side": 1,
+      "message": "shouldn\u0027t return here?",
+      "revId": "193fb399c13d7d3e069c95936c77658b013e005d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
