@@ -186,7 +186,7 @@ class FernetSetup(BasePermissionsSetup):
     """Setup a key repository for Fernet tokens.
 
     This also creates a primary key used for both creating and validating
-    Keystone Lightweight tokens. To improve security, you should rotate your
+    Fernet tokens. To improve security, you should rotate your
     keys (using keystone-manage fernet_rotate, for example).
 
     """
