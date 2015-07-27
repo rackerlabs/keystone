@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_7c721c7e",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_juno.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-27T07:39:54Z",
+      "side": 1,
+      "message": "seems this is not needed anymore since downgrade is not supported in keystone?",
+      "revId": "bf97f3377be5f5ab9d0ed351ccd4061873b5774a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5c6720b7",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_juno.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-27T07:39:54Z",
+      "side": 1,
+      "message": "pre-Icehouse?",
+      "revId": "bf97f3377be5f5ab9d0ed351ccd4061873b5774a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
