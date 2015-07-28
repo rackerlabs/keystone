@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_264673c0",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T15:04:02Z",
+      "side": 1,
+      "message": "need to address the comments from patchset 66",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c6e9cf80",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T15:04:02Z",
+      "side": 1,
+      "message": "this will change since we are creating a one level hierarchy within this driver (will return all projects, except the domain if project_id \u003d default_domain_id. Will return an empty list otherwise)",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_668a3bc1",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T15:04:02Z",
+      "side": 1,
+      "message": "similar as above, but will return the default_domain if the project_id !\u003d default_domain_id",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a6b28394",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T15:04:02Z",
+      "side": 1,
+      "message": "only the default_domain will return False",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_26ef53b2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T15:04:02Z",
+      "side": 1,
+      "message": "shouldn\u0027t be v3?",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
