@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_7dbd0867",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-07-28T01:58:27Z",
+      "side": 1,
+      "message": "nit: no need to get this twice.\n\ninterface_url \u003d endpoint.get(interface + \u0027url\u0027)\nif interface_url:\n    utils.check_endpoint_url(interface_url,",
+      "revId": "4b7d1f4ff2567effc16f1e74091189a576cdc666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dda45c4c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-07-28T01:58:27Z",
+      "side": 1,
+      "message": "nit: could have put this in catalog/utils.py or somewhere else as it\u0027s not going to be required by all the backends.\n\nIf you put it in catalog/core.py then you wouldn\u0027t need to pass the whitelist in.",
+      "revId": "4b7d1f4ff2567effc16f1e74091189a576cdc666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_bd2cf0ac",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-07-28T01:58:27Z",
+      "side": 1,
+      "message": "neat hack",
+      "revId": "4b7d1f4ff2567effc16f1e74091189a576cdc666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
