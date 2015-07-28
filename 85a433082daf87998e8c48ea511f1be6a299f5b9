@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_dd2e9c8b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-07-28T01:04:47Z",
+      "side": 1,
+      "message": "Why not testing that FakeTable constructor doesn\u0027t fail on Python 3?",
+      "revId": "85a433082daf87998e8c48ea511f1be6a299f5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
