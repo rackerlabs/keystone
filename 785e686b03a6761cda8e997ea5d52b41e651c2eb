@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_01500131",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-28T15:18:43Z",
+      "side": 1,
+      "message": "ternaries are hard to read once they break onto two or more lines -- this would be more readable with traditional if-blocks",
+      "revId": "785e686b03a6761cda8e997ea5d52b41e651c2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
