@@ -16,6 +16,24 @@
       "revId": "c3ced286827bc71f2c0a2f75b01a4f171e8d7416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d7e97f1b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-28T13:28:26Z",
+      "side": 1,
+      "message": "yeah, that makes sense. then validate_v3_token will have to do what it does in _validate_token_reference() and if only a token_id exists in the token_ref it should validate it as a non-persistent token, right?",
+      "parentUuid": "3a50d1a3_fabbf0c1",
+      "revId": "c3ced286827bc71f2c0a2f75b01a4f171e8d7416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
