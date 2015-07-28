@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_e83855d5",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T16:08:58Z",
+      "side": 1,
+      "message": "That code is used for a different purpose. You are passing in an empty dictionary for the context. This means that even if the value *is* in the whitelist the substitution will fail because there is not value for it. The other code that uses the filter has a fully populated dictionary of values.",
+      "parentUuid": "3a50d1a3_02e480dd",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_86c8a756",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 32
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Look at the function name  test_endpoint_create_with_invalid_url...\n\nShould I add another test named test_endpoint_create_with_valid_url ??",
       "parentUuid": "3a50d1a3_86c8a756",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c8b0f945",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T16:08:58Z",
+      "side": 1,
+      "message": "Sure, but I still want to validate that value URL substitutions work. As it stands right now they do not.",
+      "parentUuid": "3a50d1a3_e23dd42b",
       "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_28439d14",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T16:08:58Z",
+      "side": 1,
+      "message": "All of the ones that have a space in them are the same test case. Increasing the count does not improve the coverage since they all take the same code path. There are other cases that you are not covering like what causes the exceptions we are catching.",
+      "parentUuid": "3a50d1a3_c2553850",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_fcd81a55",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 32
@@ -136,6 +190,24 @@
       "side": 1,
       "message": "I think we should test all as we do in v2. And why not? Why not we should do different in v3？",
       "parentUuid": "3a50d1a3_fcd81a55",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c873197f",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T16:08:58Z",
+      "side": 1,
+      "message": "This is the same problem as the other tests.",
+      "parentUuid": "3a50d1a3_62c224eb",
       "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
