@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8243a5ae",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T19:29:17Z",
+      "side": 1,
+      "message": "I agree, we did this in order to make clear what were the required changes. We had also some of code that couldn\u0027t be in this patch, but we\u0027re afraid to remove and forget about them.\n\nNow that this code is working in the follow up patches, I\u0027d be ok in remove them (if you have a strong preference to do so)",
+      "parentUuid": "3a50d1a3_7f4872b3",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_1fc84e21",
         "filename": "keystone/resource/core.py",
         "patchSetId": 79
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-28T19:09:03Z",
       "side": 1,
       "message": "ditto",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e2086982",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T19:29:17Z",
+      "side": 1,
+      "message": "see above - it also applies for other TODOS around the code, specially in the tests",
+      "parentUuid": "3a50d1a3_1fc84e21",
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
