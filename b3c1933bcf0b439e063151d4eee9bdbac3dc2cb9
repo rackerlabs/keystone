@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_7f4872b3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-28T19:09:03Z",
+      "side": 1,
+      "message": "nit: in general leaving in commented out code that will be enabled in a follow on patch is not that useful...especially if the patch is already up.",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1fc84e21",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-28T19:09:03Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
