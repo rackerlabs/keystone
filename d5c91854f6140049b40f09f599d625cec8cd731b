@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_6d38ded3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 68
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T14:01:35Z",
+      "side": 1,
+      "message": "the reason why we keep this here is because in the follow up patch, we \"split\" the behavior: the _create_project() method won\u0027t call _create_domain() anymore. We also extract the checks from the _create_domain() to an external method so it can be used by both APIs.\n\nWe finally remove the _create_domain() once we drop the domain table.\n\nWe also replicate the entities for preventive reasons, replicate them we avoid to leave bugs in cases that we haven\u0027t considered.",
+      "parentUuid": "3a50d1a3_74419362",
+      "revId": "d5c91854f6140049b40f09f599d625cec8cd731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b4195b8a",
         "filename": "keystone/resource/core.py",
         "patchSetId": 68
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-28T10:43:40Z",
       "side": 1,
       "message": "same here",
+      "revId": "d5c91854f6140049b40f09f599d625cec8cd731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_cd4d7273",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 68
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-28T14:01:35Z",
+      "side": 1,
+      "message": "see the reply above",
+      "parentUuid": "3a50d1a3_b4195b8a",
       "revId": "d5c91854f6140049b40f09f599d625cec8cd731b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
