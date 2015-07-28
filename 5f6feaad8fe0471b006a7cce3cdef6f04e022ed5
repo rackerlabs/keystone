@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_2673d34f",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T15:38:56Z",
+      "side": 1,
+      "message": "This will prevent any valid URLs that contain substitutions.",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_86c8a756",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T15:38:56Z",
+      "side": 1,
+      "message": "It would be nice to expand this test to prove valid URLs work.",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_66f9db7f",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T15:38:56Z",
+      "side": 1,
+      "message": "I don\u0027t think all of these are necessary since they test the same case.",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fcd81a55",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T15:38:56Z",
+      "side": 1,
+      "message": "There is little value to all of these URLs since they test the same case.",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
