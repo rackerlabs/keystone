@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_d07985fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-28T14:45:05Z",
+      "side": 1,
+      "message": "Removed*?",
+      "revId": "047454a638fedae3dfbd381c2713b2f6a41b27a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_aa1d9a67",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 3
