@@ -16,6 +16,24 @@
       "revId": "748a1b626226f0a4837278e637b33a7e1dad8eed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2c272ab7",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-28T18:21:15Z",
+      "side": 1,
+      "message": "I agree. I\u0027ll let jiaxi tackle that. I\u0027m fine with that being in a follow up review too.",
+      "parentUuid": "3a50d1a3_d793b059",
+      "revId": "748a1b626226f0a4837278e637b33a7e1dad8eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
