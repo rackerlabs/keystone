@@ -104,6 +104,24 @@
       "revId": "819b54bd175b162b6544e8efbc010847150277a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9a69defa",
+        "filename": "keystone/tests/unit/token/test_uuid_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-28T13:57:29Z",
+      "side": 1,
+      "message": "it makes it easier to read, but more error-prone.",
+      "parentUuid": "3a50d1a3_f717dba0",
+      "revId": "819b54bd175b162b6544e8efbc010847150277a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
