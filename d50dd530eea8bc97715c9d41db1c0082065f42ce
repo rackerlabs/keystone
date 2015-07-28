@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_c8d23900",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-28T16:14:10Z",
+      "side": 0,
+      "message": "this doesn\u0027t seem to be fernet specific at all -- so i hope it\u0027s being moved in a later patch",
+      "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
