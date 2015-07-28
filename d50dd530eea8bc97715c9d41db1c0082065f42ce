@@ -33,6 +33,24 @@
       "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_48194987",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-28T16:19:45Z",
+      "side": 1,
+      "message": "yes, I believe so, but I\u0027ll have Marek take a look, too.",
+      "parentUuid": "3a50d1a3_45193287",
+      "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
