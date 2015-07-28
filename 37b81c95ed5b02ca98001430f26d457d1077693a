@@ -16,6 +16,24 @@
       "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3f53ca18",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2015-07-28T18:48:40Z",
+      "side": 0,
+      "message": "My initial intention was to fix this as part of #1381961 but I realized that this is a separate bug. I can change this in a parent fix if it\u0027s a better move.",
+      "parentUuid": "3a50d1a3_9c1c7667",
+      "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
