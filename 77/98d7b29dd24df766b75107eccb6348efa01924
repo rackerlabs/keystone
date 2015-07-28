@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Workflow+1: Alan Pevec <apevec@gmail.com>
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 28 Jul 2015 00:41:47 +0000
+Reviewed-on: https://review.openstack.org/204861
+Project: openstack/keystone
+Branch: refs/heads/stable/kilo
