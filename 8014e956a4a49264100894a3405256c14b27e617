@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_84f51cee",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-07-28T05:49:29Z",
+      "side": 1,
+      "message": "whilst frowned upon generally i think that this is a good time to use \n\nexcept Exception:\n\notherwise \n\nexcept (AttributeError, KeyError, TypeError, ValueError): \n    raise",
+      "revId": "8014e956a4a49264100894a3405256c14b27e617",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
