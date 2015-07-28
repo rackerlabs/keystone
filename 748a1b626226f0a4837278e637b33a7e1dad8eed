@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_d793b059",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-28T17:45:34Z",
+      "side": 1,
+      "message": "this specific case might benefit from being pulled out into it\u0027s own test, since it goes against the naming of this test (test_endpoint_create_with_invalid_url)",
+      "revId": "748a1b626226f0a4837278e637b33a7e1dad8eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
