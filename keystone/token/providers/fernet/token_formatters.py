@@ -169,6 +169,9 @@ class TokenFormatter(object):
     def validate_token(self, token):
         """Validates a Fernet token and returns the payload attributes."""
         # Convert v2 unicode token to a string
+        if not token:
+            raise exception.ValidationError(_('Token is not provided'))
+
         if not isinstance(token, six.binary_type):
             token = token.encode('ascii')
 
