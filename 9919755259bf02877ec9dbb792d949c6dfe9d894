@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_4309f193",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2911,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "project_xor_domain",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c3f50183",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2912,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "simplify!\n\n  return (\u0027project\u0027 in token_keys) ^ (\u0027domain\u0027 in token_keys)",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e3091d85",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2914,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "everything is an object!\n\n  for key in ...",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a36f9529",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2920,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "simplify!\n\n  self.assertTrue(project_xor_domain(token.keys()), \u0027You must specify either a project or domain.\u0027)\n\nconditionals in tests are also a big red flag to me (tests should be assertive, not adaptive) -- avoid them whenever you can.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_63918df0",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2929,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "can you make assertions about the values of these?",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_de06361b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "why is this an \"exception\"? the rest of the sentence is a good explanation, but the \"This is an exception, but\" doesn\u0027t seem necessary.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1e76dea3",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "why would group IDs be missing from the federated dict? the .get() seems needlessly defensive, or indicative of a bug somewhere else if it\u0027s actually necessary here.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_beda4a76",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "changing the method of instantiating dicts from one line to the next is distracting. stick with either dict() or {}\n\nit seems like all of this could be easier to read as a single return statement with a big dictionary, rather than a bunch of smaller steps",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1e07beca",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "missing a space after the comma",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fe58d2fa",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "missing a space after the comma. also, please don\u0027t invent unnecessary terminology (\u0027classic\u0027 workflow). Instead, try to be specific about what\u0027s going on.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1e91fe46",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "it would be worth explaining why you need to extend the parent mathod in a docstr",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3ee2bad5",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "i know you didn\u0027t name it, but this method name should not be plural -- it\u0027s only handling a single group ID.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fee772e0",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "same",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5e56a62a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "super nit! the order of elements in the tuple is inconsistent when compared to the other payload formats, which makes any sort of refactoring later on that much more challenging. the only change i would make is to swap the order of group IDs and the project ID so that it\u0027s:\n\n  user ID, methods, project ID, group IDs, IDP ID, ...",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5e2d46a6",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "the above will affect L638 and L639 of course",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_de0f1637",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "same",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_de3876f0",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "same as above, swap domain ID with group IDs",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fe121260",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-29T16:24:21Z",
+      "side": 1,
+      "message": "same",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
