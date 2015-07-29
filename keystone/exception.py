@@ -160,13 +160,15 @@ class PKITokenExpected(Error):
 
 
 class SecurityError(Error):
-    """Avoids exposing details of security failures, unless in debug mode."""
+    """Avoids exposing details of security failures, unless in insecure_debug
+    mode.
+    """
 
-    amendment = _('(Disable debug mode to suppress these details.)')
+    amendment = _('(Disable insecure_debug mode to suppress these details.)')
 
     def _build_message(self, message, **kwargs):
-        """Only returns detailed messages in debug mode."""
-        if CONF.debug:
+        """Only returns detailed messages in insecure_debug mode."""
+        if CONF.insecure_debug:
             return _('%(message)s %(amendment)s') % {
                 'message': message or self.message_format % kwargs,
                 'amendment': self.amendment}
@@ -375,7 +377,7 @@ class Conflict(Error):
 
 
 class UnexpectedError(SecurityError):
-    """Avoids exposing details of failures, unless in debug mode."""
+    """Avoids exposing details of failures, unless in insecure_debug mode."""
 
     _message_format = _("An unexpected error prevented the server "
                         "from fulfilling your request.")
@@ -385,13 +387,15 @@ class UnexpectedError(SecurityError):
 
     @property
     def message_format(self):
-        """Return the generic message format string unless debug is enabled."""
-        if CONF.debug:
+        """Return the generic message format string unless insecure_debug is
+        enabled.
+        """
+        if CONF.insecure_debug:
             return self.debug_message_format
         return self._message_format
 
     def _build_message(self, message, **kwargs):
-        if CONF.debug and 'exception' not in kwargs:
+        if CONF.insecure_debug and 'exception' not in kwargs:
             # Ensure that exception has a value to be extra defensive for
             # substitutions and make sure the exception doesn't raise an
             # exception.
