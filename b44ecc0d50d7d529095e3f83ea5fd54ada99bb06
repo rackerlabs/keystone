@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_908439d3",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "Nice docstring!",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_769ac615",
         "filename": "keystone/exception.py",
         "patchSetId": 35
@@ -87,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_10526935",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "Needn\u0027t escape the \u0027$\u0027 in the URL, it\u0027s just string substitution.",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_f62256b8",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 35
@@ -104,6 +138,40 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_f9e4890d",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "del/\u0027as\u0027",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3958b130",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "nit: s/now/not",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_16102258",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 35
@@ -115,6 +183,23 @@
       "writtenOn": "2015-07-29T06:18:02Z",
       "side": 1,
       "message": "here too",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1924d55d",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "Needn\u0027t escape the \u0027$\u0027 in the URL, it\u0027s just string substitution.",
       "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +240,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b9d4c1e8",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "Needn\u0027t escape the \u0027$\u0027 in the URL, it\u0027s just string substitution.",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_59849d5c",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 35
@@ -166,6 +268,40 @@
       "writtenOn": "2015-07-29T06:18:02Z",
       "side": 1,
       "message": "same here",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_39ff5167",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "del/as",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f9f56982",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T06:34:17Z",
+      "side": 1,
+      "message": "s/now/not",
       "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
