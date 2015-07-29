@@ -95,7 +95,8 @@ FILE_OPTIONS = {
                          'domain_id. Allowing such movement is not '
                          'recommended if the scope of a domain admin is being '
                          'restricted by use of an appropriate policy file '
-                         '(see policy.v3cloudsample as an example).'),
+                         '(see policy.v3cloudsample as an example).',
+                    deprecated_for_removal=True),
         cfg.BoolOpt('strict_password_check', default=False,
                     help='If set to true, strict password length checking is '
                          'performed for password manipulation. If a password '
