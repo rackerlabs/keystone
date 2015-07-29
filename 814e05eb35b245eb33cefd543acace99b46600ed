@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_660cd842",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_06d39460",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9d1f18b7",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 25
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_66db78ee",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_c08913cc",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_863c84c0",
         "filename": "keystone/common/clean.py",
         "patchSetId": 25
@@ -64,6 +100,24 @@
       "writtenOn": "2015-07-26T14:14:05Z",
       "side": 1,
       "message": "I am wonder why this is not in the common.utils but here?",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_46f75c59",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "The clean.py is about check the validation of variable.Such as name,type ,url and so on.\nAnd common.utils is about implementation of some small deal data. etc, format datetime.\n\nSo I think that it\u0027 much better put check_endpoint_url here.",
+      "parentUuid": "3a50d1a3_863c84c0",
       "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0698741a",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_4063c31a",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_404ae384",
         "filename": "keystone/common/clean.py",
         "patchSetId": 25
@@ -98,6 +170,24 @@
       "writtenOn": "2015-07-26T14:14:05Z",
       "side": 1,
       "message": "if not url or \u0027 \u0027 in url:\n    raise exception.URLValidationError(url)",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_269330fc",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_404ae384",
       "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_468e7cd1",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_a0f72758",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_26901095",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 25
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_06bf1461",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_26901095",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_26b9f02e",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 25
@@ -149,6 +275,24 @@
       "writtenOn": "2015-07-26T14:14:05Z",
       "side": 1,
       "message": "I have two questions here,\n\n1. Does the third invalid case is really tested?  the INVALID_URLS covered the none and spece in the url, but where is the third checkpoint covered?\n\n2. Why the testcases here is so simply compared with V2 case?",
+      "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_862004b2",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:53:58Z",
+      "side": 1,
+      "message": "@Dave Chen\t\n1. Of course will. In the for sentence below. every case in INVALID_URLS will be tested.\n\n2. Is simple compared with v2. The reason is that endpoint create in v2, has three urls(adminurl, internalurl, and publicurl)\nHowever, in v3, there is only one url.",
+      "parentUuid": "3a50d1a3_26b9f02e",
       "revId": "814e05eb35b245eb33cefd543acace99b46600ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
