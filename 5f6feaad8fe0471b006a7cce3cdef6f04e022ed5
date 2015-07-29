@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c896b94b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T03:27:58Z",
+      "side": 1,
+      "message": "You want me to reuse your code. But I don\u0027t know to add what to substitutions \u003d {}. So I leave it {}.Can you tell me what should I add in it ?",
+      "parentUuid": "3a50d1a3_e83855d5",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_86c8a756",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 32
@@ -155,6 +173,24 @@
       "side": 1,
       "message": "All of the ones that have a space in them are the same test case. Increasing the count does not improve the coverage since they all take the same code path. There are other cases that you are not covering like what causes the exceptions we are catching.",
       "parentUuid": "3a50d1a3_c2553850",
+      "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_48614938",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T03:27:58Z",
+      "side": 1,
+      "message": "So I can add some testcase like\n \u0027http://127.0.0.1:8774/v1.1/\\$(user_di)s\u0027\n \u0027http://127.0.0.1:8774/v1.1/\\$(us_di)s\u0027\n\nWith space in only one case for mismatch of substitution. Misspell is another case. I should add it ? right ?",
+      "parentUuid": "3a50d1a3_28439d14",
       "revId": "5f6feaad8fe0471b006a7cce3cdef6f04e022ed5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
