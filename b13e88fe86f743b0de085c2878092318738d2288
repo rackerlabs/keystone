@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0501b104",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_update_project_name_constraint.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T15:21:26Z",
+      "side": 1,
+      "message": "The drop of this constraint looks not tested. I see a test in test_sql_upgrade, but I don\u0027t understand how it tests this drop.",
+      "revId": "b13e88fe86f743b0de085c2878092318738d2288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f2ab2986",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2276,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T15:21:26Z",
+      "side": 1,
+      "message": "I don\u0027t understand, what this test and the test below have to do with constraints",
+      "revId": "b13e88fe86f743b0de085c2878092318738d2288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_85fb81c0",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T15:21:26Z",
+      "side": 1,
+      "message": "I think it\u0027s not a good way to test that there are no is_domain projects. I suggest to compare projects with an empty list. It would show more clearly that no is_domain projects make their way here.",
+      "revId": "b13e88fe86f743b0de085c2878092318738d2288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
