@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_e7d05721",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-29T11:57:54Z",
+      "side": 1,
+      "message": "(nit) double space in there",
+      "revId": "2348dc188831d49f52e52a2043e26922d99fdf5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
