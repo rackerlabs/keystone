@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_3a1ba374",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-29T17:06:04Z",
+      "side": 1,
+      "message": "token here can be None, it should throw an Unauthorized exception in this case.",
+      "revId": "dc1b38a986d904fbc332a83e3de2afd26bd0f318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
