@@ -42,6 +42,20 @@ class TestFernetTokenProvider(tests.TestCase):
     def test_needs_persistence_returns_false(self):
         self.assertFalse(self.provider.needs_persistence())
 
+    def test_missing_v3_token_raises_404(self):
+        token = None
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.provider.validate_v3_token,
+            token)
+
+    def test_missing_v2_token_raises_404(self):
+        token = None
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.provider.validate_v2_token,
+            token)
+
     def test_invalid_v3_token_raises_404(self):
         self.assertRaises(
             exception.TokenNotFound,
