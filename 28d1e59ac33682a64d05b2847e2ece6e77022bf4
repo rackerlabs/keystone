@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_9f8e8577",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T07:29:53Z",
+      "side": 1,
+      "message": "not updating *a* request, but the creating or updating request, such as post or put http request.",
+      "parentUuid": "3a50d1a3_105fed0f",
+      "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_cd181287",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 15
@@ -72,6 +90,42 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_5fdf9d0c",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T07:29:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_cd181287",
+      "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5f06bd86",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T07:29:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_99c22533",
+      "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b9f5a151",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 15
@@ -83,6 +137,24 @@
       "writtenOn": "2015-07-29T06:37:00Z",
       "side": 1,
       "message": "question: why do we also want to raise an error if resource_to_validate is not passed in?",
+      "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ffc78942",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T07:29:53Z",
+      "side": 1,
+      "message": "@Lin, This is what we want to address, when there is no or empty request body in the http request, we should captch it in the validation or else it will throw python exception,  and the  python exception is helpless for end user.\n\nsee： https://bugs.launchpad.net/keystone/+bug/1466872\n\nkwargs includes the request body if there is, \u0027resource_to_validate\u0027 is just the key of the dict, this is a simply approach to address all of the creating or updating request without body.",
+      "parentUuid": "3a50d1a3_b9f5a151",
       "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
