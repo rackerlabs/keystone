@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_c1043d16",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T02:30:34Z",
+      "side": 1,
+      "message": "change \"catched\" to \"caught\"",
+      "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_810ab51e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T02:30:34Z",
+      "side": 1,
+      "message": "change \"uniques\" to \"unique\"",
+      "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_734e9f70",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 2
@@ -84,6 +118,23 @@
       "side": 1,
       "message": "I wrote a similar test like test_admin_version_v3_eventlet, because in case of eventlets there is only v3 public app. Then I found this test, checked that this line was changed this March by David and decided that it reflects the eventlets setup. Now I\u0027ve checked David\u0027s patch and found it was just refactoring. So I checked when this behavior was introduced and it was always there https://review.openstack.org/#/c/23642/5/tests/test_versions.py \nI\u0027m going to open a separate bug for this and introduce my test as part of #1381961",
       "parentUuid": "3a50d1a3_e6178852",
+      "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a14fb169",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T02:30:34Z",
+      "side": 1,
+      "message": "why is this copy-pasted all over?",
       "revId": "37b81c95ed5b02ca98001430f26d457d1077693a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
