@@ -51,6 +51,24 @@
       "revId": "a9c794ae5edee2cf7fce70ea9bdbd8ab7ae35682",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_2423af57",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-29T03:21:09Z",
+      "side": 0,
+      "message": "This is testing that we can delete a URL that exists in the backend. While it\u0027s true that this review will make that harder to do, there is lots of existing data out there.",
+      "parentUuid": "3a50d1a3_616be9f1",
+      "revId": "a9c794ae5edee2cf7fce70ea9bdbd8ab7ae35682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
