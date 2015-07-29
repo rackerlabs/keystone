@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_a70a7288",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T12:37:54Z",
+      "side": 1,
+      "message": "I can make a endpoint_url regex to solve the bug.If I replace the original one.Many codes related will be modified.Maybe next fix is ok.",
+      "parentUuid": "9a41bdd9_87ec0e2b",
+      "revId": "038fa3f3abfab3602c73f5e798dcaf4ebc8fdc15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_ba596f5c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
