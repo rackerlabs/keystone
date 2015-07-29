@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_1fa35501",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-29T07:15:55Z",
+      "side": 1,
+      "message": "or we could also do:\n\nkwargs_str \u003d \u0027, \u0027.join([\u0027%s\u003d%s\u0027 % (k, v) for (k,v) in kwargs.items()])",
+      "revId": "c15cbc48d63e9cb6a6994ffc73fded2464a8651c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
