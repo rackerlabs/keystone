@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_bda80d8d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2370,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T17:53:29Z",
+      "side": 1,
+      "message": "Oh, it\u0027s for comparison. OK. Are you making sure anywhere that old calls (without explicit is_domain\u003dFalse) still work?",
+      "parentUuid": "3a50d1a3_1460fda3",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_62042e14",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 79
@@ -224,6 +242,24 @@
       "side": 1,
       "message": "if we can\u0027t create an is_domain project than we can\u0027t delete it...",
       "parentUuid": "3a50d1a3_62042e14",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1d3101a2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T17:53:29Z",
+      "side": 1,
+      "message": "That is assumed. It would be good to have it in stone. It will 1) assure us that deleting indeed doesn\u0027t work 2) save us from explaining newcomers this not-so-obvious fact",
+      "parentUuid": "3a50d1a3_f4b471f1",
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -294,6 +330,24 @@
       "side": 1,
       "message": "the projects refs will now return the is_domain field, we are not adding new tests but we need to assert the field returned",
       "parentUuid": "3a50d1a3_b74116ab",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_80604802",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T17:53:29Z",
+      "side": 1,
+      "message": "I reverted this change and ran tests. None failed. So the change seems to be not necessary.",
+      "parentUuid": "3a50d1a3_d48055c1",
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
