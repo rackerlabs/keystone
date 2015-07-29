@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_baad7385",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T17:17:40Z",
+      "side": 1,
+      "message": "sorry, missed this in the last review\n\nUpdate the doc to include the new exception that will be raised:\n\n:raises: keystone.exception.ValidationError",
+      "revId": "4e9b006b911111dec6c29efbb1ec4c496c1cde80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
