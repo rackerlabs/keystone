@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_e8afa292",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "I will address it in commit log soon.",
+      "parentUuid": "9a41bdd9_34e5e6a7",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_b4e7b6ab",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-11T08:04:45Z",
       "side": 1,
       "message": "IIUC, update endpoint should have the same issue.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_082be6ec",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "I will address it in commit log soon.",
+      "parentUuid": "9a41bdd9_b4e7b6ab",
       "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_28090a96",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_342f26a3",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_948632b8",
         "filename": "keystone/common/controller.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-11T08:04:45Z",
       "side": 1,
       "message": "socket is python lib, it\u0027s not belonged here.\nsee: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_c8fdfe6f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_948632b8",
       "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_e802426f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_34f2c69b",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_8841363c",
         "filename": "keystone/common/controller.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-11T08:04:45Z",
       "side": 1,
       "message": "log some info when exception happens here.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_88f8567e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_8841363c",
       "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_48f24e9c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_28d82a53",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_e82a422c",
         "filename": "keystone/common/controller.py",
         "patchSetId": 3
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-11T08:04:45Z",
       "side": 1,
       "message": "I think the code logic here is wrong, it will always True start from here, see your code at the end of this method, so what\u0027s the purpose of the validation here, the method will return True even the check here is negative.",
+      "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_68ef12b1",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T04:01:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_e82a422c",
       "revId": "f5f86e9e6fdc16cf6de9d2d94e0f18640aae4e9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
