@@ -537,6 +537,9 @@ class Auth(controller.V3Controller):
     @controller.protected()
     def validate_token(self, context):
         token_id = context.get('subject_token_id')
+        if token_id is None:
+            raise exception.ValidationError(_('Token is missing'))
+
         include_catalog = 'nocatalog' not in context['query_string']
         token_data = self.token_provider_api.validate_v3_token(
             token_id)
