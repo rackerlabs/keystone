@@ -16,6 +16,24 @@
       "revId": "dc1b38a986d904fbc332a83e3de2afd26bd0f318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3a4723bd",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-29T17:20:33Z",
+      "side": 1,
+      "message": "I\u0027m going to take back the -1 as this fix seems to have taken care of the None case. And ValidationError makes sense.",
+      "parentUuid": "3a50d1a3_3a1ba374",
+      "revId": "dc1b38a986d904fbc332a83e3de2afd26bd0f318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
