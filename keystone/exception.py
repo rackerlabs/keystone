@@ -160,7 +160,7 @@ class SecurityError(Error):
 
     def _build_message(self, message, **kwargs):
         """Only returns detailed messages in debug mode."""
-        if CONF.debug:
+        if CONF.insecure.debug_response:
             return _('%(message)s %(amendment)s') % {
                 'message': message or self.message_format % kwargs,
                 'amendment': self.amendment}
@@ -371,12 +371,12 @@ class UnexpectedError(SecurityError):
     @property
     def message_format(self):
         """Return the generic message format string unless debug is enabled."""
-        if CONF.debug:
+        if CONF.insecure.debug_response:
             return self.debug_message_format
         return self._message_format
 
     def _build_message(self, message, **kwargs):
-        if CONF.debug and 'exception' not in kwargs:
+        if CONF.insecure.debug_response and 'exception' not in kwargs:
             # Ensure that exception has a value to be extra defensive for
             # substitutions and make sure the exception doesn't raise an
             # exception.

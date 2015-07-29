@@ -109,6 +109,15 @@ FILE_OPTIONS = {
                         'terminating proxy. Typical value is '
                         '"HTTP_X_FORWARDED_PROTO".'),
     ],
+    'insecure': [
+        cfg.BoolOpt('debug_response', default=False,
+                    help='If set to true the server will return information '
+                         'in the response that may allow an unauthenticated '
+                         'or authenticated user to get more information than '
+                         'normal, such as why authentication failed. This may '
+                         'be useful for debugging in extreme circumstances '
+                         'but is insecure.'),
+    ],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default',
                    help='This references the domain to use for all '

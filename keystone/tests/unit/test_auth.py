@@ -286,7 +286,7 @@ class AuthWithToken(AuthTest):
 
     def test_auth_scoped_token_bad_project_with_debug(self):
         """Authenticating with an invalid project fails."""
-        # Bug 1379952 reports poor user feedback, even in debug mode,
+        # Bug 1379952 reports poor user feedback, even in debug_response mode,
         # when the user accidentally passes a project name as an ID.
         # This test intentionally does exactly that.
         body_dict = _build_user_auth(
@@ -295,7 +295,7 @@ class AuthWithToken(AuthTest):
             tenant_id=self.tenant_bar['name'])
 
         # with debug enabled, this produces a friendly exception.
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(group='insecure', debug_response=True)
         e = self.assertRaises(
             exception.Unauthorized,
             self.controller.authenticate,

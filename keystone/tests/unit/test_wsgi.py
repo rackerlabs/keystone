@@ -270,12 +270,13 @@ class MiddlewareTest(BaseWSGITest):
             self.assertEqual(exception.UnexpectedError.code, resp.status_int)
             return resp
 
-        # Exception data should not be in the message when debug is False
-        self.config_fixture.config(debug=False)
+        # Exception data should not be in the message when debug_response is
+        # False
+        self.config_fixture.config(group='insecure', debug_response=False)
         self.assertNotIn(exception_str, do_request().body)
 
-        # Exception data should be in the message when debug is True
-        self.config_fixture.config(debug=True)
+        # Exception data should be in the message when debug_response is True
+        self.config_fixture.config(group='insecure', debug_response=True)
         self.assertIn(exception_str, do_request().body)
 
     def test_middleware_local_config(self):
