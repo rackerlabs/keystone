@@ -307,6 +307,36 @@ class Manager(manager.Manager):
             raise exception.ValidationError(
                 message=_('Update of `is_domain` is not allowed.'))
 
+        update_domain = ('domain_id' in project and
+                         project['domain_id'] != original_project['domain_id'])
+
+        if update_domain:
+            is_root_project = original_project['parent_id'] is None
+            if not is_root_project:
+                raise exception.ValidationError(
+                    message=_('Update of domain_id is only allowed for '
+                              'root projects.'))
+            if original_project['is_domain']:
+                raise exception.ValidationError(
+                    message=_('Update of domain_id of projects acting as '
+                              'domains is not allowed.'))
+            subtree_list = self.list_projects_in_subtree(project_id)
+            if subtree_list:
+                raise exception.ValidationError(
+                    message=_('Cannot update domain_id of a project that '
+                              'has children.'))
+            # NOTE(htruta): Even if we are allowing domain_ids to be
+            # modified (i.e. 'domain_id_immutable' is set False),
+            # a project.domain_id can only be updated for root projects
+            # that have no children. The update of domain_id of a project in
+            # the middle of the hierarchy creates an inconsistent project
+            # hierarchy.
+            versionutils.report_deprecated_feature(
+                LOG,
+                _('update of domain_id is deprecated as of Mitaka '
+                  'and will be removed in O.')
+            )
+
         if 'enabled' in project:
             project['enabled'] = clean.project_enabled(project['enabled'])
 
