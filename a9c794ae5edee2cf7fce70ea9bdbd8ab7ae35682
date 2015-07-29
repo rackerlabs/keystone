@@ -33,6 +33,24 @@
       "revId": "a9c794ae5edee2cf7fce70ea9bdbd8ab7ae35682",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_616be9f1",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-29T03:02:11Z",
+      "side": 0,
+      "message": "Any chance that there is a space in the url? seems like this is a invliad case we should drop.",
+      "parentUuid": "3a50d1a3_5dea8c75",
+      "revId": "a9c794ae5edee2cf7fce70ea9bdbd8ab7ae35682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
