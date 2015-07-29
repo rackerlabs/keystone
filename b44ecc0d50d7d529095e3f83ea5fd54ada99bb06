@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_19f13501",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 35
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "add space after the comma",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_39f431ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 35
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "add space after the period",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_769ac615",
+        "filename": "keystone/exception.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "use double quote consistently",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_564c6a9d",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "move \"\"\" up, this should be a one liner: https://www.python.org/dev/peps/pep-0257/#one-line-docstrings",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_363c3ee0",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "only constants should be all caps",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f62256b8",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_16102258",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "here too",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d9b18d48",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "should be one liner comment",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_99b78539",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "all caps are for class/module constants, this is just local variable",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_59849d5c",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:18:02Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "b44ecc0d50d7d529095e3f83ea5fd54ada99bb06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
