@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_95795d84",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2015-07-29T21:02:05Z",
+      "side": 1,
+      "message": "This took information specific to RedHat and trades it for information specific to Ubuntu. Seems like we should keep the information here relevant to both (as the \"Some distributions\" comment later does for the log directory).",
+      "revId": "34026acfe7a9be2a1a3e0d282184113299b7f9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
