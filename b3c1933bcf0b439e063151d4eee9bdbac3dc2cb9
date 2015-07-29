@@ -69,6 +69,108 @@
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_82effae7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2153,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T14:27:50Z",
+      "side": 1,
+      "message": "please fix the description, because it is not true with this patch.",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e2ad9e31",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2223,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T14:27:50Z",
+      "side": 1,
+      "message": "I don\u0027t understand. Does this test do what it says in the function name or not? Why is the actual check in TODO?",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ae046749",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2370,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T14:27:50Z",
+      "side": 1,
+      "message": "I am concerned that you set `\u0027is_domain\u0027: False` in this test and in tests below. Will the tests work without this change? If yes, remove the change. If no, won\u0027t the change break backward compatibility with clients?",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_62042e14",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T14:27:50Z",
+      "side": 1,
+      "message": "test name says test_delete, but we call _assert_create. And we call create_project in the _assert_... function.",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dc22c9b8",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T14:27:50Z",
+      "side": 1,
+      "message": "I don\u0027t see any new usage of assertValidProject in the patchset. Does the change break compatibility? If no, this change should be reverted.",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b74116ab",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-29T14:27:50Z",
+      "side": 1,
+      "message": "I don\u0027t see any new tests using this function. Why do you need to change it?",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
