@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0ae6b5af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T08:13:15Z",
+      "side": 1,
+      "message": "fix -\u003e fixed",
+      "revId": "723a4afb55c851f2c774f5a8c0d6d7058a8bcd42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4a659d1b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T08:13:15Z",
+      "side": 1,
+      "message": "Token is None, then why is it ValidationError, not NotFoundError?\nJust discuss.",
+      "revId": "723a4afb55c851f2c774f5a8c0d6d7058a8bcd42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
