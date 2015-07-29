@@ -564,10 +564,9 @@ class BaseProvider(provider.Provider):
             roles = self.v3_token_data_helper._populate_roles_for_groups(
                 group_ids, project_id, domain_id, user_id)
             token_data.update({'roles': roles})
-        else:
-            token_data['user'][federation_constants.FEDERATION].update({
-                'groups': [{'id': x} for x in group_ids]
-            })
+        token_data['user'][federation_constants.FEDERATION].update({
+            'groups': [{'id': x} for x in group_ids]
+        })
         return token_data
 
     def _verify_token_ref(self, token_ref):
