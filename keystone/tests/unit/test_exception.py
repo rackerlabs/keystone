@@ -118,24 +118,22 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
         self.config_fixture = self.useFixture(config_fixture.Config(cfg.CONF))
 
     def test_unexpected_error_no_debug(self):
-        self.config_fixture.config(debug=False)
         e = exception.UnexpectedError(exception=self.exc_str)
         self.assertNotIn(self.exc_str, six.text_type(e))
 
     def test_unexpected_error_debug(self):
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(insecure_debug=True)
         e = exception.UnexpectedError(exception=self.exc_str)
         self.assertIn(self.exc_str, six.text_type(e))
 
     def test_unexpected_error_subclass_no_debug(self):
-        self.config_fixture.config(debug=False)
         e = UnexpectedExceptionTestCase.SubClassExc(
             debug_info=self.exc_str)
         self.assertEqual(exception.UnexpectedError._message_format,
                          six.text_type(e))
 
     def test_unexpected_error_subclass_debug(self):
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(insecure_debug=True)
         subclass = self.SubClassExc
 
         e = subclass(debug_info=self.exc_str)
@@ -146,13 +144,12 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
             six.text_type(e))
 
     def test_unexpected_error_custom_message_no_debug(self):
-        self.config_fixture.config(debug=False)
         e = exception.UnexpectedError(self.exc_str)
         self.assertEqual(exception.UnexpectedError._message_format,
                          six.text_type(e))
 
     def test_unexpected_error_custom_message_debug(self):
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(insecure_debug=True)
         e = exception.UnexpectedError(self.exc_str)
         translated_amendment = six.text_type(exception.SecurityError.amendment)
         self.assertEqual(
@@ -168,15 +165,13 @@ class SecurityErrorTestCase(ExceptionTestCase):
         self.config_fixture = self.useFixture(config_fixture.Config(cfg.CONF))
 
     def test_unauthorized_exposure(self):
-        self.config_fixture.config(debug=False)
-
         risky_info = uuid.uuid4().hex
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, six.text_type(e))
 
     def test_unauthorized_exposure_in_debug(self):
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(insecure_debug=True)
 
         risky_info = uuid.uuid4().hex
         e = exception.Unauthorized(message=risky_info)
@@ -184,15 +179,13 @@ class SecurityErrorTestCase(ExceptionTestCase):
         self.assertIn(risky_info, six.text_type(e))
 
     def test_forbidden_exposure(self):
-        self.config_fixture.config(debug=False)
-
         risky_info = uuid.uuid4().hex
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, six.text_type(e))
 
     def test_forbidden_exposure_in_debug(self):
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(insecure_debug=True)
 
         risky_info = uuid.uuid4().hex
         e = exception.Forbidden(message=risky_info)
@@ -200,8 +193,6 @@ class SecurityErrorTestCase(ExceptionTestCase):
         self.assertIn(risky_info, six.text_type(e))
 
     def test_forbidden_action_exposure(self):
-        self.config_fixture.config(debug=False)
-
         risky_info = uuid.uuid4().hex
         action = uuid.uuid4().hex
         e = exception.ForbiddenAction(message=risky_info, action=action)
@@ -214,7 +205,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         self.assertIn(risky_info, six.text_type(e))
 
     def test_forbidden_action_exposure_in_debug(self):
-        self.config_fixture.config(debug=True)
+        self.config_fixture.config(insecure_debug=True)
 
         risky_info = uuid.uuid4().hex
 
@@ -227,8 +218,6 @@ class SecurityErrorTestCase(ExceptionTestCase):
         self.assertIn(risky_info, six.text_type(e))
 
     def test_unicode_argument_message(self):
-        self.config_fixture.config(debug=False)
-
         risky_info = u'\u7ee7\u7eed\u884c\u7f29\u8fdb\u6216'
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
