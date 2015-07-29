@@ -342,11 +342,6 @@ class Manager(manager.Manager):
             raise exception.ValidationError(
                 message=_('Update of `is_domain` is not allowed.'))
 
-        # TODO(htruta): Update domain_id checking when 'immutable' property is
-        # deprecated. If the 'immutable' property is disabled, the update of
-        # domain_id will only be allowed if the project is immediately under
-        # the root and has no children of its own.
-
         # When updating name and/or domain_id, it is necessary to check wheter
         # a project with this configuration already exists
         update_name = ('name' in tenant and
@@ -359,6 +354,24 @@ class Manager(manager.Manager):
             if update_name:
                 tenant_to_check['name'] = tenant['name']
             if update_domain:
+                # NOTE(htruta): Even if 'domain_id_immutable' was set False,
+                # a project.domain_id can only be change for regular projects
+                # at the second level of the tree with no children, i.e.
+                # is_domain=False project on which parent_id is a root project.
+                LOG.warn(_('Update of domain_id is not recommended and will '
+                           'be deprecated in M.'))
+                parents_number = len(self.list_project_parents(tenant['id']))
+                if original_tenant['is_domain'] or parents_number != 1:
+                    raise exception.ValidationError(
+                        message=_('Update of domain_id is only allowed for '
+                                  'regular projects that are immediately '
+                                  'under the root.'))
+                tenant_subtree_size = len(self.list_projects_in_subtree(
+                    tenant['id']))
+                if tenant_subtree_size != 0:
+                    raise exception.ValidationError(
+                        message=_('Cannot update domain_id of a project that '
+                                  'has a subtree.'))
                 tenant_to_check['domain_id'] = tenant['domain_id']
             self._enforce_project_name_constraint(tenant_to_check)
 

@@ -88,6 +88,7 @@ FILE_OPTIONS = {
                         'default. This global limit may be then overridden '
                         'for a specific driver, by specifying a list_limit '
                         'in the appropriate section (e.g. [assignment]).'),
+
         cfg.BoolOpt('domain_id_immutable', default=True,
                     help='Set this to false if you want to enable the '
                          'ability for user, group and project entities '
@@ -95,7 +96,8 @@ FILE_OPTIONS = {
                          'domain_id. Allowing such movement is not '
                          'recommended if the scope of a domain admin is being '
                          'restricted by use of an appropriate policy file '
-                         '(see policy.v3cloudsample as an example).'),
+                         '(see policy.v3cloudsample as an example).',
+                    deprecated_for_removal=True),
         cfg.BoolOpt('strict_password_check', default=False,
                     help='If set to true, strict password length checking is '
                          'performed for password manipulation. If a password '
