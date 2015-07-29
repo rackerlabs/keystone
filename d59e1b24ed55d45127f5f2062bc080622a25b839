@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_b08347ca",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T21:29:02Z",
+      "side": 1,
+      "message": "if these assertions should always be checked together then suggest create an assertRespositoryState() or something.",
+      "revId": "d59e1b24ed55d45127f5f2062bc080622a25b839",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
