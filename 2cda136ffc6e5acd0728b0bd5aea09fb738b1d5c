@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_ad862d11",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T12:37:35Z",
+      "side": 1,
+      "message": "The info you provide can not prevent many invalid case. such as: http://sth.comm",
+      "parentUuid": "9a41bdd9_2b06a9ce",
+      "revId": "2cda136ffc6e5acd0728b0bd5aea09fb738b1d5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_b721c0b6",
         "filename": "keystone/common/controller.py",
         "patchSetId": 9
