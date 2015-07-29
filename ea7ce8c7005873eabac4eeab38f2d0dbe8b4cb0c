@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_e3302f58",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:57:29Z",
+      "side": 1,
+      "message": "Sorry,More details?",
+      "parentUuid": "9a41bdd9_633f3fb4",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_c862e83d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 14
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_e3658f44",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:57:29Z",
+      "side": 1,
+      "message": "Thank you for remainding. I will provice url info in exception.",
+      "parentUuid": "9a41bdd9_c862e83d",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_0880d089",
         "filename": "keystone/clean.py",
         "patchSetId": 14
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_437a3bbe",
+        "filename": "keystone/clean.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:57:29Z",
+      "side": 1,
+      "message": "This is specific for testing netloc.Not everything.",
+      "parentUuid": "9a41bdd9_0880d089",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_2829149b",
         "filename": "keystone/clean.py",
         "patchSetId": 14
@@ -100,6 +154,24 @@
       "writtenOn": "2015-07-16T13:50:43Z",
       "side": 1,
       "message": "i\u0027d suggest re-raising the exception instead of just logging it.",
+      "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_9f1e535e",
+        "filename": "keystone/clean.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-29T23:57:29Z",
+      "side": 1,
+      "message": "re-raise what exception?This is only the part of url.Do you want me to create a new exception for netloc ?  maybe name NetlocError ?\n\nIf netloc should re-raise exception?\nWhy not port ?\nWhy not scheme?\nThey are all just one part of the url.\nSo I think that check all and raise once for conclusion is more proper.\n\nWelcome to correct me.",
+      "parentUuid": "9a41bdd9_2829149b",
       "revId": "ea7ce8c7005873eabac4eeab38f2d0dbe8b4cb0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
