@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_f0f57682",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-29T08:59:22Z",
+      "side": 1,
+      "message": "so you are calling a method which is implemented for fernet provider only (it\u0027s def is in fernet/core.py) ?",
+      "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_45193287",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 12
@@ -48,6 +65,24 @@
       "side": 1,
       "message": "yes, I believe so, but I\u0027ll have Marek take a look, too.",
       "parentUuid": "3a50d1a3_45193287",
+      "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b0428ea9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-29T08:59:22Z",
+      "side": 1,
+      "message": "well, if i take a look at the code abowe it\u0027s been filled with data only if we have some federation data.",
+      "parentUuid": "3a50d1a3_48194987",
       "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
