@@ -402,6 +402,9 @@ class TokenAPITests(object):
         r = self.get('/auth/tokens?nocatalog', headers=headers)
         self.assertValidProjectScopedTokenResponse(r, require_catalog=False)
 
+    def test_validate_missing_subject_token(self):
+        self.get('/auth/tokens', expected_status=404)
+
 
 class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
     def config_overrides(self):
