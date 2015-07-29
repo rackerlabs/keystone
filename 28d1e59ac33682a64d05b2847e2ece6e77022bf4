@@ -33,6 +33,41 @@
       "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_99c22533",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:37:00Z",
+      "side": 1,
+      "message": "translation from google.translate: \"Later add that, that object clause, is not better\"  \n\nI still don\u0027t get the meaning :) would be nice if the comments are in english too\n\n\nsuggestion for readability:  \"# empty value, it will raise the exception to indicate the request\"\n\nAdded \", \"",
+      "parentUuid": "3a50d1a3_cd181287",
+      "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b9f5a151",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-29T06:37:00Z",
+      "side": 1,
+      "message": "question: why do we also want to raise an error if resource_to_validate is not passed in?",
+      "revId": "28d1e59ac33682a64d05b2847e2ece6e77022bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
