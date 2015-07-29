@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_3f0ad120",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1663,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-29T07:12:10Z",
+      "side": 1,
+      "message": "Why comment instead of docstring wrapped with \"\"\" \"\"\" ?",
+      "revId": "a7037547fecf0998ea09b1139123c3c1ef97472d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ff10e94f",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-29T07:12:10Z",
+      "side": 1,
+      "message": "Why comment instead of docstring wrapped with \"\"\" \"\"\" ?",
+      "revId": "a7037547fecf0998ea09b1139123c3c1ef97472d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_df15ed3f",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2346,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-29T07:12:10Z",
+      "side": 1,
+      "message": "Why comment instead of docstring wrapped with \"\"\" \"\"\" ?",
+      "revId": "a7037547fecf0998ea09b1139123c3c1ef97472d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
