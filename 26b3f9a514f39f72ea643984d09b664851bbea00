@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_19285f99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T01:24:56Z",
+      "side": 1,
+      "message": "I don\u0027t agree.",
+      "parentUuid": "3a50d1a3_060b5e2b",
+      "revId": "26b3f9a514f39f72ea643984d09b664851bbea00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9b3107f0",
         "filename": "httpd/wsgi-keystone.conf",
         "patchSetId": 10
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "That was my comment in PS6.  I tend to agree with you.",
       "parentUuid": "3a50d1a3_9b3107f0",
+      "revId": "26b3f9a514f39f72ea643984d09b664851bbea00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_190fff37",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T01:24:56Z",
+      "side": 1,
+      "message": "What do you want me to change it to? Anything I change it to is going to be *-specific and nothing in keystone should be *-specific.",
+      "parentUuid": "3a50d1a3_c1eb20db",
       "revId": "26b3f9a514f39f72ea643984d09b664851bbea00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
