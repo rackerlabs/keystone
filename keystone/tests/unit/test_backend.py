@@ -490,6 +490,7 @@ class IdentityTests(object):
         self.resource_api.create_domain(domain2['id'], domain2)
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
+                   'parent_id': domain1['id'],
                    'domain_id': domain1['id']}
         self.resource_api.create_project(project['id'], project)
         project['domain_id'] = domain2['id']
@@ -503,12 +504,15 @@ class IdentityTests(object):
         # First, create a project in domain1
         project1 = {'id': uuid.uuid4().hex,
                     'name': uuid.uuid4().hex,
+                    'parent_id': domain1['id'],
                     'domain_id': domain1['id']}
+
         self.resource_api.create_project(project1['id'], project1)
         # Now create a project in domain2 with a potentially clashing
         # name - which should work since we have domain separation
         project2 = {'id': uuid.uuid4().hex,
                     'name': project1['name'],
+                    'parent_id': domain2['id'],
                     'domain_id': domain2['id']}
         self.resource_api.create_project(project2['id'], project2)
         # Now try and move project1 into the 2nd domain - which should
@@ -518,6 +522,82 @@ class IdentityTests(object):
                           self.resource_api.update_project,
                           project1['id'],
                           project1)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_move_project_with_children_between_domains_fails(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain1['id'], domain1)
+        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain2['id'], domain2)
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'parent_id': domain1['id'],
+                   'domain_id': domain1['id']}
+        self.resource_api.create_project(project['id'], project)
+        child_project = {'id': uuid.uuid4().hex,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': project['id'],
+                         'domain_id': domain1['id']}
+        self.resource_api.create_project(child_project['id'], child_project)
+        project['domain_id'] = domain2['id']
+
+        # Update is not allowed, since updating the whole subtree would be
+        # necessary
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.update_project,
+                          project['id'],
+                          project)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_move_project_not_under_root_between_domains_fails(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain1['id'], domain1)
+        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain2['id'], domain2)
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'parent_id': domain1['id'],
+                   'domain_id': domain1['id']}
+        self.resource_api.create_project(project['id'], project)
+        child_project = {'id': uuid.uuid4().hex,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': project['id'],
+                         'domain_id': domain1['id']}
+        self.resource_api.create_project(child_project['id'], child_project)
+        child_project_2 = {'id': uuid.uuid4().hex,
+                           'name': uuid.uuid4().hex,
+                           'parent_id': child_project['id'],
+                           'domain_id': domain1['id']}
+        self.resource_api.create_project(child_project_2['id'],
+                                         child_project_2)
+        child_project_2['domain_id'] = domain2['id']
+
+        # Update is not allowed, since it is not at the second level of the
+        # tree
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.update_project,
+                          child_project_2['id'],
+                          child_project_2)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_update_domain_id_project_is_domain_fails(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain1['id'], domain1)
+        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain2['id'], domain2)
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'parent_id': domain1['id'],
+                   'domain_id': domain1['id'],
+                   'is_domain': True}
+        self.resource_api.create_project(project['id'], project)
+        project['domain_id'] = domain2['id']
+
+        # Update of domain_id of projects acting as domains is not allowed
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.update_project,
+                          project['id'],
+                          project)
 
     def test_rename_duplicate_project_name_fails(self):
         tenant1 = {'id': 'fake1', 'name': 'fake1',
