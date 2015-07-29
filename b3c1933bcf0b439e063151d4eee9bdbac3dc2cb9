@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_79705c08",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "removed the code",
+      "parentUuid": "3a50d1a3_8243a5ae",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_1fc84e21",
         "filename": "keystone/resource/core.py",
         "patchSetId": 79
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_d457f557",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2153,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_82effae7",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_e2ad9e31",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 79
@@ -100,6 +136,24 @@
       "writtenOn": "2015-07-29T14:27:50Z",
       "side": 1,
       "message": "I don\u0027t understand. Does this test do what it says in the function name or not? Why is the actual check in TODO?",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b9ad8432",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2223,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "changed the TODO message in order to make clearer why this is a TODO",
+      "parentUuid": "3a50d1a3_e2ad9e31",
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_1460fda3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 2370,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "You mean, without setting it explicitly? They will work, we are just passing it here to ease the comparison in the asserts below.\n\nAll Reseller changes includes client changes as well (it was predicted in the spec).",
+      "parentUuid": "3a50d1a3_ae046749",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_62042e14",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 79
@@ -134,6 +206,24 @@
       "writtenOn": "2015-07-29T14:27:50Z",
       "side": 1,
       "message": "test name says test_delete, but we call _assert_create. And we call create_project in the _assert_... function.",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f4b471f1",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "if we can\u0027t create an is_domain project than we can\u0027t delete it...",
+      "parentUuid": "3a50d1a3_62042e14",
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_54744534",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "you are right, I\u0027ll revert it",
+      "parentUuid": "3a50d1a3_dc22c9b8",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b74116ab",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 79
@@ -168,6 +276,24 @@
       "writtenOn": "2015-07-29T14:27:50Z",
       "side": 1,
       "message": "I don\u0027t see any new tests using this function. Why do you need to change it?",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d48055c1",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-29T17:09:39Z",
+      "side": 1,
+      "message": "the projects refs will now return the is_domain field, we are not adding new tests but we need to assert the field returned",
+      "parentUuid": "3a50d1a3_b74116ab",
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
