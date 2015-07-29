@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c53c3eca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11708
+      },
+      "writtenOn": "2015-07-29T08:19:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_0ae6b5af",
+      "revId": "723a4afb55c851f2c774f5a8c0d6d7058a8bcd42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_4a659d1b",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-29T08:13:15Z",
       "side": 1,
       "message": "Token is None, then why is it ValidationError, not NotFoundError?\nJust discuss.",
+      "revId": "723a4afb55c851f2c774f5a8c0d6d7058a8bcd42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_45282e86",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 11708
+      },
+      "writtenOn": "2015-07-29T08:19:21Z",
+      "side": 1,
+      "message": "Because ValidationError has been caught on https://github.com/openstack/keystone/blob/master/keystone/token/providers/fernet/core.py#L188",
+      "parentUuid": "3a50d1a3_4a659d1b",
       "revId": "723a4afb55c851f2c774f5a8c0d6d7058a8bcd42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
