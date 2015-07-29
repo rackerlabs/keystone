@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_dacc2237",
+        "filename": "bandit.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-29T04:39:37Z",
+      "side": 1,
+      "message": "Might want to grab latest bandit.yaml example and merge the diffs.  Been several fixes since.",
+      "revId": "60d591620c50368193b023007f2c0b12b5f5e178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fa1ebeb9",
+        "filename": "bandit.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-29T04:39:37Z",
+      "side": 1,
+      "message": "This is now fixed with https://review.openstack.org/#/c/201053/\n\nSo you could probably reenable as long as you\u0027re no longer getting false positives.",
+      "revId": "60d591620c50368193b023007f2c0b12b5f5e178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
