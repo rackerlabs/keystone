@@ -16,6 +16,24 @@
       "revId": "4e9b006b911111dec6c29efbb1ec4c496c1cde80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_fd38d5a1",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-29T17:31:18Z",
+      "side": 1,
+      "message": "The format for exceptions is here: http://sphinx-doc.org/domains.html#info-field-lists\n\n :raises keystone.exception.ValidationError: \u003ccondition\u003e",
+      "parentUuid": "3a50d1a3_baad7385",
+      "revId": "4e9b006b911111dec6c29efbb1ec4c496c1cde80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
