@@ -21,6 +21,7 @@ import uuid
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 import six
 
 from keystone.common import cache
@@ -897,6 +898,12 @@ class Manager(manager.Manager):
         if 'enabled' in user:
             user['enabled'] = clean.user_enabled(user['enabled'])
         if 'domain_id' in user:
+            if user['domain_id'] != old_user_ref['domain_id']:
+                versionutils.report_deprecated_feature(
+                    LOG,
+                    _LW('update of domain_id is deprecated as of Mitaka '
+                        'and will be removed in O.')
+                )
             self.resource_api.get_domain(user['domain_id'])
         if 'id' in user:
             if user_id != user['id']:
@@ -986,6 +993,13 @@ class Manager(manager.Manager):
     @exception_translated('group')
     def update_group(self, group_id, group, initiator=None):
         if 'domain_id' in group:
+            old_group_ref = self.get_group(group_id)
+            if group['domain_id'] != old_group_ref['domain_id']:
+                versionutils.report_deprecated_feature(
+                    LOG,
+                    _LW('update of domain_id is deprecated as of Mitaka '
+                        'and will be removed in O.')
+                )
             self.resource_api.get_domain(group['domain_id'])
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
