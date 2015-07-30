@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_115a2c2b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 0,
+      "message": "the newline should be kept as it was",
+      "revId": "564044b939995b89069703ca4585d13647fa1390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

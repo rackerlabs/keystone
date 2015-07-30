@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ae0af925",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "the title is misleading now. It should be something like \"exclude from output\" or \"omit from response\". Nothing gets removed from the database, right?",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_94e2aa2e",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "I wonder if this check should go before \"catalog[region] \u003d {}\". It will save us formatting if there are no urls, but can it happen that there will be urls before formatting, but won\u0027t after?\n\nOK, lets keep it here just to be sure.",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_74535ee3",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "although I support the switch to create_service_dict, it should be done in a separate patch",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d46d929a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "the variable here has nothing to do with tenants, especially if you\u0027re going to use it above. Please rename it from tenant_sub_service to something else.",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b40a4626",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "please, add some comments. Something like \"# create service 1 with 3 endpoints\". It will be much easier to read the code.",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f7f0d0ff",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1078,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "assertIn should be used here and below",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7774c035",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "Please fix it in a separate commit",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_97714c47",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "Please fix it in a separate commit",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f7e450e1",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-07-30T09:28:33Z",
+      "side": 1,
+      "message": "Please fix it in a separate commit",
+      "revId": "8853f89a50b3adce328e15aee20f04fba961b2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
