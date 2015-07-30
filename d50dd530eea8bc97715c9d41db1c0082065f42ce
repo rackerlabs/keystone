@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_db0361bd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T20:35:22Z",
+      "side": 1,
+      "message": "I will rebase",
+      "parentUuid": "3a50d1a3_501a2a7e",
+      "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_f0f57682",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 12
@@ -47,6 +65,24 @@
       "writtenOn": "2015-07-29T08:59:22Z",
       "side": 1,
       "message": "so you are calling a method which is implemented for fernet provider only (it\u0027s def is in fernet/core.py) ?",
+      "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7b6ecd97",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T20:35:22Z",
+      "side": 1,
+      "message": "this method (validate_v3_token_id) is only called if we are validating a non-persistent token",
+      "parentUuid": "3a50d1a3_f0f57682",
       "revId": "d50dd530eea8bc97715c9d41db1c0082065f42ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
