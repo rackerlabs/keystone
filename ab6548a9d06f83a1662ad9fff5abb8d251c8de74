@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_46945843",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T21:10:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_e8f7f5d0",
+      "revId": "ab6548a9d06f83a1662ad9fff5abb8d251c8de74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a8d56de5",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-28T16:14:10Z",
       "side": 1,
       "message": "this doesn\u0027t seem to be fernet specific at all -- so i hope it\u0027s being moved in a later patch",
+      "revId": "ab6548a9d06f83a1662ad9fff5abb8d251c8de74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_46d0d8f7",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T21:10:08Z",
+      "side": 1,
+      "message": "Right now I think the fernet token provider is the only provider that uses these utility methods. Once something else requires them I think we could move them up to the BaseProvider?",
+      "parentUuid": "3a50d1a3_a8d56de5",
       "revId": "ab6548a9d06f83a1662ad9fff5abb8d251c8de74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2015-07-28T16:14:10Z",
       "side": 1,
       "message": "include a comment that only v2 token response bodies include an \"access\" attribute?",
+      "revId": "ab6548a9d06f83a1662ad9fff5abb8d251c8de74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_06ac108b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T21:10:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_68952531",
       "revId": "ab6548a9d06f83a1662ad9fff5abb8d251c8de74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
