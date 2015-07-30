@@ -419,6 +419,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # roles assignments.
         self.assertThat(user_domains, matchers.HasLength(0))
 
+    def test_list_domains_filtered_and_limited(self):
+        # The test is designed for multiple domains only.
+        self.assertRaises(AttributeError,
+                          super(SqlIdentity, self).
+                          test_list_domains_filtered_and_limited)
+
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
