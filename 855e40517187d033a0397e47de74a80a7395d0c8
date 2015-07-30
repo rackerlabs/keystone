@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ca8e38d0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T16:52:24Z",
+      "side": 1,
+      "message": "not sure this TODO helps here",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4a70e8dc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T16:52:24Z",
+      "side": 1,
+      "message": "TODOs like this are confusing, we don\u0027t know if we should wait until you fix it before we approve or not.  I suggest you remove this.",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6a1044ac",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T16:52:24Z",
+      "side": 1,
+      "message": "In fact, why won\u0027t this always be true? Although conceptually we are finding the closed project acting as a domain...in reality the immediate parent will have done that search for you when it was created.  So don\u0027t we just use the parent\u0027s domain_id ?",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_aafacc41",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T16:52:24Z",
+      "side": 1,
+      "message": "(opinion): I personally find the use of \"is_domain\u003dTrue\" as an adjective hard to read...how about using the term \"acting as a domain\", i.e.:\n\n\"...of the closest project acting as a domain upward in the tree\"",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4aa2284d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T16:52:24Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
