@@ -247,6 +247,8 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def _validate_token(self, token_id):
+        if not token_id:
+            raise exception.TokenNotFound(token_id='')
         if not self._needs_persistence:
             return self.driver.validate_v3_token(token_id)
         token_ref = self._persistence.get_token(token_id)
