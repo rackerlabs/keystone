@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_08020473",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T08:14:11Z",
+      "side": 1,
+      "message": "this should return something and also check if it is project_scoped? Maybe:\n\n  if self.version is V3 and self.project_scoped:\n    return self[\u0027is_domain\u0027]\n  else:\n    return None",
+      "revId": "6d7ed8b50ca1ace287a58083b82510bbed53e946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
