@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_b7848fb1",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T07:24:58Z",
+      "side": 1,
+      "message": "there is some changes that were made in the follow up patch and should be done *here*",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_37663f2a",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T07:24:58Z",
+      "side": 1,
+      "message": "projects (tenants) in v2 won\u0027t have a is_domain field, it will be filtered.\n\nAlso, I believe these tests should be in the previous patch",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
