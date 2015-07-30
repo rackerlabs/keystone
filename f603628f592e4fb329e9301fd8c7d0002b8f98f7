@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_3715df9a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 81
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T07:25:49Z",
+      "side": 1,
+      "message": "this can be just:\n  \n  if project.get(\u0027is_domain\u0027) and project.get(\u0027enabled\u0027):",
+      "revId": "f603628f592e4fb329e9301fd8c7d0002b8f98f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
