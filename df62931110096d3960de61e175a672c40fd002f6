@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_e7c24d86",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T16:15:31Z",
+      "side": 0,
+      "message": "so, just to double check, we *don\u0027t* need this anymore because we\u0027ve already converted the token to ascii?",
+      "revId": "df62931110096d3960de61e175a672c40fd002f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_07c0997b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-30T16:15:31Z",
+      "side": 0,
+      "message": "same here.",
+      "revId": "df62931110096d3960de61e175a672c40fd002f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
