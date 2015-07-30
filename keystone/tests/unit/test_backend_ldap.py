@@ -115,7 +115,8 @@ def create_group_container(identity_api):
                     ('ou', ['Groups'])])
 
 
-class BaseLDAPIdentity(test_backend.IdentityTests):
+class BaseLDAPIdentity(test_backend.IdentityTests,
+                       test_backend.DomainLimitTests):
 
     def setUp(self):
         super(BaseLDAPIdentity, self).setUp()
@@ -991,6 +992,11 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             (exception.Forbidden, exception.DomainNotFound),
             super(BaseLDAPIdentity, self).
             test_list_role_assignment_by_user_with_domain_group_roles)
+
+    def test_list_domains_filtered_and_limited(self):
+        self.assertRaises(AttributeError,
+                          super(BaseLDAPIdentity, self).
+                          test_list_domains_filtered_and_limited)
 
 
 class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
@@ -2827,6 +2833,9 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
         super(BaseLDAPIdentity, self).\
             test_list_role_assignment_by_user_with_domain_group_roles
 
+    def test_list_domains_filtered_and_limited(self):
+        super(BaseLDAPIdentity, self).test_list_domains_filtered_and_limited()
+
 
 class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
     """Class to test the use of domain configs stored in the database.
@@ -3117,6 +3126,9 @@ class DomainSpecificLDAPandSQLIdentity(
         # Domain roles are supported by the SQL Assignment backend
         base = super(BaseLDAPIdentity, self)
         base.test_list_role_assignments_filtered_by_role()
+
+    def test_list_domains_filtered_and_limited(self):
+        super(BaseLDAPIdentity, self).test_list_domains_filtered_and_limited()
 
 
 class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
