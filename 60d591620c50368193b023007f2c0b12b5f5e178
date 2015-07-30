@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_400c473b",
+        "filename": "bandit.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-30T17:08:36Z",
+      "side": 1,
+      "message": "True, technically you have to work with any version greater than 0.10.1.",
+      "parentUuid": "3a50d1a3_8a34b0fb",
+      "revId": "60d591620c50368193b023007f2c0b12b5f5e178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_fa1ebeb9",
         "filename": "bandit.yaml",
         "patchSetId": 5
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "According to https://bugs.launchpad.net/bandit/+bug/1451575 the fix for this isn\u0027t released yet, so we can\u0027t use it.",
       "parentUuid": "3a50d1a3_fa1ebeb9",
+      "revId": "60d591620c50368193b023007f2c0b12b5f5e178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dd5cc04e",
+        "filename": "bandit.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-07-30T17:08:36Z",
+      "side": 1,
+      "message": "Good point. My bad.",
+      "parentUuid": "3a50d1a3_2ab47c80",
       "revId": "60d591620c50368193b023007f2c0b12b5f5e178",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
