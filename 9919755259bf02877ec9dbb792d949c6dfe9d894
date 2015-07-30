@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_5463c241",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2911,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_4309f193",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_c3f50183",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "simplify!\n\n  return (\u0027project\u0027 in token_keys) ^ (\u0027domain\u0027 in token_keys)",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f4ce8e2c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2912,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "like your reviews, really :-)",
+      "parentUuid": "3a50d1a3_c3f50183",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_74911ef1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2914,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done,\n\nInstead of \"Reply Done\" button i should have \"Obviously you are right\" one.",
+      "parentUuid": "3a50d1a3_e3091d85",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a36f9529",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "simplify!\n\n  self.assertTrue(project_xor_domain(token.keys()), \u0027You must specify either a project or domain.\u0027)\n\nconditionals in tests are also a big red flag to me (tests should be assertive, not adaptive) -- avoid them whenever you can.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_543422fa",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2920,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_a36f9529",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_34163659",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2929,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "I will do that.\nHowever, the goal of this test was also making sure  there are only \u0027groups, identity_provider, protocol\u0027 keys and nothing more.",
+      "parentUuid": "3a50d1a3_63918df0",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_de06361b",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "why is this an \"exception\"? the rest of the sentence is a good explanation, but the \"This is an exception, but\" doesn\u0027t seem necessary.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9715cce6",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "with regard of https://review.openstack.org/#/c/207167 this comment is redundant. So i will remove it.",
+      "parentUuid": "3a50d1a3_de06361b",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_f7b3f098",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "i reverted to d[] format.",
+      "parentUuid": "3a50d1a3_1e76dea3",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_beda4a76",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "changing the method of instantiating dicts from one line to the next is distracting. stick with either dict() or {}\n\nit seems like all of this could be easier to read as a single return statement with a big dictionary, rather than a bunch of smaller steps",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a2cc488b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_beda4a76",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_d7ab541d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_1e07beca",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_fe58d2fa",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 11
@@ -166,6 +328,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "missing a space after the comma. also, please don\u0027t invent unnecessary terminology (\u0027classic\u0027 workflow). Instead, try to be specific about what\u0027s going on.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c2bf14fb",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_fe58d2fa",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_17445c19",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "the method is going to be removed with regard of depending patch https://review.openstack.org/#/c/207167",
+      "parentUuid": "3a50d1a3_1e91fe46",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_3ee2bad5",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 11
@@ -200,6 +398,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "i know you didn\u0027t name it, but this method name should not be plural -- it\u0027s only handling a single group ID.",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e27fb015",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_3ee2bad5",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0285fc05",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_fee772e0",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5e56a62a",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 11
@@ -234,6 +468,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "super nit! the order of elements in the tuple is inconsistent when compared to the other payload formats, which makes any sort of refactoring later on that much more challenging. the only change i would make is to swap the order of group IDs and the project ID so that it\u0027s:\n\n  user ID, methods, project ID, group IDs, IDP ID, ...",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e23810f1",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_5e56a62a",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_023e5cda",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_5e2d46a6",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_de0f1637",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 11
@@ -268,6 +538,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "same",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c22074b3",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_de0f1637",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_622de0a7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_de3876f0",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_fe121260",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 11
@@ -302,6 +608,24 @@
       "writtenOn": "2015-07-29T16:24:21Z",
       "side": 1,
       "message": "same",
+      "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_822a6c8f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-07-30T10:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_fe121260",
       "revId": "9919755259bf02877ec9dbb792d949c6dfe9d894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
