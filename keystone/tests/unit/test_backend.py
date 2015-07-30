@@ -28,6 +28,7 @@ from testtools import matchers
 from keystone.catalog import core
 from keystone.common import driver_hints
 from keystone import exception
+from keystone import resource
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
@@ -4098,6 +4099,41 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.role_api.update_role(self.role_member['id'],
                                   {'name': self.role_member['name']})
         # If the previous line didn't raise an exception then the test passes.
+
+    def test_list_domains_filtered_and_limited(self):
+        def create_domain(domain):
+            try:
+                self.resource_api.create_domain(domain['id'], domain)
+            except exception.Conflict:
+                self.resource_api.get_domain_by_name(domain['name'])
+        for x in range(1, 20):
+            domain = 'domain%s' % x
+            create_domain({'id': uuid.uuid4().hex, 'name': domain})
+        create_domain(resource.calc_default_domain())
+
+        unfiltered_domains = self.resource_api.list_domains()
+
+        # Should get back just 10 entities
+        self.config_fixture.config(list_limit=10)
+        hints = driver_hints.Hints()
+        entities = self.resource_api.list_domains(hints=hints)
+        self.assertThat(entities, matchers.HasLength(hints.limit['limit']))
+        self.assertTrue(hints.limit['truncated'])
+
+        # Get one exact item from the list
+        hints = driver_hints.Hints()
+        hints.add_filter('name', unfiltered_domains[10]['name'])
+        entities = self.resource_api.list_domains(hints=hints)
+        self.assertThat(entities, matchers.HasLength(1))
+        self.assertEqual(entities[0], unfiltered_domains[10])
+
+        # Get 2 entries: domain5 and domain15
+        hints = driver_hints.Hints()
+        hints.add_filter('name', '5', comparator='endswith')
+        entities = self.resource_api.list_domains(hints=hints)
+        self.assertThat(entities, matchers.HasLength(2))
+        self.assertIn(entities[0], unfiltered_domains)
+        self.assertIn(entities[1], unfiltered_domains)
 
 
 class TokenTests(object):
