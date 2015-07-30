@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_d12fc786",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-30T18:28:24Z",
+      "side": 1,
+      "message": "filter() is a python builtin, so we shouldn\u0027t be overriding it. Rename the variable to `filter_`, at least? I can\u0027t think of a better option, other than `middleware`, which is obviously a no-go.",
+      "revId": "bf54e8989bdff381dbd42d7f1aa953c318482410",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
