@@ -16,6 +16,24 @@
       "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_035c2def",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-07-30T03:35:02Z",
+      "side": 0,
+      "message": "that\u0027s a good question. it should\u0027ve been some wrong rebase. Done",
+      "parentUuid": "3a50d1a3_85a5c1a2",
+      "revId": "b3c1933bcf0b439e063151d4eee9bdbac3dc2cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
