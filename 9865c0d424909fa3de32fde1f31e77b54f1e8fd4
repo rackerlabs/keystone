@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f51bcc7e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-30T20:05:45Z",
+      "side": 1,
+      "message": "could just do a direct assignment",
+      "revId": "9865c0d424909fa3de32fde1f31e77b54f1e8fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
