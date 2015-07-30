@@ -52,6 +52,24 @@
       "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7a12550b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-30T15:31:29Z",
+      "side": 1,
+      "message": "Have you ever read the launchpad and the commit log?\nhttps://bugs.launchpad.net/keystone/+bug/1471034\n\ne.g:\n\"http://127.0.0.1:8774 /v1.1/\\$(tenant_i d)s\"\n\n1. have a space after 8774\n2. tenant_i d is not right.\n\nThis bug is about substitution and space.",
+      "parentUuid": "3a50d1a3_1aaeb1e7",
+      "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
