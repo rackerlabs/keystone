@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_9de398a4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T17:08:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_ca8e38d0",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_4a70e8dc",
         "filename": "keystone/resource/core.py",
         "patchSetId": 82
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-30T16:52:24Z",
       "side": 1,
       "message": "TODOs like this are confusing, we don\u0027t know if we should wait until you fix it before we approve or not.  I suggest you remove this.",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7df1ec69",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T17:08:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_4a70e8dc",
       "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_bd49b4b9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T17:08:41Z",
+      "side": 1,
+      "message": "not really, once we have migrated domains to the project table we\u0027ll have two cases:\n\n  1) If the parent is a project acting as a domain, my domain_id will be the parent\u0027s id\n  2) if the parent is a \"pure\" project, my domain_id will be its domain_id",
+      "parentUuid": "3a50d1a3_6a1044ac",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_aafacc41",
         "filename": "keystone/resource/core.py",
         "patchSetId": 82
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_3dd4c4bb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T17:08:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_aafacc41",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_4aa2284d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 82
@@ -81,6 +153,24 @@
       "writtenOn": "2015-07-30T16:52:24Z",
       "side": 1,
       "message": "ditto",
+      "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9d563829",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T17:08:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_4aa2284d",
       "revId": "855e40517187d033a0397e47de74a80a7395d0c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
