@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_981bb873",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 81
+      },
+      "lineNbr": 2170,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T11:22:05Z",
+      "side": 1,
+      "message": "Tests should test the functionality of this patch.  Period. TODOs should really only be used when there is a bug to be fixed, and this bug is referenced in the code.  The TODOs in these tests make it much harder to review.",
+      "parentUuid": "3a50d1a3_b5e0fd97",
+      "revId": "f603628f592e4fb329e9301fd8c7d0002b8f98f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_23ba7a72",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 81
