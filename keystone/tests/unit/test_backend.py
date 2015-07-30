@@ -4766,6 +4766,54 @@ class IdentityTests(AssignmentTestHelperMixin):
         for assignment in domain_assignments:
             self.assertThat(assignment.keys(), matchers.Contains('domain_id'))
 
+    def clean_up_domains(self):
+        for k, domain in self.domain_list.items():
+            domain['enabled'] = False
+            self.resource_api.driver.update_domain(domain['id'], domain)
+            self.resource_api.delete_domain(domain['id'])
+
+    def test_list_domains_filtered_and_limited(self):
+        # The test is designed for multiple domains only
+        if not self.identity_api.multiple_domains_supported \
+                or not self.identity_api.driver.is_domain_aware():
+            return
+        self.domain_list = {}
+        for x in range(1, 6):
+            if x <= 2:
+                domain_name = 'domaingroup1-%s' % uuid.uuid4().hex
+            else:
+                domain_name = 'domaingroup2-%s' % uuid.uuid4().hex
+            domain = unit.new_domain_ref(name=domain_name)
+            self.domain_list[domain_name] = self.resource_api.create_domain(
+                domain['id'], domain)
+
+        self.addCleanup(self.clean_up_domains)
+        unfiltered_domains = self.resource_api.list_domains()
+
+        # Should get back just 4 entities
+        self.config_fixture.config(list_limit=4)
+        hints = driver_hints.Hints()
+        entities = self.resource_api.list_domains(hints=hints)
+        self.assertThat(entities, matchers.HasLength(hints.limit['limit']))
+        self.assertTrue(hints.limit['truncated'])
+
+        # Get one exact item from the list
+        hints = driver_hints.Hints()
+        hints.add_filter('name', unfiltered_domains[3]['name'])
+        entities = self.resource_api.list_domains(hints=hints)
+        self.assertThat(entities, matchers.HasLength(1))
+        self.assertEqual(entities[0], unfiltered_domains[3])
+
+        # Get 2 entries
+        hints = driver_hints.Hints()
+        hints.add_filter('name', 'domaingroup1', comparator='startswith')
+        entities = self.resource_api.list_domains(hints=hints)
+        self.assertThat(entities, matchers.HasLength(2))
+        self.assertThat(entities[0]['name'],
+                        matchers.StartsWith('domaingroup1'))
+        self.assertThat(entities[1]['name'],
+                        matchers.StartsWith('domaingroup1'))
+
 
 class TokenTests(object):
     def _create_token_id(self):
