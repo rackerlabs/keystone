@@ -84,6 +84,40 @@
       "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d51ee90c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T11:09:36Z",
+      "side": 1,
+      "message": "So I really, really, really don\u0027t like this.  I can\u0027t see any reason why we are maintaining domains in the patch.  Why not just leave them orphaned until you clean them up in the next patch?",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_35b70df7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-07-30T11:09:36Z",
+      "side": 1,
+      "message": "We absolutely, positively can\u0027t have checks in here.  We either use all the checks in _create_project or all checks in _create_domain, but not both.",
+      "revId": "018b96fdbce5e1e6af8b300649bc7e4446c8a07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
