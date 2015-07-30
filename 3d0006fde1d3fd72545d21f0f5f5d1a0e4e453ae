@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_9177ff9e",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "this should be formatted something like:\n\n* `X.509 Tokenless Authorization`: Provides a means to authorize client operations within Keystone by\t using\n   an X.509 SSL client certificate without having to issue a token.\n\nchanges:\n1.  use singe ` instead of two\n2. added colon and put the description on the same line\n\nsee sample: https://raw.githubusercontent.com/openstack/keystone/6a6fcc22bef6f81dd202928e9c3f342c3338ad73/doc/source/configure_federation.rst",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_310dcbe8",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": ".. code-block:: ini",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d1c34756",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "end with colon instead?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f1a1a396",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "a sample of the keystone conf would be helpful here and also include the config group [tokenless_auth] too?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_71027374",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "typo: issuer_dn\n\ndo we really need the emailAddress, location and street?\n\nSuggest to use a better example here than projectA or domainA.com",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_711033ac",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "can you describe or give an example how the client certificate should be created to be able to map to an existing user?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b1755bfb",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "should you mention something about IdP and mapping association when creating the protocol? to make it clearer for the reader",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8c9e08b7",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "add the \"boolean\" parameter type too in the docs",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ace50439",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "add space after the period",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ece54c0a",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "Would it better to create a more specific type of Exception?\n\nsomething like TokenlessAuthConfigError?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_121c4e69",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "would be useful to add a debug here too to determine that the request cannot be processed",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d280264c",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-30T19:16:53Z",
+      "side": 1,
+      "message": "you may want to re-use the group_id at the top of the file?  or just use a random one?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
