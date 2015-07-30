@@ -726,6 +726,10 @@ class V3Controller(wsgi.Application):
         being used.
 
         """
+        if context.get('is_admin', False):
+            raise exception.ValidationError(
+                _('The admin token is not a domain-scoped token.'))
+
         token_ref = utils.get_token_ref(context)
 
         if token_ref.domain_scoped:
