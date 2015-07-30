@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_9597e839",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-30T20:03:24Z",
+      "side": 1,
+      "message": "this is way easier to read now, thanks",
+      "revId": "7caccacf6c81241fea25174dfb09eecd4a6c5690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b538e43e",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-30T20:03:24Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be a private method if we have to call into it from here",
+      "revId": "7caccacf6c81241fea25174dfb09eecd4a6c5690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_75fedc39",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-30T20:03:24Z",
+      "side": 1,
+      "message": "Now that this is a class method, it\u0027s not using the term \"pack\" like \"pack()\" and \"unpack()\" are, so it\u0027s sort of breaking conventions, but I\u0027m not sure what to suggest as a better name.\n\nI\u0027m also tempted to suggest replacing both of these with lambdas, since they do so little work, but it might make more sense to move the list(map()) bits into this as well, since that ends up being duplicated repeatedly as well.",
+      "revId": "7caccacf6c81241fea25174dfb09eecd4a6c5690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
