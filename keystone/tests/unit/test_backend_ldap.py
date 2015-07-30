@@ -24,6 +24,7 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import cache
+from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone import exception
@@ -33,6 +34,7 @@ from keystone import resource
 from keystone.tests import unit as tests
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import fakeldap
+from keystone.tests.unit import filtering
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
@@ -2366,7 +2368,8 @@ class BaseMultiLDAPandSQLIdentity(object):
 
 
 class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
-                              tests.TestCase, BaseMultiLDAPandSQLIdentity):
+                              tests.TestCase, BaseMultiLDAPandSQLIdentity,
+                              filtering.FilterTests):
     """Class to test common SQL plus individual LDAP backends.
 
     We define a set of domains and domain-specific backends:
@@ -2636,6 +2639,28 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         # Override
         self.skipTest("Doesn't apply since LDAP configuration is ignored for "
                       "SQL assignment backend.")
+
+    def test_list_domains_filtered_and_limited(self):
+        self.domain_count = 20
+        self.setup_initial_domains()
+        unfiltered_domains = self._list_entities('domain')()
+
+        # Should get back just 10 entities
+        self.config_fixture.config(list_limit=10)
+        hints = driver_hints.Hints()
+        hints.add_filter('name', 'domain', comparator='startswith')
+        entities = self._list_entities('domain')(hints=hints)
+        self.assertEqual(hints.limit['limit'], len(entities))
+        self.assertTrue(hints.limit['truncated'])
+        self._match_with_list(entities, unfiltered_domains)
+
+        # Finally, let's pretend we want to get the full list of entities,
+        # even with the limits set, as part of some internal calculation.
+        # Calling the API without a hints list should achieve this, and
+        # return at least the 20 entries we created (there may be other
+        # entities lying around created by other tests/setup).
+        entities = self._list_entities('domain')()
+        self.assertTrue(len(entities) >= 20)
 
 
 class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
