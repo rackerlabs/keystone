@@ -6849,3 +6849,29 @@ class LimitTests(filtering.FilterTests):
 
     def test_list_projects_filtered_and_limited(self):
         self._test_list_entity_filtered_and_limited('project')
+
+
+class DomainLimitTests(filtering.FilterTests):
+
+    def test_list_domains_filtered_and_limited(self):
+        self.domain_count = 20
+        self.setup_initial_domains()
+        unfiltered_domains = self.resource_api.list_domains()
+
+        # Should get back just 10 entities
+        self.config_fixture.config(list_limit=10)
+        hints = driver_hints.Hints()
+        hints.add_filter('name', 'domain', comparator='startswith')
+        entities = self._list_entities('domain')(hints=hints)
+
+        self.assertThat(entities, matchers.HasLength(hints.limit['limit']))
+        self.assertTrue(hints.limit['truncated'])
+        self._match_with_list(entities, unfiltered_domains)
+
+        # Finally, let's pretend we want to get the full list of entities,
+        # even with the limits set, as part of some internal calculation.
+        # Calling the API without a hints list should achieve this and
+        # return at least the 20 entries we created (there may be other
+        # entities lying around created by other tests/setup).
+        entities = self.resource_api.list_domains()
+        self.assertThat(entities, matchers.HasLength(20))
