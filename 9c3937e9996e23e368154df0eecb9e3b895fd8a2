@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_540df0e6",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T14:52:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_b7848fb1",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_57faeb44",
         "filename": "keystone/resource/core.py",
         "patchSetId": 80
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-30T10:56:22Z",
       "side": 1,
       "message": "This error message still sounds confusing. Here\u0027s an example of what I think it should say:\n\n\"Cannot create project X, since it specifies its owner as domain Y, but specifies a parent in a different domain\"",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_346e2497",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T14:52:19Z",
+      "side": 1,
+      "message": "fixed in the previous patch",
+      "parentUuid": "3a50d1a3_57faeb44",
       "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_945cd8f1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 2248,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T14:52:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_a3520a67",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_634c02c9",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 80
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-30T10:56:22Z",
       "side": 1,
       "message": "TODOs really aren\u0027t for keeping reminders of what\u0027s coming in the next patch....This doesn\u0027t help the reviewer at all.",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b461d4aa",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 2276,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T14:52:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_634c02c9",
       "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_d4e58038",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T14:52:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_43f1c669",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_37663f2a",
         "filename": "keystone/tests/unit/test_v2_controller.py",
         "patchSetId": 80
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-30T07:24:58Z",
       "side": 1,
       "message": "projects (tenants) in v2 won\u0027t have a is_domain field, it will be filtered.\n\nAlso, I believe these tests should be in the previous patch",
+      "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_745b4cf7",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-30T14:52:19Z",
+      "side": 1,
+      "message": "fixed in previous patch",
+      "parentUuid": "3a50d1a3_37663f2a",
       "revId": "9c3937e9996e23e368154df0eecb9e3b895fd8a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
