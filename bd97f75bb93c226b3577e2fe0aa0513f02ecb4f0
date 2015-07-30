@@ -88,6 +88,24 @@
       "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_39e60a17",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-30T23:39:12Z",
+      "side": 1,
+      "message": "First of all, you said a url with a space is valid. That\u0027s because the broswer and curl will remove space by itself. So, you think a space in a url is removed by itself in every place???????????????\n\n\nMy preferred option is to use a library that validates URLs correctly rather than writing our own???\n\nI have told you that\n1. This bug is simply about the substitutions.\nThe rfc3986 is about validating every espect. https://www.ietf.org/rfc/rfc3986.txt\nI mean rfc3987 is for general validation. Here is a little special.\nI hope you can think twice.\n\n2. @Dolph Mathews @David Stanek They all think do it like this is okay.\nI hope that you can have a discuss with them.\n\nYou are like to use a library to validate substitution ???Please tell me how???",
+      "parentUuid": "3a50d1a3_215ed612",
+      "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
