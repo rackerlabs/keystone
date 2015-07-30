@@ -70,6 +70,24 @@
       "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_215ed612",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-30T21:31:16Z",
+      "side": 1,
+      "message": "I did read the launchpad and the commit log, but then in your comment above you said \"This bug is simply about the substitutions.\". You will find this a couple of comments above. If all this commit was doing was validating the substitution strings in the URL I would be fine with that change. So this commit could be split into 2 commits, one to validate the substitutions and one to ensure there are no spaces. I\u0027d prefer it if the commit was split up since it would be easier to understand and review.\n\nI tried out a URL that has a space in it in a few user agents and they handled it without problems. I used Firefox, curl command line, and python requests library. So this new behavior will reject valid URLs and potentially result in breaking existing deployments. As such, keystone must not reject urls just because they have spaces in them. My preferred option is to use a library that validates URLs correctly rather than writing our own.",
+      "parentUuid": "3a50d1a3_7a12550b",
+      "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
