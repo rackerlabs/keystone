@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b948da8b",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "you got it!",
+      "parentUuid": "3a50d1a3_9177ff9e",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_310dcbe8",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 47
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-30T19:16:53Z",
       "side": 1,
       "message": ".. code-block:: ini",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_395daa48",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "3a50d1a3_310dcbe8",
       "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_ff14d4e9",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "3a50d1a3_d1c34756",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_f1a1a396",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 47
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-30T19:16:53Z",
       "side": 1,
       "message": "a sample of the keystone conf would be helpful here and also include the config group [tokenless_auth] too?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_02b4c732",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "3a50d1a3_f1a1a396",
       "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c291ff47",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "not necessary but they are the common attributes in a certificate. \nST or S refers to \u0027state\u0027",
+      "parentUuid": "3a50d1a3_71027374",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_711033ac",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 47
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-30T19:16:53Z",
       "side": 1,
       "message": "can you describe or give an example how the client certificate should be created to be able to map to an existing user?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f54f1332",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "3a50d1a3_711033ac",
       "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b5a3cbb0",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3a50d1a3_b1755bfb",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_8c9e08b7",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 47
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-30T19:16:53Z",
       "side": 1,
       "message": "add the \"boolean\" parameter type too in the docs",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f8d5cae4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3a50d1a3_8c9e08b7",
       "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_981126b2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3a50d1a3_ace50439",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_ece54c0a",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 47
@@ -166,6 +328,24 @@
       "writtenOn": "2015-07-30T19:16:53Z",
       "side": 1,
       "message": "Would it better to create a more specific type of Exception?\n\nsomething like TokenlessAuthConfigError?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d8a9ee25",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "I rather to keep it more generic here as the message can already identify the specific error. And the other implementation could also use the exception as well. \nUnless you or someone else strongly against this, or I just keep it as it is ;-)",
+      "parentUuid": "3a50d1a3_ece54c0a",
       "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_f3196b23",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "that\u0027s good idea! done.",
+      "parentUuid": "3a50d1a3_121c4e69",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_d280264c",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 47
@@ -200,6 +398,24 @@
       "writtenOn": "2015-07-30T19:16:53Z",
       "side": 1,
       "message": "you may want to re-use the group_id at the top of the file?  or just use a random one?",
+      "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d3b8efc9",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-07-31T21:31:31Z",
+      "side": 1,
+      "message": "I wanted the group id can be passed from the test case. like \ntest_middleware.py:609 and 672.",
+      "parentUuid": "3a50d1a3_d280264c",
       "revId": "3d0006fde1d3fd72545d21f0f5f5d1a0e4e453ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
