@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_885d867b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-31T03:40:37Z",
+      "side": 1,
+      "message": "Why had no bug_id or bp_id in the commit log?",
+      "revId": "551d9d25329afdd2690040129d42ed86319eae31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_c815ce9b",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
