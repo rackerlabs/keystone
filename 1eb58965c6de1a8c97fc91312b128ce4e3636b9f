@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_3006fb85",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T14:47:05Z",
+      "side": 1,
+      "message": "I think you should also remove the hasattr check. This won\u0027t work on Python 3 since there is not itemitems method.?",
+      "revId": "1eb58965c6de1a8c97fc91312b128ce4e3636b9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
