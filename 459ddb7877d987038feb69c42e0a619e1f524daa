@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_72cc7c61",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-31T19:07:40Z",
+      "side": 1,
+      "message": "it\u0027s guaranteed that C\u0027s domain is already correctly set, because it has passed the same validation that we are doing here, B as well",
+      "parentUuid": "3a50d1a3_acadcf9c",
+      "revId": "459ddb7877d987038feb69c42e0a619e1f524daa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_6c07c71d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 84
@@ -47,6 +65,24 @@
       "writtenOn": "2015-07-31T18:22:58Z",
       "side": 1,
       "message": "can this not be enforced in the controller layer with the validation module?",
+      "revId": "459ddb7877d987038feb69c42e0a619e1f524daa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_12f2d89a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-07-31T19:07:40Z",
+      "side": 1,
+      "message": "you are right, but we are just keeping the legacy code (today, it does the same thing)",
+      "parentUuid": "3a50d1a3_6c07c71d",
       "revId": "459ddb7877d987038feb69c42e0a619e1f524daa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
