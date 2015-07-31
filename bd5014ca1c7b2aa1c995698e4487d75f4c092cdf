@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_324914b8",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-07-31T19:11:57Z",
+      "side": 1,
+      "message": "If the ldap tests are needed for the full test run, it\u0027s probably more accurate to put this in test-requirements.txt, but I\u0027m not sure it makes much difference.",
+      "revId": "bd5014ca1c7b2aa1c995698e4487d75f4c092cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
