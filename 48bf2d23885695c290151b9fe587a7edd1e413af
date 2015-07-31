@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0394dbe5",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-31T15:10:16Z",
+      "side": 1,
+      "message": "nit:\n\n  Upon success, a ``roles`` key will be added to ``token_dict``.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
