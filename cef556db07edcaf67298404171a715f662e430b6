@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f3540bcb",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-31T21:27:54Z",
+      "side": 1,
+      "message": "is it the TTL or is it just the integer representation of the expiration? I don\u0027t think we calculate the expiration based on that integer, I think we just convert it back into a timestamp.\n\nhttps://github.com/openstack/keystone/blob/4ff9e969a8a211213a3f550273e9fead16e3d29c/keystone/token/providers/fernet/token_formatters.py#L353",
+      "revId": "cef556db07edcaf67298404171a715f662e430b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
