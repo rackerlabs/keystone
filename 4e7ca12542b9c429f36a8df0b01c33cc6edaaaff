@@ -34,6 +34,23 @@
       "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b039ab41",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T14:47:21Z",
+      "side": 1,
+      "message": "This looks like it could cause a busy wait now. What happens when the server is under high load? What types of testing did you do to ensure this doesn\u0027t happen under heavy load or when the connection to memcache starts to experience some latency?",
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
