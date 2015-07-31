@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_9cd7e84e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1495,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-31T15:57:16Z",
+      "side": 1,
+      "message": "(nit) I\u0027d add LOG.debug here. It\u0027s better to know when your cloud configured improperly",
+      "revId": "4e802a00879d1298bb72f2e5014154279e2101ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
