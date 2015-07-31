@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_f0ff3364",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T14:47:07Z",
+      "side": 1,
+      "message": "Adding the cleanup here is no better than it was before. It still won\u0027t be run if there was an exception is the setUp.",
+      "revId": "f662919880e2f5f37a5f36930b53de9bc34c7c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
