@@ -106,6 +106,24 @@
       "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_d2501b0d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15830
+      },
+      "writtenOn": "2015-07-31T01:36:35Z",
+      "side": 1,
+      "message": "According some of your suggestion, I will only check substitution.\nIf you don\u0027t agree with me about this, I hope you can discuss with David first.",
+      "parentUuid": "3a50d1a3_215ed612",
+      "revId": "bd97f75bb93c226b3577e2fe0aa0513f02ecb4f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
