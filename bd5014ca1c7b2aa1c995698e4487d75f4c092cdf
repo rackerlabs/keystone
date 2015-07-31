@@ -16,6 +16,24 @@
       "revId": "bd5014ca1c7b2aa1c995698e4487d75f4c092cdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f21acc7b",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-07-31T19:17:46Z",
+      "side": 1,
+      "message": "Based on https://www.python.org/dev/peps/pep-0426/#extras-optional-dependencies, I\u0027m thinking that in future this will have\n\n deps\u003d.[:test:]\n\nI haven\u0027t tried it yet.",
+      "parentUuid": "3a50d1a3_324914b8",
+      "revId": "bd5014ca1c7b2aa1c995698e4487d75f4c092cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
