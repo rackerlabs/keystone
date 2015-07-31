@@ -206,6 +206,20 @@ class Provider(common.BaseProvider):
         :type token_data: dict
         :raises keystone.exception.NotImplemented: when called
         """
+        # Override the microsecond-level precision requested by the manager
+        # layer because Fernet cannot persist non-integer timestamps. Both the
+        # creation timestamp and expiration timestamp are based on an integer
+        # timestamp in the Fernet spec itself (outside of the message payload),
+        # plus an integer TTL (inside the message payload) to compute the
+        # expiration.
+        MICROSECONDS = '.000000Z'
+        token_data['token']['expires_at'] = (
+            token_data['token']['expires_at'][:-len(MICROSECONDS)] +
+            MICROSECONDS)
+        token_data['token']['issued_at'] = (
+            token_data['token']['issued_at'][:-len(MICROSECONDS)] +
+            MICROSECONDS)
+
         return self.token_formatter.create_token(
             token_data['token']['user']['id'],
             token_data['token']['expires_at'],

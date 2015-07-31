@@ -546,16 +546,8 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         super(TestFernetTokenAPIs, self).test_v3_v2_token_intermix()
 
     @test_utils.wip('Failing due to bug 1459790.')
-    def test_v3_v2_unscoped_token_intermix(self):
-        super(TestFernetTokenAPIs, self).test_v3_v2_unscoped_token_intermix()
-
-    @test_utils.wip('Failing due to bug 1459790.')
     def test_v2_v3_token_intermix(self):
         super(TestFernetTokenAPIs, self).test_v2_v3_token_intermix()
-
-    @test_utils.wip('Failing due to bug 1459790.')
-    def test_rescoping_token(self):
-        super(TestFernetTokenAPIs, self).test_rescoping_token()
 
     @test_utils.wip('Failing due to bug 1475762.')
     def test_v3_v2_intermix_non_default_project_failed(self):
