@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_e8044a19",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T03:54:20Z",
+      "side": 1,
+      "message": "Good to know. I\u0027ll try to fetch it from the DB correctly. IMO using string_types anywhere means that there is a serious problem somewhere.",
+      "parentUuid": "3a50d1a3_c815ce9b",
+      "revId": "551d9d25329afdd2690040129d42ed86319eae31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_a8772207",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -82,6 +100,24 @@
       "writtenOn": "2015-07-31T03:39:13Z",
       "side": 1,
       "message": "remove these test modules if these are not ready to go.",
+      "revId": "551d9d25329afdd2690040129d42ed86319eae31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_830c873c",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T03:54:20Z",
+      "side": 1,
+      "message": "yep, this patch isn\u0027t quite ready for merging. i only pushed it to some of the others could get a preview of the fernet changes.",
+      "parentUuid": "3a50d1a3_a8772207",
       "revId": "551d9d25329afdd2690040129d42ed86319eae31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
