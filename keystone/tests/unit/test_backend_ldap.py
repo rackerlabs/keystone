@@ -1427,6 +1427,45 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         new_user = [u for u in res if u['id'] == user['id']][0]
         self.assertThat(new_user['description'], matchers.Equals(description))
 
+    def test_user_with_bad_id(self):
+        # there are 4 users now
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(len(default_fixtures.USERS)))
+
+        # assume that their id attribute is stored in some other field
+        conf = self.get_config(CONF.identity.default_domain_id)
+        conf.ldap.user_id_attribute = 'info'
+        self.reload_backends(CONF.identity.default_domain_id)
+
+        # there are no users with non-empty `id` field
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(len(default_fixtures.USERS)))
+
+        # create a user
+        user = {
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'password': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id
+        }
+        user = self.identity_api.create_user(user)
+
+        # now there should be only 1 user with non-empty id field
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(1))
+
+        # make sure that the 4 users with `cn` serving for id are
+        # still there
+        conf = self.get_config(CONF.identity.default_domain_id)
+        conf.ldap.user_id_attribute = 'cn'
+        self.reload_backends(CONF.identity.default_domain_id)
+
+        # users created with `info` serving for id don't have `cn` field and
+        # they don't break things
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(len(default_fixtures.USERS)))
+
+
     @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
         # Mock the search results to return attribute names
