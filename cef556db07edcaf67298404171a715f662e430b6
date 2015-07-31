@@ -16,6 +16,24 @@
       "revId": "cef556db07edcaf67298404171a715f662e430b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c9012206",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-31T22:20:30Z",
+      "side": 1,
+      "message": "oh, that\u0027s right. the TTL implementation took almost as much space as a standard timestamp.",
+      "parentUuid": "3a50d1a3_f3540bcb",
+      "revId": "cef556db07edcaf67298404171a715f662e430b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
