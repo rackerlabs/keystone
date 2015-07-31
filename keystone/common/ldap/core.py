@@ -1485,6 +1485,19 @@ class BaseLdap(object):
         with self.get_connection() as conn:
             return conn.search_s(search_base, scope, query, attrlist)
 
+    def _ldap_res_to_model_list(self, res_list):
+        result = []
+        for res in res_list:
+            try:
+                model_item = self._ldap_res_to_model(res)
+                result.append(model_item)
+            except exception.NotFound:
+                pass
+                # this exception means that for some reason `id` field is
+                # missing. Missing id field in one of items should not affect
+                # other items, so skip it silently
+        return result
+
     def get(self, object_id, ldap_filter=None):
         res = self._ldap_get(object_id, ldap_filter)
         if res is None:
@@ -1503,8 +1516,7 @@ class BaseLdap(object):
             raise self._not_found(name)
 
     def get_all(self, ldap_filter=None):
-        return [self._ldap_res_to_model(x)
-                for x in self._ldap_get_all(ldap_filter)]
+        return self._ldap_res_to_model_list(self._ldap_get_all(ldap_filter))
 
     def update(self, object_id, values, old_obj=None):
         if old_obj is None:
@@ -1867,9 +1879,10 @@ class EnabledEmuMixIn(BaseLdap):
     def get_all(self, ldap_filter=None):
         if 'enabled' not in self.attribute_ignore and self.enabled_emulation:
             # had to copy BaseLdap.get_all here to ldap_filter by DN
-            tenant_list = [self._ldap_res_to_model(x)
-                           for x in self._ldap_get_all(ldap_filter)
-                           if x[0] != self.enabled_emulation_dn]
+            tenant_list = self._ldap_res_to_model_list(
+                [x for x in self._ldap_get_all(ldap_filter)
+                 if x[0] != self.enabled_emulation_dn])
+
             with self.get_connection() as conn:
                 for tenant_ref in tenant_list:
                     tenant_ref['enabled'] = self._get_enabled(

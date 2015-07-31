@@ -1427,6 +1427,34 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         new_user = [u for u in res if u['id'] == user['id']][0]
         self.assertThat(new_user['description'], matchers.Equals(description))
 
+    @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get_all')
+    def test_user_with_bad_id(self, mock_ldap_get_all):
+        # emulate bad id by mocking return value of _ldap_get_all method and
+        # setting user_id_attribute option to some non-default field
+        conf = self.get_config(CONF.identity.default_domain_id)
+        conf.ldap.user_id_attribute = 'info'
+        self.reload_backends(CONF.identity.default_domain_id)
+        user_id = uuid.uuid4().hex
+        get_all_return_value = [
+            (u'cn=bb973de1ba5f4c38a1c29c95b8c265fa,ou=Users,cn=example,cn=com',
+             {'cn': [u'bb973de1ba5f4c38a1c29c95b8c265fa'],
+              'enabled': [True],
+              'sn': [u'da2110323b524b38b42cc41c35bb9dcc'],
+              'userPassword': [u'2544043933a5411ba109d3ed1ffc3a3c'],
+              'info': [user_id]}),
+            (u'cn=ef70b57debb3431f8fa7e9e85ac2d89a,ou=Users,cn=example,cn=com',
+             {'cn': ['one'],
+              'enabled': [True],
+              'mail': [u'two@three.com'],
+              'sn': [u'TWO'],
+              'userPassword': [u'two2'],
+              'info': []})]
+        mock_ldap_get_all.return_value = get_all_return_value
+
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(1))
+        self.assertEqual(user_id, users[0]['id'])
+
     @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
         # Mock the search results to return attribute names
