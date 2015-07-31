@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_48221e03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-31T03:39:13Z",
+      "side": 1,
+      "message": "If this patch happened to fix this bug (https://bugs.launchpad.net/keystone/+bug/1463727), feel free to include this in the commit message and close it, thanks.",
+      "revId": "551d9d25329afdd2690040129d42ed86319eae31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c815ce9b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-31T03:39:13Z",
+      "side": 1,
+      "message": "This will fail tempest case, tempest.api.identity.admin.v3.test_tokens.TokensV3TestJSON.test_rescope_token\n\naudit info is built from two place,\n\n1. The mod: random_urlsafe_str, return byte and is okay.\n\n2. Inherited from the exsiting token as what the tempest case did.\nIn this case, the audit info is built from the info fetched from the DB, and the type of audit info is unicode instead of byte, unless we tweak it, it won\u0027t pass the tempest test.\n\nIn python2, both str and unicode is the subclass of basestring, but obviously unicode is not the instance of the str (six.binary_type).",
+      "revId": "551d9d25329afdd2690040129d42ed86319eae31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a8772207",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-07-31T03:39:13Z",
+      "side": 1,
+      "message": "remove these test modules if these are not ready to go.",
+      "revId": "551d9d25329afdd2690040129d42ed86319eae31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
