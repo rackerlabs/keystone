@@ -1427,6 +1427,26 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         new_user = [u for u in res if u['id'] == user['id']][0]
         self.assertThat(new_user['description'], matchers.Equals(description))
 
+    def test_user_with_missing_id(self):
+        # create a user with id field other than used in keystone
+        ldap_ = self.identity_api.driver.user.get_connection()
+        # 'z' is prepended because ldap requires field names to start with
+        # a letter
+        ldap_id_field = 'z' + uuid.uuid4().hex
+        ldap_id_value = uuid.uuid4().hex
+        dn = '%s=%s,ou=Users,cn=example,cn=com' % (ldap_id_field,
+                                                   ldap_id_value)
+        modlist = [('objectClass', ['person', 'inetOrgPerson']),
+                   (ldap_id_field, [ldap_id_value]),
+                   ('sn', [uuid.uuid4().hex]),
+                   ('mail', ['email@example.com']),
+                   ('userPassword', [uuid.uuid4().hex])]
+        ldap_.add_s(dn, modlist)
+
+        # make sure the user doesn't break other users
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(len(default_fixtures.USERS)))
+
     @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
         # Mock the search results to return attribute names
