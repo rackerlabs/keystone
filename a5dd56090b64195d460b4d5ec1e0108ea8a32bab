@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_63003f03",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-07-31T15:12:01Z",
+      "side": 1,
+      "message": "I can\u0027t understand the need for a function here, can you please explain why not to do all this in-place?",
+      "revId": "a5dd56090b64195d460b4d5ec1e0108ea8a32bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
