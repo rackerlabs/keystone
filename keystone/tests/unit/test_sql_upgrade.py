@@ -168,8 +168,9 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
 
         # auto-detect the highest available schema version in the migrate_repo
         self.max_version = self.schema.repository.version().version
+        self.addCleanup(self._cleanup)
 
-    def tearDown(self):
+    def _cleanup(self):
         sqlalchemy.orm.session.Session.close_all()
         meta = sqlalchemy.MetaData()
         meta.bind = self.engine
@@ -200,7 +201,6 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
                 conn.execute(schema.DropTable(table))
 
         sql.cleanup()
-        super(SqlMigrateBase, self).tearDown()
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
