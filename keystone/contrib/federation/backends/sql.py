@@ -17,6 +17,9 @@ from oslo_serialization import jsonutils
 from keystone.common import sql
 from keystone.contrib.federation import core
 from keystone import exception
+from keystone import notifications
+from keystone.token import persistence
+from keystone.token.persistence.backends import sql as token_sql
 from sqlalchemy import orm
 
 
@@ -169,6 +172,8 @@ class Federation(core.Driver):
     def delete_idp(self, idp_id):
         with sql.transaction() as session:
             self._delete_assigned_protocols(session, idp_id)
+            self._delete_associated_tokens(session, idp_id)
+            notifications.Audit.deleted('idp', idp_id, None)
             idp_ref = self._get_idp(session, idp_id)
             session.delete(idp_ref)
 
@@ -210,6 +215,9 @@ class Federation(core.Driver):
             new_idp = IdentityProviderModel.from_dict(old_idp)
             for attr in IdentityProviderModel.mutable_attributes:
                 setattr(idp_ref, attr, getattr(new_idp, attr))
+            self._delete_associated_tokens(session, idp_id)
+            if not new_idp.enabled:
+                notifications.Audit.disabled('idp', idp_id, None)
         return idp_ref.to_dict()
 
     # Protocol CRUD
@@ -264,6 +272,14 @@ class Federation(core.Driver):
         query = session.query(FederationProtocolModel)
         query = query.filter_by(idp_id=idp_id)
         query.delete()
+
+    def _delete_associated_tokens(self, session, idp_id):
+        query = session.query(token_sql.TokenModel)
+        query = query.filter_by(idp_id=idp_id)
+        token_manager = persistence.PersistenceManager()
+        for token in query:
+            if token.valid:
+                token_manager.delete_token(token_id=token.id)
 
     # Mapping CRUD
     def _get_mapping(self, session, mapping_id):

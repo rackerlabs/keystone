@@ -124,10 +124,8 @@ class DictBase(models.ModelBase):
     @classmethod
     def from_dict(cls, d):
         new_d = d.copy()
-
         new_d['extra'] = {k: new_d.pop(k) for k in six.iterkeys(d)
                           if k not in cls.attributes and k != 'extra'}
-
         return cls(**new_d)
 
     def to_dict(self, include_extra_dict=False):

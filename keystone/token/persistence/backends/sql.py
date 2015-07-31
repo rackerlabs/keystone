@@ -25,20 +25,20 @@ from keystone.i18n import _LI
 from keystone import token
 from keystone.token import provider
 
-
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
 class TokenModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'token'
-    attributes = ['id', 'expires', 'user_id', 'trust_id']
+    attributes = ['id', 'expires', 'user_id', 'trust_id', 'idp_id']
     id = sql.Column(sql.String(64), primary_key=True)
     expires = sql.Column(sql.DateTime(), default=None)
     extra = sql.Column(sql.JsonBlob())
     valid = sql.Column(sql.Boolean(), default=True, nullable=False)
     user_id = sql.Column(sql.String(64))
     trust_id = sql.Column(sql.String(64))
+    idp_id = sql.Column(sql.String(64))
     __table_args__ = (
         sql.Index('ix_token_expires', 'expires'),
         sql.Index('ix_token_expires_valid', 'expires', 'valid'),
@@ -100,6 +100,12 @@ class Token(token.persistence.Driver):
             data_copy['expires'] = provider.default_expire_time()
         if not data_copy.get('user_id'):
             data_copy['user_id'] = data_copy['user']['id']
+
+        try:
+            data_copy['idp_id'] = (data_copy['user']['OS-FEDERATION']
+                                            ['identity_provider']['id'])
+        except KeyError:
+            data_copy['idp_id'] = None
 
         token_ref = TokenModel.from_dict(data_copy)
         token_ref.valid = True

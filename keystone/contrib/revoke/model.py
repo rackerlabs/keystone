@@ -27,7 +27,9 @@ _NAMES = ['trust_id',
           'domain_id',
           'project_id',
           'user_id',
-          'role_id']
+          'role_id',
+          'idp_id'
+          ]
 
 
 # Additional arguments for creating a RevokeEvent
@@ -102,6 +104,7 @@ class RevokeEvent(object):
                 'project_id',
                 'audit_id',
                 'audit_chain_id',
+                'idp_id'
                 ]
         event = {key: self.__dict__[key] for key in keys
                  if self.__dict__[key] is not None}
@@ -116,6 +119,7 @@ class RevokeEvent(object):
         if self.issued_before is not None:
             event['issued_before'] = utils.isotime(self.issued_before,
                                                    subsecond=True)
+
         return event
 
     def key_for_name(self, name):
@@ -302,6 +306,7 @@ def build_token_values_v2(access, default_domain_id):
     for role in roles:
         role_list.append(role)
     token_values['roles'] = role_list
+
     return token_values
 
 
@@ -368,4 +373,7 @@ def build_token_values(token_data):
     else:
         token_values['consumer_id'] = oauth1['consumer_id']
         token_values['access_token_id'] = oauth1['access_token_id']
+
+    token_values['idp_id'] = token_data.get('idp_id', None)
+
     return token_values
