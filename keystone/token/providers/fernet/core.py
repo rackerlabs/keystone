@@ -82,6 +82,8 @@ class Provider(common.BaseProvider):
             include_catalog=False,
             audit_info=audit_ids)
 
+        self._truncate_timestamps(v3_token_data)
+
         expires_at = v3_token_data['token']['expires_at']
         token_id = self.token_formatter.create_token(user_id, expires_at,
                                                      audit_ids,
@@ -199,6 +201,23 @@ class Provider(common.BaseProvider):
             token=token_dict,
             audit_info=audit_ids)
 
+    def _truncate_timestamps(self, v3_token_data):
+        """Truncate non-integer timestamps.
+
+        This overrides the microsecond-level precision requested by the manager
+        layer because Fernet cannot persist non-integer timestamps. In Fernet,
+        both the creation timestamp and expiration timestamp are based on
+        integer timestamps. The creation timestamp is outside of the message
+        payload (and a part of the Fernet spec itself), and the expiration is a
+        part of the message payload.
+
+        """
+        MICROSECONDS = '.000000Z'
+        for timestamp_key in ('expires_at', 'issued_at'):
+            v3_token_data['token'][timestamp_key] = (
+                v3_token_data['token'][timestamp_key][:-len(MICROSECONDS)] +
+                MICROSECONDS)
+
     def _get_token_id(self, token_data):
         """Generate the token_id based upon the data in token_data.
 
@@ -206,6 +225,8 @@ class Provider(common.BaseProvider):
         :type token_data: dict
         :raises keystone.exception.NotImplemented: when called
         """
+        self._truncate_timestamps(token_data)
+
         return self.token_formatter.create_token(
             token_data['token']['user']['id'],
             token_data['token']['expires_at'],
