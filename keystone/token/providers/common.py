@@ -239,9 +239,25 @@ class V3TokenDataHelper(object):
                 user_id, project_id)
         return [self.role_api.get_role(role_id) for role_id in roles]
 
-    def _populate_roles_for_groups(self, group_ids,
+    def _populate_roles_for_groups(self, token_data, group_ids,
                                    project_id=None, domain_id=None,
                                    user_id=None):
+        """Populate roles basing on provided groups and project/domain
+
+        Used for ephemeral users with dynamically assigned groups.
+        This method does not return anything, yet it modifies token_data in
+        place.
+
+        :param token_data: a dictionary used for building token response
+        :group_ids: list of group IDs a user is a member of
+        :project_id: project ID to scope to
+        :domain_id: domain ID to scope to
+        :user_id: user ID
+
+        :raises: exception.Unauthorized - when no roles were found for a
+            (group_ids, project_id) or (group_ids, domain_id) pairs.
+
+        """
         def _check_roles(roles, user_id, project_id, domain_id):
             # User was granted roles so simply exit this function.
             if roles:
@@ -265,7 +281,7 @@ class V3TokenDataHelper(object):
                                                          project_id,
                                                          domain_id)
         _check_roles(roles, user_id, project_id, domain_id)
-        return roles
+        token_data['roles'] = roles
 
     def _populate_user(self, token_data, user_id, trust):
         if 'user' in token_data:
@@ -562,12 +578,10 @@ class BaseProvider(provider.Provider):
         }
 
         if project_id or domain_id:
-            token_data['roles'] = (
-                self.v3_token_data_helper._populate_roles_for_groups(
-                    group_ids, project_id, domain_id, user_id)
-            )
+            self.v3_token_data_helper._populate_roles_for_groups(
+                token_data, group_ids, project_id, domain_id, user_id)
 
-            return token_data
+        return token_data
 
     def _verify_token_ref(self, token_ref):
         """Verify and return the given token_ref."""
