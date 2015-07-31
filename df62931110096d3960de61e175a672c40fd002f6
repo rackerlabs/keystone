@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c3504f0d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T03:57:32Z",
+      "side": 0,
+      "message": "anything calling this or the method below should be sending bytes and the argument. at least in the unit tests this is true. i still need to test using typist against tempest.",
+      "parentUuid": "3a50d1a3_e7c24d86",
+      "revId": "df62931110096d3960de61e175a672c40fd002f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_278035f7",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-30T16:25:34Z",
       "side": 0,
       "message": "shouldn\u0027t this be ascii encoded too?",
+      "revId": "df62931110096d3960de61e175a672c40fd002f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a372e3ae",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-07-31T03:57:32Z",
+      "side": 0,
+      "message": "No, unquote takes bytes and returns a string. the ascii encoding only happened where i took a string and needed bytes.",
+      "parentUuid": "3a50d1a3_278035f7",
       "revId": "df62931110096d3960de61e175a672c40fd002f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
