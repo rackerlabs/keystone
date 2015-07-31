@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_43a98323",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-07-31T15:10:57Z",
+      "side": 1,
+      "message": "(out of scope, as we\u0027re not using it yet, but) I\u0027d be curious what dstanek\u0027s pypi/typist expects for null returns...\n\n  :returns: None\n\nMaybe?",
+      "revId": "7caccacf6c81241fea25174dfb09eecd4a6c5690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b538e43e",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 12
