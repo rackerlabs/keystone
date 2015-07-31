@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ec3997a4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-31T18:22:58Z",
+      "side": 1,
+      "message": "nit: indentation could be moved back one space here.\n\n    \u0027domain_id\u0027: domain[\u0027id\u0027],\n    \u0027parent_domain_id\u0027: parent_ref.get(\u0027domain_id\u0027)})\n\nthis could be fixed in a follow on patch, too.",
+      "revId": "459ddb7877d987038feb69c42e0a619e1f524daa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_acadcf9c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-31T18:22:58Z",
+      "side": 1,
+      "message": "This only works up to three layers, right? _find_domain_id doesn\u0027t recursively find the domain_id of the project_ref in question. What happens if we nest several projects and end up with a bunch of layers? \n\n\n    A (domain)\n    | \n    B\n    |\n    C\n    |\n    D (project_ref we\u0027re working with here)\n\nLet\u0027s say that _enforce_project_constraints is called with project D\u0027s reference. How does that work in determining project D belongs to project/domain A?",
+      "revId": "459ddb7877d987038feb69c42e0a619e1f524daa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6c07c71d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-07-31T18:22:58Z",
+      "side": 1,
+      "message": "can this not be enforced in the controller layer with the validation module?",
+      "revId": "459ddb7877d987038feb69c42e0a619e1f524daa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
