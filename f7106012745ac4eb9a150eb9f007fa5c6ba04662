@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_77e1f229",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-07-31T06:06:56Z",
+      "side": 1,
+      "message": "ldap are used here and in couple of places..  I think the reason it still works because when ldap.filter is imported, it will implicitly import ldap too.\n\nShould we remove the import on ldap.filter instead?",
+      "revId": "f7106012745ac4eb9a150eb9f007fa5c6ba04662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
