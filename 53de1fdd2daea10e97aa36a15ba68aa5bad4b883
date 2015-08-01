@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_47708fa4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T17:12:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_0495a83e",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_6484ac0a",
         "filename": "keystone/resource/core.py",
         "patchSetId": 71
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-01T08:47:41Z",
       "side": 1,
       "message": "nope can\u0027t do that (yet)...we haven\u0027t checked the project constraints...so we could fail in odd ways (e.g. clashing names etc.)\n\n(Henry acting like a dog with a bone)...why oh why are we bothering to maintain both tables in this patch...we never read the domain table, so what\u0027s the point?",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_27af837e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T17:12:25Z",
+      "side": 1,
+      "message": "We are maintaning both because there is a lot of references to the domain \u0027construct\u0027 that must be removed as well. That would basically lead us to squash this patch with the next one that really removes these references. And I also think that this patch is already big enough :/",
+      "parentUuid": "3a50d1a3_6484ac0a",
       "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_07aa87d2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T17:12:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_44b3b00a",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_c49ee062",
         "filename": "keystone/resource/core.py",
         "patchSetId": 71
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-01T08:47:41Z",
       "side": 1,
       "message": "don\u0027t use hints...we already have a backend method list_projects_in_domain()",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_a7b8732b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T17:12:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_c49ee062",
       "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
