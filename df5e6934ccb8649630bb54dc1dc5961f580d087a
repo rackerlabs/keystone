@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_3125815b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_5c29eb88",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_fc11d752",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-23T08:47:07Z",
       "side": 1,
       "message": "nits: backend",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_f11f1907",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_fc11d752",
       "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_111ba51d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7c05c70e",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_ab4303ae",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-23T08:47:07Z",
       "side": 1,
       "message": "suggest to move this into config, so end user can customize this value.",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b16bd184",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "so we could do that....I\u0027m just not sure an end user would know what to set it to?",
+      "parentUuid": "3a50d1a3_ab4303ae",
       "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_d1669dba",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_90767204",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_65f44a5a",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-23T08:47:07Z",
       "side": 1,
       "message": "the expection here show me that \u0027The Keystone domain-specific configuration has specified more than one SQL driver ...\", is that correct? or we need override the message here?",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b102f1b2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_65f44a5a",
       "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_31c901ad",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "we could, of course, but would probably vote for leaving that generality until we find a use case...",
+      "parentUuid": "3a50d1a3_d9618d06",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_2b285332",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-23T08:47:07Z",
       "side": 1,
       "message": "not sure if the cloumn domain_id need a FK reference with domain table?",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_71cf89b3",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "So I didn\u0027t do this for two reasons;: 1) we are about to kill the domain table (so it would be an FK into the project table anyway), and 2) since we self heal for the mutex\u0027s being left around anyway, there isn\u0027t much advantage.",
+      "parentUuid": "3a50d1a3_2b285332",
       "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_11bf25fd",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "so I tried to keep all the message handling at the manager level...rather than have it at both levels.  The manager will realise it failed to get the mutex and then decide what to do about it",
+      "parentUuid": "3a50d1a3_fd6b0eb5",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_ea490932",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
@@ -166,6 +328,24 @@
       "writtenOn": "2015-07-23T08:47:07Z",
       "side": 1,
       "message": ":raises: keystone.exception.ConfigSQLMutexNotFound for consistency",
+      "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_11464521",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T12:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_ea490932",
       "revId": "df5e6934ccb8649630bb54dc1dc5961f580d087a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
