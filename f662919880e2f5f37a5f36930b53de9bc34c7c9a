@@ -16,6 +16,24 @@
       "revId": "f662919880e2f5f37a5f36930b53de9bc34c7c9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1302d03e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-01T03:20:32Z",
+      "side": 1,
+      "message": "@David,\n\nI am not quite sure how this logic is implemented, but just believe in what docstring is saying, \"Cleanup items are called even if setUp fails (unlike tearDown)\" pls see,\nhttp://testtools.readthedocs.org/en/latest/api.html#testtools.TestCase.addCleanup\n\nAnd the example there which use addCleanup just as it is, pls see, \nhttp://testtools.readthedocs.org/en/latest/for-test-authors.html#a-realistic-example.",
+      "parentUuid": "3a50d1a3_f0ff3364",
+      "revId": "f662919880e2f5f37a5f36930b53de9bc34c7c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
