@@ -16,6 +16,24 @@
       "revId": "47810ed09bcbe0f34fad47a22f8ac3907c4ff1c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1407131e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T16:23:54Z",
+      "side": 1,
+      "message": "ok. I\u0027ll do that in another patch creating another backend call",
+      "parentUuid": "3a50d1a3_840458c6",
+      "revId": "47810ed09bcbe0f34fad47a22f8ac3907c4ff1c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
