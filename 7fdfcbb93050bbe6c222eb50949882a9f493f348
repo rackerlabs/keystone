@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_45ade799",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-01T19:35:39Z",
+      "side": 1,
+      "message": "So, I was thinking a little more about this. In theory this would be a breaking change unless we make sure whatever objects are passed in as arguments have their iteritems methods renamed to items. Since this isn\u0027t tested I don\u0027t know that it\u0027s actually used.",
+      "revId": "7fdfcbb93050bbe6c222eb50949882a9f493f348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
