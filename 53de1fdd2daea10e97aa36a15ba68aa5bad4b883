@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0495a83e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T08:47:41Z",
+      "side": 1,
+      "message": "It might be worth adding a NOTE here just to explain that even if domain_id is not specified, the name for a project acting as a domain must be unique...hence only one item can be returned.",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6484ac0a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T08:47:41Z",
+      "side": 1,
+      "message": "nope can\u0027t do that (yet)...we haven\u0027t checked the project constraints...so we could fail in odd ways (e.g. clashing names etc.)\n\n(Henry acting like a dog with a bone)...why oh why are we bothering to maintain both tables in this patch...we never read the domain table, so what\u0027s the point?",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_44b3b00a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T08:47:41Z",
+      "side": 1,
+      "message": "We should create a specific backend driver method \"list_projects_acting_as_domain()\" instead of using hints",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c49ee062",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-01T08:47:41Z",
+      "side": 1,
+      "message": "don\u0027t use hints...we already have a backend method list_projects_in_domain()",
+      "revId": "53de1fdd2daea10e97aa36a15ba68aa5bad4b883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
