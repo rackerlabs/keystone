@@ -94,15 +94,13 @@
 # From oslo.log
 #
 
-# Print debugging output (set logging level to DEBUG instead of default INFO
+# Print debugging output (set logging level to DEBUG instead of default WARNING
 # level). (boolean value)
 #debug = false
 
-# If set to false, will disable INFO logging level, making WARNING the default.
-# (boolean value)
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-#verbose = true
+# Print more verbose output (set logging level to INFO instead of default
+# WARNING level). (boolean value)
+#verbose = false
 
 # The name of a logging configuration file. This file is appended to any
 # existing logging configuration files. For details about logging configuration
@@ -161,7 +159,7 @@
 #logging_exception_prefix = %(asctime)s.%(msecs)03d %(process)d ERROR %(name)s %(instance)s
 
 # List of logger=LEVEL pairs. (list value)
-#default_log_levels = amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN,websocket=WARN,requests.packages.urllib3.util.retry=WARN,urllib3.util.retry=WARN,keystonemiddleware=WARN,routes.middleware=WARN,stevedore=WARN,taskflow=WARN
+#default_log_levels = amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN,websocket=WARN,requests.packages.urllib3.util.retry=WARN,urllib3.util.retry=WARN,keystonemiddleware=WARN,routes.middleware=WARN,stevedore=WARN
 
 # Enables or disables publication of error events. (boolean value)
 #publish_errors = false
@@ -219,9 +217,8 @@
 # Heartbeat time-to-live. (integer value)
 #matchmaker_heartbeat_ttl = 600
 
-# Size of executor thread pool. (integer value)
-# Deprecated group/name - [DEFAULT]/rpc_thread_pool_size
-#executor_thread_pool_size = 64
+# Size of RPC thread pool. (integer value)
+#rpc_thread_pool_size = 64
 
 # The Drivers(s) to handle sending notifications. Possible values are
 # messaging, messagingv2, routing, log, test, noop (multi valued)
