@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_4ab3c10a",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_update_project_name_constraint.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T00:16:13Z",
+      "side": 1,
+      "message": "Done. Removed the whole comment. the rest of the phrase is pretty time dependant too",
+      "parentUuid": "3a50d1a3_78d0e5c9",
+      "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_fb338ff4",
         "filename": "keystone/resource/core.py",
         "patchSetId": 83
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-31T17:12:31Z",
       "side": 1,
       "message": "so in general we have said that supporting hints is optional of for a backend driver.  Either we must change that, or you need to provide a specific backend method, e.g. \"list_projects_acting_as_domain()\"",
+      "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0a54d951",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T00:16:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_fb338ff4",
       "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_2a8435af",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T00:16:13Z",
+      "side": 1,
+      "message": "yes, there is a bug for it. the patch that fixes it is already submitted and is depending on the next reseller patch (honor domain operations). I decided to put the warning here, since this is where we specifically treat the changing of domain_id. I\u0027lll refer to the bug in here",
+      "parentUuid": "3a50d1a3_3b6817ba",
+      "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5bcc0361",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 83
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8ab549d1",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 1673,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T00:16:13Z",
+      "side": 1,
+      "message": "Done. rephrased",
+      "parentUuid": "3a50d1a3_5bcc0361",
+      "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_3b2577c1",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 83
@@ -81,6 +153,24 @@
       "writtenOn": "2015-07-31T17:12:31Z",
       "side": 1,
       "message": "\"backend\" is a bit overused...you don\u0027t mean the keystone backend, you mean, I assume, then the SQL level itself?",
+      "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_eabe4dad",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-01T00:16:13Z",
+      "side": 1,
+      "message": "yes, that\u0027s it. done",
+      "parentUuid": "3a50d1a3_3b2577c1",
       "revId": "bf0f168b78bc2f6cb33d0a266d585fff7d627e25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
