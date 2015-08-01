@@ -2954,6 +2954,77 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
         inher_up_entity['scope']['project']['id'] = leaf_id
         self.assertRoleAssignmentInListResponse(r, inher_up_entity)
 
+    def test_get_effective_role_assignments_for_project_subtree(self):
+        """Get role_assignment ?project_id=X?include_subtree=True?effective``.
+
+        Test Plan:
+
+        - Create 2 roles
+        - Create a hierarchy of projects with one root and 4 levels of
+          child project
+        - Issue the URL to add a non-inherited user role to the root project
+          and a level 1 project
+        - Issue the URL to add an inherited user role on the level 2 project
+        - Issue the URL to get effective role assignments for the level 1
+          project and it's subtree - this should return a role (non-inherited)
+          on the level 1 project and roles (inherited) on each of the level
+          2, 3 and 4 projects
+
+        """
+        # Create default scenario
+        root_id, leaf_id, non_inherited_role_id, inherited_role_id = (
+            self._setup_hierarchical_projects_scenario())
+
+        # Add some extra projects to the project hierarchy
+        level2 = self.new_project_ref(domain_id=self.domain['id'],
+                                      parent_id=leaf_id)
+        level3 = self.new_project_ref(domain_id=self.domain['id'],
+                                      parent_id=level2['id'])
+        level4 = self.new_project_ref(domain_id=self.domain['id'],
+                                      parent_id=level3['id'])
+        self.resource_api.create_project(level2['id'], level2)
+        self.resource_api.create_project(level3['id'], level3)
+        self.resource_api.create_project(level4['id'], level4)
+
+        # Grant non-inherited role to root (as a spoiler) and to
+        # the level 1 (leaf) project
+        non_inher_up_entity_root = self.build_role_assignment_entity(
+            project_id=root_id, user_id=self.user['id'],
+            role_id=non_inherited_role_id)
+        self.put(non_inher_up_entity_root['links']['assignment'])
+        non_inher_up_entity_leaf = self.build_role_assignment_entity(
+            project_id=leaf_id, user_id=self.user['id'],
+            role_id=non_inherited_role_id)
+        self.put(non_inher_up_entity_leaf['links']['assignment'])
+
+        # Grant inherited role to level 2
+        inher_up_entity = self.build_role_assignment_entity(
+            project_id=level2['id'], user_id=self.user['id'],
+            role_id=inherited_role_id, inherited_to_projects=True)
+        self.put(inher_up_entity['links']['assignment'])
+
+        # Get effective role assignments
+        collection_url = (
+            '/role_assignments?scope.project.id=%(project)s?include_subtree=True'
+            '?effective' % {
+                'project': leaf_id})
+        r = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(
+            r, resource_url=collection_url)
+
+        # Assert that the user does not non-inherited role on root project
+        self.assertRoleAssignmentNotInListResponse(
+            r, non_inher_up_entity_root)
+
+        # Assert that the user does have non-inherited role on leaf project
+        self.assertRoleAssignmentNotInListResponse(r, non_inher_up_entity_leaf)
+
+        # Assert that the user has inherited role on levels 3 and 4
+        inher_up_entity['scope']['project']['id'] = level3['id']
+        self.assertRoleAssignmentInListResponse(r, inher_up_entity)
+        inher_up_entity['scope']['project']['id'] = level4['id']
+        self.assertRoleAssignmentInListResponse(r, inher_up_entity)
+
     def test_get_inherited_role_assignments_for_project_hierarchy(self):
         """Call ``GET /role_assignments?scope.OS-INHERIT:inherited_to``.
 
