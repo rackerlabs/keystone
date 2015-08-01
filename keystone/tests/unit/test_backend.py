@@ -377,7 +377,7 @@ class AssignmentTestHelperMixin(object):
         for test in test_plan.get('tests', []):
             args = {}
             for param in test['params']:
-                if param in ['effective', 'inherited']:
+                if param in ['effective', 'inherited', 'include_subtree']:
                     # Just pass the value into the args
                     args[param] = test['params'][param]
                 else:
@@ -6398,6 +6398,143 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # Pass the existing test data in to allow execution of 2nd test plan
         self.execute_assignment_tests(
             test_plan_with_os_inherit_disabled, test_data)
+
+    def test_list_assignments_for_tree(self):
+        """Test listing of role assignments for tree of projects."""
+
+        # Enable OS-INHERIT extension
+        self.config_fixture.config(group='os_inherit', enabled=True)
+
+        test_plan = {
+            # Create a domain with a project hierarchy 3 levels deep:
+            #
+            #                      project 0
+            #             ____________|____________
+            #            |                         |
+            #         project 1                 project 4
+            #      ______|_____              ______|_____
+            #     |            |            |            |
+            #  project 2    project 3    project 5    project 6
+            #
+            # Also, create 1 user and 4 roles.
+            'entities': {
+                'domains': {
+                    'projects': {'project': [{'project': 2},
+                                             {'project': 2}]},
+                    'users': 1},
+                'roles': 4},
+            # First add a spoiler assignment to the root of the hierarchy.
+            # Then an inherited assignment to project 1. Also add a direct
+            # assignment to project 2 and another spoiler to project 4.
+            'assignments': [{'user': 0, 'role': 0, 'project': 0},
+                            {'user': 0, 'role': 1, 'project': 1,
+                             'inherited_to_projects': True},
+                            {'user': 0, 'role': 2, 'project': 2},
+                            {'user': 0, 'role': 3, 'project': 4}],
+            'tests': [
+                # List all effective assignments for project 1 and its subtree.
+                # The assignments on projects 0 and 4 should not be included,
+                # nor should there be any assignment on project 1 itself (since
+                # it only has an inherited assignment that applies to it's
+                # children
+                {'params': {'project': 1, 'effective': True,
+                            'include_subtree': True},
+                 'results': [{'user': 0, 'role': 1, 'project': 2,
+                              'indirect': {'project': 1}},
+                             {'user': 0, 'role': 1, 'project': 3,
+                              'indirect': {'project': 1}},
+                             {'user': 0, 'role': 2, 'project': 2}]}
+            ]
+        }
+
+        self.execute_assignment_test_plan(test_plan)
+
+    def test_list_assignments_for_tree_with_inherited_parent_assignments(self):
+        """Test tree of project assignments with mixed inherited assignments.
+
+        In this test we want to ensure that a when asking for a list of
+        assignments in a subtree, any assignments inherited from above the
+        subtree are correctly combined with any assignments within the subtree
+        itself.
+
+        """
+        # Enable OS-INHERIT extension
+        self.config_fixture.config(group='os_inherit', enabled=True)
+
+        test_plan = {
+            # Create a domain with a project hierarchy 3 levels deep:
+            #
+            #                      project 0
+            #             ____________|____________
+            #            |                         |
+            #         project 1                 project 4
+            #      ______|_____              ______|_____
+            #     |            |            |            |
+            #  project 2    project 3    project 5    project 6
+            #
+            # Also, create 2 users, 1 group and 4 roles.
+            'entities': {
+                'domains': {
+                    'projects': {'project': [{'project': 2},
+                                             {'project': 2}]},
+                    'users': 2, 'groups': 1},
+                'roles': 4},
+            # Both users are part of the same group
+            'group_memberships': [{'group': 0, 'users': [0, 1]}],
+            # We are going to ask for listing of assignment on project 1 and
+            # it's subtree. So first we'll add two inherited assignents above
+            # this (one user and one for a group that contains this user).
+            'assignments': [{'user': 0, 'role': 0, 'project': 0,
+                             'inherited_to_projects': True},
+                            {'group': 0, 'role': 1, 'project': 0,
+                             'inherited_to_projects': True},
+                            # Now an inherited assignment on project 1 itself,
+                            # which should ONLY show up on its children
+                            {'user': 0, 'role': 2, 'project': 1,
+                             'inherited_to_projects': True},
+                            # ...and a direct assignment on one of those
+                            # children
+                            {'user': 0, 'role': 3, 'project': 2},
+                            # The rest are spoiler assignments
+                            {'user': 0, 'role': 2, 'project': 5},
+                            {'user': 0, 'role': 3, 'project': 4}],
+            'tests': [
+                # List all effective assignments for project 1 and its subtree.
+                # The assignments on projects 0 and 4 should not be included,
+                # nor should there be any assignment on project 1 itself (since
+                # it only has an inherited assignment that applies to it's
+                # children
+                {'params': {'project': 1, 'user': 0, 'effective': True,
+                            'include_subtree': True},
+                 'results': [
+                     # First, we should see the inherited user assignment from
+                     # project 0 on all projects in the subtree
+                     {'user': 0, 'role': 0, 'project': 1,
+                      'indirect': {'project': 0}},
+                     {'user': 0, 'role': 0, 'project': 2,
+                      'indirect': {'project': 0}},
+                     {'user': 0, 'role': 0, 'project': 3,
+                      'indirect': {'project': 0}},
+                     # Also the inherited group assignment from project 0 on
+                     # he subtree
+                     {'user': 0, 'role': 1, 'project': 1,
+                      'indirect': {'project': 0, 'group': 0}},
+                     {'user': 0, 'role': 1, 'project': 2,
+                      'indirect': {'project': 0, 'group': 0}},
+                     {'user': 0, 'role': 1, 'project': 3,
+                      'indirect': {'project': 0, 'group': 0}},
+                     # The inherited assignment on project 1 should appear only
+                     # on its children
+                     {'user': 0, 'role': 2, 'project': 2,
+                      'indirect': {'project': 1}},
+                     {'user': 0, 'role': 2, 'project': 3,
+                      'indirect': {'project': 1}},
+                     # And finally the direct assignment on project 2
+                     {'user': 0, 'role': 3, 'project': 2}]}
+            ]
+        }
+
+        self.execute_assignment_test_plan(test_plan)
 
 
 class FilterTests(filtering.FilterTests):
