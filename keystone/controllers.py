@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 import webob
@@ -22,6 +23,7 @@ from keystone.common import wsgi
 from keystone import exception
 
 
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 MEDIA_TYPE_JSON = 'application/vnd.openstack.identity-%s+json'
@@ -113,9 +115,17 @@ class Version(wsgi.Application):
 
         super(Version, self).__init__()
 
+    def _get_endpoint_type(self, default_type, env):
+        """"Returns the correct endpoint type."""
+        if int(env['SERVER_PORT']) == CONF.admin_port:
+            return 'admin'
+        return default_type
+
     def _get_identity_url(self, context, version):
         """Returns a URL to keystone's own endpoint."""
-        url = self.base_url(context, self.endpoint_url_type)
+        url = self.base_url(context,
+                            self._get_endpoint_type(self.endpoint_url_type,
+                                                    context['environment']))
         return '%s/%s/' % (url, version)
 
     def _get_versions_list(self, context):

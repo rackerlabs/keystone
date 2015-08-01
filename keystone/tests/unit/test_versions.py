@@ -25,7 +25,6 @@ from testtools import matchers as tt_matchers
 from keystone.common import json_home
 from keystone import controllers
 from keystone.tests import unit as tests
-from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -673,6 +672,17 @@ class VersionTestCase(tests.TestCase):
                     CONF.eventlet_server.public_port)
         self.assertThat(data, _VersionsEqual(expected))
 
+    def test_v3_eventlet_admin_version(self):
+        ports = [CONF.eventlet_server.admin_port,
+                 CONF.eventlet_server.public_port]
+        for port in ports:
+            client = tests.TestClient(self.public_app)
+            url = 'http://localhost:%d/v3/' % port
+            resp = client.get(url)
+            self.assertEqual(resp.status_int, 200)
+            data = jsonutils.loads(resp.body)
+            self.assertEqual(url, data['version']['links'][0]['href'])
+
     def test_admin_versions(self):
         client = tests.TestClient(self.admin_app)
         resp = client.get('/')
@@ -753,10 +763,10 @@ class VersionTestCase(tests.TestCase):
                             CONF.eventlet_server.public_port)
         self.assertEqual(expected, data)
 
-    @utils.wip('waiting on bug #1381961')
     def test_admin_version_v3(self):
         client = tests.TestClient(self.admin_app)
-        resp = client.get('/v3/')
+        resp = client.get('http://localhost:%d/v3/' %
+                          CONF.eventlet_server.admin_port)
         self.assertEqual(200, resp.status_int)
         data = jsonutils.loads(resp.body)
         expected = v3_VERSION_RESPONSE
