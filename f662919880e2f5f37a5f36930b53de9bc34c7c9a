@@ -34,6 +34,24 @@
       "revId": "f662919880e2f5f37a5f36930b53de9bc34c7c9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_3faf8d7e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-01T14:31:29Z",
+      "side": 1,
+      "message": "If the last thing you do in the setUp is add the cleanup then there is no way it can be called if setUp fails because the failure would happen before you added the cleanUp.",
+      "parentUuid": "3a50d1a3_1302d03e",
+      "revId": "f662919880e2f5f37a5f36930b53de9bc34c7c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
