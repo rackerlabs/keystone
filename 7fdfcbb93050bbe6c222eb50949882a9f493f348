@@ -16,6 +16,24 @@
       "revId": "7fdfcbb93050bbe6c222eb50949882a9f493f348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_957d56b4",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-02T14:52:28Z",
+      "side": 1,
+      "message": "ok, back to patch set 1.",
+      "parentUuid": "3a50d1a3_45ade799",
+      "revId": "7fdfcbb93050bbe6c222eb50949882a9f493f348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
