@@ -51,6 +51,24 @@
       "revId": "28e191bedfb25cec3679161dc797807b058e4cdc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0db9b3e9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-03T18:41:31Z",
+      "side": 1,
+      "message": "Is that something that all providers outside of keystone have to write?",
+      "parentUuid": "3a50d1a3_41a14693",
+      "revId": "28e191bedfb25cec3679161dc797807b058e4cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
