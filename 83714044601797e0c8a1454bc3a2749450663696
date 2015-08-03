@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b3510365",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "Restrict domain_id update",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_734b7bb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "the update*",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f3d54bb9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0eff6e02",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "This means that the deprecation will start in M or that it will be removed in M?",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0e744e9a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "if you want to keep the logic by checking the hierarchy depth, use this method",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8e4b7e2b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "the other way to do this check (and cleaner IMHO) is like that:\n\n  subtree_list \u003d self.list_projects_in_subtree(original_tenant[\u0027id\u0027])\n  parent_ref \u003d self.get_project(original_tenant[\u0027parent_id\u0027])\n\n  if any(subtree_list) or parent_ref[\u0027parent_id\u0027]:\n    raise ...\n\nYou could also, check the parent first, since it makes fewer calls to the database",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6e1ab270",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "can remove the last sentence",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6e3152ec",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:44:55Z",
+      "side": 1,
+      "message": "we have a method to fetch the hierarchy size, see above",
+      "revId": "83714044601797e0c8a1454bc3a2749450663696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
