@@ -16,6 +16,24 @@
       "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8e3ffe24",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T17:56:26Z",
+      "side": 1,
+      "message": "Server responses are stubbed out, so client tests can\u0027t verify that the server returns only projects with is_domain set to true. All the client tests can do is verify that the client works correctly, in this case setting ?is_domain\u003dTrue on the request URL and parsing the results. The rest of the testing is only complicating things.",
+      "parentUuid": "1a4dcd0f_eee1e2ff",
+      "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
