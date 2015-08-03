@@ -1488,6 +1488,39 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'failed_auth_count',
                                  'failed_auth_at'])
 
+    def test_add_delegation_tables(self):
+        delegation_table_name = 'delegation'
+        role_delegation_table_name = 'role_delegation'
+        self.upgrade(109)
+        self.assertTableDoesNotExist(delegation_table_name)
+        self.assertTableDoesNotExist(role_delegation_table_name)
+        self.upgrade(110)
+        self.assertTableColumns(delegation_table_name,
+                                ['id',
+                                 'trustor_id',
+                                 'agent_id',
+                                 'redelegated_id',
+                                 'impersonation',
+                                 'strict_ancestry',
+                                 'sealed',
+                                 'executable',
+                                 'inherited_to_projects',
+                                 'user_id',
+                                 'group_id',
+                                 'project_id',
+                                 'domain_id',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'redelegation_count',
+                                 'extra'
+                                 ])
+        self.assertTableColumns(role_delegation_table_name,
+                                ['id',
+                                 'delegation_id',
+                                 'role_id'])
+
+
     def test_migration_109_add_password_self_service_column(self):
         password_table = 'password'
         self.upgrade(108)
