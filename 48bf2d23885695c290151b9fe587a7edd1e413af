@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_61080281",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2914,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-03T07:45:14Z",
+      "side": 1,
+      "message": "nice use of ^",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_81ff4e65",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-03T07:45:14Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be the url safe version of user name?",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_0394dbe5",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
