@@ -50,6 +50,57 @@
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_29eee422",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-03T18:11:19Z",
+      "side": 1,
+      "message": "Isn\u0027t this already done by the v3_data_helper in get_token_data?",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_293ca492",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-03T18:11:19Z",
+      "side": 1,
+      "message": "nit: missing project id in the return doc string.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_495570c4",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-03T18:11:19Z",
+      "side": 1,
+      "message": "nit: same comment as above, but w.r.t. the domain id that the token is being scoped to.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
