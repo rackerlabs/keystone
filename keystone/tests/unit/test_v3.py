@@ -325,7 +325,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['user_id'] = user_id
         if cred_type == 'ec2':
             ref['type'] = 'ec2'
-            ref['blob'] = {'blah': 'test'}
+            ref['blob'] = uuid.uuid4().hex
         else:
             ref['type'] = 'cert'
             ref['blob'] = uuid.uuid4().hex
