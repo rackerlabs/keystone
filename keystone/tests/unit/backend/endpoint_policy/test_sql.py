@@ -15,7 +15,6 @@ import uuid
 from keystone.common import sql
 from keystone import exception
 from keystone.tests.unit.backend import core_sql
-from keystone.tests.unit import utils
 
 
 class ModelTestCase(core_sql.BaseBackendSqlModels):
@@ -78,8 +77,6 @@ class DriverTestCase(core_sql.BaseBackendSqlTests):
                           self.driver.check_policy_association,
                           **self.association)
 
-    @utils.wip("Blocked by bug #1483375, the assertEqual statement is going to"
-               " fail since the returned value is a tuple")
     def test_get_policy_association(self):
         target = self.association.copy()
         policy_id = target.pop('policy_id')
