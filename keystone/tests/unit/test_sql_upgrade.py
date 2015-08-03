@@ -35,17 +35,18 @@ import json
 import uuid
 
 import migrate
+from migrate.versioning import api as versioning_api
 from migrate.versioning import repository
-from migrate.versioning import script
 import mock
 from oslo_db import exception as db_exception
+from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import test_base
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
 from testtools import matchers
 
 from keystone.common import sql
-from keystone.common.sql import upgrades
+from keystone.common.sql import migration_helpers
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone.tests import unit
@@ -126,9 +127,9 @@ DATA_MIGRATION_REPO = 'data_migration_repo'
 CONTRACT_REPO = 'contract_repo'
 
 
-# Test upgrades.get_init_version separately to ensure it works before
+# Test migration_helpers.get_init_version separately to ensure it works before
 # using in the SqlUpgrade tests.
-class SqlUpgradeGetInitVersionTests(unit.TestCase):
+class MigrationHelpersGetInitVersionTests(unit.TestCase):
     @mock.patch.object(repository, 'Repository')
     def test_get_init_version_no_path(self, repo):
         migrate_versions = mock.MagicMock()
@@ -137,11 +138,11 @@ class SqlUpgradeGetInitVersionTests(unit.TestCase):
         migrate_versions.versions.versions = list(range(0, 5))
         repo.return_value = migrate_versions
 
-        # os.path.isdir() is called by `find_repo()`. Mock it to avoid
+        # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
             # since 0 is the smallest version expect None
-            version = upgrades.get_init_version()
+            version = migration_helpers.get_init_version()
             self.assertIsNone(version)
 
         # check that the default path was used as the first argument to the
@@ -158,13 +159,13 @@ class SqlUpgradeGetInitVersionTests(unit.TestCase):
         migrate_versions.versions.versions = list(range(0, 5))
         repo.return_value = migrate_versions
 
-        # os.path.isdir() is called by `find_repo()`. Mock it to avoid
+        # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
             path = '/keystone/' + LEGACY_REPO + '/'
 
             # since 0 is the smallest version expect None
-            version = upgrades.get_init_version(abs_path=path)
+            version = migration_helpers.get_init_version(abs_path=path)
             self.assertIsNone(version)
 
     @mock.patch.object(repository, 'Repository')
@@ -176,23 +177,55 @@ class SqlUpgradeGetInitVersionTests(unit.TestCase):
                                                         initial_version + 5))
         repo.return_value = migrate_versions
 
-        # os.path.isdir() is called by `find_repo()`. Mock it to avoid
+        # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
             path = '/keystone/' + LEGACY_REPO + '/'
 
-            version = upgrades.get_init_version(abs_path=path)
+            version = migration_helpers.get_init_version(abs_path=path)
             self.assertEqual(initial_version, version)
+
+
+class MigrationRepository(object):
+    def __init__(self, engine, repo_name):
+        self.repo_name = repo_name
+
+        self.repo_path = migration_helpers.find_migrate_repo(
+            package=sql, repo_name=self.repo_name)
+        self.min_version = (
+            migration_helpers.get_init_version(abs_path=self.repo_path))
+        self.schema_ = versioning_api.ControlledSchema.create(
+            engine, self.repo_path, self.min_version)
+        self.max_version = self.schema_.repository.version().version
+
+    def upgrade(self, version=None, current_schema=None):
+        version = version or self.max_version
+        err = ''
+        upgrade = True
+        version = versioning_api._migrate_version(
+            self.schema_, version, upgrade, err)
+        if not current_schema:
+            current_schema = self.schema_
+        changeset = current_schema.changeset(version)
+        for ver, change in changeset:
+            self.schema_.runchange(ver, change, changeset.step)
+
+        if self.schema_.version != version:
+            raise Exception(
+                'Actual version (%s) of %s does not equal expected '
+                'version (%s)' % (
+                    self.schema_.version, self.repo_name, version))
+
+    @property
+    def version(self):
+        with sql.session_for_read() as session:
+            return migration.db_version(
+                session.get_bind(), self.repo_path, self.min_version)
 
 
 class SqlMigrateBase(test_base.DbTestCase):
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
-
-        # NOTE(dstanek): Clear out sqlalchemy-migrate's script cache to allow
-        # us to have multiple repos (expand, migrate, contrate) where the
-        # modules have the same name (001_awesome.py).
-        self.addCleanup(script.PythonScript.clear)
 
         # Set keystone's connection URL to be the test engine's url.
         database.initialize_sql_session(self.engine.url)
@@ -205,11 +238,11 @@ class SqlMigrateBase(test_base.DbTestCase):
         self.addCleanup(sql.cleanup)
 
         self.repos = {
-            LEGACY_REPO: upgrades.Repository(self.engine, LEGACY_REPO),
-            EXPAND_REPO: upgrades.Repository(self.engine, EXPAND_REPO),
-            DATA_MIGRATION_REPO: upgrades.Repository(
+            LEGACY_REPO: MigrationRepository(self.engine, LEGACY_REPO),
+            EXPAND_REPO: MigrationRepository(self.engine, EXPAND_REPO),
+            DATA_MIGRATION_REPO: MigrationRepository(
                 self.engine, DATA_MIGRATION_REPO),
-            CONTRACT_REPO: upgrades.Repository(self.engine, CONTRACT_REPO)}
+            CONTRACT_REPO: MigrationRepository(self.engine, CONTRACT_REPO)}
 
     def upgrade(self, *args, **kwargs):
         """Upgrade the legacy migration repository."""
@@ -444,7 +477,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                 ['id', 'policy_id', 'endpoint_id',
                                  'service_id', 'region_id'])
 
-    @mock.patch.object(upgrades, 'get_db_version', return_value=1)
+    @mock.patch.object(migration_helpers, 'get_db_version', return_value=1)
     def test_endpoint_policy_already_migrated(self, mock_ep):
 
         # By setting the return value to 1, the migration has already been
@@ -499,7 +532,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         self.assertFalse(sp_table.c.auth_url.nullable)
         self.assertFalse(sp_table.c.sp_url.nullable)
 
-    @mock.patch.object(upgrades, 'get_db_version', return_value=8)
+    @mock.patch.object(migration_helpers, 'get_db_version', return_value=8)
     def test_federation_already_migrated(self, mock_federation):
 
         # By setting the return value to 8, the migration has already been
@@ -548,7 +581,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'consumer_id',
                                  'expires_at'])
 
-    @mock.patch.object(upgrades, 'get_db_version', return_value=5)
+    @mock.patch.object(migration_helpers, 'get_db_version', return_value=5)
     def test_oauth1_already_migrated(self, mock_oauth1):
 
         # By setting the return value to 5, the migration has already been
@@ -573,7 +606,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'expires_at', 'revoked_at',
                                  'audit_chain_id', 'audit_id'])
 
-    @mock.patch.object(upgrades, 'get_db_version', return_value=2)
+    @mock.patch.object(migration_helpers, 'get_db_version', return_value=2)
     def test_revoke_already_migrated(self, mock_revoke):
 
         # By setting the return value to 2, the migration has already been
@@ -620,7 +653,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         self.upgrade(85)
         assert_tables_columns_exist()
 
-    @mock.patch.object(upgrades, 'get_db_version', return_value=2)
+    @mock.patch.object(migration_helpers, 'get_db_version', return_value=2)
     def test_endpoint_filter_already_migrated(self, mock_endpoint_filter):
 
         # By setting the return value to 2, the migration has already been
@@ -1581,7 +1614,7 @@ class VersionTests(SqlMigrateBase):
         self.upgrade()
         self.assertRaises(
             db_exception.DbMigrationError,
-            upgrades._sync_common_repo,
+            migration_helpers._sync_common_repo,
             self.repos[LEGACY_REPO].max_version - 1)
 
     def test_these_are_not_the_migrations_you_are_looking_for(self):
@@ -1601,34 +1634,6 @@ class VersionTests(SqlMigrateBase):
         """
         # Note to reviewers: this version number should never change.
         self.assertEqual(109, self.repos[LEGACY_REPO].max_version)
-
-    def test_migrate_repos_stay_in_lockstep(self):
-        """Rolling upgrade repositories should always stay in lockstep.
-
-        By maintaining a single "latest" version number in each of the three
-        migration repositories (expand, data migrate, and contract), we can
-        trivially prevent operators from "doing the wrong thing", such as
-        running upgrades operations out of order (for example, you should not
-        be able to run data migration 5 until schema expansion 5 has been run).
-
-        For example, even if your rolling upgrade task *only* involves adding a
-        new column with a reasonable default, and doesn't require any triggers,
-        data migration, etc, you still need to create "empty" upgrade steps in
-        the data migration and contract repositories with the same version
-        number as the expansion.
-
-        For more information, see "Database Migrations" here:
-
-            http://docs.openstack.org/developer/keystone/developing.html
-
-        """
-        # Transitive comparison: expand == data migration == contract
-        self.assertEqual(
-            self.repos[EXPAND_REPO].max_version,
-            self.repos[DATA_MIGRATION_REPO].max_version)
-        self.assertEqual(
-            self.repos[DATA_MIGRATION_REPO].max_version,
-            self.repos[CONTRACT_REPO].max_version)
 
 
 class FullMigration(SqlMigrateBase, unit.TestCase):
@@ -1783,6 +1788,49 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         else:
             self.assertEqual('DATETIME', str(password.c.created_at.type))
         self.assertFalse(password.c.created_at.nullable)
+
+    def test_migration_005_add_delegation_tables(self):
+        test_version = 5
+        delegation_table_name = 'delegation'
+        role_delegation_table_name = 'role_delegation'
+
+        self.expand(test_version - 1)
+        self.migrate(test_version - 1)
+        self.contract(test_version - 1)
+        self.assertTableDoesNotExist(delegation_table_name)
+        self.assertTableDoesNotExist(role_delegation_table_name)
+
+        self.expand(test_version)
+        self.assertTableExists(delegation_table_name)
+        self.assertTableColumns(delegation_table_name,
+                                ['id',
+                                 'trustor_id',
+                                 'agent_id',
+                                 'redelegated_id',
+                                 'impersonation',
+                                 'strict_ancestry',
+                                 'sealed',
+                                 'executable',
+                                 'inherited_to_projects',
+                                 'user_id',
+                                 'group_id',
+                                 'project_id',
+                                 'domain_id',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'redelegation_count',
+                                 'consumer_id',
+                                 'secret',
+                                 'extra'
+                                 ])
+        self.assertTableExists(role_delegation_table_name)
+        self.assertTableColumns(role_delegation_table_name,
+                                ['id',
+                                 'delegation_id',
+                                 'role_id'])
+        self.migrate(test_version)
+        self.contract(test_version)
 
 
 class MySQLOpportunisticFullMigration(FullMigration):
