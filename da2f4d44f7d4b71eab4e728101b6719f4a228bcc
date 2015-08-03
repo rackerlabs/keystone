@@ -16,6 +16,24 @@
       "revId": "da2f4d44f7d4b71eab4e728101b6719f4a228bcc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c97a66ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9581
+      },
+      "writtenOn": "2015-08-03T02:53:37Z",
+      "side": 1,
+      "message": "tools/pretty_tox.sh is not marked as executable which is not appropriate, like other files (e.g. with_venv.sh). Do you think it is necessary to file one bug?",
+      "parentUuid": "3a50d1a3_cec1cce5",
+      "revId": "da2f4d44f7d4b71eab4e728101b6719f4a228bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
