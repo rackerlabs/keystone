@@ -114,6 +114,10 @@ class TestAuthInfo(test_v3.AuthTestMixin, testcase.TestCase):
 
 
 class TokenAPITests(object):
+    def config_overrides(self):
+        super(TokenAPITests, self).config_overrides()
+        self.config_fixture.config(admin_token='ADMIN')
+
     # Why is this not just setUp? Because TokenAPITests is not a test class
     # itself. If TokenAPITests became a subclass of the testcase, it would get
     # called by the enumerate-tests-in-file code. The way the functions get
@@ -139,7 +143,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         self.admin_request(
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             method='GET',
             expected_status=401)
 
@@ -179,7 +183,7 @@ class TokenAPITests(object):
         # 5) Validate token using v2 API.
         self.admin_request(
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             method='GET')
 
     def test_v3_v2_intermix_domain_scoped_token_failed(self):
@@ -198,7 +202,7 @@ class TokenAPITests(object):
         self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             expected_status=401)
 
     def test_v3_v2_intermix_non_default_project_failed(self):
@@ -212,7 +216,7 @@ class TokenAPITests(object):
         self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             expected_status=401)
 
     def test_v3_v2_intermix_non_default_user_failed(self):
@@ -231,7 +235,7 @@ class TokenAPITests(object):
         self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             expected_status=401)
 
     def test_v3_v2_intermix_domain_scope_failed(self):
@@ -248,7 +252,7 @@ class TokenAPITests(object):
         # v2 cannot reference projects outside the default domain
         self.admin_request(
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             method='GET',
             expected_status=401)
 
@@ -263,7 +267,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         r = self.admin_request(
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             method='GET')
         v2_token_data = r.result
 
@@ -289,7 +293,7 @@ class TokenAPITests(object):
         r = self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token)
+            token='ADMIN')
         v2_token_data = r.result
 
         self.assertEqual(v2_token_data['access']['user']['id'],
@@ -480,6 +484,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestPKITokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='pki')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestPKITokenAPIs, self).setUp()
@@ -524,7 +529,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         token = cms.cms_hash_token(token)
         path = '/v2.0/tokens/%s' % (token)
         resp = self.admin_request(path=path,
-                                  token=CONF.admin_token,
+                                  token='ADMIN',
                                   method='GET')
         v2_token = resp.result
         self.assertEqual(v2_token['access']['user']['id'],
@@ -550,6 +555,7 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestUUIDTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='uuid')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestUUIDTokenAPIs, self).setUp()
@@ -570,6 +576,7 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestFernetTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+        self.config_fixture.config(admin_token='ADMIN')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
     def setUp(self):
@@ -3123,6 +3130,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             provider='pki',
             revoke_by_id=False)
         self.config_fixture.config(group='trust', enabled=True)
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestTrustAuth, self).setUp()
@@ -3393,7 +3401,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token=CONF.admin_token,
+            path=path, token='ADMIN',
             method='GET', expected_status=401)
 
     def test_v3_v2_intermix_trustor_not_in_default_domaini_failed(self):
@@ -3426,7 +3434,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token=CONF.admin_token,
+            path=path, token='ADMIN',
             method='GET', expected_status=401)
 
     def test_v3_v2_intermix_project_not_in_default_domaini_failed(self):
@@ -3466,7 +3474,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token=CONF.admin_token,
+            path=path, token='ADMIN',
             method='GET', expected_status=401)
 
     def test_v3_v2_intermix(self):
@@ -3505,7 +3513,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # now validate the v3 token with v2 API
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
-            path=path, token=CONF.admin_token,
+            path=path, token='ADMIN',
             method='GET', expected_status=200)
 
     def test_exercise_trust_scoped_token_without_impersonation(self):

@@ -1255,6 +1255,10 @@ class VersionTestCase(RestfulTestCase):
 # NOTE(gyee): test AuthContextMiddleware here instead of test_middleware.py
 # because we need the token
 class AuthContextMiddlewareTestCase(RestfulTestCase):
+    def config_overrides(self):
+        super(AuthContextMiddlewareTestCase, self).config_overrides()
+        self.config_fixture.config(admin_token='ADMIN')
+
     def _mock_request_object(self, token_id):
 
         class fake_req(object):
