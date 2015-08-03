@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_132c7749",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:31:10Z",
+      "side": 1,
+      "message": "why \"not is_domain\" here? Aren\u0027t inherited roles from domains (not to domains) being considered?",
+      "revId": "8c68e37a63a0ea93fd68e782627ecd82183439bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1304777c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:31:10Z",
+      "side": 1,
+      "message": "I believe this filtering should be done in the list_projects_in_subtree() method. It can\u0027t return the domains from a project subtree.\n\nAlso, this change should be done in a different patchset (maybe one of the firsts in the Reseller chain)",
+      "revId": "8c68e37a63a0ea93fd68e782627ecd82183439bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_93264715",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:31:10Z",
+      "side": 1,
+      "message": "same issue as in list_projects_in_subtree(), it should return the parents up to the domain",
+      "revId": "8c68e37a63a0ea93fd68e782627ecd82183439bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
