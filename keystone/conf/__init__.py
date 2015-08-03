@@ -24,6 +24,7 @@ from keystone.conf import auth
 from keystone.conf import catalog
 from keystone.conf import credential
 from keystone.conf import default
+from keystone.conf import delegation
 from keystone.conf import domain_config
 from keystone.conf import endpoint_filter
 from keystone.conf import endpoint_policy
@@ -59,6 +60,7 @@ conf_modules = [
     auth,
     catalog,
     credential,
+    delegation,
     default,
     domain_config,
     endpoint_filter,
