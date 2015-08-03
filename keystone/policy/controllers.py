@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_utils import timeutils
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -41,6 +43,13 @@ class PolicyV3(controller.V3Controller):
     @controller.protected()
     def get_policy(self, context, policy_id):
         ref = self.policy_api.get_policy(policy_id)
+
+        valid_to = ref.pop('valid_to')
+        freshness = (valid_to - timeutils.utcnow()).total_seconds()
+
+        wrapped_ref = PolicyV3.wrap_member(context, ref)
+        wrapped_ref['freshness'] = freshness
+
         return PolicyV3.wrap_member(context, ref)
 
     @controller.protected()
