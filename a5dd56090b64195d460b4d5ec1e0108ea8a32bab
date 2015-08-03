@@ -16,6 +16,24 @@
       "revId": "a5dd56090b64195d460b4d5ec1e0108ea8a32bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b87ddeb3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-03T06:39:23Z",
+      "side": 1,
+      "message": "it\u0027s a logical split, so the main flow of the populate_roles_for_groups() is like:\n\n- get roles\n- check roles\nassign roles to token_data\n\ninstead of also adding substeps for setting errors messages and raising exceptions in the populate_roles_for_groups() flow.  I did it more for a cleaner outline of what the main function was for.",
+      "parentUuid": "3a50d1a3_63003f03",
+      "revId": "a5dd56090b64195d460b4d5ec1e0108ea8a32bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
