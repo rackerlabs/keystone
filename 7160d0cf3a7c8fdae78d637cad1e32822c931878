@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_73f136cd",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-08-03T19:21:52Z",
+      "side": 1,
+      "message": "I\u0027d suggest to use \u0027cert\u0027 directly instead of self.credential[\u0027type\u0027], as you are setting it directly in the call at L 108 as well. That would make the test clearer, as you are doing in L 113 - 115.\n\nIt would be:\n\n    self.assertEqual(\u0027cert\u0027, cred[\u0027type\u0027])",
+      "revId": "7160d0cf3a7c8fdae78d637cad1e32822c931878",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
