@@ -1088,7 +1088,17 @@ FILE_OPTIONS = {
                         'at least 1 letter, 1 digit, and have a minimum '
                         'length of 7 characters: '
                         '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
-    ]
+    ],
+    'delegation': [
+        cfg.IntOpt('expiration',
+                   default=0,
+                   help='Default delegation TTL (in seconds), 0 to disable'),
+    ],
+    'delegation': [
+        cfg.IntOpt('expiration',
+                   default=0,
+                   help='Default delegation TTL (in seconds), 0 to disable'),
+    ],
 }
 
 
