@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fc399342",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-03T20:53:24Z",
+      "side": 0,
+      "message": "simplify with this",
+      "revId": "06b8f2fcf634e3e5a85ba95642172b8e93012460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
