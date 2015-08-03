@@ -1767,6 +1767,41 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'type': 'cert'}
         self.insert_dict(session, credential_table_name, credential)
 
+    def test_add_delegation_tables(self):
+        delegation_table_name = 'delegation'
+        role_delegation_table_name = 'role_delegation'
+        self.expand(3)
+        self.assertTableDoesNotExist(delegation_table_name)
+        self.assertTableDoesNotExist(role_delegation_table_name)
+        self.expand(4)
+        self.assertTableExists(delegation_table_name)
+        self.assertTableColumns(delegation_table_name,
+                                ['id',
+                                 'trustor_id',
+                                 'agent_id',
+                                 'redelegated_id',
+                                 'impersonation',
+                                 'strict_ancestry',
+                                 'sealed',
+                                 'executable',
+                                 'inherited_to_projects',
+                                 'user_id',
+                                 'group_id',
+                                 'project_id',
+                                 'domain_id',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'redelegation_count',
+                                 'secret',
+                                 'extra'
+                                 ])
+        self.assertTableExists(role_delegation_table_name)
+        self.assertTableColumns(role_delegation_table_name,
+                                ['id',
+                                 'delegation_id',
+                                 'role_id'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
