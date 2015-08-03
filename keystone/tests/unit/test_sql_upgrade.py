@@ -1784,6 +1784,49 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             self.assertEqual('DATETIME', str(password.c.created_at.type))
         self.assertFalse(password.c.created_at.nullable)
 
+    def test_migration_010_add_delegation_tables(self):
+        test_version = 10
+        delegation_table_name = 'delegation'
+        role_delegation_table_name = 'role_delegation'
+
+        self.expand(test_version - 1)
+        self.migrate(test_version - 1)
+        self.contract(test_version - 1)
+        self.assertTableDoesNotExist(delegation_table_name)
+        self.assertTableDoesNotExist(role_delegation_table_name)
+
+        self.expand(test_version)
+        self.assertTableExists(delegation_table_name)
+        self.assertTableColumns(delegation_table_name,
+                                ['id',
+                                 'trustor_id',
+                                 'agent_id',
+                                 'redelegated_id',
+                                 'impersonation',
+                                 'strict_ancestry',
+                                 'sealed',
+                                 'executable',
+                                 'inherited_to_projects',
+                                 'user_id',
+                                 'group_id',
+                                 'project_id',
+                                 'domain_id',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'redelegation_count',
+                                 'consumer_id',
+                                 'secret',
+                                 'extra'
+                                 ])
+        self.assertTableExists(role_delegation_table_name)
+        self.assertTableColumns(role_delegation_table_name,
+                                ['id',
+                                 'delegation_id',
+                                 'role_id'])
+        self.migrate(test_version)
+        self.contract(test_version)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
