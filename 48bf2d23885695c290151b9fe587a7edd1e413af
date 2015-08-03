@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_7681248f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2920,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "the caller should know whether it\u0027s domain or project or neither and tell this function which is expected. Tests shouldn\u0027t work when the code is wrong (e.g., if domain is there when project is supposed to be).",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_21ffd802",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2923,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "this is unnecessary since the next line will fail with an exception if there\u0027s no OS-FEDERATION.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_56366804",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2928,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "suggest use HasLength matcher since it can print nicer output.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_21883822",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "This should be\n\n self.assertEqual(exp_federated_info[\u0027group_ids\u0027], federated_info[\u0027group_ids\u0027])\n\nsince it will validate more (like the # of group_ids).\n\n(Same applies in copy-pasted code below in test_federated_domain_scoped_payload)",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_422b0283",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "group_ids is unused if not (idp_id and protocol_id), so move initializing it below this check.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_81ff4e65",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -36,6 +121,40 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_621abe19",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "these changes are just switching from one way of creating dict to another so should be in a separate commit from the actual fix.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_22ba76e2",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "suggest change the name to token_dict_in_out since it\u0027s modified.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_0394dbe5",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -47,6 +166,23 @@
       "writtenOn": "2015-07-31T15:10:16Z",
       "side": 1,
       "message": "nit:\n\n  Upon success, a ``roles`` key will be added to ``token_dict``.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_02b97ae9",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "token_dict\n\nchange \"tokene\" to \"token\"",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +217,23 @@
       "writtenOn": "2015-08-03T18:11:19Z",
       "side": 1,
       "message": "nit: missing project id in the return doc string.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a2268614",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T21:47:50Z",
+      "side": 1,
+      "message": "lots of copy-pasting, suggest provide a base class or functions and override for the difference.",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
