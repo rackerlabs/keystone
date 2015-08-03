@@ -30,6 +30,9 @@ To enable the endpoint filter extension:
    ``keystone-paste.ini``. This must be added after ``json_body`` and before
    the last entry in the pipeline. For example::
 
+    [filter:endpoint_filter_extension]
+    paste.filter_factory = keystone.contrib.endpoint_filter.routers:EndpointFilterExtension.factory
+
     [pipeline:api_v3]
     pipeline = sizelimit url_normalize build_auth_context token_auth admin_token_auth json_body ec2_extension_v3 s3_extension simple_cert_extension revoke_extension endpoint_filter_extension service_v3
 
