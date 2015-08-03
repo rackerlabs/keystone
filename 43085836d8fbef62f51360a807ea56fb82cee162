@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8ea37e9e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 35
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:52:48Z",
+      "side": 1,
+      "message": "Maybe follow the previous patches of the chain and give more detail about the changes made here?\n\nFor example, besides removing all Manager calls to the domain table, it also removes the domain_id FK in project table",
+      "revId": "43085836d8fbef62f51360a807ea56fb82cee162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_eeb482d2",
+        "filename": "keystone/common/sql/migrate_repo/versions/077_drop_project_domain_id_fk.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:52:48Z",
+      "side": 1,
+      "message": "what about the FKs in the tables? Do we have more?",
+      "revId": "43085836d8fbef62f51360a807ea56fb82cee162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
