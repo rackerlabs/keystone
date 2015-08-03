@@ -538,6 +538,9 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a policy collection.'),
+        cfg.IntOpt('policy_timeout',
+                   default=300,
+                   help='Add help text ...')
     ],
     'endpoint_filter': [
         cfg.StrOpt('driver',
