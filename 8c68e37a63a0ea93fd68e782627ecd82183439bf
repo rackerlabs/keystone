@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_332baeed",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-03T19:26:12Z",
+      "side": 1,
+      "message": "if this projects acts as a domain, no inherited role can be applied to it, only from it. Which means that only the projects below it will have the inheritance applied",
+      "parentUuid": "1a4dcd0f_132c7749",
+      "revId": "8c68e37a63a0ea93fd68e782627ecd82183439bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1304777c",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 28
@@ -47,6 +65,24 @@
       "writtenOn": "2015-08-03T17:31:10Z",
       "side": 1,
       "message": "same issue as in list_projects_in_subtree(), it should return the parents up to the domain",
+      "revId": "8c68e37a63a0ea93fd68e782627ecd82183439bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_734936d0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-03T19:26:12Z",
+      "side": 1,
+      "message": "maybe we can create two new resource api calls, like: subtree_until_domain and parents_until_domain",
+      "parentUuid": "1a4dcd0f_93264715",
       "revId": "8c68e37a63a0ea93fd68e782627ecd82183439bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
