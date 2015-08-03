@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_8acbdaa3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-03T13:19:38Z",
+      "side": 1,
+      "message": "Not sure whether change is required here and other places in the module where migration_helpers.get_db_version is used.\n\nCould you please explain whether change is required or not ?",
+      "revId": "bc3f91a1abd62f23b146a36f6185a3e8d43e4752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
