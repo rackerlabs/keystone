@@ -1411,6 +1411,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
     def config_overrides(self):
         super(TestFernetTokenProviderV2, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def test_authenticate_unscoped_token(self):
         unscoped_token = self.get_unscoped_token()

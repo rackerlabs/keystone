@@ -50,6 +50,10 @@ class TokenAuthMiddlewareTest(tests.TestCase):
 
 
 class AdminTokenAuthMiddlewareTest(tests.TestCase):
+    def config_overrides(self):
+        super(AdminTokenAuthMiddlewareTest, self).config_overrides()
+        self.config_fixture.config(admin_token='ADMIN')
+
     def test_request_admin(self):
         req = make_request()
         req.headers[middleware.AUTH_TOKEN_HEADER] = CONF.admin_token
