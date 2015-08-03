@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_utils import timeutils
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import notifications
@@ -138,11 +140,15 @@ class EndpointPolicyV3Controller(controller.V3Controller):
         """Get the effective policy for an endpoint."""
         self.catalog_api.get_endpoint(endpoint_id)
         ref = self.endpoint_policy_api.get_policy_for_endpoint(endpoint_id)
+
+        valid_to = ref.pop('valid_to')
+        freshness = (valid_to - timeutils.utcnow()).total_seconds()
+
         # NOTE(henry-nash): since the collection and member for this class is
         # set to endpoints, we have to handle wrapping this policy entity
         # ourselves.
         self._add_self_referential_link(context, ref)
-        return {'policy': ref}
+        return {'policy': ref, 'freshness': freshness}
 
     # NOTE(henry-nash): As in the catalog controller, we must ensure that the
     # legacy_endpoint_id does not escape.

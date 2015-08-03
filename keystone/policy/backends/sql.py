@@ -26,6 +26,12 @@ class PolicyModel(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+class PolicyVersionModel(PolicyModel, sql.TimestampMixin):
+    __tablename__ = 'policy_version'
+    attributes = ['id', 'blob', 'type', 'valid_to']
+    valid_to = sql.Column(sql.DateTime, nullable=False)
+
+
 class Policy(rules.Policy):
 
     @sql.handle_conflicts(conflict_type='policy')
@@ -44,9 +50,9 @@ class Policy(rules.Policy):
         refs = session.query(PolicyModel).all()
         return [ref.to_dict() for ref in refs]
 
-    def _get_policy(self, session, policy_id):
+    def _get_policy(self, session, policy_id, _class=PolicyModel):
         """Private method to get a policy model object (NOT a dictionary)."""
-        ref = session.query(PolicyModel).get(policy_id)
+        ref = session.query(_class).get(policy_id)
         if not ref:
             raise exception.PolicyNotFound(policy_id=policy_id)
         return ref
@@ -54,13 +60,16 @@ class Policy(rules.Policy):
     def get_policy(self, policy_id):
         session = sql.get_session()
 
-        return self._get_policy(session, policy_id).to_dict()
+        return self._get_policy(
+            session, policy_id, PolicyVersionModel).to_dict()
 
     @sql.handle_conflicts(conflict_type='policy')
     def update_policy(self, policy_id, policy):
         session = sql.get_session()
 
         with session.begin():
+            # Updates always occurs in the main table, versioning mechanism
+            # will apply the changes in the versioned table
             ref = self._get_policy(session, policy_id)
             old_dict = ref.to_dict()
             old_dict.update(policy)
@@ -77,3 +86,21 @@ class Policy(rules.Policy):
         with session.begin():
             ref = self._get_policy(session, policy_id)
             session.delete(ref)
+
+            versioned_ref = session.query(PolicyVersionModel).get(policy_id)
+            if versioned_ref:
+                session.delete(versioned_ref)
+
+    def release_policy(self, policy_id, valid_to):
+        session = sql.get_session()
+
+        with session.begin():
+            ref_dict = self._get_policy(session, policy_id).to_dict()
+
+            versioned_ref_dict = ref_dict.copy()
+            versioned_ref_dict['valid_to'] = valid_to
+
+            versioned_ref = PolicyVersionModel.from_dict(versioned_ref_dict)
+            session.merge(versioned_ref)
+
+        return versioned_ref_dict.to_dict()
