@@ -98,6 +98,22 @@ class CredentialTestCase(CredentialBaseTestCase):
         for cred in r.result['credentials']:
             self.assertEqual(self.user['id'], cred['user_id'])
 
+    def test_list_credentials_filtered_by_type(self):
+        """Call ``GET  /credentials?type={type}``."""
+        credential = self.new_credential_ref(
+            user_id=uuid.uuid4().hex, cred_type='ec2')
+        self.credential_api.create_credential(
+            credential['id'], credential)
+
+        r = self.get('/credentials?type=%s' % 'cert')
+        self.assertValidCredentialListResponse(r, ref=self.credential)
+        for cred in r.result['credentials']:
+            self.assertEqual(self.credential['type'], cred['type'])
+
+        r_ec2 = self.get('/credentials?type=%s' % 'ec2')
+        for cred in r_ec2.result['credentials']:
+            self.assertEqual('ec2', cred['type'])
+
     def test_create_credential(self):
         """Call ``POST /credentials``."""
         ref = self.new_credential_ref(user_id=self.user['id'])
