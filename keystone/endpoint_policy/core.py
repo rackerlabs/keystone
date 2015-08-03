@@ -348,7 +348,7 @@ class EndpointPolicyDriverV8(object):
         :type region_id: string
         :raises keystone.exception.PolicyAssociationNotFound: If there is no
             match for the specified association.
-        :returns: dict containing policy_id
+        :returns: Association dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
