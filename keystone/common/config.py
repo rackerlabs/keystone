@@ -538,6 +538,16 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a policy collection.'),
+        cfg.IntOpt('policy_timeout',
+                   default=300,
+                   help='Timeout in seconds for controlling the freshness of '
+                   'policy entities. For a given policy entity, the server '
+                   'creates a copy of it every time the timeout is reached. '
+                   'Such copy is returned to GET calls until the server times '
+                   'out again. The freshness of a given entity is exactly the '
+                   'remaining time to the next server timeout. This mechanism '
+                   'ensure that different clients asking for the same policy '
+                   'entity always have available the same policy at any time.')
     ],
     'endpoint_filter': [
         cfg.StrOpt('driver',
