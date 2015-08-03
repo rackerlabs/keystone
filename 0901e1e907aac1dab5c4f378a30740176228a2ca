@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_eee1e2ff",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-03T17:48:21Z",
+      "side": 1,
+      "message": "The test should be much simpler than this, you just need to check that this call returns *only* projects with the is_domain flag set to true\n\nThe same applies to is_domain\u003dFalse call below\n\nYou can than add more projects and check if they return in the correct call, doesn\u0027t need to compare the size of the returned list",
+      "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
