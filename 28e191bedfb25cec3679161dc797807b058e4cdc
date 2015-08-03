@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_cefd0670",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-03T17:54:31Z",
+      "side": 1,
+      "message": "so, you\u0027d rather see something like?\n\n    def validate_v3_non_persistent_token_id(self, token_id):",
+      "parentUuid": "3a50d1a3_21cbda54",
+      "revId": "28e191bedfb25cec3679161dc797807b058e4cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_41a14693",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 15
