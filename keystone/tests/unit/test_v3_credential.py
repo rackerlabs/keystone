@@ -98,6 +98,55 @@ class CredentialTestCase(CredentialBaseTestCase):
         for cred in r.result['credentials']:
             self.assertEqual(self.user['id'], cred['user_id'])
 
+    def test_list_credentials_filtered_by_type(self):
+        """Call ``GET  /credentials?type={type}``."""
+        # The type ec2 was chosen, instead of a random string,
+        # because the type must be in the list of supported types
+        ec2_credential = self.new_credential_ref(user_id=uuid.uuid4().hex,
+                                                 cred_type='ec2')
+        self.credential_api.create_credential(
+            ec2_credential['id'], ec2_credential)
+
+        # The type cert was chosen for the same reason as ec2
+        r = self.get('/credentials?type=%s' % 'cert')
+
+        # Testing the filter for two different types
+        self.assertValidCredentialListResponse(r, ref=self.credential)
+        for cred in r.result['credentials']:
+            self.assertEqual('cert', cred['type'])
+
+        r_ec2 = self.get('/credentials?type=%s' % 'ec2')
+        cred_ec2 = r_ec2.result['credentials'][0]
+        self.assertEqual('ec2', cred_ec2['type'])
+        self.assertEqual(cred_ec2['id'], ec2_credential['id'])
+
+    def test_list_credentials_filtered_by_type_and_user_id(self):
+        """Call ``GET  /credentials?user_id={user_id}&type={type}``."""
+        user1_id = uuid.uuid4().hex
+        user2_id = uuid.uuid4().hex
+
+        # Creating credentials for two different users
+        credential_user1_ec2 = self.new_credential_ref(
+            user_id=user1_id, cred_type='ec2')
+        credential_user1_cert = self.new_credential_ref(
+            user_id=user1_id)
+        credential_user2_cert = self.new_credential_ref(
+            user_id=user2_id)
+
+        self.credential_api.create_credential(
+            credential_user1_ec2['id'], credential_user1_ec2)
+        self.credential_api.create_credential(
+            credential_user1_cert['id'], credential_user1_cert)
+        self.credential_api.create_credential(
+            credential_user2_cert['id'], credential_user2_cert)
+
+        r = self.get('/credentials?user_id=%s&type=%s' % (user1_id, 'ec2'))
+        self.assertEqual(1, len(r.result['credentials']))
+
+        cred = r.result['credentials'][0]
+        self.assertEqual('ec2', cred['type'])
+        self.assertEqual(user1_id, cred['user_id'])
+
     def test_create_credential(self):
         """Call ``POST /credentials``."""
         ref = self.new_credential_ref(user_id=self.user['id'])
