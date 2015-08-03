@@ -90,3 +90,6 @@ class Policy(policy.Driver):
 
     def delete_policy(self, policy_id):
         raise exception.NotImplemented()
+
+    def release_policy(self, policy_id):
+        raise exception.NotImplemented()
