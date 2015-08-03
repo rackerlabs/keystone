@@ -1095,6 +1095,11 @@ FILE_OPTIONS = {
                     deprecated_for_removal=True,
                     help='Require client certificate.'),
     ],
+    'delegation': [
+        cfg.IntOpt('expiration',
+                   default=0,
+                   help='Default delegation TTL (in seconds), 0 to disable'),
+    ],
 }
 
 
