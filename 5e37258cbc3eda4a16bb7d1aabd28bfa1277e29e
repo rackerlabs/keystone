@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_56a0a8f4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-03T19:42:57Z",
+      "side": 1,
+      "message": "The cleanups get called in reverse order, so where before the code did the _cleanupDB() stuff and then sql.cleanup(), it now does sql.cleanup() and then self._cleanupDB().\n\nSo if the order was correct before, then cleanups should be:\n\n self.addCleanup(sql.cleanup)\n self.addCleanup(self._cleanupDB)\n self.addCleanup(sqlalchemy.orm.session.Session.close_all)\n\nI think it\u0027s more correct to put the \"self.addCleanup(sqlalchemy.orm.session.Session.close_all)\" last so I\u0027m fine with where it is in this patch set.\n\nBut, I don\u0027t think it\u0027s correct to change so that sql.cleanup() is done before _cleanupDB(). So either leave sql.cleanup() in _cleanupDB(), or change the order of these 2 cleanups.\n\nOr, maybe there\u0027s a reason that the order should change and if that\u0027s the case then say it in the commit message.",
+      "revId": "5e37258cbc3eda4a16bb7d1aabd28bfa1277e29e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
