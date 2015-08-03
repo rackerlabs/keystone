@@ -103,9 +103,8 @@ class EndpointPolicy(object):
 
         try:
             with sql.transaction() as session:
-                policy_id = session.query(PolicyAssociation.policy_id).filter(
-                    sql_constraints).distinct().one()
-            return {'policy_id': policy_id}
+                return session.query(PolicyAssociation).filter(
+                    sql_constraints).distinct().one().to_dict()
         except sql.NotFound:
             raise exception.PolicyAssociationNotFound()
 
