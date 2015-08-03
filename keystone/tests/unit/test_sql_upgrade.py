@@ -1446,6 +1446,38 @@ class SqlUpgradeTests(SqlMigrateBase):
                                           autoload=True)
         self.assertTrue(password_table.c.password.nullable)
 
+    def test_add_delegation_tables(self):
+        delegation_table_name = 'delegation'
+        role_delegation_table_name = 'role_delegation'
+        self.upgrade(106)
+        self.assertTableDoesNotExist(delegation_table_name)
+        self.assertTableDoesNotExist(role_delegation_table_name)
+        self.upgrade(107)
+        self.assertTableColumns(delegation_table_name,
+                                ['id',
+                                 'trustor_id',
+                                 'agent_id',
+                                 'redelegated_id',
+                                 'impersonation',
+                                 'strict_ancestry',
+                                 'sealed',
+                                 'executable',
+                                 'inherited_to_projects',
+                                 'user_id',
+                                 'group_id',
+                                 'project_id',
+                                 'domain_id',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'redelegation_count',
+                                 'extra'
+                                 ])
+        self.assertTableColumns(role_delegation_table_name,
+                                ['id',
+                                 'delegation_id',
+                                 'role_id'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
