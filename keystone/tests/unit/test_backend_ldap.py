@@ -1864,6 +1864,13 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_list_projects_in_subtree_with_circular_reference(self):
         self._assert_create_hierarchy_not_allowed()
 
+    def test_list_projects_in_subtree_do_not_bypass_domains(self):
+        projects = self._assert_create_hierarchy_not_allowed()
+        for project in projects:
+            subtree_list = self.resource_api.list_projects_in_subtree(
+                project['id'])
+            self.assertEqual(0, len(subtree_list))
+
     def test_list_project_parents(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
@@ -1881,6 +1888,13 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         default_domain_project = self.resource_api.get_project(
             CONF.identity.default_domain_id)
         self.assertEqual(projects[0], default_domain_project)
+
+    def test_list_project_parents_do_not_bypass_domains(self):
+        projects = self._assert_create_hierarchy_not_allowed()
+        for project in projects:
+            parents_list = self.resource_api.list_project_parents(
+                project['id'])
+            self.assertEqual(1, len(parents_list))
 
     def test_hierarchical_projects_crud(self):
         self._assert_create_hierarchy_not_allowed()
