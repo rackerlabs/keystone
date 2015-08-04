@@ -16,6 +16,24 @@
       "revId": "f7106012745ac4eb9a150eb9f007fa5c6ba04662",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1bd6bcc5",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-04T02:44:45Z",
+      "side": 1,
+      "message": "Yep, this is just Python\u0027s import semantics. You can\u0027t import and use ldap.filter because the ldap module is not importing filter.",
+      "parentUuid": "3a50d1a3_77e1f229",
+      "revId": "f7106012745ac4eb9a150eb9f007fa5c6ba04662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
