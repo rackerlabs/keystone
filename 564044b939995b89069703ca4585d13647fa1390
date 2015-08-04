@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_ae11ea53",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-04T20:19:03Z",
+      "side": 1,
+      "message": "Didn\u0027t you switch away from doing a joined load here? Is there any reason you went from eager loading to lazy loading?",
+      "revId": "564044b939995b89069703ca4585d13647fa1390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_4e1706ee",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-04T20:19:03Z",
+      "side": 1,
+      "message": "To make this more readable I would put the \u0027if not tenant_id\u0027 here to break early. Then when you so the associations assignment you don\u0027t need to wrap it in an \u0027if\u0027 statement.",
+      "revId": "564044b939995b89069703ca4585d13647fa1390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0e9c9ebe",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-04T20:19:03Z",
+      "side": 1,
+      "message": "Where does metadata come from? I can\u0027t find where this was originally needed....and if you don\u0027t need it we can delete this method entirely.",
+      "revId": "564044b939995b89069703ca4585d13647fa1390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
