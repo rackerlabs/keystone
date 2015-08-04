@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7aac6335",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-04T20:28:00Z",
+      "side": 1,
+      "message": "The conflict in keystone/tests/unit/token/test_fernet_provider.py needs to be left in the commit message. See https://wiki.openstack.org/wiki/StableBranch#Proposing_Fixes",
+      "revId": "f9fe93665b97153b80920a715aaecc6bc6bd47ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
