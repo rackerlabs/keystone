@@ -111,25 +111,28 @@ class FederatedSetupMixin(object):
         self.assertEqual(token_projects, projects_ref)
 
     def _check_scoped_token_attributes(self, token):
-        def xor_project_domain(token_keys):
-            return sum(('project' in token_keys, 'domain' in token_keys)) % 2
 
         for obj in ('user', 'catalog', 'expires_at', 'issued_at',
                     'methods', 'roles'):
             self.assertIn(obj, token)
-        # Check for either project or domain
-        if not xor_project_domain(list(token.keys())):
-            raise AssertionError("You must specify either"
-                                 "project or domain.")
 
-        self.assertIn('OS-FEDERATION', token['user'])
         os_federation = token['user']['OS-FEDERATION']
+
+        self.assertIn('groups', os_federation)
+        self.assertIn('identity_provider', os_federation)
+        self.assertIn('protocol', os_federation)
+        self.assertThat(os_federation, matchers.HasLength(3))
+
         self.assertEqual(self.IDP, os_federation['identity_provider']['id'])
         self.assertEqual(self.PROTOCOL, os_federation['protocol']['id'])
-        self.assertListEqual(sorted(['groups',
-                                     'identity_provider',
-                                     'protocol']),
-                             sorted(os_federation.keys()))
+
+    def _check_project_scoped_token_attributes(self, token, project_id):
+        self.assertEqual(project_id, token['project']['id'])
+        self._check_scoped_token_attributes(token)
+
+    def _check_domain_scoped_token_attributes(self, token, domain_id):
+        self.assertEqual(domain_id, token['domain']['id'])
+        self._check_scoped_token_attributes(token)
 
     def _issue_unscoped_token(self,
                               idp=None,
@@ -2179,9 +2182,9 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
         token_resp = r.result['token']
         project_id = token_resp['project']['id']
-        self.assertEqual(project_id, self.proj_employees['id'])
-        self._check_scoped_token_attributes(token_resp)
+        self._check_project_scoped_token_attributes(token_resp, project_id)
         roles_ref = [self.role_employee]
+
         projects_ref = self.proj_employees
         self._check_projects_and_roles(token_resp, roles_ref, projects_ref)
 
@@ -2232,9 +2235,8 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         for body, project_id_ref in zip(bodies, project_ids):
             r = self.v3_authenticate_token(body)
             token_resp = r.result['token']
-            project_id = token_resp['project']['id']
-            self.assertEqual(project_id, project_id_ref)
-            self._check_scoped_token_attributes(token_resp)
+            self._check_project_scoped_token_attributes(token_resp,
+                                                        project_id_ref)
 
     def test_scope_to_project_with_only_inherited_roles(self):
         """Try to scope token whose only roles are inherited."""
@@ -2242,9 +2244,8 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         r = self.v3_authenticate_token(
             self.TOKEN_SCOPE_PROJECT_INHERITED_FROM_CUSTOMER)
         token_resp = r.result['token']
-        project_id = token_resp['project']['id']
-        self.assertEqual(project_id, self.project_inherited['id'])
-        self._check_scoped_token_attributes(token_resp)
+        self._check_project_scoped_token_attributes(
+            token_resp, self.project_inherited['id'])
         roles_ref = [self.role_customer]
         projects_ref = self.project_inherited
         self._check_projects_and_roles(token_resp, roles_ref, projects_ref)
@@ -2277,9 +2278,8 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
     def test_scope_to_domain_once(self):
         r = self.v3_authenticate_token(self.TOKEN_SCOPE_DOMAIN_A_FROM_CUSTOMER)
         token_resp = r.result['token']
-        domain_id = token_resp['domain']['id']
-        self.assertEqual(self.domainA['id'], domain_id)
-        self._check_scoped_token_attributes(token_resp)
+        self._check_domain_scoped_token_attributes(token_resp,
+                                                   self.domainA['id'])
 
     def test_scope_to_domain_multiple_tokens(self):
         """Issue multiple tokens scoping to different domains.
@@ -2301,9 +2301,8 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         for body, domain_id_ref in zip(bodies, domain_ids):
             r = self.v3_authenticate_token(body)
             token_resp = r.result['token']
-            domain_id = token_resp['domain']['id']
-            self.assertEqual(domain_id_ref, domain_id)
-            self._check_scoped_token_attributes(token_resp)
+            self._check_domain_scoped_token_attributes(token_resp,
+                                                       domain_id_ref)
 
     def test_scope_to_domain_with_only_inherited_roles_fails(self):
         """Try to scope to a domain that has no direct roles."""
@@ -2422,9 +2421,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
         r = self.v3_authenticate_token(v3_scope_request)
         token_resp = r.result['token']
-        project_id = token_resp['project']['id']
-        self.assertEqual(project['id'], project_id)
-        self._check_scoped_token_attributes(token_resp)
+        self._check_project_scoped_token_attributes(token_resp, project['id'])
 
     def test_workflow_with_groups_deletion(self):
         """Test full workflow with groups deletion before token scoping.
@@ -2959,9 +2956,7 @@ class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin):
 
         resp = self.v3_authenticate_token(v3_scope_request)
         token_resp = resp.result['token']
-        project_id = token_resp['project']['id']
-        self.assertEqual(project['id'], project_id)
-        self._check_scoped_token_attributes(token_resp)
+        self._check_project_scoped_token_attributes(token_resp, project['id'])
 
 
 class FederatedTokenTestsMethodToken(FederatedTokenTests):
