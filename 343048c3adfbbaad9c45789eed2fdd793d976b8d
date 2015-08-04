@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_82a465a6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-04T22:23:47Z",
+      "side": 1,
+      "message": "is this needed or defined in this patch?",
+      "revId": "343048c3adfbbaad9c45789eed2fdd793d976b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
