@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_82b1c591",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-04T22:31:59Z",
+      "side": 1,
+      "message": "Question: is the goal to include in this list any sub projects that are acting as a domain, but not their subtrees....or to exclude them entirely?  If it is the former, then this works...if it\u0027s the later then the filer is not correct.",
+      "revId": "c3735264e3ac68ad2e604eb166e1872a8d9c0d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
