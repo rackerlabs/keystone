@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6d4cc170",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-04T15:03:51Z",
+      "side": 1,
+      "message": "I think you might want to put this in a context? e.g.,\n\n with self.identity_api.driver.user.get_connection() as ldap_:\n\nI\u0027ll check...",
+      "revId": "0c702e2a0d10e10ed558668bdf51c1161a12c7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6d6da197",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-04T15:03:51Z",
+      "side": 1,
+      "message": "some of these magic values must be in the config?",
+      "revId": "0c702e2a0d10e10ed558668bdf51c1161a12c7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ed0f71df",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-04T15:03:51Z",
+      "side": 1,
+      "message": "some of these magic values must be in the config?",
+      "revId": "0c702e2a0d10e10ed558668bdf51c1161a12c7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
