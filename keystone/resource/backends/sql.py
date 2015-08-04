@@ -85,15 +85,20 @@ class Resource(keystone_resource.Driver):
             project_refs = query.filter_by(domain_id=domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def _get_children(self, session, project_ids):
+    def _get_children(self, session, project_ids, domain_id=None):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
+        if domain_id:
+            query = query.filter_by(domain_id=domain_id)
         project_refs = query.all()
         return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_in_subtree(self, project_id):
+        project = self.get_project(project_id)
+        domain_id = (project['id'] if project['is_domain']
+                     else project['domain_id'])
         with sql.transaction() as session:
-            children = self._get_children(session, [project_id])
+            children = self._get_children(session, [project_id], domain_id)
             subtree = []
             examined = set([project_id])
             while children:
@@ -109,7 +114,7 @@ class Resource(keystone_resource.Driver):
 
                 examined.update(children_ids)
                 subtree += children
-                children = self._get_children(session, children_ids)
+                children = self._get_children(session, children_ids, domain_id)
             return subtree
 
     def list_project_parents(self, project_id):
@@ -117,7 +122,7 @@ class Resource(keystone_resource.Driver):
             project = self._get_project(session, project_id).to_dict()
             parents = []
             examined = set()
-            while project.get('parent_id') is not None:
+            while project and project.get('parent_id') is not None:
                 if project['id'] in examined:
                     msg = _LE('Circular reference or a repeated '
                               'entry found in projects hierarchy - '
@@ -130,6 +135,8 @@ class Resource(keystone_resource.Driver):
                     session, project['parent_id']).to_dict()
                 parents.append(parent_project)
                 project = parent_project
+                if project['is_domain']:
+                    project = None
             return parents
 
     def is_leaf_project(self, project_id):

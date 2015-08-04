@@ -398,7 +398,8 @@ class Manager(manager.Manager):
         # traverse up the hierarchy.
         def traverse_parents_hierarchy(project):
             parent_id = project.get('parent_id')
-            if not parent_id:
+            is_domain = project.get('is_domain')
+            if not parent_id or is_domain:
                 return None
 
             parent = parents_by_id[parent_id]
