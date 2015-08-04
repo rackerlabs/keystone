@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e172397c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:56:33Z",
+      "side": 1,
+      "message": "Why not provide a hint what\u0027s expected token format (text)?",
+      "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
