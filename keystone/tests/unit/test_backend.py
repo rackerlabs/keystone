@@ -2664,6 +2664,66 @@ class IdentityTests(object):
         subtree = self.resource_api.list_projects_in_subtree(project3['id'])
         self.assertEqual(0, len(subtree))
 
+    @tests.skip_if_no_multiple_domains_support
+    def test_projects_subtree_do_not_bypass_domains(self):
+        """Tests list_projects_in_subtree do not by pass subdomains
+        This test creates the following four projects hierarchy, where A and
+        B act as domains and C and D are regular projects.
+            A
+            |
+          -----
+          |   |
+          B   C
+          |
+          D
+
+        """
+        projects_hierarchy = self._create_projects_hierarchy(is_domain=True,
+                                                             hierarchy_size=2)
+        project_a = projects_hierarchy[0]
+        project_b = projects_hierarchy[1]
+        sub_project_c = {'id': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': project_a['domain_id'],
+                         'enabled': True,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': project_a['id'],
+                         'is_domain': False}
+        self.resource_api.create_project(sub_project_c['id'], sub_project_c)
+
+        sub_project_d = {'id': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': project_b['id'],
+                         'enabled': True,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': project_b['id'],
+                         'is_domain': False}
+        self.resource_api.create_project(sub_project_d['id'], sub_project_d)
+
+        subtree_a = self.resource_api.list_projects_in_subtree(project_a['id'])
+        # project_a's subtree will contain only B and C
+        self.assertEqual(2, len(subtree_a))
+
+        # project_b's subtree will contain only D
+        subtree_b = self.resource_api.list_projects_in_subtree(project_b['id'])
+        self.assertEqual(1, len(subtree_b))
+
+        subtree_a_ids = self.resource_api.get_projects_in_subtree_as_ids(
+            project_a['id'])
+        # project_a's subtree as ids contains B and C's subtrees
+        self.assertIn(project_b['id'], subtree_a_ids)
+        self.assertIn(sub_project_c['id'], subtree_a_ids)
+
+        # As B is a project that acts as a domain, A can't see its subtree
+        self.assertIsNone(subtree_a_ids[project_b['id']])
+        self.assertIsNone(subtree_a_ids[sub_project_c['id']])
+
+        # project_b's subtree has only D
+        subtree_b_ids = self.resource_api.get_projects_in_subtree_as_ids(
+            project_b['id'])
+        self.assertIn(sub_project_d['id'], subtree_b_ids)
+        self.assertIsNone(subtree_b_ids[sub_project_d['id']])
+
     def test_list_projects_in_subtree_with_circular_reference(self):
         project1_id = uuid.uuid4().hex
         project2_id = uuid.uuid4().hex
@@ -2731,6 +2791,72 @@ class IdentityTests(object):
         # It is has the default domain as parent
         parents = self.resource_api.list_project_parents(project1['id'])
         self.assertEqual(1, len(parents))
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_project_parents_do_not_bypass_domains(self):
+        """Tests list_projects_parents not by pass subdomains
+        This test creates the following four projects hierarchy, where A and
+        B act as domains and C and D are regular projects.
+            A
+            |
+          -----
+          |   |
+          B   C
+          |
+          D
+
+        """
+        projects_hierarchy = self._create_projects_hierarchy(is_domain=True,
+                                                             hierarchy_size=2)
+        project1 = projects_hierarchy[0]
+        project2 = projects_hierarchy[1]
+        sub_project_1 = {'id': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': project1['domain_id'],
+                         'enabled': True,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': project1['id'],
+                         'is_domain': False}
+        self.resource_api.create_project(sub_project_1['id'], sub_project_1)
+        sub_project_2 = {'id': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': project1['domain_id'],
+                         'enabled': True,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': project2['id'],
+                         'is_domain': False}
+        self.resource_api.create_project(sub_project_2['id'], sub_project_2)
+
+        parents_2 = self.resource_api.list_project_parents(project2['id'])
+        # project2's parents must contain only project1
+        self.assertEqual(1, len(parents_2))
+        self.assertIn(project1, parents_2)
+
+        # sub_project_1's parents must contain project1
+        parents_sub_project_1 = self.resource_api.list_project_parents(
+            sub_project_1['id'])
+        self.assertEqual(1, len(parents_sub_project_1))
+        self.assertIn(project1, parents_sub_project_1)
+
+        # sub_project_2's parents must contain project2
+        parents_sub_project_2 = self.resource_api.list_project_parents(
+            sub_project_2['id'])
+        self.assertEqual(1, len(parents_sub_project_2))
+        self.assertIn(project2, parents_sub_project_2)
+
+        # sub_project_1's parents must contain project1
+        parents_sub_project_1_ids = (
+            self.resource_api.get_project_parents_as_ids(sub_project_1))
+        self.assertIn(project1['id'], parents_sub_project_1_ids)
+        # project1 must have no parent
+        self.assertIsNone(parents_sub_project_1_ids[project1['id']])
+
+        # sub_project_2's parents_ids must contain project2
+        parents_sub_project_2_ids = (
+            self.resource_api.get_project_parents_as_ids(sub_project_2))
+        self.assertIn(project2['id'], parents_sub_project_2_ids)
+        # project2 must have no parent
+        self.assertIsNone(parents_sub_project_2_ids[project2['id']])
 
     def test_list_project_parents_invalid_project_id(self):
         self.assertRaises(exception.ValidationError,
