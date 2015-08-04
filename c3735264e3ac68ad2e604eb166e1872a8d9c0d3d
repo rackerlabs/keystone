@@ -16,6 +16,24 @@
       "revId": "c3735264e3ac68ad2e604eb166e1872a8d9c0d3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f895d6e3",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-04T23:29:25Z",
+      "side": 1,
+      "message": "the intention is to include the project acting as domain but not its subtree",
+      "parentUuid": "1a4dcd0f_82b1c591",
+      "revId": "c3735264e3ac68ad2e604eb166e1872a8d9c0d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
