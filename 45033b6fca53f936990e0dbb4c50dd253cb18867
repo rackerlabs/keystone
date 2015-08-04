@@ -34,6 +34,24 @@
       "revId": "45033b6fca53f936990e0dbb4c50dd253cb18867",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_530ad127",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-04T13:08:21Z",
+      "side": 1,
+      "message": "338-339 weren\u0027t referring to the lines that were removed.",
+      "parentUuid": "1a4dcd0f_345ce24a",
+      "revId": "45033b6fca53f936990e0dbb4c50dd253cb18867",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
