@@ -767,10 +767,26 @@ class RoleAssignmentV3(controller.V3Controller):
             msg = _('Specify a user or group, not both')
             raise exception.ValidationError(msg)
 
+    def _patch_assignments_protection(func):
+        def _patch_project(self, context):
+            target = {}
+            project_id = context['query_string'].get('scope.project.id')
+            if project_id:
+                target['project'] = self.resource_api.get_project(project_id)
+            return target
+
+        @functools.wraps(func)
+        def wrapper(self, context, *args, **kwargs):
+            kwargs['target'] = _patch_project(self, context)
+            return func(self, context, *args, **kwargs)
+
+        return wrapper
+
+    @_patch_assignments_protection
     @controller.filterprotected('group.id', 'role.id',
                                 'scope.domain.id', 'scope.project.id',
                                 'scope.OS-INHERIT:inherited_to', 'user.id')
-    def list_role_assignments(self, context, filters):
+    def list_role_assignments(self, context, filters, target=None):
 
         # TODO(henry-nash): This implementation uses the standard filtering
         # in the V3.wrap_collection. Given the large number of individual
