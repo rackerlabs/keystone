@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ce0ab8d2",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 76
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-04T13:13:45Z",
+      "side": 1,
+      "message": "instead of passing the is_domain flag, pass the domain_id",
+      "revId": "b0d4719945d8eaecae45e9a3a5072520593b137c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
