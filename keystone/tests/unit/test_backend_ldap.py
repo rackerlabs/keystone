@@ -1697,7 +1697,21 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_list_projects_in_subtree_with_circular_reference(self):
         self._assert_create_hierarchy_not_allowed()
 
+    def test_list_projects_in_subtree_do_not_bypass_domains(self):
+        projects = self._assert_create_hierarchy_not_allowed()
+        for project in projects:
+            subtree_list = self.resource_api.list_projects_in_subtree(
+                project['id'])
+            self.assertEqual(0, len(subtree_list))
+
     def test_list_project_parents(self):
+        projects = self._assert_create_hierarchy_not_allowed()
+        for project in projects:
+            parents_list = self.resource_api.list_project_parents(
+                project['id'])
+            self.assertEqual(0, len(parents_list))
+
+    def test_list_project_parents_do_not_bypass_domains(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
             parents_list = self.resource_api.list_project_parents(
