@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2e930051",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-04T20:41:51Z",
+      "side": 1,
+      "message": "this should be cherry-picked from stable/kilo.",
+      "revId": "dbdc4cf2f8fe47f7c17dca16c3e8737daab18d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
