@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_b4879260",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2920,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "actually since we already put groups in both unscoped and scoped tokens we can use implementation of FederatedSetupMixin._check_scoped_token_attributes .\n\nAnd all suggested fixes should be proposed in a separate patch.",
+      "parentUuid": "1a4dcd0f_7681248f",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_21ffd802",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 16
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_b46312b1",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_21883822",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_422b0283",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -98,6 +134,24 @@
       "writtenOn": "2015-08-03T21:47:50Z",
       "side": 1,
       "message": "group_ids is unused if not (idp_id and protocol_id), so move initializing it below this check.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b4d8f254",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "done, but what is the purpose of that?",
+      "parentUuid": "1a4dcd0f_422b0283",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +192,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_68d36e39",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "1a4dcd0f_621abe19",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_22ba76e2",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -149,6 +221,24 @@
       "writtenOn": "2015-08-03T21:47:50Z",
       "side": 1,
       "message": "suggest change the name to token_dict_in_out since it\u0027s modified.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_08a18a94",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "naming is  consistent with other methods like https://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L286 or https://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L222 where token_data is also modified. Suggested to fix it collectively in a separate patch.",
+      "parentUuid": "1a4dcd0f_22ba76e2",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +262,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_a8c41640",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_0394dbe5",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_02b97ae9",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -183,6 +291,24 @@
       "writtenOn": "2015-08-03T21:47:50Z",
       "side": 1,
       "message": "token_dict\n\nchange \"tokene\" to \"token\"",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c8c16230",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_02b97ae9",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +332,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_287c8671",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "no, usually it\u0027s done by _handle_mapped_tokens()\nhttps://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L556",
+      "parentUuid": "1a4dcd0f_29eee422",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_293ca492",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 16
@@ -217,6 +361,24 @@
       "writtenOn": "2015-08-03T18:11:19Z",
       "side": 1,
       "message": "nit: missing project id in the return doc string.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_08cf4a57",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "i have redone lots of the code.",
+      "parentUuid": "1a4dcd0f_293ca492",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +402,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_b4e232d4",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "1a4dcd0f_a2268614",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_495570c4",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 16
@@ -251,6 +431,24 @@
       "writtenOn": "2015-08-03T18:11:19Z",
       "side": 1,
       "message": "nit: same comment as above, but w.r.t. the domain id that the token is being scoped to.",
+      "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_08f66a8f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-04T08:11:13Z",
+      "side": 1,
+      "message": "i ve removed lots of the code",
+      "parentUuid": "1a4dcd0f_495570c4",
       "revId": "48bf2d23885695c290151b9fe587a7edd1e413af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
