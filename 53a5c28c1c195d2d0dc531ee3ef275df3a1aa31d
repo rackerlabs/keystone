@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e22c84ad",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-04T04:23:56Z",
+      "side": 1,
+      "message": "hmm, i would have thought that only one \u0026 is needed.",
+      "revId": "53a5c28c1c195d2d0dc531ee3ef275df3a1aa31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_020df03d",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-04T04:23:56Z",
+      "side": 1,
+      "message": "you could also assert the length of r.result[\u0027credentials\u0027] is one.",
+      "revId": "53a5c28c1c195d2d0dc531ee3ef275df3a1aa31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
