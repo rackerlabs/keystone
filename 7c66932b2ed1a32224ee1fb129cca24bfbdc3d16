@@ -16,6 +16,41 @@
       "revId": "7c66932b2ed1a32224ee1fb129cca24bfbdc3d16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e5cb3371",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-04T01:20:36Z",
+      "side": 1,
+      "message": "@Dolph, actually, the docstring here means resource_to_validate is not existing in the kwargs...",
+      "parentUuid": "1a4dcd0f_5cdbe71b",
+      "revId": "7c66932b2ed1a32224ee1fb129cca24bfbdc3d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_658de330",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-04T01:20:36Z",
+      "side": 1,
+      "message": "... from here, I happened to update the docstring and move the comments here up to the docstring from the previous patch.\n\nI will revert it back, thanks!",
+      "revId": "7c66932b2ed1a32224ee1fb129cca24bfbdc3d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
