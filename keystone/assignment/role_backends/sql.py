@@ -11,11 +11,13 @@
 # under the License.
 
 from keystone import assignment
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 
 
 class Role(assignment.RoleDriver):
+    driver_version = manager.LIBERTY
 
     @sql.handle_conflicts(conflict_type='role')
     def create_role(self, role_id, role):

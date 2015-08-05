@@ -229,9 +229,10 @@ class Manager(object):
         return f
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface description for a Token driver."""
+    interface_version = manager.LIBERTY
 
     @abc.abstractmethod
     def get_token(self, token_id):

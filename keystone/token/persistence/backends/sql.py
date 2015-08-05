@@ -19,6 +19,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _LI
@@ -84,6 +85,8 @@ def _expiry_range_all(session, upper_bound_func):
 
 
 class Token(token.persistence.Driver):
+    driver_version = manager.LIBERTY
+
     # Public interface
     def get_token(self, token_id):
         if token_id is None:

@@ -12,6 +12,7 @@
 
 from oslo_config import cfg
 
+from keystone.common import manager
 from keystone.token.persistence.backends import memcache
 
 
@@ -19,6 +20,7 @@ CONF = cfg.CONF
 
 
 class Token(memcache.Token):
+    driver_version = manager.LIBERTY
     memcached_backend = 'pooled_memcached'
 
     def __init__(self, *args, **kwargs):

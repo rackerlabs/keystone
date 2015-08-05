@@ -21,6 +21,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 
@@ -87,6 +88,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 
 
 class Catalog(catalog.Driver):
+    driver_version = manager.LIBERTY
+
     # Regions
     def list_regions(self, hints):
         session = sql.get_session()

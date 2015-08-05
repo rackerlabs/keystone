@@ -91,8 +91,9 @@ class Manager(manager.Manager):
         return mapped_properties, mapping['id']
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = manager.LIBERTY
 
     @abc.abstractmethod
     def create_idp(self, idp_id, idp):

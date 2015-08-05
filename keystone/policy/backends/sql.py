@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 from keystone.policy.backends import rules
@@ -27,6 +28,7 @@ class PolicyModel(sql.ModelBase, sql.DictBase):
 
 
 class Policy(rules.Policy):
+    driver_version = manager.LIBERTY
 
     @sql.handle_conflicts(conflict_type='policy')
     def create_policy(self, policy_id, policy):

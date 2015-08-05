@@ -18,6 +18,7 @@ import sqlalchemy
 from sqlalchemy.sql.expression import false
 
 from keystone import assignment as keystone_assignment
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _
@@ -50,6 +51,7 @@ class AssignmentType(object):
 
 
 class Assignment(keystone_assignment.Driver):
+    driver_version = manager.LIBERTY
 
     def default_role_driver(self):
         return 'sql'

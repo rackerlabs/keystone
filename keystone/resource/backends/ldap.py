@@ -20,6 +20,7 @@ from oslo_log import log
 from keystone.common import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
+from keystone.common import manager
 from keystone.common import models
 from keystone import exception
 from keystone.i18n import _
@@ -32,6 +33,8 @@ LOG = log.getLogger(__name__)
 
 
 class Resource(resource.Driver):
+    driver_version = manager.LIBERTY
+
     def __init__(self):
         super(Resource, self).__init__()
         self.LDAP_URL = CONF.ldap.url

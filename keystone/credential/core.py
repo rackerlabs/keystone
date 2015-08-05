@@ -50,8 +50,9 @@ class Manager(manager.Manager):
         return self.driver.list_credentials(hints or driver_hints.Hints())
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = manager.LIBERTY
     # credential crud
 
     @abc.abstractmethod

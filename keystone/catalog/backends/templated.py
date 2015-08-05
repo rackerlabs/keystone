@@ -20,6 +20,7 @@ from oslo_log import log
 
 from keystone.catalog.backends import kvs
 from keystone.catalog import core
+from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _LC
 
@@ -87,6 +88,7 @@ class Catalog(kvs.Catalog):
       internalURL - the url of the internal endpoint
 
     """
+    driver_version = manager.LIBERTY
 
     def __init__(self, templates=None):
         super(Catalog, self).__init__()

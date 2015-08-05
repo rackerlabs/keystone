@@ -17,6 +17,7 @@ from oslo_log import log
 
 from keystone import assignment
 from keystone.common import ldap as common_ldap
+from keystone.common import manager
 from keystone.common import models
 from keystone import exception
 from keystone.i18n import _
@@ -28,6 +29,7 @@ LOG = log.getLogger(__name__)
 
 
 class Role(assignment.RoleDriver):
+    driver_version = manager.LIBERTY
 
     def __init__(self):
         super(Role, self).__init__()

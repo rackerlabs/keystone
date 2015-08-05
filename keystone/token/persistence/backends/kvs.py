@@ -22,6 +22,7 @@ from oslo_utils import timeutils
 import six
 
 from keystone.common import kvs
+from keystone.common import manager
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
@@ -40,6 +41,7 @@ class Token(token.persistence.Driver):
     memcached) for the Token backend.  It is recommended to only use the base
     in-memory implementation for testing purposes.
     """
+    driver_version = manager.LIBERTY
 
     revocation_key = 'revocation-list'
     kvs_backend = 'openstack.kvs.Memory'

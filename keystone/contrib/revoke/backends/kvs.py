@@ -17,6 +17,7 @@ from oslo_log import versionutils
 from oslo_utils import timeutils
 
 from keystone.common import kvs
+from keystone.common import manager
 from keystone.contrib import revoke
 from keystone import exception
 
@@ -28,6 +29,7 @@ _KVS_BACKEND = 'openstack.kvs.Memory'
 
 
 class Revoke(revoke.Driver):
+    driver_version = manager.LIBERTY
 
     @versionutils.deprecated(
         versionutils.deprecated.JUNO,

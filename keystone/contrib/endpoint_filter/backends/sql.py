@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone.contrib import endpoint_filter
 from keystone import exception
@@ -54,6 +55,7 @@ class ProjectEndpointGroupMembership(sql.ModelBase, sql.ModelDictMixin):
 
 
 class EndpointFilter(endpoint_filter.Driver):
+    driver_version = manager.LIBERTY
 
     @sql.handle_conflicts(conflict_type='project_endpoint')
     def add_endpoint_to_project(self, endpoint_id, project_id):

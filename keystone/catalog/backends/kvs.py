@@ -16,9 +16,12 @@
 from keystone import catalog
 from keystone.common import driver_hints
 from keystone.common import kvs
+from keystone.common import manager
 
 
 class Catalog(kvs.Base, catalog.Driver):
+    driver_version = manager.LIBERTY
+
     # Public interface
     def get_catalog(self, user_id, tenant_id):
         return self.db.get('catalog-%s-%s' % (tenant_id, user_id))

@@ -22,6 +22,7 @@ import six
 from keystone.common import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
+from keystone.common import manager
 from keystone.common import models
 from keystone import exception
 from keystone.i18n import _
@@ -33,6 +34,8 @@ LOG = log.getLogger(__name__)
 
 
 class Identity(identity.Driver):
+    driver_version = manager.LIBERTY
+
     def __init__(self, conf=None):
         super(Identity, self).__init__()
         if conf is None:

@@ -12,6 +12,7 @@
 
 import uuid
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone.contrib import revoke
 from keystone.contrib.revoke import model
@@ -39,6 +40,8 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
 
 
 class Revoke(revoke.Driver):
+    driver_version = manager.LIBERTY
+
     def _flush_batch_size(self, dialect):
         batch_size = 0
         if dialect == 'ibm_db_sa':

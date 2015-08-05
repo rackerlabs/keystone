@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _
@@ -43,6 +44,7 @@ class SensitiveConfig(sql.ModelBase, sql.ModelDictMixin):
 
 
 class DomainConfig(resource.DomainConfigDriver):
+    driver_version = manager.LIBERTY
 
     def choose_table(self, sensitive):
         if sensitive:

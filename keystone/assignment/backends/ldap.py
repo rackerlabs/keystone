@@ -21,6 +21,7 @@ from oslo_log import versionutils
 from keystone import assignment
 from keystone.assignment.role_backends import ldap as ldap_role
 from keystone.common import ldap as common_ldap
+from keystone.common import manager
 from keystone.common import models
 from keystone import exception
 from keystone.i18n import _
@@ -32,6 +33,8 @@ LOG = log.getLogger(__name__)
 
 
 class Assignment(assignment.Driver):
+    driver_version = manager.LIBERTY
+
     @versionutils.deprecated(
         versionutils.deprecated.KILO,
         remove_in=+2,

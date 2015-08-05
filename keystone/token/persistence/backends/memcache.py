@@ -15,6 +15,7 @@
 
 from oslo_config import cfg
 
+from keystone.common import manager
 from keystone.token.persistence.backends import kvs
 
 
@@ -22,6 +23,7 @@ CONF = cfg.CONF
 
 
 class Token(kvs.Token):
+    driver_version = manager.LIBERTY
     kvs_backend = 'openstack.kvs.Memcached'
     memcached_backend = 'memcached'
 

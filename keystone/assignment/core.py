@@ -910,8 +910,9 @@ class Manager(manager.Manager):
         pass
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = manager.LIBERTY
 
     def _role_to_dict(self, role_id, inherited):
         role_dict = {'id': role_id}
@@ -1218,8 +1219,9 @@ class RoleManager(manager.Manager):
         self.get_role.invalidate(self, role_id)
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class RoleDriver(object):
+    interface_version = manager.LIBERTY
 
     def _get_list_limit(self):
         return CONF.role.list_limit or CONF.list_limit

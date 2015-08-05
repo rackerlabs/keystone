@@ -18,6 +18,7 @@ from oslo_log import log
 from oslo_utils import timeutils
 from six.moves import range
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 from keystone import trust
@@ -55,6 +56,8 @@ class TrustRole(sql.ModelBase):
 
 
 class Trust(trust.Driver):
+    driver_version = manager.LIBERTY
+
     @sql.handle_conflicts(conflict_type='trust')
     def create_trust(self, trust_id, trust, roles):
         with sql.transaction() as session:

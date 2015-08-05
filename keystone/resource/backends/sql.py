@@ -14,6 +14,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import clean
+from keystone.common import manager
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _LE
@@ -25,6 +26,7 @@ LOG = log.getLogger(__name__)
 
 
 class Resource(keystone_resource.Driver):
+    driver_version = manager.LIBERTY
 
     def default_assignment_driver(self):
         return 'sql'

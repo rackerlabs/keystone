@@ -17,6 +17,7 @@ from oslo_config import cfg
 from keystone.catalog.backends import sql
 from keystone.catalog import core as catalog_core
 from keystone.common import dependency
+from keystone.common import manager
 from keystone import exception
 
 
@@ -25,6 +26,8 @@ CONF = cfg.CONF
 
 @dependency.requires('endpoint_filter_api')
 class EndpointFilterCatalog(sql.Catalog):
+    driver_version = manager.LIBERTY
+
     def get_v3_catalog(self, user_id, project_id):
         substitutions = dict(CONF.items())
         substitutions.update({'tenant_id': project_id, 'user_id': user_id})

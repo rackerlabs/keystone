@@ -263,9 +263,10 @@ class Manager(manager.Manager):
         raise exception.NotFound(msg)
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface description for an Endpoint Policy driver."""
+    interface_version = manager.LIBERTY
 
     @abc.abstractmethod
     def create_policy_association(self, policy_id, endpoint_id=None,

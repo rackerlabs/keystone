@@ -453,6 +453,16 @@ class MultipleSQLDriversInConfig(UnexpectedError):
                        'permitted): %(source)s.')
 
 
+class IncompatibleInterface(UnexpectedError):
+    message_format = _('Driver interface %(cls)s is incompatible. '
+                       '%(msg)s')
+
+
+class IncompatibleDriver(UnexpectedError):
+    message_format = _('The driver %(cls)s is incompatible with version '
+                       '%(ver)s of interface')
+
+
 class MigrationNotProvided(Exception):
     def __init__(self, mod_name, path):
         super(MigrationNotProvided, self).__init__(_(

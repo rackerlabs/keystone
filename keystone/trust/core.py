@@ -203,8 +203,9 @@ class Manager(manager.Manager):
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = manager.LIBERTY
 
     @abc.abstractmethod
     def create_trust(self, trust_id, trust, roles):

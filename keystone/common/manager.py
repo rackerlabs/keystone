@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import abc
 import functools
 
 from oslo_log import log
@@ -19,7 +20,12 @@ from oslo_log import versionutils
 from oslo_utils import importutils
 import stevedore
 
+from keystone import exception
+from keystone.i18n import _LW
 
+
+KILO = 11
+LIBERTY = 12
 LOG = log.getLogger(__name__)
 
 
@@ -104,3 +110,54 @@ class Manager(object):
         f = getattr(self.driver, name)
         setattr(self, name, f)
         return f
+
+
+class CompatibilizerMeta(abc.ABCMeta):
+    """Metaclass for all database drivers.
+
+    It checks if the driver version matches the corresponding interface
+    version and if not, it raises a warning to the user to upgrade the driver
+    """
+    def __new__(metaclass, name, bases, attrs):
+        interface_version = None
+        for cls in bases:
+            if hasattr(cls, '__abstractmethods__'):
+                try:
+                    interface_version = cls.interface_version
+                    driverABC = cls
+                    break
+                except AttributeError:
+                    # the interface hasn't defined its version
+                    raise exception.IncompatibleInterface(
+                        cls=str(cls), msg="interface version missing")
+
+        if interface_version:
+            # interface_version is defined in the base class;
+            # that implies that this is a driver implementation class.
+            # So, proceed with the compatibility checks.
+            driver_version = attrs.get("driver_version")
+
+            # TODO(vivekdhayaal):
+            # the following two lines of code are temporarily added
+            # to ensure that existing existing out-of-tree
+            # drivers will continue to work as-is.
+            # so these should be removed once they're upgraded
+            if driver_version is None:
+                driver_version = KILO
+
+            cls = attrs.get("__module__") + "." + name
+            try:
+                driver_version = int(driver_version)
+            except (TypeError, ValueError):
+                raise exception.IncompatibleDriver(cls=cls,
+                                                   ver=interface_version)
+            if interface_version == driver_version:
+                # no compatibility issues
+                pass
+            elif interface_version > driver_version:
+                LOG.warning(_LW('Driver %(cls)s is of version older than that '
+                                'of the corresponding interface %(ifc)s. '
+                                'Please upgrade your driver.'),
+                            {'ifc': driverABC, 'cls': cls})
+        return super(CompatibilizerMeta, metaclass).__new__(metaclass, name,
+                                                            bases, attrs)

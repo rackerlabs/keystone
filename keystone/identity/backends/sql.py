@@ -14,6 +14,7 @@
 
 from oslo_config import cfg
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone.common import utils
 from keystone import exception
@@ -71,6 +72,8 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
 
 
 class Identity(identity.Driver):
+    driver_version = manager.LIBERTY
+
     # NOTE(henry-nash): Override the __init__() method so as to take a
     # config parameter to enable sql to be used as a domain-specific driver.
     def __init__(self, conf=None):

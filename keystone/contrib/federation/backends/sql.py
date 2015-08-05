@@ -14,6 +14,7 @@
 
 from oslo_serialization import jsonutils
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone.contrib.federation import core
 from keystone import exception
@@ -156,6 +157,7 @@ class ServiceProviderModel(sql.ModelBase, sql.DictBase):
 
 
 class Federation(core.Driver):
+    driver_version = manager.LIBERTY
 
     # Identity Provider CRUD
     @sql.handle_conflicts(conflict_type='identity_provider')

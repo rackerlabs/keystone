@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import manager
 from keystone.common import sql
 from keystone import credential
 from keystone import exception
@@ -30,6 +31,7 @@ class CredentialModel(sql.ModelBase, sql.DictBase):
 
 
 class Credential(credential.Driver):
+    driver_version = manager.LIBERTY
 
     # credential crud
 

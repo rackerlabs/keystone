@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone.common import dependency
+from keystone.common import manager
 from keystone.common import sql
 from keystone import identity
 from keystone.identity.mapping_backends import mapping as identity_mapping
@@ -37,6 +38,7 @@ class IDMapping(sql.ModelBase, sql.ModelDictMixin):
 
 @dependency.requires('id_generator_api')
 class Mapping(identity.MappingDriver):
+    driver_version = manager.LIBERTY
 
     def get_public_id(self, local_entity):
         # NOTE(henry-nash): Since the Public ID is regeneratable, rather
