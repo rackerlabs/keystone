@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_03d84d1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-05T06:16:50Z",
+      "side": 1,
+      "message": "add the bug back too :)\n\n  Closes-Bug: #1460492",
+      "revId": "a527f88a0b0efb61f901604a08cf6308bcd4bc98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
