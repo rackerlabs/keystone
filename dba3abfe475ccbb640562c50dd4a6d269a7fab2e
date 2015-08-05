@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3241e438",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:22:24Z",
+      "side": 1,
+      "message": "Please adjust this text to have lines \u003c 80 chars",
+      "revId": "dba3abfe475ccbb640562c50dd4a6d269a7fab2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
