@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_8ce80fb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-05T05:07:26Z",
+      "side": 1,
+      "message": "actually keep this text too:\n\n  implements bp: list-credentials-by-type\n  Closes-Bug: #1460492\n\nWe should keep the bug open for tracking the client side support",
+      "parentUuid": "1a4dcd0f_8cac8fa1",
+      "revId": "9e54a6af2be060b70e66127decc53865004364eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_40973048",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 4
