@@ -87,6 +87,7 @@ class Catalog(kvs.Catalog):
       internalURL - the url of the internal endpoint
 
     """
+    driver_version = 12
 
     def __init__(self, templates=None):
         super(Catalog, self).__init__()

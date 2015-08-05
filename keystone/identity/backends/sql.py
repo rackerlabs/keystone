@@ -71,6 +71,8 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
 
 
 class Identity(identity.Driver):
+    driver_version = 12
+
     # NOTE(henry-nash): Override the __init__() method so as to take a
     # config parameter to enable sql to be used as a domain-specific driver.
     def __init__(self, conf=None):

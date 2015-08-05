@@ -84,6 +84,8 @@ def _expiry_range_all(session, upper_bound_func):
 
 
 class Token(token.persistence.Driver):
+    driver_version = 12
+
     # Public interface
     def get_token(self, token_id):
         if token_id is None:
