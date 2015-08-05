@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_725c70ed",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-05T09:49:29Z",
+      "side": 1,
+      "message": "I dislike handling datetime as strings. This should be converted to a proper datetime or timestamp and then truncated.",
+      "revId": "87f0ac81af3b8ec1a1243446a72a39d54f07d2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
