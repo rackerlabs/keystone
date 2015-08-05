@@ -16,6 +16,24 @@
       "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ee408f36",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T13:39:51Z",
+      "side": 1,
+      "message": "Is this something that should be applied to all tokens? What do we do when a token isn\u0027t a binary_type or a text_type? I imagine this would be useful for the other token formats, too? Maybe this should be moved somewhere were it can be leveraged by all token providers instead of only the Fernet provider.",
+      "parentUuid": "1a4dcd0f_e172397c",
+      "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
