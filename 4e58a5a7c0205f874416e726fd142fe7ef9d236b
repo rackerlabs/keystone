@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cba585a2",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T13:35:07Z",
+      "side": 1,
+      "message": "this should be passed as a kwarg since it is defined in the method signature as a kwarg.",
+      "revId": "4e58a5a7c0205f874416e726fd142fe7ef9d236b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_eba2c198",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T13:35:07Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "4e58a5a7c0205f874416e726fd142fe7ef9d236b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_abd6f9ee",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T13:35:07Z",
+      "side": 1,
+      "message": "unrelated whitespace change?",
+      "revId": "4e58a5a7c0205f874416e726fd142fe7ef9d236b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8b1e9db9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T13:35:07Z",
+      "side": 1,
+      "message": "is this a definitive way to determine it we are working with a v3 token? a comment explaining why are are using: \n\n     if domain_id or not token_ref: \n\nas a way to determine v3 token formats would be helpful",
+      "revId": "4e58a5a7c0205f874416e726fd142fe7ef9d236b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
