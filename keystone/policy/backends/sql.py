@@ -27,6 +27,7 @@ class PolicyModel(sql.ModelBase, sql.DictBase):
 
 
 class Policy(rules.Policy):
+    driver_version = 12
 
     @sql.handle_conflicts(conflict_type='policy')
     def create_policy(self, policy_id, policy):

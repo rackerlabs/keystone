@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import abc
 import functools
 
 from oslo_log import log
@@ -19,7 +20,11 @@ from oslo_log import versionutils
 from oslo_utils import importutils
 import stevedore
 
+from keystone import exception
+from keystone.i18n import _, _LW
 
+
+LIBERTY = 12
 LOG = log.getLogger(__name__)
 
 
@@ -104,3 +109,69 @@ class Manager(object):
         f = getattr(self.driver, name)
         setattr(self, name, f)
         return f
+
+
+class CompatibilizerMeta(abc.ABCMeta):
+    """Metaclass for all database drivers;
+
+    This will ensure that
+    + the driver version either matches the current interface version or
+      the previous one
+    + if its the previous, it'll introduce the compatibility methods defined
+      in the 'Compatibilizer' class into the driver
+    + if the 'Compatibilizer' class doesn't have a corresponding method
+      implemented for any not-implemented-abstract-method of driver,
+      then exception will be raised
+    """
+    def __new__(metaclass, name, bases, attrs):
+        interface_version = None
+        for cls in bases:
+            if hasattr(cls, '__abstractmethods__'):
+                try:
+                    interface_version = cls.interface_version
+                    driverABC = cls
+                    break
+                except AttributeError:
+                    # the interface hasn't defined its version
+                    raise exception.IncompatibleInterface(
+                        cls=str(cls), msg="interface version missing")
+        if interface_version:
+            # interface_version is defined in the base class;
+            # that implies that this is a driver implementation class.
+            # So, proceed with the compatibility checks.
+            # TODO(vivekdhayaal):
+            # the following six lines of code are temporarily added
+            # to ensure that existing drivers will work with next
+            # release(VERSION=12); so these should be removed thereafter.
+            driver_version = attrs.get("driver_version")
+            if driver_version is None and interface_version == LIBERTY:
+                driver_version = LIBERTY
+                cls = attrs.get("__module__") + "." + name
+                LOG.warning(_LW('Version not specified in driver %(cls)s;'
+                                'Such drivers would be deprecated after '
+                                'liberty release(version=12)'), {'cls': cls})
+            try:
+                driver_version = int(driver_version)
+            except (TypeError, ValueError):
+                cls = attrs.get("__module__") + "." + name
+                raise exception.IncompatibleDriver(cls=cls)
+            if interface_version == driver_version:
+                # no compatibility issues
+                pass
+            elif interface_version == driver_version + 1:
+                abs_methods = []
+                for key in driverABC.__abstractmethods__:
+                    if key not in attrs:
+                        abs_methods.append(key)
+                if abs_methods:
+                    msg = _("Compatibility methods missing for "
+                            "not-implemented-abstract-methods "
+                            "%s of driver implementation") % abs_methods
+                    raise exception.IncompatibleInterface(
+                        cls=driverABC, msg=msg)
+            else:
+                # older versions are not supported
+                cls = attrs.get("__module__") + "." + name
+                raise exception.IncompatibleDriver(cls=cls)
+        return super(CompatibilizerMeta, metaclass).__new__(metaclass, name,
+                                                            bases, attrs)
