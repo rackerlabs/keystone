@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_8cac8fa1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-05T05:06:05Z",
+      "side": 1,
+      "message": "change this to:\n\n  implements bp: list-credentials-by-type\n\ni\u0027m going to mark the bug as invalid and indicate that it\u0027s superseded by the blueprint",
+      "revId": "9e54a6af2be060b70e66127decc53865004364eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_40973048",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 4
