@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_83ebd477",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-05T18:32:46Z",
+      "side": 1,
+      "message": "this should also filter by RoleAssignment.type in case a project ID matches a domain ID (e.g., if there\u0027s a \u0027default\u0027 project ID). There should be a test for this.\n\ntype must be AssignmentType.USER_DOMAIN or AssignmentType.GROUP_DOMAIN",
+      "revId": "649d226da95e7942e300b040cf4abc3c49bde98d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a397f0ea",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-05T18:32:46Z",
+      "side": 1,
+      "message": "rather than make a direct call, an internal notification should be used.",
+      "revId": "649d226da95e7942e300b040cf4abc3c49bde98d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
