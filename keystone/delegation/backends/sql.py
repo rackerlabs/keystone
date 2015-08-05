@@ -13,10 +13,12 @@
 # under the License.
 
 from datetime import datetime
+import six
 import uuid
 
 from keystone.common import sql
 from keystone import config
+from keystone.delegation import core
 
 CONF = config.CONF
 
@@ -127,3 +129,77 @@ class RoleDelegationModel(sql.DictBase):
     role_id = sql.Column(sql.String(64), nullable=False)
 
     __table_args__ = (sql.PrimaryKeyConstraint('delegation_id', 'role_id'), )
+
+
+class Driver(core.Driver):
+    """Basic delegation driver implementing generic CRUD operation set"""
+
+    @staticmethod
+    def _get_delegation(delegation_or_id):
+        if isinstance(delegation_or_id, DelegationModel):
+            return delegation_or_id
+        elif isinstance(delegation_or_id, six.text_type):
+            with sql.transaction() as session:
+                found = session.query(DelegationModel).get(delegation_or_id)
+            return found
+        else:
+            raise ValueError("Wrong delegation reference")
+
+    def create(self, delegation_or_id, agent_id, user_id, group_id, roles,
+               strict, impersonation, project_id, domain_id,
+               inherited_to_projects):
+        """Inherited delegation created by agent"""
+
+        delegation = self._get_delegation(delegation_or_id)
+
+        # TODO(amakarov): validate domain/project inheritance not to allow
+        # scoping out of the source delegation scope
+        inherited = delegation.inherit(agent_id, strict).scope(
+            user_id=user_id, group_id=group_id, impersonation=impersonation,
+            project_id=project_id, domain_id=domain_id,
+            inherited=inherited_to_projects)
+
+        with sql.transaction() as session:
+            session.add(inherited)
+            # TODO(amakarov): validate roles
+            for role_id in roles:
+                session.add(RoleDelegationModel(
+                    delegation_id=inherited.id,
+                    role_id=role_id
+                ))
+
+        return inherited
+
+    def update(self, delegation_or_id, grant_roles, revoke_roles):
+        delegation = self._get_delegation(delegation_or_id)
+        with sql.transaction() as session:
+            session.query(RoleDelegationModel).filter(
+                RoleDelegationModel.delegation_id == delegation.id,
+                RoleDelegationModel.role_id.in_(revoke_roles)).delete(
+                    synchronize_session=False)
+            for role_id in grant_roles:
+                # Perform "get or create"
+                if session.query(RoleDelegationModel).filter_by(
+                    delegation_id=delegation.id, role_id=role_id
+                ).count() == 0:
+                    session.add(RoleDelegationModel(
+                        delegation_id=delegation.id,
+                        role_id=role_id
+                    ))
+
+        return delegation
+
+    def revoke(self, delegation_or_id):
+        # TBD: mark as deleted or actually delete?
+        delegation = self._get_delegation(delegation_or_id)
+        with sql.transaction() as session:
+            session.delete(delegation)
+            # TODO(amakarov): cascaded cleanup operations
+        return delegation
+
+    def find(self, delegation_or_id, inherited_to_projects):
+        # TODO(amakarov): it should be used for validations/enforcements
+        # TBD: filtering
+        delegation = self._get_delegation(delegation_or_id)
+
+        return delegation
