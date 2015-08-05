@@ -16,6 +16,24 @@
       "revId": "f9fe93665b97153b80920a715aaecc6bc6bd47ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_beab9f1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11708
+      },
+      "writtenOn": "2015-08-05T11:01:54Z",
+      "side": 1,
+      "message": "I had no conflicts in my merge.",
+      "parentUuid": "1a4dcd0f_7aac6335",
+      "revId": "f9fe93665b97153b80920a715aaecc6bc6bd47ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
