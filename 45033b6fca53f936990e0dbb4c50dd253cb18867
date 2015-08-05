@@ -52,6 +52,24 @@
       "revId": "45033b6fca53f936990e0dbb4c50dd253cb18867",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cca04da2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-05T09:17:04Z",
+      "side": 1,
+      "message": "Brant, I think these comment is for the following code code snippet,\n\ncallbacks \u003d self.event_callbacks[event][resource_type]\nif not callbacks:\n    continue\n\nBut now, these check either been move up to L337 or just removed in this patch, they will be the orphan comments if we leave it here.\n\nI hope these comment could be removed or put them in another place where they should go.",
+      "parentUuid": "1a4dcd0f_530ad127",
+      "revId": "45033b6fca53f936990e0dbb4c50dd253cb18867",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
