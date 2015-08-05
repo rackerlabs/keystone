@@ -198,9 +198,10 @@ class Manager(manager.Manager):
         return ret
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface description for an OAuth1 driver."""
+    interface_version = 12
 
     @abc.abstractmethod
     def create_consumer(self, consumer_ref):

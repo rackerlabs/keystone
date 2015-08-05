@@ -28,6 +28,7 @@ LOG = log.getLogger(__name__)
 
 
 class Role(assignment.RoleDriver):
+    driver_version = 12
 
     def __init__(self):
         super(Role, self).__init__()

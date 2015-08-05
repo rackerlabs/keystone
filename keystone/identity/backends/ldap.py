@@ -33,6 +33,8 @@ LOG = log.getLogger(__name__)
 
 
 class Identity(identity.Driver):
+    driver_version = 12
+
     def __init__(self, conf=None):
         super(Identity, self).__init__()
         if conf is None:

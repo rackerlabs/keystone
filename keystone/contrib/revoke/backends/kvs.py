@@ -28,6 +28,7 @@ _KVS_BACKEND = 'openstack.kvs.Memory'
 
 
 class Revoke(revoke.Driver):
+    driver_version = 12
 
     @versionutils.deprecated(
         versionutils.deprecated.JUNO,

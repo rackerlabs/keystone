@@ -81,8 +81,9 @@ class Manager(manager.Manager):
         return ret
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = 12
 
     def _get_list_limit(self):
         return CONF.policy.list_limit or CONF.list_limit
