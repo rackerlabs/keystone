@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d1568229",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:19:01Z",
+      "side": 1,
+      "message": "It\u0027s available by default - not always. Some deployers switch it off and surprise their colleagues by non-operational v3 REST API, and they, in turn, blame keystone it doesn\u0027t work.\nI\u0027d suggest to say something like: \"available by default if not messed up by those who deployed the cloud you are working on\" :)",
+      "revId": "ae3034aa92565627453ca1afbbe8f79ba0b42abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ac2d9d96",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:19:01Z",
+      "side": 1,
+      "message": "More to say: in the contrary case you\u0027ll not even be able to create your service users at all if your default domain is configured to use LDAP r/o backend.",
+      "revId": "ae3034aa92565627453ca1afbbe8f79ba0b42abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2c68adb8",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:19:01Z",
+      "side": 1,
+      "message": "It\u0027ll be good to have a link to domain scoped tokens doc here.",
+      "revId": "ae3034aa92565627453ca1afbbe8f79ba0b42abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9728ea87",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:19:01Z",
+      "side": 1,
+      "message": "I think, authorization is not the purpose of oslo.policy - can you explain here somehow, what is \"enforcement\"?",
+      "revId": "ae3034aa92565627453ca1afbbe8f79ba0b42abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_374b162c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:19:01Z",
+      "side": 1,
+      "message": "This reference to the user token is a bit confusing, maybe just provide here a short description of what exactly happens?",
+      "revId": "ae3034aa92565627453ca1afbbe8f79ba0b42abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_17b37a99",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-05T20:19:01Z",
+      "side": 1,
+      "message": "Please add a row or two about what HMT is and what it is aiming to.",
+      "revId": "ae3034aa92565627453ca1afbbe8f79ba0b42abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
