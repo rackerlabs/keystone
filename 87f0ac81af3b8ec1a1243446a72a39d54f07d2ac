@@ -16,6 +16,24 @@
       "revId": "87f0ac81af3b8ec1a1243446a72a39d54f07d2ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9d07b1c9",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-05T17:41:09Z",
+      "side": 1,
+      "message": "I agree, but that\u0027s a much larger problem in keystone today. Datetimes are passed as strings nearly everywhere.",
+      "parentUuid": "1a4dcd0f_725c70ed",
+      "revId": "87f0ac81af3b8ec1a1243446a72a39d54f07d2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
