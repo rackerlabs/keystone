@@ -1035,8 +1035,18 @@ class Manager(manager.Manager):
         return self.resource_api.list_projects_in_subtree(project_id, user_id)
 
 
-@six.add_metaclass(abc.ABCMeta)
+class Compatibilizer(object):
+    # class containing compatibility code
+    # (to be provided by the developer proposing the change to the interface)
+    # to ensure that keystone will work with drivers implementing
+    # either the current version of the interface or the previous one
+    pass
+
+
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = 12
+    compatibilizer = Compatibilizer
 
     def _role_to_dict(self, role_id, inherited):
         role_dict = {'id': role_id}
@@ -1343,8 +1353,18 @@ class RoleManager(manager.Manager):
         self.get_role.invalidate(self, role_id)
 
 
-@six.add_metaclass(abc.ABCMeta)
+class RoleCompatibilizer(object):
+    # class containing compatibility code
+    # (to be provided by the developer proposing the change to the interface)
+    # to ensure that keystone will work with drivers implementing
+    # either the current version of the interface or the previous one
+    pass
+
+
+@six.add_metaclass(manager.CompatibilizerMeta)
 class RoleDriver(object):
+    interface_version = 12
+    compatibilizer = RoleCompatibilizer
 
     def _get_list_limit(self):
         return CONF.role.list_limit or CONF.list_limit

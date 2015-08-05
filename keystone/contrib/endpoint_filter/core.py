@@ -64,9 +64,19 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.endpoint_filter.driver)
 
 
-@six.add_metaclass(abc.ABCMeta)
+class Compatibilizer(object):
+    # class containing compatibility code
+    # (to be provided by the developer proposing the change to the interface)
+    # to ensure that keystone will work with drivers implementing
+    # either the current version of the interface or the previous one
+    pass
+
+
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface description for an Endpoint Filter driver."""
+    interface_version = 12
+    compatibilizer = Compatibilizer
 
     @abc.abstractmethod
     def add_endpoint_to_project(self, endpoint_id, project_id):

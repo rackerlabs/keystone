@@ -70,6 +70,8 @@ def enforce(credentials, action, target, do_raise=True):
 
 
 class Policy(policy.Driver):
+    driver_version = 12
+
     def enforce(self, credentials, action, target):
         LOG.debug('enforce %(action)s: %(credentials)s', {
             'action': action,

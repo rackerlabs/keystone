@@ -203,8 +203,18 @@ class Manager(manager.Manager):
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
 
 
-@six.add_metaclass(abc.ABCMeta)
+class Compatibilizer(object):
+    # class containing compatibility code
+    # (to be provided by the developer proposing the change to the interface)
+    # to ensure that keystone will work with drivers implementing
+    # either the current version of the interface or the previous one
+    pass
+
+
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
+    interface_version = 12
+    compatibilizer = Compatibilizer
 
     @abc.abstractmethod
     def create_trust(self, trust_id, trust, roles):

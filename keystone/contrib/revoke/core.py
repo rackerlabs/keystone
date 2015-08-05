@@ -231,9 +231,19 @@ class Manager(manager.Manager):
         self._get_revoke_tree.invalidate(self)
 
 
-@six.add_metaclass(abc.ABCMeta)
+class Compatibilizer(object):
+    # class containing compatibility code
+    # (to be provided by the developer proposing the change to the interface)
+    # to ensure that keystone will work with drivers implementing
+    # either the current version of the interface or the previous one
+    pass
+
+
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface for recording and reporting revocation events."""
+    interface_version = 12
+    compatibilizer = Compatibilizer
 
     @abc.abstractmethod
     def list_events(self, last_fetch=None):

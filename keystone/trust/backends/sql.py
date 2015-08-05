@@ -55,6 +55,8 @@ class TrustRole(sql.ModelBase):
 
 
 class Trust(trust.Driver):
+    driver_version = 12
+
     @sql.handle_conflicts(conflict_type='trust')
     def create_trust(self, trust_id, trust, roles):
         with sql.transaction() as session:
