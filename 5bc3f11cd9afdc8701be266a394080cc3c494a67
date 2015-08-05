@@ -16,6 +16,40 @@
       "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_433aaccd",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-05T18:16:52Z",
+      "side": 1,
+      "message": "stevemar asked on patch set 16: shouldn\u0027t this be the url safe version of user name?",
+      "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0347c44b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-05T18:16:52Z",
+      "side": 1,
+      "message": "the parameter name is token_dict",
+      "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
