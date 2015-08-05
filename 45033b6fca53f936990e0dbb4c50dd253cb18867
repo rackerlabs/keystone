@@ -70,6 +70,24 @@
       "revId": "45033b6fca53f936990e0dbb4c50dd253cb18867",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_66c82d23",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-05T12:26:50Z",
+      "side": 1,
+      "message": "The comment is about registering the provider, which happens at line 344.\n\nThe 3 lines that were removed were getting the callbacks for the resource type and then aborting if there weren\u0027t any callbacks.",
+      "parentUuid": "1a4dcd0f_cca04da2",
+      "revId": "45033b6fca53f936990e0dbb4c50dd253cb18867",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
