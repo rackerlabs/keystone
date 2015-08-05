@@ -12,9 +12,35 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import abc
+import six
+
+
 from oslo_config import cfg
 from oslo_log import log
 
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+
+@six.add_metaclass(abc.ABCMeta)
+class Driver(object):
+    """Driver interface for delegation low level management"""
+
+    @abc.abstractmethod
+    def create_delegation(self, delegation_id, agent_id, user_id, group_id,
+                          roles, strict, impersonation, inherited_to_projects):
+        pass
+
+    @abc.abstractmethod
+    def list_delegations(self, delegation_id, inherited_to_projects):
+        pass
+
+    @abc.abstractmethod
+    def update_delegation(self, delegation_id, grant_roles, revoke_roles):
+        pass
+
+    @abc.abstractmethod
+    def revoke_delegation(self, delegation_id):
+        pass
