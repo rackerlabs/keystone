@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b4e3b1a3",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T15:31:43Z",
+      "side": 1,
+      "message": "unrelated whitespace change, or just preference?",
+      "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
