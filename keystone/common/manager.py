@@ -13,11 +13,14 @@
 # under the License.
 
 import functools
+import abc
 
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import importutils
 import stevedore
+
+from keystone import exception
 
 
 LOG = log.getLogger(__name__)
@@ -104,3 +107,34 @@ class Manager(object):
         f = getattr(self.driver, name)
         setattr(self, name, f)
         return f
+
+
+class CompatibilizerMeta(abc.ABCMeta):
+    def __new__(mcl, name, bases, attrs):
+        if "INTERFACE_VERSION" not in attrs:
+            # code pertaining to driver implementations alone
+            driverABC = bases[0]
+            INTERFACE_VERSION = int(driverABC.INTERFACE_VERSION)
+            try:
+                DRIVER_VERSION = int(attrs.get("DRIVER_VERSION"))
+            except TypeError:
+                raise exception.IncompatibleDriver()
+            if INTERFACE_VERSION == DRIVER_VERSION:
+                # no compatibility issues
+                pass
+            elif INTERFACE_VERSION == DRIVER_VERSION + 1:
+                # introduce the compatibility class for backward compatibility
+                import inspect
+                for methodTuple in inspect.getmembers(driverABC.COMPATIBILIZER,
+                                            predicate=inspect.ismethod):
+                    attrs[methodTuple[0]] = methodTuple[1]
+                for key in driverABC.__abstractmethods__:
+                    if key not in attrs:
+                        # developer missed to write compatibility code
+                        # for not-implemented abstract method of driver
+                        raise exception.IncompatibleInterface()
+            else:
+                # older versions are not supported
+                raise exception.IncompatibleDriver()
+        return super(CompatibilizerMeta, mcl).__new__(mcl, name, bases, attrs)
+
