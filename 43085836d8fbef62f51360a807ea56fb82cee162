@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_e0564e29",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 35
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-05T19:11:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_8ea37e9e",
+      "revId": "43085836d8fbef62f51360a807ea56fb82cee162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_eeb482d2",
         "filename": "keystone/common/sql/migrate_repo/versions/077_drop_project_domain_id_fk.py",
         "patchSetId": 35
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-03T17:52:48Z",
       "side": 1,
       "message": "what about the FKs in the tables? Do we have more?",
+      "revId": "43085836d8fbef62f51360a807ea56fb82cee162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_46415a37",
+        "filename": "keystone/common/sql/migrate_repo/versions/077_drop_project_domain_id_fk.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-05T19:11:07Z",
+      "side": 1,
+      "message": "as strange as it might sound, other tables do not have. Not even \"user\" and \"group\"",
+      "parentUuid": "1a4dcd0f_eeb482d2",
       "revId": "43085836d8fbef62f51360a807ea56fb82cee162",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
