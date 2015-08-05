@@ -34,6 +34,24 @@
       "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5d9da908",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-05T17:51:31Z",
+      "side": 1,
+      "message": "@Rodrigo, the checking of the initial length of projects was suggested by Henry in patch set 29. It really made the test more robust",
+      "parentUuid": "1a4dcd0f_8e3ffe24",
+      "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
