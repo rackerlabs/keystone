@@ -16,6 +16,41 @@
       "revId": "56d64c641cde48ea4b78f9d00cb1c0be50c22d30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2dfc3471",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T16:16:16Z",
+      "side": 1,
+      "message": "Looks like this was done here: \n\nhttps://github.com/openstack/keystone/commit/7223bb1c035d98ebb1a49e115f05cb69ad7928d4\n\nHere is the merged review: https://review.openstack.org/#/c/206177/",
+      "parentUuid": "1a4dcd0f_ee44381c",
+      "revId": "56d64c641cde48ea4b78f9d00cb1c0be50c22d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2de674b0",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T16:16:16Z",
+      "side": 1,
+      "message": "Should we rebase this on: \n\nhttps://review.openstack.org/#/c/207506/1/keystone/tests/unit/token/test_fernet_provider.py\n\nSo we don\u0027t have any inconsistencies with what is in master? Master just contains a couple more test cases in TestFernetKeyRotation. \n\nhttps://review.openstack.org/#/c/206177/2/keystone/tests/unit/token/test_fernet_provider.py",
+      "revId": "56d64c641cde48ea4b78f9d00cb1c0be50c22d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
