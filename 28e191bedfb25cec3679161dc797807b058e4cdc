@@ -105,6 +105,24 @@
       "revId": "28e191bedfb25cec3679161dc797807b058e4cdc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_637fad66",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-05T16:35:59Z",
+      "side": 1,
+      "message": "I mean people who are writing their own custom providers.",
+      "parentUuid": "1a4dcd0f_21f3410c",
+      "revId": "28e191bedfb25cec3679161dc797807b058e4cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
