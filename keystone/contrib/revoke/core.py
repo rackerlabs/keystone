@@ -231,9 +231,10 @@ class Manager(manager.Manager):
         self._get_revoke_tree.invalidate(self)
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface for recording and reporting revocation events."""
+    interface_version = 12
 
     @abc.abstractmethod
     def list_events(self, last_fetch=None):

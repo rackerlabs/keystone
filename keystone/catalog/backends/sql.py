@@ -87,6 +87,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 
 
 class Catalog(catalog.Driver):
+    driver_version = 12
+
     # Regions
     def list_regions(self, hints):
         session = sql.get_session()

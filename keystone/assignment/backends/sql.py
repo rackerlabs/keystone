@@ -50,6 +50,7 @@ class AssignmentType(object):
 
 
 class Assignment(keystone_assignment.Driver):
+    driver_version = 12
 
     def default_role_driver(self):
         return 'sql'

@@ -64,9 +64,10 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.endpoint_filter.driver)
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface description for an Endpoint Filter driver."""
+    interface_version = 12
 
     @abc.abstractmethod
     def add_endpoint_to_project(self, endpoint_id, project_id):

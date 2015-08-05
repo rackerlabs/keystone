@@ -277,9 +277,10 @@ class Manager(manager.Manager):
             raise exception.NotFound('Catalog not found for user and tenant')
 
 
-@six.add_metaclass(abc.ABCMeta)
+@six.add_metaclass(manager.CompatibilizerMeta)
 class Driver(object):
     """Interface description for an Catalog driver."""
+    interface_version = 12
 
     def _get_list_limit(self):
         return CONF.catalog.list_limit or CONF.list_limit
