@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_40973048",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-05T02:32:12Z",
+      "side": 1,
+      "message": "for clarity it is probably better to name this to ec_credential,  since we also have a variable called self.credential.",
+      "revId": "9e54a6af2be060b70e66127decc53865004364eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c0890028",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-05T02:32:12Z",
+      "side": 1,
+      "message": "should the  value of the ec2 credential id be checked here?",
+      "revId": "9e54a6af2be060b70e66127decc53865004364eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
