@@ -13,6 +13,7 @@
 #    under the License.
 
 import logging
+import threading
 
 from oslo_config import cfg
 import oslo_i18n
@@ -33,20 +34,30 @@ from keystone import service as keystone_service
 
 CONF = cfg.CONF
 
+# NOTE(amakarov): Apache modwsgi spec requires to protect global variables
+# http://code.google.com/p/modwsgi/wiki/ProcessesAndThreading
+app_lock = threading.Lock()
+
 
 def initialize_application(name):
-    common.configure()
+    with app_lock:
+        application = getattr(initialize_application, "application", None)
+        if application:
+            return application
 
-    # Log the options used when starting if we're in debug mode...
-    if CONF.debug:
-        CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
+        common.configure()
 
-    environment.use_stdlib()
+        # Log the options used when starting if we're in debug mode...
+        if CONF.debug:
+            CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
 
-    def loadapp():
-        return keystone_service.loadapp(
-            'config:%s' % config.find_paste_config(), name)
+        environment.use_stdlib()
 
-    _unused, application = common.setup_backends(
-        startup_application_fn=loadapp)
-    return application
+        def loadapp():
+            return keystone_service.loadapp(
+                'config:%s' % config.find_paste_config(), name)
+
+        _unused, application = common.setup_backends(
+            startup_application_fn=loadapp)
+        initialize_application.application = application
+        return application
