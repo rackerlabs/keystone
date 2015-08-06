@@ -34,6 +34,24 @@
       "revId": "aac271e6f7c85d71d5871cff6d8b82a7322218d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8fe980b9",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T17:48:38Z",
+      "side": 0,
+      "message": "Oh... that makes sense.... \n\n\n    \u003e\u003e\u003e time_integer \u003d 1438886516.521249\n    \u003e\u003e\u003e int(time_integer)\n    1438886516\n    \u003e\u003e\u003e\n\nLike that for example. Good point!",
+      "parentUuid": "1a4dcd0f_cfd6a84e",
+      "revId": "aac271e6f7c85d71d5871cff6d8b82a7322218d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
