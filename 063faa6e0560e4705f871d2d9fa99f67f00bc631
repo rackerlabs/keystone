@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_51433b42",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-06T08:32:43Z",
+      "side": 1,
+      "message": "That\u0027s probably the best answer, since domain role assignments are not supported at all in the LDAP backend.",
+      "parentUuid": "1a4dcd0f_88d2165b",
+      "revId": "063faa6e0560e4705f871d2d9fa99f67f00bc631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_68b78af5",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 41
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_3b50ced3",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-06T08:32:43Z",
+      "side": 1,
+      "message": "Done - explained what actor/target is to ensure the sentences don\u0027t become unweildy",
+      "parentUuid": "1a4dcd0f_68b78af5",
+      "revId": "063faa6e0560e4705f871d2d9fa99f67f00bc631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_28d182fa",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 41
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-05T17:02:05Z",
       "side": 1,
       "message": "You may want to mention in the docs that it is possible for user and group to both have a value and in that case user wins because it\u0027s more specific. Same thing for project/domain too.",
+      "revId": "063faa6e0560e4705f871d2d9fa99f67f00bc631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fb9b4616",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-06T08:32:43Z",
+      "side": 1,
+      "message": "I don\u0027t think it is possible for user/group to both have a value in the way that this method is called....although I you comment is accurate as to what would happen if it were.",
+      "parentUuid": "1a4dcd0f_28d182fa",
       "revId": "063faa6e0560e4705f871d2d9fa99f67f00bc631",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
