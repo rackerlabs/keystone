@@ -18,6 +18,7 @@ import time
 import weakref
 
 from dogpile.cache import api
+from dogpile.cache import exception as dogpile_exception
 from dogpile.cache import proxy
 from dogpile.cache import region
 from dogpile.cache import util as dogpile_util
@@ -42,6 +43,8 @@ KEY_VALUE_STORE_REGISTRY = weakref.WeakValueDictionary()
 LOCK_WINDOW = 1
 LOG = log.getLogger(__name__)
 NO_VALUE = api.NO_VALUE
+
+key_value_store_lock = threading.Lock()
 
 
 def _register_backends():
@@ -237,7 +240,13 @@ class KeyValueStore(object):
 
         LOG.debug('KVS region configuration for %(name)s: %(config)r',
                   {'name': self._region.name, 'config': conf_dict})
-        self._region.configure_from_config(conf_dict, '%s.' % prefix)
+        # NOTE(amakarov): At this point we can rely on persistent cache config
+        # in case of occasional cache reconfiguration in the result of race
+        # condition, so just notify about the exception.
+        try:
+            self._region.configure_from_config(conf_dict, '%s.' % prefix)
+        except dogpile_exception.RegionAlreadyConfigured, e:
+            LOG.debug(str(e))
 
     def _mutex(self, key):
         return self._lock_registry.get(key)
@@ -412,11 +421,13 @@ def get_key_value_store(name, kvs_region=None):
     """
     global KEY_VALUE_STORE_REGISTRY
 
-    _register_backends()
-    key_value_store = KEY_VALUE_STORE_REGISTRY.get(name)
-    if key_value_store is None:
-        if kvs_region is None:
-            kvs_region = region.make_region(name=name)
-        key_value_store = KeyValueStore(kvs_region)
-        KEY_VALUE_STORE_REGISTRY[name] = key_value_store
+    with key_value_store_lock:
+        _register_backends()
+        key_value_store = KEY_VALUE_STORE_REGISTRY.get(name)
+        if key_value_store is None:
+            if kvs_region is None:
+                kvs_region = region.make_region(name=name)
+            key_value_store = KeyValueStore(kvs_region)
+            KEY_VALUE_STORE_REGISTRY[name] = key_value_store
+
     return key_value_store
