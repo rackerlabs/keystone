@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cc547bcb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-06T15:55:18Z",
+      "side": 1,
+      "message": "1. Not /, but \\\n\n2. \\ is called a backslash.\n\n3. The name of the change should be something like \"fix explicit line joining with backslash\"",
+      "revId": "08b60ecac51585ef923ab7c679770edde77d100b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
