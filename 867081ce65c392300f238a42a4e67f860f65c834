@@ -16,6 +16,24 @@
       "revId": "867081ce65c392300f238a42a4e67f860f65c834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_44bfd260",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T23:22:45Z",
+      "side": 1,
+      "message": "yep, this should be modified (sorry!) so it makes sense within the context of the Fernet provider. when I originally wrote it, it was in the BaseProvider.\n\nMaybe something like:\n\n    # NOTE(roxanaghe, lbragstad): We must use the creation time that\n    Fernet builds into it\u0027s tokens. etc...",
+      "parentUuid": "1a4dcd0f_8905f314",
+      "revId": "867081ce65c392300f238a42a4e67f860f65c834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

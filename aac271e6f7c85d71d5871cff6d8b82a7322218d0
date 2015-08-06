@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_64f44e5a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T23:22:45Z",
+      "side": 0,
+      "message": "\\o/ awesome!",
+      "revId": "aac271e6f7c85d71d5871cff6d8b82a7322218d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_8c466e79",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 2
