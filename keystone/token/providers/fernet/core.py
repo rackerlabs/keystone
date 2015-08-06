@@ -14,6 +14,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import dependency
+from keystone.common import utils as ks_utils
 from keystone.contrib.federation import constants as federation_constants
 from keystone import exception
 from keystone.i18n import _
@@ -87,6 +88,10 @@ class Provider(common.BaseProvider):
                                                      audit_ids,
                                                      methods=method_names,
                                                      project_id=project_id)
+        fernet_creation_datetime_obj = self.token_formatter.creation_time(
+            token_id)
+        v3_token_data['token']['issued_at'] = ks_utils.isotime(
+            at=fernet_creation_datetime_obj, subsecond=True)
         # Convert v3 to v2 token data and build v2 catalog
         token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
                                                               v3_token_data)
