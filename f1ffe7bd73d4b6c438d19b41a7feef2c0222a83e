@@ -104,6 +104,24 @@
       "revId": "f1ffe7bd73d4b6c438d19b41a7feef2c0222a83e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6298cb6a",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-06T18:09:04Z",
+      "side": 1,
+      "message": "you are right, sorry.",
+      "parentUuid": "1a4dcd0f_ef760405",
+      "revId": "f1ffe7bd73d4b6c438d19b41a7feef2c0222a83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
