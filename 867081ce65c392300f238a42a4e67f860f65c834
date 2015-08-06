@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8905f314",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-06T22:51:40Z",
+      "side": 1,
+      "message": "I know you didn\u0027t write this, but Fernet tokens *are* being used. It\u0027s not a conditional here :)",
+      "revId": "867081ce65c392300f238a42a4e67f860f65c834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
