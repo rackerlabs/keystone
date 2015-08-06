@@ -22,4 +22,12 @@ name = os.path.basename(__file__)
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
 # http://pythonpaste.org/deploy/
-application = wsgi_server.initialize_application(name)
+application = None
+
+# NOTE(amakarov): Apache modwsgi spec requires to protect global variables
+# http://code.google.com/p/modwsgi/wiki/ProcessesAndThreading
+app_lock = threading.Lock()
+
+with app_lock:
+    if application is None:
+        application = wsgi_server.initialize_application(name)
