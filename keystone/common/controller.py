@@ -17,6 +17,7 @@ import uuid
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_utils import strutils
 import six
 
@@ -736,6 +737,17 @@ class V3Controller(wsgi.Application):
             # the current tempest heat tests issue a v3 call without this.
             # This is raised as bug #1283539.  Once this is fixed, we
             # should remove the line below and replace it with an error.
+            #
+            # Ahead of actually changing the code to raise an exception, we
+            # issue a deprecation warning.
+            versionutils.deprecated(
+                as_of=versionutils.deprecated.LIBERTY,
+                remove_in=+1,
+                what=('Not specifying a domain during a create user, group or'
+                      'project call, but relying on falling back to the '
+                      'default domain'),
+                in_favor_of='specifying domain explicitly or using a '
+                            'domain-scoped token')(lambda: None)()
             return CONF.identity.default_domain_id
 
     def _normalize_domain_id(self, context, ref):
