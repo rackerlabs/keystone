@@ -14,6 +14,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import dependency
+from keystone.common import utils as ks_utils
 from keystone.contrib.federation import constants as federation_constants
 from keystone import exception
 from keystone.i18n import _
@@ -87,10 +88,38 @@ class Provider(common.BaseProvider):
                                                      audit_ids,
                                                      methods=method_names,
                                                      project_id=project_id)
+        fernet_creation_datetime_obj = self.token_formatter.creation_time(
+            token_id)
+        v3_token_data['token']['issued_at'] = ks_utils.isotime(
+            at=fernet_creation_datetime_obj, subsecond=True)
         # Convert v3 to v2 token data and build v2 catalog
         token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
                                                               v3_token_data)
 
+        return token_id, token_data
+
+    def issue_v3_token(self, user_id, method_names, expires_at=None,
+                       project_id=None, domain_id=None, auth_context=None,
+                       trust=None, metadata_ref=None, include_catalog=True,
+                       parent_audit_id=None):
+        # NOTE(lbragstad): If Fernet tokens are being used, we must use the
+        # creation time that Fernet builds into it's token. The Fernet spec
+        # details that the token creation time is built into the token, outside
+        # of the payload provided by Keystone. This is the reason why we don't
+        # pass the issued_at time in the payload. This also means that we
+        # shouldn't return a token reference with a creation time that we
+        # created when Fernet uses a different creation time. We should use the
+        # creation time provided by Fernet because it's the creation time that
+        # we have to rely on when we validate the token.
+        token_id, token_data = super(Provider, self).issue_v3_token(
+            user_id, method_names, expires_at=expires_at,
+            project_id=project_id, domain_id=domain_id,
+            auth_context=auth_context, trust=trust, metadata_ref=metadata_ref,
+            include_catalog=include_catalog, parent_audit_id=parent_audit_id)
+        fernet_creation_datetime_obj = self.token_formatter.creation_time(
+            token_id)
+        token_data['token']['issued_at'] = ks_utils.isotime(
+            at=fernet_creation_datetime_obj, subsecond=True)
         return token_id, token_data
 
     def _build_federated_info(self, token_data):
