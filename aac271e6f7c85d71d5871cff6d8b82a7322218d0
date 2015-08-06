@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8c466e79",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T17:34:50Z",
+      "side": 0,
+      "message": "I don\u0027t think this part *needs* to be removed, it shouldn\u0027t effect the resulting time_object",
+      "revId": "aac271e6f7c85d71d5871cff6d8b82a7322218d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
