@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_204c0d9d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-06T14:15:42Z",
+      "side": 1,
+      "message": "unrelated.",
+      "parentUuid": "1a4dcd0f_b4e3b1a3",
+      "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_433aaccd",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 17
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_be76fad4",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-06T14:15:42Z",
+      "side": 1,
+      "message": "it\u0027s true, but i\u0027d invert it - user_name should be unquoted. as from the very beginning it\u0027s user_id that;s being treated with parse.quote(user_name) and from that point it\u0027s being used.",
+      "parentUuid": "1a4dcd0f_433aaccd",
+      "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_0347c44b",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 17
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-05T18:16:52Z",
       "side": 1,
       "message": "the parameter name is token_dict",
+      "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2033ad15",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-06T14:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_0347c44b",
       "revId": "5bc3f11cd9afdc8701be266a394080cc3c494a67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
