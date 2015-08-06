@@ -96,13 +96,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=self.project['id'])
-        r = self.post('/users', body={'user': ref_nd}, auth=auth)
-        # TODO(henry-nash): Due to bug #1283539 we currently automatically
-        # use the default domain_id if a domain scoped token is not being
-        # used. Change the code below to expect a failure once this bug is
-        # fixed.
-        ref['domain_id'] = CONF.identity.default_domain_id
-        return self.assertValidUserResponse(r, ref)
+        self.post('/users', body={'user': ref_nd}, auth=auth,
+                  expected_status=400)
 
     def test_create_user_400(self):
         """Call ``POST /users``."""
