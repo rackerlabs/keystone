@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2c497660",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-06T09:18:22Z",
+      "side": 1,
+      "message": "pls reduce the length per line, too long here and the same else.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cc2252a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-06T09:18:22Z",
+      "side": 1,
+      "message": "The above commit message should be updated, this patch just remvoe `validate_v3_token` from the fernet.Provider.\n\nAnd use methods of `validate_v3_non_persistent_token_id` and `validate_v3_token_reference` for non persistent token and persistent token respectively.\n\nNot *issue_v3_token()*.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_47a85d77",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-06T09:18:22Z",
+      "side": 1,
+      "message": "update the name of testcase pls, it should raise *400* instead of 404 after this patch.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_876c2536",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-06T09:18:22Z",
+      "side": 1,
+      "message": "If the name of testcase expect 404 explictly, why we not assert the status code?",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4c1ba2ca",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-06T09:18:22Z",
+      "side": 1,
+      "message": "update the docstring pls, the token_ref is not token_id anymore in this patch.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c75a2df2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-06T09:18:22Z",
+      "side": 1,
+      "message": "pls udpate this method, `validate_v3_token` is no longer existing, but `validate_v3_non_persistent_token_id` and `validate_v3_token_reference` instead.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
