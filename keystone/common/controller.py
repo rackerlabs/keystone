@@ -716,13 +716,9 @@ class V3Controller(wsgi.Application):
         if token_ref.domain_scoped:
             return token_ref.domain_id
         else:
-            # TODO(henry-nash): We should issue an exception here since if
-            # a v3 call does not explicitly specify the domain_id in the
-            # entity, it should be using a domain scoped token.  However,
-            # the current tempest heat tests issue a v3 call without this.
-            # This is raised as bug #1283539.  Once this is fixed, we
-            # should remove the line below and replace it with an error.
-            return CONF.identity.default_domain_id
+            msg = _('No domain information specified as part of create'
+                    ' request')
+            raise exception.ValidationError(message=msg)
 
     def _normalize_domain_id(self, context, ref):
         """Fill in domain_id if not specified in a v3 call."""
