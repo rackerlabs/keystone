@@ -551,6 +551,20 @@ class BaseProvider(provider.Provider):
             audit_info=parent_audit_id)
 
         token_id = self._get_token_id(token_data)
+        # NOTE(lbragstad): If Fernet tokens are being used, we must use the
+        # creation time that Fernet builds into it's token. The Fernet spec
+        # details that the token creation time is built into the token, outside
+        # of the payload provided by Keystone. This is the reason why we don't
+        # pass the issued_at time in the payload. This also means that we
+        # shouldn't return a token reference with a creation time that we
+        # created when Fernet uses a different creation time. We should use the
+        # creation time provided by Fernet because it's the creation time that
+        # we have to rely on when we validate the token.
+        if hasattr(self, 'token_formatter'):
+            fernet_creation_datetime_obj = self.token_formatter.creation_time(
+                token_id)
+            token_data['token']['issued_at'] = utils.isotime(
+                at=fernet_creation_datetime_obj, subsecond=True)
         return token_id, token_data
 
     def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
