@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_025d4714",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 48
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-06T17:59:15Z",
+      "side": 1,
+      "message": "will fix that",
+      "parentUuid": "1a4dcd0f_921bea80",
+      "revId": "f1ffe7bd73d4b6c438d19b41a7feef2c0222a83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_4a8a9d1c",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 48
@@ -65,6 +83,24 @@
       "writtenOn": "2015-08-06T17:44:35Z",
       "side": 1,
       "message": "AUTH_TOKEN_HEADER is not set when user tries to authenticate using his username/password",
+      "revId": "f1ffe7bd73d4b6c438d19b41a7feef2c0222a83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ef760405",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-06T17:59:15Z",
+      "side": 1,
+      "message": "This pipeline is for token validate, so if you did not have your auth_token_header nor x509, it will just move on to the rest of the module in the pipeline. And most likely it will fail for the authentication.\nWhen you provide username/password for a token, it will be in a different route, not coming to here.",
+      "parentUuid": "1a4dcd0f_afbd5cd9",
       "revId": "f1ffe7bd73d4b6c438d19b41a7feef2c0222a83e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
