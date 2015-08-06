@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d21f32b5",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-06T16:40:12Z",
+      "side": 1,
+      "message": "why do we need parent_id? Can\u0027t we derive it from the path? i.e.\n\nparent_id \u003d self.path.split(self.DELIMITER)[-1]",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3253f66c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-06T16:40:12Z",
+      "side": 1,
+      "message": "If all these can be overloaded, don\u0027t we want to use the\n\ngetattr(type(self), ...)\n\nconsistently throughout?",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_922f6a3e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-06T16:40:12Z",
+      "side": 1,
+      "message": "Dumb question: what\u0027s this \"getattr(type(self) ...\" trick does? Is it because this is intended to be a mixin and you need the real ID_COLUMN from its subclass? Just curious.",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_12711a0f",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-06T16:40:12Z",
+      "side": 1,
+      "message": "Can we derive the parent_id from the path? See my first question.",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b2c2a6e7",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-06T16:40:12Z",
+      "side": 1,
+      "message": "type(self)?",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
