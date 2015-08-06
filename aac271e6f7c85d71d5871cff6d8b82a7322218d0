@@ -16,6 +16,24 @@
       "revId": "aac271e6f7c85d71d5871cff6d8b82a7322218d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cfd6a84e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-06T17:40:22Z",
+      "side": 0,
+      "message": "time_int is actually a float there so if we convert it to int we lose the microseconds",
+      "parentUuid": "1a4dcd0f_8c466e79",
+      "revId": "aac271e6f7c85d71d5871cff6d8b82a7322218d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
