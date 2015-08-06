@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_0f2fb088",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T20:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_cc2252a3",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_47a85d77",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 16
@@ -47,6 +65,24 @@
       "writtenOn": "2015-08-06T09:18:22Z",
       "side": 1,
       "message": "update the name of testcase pls, it should raise *400* instead of 404 after this patch.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6da8ce20",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T20:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_47a85d77",
       "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_adb25692",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T20:25:23Z",
+      "side": 1,
+      "message": "We can\u0027t make assertions on the status code because we don\u0027t get an actual WebTest response back.",
+      "parentUuid": "1a4dcd0f_876c2536",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_4c1ba2ca",
         "filename": "keystone/token/provider.py",
         "patchSetId": 16
@@ -81,6 +135,24 @@
       "writtenOn": "2015-08-06T09:18:22Z",
       "side": 1,
       "message": "update the docstring pls, the token_ref is not token_id anymore in this patch.",
+      "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_005a312a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-06T20:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_4c1ba2ca",
       "revId": "ec839aef912be2eb0153b494855ade7585291e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
