@@ -43,6 +43,8 @@ LOCK_WINDOW = 1
 LOG = log.getLogger(__name__)
 NO_VALUE = api.NO_VALUE
 
+key_value_store_lock = threading.Lock()
+
 
 def _register_backends():
     # NOTE(morganfainberg): This function exists to ensure we do not try and
@@ -412,11 +414,13 @@ def get_key_value_store(name, kvs_region=None):
     """
     global KEY_VALUE_STORE_REGISTRY
 
-    _register_backends()
-    key_value_store = KEY_VALUE_STORE_REGISTRY.get(name)
-    if key_value_store is None:
-        if kvs_region is None:
-            kvs_region = region.make_region(name=name)
-        key_value_store = KeyValueStore(kvs_region)
-        KEY_VALUE_STORE_REGISTRY[name] = key_value_store
+    with key_value_store_lock:
+        _register_backends()
+        key_value_store = KEY_VALUE_STORE_REGISTRY.get(name)
+        if key_value_store is None:
+            if kvs_region is None:
+                kvs_region = region.make_region(name=name)
+            key_value_store = KeyValueStore(kvs_region)
+            KEY_VALUE_STORE_REGISTRY[name] = key_value_store
+
     return key_value_store
