@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_f82ecd8a",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-06T17:14:46Z",
+      "side": 1,
+      "message": "I don\u0027t like having parent_id in the \u0027host\u0027 model but the very idea of this mixin is to extend existing hierarchy, which already has \u0027parent\u0027 reference field. But the idea to use the path tail is cool: it saves a wierd check below!",
+      "parentUuid": "1a4dcd0f_d21f32b5",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3253f66c",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-06T16:40:12Z",
       "side": 1,
       "message": "If all these can be overloaded, don\u0027t we want to use the\n\ngetattr(type(self), ...)\n\nconsistently throughout?",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f8148de9",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-06T17:14:46Z",
+      "side": 1,
+      "message": "The idea is to use overloaded parameters if any, and \u0027self\u0027 contains exactly them as it\u0027s an instance of the derived class.",
+      "parentUuid": "1a4dcd0f_3253f66c",
       "revId": "5364e976531b2342af5cb385fa46c4975a230517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_18ce1963",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-06T17:14:46Z",
+      "side": 1,
+      "message": "Exactly.\n\nSince I don\u0027t know how \u0027id\u0027 is named, I have to use getattr\n\nSince I need not the value of the instance field, but the column of it\u0027s class, I request the type of the instance.",
+      "parentUuid": "1a4dcd0f_922f6a3e",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_12711a0f",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 11
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_d81f51b5",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-06T17:14:46Z",
+      "side": 1,
+      "message": "Thanks! That\u0027s a great idea!",
+      "parentUuid": "1a4dcd0f_12711a0f",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_b2c2a6e7",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 11
@@ -81,6 +153,24 @@
       "writtenOn": "2015-08-06T16:40:12Z",
       "side": 1,
       "message": "type(self)?",
+      "revId": "5364e976531b2342af5cb385fa46c4975a230517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d8fbd145",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-06T17:14:46Z",
+      "side": 1,
+      "message": "No, I need a value here. It\u0027s seen in a variable name :)",
+      "parentUuid": "1a4dcd0f_b2c2a6e7",
       "revId": "5364e976531b2342af5cb385fa46c4975a230517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
