@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import threading
+
 from keystone import assignment
 from keystone import auth
 from keystone import catalog
@@ -27,10 +29,16 @@ from keystone import token
 from keystone import trust
 
 
+# NOTE(amakarov): Apache modwsgi spec requires to protect global variables
+# http://code.google.com/p/modwsgi/wiki/ProcessesAndThreading
+cache_region_lock = threading.Lock()
+
+
 def load_backends():
 
     # Configure and build the cache
-    cache.configure_cache_region(cache.REGION)
+    with cache_region_lock:
+        cache.configure_cache_region(cache.REGION)
 
     # Ensure that the identity driver is created before the assignment manager
     # and that the assignment driver is created before the resource manager.
