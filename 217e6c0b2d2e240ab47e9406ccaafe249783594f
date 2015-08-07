@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9047221d",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:04:26Z",
+      "side": 1,
+      "message": "what\u0027s an unbound method?",
+      "revId": "217e6c0b2d2e240ab47e9406ccaafe249783594f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
