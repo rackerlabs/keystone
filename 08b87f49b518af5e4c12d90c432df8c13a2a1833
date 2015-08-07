@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_67f89d4a",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:13:46Z",
+      "side": 1,
+      "message": "is there any setup that is required to setup keystone for those paths?",
+      "revId": "08b87f49b518af5e4c12d90c432df8c13a2a1833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
