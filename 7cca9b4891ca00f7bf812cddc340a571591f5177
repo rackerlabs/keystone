@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c78091fa",
+        "filename": "keystone/tests/unit/ksfixtures/ldapdb.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:07:40Z",
+      "side": 1,
+      "message": "switch the flow to what? just in case someone else comes along and wants to do it.",
+      "revId": "7cca9b4891ca00f7bf812cddc340a571591f5177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6772dd4b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2096,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:07:40Z",
+      "side": 1,
+      "message": "since this happens in so many test cases, should it be moved to tearDown?",
+      "revId": "7cca9b4891ca00f7bf812cddc340a571591f5177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
