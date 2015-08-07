@@ -499,6 +499,9 @@ class RuleProcessor(object):
                     'domain': {
                         'name': 'default_domain'
                     }
+                },
+                {
+                    'group_ids': ['abc123', 'def456', '0cd5e9']
                 }
             ]
 
@@ -572,6 +575,14 @@ class RuleProcessor(object):
                                group_names_list]
 
                 group_names.extend(group_dicts)
+            if 'group_ids' in identity_value:
+                try:
+                    group_ids.update(
+                        ast.literal_eval(identity_value['group_ids']))
+                except (ValueError, SyntaxError):
+                    # if literal_eval fails, use the group_ids
+                    # using the provided identity_value as is
+                    group_ids.update([identity_value['group_ids']])
 
         normalize_user(user)
 
