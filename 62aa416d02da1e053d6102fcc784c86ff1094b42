@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_ea5eb778",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-07T19:47:32Z",
+      "side": 1,
+      "message": "yes... we\u0027ve already changed it in patch set 86",
+      "parentUuid": "1a4dcd0f_81e35e05",
+      "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_414a36ae",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 85
@@ -84,6 +102,24 @@
       "writtenOn": "2015-08-07T18:31:40Z",
       "side": 1,
       "message": "This is deprecated. Should we be adding more logic here? Same goes for the ones below.",
+      "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0ac0c3df",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-07T19:47:32Z",
+      "side": 1,
+      "message": "actually, we arent\u0027t adding logic. we are just keeping the current logic, making it only return regular projects, as v2 is supposed to do.",
+      "parentUuid": "1a4dcd0f_414a36ae",
       "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_aa58af8b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-07T19:47:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_c1eba677",
+      "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_610bb22c",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 85
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_75a2889c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 2196,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-07T19:47:32Z",
+      "side": 1,
+      "message": "not in these cases... just programming style. I\u0027ll change that",
+      "parentUuid": "1a4dcd0f_610bb22c",
+      "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_c40c143e",
         "filename": "keystone/tests/unit/test_v2_controller.py",
         "patchSetId": 85
@@ -135,6 +207,24 @@
       "writtenOn": "2015-08-07T18:31:40Z",
       "side": 1,
       "message": "import the module",
+      "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6a25c708",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-07T19:47:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_c40c143e",
       "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
