@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5b12235a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-07T17:22:16Z",
+      "side": 1,
+      "message": "just a nit to improve maintenance... since this method does not own the method signature (the parent class does), it\u0027s best to just pass (*args, **kwargs) through.",
+      "revId": "c75c03972e822521aaaf0b5546cba14f7dfacaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
