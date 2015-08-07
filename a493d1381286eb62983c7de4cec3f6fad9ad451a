@@ -16,6 +16,24 @@
       "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a43b0338",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-07T20:41:30Z",
+      "side": 1,
+      "message": "Thanks for noticed that, after talk in the irc, the blueprint was approved and targeted to liberty.",
+      "parentUuid": "1a4dcd0f_b0cfbe28",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
