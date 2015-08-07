@@ -16,6 +16,24 @@
       "revId": "e8ed0f28756f5c43a2fea4d7103d627705acd4d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ef024972",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T18:55:58Z",
+      "side": 1,
+      "message": "Yes, that\u0027s right. I wanted to show that we don\u0027t support unbound method, because we can\u0027t. Once this is merged I\u0027ll go back and fix up https://review.openstack.org/#/c/158777. There was a comment on there they my approach doesn\u0027t work for unbound methods, so now I can say \"it doesn\u0027t matter\".",
+      "parentUuid": "1a4dcd0f_6ff879c5",
+      "revId": "e8ed0f28756f5c43a2fea4d7103d627705acd4d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
