@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_419b1673",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T18:10:44Z",
+      "side": 1,
+      "message": "don\u0027t we need to make a change to devstack for this, like we did with ldap extras? \n\n\nhttps://github.com/openstack-dev/devstack/blob/3805b3770c091840f67949762ed38bb1548704d2/lib/keystone#L528-L536",
+      "revId": "f7908f25b2dec984973b248f116edc80f0141af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
