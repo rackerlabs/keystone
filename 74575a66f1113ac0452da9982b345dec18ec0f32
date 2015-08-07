@@ -34,6 +34,24 @@
       "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3145fd41",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T16:15:27Z",
+      "side": 0,
+      "message": "Dolph - it looks funny but it\u0027s correct... gerrit matches the new line with the existing one and shows the existing line as a new one.",
+      "parentUuid": "1a4dcd0f_16a9d723",
+      "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
