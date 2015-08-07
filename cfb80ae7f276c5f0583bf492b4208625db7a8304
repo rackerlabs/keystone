@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_8d4f3133",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-07T07:53:58Z",
+      "side": 1,
+      "message": "separate  the third party lib from the python lib, see http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_32628cd9",
         "filename": "keystone/cmd/manage.py",
         "patchSetId": 4
@@ -53,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_4dcda92f",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-07T07:53:58Z",
+      "side": 1,
+      "message": "suggest to undo this change since it\u0027s meaningless.",
+      "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_50a41607",
         "filename": "keystone/cmd/manage.py",
         "patchSetId": 4
@@ -64,6 +98,23 @@
       "writtenOn": "2015-07-17T07:16:31Z",
       "side": 1,
       "message": "where are you calling this method ?",
+      "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2d07fd82",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-07T07:53:58Z",
+      "side": 1,
+      "message": "so, the warning message may looks like, Warning: Could not find keystone.conf in /etc/keystone.conf, does this message correct enough?",
       "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
