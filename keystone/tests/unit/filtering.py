@@ -44,17 +44,23 @@ class FilterTests(object):
     def _create_entity(self, entity_type):
         f = getattr(self.identity_api, 'create_%s' % entity_type, None)
         if f is None:
+            f = getattr(self.resource_api, 'create_%s' % entity_type, None)
+        if f is None:
             f = getattr(self.assignment_api, 'create_%s' % entity_type)
         return f
 
     def _delete_entity(self, entity_type):
         f = getattr(self.identity_api, 'delete_%s' % entity_type, None)
         if f is None:
+            f = getattr(self.resource_api, 'delete_%s' % entity_type, None)
+        if f is None:
             f = getattr(self.assignment_api, 'delete_%s' % entity_type)
         return f
 
     def _list_entities(self, entity_type):
         f = getattr(self.identity_api, 'list_%ss' % entity_type, None)
+        if f is None:
+            f = getattr(self.resource_api, 'list_%ss' % entity_type, None)
         if f is None:
             f = getattr(self.assignment_api, 'list_%ss' % entity_type)
         return f
