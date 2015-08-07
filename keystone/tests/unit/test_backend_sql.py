@@ -20,7 +20,6 @@ import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db import options
-from oslo_log import versionutils
 from six.moves import range
 import sqlalchemy
 from sqlalchemy import exc
@@ -920,68 +919,3 @@ class SqlCredential(SqlTests):
         credentials = self.credential_api.list_credentials_for_user(
             self.user_foo['id'])
         self._validateCredentialList(credentials, self.user_credentials)
-
-
-class DeprecatedDecorators(SqlTests):
-
-    def test_assignment_to_role_api(self):
-        """Test that calling one of the methods does call LOG.deprecated.
-
-        This method is really generic to the type of backend, but we need
-        one to execute the test, so the SQL backend is as good as any.
-
-        """
-
-        # Rather than try and check that a log message is issued, we
-        # enable fatal_deprecations so that we can check for the
-        # raising of the exception.
-
-        # First try to create a role without enabling fatal deprecations,
-        # which should work due to the cross manager deprecated calls.
-        role_ref = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(role_ref['id'], role_ref)
-        self.role_api.get_role(role_ref['id'])
-
-        # Now enable fatal exceptions - creating a role by calling the
-        # old manager should now fail.
-        self.config_fixture.config(fatal_deprecations=True)
-        role_ref = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex}
-        self.assertRaises(versionutils.DeprecatedConfig,
-                          self.assignment_api.create_role,
-                          role_ref['id'], role_ref)
-
-    def test_assignment_to_resource_api(self):
-        """Test that calling one of the methods does call LOG.deprecated.
-
-        This method is really generic to the type of backend, but we need
-        one to execute the test, so the SQL backend is as good as any.
-
-        """
-
-        # Rather than try and check that a log message is issued, we
-        # enable fatal_deprecations so that we can check for the
-        # raising of the exception.
-
-        # First try to create a project without enabling fatal deprecations,
-        # which should work due to the cross manager deprecated calls.
-        project_ref = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID}
-        self.resource_api.create_project(project_ref['id'], project_ref)
-        self.resource_api.get_project(project_ref['id'])
-
-        # Now enable fatal exceptions - creating a project by calling the
-        # old manager should now fail.
-        self.config_fixture.config(fatal_deprecations=True)
-        project_ref = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID}
-        self.assertRaises(versionutils.DeprecatedConfig,
-                          self.assignment_api.create_project,
-                          project_ref['id'], project_ref)
