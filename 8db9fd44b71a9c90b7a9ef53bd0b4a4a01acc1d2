@@ -16,6 +16,24 @@
       "revId": "8db9fd44b71a9c90b7a9ef53bd0b4a4a01acc1d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1680f789",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T16:12:46Z",
+      "side": 1,
+      "message": "Try applying the follow-on patch https://review.openstack.org/#/c/210174/ and run without this change.\n\nThere are a lot of calls happening to assignment_api.create_\u003cproject, etc\u003e, etc. which are deprecated.",
+      "parentUuid": "1a4dcd0f_5670bf0a",
+      "revId": "8db9fd44b71a9c90b7a9ef53bd0b4a4a01acc1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
