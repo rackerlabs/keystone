@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_470241b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:05:42Z",
+      "side": 1,
+      "message": "knowing*",
+      "revId": "a2af56c2905e69cc263425dc1f533ea5900551f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_07b999ec",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2485,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:05:42Z",
+      "side": 1,
+      "message": "is assert_backends called somewhere in the setUp chain?",
+      "revId": "a2af56c2905e69cc263425dc1f533ea5900551f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_87e60915",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2739,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:05:42Z",
+      "side": 1,
+      "message": "is assert_backends called somewhere in the setUp chain?",
+      "revId": "a2af56c2905e69cc263425dc1f533ea5900551f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
