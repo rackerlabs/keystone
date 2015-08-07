@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_b1b58ded",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2646,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T16:28:30Z",
+      "side": 1,
+      "message": "Why not just use self.assignment_api.list_domains()? I\u0027d like to get rid of that FilterTests mixin anyway.",
+      "parentUuid": "1a4dcd0f_b6f4a3f0",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_563d1fc2",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 1
@@ -84,6 +102,23 @@
       "writtenOn": "2015-08-07T16:00:06Z",
       "side": 1,
       "message": "matchers.HasLength should be used",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f1cc7536",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2655,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T16:28:30Z",
+      "side": 1,
+      "message": "You want to check for a subset right? Do you care if they are contiguous in the unfiltered list?",
       "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -119,6 +154,24 @@
       "side": 1,
       "message": "extra () are required here as well, see my previous comment",
       "parentUuid": "1a4dcd0f_48ea7c75",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_71d945f2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2662,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T16:28:30Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "1a4dcd0f_847b83bd",
       "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
