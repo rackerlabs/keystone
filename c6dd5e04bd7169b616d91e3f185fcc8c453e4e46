@@ -16,6 +16,24 @@
       "revId": "c6dd5e04bd7169b616d91e3f185fcc8c453e4e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e7eb4d77",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T21:14:31Z",
+      "side": 1,
+      "message": "The manager will be loaded because it\u0027s loaded in keystone.server.backends:load_backends and our base testcase adds all of those things as attributes to the testcase instance.",
+      "parentUuid": "1a4dcd0f_e7010d6c",
+      "revId": "c6dd5e04bd7169b616d91e3f185fcc8c453e4e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
