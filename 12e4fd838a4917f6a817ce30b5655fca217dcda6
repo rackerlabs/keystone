@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_fdce7ab6",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T22:00:59Z",
+      "side": 1,
+      "message": "I\u0027m going to update this review, but we don\u0027t care about unbound methods since that can\u0027t work anyway. Added a test case here https://review.openstack.org/#/c/210478/",
+      "parentUuid": "bab921fb_7439b6f1",
+      "revId": "12e4fd838a4917f6a817ce30b5655fca217dcda6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab921fb_cf710f46",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 6
