@@ -16,6 +16,24 @@
       "revId": "2c67320a590f62039a8fd978c5b878ebdfc8808a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c3b3cf4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-08-07T06:03:31Z",
+      "side": 1,
+      "message": "Brant, in case of v3 create entity call that does not specify a domain ID, the spec says that we should use the domain scoping from the token being used. But it does not say what we should do if the token itself is not associated with a domain. Also, if we use default domain for admin tokens, then when the TODO by henry-nash (https://github.com/openstack/keystone/blob/9cdbe6039b55ee401a31a18f734f88b17629b760/keystone/common/controller.py#L719-L724) is fixed, the behavior of admin token will become inconsistent with other non-domain scoped tokens.\n\nIf you feel strongly that we should use the default domain, I can make that change. Your call.",
+      "parentUuid": "1a4dcd0f_7271aca7",
+      "revId": "2c67320a590f62039a8fd978c5b878ebdfc8808a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
