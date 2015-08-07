@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f52a182f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T19:43:02Z",
+      "side": 1,
+      "message": "yep, adding help text would be good :-)",
+      "revId": "88ee64843a70702ec3a5722b871bdb949ff3f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b5249060",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T19:43:02Z",
+      "side": 1,
+      "message": "uuid is standard lib",
+      "revId": "88ee64843a70702ec3a5722b871bdb949ff3f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
