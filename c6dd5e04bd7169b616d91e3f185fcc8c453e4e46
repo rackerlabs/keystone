@@ -34,6 +34,24 @@
       "revId": "c6dd5e04bd7169b616d91e3f185fcc8c453e4e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7a12705a",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-07T21:20:02Z",
+      "side": 1,
+      "message": "correct, what stanek said",
+      "parentUuid": "1a4dcd0f_e7eb4d77",
+      "revId": "c6dd5e04bd7169b616d91e3f185fcc8c453e4e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
