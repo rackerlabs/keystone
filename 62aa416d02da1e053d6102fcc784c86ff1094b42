@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d48aab63",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T01:57:51Z",
+      "side": 1,
+      "message": "either the interface is stable and we can\u0027t add a new required parameter or it\u0027s unstable and there\u0027s no need for it to be deprecated.\n\nMy opinion is the interface is unstable, see https://review.openstack.org/#/c/210174/",
+      "revId": "62aa416d02da1e053d6102fcc784c86ff1094b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
