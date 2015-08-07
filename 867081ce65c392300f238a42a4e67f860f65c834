@@ -34,6 +34,24 @@
       "revId": "867081ce65c392300f238a42a4e67f860f65c834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4aa4b9b8",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-07T00:05:33Z",
+      "side": 1,
+      "message": "Fixed this and also consolidated the code in one function called by both issue_v2_token and issue_v3_token.",
+      "parentUuid": "1a4dcd0f_44bfd260",
+      "revId": "867081ce65c392300f238a42a4e67f860f65c834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
