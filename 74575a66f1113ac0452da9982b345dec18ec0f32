@@ -52,6 +52,24 @@
       "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ec657c44",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T16:48:16Z",
+      "side": 0,
+      "message": "I think just a comment at the class level talking about the method lookups would be enough.",
+      "parentUuid": "1a4dcd0f_3145fd41",
+      "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
