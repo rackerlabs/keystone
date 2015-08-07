@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e7010d6c",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T21:10:23Z",
+      "side": 1,
+      "message": "so, because the extension is now in core, we get it for free in test_v3.RestfulTestCase, right?",
+      "revId": "c6dd5e04bd7169b616d91e3f185fcc8c453e4e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
