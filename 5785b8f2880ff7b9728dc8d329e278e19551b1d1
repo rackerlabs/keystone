@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_388de2d2",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-07T15:36:59Z",
+      "side": 1,
+      "message": "It says \"if not f:\" here and \"if f is None:\" below. It looks inconsistently.\n\nI also don\u0027t quite understand why it\u0027s needed. Will try to figure out now...",
+      "revId": "5785b8f2880ff7b9728dc8d329e278e19551b1d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
