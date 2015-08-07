@@ -16,6 +16,24 @@
       "revId": "5785b8f2880ff7b9728dc8d329e278e19551b1d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_76c85b55",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T16:05:40Z",
+      "side": 1,
+      "message": "the line above checks if the method exists and returns None if it doesn\u0027t.\n\npython considers None to be falsy and a bound function to be true.",
+      "parentUuid": "1a4dcd0f_388de2d2",
+      "revId": "5785b8f2880ff7b9728dc8d329e278e19551b1d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
