@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_70da96eb",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-07T20:18:35Z",
+      "side": 1,
+      "message": "zomg missing a space before the \u003d",
+      "revId": "8f2d59b4dbb271b27639948d582c80f1c3c22105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_50e19a99",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-07T20:18:35Z",
+      "side": 1,
+      "message": "i\u0027m just going to assume the period is correct because it\u0027s in all these reviews",
+      "revId": "8f2d59b4dbb271b27639948d582c80f1c3c22105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
