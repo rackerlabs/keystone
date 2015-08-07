@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9092c29e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:02:39Z",
+      "side": 1,
+      "message": "this needs `self` otherwise it\u0027s defining a variable and isn\u0027t going to do anything useful:\n\n   self.event_callbacks \u003d {\n\n(we seem to have a lot of code to handle something that\u0027s only used in 1 place.)",
+      "revId": "9c0055ce134863376e548522f619454f98e2d09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
