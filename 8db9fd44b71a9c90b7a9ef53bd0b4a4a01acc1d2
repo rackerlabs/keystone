@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5670bf0a",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-07T16:08:45Z",
+      "side": 1,
+      "message": "why do you need to change this file? I tried applying the patch, checking out the file from master and running the tests. I don\u0027t see any deprecation warnings logs which could be related to this identity/resource/assignments.",
+      "revId": "8db9fd44b71a9c90b7a9ef53bd0b4a4a01acc1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
