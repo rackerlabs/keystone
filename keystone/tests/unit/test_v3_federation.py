@@ -1993,6 +1993,24 @@ class MappingRuleEngineTests(FederationTests):
         self.assertEqual('bwilliams', mapped_properties['user']['name'])
         self.assertEqual('abc123', mapped_properties['user']['id'])
 
+    def test_rule_engine_group_ids_mapping(self):
+        """Test mapping engine when group_ids is explicitely set.
+
+        For that, we use mapping rule MAPPING_GROUPS_BY_GROUP_IDS and assertion
+        GROUP_IDS_ASSERTION
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_GROUPS_BY_GROUP_IDS
+        assertion = mapping_fixtures.GROUP_IDS_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        self.assertEqual('opilotte', mapped_properties['user']['name'])
+        self.assertListEqual([], mapped_properties['group_names'])
+        self.assertListEqual(['abc123', 'def456', 'ghi789'],
+                             sorted(mapped_properties['group_ids']))
+
 
 class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
