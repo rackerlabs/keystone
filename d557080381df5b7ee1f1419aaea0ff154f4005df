@@ -16,6 +16,24 @@
       "revId": "d557080381df5b7ee1f1419aaea0ff154f4005df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ca85fb07",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T19:23:49Z",
+      "side": 1,
+      "message": "I looked at the configuring apache docs and I don\u0027t see anything in there that needs to be changed...",
+      "parentUuid": "1a4dcd0f_878133c5",
+      "revId": "d557080381df5b7ee1f1419aaea0ff154f4005df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
