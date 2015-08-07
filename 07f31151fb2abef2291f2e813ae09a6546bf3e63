@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_a4b31f97",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2646,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-08-07T11:47:11Z",
+      "side": 1,
+      "message": "Extra () at the end of this line are required to call the method:\nunfiltered_domains should be a \u0027list\u0027 type. \nself._list_entities(\u0027domain\u0027) returns the reference to the method (object of type \u0027instancemethod\u0027) \nwhich returns the list (and not the list itself) and we need extra () to call that method.\nIf we remove (), then self._list_entities(\u0027domain\u0027) returns the reference to the method and that\nreference will be assigned to unfiltered_domains, and the method is not called. In this case the following error happens:\n\nTraceback (most recent call last):\n  File \"keystone/tests/unit/test_backend_ldap.py\", line 2655, in test_list_domains_filtered_and_limited\n    self._match_with_list(entities, unfiltered_domains)\n  File \"keystone/tests/unit/filtering.py\", line 36, in _match_with_list\n    list_end \u003d len(total_list)\nTypeError: object of type \u0027instancemethod\u0027 has no len()\n\nWe need to call the method that is returned by self._list_entities(\u0027domain\u0027), therefore we need extra ().\nIn this case the list will be assigned to unfiltered_domains (and not the reference to the method),\n and this is the expected behavior: unfiltered_domains \u003d self._list_entities(\u0027domain\u0027)()",
+      "parentUuid": "1a4dcd0f_28e7f0ac",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_48ea7c75",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-07T05:44:45Z",
       "side": 1,
       "message": "remove the extra () at the end of this line",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_847b83bd",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2662,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-08-07T11:47:11Z",
+      "side": 1,
+      "message": "extra () are required here as well, see my previous comment",
+      "parentUuid": "1a4dcd0f_48ea7c75",
       "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
