@@ -900,6 +900,78 @@ MAPPING_GROUPS_WHITELIST_AND_BLACKLIST = {
     ]
 }
 
+MAPPING_GROUPS_IDS_WHITELIST = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    }
+                },
+                {
+                    "group_ids": "{1}"
+                },
+                {
+                    "group": {
+                        "id": "{2}"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "name"
+                },
+                {
+                    "type": "group_ids",
+                    "whitelist": [
+                        "abc123", "ghi789"
+                    ]
+                },
+                {
+                    "type": "group"
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_GROUPS_IDS_BLACKLIST = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    }
+                },
+                {
+                    "group_ids": "{1}"
+                },
+                {
+                    "group": {
+                        "id": "{2}"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "name"
+                },
+                {
+                    "type": "group_ids",
+                    "blacklist": [
+                        "def456"
+                    ]
+                },
+                {
+                    "type": "group"
+                }
+            ]
+        }
+    ]
+}
+
 EMPLOYEE_ASSERTION = {
     'Email': 'tim@example.com',
     'UserName': 'tbo',
@@ -1023,4 +1095,16 @@ ANOTHER_LOCAL_USER_ASSERTION = {
 UNMATCHED_GROUP_ASSERTION = {
     'REMOTE_USER': 'Any Momoose',
     'REMOTE_USER_GROUPS': 'EXISTS;NO_EXISTS'
+}
+
+GROUP_IDS_ASSERTION = {
+    'name': 'opilotte',
+    'group_ids': 'abc123;def456;ghi789',
+    'group': 'klm012'
+}
+
+GROUP_IDS_ASSERTION_ONLY_ONE_GROUP = {
+    'name': 'opilotte',
+    'group_ids': 'abc123',
+    'group': 'klm012'
 }
