@@ -900,6 +900,31 @@ MAPPING_GROUPS_WHITELIST_AND_BLACKLIST = {
     ]
 }
 
+MAPPING_GROUPS_BY_GROUP_IDS = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    }
+                },
+                {
+                    "group_ids": "{1}"
+                }
+            ],
+            "remote": [
+                {
+                    "type": "name"
+                },
+                {
+                    "type": "group_ids"
+                },
+            ]
+        }
+    ]
+}
+
 EMPLOYEE_ASSERTION = {
     'Email': 'tim@example.com',
     'UserName': 'tbo',
@@ -1023,4 +1048,9 @@ ANOTHER_LOCAL_USER_ASSERTION = {
 UNMATCHED_GROUP_ASSERTION = {
     'REMOTE_USER': 'Any Momoose',
     'REMOTE_USER_GROUPS': 'EXISTS;NO_EXISTS'
+}
+
+GROUP_IDS_ASSERTION = {
+    'name': 'opilotte',
+    'group_ids': '["abc123", "def456"]',
 }
