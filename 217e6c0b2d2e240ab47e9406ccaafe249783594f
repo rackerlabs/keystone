@@ -16,6 +16,24 @@
       "revId": "217e6c0b2d2e240ab47e9406ccaafe249783594f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ba58f88b",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-07T21:44:28Z",
+      "side": 1,
+      "message": "When you reference a method from a class object you get a method that isn\u0027t bound to a particular instance so there is no magic \u0027self\u0027. You can call it, but you have to pass in the instance manually like: C.m(C())\n\nIf you reference the method from an instance then you get a method that effectively curries the self argument for you (think functools.partial).",
+      "parentUuid": "1a4dcd0f_9047221d",
+      "revId": "217e6c0b2d2e240ab47e9406ccaafe249783594f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
