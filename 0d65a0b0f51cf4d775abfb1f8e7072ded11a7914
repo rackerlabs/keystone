@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_bb124708",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "Are we going to stick with \u0027keystone\u0027 or \u0027Keystone\u0027?",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fbbd2fd8",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "We could elaborate saying \"they used to be called tenants in v2.0, but the naming was changed when the v3 api was introduced.\" or something to that effect.",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fb8bef1c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "nit: available via a separate pipeline from v2.0",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_db8dd32b",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "Do we want to add that user IDs are assumed to be unique across domains?",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3ba9577c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "Is it important to add how someone would figure out what their default domain is?",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9be50bde",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "information*",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1bda5b18",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "would we be able to give a release that they were introduced? it might make the doc a little more time-less.",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fb152f9b",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-07T17:37:17Z",
+      "side": 1,
+      "message": "Maybe link to the OSC docs here? It would be useful for someone reading this if they have no clue what OSC is.",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
