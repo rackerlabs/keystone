@@ -34,6 +34,91 @@
       "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_04c67716",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:48:46Z",
+      "side": 1,
+      "message": "suggest put these in alphabetical order.\n\nAlso, a test that you can set policy for this would be nice.",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_24f29370",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:48:46Z",
+      "side": 1,
+      "message": "why is ec2 used rather than a random string? Add a comment.",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a48543ae",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:48:46Z",
+      "side": 1,
+      "message": "where does \u0027cert\u0027 come from? Add a comment.",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c46baff0",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:48:46Z",
+      "side": 1,
+      "message": "put \u0027ec2\u0027 into a variable so that it\u0027s obvious that this is the same as cred_type above.",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e4b90b7b",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T20:48:46Z",
+      "side": 1,
+      "message": "I\u0027m assuming there should only be 1 result since you wouldn\u0027t have multiple creds with the same ID, so no need to loop over creds.",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
