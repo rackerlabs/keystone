@@ -16,6 +16,23 @@
       "revId": "ee270714d996b66235cf289da60e55157661f702",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_51c76995",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T16:17:02Z",
+      "side": 1,
+      "message": "would be nice if there was  bug in case other devs run into this.",
+      "revId": "ee270714d996b66235cf289da60e55157661f702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
