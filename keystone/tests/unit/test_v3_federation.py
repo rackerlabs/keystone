@@ -1993,6 +1993,42 @@ class MappingRuleEngineTests(FederationTests):
         self.assertEqual('bwilliams', mapped_properties['user']['name'])
         self.assertEqual('abc123', mapped_properties['user']['id'])
 
+    def test_rule_engine_group_ids_mapping_whitelist(self):
+        """Test mapping engine when group_ids is explicitely set.
+
+        For that, we use mapping rule MAPPING_GROUPS_IDS_WHITELIST and
+        assertion GROUP_IDS_ASSERTION
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_GROUPS_IDS_WHITELIST
+        assertion = mapping_fixtures.GROUP_IDS_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        self.assertEqual('opilotte', mapped_properties['user']['name'])
+        self.assertListEqual([], mapped_properties['group_names'])
+        self.assertListEqual(['abc123', 'ghi789', 'klm012'],
+                             sorted(mapped_properties['group_ids']))
+
+    def test_rule_engine_group_ids_mapping_blacklist(self):
+        """Test mapping engine when group_ids is explicitely set.
+
+        For that, we use mapping rule MAPPING_GROUPS_IDS_BLACKLIST and
+        assertion GROUP_IDS_ASSERTION
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_GROUPS_IDS_BLACKLIST
+        assertion = mapping_fixtures.GROUP_IDS_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        self.assertEqual('opilotte', mapped_properties['user']['name'])
+        self.assertListEqual([], mapped_properties['group_names'])
+        self.assertListEqual(['abc123', 'ghi789', 'klm012'],
+                             sorted(mapped_properties['group_ids']))
+
 
 class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
