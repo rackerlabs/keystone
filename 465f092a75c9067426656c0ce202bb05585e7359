@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b539f0f4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-07T19:58:31Z",
+      "side": 1,
+      "message": "seems like we could just as well raise an exception since why would there be no callbacks.",
+      "revId": "465f092a75c9067426656c0ce202bb05585e7359",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
