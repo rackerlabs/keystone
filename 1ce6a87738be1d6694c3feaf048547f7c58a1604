@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_88508433",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-07T05:50:49Z",
+      "side": 0,
+      "message": "good catch, pls also update the name of oauth1_extension, I think it should be oauth1 now.\n\nsee, https://review.openstack.org/#/c/210204/1/etc/keystone-paste.ini",
+      "revId": "1ce6a87738be1d6694c3feaf048547f7c58a1604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
