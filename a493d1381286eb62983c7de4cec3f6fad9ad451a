@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_e90c7c3d",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 16625
+      },
+      "writtenOn": "2015-08-08T01:16:30Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s possible to do it Brant, but I can add a comment, no problem!",
+      "parentUuid": "1a4dcd0f_24f29370",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_a48543ae",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 8
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_092528ad",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 16625
+      },
+      "writtenOn": "2015-08-08T01:16:30Z",
+      "side": 1,
+      "message": "Ok!",
+      "parentUuid": "1a4dcd0f_a48543ae",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_c46baff0",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 8
@@ -99,6 +135,24 @@
       "writtenOn": "2015-08-07T20:48:46Z",
       "side": 1,
       "message": "put \u0027ec2\u0027 into a variable so that it\u0027s obvious that this is the same as cred_type above.",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_89ae18e6",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 16625
+      },
+      "writtenOn": "2015-08-08T01:16:30Z",
+      "side": 1,
+      "message": "Didn\u0027t get what you meant, can you explain it some other way?Instead of \u0027cred\u0027 use \u0027cred_ec2\u0027?",
+      "parentUuid": "1a4dcd0f_c46baff0",
       "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
