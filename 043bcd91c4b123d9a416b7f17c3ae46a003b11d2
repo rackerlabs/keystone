@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_731cd66a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 90
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-08T06:00:04Z",
+      "side": 1,
+      "message": "based on the schema update, this should change to nullable, for the case when domain-aware projects are created at root\n\nadd migration script too?",
+      "revId": "043bcd91c4b123d9a416b7f17c3ae46a003b11d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
