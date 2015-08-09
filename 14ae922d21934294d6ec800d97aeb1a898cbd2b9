@@ -16,6 +16,23 @@
       "revId": "14ae922d21934294d6ec800d97aeb1a898cbd2b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_00c96dac",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1750,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-09T06:25:29Z",
+      "side": 1,
+      "message": "....as we are changing this, we should drop the word \"now\" - since we don\u0027t say when \"before now\" was!!! Also, I would suggest dropping the word \"change\"",
+      "revId": "14ae922d21934294d6ec800d97aeb1a898cbd2b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
