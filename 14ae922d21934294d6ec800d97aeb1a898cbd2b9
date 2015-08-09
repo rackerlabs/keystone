@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6a35b0f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-09T04:34:35Z",
+      "side": 1,
+      "message": "AFAIK this isn\u0027t a thing in openstack",
+      "revId": "14ae922d21934294d6ec800d97aeb1a898cbd2b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
