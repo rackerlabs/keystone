@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f5565305",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1454,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-10T15:54:49Z",
+      "side": 1,
+      "message": "I guess the other thing you could do is rather than have this whole block is to simply say:\n\nself.asserRaises(exception.NotFound, self.identity_api.driver.user.get_all())\n\nproceeded by a comment saying, we should be able to list users, but due to the bug an error is thrown. I personally think that is clearer.",
+      "revId": "9673ab743a7ffd2c896b565dccf859a9061af91f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
