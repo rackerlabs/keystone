@@ -22,6 +22,7 @@ from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.utils import wip
 
 
 _ADMIN_CONTEXT = {'is_admin': True, 'query_string': {}}
@@ -73,6 +74,7 @@ class TenantTestCase(unit.TestCase):
         # without asserting the order of the results
         self.assertEqual(sorted(orig_project_users), sorted(new_project_users))
 
+    @wip('waiting for projects acting as domains implementation')
     def test_list_projects_default_domain(self):
         """Test that list projects only returns those in the default domain."""
         domain = unit.new_domain_ref()
@@ -80,9 +82,10 @@ class TenantTestCase(unit.TestCase):
         project1 = unit.new_project_ref(domain_id=domain['id'])
         self.resource_api.create_project(project1['id'], project1)
         # Check the real total number of projects, we should have the above
-        # plus those in the default features
+        # plus : i) those in the default fixtures; ii) two projects that act
+        # as domains, since we have two domains
         refs = self.resource_api.list_projects()
-        self.assertEqual(len(default_fixtures.TENANTS) + 1, len(refs))
+        self.assertEqual(len(default_fixtures.TENANTS) + 3, len(refs))
 
         # Now list all projects using the v2 API - we should only get
         # back those in the default features, since only those are in the
@@ -103,7 +106,9 @@ class TenantTestCase(unit.TestCase):
         return self.tenant_controller.v3_to_v2_project(project_ref)
 
     def test_get_is_domain_project_not_found(self):
-        """Test that get project does not return is_domain projects."""
+        """Test that get project does not return projects that act as
+        domains.
+        """
         project = self._create_is_domain_project()
 
         context = copy.deepcopy(_ADMIN_CONTEXT)
@@ -125,7 +130,7 @@ class TenantTestCase(unit.TestCase):
         )
 
     def test_update_is_domain_project_not_found(self):
-        """Test that update is_domain project is not allowed in v2."""
+        """Test that update projects acting as domains is not allowed in v2."""
         project = self._create_is_domain_project()
 
         project['name'] = uuid.uuid4().hex
@@ -138,7 +143,7 @@ class TenantTestCase(unit.TestCase):
         )
 
     def test_delete_is_domain_project_not_found(self):
-        """Test that delete is_domain project is not allowed in v2."""
+        """Test that delete projects acting as domains is not allowed in v2."""
         project = self._create_is_domain_project()
 
         self.assertRaises(
