@@ -1444,14 +1444,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         ldap_.add_s(dn, modlist)
 
         # make sure the user doesn't break other users
-        # he does now though
-        try:
-            users = self.identity_api.driver.user.get_all()
-            self.assertThat(users,
-                            matchers.HasLength(len(default_fixtures.USERS)))
-            self.fail('get_all was supposed to throw an exception')
-        except exception.NotFound:
-            pass
+        users = self.identity_api.driver.user.get_all()
+        self.assertThat(users, matchers.HasLength(len(default_fixtures.USERS)))
 
     @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
