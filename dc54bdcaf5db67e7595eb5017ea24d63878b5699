@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f6cc26bd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T13:31:01Z",
+      "side": 0,
+      "message": "Don\u0027t we still need to do this step somewhere along the line, maybe in mapped.py?",
+      "revId": "dc54bdcaf5db67e7595eb5017ea24d63878b5699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
