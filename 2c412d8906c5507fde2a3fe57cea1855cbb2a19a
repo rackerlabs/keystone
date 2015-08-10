@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_eea9b425",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T12:19:12Z",
+      "side": 1,
+      "message": "so this change would discard all other group_ids allocated from \u0027local\u0027 section.\nalso, such ids should be black/whitelistable.",
+      "revId": "2c412d8906c5507fde2a3fe57cea1855cbb2a19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
