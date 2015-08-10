@@ -17,7 +17,6 @@ from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
 import six
-from six.moves.urllib import parse
 
 from keystone.common import controller as common_controller
 from keystone.common import dependency
@@ -585,13 +584,14 @@ class BaseProvider(provider.Provider):
 
         federated_domain = get_federated_domain()
         user_id = auth_context['user_id']
+        user_name = auth_context['user_name']
         group_ids = auth_context['group_ids']
         idp = auth_context[federation_constants.IDENTITY_PROVIDER]
         protocol = auth_context[federation_constants.PROTOCOL]
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id),
+                'name': user_name,
                 federation_constants.FEDERATION: {
                     'groups': [{'id': x} for x in group_ids],
                     'identity_provider': {'id': idp},
