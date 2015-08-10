@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f7cd1787",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T06:51:35Z",
+      "side": 0,
+      "message": "unrelated change? \nRemove this extra line.",
+      "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_17cbe373",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T06:51:35Z",
+      "side": 0,
+      "message": "unrelated change? \nRemove this extra line.",
+      "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b7da2f16",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T06:51:35Z",
+      "side": 0,
+      "message": "unrelated change, revert.",
+      "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

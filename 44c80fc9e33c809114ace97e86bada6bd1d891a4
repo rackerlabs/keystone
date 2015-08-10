@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_57716bdf",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T06:51:35Z",
+      "side": 1,
+      "message": "I think all the notifications should be emitted in the controller (contrib/federation/controllers.py) in the corresponding methods. \nThis file is rather for backend-like operations only.\n\nSee how it\u0027s done in keystone/resource/core.py | grep delete_project",
+      "revId": "44c80fc9e33c809114ace97e86bada6bd1d891a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d7549b22",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T06:51:35Z",
+      "side": 1,
+      "message": "this should also go one level up (to controllers.py)",
+      "revId": "44c80fc9e33c809114ace97e86bada6bd1d891a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_97e133d3",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T06:51:35Z",
+      "side": 1,
+      "message": "None is the default value if \u0027idp_id\u0027 does not exist, so no need to put it explicitely as a default value.",
+      "revId": "44c80fc9e33c809114ace97e86bada6bd1d891a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
