@@ -21,6 +21,7 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -80,6 +81,42 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.post('/domains', body={'domain': {}},
                   expected_status=http_client.BAD_REQUEST)
 
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_create_domain_creates_is_domain_project(self):
+        """Call ``POST /domains`` and check an is_domain project is created."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project has is_domain flag as True
+        self.assertTrue(r.result['project']['is_domain'])
+
+        # And its parent_id and domain_id attributes are equal
+        self.assertEqual(r.result['project']['parent_id'],
+                         r.result['project']['domain_id'])
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_create_is_domain_project_creates_domain(self):
+        """Call ``POST /projects`` is_domain and check a domain is created."""
+
+        # Create a new is_domain project
+        project_ref = self.new_project_ref(domain_id=None, is_domain=True)
+        r = self.post('/projects', body={'project': project_ref})
+        self.assertValidProjectResponse(r)
+
+        # Retrieve its correspondent domain
+        r = self.get('/domains/%(domain_id)s' % {
+            'domain_id': r.result['project']['id']})
+        self.assertValidDomainResponse(r)
+        self.assertIsNotNone(r.result['domain'])
+
     def test_list_domains(self):
         """Call ``GET /domains``."""
         resource_url = '/domains'
@@ -101,6 +138,24 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain_id},
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_update_domain_updates_is_domain_project(self):
+        """Call ``PATCH /domains`` and check is_domain project is updated."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Disable it
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
 
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
@@ -272,6 +327,28 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertDictEqual(self.user, r)
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(self.credential, r)
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_delete_domain_deletes_is_domain_project(self):
+        """Call ``DELETE /domains`` and check is_domain project is deleted."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+
+        # Delete the domain
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+        self.delete('/domains/%s' % r.result['domain']['id'])
+
+        # The created project is deleted as well
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']}, expected_status=404)
 
     def test_delete_default_domain_fails(self):
         # Attempting to delete the default domain results in 403 Forbidden.
