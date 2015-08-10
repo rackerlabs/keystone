@@ -21,7 +21,6 @@ from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit import utils as test_utils
 
 
 _ADMIN_CONTEXT = {'is_admin': True, 'query_string': {}}
@@ -72,7 +71,6 @@ class TenantTestCase(unit.TestCase):
         # without asserting the order of the results
         self.assertEqual(sorted(orig_project_users), sorted(new_project_users))
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_list_projects_default_domain(self):
         """Test that list projects only returns those in the default domain."""
 
@@ -107,7 +105,9 @@ class TenantTestCase(unit.TestCase):
         return self.tenant_controller.v3_to_v2_project(project_ref)
 
     def test_get_is_domain_project_not_found(self):
-        """Test that get project does not return is_domain projects."""
+        """Test that get project does not return projects that act as
+        domains.
+        """
         project = self._create_is_domain_project()
 
         self.assertRaises(
@@ -125,7 +125,7 @@ class TenantTestCase(unit.TestCase):
         )
 
     def test_update_is_domain_project_not_found(self):
-        """Test that update is_domain project is not allowed in v2."""
+        """Test that update projects acting as domains is not allowed in v2."""
         project = self._create_is_domain_project()
 
         project['name'] = uuid.uuid4().hex
@@ -138,7 +138,7 @@ class TenantTestCase(unit.TestCase):
         )
 
     def test_delete_is_domain_project_not_found(self):
-        """Test that delete is_domain project is not allowed in v2."""
+        """Test that delete projects acting as domains is not allowed in v2."""
         project = self._create_is_domain_project()
 
         self.assertRaises(

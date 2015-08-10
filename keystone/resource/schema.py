@@ -16,9 +16,8 @@ from keystone.common.validation import parameter_types
 
 _project_properties = {
     'description': validation.nullable(parameter_types.description),
-    # NOTE(lbragstad): domain_id isn't nullable according to some backends.
-    # The identity-api should be updated to be consistent with the
-    # implementation.
+    # NOTE(htruta): domain_id must be passed as null in the controller
+    # layer if it is a project acting as a domain.
     'domain_id': validation.nullable(parameter_types.id_string),
     'enabled': parameter_types.boolean,
     'is_domain': parameter_types.boolean,
