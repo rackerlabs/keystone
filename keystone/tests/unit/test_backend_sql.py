@@ -443,7 +443,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         hints = driver_hints.Hints()
         hints.add_filter('domain_id', None)
         refs = self.resource_api.list_projects(hints)
-        self.assertThat(refs, matchers.HasLength(2))
+        self.assertThat(refs, matchers.HasLength(2 + self.domain_count))
         self.assertIn(project, refs)
         self.assertIn(project2, refs)
 
