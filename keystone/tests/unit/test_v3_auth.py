@@ -34,6 +34,7 @@ from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -1537,13 +1538,21 @@ class TestTokenRevokeApi(TestTokenRevokeById):
 
     def assertDomainInList(self, events_response, domain_id):
         events = events_response['events']
-        self.assertEqual(1, len(events))
-        self.assertEqual(domain_id, events[0]['domain_id'])
-        self.assertIsNotNone(events[0]['issued_before'])
-        self.assertIsNotNone(events_response['links'])
-        del (events_response['events'][0]['issued_before'])
+        # Two events are expected: one for the action on the domain itself and
+        # other for the action on its correspondent project that acts as a
+        # domain.
+        self.assertEqual(2, len(events))
+
+        ids_str = ('project_id', 'domain_id')
+        for i in range(2):
+            self.assertEqual(domain_id, events[i][ids_str[i]])
+            self.assertIsNotNone(events[i]['issued_before'])
+            self.assertIsNotNone(events_response['links'])
+            del (events_response['events'][i]['issued_before'])
+
         del (events_response['links'])
-        expected_response = {'events': [{'domain_id': domain_id}]}
+        expected_response = {'events': [{'project_id': domain_id},
+                                        {'domain_id': domain_id}]}
         self.assertEqual(expected_response, events_response)
 
     def assertValidRevokedTokenResponse(self, events_response, **kwargs):
@@ -1600,6 +1609,7 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.assertValidDeletedProjectResponse(events_response,
                                                self.projectA['id'])
 
+    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_disable_domain_shows_in_event_list(self):
         events = self.get('/OS-REVOKE/events').json_body['events']
         self.assertEqual([], events)
