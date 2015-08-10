@@ -57,7 +57,7 @@ class Resource(keystone_resource.ResourceDriverV9):
             except sql.NotFound:
                 raise exception.ProjectNotFound(project_id=tenant_name)
 
-            if self._is_hidden_project(project_ref):
+            if self._is_hidden_ref(project_ref):
                 raise exception.ProjectNotFound(project_id=tenant_name)
             return project_ref.to_dict()
 
@@ -101,12 +101,16 @@ class Resource(keystone_resource.ResourceDriverV9):
 
     def list_projects_in_domain(self, domain_id):
         with sql.transaction() as session:
-            self._get_domain(session, domain_id)
+            self._get_project(session, domain_id)
             query = session.query(Project)
-            project_refs = query.filter_by(domain_id=domain_id)
+            project_refs = query.filter(Project.domain_id == domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def _get_children(self, session, project_ids):
+    def list_projects_acting_as_domain(self, hints):
+        hints.add_filter('is_domain', True)
+        return self.list_projects(hints)
+
+    def _get_children(self, session, project_ids, domain_id=None):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
         project_refs = query.all()
@@ -239,7 +243,7 @@ class Resource(keystone_resource.ResourceDriverV9):
             except sql.NotFound:
                 raise exception.DomainNotFound(domain_id=domain_name)
 
-            if self._is_hidden_project(ref):
+            if self._is_hidden_ref(ref):
                 raise exception.DomainNotFound(domain_id=domain_name)
             return ref.to_dict()
 
@@ -293,7 +297,7 @@ class Project(sql.ModelBase, sql.DictBase):
                   'parent_id', 'is_domain']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'))
+    domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'))
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
