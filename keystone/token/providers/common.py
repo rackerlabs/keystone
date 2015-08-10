@@ -250,7 +250,7 @@ class V3TokenDataHelper(object):
             'id': project_ref['id'],
             'name': project_ref['name']}
         filtered_project['domain'] = self._get_filtered_domain(
-            project_ref['domain_id'])
+            project_ref['domain_id']) if project_ref['domain_id'] else None
         return filtered_project
 
     def _populate_scope(self, token_data, domain_id, project_id):
