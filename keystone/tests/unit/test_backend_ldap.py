@@ -36,6 +36,7 @@ from keystone.tests.unit import fakeldap
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -100,6 +101,17 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             return res[0][1][enabled_attr_name]
         else:
             return None
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_list_projects(self):
+        projects = self.resource_api.list_projects()
+        # Sum expected projects with is_domain = True projects
+        self.assertEqual(4 + self.domain_count, len(projects))
+        project_ids = []
+        for project in projects:
+            project_ids.append(project.get('id'))
+        self.assertIn(self.tenant_bar['id'], project_ids)
+        self.assertIn(self.tenant_baz['id'], project_ids)
 
     def test_build_tree(self):
         """Regression test for building the tree names
@@ -393,6 +405,11 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             new_user['id'])
         self.assertEqual(3, len(user_projects))
 
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_create_duplicate_is_domain_project_name_fails(self):
+        self.skipTest(
+            'N/A: LDAP does not support multiple domains')
+
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Domains are read-only against LDAP')
 
@@ -438,6 +455,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.skipTest('Blocked by bug: 1390125')
 
     def test_domain_delete_hierarchy(self):
+        self.skipTest('Domains are read-only against LDAP')
+
+    def test_delete_is_domain_project_deletes_subdomain(self):
+        self.skipTest('Domains are read-only against LDAP')
+
+    def test_delete_domain_with_project_api(self):
         self.skipTest('Domains are read-only against LDAP')
 
     def test_list_role_assignments_unfiltered(self):
@@ -1674,6 +1697,29 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.resource_api.update_project,
                           project['id'], project)
 
+    def _assert_delete_is_domain_project_not_allowed(self):
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_domain,
+                          CONF.identity.default_domain_id)
+
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_project,
+                          CONF.identity.default_domain_id)
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_delete_domain(self):
+        self._assert_delete_is_domain_project_not_allowed()
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_delete_domain_with_project_api(self):
+        self._assert_delete_is_domain_project_not_allowed()
+
+    def test_not_create_domain_under_project_hierarchy(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_create_project_under_domain_hierarchy(self):
+        self._assert_create_is_domain_project_not_allowed()
+
     def test_delete_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
@@ -1715,6 +1761,21 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self._assert_create_hierarchy_not_allowed()
 
     def test_list_project_parents(self):
+        projects = self._assert_create_hierarchy_not_allowed()
+        for project in projects:
+            parents_list = self.resource_api.list_project_parents(
+                project['id'])
+            self.assertEqual(0, len(parents_list))
+
+    @utils.wip("Waiting domain operations be replicated at project table")
+    def test_list_projects_acting_as_domain(self):
+        projects = self.resource_api.list_projects_acting_as_domain()
+        self.assertEqual(1, len(projects))
+        default_domain_project = self.resource_api.get_project(
+            CONF.identity.default_domain_id)
+        self.assertEqual(projects[0], default_domain_project)
+
+    def test_list_project_parents_do_not_bypass_domains(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
             parents_list = self.resource_api.list_project_parents(
