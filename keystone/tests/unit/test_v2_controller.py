@@ -22,7 +22,6 @@ from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit.utils import wip
 
 
 _ADMIN_CONTEXT = {'is_admin': True, 'query_string': {}}
@@ -74,7 +73,6 @@ class TenantTestCase(unit.TestCase):
         # without asserting the order of the results
         self.assertEqual(sorted(orig_project_users), sorted(new_project_users))
 
-    @wip('waiting for projects acting as domains implementation')
     def test_list_projects_default_domain(self):
         """Test that list projects only returns those in the default domain."""
         domain = unit.new_domain_ref()
