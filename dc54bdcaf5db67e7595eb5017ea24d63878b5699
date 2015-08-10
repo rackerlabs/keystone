@@ -16,6 +16,24 @@
       "revId": "dc54bdcaf5db67e7595eb5017ea24d63878b5699",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_39b91fcc",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-10T13:47:56Z",
+      "side": 0,
+      "message": "i don\u0027t think so as it\u0027s id that\u0027s being url safe encoded.\nSo if we want to keep name we should probably only pass this value.",
+      "parentUuid": "1a4dcd0f_f6cc26bd",
+      "revId": "dc54bdcaf5db67e7595eb5017ea24d63878b5699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
