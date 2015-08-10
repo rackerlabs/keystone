@@ -20,7 +20,6 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -63,7 +62,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.post('/domains', body={'domain': {}},
                   expected_status=http_client.BAD_REQUEST)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_create_domain_creates_is_domain_project(self):
         """Call ``POST /domains`` and check a project that acts as a domain
         is created.
@@ -85,7 +83,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertEqual(r.result['project']['parent_id'],
                          r.result['project']['domain_id'])
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_create_is_domain_project_creates_domain(self):
         """Call ``POST /projects`` is_domain and check a domain is created."""
         # Create a new project that acts as a domain
@@ -121,7 +118,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_update_domain_updates_is_domain_project(self):
         """Call ``PATCH /domains`` and check the project that acts as a domain
         is updated.
@@ -225,7 +221,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain['id']},
             expected_status=exception.ForbiddenAction.code)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain(self):
         """Call ``DELETE /domains/{domain_id}``.
 
@@ -311,7 +306,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain_deletes_is_domain_project(self):
         """Call ``DELETE /domains`` and check the project that acts as a domain
         is deleted.
@@ -434,7 +428,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                   headers={'x-subject-token': subject_token},
                   expected_status=http_client.NOT_FOUND)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain_hierarchy(self):
         """Call ``DELETE /domains/{domain_id}``."""
         domain = unit.new_domain_ref()
@@ -556,18 +549,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         ref = unit.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': ref},
                   expected_status=http_client.BAD_REQUEST)
-
-    def test_create_project_is_domain_not_allowed(self):
-        """Call ``POST /projects``.
-
-        Setting is_domain=True is not supported yet and should raise
-        NotImplemented.
-
-        """
-        ref = unit.new_project_ref(domain_id=self.domain_id, is_domain=True)
-        self.post('/projects',
-                  body={'project': ref},
-                  expected_status=http_client.NOT_IMPLEMENTED)
 
     def test_create_project_with_parent_id_none_and_domain_id_none(self):
         """Call ``POST /projects``."""
@@ -748,7 +729,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                  'project_id': uuid.uuid4().hex},
                  expected_status=http_client.NOT_FOUND)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_get_project_with_parents_as_ids(self):
         """Call ``GET /projects/{project_id}?parents_as_ids``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
