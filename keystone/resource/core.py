@@ -36,13 +36,24 @@ LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
 
 
-def calc_default_domain():
+def calc_default_domain_project():
     return {'description':
             (u'Owns users and tenants (i.e. projects)'
                 ' available on Identity API v2.'),
             'enabled': True,
             'id': CONF.identity.default_domain_id,
-            'name': u'Default'}
+            'name': u'Default',
+            'domain_id': None,
+            'is_domain': True,
+            'parent_id': None}
+
+
+def calc_default_domain():
+    default_project = calc_default_domain_project()
+    default_project.pop('domain_id')
+    default_project.pop('is_domain')
+    default_project.pop('parent_id')
+    return default_project
 
 
 @dependency.provider('resource_api')
@@ -85,13 +96,18 @@ class Manager(manager.Manager):
     def _assert_max_hierarchy_depth(self, project_id, parents_list=None):
         if parents_list is None:
             parents_list = self.list_project_parents(project_id)
-        max_depth = CONF.max_project_tree_depth
+        # NOTE(henry-nash): In upgrading to a scenario where domains are
+        # represented as projects acting as domains, we will effectively
+        # increase the depth of any existing project hierarchy by one. To avoid
+        # pushing any existing hierarchies over the limit, we add one to the
+        # maximum depth allowed, as specified in the configuration file.
+        max_depth = CONF.max_project_tree_depth + 1
         if self._get_hierarchy_depth(parents_list) > max_depth:
             raise exception.ForbiddenAction(
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
-    def _assert_is_domain_project_constraints(self, project_ref, parent_ref):
+    def _assert_is_domain_project_constraints(self, project_ref):
         """Enforces specific constraints of projects that act as domains
 
         Called when is_domain is true, this method ensures that:
@@ -110,12 +126,12 @@ class Manager(manager.Manager):
 
         self.assert_domain_not_federated(project_ref['id'], project_ref)
 
-        if parent_ref:
+        if project_ref['parent_id']:
             raise exception.ValidationError(
                 message=_('only root projects are allowed to act as '
                           'domains.'))
 
-    def _assert_regular_project_constraints(self, project_ref, parent_ref):
+    def _assert_regular_project_constraints(self, project_ref):
         """Enforces regular project hierarchy constraints
 
         Called when is_domain is false, and the project must contain a valid
@@ -129,33 +145,41 @@ class Manager(manager.Manager):
         """
         # Ensure domain_id is valid, and by inference will not be None.
         domain = self.get_domain(project_ref['domain_id'])
+        parent_ref = self.get_project(project_ref['parent_id'])
+        parent_is_domain = parent_ref.get('is_domain')
 
-        if parent_ref:
-            is_domain_parent = parent_ref.get('is_domain')
+        if parent_is_domain:
+            if parent_ref['id'] != domain['id']:
+                raise exception.ValidationError(
+                    message=_('Cannot create project, since its parent '
+                              '(%(domain_id)s) is acting as a domain, '
+                              'but project\'s specified parent_id '
+                              '(%(parent_id)s) does not match '
+                              'this domain_id.')
+                    % {'domain_id': domain['id'],
+                       'parent_id': parent_ref['id']})
+        else:
             parent_domain_id = parent_ref.get('domain_id')
-
-            if not is_domain_parent and parent_domain_id != domain['id']:
+            if parent_domain_id != domain['id']:
                 raise exception.ValidationError(
                     message=_('Cannot create project, since it specifies '
                               'its owner as domain %(domain_id)s, but '
                               'specifies a parent in a different domain '
                               '(%(parent_domain_id)s).')
                     % {'domain_id': domain['id'],
-                       'parent_domain_id': parent_ref.get('domain_id')})
+                       'parent_domain_id': parent_domain_id})
 
-    def _find_domain_id(self, project_ref):
-        parent_ref = self.get_project(project_ref['parent_id'])
-        return parent_ref['domain_id']
+    def _enforce_project_constraints(self, project_ref):
+        parent_id = project_ref.get('parent_id')
 
-    def _enforce_project_constraints(self, project_ref, parent_id):
-        parent_ref = self.get_project(parent_id) if parent_id else None
         if project_ref.get('is_domain'):
-            self._assert_is_domain_project_constraints(project_ref, parent_ref)
+            self._assert_is_domain_project_constraints(project_ref)
         else:
-            self._assert_regular_project_constraints(project_ref, parent_ref)
+            self._assert_regular_project_constraints(project_ref)
 
         # The whole hierarchy must be enabled
         if parent_id:
+            parent_ref = self.get_project(parent_id)
             parents_list = self.list_project_parents(parent_id)
             parents_list.append(parent_ref)
             for ref in parents_list:
@@ -187,7 +211,7 @@ class Manager(manager.Manager):
                      'within a domain with the same name : %s'
                      ) % project['name']
 
-    def create_project(self, project_id, project, initiator=None):
+    def _create_project(self, project_id, project, initiator=None):
         project = project.copy()
 
         if (CONF.resource.project_name_url_safe != 'off' and
@@ -198,22 +222,18 @@ class Manager(manager.Manager):
         project.setdefault('enabled', True)
         project['enabled'] = clean.project_enabled(project['enabled'])
         project.setdefault('description', '')
-        project.setdefault('domain_id', None)
-        project.setdefault('parent_id', None)
-        project.setdefault('is_domain', False)
 
-        # If this is a top level project acting as a domain, the project_id
+        # For regular projects, the controller will ensure we have a valid
+        # domain_id. For projects acting as a domain, the project_id
         # is, effectively, the domain_id - and for such projects we don't
         # bother to store a copy of it in the domain_id attribute.
-        # If this is a non-domain top level project,then the domain_id must
-        # have been specified by the caller (this is checked as part of the
-        # project constraints)
-        domain_id = project.get('domain_id')
-        parent_id = project.get('parent_id')
-        if not domain_id and parent_id:
-            project['domain_id'] = self._find_domain_id(project)
+        project.setdefault('domain_id', None)
+        project.setdefault('parent_id', None)
+        if not project['parent_id']:
+            project['parent_id'] = project['domain_id']
+        project.setdefault('is_domain', False)
 
-        self._enforce_project_constraints(project, parent_id)
+        self._enforce_project_constraints(project)
 
         # We leave enforcing name uniqueness to the underlying driver (instead
         # of doing it in code in the project_constraints above), so as to allow
@@ -226,12 +246,20 @@ class Manager(manager.Manager):
                 type='project',
                 details=self._generate_project_name_conflict_msg(project))
 
-        notifications.Audit.created(self._PROJECT, project_id, initiator)
+        if project.get('is_domain'):
+            notifications.Audit.created(self._DOMAIN, project_id, initiator)
+        else:
+            notifications.Audit.created(self._PROJECT, project_id, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
                                          ret['domain_id'])
         return ret
+
+    def create_project(self, project_id, project, initiator=None):
+        project = self._create_project(project_id, project, initiator)
+
+        return project
 
     def assert_domain_enabled(self, domain_id, domain=None):
         """Assert the Domain is enabled.
@@ -261,8 +289,7 @@ class Manager(manager.Manager):
             raise AssertionError(_('Domain cannot be named %s')
                                  % domain['name'])
         if (domain_id.lower() == federated_domain):
-            raise AssertionError(_('Domain cannot have ID %s')
-                                 % domain_id)
+            raise AssertionError(_('Domain cannot have ID %s') % domain_id)
 
     def assert_project_enabled(self, project_id, project=None):
         """Assert the project is enabled and its associated domain is enabled.
@@ -271,7 +298,9 @@ class Manager(manager.Manager):
         """
         if project is None:
             project = self.get_project(project_id)
-        self.assert_domain_enabled(domain_id=project['domain_id'])
+        # The domain_id of projects acting as domains is None
+        if project['domain_id']:
+            self.assert_domain_enabled(domain_id=project['domain_id'])
         if not project.get('enabled', True):
             raise AssertionError(_('Project is disabled: %s') % project_id)
 
@@ -302,8 +331,8 @@ class Manager(manager.Manager):
         subtree_enabled = [ref.get('enabled', True) for ref in subtree_list]
         return (not any(subtree_enabled))
 
-    def update_project(self, project_id, project, initiator=None,
-                       cascade=False):
+    def _update_project(self, project_id, project, initiator=None,
+                        cascade=False):
         # Use the driver directly to prevent using old cached value.
         original_project = self.driver.get_project(project_id)
         project = project.copy()
@@ -335,19 +364,17 @@ class Manager(manager.Manager):
         # the middle of the hierarchy creates an inconsistent project
         # hierarchy.
         if update_domain:
-            # NOTE(henrynash): As soon as projects start to act as domains,
-            # this check will no longer be valid, since a regular top level
-            # project will have a parent, the project that acts as a domain.
-            # Hence, this check must be changed.
-            is_root_project = original_project['parent_id'] is None
-            if not is_root_project:
-                raise exception.ValidationError(
-                    message=_('Update of domain_id is only allowed for '
-                              'root projects.'))
             if original_project['is_domain']:
                 raise exception.ValidationError(
                     message=_('Update of domain_id of projects acting as '
                               'domains is not allowed.'))
+            parent_project = (
+                self.driver.get_project(original_project['parent_id']))
+            is_root_project = parent_project['is_domain']
+            if not is_root_project:
+                raise exception.ValidationError(
+                    message=_('Update of domain_id is only allowed for '
+                              'root projects.'))
             subtree_list = self.list_projects_in_subtree(project_id)
             if subtree_list:
                 raise exception.ValidationError(
@@ -394,6 +421,13 @@ class Manager(manager.Manager):
                 details=self._generate_project_name_conflict_msg(project))
 
         notifications.Audit.updated(self._PROJECT, project_id, initiator)
+        if original_project['is_domain']:
+            notifications.Audit.updated(self._DOMAIN, project_id, initiator)
+            # If the domain is being disabled, issue the disable notification
+            # as well
+            if original_project_enabled and not project_enabled:
+                self._disable_domain(project_id)
+
         self.get_project.invalidate(self, project_id)
         self.get_project_by_name.invalidate(self, original_project['name'],
                                             original_project['domain_id'])
@@ -431,6 +465,24 @@ class Manager(manager.Manager):
 
             self.driver.update_project(child['id'], child)
 
+    def update_project(self, project_id, project, initiator=None,
+                       cascade=False):
+        project_ref = self.get_project(project_id)
+
+        # Make the domain checks
+        if project_ref.get('is_domain'):
+            domain = self._get_domain_from_project(project_ref)
+            self.assert_domain_not_federated(project_id, domain)
+            if 'enabled' in domain:
+                domain['enabled'] = clean.domain_enabled(domain['enabled'])
+
+        ret = self._update_project(project_id, project, initiator, cascade)
+        if ret['is_domain']:
+            self.get_domain.invalidate(self, project_id)
+            self.get_domain_by_name.invalidate(self, ret['name'])
+
+        return ret
+
     def _pre_delete_cleanup_project(self, project_id, project, initiator=None):
         project_user_ids = (
             self.assignment_api.list_user_ids_for_project(project_id))
@@ -452,6 +504,13 @@ class Manager(manager.Manager):
         assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def delete_project(self, project_id, initiator=None, cascade=False):
+        project = self.driver.get_project(project_id)
+        if project.get('is_domain'):
+            self.delete_domain(project_id, initiator)
+        else:
+            self._delete_project(project_id, initiator, cascade)
+
+    def _delete_project(self, project_id, initiator=None, cascade=False):
         # Use the driver directly to prevent using old cached value.
         project = self.driver.get_project(project_id)
         if project['is_domain'] and project['enabled']:
@@ -628,37 +687,100 @@ class Manager(manager.Manager):
             project_id, _projects_indexed_by_parent(subtree_list))
         return subtree_as_ids
 
+    def list_domains_from_ids(self, domain_ids):
+        """List domains for the provided list of ids.
+
+        :param domain_ids: list of ids
+
+        :returns: a list of domain_refs.
+
+        This method is used internally by the assignment manager to bulk read
+        a set of domains given their ids.
+
+        """
+        # Retrieve the projects acting as domains get their correspondent
+        # domains
+        projects = self.list_projects_from_ids(domain_ids)
+        domains = [self._get_domain_from_project(project)
+                   for project in projects]
+
+        return domains
+
     @MEMOIZE
     def get_domain(self, domain_id):
-        return self.driver.get_domain(domain_id)
+        try:
+            # Retrieve the corresponding project that acts as a domain
+            project = self.driver.get_project(domain_id)
+        except exception.ProjectNotFound:
+            raise exception.DomainNotFound(domain_id=domain_id)
+
+        # Return its correspondent domain
+        return self._get_domain_from_project(project)
 
     @MEMOIZE
     def get_domain_by_name(self, domain_name):
-        return self.driver.get_domain_by_name(domain_name)
+        try:
+            # Retrieve the corresponding project that acts as a domain
+            project = self.driver.get_project_by_name(domain_name,
+                                                      domain_id=None)
+        except exception.ProjectNotFound:
+            raise exception.DomainNotFound(domain_id=domain_name)
+
+        # Return its correspondent domain
+        return self._get_domain_from_project(project)
+
+    def _get_project_from_domain(self, domain_ref):
+        """Creates a project ref from the provided domain ref."""
+        project_ref = domain_ref.copy()
+        project_ref['is_domain'] = True
+        project_ref['domain_id'] = None
+        project_ref['parent_id'] = None
+
+        return project_ref
+
+    def _get_domain_from_project(self, project_ref):
+        """Creates a domain ref from a project ref.
+
+        Based on the provided project ref, creates a domain ref, so that the
+        result can be returned in response to a domain APi call.
+        """
+        if not project_ref.get('is_domain'):
+            LOG.error(_LE('Asked to convert a non-domain project into a '
+                          'domain - Domain: %(domain_id)s, Project ID: '
+                          '%(id)s, Project Name: %(project_name)s'),
+                      {'domain_id': project_ref['domain_id'],
+                       'id': project_ref['id'],
+                       'project_name': project_ref['name']})
+            raise exception.UnexpectedError(
+                _('An unexpected error occurred when retrieving domain '
+                  'information'))
+
+        domain_ref = project_ref.copy()
+        # As well as the project specific attributes that we need to remove,
+        # there is an old compatibility issue in that update project (as well
+        # as extracting an extra attributes), also includes a copy of the
+        # actual extra dict as well - something that update domain does not do.
+        for k in ['parent_id', 'domain_id', 'is_domain', 'extra']:
+            domain_ref.pop(k, None)
+
+        return domain_ref
 
     def create_domain(self, domain_id, domain, initiator=None):
-        if (not self.identity_api.multiple_domains_supported and
-                domain_id != CONF.identity.default_domain_id):
-            raise exception.Forbidden(_('Multiple domains are not supported'))
         if (CONF.resource.domain_name_url_safe != 'off' and
                 utils.is_not_url_safe(domain['name'])):
             self._raise_reserved_character_exception('Domain', domain['name'])
+        project_from_domain = self._get_project_from_domain(domain)
+        is_domain_project = self._create_project(
+            domain_id, project_from_domain, initiator)
 
-        self.assert_domain_not_federated(domain_id, domain)
-        domain.setdefault('enabled', True)
-        domain['enabled'] = clean.domain_enabled(domain['enabled'])
-        ret = self.driver.create_domain(domain_id, domain)
-
-        notifications.Audit.created(self._DOMAIN, domain_id, initiator)
-
-        if MEMOIZE.should_cache(ret):
-            self.get_domain.set(ret, self, domain_id)
-            self.get_domain_by_name.set(ret, self, ret['name'])
-        return ret
+        return self._get_domain_from_project(is_domain_project)
 
     @manager.response_truncated
     def list_domains(self, hints=None):
-        return self.driver.list_domains(hints or driver_hints.Hints())
+        projects = self.list_projects_acting_as_domain(hints)
+        domains = [self._get_domain_from_project(project)
+                   for project in projects]
+        return domains
 
     @notifications.disabled(_DOMAIN, public=False)
     def _disable_domain(self, domain_id):
@@ -675,30 +797,36 @@ class Manager(manager.Manager):
 
     def update_domain(self, domain_id, domain, initiator=None):
         self.assert_domain_not_federated(domain_id, domain)
-        # Use the driver directly to prevent using old cached value.
-        original_domain = self.driver.get_domain(domain_id)
+        # Use the driver directly to get the project that acts as a domain and
+        # prevent using old cached value.
+        original_domain = self.driver.get_project(domain_id)
         if (CONF.resource.domain_name_url_safe != 'off' and
             'name' in domain and domain['name'] != original_domain['name'] and
                 utils.is_not_url_safe(domain['name'])):
             self._raise_reserved_character_exception('Domain', domain['name'])
         if 'enabled' in domain:
             domain['enabled'] = clean.domain_enabled(domain['enabled'])
-        ret = self.driver.update_domain(domain_id, domain)
-        notifications.Audit.updated(self._DOMAIN, domain_id, initiator)
-        # disable owned users & projects when the API user specifically set
-        #     enabled=False
-        if (original_domain.get('enabled', True) and
-                not domain.get('enabled', True)):
-            notifications.Audit.disabled(self._DOMAIN, domain_id, initiator,
-                                         public=False)
 
+        # Update the project that acts as a domain
+        project = self._get_project_from_domain(domain)
+        try:
+            project = self._update_project(domain_id, project, initiator)
+        except exception.ProjectNotFound:
+            raise exception.DomainNotFound(domain_id=domain_id)
+
+        domain_from_project = self._get_domain_from_project(project)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, original_domain['name'])
-        return ret
+
+        return domain_from_project
 
     def delete_domain(self, domain_id, initiator=None):
-        # Use the driver directly to prevent using old cached value.
-        domain = self.driver.get_domain(domain_id)
+        # Use the driver directly to get the project that acts as a domain and
+        # prevent using old cached value.
+        try:
+            domain = self.driver.get_project(domain_id)
+        except exception.ProjectNotFound:
+            raise exception.DomainNotFound(domain_id=domain_id)
 
         # To help avoid inadvertent deletes, we insist that the domain
         # has been previously disabled.  This also prevents a user deleting
@@ -710,6 +838,7 @@ class Manager(manager.Manager):
                          'please disable it first.'))
 
         self._delete_domain_contents(domain_id)
+        self._delete_project(domain_id, initiator)
         # Delete any database stored domain config
         self.domain_config_api.delete_config_options(domain_id)
         self.domain_config_api.delete_config_options(domain_id, sensitive=True)
@@ -721,7 +850,6 @@ class Manager(manager.Manager):
         # other domains - so we should delete these here by making a call
         # to the backend to delete all assignments for this domain.
         # (see Bug #1277847)
-        self.driver.delete_domain(domain_id)
         notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
@@ -754,7 +882,7 @@ class Manager(manager.Manager):
                 _delete_projects(proj, projects, examined)
 
             try:
-                self.delete_project(project['id'])
+                self.delete_project(project['id'], initiator=None)
             except exception.ProjectNotFound:
                 LOG.debug(('Project %(projectid)s not found when '
                            'deleting domain contents for %(domainid)s, '
@@ -765,7 +893,7 @@ class Manager(manager.Manager):
         proj_refs = self.list_projects_in_domain(domain_id)
 
         # Deleting projects recursively
-        roots = [x for x in proj_refs if x.get('parent_id') is None]
+        roots = [x for x in proj_refs if x.get('parent_id') == domain_id]
         examined = set()
         for project in roots:
             _delete_projects(project, proj_refs, examined)
@@ -779,6 +907,10 @@ class Manager(manager.Manager):
     # driver hints for it.
     def list_projects_in_domain(self, domain_id):
         return self.driver.list_projects_in_domain(domain_id)
+
+    def list_projects_acting_as_domain(self, hints=None):
+        return self.driver.list_projects_acting_as_domain(
+            hints or driver_hints.Hints())
 
     @MEMOIZE
     def get_project(self, project_id):
@@ -970,7 +1102,7 @@ class ResourceDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def get_project(self, project_id):
+    def get_project(self, project_id, is_domain=False):
         """Get a project by ID.
 
         :returns: project_ref
@@ -1129,6 +1261,18 @@ class ResourceDriverV9(ResourceDriverBase):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
+    @abc.abstractmethod
+    def list_projects_acting_as_domain(self, hints):
+        """List all projacts acting as domains.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of project_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
 
 class V9ResourceWrapperForV8Driver(ResourceDriverV9):
     """Wrapper class to supported a V8 legacy driver.
@@ -1229,8 +1373,12 @@ class V9ResourceWrapperForV8Driver(ResourceDriverV9):
 
     def list_projects_in_domain(self, domain_id):
         # Projects within a domain never have a null domain_id, so no need to
-        # post-process the output
-        return self.driver.list_projects_in_domain(domain_id)
+        # post-process the output. However, the V8 used to check the domain
+        # table to ensure domain_id was valid. To avoid that, we provide a
+        # (less efficient) version here that avoids calling that method.
+        self.driver.get_project(domain_id)
+        refs = self.driver.list_projects(driver_hints.Hints())
+        return [p for p in refs if p['domain_id'] == domain_id]
 
     def get_project(self, project_id):
         return self._decode_domain_id(
@@ -1256,6 +1404,13 @@ class V9ResourceWrapperForV8Driver(ResourceDriverV9):
 
     def is_leaf_project(self, project_id):
         return self.driver.is_leaf_project(project_id)
+
+    def list_projects_acting_as_domain(self, hints):
+        # We can't assume a driver implements hints, so we need to get all the
+        # projects and filter out those that are domains manually.
+        refs = self.driver.list_projects(hints)
+        return [self._decode_domain_id(p)
+                for p in refs if p['domain_id'] == NULL_DOMAIN_ID]
 
 
 Driver = manager.create_legacy_driver(ResourceDriverV8)
