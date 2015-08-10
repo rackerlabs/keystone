@@ -34,7 +34,6 @@ from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -1611,7 +1610,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.assertValidDeletedProjectResponse(events_response,
                                                self.projectA['id'])
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_disable_domain_shows_in_event_list(self):
         events = self.get('/OS-REVOKE/events').json_body['events']
         self.assertEqual([], events)
