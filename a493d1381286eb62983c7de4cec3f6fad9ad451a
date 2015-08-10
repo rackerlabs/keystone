@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_a4942de8",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 16625
+      },
+      "writtenOn": "2015-08-10T12:48:21Z",
+      "side": 1,
+      "message": "I Tried with a random string and the credential isn\u0027t created, anyone knows if there\u0027s a list of types or something that determine the possible types?",
+      "parentUuid": "1a4dcd0f_e90c7c3d",
+      "revId": "a493d1381286eb62983c7de4cec3f6fad9ad451a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_a48543ae",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 8
