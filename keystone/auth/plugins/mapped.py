@@ -76,6 +76,7 @@ def handle_scoped_token(context, auth_payload, auth_context, token_ref,
     identity_provider = token_ref.federation_idp_id
     protocol = token_ref.federation_protocol_id
     user_id = token_ref.user_id
+    user_name = token_ref.user_name
     group_ids = token_ref.federation_group_ids
     send_notification = functools.partial(
         notifications.send_saml_audit_notification, 'authenticate',
@@ -99,6 +100,7 @@ def handle_scoped_token(context, auth_payload, auth_context, token_ref,
         send_notification(taxonomy.OUTCOME_SUCCESS)
 
     auth_context['user_id'] = user_id
+    auth_context['user_name'] = user_name
     auth_context['group_ids'] = group_ids
     auth_context[federation_constants.IDENTITY_PROVIDER] = identity_provider
     auth_context[federation_constants.PROTOCOL] = protocol
@@ -113,6 +115,7 @@ def handle_unscoped_token(context, auth_payload, auth_context,
     def build_ephemeral_user_context(auth_context, user, mapped_properties,
                                      identity_provider, protocol):
         auth_context['user_id'] = user['id']
+        auth_context['user_name'] = user['name']
         auth_context['group_ids'] = mapped_properties['group_ids']
         auth_context[federation_constants.IDENTITY_PROVIDER] = (
             identity_provider)
