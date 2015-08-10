@@ -883,6 +883,71 @@ class SqlUpgradeTests(SqlMigrateBase):
             'project',
             new_project)
 
+    def test_drop_domain_id_FK_project_table(self):
+        self.upgrade(89)
+        self.assertIs(True, self.does_fk_exist('project', 'domain_id'))
+        self.upgrade(90)
+        self.assertIs(False, self.does_fk_exist('project', 'domain_id'))
+
+    def _populate_domain_and_project_tables(self, session):
+        domain1 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        domain2 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        acme = unit.new_project_ref(
+            domain_id=domain1['id'],
+            parent_id=None
+        )
+        acme_son = unit.new_project_ref(
+            domain_id=domain1['id'],
+            parent_id=acme['id']
+        )
+        beta = unit.new_project_ref(
+            domain_id=domain2['id'],
+            parent_id=None
+        )
+        beta_son = unit.new_project_ref(
+            domain_id=domain2['id'],
+            parent_id=beta['id']
+        )
+        self.insert_dict(session, 'domain', domain1)
+        self.insert_dict(session, 'domain', domain2)
+        self.insert_dict(session, 'project', acme)
+        self.insert_dict(session, 'project', beta)
+        self.insert_dict(session, 'project', acme_son)
+        self.insert_dict(session, 'project', beta_son)
+
+    def test_domain_as_project_upgrade(self):
+        NULL_DOMAIN_ID = 'null'
+        self.upgrade(90)
+
+        session = self.Session()
+
+        self._populate_domain_and_project_tables(session)
+
+        self.upgrade(91)
+        domain_table = sqlalchemy.Table('domain', self.metadata, autoload=True)
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+
+        projects = session.query(proj_table)
+        domains = session.query(domain_table)
+
+        for project in projects:
+            if project.is_domain:
+                self.assertEqual(NULL_DOMAIN_ID, project.domain_id)
+                self.assertIsNone(project.parent_id)
+            else:
+                self.assertIsNotNone(project.domain_id)
+                self.assertIsNotNone(project.parent_id)
+
+        # There are 3 domains, counting the already existing default domain
+        self.assertEqual(3, domains.count())
+
+        # Therefore, 7 projects (4 original projects, 3 from the domains)
+        self.assertEqual(7, projects.count())
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

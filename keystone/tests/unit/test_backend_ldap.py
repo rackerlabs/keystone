@@ -126,6 +126,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
         self.config_fixture.config(group='os_inherit', enabled=False)
+        self.domain_count = 1
 
     def _get_domain_fixture(self):
         """Domains in LDAP are read-only, so just return the static one."""
@@ -904,15 +905,23 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_role_assignment_by_domain(self):
         """Multiple domain assignments are not supported."""
         self.assertRaises(
-            (exception.Forbidden, exception.DomainNotFound),
+            (exception.Forbidden, exception.DomainNotFound,
+             exception.ValidationError),
             super(BaseLDAPIdentity, self).test_list_role_assignment_by_domain)
 
     def test_list_role_assignment_by_user_with_domain_group_roles(self):
         """Multiple domain assignments are not supported."""
         self.assertRaises(
-            (exception.Forbidden, exception.DomainNotFound),
+            (exception.Forbidden, exception.DomainNotFound,
+             exception.ValidationError),
             super(BaseLDAPIdentity, self).
             test_list_role_assignment_by_user_with_domain_group_roles)
+
+    def test_create_project_with_domain_id_and_without_parent_id(self):
+        """Multiple domains are not supported."""
+        self.assertRaises(
+            exception.ValidationError,
+            super(BaseLDAPIdentity, self).test_create_project_with_domain_id_and_without_parent_id)
 
 
 class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
@@ -935,7 +944,8 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
 
     def test_configurable_allowed_project_actions(self):
         domain = self._get_domain_fixture()
-        project = unit.new_project_ref(domain_id=domain['id'])
+        project = unit.new_project_ref(parent_id=domain['id'],
+                                       domain_id=domain['id'])
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertEqual(project['id'], project_ref['id'])
@@ -1396,6 +1406,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         #              updating of a project name so this method override
         #              provides a different update test
         project = unit.new_project_ref(
+            parent_id=CONF.identity.default_domain_id,
             domain_id=CONF.identity.default_domain_id)
 
         self.resource_api.create_project(project['id'], project)
@@ -1419,6 +1430,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         # updating project names.  This method override provides a different
         # update test.
         project = unit.new_project_ref(
+            parent_id=CONF.identity.default_domain_id,
             domain_id=CONF.identity.default_domain_id)
         project_id = project['id']
         # Create a project
@@ -1468,7 +1480,8 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
 
     def test_update_is_domain_field(self):
         domain = self._get_domain_fixture()
-        project = unit.new_project_ref(domain_id=domain['id'])
+        project = unit.new_project_ref(parent_id=domain['id'],
+                                       domain_id=domain['id'])
         self.resource_api.create_project(project['id'], project)
 
         # Try to update the is_domain field to True
@@ -1476,6 +1489,15 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.assertRaises(exception.ValidationError,
                           self.resource_api.update_project,
                           project['id'], project)
+
+    def _assert_delete_is_domain_project_not_allowed(self):
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_domain,
+                          CONF.identity.default_domain_id)
+
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_project,
+                          CONF.identity.default_domain_id)
 
     def test_delete_is_domain_project(self):
         self.skipTest('Resource LDAP has been removed')
@@ -1827,6 +1849,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         #              enabled key in the project dictionary so this
         #              method override handles this side-effect
         project = unit.new_project_ref(
+            parent_id=CONF.identity.default_domain_id,
             domain_id=CONF.identity.default_domain_id)
 
         self.resource_api.create_project(project['id'], project)
@@ -2018,7 +2041,7 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, unit.SQLDriverOverrides,
 
     def test_create_domain(self):
         domain = unit.new_domain_ref()
-        self.assertRaises(exception.Forbidden,
+        self.assertRaises(exception.ValidationError,
                           self.resource_api.create_domain,
                           domain['id'],
                           domain)
@@ -2245,6 +2268,13 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
 
         self.domain_count = 5
         self.domain_specific_count = 3
+        # The number of top level projects already contains the default
+        # project acting as a domain, plus any projects in default fixtures.
+        # So we add to this the number of additional domains on top of the
+        # default domain.
+        self.default_top_level_project_count = (
+            self.default_top_level_project_count + self.domain_count - 1)
+
         self.setup_initial_domains()
         self._setup_initial_users()
 
@@ -2459,7 +2489,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
         domain = unit.new_domain_ref()
         project = unit.new_project_ref(domain_id=domain['id'])
         self.resource_api.create_domain(domain['id'], domain)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictEqual(project, project_ref)
 
@@ -2506,6 +2536,12 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
         # from BaseLDAPIdentity
         super(BaseLDAPIdentity, self).\
             test_list_role_assignment_by_user_with_domain_group_roles
+
+    def test_create_project_with_domain_id_and_without_parent_id(self):
+        # With multi LDAP this method should work, so override the override
+        # from BaseLDAPIdentity
+        super(BaseLDAPIdentity, self).\
+            test_create_project_with_domain_id_and_without_parent_id
 
 
 class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
@@ -2702,7 +2738,9 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         # should still be able to set another domain to SQL, since we should
         # self heal this issue.
 
-        self.resource_api.driver.delete_domain(domain['id'])
+        # NOTE(htruta): Domain driver operations are replicated to project
+        # ones.
+        self.resource_api.driver.delete_project(domain['id'])
         # Invalidate cache (so we will see the domain has gone)
         self.resource_api.get_domain.invalidate(
             self.resource_api, domain['id'])
@@ -2732,6 +2770,12 @@ class DomainSpecificLDAPandSQLIdentity(
         sqldb = self.useFixture(database.Database())
         super(DomainSpecificLDAPandSQLIdentity, self).setUp()
         self.initial_setup(sqldb)
+        # The number of top level projects already contains the default
+        # project acting as a domain, plus any projects in default fixtures.
+        # So we add to this the number of additional domains on top of the
+        # default domain.
+        self.default_top_level_project_count = (
+            self.default_top_level_project_count + self.domain_count - 1)
 
     def initial_setup(self, sqldb):
         # We aren't setting up any initial data ahead of switching to
@@ -2788,6 +2832,20 @@ class DomainSpecificLDAPandSQLIdentity(
     def test_domain_crud(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
+
+    def test_not_delete_domain_with_enabled_subdomains(self):
+        self.skipTest(
+            'N/A: Not relevant for multi ldap testing')
+
+    # NOTE(samueldmq): Tests in this class have LDAP as the default identity
+    # driver mapping the default domain. Thus, newly created domains cannot be
+    # mapped in a identity driver and then fail on any identity action. This
+    # test fails because, when deleting a domain, the list of users for that
+    # domain needs to be retrieved, in order to execute token revocations.
+    @wip('Waiting on bug #1425895')
+    def test_delete_domain(self):
+        super(DomainSpecificLDAPandSQLIdentity,
+              self).test_delete_domain()
 
     def test_list_users(self):
         # Override the standard list users, since we have added an extra user
@@ -2878,6 +2936,18 @@ class DomainSpecificLDAPandSQLIdentity(
         # Domain roles are supported by the SQL Assignment backend
         base = super(BaseLDAPIdentity, self)
         base.test_list_role_assignments_filtered_by_role()
+
+    def test_delete_domain_with_project_api(self):
+        """Multiple domains are not supported in this test class."""
+        self.assertRaises(
+            exception.DomainNotFound,
+            super(BaseLDAPIdentity, self).test_delete_domain_with_project_api)
+
+    def test_create_project_with_domain_id_and_without_parent_id(self):
+        # With restricted multi LDAP, tests that don't user identoty, but do
+        # required aditional domains will work
+        super(BaseLDAPIdentity, self).\
+            test_create_project_with_domain_id_and_without_parent_id
 
 
 class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
