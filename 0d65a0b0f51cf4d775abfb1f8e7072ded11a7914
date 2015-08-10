@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_7ca55545",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_bb124708",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_fbbd2fd8",
         "filename": "doc/source/services.rst",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-07T17:37:17Z",
       "side": 1,
       "message": "We could elaborate saying \"they used to be called tenants in v2.0, but the naming was changed when the v3 api was introduced.\" or something to that effect.",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_dc6ca90a",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fbbd2fd8",
       "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_bc075d1c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fb8bef1c",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_db8dd32b",
         "filename": "doc/source/services.rst",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-07T17:37:17Z",
       "side": 1,
       "message": "Do we want to add that user IDs are assumed to be unique across domains?",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4750c60a",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_db8dd32b",
       "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_87b48e35",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_9be50bde",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1bda5b18",
         "filename": "doc/source/services.rst",
         "patchSetId": 5
@@ -132,6 +222,24 @@
       "writtenOn": "2015-08-07T17:37:17Z",
       "side": 1,
       "message": "Maybe link to the OSC docs here? It would be useful for someone reading this if they have no clue what OSC is.",
+      "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e7aa3285",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fb152f9b",
       "revId": "0d65a0b0f51cf4d775abfb1f8e7072ded11a7914",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
