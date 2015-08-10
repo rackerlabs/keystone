@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3aaa7f71",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-10T09:24:45Z",
+      "side": 1,
+      "message": "Although not defined in the spec, we tend to use the convention of having a blank line before the trailing \"\"\"",
+      "revId": "472fa03a373ba004bb85ac2eb6b3b58c2237e2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
