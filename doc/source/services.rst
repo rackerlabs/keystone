@@ -3,7 +3,7 @@ Keystone for other services
 ===========================
 
 This document provides a summary of some things that other services
-need to know about how keystone works. Specifically, we were requested
+need to know about how Keystone works. Specifically, we were requested
 to describe what other services need to know about the v3 API. The v3
 API was introduced in the Grizzly release, and it's use until recently
 has been hidden from other services since the auth_token middleware
@@ -16,21 +16,23 @@ Glossary
 ========
 
 Service
-    OpenStack servers like keystone, nova, glance, etc.
+    OpenStack servers like Keystone, Nova, Glance, etc.
 
 Project
-    These are projects in keystone. They used to be called "tenant"s
-    and that term is still used all over the place.
+    These are projects in Keystone. Prior to the introduction of the v3 API,
+    projects were referred to as tenants and the term is still used all over
+    the place.
 
 
 Token differences
 =================
 
-Keystone runs both v2 and v3, v2 requests go to /v2.0 and v3 requests
-go to /v3. You don't need to "enable" the v3 API in keystone, it is
-available by default if not disabled intentionally. If you get a token
-using the v2 API you can use it to do v3 operations (like list users
-and stuff). The reverse also works, get a v3 token and use it on v2
+Keystone runs both v2 and v3, v2 requests go to /v2.0 and v3 requests go to
+/v3. You don't need to "enable" the v3 API in Keystone, it is available via a
+separate pipeline from v2.0. The v3 API is also available by default if not
+disabled intentionally. If you get a token using the v2 API you can use it to
+do v3 operations (like list users and stuff). The reverse also works, get a v3
+token and use it on v2
 works fine.
 
 You can get a v2 token using POST /v2.0/tokens. You can get a v3 token
@@ -42,10 +44,11 @@ domain, project domain).
 Domains
 =======
 
-A major change to v3 is domains. Every project, user, and group is in a
-domain. This means they have a domain_id. You can have two users with
-the same name but they must be in different domains, so user names are
-not unique. However, roles are not in domains.
+A major change to v3 is domains. Every project, user, and group is in a domain.
+This means they have a domain_id. You can have two users with the same name but
+they must be in different domains, so user names are not unique. Unique
+identifier assigned to users from Keystone are expected to be unique across the
+deployment. However, roles are not in domains.
 
 One of the great things about domains is that you can have one domain
 backed by SQL (for service users) and another backed by LDAP (the cloud
@@ -64,7 +67,7 @@ Domain-scoped tokens
 --------------------
 
 Domain-scoped tokens are scoped to a domain rather than a project.
-These are useful for operating against keystone but are useless in
+These are useful for operating against Keystone but are useless in
 other services, so other services don't need to concern themselves with
 domain-scoped tokens.
 
@@ -72,14 +75,13 @@ domain-scoped tokens.
 Auth Token middleware
 =====================
 
-The auth_token middleware handles token validation for the different
-services. Conceptually, what happens is that auth_token pulls the token
-out of the X-Auth-Token header, sends the token to keystone to validate
-the token and get info about the token (the user, project, and roles),
-and sets a bunch of environment variables with the user, project, and
-roles. The services typically take the environment variables, put them
-in the service's "context", and use the context for policy enforcement
-via oslo.policy.
+The auth_token middleware handles token validation for the different services.
+Conceptually, what happens is that auth_token pulls the token out of the
+X-Auth-Token header, sends the token to Keystone to validate the token and get
+information about the token (the user, project, and roles), and sets a bunch of
+environment variables with the user, project, and roles. The services typically
+take the environment variables, put them in the service's "context", and use
+the context for policy enforcement via oslo.policy.
 
 Service Tokens
 --------------
@@ -129,11 +131,12 @@ Picking the version
 Use version discovery to figure out what version the identity server
 supports rather than configuring the version.
 
-Use openstack CLI not keystone CLI
+Use OpenStack CLI not Keystone CLI
 ----------------------------------
 
-keystone CLI is deprecated and will be removed soon. The openstack CLI
-has all the keystone commands and even supports V3.
+Keystone CLI is deprecated and will be removed soon. The `OpenStack CLI
+<http://docs.openstack.org/developer/python-openstackclient/>`_
+has all the Keystone commands and even supports V3.
 
 
 Hierarchical Multitenancy
