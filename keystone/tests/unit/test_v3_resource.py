@@ -94,7 +94,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/domains',
             body={'domain': ref})
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_create_domain_creates_is_domain_project(self):
         """Call ``POST /domains`` and check a project that acts as a domain
         is created.
@@ -116,7 +115,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertEqual(r.result['project']['parent_id'],
                          r.result['project']['domain_id'])
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_create_is_domain_project_creates_domain(self):
         """Call ``POST /projects`` is_domain and check a domain is created."""
         # Create a new project that acts as a domain
@@ -186,7 +184,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain_id},
             body={'domain': ref})
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_update_domain_updates_is_domain_project(self):
         """Call ``PATCH /domains`` and check the project that acts as a domain
         is updated.
@@ -373,7 +370,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain_deletes_is_domain_project(self):
         """Call ``DELETE /domains`` and check the project that acts as a domain
         is deleted.
@@ -598,18 +594,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects',
             body={'project': ref})
 
-    def test_create_project_is_domain_not_allowed(self):
-        """Call ``POST /projects``.
-
-        Setting is_domain=True is not supported yet and should raise
-        NotImplemented.
-
-        """
-        ref = unit.new_project_ref(domain_id=self.domain_id, is_domain=True)
-        self.post('/projects',
-                  body={'project': ref},
-                  expected_status=http_client.NOT_IMPLEMENTED)
-
     def test_create_project_with_parent_id_none_and_domain_id_none(self):
         """Call ``POST /projects``."""
         # Grant a domain role for the user
@@ -668,6 +652,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         ref['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref)
 
+    @test_utils.wip('waiting for support for parent_id to imply domain_id')
     def test_create_project_with_parent_id_and_no_domain_id(self):
         """Call ``POST /projects``."""
         # With only the parent_id, the domain_id should be
@@ -803,16 +788,20 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
         # Assert parents_as_ids is a structured dictionary correctly
         # representing the hierarchy. The request was made using projects[2]
-        # id, hence its parents should be projects[1] and projects[0]. It
-        # should have the following structure:
+        # id, hence its parents should be projects[1], projects[0] and the
+        # is_domain_project, which is the root of the hierarchy. It should
+        # have the following structure:
         # {
         #   projects[1]: {
-        #       projects[0]: None
+        #       projects[0]: {
+        #           is_domain_project: None
+        #       }
         #   }
         # }
+        is_domain_project_id = projects[0]['project']['domain_id']
         expected_dict = {
             projects[1]['project']['id']: {
-                projects[0]['project']['id']: None
+                projects[0]['project']['id']: {is_domain_project_id: None}
             }
         }
         self.assertDictEqual(expected_dict, parents_as_ids)
@@ -825,7 +814,21 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectResponse(r, projects[0]['project'])
         parents_as_ids = r.result['project']['parents']
 
-        # projects[0] has no parents, parents_as_ids must be None
+        # projects[0] has only the project that acts as a domain as parent
+        expected_dict = {
+            is_domain_project_id: None
+        }
+        self.assertDictEqual(expected_dict, parents_as_ids)
+
+        # Query for is_domain_project parents_as_ids
+        r = self.get(
+            '/projects/%(project_id)s?parents_as_ids' % {
+                'project_id': is_domain_project_id})
+
+        parents_as_ids = r.result['project']['parents']
+
+        # the project that acts as a domain has no parents, parents_as_ids
+        # must be None
         self.assertIsNone(parents_as_ids)
 
     def test_get_project_with_parents_as_list_with_full_access(self):
