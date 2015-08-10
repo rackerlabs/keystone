@@ -265,9 +265,9 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         arbitrary_value = uuid.uuid4().hex
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
         project[arbitrary_key] = arbitrary_value
-        ref = self.resource_api.create_project(project['id'], project)
-        self.assertEqual(arbitrary_value, ref[arbitrary_key])
-        self.assertIsNone(ref.get('extra'))
+        project = self.resource_api.create_project(project['id'], project)
+        self.assertEqual(arbitrary_value, project[arbitrary_key])
+        self.assertIsNone(project.get('extra'))
 
         project['name'] = uuid.uuid4().hex
         ref = self.resource_api.update_project(project['id'], project)
