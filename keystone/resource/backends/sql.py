@@ -30,9 +30,12 @@ class Resource(keystone_resource.ResourceDriverV9):
     def default_assignment_driver(self):
         return 'sql'
 
+    def _is_hidden_project(self, project_ref):
+        return project_ref.id == keystone_resource.NULL_DOMAIN_ID
+
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
-        if project_ref is None:
+        if project_ref is None or self._is_hidden_project(project_ref):
             raise exception.ProjectNotFound(project_id=project_id)
         return project_ref
 
@@ -53,6 +56,9 @@ class Resource(keystone_resource.ResourceDriverV9):
                 project_ref = query.one()
             except sql.NotFound:
                 raise exception.ProjectNotFound(project_id=tenant_name)
+
+            if self._is_hidden_project(project_ref):
+                raise exception.ProjectNotFound(project_id=tenant_name)
             return project_ref.to_dict()
 
     @driver_hints.truncated
@@ -69,7 +75,8 @@ class Resource(keystone_resource.ResourceDriverV9):
         with sql.transaction() as session:
             query = session.query(Project)
             project_refs = sql.filter_limit_query(Project, query, hints)
-            return [project_ref.to_dict() for project_ref in project_refs]
+            return [project_ref.to_dict() for project_ref in project_refs
+                    if not self._is_hidden_project(project_ref)]
 
     def list_projects_from_ids(self, ids):
         if not ids:
@@ -78,7 +85,8 @@ class Resource(keystone_resource.ResourceDriverV9):
             with sql.transaction() as session:
                 query = session.query(Project)
                 query = query.filter(Project.id.in_(ids))
-                return [project_ref.to_dict() for project_ref in query.all()]
+                return [project_ref.to_dict() for project_ref in query.all()
+                        if not self._is_hidden_project(project_ref)]
 
     def list_project_ids_from_domain_ids(self, domain_ids):
         if not domain_ids:
@@ -88,16 +96,21 @@ class Resource(keystone_resource.ResourceDriverV9):
                 query = session.query(Project.id)
                 query = (
                     query.filter(Project.domain_id.in_(domain_ids)))
-                return [x.id for x in query.all()]
+                return [x.id for x in query.all()
+                        if not self._is_hidden_project(x)]
 
     def list_projects_in_domain(self, domain_id):
         with sql.transaction() as session:
-            self._get_domain(session, domain_id)
+            self._get_project(session, domain_id)
             query = session.query(Project)
-            project_refs = query.filter_by(domain_id=domain_id)
+            project_refs = query.filter(Project.domain_id == domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def _get_children(self, session, project_ids):
+    def list_projects_acting_as_domain(self, hints):
+        hints.add_filter('is_domain', True)
+        return self.list_projects(hints)
+
+    def _get_children(self, session, project_ids, domain_id=None):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
         project_refs = query.all()

@@ -29,6 +29,7 @@ from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
+from keystone import resource
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
@@ -443,7 +444,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         hints = driver_hints.Hints()
         hints.add_filter('domain_id', None)
         refs = self.resource_api.list_projects(hints)
-        self.assertThat(refs, matchers.HasLength(2))
+        self.assertThat(refs, matchers.HasLength(2 + self.domain_count))
         self.assertIn(project, refs)
         self.assertIn(project2, refs)
 
@@ -460,6 +461,68 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project,
                           project['id'])
+
+    def test_hidden_project_domain_root_is_really_hidden(self):
+        """Ensure we cannot access the hidden root of all domains.
+
+        Calling any of the driver methods should result in the same as
+        would be returned if we passed a project that does not exist. We don't
+        test create_project, since we do not allow a caller of our API to
+        specify their own ID for a new entity.
+
+        """
+        def _exercise_project_api(ref_id):
+            driver = self.resource_api.driver
+            self.assertRaises(exception.ProjectNotFound,
+                              driver.get_project,
+                              ref_id)
+
+            self.assertRaises(exception.ProjectNotFound,
+                              driver.get_project_by_name,
+                              resource.NULL_DOMAIN_ID,
+                              ref_id)
+
+            project_ids = [x['id'] for x in
+                           driver.list_projects(driver_hints.Hints())]
+            self.assertNotIn(ref_id, project_ids)
+
+            projects = driver.list_projects_from_ids([ref_id])
+            self.assertThat(projects, matchers.HasLength(0))
+
+            project_ids = [x for x in
+                           driver.list_project_ids_from_domain_ids([ref_id])]
+            self.assertNotIn(ref_id, project_ids)
+
+            self.assertRaises(exception.ProjectNotFound,
+                              driver.list_projects_in_domain,
+                              ref_id)
+
+            project_ids = [
+                x['id'] for x in
+                driver.list_projects_acting_as_domain(driver_hints.Hints())]
+            self.assertNotIn(ref_id, project_ids)
+
+            projects = driver.list_projects_in_subtree(ref_id)
+            self.assertThat(projects, matchers.HasLength(0))
+
+            self.assertRaises(exception.ProjectNotFound,
+                              driver.list_project_parents,
+                              ref_id)
+
+            # A non-existing project just returns True from the driver
+            self.assertTrue(driver.is_leaf_project(ref_id))
+
+            self.assertRaises(exception.ProjectNotFound,
+                              driver.update_project,
+                              ref_id,
+                              {})
+
+            self.assertRaises(exception.ProjectNotFound,
+                              driver.delete_project,
+                              ref_id)
+
+        _exercise_project_api(uuid.uuid4().hex)
+        _exercise_project_api(resource.NULL_DOMAIN_ID)
 
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
