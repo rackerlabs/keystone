@@ -33,6 +33,40 @@
       "revId": "88ee64843a70702ec3a5722b871bdb949ff3f19c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a813975b",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:51:44Z",
+      "side": 1,
+      "message": "occur*",
+      "revId": "88ee64843a70702ec3a5722b871bdb949ff3f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2826a7ba",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-10T14:51:44Z",
+      "side": 1,
+      "message": "occurred*",
+      "revId": "88ee64843a70702ec3a5722b871bdb949ff3f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
