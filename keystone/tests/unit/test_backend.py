@@ -2147,6 +2147,19 @@ class IdentityTests(object):
         self.assertIn(self.tenant_mtu['id'], project_ids)
         self.assertIn(self.tenant_service['id'], project_ids)
 
+    @test_utils.wip("Waiting domain operations be replicated at project table")
+    def test_list_projects_acting_as_domain(self):
+        initial_number_domains = len(self.resource_api.list_domains())
+        is_domain_hierarchy = self._create_projects_hierarchy(hierarchy_size=2,
+                                                              is_domain=True)
+        self._create_projects_hierarchy(hierarchy_size=2,
+                                        is_domain=False)
+
+        projects = self.resource_api.list_projects_acting_as_domain()
+        expected_number_projects = (
+            initial_number_domains + len(is_domain_hierarchy))
+        self.assertEqual(expected_number_projects, len(projects))
+
     @tests.skip_if_no_multiple_domains_support
     def test_list_projects_for_alternate_domain(self):
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -2261,6 +2274,50 @@ class IdentityTests(object):
                            'is_domain': False}
         self.resource_api.create_project(regular_project['id'],
                                          regular_project)
+
+    @test_utils.wip("Waiting domain operations be replicated at project table")
+    def test_empty_domain_id_is_set_as_parent_id(self):
+        root_project_id = uuid.uuid4().hex
+        root_project = {'id': root_project_id,
+                        'description': '',
+                        'domain_id': None,
+                        'enabled': True,
+                        'name': uuid.uuid4().hex,
+                        'parent_id': None,
+                        'is_domain': True}
+        self.resource_api.create_project(root_project['id'], root_project)
+
+        # Creating a sub-project
+        sub_project_id = uuid.uuid4().hex
+        sub_project = {'id': sub_project_id,
+                       'description': '',
+                       'domain_id': None,
+                       'enabled': True,
+                       'name': uuid.uuid4().hex,
+                       'parent_id': root_project_id,
+                       'is_domain': False}
+        ref = self.resource_api.create_project(sub_project['id'], sub_project)
+
+        # Its domain_id must match the parent_id, since it is the closest
+        # project that behaves as a domain
+        self.assertEqual(root_project['id'], ref['domain_id'])
+        self.assertEqual(root_project['id'], ref['parent_id'])
+
+        sub_project_2_id = uuid.uuid4().hex
+        sub_project_2 = {'id': sub_project_2_id,
+                         'description': '',
+                         'domain_id': None,
+                         'enabled': True,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': sub_project_id,
+                         'is_domain': False}
+        ref = self.resource_api.create_project(sub_project_2['id'],
+                                               sub_project_2)
+
+        # A regular project under sub_project must be in the same domain as it
+        # is
+        self.assertEqual(root_project['id'], ref['domain_id'])
+        self.assertEqual(sub_project['id'], ref['parent_id'])
 
     @tests.skip_if_no_multiple_domains_support
     def test_is_domain_sub_project_has_parent_domain_id(self):
