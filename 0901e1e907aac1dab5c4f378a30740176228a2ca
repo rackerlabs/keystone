@@ -52,6 +52,24 @@
       "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_062f2ea2",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-10T10:43:56Z",
+      "side": 1,
+      "message": "@Brant, the client needs to check if the body of the response matches the query parameters in the URL (if they were valid) - so this means we are following REST.\n\n@Henrique, I mean, if you are testing if the result contains all projects you\u0027ve created, do you really need to validate if it is returning a different number of projects in subsequent calls? Also, why do we need to test GET /projects without the flag (last part of this test)? Don\u0027t we have a test for it?",
+      "parentUuid": "1a4dcd0f_5d9da908",
+      "revId": "0901e1e907aac1dab5c4f378a30740176228a2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
