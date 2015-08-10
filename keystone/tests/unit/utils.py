@@ -52,7 +52,7 @@ def new_uuid():
     return uuid.uuid4().hex
 
 
-def wip(message):
+def wip(message, expected_exception=Exception):
     """Mark a test as work in progress.
 
     Based on code by Nat Pryce:
@@ -65,6 +65,8 @@ def wip(message):
 
     :param message: a string message to help clarify why the test is
                     marked as a work in progress
+    :param expected_exception: an exception that it expected to be raised
+                               (optional)
 
     usage:
       >>> @wip('waiting on bug #000000')
@@ -78,7 +80,7 @@ def wip(message):
         def run_test(*args, **kwargs):
             try:
                 f(*args, **kwargs)
-            except Exception:
+            except expected_exception:
                 raise testcase.TestSkipped('work in progress test failed: ' +
                                            message)
 
