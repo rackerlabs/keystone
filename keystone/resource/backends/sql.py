@@ -71,12 +71,13 @@ class Resource(keystone_resource.ResourceDriverV9):
             project_refs = sql.filter_limit_query(Project, query, hints)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def list_projects_from_ids(self, ids):
+    def list_projects_from_ids(self, ids, is_domain=False):
         if not ids:
             return []
         else:
             with sql.transaction() as session:
                 query = session.query(Project)
+                query = query.filter_by(is_domain=is_domain)
                 query = query.filter(Project.id.in_(ids))
                 return [project_ref.to_dict() for project_ref in query.all()]
 
@@ -92,12 +93,17 @@ class Resource(keystone_resource.ResourceDriverV9):
 
     def list_projects_in_domain(self, domain_id):
         with sql.transaction() as session:
-            self._get_domain(session, domain_id)
+            self._get_project(session, domain_id)
             query = session.query(Project)
-            project_refs = query.filter_by(domain_id=domain_id)
+            project_refs = query.filter(Project.domain_id == domain_id,
+                                        Project.id != domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def _get_children(self, session, project_ids):
+    def list_projects_acting_as_domain(self, hints):
+        hints.add_filter('is_domain', True)
+        return self.list_projects(hints)
+
+    def _get_children(self, session, project_ids, domain_id=None):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
         project_refs = query.all()

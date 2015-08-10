@@ -435,6 +435,10 @@ class AssignmentTestHelperMixin(object):
 
 
 class IdentityTests(AssignmentTestHelperMixin):
+
+    default_top_level_project_count = (
+        len(default_fixtures.TENANTS) + len(default_fixtures.DOMAINS))
+
     def _get_domain_fixture(self):
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
@@ -560,6 +564,30 @@ class IdentityTests(AssignmentTestHelperMixin):
             self.tenant_bar['name'],
             DEFAULT_DOMAIN_ID)
         self.assertDictEqual(self.tenant_bar, tenant_ref)
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_get_project_by_name_for_project_acting_as_a_domain(self):
+        """Tests get_project_by_name works when the domain_id is None."""
+        project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
+                                       is_domain=False)
+        project = self.resource_api.create_project(project['id'], project)
+
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.get_project_by_name,
+                          project['name'],
+                          None)
+
+        # Test that querying with domain_id as None will find the project
+        # acting as a domain, even if it's name is the same as the regular
+        # project above.
+        project2 = unit.new_project_ref(is_domain=True,
+                                        name=project['name'])
+        project2 = self.resource_api.create_project(project2['id'], project2)
+
+        project_ref = self.resource_api.get_project_by_name(
+            project2['name'], None)
+
+        self.assertEqual(project2, project_ref)
 
     def test_get_project_by_name_returns_not_found(self):
         self.assertRaises(exception.ProjectNotFound,
@@ -804,7 +832,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         domain2 = unit.new_domain_ref()
         self.resource_api.create_domain(domain2['id'], domain2)
         project = unit.new_project_ref(domain_id=domain1['id'])
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project['domain_id'] = domain2['id']
         self.resource_api.update_project(project['id'], project)
 
@@ -818,7 +846,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.create_domain(domain2['id'], domain2)
         # First, create a project in domain1
         project1 = unit.new_project_ref(domain_id=domain1['id'])
-        self.resource_api.create_project(project1['id'], project1)
+        project1 = self.resource_api.create_project(project1['id'], project1)
         # Now create a project in domain2 with a potentially clashing
         # name - which should work since we have domain separation
         project2 = unit.new_project_ref(name=project1['name'],
@@ -836,7 +864,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         project1 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
         project2 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
         self.resource_api.create_project(project1['id'], project1)
-        self.resource_api.create_project(project2['id'], project2)
+        project2 = self.resource_api.create_project(project2['id'], project2)
         project2['name'] = project1['name']
         self.assertRaises(exception.Error,
                           self.resource_api.update_project,
@@ -846,7 +874,7 @@ class IdentityTests(AssignmentTestHelperMixin):
     def test_update_project_id_does_nothing(self):
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
         project_id = project['id']
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project['id'] = 'fake2'
         self.resource_api.update_project(project_id, project)
         project_ref = self.resource_api.get_project(project_id)
@@ -2115,7 +2143,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         project = unit.new_project_ref(
             name=unicode_project_name,
             domain_id=CONF.identity.default_domain_id)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         self.resource_api.update_project(project['id'], project)
         self.resource_api.delete_project(project['id'])
 
@@ -2160,7 +2188,7 @@ class IdentityTests(AssignmentTestHelperMixin):
     def test_update_project_blank_name_fails(self):
         project = unit.new_project_ref(name='fake1',
                                        domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project['name'] = ''
         self.assertRaises(exception.ValidationError,
                           self.resource_api.update_project,
@@ -2170,7 +2198,7 @@ class IdentityTests(AssignmentTestHelperMixin):
     def test_update_project_long_name_fails(self):
         project = unit.new_project_ref(name='fake1',
                                        domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project['name'] = 'a' * 65
         self.assertRaises(exception.ValidationError,
                           self.resource_api.update_project,
@@ -2180,7 +2208,7 @@ class IdentityTests(AssignmentTestHelperMixin):
     def test_update_project_invalid_name_fails(self):
         project = unit.new_project_ref(name='fake1',
                                        domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project['name'] = None
         self.assertRaises(exception.ValidationError,
                           self.resource_api.update_project,
@@ -2257,7 +2285,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     def test_update_project_invalid_enabled_type_string(self):
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertTrue(project_ref['enabled'])
 
@@ -2367,7 +2395,9 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     def test_list_projects(self):
         projects = self.resource_api.list_projects()
-        self.assertEqual(4, len(projects))
+        # 5 projects are expected: 4 projects from default fixtures plus the
+        # default project that acts as a domain.
+        self.assertEqual(self.default_top_level_project_count, len(projects))
         project_ids = []
         for project in projects:
             project_ids.append(project.get('id'))
@@ -2377,7 +2407,7 @@ class IdentityTests(AssignmentTestHelperMixin):
     def test_list_projects_with_multiple_filters(self):
         # Create a project
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
 
         # Build driver hints with the project's name and inexistent description
         hints = driver_hints.Hints()
@@ -2404,11 +2434,31 @@ class IdentityTests(AssignmentTestHelperMixin):
         project_ids = ([x['id'] for x in
                        self.resource_api.list_projects_in_domain(
                            DEFAULT_DOMAIN_ID)])
+        # Only the 4 projects from the default fixtures are expected, since
+        # filtering by domain does not include any project that acts as a
+        # domain.
         self.assertEqual(4, len(project_ids))
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
         self.assertIn(self.tenant_mtu['id'], project_ids)
         self.assertIn(self.tenant_service['id'], project_ids)
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_list_projects_acting_as_domain(self):
+        initial_number_domains = len(self.resource_api.list_domains())
+
+        # Creating 5 projects that act as domains
+        for i in range(5):
+            project = unit.new_project_ref(is_domain=True)
+            self.resource_api.create_project(project['id'], project)
+
+        # Creating a few regular project to ensure it doesn't mess with the
+        # ones that act as domains
+        self._create_projects_hierarchy(hierarchy_size=2)
+
+        projects = self.resource_api.list_projects_acting_as_domain()
+        expected_number_projects = initial_number_domains + 5
+        self.assertEqual(expected_number_projects, len(projects))
 
     @unit.skip_if_no_multiple_domains_support
     def test_list_projects_for_alternate_domain(self):
@@ -2426,28 +2476,23 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertIn(project2['id'], project_ids)
 
     def _create_projects_hierarchy(self, hierarchy_size=2,
-                                   domain_id=DEFAULT_DOMAIN_ID,
-                                   is_domain=False):
+                                   domain_id=DEFAULT_DOMAIN_ID):
         """Creates a project hierarchy with specified size.
 
         :param hierarchy_size: the desired hierarchy size, default is 2 -
                                a project with one child.
         :param domain_id: domain where the projects hierarchy will be created.
-        :param is_domain: if the hierarchy will have the is_domain flag active
-                          or not.
 
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        project = unit.new_project_ref(domain_id=domain_id,
-                                       is_domain=is_domain)
+        project = unit.new_project_ref(domain_id=domain_id)
         project_id = project['id']
-        self.resource_api.create_project(project_id, project)
+        project = self.resource_api.create_project(project_id, project)
 
         projects = [project]
         for i in range(1, hierarchy_size):
             new_project = unit.new_project_ref(parent_id=project_id,
-                                               is_domain=is_domain,
                                                domain_id=domain_id)
 
             self.resource_api.create_project(new_project['id'], new_project)
@@ -2458,11 +2503,10 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     @unit.skip_if_no_multiple_domains_support
     def test_create_domain_with_project_api(self):
-        project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
-                                       is_domain=True)
+        project = unit.new_project_ref(is_domain=True)
         ref = self.resource_api.create_project(project['id'], project)
         self.assertTrue(ref['is_domain'])
-        self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
+        self.resource_api.get_domain(ref['id'])
 
     @unit.skip_if_no_multiple_domains_support
     def test_project_unique_constraint(self):
@@ -2526,23 +2570,11 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     @unit.skip_if_no_multiple_domains_support
     def test_update_name_of_project_acting_as_a_domain(self):
-        project1 = {'id': uuid.uuid4().hex,
-                    'description': '',
-                    'domain_id': DEFAULT_DOMAIN_ID,
-                    'enabled': True,
-                    'name': uuid.uuid4().hex,
-                    'parent_id': None,
-                    'is_domain': True}
+        project1 = unit.new_project_ref(is_domain=True)
         self.resource_api.create_project(project1['id'], project1)
 
-        project2 = {'id': uuid.uuid4().hex,
-                    'description': '',
-                    'domain_id': DEFAULT_DOMAIN_ID,
-                    'enabled': True,
-                    'name': uuid.uuid4().hex,
-                    'parent_id': None,
-                    'is_domain': True}
-        self.resource_api.create_project(project2['id'], project2)
+        project2 = unit.new_project_ref(is_domain=True)
+        project2 = self.resource_api.create_project(project2['id'], project2)
 
         # Update project2 name to a non existent name
         project2['name'] = uuid.uuid4().hex
@@ -2556,17 +2588,16 @@ class IdentityTests(AssignmentTestHelperMixin):
                           project2)
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain_with_project_api(self):
         project = unit.new_project_ref(domain_id=None,
                                        is_domain=True)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
 
         # Check that a corresponding domain was created
         self.resource_api.get_domain(project['id'])
 
-        # Try to delete is_domain project that is enabled
-        self.assertRaises(exception.ValidationError,
+        # Try to delete the enabled project that acts as a domain
+        self.assertRaises(exception.Forbidden,
                           self.resource_api.delete_project,
                           project['id'])
 
@@ -2587,18 +2618,10 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     @unit.skip_if_no_multiple_domains_support
     def test_create_subproject_acting_as_domain_fails(self):
-        root_project = {'id': uuid.uuid4().hex,
-                        'domain_id': DEFAULT_DOMAIN_ID,
-                        'name': uuid.uuid4().hex,
-                        'parent_id': None,
-                        'is_domain': True}
+        root_project = unit.new_project_ref(is_domain=True)
         self.resource_api.create_project(root_project['id'], root_project)
-
-        sub_project = {'id': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID,
-                       'name': uuid.uuid4().hex,
-                       'parent_id': root_project['id'],
-                       'is_domain': True}
+        sub_project = unit.new_project_ref(is_domain=True,
+                                           parent_id=root_project['id'])
 
         # Creation of sub projects acting as domains is not allowed yet
         self.assertRaises(exception.ValidationError,
@@ -2641,8 +2664,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     @unit.skip_if_no_multiple_domains_support
     def test_create_project_passing_is_domain_flag_true(self):
-        project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
-                                       is_domain=True)
+        project = unit.new_project_ref(is_domain=True)
 
         ref = self.resource_api.create_project(project['id'], project)
         self.assertTrue(ref['is_domain'])
@@ -2654,7 +2676,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         ref = self.resource_api.create_project(project['id'], project)
         self.assertIs(False, ref['is_domain'])
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
+    @test_utils.wip('waiting for support for parent_id to imply domain_id')
     def test_create_project_with_parent_id_and_without_domain_id(self):
         project = unit.new_project_ref(domain_id=None)
         self.resource_api.create_project(project['id'], project)
@@ -2665,16 +2687,17 @@ class IdentityTests(AssignmentTestHelperMixin):
         # The domain_id should be set to the parent domain_id
         self.assertEqual(project['domain_id'], ref['domain_id'])
 
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_create_project_with_domain_id_and_without_parent_id(self):
-        project = unit.new_project_ref(parent_id=None)
-        self.resource_api.create_project(project['id'], project)
+        project = unit.new_project_ref(is_domain=True)
+        project = self.resource_api.create_project(project['id'], project)
 
         sub_project = unit.new_project_ref(domain_id=project['id'])
         ref = self.resource_api.create_project(sub_project['id'], sub_project)
 
-        # The parent_id should be set to the domain_id
+        # The parent_id and domain_id should be set to the id of the project
+        # acting as a domain
         self.assertEqual(project['id'], ref['parent_id'])
+        self.assertEqual(project['id'], ref['domain_id'])
 
     def test_check_leaf_projects(self):
         projects_hierarchy = self._create_projects_hierarchy()
@@ -2718,7 +2741,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     def test_list_projects_in_subtree_with_circular_reference(self):
         project1 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project1['id'], project1)
+        project1 = self.resource_api.create_project(project1['id'], project1)
 
         project2 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
                                         parent_id=project1['id'])
@@ -2757,7 +2780,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.create_project(project4['id'], project4)
 
         parents1 = self.resource_api.list_project_parents(project3['id'])
-        self.assertEqual(2, len(parents1))
+        self.assertEqual(3, len(parents1))
         self.assertIn(project1, parents1)
         self.assertIn(project2, parents1)
 
@@ -2765,7 +2788,8 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertEqual(parents1, parents2)
 
         parents = self.resource_api.list_project_parents(project1['id'])
-        self.assertEqual(0, len(parents))
+        # It has the default domain as parent
+        self.assertEqual(1, len(parents))
 
     def test_list_project_parents_invalid_project_id(self):
         self.assertRaises(exception.ValidationError,
@@ -2891,7 +2915,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     def test_update_project_enable(self):
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertTrue(project_ref['enabled'])
 
@@ -3250,7 +3274,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
         project = unit.new_project_ref(domain_id=domain['id'])
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictContainsSubset(project, project_ref)
 
@@ -3450,10 +3474,11 @@ class IdentityTests(AssignmentTestHelperMixin):
         return len(self.resource_api.list_project_parents(project_id)) + 1
 
     def test_check_hierarchy_depth(self):
-        # First create a hierarchy with the max allowed depth
+        # First create a hierarchy with the max allowed depth minus 1, since
+        # the root project is the default project that acts as a domain
         projects_hierarchy = self._create_projects_hierarchy(
-            CONF.max_project_tree_depth)
-        leaf_project = projects_hierarchy[CONF.max_project_tree_depth - 1]
+            CONF.max_project_tree_depth - 1)
+        leaf_project = projects_hierarchy[CONF.max_project_tree_depth - 2]
 
         depth = self._get_hierarchy_depth(leaf_project['id'])
         self.assertEqual(CONF.max_project_tree_depth, depth)
@@ -3470,7 +3495,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         # Creating a project with no description attribute.
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
         del project['description']
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
 
         # Add a description attribute.
         project['description'] = uuid.uuid4().hex
@@ -3483,7 +3508,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         # Creating a project with no description attribute.
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
         del project['description']
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
 
         # Add a description attribute.
         project['description'] = ''
@@ -3534,7 +3559,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
     def test_attribute_update(self):
         project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
 
         # pick a key known to be non-existent
         key = 'description'
@@ -3671,7 +3696,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         updated_domain_ref = copy.deepcopy(domain_ref)
         updated_domain_ref['name'] = uuid.uuid4().hex
         # Update domain, bypassing resource api manager
-        self.resource_api.driver.update_domain(domain_id, updated_domain_ref)
+        self.resource_api.driver.update_project(domain_id, updated_domain_ref)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3689,10 +3714,11 @@ class IdentityTests(AssignmentTestHelperMixin):
         # Make sure domain is 'disabled', bypass resource api manager
         domain_ref_disabled = domain_ref.copy()
         domain_ref_disabled['enabled'] = False
-        self.resource_api.driver.update_domain(domain_id,
-                                               domain_ref_disabled)
+        self.resource_api.driver.update_project(domain_id,
+                                                domain_ref_disabled)
+        self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain, bypassing resource api manager
-        self.resource_api.driver.delete_domain(domain_id)
+        self.resource_api.driver.delete_project(domain_id)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3707,7 +3733,8 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.get_domain(domain_id)
         # Make sure domain is 'disabled', bypass resource api manager
         domain['enabled'] = False
-        self.resource_api.driver.update_domain(domain_id, domain)
+        self.resource_api.driver.update_project(domain_id, domain)
+        self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain
         self.resource_api.delete_domain(domain_id)
         # verify DomainNotFound raised
@@ -3724,7 +3751,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         project_name = project['name']
         self.resource_api.create_domain(domain['id'], domain)
         # Create a project
-        self.resource_api.create_project(project_id, project)
+        project = self.resource_api.create_project(project_id, project)
         self.resource_api.get_project_by_name(project_name, domain['id'])
         project['name'] = uuid.uuid4().hex
         self.resource_api.update_project(project_id, project)
@@ -3741,7 +3768,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         project_id = project['id']
         self.resource_api.create_domain(domain['id'], domain)
         # Create a project
-        self.resource_api.create_project(project_id, project)
+        project = self.resource_api.create_project(project_id, project)
         self.resource_api.get_project(project_id)
         updated_project = copy.deepcopy(project)
         updated_project['name'] = uuid.uuid4().hex
@@ -3860,7 +3887,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         project = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
 
-        self.resource_api.create_project(project['id'], project)
+        project = self.resource_api.create_project(project['id'], project)
 
         updated_project = {'enabled': False}
         updated_project_ref = self.resource_api.update_project(
@@ -6039,10 +6066,12 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # Enable OS-INHERIT extension
         self.config_fixture.config(group='os_inherit', enabled=True)
         root_project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(root_project['id'], root_project)
+        root_project = self.resource_api.create_project(root_project['id'],
+                                                        root_project)
         leaf_project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
                                             parent_id=root_project['id'])
-        self.resource_api.create_project(leaf_project['id'], leaf_project)
+        leaf_project = self.resource_api.create_project(leaf_project['id'],
+                                                        leaf_project)
 
         user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
@@ -6231,10 +6260,12 @@ class InheritanceTests(AssignmentTestHelperMixin):
         """
         self.config_fixture.config(group='os_inherit', enabled=True)
         root_project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
-        self.resource_api.create_project(root_project['id'], root_project)
+        root_project = self.resource_api.create_project(root_project['id'],
+                                                        root_project)
         leaf_project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
                                             parent_id=root_project['id'])
-        self.resource_api.create_project(leaf_project['id'], leaf_project)
+        leaf_project = self.resource_api.create_project(leaf_project['id'],
+                                                        leaf_project)
 
         user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
