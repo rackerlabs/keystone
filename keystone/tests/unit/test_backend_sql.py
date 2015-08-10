@@ -269,8 +269,8 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
-        project['name'] = uuid.uuid4().hex
-        ref = self.resource_api.update_project(project['id'], project)
+        ref['name'] = uuid.uuid4().hex
+        ref = self.resource_api.update_project(ref['id'], ref)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
@@ -443,7 +443,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         hints = driver_hints.Hints()
         hints.add_filter('domain_id', None)
         refs = self.resource_api.list_projects(hints)
-        self.assertThat(refs, matchers.HasLength(2))
+        self.assertThat(refs, matchers.HasLength(2 + self.domain_count))
         self.assertIn(project, refs)
         self.assertIn(project2, refs)
 
