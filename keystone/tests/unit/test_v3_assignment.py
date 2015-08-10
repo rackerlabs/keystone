@@ -21,6 +21,7 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -80,6 +81,44 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.post('/domains', body={'domain': {}},
                   expected_status=http_client.BAD_REQUEST)
 
+    @utils.wip('waiting for projects acting as domains implementation')
+    def test_create_domain_creates_is_domain_project(self):
+        """Call ``POST /domains`` and check a project that acts as a domain
+        is created.
+        """
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project has is_domain flag as True
+        self.assertTrue(r.result['project']['is_domain'])
+
+        # And its parent_id and domain_id attributes are equal
+        self.assertEqual(r.result['project']['parent_id'],
+                         r.result['project']['domain_id'])
+
+    @utils.wip('waiting for projects acting as domains implementation')
+    def test_create_is_domain_project_creates_domain(self):
+        """Call ``POST /projects`` is_domain and check a domain is created."""
+
+        # Create a new is_domain project
+        project_ref = self.new_project_ref(domain_id=None, is_domain=True)
+        r = self.post('/projects', body={'project': project_ref})
+        self.assertValidProjectResponse(r)
+
+        # Retrieve its correspondent domain
+        r = self.get('/domains/%(domain_id)s' % {
+            'domain_id': r.result['project']['id']})
+        self.assertValidDomainResponse(r)
+        self.assertIsNotNone(r.result['domain'])
+
     def test_list_domains(self):
         """Call ``GET /domains``."""
         resource_url = '/domains'
@@ -101,6 +140,29 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain_id},
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+
+    @utils.wip('waiting for projects acting as domains implementation')
+    def test_update_domain_updates_is_domain_project(self):
+        """Call ``PATCH /domains`` and check the project that acts as a domain
+        is updated.
+        """
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Disable it
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project is disabled as well
+        self.assertFalse(r.result['project']['enabled'])
 
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
@@ -189,6 +251,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain['id']},
             expected_status=exception.ForbiddenAction.code)
 
+    @utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain(self):
         """Call ``DELETE /domains/{domain_id}``.
 
@@ -215,6 +278,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.resource_api.create_domain(self.domain2['id'], self.domain2)
 
         self.project2 = self.new_project_ref(
+            parent_id=self.domain2['id'],
             domain_id=self.domain2['id'])
         self.resource_api.create_project(self.project2['id'], self.project2)
 
@@ -272,6 +336,30 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertDictEqual(self.user, r)
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(self.credential, r)
+
+    @utils.wip('waiting for projects acting as domains implementation')
+    def test_delete_domain_deletes_is_domain_project(self):
+        """Call ``DELETE /domains`` and check the project that acts as a domain
+        is deleted.
+        """
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+
+        # Delete the domain
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+        self.delete('/domains/%s' % r.result['domain']['id'])
+
+        # The created project is deleted as well
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']}, expected_status=404)
 
     def test_delete_default_domain_fails(self):
         # Attempting to delete the default domain results in 403 Forbidden.
@@ -376,12 +464,14 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                   headers={'x-subject-token': subject_token},
                   expected_status=http_client.NOT_FOUND)
 
+    @utils.wip('waiting for projects acting as domains implementation')
     def test_delete_domain_hierarchy(self):
         """Call ``DELETE /domains/{domain_id}``."""
         domain = self.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
 
         root_project = self.new_project_ref(
+            parent_id=domain['id'],
             domain_id=domain['id'])
         self.resource_api.create_project(root_project['id'], root_project)
 
@@ -695,6 +785,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                  'project_id': uuid.uuid4().hex},
                  expected_status=http_client.NOT_FOUND)
 
+    @utils.wip('waiting for projects acting as domains implementation')
     def test_get_project_with_parents_as_ids(self):
         """Call ``GET /projects/{project_id}?parents_as_ids``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
@@ -709,16 +800,20 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
 
         # Assert parents_as_ids is a structured dictionary correctly
         # representing the hierarchy. The request was made using projects[2]
-        # id, hence its parents should be projects[1] and projects[0]. It
-        # should have the following structure:
+        # id, hence its parents should be projects[1], projects[0] and the
+        # is_domain_project, which is the root of the hierarchy. It should
+        # have the following structure:
         # {
         #   projects[1]: {
-        #       projects[0]: None
+        #       projects[0]: {
+        #           is_domain_project: None
+        #       }
         #   }
         # }
+        is_domain_project_id = projects[0]['project']['domain_id']
         expected_dict = {
             projects[1]['project']['id']: {
-                projects[0]['project']['id']: None
+                projects[0]['project']['id']: {is_domain_project_id: None}
             }
         }
         self.assertDictEqual(expected_dict, parents_as_ids)
@@ -731,7 +826,21 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectResponse(r, projects[0]['project'])
         parents_as_ids = r.result['project']['parents']
 
-        # projects[0] has no parents, parents_as_ids must be None
+        # projects[0] has only the project that acts as a domain as parent
+        expected_dict = {
+            is_domain_project_id: None
+        }
+        self.assertDictEqual(expected_dict, parents_as_ids)
+
+        # Query for is_domain_project parents_as_ids
+        r = self.get(
+            '/projects/%(project_id)s?parents_as_ids' % {
+                'project_id': is_domain_project_id})
+
+        parents_as_ids = r.result['project']['parents']
+
+        # the project that acts as a domain has no parents, parents_as_ids
+        # must be None
         self.assertIsNone(parents_as_ids)
 
     def test_get_project_with_parents_as_list_with_full_access(self):
