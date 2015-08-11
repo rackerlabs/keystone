@@ -198,6 +198,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_912c7a03",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T19:02:33Z",
+      "side": 1,
+      "message": "ok, I got it... but we will change this behavior in https://review.openstack.org/#/c/143763/ , see my comment in the commit message",
+      "parentUuid": "1a4dcd0f_463e3a29",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_fd1a75c5",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
