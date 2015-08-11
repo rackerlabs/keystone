@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_f1d5bee4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 91
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T19:01:20Z",
+      "side": 1,
+      "message": "ok... just remembered why we can\u0027t do this. If it is a regular project we haven\u0027t provided the domain_id, we can\u0027t use the domain in the token or the default domain since we will need to check the next \"valid\" domain - find_domain_id() in the resource/core.py here: https://review.openstack.org/#/c/143763/",
+      "parentUuid": "1a4dcd0f_660c96ec",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1dd3a105",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
