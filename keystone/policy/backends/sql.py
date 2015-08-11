@@ -26,6 +26,16 @@ class PolicyModel(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+class PolicyCacheModel(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'policy_cache'
+    attributes = ['id', 'blob', 'type', 'valid_to']
+    id = sql.Column(sql.String(64), primary_key=True)
+    blob = sql.Column(sql.JsonBlob(), nullable=False)
+    type = sql.Column(sql.String(255), nullable=False)
+    extra = sql.Column(sql.JsonBlob())
+    valid_to = sql.Column(sql.DateTime, nullable=False)
+
+
 class Policy(rules.Policy):
 
     @sql.handle_conflicts(conflict_type='policy')
