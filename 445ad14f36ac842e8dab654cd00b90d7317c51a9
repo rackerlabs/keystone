@@ -162,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_463e3a29",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T18:41:48Z",
+      "side": 1,
+      "message": "sorry, maybe I wasn\u0027t clear...no, I don\u0027t think we can keep the test as is....we should not be using undocumented (and deprecated) features in our tests",
+      "parentUuid": "1a4dcd0f_66b1f600",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_fd1a75c5",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
