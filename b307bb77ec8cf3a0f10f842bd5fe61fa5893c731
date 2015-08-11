@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9e0823db",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 5538
+      },
+      "writtenOn": "2015-08-11T11:58:30Z",
+      "side": 1,
+      "message": "Instead of comment, you can make this docstring alternatively.",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7e2c374a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5538
+      },
+      "writtenOn": "2015-08-11T11:58:30Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1e9f3351",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5538
+      },
+      "writtenOn": "2015-08-11T11:58:30Z",
+      "side": 1,
+      "message": "\u0027mcl\u0027 is not a well-known short form, at least not in OpenStack as far as I know. You can just call it \u0027cls\u0027 and in a docstring write that \u0027cls\u0027 here is metaclass. Another alternative I can see is call it \u0027metaclass\u0027 :)",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3ee78fe5",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5538
+      },
+      "writtenOn": "2015-08-11T11:58:30Z",
+      "side": 1,
+      "message": "an empty line here would make better readability IMO",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
