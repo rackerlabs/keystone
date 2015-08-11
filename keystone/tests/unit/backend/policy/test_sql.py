@@ -28,6 +28,15 @@ class ModelTestCase(core_sql.BaseBackendSqlModels):
 
         self.assertExpectedSchema('policy', cols)
 
+    def test_policy_cache_model(self):
+        cols = (('id', sql.String, 64),
+                ('blob', sql.JsonBlob, None),
+                ('type', sql.String, 255),
+                ('extra', sql.JsonBlob, None),
+                ('valid_to', sql.DateTime, None))
+
+        self.assertExpectedSchema('policy_cache', cols)
+
 
 class DriverTestCase(core_sql.BaseBackendSqlTests):
     """Test cases to validate the policy driver behavior."""
