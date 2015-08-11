@@ -717,7 +717,7 @@ def render_response(body=None, status=None, headers=None, method=None):
         headers = []
     else:
         headers = list(headers)
-    headers.append(('Vary', 'X-Auth-Token'))
+    #headers.append(('Vary', 'X-Auth-Token'))
 
     if body is None:
         body = b''

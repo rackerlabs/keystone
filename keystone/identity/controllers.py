@@ -24,6 +24,7 @@ from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity import schema
 from keystone import notifications
+from keystone.server import http
 
 
 CONF = cfg.CONF
@@ -226,6 +227,15 @@ class UserV3(controller.V3Controller):
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.create_user(ref, initiator)
         return UserV3.wrap_member(request.context_dict, ref)
+
+    @http.naive_cache(expires_in=10, send_etag=True)
+    @controller.filterprotected('domain_id', 'enabled', 'name')
+    def list_users(self, context, filters):
+        hints = UserV3.build_driver_hints(context, filters)
+        refs = self.identity_api.list_users(
+            domain_scope=self._get_domain_id_for_list_request(context),
+            hints=hints)
+        return UserV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_users(self, request, filters):
