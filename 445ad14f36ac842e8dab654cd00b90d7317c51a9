@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_660c96ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 91
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T18:37:55Z",
+      "side": 1,
+      "message": "makes sense... thought we would remove the normalize_domain_id() call, but it seems to be a break of contract as well.",
+      "parentUuid": "1a4dcd0f_c6d6ca4e",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1dd3a105",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
@@ -120,6 +138,24 @@
       "side": 1,
       "message": "we\u0027ll we are going deprecate the use of default domain in this cycle, so not sure we want our own tests generating deprecated messages....",
       "parentUuid": "1a4dcd0f_4612ba58",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_66b1f600",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T18:37:55Z",
+      "side": 1,
+      "message": "yeah... then, I\u0027ll keep the test like it is",
+      "parentUuid": "1a4dcd0f_26b1ae47",
       "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
