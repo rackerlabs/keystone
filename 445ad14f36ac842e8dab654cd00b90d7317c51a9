@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_83b8b476",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 91
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T18:24:51Z",
+      "side": 1,
+      "message": "for is_domain projects we do nothing. For regular projects we throw an exception if both aren\u0027t provided.",
+      "parentUuid": "1a4dcd0f_3d945d41",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1dd3a105",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_80850ad0",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T18:24:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_1dd3a105",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_fd1a75c5",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-11T17:41:38Z",
       "side": 1,
       "message": "Shouldn\u0027t we also have a test for the case when parent_id is set?  ...if we are supporting not providing a domain_id via the controller call, we should test all options.",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6080febf",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-11T18:24:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fd1a75c5",
       "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
