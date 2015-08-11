@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3daf7d2b",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T17:45:35Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "b4d84125cf1763c9eced1e5012a1a06fb45a5b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
