@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_20da004c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-11T15:09:48Z",
+      "side": 1,
+      "message": "The title should say what the commit does. Like \"prevent keystone from accepting Group IDs...\" or \"allow keystone to accept Group IDs...\"",
+      "revId": "1431c2e191bc7d57009535b7b6b3f9848c798935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_00da64e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-11T15:09:48Z",
+      "side": 1,
+      "message": "Something should be here. What the commit does and why it is needed. A link to bp is not enough.",
+      "revId": "1431c2e191bc7d57009535b7b6b3f9848c798935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
