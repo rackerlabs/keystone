@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e0696e8d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T17:58:02Z",
+      "side": 1,
+      "message": "I\u0027m not clear why we don\u0027t add this check now?  Surely we deprecate mutability, there will be no need for the check.  We need it now where someone *could* set the domain_id to be mutable and then try and change the it....in which we should refuse if it is not a direct descendant or has children.",
+      "revId": "afb51613d4abc59511900822b972e885dae7d917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_002fba88",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T17:58:02Z",
+      "side": 1,
+      "message": "nit: s/wheter/whether/",
+      "revId": "afb51613d4abc59511900822b972e885dae7d917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8028aa34",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T17:58:02Z",
+      "side": 1,
+      "message": "I\u0027m not sure why we need this....there is no backend method for this....",
+      "revId": "afb51613d4abc59511900822b972e885dae7d917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
