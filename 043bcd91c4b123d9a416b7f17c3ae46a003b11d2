@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_14bac10a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 90
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T07:51:49Z",
+      "side": 1,
+      "message": "I think you have changed this now...and this patch DOES update the controller to no longer require a domain ID.",
+      "revId": "043bcd91c4b123d9a416b7f17c3ae46a003b11d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_731cd66a",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 90
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "at this point, we only receive domain_id as null, but we don\u0027t store it as null. this storage is only done from this patch: https://review.openstack.org/#/c/143763/7 and the migration is done in this one: https://review.openstack.org/#/c/158372/ which treats the project name constraints, involving the null domain_id",
       "parentUuid": "1a4dcd0f_731cd66a",
+      "revId": "043bcd91c4b123d9a416b7f17c3ae46a003b11d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_347d7d1c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 90
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-11T07:51:49Z",
+      "side": 1,
+      "message": "If we are going to make this change here, we need to test it...I don\u0027t see any test at the restful level for this?",
       "revId": "043bcd91c4b123d9a416b7f17c3ae46a003b11d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
