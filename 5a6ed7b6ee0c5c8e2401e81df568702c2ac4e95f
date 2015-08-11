@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6c01f969",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-11T09:54:36Z",
+      "side": 1,
+      "message": "why it\u0027s public_app here but the test name is \"admin_version\"? and I don\u0027t quite understand the reason of validating the url with admin port based on the public app.\n\nIf this is what the bug for would you pls refactor this testcase a little bit?",
+      "revId": "5a6ed7b6ee0c5c8e2401e81df568702c2ac4e95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
