@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_9141080e",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-11T07:07:46Z",
+      "side": 1,
+      "message": "missing a second set here?\n\n  return list(set(actor_types).intersection(set(target_types)))\n\nupdate: apparently you don\u0027t need to, but maybe change it in a follow-on patch?",
+      "revId": "a415908d670364d3a396ae7a65aa695cb7f9edb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_31c4b45d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-11T07:07:46Z",
+      "side": 1,
+      "message": "nit: this could be shorter\n\n  targets \u003d project_ids if project_ids else [domain_id]",
+      "revId": "a415908d670364d3a396ae7a65aa695cb7f9edb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f1a40cba",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-11T07:07:46Z",
+      "side": 1,
+      "message": "nit: this could be shorter:\n\n  actors \u003d group_ids if group_ids else [user_id]",
+      "revId": "a415908d670364d3a396ae7a65aa695cb7f9edb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_23030944",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-11T07:07:46Z",
+      "side": 1,
+      "message": "its weird that this is assigned and then stomped on without checking it\u0027s value on line 515 and 519",
+      "revId": "a415908d670364d3a396ae7a65aa695cb7f9edb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2355494f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-11T07:07:46Z",
+      "side": 1,
+      "message": "i\u0027d add a comment here, it\u0027s not super clear what the reasoning behind this is (even it\u0027s somewhat explained in lines 856-857)",
+      "revId": "a415908d670364d3a396ae7a65aa695cb7f9edb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c392654b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-11T07:07:46Z",
+      "side": 1,
+      "message": "a comment here about why/when we return an empty list would be helpful",
+      "revId": "a415908d670364d3a396ae7a65aa695cb7f9edb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
