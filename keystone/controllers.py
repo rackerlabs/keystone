@@ -20,6 +20,7 @@ from keystone.common import extension
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone import exception
+from keystone.server import http
 
 
 LOG = log.getLogger(__name__)
@@ -165,6 +166,9 @@ class Version(wsgi.Application):
 
         return versions
 
+    # this could have been done by changing the wsgi.render_response to
+    # the new (at yet to be written) render_cached_response.....
+    @http.naive_cache(expires_in=3600, send_etag=True)
     def get_versions(self, context):
 
         req_mime_type = v3_mime_type_best_match(context)
