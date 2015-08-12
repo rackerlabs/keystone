@@ -123,6 +123,10 @@ class Manager(manager.Manager):
                              domain_id=info.get('domain_id'),
                              project_id=info.get('project_id'))
 
+    def _identity_provider_callback(self, service, resource_type, operation,
+                                    payload):
+        self.revoke(model.RevokeEvent(idp_id=payload['resource_info']))
+
     def _register_listeners(self):
         callbacks = {
             notifications.ACTIONS.deleted: [
@@ -132,12 +136,14 @@ class Manager(manager.Manager):
                 ['role', self._role_callback],
                 ['user', self._user_callback],
                 ['project', self._project_callback],
-                ['role_assignment', self._role_assignment_callback]
+                ['role_assignment', self._role_assignment_callback],
+                ['idp', self._identity_provider_callback]
             ],
             notifications.ACTIONS.disabled: [
                 ['user', self._user_callback],
                 ['project', self._project_callback],
                 ['domain', self._domain_callback],
+                ['idp', self._identity_provider_callback]
             ],
             notifications.ACTIONS.internal: [
                 [notifications.INVALIDATE_USER_TOKEN_PERSISTENCE,

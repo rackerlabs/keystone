@@ -32,6 +32,7 @@ from keystone.contrib.federation import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone import notifications
 
 
 CONF = cfg.CONF
@@ -112,12 +113,61 @@ class IdentityProvider(_ControllerBase):
 
     @controller.protected()
     def delete_identity_provider(self, context, idp_id):
+        notifications.Audit.deleted('idp', idp_id, None)
         self.federation_api.delete_idp(idp_id)
 
     @controller.protected()
     def update_identity_provider(self, context, idp_id, identity_provider):
+
+        def need_revocation_event(idp, idp_ref):
+            """Evaluate whether revocation event should be emited.
+
+            While updating Identity Provider we need to carefully evaluate
+            whether we should add a revocation event corresponding to this
+            instance.
+
+            1) If the Identity Provider is being disabled - add a revocation
+            event
+            2) Since one Identity Provider object can be used for
+            authentication of users from many real Identity Provider and this
+            is controlled by a ``remote_ids`` list we need to consider
+            following cases.
+                a) If the new remote_id value was added there is
+                   no need to revoke any token
+                b) If at least one remote_id was
+                   removed we must revoke all tokens matched with evaluated
+                   Identity Provider.
+
+            :param idp: instance of the Identity Provider created from the user
+                        input.
+            :type idp: dict
+            :param idp_ref: instance of the Identity Provider actually stored
+                            in the backend.
+            :type idp_ref: dict
+            :returns: True if a revocation event must be created, False
+                      otherwise
+            :rtype: boolean
+
+            """
+            # Return True only if the IdP is being disabled
+            if idp_ref['enabled'] and idp['enabled'] is False:
+                return True
+
+            remote_ids = set(idp['remote_ids'])
+            remote_ids_ref = set(idp_ref['remote_ids'])
+
+            if remote_ids < remote_ids_ref:
+                return True
+            if remote_ids.issuperset(remote_ids_ref) is False:
+                return True
+
+            return False
+
         identity_provider = self._normalize_dict(identity_provider)
         IdentityProvider.check_immutable_params(identity_provider)
+        idp_ref = self.federation_api.get_idp(idp_id)
+        if need_revocation_event(identity_provider, idp_ref):
+            notifications.Audit.disabled('idp', idp_id, None)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
         return IdentityProvider.wrap_member(context, idp_ref)
 

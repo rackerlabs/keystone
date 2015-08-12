@@ -332,3 +332,26 @@ class RevokeExtension(test_sql_upgrade.SqlMigrateBase):
         self.upgrade(1, repository=self.repo_path)
         self.assertTableColumns('revocation_event',
                                 self._REVOKE_COLUMN_NAMES)
+
+    def test_add_idp_id_column(self):
+        columns = ['id',
+                   'domain_id',
+                   'project_id',
+                   'user_id',
+                   'role_id',
+                   'trust_id',
+                   'consumer_id',
+                   'access_token_id',
+                   'issued_before',
+                   'expires_at',
+                   'revoked_at',
+                   'audit_id',
+                   'audit_chain_id']
+
+        self.upgrade(2, repository=self.repo_path)
+        self.assertTableColumns('revocation_event', columns)
+        self.upgrade(3, repository=self.repo_path)
+        # NOTE(marek-denis): Append the column and make sure it's present in
+        # the table after the upgrade
+        columns.append('idp_id')
+        self.assertTableColumns('revocation_event', columns)
