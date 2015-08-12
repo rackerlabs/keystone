@@ -1087,6 +1087,53 @@ class FederatedIdentityProviderTests(FederationTests):
             else:
                 self.assertEqual(body[key], updated_idp.get(key))
 
+    def test_check_notifications_on_idp_update(self):
+        """Ensure notfication are emited upon updating
+
+        Depending on what's being updated we should or should not emit
+        notification, resulting in a revocation event.
+
+        The notification (revocation event) should be emited in case of:
+        - Identity provider is disabled (and was enabled)
+        - A remote_ids list has been shrinked by at least one element
+        - An element in remote_ids has changed (one was removed)
+
+        """
+        idp_id, default_idp = self._create_and_decapsulate_response()
+        url = self.base_url(suffix=idp_id)
+        body = self._http_idp_input()
+
+        body['remote_ids'] = [uuid.uuid4().hex,
+                              uuid.uuid4().hex,
+                              uuid.uuid4().hex]
+        self.patch(url, body={'identity_provider': body})
+
+
+        # No revocation event required
+        body['remote_ids'].append(uuid.uuid4().hex)
+        self.patch(url, body={'identity_provider': body})
+
+        # Expect revocation event
+        body['remote_ids'].pop()
+        self.patch(url, body={'identity_provider': body})
+
+        # Expect revocation event
+        body['remote_ids'][0] = uuid.uuid4().hex
+        self.patch(url, body={'identity_provider': body})
+
+        # Expect revocation event
+        body['remote_ids'][0] = uuid.uuid4().hex
+        body['remote_ids'].append(uuid.uuid4().hex)
+        self.patch(url, body={'identity_provider': body})
+
+        # Expect revocation event
+        body['enabled'] = False
+        self.patch(url, body={'identity_provider': body})
+
+        # No revocation event required
+        body['enabled'] = True
+        self.patch(url, body={'identity_provider': body})
+
     def test_update_idp_immutable_attributes(self):
         """Update IdP's immutable parameters.
 
