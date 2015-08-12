@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_9818df1f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 91
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-12T20:43:57Z",
+      "side": 1,
+      "message": "Nope, still don\u0027t understand this.  Are we saying that reseller breaks the current contract (I hope not). Ignore the default domain fall back - that\u0027s really a \"bug\".....why would we not use the domain Id in the token (or the project_id of a project acting as a domain) if the caller did not provide a domain_id in the entity in the create request",
+      "parentUuid": "1a4dcd0f_f1d5bee4",
+      "revId": "445ad14f36ac842e8dab654cd00b90d7317c51a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1dd3a105",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 91
