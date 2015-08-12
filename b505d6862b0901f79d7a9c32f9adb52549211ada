@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6f075418",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-12T17:13:25Z",
+      "side": 0,
+      "message": "why shouldn\u0027t this be a @property any longer?",
+      "revId": "b505d6862b0901f79d7a9c32f9adb52549211ada",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8f2180a0",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-12T17:13:25Z",
+      "side": 0,
+      "message": "what was the point of the rename? seems like unnecessary change, especially for anyone implementing their own token provider",
+      "revId": "b505d6862b0901f79d7a9c32f9adb52549211ada",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
