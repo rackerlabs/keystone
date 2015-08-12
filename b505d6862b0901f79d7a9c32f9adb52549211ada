@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_a265731e",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-12T18:00:08Z",
+      "side": 0,
+      "message": "I think this came of out some comments made on a previous patch: \n\nhttps://review.openstack.org/#/c/196774/8/keystone/token/providers/common.py\n\nbut I also think that it\u0027s missing some context from IRC. We should follow up with morgan.",
+      "parentUuid": "1a4dcd0f_6f075418",
+      "revId": "b505d6862b0901f79d7a9c32f9adb52549211ada",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_8f2180a0",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 10
