@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_82a07743",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-12T18:02:45Z",
+      "side": 1,
+      "message": "*most of the",
+      "revId": "9cd669a8931a4ff9f25b10d2552bd464929dbdc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c29aff13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-12T18:02:45Z",
+      "side": 1,
+      "message": "*and",
+      "revId": "9cd669a8931a4ff9f25b10d2552bd464929dbdc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_02a46748",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-12T18:02:45Z",
+      "side": 1,
+      "message": "Should we just add a new test which calls the new validate_v3_non_persistent_token_id and leave the old test to call validate_v3_token_reference..?",
+      "revId": "9cd669a8931a4ff9f25b10d2552bd464929dbdc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
