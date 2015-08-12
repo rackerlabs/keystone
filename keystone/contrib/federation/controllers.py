@@ -32,6 +32,7 @@ from keystone.contrib.federation import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone import notifications
 
 
 CONF = cfg.CONF
@@ -112,12 +113,23 @@ class IdentityProvider(_ControllerBase):
 
     @controller.protected()
     def delete_identity_provider(self, context, idp_id):
+        notifications.Audit.deleted('idp', idp_id, None)
         self.federation_api.delete_idp(idp_id)
 
     @controller.protected()
     def update_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
         IdentityProvider.check_immutable_params(identity_provider)
+        idp_ref = self.federation_api.get_idp(idp_id)
+        try:
+            # NOTE(pawel-pamula): a revocation event is triggered in case
+            # an idp is disabled or remote ids were excluded.
+            if (not identity_provider['enabled'] or
+                    frozenset(identity_provider['remote_ids']) <
+                    frozenset(idp_ref['remote_ids'])):
+                notifications.Audit.disabled('idp', idp_id, None)
+        except KeyError:
+            pass
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
         return IdentityProvider.wrap_member(context, idp_ref)
 

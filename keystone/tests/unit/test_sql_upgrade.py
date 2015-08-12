@@ -116,7 +116,7 @@ INITIAL_EXTENSION_TABLE_STRUCTURE = {
         'id', 'domain_id', 'project_id', 'user_id', 'role_id',
         'trust_id', 'consumer_id', 'access_token_id',
         'issued_before', 'expires_at', 'revoked_at', 'audit_id',
-        'audit_chain_id',
+        'audit_chain_id', 'idp_id'
     ],
 }
 
