@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_541d57bc",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-12T14:23:53Z",
+      "side": 1,
+      "message": "yes https://review.openstack.org/#/c/197706/",
+      "parentUuid": "1a4dcd0f_fee3b403",
+      "revId": "0bef141f164ecc507b61f5302a3bc6fd3baae975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_4b16ac56",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-10T03:38:07Z",
       "side": 1,
       "message": "suggest to remove this line since this is not an interface anymore.",
+      "revId": "0bef141f164ecc507b61f5302a3bc6fd3baae975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8f3bcad0",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-12T14:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_4b16ac56",
       "revId": "0bef141f164ecc507b61f5302a3bc6fd3baae975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

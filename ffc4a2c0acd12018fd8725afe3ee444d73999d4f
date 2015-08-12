@@ -16,6 +16,24 @@
       "revId": "ffc4a2c0acd12018fd8725afe3ee444d73999d4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_144b4f88",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-12T14:23:53Z",
+      "side": 0,
+      "message": "V2TokenDataHelper.format_token() relies on the fact that the data it\u0027s formatting the token with is a dictionary, which is pulled out of the database or some backend store. We can\u0027t do that with a v2.0 token since we don\u0027t persist anything about the token. \n\n\nhttps://github.com/openstack/keystone/blob/4d2bbe0e7c4e08c372e229f5622b9cfc2c25c3c6/keystone/token/providers/common.py#L118\n\nThe token_ref passed into that method is a dictionary that we don\u0027t have with non-persistent tokens.",
+      "parentUuid": "1a4dcd0f_beee8cb2",
+      "revId": "ffc4a2c0acd12018fd8725afe3ee444d73999d4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
