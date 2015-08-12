@@ -31,7 +31,7 @@ _NAMES = ['trust_id',
 
 
 # Additional arguments for creating a RevokeEvent
-_EVENT_ARGS = ['issued_before', 'revoked_at']
+_EVENT_ARGS = ['issued_before', 'revoked_at', 'idp_id']
 
 # Names of attributes in the RevocationEvent, including "virtual" attributes.
 # Virtual attributes are those added based on other values.
@@ -102,6 +102,7 @@ class RevokeEvent(object):
                 'project_id',
                 'audit_id',
                 'audit_chain_id',
+                'idp_id'
                 ]
         event = {key: self.__dict__[key] for key in keys
                  if self.__dict__[key] is not None}
@@ -368,4 +369,8 @@ def build_token_values(token_data):
     else:
         token_values['consumer_id'] = oauth1['consumer_id']
         token_values['access_token_id'] = oauth1['access_token_id']
+
+    if user and 'OS-FEDERATION' in user:
+        token_values['idp_id'] = (token_data['user']['OS-FEDERATION']
+                                            ['identity_provider']['id'])
     return token_values
