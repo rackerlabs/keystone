@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_55c25054",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-12T03:22:21Z",
+      "side": 1,
+      "message": "Henry, this check is done at this patch: https://review.openstack.org/#/c/207218/ I wanted to move it to after the HOnor operations one, because putting it before, we\u0027d have to change it all after the honor was merged.",
+      "parentUuid": "1a4dcd0f_e0696e8d",
+      "revId": "afb51613d4abc59511900822b972e885dae7d917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_002fba88",
         "filename": "keystone/resource/core.py",
         "patchSetId": 91
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_f5a11caa",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-12T03:22:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_002fba88",
+      "revId": "afb51613d4abc59511900822b972e885dae7d917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_8028aa34",
         "filename": "keystone/resource/core.py",
         "patchSetId": 91
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-11T17:58:02Z",
       "side": 1,
       "message": "I\u0027m not sure why we need this....there is no backend method for this....",
+      "revId": "afb51613d4abc59511900822b972e885dae7d917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b5fab475",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-12T03:22:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_8028aa34",
       "revId": "afb51613d4abc59511900822b972e885dae7d917",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
