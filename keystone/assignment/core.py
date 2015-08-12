@@ -525,7 +525,7 @@ class Manager(manager.Manager):
     # The methods _expand_indirect_assignment, _list_direct_role_assignments
     # and _list_effective_role_assignments below are only used on
     # list_role_assignments, but they are not in its scope as nested functions
-    # since it would significantly increase McCabe complexitiy, that should be
+    # since it would significantly increase McCabe complexity, that should be
     # kept as it is in order to detect unnecessarily complex code, which is not
     # this case.
 
@@ -704,8 +704,8 @@ class Manager(manager.Manager):
         be expanded.
 
         The resulting list of assignments will be filtered by the provided
-        parameters, although since we are in effective mode, group can never
-        act as a filter (since group assignments are expanded into user roles)
+        parameters, since we are in effective mode, group can never act as
+        a filter (since group assignments are expanded into user roles)
         and domain can only be filter if we want non-inherited assignments,
         since domains can't inherit assignments.
 
