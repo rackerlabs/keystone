@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_58a337b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-12T20:45:26Z",
+      "side": 1,
+      "message": "Nope, still don\u0027t understand this. Are we saying that reseller breaks the current contract (I hope not). Ignore the default domain fall back - that\u0027s really a \"bug\".....why would we not use the domain Id in the token (or the project_id of a project acting as a domain) if the caller did not provide a domain_id in the entity in the create request",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
