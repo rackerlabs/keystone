@@ -12,9 +12,18 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import calendar
+import datetime
+import mock
 from testtools import matchers
+import uuid
+
+from oslo_config import cfg
 
 from keystone.tests.unit import test_v3
+
+
+CONF = cfg.CONF
 
 
 class EndpointPolicyTestCase(test_v3.RestfulTestCase):
@@ -195,6 +204,91 @@ class EndpointPolicyTestCase(test_v3.RestfulTestCase):
             'service_id': self.service['id']})
 
         self.head(url, expected_status=404)
+
+    def test_policy_cache_control_header(self):
+        url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+               '/services/%(service_id)s') % {
+                   'policy_id': self.policy['id'],
+                   'service_id': self.service['id']}
+        self.put(url, expected_status=204)
+
+        url = '/endpoints/%s/OS-ENDPOINT-POLICY/policy' % self.endpoint['id']
+        response = self.get(url)
+
+        self.assertIn('Cache-Control', response.headers)
+        max_age = response.headers['Cache-Control']
+        self.assertEqual('max-age=', max_age[:8])
+        self.assertTrue(int(max_age[8:]) <= CONF.policy.policy_timeout)
+
+    @mock.patch('oslo_utils.timeutils.utcnow')
+    @mock.patch('oslo_utils.timeutils.utcnow_ts')
+    def test_policy_cache_control_mechanism(self, utcnow_ts, utcnow):
+        '''Test requests for policies of different endpoints at the same time
+
+        In this scenario, requests for the policies associated with 3 different
+        endpoints arrive at the same time in the server.
+
+        Configuration:
+        - The policy_timeout is 300 seconds, implying that the server times out
+          every 5 minutes;
+        - It's 12:02:00, and the last time the server timed out was 12:00:00.
+
+        Test plan for the 1st request:
+        - The hash (endpoint_id % policy_timeout) equals to 120 seconds,
+          meaning the policy for this endpoint expired at 12:02:00 (right now);
+        - This, the returned policy valid will be valid until 12:07:00, i.e it
+          is fresh for 300 seconds from now.
+
+        Test plan for the 2nd request:
+        - The hash (endpoint_id % policy_timeout) equals to 121 seconds,
+          meaning the policy for this endpoint expired at 12:02:01;
+        - This, the returned policy valid will be valid until 12:02:01, i.e it
+          is for 1 second from now.
+
+        Test plan for the 3rd request:
+        - The hash (endpoint_id % policy_timeout) equals to 119 seconds,
+          meaning the policy for this endpoint expired at 12:01:59;
+        - This, the returned policy valid will be valid until 12:06:59, i.e it
+          is fresh for 299 seconds from now.
+
+        '''
+
+        # Let's use the Liberty Release (2015.2.0) date as base for this test
+        date = {'year': 2015, 'month': 10, 'day': 15}
+
+        utcnow.return_value = datetime.datetime(
+            hour=12, minute=2, second=0, **date)
+        utcnow_ts.return_value = calendar.timegm(
+            utcnow.return_value.timetuple())
+
+        hashes = (120, 121, 119)
+        freshness = (300, 1, 299)
+
+        for i in range(len(hashes)):
+            endpoint = {'id': uuid.UUID(int=hashes[i]).hex,
+                        'interface': 'public',
+                        'region_id': self.region['id'],
+                        'service_id': self.service['id'],
+                        'url': '/url'}
+
+            self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+            url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+                   '/services/%(service_id)s') % {
+                       'policy_id': self.policy['id'],
+                       'service_id': self.service['id']}
+            self.put(url, expected_status=204)
+
+            url = '/endpoints/%s/OS-ENDPOINT-POLICY/policy' % endpoint['id']
+            response = self.get(url)
+
+            max_age = response.headers['Cache-Control']
+            max_age = int(max_age[8:])
+            self.assertEqual(freshness[i], max_age)
+
+            policy = response.result['policy']
+            policy.pop('links')
+            self.assertEqual(self.policy, policy)
 
 
 class JsonHomeTests(test_v3.JsonHomeTestMixin):

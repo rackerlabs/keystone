@@ -12,9 +12,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+import uuid
+
+from oslo_config import cfg
+from oslo_utils import timeutils
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import notifications
+
+
+CONF = cfg.CONF
 
 
 @dependency.requires('policy_api', 'catalog_api', 'endpoint_policy_api')
@@ -32,6 +41,9 @@ class EndpointPolicyV3Controller(controller.V3Controller):
             'deleted', 'region', self._on_region_delete)
         notifications.register_event_callback(
             'deleted', 'policy', self._on_policy_delete)
+
+        self.policy_timeout = datetime.timedelta(
+            seconds=CONF.policy.policy_timeout)
 
     def _on_endpoint_delete(self, service, resource_type, operation, payload):
         self.endpoint_policy_api.delete_association_by_endpoint(
@@ -133,16 +145,54 @@ class EndpointPolicyV3Controller(controller.V3Controller):
         self.endpoint_policy_api.delete_policy_association(
             policy_id, service_id=service_id, region_id=region_id)
 
+    def _get_policy_validity(self, endpoint_id):
+        """Calculates the validity of the policy associated with the given ID
+
+        Policy entities have their validity defined according to the
+        policy_timeout config.
+
+        However, if all the policies in the system timed out at the same
+        moment, that could cause the thundering herd problem. Thus, policy
+        entities have their freshness added of a hash value, which is
+        calculated based on both the endpoint ID the policy is associated to
+        and the policy_timeout.
+
+        This function returns the datetime object representing the entity's
+        expiration date.
+
+        """
+
+        now_secs = timeutils.utcnow_ts()
+
+        timeout_delay = (uuid.UUID(endpoint_id).int
+                         % self.policy_timeout.seconds)
+
+        timeout_secs = (now_secs - (now_secs % self.policy_timeout.seconds)
+                        + timeout_delay)
+
+        timeout_datetime = datetime.datetime.utcfromtimestamp(timeout_secs)
+
+        if timeout_secs > now_secs:
+            # The calculated timeout event did not occur yet
+            return timeout_datetime
+        else:
+            # The calculated timeout event occurred, return the next one
+            return timeout_datetime + self.policy_timeout
+
     @controller.protected()
     def get_policy_for_endpoint(self, context, endpoint_id):
         """Get the effective policy for an endpoint."""
         self.catalog_api.get_endpoint(endpoint_id)
         ref = self.endpoint_policy_api.get_policy_for_endpoint(endpoint_id)
+
+        freshness = self._get_policy_validity(endpoint_id) - timeutils.utcnow()
+        freshness = freshness.total_seconds()
+
         # NOTE(henry-nash): since the collection and member for this class is
         # set to endpoints, we have to handle wrapping this policy entity
         # ourselves.
         self._add_self_referential_link(context, ref)
-        return {'policy': ref}
+        return {'policy': ref, 'freshness': freshness}
 
     # NOTE(henry-nash): As in the catalog controller, we must ensure that the
     # legacy_endpoint_id does not escape.
