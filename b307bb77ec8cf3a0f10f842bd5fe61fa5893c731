@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_5b631fb1",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-13T07:01:06Z",
+      "side": 1,
+      "message": "Why start with version 12? Was that because this is the \u0027L\u0027 release, the 12th letter in the alphabet? btw, pluggable driver support starts with Keystone Light (KSL), which was first introduced in Folsom if I am not mistaken.",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7b74db34",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-13T07:01:06Z",
+      "side": 1,
+      "message": "We seem to define this class in all the core.py files. Why need define it once and make use of it everywhere?",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_9e0823db",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -64,6 +98,23 @@
       "writtenOn": "2015-08-11T11:58:30Z",
       "side": 1,
       "message": "an empty line here would make better readability IMO",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3b065386",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-13T07:01:06Z",
+      "side": 1,
+      "message": "With this change, the existing out-of-tree drivers will break if they don\u0027t have INTERFACE_VERSION defined right?",
       "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
