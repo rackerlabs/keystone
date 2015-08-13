@@ -34,6 +34,24 @@
       "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_941743a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-13T01:59:14Z",
+      "side": 1,
+      "message": "++Rodrigo. Except for one case, the one with is_Domain\u003dFalse and no parent or domain_id were set. We have two cases: One if it is a domain scoped token or a project that acts as a domain scoped token... In this case we can easily get the domain_id. What if it\u0027s not a project acting as a domain? Should we raise an error or use its domain_id, setting the project as child of the one in the token?",
+      "parentUuid": "1a4dcd0f_8a9161f3",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
