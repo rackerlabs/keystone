@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b6e8237c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-13T15:11:25Z",
+      "side": 1,
+      "message": "Comment on this in the review that is proposed against master (https://review.openstack.org/#/c/206921/3)",
+      "revId": "71f0f410e1af7ebabeb61980b6a2e8ae0a2a4188",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
