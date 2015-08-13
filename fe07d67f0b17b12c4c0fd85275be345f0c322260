@@ -52,6 +52,24 @@
       "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_13eb3b14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-13T08:53:20Z",
+      "side": 1,
+      "message": "if I have a domain scoped token, won\u0027t it always be a project acting as a domain?\n\nIf I have a project scoped token, the fallback is the domain default",
+      "parentUuid": "1a4dcd0f_941743a2",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
