@@ -111,6 +111,15 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def get_policy_cache(self, policy_id):
+        """Retrieve a specific cached policy blob.
+
+        :raises: keystone.exception.PolicyNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def get_policy(self, policy_id):
         """Retrieve a specific policy blob.
 
@@ -131,6 +140,15 @@ class Driver(object):
     @abc.abstractmethod
     def delete_policy(self, policy_id):
         """Remove a policy blob.
+
+        :raises: keystone.exception.PolicyNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def cache_policy(self, policy_id):
+        """Cache a policy blob.
 
         :raises: keystone.exception.PolicyNotFound
 

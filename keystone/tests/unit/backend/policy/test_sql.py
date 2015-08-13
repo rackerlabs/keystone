@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
 from keystone.common import sql
@@ -82,3 +83,34 @@ class DriverTestCase(core_sql.BaseBackendSqlTests):
         self.assertRaises(exception.PolicyNotFound,
                           self.driver.get_policy,
                           self.policy['id'])
+
+    def test_get_policy_cache(self):
+        valid_to = datetime.datetime.utcnow()
+        self.driver.cache_policy(self.policy['id'], valid_to)
+
+        policy_cache = self.driver.get_policy_cache(self.policy['id'])
+
+        self.assertEqual(valid_to, policy_cache.pop('valid_to'))
+        self.assertEqual(self.policy, policy_cache)
+
+    def test_cache_policy(self):
+        self.assertRaises(exception.PolicyNotFound,
+                          self.driver.get_policy_cache,
+                          self.policy['id'])
+
+        valid_to = datetime.datetime.utcnow()
+        policy_cache = self.driver.cache_policy(self.policy['id'],
+                                                valid_to)
+
+        self.assertEqual(policy_cache,
+                         self.driver.get_policy_cache(self.policy['id']))
+
+        self.driver.delete_policy(self.policy['id'])
+
+        self.assertEqual(policy_cache,
+                         self.driver.get_policy_cache(self.policy['id']))
+
+        self.assertRaises(exception.PolicyNotFound,
+                          self.driver.cache_policy,
+                          self.policy['id'],
+                          valid_to)
