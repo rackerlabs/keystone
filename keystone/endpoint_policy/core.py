@@ -13,9 +13,12 @@
 # under the License.
 
 import abc
+import datetime
+import uuid
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_utils import timeutils
 import six
 
 from keystone.common import dependency
@@ -42,6 +45,9 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.endpoint_policy.driver)
+
+        self.policy_timeout = datetime.timedelta(
+            seconds=CONF.policy.policy_timeout)
 
     def _assert_valid_association(self, endpoint_id, service_id, region_id):
         """Assert that the association is supported.
@@ -189,11 +195,58 @@ class Manager(manager.Manager):
 
         return matching_endpoints
 
+    def _calculate_policy_validity(self, endpoint_id):
+        """Calculates the validity of the policy associated with the given ID
+
+        Policy entities have their validity defined according to the
+        policy_timeout config.
+
+        However, if all the policies in the system timed out at the same
+        moment, that could cause the thundering herd problem. Thus, policy
+        entities have their freshness added of a hash value, which is
+        calculated based on both the endpoint ID the policy is associated to
+        and the policy_timeout.
+
+        This function returns the datetime object representing the entity's
+        expiration date.
+
+        """
+
+        now_secs = timeutils.utcnow_ts()
+
+        timeout_delay = (uuid.UUID(endpoint_id).int
+                         % self.policy_timeout.seconds)
+
+	timeout_secs = (now_secs - (now_secs % self.policy_timeout.seconds)
+                        + timeout_delay)
+
+        timeout_datetime = datetime.datetime.utcfromtimestamp(timeout_secs)
+
+	if timeout_secs > now_secs:
+            # The calculated timeout event did not occur yet
+            return timeout_datetime
+        else:
+            # The calculated timeout event occurred, return the next one
+            return timeout_datetime + self.policy_timeout
+
     def get_policy_for_endpoint(self, endpoint_id):
 
         def _get_policy(policy_id, endpoint_id):
             try:
-                return self.policy_api.get_policy(policy_id)
+                try:
+                    policy_ref = self.policy_api.get_policy_cache(policy_id)
+                except exception.PolicyNotFound:
+                    # It is possible that the requested policy was never
+                    # cached. Then try to cache and then return it.
+                    valid_to = self._calculate_policy_validity(endpoint_id)
+                    return self.policy_api.cache_policy(policy_id, valid_to)
+                else:
+                    if policy_ref['valid_to'] < timeutils.utcnow():
+                        # The policy timed out, then try to re-cache it.
+                        valid_to = self._calculate_policy_validity(endpoint_id)
+                        return self.policy_api.cache_policy(policy_id,
+                                                            valid_to)
+                    return policy_ref
             except exception.PolicyNotFound:
                 msg = _LW('Policy %(policy_id)s referenced in association '
                           'for endpoint %(endpoint_id)s not found.')

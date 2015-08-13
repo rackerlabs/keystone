@@ -14,7 +14,12 @@
 
 from testtools import matchers
 
+from oslo_config import cfg
+
 from keystone.tests.unit import test_v3
+
+
+CONF = cfg.CONF
 
 
 class EndpointPolicyTestCase(test_v3.RestfulTestCase):
@@ -195,6 +200,21 @@ class EndpointPolicyTestCase(test_v3.RestfulTestCase):
             'service_id': self.service['id']})
 
         self.head(url, expected_status=404)
+
+    def test_policy_cachecontrol_header(self):
+        url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+               '/services/%(service_id)s') % {
+                   'policy_id': self.policy['id'],
+                   'service_id': self.service['id']}
+        self.put(url, expected_status=204)
+
+        url = '/endpoints/%s/OS-ENDPOINT-POLICY/policy' % self.endpoint['id']
+        response = self.get(url)
+
+        self.assertIn('Cache-Control', response.headers)
+        max_age = response.headers['Cache-Control']
+        self.assertEqual('max-age=', max_age[:8])
+        self.assertTrue(int(max_age[8:]) <= CONF.policy.policy_timeout)
 
 
 class JsonHomeTests(test_v3.JsonHomeTestMixin):
