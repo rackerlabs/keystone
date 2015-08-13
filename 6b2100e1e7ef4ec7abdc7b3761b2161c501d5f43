@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_56945635",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-13T07:28:05Z",
+      "side": 1,
+      "message": "I am a little bit confused when I first saw this testcase `test_calling_with_invalid_entity_arg_fails` since this is not closely related with the bug and the fixing here.\n\nAnyway, it\u0027s no harm, I am fine with it. :)",
+      "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
