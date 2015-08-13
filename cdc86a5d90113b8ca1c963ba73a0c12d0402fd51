@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_892e6541",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-13T14:22:00Z",
+      "side": 1,
+      "message": "nits: reverse the order pls, \n\n    def assertEqual(self, expected, observed, message\u003d\u0027\u0027):\n        \"\"\"Assert that \u0027expected\u0027 is equal to \u0027observed\u0027.",
+      "revId": "cdc86a5d90113b8ca1c963ba73a0c12d0402fd51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c5e89b7d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-13T14:22:00Z",
+      "side": 1,
+      "message": "I think what this testcase want to do is,\n- list unfiltered role assignment\n- list the filtered role assignment with role_id \u003d2 as the filter parameter\n- verify that your new test strategy is really work.\n\nThis testcase is burdened with too many scenario, can we split this test into two or three? or just update the name of the testcase?",
+      "revId": "cdc86a5d90113b8ca1c963ba73a0c12d0402fd51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
