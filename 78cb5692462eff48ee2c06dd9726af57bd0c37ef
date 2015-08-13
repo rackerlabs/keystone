@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_f3bd6268",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T20:23:03Z",
+      "side": 1,
+      "message": "It\u0027s great that we are taking a \"tests first, then code\" approach.  However, unless I understand the vagaries of how we are batching in the changes for reseller, I can\u0027t really evaluate whether the tests are appropriate or not.  This test just feels wrong - since we are setting up a scenario that we know doesn\u0027t really make sense...and only passes because of the \u0027extra\u0027 support and odd capabilities of the first patch.  This can\u0027t be right.  Actually what this does do is re-enforce that the \"Add domain_id to project table\" patch is incomplete...we should not be allowing what will become an illegal hierarchy to be created.  What if we made the cut for Libterty just after that patch?  We\u0027d be supporting that hierarchy for several cycles!",
+      "parentUuid": "1a4dcd0f_93c17e82",
+      "revId": "78cb5692462eff48ee2c06dd9726af57bd0c37ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_dc6e3bc7",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 1
