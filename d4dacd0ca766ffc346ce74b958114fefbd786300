@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_53bf5a60",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-08-13T22:48:26Z",
+      "side": 1,
+      "message": "\"config override to maintain types\"   or something along those lines.",
+      "revId": "d4dacd0ca766ffc346ce74b958114fefbd786300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_937c02b7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-08-13T22:48:26Z",
+      "side": 1,
+      "message": "Do you ever want to have this value be false?",
+      "revId": "d4dacd0ca766ffc346ce74b958114fefbd786300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
