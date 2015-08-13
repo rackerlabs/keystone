@@ -16,6 +16,24 @@
       "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8a9161f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-13T00:19:39Z",
+      "side": 1,
+      "message": "hmm... just realized that we could use the domain_id from the token if both parent_id and domain weren\u0027t provided. Let\u0027s analyze the 6 cases:\n\n  is_domain \u003d True\n\n* domain_id \u003d None, parent_id \u003d None -\u003e valid\n* domain_id \u003d X, parent_id \u003d None -\u003e parent_id should be set to X\n* domain_id \u003d None, parent_id \u003d X -\u003e domain_id should be set to X\n\n  is_domain \u003d False\n\n* domain_id \u003d None, parent_id \u003d None -\u003e domain_id should be set to the one in the token and the parent_id should be the equal to the domain_id\n* domain_id \u003d X, parent_id \u003d None -\u003e parent_id should be set to X\n* domain_id \u003d None, parent_id \u003d X -\u003e domain_id should be set to X if the parent acts as a domain, or to X\u0027s domain_id if it is regular project\n\nMakes sense?",
+      "parentUuid": "1a4dcd0f_58a337b2",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
