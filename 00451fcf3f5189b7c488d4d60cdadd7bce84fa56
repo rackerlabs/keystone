@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_a441c865",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-13T17:15:30Z",
+      "side": 1,
+      "message": "It\u0027s just in the request environment, it translates those two attributes to emailAddress and ST. I could have converted it back to E and S before building the IdP Id, but I rather to keep it as it is for now :-)",
+      "parentUuid": "1a4dcd0f_a7830fca",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_67518761",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 50
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-13T16:00:24Z",
       "side": 1,
       "message": "this is written funny, i\u0027m gonna run it to double check it works, might want to add a test to check the content of the exception.",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2404d816",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-13T17:15:30Z",
+      "side": 1,
+      "message": "yep, that works. I picked it up from other code.\nI will try to add a test if I will have to make another patch ;-)",
+      "parentUuid": "1a4dcd0f_67518761",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
