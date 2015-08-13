@@ -54,6 +54,18 @@ class Policy(rules.Policy):
         refs = session.query(PolicyModel).all()
         return [ref.to_dict() for ref in refs]
 
+    def _get_policy_cache(self, session, policy_id):
+        """Private method to get a policy cache model object."""
+        ref = session.query(PolicyCacheModel).get(policy_id)
+        if not ref:
+            raise exception.PolicyNotFound(policy_id=policy_id)
+        return ref
+
+    def get_policy_cache(self, policy_id):
+        session = sql.get_session()
+
+        return self._get_policy_cache(session, policy_id).to_dict()
+
     def _get_policy(self, session, policy_id):
         """Private method to get a policy model object (NOT a dictionary)."""
         ref = session.query(PolicyModel).get(policy_id)
@@ -71,6 +83,8 @@ class Policy(rules.Policy):
         session = sql.get_session()
 
         with session.begin():
+            # Updates always occurs in the main table, caching mechanism will
+            # apply the changes in the cache table
             ref = self._get_policy(session, policy_id)
             old_dict = ref.to_dict()
             old_dict.update(policy)
@@ -85,5 +99,26 @@ class Policy(rules.Policy):
         session = sql.get_session()
 
         with session.begin():
+            # Deletes always occurs in the main table, caching mechanism will
+            # apply the changes in the cache table
             ref = self._get_policy(session, policy_id)
             session.delete(ref)
+
+    def cache_policy(self, policy_id, valid_to):
+        session = sql.get_session()
+
+        with session.begin():
+            try:
+                ref_dict = self._get_policy(session, policy_id).to_dict()
+            except exception.PolicyNotFound as exc:
+                cached_ref = self._get_policy_cache(session, policy_id)
+                session.delete(cached_ref)
+                raise exc
+            else:
+                cached_ref_dict = ref_dict.copy()
+                cached_ref_dict['valid_to'] = valid_to
+
+                cached_ref = PolicyCacheModel.from_dict(cached_ref_dict)
+                session.merge(cached_ref)
+
+        return cached_ref.to_dict()
