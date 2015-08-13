@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4df36973",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-13T06:09:22Z",
+      "side": 1,
+      "message": "why its called \u0027token_ref\u0027? Weird.",
+      "revId": "6982dc2fc20a80f00f01a37b8eb844c46ce1a752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
