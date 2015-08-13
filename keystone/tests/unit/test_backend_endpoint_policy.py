@@ -12,12 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import calendar
+import datetime
+import mock
 import uuid
 
 from six.moves import range
 from testtools import matchers
 
 from keystone import exception
+from keystone.tests.unit import utils
 
 
 class PolicyAssociationTests(object):
@@ -246,3 +250,76 @@ class PolicyAssociationTests(object):
                           self.endpoint_policy_api.check_policy_association,
                           self.policy[0]['id'],
                           service_id=self.service[0]['id'])
+
+    def _test_policy_cache_control_mechanism(self, utcnow_ts, utcnow,
+                                             policy_id=None):
+        '''Test requests for policies of different endpoints at the same time
+
+        In this scenario, requests for the policies associated with 3 different
+        endpoints arrive at the same time in the server.
+
+        Configuration:
+        - The policy_timeout is 300 seconds, implying that the server times out
+          every 5 minutes;
+        - It's 12:02:00, and the last time the server timed out was 12:00:00.
+
+        Test plan for the 1st request:
+        - The hash (endpoint_id % policy_timeout) equals to 120 seconds,
+          meaning the policy for this endpoint expired at 12:02:00 (right now);
+        - This, the returned policy valid will be valid until 12:07:00.
+
+        Test plan for the 2nd request:
+        - The hash (endpoint_id % policy_timeout) equals to 121 seconds,
+          meaning the policy for this endpoint expired at 12:02:01;
+        - This, the returned policy valid will be valid until 12:02:01.
+
+        Test plan for the 3rd request:
+        - The hash (endpoint_id % policy_timeout) equals to 119 seconds,
+          meaning the policy for this endpoint expired at 12:01:59;
+        - This, the returned policy valid will be valid until 12:06:59.
+
+        '''
+
+        # Let's use the Liberty Release (2015.2.0) date in this test
+        date = {'year': 2015, 'month': 10, 'day': 15}
+
+        utcnow.return_value = datetime.datetime(
+            hour=12, minute=2, second=0, **date)
+        utcnow_ts.return_value = calendar.timegm(
+            utcnow.return_value.timetuple())
+
+        hashes = (120, 121, 119)
+        validities = (datetime.datetime(hour=12, minute=7, second=0, **date),
+                      datetime.datetime(hour=12, minute=2, second=1, **date),
+                      datetime.datetime(hour=12, minute=6, second=59, **date))
+
+        for i in range(3):
+            endpoint = {'id': uuid.UUID(int=hashes[i]).hex,
+                        'interface': 'public',
+                        'region_id': self.region[0]['id'],
+                        'service_id': self.service[0]['id'],
+                        'url': '/url'}
+
+            self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+            self.endpoint_policy_api.create_policy_association(
+                policy_id or self.policy[i]['id'], endpoint['id'])
+
+            policy = self.endpoint_policy_api.get_policy_for_endpoint(
+                endpoint['id'])
+            self.assertEqual(validities[i], policy['valid_to'])
+
+    @mock.patch('oslo_utils.timeutils.utcnow')
+    @mock.patch('oslo_utils.timeutils.utcnow_ts')
+    def test_policy_cache_multiple_endpoints_multiple_policies(self, utcnow_ts,
+                                                               utcnow):
+        self._test_policy_cache_control_mechanism(utcnow_ts, utcnow)
+
+    @utils.wip('There is a bug in the current model for the cache control.'
+               'The valid_to depends on the endpoint_id, thus it must be in'
+               'endpoint table, instead of in the policy_cache table.')
+    @mock.patch('oslo_utils.timeutils.utcnow')
+    @mock.patch('oslo_utils.timeutils.utcnow_ts')
+    def test_policy_cache_multiple_endpoints_single_policy(self, utcnow_ts,
+                                                           utcnow):
+        self._test_policy_cache_control_mechanism(utcnow_ts, utcnow,
+                                                  self.policy[0]['id'])
