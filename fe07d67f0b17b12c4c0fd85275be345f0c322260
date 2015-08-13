@@ -142,6 +142,24 @@
       "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4d4277ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-13T12:48:28Z",
+      "side": 1,
+      "message": "More that I think about this, I believe we should raise an error if both parent_id and domain_id are not provided for regular projects - with reseller, we don\u0027t have anymore the \"container\" ownership between domains and projects, we now have a hierarchy and doesn\u0027t seem natural to create a project below another one just by using the token information.\n\nTrying to always not break tiny API contracts and doing too much hacks to work alongside them is making features like Reseller impracticable. We end by adding new features with really bad UX - no one uses something with bad UX.\n\n(just make clear that I\u0027m agreeing with you, and we might end by using this solution with bad UX you highlighted in your comment)",
+      "parentUuid": "1a4dcd0f_f95f89e2",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
