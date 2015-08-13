@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_788ef8d1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 95
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T20:26:07Z",
+      "side": 1,
+      "message": "It is unclear to me why we are not checking that parent_id, domain_id etc. are correct and don\u0027t clash here - in the same way that we do for regular projects below.  It appears that we are allowing what will soon be illegal hierarchies to be created between the time this patch merges and subsequent ones.  What if we made the cut to liberty just after this patch?",
+      "revId": "4f5039641af07a4ad906a54b3196a60aa17d7bea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
