@@ -269,8 +269,16 @@ class Application(BaseApplication):
         elif isinstance(result, webob.exc.WSGIHTTPException):
             return result
 
+        headers = []
+        # If a freshness attibute is part of the formatted entity, extract it
+        # and return it in the appropriate HTTP cache control header.
+        max_age = result.pop('freshness', None)
+        if max_age:
+            headers.append(('Cache-Control', 'max-age=%d' % max_age))
+
         response_code = self._get_response_code(req)
         return render_response(body=result, status=response_code,
+                               headers=headers,
                                method=req.environ['REQUEST_METHOD'])
 
     def _get_response_code(self, req):
