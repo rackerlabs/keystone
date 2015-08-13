@@ -70,6 +70,42 @@
       "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a9a0d890",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T09:38:39Z",
+      "side": 1,
+      "message": "So I agree with all that.....one issue is....How do I create a top level project acting as as a domain?  I don\u0027t want the domain to be filled in from the token...because I don\u0027t want it to be in any domain?  Is the fact that I have specified (explicitly) parent_id \u003d None in the entity enough?  What if I just leave parent_id out of the entity?  Does that mean use the domain from the token...or does it mean give me a root project acting as a domain?",
+      "parentUuid": "1a4dcd0f_8a9161f3",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e95820fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T09:38:39Z",
+      "side": 1,
+      "message": "Rodrigo - no, today, you can create a regular project by using a domain scoped token as the indicator the the domain in which to place that project.\n\nAlso remember the fallback to the domain default is now deprecated (at least it will be when I get my patch in!)",
+      "parentUuid": "1a4dcd0f_13eb3b14",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
