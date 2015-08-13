@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_8d72a310",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-13T21:49:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_631d3fbd",
+      "revId": "60d591620c50368193b023007f2c0b12b5f5e178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_dacc2237",
         "filename": "bandit.yaml",
         "patchSetId": 5
