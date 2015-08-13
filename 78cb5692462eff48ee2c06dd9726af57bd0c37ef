@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_3834f0f9",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-13T20:28:02Z",
+      "side": 1,
+      "message": "I had the same feeling and thought about prohibiting the creation of projects with is_domain \u003d True at this point. There is no other way to have atomic changes that won\u0027t hurt us in the future.\n\nThe major issue is that this kind of projects are only \"valid\" in the 5th patch of the chain. Should we prohibit the creation of projects acting as domains until that patch?",
+      "parentUuid": "1a4dcd0f_f3bd6268",
+      "revId": "78cb5692462eff48ee2c06dd9726af57bd0c37ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_dc6e3bc7",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 1
