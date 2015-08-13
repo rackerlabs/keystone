@@ -16,6 +16,24 @@
       "revId": "9491af2db64855b9da5b7ef5f1a3fc1ad3fc3fc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0db9b379",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-13T21:53:36Z",
+      "side": 0,
+      "message": "No, because AuthContextMiddleware shouldn\u0027t have been doing this check since it\u0027s supposed to be done by admin token middleware.",
+      "parentUuid": "1a4dcd0f_7cfeb5af",
+      "revId": "9491af2db64855b9da5b7ef5f1a3fc1ad3fc3fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

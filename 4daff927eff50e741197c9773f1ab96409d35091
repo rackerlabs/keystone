@@ -16,6 +16,24 @@
       "revId": "4daff927eff50e741197c9773f1ab96409d35091",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ed9c8710",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-13T21:53:36Z",
+      "side": 1,
+      "message": "The admin token middleware checks the token_id against CONF.admin_token -- http://git.openstack.org/cgit/openstack/keystone/tree/keystone/middleware/core.py#n69",
+      "parentUuid": "1a4dcd0f_dcc909ae",
+      "revId": "4daff927eff50e741197c9773f1ab96409d35091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
