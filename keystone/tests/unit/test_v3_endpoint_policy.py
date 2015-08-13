@@ -12,9 +12,18 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import calendar
+import datetime
+import mock
 from testtools import matchers
+import uuid
+
+from oslo_config import cfg
 
 from keystone.tests.unit import test_v3
+
+
+CONF = cfg.CONF
 
 
 class EndpointPolicyTestCase(test_v3.RestfulTestCase):
@@ -195,6 +204,149 @@ class EndpointPolicyTestCase(test_v3.RestfulTestCase):
             'service_id': self.service['id']})
 
         self.head(url, expected_status=404)
+
+    def test_policy_cache_control_header(self):
+        url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+               '/services/%(service_id)s') % {
+                   'policy_id': self.policy['id'],
+                   'service_id': self.service['id']}
+        self.put(url, expected_status=204)
+
+        url = '/endpoints/%s/OS-ENDPOINT-POLICY/policy' % self.endpoint['id']
+        response = self.get(url)
+
+        self.assertIn('Cache-Control', response.headers)
+        max_age = response.headers['Cache-Control']
+        self.assertEqual('max-age=', max_age[:8])
+        self.assertTrue(int(max_age[8:]) <= CONF.policy.policy_timeout)
+
+    def _test_policy_caching(self, endpoint_id, freshness):
+        """Associate, retrieve and check policy freshness for endpoint."""
+
+        url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+               '/services/%(service_id)s') % {
+                   'policy_id': self.policy['id'],
+                   'service_id': self.service['id']}
+        self.put(url, expected_status=204)
+
+        url = '/endpoints/%s/OS-ENDPOINT-POLICY/policy' % endpoint_id
+        response = self.get(url)
+
+        max_age = response.headers['Cache-Control']
+        # Cache-Control value is in the format max-age={freshness}
+        max_age = int(max_age[8:])
+        self.assertEqual(freshness, max_age)
+
+        policy = response.result['policy']
+        policy.pop('links')
+        self.assertEqual(self.policy, policy)
+
+    @mock.patch('oslo_utils.timeutils.utcnow')
+    @mock.patch('oslo_utils.timeutils.utcnow_ts')
+    def test_policy_cache_thundering_herd(self, utcnow_ts, utcnow):
+        '''Test freshness vary for policies associated with different endpoints
+
+        In this scenario, requests for the policies associated with 3 different
+        endpoints arrive at the same time in the server.
+
+        Configuration:
+        - The policy_timeout is 300 seconds, implying that the server times out
+        every 5 minutes;
+        - It's 12:02:00, and the last time the server timed out was 12:00:00.
+
+        Test plan for the 1st request:
+        - The hash (endpoint_id % policy_timeout) equals to 120 seconds,
+        meaning the policy for this endpoint expired at 12:02:00 (right now);
+        - Thus, the returned policy will be valid until 12:07:00, i.e it is
+        fresh for 300 seconds from now.
+
+        Test plan for the 2nd request:
+        - The hash (endpoint_id % policy_timeout) equals to 121 seconds,
+        meaning the policy for this endpoint expired at 12:02:01;
+        - Thus, the returned policy will be valid until 12:02:01, i.e it is
+        fresh for 1 second from now.
+
+        Test plan for the 3rd request:
+        - The hash (endpoint_id % policy_timeout) equals to 119 seconds,
+        meaning the policy for this endpoint expired at 12:01:59;
+        - Thus, the returned policy will be valid until 12:06:59, i.e it is
+        fresh for 299 seconds from now.
+
+        '''
+
+        # Let's use the Liberty Release (2015.2.0) date as base for this test
+        date = {'year': 2015, 'month': 10, 'day': 15}
+
+        utcnow.return_value = datetime.datetime(
+            hour=12, minute=2, second=0, **date)
+        utcnow_ts.return_value = calendar.timegm(
+            utcnow.return_value.timetuple())
+
+        hashes = (120, 121, 119)
+        freshness = (300, 1, 299)
+
+        for i in range(len(hashes)):
+            endpoint = {'id': uuid.UUID(int=hashes[i]).hex,
+                        'interface': 'public',
+                        'region_id': self.region['id'],
+                        'service_id': self.service['id'],
+                        'url': '/url'}
+            self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+            self._test_policy_caching(endpoint['id'], freshness[i])
+
+    @mock.patch('oslo_utils.timeutils.utcnow')
+    @mock.patch('oslo_utils.timeutils.utcnow_ts')
+    def test_policy_cache_inconsistency(self, utcnow_ts, utcnow):
+        '''Test policy updates may cause inconsistency between endpoints
+
+        In this scenario, two endpoints request the same policy entity at
+        different times. In the meantime, a policy update occurs, and the
+        second endpoint gets the changes in its request. The policy of the
+        first endpoint remains out-of-date until it expires.
+
+        Configuration:
+        - The policy_timeout is 300 seconds, implying that the server times out
+        every 5 minutes;
+        - The hash (endpoint_id % policy_timeou) equals to 0 seconds, meaning
+        the policy for this endpoint expires exactly when the server times out.
+
+        Test plan for the 1st request:
+        - It's 12:02:00 and the next server timeout will be at 12:05:00;
+        - The first endpoint requests the policy and it will be valid until
+        12:05:00, i.e it is fresh for 180 seconds.
+
+        There is a policy update somewhen between 12:02:00 and 12:04:00.
+
+        Test plan for the 2nd request:
+        - It's 12:04:00 and the next server timeout will be at 12:05:00;
+        - The second endpoint requests the policy and gets the updated entity,
+        which will be valid until 12:05:00, i.e it is fresh for 60 seconds.
+
+        '''
+
+        endpoint = {'id': uuid.UUID(int=0).hex,
+                    'interface': 'public',
+                    'region_id': self.region['id'],
+                    'service_id': self.service['id'],
+                    'url': '/url'}
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+        # Let's use the Liberty Release (2015.2.0) date as base for this test
+        date = {'year': 2015, 'month': 10, 'day': 15}
+
+        utcnow.return_value = datetime.datetime(hour=12, minute=2, **date)
+        utcnow_ts.return_value = calendar.timegm(
+            utcnow.return_value.timetuple())
+        self._test_policy_caching(endpoint['id'], 180)
+
+        self.policy['blob'] = uuid.uuid4().hex
+        self.policy_api.update_policy(self.policy['id'], self.policy)
+
+        utcnow.return_value = datetime.datetime(hour=12, minute=4, **date)
+        utcnow_ts.return_value = calendar.timegm(
+            utcnow.return_value.timetuple())
+        self._test_policy_caching(endpoint['id'], 60)
 
 
 class JsonHomeTests(test_v3.JsonHomeTestMixin):
