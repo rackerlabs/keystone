@@ -124,6 +124,24 @@
       "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f95f89e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 94
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T11:17:20Z",
+      "side": 1,
+      "message": "So I agree that\u0027s what we are saying. However, what I am worried about is whether it is obvious to a caller....think of this situation.  Imagine I have a 3 level hierarchy of projects acting as a domain...and I\u0027m creating projects below the bottom domain.  When I create a regular project, I know I can leave out the domain_id and parent_id and the domain will be picked up from the token.  However, if I then want to create another sub-domain, I might easily think that all I do is set is_domain\u003dTrue in a new entity (and leave the domain_id and parent_id empty) just like I did with a regular project.  But that\u0027s not what will happen...I just created a root level domain, not a sub-domain.\n\nI\u0027m not sure I have an answer for this.",
+      "parentUuid": "1a4dcd0f_24062f86",
+      "revId": "fe07d67f0b17b12c4c0fd85275be345f0c322260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
