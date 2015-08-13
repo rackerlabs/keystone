@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_bcf00ffe",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T11:39:33Z",
+      "side": 1,
+      "message": "I don\u0027t understand why we are setting this? Aren\u0027t we asking for a project acting as a domain as a sub_domain of it\u0027s parent?  I\u0027d have expect an exception from issue a create call like this.",
+      "revId": "78cb5692462eff48ee2c06dd9726af57bd0c37ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_dc6e3bc7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2220,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-13T11:39:33Z",
+      "side": 1,
+      "message": "I would not have expected these to be equal. Why would the sub-project be in the default domain? Surely it would be in the domain created by its parent, i.e. ref[domainId] would be equal to ref[parent_id] as well as project[id] ?",
+      "revId": "78cb5692462eff48ee2c06dd9726af57bd0c37ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
