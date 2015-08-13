@@ -16,6 +16,24 @@
       "revId": "3988f33e193c11da0f03bee17f1fe15b9a9d20d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f46fa728",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-13T02:02:53Z",
+      "side": 1,
+      "message": "I believe what my english teacher told me is not exactly correct here, thanks Herny. :)",
+      "parentUuid": "1a4dcd0f_ea56045d",
+      "revId": "3988f33e193c11da0f03bee17f1fe15b9a9d20d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
