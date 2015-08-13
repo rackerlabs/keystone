@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_44cc9b34",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-13T10:12:22Z",
+      "side": 1,
+      "message": "\u0027validated expected\u0027 does it make sense.\n\nIMO it should be either \u0027validation expected\u0027 or \u0027validator expected\u0027. Correct me if I am wrong.",
+      "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_56945635",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 1
