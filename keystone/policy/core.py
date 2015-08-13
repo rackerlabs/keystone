@@ -15,8 +15,11 @@
 """Main entry point into the Policy service."""
 
 import abc
+import datetime
+import uuid
 
 from oslo_config import cfg
+from oslo_utils import timeutils
 import six
 
 from keystone.common import dependency
@@ -44,16 +47,62 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
 
+        self.policy_timeout = datetime.timedelta(
+            seconds=CONF.policy.policy_timeout)
+
     def create_policy(self, policy_id, policy, initiator=None):
         ref = self.driver.create_policy(policy_id, policy)
         notifications.Audit.created(self._POLICY, policy_id, initiator)
         return ref
 
+    def _calculate_policy_validity(self, policy_id):
+        """Calculates the validity date for the policy with the given id
+
+        Policy entities have their cache control values defined by the server.
+        Their freshness is defined according to the policy_timeout config.
+
+        However, if all the policies in the system timed out at the same
+        moment, that could cause the thundering herd problem. In order to avoid
+        this, policy entities have their freshness added of a hash value, which
+        is calculated based on the entity's ID and the global policy_timeout.
+
+        This function returns the datetime object representing when a policy
+        with the provided ID will expire.
+
+        """
+
+        now_datetime = timeutils.utcnow()
+        now_secs = (now_datetime - datetime.datetime.min).total_seconds()
+
+        timeout_delay = uuid.UUID(policy_id).int % self.policy_timeout.seconds
+
+        timeout_secs = (now_secs - (now_secs % self.policy_timeout.seconds)
+                        + timeout_delay)
+
+        timeout_datetime = datetime.datetime.utcfromtimestamp(timeout_secs)
+
+        if timeout_datetime > now_datetime:
+            # The calculated timeout event did not occur yet
+            return timeout_datetime
+        else:
+            # The calculated timeout event occurred, return the next one
+            return timeout_datetime + self.policy_timeout
+
     def get_policy(self, policy_id):
         try:
-            return self.driver.get_policy(policy_id)
-        except exception.NotFound:
-            raise exception.PolicyNotFound(policy_id=policy_id)
+            policy_ref = self.driver.get_policy_cache(policy_id)
+        except exception.PolicyNotFound:
+            # It is possible that the requested policy was never cached. Then
+            # try to cache and then return it.
+            valid_to = self._calculate_policy_validity(policy_id)
+            return self.driver.cache_policy(policy_id, valid_to)
+        else:
+            if policy_ref['valid_to'] < timeutils.utcnow():
+                # The policy timed out, then try to re-cache and return it.
+                valid_to = self._calculate_policy_validity(policy_id)
+                return self.driver.cache_policy(policy_id, valid_to)
+
+            return policy_ref
 
     def update_policy(self, policy_id, policy, initiator=None):
         if 'id' in policy and policy_id != policy['id']:
