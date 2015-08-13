@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7eee1b23",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-13T15:00:23Z",
+      "side": 1,
+      "message": "Yeah, I was hitting this issue consolidating the v2 issue token path, I\u0027ll have to refactor the v2 token provider stuff once this lands.",
+      "revId": "885b13179fba5e22361a942f7ca33bd914bba703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
