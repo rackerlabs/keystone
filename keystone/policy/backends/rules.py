@@ -82,6 +82,9 @@ class Policy(policy.Driver):
     def list_policies(self):
         raise exception.NotImplemented()
 
+    def get_policy_cache(self, policy_id):
+        raise exception.NotImplemented()
+
     def get_policy(self, policy_id):
         raise exception.NotImplemented()
 
@@ -89,4 +92,7 @@ class Policy(policy.Driver):
         raise exception.NotImplemented()
 
     def delete_policy(self, policy_id):
+        raise exception.NotImplemented()
+
+    def cache_policy(self, policy_id):
         raise exception.NotImplemented()
