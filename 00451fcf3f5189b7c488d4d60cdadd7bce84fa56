@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a7830fca",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-13T16:00:24Z",
+      "side": 1,
+      "message": "thanks for showing the example cert, just wondering why we have to use emailAdress and ST instead of E and S?",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_67518761",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-13T16:00:24Z",
+      "side": 1,
+      "message": "this is written funny, i\u0027m gonna run it to double check it works, might want to add a test to check the content of the exception.",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
