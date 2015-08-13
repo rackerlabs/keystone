@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Ajaya Agrawal <ajku.agr@gmail.com>
+Code-Review+1: Alexey Miroshkin <alexey.miroshkin@ru.ibm.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 13 Aug 2015 03:57:53 +0000
+Reviewed-on: https://review.openstack.org/199989
+Project: openstack/keystone
+Branch: refs/heads/master
