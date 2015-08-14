@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_7ce1d529",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-14T19:23:49Z",
+      "side": 1,
+      "message": "Yes, your\u0027re right. It is because this is \u0027L\u0027 release. I\u0027m open to any alternative versioning scheme. Suggestions welcome!",
+      "parentUuid": "1a4dcd0f_5b631fb1",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_7b74db34",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
