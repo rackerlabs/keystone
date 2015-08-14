@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_bf63d440",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-14T17:56:44Z",
+      "side": 1,
+      "message": "This return is not necessary",
+      "revId": "548e43ddad14a7dc935e9c97bd04e559fa56f7d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
