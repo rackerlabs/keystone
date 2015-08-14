@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a770d874",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:49:36Z",
+      "side": 1,
+      "message": "no need to use %s replacement.\n\n r \u003d self.get(\u0027/credentials?type\u003dcert\u0027)",
+      "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a7f778d3",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:49:36Z",
+      "side": 1,
+      "message": "no need to use %:\n\n r_ec2 \u003d self.get(\u0027/credentials?type\u003dec2\u0027)\n\nAlso, check the response like above:\n\n  self.assertValidCredentialListResponse(r, ref\u003dself.credential)",
+      "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_472f943e",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:49:36Z",
+      "side": 1,
+      "message": "check the length of the response (using the HasLength matcher from testools) is as expected otherwise this test might pass just because the first response is the ec2 credential.",
+      "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_07b74cf6",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:49:36Z",
+      "side": 1,
+      "message": "no need for %s for the type.",
+      "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_07442c19",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:49:36Z",
+      "side": 1,
+      "message": "Use the HasLength matcher from testtools so that the output is more informative in case of a failure.",
+      "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
