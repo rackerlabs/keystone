@@ -126,6 +126,23 @@ def v3_app_factory(global_conf, **local_conf):
         _routers.append(routers_instance)
         routers_instance.append_v3_routers(mapper, sub_routers)
 
-    # Add in the v3 version api
+    return (mapper, _routers, sub_routers)
+
+@fail_gracefully
+def v3_admin_app_factory(global_conf, **local_conf):
+
+    # Add in the v3 admin version api
+    mapper, _routers, sub_routers =  v3_app_factory(global_conf, **local_conf)
+    sub_routers.append(routers.VersionV3('admin', _routers))
+
+    return wsgi.ComposingRouter(mapper, sub_routers)
+
+
+@fail_gracefully
+def v3_public_app_factory(global_conf, **local_conf):
+
+    # Add in the v3 public version api
+    mapper, _routers, sub_routers =  v3_app_factory(global_conf, **local_conf)
     sub_routers.append(routers.VersionV3('public', _routers))
+
     return wsgi.ComposingRouter(mapper, sub_routers)

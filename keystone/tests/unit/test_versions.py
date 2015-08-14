@@ -775,6 +775,28 @@ class VersionTestCase(tests.TestCase):
             expected = v3_VERSION_RESPONSE
             self._paste_in_port(expected['version'], 'http://localhost/v3/')
             self.assertEqual(expected, data)
+            
+    def test_use_config_endpoint_if_set_v3(self):
+        admin_endpoint = "http://admin_endpoint:9999"
+        public_endpoint  = "http://public_endpoint:8888"
+                      
+        self.config_fixture.config(public_endpoint=public_endpoint,
+                                   admin_endpoint=admin_endpoint)
+
+        client = tests.TestClient(self.public_app)
+        resp = client.get('/v3/')
+        self.assertEqual(200, resp.status_int)
+        data = jsonutils.loads(resp.body)
+        expected_endpoint = '%s/v3/' % public_endpoint
+        self.assertEqual(data["version"]["links"][0]["href"] , expected_endpoint)
+
+        client = tests.TestClient(self.admin_app)
+        resp = client.get('/v3/')
+        self.assertEqual(200, resp.status_int)
+        data = jsonutils.loads(resp.body)
+        expected_endpoint = '%s/v3/' % admin_endpoint
+        self.assertEqual(data["version"]["links"][0]["href"] , expected_endpoint)
+
 
     @mock.patch.object(controllers, '_VERSIONS', ['v3'])
     def test_v2_disabled(self):
