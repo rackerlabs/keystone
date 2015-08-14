@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_530f312e",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-08-14T16:10:03Z",
+      "side": 1,
+      "message": "This is a hack. Proper fix is to have different factories for admin and public for v3. After 1 week no one knows why we added this if condition",
+      "revId": "5a6ed7b6ee0c5c8e2401e81df568702c2ac4e95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_6c01f969",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 1
