@@ -97,8 +97,8 @@ def admin_version_app_factory(global_conf, **local_conf):
                                 [routers.Versions('admin')])
 
 
-@fail_gracefully
-def v3_app_factory(global_conf, **local_conf):
+
+def get_v3_routers(global_conf, **local_conf):
     controllers.register_version('v3')
     mapper = routes.Mapper()
     sub_routers = []
@@ -126,6 +126,30 @@ def v3_app_factory(global_conf, **local_conf):
         _routers.append(routers_instance)
         routers_instance.append_v3_routers(mapper, sub_routers)
 
-    # Add in the v3 version api
-    sub_routers.append(routers.VersionV3('public', _routers))
+    return (mapper, _routers, sub_routers)
+
+@fail_gracefully
+def v3_admin_app_factory(global_conf, **local_conf):
+
+    # Add in the v3 admin version api
+    mapper, _routers, sub_routers = get_v3_routers(global_conf, **local_conf)
+    sub_routers.append(routers.VersionV3('admin', _routers))
+
     return wsgi.ComposingRouter(mapper, sub_routers)
+
+@fail_gracefully
+def v3_public_app_factory(global_conf, **local_conf):
+
+    # Add in the v3 public version api
+    mapper, _routers, sub_routers = get_v3_routers(global_conf, **local_conf)
+    sub_routers.append(routers.VersionV3('public', _routers))
+
+    return wsgi.ComposingRouter(mapper, sub_routers)
+
+@fail_gracefully
+def v3_app_factory(global_conf, **local_conf):
+    # We are still keeping this factory since grenade-gate requires
+    # new code to run with old config. We can remove this after liberty
+    # https://github.com/openstack-dev/grenade#theory-of-upgrade
+
+    return v3_public_app_factory(global_conf, **local_conf)
