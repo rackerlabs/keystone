@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_724c4242",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-14T01:44:11Z",
+      "side": 1,
+      "message": "sure, seems like both Henry and Lance are happy with a blank line before the trailing \"\"\". Done.",
+      "parentUuid": "1a4dcd0f_c4259d5c",
+      "revId": "472fa03a373ba004bb85ac2eb6b3b58c2237e2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_bc4f8bbd",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_025dfa78",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-14T01:44:11Z",
+      "side": 1,
+      "message": "To avoid this line excced the 79 characters, I am going to cut off some words from the summary line.",
+      "parentUuid": "1a4dcd0f_bc4f8bbd",
+      "revId": "472fa03a373ba004bb85ac2eb6b3b58c2237e2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3cca9b1b",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -83,6 +119,24 @@
       "writtenOn": "2015-08-14T00:25:06Z",
       "side": 1,
       "message": "change \"method return\" to \"method returns\"",
+      "revId": "472fa03a373ba004bb85ac2eb6b3b58c2237e2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_02389a3c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-14T01:44:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_3cca9b1b",
       "revId": "472fa03a373ba004bb85ac2eb6b3b58c2237e2e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
