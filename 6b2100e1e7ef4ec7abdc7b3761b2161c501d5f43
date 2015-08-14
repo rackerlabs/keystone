@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_f07f53a9",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-14T16:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_967adeb8",
+      "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_44cc9b34",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "1a4dcd0f_44cc9b34",
+      "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5073a7e7",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-14T16:10:47Z",
+      "side": 1,
+      "message": "I think this is wrong. validated is the name of the decorator.",
+      "parentUuid": "1a4dcd0f_85c26f33",
       "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
