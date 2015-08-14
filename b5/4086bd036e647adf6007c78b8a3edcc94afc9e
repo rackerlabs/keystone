@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Takashi NATSUME <natsume.takashi@lab.ntt.co.jp>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+1: Raildo Mascena de Sousa Filho <raildom@gmail.com>
+Code-Review+1: Rajesh Tailor <rajesh.tailor@nttdata.com>
+Code-Review+1: venkatamahesh <venkatamaheshkotha@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 14 Aug 2015 02:39:27 +0000
+Reviewed-on: https://review.openstack.org/211876
+Project: openstack/keystone
+Branch: refs/heads/master
