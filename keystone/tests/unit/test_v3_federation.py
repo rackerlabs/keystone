@@ -2472,6 +2472,21 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                           self._issue_unscoped_token,
                           assertion='ANOTHER_LOCAL_USER_ASSERTION')
 
+    def test_delete_tokens_by_idp(self):
+        self.assertTrue(self.tokens)
+
+        for token in self.tokens.values():
+            self.assertTrue(self.token_provider_api.validate_token(token))
+
+        self.token_provider_api._persistence.delete_tokens(user_id=None,
+                                                           idp_id=self.IDP)
+
+        for token in self.tokens.values():
+            self.assertRaises(
+                exception.TokenNotFound,
+                self.token_provider_api.validate_token,
+                token)
+
 
 class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'

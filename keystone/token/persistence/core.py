@@ -95,11 +95,11 @@ class PersistenceManager(manager.Manager):
         self.invalidate_revocation_list()
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, idp_id=None):
         if not CONF.token.revoke_by_id:
             return
         token_list = self.driver.delete_tokens(user_id, tenant_id, trust_id,
-                                               consumer_id)
+                                               consumer_id, idp_id)
         for token_id in token_list:
             unique_id = utils.generate_unique_id(token_id)
             self._invalidate_individual_token_cache(unique_id)
@@ -278,7 +278,7 @@ class TokenDriverV8(object):
 
     @abc.abstractmethod
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, idp_id=None):
         """Deletes tokens by user.
 
         If the tenant_id is not None, only delete the tokens by user id under
@@ -298,6 +298,8 @@ class TokenDriverV8(object):
         :type trust_id: string
         :param consumer_id: identity of the consumer
         :type consumer_id: string
+        :param idp_id: identity of the identity provider
+        :type idp_id: string
         :returns: The tokens that have been deleted.
         :raises keystone.exception.TokenNotFound: If the token doesn't exist.
 

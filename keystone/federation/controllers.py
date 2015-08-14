@@ -33,6 +33,7 @@ from keystone.federation import schema
 from keystone.federation import utils
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone import notifications
 
 
 CONF = cfg.CONF
@@ -97,6 +98,8 @@ class IdentityProvider(_ControllerBase):
         identity_provider.setdefault('enabled', False)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(context, idp_ref)
+        initiator = notifications._get_request_audit_info(context)
+        notifications.Audit.created('idp', idp_ref['id'], initiator)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
     @controller.filterprotected('id', 'enabled')
@@ -113,6 +116,8 @@ class IdentityProvider(_ControllerBase):
 
     @controller.protected()
     def delete_identity_provider(self, context, idp_id):
+        initiator = notifications._get_request_audit_info(context)
+        notifications.Audit.deleted('idp', idp_id, initiator)
         self.federation_api.delete_idp(idp_id)
 
     @controller.protected()
@@ -120,6 +125,8 @@ class IdentityProvider(_ControllerBase):
     def update_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
+        initiator = notifications._get_request_audit_info(context)
+        notifications.Audit.updated('idp', idp_ref['id'], initiator)
         return IdentityProvider.wrap_member(context, idp_ref)
 
 
