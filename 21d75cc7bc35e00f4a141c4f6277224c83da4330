@@ -84,6 +84,24 @@
       "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_68802f8c",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 16625
+      },
+      "writtenOn": "2015-08-14T21:22:41Z",
+      "side": 1,
+      "message": "Ok Brant, I can make these changes.",
+      "parentUuid": "1a4dcd0f_07442c19",
+      "revId": "21d75cc7bc35e00f4a141c4f6277224c83da4330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
