@@ -68,6 +68,24 @@
       "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d7ec9694",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-14T13:51:42Z",
+      "side": 1,
+      "message": "This is just making sure it is working as designed and already being used.",
+      "parentUuid": "1a4dcd0f_56945635",
+      "revId": "6b2100e1e7ef4ec7abdc7b3761b2161c501d5f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
