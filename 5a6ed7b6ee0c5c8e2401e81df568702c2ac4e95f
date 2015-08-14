@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_5fae6f99",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-14T07:25:58Z",
+      "side": 1,
+      "message": "s/CONF.eventlet_server.admin_port/CONF.admin_port/\n\neventlet_server section is deprecated",
+      "revId": "5a6ed7b6ee0c5c8e2401e81df568702c2ac4e95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_6c01f969",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 1
