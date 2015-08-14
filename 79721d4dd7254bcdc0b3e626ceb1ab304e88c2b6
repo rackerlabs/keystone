@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_2e71dc77",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3440,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-14T16:41:04Z",
+      "side": 1,
+      "message": "do you need create_class for anything? you don\u0027t touch the mock here",
+      "revId": "79721d4dd7254bcdc0b3e626ceb1ab304e88c2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3fc843a8",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -13,6 +30,24 @@
       "writtenOn": "2015-08-14T07:11:24Z",
       "side": 1,
       "message": "(aside) what\u0027s the reason for the double __ convention? (like above as well)?",
+      "revId": "79721d4dd7254bcdc0b3e626ceb1ab304e88c2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2e679ceb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3443,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-14T16:41:04Z",
+      "side": 1,
+      "message": "I think you have to read this as \"test_\" \"_sign_assertion\" \"_ex\". So, this is a test method for a private attribute called \"_sign_assertion\" which makes assertions about exception. Quite a convoluted pattern. \"_sign_assertion\" probably shouldn\u0027t be a private method if it can be reasonably unit tested externally?\n\nnit: the new method uses the _ex suffix, whereas the existing one uses the _exc suffix.",
+      "parentUuid": "1a4dcd0f_3fc843a8",
       "revId": "79721d4dd7254bcdc0b3e626ceb1ab304e88c2b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
