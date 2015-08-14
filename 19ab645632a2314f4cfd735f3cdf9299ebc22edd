@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f663efdb",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-14T01:51:27Z",
+      "side": 1,
+      "message": "With Hierarchical Multitenancy, we only have a project hierarchy inside a domain, so in fact, we don\u0027t have parent projects operating as domains, this will only be true after reseller.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
