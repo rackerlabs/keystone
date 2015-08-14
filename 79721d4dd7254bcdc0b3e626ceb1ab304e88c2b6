@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3fc843a8",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3443,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-14T07:11:24Z",
+      "side": 1,
+      "message": "(aside) what\u0027s the reason for the double __ convention? (like above as well)?",
+      "revId": "79721d4dd7254bcdc0b3e626ceb1ab304e88c2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
