@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_19c6a316",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-14T19:19:02Z",
+      "side": 1,
+      "message": "Compatibilizer classes contain compatibility methods specific to the respective drivers. Hence, corresponding to every driver in each core.py file, we need to define a compatibilizer in tandem. Compatibilizer class doesn\u0027t hold any code common to all drivers and that explains why we can\u0027t define it once and use it everywhere.",
+      "parentUuid": "1a4dcd0f_7b74db34",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_9e0823db",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_19ed438e",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-14T19:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_1e9f3351",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3ee78fe5",
         "filename": "keystone/common/manager.py",
         "patchSetId": 3
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_d9e6fbaf",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-14T19:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_3ee78fe5",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3b065386",
         "filename": "keystone/common/manager.py",
         "patchSetId": 3
@@ -115,6 +169,24 @@
       "writtenOn": "2015-08-13T07:01:06Z",
       "side": 1,
       "message": "With this change, the existing out-of-tree drivers will break if they don\u0027t have INTERFACE_VERSION defined right?",
+      "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d9427b68",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-14T19:19:02Z",
+      "side": 1,
+      "message": "Yes you\u0027re right. I\u0027ve addressed this issue in patch set 4. Please review that. With that, existing out-of-tree drivers would work with the next release i.e. version 12, as well.",
+      "parentUuid": "1a4dcd0f_3b065386",
       "revId": "b307bb77ec8cf3a0f10f842bd5fe61fa5893c731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
