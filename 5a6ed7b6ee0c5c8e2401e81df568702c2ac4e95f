@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_e52013b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-14T05:47:40Z",
+      "side": 1,
+      "message": "this phrase doesn\u0027t sound good grammatically. Did you mean \"so in case public_endpoint and admin_endpoint are specified in config URL - public endpoint is always returned\"",
+      "revId": "5a6ed7b6ee0c5c8e2401e81df568702c2ac4e95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c50ab727",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-14T05:47:40Z",
+      "side": 1,
+      "message": "*to decide if",
+      "revId": "5a6ed7b6ee0c5c8e2401e81df568702c2ac4e95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_6c01f969",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 1
