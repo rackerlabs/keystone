@@ -57,7 +57,9 @@ class TokenTests(object):
                 'trust_id': None,
                 'user': {'id': 'testuserid'},
                 'token_data': {'access': {'token': {
-                    'audit_ids': [uuid.uuid4().hex]}}}}
+                    'audit_ids': [uuid.uuid4().hex]}}},
+                'idp_id': None, }
+
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         expires = data_ref.pop('expires')
@@ -240,7 +242,8 @@ class TokenTests(object):
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'expires': expire_time,
                 'trust_id': None,
-                'user': {'id': 'testuserid'}}
+                'user': {'id': 'testuserid'},
+                'idp_id': None, }
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         data_ref.pop('user_id')
@@ -252,7 +255,8 @@ class TokenTests(object):
     def test_null_expires_token(self):
         token_id = uuid.uuid4().hex
         data = {'id': token_id, 'id_hash': token_id, 'a': 'b', 'expires': None,
-                'user': {'id': 'testuserid'}}
+                'user': {'id': 'testuserid'},
+                'idp_id': None, }
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         self.assertIsNotNone(data_ref['expires'])
@@ -279,7 +283,8 @@ class TokenTests(object):
         audit_id = uuid.uuid4().hex
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'user': {'id': 'testuserid'},
-                'token_data': {'token': {'audit_ids': [audit_id]}}}
+                'token_data': {'token': {'audit_ids': [audit_id]}},
+                'idp_id': None, }
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         self.token_provider_api._persistence.delete_token(token_id)
@@ -312,7 +317,8 @@ class TokenTests(object):
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'expires': expire_time,
                 'trust_id': None,
-                'user': {'id': 'testuserid'}}
+                'user': {'id': 'testuserid'},
+                'idp_id': None, }
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         data_ref.pop('user_id')
@@ -323,7 +329,8 @@ class TokenTests(object):
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'expires': expire_time,
                 'trust_id': None,
-                'user': {'id': 'testuserid'}}
+                'user': {'id': 'testuserid'},
+                'idp_id': None, }
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         data_ref.pop('user_id')
@@ -344,14 +351,16 @@ class TokenTests(object):
                       'trust_id': None,
                       'user': {'id': 'testuserid'},
                       'token_data': {'token': {
-                          'audit_ids': [uuid.uuid4().hex]}}}
+                          'audit_ids': [uuid.uuid4().hex]}},
+                      'idp_id': None, }
         token2_id = uuid.uuid4().hex
         token2_data = {'id_hash': token2_id, 'id': token2_id, 'a': 'b',
                        'expires': expire_time,
                        'trust_id': None,
                        'user': {'id': 'testuserid'},
                        'token_data': {'token': {
-                           'audit_ids': [uuid.uuid4().hex]}}}
+                           'audit_ids': [uuid.uuid4().hex]}},
+                       'idp_id': None, }
         # Create 2 Tokens.
         self.token_provider_api._persistence.create_token(token_id,
                                                           token_data)
@@ -387,7 +396,8 @@ class TokenTests(object):
         token_id = self._create_token_id()
         token_id_hash = hash_fn(token_id.encode('utf-8')).hexdigest()
         token = {'user': {'id': uuid.uuid4().hex},
-                 'token_data': {'token': {'audit_ids': [uuid.uuid4().hex]}}}
+                 'token_data': {'token': {'audit_ids': [uuid.uuid4().hex]}},
+                 'idp_id': None, }
 
         self.token_provider_api._persistence.create_token(token_id, token)
         self.token_provider_api._persistence.delete_token(token_id)
