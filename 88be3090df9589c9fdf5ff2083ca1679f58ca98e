@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1cdb1f23",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1431,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:22:30Z",
+      "side": 1,
+      "message": "keystone determines the id attribute of entries. LDAP doesn\u0027t have IDs for entries.\n\nThis should be\n\n # create a user that doesn\u0027t have the id attribute",
+      "revId": "88be3090df9589c9fdf5ff2083ca1679f58ca98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_dc32975e",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1435,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-14T00:22:30Z",
+      "side": 1,
+      "message": "use \"sn\" for the attribute in the DN instead of an attribute that\u0027s not going to be allowed by the entry\u0027s objectclasses so that this test could conceivably run in the live tests.",
+      "revId": "88be3090df9589c9fdf5ff2083ca1679f58ca98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
