@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_3ceb4d14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-14T19:22:16Z",
+      "side": 1,
+      "message": "I would say that this patch provides the basic storage, and the flag is not yet interpreted anywhere",
+      "revId": "548e43ddad14a7dc935e9c97bd04e559fa56f7d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3c9d8dbb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-14T19:22:16Z",
+      "side": 1,
+      "message": "..should say we don\u0027t support seeing it to True via the rest API....",
+      "revId": "548e43ddad14a7dc935e9c97bd04e559fa56f7d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7c8a3566",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-14T19:22:16Z",
+      "side": 1,
+      "message": "I wouldn\u0027t be explicit here...just say in subsequent patches",
+      "revId": "548e43ddad14a7dc935e9c97bd04e559fa56f7d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_bf63d440",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 2
