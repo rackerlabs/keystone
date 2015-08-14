@@ -100,11 +100,11 @@ class PersistenceManager(manager.Manager):
         self.invalidate_revocation_list()
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, idp_id=None):
         if not CONF.token.revoke_by_id:
             return
         token_list = self.driver.delete_tokens(user_id, tenant_id, trust_id,
-                                               consumer_id)
+                                               consumer_id, idp_id)
         for token_id in token_list:
             unique_id = utils.generate_unique_id(token_id)
             self._invalidate_individual_token_cache(unique_id)

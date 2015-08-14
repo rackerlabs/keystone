@@ -32,6 +32,7 @@ from keystone.contrib.federation import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone import notifications
 
 
 CONF = cfg.CONF
@@ -112,6 +113,7 @@ class IdentityProvider(_ControllerBase):
 
     @controller.protected()
     def delete_identity_provider(self, context, idp_id):
+        notifications.Audit.deleted('idp', idp_id, None)
         self.federation_api.delete_idp(idp_id)
 
     @controller.protected()
