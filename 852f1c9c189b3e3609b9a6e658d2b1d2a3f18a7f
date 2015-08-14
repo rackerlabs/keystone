@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_3912a80a",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-14T02:43:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a4dcd0f_3e06981c",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1e407c33",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 12
