@@ -131,6 +131,7 @@ class Manager(manager.Manager):
                 ['OS-TRUST:trust', self._trust_deleted_event_callback],
                 ['user', self._delete_user_tokens_callback],
                 ['domain', self._delete_domain_tokens_callback],
+                ['idp', self._delete_idp_tokens_callback]
             ],
             notifications.ACTIONS.disabled: [
                 ['user', self._delete_user_tokens_callback],
@@ -463,6 +464,13 @@ class Manager(manager.Manager):
             consumer_id = payload['resource_info']['consumer_id']
             self._persistence.delete_tokens(user_id=user_id,
                                             consumer_id=consumer_id)
+
+    def _delete_idp_tokens_callback(self, service, resource_type,
+                                    operation, payload):
+        if CONF.token.revoke_by_id:
+            idp_id = payload['resource_info']
+            self._persistence.delete_tokens(user_id=None,
+                                            idp_id=idp_id)
 
 
 @six.add_metaclass(abc.ABCMeta)

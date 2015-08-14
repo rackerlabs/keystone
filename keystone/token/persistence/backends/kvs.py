@@ -103,6 +103,11 @@ class Token(token.persistence.Driver):
         if not data_copy.get('user_id'):
             data_copy['user_id'] = data_copy['user']['id']
 
+        try:
+            data_copy['idp_id'] = (data_copy['user']['OS-FEDERATION']
+                                            ['identity_provider']['id'])
+        except KeyError:
+            data_copy['idp_id'] = None
         # NOTE(morganfainberg): for ease of manipulating the data without
         # concern about the backend, always store the value(s) in the
         # index as the isotime (string) version so this is where the string is
@@ -255,12 +260,13 @@ class Token(token.persistence.Driver):
         return result
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, idp_id=None):
         return super(Token, self).delete_tokens(
             user_id=user_id,
             tenant_id=tenant_id,
             trust_id=trust_id,
             consumer_id=consumer_id,
+            idp_id=idp_id
         )
 
     def _format_token_index_item(self, item):
@@ -299,8 +305,15 @@ class Token(token.persistence.Driver):
         except KeyError:
             return False
 
+    def _token_match_idp(self, token_ref, idp_id):
+        try:
+            idp = token_ref['user']['OS-FEDERATION']['identity_provider']
+            return idp.get('id') == idp_id
+        except KeyError:
+            return False
+
     def _list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                     consumer_id=None):
+                     consumer_id=None, idp_id=None):
         # This function is used to generate the list of tokens that should be
         # revoked when revoking by token identifiers.  This approach will be
         # deprecated soon, probably in the Juno release.  Setting revoke_by_id
@@ -339,6 +352,9 @@ class Token(token.persistence.Driver):
                         continue
                 if consumer_id is not None:
                     if not self._token_match_consumer(token_ref, consumer_id):
+                        continue
+                if idp_id is not None:
+                    if not self._token_match_idp(token_ref, idp_id):
                         continue
 
                 tokens.append(token_id)

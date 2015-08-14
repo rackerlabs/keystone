@@ -32,13 +32,14 @@ LOG = log.getLogger(__name__)
 
 class TokenModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'token'
-    attributes = ['id', 'expires', 'user_id', 'trust_id']
+    attributes = ['id', 'expires', 'user_id', 'trust_id', 'idp_id']
     id = sql.Column(sql.String(64), primary_key=True)
     expires = sql.Column(sql.DateTime(), default=None)
     extra = sql.Column(sql.JsonBlob())
     valid = sql.Column(sql.Boolean(), default=True, nullable=False)
     user_id = sql.Column(sql.String(64))
     trust_id = sql.Column(sql.String(64))
+    idp_id = sql.Column(sql.String(64))
     __table_args__ = (
         sql.Index('ix_token_expires', 'expires'),
         sql.Index('ix_token_expires_valid', 'expires', 'valid'),
@@ -101,6 +102,12 @@ class Token(token.persistence.Driver):
         if not data_copy.get('user_id'):
             data_copy['user_id'] = data_copy['user']['id']
 
+        try:
+            data_copy['idp_id'] = (data_copy['user']['OS-FEDERATION']
+                                            ['identity_provider']['id'])
+        except KeyError:
+            data_copy['idp_id'] = None
+
         token_ref = TokenModel.from_dict(data_copy)
         token_ref.valid = True
         session = sql.get_session()
@@ -117,11 +124,11 @@ class Token(token.persistence.Driver):
             token_ref.valid = False
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, idp_id=None):
         """Deletes all tokens in one session
 
         The user_id will be ignored if the trust_id is specified. user_id
-        will always be specified.
+        will always be specified unless it is a federated token.
         If using a trust, the token's user_id is set to the trustee's user ID
         or the trustor's user ID, so will use trust_id to query the tokens.
 
@@ -135,8 +142,10 @@ class Token(token.persistence.Driver):
             query = query.filter(TokenModel.expires > now)
             if trust_id:
                 query = query.filter(TokenModel.trust_id == trust_id)
-            else:
+            elif user_id:
                 query = query.filter(TokenModel.user_id == user_id)
+            else:
+                query = query.filter(TokenModel.idp_id == idp_id)
 
             for token_ref in query.all():
                 if tenant_id:

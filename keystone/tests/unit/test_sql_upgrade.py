@@ -750,6 +750,12 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         connection.close()
 
+    def test_idp_id_column(self):
+        self.upgrade(74)
+        self.assertTableColumns('token',
+                                ['id', 'expires', 'extra', 'valid',
+                                 'trust_id', 'user_id', 'idp_id'])
+
 
 class VersionTests(SqlMigrateBase):
 
