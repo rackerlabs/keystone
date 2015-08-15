@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_c8e93981",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-15T12:04:30Z",
+      "side": 1,
+      "message": "(nit) Remove the word \u0027Raises\u0027 here. I think this makes the docs flow better. See http://docs-draft.openstack.org/03/195903/22/check/gate-keystone-docs/704843d//doc/build/html/api/keystone.common.validation.html#keystone.common.validation.validated for my raises vs. yours.",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_25e6c844",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 22
@@ -30,6 +47,24 @@
       "writtenOn": "2015-08-15T10:39:25Z",
       "side": 1,
       "message": "yes, this can happen and this is what\u0027s the bug for.\n\n`inspect` just inspect the signature but not guarantee the argument has the value.\n\nfor example, the method as this,\n@validated(\u0027entity\u0027)\ndef do_something(entity):\n pass\n \n`inspect` could help to get the signature as this,\nArgSpec(args\u003d[\u0027entity\u0027], varargs\u003dNone, keywords\u003dNone, defaults\u003dNone)\n\nbut whether there is a value for the argument \"entity\" is not depend on the signature but how this method was called.\n\npls see the testcase, it will be more clear.",
+      "parentUuid": "1a4dcd0f_25e6c844",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_08c96125",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-15T12:04:30Z",
+      "side": 1,
+      "message": "The TypeError I raise when inspecting is a import (compile) type error. It will happen when the decorator is first evaluated when the module is imported. This error is what happens when the caller doesn\u0027t provide a value for the argument.",
       "parentUuid": "1a4dcd0f_25e6c844",
       "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
