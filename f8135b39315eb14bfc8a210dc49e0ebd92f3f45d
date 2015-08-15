@@ -87,6 +87,24 @@
       "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e82f55a5",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-15T12:25:11Z",
+      "side": 1,
+      "message": "ok, thanks to stank explaining it to me on IRC, I get it!",
+      "parentUuid": "1a4dcd0f_88fc9140",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
