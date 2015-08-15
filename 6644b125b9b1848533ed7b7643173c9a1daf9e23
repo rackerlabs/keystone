@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_c1aef9e6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-15T05:57:00Z",
+      "side": 1,
+      "message": "Technically openssl allows very small key sizes.  I tried 64 bits also.  But I wanted this value set to a sensible minimum for security reasons.  The recommend minimum for RSA in 2015 is 2048.  So 1024 feels like a good min.",
+      "parentUuid": "1a4dcd0f_348ff8cd",
+      "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_542404c5",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-14T13:37:05Z",
       "side": 1,
       "message": "Here too. I am not sure is there any specific requirement in keystone, if there is pls correct me, thanks.",
+      "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e1a9b5de",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-15T05:57:00Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "1a4dcd0f_542404c5",
       "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_81b8f12b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-15T05:57:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_543964d7",
+      "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_d44b345e",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-14T13:37:05Z",
       "side": 1,
       "message": "the same.",
+      "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a1b3ad4c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-15T05:57:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_d44b345e",
       "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
