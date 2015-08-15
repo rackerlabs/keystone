@@ -16,6 +16,24 @@
       "revId": "b9d6d6f4577c60c5ffead9c4ce12877de329bbcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ceb5c1ed",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-15T16:41:34Z",
+      "side": 1,
+      "message": "I took these numbers from the docs on passlib.  Is there a more appropriate max you would prefer?\n\nhttps://pythonhosted.org/passlib/lib/passlib.hash.sha512_crypt.html\n\n\"rounds (int) – Optional number of rounds to use. Defaults to 656000, must be between 1000 and 999999999, inclusive.\"",
+      "parentUuid": "1a4dcd0f_e810b5ad",
+      "revId": "b9d6d6f4577c60c5ffead9c4ce12877de329bbcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
