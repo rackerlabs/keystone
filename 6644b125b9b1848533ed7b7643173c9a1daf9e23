@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_88cb314a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-15T11:45:00Z",
+      "side": 1,
+      "message": "I don\u0027t think it matters all that much since I don\u0027t think this is intended to be used by production deployments.",
+      "parentUuid": "1a4dcd0f_c1aef9e6",
+      "revId": "6644b125b9b1848533ed7b7643173c9a1daf9e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_542404c5",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
