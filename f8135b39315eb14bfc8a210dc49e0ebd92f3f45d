@@ -16,6 +16,24 @@
       "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2861bdd3",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-15T10:39:25Z",
+      "side": 1,
+      "message": "yes, this can happen and this is what\u0027s the bug for.\n\n`inspect` just inspect the signature but not guarantee the argument has the value.\n\nfor example, the method as this,\n@validated(\u0027entity\u0027)\ndef do_something(entity):\n pass\n \n`inspect` could help to get the signature as this,\nArgSpec(args\u003d[\u0027entity\u0027], varargs\u003dNone, keywords\u003dNone, defaults\u003dNone)\n\nbut whether there is a value for the argument \"entity\" is not depend on the signature but how this method was called.\n\npls see the testcase, it will be more clear.",
+      "parentUuid": "1a4dcd0f_25e6c844",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
