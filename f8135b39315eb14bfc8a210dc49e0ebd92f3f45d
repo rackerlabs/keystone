@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_0b9ddbba",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-15T13:07:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_c8e93981",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_25e6c844",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 22
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "ok, thanks to stank explaining it to me on IRC, I get it!",
       "parentUuid": "1a4dcd0f_88fc9140",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cba6130f",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-15T13:07:55Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "1a4dcd0f_e82f55a5",
       "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
