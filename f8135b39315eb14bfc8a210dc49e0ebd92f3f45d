@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_25e6c844",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-15T08:35:32Z",
+      "side": 1,
+      "message": "can this really happen?  Wouldn\u0027t a TypeError have been thrown when we first inspected the signature?",
+      "revId": "f8135b39315eb14bfc8a210dc49e0ebd92f3f45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
