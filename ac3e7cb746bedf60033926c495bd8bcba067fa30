@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_591f3909",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-15T18:17:55Z",
+      "side": 1,
+      "message": "Done. Just applied the tests on this follow up patch https://review.openstack.org/#/c/212045/3/keystone/tests/unit/test_v2_controller.py in this one",
+      "parentUuid": "1a4dcd0f_08d5e119",
+      "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_c8de193e",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-15T11:24:44Z",
       "side": 1,
       "message": "same here",
+      "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_791a351a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-15T18:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_c8de193e",
       "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_1919b122",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-15T18:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_88e1f1fe",
+      "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_28f0ddc8",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-15T11:24:44Z",
       "side": 1,
       "message": "and here",
+      "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3914ade7",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-15T18:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_28f0ddc8",
       "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_59e65917",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-15T18:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_e8b8b5ea",
+      "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_08bc01da",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-15T11:24:44Z",
       "side": 1,
       "message": "same here",
+      "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d9b4a9d5",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-15T18:17:55Z",
+      "side": 1,
+      "message": "Not exactly... in this case, we\u0027ll never allow the update of this flag. so, we can just show the ValidationError.",
+      "parentUuid": "1a4dcd0f_08bc01da",
       "revId": "ac3e7cb746bedf60033926c495bd8bcba067fa30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
