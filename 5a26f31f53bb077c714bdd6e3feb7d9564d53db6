@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7971d5dd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-15T18:28:55Z",
+      "side": 1,
+      "message": "The correct tag for bug is:\n\nCloses-Bug: #1485104",
+      "revId": "5a26f31f53bb077c714bdd6e3feb7d9564d53db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
