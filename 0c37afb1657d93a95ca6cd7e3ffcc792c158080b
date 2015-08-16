@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e48459d4",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1895,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T06:51:24Z",
+      "side": 1,
+      "message": "might be better to say \"Test listing role assignment by domain.\", we have the API to list role but this is different.",
+      "revId": "0c37afb1657d93a95ca6cd7e3ffcc792c158080b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_914a7526",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1898,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T06:51:24Z",
+      "side": 1,
+      "message": "might be better to remove the word \u0027a\u0027 before \u00273\u0027.",
+      "revId": "0c37afb1657d93a95ca6cd7e3ffcc792c158080b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_846c7537",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1926,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T06:51:24Z",
+      "side": 1,
+      "message": "better to say \"listing role assignment or just listing assignment\"?",
+      "revId": "0c37afb1657d93a95ca6cd7e3ffcc792c158080b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f1a09944",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1929,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T06:51:24Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "0c37afb1657d93a95ca6cd7e3ffcc792c158080b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2414819d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1933,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T06:51:24Z",
+      "side": 1,
+      "message": "create 3 role is enough, this testcase intends to filter by user coupled with domain, it\u0027s not matter what the role for \u0027user_1\u0027 and \u0027group_2\u0027.",
+      "revId": "0c37afb1657d93a95ca6cd7e3ffcc792c158080b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
