@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_33192123",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T15:35:39Z",
+      "side": 1,
+      "message": "there is no \u0027service_v3\u0027 anymore, update the comments to make it more accurate.",
+      "revId": "c1a9177aeef64e6a986b874ad6e44551c6528b8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_33bda102",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T15:35:39Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "c1a9177aeef64e6a986b874ad6e44551c6528b8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f3b899ea",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T15:35:39Z",
+      "side": 1,
+      "message": "remove this decorator since this is not an independent app called from the paste.\n\ndecorator on `v3_admin_app_factory` or `v3_public_app_factory` is enough.",
+      "revId": "c1a9177aeef64e6a986b874ad6e44551c6528b8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_53994d78",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-16T15:35:39Z",
+      "side": 1,
+      "message": "might be consider to use CONF.public_endpoint and CONF.admin_endpoint instead, but I am fine if keep it as is.",
+      "revId": "c1a9177aeef64e6a986b874ad6e44551c6528b8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
