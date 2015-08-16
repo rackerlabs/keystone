@@ -16,6 +16,24 @@
       "revId": "09fe734fc63cdd541e44e85c83780dd300f3d37a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1d84345b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2191,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-16T16:35:01Z",
+      "side": 1,
+      "message": "ps: just for clarification...what I meant by \"this really has nothing to do with multiple domains\" is that for this patch, that is not the issue (since we don\u0027t interpret the is_domain flag)",
+      "parentUuid": "1a4dcd0f_5d171c45",
+      "revId": "09fe734fc63cdd541e44e85c83780dd300f3d37a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
