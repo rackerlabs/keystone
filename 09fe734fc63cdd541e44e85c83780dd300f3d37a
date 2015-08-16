@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5d171c45",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2191,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-16T10:23:22Z",
+      "side": 1,
+      "message": "so I understand why you put this here (LDAP doesn\u0027t support is_domain), but this really has nothing to do with multiple domain support.  We are also not testing the code we added to the ldap driver to handle not supporting is_domain.  We should override this test  in test_backend_ldap.py (and others if necessary) to instead check we get the expected result if you have an ldap backend.",
+      "revId": "09fe734fc63cdd541e44e85c83780dd300f3d37a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
