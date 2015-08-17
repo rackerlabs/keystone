@@ -36,8 +36,12 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         self.assertTrue(auth_context['is_delegated_auth'])
         self.assertEqual(token_data['token']['user']['id'],
                          auth_context['user_id'])
+        self.assertEqual(token_data['token']['user']['domain']['id'],
+                         auth_context['user_domain_id'])
         self.assertEqual(token_data['token']['project']['id'],
                          auth_context['project_id'])
+        self.assertEqual(token_data['token']['project']['domain']['id'],
+                         auth_context['project_domain_id'])
         self.assertNotIn('domain_id', auth_context)
         self.assertNotIn('domain_name', auth_context)
         self.assertEqual(token_data['token']['OS-TRUST:trust']['id'],
@@ -70,6 +74,7 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         auth_context = authorization.token_to_auth_context(token)
 
         self.assertNotIn('project_id', auth_context)
+        self.assertNotIn('project_domain_id', auth_context)
 
         self.assertEqual(domain_id, auth_context['domain_id'])
         self.assertEqual(domain_name, auth_context['domain_name'])
@@ -85,6 +90,7 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         auth_context = authorization.token_to_auth_context(token)
 
         self.assertNotIn('project_id', auth_context)
+        self.assertNotIn('project_domain_id', auth_context)
         self.assertNotIn('domain_id', auth_context)
         self.assertNotIn('domain_name', auth_context)
 
