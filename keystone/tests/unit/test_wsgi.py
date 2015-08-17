@@ -202,6 +202,26 @@ class ApplicationTest(BaseWSGITest):
 
         self.assertEqual(401, resp.status_int)
 
+    def test_improperly_encoded_params(self):
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                return context['query_string']
+        # this is high bit set ASCII, copy & pasted from Windows.
+        # \xe8 is valid unicode and UTF16 but not UTF8.
+        req = self._make_request(url='/?name=nonexit%E8nt')
+        self.assertRaises(exception.ValidationError, req.get_response,
+                          FakeApp())
+
+    def test_properly_encoded_params(self):
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                return context['query_string']
+        # \xc3\xa8 is the UTF8 encoding of \xe8
+        req = self._make_request(url='/?name=nonexit%C3%A8nt')
+        resp = req.get_response(FakeApp())
+        self.assertEqual(jsonutils.loads(resp.body),
+                         {'name': u'nonexit\xe8nt'})
+
 
 class ExtensionRouterTest(BaseWSGITest):
     def test_extensionrouter_local_config(self):
