@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f1d2cc5a",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-17T03:00:30Z",
+      "side": 1,
+      "message": "Instead of calling a method to do this, this can just be simplified as this,\n\ngroup_ids\u003d list(group_id) if group_id else []\n\nsame in other occurrences.",
+      "revId": "1785f38f58026a9cc2767b451a74fe22bc9c6dec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
