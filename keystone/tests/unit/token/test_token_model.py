@@ -50,6 +50,7 @@ class TestKeystoneTokenModel(core.TestCase):
                          token_data.user_id)
         self.assertEqual(self.v3_sample_token['token']['user']['name'],
                          token_data.user_name)
+        self.assertTrue(token_data.user_has_domain)
         self.assertEqual(self.v3_sample_token['token']['user']['domain']['id'],
                          token_data.user_domain_id)
         self.assertEqual(
@@ -117,6 +118,10 @@ class TestKeystoneTokenModel(core.TestCase):
         self.assertIsNone(token_data.audit_chain_id)
 
     def test_token_model_v3_federated_user(self):
+
+        # Federated tokens don't have user domain.
+        del self.v3_sample_token['token']['user']['domain']
+
         token_data = token_model.KeystoneToken(token_id=uuid.uuid4().hex,
                                                token_data=self.v3_sample_token)
         federation_data = {'identity_provider': {'id': uuid.uuid4().hex},
@@ -139,6 +144,12 @@ class TestKeystoneTokenModel(core.TestCase):
         self.assertEqual(federation_data['identity_provider']['id'],
                          token_data.federation_idp_id)
 
+        self.assertFalse(token_data.user_has_domain)
+        self.assertRaises(exception.UnexpectedError, getattr, token_data,
+                          'user_domain_name')
+        self.assertRaises(exception.UnexpectedError, getattr, token_data,
+                          'user_domain_id')
+
     def test_token_model_v2_federated_user(self):
         token_data = token_model.KeystoneToken(token_id=uuid.uuid4().hex,
                                                token_data=self.v2_sample_token)
@@ -159,6 +170,9 @@ class TestKeystoneTokenModel(core.TestCase):
         self.assertIsNone(token_data.federation_protocol_id)
         self.assertIsNone(token_data.federation_idp_id)
 
+        # In V2 tokens, users always have default domain.
+        self.assertTrue(token_data.user_has_domain)
+
     def test_token_model_v2(self):
         token_data = token_model.KeystoneToken(uuid.uuid4().hex,
                                                self.v2_sample_token)
@@ -173,6 +187,7 @@ class TestKeystoneTokenModel(core.TestCase):
                          token_data.user_id)
         self.assertEqual(self.v2_sample_token['access']['user']['name'],
                          token_data.user_name)
+        self.assertTrue(token_data.user_has_domain)
         self.assertEqual(CONF.identity.default_domain_id,
                          token_data.user_domain_id)
         self.assertEqual('Default', token_data.user_domain_name)
