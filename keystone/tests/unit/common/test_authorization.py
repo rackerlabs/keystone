@@ -36,8 +36,12 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         self.assertTrue(auth_context['is_delegated_auth'])
         self.assertEqual(token_data['token']['user']['id'],
                          auth_context['user_id'])
+        self.assertEqual(token_data['token']['user']['domain']['id'],
+                         auth_context['user_domain_id'])
         self.assertEqual(token_data['token']['project']['id'],
                          auth_context['project_id'])
+        self.assertEqual(token_data['token']['project']['domain']['id'],
+                         auth_context['project_domain_id'])
         self.assertNotIn('domain_id', auth_context)
         self.assertNotIn('domain_name', auth_context)
         self.assertEqual(token_data['token']['OS-TRUST:trust']['id'],
@@ -55,6 +59,20 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         self.assertIsNone(auth_context['access_token_id'])
         self.assertNotIn('group_ids', auth_context)
 
+    def test_user_no_domain(self):
+        # If the user doesn't have a domain then user_domain_id isn't
+        # available.
+
+        token_data = copy.deepcopy(test_token_provider.SAMPLE_V3_TOKEN)
+        del token_data['token']['user']['domain']
+
+        token = token_model.KeystoneToken(token_id=uuid.uuid4().hex,
+                                          token_data=token_data)
+
+        auth_context = authorization.token_to_auth_context(token)
+
+        self.assertNotIn('user_domain_id', auth_context)
+
     def test_domain_scoped(self):
         # Check contents of auth_context when token is domain-scoped.
 
@@ -71,6 +89,7 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         auth_context = authorization.token_to_auth_context(token)
 
         self.assertNotIn('project_id', auth_context)
+        self.assertNotIn('project_domain_id', auth_context)
 
         self.assertEqual(domain_id, auth_context['domain_id'])
         self.assertEqual(domain_name, auth_context['domain_name'])
@@ -87,6 +106,7 @@ class TestTokenToAuthContext(unit.BaseTestCase):
         auth_context = authorization.token_to_auth_context(token)
 
         self.assertNotIn('project_id', auth_context)
+        self.assertNotIn('project_domain_id', auth_context)
         self.assertNotIn('domain_id', auth_context)
         self.assertNotIn('domain_name', auth_context)
 
