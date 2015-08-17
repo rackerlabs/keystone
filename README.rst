@@ -2,7 +2,7 @@
 OpenStack Keystone
 ==================
 
-DO NOT MERGE
+DO NOT MERGE!
 
 Keystone provides authentication, authorization and service discovery
 mechanisms via HTTP primarily for use by projects in the OpenStack family. It
