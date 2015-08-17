@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_b9c48292",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-17T22:16:09Z",
+      "side": 1,
+      "message": "If you can prove in a test that it happens then I would say we should widen a little bit, although I am not a fan of the diaper pattern.",
+      "parentUuid": "fa1b9901_9e55e41e",
+      "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_de511c64",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 4
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "I thought UTF8 was the standard here because we are dealing with URL parameters. If I am wrong I can try to update the message to reflect the required encoding",
       "parentUuid": "fa1b9901_de511c64",
+      "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d9c13682",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-17T22:16:09Z",
+      "side": 1,
+      "message": "I think you may be correct here. I only quickly looked at the RFC.",
+      "parentUuid": "fa1b9901_9e2c04ad",
       "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
