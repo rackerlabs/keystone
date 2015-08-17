@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_612c05ac",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T13:36:46Z",
+      "side": 1,
+      "message": "update comment - this won\u0027t be always the behavior. Maybe just say that the domain_id will be normalized\n\nalso... this patch is supposed to add only Manager support, right?",
+      "revId": "23f6186e78023a36dfe69ec2b4187e63b11fdd61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_444b0f5a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T13:36:46Z",
+      "side": 1,
+      "message": "maybe \"Disabling a project acting as domain effectively disables its children\"\n\nwhat if there is another project acting as a domain below it?",
+      "revId": "23f6186e78023a36dfe69ec2b4187e63b11fdd61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_042677ba",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T13:36:46Z",
+      "side": 1,
+      "message": "maybe use [\u0027is_domain\u0027] and [\u0027enabled\u0027] - if they aren\u0027t present we have much more problems to be worried here",
+      "revId": "23f6186e78023a36dfe69ec2b4187e63b11fdd61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6103a510",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T13:36:46Z",
+      "side": 1,
+      "message": "undo this",
+      "revId": "23f6186e78023a36dfe69ec2b4187e63b11fdd61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_24a05bf4",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T13:36:46Z",
+      "side": 1,
+      "message": "isn\u0027t this related to the controller layer?",
+      "revId": "23f6186e78023a36dfe69ec2b4187e63b11fdd61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
