@@ -16,6 +16,24 @@
       "revId": "a39807ea95e2b661484edf50e1c9024f84143f80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b1dd8472",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-17T16:50:44Z",
+      "side": 1,
+      "message": "Doug - The data aren\u0027t available when the RequestContext is constructed. If I move the RequestContext creation down here where the data are available then there\u0027s a lot of important logging that isn\u0027t going to have a request ID (or maybe it\u0027s going to have the wrong request ID if the context is left over from a previous request?).",
+      "parentUuid": "fa1b9901_b113445c",
+      "revId": "a39807ea95e2b661484edf50e1c9024f84143f80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
