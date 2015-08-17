@@ -110,6 +110,21 @@ class KeystoneToken(dict):
         return self['user']['name']
 
     @property
+    def user_has_domain(self):
+        """Returns true if the user has a domain.
+
+        Check this before using :attr:`user_domain_name` or
+        :attr:`user_domain_id` otherwise
+        :exc:`keystone.exception.UnexpectedError` may be raised by these
+        attributes. Users in tokens granted by federation don't have a domain.
+
+        """
+        if self.version == V3:
+            return 'domain' in self['user']
+        else:
+            return True
+
+    @property
     def user_domain_name(self):
         try:
             if self.version == V3:
