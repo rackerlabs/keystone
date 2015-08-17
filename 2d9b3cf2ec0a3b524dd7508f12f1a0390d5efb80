@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9e55e41e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-17T21:24:17Z",
+      "side": 1,
+      "message": "I went wide because it could also in theory occur with other parts of the request.\n\nIf the caution is unwarranted I have no problem limiting the scope.",
+      "parentUuid": "fa1b9901_def59c83",
+      "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_de511c64",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9e2c04ad",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-17T21:24:17Z",
+      "side": 1,
+      "message": "I thought UTF8 was the standard here because we are dealing with URL parameters. If I am wrong I can try to update the message to reflect the required encoding",
+      "parentUuid": "fa1b9901_de511c64",
+      "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_be89c8cc",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 4
@@ -64,6 +100,24 @@
       "writtenOn": "2015-08-17T21:13:05Z",
       "side": 1,
       "message": "Can you add a comment here saying what it\u0027s invalid? Is it UTF-16 or something else?",
+      "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_59044614",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-17T21:24:17Z",
+      "side": 1,
+      "message": "Sure. The Python error just says \"invalid value at pos ....\". I can track down what the value really is.",
+      "parentUuid": "fa1b9901_be89c8cc",
       "revId": "2d9b3cf2ec0a3b524dd7508f12f1a0390d5efb80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
