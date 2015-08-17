@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_30041514",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T14:46:18Z",
+      "side": 1,
+      "message": "is not only when \"creating\", right?",
+      "revId": "88209fd5a16b0c4ed34b6e5c4e5994735db7d2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
