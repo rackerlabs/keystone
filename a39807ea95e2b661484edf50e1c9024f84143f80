@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_b113445c",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-08-17T16:42:21Z",
+      "side": 1,
+      "message": "It would be better to pass these values to the RequestContext constructor in case we ever want to do anything with them inside that class.",
+      "revId": "a39807ea95e2b661484edf50e1c9024f84143f80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
