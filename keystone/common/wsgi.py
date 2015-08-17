@@ -23,6 +23,7 @@ import itertools
 import wsgiref.util
 
 from oslo_config import cfg
+from oslo_context import context as oslo_context
 import oslo_i18n
 from oslo_log import log
 from oslo_serialization import jsonutils
@@ -222,6 +223,18 @@ class Application(BaseApplication):
         params.update(arg_dict)
 
         context.setdefault('is_admin', False)
+
+        auth_context = context['environment'].get('KEYSTONE_AUTH_CONTEXT', {})
+        oslo_context.RequestContext(
+            auth_token=context.get('token_id'),
+            user=auth_context.get('user_id'),
+            tenant=auth_context.get('project_id'),
+            domain=auth_context.get('domain_id'),
+            user_domain=auth_context.get('user_domain_id'),
+            project_domain=auth_context.get('project_domain_id'),
+            is_admin=context.get('is_admin', False),
+            request_id=context['environment'].get('openstack.request_id')
+        )
 
         # TODO(termie): do some basic normalization on methods
         method = getattr(self, action)
