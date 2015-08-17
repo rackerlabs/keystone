@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_e49d835a",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T13:43:26Z",
+      "side": 1,
+      "message": "would change this method name: _assert_not_is_domain_project() - only if we have -1 reviews",
+      "revId": "2904312022ff20c856c469057541a630dc46fd0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
