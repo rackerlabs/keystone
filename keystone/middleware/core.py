@@ -173,9 +173,7 @@ class RequestBodySizeLimiter(sizelimit.RequestBodySizeLimiter):
 class AuthContextMiddleware(wsgi.Middleware):
     """Build the authentication context from the request auth token."""
 
-    def _build_auth_context(self, request):
-        token_id = request.headers.get(AUTH_TOKEN_HEADER).strip()
-
+    def _build_auth_context(self, request, token_id):
         if token_id == CONF.admin_token:
             # NOTE(gyee): no need to proceed any further as the special admin
             # token is being handled by AdminTokenAuthMiddleware. This code
@@ -283,7 +281,7 @@ class AuthContextMiddleware(wsgi.Middleware):
     def process_request(self, request):
 
         # The request context stores itself in thread-local memory for logging.
-        oslo_context.RequestContext(
+        request_context = oslo_context.RequestContext(
             request_id=request.environ.get('openstack.request_id'))
 
         if authorization.AUTH_CONTEXT_ENV in request.environ:
@@ -299,7 +297,10 @@ class AuthContextMiddleware(wsgi.Middleware):
         # certificate is effectively disabled if no trusted issuers are
         # provided.
         if AUTH_TOKEN_HEADER in request.headers:
-            auth_context = self._build_auth_context(request)
+            token_id = request.headers[AUTH_TOKEN_HEADER].strip()
+            request_context.auth_token = token_id
+
+            auth_context = self._build_auth_context(request, token_id)
         elif self._validate_trusted_issuer(request.environ):
             auth_context = self._build_tokenless_auth_context(
                 request.environ)
@@ -308,5 +309,13 @@ class AuthContextMiddleware(wsgi.Middleware):
                       'the certificate issuer is not trusted. No auth '
                       'context will be set.')
             return
+
+        request_context.user = auth_context.get('user_id')
+        request_context.tenant = auth_context.get('project_id')
+        request_context.domain = auth_context.get('domain_id')
+        request_context.user_domain = auth_context.get('user_domain_id')
+        request_context.project_domain = auth_context.get('project_domain_id')
+        request_context.is_admin = request.environ.get('is_admin', False)
+
         LOG.debug('RBAC: auth_context: %s', auth_context)
         request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context
