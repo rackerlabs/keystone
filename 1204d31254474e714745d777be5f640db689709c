@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_46af48e3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T01:49:50Z",
+      "side": 1,
+      "message": "iirc the is_domain field isn\u0027t nullable",
+      "revId": "1204d31254474e714745d777be5f640db689709c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_06906094",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T01:49:50Z",
+      "side": 1,
+      "message": "why not pass the is_domain parameter here?",
+      "revId": "1204d31254474e714745d777be5f640db689709c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c6e83819",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 965,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-17T01:49:50Z",
+      "side": 1,
+      "message": "it is already False",
+      "revId": "1204d31254474e714745d777be5f640db689709c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
