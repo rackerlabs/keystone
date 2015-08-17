@@ -191,35 +191,41 @@ class BaseApplication(object):
 class Application(BaseApplication):
     @webob.dec.wsgify()
     def __call__(self, req):
-        arg_dict = req.environ['wsgiorg.routing_args'][1]
-        action = arg_dict.pop('action')
-        del arg_dict['controller']
+        try:
+            arg_dict = req.environ['wsgiorg.routing_args'][1]
+            action = arg_dict.pop('action')
+            del arg_dict['controller']
 
-        # allow middleware up the stack to provide context, params and headers.
-        context = req.environ.get(CONTEXT_ENV, {})
-        context['query_string'] = dict(req.params.items())
-        context['headers'] = dict(req.headers.items())
-        context['path'] = req.environ['PATH_INFO']
-        scheme = (None if not CONF.secure_proxy_ssl_header
-                  else req.environ.get(CONF.secure_proxy_ssl_header))
-        if scheme:
-            # NOTE(andrey-mp): "wsgi.url_scheme" contains the protocol used
-            # before the proxy removed it ('https' usually). So if
-            # the webob.Request instance is modified in order to use this
-            # scheme instead of the one defined by API, the call to
-            # webob.Request.relative_url() will return a URL with the correct
-            # scheme.
-            req.environ['wsgi.url_scheme'] = scheme
-        context['host_url'] = req.host_url
-        params = req.environ.get(PARAMS_ENV, {})
-        # authentication and authorization attributes are set as environment
-        # values by the container and processed by the pipeline.  the complete
-        # set is not yet know.
-        context['environment'] = req.environ
-        context['accept_header'] = req.accept
-        req.environ = None
+            # allow middleware up the stack to provide context,
+            # params and headers.
+            context = req.environ.get(CONTEXT_ENV, {})
+            context['query_string'] = dict(req.params.items())
+            context['headers'] = dict(req.headers.items())
+            context['path'] = req.environ['PATH_INFO']
+            scheme = (None if not CONF.secure_proxy_ssl_header
+                      else req.environ.get(CONF.secure_proxy_ssl_header))
+            if scheme:
+                # NOTE(andrey-mp): "wsgi.url_scheme" contains the protocol used
+                # before the proxy removed it ('https' usually). So if
+                # the webob.Request instance is modified in order to use this
+                # scheme instead of the one defined by API, the call to
+                # webob.Request.relative_url() will return a URL with the
+                # correct scheme.
+                req.environ['wsgi.url_scheme'] = scheme
+            context['host_url'] = req.host_url
+            params = req.environ.get(PARAMS_ENV, {})
+            # authentication and authorization attributes are set as
+            # environment values by the container and processed by the
+            # pipeline. The complete set is not yet known.
+            context['environment'] = req.environ
+            context['accept_header'] = req.accept
+            req.environ = None
 
-        params.update(arg_dict)
+            params.update(arg_dict)
+        except UnicodeDecodeError as e:
+            # The webob package will throw UnicodeError if it cannot decode the
+            # request. Raise ValidationError instead to avoid an UnknownError.
+            raise exception.ValidationError("request is not proper UTF8")
 
         context.setdefault('is_admin', False)
 
