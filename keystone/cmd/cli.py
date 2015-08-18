@@ -470,6 +470,7 @@ class DomainConfigUploadFiles(object):
         # Request is to transfer all config files, so let's read all the
         # files in the config directory, and transfer those that match the
         # filename pattern of 'keystone.<domain_name>.conf'
+        num_uploaded = 0
         for r, d, f in os.walk(conf_dir):
             for fname in f:
                 if (fname.startswith(DOMAIN_CONF_FHEAD) and
@@ -479,9 +480,12 @@ class DomainConfigUploadFiles(object):
                             os.path.join(r, fname),
                             fname[len(DOMAIN_CONF_FHEAD):
                                   -len(DOMAIN_CONF_FTAIL)])
+                        num_uploaded += 1
                     else:
                         LOG.warn(_LW('Ignoring file (%s) while scanning '
                                      'domain config directory'), fname)
+        else:
+            LOG.warn(_LW('No domain configs found in %r'), conf_dir)
 
     def run(self):
         # First off, let's just check we can talk to the domain database
