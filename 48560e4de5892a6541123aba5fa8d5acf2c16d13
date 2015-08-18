@@ -16,6 +16,24 @@
       "revId": "48560e4de5892a6541123aba5fa8d5acf2c16d13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_2026e768",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 14084
+      },
+      "writtenOn": "2015-08-18T03:18:49Z",
+      "side": 1,
+      "message": "Yes, It\u0027s need but the python-sqlite is install by pip now.",
+      "parentUuid": "fa1b9901_c0484b5e",
+      "revId": "48560e4de5892a6541123aba5fa8d5acf2c16d13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
