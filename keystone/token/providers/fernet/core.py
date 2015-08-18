@@ -140,9 +140,16 @@ class Provider(common.BaseProvider):
         group_ids = token_data['token'].get('user', {}).get(
             federation_constants.FEDERATION, {}).get('groups')
 
+        user_domain_info = token_data['token'].get('user', {}).get('domain',
+                                                                   {})
+        user_domain_id = user_domain_info.get('id')
+        user_domain_name = user_domain_info.get('name')
+
         return {'group_ids': group_ids,
                 'idp_id': idp_id,
-                'protocol_id': protocol_id}
+                'protocol_id': protocol_id,
+                'user_domain_id': user_domain_id,
+                'user_domain_name': user_domain_name, }
 
     def _rebuild_federated_info(self, federated_dict, user_id):
         """Format federated information into the token reference.
@@ -163,11 +170,14 @@ class Provider(common.BaseProvider):
             'protocol': {'id': protocol_id}
         }
 
+        user_domain_id = federated_dict['user_domain_id']
+        user_domain_name = federated_dict['user_domain_name']
         token_dict = {
             'user': {
                 federation_constants.FEDERATION: federated_info,
                 'id': user_id,
-                'name': user_id
+                'name': user_id,
+                'domain': {'id': user_domain_id, 'name': user_domain_name, },
             }
         }
 
