@@ -314,7 +314,9 @@ class TestPayloads(tests.TestCase):
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'protocol_id': uuid.uuid4().hex,
+                              'user_domain_id': uuid.uuid4().hex,
+                              'user_domain_name': uuid.uuid4().hex, }
 
         payload = token_formatters.FederatedPayload.assemble(
             exp_user_id, exp_methods, exp_expires_at, exp_audit_ids,
@@ -342,7 +344,9 @@ class TestPayloads(tests.TestCase):
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'protocol_id': uuid.uuid4().hex,
+                              'user_domain_id': uuid.uuid4().hex,
+                              'user_domain_name': uuid.uuid4().hex, }
 
         payload = token_formatters.FederatedProjectScopedPayload.assemble(
             exp_user_id, exp_methods, exp_project_id, exp_expires_at,
@@ -373,7 +377,9 @@ class TestPayloads(tests.TestCase):
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'protocol_id': uuid.uuid4().hex,
+                              'user_domain_id': uuid.uuid4().hex,
+                              'user_domain_name': uuid.uuid4().hex, }
 
         payload = token_formatters.FederatedDomainScopedPayload.assemble(
             exp_user_id, exp_methods, exp_domain_id, exp_expires_at,
