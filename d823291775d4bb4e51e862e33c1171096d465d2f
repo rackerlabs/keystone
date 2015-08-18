@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_f8c0867e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-18T17:11:43Z",
+      "side": 1,
+      "message": "Of course that makes the line 83 characters long....\n\nIt is 2015 and we are still coding to silly UI impediments from 40+ years ago.",
+      "parentUuid": "fa1b9901_2be56d08",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_8bba79e0",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
