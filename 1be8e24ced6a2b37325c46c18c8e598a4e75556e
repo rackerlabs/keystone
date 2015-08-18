@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_7019df78",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "may want to change INTERFACE_VERSION to interface_version. All caps usually means constant.",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_93e36805",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "say we have a class hierarchy like this, where A is the base\n\nA \u003c- B \u003c- C\n\nboth A and C define INTERFACE_VERSION. How is this code behave?",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_708c7f7f",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "why int()? Isn\u0027t INTERFACE_VERSION already an integer? Otherwise, you may want to also catch ValueException.",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f0f64ff8",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "s/driverABC/driver/",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_306287ae",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "why eat this exception? If CompatibilizerMeta is used, interface must define INTERFACE_VERSION.",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d3ea40ac",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "if INTERFACE_VERSION:",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b0f537cc",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "# TODO",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9096f34a",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "may consider using driver_version instead of DRIVER_VERSION",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_50ae1b86",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "may want to have a global constant for \"12\"",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d099cb6f",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "is there a better way to say drivers without DRIVER_VERSION defined will be deprecated?",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f0eacfab",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "need to catch TypeError and ValueError",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f05def79",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "should IncompatibleDriver be accepting driver class/name as a param?",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b073f7e6",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "instead of failing at the first missing method, may want to finish the inspection and report the missing ones all at once in IncompatibleInterface",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_50593b59",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "IncompatibleInterface should be more informative. Like reporting the interfaces which failed the inspection.",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b3b0ecde",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T23:47:07Z",
+      "side": 1,
+      "message": "If an interface does not define INTERFACE_VERSION that would be an error.",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
