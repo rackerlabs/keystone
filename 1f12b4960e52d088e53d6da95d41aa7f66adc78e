@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_56b645dd",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T04:56:12Z",
+      "side": 1,
+      "message": "would be nice if there\u0027s warning log here",
+      "revId": "1f12b4960e52d088e53d6da95d41aa7f66adc78e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
