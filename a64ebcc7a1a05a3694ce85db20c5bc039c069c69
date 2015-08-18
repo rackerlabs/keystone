@@ -67,6 +67,23 @@
       "revId": "a64ebcc7a1a05a3694ce85db20c5bc039c069c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bd8c4080",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:49:53Z",
+      "side": 1,
+      "message": "actually, it is possible to insert any kind of project, right?",
+      "revId": "a64ebcc7a1a05a3694ce85db20c5bc039c069c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
