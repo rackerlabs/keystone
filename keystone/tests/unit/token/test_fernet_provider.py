@@ -314,7 +314,9 @@ class TestPayloads(tests.TestCase):
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'protocol_id': uuid.uuid4().hex,
+                              'user_domain_id': uuid.uuid4().hex,
+                              'user_domain_name': uuid.uuid4().hex, }
 
         payload = token_formatters.FederatedPayload.assemble(
             exp_user_id, exp_methods, exp_expires_at, exp_audit_ids,
@@ -333,6 +335,10 @@ class TestPayloads(tests.TestCase):
                          federated_info['idp_id'])
         self.assertEqual(exp_federated_info['protocol_id'],
                          federated_info['protocol_id'])
+        self.assertEqual(exp_federated_info['user_domain_id'],
+                         federated_info['user_domain_id'])
+        self.assertEqual(exp_federated_info['user_domain_name'],
+                         federated_info['user_domain_name'])
 
     def test_federated_project_scoped_payload(self):
         exp_user_id = 'someNonUuidUserId'
@@ -342,7 +348,9 @@ class TestPayloads(tests.TestCase):
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'protocol_id': uuid.uuid4().hex,
+                              'user_domain_id': uuid.uuid4().hex,
+                              'user_domain_name': uuid.uuid4().hex, }
 
         payload = token_formatters.FederatedProjectScopedPayload.assemble(
             exp_user_id, exp_methods, exp_project_id, exp_expires_at,
@@ -364,6 +372,10 @@ class TestPayloads(tests.TestCase):
                          federated_info['idp_id'])
         self.assertEqual(exp_federated_info['protocol_id'],
                          federated_info['protocol_id'])
+        self.assertEqual(exp_federated_info['user_domain_id'],
+                         federated_info['user_domain_id'])
+        self.assertEqual(exp_federated_info['user_domain_name'],
+                         federated_info['user_domain_name'])
 
     def test_federated_domain_scoped_payload(self):
         exp_user_id = 'someNonUuidUserId'
@@ -373,7 +385,9 @@ class TestPayloads(tests.TestCase):
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'protocol_id': uuid.uuid4().hex,
+                              'user_domain_id': uuid.uuid4().hex,
+                              'user_domain_name': uuid.uuid4().hex, }
 
         payload = token_formatters.FederatedDomainScopedPayload.assemble(
             exp_user_id, exp_methods, exp_domain_id, exp_expires_at,
@@ -395,6 +409,10 @@ class TestPayloads(tests.TestCase):
                          federated_info['idp_id'])
         self.assertEqual(exp_federated_info['protocol_id'],
                          federated_info['protocol_id'])
+        self.assertEqual(exp_federated_info['user_domain_id'],
+                         federated_info['user_domain_id'])
+        self.assertEqual(exp_federated_info['user_domain_name'],
+                         federated_info['user_domain_name'])
 
 
 class TestFernetKeyRotation(tests.TestCase):
