@@ -562,9 +562,10 @@ class FederatedUnscopedPayload(BasePayload):
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                                audit_ids))
-
+        user_domain_id = federated_info['user_domain_id']
+        user_domain_name = federated_info['user_domain_name']
         return (b_user_id, methods, b_group_ids, b_idp_id, protocol_id,
-                expires_at_int, b_audit_ids)
+                expires_at_int, b_audit_ids, user_domain_id, user_domain_name)
 
     @classmethod
     def disassemble(cls, payload):
@@ -585,8 +586,11 @@ class FederatedUnscopedPayload(BasePayload):
         protocol_id = payload[4]
         expires_at_str = cls._convert_int_to_time_string(payload[5])
         audit_ids = list(map(provider.base64_encode, payload[6]))
-        federated_info = dict(group_ids=group_ids, idp_id=idp_id,
-                              protocol_id=protocol_id)
+        user_domain_id = payload[7]
+        user_domain_name = payload[8]
+        federated_info = dict(
+            group_ids=group_ids, idp_id=idp_id, protocol_id=protocol_id,
+            user_domain_id=user_domain_id, user_domain_name=user_domain_name)
         return (user_id, methods, expires_at_str, audit_ids, federated_info)
 
 
@@ -619,9 +623,12 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                                audit_ids))
+        user_domain_id = federated_info['user_domain_id']
+        user_domain_name = federated_info['user_domain_name']
 
         return (b_user_id, methods, b_scope_id, b_group_ids, b_idp_id,
-                protocol_id, expires_at_int, b_audit_ids)
+                protocol_id, expires_at_int, b_audit_ids, user_domain_id,
+                user_domain_name)
 
     @classmethod
     def disassemble(cls, payload):
@@ -643,8 +650,11 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         protocol_id = payload[5]
         expires_at_str = cls._convert_int_to_time_string(payload[6])
         audit_ids = list(map(provider.base64_encode, payload[7]))
-        federated_info = dict(idp_id=idp_id, protocol_id=protocol_id,
-                              group_ids=group_ids)
+        user_domain_id = payload[8]
+        user_domain_name = payload[9]
+        federated_info = dict(
+            idp_id=idp_id, protocol_id=protocol_id, group_ids=group_ids,
+            user_domain_id=user_domain_id, user_domain_name=user_domain_name)
         return (user_id, methods, scope_id, expires_at_str, audit_ids,
                 federated_info)
 
