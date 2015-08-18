@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_5f995c1e",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-18T16:24:29Z",
+      "side": 1,
+      "message": "I don\u0027t think we should change the log message for the backport.",
+      "revId": "20910a6ef3cb33cc7cb758b890472aaec529a238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
