@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_f120c34b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T05:32:02Z",
+      "side": 1,
+      "message": "hah nice",
+      "parentUuid": "fa1b9901_2be56d08",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_8bba79e0",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2015-08-18T02:12:36Z",
       "side": 1,
       "message": "I\u0027m OK with this some others may ask for it to be in a separate commit.",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d1001fad",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T05:32:02Z",
+      "side": 1,
+      "message": "I am not a big fan of submitting a separate commit to just fix a typo. Seem like wasting Jenkins resource. But hey, whatever makes people happy I guess.",
+      "parentUuid": "fa1b9901_8bba79e0",
       "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
