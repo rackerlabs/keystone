@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_42641f21",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-18T16:58:52Z",
+      "side": 1,
+      "message": "Why \"I\" here? It is WebOb that is failing to handle the Unicode? Which in standard English is an \"it\".",
+      "parentUuid": "fa1b9901_8bd35938",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_2be56d08",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2015-08-18T05:32:02Z",
       "side": 1,
       "message": "hah nice",
+      "parentUuid": "fa1b9901_2be56d08",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5d008401",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-18T16:58:52Z",
+      "side": 1,
+      "message": "Good suggestion.",
       "parentUuid": "fa1b9901_2be56d08",
       "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9d35bcdb",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-18T16:58:52Z",
+      "side": 1,
+      "message": "I originally fixed this when I had to indent the region so it was in my commit. It just felt silly to revert it and make a separate change.",
+      "parentUuid": "fa1b9901_8bba79e0",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_6b036574",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 6
@@ -100,6 +154,24 @@
       "writtenOn": "2015-08-18T02:12:36Z",
       "side": 1,
       "message": "I just checked and the character is likely encoded with windows-1252 and definitely not utf-16.\n\nI would change this entire comment to just be:\n\n# nonexitènt encoded as Windows-1252",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1dac4c9f",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-18T16:58:52Z",
+      "side": 1,
+      "message": "This is Python 3.\n\n\u003e\u003e\u003e \"nonexit\\xe8nt\".encode(\"utf16\")\n\nb\u0027\\xff\\xfen\\x00o\\x00n\\x00e\\x00x\\x00i\\x00t\\x00\\xe8\\x00n\\x00t\\x00\u0027\n\n\u003e\u003e\u003e \u0027\\\\xff\\\\xfen\\\\x00o\\\\x00n\\\\x00e\\\\x00x\\\\x00i\\\\x00t\\\\x00\\\\xe8\\\\x00n\\\\x00t\n\\\\x00\u0027.replace(\u0027\\\\x00\u0027, \u0027\u0027)\n\n\u0027\\\\xff\\\\xfenonexit\\\\xe8nt\u0027\n\nI tried it before I wrote it :-) But yes in this case it was 1252 as the result of a Putty cut/paste. Apparently some versions of Putty do not properly UTF8 encode the clipboard.",
+      "parentUuid": "fa1b9901_6b036574",
       "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -134,6 +206,24 @@
       "writtenOn": "2015-08-18T02:12:36Z",
       "side": 1,
       "message": "The order of the args is incorrect. It should be (expected, observed)",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_fd915853",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-08-18T16:58:52Z",
+      "side": 1,
+      "message": "Thanks, I always get it backwards.",
+      "parentUuid": "fa1b9901_ab309d57",
       "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
