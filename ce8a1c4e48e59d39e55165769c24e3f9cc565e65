@@ -84,6 +84,23 @@
       "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8b8828e9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 96
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:31:20Z",
+      "side": 1,
+      "message": "if we follow the suggestion in the previous patch (that adds the is_domain parameter to get_project_by_name()) we can refactor this method to something like:\n\n  domain_id \u003d project_ref[\u0027domain_id\u0027] if project_ref[\u0027is_domain\u0027] else None\n  projects \u003d self.driver.get_project_by_name(project[\u0027name\u0027], domain_id, project[\u0027is_domain\u0027])\n  if any(projects):\n      ...",
+      "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
