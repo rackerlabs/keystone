@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_a28f3bcb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:48:55Z",
+      "side": 1,
+      "message": "I think the comment was useful, since we are calling the driver directly and not using the Manager method.",
+      "revId": "a64ebcc7a1a05a3694ce85db20c5bc039c069c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9d1e1c62",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 2221,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:48:55Z",
+      "side": 1,
+      "message": "needs a test for regular projects",
+      "revId": "a64ebcc7a1a05a3694ce85db20c5bc039c069c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_a27dfbb2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 2237,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:48:55Z",
+      "side": 1,
+      "message": "to really test this you\u0027d need to change the domain_id as well",
+      "revId": "a64ebcc7a1a05a3694ce85db20c5bc039c069c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7d78e88f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 1676,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:48:55Z",
+      "side": 1,
+      "message": "remove the comma",
+      "revId": "a64ebcc7a1a05a3694ce85db20c5bc039c069c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
