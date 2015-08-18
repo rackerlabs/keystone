@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_9d04dcc0",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "I know, this code is mine... but a comment here would be useful :P",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1d276c65",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "here too",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3d391042",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "I\u0027d suggest make the same _as_ids calls right below the _as_list calls - they should have the \"same\" result",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5dbba4e5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2503,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "add a docstring explaining the hierarchy used in the test",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1d9a0c64",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2527,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "why not? I\u0027d expect subproject1 here",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_fd9f184e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2532,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "why not? I\u0027d expect subproject2 here",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7dba28c2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2612,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "add docstring to explain the hierarchy",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ddd25400",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2645,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "must contain only project2",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9ddcdc13",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2651,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T16:59:43Z",
+      "side": 1,
+      "message": "only project1",
+      "revId": "f667d67cc9db55bf37d391e3e707812d47499bca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
