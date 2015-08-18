@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_c0484b5e",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 14107
+      },
+      "writtenOn": "2015-08-18T03:07:50Z",
+      "side": 1,
+      "message": "Should we need sqlite-devel?",
+      "revId": "48560e4de5892a6541123aba5fa8d5acf2c16d13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
