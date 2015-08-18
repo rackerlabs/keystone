@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_707d6a1b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-18T18:21:47Z",
+      "side": 1,
+      "message": "It would be nice to add a LOG.info() here indicating how many files were successfully uploaded",
+      "revId": "9059df15ffe4a13d918b7c3614baf66817e2069f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
