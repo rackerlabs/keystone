@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_e5d3f236",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_juno.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-18T21:34:27Z",
+      "side": 1,
+      "message": "Would we be able to add a comment as to why there were named that way? There were some comments in the original migration that might be useful to carry over here.",
+      "revId": "81f2ccb3c56eacb15d2b3c8aaaf68a4239c678a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
