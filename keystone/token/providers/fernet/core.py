@@ -166,7 +166,9 @@ class Provider(common.BaseProvider):
             'user': {
                 federation_constants.FEDERATION: federated_info,
                 'id': user_id,
-                'name': parse.unquote(user_id)
+                'name': parse.unquote(user_id),
+                'domain': {'id': CONF.federation.federated_domain_name,
+                           'name': CONF.federation.federated_domain_name, },
             }
         }
 
