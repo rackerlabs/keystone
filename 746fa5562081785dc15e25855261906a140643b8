@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_bfcbd852",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-18T16:18:53Z",
+      "side": 1,
+      "message": "Add a backport note that keystone/tests/unit/test_v3_auth.py needed to be changed since stevedore loading isn\u0027t supported in stable/kilo.",
+      "revId": "746fa5562081785dc15e25855261906a140643b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
