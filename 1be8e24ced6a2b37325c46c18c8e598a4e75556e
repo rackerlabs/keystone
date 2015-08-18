@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_6bb5702f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T23:56:11Z",
+      "side": 1,
+      "message": "Is this not you?",
+      "range": {
+        "startLine": 1040,
+        "startChar": 6,
+        "endLine": 1040,
+        "endChar": 68
+      },
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_7019df78",
         "filename": "keystone/common/manager.py",
         "patchSetId": 5
