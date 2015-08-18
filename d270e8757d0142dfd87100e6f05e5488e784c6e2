@@ -16,6 +16,24 @@
       "revId": "d270e8757d0142dfd87100e6f05e5488e784c6e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8a5829fc",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-18T08:28:23Z",
+      "side": 1,
+      "message": "Steve, this change is needed since we should exclude the case when the \u0027resource_to_validate\u0027 existing in kwargs but is an empty value.\n\n\u003e\u003e\u003e kwargs \u003d {\"key\": \u0027\u0027}\n\n\u003e\u003e\u003e \u0027key\u0027 in kwargs\nTrue\n\nIn this case, we won\u0027t let it go to jsonschema just beacuse the error message thrown by jsonschema doesn\u0027t help.\n\nThis is part of scope from that bug.",
+      "parentUuid": "fa1b9901_0c751cca",
+      "revId": "d270e8757d0142dfd87100e6f05e5488e784c6e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
