@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_6bfef46c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:28:27Z",
+      "side": 1,
+      "message": "it is possible to have domain_id\u003dNone, right? Only projects acting as a domain can have such domain_id - and since we ignore the domain_id when searching such projects, I\u0027d add:\n\n  if domain_id is not None:\n    query \u003d query.filter_by(domain_id\u003ddomain_id)",
+      "revId": "169050100dc38d0bd29ab44a6eb76a10f5fa4edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_d9683df8",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
