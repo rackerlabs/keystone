@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_0b8e5878",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 96
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:24:59Z",
+      "side": 1,
+      "message": "I\u0027d rephrase this paragraph to say the main reason of the patch - the information of the table drop can be added in the end of the paragraph.",
+      "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8b7348b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 96
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:24:59Z",
+      "side": 1,
+      "message": "not in the backend driver",
+      "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_0b6098cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 96
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:24:59Z",
+      "side": 1,
+      "message": "add: (current domain names constraint)",
+      "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_2bdebc6d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 96
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:24:59Z",
+      "side": 1,
+      "message": "remove (is_domain\u003dTrue) and (is_domain\u003dFalse)",
+      "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_eb03e4b6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 96
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-18T10:24:59Z",
+      "side": 1,
+      "message": "instead of in the backend driver.",
+      "revId": "ce8a1c4e48e59d39e55165769c24e3f9cc565e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
