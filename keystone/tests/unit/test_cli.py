@@ -12,12 +12,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import logging
 import os
 import uuid
 
 import fixtures
 import mock
 from oslo_config import cfg
+import oslo_config.fixture
+from oslotest import mockpatch
 from six.moves import range
 from testtools import matchers
 
@@ -165,6 +168,8 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
             domain_config_dir=unit.TESTCONF + '/domain_configs_multi_ldap')
         self.domain_count = 3
         self.setup_initial_domains()
+        self.logging = self.useFixture(
+            fixtures.FakeLogger(level=logging.INFO))
 
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
@@ -392,3 +397,36 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class CliDomainConfigUploadNothing(unit.BaseTestCase):
+
+    def setUp(self):
+        super(CliDomainConfigUploadNothing, self).setUp()
+
+        config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
+        config_fixture.register_cli_opt(cli.command_opt)
+
+        # NOTE(dstanek): since this is not testing any database
+        # functionality there is no need to go through the motions and
+        # setup a test database.
+        def fake_load_backends(self):
+            self.resource_manager = mock.Mock()
+        self.useFixture(mockpatch.PatchObject(
+            cli.DomainConfigUploadFiles, 'load_backends', fake_load_backends))
+
+        tempdir = self.useFixture(fixtures.TempDir())
+        config_fixture.config(group='identity', domain_config_dir=tempdir.path)
+
+        self.logging = self.useFixture(
+            fixtures.FakeLogger(level=logging.DEBUG))
+
+    def test_uploading_all_from_an_empty_directory(self):
+        CONF(args=['domain_config_upload', '--all'], project='keystone',
+             default_config_files=[])
+        cli.DomainConfigUpload.main()
+
+        expected_msg = ('No domain configs uploaded from %r' %
+                        CONF.identity.domain_config_dir)
+        self.assertThat(self.logging.output,
+                        matchers.Contains(expected_msg))
