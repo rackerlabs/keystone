@@ -50,6 +50,24 @@
       "revId": "8be291a332bc5fb3b789a6669e400dc96b1d827c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_058ce633",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-18T21:37:19Z",
+      "side": 1,
+      "message": "Rajesh, agreed, and this can be generated automatically for you when you cherry-pick by using -x [0]. \n\n\n[0] http://git-scm.com/docs/git-cherry-pick",
+      "parentUuid": "1a4dcd0f_4ab85dc8",
+      "revId": "8be291a332bc5fb3b789a6669e400dc96b1d827c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
