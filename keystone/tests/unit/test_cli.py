@@ -12,12 +12,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import logging
 import os
 import uuid
 
+import fixtures
 import mock
 from oslo_config import cfg
+import oslo_config.fixture
+from oslotest import mockpatch
 from six.moves import range
+from testtools import matchers
 
 from keystone.cmd import cli
 from keystone.common import dependency
@@ -53,6 +58,8 @@ class CliDomainConfigAllTestCase(tests.SQLDriverOverrides, tests.TestCase):
             domain_config_dir=tests.TESTCONF + '/domain_configs_multi_ldap')
         self.domain_count = 3
         self.setup_initial_domains()
+        self.logging = self.useFixture(
+            fixtures.FakeLogger(level=logging.INFO))
 
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
@@ -137,6 +144,11 @@ class CliDomainConfigAllTestCase(tests.SQLDriverOverrides, tests.TestCase):
         res = self.domain_config_api.get_config_with_sensitive_info(
             self.domains['domain2']['id'])
         self.assertEqual(domain2_config, res)
+
+        expected_msg = ('%d configs uploaded from %r' %
+                        (3, CONF.identity.domain_config_dir))
+        self.assertThat(self.logging.output,
+                        matchers.Contains(expected_msg))
 
 
 class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
@@ -252,3 +264,36 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
                     'file': os.path.join(CONF.identity.domain_config_dir,
                                          file_name)})
             mock_print.assert_has_calls([mock.call(error_msg)])
+
+
+class CliDomainConfigUploadNothing(tests.BaseTestCase):
+
+    def setUp(self):
+        super(CliDomainConfigUploadNothing, self).setUp()
+
+        config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
+        config_fixture.register_cli_opt(cli.command_opt)
+
+        # NOTE(dstanek): since this is not testing any database
+        # functionality there is no need to go through the motions and
+        # setup a test database.
+        def fake_load_backends(self):
+            self.resource_manager = mock.Mock()
+        self.useFixture(mockpatch.PatchObject(
+            cli.DomainConfigUploadFiles, 'load_backends', fake_load_backends))
+
+        tempdir = self.useFixture(fixtures.TempDir())
+        config_fixture.config(group='identity', domain_config_dir=tempdir.path)
+
+        self.logging = self.useFixture(
+            fixtures.FakeLogger(level=logging.DEBUG))
+
+    def test_uploading_all_from_an_empty_directory(self):
+        CONF(args=['domain_config_upload', '--all'], project='keystone',
+             default_config_files=[])
+        cli.DomainConfigUpload.main()
+
+        expected_msg = ('No domain configs found in %r' %
+                        CONF.identity.domain_config_dir)
+        self.assertThat(self.logging.output,
+                        matchers.Contains(expected_msg))
