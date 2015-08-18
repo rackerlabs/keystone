@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_1360d4cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-18T09:26:37Z",
+      "side": 1,
+      "message": "Maybe you can update this line to indicate this bug can be found just define different value for CONF.public_endpoint and CONF.admin_endpoint.\n\nThe orginal message leads to think the bug could be reproduced by giving some value for CONF.public_endpoint or CONF.admin_endpoint, not necessary to be different.\n\nYou can keep it as is. I am just thinking out loud.",
+      "revId": "bbb8fbab179b1b10e2d8d968ac6f0586e7f9e45b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_981163af",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-18T09:26:37Z",
+      "side": 1,
+      "message": "Thanks for the detail comments here, so, you should deprected this using this annotation.\"@versionutils.deprecated\"",
+      "revId": "bbb8fbab179b1b10e2d8d968ac6f0586e7f9e45b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
