@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_5d12e8b5",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 14107
+      },
+      "writtenOn": "2015-08-18T02:51:12Z",
+      "side": 1,
+      "message": "not libffi-dev should libffi-devel",
+      "revId": "0a832b3484200e567e676c075616303549cfde36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
