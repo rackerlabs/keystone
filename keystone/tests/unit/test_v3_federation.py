@@ -2400,13 +2400,13 @@ class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin):
 
     def test_federated_unscoped_token(self):
         resp = self._issue_unscoped_token()
-        self.assertEqual(204, len(resp.headers['X-Subject-Token']))
+        self.assertEqual(232, len(resp.headers['X-Subject-Token']))
         self.assertValidMappedUser(resp.json_body['token'])
 
     def test_federated_unscoped_token_with_multiple_groups(self):
         assertion = 'ANOTHER_CUSTOMER_ASSERTION'
         resp = self._issue_unscoped_token(assertion=assertion)
-        self.assertEqual(232, len(resp.headers['X-Subject-Token']))
+        self.assertEqual(250, len(resp.headers['X-Subject-Token']))
         self.assertValidMappedUser(resp.json_body['token'])
 
     def test_validate_federated_unscoped_token(self):
