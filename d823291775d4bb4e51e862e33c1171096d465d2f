@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_8bd35938",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T02:12:36Z",
+      "side": 1,
+      "message": "Suggest: WebOb will raise a UnicodeDecodeError if i cannot decode the request",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_2be56d08",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T02:12:36Z",
+      "side": 1,
+      "message": "Suggest: _(\u0027Query string is not UTF-8 encoded\u0027)\n\nthe _() will i18n the string.",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8bba79e0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T02:12:36Z",
+      "side": 1,
+      "message": "I\u0027m OK with this some others may ask for it to be in a separate commit.",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6b036574",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T02:12:36Z",
+      "side": 1,
+      "message": "I just checked and the character is likely encoded with windows-1252 and definitely not utf-16.\n\nI would change this entire comment to just be:\n\n# nonexitènt encoded as Windows-1252",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_cbf2b19a",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T02:12:36Z",
+      "side": 1,
+      "message": "I would change this comment to be:\n\n# nonexitènt encoded as UTF-8",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ab309d57",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-18T02:12:36Z",
+      "side": 1,
+      "message": "The order of the args is incorrect. It should be (expected, observed)",
+      "revId": "d823291775d4bb4e51e862e33c1171096d465d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
