@@ -316,6 +316,15 @@ class Auth(auth_controllers.Auth):
         token_id = res.headers['X-Subject-Token']
         return self.render_html_response(host, token_id)
 
+    def federated_idp_specific_sso_auth(self, context, idp_id, protocol_id):
+        host = self._get_sso_origin_host(context)
+
+        # NOTE(lbragstad): Validate the Identity Provider exists
+        self.federation_api.get_idp(idp_id)
+        res = self.federated_authentication(context, idp_id, protocol_id)
+        token_id = res.headers['X-Subject-Token']
+        return self.render_html_response(host, token_id)
+
     def render_html_response(self, host, token_id):
         """Forms an HTML Form from a template with autosubmit."""
 
