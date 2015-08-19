@@ -83,6 +83,10 @@ class FederationExtension(wsgi.V3ExtensionRouter):
         POST /auth/OS-FEDERATION/websso/{protocol_id}
              ?origin=https%3A//horizon.example.com
 
+        GET /auth/OS-FEDERATION/websso/identity_providers/
+            {identity_provider}/protocols/{protocol_id}
+            ?origin=https%3A//horizon.example.com
+
     """
     def _construct_url(self, suffix):
         return "/OS-FEDERATION/%s" % suffix
@@ -221,6 +225,17 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             get_post_action='federated_sso_auth',
             rel=build_resource_relation(resource_name='websso'),
             path_vars={
+                'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
+            })
+        self._add_resource(
+            mapper, auth_controller,
+            path='/auth' + self._construct_url('websso/identity_providers/'
+                                               '{identity_provider}/protocols/'
+                                               '{protocol}'),
+            get_post_action='federated_idp_specific_sso_auth',
+            rel=build_resource_relation(resource_name='websso'),
+            path_vars={
+                'identity_provider': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
             })
 

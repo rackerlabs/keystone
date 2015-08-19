@@ -170,6 +170,9 @@ BASE_ACCESS_TOKEN = (
 # TODO(stevemar): Use BASE_IDP_PROTOCOL when bug 1420125 is resolved.
 FEDERATED_AUTH_URL = ('/OS-FEDERATION/identity_providers/{identity_provider}'
                       '/protocols/{protocol}/auth')
+FEDERATED_IDP_SPECIFIC_WEBSSO = ('/auth/OS-FEDERATION/websso/'
+                                 'identity_providers/{identity_provider}/'
+                                 'protocols/{protocol}')
 
 V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
     json_home.build_v3_resource_relation('auth_tokens'): {
@@ -349,6 +352,11 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
     _build_federation_rel(resource_name='websso'): {
         'href-template': '/auth/OS-FEDERATION/websso/{protocol_id}',
         'href-vars': {
+            'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
+    _build_federation_rel(resource_name='websso'): {
+        'href-template': FEDERATED_IDP_SPECIFIC_WEBSSO,
+        'href-vars': {
+            'identity_provider': IDP_ID_PARAMETER_RELATION,
             'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
     _build_federation_rel(resource_name='projects'): {
         'href': '/OS-FEDERATION/projects'},
