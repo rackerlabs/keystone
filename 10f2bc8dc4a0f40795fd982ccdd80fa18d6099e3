@@ -69,6 +69,24 @@
       "revId": "10f2bc8dc4a0f40795fd982ccdd80fa18d6099e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_477151a7",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-08-19T17:45:00Z",
+      "side": 1,
+      "message": "you are going to iterate over unnecessary projects here if you insert the domains first",
+      "parentUuid": "fa1b9901_946a39ed",
+      "revId": "10f2bc8dc4a0f40795fd982ccdd80fa18d6099e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
