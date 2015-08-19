@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_62ded112",
+        "filename": "bandit.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 11861
+      },
+      "writtenOn": "2015-08-19T14:22:18Z",
+      "side": 1,
+      "message": "if you\u0027re alphabetizing, do you want to do it here too?",
+      "revId": "378afd201215a238ce725e9146a8639f4ed35bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
