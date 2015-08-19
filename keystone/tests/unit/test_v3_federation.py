@@ -3436,6 +3436,21 @@ class SAMLGenerationTests(FederationTests):
 
         create_class_mock.assert_called_with(saml.Assertion, 'fakeoutput')
 
+    @mock.patch('saml2.create_class_from_xml_string')
+    @mock.patch('oslo_utils.fileutils.write_to_tempfile')
+    @mock.patch('subprocess.check_output')
+    def test__sign_assertion_xmlsec1_error(self, check_output_mock,
+                                           write_to_tempfile_mock,
+                                           create_class_mock):
+        write_to_tempfile_mock.return_value = 'tmp_path'
+        e = Exception("xmlsec1 failure")
+        e.output = "some details\nmore details"
+        check_output_mock.side_effect = e
+
+        self.assertRaises(exception.SAMLSigningError,
+                          keystone_idp._sign_assertion,
+                          self.signed_assertion)
+
     @mock.patch('oslo_utils.fileutils.write_to_tempfile')
     def test__sign_assertion_fileutils_exc(self, write_to_tempfile_mock):
         write_to_tempfile_mock.side_effect = Exception('fake')

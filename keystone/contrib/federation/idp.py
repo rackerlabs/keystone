@@ -428,9 +428,11 @@ def _sign_assertion(assertion):
     except Exception as e:
         msg = _LE('Error when signing assertion, reason: %(reason)s')
         msg = msg % {'reason': e}
-        if hasattr(e, 'output'):
-            msg += ' output: %(output)s' % {'output': e.output}
         LOG.error(msg)
+        if hasattr(e, 'output'):
+            msg = _LE('output: %(output)s')
+            msg = msg % {'output': e.output}
+            LOG.error(msg)
         raise exception.SAMLSigningError(reason=e)
     finally:
         try:
