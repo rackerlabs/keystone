@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_d48e71cf",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-19T17:43:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_b8a9ae7d",
+      "revId": "10f2bc8dc4a0f40795fd982ccdd80fa18d6099e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_b8d76eec",
         "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-18T17:23:03Z",
       "side": 1,
       "message": "why not perform this before inserting the domains in the project table?\n\nalso, unnecessary () in the if statement",
+      "revId": "10f2bc8dc4a0f40795fd982ccdd80fa18d6099e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_946a39ed",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_migrate_domains_to_projects.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-19T17:43:33Z",
+      "side": 1,
+      "message": "I think it is more logical we first insert the domains, and then point to them. removed the ()",
+      "parentUuid": "fa1b9901_b8d76eec",
       "revId": "10f2bc8dc4a0f40795fd982ccdd80fa18d6099e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
