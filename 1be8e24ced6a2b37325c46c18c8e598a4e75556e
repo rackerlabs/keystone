@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_3e72237c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-19T20:48:51Z",
+      "side": 1,
+      "message": "No:-)...the developer who proposes a change to the interface, in future",
+      "parentUuid": "fa1b9901_6bb5702f",
+      "revId": "1be8e24ced6a2b37325c46c18c8e598a4e75556e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_7019df78",
         "filename": "keystone/common/manager.py",
         "patchSetId": 5
