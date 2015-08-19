@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_4d97273a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-19T23:10:45Z",
+      "side": 0,
+      "message": "I would prefer to keep the default. The changes in core.py would still allow you to achieve your goal. But if we change the default, I am afraid that\u0027s going to break somebody out there.",
+      "revId": "909ed85053236b9109d948445a7dff325ee20d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
