@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_f8e37403",
+        "filename": "bandit.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-19T14:50:26Z",
+      "side": 1,
+      "message": "I think you can refresh this file with the latest example bandit.yaml from 0.13.2 of bandit.",
+      "revId": "378afd201215a238ce725e9146a8639f4ed35bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_583860a0",
+        "filename": "bandit.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-19T14:50:26Z",
+      "side": 1,
+      "message": "This fix was released in the current version keystone uses.",
+      "revId": "378afd201215a238ce725e9146a8639f4ed35bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_62ded112",
         "filename": "bandit.yaml",
         "patchSetId": 7
