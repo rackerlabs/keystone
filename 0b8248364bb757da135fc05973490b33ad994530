@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_bea8738e",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "mark this line with \"# pragma: no cover\" for the coverage report.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d84c5fca",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "this needs server_default\u003dsqlalchemy.sql.expression.false() to match the migration.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3b7c751e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "Add a comment what this is doing or create a function that has a name that explains what it does.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3b95553e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "What\u0027s the point of this comment?",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7b018d69",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "create needs to make sure that is_domain isn\u0027t set.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d8045f19",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "I\u0027d prefer the v2 controller forced the field to False rather than removing it.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bb896577",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "There should also be a test with is_domain set to False.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bb0c05ee",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "change not_found to not_returned",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9b6021a7",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "this is over-indented.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9b07c1c9",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "use [] rather than .get.",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7b298d36",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T20:54:41Z",
+      "side": 1,
+      "message": "why was domain_id made optional?",
+      "revId": "0b8248364bb757da135fc05973490b33ad994530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
