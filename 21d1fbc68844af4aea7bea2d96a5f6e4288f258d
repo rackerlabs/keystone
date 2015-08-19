@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_61c02f2b",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-19T01:46:18Z",
+      "side": 1,
+      "message": "can you just do:\n\nself.assertDictEqual(exp_federated_info, federated_info)\n\nor is something else stashed in there when being disassembled?",
+      "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_c15a5b83",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-19T01:46:18Z",
+      "side": 1,
+      "message": "Any reason you unquote here and not for the ID?",
+      "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
