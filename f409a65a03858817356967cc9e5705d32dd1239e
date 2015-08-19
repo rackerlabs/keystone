@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_8dbc5fdd",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-08-19T23:03:06Z",
+      "side": 1,
+      "message": "My intent had initially been to put this at GET /OS-FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/websso because that way when you configure apache you can use the same \u003cLocation\u003e tag for the CLI (/auth) and /websso cases. \n\nI don\u0027t know which one of these is more practical as it could be that you want to only support the /auth or /websso case. I\u0027d be happy to try out both but just giving you an early response.",
+      "revId": "f409a65a03858817356967cc9e5705d32dd1239e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
