@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_db07a01a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-19T08:46:56Z",
+      "side": 1,
+      "message": "nit: s/execption/exception",
+      "revId": "1f5feea35b368d7e083be924b5df0453e75e9fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
