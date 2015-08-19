@@ -33,6 +33,23 @@
       "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b6473dbb",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-19T19:46:25Z",
+      "side": 1,
+      "message": "This at least needs a comment so that we know why this needs to be done. All the tests pass even without the unquote so a test also needs to be added.",
+      "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
