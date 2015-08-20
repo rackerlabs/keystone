@@ -414,6 +414,49 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.get('/endpoints')
         self.assertValidEndpointListResponse(r, ref=self.endpoint)
 
+    def _create_random_endpoint(self, interface='public'):
+        region = self._create_region_with_parent_id()
+        service = self._create_random_service()
+        ref = self.new_endpoint_ref(
+            service_id=service['id'],
+            interface=interface,
+            region_id=region.result['region']['id'])
+
+        response = self.post(
+            '/endpoints',
+            body={'endpoint': ref})
+        return response.json['endpoint']
+
+    def test_list_endpoints_filtered_by_interface(self):
+        """Call ``GET /endpoints?interface={interface}``."""
+        ref = self._create_random_endpoint(interface='internal')
+
+        response = self.get('/endpoints?interface=%s' % ref['interface'])
+        self.assertValidEndpointListResponse(response, ref=ref)
+
+        for endpoint in response.json['endpoints']:
+            self.assertEqual(ref['interface'], endpoint['interface'])
+
+    def test_list_endpoints_filtered_by_service_id(self):
+        """Call ``GET /endpoints?service_id={service_id}``."""
+        ref = self._create_random_endpoint()
+
+        response = self.get('/endpoints?service_id=%s' % ref['service_id'])
+        self.assertValidEndpointListResponse(response, ref=ref)
+
+        for endpoint in response.json['endpoints']:
+            self.assertEqual(ref['service_id'], endpoint['service_id'])
+
+    def test_list_endpoints_filtered_by_region_id(self):
+        """Call ``GET /endpoints?region_id={region_id}``."""
+        ref = self._create_random_endpoint()
+
+        response = self.get('/endpoints?region_id=%s' % ref['region_id'])
+        self.assertValidEndpointListResponse(response, ref=ref)
+
+        for endpoint in response.json['endpoints']:
+            self.assertEqual(ref['region_id'], endpoint['region_id'])
+
     def test_create_endpoint_no_enabled(self):
         """Call ``POST /endpoints``."""
         ref = self.new_endpoint_ref(service_id=self.service_id)
