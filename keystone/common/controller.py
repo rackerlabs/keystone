@@ -603,8 +603,7 @@ class V3Controller(wsgi.Application):
 
         :param context: contains the query_string from which any list hints can
                         be extracted
-        :param supported_filters: list of filters supported, so ignore any
-                                  keys in query_dict that are not in this list.
+        :param supported_filters: list of filters supported.
 
         """
         query_dict = context['query_string']
@@ -648,6 +647,11 @@ class V3Controller(wsgi.Application):
                 hints.add_filter(base_key, query_dict[key],
                                  comparator=comparator,
                                  case_sensitive=case_sensitive)
+
+            # If key is not in the query_dict, add this query into filter to
+            # prevent return the entities which are not we want, driver is
+            # expected to throw an exception and no entities will return.
+            hints.add_filter(key, query_dict[key])
 
         # NOTE(henry-nash): If we were to support pagination, we would pull any
         # pagination directives out of the query_dict here, and add them into

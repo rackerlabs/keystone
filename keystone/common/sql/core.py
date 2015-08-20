@@ -349,7 +349,7 @@ def _filter(model, query, hints):
         satisfied_filters = []
         for filter_ in hints.filters:
             if filter_['name'] not in model.attributes:
-                continue
+                raise _WontMatch()
             if filter_['comparator'] == 'equals':
                 exact_filter(model, filter_, filter_dict)
                 satisfied_filters.append(filter_)
