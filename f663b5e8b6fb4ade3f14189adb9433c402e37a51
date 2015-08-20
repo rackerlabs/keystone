@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_b46ab6b1",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-20T11:24:52Z",
+      "side": 1,
+      "message": "IMO instead of writing two separate methods (check_length and check_type) to validate string type and string length, you can club those and write validate_string_length method like this, which makes it much more readable:\n\n    def validate_string_length(property_name, value, min_length\u003d0, max_length\u003dNone):\n        if not isinstance(value, six.string_types):\t\n            msg \u003d _(\"%s is not a string or unicode\") % property_name\n            raise exception.ValidationError(msg)\n\n        name \u003d name.strip()\n\n        if len(value) \u003c min_length:\n            msg \u003d _(\"%(property_name)s has a minimum character requirement of \"\t\n                \"%(min_length)s.\") % {\u0027property_name\u0027: property_name,\n                                      \u0027min_length\u0027: min_length}\n            raise exception.ValidationError(msg)\n\n        if max_length and len(value) \u003e max_length:\n            msg \u003d _(\"%(property_name)s has more than %(max_length)s \"\n                    \"characters.\") % {\u0027property_name\u0027: property_name,\n                                  \u0027max_length\u0027: max_length}\n            raise exception.ValidationError(msg)",
+      "revId": "f663b5e8b6fb4ade3f14189adb9433c402e37a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_14b92279",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-20T11:24:52Z",
+      "side": 1,
+      "message": "You can implement check_enabled method separately like this:\n\n    def check_enabled(property_name, enabled):\n        if not isinstance(property_name, int):\n            msg \u003d _(\"%s is not boolean\") % property_name\n            raise ValidationError(msg)\n        return bool(enabled)",
+      "revId": "f663b5e8b6fb4ade3f14189adb9433c402e37a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
