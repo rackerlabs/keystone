@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_ca67a8b5",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "why is the sample protocol set to ephemeral instead of x509?",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_aae59438",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "our keystone.conf seems to be using true (small \"T\")",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ead38c02",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "the samples should be random rather than using HP :P",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_a7830fca",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 50
@@ -37,6 +88,91 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_4ab95878",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "\"its the domain  of the project scope\"",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_aaa83421",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "\"its the domain  of the project scope\"",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bbb72839",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "this is kinda weird, can we just pass in a flag inside the auth instead to determine that auth_method validation is not needed? (i.e. method)",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_38b3109a",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "\"due to not provided\" sounds a bit weird, maybe needs to be rephrased?",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f87fd8a8",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": ":type env: dict",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_67518761",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 50
@@ -66,6 +202,108 @@
       "side": 1,
       "message": "yep, that works. I picked it up from other code.\nI will try to add a test if I will have to make another patch ;-)",
       "parentUuid": "1a4dcd0f_67518761",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_fba5a0a1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "might be good to include the value of \"issuer_attribute\" too in the log",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f31e19ba",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "should this generate a cadf notification for success/fail of x509 authentication?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L544-L552",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ee606ed1",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "Name the test class to be more specific to tokenless x509",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d367554b",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "an -\u003e a",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8e23f2a6",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "use domain_name for readability",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6e553ef8",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-20T02:12:44Z",
+      "side": 1,
+      "message": "use domain_id for readability",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
