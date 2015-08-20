@@ -1637,7 +1637,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # Returning projects to be used across the tests
         return [project1, project2]
 
-    def test_create_is_domain_project(self):
+    def test_create_project_with_is_domain_flag(self):
         domain = self._get_domain_fixture()
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
@@ -1650,6 +1650,16 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           project['id'], project)
+
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': domain['id'],
+                   'enabled': True,
+                   'parent_id': None,
+                   'is_domain': False}
+        ref = self.resource_api.create_project(project['id'], project)
+        self.assertFalse(ref['is_domain'])
 
     def test_update_is_domain_field(self):
         domain = self._get_domain_fixture()
