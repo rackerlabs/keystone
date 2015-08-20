@@ -66,6 +66,9 @@ class TestTemplatedCatalog(unit.TestCase, test_backend.CatalogTests):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
         self.assertDictEqual(self.DEFAULT_FIXTURE, catalog_ref)
 
+    # NOTE(lbragstad): This test is skipped because the catalog is being
+    # modified within the test and not through the API.
+    @unit.skip_if_cache_is_enabled('catalog')
     def test_catalog_ignored_malformed_urls(self):
         # both endpoints are in the catalog
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')

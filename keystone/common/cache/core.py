@@ -249,12 +249,12 @@ def function_key_generator(namespace, fn, to_str=key_generate_to_str):
     return util.function_key_generator(namespace, fn, to_str=to_str)
 
 
-REGION = dogpile.cache.make_region(
+REGION = make_region(
     function_key_generator=function_key_generator)
 on_arguments = REGION.cache_on_arguments
 
 
-def get_memoization_decorator(section, expiration_section=None):
+def get_memoization_decorator(section, expiration_section=None, region=None):
     """Build a function based on the `on_arguments` decorator for the section.
 
     For any given driver in Keystone that has caching capabilities, a
@@ -293,10 +293,12 @@ def get_memoization_decorator(section, expiration_section=None):
     """
     if expiration_section is None:
         expiration_section = section
+    if region is None:
+        region = REGION
     should_cache = get_should_cache_fn(section)
     expiration_time = get_expiration_time_fn(expiration_section)
 
-    memoize = REGION.cache_on_arguments(should_cache_fn=should_cache,
+    memoize = region.cache_on_arguments(should_cache_fn=should_cache,
                                         expiration_time=expiration_time)
 
     # Make sure the actual "should_cache" and "expiration_time" methods are
