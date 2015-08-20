@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_1e061886",
+        "filename": "keystone/common/sql/migrate_repo/versions/074_create_cached_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:10:49Z",
+      "side": 1,
+      "message": "this will need a test added to sql_upgrades.py I think.",
+      "revId": "f776d3ca98d0492ef6bbf462f87d099c6a4e8ea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
