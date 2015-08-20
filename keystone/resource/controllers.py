@@ -47,6 +47,7 @@ class Tenant(controller.V2Controller):
         self.assert_admin(context)
         tenant_refs = self.resource_api.list_projects_in_domain(
             CONF.identity.default_domain_id)
+        # Remove projects acting as a domain in the return list
         tenant_refs = [self.v3_to_v2_project(tenant_ref)
                        for tenant_ref in tenant_refs
                        if not tenant_ref.get('is_domain')]
@@ -74,7 +75,6 @@ class Tenant(controller.V2Controller):
     @controller.v2_deprecated
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
-        # Projects acting as a domain should not be visible via v2
         ref = self.resource_api.get_project_by_name(
             tenant_name, CONF.identity.default_domain_id)
         return {'tenant': self.v3_to_v2_project(ref)}
@@ -86,6 +86,11 @@ class Tenant(controller.V2Controller):
 
         if 'name' not in tenant_ref or not tenant_ref['name']:
             msg = _('Name field is required and cannot be empty')
+            raise exception.ValidationError(message=msg)
+
+        if tenant_ref.get('is_domain'):
+            msg = _('The creation of projects acting as domains is not '
+                    'allowed.')
             raise exception.ValidationError(message=msg)
 
         self.assert_admin(context)

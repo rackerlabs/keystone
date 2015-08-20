@@ -66,7 +66,8 @@ class Resource(resource.Driver):
         elif isinstance(ref, list):
             return [self._set_default_is_domain_project(x) for x in ref]
         else:
-            raise ValueError(_('Expected dict or list: %s') % type(ref))
+            raise ValueError(_(
+                'Expected dict or list: %s') % type(ref))  # pragma: no cover
 
     def _validate_parent_project_is_none(self, ref):
         """If a parent_id different from None was given,
