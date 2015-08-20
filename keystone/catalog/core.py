@@ -270,6 +270,7 @@ class Manager(manager.Manager):
     def list_endpoints(self, hints=None):
         return self.driver.list_endpoints(hints or driver_hints.Hints())
 
+    @MEMOIZE
     def get_catalog(self, user_id, tenant_id):
         try:
             return self.driver.get_catalog(user_id, tenant_id)
