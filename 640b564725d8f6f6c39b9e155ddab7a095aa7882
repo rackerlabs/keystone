@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_012a2c90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T17:19:27Z",
+      "side": 1,
+      "message": "Currently, *",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_981f3b5b",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 4
@@ -49,6 +66,40 @@
       "side": 1,
       "message": "The only way I can think of is to change format() to catch the IndexError and only raise the new error if a keyword was included in the mapping. Otherwise you\u0027d re-raise the original exception.",
       "parentUuid": "7a016987_cef457f2",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6c567f07",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T17:19:27Z",
+      "side": 1,
+      "message": "Would the mapping ID or any information about the mapping be useful here?",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6c7bdf7b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T17:19:27Z",
+      "side": 1,
+      "message": "what if we added the expected output to the test name? \n\n    def test_direct_mapping_with_keyword_raises_exception(self):",
       "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
