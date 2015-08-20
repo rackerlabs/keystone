@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_7b8e46d1",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:03:19Z",
+      "side": 1,
+      "message": "do we need to send a notification for the update case?",
+      "revId": "0b88db476631781006293546886b04de19a7a41e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9e154841",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:03:19Z",
+      "side": 1,
+      "message": "we could simplify this to be something like http://cdn.pasteraw.com/fqcvkzvjb7hv4ojbajlukq2hyq0rea8",
+      "revId": "0b88db476631781006293546886b04de19a7a41e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1e285885",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:03:19Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "0b88db476631781006293546886b04de19a7a41e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_be392cd9",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:03:19Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "0b88db476631781006293546886b04de19a7a41e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
