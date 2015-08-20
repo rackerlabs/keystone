@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_b9b938ce",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5c04a648",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_1c7f0eac",
         "filename": "keystone/common/manager.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "First line should be a 1 line summary: http://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_99b234e4",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_1c7f0eac",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_39ce8863",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_573c7fc7",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_37b46b33",
         "filename": "keystone/common/manager.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "Use the _() i18n helper.",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b9e058ce",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_37b46b33",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_d9e3ccd7",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_d783af54",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_5798ffbf",
         "filename": "keystone/common/manager.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "Same for str() here",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_79e640e9",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5798ffbf",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_5901fc36",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "We don\u0027t have to, as per my understanding of the spec.\nI\u0027ll improve upon my understanding with the help of your alternative @\nhttps://review.openstack.org/#/c/215202/",
+      "parentUuid": "fa1b9901_37feabae",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_57c6bf9a",
         "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "Do you work for the foundation?",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_198e24d0",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Oops; fixed it.",
+      "parentUuid": "fa1b9901_57c6bf9a",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_d9c2ece8",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_f73d938f",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_973e9789",
         "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
         "patchSetId": 8
@@ -166,6 +328,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "Summary line issue again: http://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f9a9f024",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_973e9789",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_19a5c445",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_574d5f3c",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_d7896f27",
         "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
         "patchSetId": 8
@@ -200,6 +398,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "So this means that older driver will have to be changed to adhere to the new interface?",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_993d54df",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Not necessarily...if the new interface is developed with necessary compatibility.",
+      "parentUuid": "fa1b9901_d7896f27",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_59249cc3",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_774ae327",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_57a55f9f",
         "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
         "patchSetId": 8
@@ -234,6 +468,24 @@
       "writtenOn": "2015-08-20T10:33:33Z",
       "side": 1,
       "message": "Why not? The interfaces in the examples look exactly the same and should work fine.",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_dc7ada87",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-20T18:17:21Z",
+      "side": 1,
+      "message": "I meant to convey that driver implementations of version older than the previous version of the current interface version aren\u0027t supported",
+      "parentUuid": "fa1b9901_57a55f9f",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
