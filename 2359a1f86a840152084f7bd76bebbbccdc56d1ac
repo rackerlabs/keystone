@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_26499fb7",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-20T09:34:07Z",
+      "side": 1,
+      "message": "we don\u0027t check it in the federated_authentication() method.\nIdp is being checked somewhere deeper :\n\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/plugins/mapped.py#L184",
+      "revId": "2359a1f86a840152084f7bd76bebbbccdc56d1ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
