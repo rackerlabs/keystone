@@ -190,11 +190,9 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         r = self.get(my_url, auth=self.auth)
         id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
 
-        # domainA is returned and it is enabled, since enableds=0 is not the
-        # same as enabled=0
-        self.assertEqual(1, len(id_list))
-        self.assertIn(self.domainA['id'], id_list)
-        self.assertIs(True, r.result.get('domains')[0]['enabled'])
+        # No domain will be returned since there is no query match with
+        # enableds
+        self.assertEqual(0, len(id_list))
 
     def test_list_users_filtered_by_funny_name(self):
         """GET /users?name=%myname%
