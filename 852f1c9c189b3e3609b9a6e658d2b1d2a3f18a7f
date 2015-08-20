@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_1e97f8ec",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:15:31Z",
+      "side": 1,
+      "message": "would we be able to convert these to docstrings; like the following format? \n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L104-L113",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3e6afcee",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:15:31Z",
+      "side": 1,
+      "message": "referenced*",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3e06981c",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 12
@@ -31,6 +65,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "1a4dcd0f_3e06981c",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_de574058",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T14:15:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a4dcd0f_3912a80a",
       "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
