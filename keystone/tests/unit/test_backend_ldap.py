@@ -1755,6 +1755,9 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
                           self.resource_api.create_project,
                           project['id'], project)
 
+    def test_create_project_with_is_domain_flag(self):
+        self._assert_create_is_domain_project_not_allowed()
+
     def test_update_is_domain_field(self):
         domain = self._get_domain_fixture()
         project = {'id': uuid.uuid4().hex,
