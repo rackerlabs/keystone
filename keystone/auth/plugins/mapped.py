@@ -245,6 +245,18 @@ def setup_username(context, mapped_properties):
         user['name'] = user_id
 
     elif not user_id:
-        user['id'] = parse.quote(user_name)
+        user_id = user_name
+
+    # NOTE(marek-denis): Following logic checks on whether user_id is already
+    # url-safe. If this is the case there is no need to actually encode the
+    # string. The algorithm compares original user_id with decoded
+    # version of the parameter. If strings are equal it means the string is
+    # not url encoded. We should attempt to encode the user_id then. Otherwise
+    # pass the value, so the value is not encoded twice.
+    decoded_user_id = parse.unquote(user_id)
+    if decoded_user_id == user_id:
+        user_id = parse.quote(user_id)
+
+    user['id'] = user_id
 
     return user
