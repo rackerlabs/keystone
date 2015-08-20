@@ -2188,7 +2188,7 @@ class IdentityTests(object):
         # The is_domain flag should be False by default
         self.assertFalse(ref['is_domain'])
 
-    def test_create_is_domain_project(self):
+    def test_create_project_with_is_domain_flag(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
                    'domain_id': DEFAULT_DOMAIN_ID,
@@ -2199,6 +2199,17 @@ class IdentityTests(object):
 
         ref = self.resource_api.create_project(project['id'], project)
         self.assertTrue(ref['is_domain'])
+
+        project = {'id': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'enabled': True,
+                   'name': uuid.uuid4().hex,
+                   'parent_id': None,
+                   'is_domain': False}
+
+        ref = self.resource_api.create_project(project['id'], project)
+        self.assertFalse(ref['is_domain'])
 
     def test_check_leaf_projects(self):
         projects_hierarchy = self._create_projects_hierarchy()

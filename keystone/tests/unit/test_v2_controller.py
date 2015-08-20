@@ -103,6 +103,18 @@ class TenantTestCase(tests.TestCase):
         project_ref = self.resource_api.create_project(project['id'], project)
         return self.tenant_controller.v3_to_v2_project(project_ref)
 
+    def test_create_is_domain_project_fails(self):
+        """Test that the creation of a project acting as a domain fails."""
+        project = {'name': uuid.uuid4().hex, 'domain_id': 'default',
+                   'is_domain': True}
+
+        self.assertRaises(
+            exception.ValidationError,
+            self.tenant_controller.create_project,
+            _ADMIN_CONTEXT,
+            project
+        )
+
     def test_update_is_domain_project_not_found(self):
         """Test that update is_domain project is not allowed in v2."""
         project = self._create_is_domain_project()
@@ -127,17 +139,17 @@ class TenantTestCase(tests.TestCase):
             project['id']
         )
 
-    def test_list_is_domain_project_not_found(self):
+    def test_list_is_domain_project_not_returned(self):
         """Test v2 get_all_projects having projects that act as a domain.
 
-           In v2 no project with the is_domain flag enabled should be
-           returned.
+        In v2 no project with the is_domain flag enabled should be
+        returned.
         """
         project1 = self._create_is_domain_project()
         project2 = self._create_is_domain_project()
 
         refs = self.tenant_controller.get_all_projects(_ADMIN_CONTEXT)
-        projects = refs.get('tenants')
+        projects = refs['tenants']
 
         self.assertNotIn(project1, projects)
         self.assertNotIn(project2, projects)
