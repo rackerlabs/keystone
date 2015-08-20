@@ -13,7 +13,11 @@
 
 import fixtures
 
+from keystone import catalog
 from keystone.common import cache
+
+
+CACHE_REGIONS = (cache.REGION, catalog.COMPUTED_CATALOG_REGION)
 
 
 class Cache(fixtures.Fixture):
@@ -29,8 +33,9 @@ class Cache(fixtures.Fixture):
 
         # NOTE(morganfainberg):  The only way to reconfigure the CacheRegion
         # object on each setUp() call is to remove the .backend property.
-        if cache.REGION.is_configured:
-            del cache.REGION.backend
+        for region in CACHE_REGIONS:
+            if region.is_configured:
+                del region.backend
 
-        # ensure the cache region instance is setup
-        cache.configure_cache_region(cache.REGION)
+            # ensure the cache region instance is setup
+            cache.configure_cache_region(region)
