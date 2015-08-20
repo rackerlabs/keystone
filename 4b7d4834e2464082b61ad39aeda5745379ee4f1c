@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_cd08e2dc",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-20T19:30:28Z",
+      "side": 1,
+      "message": "The spec says at least two versions. I would hope it doesn\u0027t happen but there could be a case with some major cloud provider\u0027s driver and we\u0027ll end up having to support something for 3 releases.\n\nIn my alternative I didn\u0027t provide a way to say that a particular version is no longer supported at all. I\u0027m not sure it if matters though.",
+      "parentUuid": "fa1b9901_5901fc36",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_57c6bf9a",
         "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
         "patchSetId": 8
@@ -422,6 +440,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_cdbd42d9",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-20T19:30:28Z",
+      "side": 1,
+      "message": "Can you provide an example of how to do that?",
+      "parentUuid": "fa1b9901_993d54df",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_774ae327",
         "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
         "patchSetId": 8
@@ -486,6 +522,24 @@
       "side": 1,
       "message": "I meant to convey that driver implementations of version older than the previous version of the current interface version aren\u0027t supported",
       "parentUuid": "fa1b9901_57a55f9f",
+      "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_0d9fba5f",
+        "filename": "keystone/tests/unit/common/test_stable_driver_interface.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-20T19:30:28Z",
+      "side": 1,
+      "message": "What I mean is that in this example (and likely if we always up the version for each OpenStack release) there is no discernable difference in interface. If that\u0027s the case why not let it continue to work?",
+      "parentUuid": "fa1b9901_dc7ada87",
       "revId": "4b7d4834e2464082b61ad39aeda5745379ee4f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
