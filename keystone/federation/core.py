@@ -114,7 +114,7 @@ class FederationDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_idps(self):
+    def list_idps(self, hint):
         """List all identity providers.
 
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
