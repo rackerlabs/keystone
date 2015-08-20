@@ -33,6 +33,7 @@ if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
 from keystone.auth import controllers as auth_controllers
+from keystone.common import controller
 from keystone.common import environment
 from keystone.contrib.federation import routers
 from keystone import exception
@@ -1014,6 +1015,36 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         entities_ids = set([e['id'] for e in entities])
         ids_intersection = entities_ids.intersection(ids)
         self.assertEqual(ids_intersection, ids)
+
+    def test_filter_list_idp_by_invalid_filter(self):
+        """Call ``GET /OS-FEDERATION/identity_providers/?foo=<some name>``."""
+        foo_value = uuid.uuid4().hex
+        context = {'query_string': {"foo": foo_value}}
+        self._create_default_idp()
+        supported_filters = ('id', 'enabled')
+        # doesn't ignore arbitrary filter by default
+        hints = controller.V3Controller.build_driver_hints(context,
+                                                           supported_filters)
+        with mock.patch.object(controller.V3Controller, 'build_driver_hints',
+                               return_value=hints):
+            url = self.base_url() + '?foo=' + foo_value
+            resp = self.get(url)
+
+            filtered_service_list = resp.json['identity_providers']
+            self.assertEqual(0, len(filtered_service_list))
+
+        # ignore arbitrary filter
+        hints = controller.V3Controller.build_driver_hints(
+            context,
+            supported_filters,
+            ignore_arbitrary_query=True)
+        with mock.patch.object(controller.V3Controller, 'build_driver_hints',
+                               return_value=hints):
+            url = self.base_url() + '?foo=' + foo_value
+            resp = self.get(url)
+
+            filtered_service_list = resp.json['identity_providers']
+            self.assertEqual(1, len(filtered_service_list))
 
     def test_check_idp_uniqueness(self):
         """Add same IdP twice.
