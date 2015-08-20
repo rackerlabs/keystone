@@ -334,13 +334,17 @@ class FederatedSetupMixin(object):
                         },
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         }
                     ],
                     'remote': [
                         {
                             'type': 'UserName'
+                        },
+                        {
+                            "type": "Email",
                         },
                         {
                             'type': 'orgPersonType',
@@ -359,13 +363,18 @@ class FederatedSetupMixin(object):
                         },
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         }
                     ],
                     'remote': [
                         {
                             'type': self.ASSERTION_PREFIX + 'UserName'
+                        },
+
+                        {
+                            "type": self.ASSERTION_PREFIX + 'Email',
                         },
                         {
                             'type': self.ASSERTION_PREFIX + 'orgPersonType',
@@ -384,13 +393,19 @@ class FederatedSetupMixin(object):
                         },
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
+
+
                             }
                         }
                     ],
                     'remote': [
                         {
                             'type': 'UserName'
+                        },
+                        {
+                            "type": "Email",
                         },
                         {
                             'type': 'orgPersonType',
@@ -420,13 +435,17 @@ class FederatedSetupMixin(object):
 
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         }
                     ],
                     'remote': [
                         {
                             'type': 'UserName'
+                        },
+                        {
+                            'type': 'Email'
                         },
                         {
                             'type': 'orgPersonType',
@@ -451,13 +470,17 @@ class FederatedSetupMixin(object):
                         },
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         }
                     ],
                     'remote': [
                         {
                             'type': 'UserName',
+                        },
+                        {
+                            'type': 'Email',
                         },
                         {
                             'type': 'FirstName',
@@ -482,13 +505,17 @@ class FederatedSetupMixin(object):
                         },
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         }
                     ],
                     'remote': [
                         {
                             'type': 'UserName',
+                        },
+                        {
+                            'type': 'Email',
                         },
                         {
                             'type': 'Email',
@@ -509,7 +536,8 @@ class FederatedSetupMixin(object):
                     "local": [
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         },
                         {
@@ -526,6 +554,9 @@ class FederatedSetupMixin(object):
                             'type': 'UserName',
                         },
                         {
+                            'type': 'Email',
+                        },
+                        {
                             "type": "orgPersonType",
                             "any_one_of": [
                                 "CEO",
@@ -538,7 +569,8 @@ class FederatedSetupMixin(object):
                     "local": [
                         {
                             'user': {
-                                'name': '{0}'
+                                'name': '{0}',
+                                'id': '{1}'
                             }
                         },
                         {
@@ -555,6 +587,9 @@ class FederatedSetupMixin(object):
                             "type": "UserName",
                         },
                         {
+                            "type": "Email",
+                        },
+                        {
                             "type": "orgPersonType",
                             "any_one_of": [
                                 "Managers"
@@ -566,7 +601,9 @@ class FederatedSetupMixin(object):
                     "local": [
                         {
                             "user": {
-                                "name": "{0}"
+                                "name": "{0}",
+                                "id": "{1}"
+
                             }
                         },
                         {
@@ -581,6 +618,9 @@ class FederatedSetupMixin(object):
                     "remote": [
                         {
                             "type": "UserName",
+                        },
+                        {
+                            "type": "Email",
                         },
                         {
                             "type": "UserName",
@@ -1980,6 +2020,7 @@ class MappingRuleEngineTests(FederationTests):
         - Check if user's name is properly mapped from the assertion
         - Check if user's id is properly set and and equal to value hardcoded
         in the mapping
+        - Check if the user's id is url safe
 
         """
         mapping = mapping_fixtures.MAPPING_USER_IDS
@@ -1991,7 +2032,8 @@ class MappingRuleEngineTests(FederationTests):
         self.assertValidMappedUserObject(mapped_properties)
         mapped.setup_username(context, mapped_properties)
         self.assertEqual('bwilliams', mapped_properties['user']['name'])
-        self.assertEqual('abc123', mapped_properties['user']['id'])
+        self.assertEqual('abc123%40example.com',
+                         mapped_properties['user']['id'])
 
 
 class FederatedTokenTests(FederationTests, FederatedSetupMixin):
