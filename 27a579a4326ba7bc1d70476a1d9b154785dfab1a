@@ -34,6 +34,24 @@
       "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_01530c3a",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-20T17:15:30Z",
+      "side": 1,
+      "message": "that might make for a good comment,",
+      "parentUuid": "9aa53dc9_3e6adc81",
+      "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
