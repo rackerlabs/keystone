@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_970f1b2e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2249,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-21T19:20:42Z",
+      "side": 1,
+      "message": "nit: maybe a better name would be \"test_create_domain_under_regular_project_hierarchy_fails\"",
+      "revId": "b2e32db20c8b98bf22eb7f8a784ca638c6eb3edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7d7353e8",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-21T19:20:42Z",
+      "side": 1,
+      "message": "does this test create a project with a parent_id ?",
+      "revId": "b2e32db20c8b98bf22eb7f8a784ca638c6eb3edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9de667af",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-21T19:20:42Z",
+      "side": 1,
+      "message": "while this seems a good test..is it really part of this change?",
+      "revId": "b2e32db20c8b98bf22eb7f8a784ca638c6eb3edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
