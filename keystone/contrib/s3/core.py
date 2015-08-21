@@ -11,6 +11,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+from keystoneclient.contrib.ec2.utils import Ec2Signer
 
 """Main entry point into the S3 Credentials service.
 
@@ -67,16 +68,51 @@ class S3Extension(wsgi.V3ExtensionRouter):
 
 class S3Controller(controllers.Ec2Controller):
     def check_signature(self, creds_ref, credentials):
-        msg = base64.urlsafe_b64decode(str(credentials['token']))
-        key = str(creds_ref['secret']).encode('utf-8')
+        string_to_sign = base64.urlsafe_b64decode(str(credentials['token']))
 
+        if string_to_sign[0:4] != b'AWS4':
+            signature = self.calculate_signature_v1(string_to_sign,
+                                                    creds_ref['secret'])
+        else:
+            signature = self.calculate_signature_v4(string_to_sign,
+                                                    creds_ref['secret'])
+
+        if not utils.auth_str_equal(credentials['signature'], signature):
+            raise exception.Unauthorized('Credential signature mismatch')
+
+    def calculate_signature_v1(self, string_to_sign, secret_key):
+        key = str(secret_key).encode('utf-8')
         if six.PY2:
             b64_encode = base64.encodestring
         else:
             b64_encode = base64.encodebytes
+        signed = b64_encode(hmac.new(key, string_to_sign, hashlib.sha1)
+                            .digest()).decode('utf-8').strip()
+        return signed
 
-        signed = b64_encode(
-            hmac.new(key, msg, hashlib.sha1).digest()).decode('utf-8').strip()
+    def calculate_signature_v4(self, string_to_sign, secret_key):
+        if six.PY3:
+            strings = string_to_sign.decode('ascii').split('\n')
+        else:
+            strings = string_to_sign.split('\n')
+        if len(strings) != 4 or strings[0] != 'AWS4-HMAC-SHA256':
+            raise exception.Unauthorized(
+                message='Invalid EC2 signature.')
+        scope = strings[2].split('/')
+        if len(scope) != 4 or scope[2] != 's3' or scope[3] != 'aws4_request':
+            raise exception.Unauthorized(
+                message='Invalid EC2 signature.')
 
-        if not utils.auth_str_equal(credentials['signature'], signed):
-            raise exception.Unauthorized('Credential signature mismatch')
+        def sign(key, msg):
+            return hmac.new(key, Ec2Signer._get_utf8_value(msg),
+                            hashlib.sha256).digest()
+
+        signed = sign(Ec2Signer._get_utf8_value(six.b("AWS4" + secret_key)),
+                      scope[0])
+        signed = sign(signed, scope[1])
+        signed = sign(signed, scope[2])
+        signed = sign(signed, 'aws4_request')
+
+        signature = hmac.new(signed, Ec2Signer._get_utf8_value(string_to_sign),
+                             hashlib.sha256).hexdigest()
+        return signature
