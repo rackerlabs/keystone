@@ -56,7 +56,7 @@ def configure_once(name):
 
 
 @configure_once('eventlet')
-def use_eventlet(monkeypatch_thread=None):
+def use_eventlet(monkeypatch_thread=False):
     global httplib, subprocess, Server
 
     # This must be set before the initial import of eventlet because if
