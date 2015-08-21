@@ -23,6 +23,7 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
+from keystone import assignment
 from keystone.common import cache
 from keystone.common import clean
 from keystone.common import dependency
@@ -1000,6 +1001,8 @@ class Manager(manager.Manager):
         for uid in user_ids:
             self.emit_invalidate_user_token_persistence(uid)
 
+        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
     @domains_configured
     @exception_translated('group')
     def add_user_to_group(self, user_id, group_id):
@@ -1018,6 +1021,7 @@ class Manager(manager.Manager):
             user_entity_id, user_driver, group_entity_id, group_driver)
 
         group_driver.add_user_to_group(user_entity_id, group_entity_id)
+        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @domains_configured
     @exception_translated('group')
@@ -1038,6 +1042,7 @@ class Manager(manager.Manager):
 
         group_driver.remove_user_from_group(user_entity_id, group_entity_id)
         self.emit_invalidate_user_token_persistence(user_id)
+        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.internal(notifications.INVALIDATE_USER_TOKEN_PERSISTENCE)
     def emit_invalidate_user_token_persistence(self, user_id):
