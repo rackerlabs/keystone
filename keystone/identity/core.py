@@ -1031,6 +1031,19 @@ class Manager(manager.Manager):
 
         group_driver.add_user_to_group(user_entity_id, group_entity_id)
 
+        # NOTE(lbragstad): Invalidate any roles cached for all projects a user
+        # has an assignment on. This has to be done because users can be added
+        # to groups that have existing role assignments on various domains or
+        # projects.
+        user_projects = self.assignment_api.list_projects_for_user(user_id)
+        for project in user_projects:
+            self.assignment_api.get_roles_for_user_and_project.invalidate(
+                user_id, project.get('id'))
+        user_domains = self.assignment_api.list_domains_for_user(user_id)
+        for domain in user_domains:
+            self.assignment_api.get_roles_for_user_and_domain.invalidate(
+                user_id, domain.get('id'))
+
     @domains_configured
     @exception_translated('group')
     def remove_user_from_group(self, user_id, group_id):
