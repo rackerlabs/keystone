@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_22506431",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-21T12:16:57Z",
+      "side": 1,
+      "message": "What difference does it make ?\n\nYou are still passing domain_id as keyword argument while calling new_project_ref method in same module.",
+      "revId": "cd65c16ac7058ff0ae9c74739049ed2008f18807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
