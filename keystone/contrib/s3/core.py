@@ -67,16 +67,44 @@ class S3Extension(wsgi.V3ExtensionRouter):
 
 class S3Controller(controllers.Ec2Controller):
     def check_signature(self, creds_ref, credentials):
-        msg = base64.urlsafe_b64decode(str(credentials['token']))
-        key = str(creds_ref['secret']).encode('utf-8')
+        string_to_sign = base64.urlsafe_b64decode(str(credentials['token']))
 
+        if string_to_sign[0:4] != 'AWS4':
+            signature = self.calculate_signature_v1(string_to_sign,
+                                                    creds_ref['secret'])
+        else:
+            signature = self.calculate_signature_v4(string_to_sign,
+                                                    creds_ref['secret'])
+
+        if not utils.auth_str_equal(credentials['signature'], signature):
+            raise exception.Unauthorized('Credential signature mismatch')
+
+    def calculate_signature_v1(self, string_to_sign, secret_key):
+        key = str(secret_key).encode('utf-8')
         if six.PY2:
             b64_encode = base64.encodestring
         else:
             b64_encode = base64.encodebytes
+        signed = b64_encode(hmac.new(key, string_to_sign, hashlib.sha1)
+                            .digest()).decode('utf-8').strip()
+        return signed
 
-        signed = b64_encode(
-            hmac.new(key, msg, hashlib.sha1).digest()).decode('utf-8').strip()
+    def calculate_signature_v4(self, string_to_sign, secret_key):
+        strings = string_to_sign.split('\n')
+        if len(strings) != 4 or strings[0] != 'AWS4-HMAC-SHA256':
+            raise exception.Unauthorized(
+                message='Invalid EC2 signature.')
+        scope = strings[2].split('/')
+        if len(scope) != 4 or scope[2] != 's3' or scope[3] != 'aws4_request':
+            raise exception.Unauthorized(
+                message='Invalid EC2 signature.')
 
-        if not utils.auth_str_equal(credentials['signature'], signed):
-            raise exception.Unauthorized('Credential signature mismatch')
+        signing_key = hmac.new('AWS4' + secret_key, scope[0],
+                               hashlib.sha256).digest()
+        # NOTE(andrey-mp): Here should be real region instead of requested
+        # region from 'scope[1]
+        signing_key = hmac.new(signing_key, scope[1], hashlib.sha256).digest()
+        signing_key = hmac.new(signing_key, scope[2], hashlib.sha256).digest()
+        signing_key = hmac.new(signing_key, scope[3], hashlib.sha256).digest()
+
+        return hmac.new(signing_key, string_to_sign, hashlib.sha256).digest()
