@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_9a6c2dd2",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-21T15:44:45Z",
+      "side": 1,
+      "message": "(nit) The following",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_e8a002f6",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 4
