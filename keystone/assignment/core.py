@@ -17,6 +17,7 @@
 import abc
 import copy
 
+from oslo_cache import core as oslo_cache
 from oslo_config import cfg
 from oslo_log import log
 import six
@@ -33,7 +34,18 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+# This is a general cache region for assignment administration (CRUD
+# operations).
 MEMOIZE = cache.get_memoization_decorator(group='role')
+
+# This builds a discrete cache region dedicated to role assignments computed
+# for a given user + project/domain pair. Any write operation to add or remove
+# any role assignment should invalidate this entire cache region.
+COMPUTED_ASSIGNMENTS_REGION = oslo_cache.create_region()
+MEMOIZE_COMPUTED_ASSIGNMENTS = cache.get_memoization_decorator(
+    group='role',
+    region=COMPUTED_ASSIGNMENTS_REGION)
 
 
 @dependency.provider('assignment_api')
@@ -83,6 +95,7 @@ class Manager(manager.Manager):
         else:
             return []
 
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
 
@@ -139,6 +152,7 @@ class Manager(manager.Manager):
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         """Get the roles associated with a user within given domain.
 
@@ -230,6 +244,7 @@ class Manager(manager.Manager):
                 user_id,
                 tenant_id,
                 CONF.member_role_id)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.role_assignment('created')
     def _add_role_to_user_and_project_adapter(self, role_id, user_id=None,
@@ -249,6 +264,7 @@ class Manager(manager.Manager):
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self._add_role_to_user_and_project_adapter(
             role_id, user_id=user_id, project_id=tenant_id)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def remove_user_from_project(self, tenant_id, user_id):
         """Remove user from a tenant
@@ -391,6 +407,7 @@ class Manager(manager.Manager):
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self._remove_role_from_user_and_project_adapter(
             role_id, user_id=user_id, project_id=tenant_id)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.internal(notifications.INVALIDATE_USER_TOKEN_PERSISTENCE)
     def _emit_invalidate_user_token_persistence(self, user_id):
@@ -412,6 +429,7 @@ class Manager(manager.Manager):
             self.resource_api.get_project(project_id)
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None,
@@ -489,6 +507,7 @@ class Manager(manager.Manager):
             self.resource_api.get_project(project_id)
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     # The methods _expand_indirect_assignment, _list_direct_role_assignments
     # and _list_effective_role_assignments below are only used on
@@ -1222,6 +1241,7 @@ class RoleManager(manager.Manager):
         self.driver.delete_role(role_id)
         notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
 
 @six.add_metaclass(abc.ABCMeta)
