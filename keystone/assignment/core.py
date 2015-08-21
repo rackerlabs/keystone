@@ -83,6 +83,7 @@ class Manager(manager.Manager):
         else:
             return []
 
+    @MEMOIZE
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
 
@@ -139,6 +140,7 @@ class Manager(manager.Manager):
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 
+    @MEMOIZE
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         """Get the roles associated with a user within given domain.
 
@@ -487,6 +489,12 @@ class Manager(manager.Manager):
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
+        if user_id and domain_id:
+            self.get_roles_for_user_and_domain.invalidate(self, user_id,
+                                                          domain_id)
+        if user_id and project_id:
+            self.get_roles_for_user_and_project.invalidate(self, user_id,
+                                                           project_id)
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
 
