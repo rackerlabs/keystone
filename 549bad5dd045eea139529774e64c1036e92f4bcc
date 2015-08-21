@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_4b923af8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-21T21:38:51Z",
+      "side": 1,
+      "message": "nit: in all of these project dicts, you could remove many of the attributes since they are defaulted anyway....would cut down the number of lines quite a lot!",
+      "revId": "549bad5dd045eea139529774e64c1036e92f4bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
