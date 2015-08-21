@@ -16,6 +16,24 @@
       "revId": "a03305d87b5fa49b746d93c50bdb83e5267230ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_4ddee0dd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-21T15:18:42Z",
+      "side": 1,
+      "message": "yes, separate patch. \nCommit msg says this patch doesn\u0027t work for fernet scoped tokens.",
+      "parentUuid": "fa1b9901_79936e5b",
+      "revId": "a03305d87b5fa49b746d93c50bdb83e5267230ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
