@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_d77fd364",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-21T19:23:14Z",
+      "side": 1,
+      "message": "in which patch will we test having domain id filled in when you have only specified parent-id?",
+      "revId": "b2e32db20c8b98bf22eb7f8a784ca638c6eb3edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_970f1b2e",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 7
