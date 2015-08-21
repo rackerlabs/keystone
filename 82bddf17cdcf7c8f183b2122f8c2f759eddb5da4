@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_221864d2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-21T12:03:55Z",
+      "side": 1,
+      "message": "you should provide space before \u0027%(output)s\u0027.",
+      "revId": "82bddf17cdcf7c8f183b2122f8c2f759eddb5da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
