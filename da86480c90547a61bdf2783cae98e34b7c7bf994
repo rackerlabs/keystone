@@ -176,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_99a9a292",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-21T14:11:43Z",
+      "side": 1,
+      "message": "maybe rename it filter_group or filter_set?",
+      "parentUuid": "1a6ced46_9187570f",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_a4e868b5",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 11
@@ -193,6 +211,40 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_391416e7",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1132,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-21T14:11:43Z",
+      "side": 1,
+      "message": "Do we really need a new class for this?",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f90a1ed1",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1162,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-21T14:11:43Z",
+      "side": 1,
+      "message": "nit: an",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_24221801",
         "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -204,6 +256,24 @@
       "writtenOn": "2015-03-31T18:30:56Z",
       "side": 1,
       "message": "I think the order here should be switched. I think is should be (expected, observed)",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_061e8d6f",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-21T14:11:43Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da9b358b_24221801",
       "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
