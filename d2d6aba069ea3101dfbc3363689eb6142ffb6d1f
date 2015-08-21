@@ -16,6 +16,24 @@
       "revId": "d2d6aba069ea3101dfbc3363689eb6142ffb6d1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_0bc0db4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-21T12:55:13Z",
+      "side": 1,
+      "message": "^pernickety",
+      "parentUuid": "1a4dcd0f_cacd4886",
+      "revId": "d2d6aba069ea3101dfbc3363689eb6142ffb6d1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
