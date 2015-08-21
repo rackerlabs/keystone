@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_34b202e6",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "this can be one or the other. Since we are setting x509 as the default, I just use ephemeral for the example.",
+      "parentUuid": "fa1b9901_ca67a8b5",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_aae59438",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 50
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_8f4897cd",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "One of the reviewed comments suggested to use lower case t \u0027true\u0027 in the comment.",
+      "parentUuid": "fa1b9901_aae59438",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_ead38c02",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 50
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-20T02:12:44Z",
       "side": 1,
       "message": "the samples should be random rather than using HP :P",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6f18a3d3",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "fa1b9901_ead38c02",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_8fe417ac",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_4ab95878",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_aaa83421",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 50
@@ -116,6 +188,24 @@
       "writtenOn": "2015-08-20T02:12:44Z",
       "side": 1,
       "message": "\"its the domain  of the project scope\"",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_afdf9bd4",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_aaa83421",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_fa38f3d4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "auth is the data structure stores all the auth and scope information. passing scope_only as the argument is kind of the instruction/condition that the method will follow. So keeping is as an argument seems to make more sense to me.",
+      "parentUuid": "fa1b9901_bbb72839",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_38b3109a",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 50
@@ -156,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9ab8d72b",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "how\u0027s \"due to missing\"?",
+      "parentUuid": "fa1b9901_38b3109a",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f87fd8a8",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 50
@@ -167,6 +293,24 @@
       "writtenOn": "2015-08-20T02:12:44Z",
       "side": 1,
       "message": ":type env: dict",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_fa94738b",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "fa1b9901_f87fd8a8",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -225,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9abd3704",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_fba5a0a1",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f31e19ba",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 50
@@ -236,6 +398,24 @@
       "writtenOn": "2015-08-20T02:12:44Z",
       "side": 1,
       "message": "should this generate a cadf notification for success/fail of x509 authentication?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L544-L552",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_55e0d0cc",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "In the method _validate_trusted_issuer(), it has already triggered a notification if the client issuer is not trusted. \nAnd I think it\u0027s unnecessary to trigger another notification here as the underneath API will handle/report the error if something happens while building the auth context.",
+      "parentUuid": "fa1b9901_f31e19ba",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -259,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9a19b724",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "I think it\u0027s better to follow the convention to use the name that can match with the class name in the implementation so that the test cases can be easier to located.",
+      "parentUuid": "fa1b9901_ee606ed1",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_d367554b",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 50
@@ -270,6 +468,24 @@
       "writtenOn": "2015-08-20T02:12:44Z",
       "side": 1,
       "message": "an -\u003e a",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9af0d7ca",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_d367554b",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -293,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_7ac06350",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_8e23f2a6",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_6e553ef8",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 50
@@ -304,6 +538,24 @@
       "writtenOn": "2015-08-20T02:12:44Z",
       "side": 1,
       "message": "use domain_id for readability",
+      "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1ab3670b",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-21T01:19:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_6e553ef8",
       "revId": "00451fcf3f5189b7c488d4d60cdadd7bce84fa56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
