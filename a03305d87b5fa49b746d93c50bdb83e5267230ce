@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_79936e5b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-21T14:09:11Z",
+      "side": 1,
+      "message": "this will require adding user_name to the following, right: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/token/providers/fernet/core.py#L123\n\nor is that going to be done in a separate patch?",
+      "revId": "a03305d87b5fa49b746d93c50bdb83e5267230ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
