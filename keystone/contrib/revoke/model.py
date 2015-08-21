@@ -240,7 +240,7 @@ class RevokeTree(object):
         # issued_at field differently.
         for leaf in partial_matches:
             try:
-                if leaf['issued_before'] > token_data['issued_at']:
+                if leaf['issued_before'] >= token_data['issued_at']:
                     return True
             except KeyError:
                 pass
