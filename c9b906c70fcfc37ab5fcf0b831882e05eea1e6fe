@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_06376dff",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-21T14:07:12Z",
+      "side": 1,
+      "message": "Following",
+      "revId": "c9b906c70fcfc37ab5fcf0b831882e05eea1e6fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d9287a88",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-21T14:07:12Z",
+      "side": 1,
+      "message": "example.com*?",
+      "revId": "c9b906c70fcfc37ab5fcf0b831882e05eea1e6fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f979be93",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2027,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-21T14:07:12Z",
+      "side": 1,
+      "message": "hardcoded*",
+      "revId": "c9b906c70fcfc37ab5fcf0b831882e05eea1e6fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
