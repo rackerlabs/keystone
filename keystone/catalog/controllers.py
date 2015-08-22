@@ -67,27 +67,33 @@ class Endpoint(controller.V2Controller):
     def get_endpoints(self, context):
         """Merge matching v3 endpoint refs into legacy refs."""
         self.assert_admin(context)
-        legacy_endpoints = {}
+        endpoints = {}
         for endpoint in self.catalog_api.list_endpoints():
-            if not endpoint.get('legacy_endpoint_id'):
-                # endpoints created in v3 should not appear on the v2 API
-                continue
+            # tell endpoints apart by the combination of
+            # service_id and region_id
+            key = (endpoint['service_id'], endpoint['region_id'])
+            if key not in endpoints:
+                ep = endpoint.copy()
+                ep['id'] = ep.pop('legacy_endpoint_id')
+                ep.pop('interface')
+                ep.pop('url')
+                ep['region'] = ep.pop('region_id')
 
-            # is this is a legacy endpoint we haven't indexed yet?
-            if endpoint['legacy_endpoint_id'] not in legacy_endpoints:
-                legacy_ep = endpoint.copy()
-                legacy_ep['id'] = legacy_ep.pop('legacy_endpoint_id')
-                legacy_ep.pop('interface')
-                legacy_ep.pop('url')
-                legacy_ep['region'] = legacy_ep.pop('region_id')
-
-                legacy_endpoints[endpoint['legacy_endpoint_id']] = legacy_ep
+                endpoints[key] = ep
             else:
-                legacy_ep = legacy_endpoints[endpoint['legacy_endpoint_id']]
+                ep = endpoints[key]
 
             # add the legacy endpoint with an interface url
-            legacy_ep['%surl' % endpoint['interface']] = endpoint['url']
-        return {'endpoints': list(legacy_endpoints.values())}
+            ep['%surl' % endpoint['interface']] = endpoint['url']
+
+            # assign v3 endpoint id with public url to v2 endpoint
+            # as legacy_endpoint_id
+            if endpoint['interface'] == 'public' and ep['id'] is None:
+                ep['id'] = endpoint['id']
+        # Public URL is required for v2 endpoints. This is to filter out
+        # endpoints generated from v3 endpoints without public URL.
+        return {'endpoints':
+                [e for e in endpoints.values() if 'publicurl' in e]}
 
     @controller.v2_deprecated
     def create_endpoint(self, context, endpoint):
