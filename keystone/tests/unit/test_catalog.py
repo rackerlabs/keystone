@@ -84,6 +84,92 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         for field, value in req_body['endpoint'].items():
             self.assertEqual(response.result['endpoint'][field], value)
 
+    def test_pure_v3_endpoint_with_publicurl_visible_from_v2(self):
+        """Test pure v3 endpoint can be fetched via v2 API.
+
+        For those who are using v2 APIs, endpoints created by v3 API should
+        also be visible as there are no differences about the endpoints
+        except the format or the internal implementation.
+        And because public url is required for v2 API, so only the v3 endpoints
+        of the service which has the public interface endpoint will be
+        converted into v2 endpoints.
+        """
+        # create a service
+        service_id = uuid.uuid4().hex
+        service = unit.new_service_ref()
+        service['id'] = service_id
+        self.catalog_api.create_service(service_id, service)
+        # create a v3 endpoint with three interfaces
+        body = {
+            'endpoint': {
+                'name': uuid.uuid4().hex,
+                'description': uuid.uuid4().hex,
+                'service_id': service_id,
+                'url': 'https://' + uuid.uuid4().hex + '.com',
+                'region': 'RegionOne',
+                'enabled': True,
+            }
+        }
+        for interface in catalog.controllers.INTERFACES:
+            body['endpoint']['interface'] = interface
+            self.admin_request(method='POST',
+                               token=self.get_scoped_token(),
+                               path='/v3/endpoints',
+                               expected_status=http_client.CREATED,
+                               body=body)
+
+        r = self.admin_request(token=self.get_scoped_token(),
+                               path='/v2.0/endpoints')
+        # v3 endpoints having public url can be fetched via v2.0 API
+        self.assertEqual(1, len(r.result['endpoints']))
+        v2_endpoint = r.result['endpoints'][0]
+        self.assertEqual(body['endpoint']['name'], v2_endpoint['name'])
+        self.assertEqual(service_id, v2_endpoint['service_id'])
+        self.assertEqual(body['endpoint']['url'], v2_endpoint['publicurl'])
+        v3_endpoint = self.catalog_api.get_endpoint(v2_endpoint['id'])
+        # it's the v3 public endpoint's id as the generated v2 endpoint
+        self.assertEqual('public', v3_endpoint['interface'])
+        self.assertEqual(service_id, v3_endpoint['service_id'])
+
+    def test_pure_v3_endpoint_without_publicurl_invisible_from_v2(self):
+        """Test pure v3 endpoint without public url can't be fetched via v2 API.
+
+        V2 API will return endpoints created by v3 API, but because public url
+        is required for v2 API, so v3 endpoints without public url will be
+        ignored.
+        """
+        # create a service
+        service_id = uuid.uuid4().hex
+        service = unit.new_service_ref()
+        service['id'] = service_id
+        self.catalog_api.create_service(service_id, service)
+        # create a v3 endpoint with three interfaces
+        body = {
+            'endpoint': {
+                'name': uuid.uuid4().hex,
+                'description': uuid.uuid4().hex,
+                'service_id': service_id,
+                'url': 'https://' + uuid.uuid4().hex + '.com',
+                'region': 'RegionOne',
+                'enabled': True,
+            }
+        }
+        # create a v3 endpoint without public interface
+        for interface in catalog.controllers.INTERFACES:
+            if interface == 'public':
+                continue
+            body['endpoint']['interface'] = interface
+            self.admin_request(method='POST',
+                               token=self.get_scoped_token(),
+                               path='/v3/endpoints',
+                               expected_status=http_client.CREATED,
+                               body=body)
+
+        r = self.admin_request(token=self.get_scoped_token(),
+                               path='/v2.0/endpoints')
+        # v3 endpoints without public url won't be fetched via v2.0 API
+        self.assertEqual(0, len(r.result['endpoints']))
+
     def test_endpoint_create_with_null_adminurl(self):
         req_body, response = self._endpoint_create(adminurl=None)
         self.assertIsNone(req_body['endpoint']['adminurl'])
