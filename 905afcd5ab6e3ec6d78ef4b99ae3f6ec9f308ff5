@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_1211cb5d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-22T09:42:30Z",
+      "side": 1,
+      "message": "Since (in v2) this is an exposed API, you should make it clear that we are not exposing this attribute via REST - it is for internal user only.",
+      "revId": "905afcd5ab6e3ec6d78ef4b99ae3f6ec9f308ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_e53d6fbc",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-22T09:42:30Z",
+      "side": 1,
+      "message": "this seems an odd test to be here...it\u0027s not related to get project by name. In reality this should have been in the original patch to add the is_domain attribute...maybe put it into the fix up patch?",
+      "revId": "905afcd5ab6e3ec6d78ef4b99ae3f6ec9f308ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
