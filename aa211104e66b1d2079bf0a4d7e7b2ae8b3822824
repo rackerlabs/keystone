@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_e336c7e6",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-22T13:12:38Z",
+      "side": 1,
+      "message": "I once tried this to fix the duplicated bug like what you did here. (https://bugs.launchpad.net/keystone/+bug/1403408)\n\n\n\u0027url\u0027 is defined as \"TEXT\" while \"TEXT\" cannot be used as primary key or index, if we include \u0027url\u0027 as it should be into UniqueConstraint, we will hit \"BLOB / TEXT Column Used in Key Specification Without a Key Length\" exception.\n\n\nI try to run your migration code, but it\u0027s not work at all, so I suspect there is some issue with your migraiton code.\n\nsee, http://www.databaseskill.com/981875/",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_cff9e081",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 3
