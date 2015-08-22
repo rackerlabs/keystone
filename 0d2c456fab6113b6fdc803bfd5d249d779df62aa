@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_d4ca5b6e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "agreed. I\u0027ll undo and put a todo here to handle the case where domain_id\u003dNone",
+      "parentUuid": "fa1b9901_727da7e6",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_7264c748",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-22T09:29:11Z",
       "side": 1,
       "message": "Just for clarity, it might be better to have this above the is_domain check, so it is a replacement in the same place as the original call to normalise domain.",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_79a90a24",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_7264c748",
       "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_f41e7f5e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_d201133b",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_72f28771",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-22T09:29:11Z",
       "side": 1,
       "message": "Maybe turn this into a docstring",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b95d624a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_72f28771",
       "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_193faed7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "true... that\u0027s going to happen in the follow up patchsets",
+      "parentUuid": "fa1b9901_b2e1ff9c",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_32bacf6f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_19480e87",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "actually, I disagree... we are only checking ig the projects acting as domains are enabled, not the whole subtree",
+      "parentUuid": "fa1b9901_32bacf6f",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_b2a6df51",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 6
@@ -115,6 +223,24 @@
       "writtenOn": "2015-08-22T09:29:11Z",
       "side": 1,
       "message": "s/equals/equal/",
+      "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f47aff76",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T18:00:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_b2a6df51",
       "revId": "0d2c456fab6113b6fdc803bfd5d249d779df62aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
