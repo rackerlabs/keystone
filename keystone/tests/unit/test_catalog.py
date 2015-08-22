@@ -25,6 +25,7 @@ SERVICE_FIXTURE = object()
 
 
 class V2CatalogTestCase(rest.RestfulTestCase):
+
     def setUp(self):
         super(V2CatalogTestCase, self).setUp()
         self.useFixture(database.Database())
@@ -93,6 +94,45 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         self.assertIn('id', response.result['endpoint'])
         for field, value in req_body['endpoint'].items():
             self.assertEqual(response.result['endpoint'][field], value)
+
+    def test_get_v3_endpoint(self):
+        # create a service
+        service_id = uuid.uuid4().hex
+        service = self.new_service_ref()
+        service['id'] = service_id
+        self.catalog_api.create_service(service_id, service)
+        # create a v3 endpoint with three interfaces
+        body = {
+            'endpoint': {
+                'name': uuid.uuid4().hex,
+                'description': uuid.uuid4().hex,
+                'service_id': service_id,
+                'url': 'https://' + uuid.uuid4().hex + '.com',
+                'region': 'RegionOne',
+                'enabled': True,
+            }
+        }
+        for interface in catalog.controllers.INTERFACES:
+            body['endpoint']['interface'] = interface
+            self.admin_request(method='POST',
+                               token=self.get_scoped_token(),
+                               path='/v3/endpoints',
+                               expected_status=201,
+                               body=body)
+
+        r = self.admin_request(token=self.get_scoped_token(),
+                               path='/v2.0/endpoints')
+        # v3 endpoint can be fetched via v2.0 API
+        self.assertEqual(len(r.result['endpoints']), 1)
+        v2_endpoint = r.result['endpoints'][0]
+        v3_endpoint = self.catalog_api.get_endpoint(v2_endpoint['id'])
+        # it's the v3 public endpoint's id as the generated v2 endpoint
+        self.assertEqual('public', v3_endpoint['interface'])
+        self.assertEqual(service_id, v3_endpoint['service_id'])
+        # make sure it's still a new v3 endpoint, not migrated from v2.0
+        self.assertIsNone(v3_endpoint['legacy_endpoint_id'])
+        self.assertEqual('RegionOne', v3_endpoint['region_id'])
+        self.assertTrue(v3_endpoint['enabled'])
 
     def test_endpoint_create_with_null_adminurl(self):
         req_body, response = self._endpoint_create(adminurl=None)
