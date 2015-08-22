@@ -16,6 +16,24 @@
       "revId": "549bad5dd045eea139529774e64c1036e92f4bcc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_59f20671",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-22T17:02:36Z",
+      "side": 1,
+      "message": "ok. I\u0027ll remove a few of them in a next patchset",
+      "parentUuid": "fa1b9901_4b923af8",
+      "revId": "549bad5dd045eea139529774e64c1036e92f4bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
