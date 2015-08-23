@@ -16,6 +16,24 @@
       "revId": "82bddf17cdcf7c8f183b2122f8c2f759eddb5da4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3d393442",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-23T13:45:57Z",
+      "side": 1,
+      "message": "If I did that then there would be an extra space in the result.",
+      "parentUuid": "fa1b9901_221864d2",
+      "revId": "82bddf17cdcf7c8f183b2122f8c2f759eddb5da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
