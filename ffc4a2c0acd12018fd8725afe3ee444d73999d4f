@@ -34,6 +34,24 @@
       "revId": "ffc4a2c0acd12018fd8725afe3ee444d73999d4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_dd01183b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-23T14:12:31Z",
+      "side": 0,
+      "message": "Lance, thanks for the explanation! So, after this patch, fernet token will call \u0027V2TokenDataHelper.format_token()\u0027 instead to generate the token data which should not work with non-persistent token. Did I miss something?",
+      "parentUuid": "1a4dcd0f_144b4f88",
+      "revId": "ffc4a2c0acd12018fd8725afe3ee444d73999d4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
