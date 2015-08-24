@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_a40e60e3",
+        "filename": "keystone/tests/unit/test_alternative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-24T19:17:40Z",
+      "side": 1,
+      "message": "Would be good to know why the class is created this way rather than the conventional \u0027super(...).__new__(...\u0027 way?",
+      "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_24f1f0cd",
+        "filename": "keystone/tests/unit/test_alternative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-24T19:17:40Z",
+      "side": 1,
+      "message": "a \u0027if not required_version\u0027 check prior to this iteration, could limit the iteration to just interface classes and prevent unnecessary iterations in implementation classes.",
+      "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_042e2cfa",
+        "filename": "keystone/tests/unit/test_alternative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-24T19:17:40Z",
+      "side": 1,
+      "message": "What would happen if a driver implementation class didn\u0027t specify the \u0027required_version\u0027?\nThis would be the case, even with currently existing out-of-tree drivers.",
+      "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
