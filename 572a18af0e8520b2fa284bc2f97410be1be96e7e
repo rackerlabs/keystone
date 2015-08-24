@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_53c39057",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "ok, will try to add more details.",
+      "parentUuid": "fa1b9901_be5f6f74",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_decb431d",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 51
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-24T08:24:51Z",
       "side": 1,
       "message": "add some reference that this is a snippet for \u003cVirtualHost\u003e configuration",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f6dc121a",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "maybe I just give a full configuration in this case.",
+      "parentUuid": "fa1b9901_decb431d",
       "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_f373c4b2",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "Boris is right about that. An issuer can issue as many client certificates to it\u0027s clients as it needs to and one issuer refers to one IdP.",
+      "parentUuid": "fa1b9901_44743dce",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_de2fc3f4",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 51
@@ -82,6 +136,24 @@
       "writtenOn": "2015-08-24T08:24:51Z",
       "side": 1,
       "message": "this documentation does not explain how to really setup this. You pasted some code snippet and don\u0027t tell the user what do do with that? Is it okay if I save it in my /tmp? \nI don\u0027t see what I am supposed to do (from the very beginning to the very end) and why i should do this.",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_56d61ef2",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "will give more details.",
+      "parentUuid": "fa1b9901_de2fc3f4",
       "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_b6fd3a70",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "will give more details.",
+      "parentUuid": "fa1b9901_fe2e47a4",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_191a356f",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 51
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_f0a09aa7",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "fa1b9901_191a356f",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_7956d107",
         "filename": "keystone/common/config.py",
         "patchSetId": 51
@@ -133,6 +241,24 @@
       "writtenOn": "2015-08-24T08:24:51Z",
       "side": 1,
       "message": "why adding this instead of checking the mapping? \nuser has already a keyword \u0027type\u0027 which can be eiter \u0027ephemeral\u0027 or \u0027local\u0027 (defaulting to \u0027ephemeral\u0027 due to backwards compatibility).\nWe can also test user type by checking the domain.",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_903a7e33",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-24T17:29:33Z",
+      "side": 1,
+      "message": "good to know, will look into it.",
+      "parentUuid": "fa1b9901_7956d107",
       "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
