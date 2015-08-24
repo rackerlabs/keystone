@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_132c54aa",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_9a6c2dd2",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_933f04d6",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Henry - I think you meant \u0027on\u0027 instead of \u0027no\u0027 ?",
+      "parentUuid": "fa1b9901_056c2307",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_e8a002f6",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 4
@@ -48,6 +84,24 @@
       "writtenOn": "2015-08-21T15:28:50Z",
       "side": 1,
       "message": "nit",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_330cf841",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_e8a002f6",
       "revId": "608b42f876532b678e673118a834825aa5e36111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_5e10934e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_9f939b4f",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_a8a68a0c",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -82,6 +154,24 @@
       "writtenOn": "2015-08-21T15:28:50Z",
       "side": 1,
       "message": "nit",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1e1a1b6f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_a8a68a0c",
       "revId": "608b42f876532b678e673118a834825aa5e36111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_be252faf",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5f9d0358",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_08b8d628",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -116,6 +224,24 @@
       "writtenOn": "2015-08-21T15:28:50Z",
       "side": 1,
       "message": "nit",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7e1f975b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_08b8d628",
       "revId": "608b42f876532b678e673118a834825aa5e36111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_3e3a7fce",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_68add2e7",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_ffa2d799",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -150,6 +294,24 @@
       "writtenOn": "2015-08-23T04:04:01Z",
       "side": 1,
       "message": "nit",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5e3e53b9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_ffa2d799",
       "revId": "608b42f876532b678e673118a834825aa5e36111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_1e5f7b0f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_887aa675",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_e81d6273",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -184,6 +364,24 @@
       "writtenOn": "2015-08-21T15:54:01Z",
       "side": 1,
       "message": "correlating id?",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3eafdfe4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2517,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "not always required.",
+      "parentUuid": "fa1b9901_e81d6273",
       "revId": "608b42f876532b678e673118a834825aa5e36111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_feb8872c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2524,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "not supported atthe moment.",
+      "parentUuid": "fa1b9901_dad14531",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_28b83a10",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -218,6 +434,24 @@
       "writtenOn": "2015-08-21T15:28:50Z",
       "side": 1,
       "message": "*cries*",
+      "revId": "608b42f876532b678e673118a834825aa5e36111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_53ff2c34",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2986,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:53:39Z",
+      "side": 1,
+      "message": "we can still say \u0027name\u0027 is a no go in Federation :P\n\nBesides: still 23 bytes to go!",
+      "parentUuid": "fa1b9901_28b83a10",
       "revId": "608b42f876532b678e673118a834825aa5e36111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
