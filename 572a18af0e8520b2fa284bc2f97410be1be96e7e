@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_44743dce",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-24T10:22:05Z",
+      "side": 1,
+      "message": "No. That\u0027s one IDP per issuer. An issuer issues certificates for multiple clients. Although I agree, the instructions could be a bit more explicit.",
+      "parentUuid": "fa1b9901_79081129",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_de2fc3f4",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 51
