@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_6de02897",
+        "filename": "keystone/tests/unit/test_alternative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-24T20:41:18Z",
+      "side": 1,
+      "message": "I did this so that it would be more obvious what is actually happening. For those that don\u0027t know that the __new__ method is a static method having \"super(VersionedAPI, mcls).__new__(mcls, ...)\" look incorrect.\n\nDoing the old way (I thought) pointed to attention to it. And beside there is no multiple inheritance to worry about or at least there shouldn\u0027t be.\n\nIf others like the the super() better I would have no issues changing it.",
+      "parentUuid": "fa1b9901_a40e60e3",
+      "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_24f1f0cd",
         "filename": "keystone/tests/unit/test_alternative.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_4d3444dd",
+        "filename": "keystone/tests/unit/test_alternative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-24T20:41:18Z",
+      "side": 1,
+      "message": "The class\u0027 __versioned_methods__ should be updated even if the required_version isn\u0027t set. This allow subclasses of the driver.",
+      "parentUuid": "fa1b9901_24f1f0cd",
+      "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_042e2cfa",
         "filename": "keystone/tests/unit/test_alternative.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-24T19:17:40Z",
       "side": 1,
       "message": "What would happen if a driver implementation class didn\u0027t specify the \u0027required_version\u0027?\nThis would be the case, even with currently existing out-of-tree drivers.",
+      "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ad35e0db",
+        "filename": "keystone/tests/unit/test_alternative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-24T20:41:18Z",
+      "side": 1,
+      "message": "We could probably make sure that required_version or interface_version exists in the namespace.",
+      "parentUuid": "fa1b9901_042e2cfa",
       "revId": "ff535233ec36d6355f8d67c15a4ca24f267d186b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
