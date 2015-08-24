@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_a635fddb",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "May want to use the global LIBERTY defined in keystone.common instead of hardcoding it to 12 everywhere\n\ns/12/LIBERTY/g",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f92ac5e6",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "s/;/./",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_39491dd1",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "please replace the \u0027+\u0027 with proper line format",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_796d5531",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "we don\u0027t use \u0027Compatibilizer\u0027 class, please update the description",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_daaa4c85",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "add a line separation",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9af934cb",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "may want to use versionutils.deprecated(). See\n\nhttps://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L461",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_77ed59b6",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-24T22:15:48Z",
+      "side": 1,
+      "message": "How about this?\n\n\u0027The driver %(cls)s is incompatible with version %(version)s of Keystone driver interface\u0027\n\nWe don\u0027t want to confuse interface version with Keystone package/release version.",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
