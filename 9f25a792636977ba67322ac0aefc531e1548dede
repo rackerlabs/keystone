@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_7edc7746",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T07:59:02Z",
+      "side": 1,
+      "message": "wrong bug reference? \n(Points me to a bug entitled \"Logs must contain the request ID\")",
+      "revId": "9f25a792636977ba67322ac0aefc531e1548dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
