@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_e29e9e06",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_3e6afcee",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3e06981c",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 12
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_c5c9247b",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_de574058",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1e407c33",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 12
@@ -100,6 +136,24 @@
       "writtenOn": "2015-08-11T17:02:08Z",
       "side": 1,
       "message": "we may need a test for ID and PARENT_ID column override since the code also support it",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_45caf41b",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_1e407c33",
       "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_e543086b",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fec5908d",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1e25dc07",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 12
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_5166362a",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:53:44Z",
+      "side": 1,
+      "message": "I think it will be too much: descendants is a query made to check that tree is deleted. Why do we have to make exact one query twice?",
+      "parentUuid": "1a4dcd0f_1e25dc07",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_9ecd6c33",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 12
@@ -151,6 +241,24 @@
       "writtenOn": "2015-08-11T17:02:08Z",
       "side": 1,
       "message": "do we need to check to descendant\u0027s path to make sure they got resetted?",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5c296d88",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:53:44Z",
+      "side": 1,
+      "message": "agree, working on it",
+      "parentUuid": "1a4dcd0f_9ecd6c33",
       "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
