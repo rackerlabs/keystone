@@ -262,6 +262,24 @@
       "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9c5065d6",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-24T13:58:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5c296d88",
+      "revId": "852f1c9c189b3e3609b9a6e658d2b1d2a3f18a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
