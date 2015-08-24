@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_be5f6f74",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "explain that x509 is a special case of federated authn, so people know where to look for extra information. This docs doesn\u0027t explain how to setup, just gives some partial informatin without explaining \u0027what next\u0027.",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_decb431d",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "add some reference that this is a snippet for \u003cVirtualHost\u003e configuration",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_79081129",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "so it\u0027s one IdP *per* user?",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_de2fc3f4",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "this documentation does not explain how to really setup this. You pasted some code snippet and don\u0027t tell the user what do do with that? Is it okay if I save it in my /tmp? \nI don\u0027t see what I am supposed to do (from the very beginning to the very end) and why i should do this.",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_fe2e47a4",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 51
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "and what next with the mapping ?",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_191a356f",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "maybe it\u0027d be easier to read :\n\nif scope_only is False:",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7956d107",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-24T08:24:51Z",
+      "side": 1,
+      "message": "why adding this instead of checking the mapping? \nuser has already a keyword \u0027type\u0027 which can be eiter \u0027ephemeral\u0027 or \u0027local\u0027 (defaulting to \u0027ephemeral\u0027 due to backwards compatibility).\nWe can also test user type by checking the domain.",
+      "revId": "572a18af0e8520b2fa284bc2f97410be1be96e7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
