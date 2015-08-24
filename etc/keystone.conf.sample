@@ -1935,3 +1935,36 @@
 # Entrypoint for the trust backend driver in the keystone.trust namespace.
 # (string value)
 #driver = sql
+
+
+[cors]
+
+#
+# Options defined in oslo_middleware.cors.CORS. These are considered the
+# 'default' settings for any additional domains.
+#
+
+# The default protocol, domain, and port from which HTTP requests are
+# permitted.
+# allowed_origin=https://localhost:443
+
+# Whether to permit credential headers on CORS requests.
+# allow_credentials = True
+
+# CORS preflight responses may be cached. This setting allows you to tell the
+# client how many seconds that cache should persist.
+# max_age=3600
+
+# The list of HTTP methods which clients may access.
+# allow_methods=GET,POST,PUT,DELETE,PATCH
+
+# The default list of headers each CORS client may access.
+# allow_headers=X-Custom-Header
+
+# The default list of headers exposed on each CORS request.
+# expose_headers=X-Custom-Header
+
+# [cors.optional]
+# Optional [cors.name] blocks may be added here, to add more domains and/or
+# override global settings from the [cors] configuration.
+
