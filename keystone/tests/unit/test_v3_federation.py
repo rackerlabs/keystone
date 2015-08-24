@@ -1994,6 +1994,17 @@ class MappingRuleEngineTests(FederationTests):
         self.assertEqual('bwilliams', mapped_properties['user']['name'])
         self.assertEqual('abc123', mapped_properties['user']['id'])
 
+    def test_type_not_in_assertion(self):
+        """Test that if the remote "type" is not in the assertion it fails."""
+        mapping = mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = {uuid.uuid4().hex: uuid.uuid4().hex}
+        mapped_properties = rp.process(assertion)
+        self.assertValidMappedUserObject(mapped_properties)
+
+        self.assertNotIn('id', mapped_properties['user'])
+        self.assertNotIn('name', mapped_properties['user'])
+
 
 class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
