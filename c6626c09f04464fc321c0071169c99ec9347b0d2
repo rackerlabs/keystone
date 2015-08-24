@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_249034ec",
+        "filename": "setup.cfg",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-24T03:59:44Z",
+      "side": 1,
+      "message": "I think this space is necessary",
+      "revId": "c6626c09f04464fc321c0071169c99ec9347b0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
