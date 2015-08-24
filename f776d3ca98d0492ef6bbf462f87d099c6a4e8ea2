@@ -16,6 +16,24 @@
       "revId": "f776d3ca98d0492ef6bbf462f87d099c6a4e8ea2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_761d7065",
+        "filename": "keystone/common/sql/migrate_repo/versions/074_create_cached_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-08-24T13:15:17Z",
+      "side": 1,
+      "message": "As it isn\u0027t in the initial tables structure (collapsed migrations), and the is no data migrated to this table, I think there is no test to be added there, do you agree?",
+      "parentUuid": "fa1b9901_1e061886",
+      "revId": "f776d3ca98d0492ef6bbf462f87d099c6a4e8ea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
