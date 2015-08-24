@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_dcd6ddc2",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-24T14:08:03Z",
+      "side": 1,
+      "message": "NIT: this and other parameters don\u0027t end in a period, yet some do.",
+      "revId": "e8c22ae3db07c05c3acb53e3da39507044708f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_dcf33d9e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-24T14:08:03Z",
+      "side": 1,
+      "message": "NIT: \"for a federated user\" or \"federated users.\"",
+      "revId": "e8c22ae3db07c05c3acb53e3da39507044708f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
