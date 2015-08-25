@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_7e23e2a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-25T06:21:21Z",
+      "side": 1,
+      "message": "Sure I can do in next PS.  Just need some questions answered.",
+      "parentUuid": "fa1b9901_4d975990",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_6de33d06",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-25T02:44:45Z",
       "side": 1,
       "message": "The comment here illustrate why we use 10k as the default value,  and maybe why David concerns about the max value.\n\nPer my understanding, you can just add more comments here to tell the end user that max value you defined there is not *recommended* and not *performance warranted* but just from passlib.\n\nIt is not possible that max value here is extactly marginal value that keystone could accepted except some benchmark around this.",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1e142642",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-25T06:21:21Z",
+      "side": 1,
+      "message": "This comment isn\u0027t even seen by a normal deployer since its not in the option help (see below).  I could put something in the help if that\u0027ll help resolve the concerns.",
+      "parentUuid": "fa1b9901_6de33d06",
       "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,42 @@
       "writtenOn": "2015-08-25T02:02:10Z",
       "side": 1,
       "message": "I think you do not need to set the maximum",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bb342cfb",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-25T06:21:21Z",
+      "side": 1,
+      "message": "If a max is not set, you still get a ValueError on creation of the user if crypt_strength is too large for passlib.",
+      "parentUuid": "fa1b9901_b229b439",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1b78b8c3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-25T06:21:21Z",
+      "side": 1,
+      "message": "Can you please recommend a maximum that would be appropriate for keystone?",
+      "parentUuid": "fa1b9901_81e8e07d",
       "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
