@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_4d23a758",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T21:05:33Z",
+      "side": 1,
+      "message": "How so? The format_token method is just building the token data that is returned to the user, much like get_token_data, which is the equivalent for the v3_token_data_helper.",
+      "parentUuid": "fa1b9901_7d67ac25",
+      "revId": "20d5e2cda7e8adeb34b48c77699fec8ed3891496",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_7dc00ce1",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-23T14:13:31Z",
       "side": 1,
       "message": "this will call `v2_token_data_helper.format_token` to generate `token_data`, but not work with non-persistent token per your explanation in the previous patch, should we still use `v3_token_data_helper.get_token_data` for token data generation?",
+      "revId": "20d5e2cda7e8adeb34b48c77699fec8ed3891496",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_cdc5775c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T21:05:33Z",
+      "side": 1,
+      "message": "Morgan has a separate series up to address that. I think it starts here. \n\nhttps://review.openstack.org/#/c/196483/",
+      "parentUuid": "fa1b9901_7dc00ce1",
       "revId": "20d5e2cda7e8adeb34b48c77699fec8ed3891496",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
