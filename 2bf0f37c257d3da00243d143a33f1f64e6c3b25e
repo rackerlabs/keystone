@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_d3eeaa8a",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-25T04:40:09Z",
+      "side": 1,
+      "message": "why not start the second line with \"type(ref))\" rather than \u0027\u0027Expected dict ...\u0027 since there are still spaces above",
+      "revId": "2bf0f37c257d3da00243d143a33f1f64e6c3b25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b3b9b67b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-25T04:40:09Z",
+      "side": 1,
+      "message": "3rd party lib, move this in the same group as oslo imports",
+      "revId": "2bf0f37c257d3da00243d143a33f1f64e6c3b25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1359825a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-25T04:40:09Z",
+      "side": 1,
+      "message": "should this be \u0027is_domain\u0027 in tenant_ref?  The comment was to check that the attribute should not even set.  User can set this to False, and the validation would not capture it.",
+      "revId": "2bf0f37c257d3da00243d143a33f1f64e6c3b25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_0547f54b",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-25T04:40:09Z",
+      "side": 1,
+      "message": "passing is_domain:False should also fail, since is_domain is not a v2 attribute",
+      "revId": "2bf0f37c257d3da00243d143a33f1f64e6c3b25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
