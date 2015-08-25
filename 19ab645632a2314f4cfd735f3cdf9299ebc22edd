@@ -2,6 +2,176 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_01e01e95",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "... when referencing the v2 API.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_218be2c4",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "There are exceptions, specifically in the v3 -\u003e v2 case. The v2 API is limited to the \"default\" domain (perhaps domains should be introduced first?), so any reference to an entity outside the default domain would result in namespace collisions in v2, and thus result in 401\u0027s.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_2179a2c8",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "domains aren\u0027t a \"change to v3\", they\u0027re a change *introduced in* v3 -- something never available in v2 but always available in v3.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_81466e79",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "can you slip the word namespacing in there to describe this behavior?",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_c13786fd",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "I\u0027d put default in quotes, and then explain that it\u0027s not special from v3\u0027s perspective, but provide a single scope for the entirety of v2.0.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_0c3cd5c6",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "++",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8c9c65c1",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "and to provide multi-tenancy constraints",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ac884972",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "++",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_acefe91c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "grammar",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8c38e5a1",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "aside: although it would be reasonable for all v3 clients everywhere to assume a domain ID of \"default\" when no domain is otherwise specified...",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_f663efdb",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -13,6 +183,23 @@
       "writtenOn": "2015-08-14T01:51:27Z",
       "side": 1,
       "message": "With Hierarchical Multitenancy, we only have a project hierarchy inside a domain, so in fact, we don\u0027t have parent projects operating as domains, this will only be true after reseller.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ec1401ea",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-25T19:58:30Z",
+      "side": 1,
+      "message": "any part of the hierarchy?",
       "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
