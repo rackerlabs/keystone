@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_4532a95f",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2015-08-25T17:05:43Z",
+      "side": 1,
+      "message": "It looks like the code is out of sync with the comment above.  endpoint_filter is not been used beyond this point.  The comment said list_endpoints may use it.",
+      "revId": "223e30fe527ebadb6cf1c5478d72c095d5b92f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_ab668d4e",
         "filename": "keystone/policy/core.py",
         "patchSetId": 2
