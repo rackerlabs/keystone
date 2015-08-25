@@ -105,6 +105,58 @@
       "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f84ff4bb",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T13:41:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a50d1a3_b9f06ffe",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_58bce06b",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T13:41:08Z",
+      "side": 1,
+      "message": "the get_scoped_token_raw() method seems build scope into the request. maybe we should remove the unscoped part from this doc string.",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_98811892",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T13:41:08Z",
+      "side": 1,
+      "message": "this method seems like it\u0027s returning a scoped token, but the doc strings say it\u0027s unscoped?",
+      "revId": "3d963ca216cce5b6d0662bdc56ec20da0e6281de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
