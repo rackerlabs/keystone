@@ -16,6 +16,24 @@
       "revId": "81f2ccb3c56eacb15d2b3c8aaaf68a4239c678a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3e946341",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_juno.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-25T19:10:03Z",
+      "side": 1,
+      "message": "The indexes were *not* named like this for a reason. The original migration just made naming consistent. It was necessary because before there was no name at all (it was auto-generated).\n\nThe comment above just notes the inconsistency with index names above and tells that it\u0027s intentional.",
+      "parentUuid": "fa1b9901_e5d3f236",
+      "revId": "81f2ccb3c56eacb15d2b3c8aaaf68a4239c678a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
