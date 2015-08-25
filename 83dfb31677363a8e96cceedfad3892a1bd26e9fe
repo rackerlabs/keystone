@@ -16,6 +16,23 @@
       "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b229b439",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-25T02:02:10Z",
+      "side": 1,
+      "message": "I think you do not need to set the maximum",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
