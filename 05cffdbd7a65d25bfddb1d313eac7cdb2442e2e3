@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_c17a2688",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-25T19:26:38Z",
+      "side": 1,
+      "message": "is \"domain roles\" the correct name? I thought that domain roles will be another concept after dynamic policies.",
+      "revId": "05cffdbd7a65d25bfddb1d313eac7cdb2442e2e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
