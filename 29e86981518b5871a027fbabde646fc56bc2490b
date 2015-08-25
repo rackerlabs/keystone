@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_1efbad7c",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:59:59Z",
+      "side": 1,
+      "message": "wrong year?",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_de5f753f",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:59:59Z",
+      "side": 1,
+      "message": "As we move more extensions into core, I can see this code getting copy-pasted into a bunch of different migrations. Maybe it would be useful to pull it out in to a common place?",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bef6415b",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:59:59Z",
+      "side": 1,
+      "message": "is this going to conflict with \n\nhttps://review.openstack.org/#/c/171916/13/keystone/common/sql/migrate_repo/versions/073_add_endpoint_policy_table.py",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f9113353",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:59:59Z",
+      "side": 1,
+      "message": "\u0027endpoint_group_id\u0027 is used in a few different places, it could be pulled out into a variable.",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5927ffb5",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:59:59Z",
+      "side": 1,
+      "message": "same comment here with \u0027project_id\u0027",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
