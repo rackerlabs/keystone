@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_4121684c",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-25T00:30:27Z",
+      "side": 1,
+      "message": "yeah, server should not have started if the event callbacks don\u0027t work. I agree it should be done at startup. Having said that, can\u0027t we be a bit smarter? Like using inspect to ignore the first argument?",
+      "parentUuid": "fa1b9901_964924ba",
+      "revId": "972df7532642b3af39cc95b9d675d8b223b7c25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_eb43d96a",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 5
