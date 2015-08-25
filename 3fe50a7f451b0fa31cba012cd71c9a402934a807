@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_d505fd10",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_a635fddb",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f92ac5e6",
         "filename": "keystone/common/manager.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-24T22:15:48Z",
       "side": 1,
       "message": "s/;/./",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_756bd1b9",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_f92ac5e6",
       "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_356a39b4",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_39491dd1",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_796d5531",
         "filename": "keystone/common/manager.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-24T22:15:48Z",
       "side": 1,
       "message": "we don\u0027t use \u0027Compatibilizer\u0027 class, please update the description",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5567ade8",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_796d5531",
       "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_f55fe10c",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_daaa4c85",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_9af934cb",
         "filename": "keystone/common/manager.py",
         "patchSetId": 10
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_755511c0",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "not needed as per the below IRC discussion...\n\n\u003csnip\u003e\n\n...\n\ndstanek\tmorganfainberg: take a look at the initial review when you have a few. the author was thinking of only supporting 1 version back and providing code that would make the old version act like the new one.\t20:54\n\ndstanek\tmorganfainberg: i don\u0027t know that it\u0027s necessarily a good thing to do that\t20:54\n\nmorganfainberg\tyeah no we can\u0027t do that\t20:54\n\nmorganfainberg\tit has to be *all versions*\t20:54\n\nmorganfainberg\tuntil we deprecate the version explicitly\t20:54\n\nmorganfainberg\tbut yes code needs ot make the old version behave like the new\n\n...\n\n\u003c/snip\u003e\n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2015-08-24.log.html#t2015-08-24T20:42:15",
+      "parentUuid": "fa1b9901_9af934cb",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_77ed59b6",
         "filename": "keystone/exception.py",
         "patchSetId": 10
@@ -115,6 +223,24 @@
       "writtenOn": "2015-08-24T22:15:48Z",
       "side": 1,
       "message": "How about this?\n\n\u0027The driver %(cls)s is incompatible with version %(version)s of Keystone driver interface\u0027\n\nWe don\u0027t want to confuse interface version with Keystone package/release version.",
+      "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9511c506",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-25T22:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_77ed59b6",
       "revId": "3fe50a7f451b0fa31cba012cd71c9a402934a807",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
