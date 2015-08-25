@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_59efff86",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T15:14:50Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_594b7f87",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T15:14:50Z",
+      "side": 1,
+      "message": "equals? why not \n\n    as null or equal to the parent_id",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_791e8371",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T15:14:50Z",
+      "side": 1,
+      "message": "nit: use a uuid and save it to a variable that is reused in other places.",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d90d4f3f",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T15:14:50Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_04403a33",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 2973,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T15:14:50Z",
+      "side": 1,
+      "message": "newly*?",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
