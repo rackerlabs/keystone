@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_81e8e07d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-25T00:39:08Z",
+      "side": 1,
+      "message": "Is there any reason not to make this a little more appropriate for Keystone? I don\u0027t think a server would be functional anywhere near that max.",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
