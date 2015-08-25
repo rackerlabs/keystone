@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_4d975990",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-25T02:44:45Z",
+      "side": 1,
+      "message": "pls include your change about pydev-debug-port in the commit message, thanks.",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6de33d06",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-25T02:44:45Z",
+      "side": 1,
+      "message": "The comment here illustrate why we use 10k as the default value,  and maybe why David concerns about the max value.\n\nPer my understanding, you can just add more comments here to tell the end user that max value you defined there is not *recommended* and not *performance warranted* but just from passlib.\n\nIt is not possible that max value here is extactly marginal value that keystone could accepted except some benchmark around this.",
+      "revId": "83dfb31677363a8e96cceedfad3892a1bd26e9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_81e8e07d",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
