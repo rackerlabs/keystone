@@ -69,6 +69,24 @@
       "revId": "972df7532642b3af39cc95b9d675d8b223b7c25e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_307020a4",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-25T14:14:58Z",
+      "side": 1,
+      "message": "Looks like I had to make this change anyway. A change was merged to remove those methods and that broke my test.",
+      "parentUuid": "fa1b9901_793a35cf",
+      "revId": "972df7532642b3af39cc95b9d675d8b223b7c25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
