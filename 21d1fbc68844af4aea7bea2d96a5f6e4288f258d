@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_378eabd0",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-25T11:53:59Z",
+      "side": 1,
+      "message": "i changed is to assertDictEqual (same for domain_scoped_payload below).",
+      "parentUuid": "fa1b9901_61c02f2b",
+      "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_c15a5b83",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 19
@@ -47,6 +65,42 @@
       "writtenOn": "2015-08-19T19:46:25Z",
       "side": 1,
       "message": "This at least needs a comment so that we know why this needs to be done. All the tests pass even without the unquote so a test also needs to be added.",
+      "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9607af80",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-25T11:53:59Z",
+      "side": 1,
+      "message": "i will fix in in the followup patch, as this probably qualifies for a separate bug.",
+      "parentUuid": "fa1b9901_b6473dbb",
+      "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_126055ce",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-25T11:53:59Z",
+      "side": 1,
+      "message": "in general id must be url-safe while name does not.",
+      "parentUuid": "fa1b9901_c15a5b83",
       "revId": "21d1fbc68844af4aea7bea2d96a5f6e4288f258d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
