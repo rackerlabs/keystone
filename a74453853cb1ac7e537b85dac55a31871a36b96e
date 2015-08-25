@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_1e55edc0",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:47:35Z",
+      "side": 1,
+      "message": "what is the \u0027host model\u0027?",
+      "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5e5fe5e4",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-25T14:47:35Z",
+      "side": 1,
+      "message": "what is the \u0027host model\u0027?",
+      "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
