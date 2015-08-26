@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa1b9901_14059778",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-26T13:31:44Z",
+      "side": 1,
+      "message": "oslo_policy",
+      "revId": "5945b786f7dea9240644e0185865d1c875457167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_54ef8fb0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-26T13:31:44Z",
+      "side": 1,
+      "message": "no bug report?",
+      "revId": "5945b786f7dea9240644e0185865d1c875457167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_985a5029",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 2
