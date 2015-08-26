@@ -160,6 +160,9 @@ class DirectMaps(object):
         else:
             return value
 
+    def get_matches(self):
+        return self._matches
+
 
 def validate_mapping_structure(ref):
     v = jsonschema.Draft4Validator(MAPPING_SCHEMA)
@@ -463,8 +466,9 @@ class RuleProcessor(object):
             # If there are no direct mappings, then add the local mapping
             # directly to the array of saved values. However, if there is
             # a direct mapping, then perform variable replacement.
-            if not direct_maps:
+            if not direct_maps or not direct_maps.get_matches():
                 identity_values += rule['local']
+                LOG.warning(_LW('No Mappings Found in rules'))
             else:
                 for local in rule['local']:
                     new_local = self._update_local_mapping(local, direct_maps)

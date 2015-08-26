@@ -1146,6 +1146,31 @@ MAPPING_FOR_DEFAULT_EPHEMERAL_USER = {
     ]
 }
 
+MAPPING_GROUPS_NO_DIRECT_MAPPING = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}",
+                        "domain": {"name": "Default"}
+                    }
+                },
+                {
+                    "group": {
+                        "id": "GROUP_ID"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "REMOTE_USER"
+                }
+            ]
+        }
+    ]
+}
+
 EMPLOYEE_ASSERTION = {
     'Email': 'tim@example.com',
     'UserName': 'tbo',
