@@ -632,3 +632,23 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         self.assertNotIn('id', mapped_properties['user'])
         self.assertNotIn('name', mapped_properties['user'])
+
+    def test_unavailable_request_variables(self):
+        """Test mapping with unavailable request variables.
+
+        Test mapping option with a request variable that does not have a
+        direct mapping. This test calls rp.process to replace the direct
+        mapped varables
+
+        Test plan:
+        -  Check if the MappingValidationError is raised if the user tries
+        to map request varables that aren't in the request
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_NO_DIRECT_MAPPING
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = {'REMOTE_USER': 'test'}
+
+        self.assertRaises(exception.MappingFormatError,
+                          rp.process,
+                          assertion)

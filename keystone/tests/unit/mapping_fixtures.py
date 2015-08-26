@@ -1184,6 +1184,29 @@ MAPPING_GROUPS_WHITELIST_PASS_THROUGH = {
     ]
 }
 
+# Mapping used by the unavailable request variable test by providing a higher
+# request variable that what is provided and maps the domain_id only.
+MAPPING_GROUPS_NO_DIRECT_MAPPING = {
+    'rules': [
+        {
+            'local': [
+                {
+                    'user': {
+                        'domain': {
+                            'id': '{1}'
+                        },
+                        'type': 'local'
+                    }
+                }
+            ],
+            'remote': [
+                {
+                    'type': 'REMOTE_USER'
+                }
+            ]
+        }
+    ]
+}
 
 EMPLOYEE_ASSERTION = {
     'Email': 'tim@example.com',

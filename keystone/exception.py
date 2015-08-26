@@ -461,6 +461,10 @@ class MigrationNotProvided(Exception):
         ) % {'mod_name': mod_name, 'path': path})
 
 
+class MappingFormatError(Exception):
+    message_format = _("Error while mapping the data to a user")
+
+
 class UnsupportedTokenVersionException(UnexpectedError):
     message_format = _('Token version is unrecognizable or '
                        'unsupported.')
