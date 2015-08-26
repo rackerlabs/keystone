@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_0531950b",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-26T18:55:44Z",
+      "side": 1,
+      "message": "if a KeyError is raised here, then something was passed in that isn\u0027t in the idp_ref, which means it would probably fall under the validation error umbrella? \n\nRegardless, I don\u0027t think we should just except a KeyError and pass without doing something about it, or informing the user.",
+      "parentUuid": "fa1b9901_c84c1ea0",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_880aa677",
         "filename": "keystone/contrib/revoke/migrate_repo/versions/003_add_idp_id_to_revoke_table.py",
         "patchSetId": 4
@@ -47,6 +65,40 @@
       "writtenOn": "2015-08-21T16:21:15Z",
       "side": 1,
       "message": "nit: remove tabs",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_585214df",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-26T18:55:44Z",
+      "side": 1,
+      "message": "can we check if the key is in the token_data dict and then populate it into token_values, rather than excepting KeyErrors?",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d85ce4ef",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-26T18:55:44Z",
+      "side": 1,
+      "message": "we should assert that the \u0027idp_id\u0027 column doesn\u0027t exist before migration 3.",
       "revId": "1632f5290511b569237d421e656b201c3c20140e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
