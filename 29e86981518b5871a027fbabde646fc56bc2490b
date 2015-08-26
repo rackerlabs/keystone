@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_1b4b8a88",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-26T12:46:43Z",
+      "side": 1,
+      "message": "I think I misread something. Thanks for the explanation.",
+      "parentUuid": "fa1b9901_1ba71bbe",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f9113353",
         "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
         "patchSetId": 12
