@@ -34,6 +34,24 @@
       "revId": "85b81583955bf30ed0e82347e8159235ee839b9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4290e395",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-26T18:04:55Z",
+      "side": 1,
+      "message": "Ah, so I understood that admin_on_domain_filter was a policy check itself, not just a reusable rule. So, my concern then is that identity:list_role_assignments evaluates to the same policy check (unless we have a reason to have it evaluate to a different policy check... but this is supposed to be a refactor).\n\nSo, I worked out the before-and-after policy expansions by hand (apologies if anyone wants to follow this mess):\n\n  http://cdn.pasteraw.com/l71u9dyzzcju1wnswiv0xywh5xi4htk\n\nThe before and after policy checks for \"identity:list_role_assignments\" *do* match. This is a pretty simple refactor then, but that totally escaped me as I immediately stumbled on the non-equivalent change to \"admin_on_domain_filter\" alone last read-through.",
+      "parentUuid": "da20952f_73ce2085",
+      "revId": "85b81583955bf30ed0e82347e8159235ee839b9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
