@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_8542cf3c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-26T14:07:10Z",
+      "side": 1,
+      "message": "As mentioned in IRC, although the conflicts don\u0027t appear to be particularly relevant to this change, given that it\u0027s not a clean backport, always include an explanation of each conflict in the commit message. Preserving the \"Conflicts:\" section added by git as part of the body of the commit message (rather than as the footer) is a good starting point.",
+      "revId": "12b02d9f23975f74acc35761ebd4c48c60b770ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
