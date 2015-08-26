@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_4ee24fa1",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1182,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-26T17:53:51Z",
+      "side": 1,
+      "message": "(nit) It\u0027d be nice to check here that returned structure is correct",
+      "revId": "1258f7f7f17e66414bbd204581f07b85d50c3916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
