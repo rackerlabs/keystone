@@ -52,6 +52,24 @@
       "revId": "d557080381df5b7ee1f1419aaea0ff154f4005df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e287b7d5",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-26T18:18:06Z",
+      "side": 1,
+      "message": "well, exposing an endpoint twice potentially circumvents higher level authorization mechanisms that are URL-based. this should absolutely, 100% be documented somewhere. release notes at minimum, and somewhere slightly more security focused too",
+      "parentUuid": "1a4dcd0f_c78171c5",
+      "revId": "d557080381df5b7ee1f1419aaea0ff154f4005df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
