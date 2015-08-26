@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_c113ed63",
+        "filename": "keystone/tests/unit/backend/policy/test_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T08:37:21Z",
+      "side": 1,
+      "message": "Add self.addCleanup(...) here to clean up the policy created here for testing.",
+      "revId": "da7e1b97e7091e9e3c868af71d97669229f10bb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7c116a51",
+        "filename": "keystone/tests/unit/backend/policy/test_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T08:37:21Z",
+      "side": 1,
+      "message": "Add another testcase to test the creation of policy to consistent with the API definition.",
+      "revId": "da7e1b97e7091e9e3c868af71d97669229f10bb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
