@@ -528,8 +528,7 @@ class RuleProcessor(object):
 
             if user_type == UserType.EPHEMERAL:
                 user['domain'] = {
-                    'id': (CONF.federation.federated_domain_name or
-                           federation_constants.FEDERATED_DOMAIN_KEYWORD)
+                    'id': CONF.federation.federated_domain_name
                 }
 
         # initialize the group_ids as a set to eliminate duplicates
