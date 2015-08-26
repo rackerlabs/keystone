@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_b6f58184",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-26T19:55:31Z",
+      "side": 1,
+      "message": "I don\u0027t understand this change. If I am reading the code correctly, config_overrides() for these tests was intended to be a no-op. Not it will use the config_overrides() from the base class? Seems like a change in behavior, and Jenkins still go green?",
+      "revId": "a0ad88b333301da2cba27e7f7bc352209874b80f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
