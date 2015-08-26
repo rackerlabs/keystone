@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_7325c0c0",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-26T17:38:35Z",
+      "side": 1,
+      "message": "Why you\u0027re changing this?\n\nAs I know, In every rst documentation here, we use \u0027-------\u0027 as the partner for titles.",
+      "revId": "7fabe728afbc9cb5b4b4a15810c64f7c78fd5969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
