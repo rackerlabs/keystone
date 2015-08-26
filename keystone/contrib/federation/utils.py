@@ -463,7 +463,7 @@ class RuleProcessor(object):
             # If there are no direct mappings, then add the local mapping
             # directly to the array of saved values. However, if there is
             # a direct mapping, then perform variable replacement.
-            if not direct_maps:
+            if not direct_maps or not direct_maps._matches:
                 identity_values += rule['local']
             else:
                 for local in rule['local']:
