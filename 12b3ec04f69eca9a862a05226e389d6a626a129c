@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_fea6c40d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-26T13:37:48Z",
+      "side": 1,
+      "message": "It\u0027s a little weird that in the same test plan that entities appears twice.",
+      "revId": "12b3ec04f69eca9a862a05226e389d6a626a129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f4a6e30d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-26T13:37:48Z",
+      "side": 1,
+      "message": "(nit) I think it would be better to explicitly check for \u0027projects\u0027 and raise an exception in the \u0027else\u0027. That would prevent tests from accidentally working and eventually breaking as unrelated things are changed.",
+      "revId": "12b3ec04f69eca9a862a05226e389d6a626a129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_915f7940",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-26T13:37:48Z",
+      "side": 1,
+      "message": "Since it\u0027s defined with a kwarg, it should probably be domain_id\u003ddomain_spec.get(\u0027id\u0027)",
+      "revId": "12b3ec04f69eca9a862a05226e389d6a626a129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
