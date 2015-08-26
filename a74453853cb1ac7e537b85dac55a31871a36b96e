@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_ae149d43",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-26T11:42:49Z",
+      "side": 1,
+      "message": "thanks, renamed to \u0027model being extended\u0027",
+      "parentUuid": "fa1b9901_1e55edc0",
+      "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_5e5fe5e4",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-25T14:47:35Z",
       "side": 1,
       "message": "what is the \u0027host model\u0027?",
+      "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_ce11d153",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-26T11:42:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5e5fe5e4",
       "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_2e272db7",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-26T11:42:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_9e733d4e",
+      "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_3e847109",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-25T14:51:39Z",
       "side": 1,
       "message": "nit: missing test description here, all the other tests have one.",
+      "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_4e2ce198",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-26T11:42:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_3e847109",
       "revId": "a74453853cb1ac7e537b85dac55a31871a36b96e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
