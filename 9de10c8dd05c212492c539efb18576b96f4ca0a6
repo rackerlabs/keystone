@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_0a132eb9",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-26T14:04:48Z",
+      "side": 1,
+      "message": "maybe say for the mapping the mapping_id is really user degined and doesn\u0027t matter, as opposed to idp_id.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_2a663251",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-26T14:04:48Z",
+      "side": 1,
+      "message": "same for PROTOCOL_NAME",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
