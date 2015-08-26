@@ -34,6 +34,7 @@ if not xmldsig:
 from keystone.auth import controllers as auth_controllers
 from keystone.contrib.federation import controllers as federation_controllers
 from keystone.contrib.federation import idp as keystone_idp
+from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone import notifications
 from keystone.tests.unit import core
@@ -1463,6 +1464,26 @@ class MappingCRUDTests(FederationTests):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_AND_BLACKLIST
         self.put(url, expected_status=400, body={'mapping': mapping})
+
+    def test_unavailable_request_variables(self):
+        """Test mapping with unavailable request variables.
+
+        Test mapping option with a request variable that does not have a
+           direct mapping. This test calls rp.process to replace the direct
+           mapped varables
+
+        Test plan:
+        -  Check if the user can add request varables when the direct
+        mapped list is empty
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_NO_DIRECT_MAPPING
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = {}
+
+        self.assertRaises(exception.MappingValidationError,
+                          rp.process,
+                          assertion)
 
 
 class FederatedTokenTests(FederationTests, FederatedSetupMixin):
