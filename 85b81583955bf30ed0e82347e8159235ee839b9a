@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_af3d742c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-26T13:56:08Z",
+      "side": 1,
+      "message": "This is not equivalent to the previous policy. You\u0027re dropping support for \"having the \u0027admin\u0027 role in the arbitrarily chosen \u0027admin\u0027 domain\" in favor of a domain-admin only. if you\u0027re going to remove \"rule:cloud_admin\" from this for whatever reason, then it should look like this:\n\n  rule:admin_required and (domain_id:admin_domain_id or domain_id:%(scope.domain.id)s)\n\nBut I think it\u0027s already simplified as-is, unless you\u0027re going to add a new rule.",
+      "revId": "85b81583955bf30ed0e82347e8159235ee839b9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
