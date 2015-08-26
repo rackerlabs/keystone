@@ -2042,6 +2042,34 @@ class MappingRuleEngineTests(FederationTests):
             self.assertEqual('abc123%40example.com',
                              mapped_properties['user']['id'])
 
+    def test_unavailable_request_variables(self):
+        """Test mapping option with a request variable that does not have a
+           direct mapping
+
+        This test calls rp.process to replace direct mapped varables
+
+        Test plan:
+        -  Check if the user can add request varables when the direct
+        mapped list is empty
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_NO_DIRECT_MAPPING
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = {}
+
+        # this test should not result in an IndexError
+        mapped_properties = rp.process(assertion)
+
+        mapped_properties_expected_value = {'user': {
+            'type': 'ephemeral',
+            'domain': {
+                'id': 'Federated'},
+            'name': '{0}'},
+            'group_names': [],
+            'group_ids': ['GROUP_ID']}
+
+        self.assertEqual(mapped_properties_expected_value, mapped_properties)
+
 
 class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
