@@ -16,6 +16,24 @@
       "revId": "a0ad88b333301da2cba27e7f7bc352209874b80f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3b0ab1d3",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-26T23:11:55Z",
+      "side": 1,
+      "message": "The whole reason to make it a no op was so it wouldn\u0027t configure the auth plugins. Override the correct method instead.",
+      "parentUuid": "da20952f_b6f58184",
+      "revId": "a0ad88b333301da2cba27e7f7bc352209874b80f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
