@@ -16,6 +16,24 @@
       "revId": "05cffdbd7a65d25bfddb1d313eac7cdb2442e2e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b283a902",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-26T09:26:59Z",
+      "side": 1,
+      "message": "maybe domain assignments would have been a better term...I\u0027ll update if I need to do another patch - if not, I\u0027ll fix up as a follow on",
+      "parentUuid": "fa1b9901_c17a2688",
+      "revId": "05cffdbd7a65d25bfddb1d313eac7cdb2442e2e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
