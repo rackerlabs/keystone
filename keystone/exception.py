@@ -94,6 +94,10 @@ class SchemaValidationError(ValidationError):
     message_format = _("%(detail)s")
 
 
+class MappingValidationError(ValidationError):
+    message_format = _("Error while mapping the data to a user")
+
+
 class ValidationTimeStampError(Error):
     message_format = _("Timestamp not in expected format."
                        " The server could not comply with the request"
