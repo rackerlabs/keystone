@@ -16,6 +16,24 @@
       "revId": "85b81583955bf30ed0e82347e8159235ee839b9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_73ce2085",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 17043
+      },
+      "writtenOn": "2015-08-26T17:29:00Z",
+      "side": 1,
+      "message": "I agree, the new rule:admin_on_domain_filter is NOT equivalent to the previous policy. And I agree with what you\u0027re saying, the change does not eliminate any redundancy within rule:admin_on_domain_filter - indeed there never was redundancy in there. \n\nThe intention of this change is to remove the redundant appearance of rule:cloud_admin within the below rule identity:list_role_assignments. Currently rule:cloud_admin is in there twice because rule:cloud_admin is included in both of its sub-rules, admin_on_domain_filter and admin_on_project_filter. The change removes rule:cloud_admin from each of the sub-rules, and includes it once directly in the main rule.",
+      "parentUuid": "fa1b9901_af3d742c",
+      "revId": "85b81583955bf30ed0e82347e8159235ee839b9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
