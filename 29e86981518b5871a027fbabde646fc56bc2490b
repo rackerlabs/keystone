@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_9bdb2b7c",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T06:32:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_1efbad7c",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_de5f753f",
         "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-25T14:59:59Z",
       "side": 1,
       "message": "As we move more extensions into core, I can see this code getting copy-pasted into a bunch of different migrations. Maybe it would be useful to pull it out in to a common place?",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3b69bf8c",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T06:32:33Z",
+      "side": 1,
+      "message": "this is already a function encapsulated in migration_helpers, entension name is definitely different, thus, need to passed by the caller.",
+      "parentUuid": "fa1b9901_de5f753f",
       "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_1ba71bbe",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_add_endpoint_filtering_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T06:32:33Z",
+      "side": 1,
+      "message": "seen from the rest of the code, \u0027extension_version\u0027 just works as a flag, when table \u0027project_endpoint\u0027 existing, there is no need to create the table again. 1 and 2 map to \u0027001_add_endpoint_filtering_table.py\u0027 and  \u0027002_add_endpoint_groups.py\u0027 respectively.\n\nIs \u0027extension_version just a local env, how does this conflict with a different migration?",
+      "parentUuid": "fa1b9901_bef6415b",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f9113353",
         "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
         "patchSetId": 12
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_bbe4efa7",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T06:32:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_f9113353",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_5927ffb5",
         "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
         "patchSetId": 12
@@ -81,6 +153,24 @@
       "writtenOn": "2015-08-25T14:59:59Z",
       "side": 1,
       "message": "same comment here with \u0027project_id\u0027",
+      "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_dbe9a380",
+        "filename": "keystone/common/sql/migrate_repo/versions/076_add_endpoint_groups.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-26T06:32:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5927ffb5",
       "revId": "29e86981518b5871a027fbabde646fc56bc2490b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
