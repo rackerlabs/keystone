@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_14611739",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-26T13:44:39Z",
+      "side": 1,
+      "message": "perhaps out of scope for this change, but shouldn\u0027t we log something here about the bad config?\n\nand seemingly in scope for this change, shouldn\u0027t this be a continue (to the next requirement), not an outright abort? (if it should truly abort, then it should raise an exception, not exit cleanly)",
+      "revId": "5efe64e0d809968a1489ac2401503032ae2a3ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
