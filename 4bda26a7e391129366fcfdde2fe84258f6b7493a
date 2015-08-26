@@ -16,6 +16,24 @@
       "revId": "4bda26a7e391129366fcfdde2fe84258f6b7493a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_e0139263",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-08-26T05:58:06Z",
+      "side": 1,
+      "message": "not entirely right? what about them pipelines?",
+      "parentUuid": "fa1b9901_ac1b3780",
+      "revId": "4bda26a7e391129366fcfdde2fe84258f6b7493a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
