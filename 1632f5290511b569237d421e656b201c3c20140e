@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_64040115",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T04:16:55Z",
+      "side": 1,
+      "message": "I think is the wrong implementation. Reading the code I have no idea what it is trying to do and why.",
+      "parentUuid": "fa1b9901_806efa94",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_c84c1ea0",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 4
@@ -54,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "da20952f_bf26a414",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T04:16:55Z",
+      "side": 1,
+      "message": "There is no tests that shows how a KeyError can happen.",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_880aa677",
         "filename": "keystone/contrib/revoke/migrate_repo/versions/003_add_idp_id_to_revoke_table.py",
         "patchSetId": 4
@@ -65,6 +100,23 @@
       "writtenOn": "2015-08-21T16:21:15Z",
       "side": 1,
       "message": "nit: remove tabs",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_44269dbb",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/003_add_idp_id_to_revoke_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T04:16:55Z",
+      "side": 1,
+      "message": "Add newline",
       "revId": "1632f5290511b569237d421e656b201c3c20140e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
