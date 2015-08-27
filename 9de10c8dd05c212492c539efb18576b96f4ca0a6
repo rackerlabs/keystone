@@ -579,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_2ad546b8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "It is not introducing anything new,  just likes all the other configuration changes will request server restart.\nAnd this list of trusted issuer should not be changed very often.",
+      "parentUuid": "da20952f_2c5339e3",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_6c705173",
         "filename": "keystone/common/config.py",
         "patchSetId": 55
@@ -590,6 +608,24 @@
       "writtenOn": "2015-08-27T12:57:53Z",
       "side": 1,
       "message": "where is this \"check_trusted_issuer\" option is defined? Apache?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6ac01ee1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "good catch. this option is no longer valid, it was in the earlier patches ;-)\nwill remove it.",
+      "parentUuid": "da20952f_6c705173",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -613,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_cd3b84d0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "the wsgi framework, it passes the http request headers attributes to env.\nplease have a look at the specs - http://specs.openstack.org/openstack/keystone-specs/specs/kilo/keystone-tokenless-authz-with-x509-ssl-client-cert.html",
+      "parentUuid": "da20952f_177f62ab",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_4c7d4d1b",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 55
@@ -624,6 +678,24 @@
       "writtenOn": "2015-08-27T12:57:53Z",
       "side": 1,
       "message": "This would imply that both id and name must be always provided whereas the code seems to require just one of them.\n\n\"Neither Project Domain ID nor Project Domain Name was provided\" ?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4d753496",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "da20952f_4c7d4d1b",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -682,6 +754,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_4d9c54c0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_cc639d19",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_4c5f8d41",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 55
@@ -693,6 +783,24 @@
       "writtenOn": "2015-08-27T12:57:53Z",
       "side": 1,
       "message": "Idea for another patch: provide this as a option in keystone-manage.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8faedc83",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "good question, there will be a follow-on patch to allow user to easily setup IdP from the given trusted ca certificate.",
+      "parentUuid": "da20952f_4c5f8d41",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -803,6 +911,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_ef88b724",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "fine with me",
+      "parentUuid": "da20952f_376e2630",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_975ff271",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 55
@@ -820,6 +946,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_4f320412",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "yeah, that\u0027s right. we don\u0027t necessarily need it here but it can be just a test case though ;-) \nI have another test case with the user id only.",
+      "parentUuid": "da20952f_975ff271",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_9281404d",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 55
@@ -831,6 +975,24 @@
       "writtenOn": "2015-08-27T12:57:53Z",
       "side": 1,
       "message": "maybe copy this dictionary first? I am not sure.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8f21fcfd",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T22:42:00Z",
+      "side": 1,
+      "message": "This should not matter for the testcase as every single test case will call setup again to setup all the resources. But let me change that for better code practice ;-)",
+      "parentUuid": "da20952f_9281404d",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
