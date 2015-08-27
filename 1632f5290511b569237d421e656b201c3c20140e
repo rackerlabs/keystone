@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "da20952f_fbe74b10",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-27T06:43:53Z",
+      "side": 1,
+      "message": "+1 Lance",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_bf26a414",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 4
@@ -117,6 +134,24 @@
       "writtenOn": "2015-08-27T04:16:55Z",
       "side": 1,
       "message": "Add newline",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_dbe4c73c",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/003_add_idp_id_to_revoke_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-27T06:43:53Z",
+      "side": 1,
+      "message": "it\u0027s need to add newline ? why ?",
+      "parentUuid": "da20952f_44269dbb",
       "revId": "1632f5290511b569237d421e656b201c3c20140e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
