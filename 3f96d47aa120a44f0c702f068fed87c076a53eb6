@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_15d73e24",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 17254
+      },
+      "writtenOn": "2015-08-27T22:19:43Z",
+      "side": 1,
+      "message": "Could be domain_id or the domain name. Made the corresponding updates.",
+      "parentUuid": "da20952f_e093fdf8",
+      "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_c0c119e6",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
@@ -124,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_f5bacae0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 17254
+      },
+      "writtenOn": "2015-08-27T22:19:43Z",
+      "side": 1,
+      "message": "Added the variables which caused the exceptions",
+      "parentUuid": "da20952f_c0c119e6",
+      "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_00a8711e",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
@@ -135,6 +171,24 @@
       "writtenOn": "2015-08-27T15:29:31Z",
       "side": 1,
       "message": "domain_name*\n\nsame comment applies throughout the file.",
+      "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_757d5a1b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 17254
+      },
+      "writtenOn": "2015-08-27T22:19:43Z",
+      "side": 1,
+      "message": "Added the variables which caused the exceptions",
+      "parentUuid": "da20952f_00a8711e",
       "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
