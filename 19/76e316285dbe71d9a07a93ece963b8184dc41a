@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 27 Aug 2015 08:13:19 +0000
+Reviewed-on: https://review.openstack.org/215337
+Project: openstack/keystone
+Branch: refs/heads/master
