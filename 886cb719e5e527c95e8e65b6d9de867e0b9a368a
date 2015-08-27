@@ -16,6 +16,24 @@
       "revId": "886cb719e5e527c95e8e65b6d9de867e0b9a368a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_afd3b637",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T13:57:00Z",
+      "side": 1,
+      "message": "doesn\u0027t hurt to add a bug, but it;s not required for those types of changes.",
+      "parentUuid": "da20952f_210cad93",
+      "revId": "886cb719e5e527c95e8e65b6d9de867e0b9a368a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
