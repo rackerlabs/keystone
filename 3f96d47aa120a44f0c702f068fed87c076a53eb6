@@ -34,6 +34,24 @@
       "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_fec41993",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-27T07:08:52Z",
+      "side": 1,
+      "message": "Looks like you are correct, I guess I have a personal preference for \u0027raises\u0027 (or at least to be consistent in a file), but, yep, either seem OK.",
+      "parentUuid": "da20952f_ca65e1e1",
+      "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
