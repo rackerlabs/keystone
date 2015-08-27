@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_3e20519b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-27T07:03:42Z",
+      "side": 1,
+      "message": "Leave one blank line after you finish brief explanation. makes easily readable.\n\nCloses-Bug: #1488451\n\ngood examples here https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "2bab4b41bcfbd13d6de8202bc5eff12ac6e40bf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
