@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_15450c16",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-08-27T17:04:20Z",
+      "side": 0,
+      "message": "do you also need to protect the initialization of this variable?",
+      "revId": "4a5a12c19f9be7e09f544d7264d496268ca0a851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
