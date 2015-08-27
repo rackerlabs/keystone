@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_4aa53b02",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-27T08:38:36Z",
+      "side": 1,
+      "message": "Since doc updating is also required per the provious review (https://review.openstack.org/#/c/121439/). \n\nSo, there are two patches to address it, one is about the doc (https://review.openstack.org/#/c/134125/) and one is about the code IMPL, here it is.",
+      "parentUuid": "fa1b9901_cf7f88dd",
+      "revId": "db0da3faa92e48ae847f2f1e519ed3b427ca3f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_b4c2ab83",
         "filename": "keystone/service.py",
         "patchSetId": 16
