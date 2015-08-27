@@ -158,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_2ccfb480",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/003_add_idp_id_to_revoke_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:42:57Z",
+      "side": 1,
+      "message": "there are two blank lines after the project import section http://docs.openstack.org/developer/hacking/#import-order-template",
+      "parentUuid": "da20952f_dbe4c73c",
+      "revId": "1632f5290511b569237d421e656b201c3c20140e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_585214df",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 4
