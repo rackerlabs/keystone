@@ -269,7 +269,7 @@ class Federation(core.Driver):
     def _get_mapping(self, session, mapping_id):
         mapping_ref = session.query(MappingModel).get(mapping_id)
         if not mapping_ref:
-            raise exception.MappingNotFound(mapping_id=mapping_id)
+            raise exception.UnexpectedError(mapping_id=mapping_id)
         return mapping_ref
 
     @sql.handle_conflicts(conflict_type='mapping')
