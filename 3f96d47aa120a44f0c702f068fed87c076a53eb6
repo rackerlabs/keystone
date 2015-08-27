@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_f4799530",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T09:44:31Z",
+      "side": 1,
+      "message": "Please correct file name.\n\ns/resources/resource",
+      "revId": "3f96d47aa120a44f0c702f068fed87c076a53eb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a7d1c8fd",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
