@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_0f03d543",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-27T08:32:09Z",
+      "side": 1,
+      "message": "The error will be found as long as someone override PASSLIB_MAX_PASSWORD_SIZE or hit the error just in case exceed this max value defined in the CONF?",
+      "revId": "a7235fc0511c643a8441efd3d21fc334535066e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
