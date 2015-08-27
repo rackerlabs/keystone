@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_3b99436f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-27T06:53:45Z",
+      "side": 1,
+      "message": "Closes-Bug: #1488715\n\ngood examples here https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_db4607bf",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-27T06:53:45Z",
+      "side": 1,
+      "message": "why return ?",
+      "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
