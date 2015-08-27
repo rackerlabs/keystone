@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_b65b3854",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-08-27T00:21:56Z",
+      "side": 1,
+      "message": "this is where the rules loop is and the continue if None.",
+      "revId": "5efe64e0d809968a1489ac2401503032ae2a3ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_14611739",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2015-08-26T13:44:39Z",
       "side": 1,
       "message": "perhaps out of scope for this change, but shouldn\u0027t we log something here about the bad config?\n\nand seemingly in scope for this change, shouldn\u0027t this be a continue (to the next requirement), not an outright abort? (if it should truly abort, then it should raise an exception, not exit cleanly)",
+      "revId": "5efe64e0d809968a1489ac2401503032ae2a3ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b62258b8",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-08-27T00:21:56Z",
+      "side": 1,
+      "message": "It may or may not be bad config. In my case it\u0027s not it\u0027s just a mapping handling multiple scenarios.\n\nThe loop here is around the multiple \"remote\" requirements, not each rule. If any one of the remote requirements fails to apply then the corresponding local should not be applied.\n\nReturn None is used here in the same way that if the any_one_of or not_any_of values would return false from _evaluate_requirements and then none below to indicate that these requirements don\u0027t match the incoming assertion.",
+      "parentUuid": "fa1b9901_14611739",
       "revId": "5efe64e0d809968a1489ac2401503032ae2a3ee1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
