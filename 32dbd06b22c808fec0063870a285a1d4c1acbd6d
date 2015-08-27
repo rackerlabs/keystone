@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_2cdc94e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:49:54Z",
+      "side": 1,
+      "message": "(nit) replace the period with a comma",
+      "revId": "32dbd06b22c808fec0063870a285a1d4c1acbd6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_acee6489",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:49:54Z",
+      "side": 1,
+      "message": "s/like v1 implemented// because i don\u0027t think v1 implemented v4",
+      "revId": "32dbd06b22c808fec0063870a285a1d4c1acbd6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_58a18793",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:49:54Z",
+      "side": 1,
+      "message": "Why is this up here instead of with the other imports?",
+      "revId": "32dbd06b22c808fec0063870a285a1d4c1acbd6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b8dd4316",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:49:54Z",
+      "side": 1,
+      "message": "This is using a non-public API",
+      "revId": "32dbd06b22c808fec0063870a285a1d4c1acbd6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f8c41b41",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:49:54Z",
+      "side": 1,
+      "message": "This is using a non-public API",
+      "revId": "32dbd06b22c808fec0063870a285a1d4c1acbd6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_18d9cf21",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:49:54Z",
+      "side": 1,
+      "message": "This is using a non-public API",
+      "revId": "32dbd06b22c808fec0063870a285a1d4c1acbd6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
