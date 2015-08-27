@@ -359,9 +359,11 @@ class Auth(controller.V2Controller):
         Returns a valid tenant_id if it exists, or None if not specified.
         """
         tenant_id = auth.get('tenantId')
-        if tenant_id and len(tenant_id) > CONF.max_param_size:
-            raise exception.ValidationSizeError(attribute='tenantId',
+        if tenant_id:
+            if len(tenant_id) > CONF.max_param_size: 
+                raise exception.ValidationSizeError(attribute='tenantId',
                                                 size=CONF.max_param_size)
+            return tenant_id
 
         tenant_name = auth.get('tenantName')
         if tenant_name and len(tenant_name) > CONF.max_param_size:
