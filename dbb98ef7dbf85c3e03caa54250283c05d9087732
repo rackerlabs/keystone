@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_044c1c41",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-27T07:58:50Z",
+      "side": 1,
+      "message": "i think there is no need to hightlight bound/unbound anymore.",
+      "revId": "dbb98ef7dbf85c3e03caa54250283c05d9087732",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
