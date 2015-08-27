@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_c9e94f1c",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "you can renamed the method as \u0027test_token_is_domain_scoped\u0027",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_89f3570a",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "you can remove new line here.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_29532be3",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "rename method to \u0027test_domain_is_unscoped\u0027",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a9cf3baf",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e90a13d2",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "rename method to \u0027test_token_is_for_federated_user\u0027",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a9141bf5",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_691e030e",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "rename method to \u0027test_token_is_not_keystoneToken_raises_exception\u0027",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_89dd9744",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_69ccc389",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "rename method to \u0027test_user_id_missing_in_keystoneToken_raises_exception\u0027",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_49e8dfe2",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-27T12:00:35Z",
+      "side": 1,
+      "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
