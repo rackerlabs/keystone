@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Workflow+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Rajesh Tailor <rajesh.tailor@nttdata.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Submitted-by: Jenkins
+Submitted-at: Thu, 27 Aug 2015 21:15:48 +0000
+Reviewed-on: https://review.openstack.org/216892
+Project: openstack/keystone
+Branch: refs/heads/master
