@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_954f0092",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "Lines these lines up with 22. So remove 2 of the leading spaces.",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_18948589",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "maybe lose the parens here. it looks odd in the rendered doc",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_386e29ca",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "Make these two sentences joined by an \u0027and\u0027 instead of a sentence staring with \u0027and\u0027.",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_789b41ca",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "hi dhu! is there a more standard path we can use?",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_58b0bdf4",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "In the config file this really isn\u0027t a list. The operator just specifies it multiple times. (Although I just checked how we document other multi-opts and we call then lists)",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7b26dbbb",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "What about your example below where L\u003dSan Jose? Do they just remove the spaces?",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3899496f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "This doesn\u0027t render correctly. It probably needs to be a code-block or you could point to the example you give below on line 92.\n\nhttp://docs-draft.openstack.org/70/156870/56/check/gate-keystone-docs/3992019//doc/build/html/configure_tokenless_x509.html",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b820f9f8",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "Python\n\n... and the same thing with and as above.",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_989ad513",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 56
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "This sentence feels off. keywords?",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_52a16893",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "The \"along with\" seems to indicate that the setting should contain the protocol and IdP.",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_124770bc",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "attribute name or environment variable? \u0027as a IdP\u0027 or \u0027by an IdP\u0027?",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_fd764d3d",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "s/is/are/",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7d99dd6d",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "s/here//",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_92406058",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "Is this a config error or a runtime error?",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b89b03c9",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "Missing a newline",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f8f17bce",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "It seems like this would be important for operators to see, so debug probably isn\u0027t right",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d8a6f7c0",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-27T13:34:49Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "9bacabed509045f4202419ba95d322739fd707e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
