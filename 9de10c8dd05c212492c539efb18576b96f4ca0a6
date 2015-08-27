@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_8c206a4b",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "no, this is basically very generic instructions on how to setup https with apache; it can be found easily from googling. But this link seems to be better organized and easy to follow, and one of the comments suggested to include it, so ... it\u0027s here :-)",
+      "parentUuid": "da20952f_02ee6b8b",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_e202576f",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "doesn\u0027t this fall under \"Prerequisites\"?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6cc1562e",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "Couple of these options are explicitly required for this tokenless, so I think it makes more sense to have a separated session for that.",
+      "parentUuid": "da20952f_e202576f",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_acce8e58",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "da20952f_c234f34b",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_82db5bed",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "Identity Provider* \n\nonly because this is documentation that will be referenced by users and they might not know what \u0027IdP\u0027 stands for.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8c3f0a25",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "good point. done.",
+      "parentUuid": "da20952f_82db5bed",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_cc11825f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "good point. done.",
+      "parentUuid": "da20952f_825efb43",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_0a132eb9",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-26T14:04:48Z",
       "side": 1,
       "message": "maybe say for the mapping the mapping_id is really user degined and doesn\u0027t matter, as opposed to idp_id.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_47bead00",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "fa1b9901_0a132eb9",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_c70b9d7c",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "da20952f_e23fb7d4",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_22360f04",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -132,6 +258,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e43ed1b7",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_22360f04",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_44745d9b",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa1b9901_2a663251",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_622c07ac",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -166,6 +328,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "add a new line here",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c4962d94",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_622c07ac",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_a48d397d",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_e216d754",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_4206a321",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -200,6 +398,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "add a new line here",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_64ee4124",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_4206a321",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_24f849e5",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_05ff5502",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_e50d8138",
         "filename": "doc/source/configure_tokenless_x509.rst",
         "patchSetId": 55
@@ -234,6 +468,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "same comment applies to this curl command",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_04cae5a1",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_e50d8138",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_44d0dd53",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_2504d913",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_853a85cc",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 55
@@ -268,6 +538,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "nit: indent this line to be under the \u0027If\u0027 above; \n\n    If it is True.... \n    validated but only the scope data.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_ad968792",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_853a85cc",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_a4e2199e",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_e5b821e8",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_c5aabd85",
         "filename": "keystone/exception.py",
         "patchSetId": 55
@@ -302,6 +608,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "nit: s/provided//",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e4ffb132",
+        "filename": "keystone/exception.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_c5aabd85",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -336,6 +660,24 @@
       "writtenOn": "2015-08-26T18:34:25Z",
       "side": 1,
       "message": "should an exception be raised here?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a42c59ac",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-08-27T03:51:32Z",
+      "side": 1,
+      "message": "exception should not be raised here. we just don\u0027t set auth context in the module, but we will let the request go on to the other modules in the pipeline.",
+      "parentUuid": "da20952f_857cc521",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
