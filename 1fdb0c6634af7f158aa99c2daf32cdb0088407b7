@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_0d8758b6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2761,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-08-27T10:42:49Z",
+      "side": 1,
+      "message": "won\u0027t the test run automatically, without this call?",
+      "revId": "1fdb0c6634af7f158aa99c2daf32cdb0088407b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
