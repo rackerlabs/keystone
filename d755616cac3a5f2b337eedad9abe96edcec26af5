@@ -33,6 +33,24 @@
       "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_1d4c61c6",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-27T13:20:58Z",
+      "side": 1,
+      "message": "This method will return the tenant_id, so if \u0027tenant_id\u0027 is already present in the auth object, we don\u0027t need get the tenant_id by name.",
+      "parentUuid": "da20952f_db4607bf",
+      "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
