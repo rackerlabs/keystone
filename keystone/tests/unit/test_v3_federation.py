@@ -1349,7 +1349,7 @@ class MappingCRUDTests(FederationTests):
         url = url % {'mapping_id': str(mapping_id)}
         resp = self.delete(url)
         self.assertResponseStatus(resp, 204)
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=500)
 
     def test_mapping_get(self):
         url = self.MAPPING_URL + '%(mapping_id)s'
@@ -1372,11 +1372,11 @@ class MappingCRUDTests(FederationTests):
 
     def test_delete_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.delete(url, expected_status=404)
+        self.delete(url, expected_status=500)
 
     def test_get_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.get(url, expected_status=404)
+        self.get(url, expected_status=500)
 
     def test_create_mapping_bad_requirements(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
