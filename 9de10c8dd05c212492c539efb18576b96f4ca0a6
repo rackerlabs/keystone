@@ -562,6 +562,74 @@
     },
     {
       "key": {
+        "uuid": "da20952f_2c5339e3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "so each reconfigurtion will require restarting the server(s) ? :(",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6c705173",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "where is this \"check_trusted_issuer\" option is defined? Apache?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_177f62ab",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "where do those values come from? who sets them?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4c7d4d1b",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "This would imply that both id and name must be always provided whereas the code seems to require just one of them.\n\n\"Neither Project Domain ID nor Project Domain Name was provided\" ?",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_e5b821e8",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 55
@@ -591,6 +659,40 @@
       "side": 1,
       "message": "done",
       "parentUuid": "da20952f_e5b821e8",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_cc639d19",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "You may want to use constant : federation.utils.UserType.EPHEMERAL",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4c5f8d41",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "Idea for another patch: provide this as a option in keystone-manage.",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -678,6 +780,57 @@
       "side": 1,
       "message": "exception should not be raised here. we just don\u0027t set auth context in the module, but we will let the request go on to the other modules in the pipeline.",
       "parentUuid": "da20952f_857cc521",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_376e2630",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "While the mapping engine is quite liberate we normally don\u0027t support domain_name, user_name. It\u0027s rather:\n\ndomain: {\n    \u0027id\u0027: id\n}\n\ndomain: {\n    \u0027name;: name\n}\n\nso unless you have a good argument I\u0027d stick with that notation.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_975ff271",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "if the user type is local and his user_id is specified you normally don\u0027t need domain.",
+      "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_9281404d",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-27T12:57:53Z",
+      "side": 1,
+      "message": "maybe copy this dictionary first? I am not sure.",
       "revId": "9de10c8dd05c212492c539efb18576b96f4ca0a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
