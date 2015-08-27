@@ -16,6 +16,24 @@
       "revId": "a7235fc0511c643a8441efd3d21fc334535066e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_1002fa6f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-27T17:31:38Z",
+      "side": 1,
+      "message": "Yes if someone overrides PASSLIB_MAX_PASSWORD_SIZE to be lower than the default (4096) or lower than what is set, then you\u0027ll get a config error.\n\nAnd even if PASSLIB_MAX_PASSWORD_SIZE is still at the default of 4096, if someone tries to use a value higher, it will result in a config error.",
+      "parentUuid": "da20952f_0f03d543",
+      "revId": "a7235fc0511c643a8441efd3d21fc334535066e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
