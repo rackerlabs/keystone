@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_3796ca93",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_c9e94f1c",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_89f3570a",
         "filename": "keystone/tests/unit/common/test_authorization.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-27T12:00:35Z",
       "side": 1,
       "message": "you can remove new line here.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f78b7266",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "da20952f_89f3570a",
       "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_77cd22b6",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "I renamed it to \"test_token_is_unscoped\"... not sure how a domain can be unscoped.",
+      "parentUuid": "da20952f_29532be3",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a9cf3baf",
         "filename": "keystone/tests/unit/common/test_authorization.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-27T12:00:35Z",
       "side": 1,
       "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_37c48a8f",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "da20952f_a9cf3baf",
       "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_374b2a2c",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_e90a13d2",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a9141bf5",
         "filename": "keystone/tests/unit/common/test_authorization.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-27T12:00:35Z",
       "side": 1,
       "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f75052d6",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "da20952f_a9141bf5",
       "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_1775c662",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_691e030e",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_89dd9744",
         "filename": "keystone/tests/unit/common/test_authorization.py",
         "patchSetId": 4
@@ -132,6 +258,24 @@
       "writtenOn": "2015-08-27T12:00:35Z",
       "side": 1,
       "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d76aee80",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "da20952f_89dd9744",
       "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_570d7ee6",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_69ccc389",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_49e8dfe2",
         "filename": "keystone/tests/unit/common/test_authorization.py",
         "patchSetId": 4
@@ -166,6 +328,24 @@
       "writtenOn": "2015-08-27T12:00:35Z",
       "side": 1,
       "message": "remove new line.",
+      "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_17fce6b6",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-28T23:49:47Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "da20952f_49e8dfe2",
       "revId": "768083f061ec6215338e39c4c7f7ee1cb64561df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
