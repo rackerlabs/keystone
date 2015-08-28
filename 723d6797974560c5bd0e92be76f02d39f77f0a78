@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_516a98b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-08-28T07:31:08Z",
+      "side": 1,
+      "message": "could you please report a bug for this change ?\n\nIMO since you are changing the exception type, you need to mention ApiImpact flag in commit message.",
+      "revId": "723d6797974560c5bd0e92be76f02d39f77f0a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
