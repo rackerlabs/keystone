@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_7ec3c5ed",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-28T19:43:04Z",
+      "side": 1,
+      "message": "empty context?",
+      "revId": "5ced3c77430d9a0bd871d5387c9aadb9df1c0060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
