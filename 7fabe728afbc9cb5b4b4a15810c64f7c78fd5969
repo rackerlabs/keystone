@@ -16,6 +16,23 @@
       "revId": "7fabe728afbc9cb5b4b4a15810c64f7c78fd5969",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b7168453",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-28T08:41:45Z",
+      "side": 1,
+      "message": "why not changing this then?",
+      "revId": "7fabe728afbc9cb5b4b4a15810c64f7c78fd5969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
