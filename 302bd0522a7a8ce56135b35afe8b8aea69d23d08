@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_c0bd7469",
+        "filename": "keystone/tests/unit/backend/endpoint_policy/test_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-28T08:11:45Z",
+      "side": 1,
+      "message": "same here, use addCleanup to clean the sample data.",
+      "revId": "302bd0522a7a8ce56135b35afe8b8aea69d23d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b1ce94b2",
+        "filename": "keystone/tests/unit/backend/endpoint_policy/test_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-28T08:11:45Z",
+      "side": 1,
+      "message": "this seems like the incomplete targets, could also given the full attributes but update with the a random value to assert the raise.",
+      "revId": "302bd0522a7a8ce56135b35afe8b8aea69d23d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_319cc468",
+        "filename": "keystone/tests/unit/backend/endpoint_policy/test_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-28T08:11:45Z",
+      "side": 1,
+      "message": "self.driver.get_policy_association maybe better in this context.",
+      "revId": "302bd0522a7a8ce56135b35afe8b8aea69d23d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
