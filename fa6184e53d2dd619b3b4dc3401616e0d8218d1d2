@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_ac8717d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-28T08:19:52Z",
+      "side": 1,
+      "message": "Closes-Bug: #",
+      "revId": "fa6184e53d2dd619b3b4dc3401616e0d8218d1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
