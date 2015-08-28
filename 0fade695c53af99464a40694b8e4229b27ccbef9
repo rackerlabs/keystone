@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_81d5151d",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "Needs more !!!!!!!!!!!!! (not really)\n\nNice paragraph.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_41b29d07",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "suggest \"outside of ecosystem\" is a bit broad. It is still probably part of the keystone ecosystem, maybe rephrase.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_41a93d8f",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "Yes!",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_017fc515",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "a and b are a bit snarky. suggest rephrase",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a196193d",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "You need the \u0027???\u0027 step if you want to be true to the meme, but this is generally good. Suggest moving to \"sit back and enjoy\" (strictly speaking \"profit\" is not something we imply in OpenSource)",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_01a6e5ad",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "I\u0027d remove \"typically here\" and replace with \"at least\"",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_21a3e99e",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "(NIT): will give -\u003e gives",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_61ea41ae",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "Explain what you mean by this in the sentence or drop it. What are the potential breaking changes, why wouldn\u0027t it just be another version?\n\nI would change to \"Some cases, such as critical security flaws, may require a change to be introduced that breaks compatibility. These special cases will be communicated as widely as possible via the typical OpenStack communication channels.\"",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a10b798d",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "(NIT) Suggest: When a driver version moves from \"deprecated\" to \"unsupported\" it will be removed from the keystone source tree.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_41585d8a",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "The \"it will no longer work\" and \"maybe for auditing\" seem a bit awkward and could be rephrased (NIT)",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e1e09198",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "(NIT) Suggest rephrasing to something less \"yours\" vs \"ours\" but ephasising that there should be minimal (or zero) impact keeping a method on the driver even if the new driver version doesn\u0027t use it.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_819755eb",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "Would move \"When possible\" to the start of the sentence example:\n\nWhen possible, we will provide a default implementation of the new method which will be added to previous supported driver versions.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_2189a9c9",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "(NIT) don\u0027t use the we\u0027d contraction use \"we will\" in this case (or past tense)",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a1c379ec",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "I think you accidentally a word before naive",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c17f8da9",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "(feel free to ignore) Suggest renaming these to:\n\nCatalogDriverBaseV12 or similar, i know... we are in catalog.core, but it will be more explicit. Same applies elsewhere.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_41429d69",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-28T22:26:59Z",
+      "side": 1,
+      "message": "Suggest docstring",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
