@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_1c964c93",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-28T22:41:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_06529fdd",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_59efff86",
         "filename": "keystone/resource/core.py",
         "patchSetId": 85
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-25T15:14:50Z",
       "side": 1,
       "message": "why?",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_dcb9b416",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-28T22:41:03Z",
+      "side": 1,
+      "message": "we\u0027ll never store a project like this one (is_domain\u003dFalse and domain_id\u003dNone), since the only projects that can have is_domain\u003dNone are the is_domain\u003dTrue projects that are root",
+      "parentUuid": "fa1b9901_59efff86",
       "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_e0137963",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-28T22:41:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_594b7f87",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_791e8371",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 85
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-25T15:14:50Z",
       "side": 1,
       "message": "nit: use a uuid and save it to a variable that is reused in other places.",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_124e043b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-28T22:41:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_791e8371",
       "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_3249c831",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-28T22:41:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_d90d4f3f",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_04403a33",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 85
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-25T15:14:50Z",
       "side": 1,
       "message": "newly*?",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9260d4a6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 2973,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-28T22:41:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_04403a33",
       "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
