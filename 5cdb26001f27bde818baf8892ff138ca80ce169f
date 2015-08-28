@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_92834e04",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-28T08:59:34Z",
+      "side": 1,
+      "message": "maybe rather than saying \"at the second level of the tree\" (since we don\u0027t know how many layers of domain there are), perhaps say \"that are immediate children of a project acting as a domain, and themselves have no children\".",
+      "revId": "5cdb26001f27bde818baf8892ff138ca80ce169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f22f2af4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-28T08:59:34Z",
+      "side": 1,
+      "message": "probably the more correct way of saying this is:\n\n\"Update of domain_is is deprecated and will be removed in M.\"\n\nI think you use this wording in the identity manager.",
+      "revId": "5cdb26001f27bde818baf8892ff138ca80ce169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
