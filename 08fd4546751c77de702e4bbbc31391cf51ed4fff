@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_06529fdd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 85
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-08-28T09:10:12Z",
+      "side": 1,
+      "message": "This message is confusing - the first sentence sounds like you can never create a regular project in the domain. Try and use more of the form of the message in the if clause above, e.g. perhaps something like:\n\n\u0027Cannot create project, since it\u0027s parent (%(domain_id)s) is acting as a domain, but the project\u0027s specified parent_id (%(parent_ref[\u0027id\u0027])s) does not match this domain_id.\u0027",
+      "revId": "08fd4546751c77de702e4bbbc31391cf51ed4fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_59efff86",
         "filename": "keystone/resource/core.py",
         "patchSetId": 85
