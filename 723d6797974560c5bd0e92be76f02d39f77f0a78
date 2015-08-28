@@ -16,6 +16,24 @@
       "revId": "723d6797974560c5bd0e92be76f02d39f77f0a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_57228853",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-08-28T08:30:55Z",
+      "side": 1,
+      "message": "report bug is okay, but this is still under discussion.",
+      "parentUuid": "da20952f_516a98b4",
+      "revId": "723d6797974560c5bd0e92be76f02d39f77f0a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
