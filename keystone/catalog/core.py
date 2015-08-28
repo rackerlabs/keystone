@@ -278,7 +278,7 @@ class Manager(manager.Manager):
 
 
 @six.add_metaclass(abc.ABCMeta)
-class Driver(object):
+class DriverV12(object):
     """Interface description for an Catalog driver."""
 
     def _get_list_limit(self):
@@ -543,3 +543,6 @@ class Driver(object):
                 v3_catalog.append(service_v3)
 
         return v3_catalog
+
+
+Driver = manager.create_legacy_driver(DriverV12)

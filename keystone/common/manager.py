@@ -104,3 +104,19 @@ class Manager(object):
         f = getattr(self.driver, name)
         setattr(self, name, f)
         return f
+
+
+def create_legacy_driver(driver_class):
+    module_name = driver_class.__module__
+    class_name = driver_class.__name__
+    class Driver(driver_class):
+
+        @versionutils.deprecated(
+            as_of=versionutils.deprecated.LIBERTY,
+            what='%s.Driver' % module_name,
+            in_favor_of='%s.%s' % (module_name, class_name),
+            remove_in=+2)
+        def __init__(self, *args, **kwargs):
+            super(Driver, self).__init__(*args, **kwargs)
+
+    return Driver
