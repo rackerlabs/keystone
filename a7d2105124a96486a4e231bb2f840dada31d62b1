@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da20952f_cbed6cb8",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-28T21:17:38Z",
+      "side": 1,
+      "message": "why is this commented out?",
+      "revId": "a7d2105124a96486a4e231bb2f840dada31d62b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_99739eb1",
         "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
         "patchSetId": 8
