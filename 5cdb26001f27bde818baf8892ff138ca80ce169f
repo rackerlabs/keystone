@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_d78f65ca",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-28T14:51:09Z",
+      "side": 1,
+      "message": "Isn\u0027t it a strict deprecation/removal chain? Are you sure we can drop it in M?",
+      "revId": "5cdb26001f27bde818baf8892ff138ca80ce169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_92834e04",
         "filename": "keystone/resource/core.py",
         "patchSetId": 8
