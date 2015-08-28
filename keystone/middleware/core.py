@@ -13,6 +13,7 @@
 # under the License.
 
 from oslo_config import cfg
+from oslo_context import context as oslo_context
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_middleware import sizelimit
@@ -195,6 +196,11 @@ class AuthContextMiddleware(wsgi.Middleware):
             raise exception.Unauthorized()
 
     def process_request(self, request):
+
+        # The request context stores itself in thread-local memory for logging.
+        oslo_context.RequestContext(
+            request_id=request.environ.get('openstack.request_id'))
+
         if AUTH_TOKEN_HEADER not in request.headers:
             LOG.debug(('Auth token not in the request header. '
                        'Will not build auth context.'))
