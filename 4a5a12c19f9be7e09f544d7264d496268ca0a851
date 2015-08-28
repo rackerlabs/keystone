@@ -16,6 +16,24 @@
       "revId": "4a5a12c19f9be7e09f544d7264d496268ca0a851",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_9fd1125a",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-08-28T10:07:21Z",
+      "side": 0,
+      "message": "Ideally - yes. It can be re-created on race condition during import in the moment when the module is already created but not yet in sys.modules. \nBut to the moment of get_key_value_store call KEY_VALUE_STORE_REGISTRY is already initialized and imported (it\u0027s latest instance). If it actually was the race condition, fantom variable will be swept by garbage collection and all threads will be using the same registry instance.\nIf some sleeping new thread awakens, it receives needed modules from sys.modules rather than actually re-importing them.",
+      "parentUuid": "da20952f_15450c16",
+      "revId": "4a5a12c19f9be7e09f544d7264d496268ca0a851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
