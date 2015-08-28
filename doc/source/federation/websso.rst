@@ -35,9 +35,17 @@ prevent man-in-the-middle (MITM) attacks.
 
 2. Update httpd vhost file with websso information.
 
-The `/v3/auth/OS-FEDERATION/websso/<protocol>` route must be protected by the
-chosen httpd module. This is performed so the request that originates from
-horizon will use the same identity provider that is configured in keystone.
+The `/v3/auth/OS-FEDERATION/websso/<protocol>` and
+`/v3/auth/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/websso`
+routes must be protected by the chosen httpd module. This is performed so the
+request that originates from horizon will use the same identity provider that
+is configured in keystone.
+
+.. WARNING::
+    By using the IdP specific route, a user will no longer leverage the Remote
+    ID of a specific Identity Provider, and will be unable to verify that the
+    Identity Provider is trusted, the mapping will remain as the only source of
+    controlling authorization.
 
 If `mod_shib` is used, then use the following as an example:
 
@@ -52,6 +60,11 @@ If `mod_shib` is used, then use the following as an example:
         Require valid-user
         ...
       </Location>
+      <Location ~ "/v3/auth/OS-FEDERATION/identity_providers/idp_1/protocols/saml2/websso">
+        AuthType shibboleth
+        Require valid-user
+        ...
+      </Location>
   </VirtualHost>
 
 If `mod_auth_openidc` is used, then use the following as an example:
@@ -61,10 +74,16 @@ If `mod_auth_openidc` is used, then use the following as an example:
   <VirtualHost *:5000>
 
       OIDCRedirectURI http://localhost:5000/v3/auth/OS-FEDERATION/websso/redirect
+      OIDCRedirectURI http://localhost:5000/v3/auth/OS-FEDERATION/identity_providers/idp_1/protocol/oidc/websso/redirect
 
       ...
 
       <Location ~ "/v3/auth/OS-FEDERATION/websso/oidc">
+        AuthType openid-connect
+        Require valid-user
+        ...
+      </Location>
+      <Location ~ "/v3/auth/OS-FEDERATION/identity_providers/idp_1/protocols/oidc/websso">
         AuthType openid-connect
         Require valid-user
         ...
@@ -87,6 +106,14 @@ If `mod_auth_kerb` is used, then use the following as an example:
         Krb5Keytab /etc/apache2/http.keytab
         ...
       </Location>
+      <Location ~ "/v3/auth/OS-FEDERATION/identity_providers/idp_1/protocols/kerberos/websso">
+        AuthType Kerberos
+        AuthName "Acme Corporation"
+        KrbMethodNegotiate on
+        KrbMethodK5Passwd off
+        Krb5Keytab /etc/apache2/http.keytab
+        ...
+      </Location>
   </VirtualHost>
 
 If `mod_auth_mellon` is used, then use the following as an example:
@@ -98,6 +125,12 @@ If `mod_auth_mellon` is used, then use the following as an example:
       ...
 
       <Location ~ "/v3/auth/OS-FEDERATION/websso/saml2">
+        AuthType Mellon
+        MellonEnable auth
+        Require valid-user
+        ...
+      </Location>
+      <Location ~ "/v3/auth/OS-FEDERATION/identity_providers/idp_1/protocols/saml2/websso">
         AuthType Mellon
         MellonEnable auth
         Require valid-user
