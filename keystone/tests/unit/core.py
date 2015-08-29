@@ -32,7 +32,6 @@ from oslotest import mockpatch
 import six
 from sqlalchemy import exc
 from testtools import testcase
-import webob
 
 # NOTE(ayoung)
 # environment.use_eventlet must run before any of the code that will
@@ -200,36 +199,6 @@ class UnexpectedExit(Exception):
 class BadLog(Exception):
     """Raised on invalid call to logging (parameter mismatch)."""
     pass
-
-
-class TestClient(object):
-    def __init__(self, app=None, token=None):
-        self.app = app
-        self.token = token
-
-    def request(self, method, path, headers=None, body=None):
-        if headers is None:
-            headers = {}
-
-        if self.token:
-            headers.setdefault('X-Auth-Token', self.token)
-
-        req = webob.Request.blank(path)
-        req.method = method
-        for k, v in headers.items():
-            req.headers[k] = v
-        if body:
-            req.body = body
-        return req.get_response(self.app)
-
-    def get(self, path, headers=None):
-        return self.request('GET', path=path, headers=headers)
-
-    def post(self, path, headers=None, body=None):
-        return self.request('POST', path=path, headers=headers, body=body)
-
-    def put(self, path, headers=None, body=None):
-        return self.request('PUT', path=path, headers=headers, body=body)
 
 
 class BaseTestCase(oslotest.BaseTestCase):
