@@ -24,8 +24,10 @@ from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource as cadfresource
 
+from keystone import exception
 from keystone import notifications
 from keystone.tests import unit
+from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_v3
 
 
@@ -36,6 +38,8 @@ CREATED_OPERATION = notifications.ACTIONS.created
 UPDATED_OPERATION = notifications.ACTIONS.updated
 DELETED_OPERATION = notifications.ACTIONS.deleted
 DISABLED_OPERATION = notifications.ACTIONS.disabled
+
+DEFAULT_DOMAIN_ID = 'default'
 
 
 class ArbitraryException(Exception):
@@ -204,7 +208,7 @@ class NotificationsTestCase(unit.BaseTestCase):
             mocked.assert_called_once_with(*expected_args)
 
 
-class BaseNotificationTest(test_v3.RestfulTestCase):
+class BaseNotificationTest(unit.TestCase):
 
     def setUp(self):
         super(BaseNotificationTest, self).setUp()
@@ -248,6 +252,36 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
 
         self.useFixture(mockpatch.PatchObject(
             notifications, '_send_audit_notification', fake_audit))
+
+        self.useFixture(database.Database())
+        self.load_backends()
+
+        self._populate_default_domain()
+        self.domain_id = uuid.uuid4().hex
+        self.domain = unit.new_domain_ref()
+        self.domain['id'] = self.domain_id
+        self.resource_api.create_domain(self.domain_id, self.domain)
+
+        service = unit.new_service_ref()
+        self.service_id = service['id']
+        self.catalog_api.create_service(service['id'], service)
+
+    def _populate_default_domain(self):
+        if CONF.database.connection == unit.IN_MEM_DB_CONN_STRING:
+            # NOTE(morganfainberg): If an in-memory db is being used, be sure
+            # to populate the default domain, this is typically done by
+            # a migration, but the in-mem db uses model definitions  to create
+            # the schema (no migrations are run).
+            try:
+                self.resource_api.get_domain(DEFAULT_DOMAIN_ID)
+            except exception.DomainNotFound:
+                domain = {'description': (u'Owns users and tenants (i.e. '
+                                          u'projects) available on Identity '
+                                          u'API v2.'),
+                          'enabled': True,
+                          'id': DEFAULT_DOMAIN_ID,
+                          'name': u'Default'}
+                self.resource_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
     def _assert_last_note(self, resource_id, operation, resource_type):
         # NOTE(stevemar): If 'basic' format is not used, then simply
@@ -308,14 +342,14 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
 class NotificationsForEntities(BaseNotificationTest):
 
     def test_create_group(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = unit.new_group_ref(domain_id=self.domain_id)
         group_ref = self.identity_api.create_group(group_ref)
         self._assert_last_note(group_ref['id'], CREATED_OPERATION, 'group')
         self._assert_last_audit(group_ref['id'], CREATED_OPERATION, 'group',
                                 cadftaxonomy.SECURITY_GROUP)
 
     def test_create_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         self._assert_last_note(
             project_ref['id'], CREATED_OPERATION, 'project')
@@ -323,27 +357,27 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'project', cadftaxonomy.SECURITY_PROJECT)
 
     def test_create_role(self):
-        role_ref = self.new_role_ref()
+        role_ref = unit.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
         self._assert_last_note(role_ref['id'], CREATED_OPERATION, 'role')
         self._assert_last_audit(role_ref['id'], CREATED_OPERATION, 'role',
                                 cadftaxonomy.SECURITY_ROLE)
 
     def test_create_user(self):
-        user_ref = self.new_user_ref(domain_id=self.domain_id)
+        user_ref = unit.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         self._assert_last_note(user_ref['id'], CREATED_OPERATION, 'user')
         self._assert_last_audit(user_ref['id'], CREATED_OPERATION, 'user',
                                 cadftaxonomy.SECURITY_ACCOUNT_USER)
 
     def test_create_trust(self):
-        trustor = self.new_user_ref(domain_id=self.domain_id)
+        trustor = unit.new_user_ref(domain_id=self.domain_id)
         trustor = self.identity_api.create_user(trustor)
-        trustee = self.new_user_ref(domain_id=self.domain_id)
+        trustee = unit.new_user_ref(domain_id=self.domain_id)
         trustee = self.identity_api.create_user(trustee)
-        role_ref = self.new_role_ref()
+        role_ref = unit.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
-        trust_ref = self.new_trust_ref(trustor['id'],
+        trust_ref = unit.new_trust_ref(trustor['id'],
                                        trustee['id'])
         self.trust_api.create_trust(trust_ref['id'],
                                     trust_ref,
@@ -354,7 +388,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'OS-TRUST:trust', cadftaxonomy.SECURITY_TRUST)
 
     def test_delete_group(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = unit.new_group_ref(domain_id=self.domain_id)
         group_ref = self.identity_api.create_group(group_ref)
         self.identity_api.delete_group(group_ref['id'])
         self._assert_last_note(group_ref['id'], DELETED_OPERATION, 'group')
@@ -362,7 +396,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_GROUP)
 
     def test_delete_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         self.resource_api.delete_project(project_ref['id'])
         self._assert_last_note(
@@ -371,7 +405,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'project', cadftaxonomy.SECURITY_PROJECT)
 
     def test_delete_role(self):
-        role_ref = self.new_role_ref()
+        role_ref = unit.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
         self.role_api.delete_role(role_ref['id'])
         self._assert_last_note(role_ref['id'], DELETED_OPERATION, 'role')
@@ -379,7 +413,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_ROLE)
 
     def test_delete_user(self):
-        user_ref = self.new_user_ref(domain_id=self.domain_id)
+        user_ref = unit.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         self.identity_api.delete_user(user_ref['id'])
         self._assert_last_note(user_ref['id'], DELETED_OPERATION, 'user')
@@ -387,14 +421,14 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_ACCOUNT_USER)
 
     def test_create_domain(self):
-        domain_ref = self.new_domain_ref()
+        domain_ref = unit.new_domain_ref()
         self.resource_api.create_domain(domain_ref['id'], domain_ref)
         self._assert_last_note(domain_ref['id'], CREATED_OPERATION, 'domain')
         self._assert_last_audit(domain_ref['id'], CREATED_OPERATION, 'domain',
                                 cadftaxonomy.SECURITY_DOMAIN)
 
     def test_update_domain(self):
-        domain_ref = self.new_domain_ref()
+        domain_ref = unit.new_domain_ref()
         self.resource_api.create_domain(domain_ref['id'], domain_ref)
         domain_ref['description'] = uuid.uuid4().hex
         self.resource_api.update_domain(domain_ref['id'], domain_ref)
@@ -403,7 +437,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_DOMAIN)
 
     def test_delete_domain(self):
-        domain_ref = self.new_domain_ref()
+        domain_ref = unit.new_domain_ref()
         self.resource_api.create_domain(domain_ref['id'], domain_ref)
         domain_ref['enabled'] = False
         self.resource_api.update_domain(domain_ref['id'], domain_ref)
@@ -413,12 +447,12 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_DOMAIN)
 
     def test_delete_trust(self):
-        trustor = self.new_user_ref(domain_id=self.domain_id)
+        trustor = unit.new_user_ref(domain_id=self.domain_id)
         trustor = self.identity_api.create_user(trustor)
-        trustee = self.new_user_ref(domain_id=self.domain_id)
+        trustee = unit.new_user_ref(domain_id=self.domain_id)
         trustee = self.identity_api.create_user(trustee)
-        role_ref = self.new_role_ref()
-        trust_ref = self.new_trust_ref(trustor['id'], trustee['id'])
+        role_ref = unit.new_role_ref()
+        trust_ref = unit.new_trust_ref(trustor['id'], trustee['id'])
         self.trust_api.create_trust(trust_ref['id'],
                                     trust_ref,
                                     [role_ref])
@@ -429,7 +463,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'OS-TRUST:trust', cadftaxonomy.SECURITY_TRUST)
 
     def test_create_endpoint(self):
-        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id)
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self._assert_notify_sent(endpoint_ref['id'], CREATED_OPERATION,
                                  'endpoint')
@@ -437,7 +471,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
 
     def test_update_endpoint(self):
-        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id)
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self.catalog_api.update_endpoint(endpoint_ref['id'], endpoint_ref)
         self._assert_notify_sent(endpoint_ref['id'], UPDATED_OPERATION,
@@ -446,7 +480,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
 
     def test_delete_endpoint(self):
-        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id)
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self.catalog_api.delete_endpoint(endpoint_ref['id'])
         self._assert_notify_sent(endpoint_ref['id'], DELETED_OPERATION,
@@ -455,7 +489,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
 
     def test_create_service(self):
-        service_ref = self.new_service_ref()
+        service_ref = unit.new_service_ref()
         self.catalog_api.create_service(service_ref['id'], service_ref)
         self._assert_notify_sent(service_ref['id'], CREATED_OPERATION,
                                  'service')
@@ -463,7 +497,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'service', cadftaxonomy.SECURITY_SERVICE)
 
     def test_update_service(self):
-        service_ref = self.new_service_ref()
+        service_ref = unit.new_service_ref()
         self.catalog_api.create_service(service_ref['id'], service_ref)
         self.catalog_api.update_service(service_ref['id'], service_ref)
         self._assert_notify_sent(service_ref['id'], UPDATED_OPERATION,
@@ -472,7 +506,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'service', cadftaxonomy.SECURITY_SERVICE)
 
     def test_delete_service(self):
-        service_ref = self.new_service_ref()
+        service_ref = unit.new_service_ref()
         self.catalog_api.create_service(service_ref['id'], service_ref)
         self.catalog_api.delete_service(service_ref['id'])
         self._assert_notify_sent(service_ref['id'], DELETED_OPERATION,
@@ -481,7 +515,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'service', cadftaxonomy.SECURITY_SERVICE)
 
     def test_create_region(self):
-        region_ref = self.new_region_ref()
+        region_ref = unit.new_region_ref()
         self.catalog_api.create_region(region_ref)
         self._assert_notify_sent(region_ref['id'], CREATED_OPERATION,
                                  'region')
@@ -489,7 +523,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'region', cadftaxonomy.SECURITY_REGION)
 
     def test_update_region(self):
-        region_ref = self.new_region_ref()
+        region_ref = unit.new_region_ref()
         self.catalog_api.create_region(region_ref)
         self.catalog_api.update_region(region_ref['id'], region_ref)
         self._assert_notify_sent(region_ref['id'], UPDATED_OPERATION,
@@ -498,7 +532,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'region', cadftaxonomy.SECURITY_REGION)
 
     def test_delete_region(self):
-        region_ref = self.new_region_ref()
+        region_ref = unit.new_region_ref()
         self.catalog_api.create_region(region_ref)
         self.catalog_api.delete_region(region_ref['id'])
         self._assert_notify_sent(region_ref['id'], DELETED_OPERATION,
@@ -507,7 +541,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'region', cadftaxonomy.SECURITY_REGION)
 
     def test_create_policy(self):
-        policy_ref = self.new_policy_ref()
+        policy_ref = unit.new_policy_ref()
         self.policy_api.create_policy(policy_ref['id'], policy_ref)
         self._assert_notify_sent(policy_ref['id'], CREATED_OPERATION,
                                  'policy')
@@ -515,7 +549,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'policy', cadftaxonomy.SECURITY_POLICY)
 
     def test_update_policy(self):
-        policy_ref = self.new_policy_ref()
+        policy_ref = unit.new_policy_ref()
         self.policy_api.create_policy(policy_ref['id'], policy_ref)
         self.policy_api.update_policy(policy_ref['id'], policy_ref)
         self._assert_notify_sent(policy_ref['id'], UPDATED_OPERATION,
@@ -524,7 +558,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'policy', cadftaxonomy.SECURITY_POLICY)
 
     def test_delete_policy(self):
-        policy_ref = self.new_policy_ref()
+        policy_ref = unit.new_policy_ref()
         self.policy_api.create_policy(policy_ref['id'], policy_ref)
         self.policy_api.delete_policy(policy_ref['id'])
         self._assert_notify_sent(policy_ref['id'], DELETED_OPERATION,
@@ -533,7 +567,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'policy', cadftaxonomy.SECURITY_POLICY)
 
     def test_disable_domain(self):
-        domain_ref = self.new_domain_ref()
+        domain_ref = unit.new_domain_ref()
         self.resource_api.create_domain(domain_ref['id'], domain_ref)
         domain_ref['enabled'] = False
         self.resource_api.update_domain(domain_ref['id'], domain_ref)
@@ -541,7 +575,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                  public=False)
 
     def test_disable_of_disabled_domain_does_not_notify(self):
-        domain_ref = self.new_domain_ref()
+        domain_ref = unit.new_domain_ref()
         domain_ref['enabled'] = False
         self.resource_api.create_domain(domain_ref['id'], domain_ref)
         # The domain_ref above is not changed during the create process. We
@@ -551,7 +585,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                      public=False)
 
     def test_update_group(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = unit.new_group_ref(domain_id=self.domain_id)
         group_ref = self.identity_api.create_group(group_ref)
         self.identity_api.update_group(group_ref['id'], group_ref)
         self._assert_last_note(group_ref['id'], UPDATED_OPERATION, 'group')
@@ -559,7 +593,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_GROUP)
 
     def test_update_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         self.resource_api.update_project(project_ref['id'], project_ref)
         self._assert_notify_sent(
@@ -568,7 +602,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'project', cadftaxonomy.SECURITY_PROJECT)
 
     def test_disable_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         project_ref['enabled'] = False
         self.resource_api.update_project(project_ref['id'], project_ref)
@@ -576,7 +610,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                  public=False)
 
     def test_disable_of_disabled_project_does_not_notify(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         project_ref['enabled'] = False
         self.resource_api.create_project(project_ref['id'], project_ref)
         # The project_ref above is not changed during the create process. We
@@ -586,7 +620,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                      public=False)
 
     def test_update_project_does_not_send_disable(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         project_ref['enabled'] = True
         self.resource_api.update_project(project_ref['id'], project_ref)
@@ -595,7 +629,7 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_notify_not_sent(project_ref['id'], 'disabled', 'project')
 
     def test_update_role(self):
-        role_ref = self.new_role_ref()
+        role_ref = unit.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
         self.role_api.update_role(role_ref['id'], role_ref)
         self._assert_last_note(role_ref['id'], UPDATED_OPERATION, 'role')
@@ -603,7 +637,7 @@ class NotificationsForEntities(BaseNotificationTest):
                                 cadftaxonomy.SECURITY_ROLE)
 
     def test_update_user(self):
-        user_ref = self.new_user_ref(domain_id=self.domain_id)
+        user_ref = unit.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assert_last_note(user_ref['id'], UPDATED_OPERATION, 'user')
@@ -612,7 +646,7 @@ class NotificationsForEntities(BaseNotificationTest):
 
     def test_config_option_no_events(self):
         self.config_fixture.config(notification_format='basic')
-        role_ref = self.new_role_ref()
+        role_ref = unit.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
         # The regular notifications will still be emitted, since they are
         # used for callback handling.
@@ -627,8 +661,58 @@ class CADFNotificationsForEntities(NotificationsForEntities):
         super(CADFNotificationsForEntities, self).setUp()
         self.config_fixture.config(notification_format='cadf')
 
+
+class CADFNotificationsInitiatorTests(test_v3.RestfulTestCase):
+    def setUp(self):
+        super(CADFNotificationsInitiatorTests, self).setUp()
+        self.config_fixture.config(notification_format='cadf')
+
+        self._audits = []
+
+        def fake_audit(action, initiator, outcome, target,
+                       event_type, **kwargs):
+            service_security = cadftaxonomy.SERVICE_SECURITY
+
+            event = eventfactory.EventFactory().new_event(
+                eventType=cadftype.EVENTTYPE_ACTIVITY,
+                outcome=outcome,
+                action=action,
+                initiator=initiator,
+                target=target,
+                observer=cadfresource.Resource(typeURI=service_security))
+
+            for key, value in kwargs.items():
+                setattr(event, key, value)
+
+            audit = {
+                'payload': event.as_dict(),
+                'event_type': event_type,
+                'send_notification_called': True}
+            self._audits.append(audit)
+
+        self.useFixture(mockpatch.PatchObject(
+            notifications, '_send_audit_notification', fake_audit))
+
+    def _assert_last_audit(self, resource_id, operation, resource_type,
+                           target_uri):
+        # NOTE(stevemar): If 'cadf' format is not used, then simply
+        # return since this assertion is not valid.
+        if CONF.notification_format != 'cadf':
+            return
+        self.assertTrue(len(self._audits) > 0)
+        audit = self._audits[-1]
+        payload = audit['payload']
+        self.assertEqual(resource_id, payload['resource_info'])
+        action = '%s.%s' % (operation, resource_type)
+        self.assertEqual(action, payload['action'])
+        self.assertEqual(target_uri, payload['target']['typeURI'])
+        self.assertEqual(resource_id, payload['target']['id'])
+        event_type = '%s.%s.%s' % ('identity', resource_type, operation)
+        self.assertEqual(event_type, audit['event_type'])
+        self.assertTrue(audit['send_notification_called'])
+
     def test_initiator_data_is_set(self):
-        ref = self.new_domain_ref()
+        ref = unit.new_domain_ref()
         resp = self.post('/domains', body={'domain': ref})
         resource_id = resp.result.get('domain').get('id')
         self._assert_last_audit(resource_id, CREATED_OPERATION, 'domain',
@@ -640,11 +724,37 @@ class CADFNotificationsForEntities(NotificationsForEntities):
         self.assertEqual(self.project_id, payload['initiator']['project_id'])
 
 
-class TestEventCallbacks(test_v3.RestfulTestCase):
+class TestEventCallbacks(unit.TestCase):
 
     def setUp(self):
         super(TestEventCallbacks, self).setUp()
         self.has_been_called = False
+
+        self.useFixture(database.Database())
+        self.load_backends()
+
+        self._populate_default_domain()
+        self.domain_id = uuid.uuid4().hex
+        self.domain = unit.new_domain_ref()
+        self.domain['id'] = self.domain_id
+        self.resource_api.create_domain(self.domain_id, self.domain)
+
+    def _populate_default_domain(self):
+        if CONF.database.connection == unit.IN_MEM_DB_CONN_STRING:
+            # NOTE(morganfainberg): If an in-memory db is being used, be sure
+            # to populate the default domain, this is typically done by
+            # a migration, but the in-mem db uses model definitions  to create
+            # the schema (no migrations are run).
+            try:
+                self.resource_api.get_domain(DEFAULT_DOMAIN_ID)
+            except exception.DomainNotFound:
+                domain = {'description': (u'Owns users and tenants (i.e. '
+                                          u'projects) available on Identity '
+                                          u'API v2.'),
+                          'enabled': True,
+                          'id': DEFAULT_DOMAIN_ID,
+                          'name': u'Default'}
+                self.resource_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
     def _project_deleted_callback(self, service, resource_type, operation,
                                   payload):
@@ -656,7 +766,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
     def test_notification_received(self):
         callback = register_callback(CREATED_OPERATION, 'project')
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         self.assertTrue(callback.called)
 
@@ -701,7 +811,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
                 callback_called.append(True)
 
         Foo()
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         self.assertEqual([True], callback_called)
 
@@ -724,7 +834,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
                 callback_called.append('cb1')
 
         Foo()
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
         self.assertItemsEqual(['cb1', 'cb0'], callback_called)
 
@@ -766,7 +876,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
         # something like:
         #     self.assertRaises(TypeError, Foo)
         Foo()
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
         self.assertRaises(TypeError, self.resource_api.create_project,
                           project_ref['id'], project_ref)
 
@@ -920,7 +1030,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                                    user=self.user_id)
 
     def test_group_domain_grant(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = unit.new_group_ref(domain_id=self.domain_id)
         group = self.identity_api.create_group(group_ref)
         self.identity_api.add_user_to_group(self.user_id, group['id'])
         url = ('/domains/%s/groups/%s/roles/%s' %
@@ -934,7 +1044,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         # A notification is sent when add_role_to_user_and_project is called on
         # the assignment manager.
 
-        project_ref = self.new_project_ref(self.domain_id)
+        project_ref = unit.new_project_ref(self.domain_id)
         project = self.resource_api.create_project(
             project_ref['id'], project_ref)
         tenant_id = project['id']
