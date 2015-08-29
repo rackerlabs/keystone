@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_e0c2c633",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-29T02:45:42Z",
+      "side": 1,
+      "message": "this is about as vague as vague can get :)\n\nThe reason why we want to warn the reader (maybe use WARNING instead of NOTE?) is that now keystone will accept any assertions from any identity provider at this endpoint. Before, the assertion had to have identifying information in the form of the remote-id. If by some chance, the assertion from Coke actually works on a Pepsi IdP, then that\u0027s pretty bad.\n\nhow about...\n\nBy using the IdP specific route, a user will no longer leverage the Remote ID of n Identity Provider, and will be unable to verify that the Identity Provider is trusted, the mapping will remain as the only source of controlling authorization.",
+      "revId": "3309ce986efac37f02b1cadff38be05e18418a87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
