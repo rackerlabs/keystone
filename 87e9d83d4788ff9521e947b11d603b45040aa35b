@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_a5da9249",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-08-29T23:54:37Z",
+      "side": 1,
+      "message": "can this inherit BaseNotificationTestCase instead? then you won\u0027t have to re-write the _populate_default_domain method",
+      "revId": "87e9d83d4788ff9521e947b11d603b45040aa35b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
