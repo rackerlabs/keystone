@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_746c33d0",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-29T16:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_dcd6ddc2",
+      "revId": "e8c22ae3db07c05c3acb53e3da39507044708f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_dcf33d9e",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-24T14:08:03Z",
       "side": 1,
       "message": "NIT: \"for a federated user\" or \"federated users.\"",
+      "revId": "e8c22ae3db07c05c3acb53e3da39507044708f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d47bbf8a",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-29T16:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_dcf33d9e",
       "revId": "e8c22ae3db07c05c3acb53e3da39507044708f87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
