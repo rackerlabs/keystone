@@ -16,6 +16,24 @@
       "revId": "87e9d83d4788ff9521e947b11d603b45040aa35b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8bcd1d87",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-30T03:18:14Z",
+      "side": 1,
+      "message": "then it would run all the testcases again. This calls for either a mixin or extract the function so it can be shared. I\u0027ll aim at extracting a function since mixins are harder to reason about.",
+      "parentUuid": "da20952f_a5da9249",
+      "revId": "87e9d83d4788ff9521e947b11d603b45040aa35b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
