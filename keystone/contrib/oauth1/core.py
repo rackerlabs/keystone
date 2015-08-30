@@ -199,7 +199,7 @@ class Manager(manager.Manager):
 
 
 @six.add_metaclass(abc.ABCMeta)
-class Driver(object):
+class DriverV12(object):
     """Interface description for an OAuth1 driver."""
 
     @abc.abstractmethod
@@ -362,3 +362,6 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+
+Driver = manager.create_legacy_driver(DriverV12)
