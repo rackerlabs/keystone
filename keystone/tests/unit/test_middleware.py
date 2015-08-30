@@ -16,7 +16,7 @@ from oslo_config import cfg
 import webob
 
 from keystone import middleware
-from keystone.tests import unit as tests
+from keystone.tests import unit
 
 
 CONF = cfg.CONF
@@ -40,7 +40,7 @@ def make_response(**kwargs):
     return webob.Response(body)
 
 
-class TokenAuthMiddlewareTest(tests.TestCase):
+class TokenAuthMiddlewareTest(unit.TestCase):
     def test_request(self):
         req = make_request()
         req.headers[middleware.AUTH_TOKEN_HEADER] = 'MAGIC'
@@ -49,7 +49,7 @@ class TokenAuthMiddlewareTest(tests.TestCase):
         self.assertEqual('MAGIC', context['token_id'])
 
 
-class AdminTokenAuthMiddlewareTest(tests.TestCase):
+class AdminTokenAuthMiddlewareTest(unit.TestCase):
     def test_request_admin(self):
         req = make_request()
         req.headers[middleware.AUTH_TOKEN_HEADER] = CONF.admin_token
@@ -65,7 +65,7 @@ class AdminTokenAuthMiddlewareTest(tests.TestCase):
         self.assertFalse(context['is_admin'])
 
 
-class PostParamsMiddlewareTest(tests.TestCase):
+class PostParamsMiddlewareTest(unit.TestCase):
     def test_request_with_params(self):
         req = make_request(body="arg1=one", method='POST')
         middleware.PostParamsMiddleware(None).process_request(req)
@@ -73,7 +73,7 @@ class PostParamsMiddlewareTest(tests.TestCase):
         self.assertEqual({"arg1": "one"}, params)
 
 
-class JsonBodyMiddlewareTest(tests.TestCase):
+class JsonBodyMiddlewareTest(unit.TestCase):
     def test_request_with_params(self):
         req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
                            content_type='application/json',

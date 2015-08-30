@@ -15,7 +15,7 @@
 import uuid
 
 from keystone import catalog
-from keystone.tests import unit as tests
+from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import rest
 
@@ -213,7 +213,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
                                   adminurl=invalid_url)
 
 
-class TestV2CatalogAPISQL(tests.TestCase):
+class TestV2CatalogAPISQL(unit.TestCase):
 
     def setUp(self):
         super(TestV2CatalogAPISQL, self).setUp()

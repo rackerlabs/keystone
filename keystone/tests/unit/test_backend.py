@@ -28,7 +28,7 @@ from testtools import matchers
 from keystone.catalog import core
 from keystone.common import driver_hints
 from keystone import exception
-from keystone.tests import unit as tests
+from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
 from keystone.tests.unit import utils as test_utils
@@ -227,7 +227,7 @@ class IdentityTests(object):
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
 
-    @tests.skip_if_cache_disabled('identity')
+    @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user(self):
         user = {
             'name': uuid.uuid4().hex.lower(),
@@ -279,7 +279,7 @@ class IdentityTests(object):
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
 
-    @tests.skip_if_cache_disabled('identity')
+    @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user_by_name(self):
         user = {
             'name': uuid.uuid4().hex.lower(),
@@ -2162,7 +2162,7 @@ class IdentityTests(object):
         self.assertIn(self.tenant_mtu['id'], project_ids)
         self.assertIn(self.tenant_service['id'], project_ids)
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_list_projects_for_alternate_domain(self):
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(domain1['id'], domain1)
@@ -2771,7 +2771,7 @@ class IdentityTests(object):
                           uuid.uuid4().hex,
                           DEFAULT_DOMAIN_ID)
 
-    @tests.skip_if_cache_disabled('identity')
+    @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_group_crud(self):
         group = {'domain_id': DEFAULT_DOMAIN_ID, 'name': uuid.uuid4().hex}
         group = self.identity_api.create_group(group)
@@ -2846,7 +2846,7 @@ class IdentityTests(object):
                           group1['id'],
                           group1)
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_project_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -2947,7 +2947,7 @@ class IdentityTests(object):
                           project['id'],
                           project)
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_create_leaf_project_with_different_domain(self):
         root_project = {'id': uuid.uuid4().hex,
                         'name': uuid.uuid4().hex,
@@ -3162,7 +3162,7 @@ class IdentityTests(object):
                           self.resource_api.get_domain,
                           domain['id'])
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_create_domain_case_sensitivity(self):
         # create a ref with a lowercase name
         ref = {
@@ -3297,8 +3297,8 @@ class IdentityTests(object):
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(3, len(user_projects))
 
-    @tests.skip_if_cache_disabled('resource')
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_cache_disabled('resource')
+    @unit.skip_if_no_multiple_domains_support
     def test_domain_rename_invalidates_get_domain_by_name_cache(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -3312,7 +3312,7 @@ class IdentityTests(object):
                           self.resource_api.get_domain_by_name,
                           domain_name)
 
-    @tests.skip_if_cache_disabled('resource')
+    @unit.skip_if_cache_disabled('resource')
     def test_cache_layer_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -3367,8 +3367,8 @@ class IdentityTests(object):
                           self.resource_api.get_domain,
                           domain_id)
 
-    @tests.skip_if_cache_disabled('resource')
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_cache_disabled('resource')
+    @unit.skip_if_no_multiple_domains_support
     def test_project_rename_invalidates_get_project_by_name_cache(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -3387,8 +3387,8 @@ class IdentityTests(object):
                           project_name,
                           domain['id'])
 
-    @tests.skip_if_cache_disabled('resource')
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_cache_disabled('resource')
+    @unit.skip_if_no_multiple_domains_support
     def test_cache_layer_project_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -3500,7 +3500,7 @@ class IdentityTests(object):
             group_id=uuid.uuid4().hex,
             project_id=self.tenant_bar['id'])
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_get_default_domain_by_name(self):
         domain_name = 'default'
 
@@ -4193,7 +4193,7 @@ class TokenTests(object):
         self.assertEqual(1, len(tokens))
         self.assertIn(token_id, tokens)
 
-    @tests.skip_if_cache_disabled('token')
+    @unit.skip_if_cache_disabled('token')
     def test_revocation_list_cache(self):
         expire_time = timeutils.utcnow() + datetime.timedelta(minutes=10)
         token_id = uuid.uuid4().hex
@@ -4623,7 +4623,7 @@ class CatalogTests(object):
         for region in regions:
             self.assertEqual(parent_id, region['parent_region_id'])
 
-    @tests.skip_if_cache_disabled('catalog')
+    @unit.skip_if_cache_disabled('catalog')
     def test_cache_layer_region_crud(self):
         region_id = uuid.uuid4().hex
         new_region = {
@@ -4651,7 +4651,7 @@ class CatalogTests(object):
         self.assertRaises(exception.RegionNotFound,
                           self.catalog_api.get_region, region_id)
 
-    @tests.skip_if_cache_disabled('catalog')
+    @unit.skip_if_cache_disabled('catalog')
     def test_invalidate_cache_when_updating_region(self):
         region_id = uuid.uuid4().hex
         new_region = {
@@ -4857,7 +4857,7 @@ class CatalogTests(object):
         self.catalog_api.delete_service(unrelated_service1['id'])
         self.catalog_api.delete_service(unrelated_service2['id'])
 
-    @tests.skip_if_cache_disabled('catalog')
+    @unit.skip_if_cache_disabled('catalog')
     def test_cache_layer_service_crud(self):
         service_id = uuid.uuid4().hex
         new_service = {
@@ -4894,7 +4894,7 @@ class CatalogTests(object):
                           self.catalog_api.get_service,
                           service_id)
 
-    @tests.skip_if_cache_disabled('catalog')
+    @unit.skip_if_cache_disabled('catalog')
     def test_invalidate_cache_when_updating_service(self):
         service_id = uuid.uuid4().hex
         new_service = {
@@ -5205,7 +5205,7 @@ class CatalogTests(object):
         endpoint_ids = [x['id'] for x in catalog[0]['endpoints']]
         self.assertEqual([enabled_endpoint_ref['id']], endpoint_ids)
 
-    @tests.skip_if_cache_disabled('catalog')
+    @unit.skip_if_cache_disabled('catalog')
     def test_invalidate_cache_when_updating_endpoint(self):
         service = {
             'id': uuid.uuid4().hex,

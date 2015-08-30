@@ -27,7 +27,7 @@ from keystone.common import cache
 from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules
-from keystone.tests import unit as tests
+from keystone.tests import unit
 from keystone.tests.unit import rest
 
 
@@ -116,11 +116,11 @@ class AuthTestMixin(object):
         return {'auth': auth_data}
 
 
-class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
+class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                       AuthTestMixin):
     def config_files(self):
         config_files = super(RestfulTestCase, self).config_files()
-        config_files.append(tests.dirs.tests_conf('backend_sql.conf'))
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
     def get_extensions(self):
@@ -132,7 +132,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
     def generate_paste_config(self):
         new_paste_file = None
         try:
-            new_paste_file = tests.generate_paste_config(self.EXTENSION_TO_ADD)
+            new_paste_file = unit.generate_paste_config(self.EXTENSION_TO_ADD)
         except AttributeError:
             # no need to report this error here, as most tests will not have
             # EXTENSION_TO_ADD defined.
@@ -142,7 +142,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def remove_generated_paste_config(self):
         try:
-            tests.remove_generated_paste_config(self.EXTENSION_TO_ADD)
+            unit.remove_generated_paste_config(self.EXTENSION_TO_ADD)
         except AttributeError:
             pass
 
@@ -176,7 +176,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.load_sample_data()
 
     def _populate_default_domain(self):
-        if CONF.database.connection == tests.IN_MEM_DB_CONN_STRING:
+        if CONF.database.connection == unit.IN_MEM_DB_CONN_STRING:
             # NOTE(morganfainberg): If an in-memory db is being used, be sure
             # to populate the default domain, this is typically done by
             # a migration, but the in-mem db uses model definitions  to create

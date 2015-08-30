@@ -31,7 +31,7 @@ from keystone import exception
 from keystone import identity
 from keystone.identity.mapping_backends import mapping as map
 from keystone import resource
-from keystone.tests import unit as tests
+from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
@@ -138,7 +138,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
     def config_files(self):
         config_files = super(BaseLDAPIdentity, self).config_files()
-        config_files.append(tests.dirs.tests_conf('backend_ldap.conf'))
+        config_files.append(unit.dirs.tests_conf('backend_ldap.conf'))
         return config_files
 
     def get_user_enabled_vals(self, user):
@@ -712,7 +712,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           self.identity_api.get_group,
                           group['id'])
 
-    @tests.skip_if_cache_disabled('identity')
+    @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_group_crud(self):
         group = {
             'domain_id': CONF.identity.default_domain_id,
@@ -980,7 +980,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertIs(True, project_info['enabled'])
 
 
-class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
+class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
 
     def setUp(self):
         # NOTE(dstanek): The database must be setup prior to calling the
@@ -1578,7 +1578,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.resource_api.get_domain,
                           domain['id'])
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_create_domain_case_sensitivity(self):
         # domains are read-only, so case sensitivity isn't an issue
         ref = {
@@ -1633,7 +1633,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.resource_api.get_project,
                           project['id'])
 
-    @tests.skip_if_cache_disabled('assignment')
+    @unit.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
         # NOTE(morganfainberg): LDAP implementation does not currently support
         # updating project names.  This method override provides a different
@@ -2070,7 +2070,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
 
     def config_files(self):
         config_files = super(LDAPIdentityEnabledEmulation, self).config_files()
-        config_files.append(tests.dirs.tests_conf('backend_ldap.conf'))
+        config_files.append(unit.dirs.tests_conf('backend_ldap.conf'))
         return config_files
 
     def config_overrides(self):
@@ -2229,12 +2229,12 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         self.assertIs(False, user_ref['enabled'])
 
 
-class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
-                                tests.TestCase):
+class LdapIdentitySqlAssignment(BaseLDAPIdentity, unit.SQLDriverOverrides,
+                                unit.TestCase):
 
     def config_files(self):
         config_files = super(LdapIdentitySqlAssignment, self).config_files()
-        config_files.append(tests.dirs.tests_conf('backend_ldap_sql.conf'))
+        config_files.append(unit.dirs.tests_conf('backend_ldap_sql.conf'))
         return config_files
 
     def setUp(self):
@@ -2497,8 +2497,8 @@ class BaseMultiLDAPandSQLIdentity(object):
                 password=self.users[user]['password'])
 
 
-class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
-                              tests.TestCase, BaseMultiLDAPandSQLIdentity):
+class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
+                              unit.TestCase, BaseMultiLDAPandSQLIdentity):
     """Class to test common SQL plus individual LDAP backends.
 
     We define a set of domains and domain-specific backends:
@@ -2577,7 +2577,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         """
         self.config_fixture.config(
             group='identity', domain_specific_drivers_enabled=True,
-            domain_config_dir=tests.TESTCONF + '/domain_configs_multi_ldap')
+            domain_config_dir=unit.TESTCONF + '/domain_configs_multi_ldap')
         self.config_fixture.config(group='identity_mapping',
                                    backward_compatible_ids=False)
 
@@ -2910,7 +2910,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
 
 
 class DomainSpecificLDAPandSQLIdentity(
-    BaseLDAPIdentity, tests.SQLDriverOverrides, tests.TestCase,
+    BaseLDAPIdentity, unit.SQLDriverOverrides, unit.TestCase,
         BaseMultiLDAPandSQLIdentity):
     """Class to test when all domains use specific configs, including SQL.
 
@@ -2933,7 +2933,7 @@ class DomainSpecificLDAPandSQLIdentity(
         self.config_fixture.config(
             group='identity', domain_specific_drivers_enabled=True,
             domain_config_dir=(
-                tests.TESTCONF + '/domain_configs_one_sql_one_ldap'))
+                unit.TESTCONF + '/domain_configs_one_sql_one_ldap'))
         self.config_fixture.config(group='identity_mapping',
                                    backward_compatible_ids=False)
 
@@ -3092,7 +3092,7 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
         self.config_fixture.config(
             group='identity', domain_specific_drivers_enabled=True,
             domain_config_dir=(
-                tests.TESTCONF + '/domain_configs_default_ldap_one_sql'))
+                unit.TESTCONF + '/domain_configs_default_ldap_one_sql'))
         # Part of the testing counts how many new mappings get created as
         # we create users, so ensure we are NOT using mapping for the default
         # LDAP domain so this doesn't confuse the calculation.
@@ -3168,12 +3168,12 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             exception.MultipleSQLDriversInConfig,
             self.identity_api.domain_configs._load_config_from_file,
             self.resource_api,
-            [tests.TESTCONF + '/domain_configs_one_extra_sql/' +
+            [unit.TESTCONF + '/domain_configs_one_extra_sql/' +
              'keystone.domain2.conf'],
             'domain2')
 
 
-class LdapFilterTests(test_backend.FilterTests, tests.TestCase):
+class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
 
     def setUp(self):
         super(LdapFilterTests, self).setUp()
@@ -3191,7 +3191,7 @@ class LdapFilterTests(test_backend.FilterTests, tests.TestCase):
 
     def config_files(self):
         config_files = super(LdapFilterTests, self).config_files()
-        config_files.append(tests.dirs.tests_conf('backend_ldap.conf'))
+        config_files.append(unit.dirs.tests_conf('backend_ldap.conf'))
         return config_files
 
     def test_list_users_in_group_filtered(self):
