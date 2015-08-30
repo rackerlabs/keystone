@@ -109,6 +109,7 @@ class Manager(object):
 def create_legacy_driver(driver_class):
     module_name = driver_class.__module__
     class_name = driver_class.__name__
+
     class Driver(driver_class):
 
         @versionutils.deprecated(

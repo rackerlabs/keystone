@@ -11,7 +11,6 @@
 # under the License.
 
 import mock
-from oslo_log.tests.unit import test_versionutils
 
 from keystone import catalog
 from keystone.common import manager
