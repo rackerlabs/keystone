@@ -61,8 +61,7 @@ The TLDR; steps (and too long didn't write yet):
 1. Determine which subsystem you would like write a driver for
 2. Subclass the most current version of the driver interface
 3. Implement each of the abstract methods for that driver
-   a. Guess at the inputs/outputs or maybe do some debugging to figure
-      it out
+   a. Guess at the inputs/outputs or maybe do some debugging to figure it out
    b. Definitely cross your fingers!
 4. Register your new driver as an entry point
 5. Configure your new driver in ``keystone.conf``

@@ -83,6 +83,7 @@ Developers Documentation
    external-auth
    event_notifications
    extension_development
+   developing_drivers
 
 Code Documentation
 ==================
