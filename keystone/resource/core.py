@@ -544,7 +544,7 @@ class Manager(manager.Manager):
 
 
 @six.add_metaclass(abc.ABCMeta)
-class Driver(object):
+class DriverV12(object):
 
     def _get_list_limit(self):
         return CONF.resource.list_limit or CONF.list_limit
@@ -797,6 +797,9 @@ class Driver(object):
         """
         if domain_id != CONF.identity.default_domain_id:
             raise exception.DomainNotFound(domain_id=domain_id)
+
+
+Driver = manager.create_legacy_driver(DriverV12)
 
 
 MEMOIZE_CONFIG = cache.get_memoization_decorator(section='domain_config')
@@ -1275,7 +1278,7 @@ class DomainConfigManager(manager.Manager):
 
 
 @six.add_metaclass(abc.ABCMeta)
-class DomainConfigDriver(object):
+class DomainConfigDriverV12(object):
     """Interface description for a Domain Config driver."""
 
     @abc.abstractmethod
@@ -1362,3 +1365,6 @@ class DomainConfigDriver(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+
+DomainConfigDriver = manager.create_legacy_driver(DomainConfigDriverV12)
