@@ -16,6 +16,24 @@
       "revId": "3309ce986efac37f02b1cadff38be05e18418a87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_baefed1c",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T13:27:18Z",
+      "side": 1,
+      "message": "++, good suggestions. I\u0027ll incorporate that into my patch.",
+      "parentUuid": "da20952f_e0c2c633",
+      "revId": "3309ce986efac37f02b1cadff38be05e18418a87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
