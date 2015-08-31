@@ -271,6 +271,23 @@
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f63ef489",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-08-31T04:20:08Z",
+      "side": 1,
+      "message": "unused, please remove",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
