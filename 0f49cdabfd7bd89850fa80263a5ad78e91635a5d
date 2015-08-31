@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_d25cef1a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-31T22:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_f9ede58e",
+      "revId": "0f49cdabfd7bd89850fa80263a5ad78e91635a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_59017105",
         "filename": "keystone/resource/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-26T15:04:58Z",
       "side": 1,
       "message": "Perhaps make this a bulleted pointed list for clarity, e.g.\n\nCalled when is_domain is true, this method ensures that:\n\n- multiple domains are enabled\n- the project name is not the reserved name for a federated domain\n- if the project is not a root project, then its parent must also be acting as a domain",
+      "revId": "0f49cdabfd7bd89850fa80263a5ad78e91635a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_5270dfa3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-08-31T22:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_59017105",
       "revId": "0f49cdabfd7bd89850fa80263a5ad78e91635a5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
