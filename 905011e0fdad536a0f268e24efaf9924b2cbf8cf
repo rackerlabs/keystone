@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_658216ca",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-08-31T13:53:43Z",
+      "side": 1,
+      "message": "maybe we can can add some logs here to verify that was uploaded correctly, makes sense?",
+      "revId": "905011e0fdad536a0f268e24efaf9924b2cbf8cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
