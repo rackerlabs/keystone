@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_5f77959f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-31T16:58:24Z",
+      "side": 1,
+      "message": "Not a big thing, but could you reformat this description to either be a list starting with dash (-) of the things you fixed or a sentence starting with capital letter.",
+      "revId": "7fabe728afbc9cb5b4b4a15810c64f7c78fd5969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_7325c0c0",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 1
