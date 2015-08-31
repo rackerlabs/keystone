@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_f3412664",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1133,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "probably the \"Not Found\" after NOT_FOUND is redundant now",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_732d16a7",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "above you\u0027ve removed 401, so why leave 404 here?",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_932a2a8f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_331a3e7e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_531fb26b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_761bc473",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1592,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "should function be test_revoke_by_id_false_gone?",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f654b4fe",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "sounds funny to repeat the same words twice in the sentence \"bad request status for bad request\"",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b6439c41",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-08-31T04:11:21Z",
+      "side": 1,
+      "message": "maybe add status after request",
+      "revId": "81d7d0971eba95060574d84b0784d40c4b4b2ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
