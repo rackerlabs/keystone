@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_5ae7b1ab",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T13:36:28Z",
+      "side": 1,
+      "message": "We should do this in a separate commit. I don\u0027t think there is a reason to change the heading types, is there? \n\nI think the bug linked to this review only mentions the broken link: \n\nhttps://bugs.launchpad.net/keystone/+bug/1488903",
+      "parentUuid": "da20952f_7325c0c0",
+      "revId": "7fabe728afbc9cb5b4b4a15810c64f7c78fd5969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_b7168453",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 1
