@@ -173,7 +173,8 @@ def _get_engine_facade():
     global _engine_facade
 
     if not _engine_facade:
-        _engine_facade = db_session.EngineFacade.from_config(CONF)
+        _engine_facade = (db_session.enginefacade.
+                          LegacyEngineFacade.from_config(CONF))
 
     return _engine_facade
 
