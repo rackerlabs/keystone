@@ -16,6 +16,24 @@
       "revId": "2c80f26c78d3d2c49090fe0df702cd911b72c6c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_45b6e4f9",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T17:57:01Z",
+      "side": 1,
+      "message": "i think the `protocol_id` part corresponds to the `protocol_id` of the method signature.",
+      "parentUuid": "da20952f_05f8ecc1",
+      "revId": "2c80f26c78d3d2c49090fe0df702cd911b72c6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
