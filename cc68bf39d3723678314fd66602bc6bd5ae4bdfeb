@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_8134e7fb",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-08-31T21:39:52Z",
+      "side": 1,
+      "message": "As a followup can we also add a note about using the positional decorator (see implementation in Keystoneclient) that forces all arguments to be passed as kwargs to ensure that we don\u0027t break things because of positional-argument use by accident",
+      "revId": "cc68bf39d3723678314fd66602bc6bd5ae4bdfeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
