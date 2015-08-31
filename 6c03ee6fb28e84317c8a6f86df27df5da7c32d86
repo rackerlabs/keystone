@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "da20952f_0b2fa988",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "Don\u0027t we usually import an API with dependency.requires?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_207bacc2",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "I think you can use isinstance here.",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a0349cfb",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "Should we be giving something useful back to the user?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a066dc27",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "Does this need to be translated?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_00663fed",
         "filename": "keystone/models/builder.py",
         "patchSetId": 6
@@ -30,6 +98,23 @@
       "writtenOn": "2015-07-20T15:33:43Z",
       "side": 1,
       "message": "needs docstring",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6b566507",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "Don\u0027t we usually import an API with dependency.requires?",
       "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +138,23 @@
     },
     {
       "key": {
+        "uuid": "da20952f_8bf5f9ed",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "Instead of: \n\n    builder.set_expires_at \u003d \u003csome_time\u003e\n\ncan\u0027t we just do:\n\n    build.expires_at \u003d enforce_datetime(\u003csome_time\u003e) \n\n?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_5bec38c7",
         "filename": "keystone/models/builder.py",
         "patchSetId": 6
@@ -64,6 +166,74 @@
       "writtenOn": "2015-07-20T15:33:43Z",
       "side": 1,
       "message": "what\u0027s user_info? Needs docstring",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_cb3d3190",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "servers, or services?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6bdc2546",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "suggest using the documentation format already established in the project.\n\nhttps://www.python.org/dev/peps/pep-0008/#documentation-strings\n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L104-L114",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6baf457d",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "docstrings?",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_cb3771fd",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "we should remove this bit",
       "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -423,6 +593,23 @@
       "writtenOn": "2015-07-20T15:33:43Z",
       "side": 1,
       "message": "this and below should be capslocked",
+      "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c68e882d",
+        "filename": "keystone/tests/unit/test_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-08-31T14:42:49Z",
+      "side": 1,
+      "message": "can\u0027t these be broken out into fixtures?",
       "revId": "6c03ee6fb28e84317c8a6f86df27df5da7c32d86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
