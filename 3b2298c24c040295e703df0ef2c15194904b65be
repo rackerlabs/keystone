@@ -16,6 +16,24 @@
       "revId": "3b2298c24c040295e703df0ef2c15194904b65be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d2b86f13",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-08-31T22:51:30Z",
+      "side": 1,
+      "message": "the trust fields are always present.",
+      "parentUuid": "da20952f_da574124",
+      "revId": "3b2298c24c040295e703df0ef2c15194904b65be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
