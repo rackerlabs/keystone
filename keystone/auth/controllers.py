@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import sys
 
 from keystoneclient.common import cms
@@ -542,7 +543,7 @@ class Auth(controller.V3Controller):
 
         for t in tokens:
             expires = t['expires']
-            if not (expires and isinstance(expires, six.text_type)):
+            if expires and isinstance(expires, datetime.datetime):
                 t['expires'] = utils.isotime(expires)
         data = {'revoked': tokens}
         json_data = jsonutils.dumps(data)
