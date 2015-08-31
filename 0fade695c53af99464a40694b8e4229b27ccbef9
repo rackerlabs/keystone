@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "da20952f_e69b9564",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-08-31T11:35:52Z",
+      "side": 1,
+      "message": "indentation issue",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a196193d",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 2
