@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_a64d949b",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-31T17:00:15Z",
+      "side": 1,
+      "message": "Well, this is not really true. if you did this warning based on my previos comments in the underlying patches then it is my fault :-)\n\nWe can still leverage on remote id is we configure keystone to do so.",
+      "revId": "9e9931a35dcbc62b788244150fe1adf653beb20d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7a43906c",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-08-31T17:00:15Z",
+      "side": 1,
+      "message": "let\u0027s not mix kerberos here.",
+      "revId": "9e9931a35dcbc62b788244150fe1adf653beb20d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
