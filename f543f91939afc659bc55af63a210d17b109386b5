@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_22a40606",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-31T17:26:10Z",
+      "side": 1,
+      "message": "would like *to write...",
+      "revId": "f543f91939afc659bc55af63a210d17b109386b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_221f265c",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-31T17:26:10Z",
+      "side": 1,
+      "message": "...when *they are...",
+      "revId": "f543f91939afc659bc55af63a210d17b109386b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e26b6eb5",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-08-31T17:26:10Z",
+      "side": 1,
+      "message": "deprecate *them ...",
+      "revId": "f543f91939afc659bc55af63a210d17b109386b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
