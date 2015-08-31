@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_b0ece92a",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done. Maybe. I\u0027m not sure I like my new phrasing either.",
+      "parentUuid": "da20952f_41b29d07",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_41a93d8f",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 2
@@ -121,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_304f7938",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_01a6e5ad",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_21a3e99e",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 2
@@ -132,6 +168,24 @@
       "writtenOn": "2015-08-28T22:26:59Z",
       "side": 1,
       "message": "(NIT): will give -\u003e gives",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_105035d3",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_21a3e99e",
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +209,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_d064fdb9",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_61ea41ae",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a10b798d",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 2
@@ -166,6 +238,24 @@
       "writtenOn": "2015-08-28T22:26:59Z",
       "side": 1,
       "message": "(NIT) Suggest: When a driver version moves from \"deprecated\" to \"unsupported\" it will be removed from the keystone source tree.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_30b4597e",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_a10b798d",
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +279,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_d01e3d6f",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_41585d8a",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_e1e09198",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 2
@@ -200,6 +308,24 @@
       "writtenOn": "2015-08-28T22:26:59Z",
       "side": 1,
       "message": "(NIT) Suggest rephrasing to something less \"yours\" vs \"ours\" but ephasising that there should be minimal (or zero) impact keeping a method on the driver even if the new driver version doesn\u0027t use it.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d3d96758",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_e1e09198",
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +349,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_73aadb86",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_819755eb",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_2189a9c9",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 2
@@ -234,6 +378,24 @@
       "writtenOn": "2015-08-28T22:26:59Z",
       "side": 1,
       "message": "(NIT) don\u0027t use the we\u0027d contraction use \"we will\" in this case (or past tense)",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_537b1728",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_2189a9c9",
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +419,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_13ed9fb6",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_a1c379ec",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_c17f8da9",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -268,6 +448,24 @@
       "writtenOn": "2015-08-28T22:26:59Z",
       "side": 1,
       "message": "(feel free to ignore) Suggest renaming these to:\n\nCatalogDriverBaseV12 or similar, i know... we are in catalog.core, but it will be more explicit. Same applies elsewhere.",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d3c2c7e8",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "I like your suggestion, but removed the \"Base\" part.",
+      "parentUuid": "da20952f_c17f8da9",
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_69c98858",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_41429d69",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_f63ef489",
         "filename": "keystone/tests/unit/common/test_manager.py",
         "patchSetId": 2
@@ -302,6 +518,24 @@
       "writtenOn": "2015-08-31T04:20:08Z",
       "side": 1,
       "message": "unused, please remove",
+      "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_09c48c3d",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-08-31T16:05:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_f63ef489",
       "revId": "0fade695c53af99464a40694b8e4229b27ccbef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
