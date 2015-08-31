@@ -34,6 +34,24 @@
       "revId": "2c80f26c78d3d2c49090fe0df702cd911b72c6c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_12126757",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-31T22:45:25Z",
+      "side": 1,
+      "message": "Okay, its kinda weird.  I thought this should be {protocol_id} to match the path_vards.  I\u0027ll test this out.",
+      "parentUuid": "da20952f_45b6e4f9",
+      "revId": "2c80f26c78d3d2c49090fe0df702cd911b72c6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
