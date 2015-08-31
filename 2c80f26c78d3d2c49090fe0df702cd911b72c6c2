@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_05f8ecc1",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-08-31T17:54:55Z",
+      "side": 1,
+      "message": "{protocol} should this be {protocol_id} ? to also match line: 237",
+      "revId": "2c80f26c78d3d2c49090fe0df702cd911b72c6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
