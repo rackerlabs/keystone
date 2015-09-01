@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_cde0a9fd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-01T15:00:57Z",
+      "side": 1,
+      "message": "if you don\u0027t want to make BasePRovider._rebuild_federated_info()  @abc.abstractmethod or make it raise NotImplemented() when called BaseProvider\u0027s version at least put a comment that this method doesn\u0027t belond in here. Otherwise developers implementing this will first end with confusion and this frustrating \"hmmm, i wonder where is it called and why not here\" + grepping of the codebase will begin.",
+      "revId": "c47111927647dc85b05f9fd94c7b96a22b5c6426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
