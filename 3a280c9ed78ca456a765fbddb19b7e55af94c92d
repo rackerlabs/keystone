@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_a71a52c4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-01T04:02:30Z",
+      "side": 1,
+      "message": "i think bug #1490764 is not a bug",
+      "revId": "3a280c9ed78ca456a765fbddb19b7e55af94c92d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e76b6a1c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-01T04:02:30Z",
+      "side": 1,
+      "message": "i think it is unnecessary, domain_id\u003dNone is OK, it will not happen KeyError.\n\nAnd if you add this, why don\u0027t add \u0027if parent_id:\u0027 on line 306, \u0027if is_domain:\u0027 on line 307 and so on",
+      "revId": "3a280c9ed78ca456a765fbddb19b7e55af94c92d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
