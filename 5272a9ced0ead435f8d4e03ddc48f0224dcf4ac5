@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_1b86d665",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-01T16:48:10Z",
+      "side": 1,
+      "message": "Closes-Bug: 1490160",
+      "revId": "5272a9ced0ead435f8d4e03ddc48f0224dcf4ac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_5b30cee8",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 2
