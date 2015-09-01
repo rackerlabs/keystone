@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_c19f044f",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-09-01T20:46:55Z",
+      "side": 1,
+      "message": "Fixed them. Thank you!",
+      "parentUuid": "da20952f_b66ed894",
+      "revId": "8390e776876d7fefdc22683efca0d8633e365a42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_3662c8ae",
         "filename": "keystone/trust/core.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-01T20:19:10Z",
       "side": 1,
       "message": "TrustDriverV12?",
+      "revId": "8390e776876d7fefdc22683efca0d8633e365a42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_81a90c7e",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-09-01T20:46:55Z",
+      "side": 1,
+      "message": "Fixed it. Thank you!",
+      "parentUuid": "da20952f_3662c8ae",
       "revId": "8390e776876d7fefdc22683efca0d8633e365a42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
