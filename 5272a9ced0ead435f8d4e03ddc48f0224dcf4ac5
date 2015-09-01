@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_5b30cee8",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-01T16:47:13Z",
+      "side": 1,
+      "message": "there\u0027s potentially 3 lookups in the dict so this could be more efficient.\n\n ret \u003d self._basket.get(egg_key)\n if ret:\n   return ret\n ret \u003d super(EggLoader,...\n self._basket[egg_key] \u003d ret\n return ret",
+      "revId": "5272a9ced0ead435f8d4e03ddc48f0224dcf4ac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
