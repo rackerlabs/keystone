@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_98850caf",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-01T16:48:45Z",
+      "side": 1,
+      "message": "will these get preformatted?",
+      "revId": "84cf741fbe19d7d4e29a09e65d5dff5d7ebb7ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b8b49082",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-01T16:48:45Z",
+      "side": 1,
+      "message": "rules or schedules",
+      "revId": "84cf741fbe19d7d4e29a09e65d5dff5d7ebb7ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3b4aba56",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-01T16:48:45Z",
+      "side": 1,
+      "message": "nit: s/1/one/",
+      "revId": "84cf741fbe19d7d4e29a09e65d5dff5d7ebb7ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_1bed7625",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-01T16:48:45Z",
+      "side": 1,
+      "message": "quick stupid question, but why 12?",
+      "revId": "84cf741fbe19d7d4e29a09e65d5dff5d7ebb7ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
