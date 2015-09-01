@@ -34,6 +34,24 @@
       "revId": "905011e0fdad536a0f268e24efaf9924b2cbf8cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_30b5f0cf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-01T19:39:15Z",
+      "side": 1,
+      "message": "Yes, makes sense for me. Thanks",
+      "parentUuid": "da20952f_10454c16",
+      "revId": "905011e0fdad536a0f268e24efaf9924b2cbf8cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
