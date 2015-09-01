@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_29afc295",
+        "filename": "keystone/tests/unit/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-01T22:49:54Z",
+      "side": 0,
+      "message": "suggest put this in a separate patch.",
+      "revId": "3d489731370969dd04c50fe168ea99544a8e4cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
