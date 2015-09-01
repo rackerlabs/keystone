@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_65c0912b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-01T16:17:15Z",
+      "side": 1,
+      "message": "only if it\u0027s a sturdy one",
+      "parentUuid": "da20952f_059af5c5",
+      "revId": "0ac43fd4161eed67dee7067fddbe244c4f6161d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_45b8ed2a",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-01T16:10:44Z",
       "side": 1,
       "message": "this is the default.",
+      "revId": "0ac43fd4161eed67dee7067fddbe244c4f6161d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_45f0edc9",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-01T16:17:15Z",
+      "side": 1,
+      "message": "oops. yeah, i was supposed to delete this. originally the _basket was an instance variable, but EggLoader is created several times",
+      "parentUuid": "da20952f_45b8ed2a",
       "revId": "0ac43fd4161eed67dee7067fddbe244c4f6161d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
