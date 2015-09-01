@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_4f17bf44",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 58
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-01T10:09:07Z",
+      "side": 1,
+      "message": "is it really GET?",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_9e0aef24",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-01T10:09:07Z",
+      "side": 1,
+      "message": "nit, you can also user utils.UserType.LOCAL instead of literal",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_de5b8784",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-01T10:09:07Z",
+      "side": 1,
+      "message": "what if both domain_id and project_id are set? We cannot scope to both, can we?",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_848cdeda",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-01T10:09:07Z",
+      "side": 1,
+      "message": "I think I see what you are doing - so you want to authenticate and authorize user at this early stage because the whole call (I deducted this from the curl -X GET keystone/v3/auth/tokens example in the doc) is a token validation, so you must provide a token to validate.\n\nWhat is we used cul -X POST /auth/tokens with the certificate, and in the AuthContextMiddleware simply build a json object so it looks like it was a federation request - something like this: https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/controllers.py#L280\n\nPlease, explain if I am missing something :-)\nP.S. Looking at the class name (AuthCoontextMiddleware) and the place where it is called in the pipe, it\u0027s purpose seems to  build auth context, not authenticate the user.",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_dee867b5",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-01T10:09:07Z",
+      "side": 1,
+      "message": "so, this notification is emited here to notify that something went wrong, right? \nA comment would be useful, as Audit.created() looks like reserved for successful operations, while this one is not :-)\nAlso, I would like Steve to take a look at it. He is the gatekeeper here :-)",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
