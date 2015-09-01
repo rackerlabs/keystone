@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_3f5db4ec",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 58
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-01T23:56:19Z",
+      "side": 1,
+      "message": "Yes. Token validate is GET.",
+      "parentUuid": "da20952f_4f17bf44",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_9e0aef24",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 58
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_3f87f413",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-01T23:56:19Z",
+      "side": 1,
+      "message": "Yeah, they should be mutually exclusive. We need to raise an exception here.",
+      "parentUuid": "da20952f_de5b8784",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_848cdeda",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 58
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_7fe48cab",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-01T23:56:19Z",
+      "side": 1,
+      "message": "We are not authenticating the user. Like federation, user is authenticated if 2-Way SSL session is successfully establish. We are simple using the mapping to determine the certificate\u0027s authorization attributes.\n\nIf someone is calling \u0027curl -X POST /auth/tokens\u0027, they meant to get a token. In this case, if the accidentally use the cert in which we allow for tokenless authz, the auth context will still get built. But needless to say, it is redundent.\n\nTokenless authz is not meant for token request. It is intended to replaced the need for token request in order to perform the privilege operations.",
+      "parentUuid": "da20952f_848cdeda",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_dee867b5",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 58
@@ -81,6 +135,24 @@
       "writtenOn": "2015-09-01T10:09:07Z",
       "side": 1,
       "message": "so, this notification is emited here to notify that something went wrong, right? \nA comment would be useful, as Audit.created() looks like reserved for successful operations, while this one is not :-)\nAlso, I would like Steve to take a look at it. He is the gatekeeper here :-)",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3a7382b6",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-01T23:56:19Z",
+      "side": 1,
+      "message": "Good point! We shouldn\u0027t be using \u0027created\u0027. Should be something similar to this\n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L545",
+      "parentUuid": "da20952f_dee867b5",
       "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
