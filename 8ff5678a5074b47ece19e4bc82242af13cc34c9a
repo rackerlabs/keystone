@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_fcd68526",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-01T14:29:26Z",
+      "side": 1,
+      "message": "Rather than we do the clean up when caching policy, why not do it when trying to delete policy/update policy? In this patch, when the policy has been deleted we can still get the cached policy with the deleted policy id,\nobviously, this cached policy is invalid but client has no knowledge about this, right?",
+      "revId": "8ff5678a5074b47ece19e4bc82242af13cc34c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7cc0357d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-01T14:29:26Z",
+      "side": 1,
+      "message": "add a testcase to test merge behaviour, i.e. cache an existing cached policy.",
+      "revId": "8ff5678a5074b47ece19e4bc82242af13cc34c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_59cd4385",
+        "filename": "keystone/tests/unit/backend/policy/test_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-01T14:29:26Z",
+      "side": 1,
+      "message": "this testcase could be split into two sub-test, then it will be more clear what the testcase want to test,\nmaybe?\n- test_cache_policy (this seems duplicated with the test_get_policy_cache)\n- test_cache_policy_without_policy",
+      "revId": "8ff5678a5074b47ece19e4bc82242af13cc34c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7cab55d7",
+        "filename": "keystone/tests/unit/backend/policy/test_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-01T14:29:26Z",
+      "side": 1,
+      "message": "why policy deletion doesn\u0027t clean up the policy cache?",
+      "revId": "8ff5678a5074b47ece19e4bc82242af13cc34c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
