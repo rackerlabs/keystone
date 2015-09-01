@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_90a63c52",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-01T19:57:39Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like anything from here down is actually tested in this function. Can\u0027t all of this just be replaced with set.difference()?\n\nWhen I did this: http://paste.openstack.org/show/438523/, all of the federation tests still passed.",
+      "revId": "bede09e34cebca0efee243513e9db508d1ba93c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
