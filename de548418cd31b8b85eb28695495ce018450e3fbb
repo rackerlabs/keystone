@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_6ecdd385",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-01T16:01:38Z",
+      "side": 1,
+      "message": "This should probably be \u0027partially implements bp stable-driver-interfaces\u0027 since we didn\u0027t look at the interfaces for redesign.",
+      "revId": "de548418cd31b8b85eb28695495ce018450e3fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0e677726",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-01T16:01:38Z",
+      "side": 1,
+      "message": "Unrelated change?",
+      "revId": "de548418cd31b8b85eb28695495ce018450e3fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
