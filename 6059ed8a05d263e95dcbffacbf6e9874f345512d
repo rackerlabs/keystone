@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_bcd10925",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-01T03:32:36Z",
+      "side": 1,
+      "message": "oslo.db.sqlalchemy.EngineFacade use\noslo.db.sqlalchemy.enginefacade.LegacyEngineFacade",
+      "revId": "6059ed8a05d263e95dcbffacbf6e9874f345512d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_bc058946",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-01T03:32:36Z",
+      "side": 1,
+      "message": "i think it can use:\n\n    from oslo.db.sqlalchemy import enginefacade\n\n    _engine_facade \u003d (enginefacade.\n                        LegacyEngineFacade.from_config(CONF))\n\nit is not need to \u0027from oslo.db.sqlalchemy import session as db_session\u0027",
+      "revId": "6059ed8a05d263e95dcbffacbf6e9874f345512d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
