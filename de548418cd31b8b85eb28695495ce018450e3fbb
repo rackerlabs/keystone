@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_6a2e15a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-09-01T19:12:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_6ecdd385",
+      "revId": "de548418cd31b8b85eb28695495ce018450e3fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_0e677726",
         "filename": "keystone/common/manager.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-01T16:01:38Z",
       "side": 1,
       "message": "Unrelated change?",
+      "revId": "de548418cd31b8b85eb28695495ce018450e3fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_ad120757",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2015-09-01T19:12:06Z",
+      "side": 1,
+      "message": "This was done to fix the pep8 failure[1] in your patch to make Jenkins pass in my patch(which is on top your patch); Removed it from my latest patchset as you have fixed it in the your latest patchset.\n\n[1] - http://logs.openstack.org/81/218481/2/check/gate-keystone-pep8/03de869/console.html",
+      "parentUuid": "da20952f_0e677726",
       "revId": "de548418cd31b8b85eb28695495ce018450e3fbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
