@@ -29,6 +29,7 @@ if six.PY3:
     sys.modules['memcache'] = mock.Mock()
     sys.modules['oslo_messaging'] = mock.Mock()
     sys.modules['paste'] = mock.Mock()
+    sys.modules['paste.deploy'] = mock.Mock()
 
 # NOTE(dstanek): oslo_i18n.enable_lazy() must be called before
 # keystone.i18n._() is called to ensure it has the desired lazy lookup
