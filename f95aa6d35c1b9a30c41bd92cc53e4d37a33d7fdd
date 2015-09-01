@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_93ebd8db",
+        "filename": "test-requirements-py3.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-01T01:31:54Z",
+      "side": 1,
+      "message": "remove new line",
+      "revId": "f95aa6d35c1b9a30c41bd92cc53e4d37a33d7fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
