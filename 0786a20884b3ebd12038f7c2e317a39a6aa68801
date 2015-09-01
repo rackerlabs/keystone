@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_26fc246f",
+        "filename": "keystone/models/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-01T15:59:45Z",
+      "side": 1,
+      "message": "What kind of formatter is this?",
+      "revId": "0786a20884b3ebd12038f7c2e317a39a6aa68801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c67f68de",
+        "filename": "keystone/models/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-01T15:59:45Z",
+      "side": 1,
+      "message": "We could do something like; \n\n     project \u003d {\u0027id\u0027: access_token.project.id,\n                \u0027name\u0027: access_token.project.name}\n     token[\u0027tenant\u0027] \u003d project\n\ntotally a style thing, but it would get rid of doing the \n\n     project \u003d {}\n\nline in every case.",
+      "revId": "0786a20884b3ebd12038f7c2e317a39a6aa68801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
