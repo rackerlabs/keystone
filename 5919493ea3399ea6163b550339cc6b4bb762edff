@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_3eeb487a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-02T19:39:22Z",
+      "side": 1,
+      "message": "is there some reason to don\u0027t change this behavior in the this previous patch since it was not merged yet?",
+      "revId": "5919493ea3399ea6163b550339cc6b4bb762edff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_fe4f10bc",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-02T19:39:22Z",
+      "side": 1,
+      "message": "why not add some message to clarify the error for the user? :)",
+      "revId": "5919493ea3399ea6163b550339cc6b4bb762edff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
