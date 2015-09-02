@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_5578898f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T02:44:42Z",
+      "side": 1,
+      "message": "\u0027subtree_ids is None,\u0027",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_75acad8c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T02:44:42Z",
+      "side": 1,
+      "message": "\u0027then replace\u0027",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_b525650b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T02:44:42Z",
+      "side": 1,
+      "message": "if ref.get(\u0027project_id\u0027) in project_ids:",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_fed099f9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T02:44:42Z",
+      "side": 1,
+      "message": "may want to move the new param to the end of the list",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_1ecead5a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T02:44:42Z",
+      "side": 1,
+      "message": ",?",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
