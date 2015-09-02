@@ -16,6 +16,24 @@
       "revId": "c49c4ebf90526297fb37b64965e8af9e550acb38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_85ba536d",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-02T13:45:48Z",
+      "side": 1,
+      "message": "as discussed in IRC, this is not a bug. We\u0027ve introduced the possibility of None domain_id in this patch and should fix at this one",
+      "parentUuid": "da20952f_d7becad3",
+      "revId": "c49c4ebf90526297fb37b64965e8af9e550acb38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
