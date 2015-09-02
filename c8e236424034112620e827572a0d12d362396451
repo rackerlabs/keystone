@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_9b039476",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-02T14:20:28Z",
+      "side": 1,
+      "message": "Yes, sorta. We should do our best to make sure old drivers still work though.",
+      "parentUuid": "da20952f_629e1509",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_e2054514",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-02T13:27:52Z",
       "side": 1,
       "message": "them*",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3b3cc82e",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-02T14:20:28Z",
+      "side": 1,
+      "message": "Follow up patch? Feel free to create as I won\u0027t be near a computer for a few more hours.",
+      "parentUuid": "da20952f_e2054514",
       "revId": "c8e236424034112620e827572a0d12d362396451",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
