@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_c0726b7c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1367,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-02T18:34:45Z",
+      "side": 1,
+      "message": "Does this one need to be added to the architecture doc?",
+      "revId": "ba317dedd8fffb8ab7a4a6cdb17480aa9fc5acb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
