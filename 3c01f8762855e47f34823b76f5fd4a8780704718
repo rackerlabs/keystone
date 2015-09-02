@@ -196,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_e853f26a",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-02T08:38:42Z",
+      "side": 1,
+      "message": "OK, apparently I am missing sometthing: When you use client SSL certificate - what are you going to get in return? An OpenStack token? A HTTP 200 with regard to the roles and project you are trying to access?\nCause I see lot\u0027s of code repeated and looks like token_helper does everything we already have - I am just wondering if we can avoid this.",
+      "parentUuid": "da20952f_7fe48cab",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_dee867b5",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 58
