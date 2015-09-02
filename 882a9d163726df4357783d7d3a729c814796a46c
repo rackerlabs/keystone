@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_9644c2b7",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 59
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T17:39:57Z",
+      "side": 1,
+      "message": "The DN being passed by mod_ssl to the request env contains no spaces. so we just need to match it when creating the IdP Id and I believe this is against rfc.",
+      "parentUuid": "da20952f_56d38a5f",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_3b311f0c",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 59
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-02T17:23:29Z",
       "side": 1,
       "message": "(Nit) i prefer an explicit else for clarity",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_961b62ca",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T17:39:57Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "da20952f_3b311f0c",
       "revId": "882a9d163726df4357783d7d3a729c814796a46c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_b6db06ed",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T17:39:57Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "da20952f_36fff602",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_d63c7ac1",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 59
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-02T17:23:29Z",
       "side": 1,
       "message": "This is not log warn. Please fix in a followup patch to at most log info. Do not spam logs at warning level for a legitimate case of \"user passed a cert that isnt from a trusted issuer\" - this is a valid case that should be at most informational. The deployer has nothing to do here in most cases.",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_96e04298",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T17:39:57Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "da20952f_d63c7ac1",
       "revId": "882a9d163726df4357783d7d3a729c814796a46c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
