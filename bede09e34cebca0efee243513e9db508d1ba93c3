@@ -16,6 +16,24 @@
       "revId": "bede09e34cebca0efee243513e9db508d1ba93c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7859eb8d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-02T12:19:48Z",
+      "side": 1,
+      "message": "i pushed new change that increases the coverage however i need to figure out how to check whether notifications were emited and revocation events added.",
+      "parentUuid": "da20952f_90a63c52",
+      "revId": "bede09e34cebca0efee243513e9db508d1ba93c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
