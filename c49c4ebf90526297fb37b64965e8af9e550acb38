@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_d7becad3",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-02T10:53:47Z",
+      "side": 1,
+      "message": "To Lei\u0027s comment, this does look an odd change.  I think you are doing it because we know there is a big that we don\u0027t handle it being passed as None.  The question is why do we need this change in this patch.  If your new code breaks without fixing the underlying bug, then you should insert a patch preceding this one that fixes the bug.",
+      "revId": "c49c4ebf90526297fb37b64965e8af9e550acb38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
