@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_f2dc201a",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-02T21:51:27Z",
+      "side": 1,
+      "message": "doesn\u0027t this have to be done separately in both the resource and assignment backends? So this one should just say \"ldap resource\".",
+      "revId": "f0f77bd5a7f4fb4b92289b2b0274eded2e4b2793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
