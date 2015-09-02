@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_3e3a91e8",
+        "filename": "keystone/tests/unit/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4190
+      },
+      "writtenOn": "2015-09-02T03:01:37Z",
+      "side": 0,
+      "message": "This is a latent bug: it should always be importing \u0027mock\u0027. I suspect you\u0027ve got some evil like I mailed about to the list in your __init__ somewhere.",
+      "revId": "3d489731370969dd04c50fe168ea99544a8e4cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_29afc295",
         "filename": "keystone/tests/unit/__init__.py",
         "patchSetId": 5
