@@ -36,7 +36,7 @@ class Assignment(assignment.Driver):
     @versionutils.deprecated(
         versionutils.deprecated.KILO,
         remove_in=+2,
-        what='ldap')
+        what='ldap assignment')
     def __init__(self):
         super(Assignment, self).__init__()
         self.LDAP_URL = CONF.ldap.url
