@@ -43,13 +43,13 @@ class TestFernetTokenProvider(tests.TestCase):
     def test_needs_persistence_returns_false(self):
         self.assertFalse(self.provider.needs_persistence())
 
-    def test_invalid_v3_token_raises_400(self):
+    def test_invalid_v3_token_raises_token_not_found_exception(self):
         self.assertRaises(
-            exception.ValidationError,
+            exception.TokenNotFound,
             self.provider.validate_v3_non_persistent_token_id,
             uuid.uuid4().hex)
 
-    def test_invalid_v2_token_raises_404(self):
+    def test_invalid_v2_token_raises_token_not_found_exception(self):
         self.assertRaises(
             exception.TokenNotFound,
             self.provider.validate_v2_token,

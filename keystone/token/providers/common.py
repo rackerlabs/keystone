@@ -712,9 +712,13 @@ class BaseProvider(provider.Provider):
             raise exception.TokenNotFound(e)
 
     def validate_v3_non_persistent_token_id(self, token_id):
-        (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-            federated_info, created_at, expires_at) = (
-                self.token_formatter.validate_token(token_id))
+        try:
+            (user_id, methods, audit_ids, domain_id, project_id, trust_id,
+                federated_info, created_at, expires_at) = (
+                    self.token_formatter.validate_token(token_id))
+        except exception.ValidationError as e:
+            # NOTE(lbragstad): The token is either invalid or not found
+            raise exception.TokenNotFound(e)
 
         token_dict = None
         trust_ref = None
