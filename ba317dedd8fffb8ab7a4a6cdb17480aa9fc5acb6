@@ -16,6 +16,24 @@
       "revId": "ba317dedd8fffb8ab7a4a6cdb17480aa9fc5acb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_43e98519",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1367,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T18:57:05Z",
+      "side": 1,
+      "message": "Probably. But we are not changing the existing behavior so I am fine with adding it in a follow-on patch.",
+      "parentUuid": "da20952f_c0726b7c",
+      "revId": "ba317dedd8fffb8ab7a4a6cdb17480aa9fc5acb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
