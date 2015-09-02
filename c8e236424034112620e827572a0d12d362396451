@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_0a542352",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T19:07:14Z",
+      "side": 1,
+      "message": "nit: DriverV11",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_629e1509",
         "filename": "doc/source/developing_drivers.rst",
         "patchSetId": 7
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "Yes, sorta. We should do our best to make sure old drivers still work though.",
       "parentUuid": "da20952f_629e1509",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8ac6f314",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T19:07:14Z",
+      "side": 1,
+      "message": "the -\u003e there",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_aacbb71d",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T19:07:14Z",
+      "side": 1,
+      "message": "DriverV10",
       "revId": "c8e236424034112620e827572a0d12d362396451",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
