@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_e42b2893",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-02T04:07:43Z",
+      "side": 1,
+      "message": "I don\u0027t think we actually want to say that ldap is deprecated.",
+      "revId": "0116238ec739cb645dfa0d23a7a84130fd43394a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
