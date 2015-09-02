@@ -87,6 +87,24 @@
       "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_dba90c26",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-02T14:24:43Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1af86dd1_69aa8f1b",
+      "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
