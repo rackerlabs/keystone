@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_4a9bdac9",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-02T17:45:40Z",
+      "side": 0,
+      "message": "This should be carried over into the BaseProvider, too.",
+      "revId": "ada038534236293fb73aed9d4e38b812950967ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
