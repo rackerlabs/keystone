@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_2226dd16",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-02T13:24:08Z",
+      "side": 1,
+      "message": "so we will change these to the version keystone is on, not OpenStack, right?\n\nAlso, does this mean we *have* to update these every release? Or can we release M with CatalogDriverV8?",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
