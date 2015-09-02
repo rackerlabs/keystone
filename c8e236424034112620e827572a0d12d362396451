@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_629e1509",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-02T13:27:52Z",
+      "side": 1,
+      "message": "required by the current driver, right? so, new drivers are allowed to break backwards compatibility?",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e2054514",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-02T13:27:52Z",
+      "side": 1,
+      "message": "them*",
+      "revId": "c8e236424034112620e827572a0d12d362396451",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_2226dd16",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 7
