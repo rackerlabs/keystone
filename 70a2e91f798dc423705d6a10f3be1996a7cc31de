@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_e06d2f9a",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 60
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T18:52:40Z",
+      "side": 1,
+      "message": "not sure if we even needed the print statement here.",
+      "revId": "70a2e91f798dc423705d6a10f3be1996a7cc31de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_60ca7f1c",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T18:52:40Z",
+      "side": 1,
+      "message": "\"return auth_context\" can be moved out of the if/else condition",
+      "revId": "70a2e91f798dc423705d6a10f3be1996a7cc31de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c0b02b8e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T18:52:40Z",
+      "side": 1,
+      "message": "should be _LI instead of _LW",
+      "revId": "70a2e91f798dc423705d6a10f3be1996a7cc31de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_2047a778",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-02T18:52:40Z",
+      "side": 1,
+      "message": "not sure if we want to include the tokenless auth in the message,  as x509 is an additional setup and won\u0027t always be configured in keystone.",
+      "revId": "70a2e91f798dc423705d6a10f3be1996a7cc31de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
