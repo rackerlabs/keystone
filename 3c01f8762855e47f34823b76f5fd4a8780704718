@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_16bb0d77",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 58
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T00:09:20Z",
+      "side": 1,
+      "message": "yes, it\u0027s really GET ;-)\nThis is the main use case to do token validation. And it\u0027s really similar to what we do today for token validation with X-Auth-Token, like -\n\ncurl -v -k -s -X GET -H \"X-Auth-Token: \u003cauth token\u003e\" -H \"X-Subject-Token: subject token\" https://10.0.2.15/v3/auth/tokens | python -mjson.tool",
+      "parentUuid": "da20952f_4f17bf44",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_9e0aef24",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 58
@@ -48,6 +66,24 @@
       "writtenOn": "2015-09-01T10:09:07Z",
       "side": 1,
       "message": "nit, you can also user utils.UserType.LOCAL instead of literal",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f63e99d9",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T00:09:20Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "da20952f_9e0aef24",
       "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +118,24 @@
       "writtenOn": "2015-09-01T23:56:19Z",
       "side": 1,
       "message": "Yeah, they should be mutually exclusive. We need to raise an exception here.",
+      "parentUuid": "da20952f_de5b8784",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3f9a94c6",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T00:09:20Z",
+      "side": 1,
+      "message": "done",
       "parentUuid": "da20952f_de5b8784",
       "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_faae6a80",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T00:09:20Z",
+      "side": 1,
+      "message": "yep, we are basically still building the auth context here.",
+      "parentUuid": "da20952f_7fe48cab",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_dee867b5",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 58
@@ -153,6 +225,24 @@
       "side": 1,
       "message": "Good point! We shouldn\u0027t be using \u0027created\u0027. Should be something similar to this\n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L545",
       "parentUuid": "da20952f_dee867b5",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_9a9bae72",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-09-02T00:09:20Z",
+      "side": 1,
+      "message": "yep, good point!",
+      "parentUuid": "da20952f_3a7382b6",
       "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
