@@ -282,6 +282,24 @@
       "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f040a609",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-02T16:40:12Z",
+      "side": 1,
+      "message": "actually we don\u0027t need notification here. If client cert does not match trusted issues, it has no effect on the system",
+      "parentUuid": "da20952f_9a9bae72",
+      "revId": "3c01f8762855e47f34823b76f5fd4a8780704718",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
