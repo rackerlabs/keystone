@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_c3a10c48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-02T23:10:32Z",
+      "side": 1,
+      "message": "Why not raise an exception? We failed to map the data to a user properly. Consider a case there the user_id or similar gets mapped to {0} then different users would get mapped to the same ephemeral user right? I say that instead of an indexing error we should raise something more meaningful. I think this is actually a server error of some sort.",
+      "revId": "699e7d9a3d3dc0bfdaed9a40f9f8ba0248178c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a3d098ca",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-02T23:10:32Z",
+      "side": 1,
+      "message": "This is using a private variable.",
+      "revId": "699e7d9a3d3dc0bfdaed9a40f9f8ba0248178c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
