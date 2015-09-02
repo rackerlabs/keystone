@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_51595d8d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-02T14:56:42Z",
+      "side": 1,
+      "message": "We should add a test that ensures this type doesn\u0027t change. It must have been untested before.",
+      "revId": "1d595ab6a2400bb559ac74961c18e383bf44330b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
