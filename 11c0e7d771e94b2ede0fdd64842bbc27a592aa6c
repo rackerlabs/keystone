@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_9724d2af",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-02T10:48:23Z",
+      "side": 1,
+      "message": "the double negative is a bit hard to understand here, how about saying:\n\nEven if we are allowing domain_ids to be modified (i.e. \u0027domain_id_immutable\u0027 is set False), a project.....",
+      "revId": "11c0e7d771e94b2ede0fdd64842bbc27a592aa6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
