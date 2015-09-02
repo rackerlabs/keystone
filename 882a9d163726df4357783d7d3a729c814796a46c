@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_56d38a5f",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 59
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-09-02T17:23:29Z",
+      "side": 1,
+      "message": "Afaik DNs can have spaces? Please confirm this is not against rfc",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3b311f0c",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-09-02T17:23:29Z",
+      "side": 1,
+      "message": "(Nit) i prefer an explicit else for clarity",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_36fff602",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-09-02T17:23:29Z",
+      "side": 1,
+      "message": "Not sure if this should be a log warn or info. Maybe evaluate later",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_d63c7ac1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-09-02T17:23:29Z",
+      "side": 1,
+      "message": "This is not log warn. Please fix in a followup patch to at most log info. Do not spam logs at warning level for a legitimate case of \"user passed a cert that isnt from a trusted issuer\" - this is a valid case that should be at most informational. The deployer has nothing to do here in most cases.",
+      "revId": "882a9d163726df4357783d7d3a729c814796a46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
