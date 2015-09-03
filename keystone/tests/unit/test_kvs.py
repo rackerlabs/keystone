@@ -583,3 +583,19 @@ class TestMemcachedBackend(unit.TestCase):
         }
         self.assertThat(lambda: memcached.MemcachedBackend(options),
                         raises_valueerror)
+
+
+class TestCacheRegionRaceCondition(unit.TestCase):
+    """Expose the race condition on cache initialization"""
+
+    kvs_backend = 'openstack.kvs.Memory'
+
+    def test_region_initialization_race_condition(self):
+        store = core.get_key_value_store('token-driver')
+        self.assertFalse(store.is_configured)
+        other_store = core.get_key_value_store('token-driver')
+        self.assertFalse(other_store.is_configured)
+
+        other_store.configure(backing_store=self.kvs_backend)
+        self.assertRaises(RuntimeError, store.configure,
+                          dict(backing_store=self.kvs_backend))
