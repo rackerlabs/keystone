@@ -71,7 +71,7 @@ class Server(service.ServiceBase):
     """Server class to manage multiple WSGI sockets and applications."""
 
     def __init__(self, application, host=None, port=None, keepalive=False,
-                 keepidle=None):
+                 keepidle=None, url_length_limit=16384):
         self.application = application
         self.host = host or '0.0.0.0'
         self.port = port or 0
@@ -83,6 +83,7 @@ class Server(service.ServiceBase):
         self.cert_required = False
         self.keepalive = keepalive
         self.keepidle = keepidle
+        self.url_length_limit = url_length_limit
         self.socket = None
 
     def listen(self, key=None, backlog=128):
@@ -197,7 +198,8 @@ class Server(service.ServiceBase):
             eventlet.wsgi.server(
                 socket, application, log=EventletFilteringLogger(logger),
                 debug=False, keepalive=CONF.eventlet_server.wsgi_keep_alive,
-                socket_timeout=socket_timeout)
+                socket_timeout=socket_timeout,
+                url_length_limit=self.url_length_limit)
         except greenlet.GreenletExit:
             # Wait until all servers have completed running
             pass

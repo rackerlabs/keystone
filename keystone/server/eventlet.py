@@ -62,9 +62,11 @@ class ServerWrapper(object):
 
 def create_server(conf, name, host, port, workers):
     app = keystone_service.loadapp('config:%s' % conf, name)
-    server = environment.Server(app, host=host, port=port,
-                                keepalive=CONF.eventlet_server.tcp_keepalive,
-                                keepidle=CONF.eventlet_server.tcp_keepidle)
+    server = environment.Server(
+        app, host=host, port=port,
+        keepalive=CONF.eventlet_server.tcp_keepalive,
+        keepidle=CONF.eventlet_server.tcp_keepidle,
+        url_length_limit=CONF.eventlet_server.url_length_limit)
     if CONF.eventlet_server_ssl.enable:
         server.set_ssl(CONF.eventlet_server_ssl.certfile,
                        CONF.eventlet_server_ssl.keyfile,
