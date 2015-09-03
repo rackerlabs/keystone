@@ -21,7 +21,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
-from six.moves import map, urllib
+from six.moves import map
 
 from keystone.auth import plugins as auth_plugins
 from keystone.common import utils as ks_utils
@@ -67,11 +67,11 @@ class TokenFormatter(object):
     def pack(self, payload):
         """Pack a payload for transport as a token."""
         # base64 padding (if any) is not URL-safe
-        return urllib.parse.quote(self.crypto.encrypt(payload))
+        return self.crypto.encrypt(payload)
 
     def unpack(self, token):
         """Unpack a token, and validate the payload."""
-        token = urllib.parse.unquote(six.binary_type(token))
+        token = six.binary_type(token)
 
         try:
             return self.crypto.decrypt(token)
@@ -80,16 +80,30 @@ class TokenFormatter(object):
                 _('This is not a recognized Fernet token'))
 
     @classmethod
+    def restore_padding(cls, token):
+        """Restore padding based on token size.
+
+        :param token: token to restore padding on
+        :returns: token with correct padding
+
+        """
+        # Re-inflate the padding
+        missing_padding = 4 - len(token) % 4
+        if missing_padding:
+            token += b'=' * missing_padding
+        return token
+
+    @classmethod
     def creation_time(cls, fernet_token):
         """Returns the creation time of a valid Fernet token."""
         # tokens may be transmitted as Unicode, but they're just ASCII
         # (pypi/cryptography will refuse to operate on Unicode input)
         fernet_token = six.binary_type(fernet_token)
 
-        # the base64 padding on fernet tokens is made URL-safe
-        fernet_token = urllib.parse.unquote(fernet_token)
+        # Restore padding on token before decoding it
+        fernet_token = TokenFormatter.restore_padding(fernet_token)
 
-        # fernet tokens are base64 encoded and the padding made URL-safe
+        # fernet tokens are base64 encoded, so we need to unpack them first
         token_bytes = base64.urlsafe_b64decode(fernet_token)
 
         # slice into the byte array to get just the timestamp
@@ -169,7 +183,7 @@ class TokenFormatter(object):
 
         versioned_payload = (version,) + payload
         serialized_payload = msgpack.packb(versioned_payload)
-        token = self.pack(serialized_payload)
+        token = self.pack(serialized_payload).rstrip('=')
 
         # NOTE(lbragstad): We should warn against Fernet tokens that are over
         # 255 characters in length. This is mostly due to persisting the tokens
@@ -189,6 +203,9 @@ class TokenFormatter(object):
         # Convert v2 unicode token to a string
         if not isinstance(token, six.binary_type):
             token = token.encode('ascii')
+
+        # Restore padding on token before decoding it
+        token = TokenFormatter.restore_padding(token)
 
         serialized_payload = self.unpack(token)
         versioned_payload = msgpack.unpackb(serialized_payload)

@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
 import datetime
 import hashlib
 import os
@@ -54,6 +55,18 @@ class TestFernetTokenProvider(tests.TestCase):
             exception.TokenNotFound,
             self.provider.validate_v2_token,
             uuid.uuid4().hex)
+
+
+class TestTokenFormatter(tests.TestCase):
+    def test_restore_padding(self):
+        encoded_string = base64.urlsafe_b64encode(uuid.uuid4().hex)
+        encoded_str_without_padding = encoded_string.rstrip('=')
+        self.assertFalse(encoded_str_without_padding.endswith('='))
+        encoded_str_with_padding_restored = (
+            token_formatters.TokenFormatter.restore_padding(
+                encoded_str_without_padding)
+        )
+        self.assertEqual(encoded_string, encoded_str_with_padding_restored)
 
 
 class TestPayloads(tests.TestCase):
