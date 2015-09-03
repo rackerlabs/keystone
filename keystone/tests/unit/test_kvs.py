@@ -583,3 +583,26 @@ class TestMemcachedBackend(unit.TestCase):
         }
         self.assertThat(lambda: memcached.MemcachedBackend(options),
                         raises_valueerror)
+
+
+class TestCacheRegionInit(unit.TestCase):
+    """Illustrate the race condition on cache initialization
+
+    This case doesn't actually expose the error, it just simulates unprotected
+    code behaviour, when race condition leads to re-configuration of shared
+    KVS backend object. What, in turn, results in an exception.
+    """
+
+    kvs_backend = 'openstack.kvs.Memory'
+
+    def test_different_instances_initialization_race_condition(self):
+        store = core.get_key_value_store('token-driver')
+        self.assertFalse(store.is_configured)
+        other_store = core.get_key_value_store('token-driver')
+        self.assertFalse(other_store.is_configured)
+
+        other_store.configure(backing_store=self.kvs_backend)
+        # This error shows that core.get_key_value_store() returns shared
+        # object protected from re-configuration with an exception.
+        self.assertRaises(RuntimeError, store.configure,
+                          dict(backing_store=self.kvs_backend))
