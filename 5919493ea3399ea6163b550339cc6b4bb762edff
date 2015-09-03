@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_c3c32356",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-03T17:25:52Z",
+      "side": 1,
+      "message": "Ok, got it, thanks.",
+      "parentUuid": "da20952f_a82fec9f",
+      "revId": "5919493ea3399ea6163b550339cc6b4bb762edff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_fe4f10bc",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "We could, I know we try not to give much information about the error because of security concerns.",
       "parentUuid": "da20952f_fe4f10bc",
+      "revId": "5919493ea3399ea6163b550339cc6b4bb762edff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_23b0dfdc",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-03T17:25:52Z",
+      "side": 1,
+      "message": "OK, you know more about than me, if you\u0027re saying that can have some security concerns with this, I believe :)",
+      "parentUuid": "da20952f_6326d7bb",
       "revId": "5919493ea3399ea6163b550339cc6b4bb762edff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
