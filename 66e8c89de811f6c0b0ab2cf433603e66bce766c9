@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_9231f2ef",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 12606
+      },
+      "writtenOn": "2015-09-03T19:20:37Z",
+      "side": 1,
+      "message": "For this to be an effective test, you need to try strings of different lengths, so that all the padding configurations of the b64 are exercised. You can start with the uuid, but then repeat the test with the last char removed, and then again with the last two chars removed.",
+      "revId": "66e8c89de811f6c0b0ab2cf433603e66bce766c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_8feea9eb",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2015-09-03T19:19:17Z",
       "side": 1,
       "message": "Python is not broken!",
+      "revId": "66e8c89de811f6c0b0ab2cf433603e66bce766c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_327ee66a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 12606
+      },
+      "writtenOn": "2015-09-03T19:20:37Z",
+      "side": 1,
+      "message": "If missing_padding \u003d\u003d 4, then you can skip the whole thing, right? That means the originally encoded token has a len that is a multiple of 4, so it does not need any padding.",
       "revId": "66e8c89de811f6c0b0ab2cf433603e66bce766c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
