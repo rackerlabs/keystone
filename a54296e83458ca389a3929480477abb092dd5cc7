@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_94080bdb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-03T15:55:46Z",
+      "side": 1,
+      "message": "It looks like your blueprint link is broken",
+      "revId": "a54296e83458ca389a3929480477abb092dd5cc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
