@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_1982ec00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-03T18:06:31Z",
+      "side": 1,
+      "message": "Can you add some body message explaining the solution?",
+      "revId": "98202f2828f688c4ee63e0bff7935f1431ef0986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
