@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_9141100e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-03T08:24:07Z",
+      "side": 1,
+      "message": "This patch impact the existing API (get_policy_for_endpoint), might need add APIImpact here.\n\nFurthermore, DocImpact also needed here since there might need some document somewhere, for examle, the doc about how \u0027valid_to\u0027 is generated.",
+      "revId": "5990fa700457b52b60780f63dc14bd1576d922a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_51dcd8e3",
+        "filename": "keystone/endpoint_policy/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-03T08:24:07Z",
+      "side": 1,
+      "message": "The algorithm used here is interesting. :)",
+      "revId": "5990fa700457b52b60780f63dc14bd1576d922a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_03ab761e",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-03T08:24:07Z",
+      "side": 1,
+      "message": "mock is third party lib.",
+      "revId": "5990fa700457b52b60780f63dc14bd1576d922a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_83122661",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-03T08:24:07Z",
+      "side": 1,
+      "message": "remove this blank line, both testools and oslo_cofig fall into third party lib.",
+      "revId": "5990fa700457b52b60780f63dc14bd1576d922a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
