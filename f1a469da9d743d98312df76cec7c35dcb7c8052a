@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_4cfafbbe",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:18:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_5578898f",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_75acad8c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-02T02:44:42Z",
       "side": 1,
       "message": "\u0027then replace\u0027",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_ace077fb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:18:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_75acad8c",
       "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_4c8afbc0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:18:08Z",
+      "side": 1,
+      "message": "I think you were saying that I could ditch the first if check...I think technically yes, although I think it is clearer this way since it shows the existence of project ID as a flag to say that this is a project inherited assignment....and then separately check where that assignment point is in the tree.  I did, however, modify the second check to simply be if ref[\u0027project_id} in project_ids since we then know that ref contains project_id.",
+      "parentUuid": "da20952f_b525650b",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_fed099f9",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_8c449374",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:18:08Z",
+      "side": 1,
+      "message": "I put it there since it seems naturally to sit with project_od",
+      "parentUuid": "da20952f_fed099f9",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_1ecead5a",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -81,6 +153,24 @@
       "writtenOn": "2015-09-02T02:44:42Z",
       "side": 1,
       "message": ",?",
+      "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0caba31e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:18:08Z",
+      "side": 1,
+      "message": "oops!",
+      "parentUuid": "da20952f_1ecead5a",
       "revId": "f1a469da9d743d98312df76cec7c35dcb7c8052a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
