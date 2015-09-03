@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_8db9dacd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-03T16:49:24Z",
+      "side": 1,
+      "message": "prefix this with: \"Refactor: \" to make it easier for reviewers",
+      "revId": "5d2460304ab22a5ab3b3e78c5f7853ae117d7a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
