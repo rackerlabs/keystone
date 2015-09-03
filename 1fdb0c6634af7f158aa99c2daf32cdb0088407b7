@@ -16,6 +16,24 @@
       "revId": "1fdb0c6634af7f158aa99c2daf32cdb0088407b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_f2616aa9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2761,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:28:13Z",
+      "side": 1,
+      "message": "Thanks...I think you may be right, I\u0027ll check this out, and maybe follow up with a clean up patch",
+      "parentUuid": "da20952f_0d8758b6",
+      "revId": "1fdb0c6634af7f158aa99c2daf32cdb0088407b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
