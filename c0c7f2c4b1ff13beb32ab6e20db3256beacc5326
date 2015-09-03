@@ -16,6 +16,24 @@
       "revId": "c0c7f2c4b1ff13beb32ab6e20db3256beacc5326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_28b67c8a",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-03T17:14:37Z",
+      "side": 1,
+      "message": "We previously did this, but for WebSSO pointing to specific Identity Providers, it can be a security vulnerability if you use wild cards. I believe using wild cards is less of a security risk if you only have one Identity Provider to route to. But in the case where you have multiple Identity Providers, by using a wild card, you could end up at Coke\u0027s IdP when you really meant to go to Pepsi\u0027s.",
+      "parentUuid": "da20952f_2d41ae0b",
+      "revId": "c0c7f2c4b1ff13beb32ab6e20db3256beacc5326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
