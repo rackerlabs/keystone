@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_0808582c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-03T17:17:44Z",
+      "side": 1,
+      "message": "maybe put the %s between parenthesis ?",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
