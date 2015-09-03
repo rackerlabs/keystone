@@ -483,7 +483,8 @@ class ServerTest(tests.TestCase):
                     debug=mock.ANY,
                     socket_timeout=socket_timeout,
                     log=mock.ANY,
-                    keepalive=mock.ANY)
+                    keepalive=mock.ANY,
+                    url_length_limit=mock.ANY)
 
     def test_wsgi_keep_alive(self):
         # mocking server method of eventlet.wsgi to check it is called with
@@ -503,4 +504,5 @@ class ServerTest(tests.TestCase):
                                                 debug=mock.ANY,
                                                 socket_timeout=mock.ANY,
                                                 log=mock.ANY,
-                                                keepalive=wsgi_keepalive)
+                                                keepalive=wsgi_keepalive,
+                                                url_length_limit=mock.ANY)
