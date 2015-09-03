@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_17c97078",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2827,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-09-03T09:07:00Z",
+      "side": 1,
+      "message": "please refrain from using \u0027\\\u0027 for line continuation. Instead you can change it as below.\n\n    super(BaseLDAPIdentity,\n          self).test_list_role_assignment_by_user_with_domain_group_roles",
+      "revId": "3a6f854987e9f5214bc011b0584a2f9d35b78e21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
