@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_ecc89357",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-03T18:45:15Z",
+      "side": 1,
+      "message": "I\u0027m not sure I like this broken out since you\u0027re creating a dictionary when it\u0027s not really needed. I\u0027d rather see the four assignments happen in the caller.",
+      "revId": "680c732ca3a5431b7517a48b0608c27b8a599bff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_aceb7bdb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-03T18:45:15Z",
+      "side": 1,
+      "message": "This has a bad name. It\u0027s not a boolean param.",
+      "revId": "680c732ca3a5431b7517a48b0608c27b8a599bff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
