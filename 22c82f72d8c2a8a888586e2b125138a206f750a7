@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_ceaa7519",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-03T14:01:31Z",
+      "side": 1,
+      "message": "s/we/We",
+      "revId": "22c82f72d8c2a8a888586e2b125138a206f750a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4e6d0503",
+        "filename": "doc/source/developing_drivers.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-03T14:01:31Z",
+      "side": 1,
+      "message": "s/we/We",
+      "revId": "22c82f72d8c2a8a888586e2b125138a206f750a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
