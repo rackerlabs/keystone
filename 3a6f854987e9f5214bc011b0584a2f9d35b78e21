@@ -16,6 +16,24 @@
       "revId": "3a6f854987e9f5214bc011b0584a2f9d35b78e21",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_5242963f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2827,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-03T09:21:47Z",
+      "side": 1,
+      "message": "Fair point...I\u0027ll come back in and clean this up as a follow on patch",
+      "parentUuid": "da20952f_17c97078",
+      "revId": "3a6f854987e9f5214bc011b0584a2f9d35b78e21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
