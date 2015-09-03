@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_8feea9eb",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-03T19:19:17Z",
+      "side": 1,
+      "message": "Python is not broken!",
+      "revId": "66e8c89de811f6c0b0ab2cf433603e66bce766c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_2f851dce",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-03T19:19:17Z",
+      "side": 1,
+      "message": "(nit) you can replace all three of these lines with \"return token +\u003d b\u0027\u003d\u0027 * missing_padding\"",
+      "revId": "66e8c89de811f6c0b0ab2cf433603e66bce766c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
