@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_2d41ae0b",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 12606
+      },
+      "writtenOn": "2015-09-03T16:46:41Z",
+      "side": 1,
+      "message": "Suggestion: replace the id of the IdP in all these examples with a pattern. That\u0027s what we use in OSAD. Example:\n\n    \u003cLocation ~ \"/v3/auth/OS-FEDERATION/identity_providers/.*?/protocols/saml2/websso\"\u003e",
+      "revId": "c0c7f2c4b1ff13beb32ab6e20db3256beacc5326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
