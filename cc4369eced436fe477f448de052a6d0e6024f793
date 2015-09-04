@@ -16,6 +16,24 @@
       "revId": "cc4369eced436fe477f448de052a6d0e6024f793",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_df0d0f90",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-04T15:04:02Z",
+      "side": 1,
+      "message": "Well the RolesV3() object is a fully fledged v3 class with get, delete etc....so we want all these routes set up.  For role_assignments, we only have list....and in the follow on patch I want to change this to something other than the standard list_role_assignments.",
+      "parentUuid": "da20952f_ffe9f31a",
+      "revId": "cc4369eced436fe477f448de052a6d0e6024f793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
