@@ -34,6 +34,24 @@
       "revId": "6aa22404be3b30766e0b1d7fd54dfb9fef6493fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_941e9e0a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-04T14:36:46Z",
+      "side": 1,
+      "message": "Sounds good to me!  Should we do it to keep the same formatting of the file?",
+      "parentUuid": "da20952f_f931130c",
+      "revId": "6aa22404be3b30766e0b1d7fd54dfb9fef6493fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
