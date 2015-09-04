@@ -16,6 +16,24 @@
       "revId": "8719f5a7d0a8eda22291c7c905b0a849ecf4fffa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_67aeb52f",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-04T16:56:47Z",
+      "side": 1,
+      "message": "This is set by the request_id middleware from oslo.config -- http://git.openstack.org/cgit/openstack/oslo.middleware/tree/oslo_middleware/request_id.py#n22\n\nIt\u0027s already in the paste pipeline -- http://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone-paste.ini#n79",
+      "parentUuid": "da20952f_e0e3a1d7",
+      "revId": "8719f5a7d0a8eda22291c7c905b0a849ecf4fffa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
