@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_2e173fef",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-04T14:10:41Z",
+      "side": 1,
+      "message": "Should we be using the class object to call restore_padding? i.e. \u0027cls.restore_padding(fernet_token)\u0027",
+      "revId": "6aa22404be3b30766e0b1d7fd54dfb9fef6493fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
