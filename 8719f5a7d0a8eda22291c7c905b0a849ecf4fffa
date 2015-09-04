@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_e0e3a1d7",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-04T08:52:45Z",
+      "side": 1,
+      "message": "out of curiosity - where is \u0027openstack.request_id\u0027 env variable being created? I grepped the codebase and found nothing.",
+      "revId": "8719f5a7d0a8eda22291c7c905b0a849ecf4fffa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
