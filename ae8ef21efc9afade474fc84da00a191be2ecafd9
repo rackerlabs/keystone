@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_f6ee0bec",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-04T09:56:51Z",
+      "side": 1,
+      "message": "do we need domain id while the project is identified by an ID only?",
+      "revId": "ae8ef21efc9afade474fc84da00a191be2ecafd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
