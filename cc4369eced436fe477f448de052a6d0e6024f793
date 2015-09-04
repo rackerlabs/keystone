@@ -34,6 +34,24 @@
       "revId": "cc4369eced436fe477f448de052a6d0e6024f793",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3f552b1d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-04T15:10:34Z",
+      "side": 1,
+      "message": "Thank you for explaining :)",
+      "parentUuid": "da20952f_df0d0f90",
+      "revId": "cc4369eced436fe477f448de052a6d0e6024f793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
