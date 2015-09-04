@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_ffe9f31a",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-04T15:00:45Z",
+      "side": 1,
+      "message": "Can we do a similar change to this router, like the router bellow that you changed?  If not can you explain why?",
+      "revId": "cc4369eced436fe477f448de052a6d0e6024f793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
