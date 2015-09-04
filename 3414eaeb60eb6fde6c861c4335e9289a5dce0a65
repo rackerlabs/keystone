@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_162fff88",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-04T09:50:40Z",
+      "side": 1,
+      "message": "you could set this to CONF.federation.federated_domain_name as for ephemeral users this cannot have different value as of today.",
+      "revId": "3414eaeb60eb6fde6c861c4335e9289a5dce0a65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
