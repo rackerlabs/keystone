@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_2b32b6a7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-05T05:07:05Z",
+      "side": 1,
+      "message": "It\u0027s more like configs file *processed* instead of *uploaded*. If the file is something like \u0027keystone.invalid.conf\u0027, this patch still tell me there is  1 configs uploaded.",
+      "revId": "53c8bba2f142e49a002ff08c770caf68bd7e0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_abcc8689",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-05T05:07:05Z",
+      "side": 1,
+      "message": "suggest to use temporaryfile.SecureTempFile() here.",
+      "revId": "53c8bba2f142e49a002ff08c770caf68bd7e0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
