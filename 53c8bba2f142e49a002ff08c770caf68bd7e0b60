@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_859aca60",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-05T20:31:33Z",
+      "side": 1,
+      "message": "Processed is probably a better word. That\u0027s probably true. I\u0027m going to delete this message here and submit a new patch to do a bit of refactoring to make this possible. It doesn\u0027t address the bug anyway and I only included it since it was requested in an earlier patchset.",
+      "parentUuid": "da20952f_2b32b6a7",
+      "revId": "53c8bba2f142e49a002ff08c770caf68bd7e0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_abcc8689",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-05T05:07:05Z",
       "side": 1,
       "message": "suggest to use temporaryfile.SecureTempFile() here.",
+      "revId": "53c8bba2f142e49a002ff08c770caf68bd7e0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0599da78",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-05T20:31:33Z",
+      "side": 1,
+      "message": "what is temporaryfile and why would i not want to use the fixture?",
+      "parentUuid": "da20952f_abcc8689",
       "revId": "53c8bba2f142e49a002ff08c770caf68bd7e0b60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
