@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_4b004134",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-06T02:24:10Z",
+      "side": 1,
+      "message": "why do you import this ? it\u0027s unused.",
+      "revId": "83e8a14c9125d7cbbcae6908017b9bc1dfe238df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_ebfa7542",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-06T02:24:10Z",
+      "side": 1,
+      "message": "same",
+      "revId": "83e8a14c9125d7cbbcae6908017b9bc1dfe238df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
