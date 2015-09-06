@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_da309c58",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-06T05:44:07Z",
+      "side": 1,
+      "message": "this seems out of place here, like it should be in _NAMES?",
+      "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_5a3d6c29",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-06T05:44:07Z",
+      "side": 1,
+      "message": "looks like you still need to check the notifications, maybe look at the code around line 2050ish? i\u0027ll have to look to see how the revoke tests are currently performed",
+      "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3a42f8ae",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1099,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-06T05:44:07Z",
+      "side": 1,
+      "message": "remove (one was removed) or say (one was changed)?",
+      "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
