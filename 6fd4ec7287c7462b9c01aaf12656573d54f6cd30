@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_cbc1b1e5",
+        "filename": "keystone/common/sql/alembic/env.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-06T02:27:22Z",
+      "side": 1,
+      "message": "please remove this line",
+      "revId": "6fd4ec7287c7462b9c01aaf12656573d54f6cd30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
