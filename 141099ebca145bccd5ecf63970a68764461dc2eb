@@ -16,6 +16,24 @@
       "revId": "141099ebca145bccd5ecf63970a68764461dc2eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c1d3b602",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-07T12:32:47Z",
+      "side": 1,
+      "message": "+1 I\u0027ve noticed that red placeholder too :)",
+      "parentUuid": "da20952f_900a051f",
+      "revId": "141099ebca145bccd5ecf63970a68764461dc2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
