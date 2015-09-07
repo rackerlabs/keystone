@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_1cad9ee8",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-07T08:50:37Z",
+      "side": 1,
+      "message": "Yes, i missed that. Thanks.",
+      "parentUuid": "da20952f_da309c58",
+      "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_5a3d6c29",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_fc6f8a28",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-07T08:50:37Z",
+      "side": 1,
+      "message": "i did see the code around line 2055 but i don\u0027t know how to use it in my case.",
+      "parentUuid": "da20952f_5a3d6c29",
+      "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_3a42f8ae",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-06T05:44:07Z",
       "side": 1,
       "message": "remove (one was removed) or say (one was changed)?",
+      "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_bcc27232",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1099,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-07T08:50:37Z",
+      "side": 1,
+      "message": "i changed this bullet point, see how you like it now.",
+      "parentUuid": "da20952f_3a42f8ae",
       "revId": "f0e65ac13cb00f2127edfe62f4cb568df2375661",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
