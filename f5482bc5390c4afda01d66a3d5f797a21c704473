@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_0d21e59d",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-07T10:34:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_6f4f5c34",
+      "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_8f4c3043",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-26T13:50:17Z",
       "side": 1,
       "message": "same comment here.",
+      "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_cd376de1",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-07T10:34:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_8f4c3043",
       "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_6d32e1f3",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1028,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-07T10:34:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_cf3d488f",
+      "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_6f43dcaf",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-26T13:50:17Z",
       "side": 1,
       "message": "we already have some logic that creates services, and its inherited through the CatalogTests class. It would be awesome to see some of these utility methods consolidated rather than each class in the hierarchy having their own version.\n\nSounds like a good place for a mix-in or just some utility function in CatalogTests.",
+      "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_cdcbed70",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-07T10:34:45Z",
+      "side": 1,
+      "message": "CatalogTests is not in the SqlCatalogV3 hierarchy as it carries with it a lot of extra tests that don\u0027t work when inherited there.  I agree that there is a need for some improvement/refactoring to the utility methods but perhaps it should be a separate patch set.  I think the utility methods should be separated from actual test methods in the class structure - something that\u0027s not evident in CatalogTests - which itself I think is version (V2/V3) specific.",
+      "parentUuid": "fa1b9901_6f43dcaf",
       "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_6d49815f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-07T10:34:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_2fa724be",
+      "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_8fe8b0e3",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 16
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-26T13:50:17Z",
       "side": 1,
       "message": "nit: add period to end of this doc string.",
+      "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8d441547",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1079,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-07T10:34:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_8fe8b0e3",
       "revId": "f5482bc5390c4afda01d66a3d5f797a21c704473",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
