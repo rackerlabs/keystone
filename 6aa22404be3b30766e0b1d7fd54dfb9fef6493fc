@@ -88,6 +88,24 @@
       "revId": "6aa22404be3b30766e0b1d7fd54dfb9fef6493fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a789f270",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-07T13:07:29Z",
+      "side": 1,
+      "message": "i\u0027d simply make it cls so we don\u0027t close for some class overloading. I think this is what @classmethod is for, right?",
+      "parentUuid": "da20952f_f632425d",
+      "revId": "6aa22404be3b30766e0b1d7fd54dfb9fef6493fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
