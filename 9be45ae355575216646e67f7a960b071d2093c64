@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_0aa8b9da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-08T15:05:15Z",
+      "side": 1,
+      "message": "s/expand_ref()/_expand_project_ref()",
+      "revId": "9be45ae355575216646e67f7a960b071d2093c64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4a77919f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-08T15:05:15Z",
+      "side": 1,
+      "message": "I like this update. :)",
+      "revId": "9be45ae355575216646e67f7a960b071d2093c64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
