@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_90715c47",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-08T15:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_6e5a492c",
+      "revId": "699e7d9a3d3dc0bfdaed9a40f9f8ba0248178c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a3d098ca",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Is it okay to put a getter inside the DirectMaps() class?",
       "parentUuid": "da20952f_a3d098ca",
+      "revId": "699e7d9a3d3dc0bfdaed9a40f9f8ba0248178c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_109c6c5c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-08T15:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_eb908c97",
       "revId": "699e7d9a3d3dc0bfdaed9a40f9f8ba0248178c33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
