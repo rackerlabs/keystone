@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_50809f49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-08T17:30:44Z",
+      "side": 1,
+      "message": "+1 It\u0027d be nice to have correct naming to ease the life of those exploring the logs in the future",
+      "parentUuid": "da20952f_0aa8b9da",
+      "revId": "9be45ae355575216646e67f7a960b071d2093c64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_4a77919f",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 3
@@ -30,6 +48,23 @@
       "writtenOn": "2015-09-08T15:05:15Z",
       "side": 1,
       "message": "I like this update. :)",
+      "revId": "9be45ae355575216646e67f7a960b071d2093c64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_bc07971c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-08T17:30:44Z",
+      "side": 1,
+      "message": "I\u0027d rather use tuple here: you aren\u0027t going to expose this function in any way - so you don\u0027t need to assemble a dict; as for me, using variables in calling function is more compact and readable",
       "revId": "9be45ae355575216646e67f7a960b071d2093c64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
