@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_f84a085b",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-08T12:52:35Z",
+      "side": 1,
+      "message": "Doesn\u0027t makes sense this method be implemented here? https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L64 or in the endpoint driver layer?",
+      "revId": "f79980891b4a62cfdb7a64e87ed91aa6a181406f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
