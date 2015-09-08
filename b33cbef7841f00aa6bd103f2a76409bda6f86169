@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_1c4b2361",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-08T18:30:33Z",
+      "side": 0,
+      "message": "the type of this should be consistent. this patch is a bandaid over the real problem: that the data type is inconsistent. please fix the underlying problem instead.",
+      "revId": "b33cbef7841f00aa6bd103f2a76409bda6f86169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
