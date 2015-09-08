@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_2c927e4c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-08T14:24:40Z",
+      "side": 1,
+      "message": "since https://review.openstack.org/#/c/196877/21/keystone/token/providers/fernet/core.py hasn\u0027t landed yet, I\u0027m not sure... \n\nIf can open one if need though.",
+      "parentUuid": "da20952f_d6fb7979",
+      "revId": "5919493ea3399ea6163b550339cc6b4bb762edff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_fe4f10bc",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
