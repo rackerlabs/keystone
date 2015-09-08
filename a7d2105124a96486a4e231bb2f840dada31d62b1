@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_61bcf806",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-08T16:40:15Z",
+      "side": 1,
+      "message": "IdP, for consistency",
+      "revId": "a7d2105124a96486a4e231bb2f840dada31d62b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_d9528613",
         "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
         "patchSetId": 8
