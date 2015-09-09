@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_e17a3525",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "one of the issues i have with this is that you can\u0027t opt-in, you are making an experimental change to be always enabled, maybe consider another option to enable policy refresh?",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c1c37156",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "headers are normally dicts not lists\n\n  headers \u003d {}",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_21a90d91",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "http://docs.python-requests.org/en/latest/user/quickstart/#custom-headers\n\n  headers\u003d{\u0027Cache-Control\u0027: \u0027max-age\u003d%d\u0027 % max_age}",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_61db8522",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "consider adding some logs so a deployer knows when a new policy timeout has been hit",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_2197cd3b",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "nit: for cleanliness, i\u0027d prefer this moved to the end of file",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_81b9f9cd",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "I still have no idea what this function actually does or why it needs endpoint_id",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e1a1d596",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "use docstring formatting here",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_21db4d51",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-09T03:06:44Z",
+      "side": 1,
+      "message": "this is changing the result of this API: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-endpoint-policy.html#get-effective-policy-associated-with-endpoint",
+      "revId": "e0afe3a7b0f5c957dc2daf2be7a915a709f11b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
