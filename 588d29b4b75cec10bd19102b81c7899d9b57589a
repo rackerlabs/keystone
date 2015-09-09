@@ -16,6 +16,24 @@
       "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8c9cc05e",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-09T11:16:03Z",
+      "side": 1,
+      "message": "Dolph, this code is executed during request rather than app initialization and, as you can see, not protected against race condition. In our case race condition occurs during request in this very call (traceback added to the bug).\ndogpile.cache research revealed that RegionAlreadyConfigured is raised when several concurrent threads are attempting to configure region for the first use and aims to prevent any change to configuration \"on-the-fly\".\nIn our case config is persistent so the exception can be safely ignored.\nThe other (and more robust) solution was offered by Boris Bobrov internally: just wrap it in critical section, though I think it\u0027s an overkill to tackle the lock on every request.",
+      "parentUuid": "da20952f_548de128",
+      "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
