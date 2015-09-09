@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_e439ccf3",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T14:46:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_a4dc3475",
+      "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_648ffc75",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_a488b4c7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T14:46:46Z",
+      "side": 1,
+      "message": "agreed, I did it this way because it was originally done like this - https://github.com/openstack/keystone/blob/c5b194300a4b6befbdc75e3142207e5709d42736/keystone/token/providers/fernet/token_formatters.py#L24\n\nbut I can do it either way.",
+      "parentUuid": "da20952f_648ffc75",
+      "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_e4978c38",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-09T14:36:09Z",
       "side": 1,
       "message": "Should this mention \"initially in Kilo\" had padding and \"later in liberty\" it was removed?",
+      "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0446407b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T14:46:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_e4978c38",
       "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
