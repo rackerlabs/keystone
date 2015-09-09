@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_5ec63c17",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T18:47:19Z",
+      "side": 1,
+      "message": "can fix this typo here: /s/it\u0027s/its",
+      "revId": "85ef40aa1382a8c776958d84c9b939bc85dbfc08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_be8d18d5",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T18:47:19Z",
+      "side": 1,
+      "message": "this line can be joint with the one below",
+      "revId": "85ef40aa1382a8c776958d84c9b939bc85dbfc08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
