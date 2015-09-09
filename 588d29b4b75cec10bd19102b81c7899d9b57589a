@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_548de128",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-09T03:43:23Z",
+      "side": 1,
+      "message": "I\u0027m not really clear on what the point of this try/except is? Is the except block actually reachable now? Who is supposed to see this debug log and what are they supposed to do about it?\n\nThe rest of the patch makes sense to me.",
+      "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
