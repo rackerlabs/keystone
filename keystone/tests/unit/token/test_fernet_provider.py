@@ -10,12 +10,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
 import datetime
 import hashlib
 import os
 import uuid
 
+import msgpack
 from oslo_utils import timeutils
+from six.moves import urllib
 
 from keystone.common import config
 from keystone import exception
@@ -56,6 +59,60 @@ class TestFernetTokenProvider(tests.TestCase):
             exception.TokenNotFound,
             self.provider.validate_v2_token,
             uuid.uuid4().hex)
+
+
+class TestTokenFormatter(tests.TestCase):
+    def setUp(self):
+        super(TestTokenFormatter, self).setUp()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    def test_restore_padding(self):
+        # 'a' will result in '==' padding, 'aa' will result in '=' padding, and
+        # 'aaa' will result in no padding.
+        strings_to_test = ['a', 'aa', 'aaa']
+
+        for string in strings_to_test:
+            encoded_string = base64.urlsafe_b64encode(string)
+            encoded_str_without_padding = encoded_string.rstrip('=')
+            self.assertFalse(encoded_str_without_padding.endswith('='))
+            encoded_str_with_padding_restored = (
+                token_formatters.TokenFormatter.restore_padding(
+                    encoded_str_without_padding)
+            )
+            self.assertEqual(encoded_string, encoded_str_with_padding_restored)
+
+    def test_legacy_padding_validation(self):
+        first_value = uuid.uuid4().hex
+        second_value = uuid.uuid4().hex
+        payload = (first_value, second_value)
+        msgpack_payload = msgpack.packb(payload)
+
+        # NOTE(lbragstad): This method perserves the way that keystone used to
+        # percent encode the tokens, prior to bug #1491926.
+        def legacy_pack(payload):
+            tf = token_formatters.TokenFormatter()
+            encrypted_payload = tf.crypto.encrypt(payload)
+
+            # the encrypted_payload is returned with padding appended
+            self.assertTrue(encrypted_payload.endswith('='))
+
+            # using urllib.parse.quote will percent encode the padding, like
+            # keystone did in Kilo.
+            percent_encoded_payload = urllib.parse.quote(encrypted_payload)
+
+            # ensure that the padding was actaully percent encoded
+            self.assertTrue(percent_encoded_payload.endswith('%3D'))
+            return percent_encoded_payload
+
+        token_with_legacy_padding = legacy_pack(msgpack_payload)
+        tf = token_formatters.TokenFormatter()
+
+        # demonstrate the we can validate a payload that has been percent
+        # encoded with the Fernet logic that existed in Kilo
+        serialized_payload = tf.unpack(token_with_legacy_padding)
+        returned_payload = msgpack.unpackb(serialized_payload)
+        self.assertEqual(first_value, returned_payload[0])
+        self.assertEqual(second_value, returned_payload[1])
 
 
 class TestPayloads(tests.TestCase):
