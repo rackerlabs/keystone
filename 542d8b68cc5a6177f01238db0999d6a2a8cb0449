@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_00af037e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4855,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T17:52:02Z",
+      "side": 1,
+      "message": "What does this have to do with the patch itself?",
+      "revId": "542d8b68cc5a6177f01238db0999d6a2a8cb0449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6097dfeb",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T17:52:02Z",
+      "side": 1,
+      "message": "Same comment as before",
+      "revId": "542d8b68cc5a6177f01238db0999d6a2a8cb0449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
