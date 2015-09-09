@@ -22,4 +22,7 @@ name = os.path.basename(__file__)
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
 # http://pythonpaste.org/deploy/
-application = wsgi_server.initialize_application(name)
+
+# log_deprecation: used to display deprecation for httpd/keystone.py
+# since logging is not configured in this file
+application = wsgi_server.initialize_application(name, log_deprecation=True)
