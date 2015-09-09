@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_8df02ccb",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T17:29:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_db06e320",
+      "revId": "c67d19d2bae652f23051c25cf75d9cac987aa503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_db1fc36e",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 3
@@ -65,6 +83,24 @@
       "writtenOn": "2015-09-09T16:27:58Z",
       "side": 1,
       "message": "can you add an assertion to ensure/illustrate that the fernet token requires quoting, per the old scheme? in other words, ensure that the encrypted result has padding\u003d\u003d that must be encoded%3d%3d",
+      "revId": "c67d19d2bae652f23051c25cf75d9cac987aa503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0dd09cc8",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T17:29:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_db1fc36e",
       "revId": "c67d19d2bae652f23051c25cf75d9cac987aa503",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_2dd320d7",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T17:29:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_56014a03",
+      "revId": "c67d19d2bae652f23051c25cf75d9cac987aa503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_56286a85",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 3
@@ -99,6 +153,24 @@
       "writtenOn": "2015-09-09T16:27:58Z",
       "side": 1,
       "message": "FIXME indicates that the following code should not be used/trusted without further work... this just sounds like an action item for later (TODO).",
+      "revId": "c67d19d2bae652f23051c25cf75d9cac987aa503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0de73cad",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-09T17:29:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_56286a85",
       "revId": "c67d19d2bae652f23051c25cf75d9cac987aa503",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
