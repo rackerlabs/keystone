@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_6f7b48f5",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T20:14:02Z",
+      "side": 1,
+      "message": "How are the changes in this file related with the proposal of the patch?",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_ef72f7af",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T20:14:02Z",
+      "side": 1,
+      "message": "You need tests for this",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8f925cf5",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T20:14:02Z",
+      "side": 1,
+      "message": "remove this new line",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_af55dffa",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-09T20:14:02Z",
+      "side": 1,
+      "message": "what about renaming it to something like test_v3_endpoint_visible_from_v2",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
