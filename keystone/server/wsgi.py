@@ -47,7 +47,7 @@ KEYSTONE_HEADERS = [
 ]
 
 
-def initialize_application(name):
+def initialize_application(name, deprecation_keystone_py_function=None):
     common.configure()
 
     # Log the options used when starting if we're in debug mode...
@@ -55,6 +55,10 @@ def initialize_application(name):
         CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
 
     environment.use_stdlib()
+
+    # Display deprecation of keystone.py
+    if deprecation_keystone_py_function:
+        deprecation_keystone_py_function()
 
     def loadapp():
         return keystone_service.loadapp(
