@@ -22,4 +22,4 @@ name = os.path.basename(__file__)
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
 # http://pythonpaste.org/deploy/
-application = wsgi_server.initialize_application(name)
+application = wsgi_server.initialize_application(name, using_deprecated_keystone_py=True)

@@ -31,6 +31,7 @@ from keystone import config
 import keystone.middleware.core as middleware_core
 from keystone.server import common
 from keystone import service as keystone_service
+from oslo_log import versionutils
 
 
 CONF = cfg.CONF
@@ -47,12 +48,19 @@ KEYSTONE_HEADERS = [
 ]
 
 
-def initialize_application(name):
+def initialize_application(name, using_deprecated_keystone_py=False):
     common.configure()
 
     # Log the options used when starting if we're in debug mode...
     if CONF.debug:
         CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
+
+    # display deprecation of keystone.py
+    if using_deprecated_keystone_py:
+        versionutils.deprecated(as_of=versionutils.deprecated.LIBERTY,
+                                 in_favor_of='pbr',
+                                 remove_in=+2,
+                                 what='keystone.py')
 
     environment.use_stdlib()
 
