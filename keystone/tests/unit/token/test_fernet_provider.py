@@ -16,7 +16,9 @@ import hashlib
 import os
 import uuid
 
+import msgpack
 from oslo_utils import timeutils
+from six.moves import urllib
 
 from keystone.common import config
 from keystone.common import utils
@@ -72,6 +74,25 @@ class TestTokenFormatter(unit.TestCase):
                     encoded_str_without_padding)
             )
             self.assertEqual(encoded_string, encoded_str_with_padding_restored)
+
+    def test_legacy_padding_validation(self):
+        first_value = uuid.uuid4().hex
+        second_value = uuid.uuid4().hex
+        payload = (first_value, second_value)
+        msgpack_payload = msgpack.packb(payload)
+
+        # NOTE(lbragstad): This method perserves the way that keystone use to
+        # percent encode the tokens, prior to bug #1491926.
+        def legacy_encoding_logic(payload):
+            tf = token_formatters.TokenFormatter()
+            return urllib.parse.quote(tf.crypto.encrypt(payload))
+
+        token_with_legacy_encoding = legacy_encoding_logic(msgpack_payload)
+        tf = token_formatters.TokenFormatter()
+        serialized_payload = tf.unpack(token_with_legacy_encoding)
+        returned_payload = msgpack.unpackb(serialized_payload)
+        self.assertEqual(first_value, returned_payload[0])
+        self.assertEqual(second_value, returned_payload[1])
 
 
 class TestPayloads(unit.TestCase):
