@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "da20952f_c39ff063",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-09T08:33:39Z",
+      "side": 1,
+      "message": "better to say \"Multiple domains are not supported under which condition...\", or else, we have no idea what\u0027s going on from the log.",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_39fe4faf",
         "filename": "keystone/resource/core.py",
         "patchSetId": 13
@@ -47,6 +64,40 @@
       "writtenOn": "2015-09-08T15:01:08Z",
       "side": 1,
       "message": "same here.",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_83e6d8ae",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-09T08:33:39Z",
+      "side": 1,
+      "message": "Add the following `raises` in the docstring.\n\n:raises: keystone.exception.DomainNotFound",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a35afc28",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-09T08:33:39Z",
+      "side": 1,
+      "message": "what happened if the parent project doesn\u0027t has the domain_id?\ncan this happen? If not, why?",
       "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
