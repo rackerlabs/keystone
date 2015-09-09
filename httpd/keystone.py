@@ -14,12 +14,25 @@
 
 import os
 
+from oslo_log import log
+from oslo_log import versionutils
+
+from keystone.i18n import _LW
 from keystone.server import wsgi as wsgi_server
 
-
 name = os.path.basename(__file__)
-
+LOG = log.getLogger(__name__)
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
 # http://pythonpaste.org/deploy/
+
+# log_deprecation: used to display deprecation for httpd/keystone.py
+# since logging is not configured in this file
 application = wsgi_server.initialize_application(name)
+
+versionutils.report_deprecated_feature(
+    LOG,
+    _LW('httpd/keystone.py is deprecated as of Mitaka'
+        ' in favor of keystone-wsgi-admin and keystone-wsgi-public'
+        ' and may be removed in O.')
+)
