@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_eff2f89a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-09T20:00:43Z",
+      "side": 1,
+      "message": "the name of the project is oslo.log -- http://git.openstack.org/cgit/openstack/oslo.log/",
+      "parentUuid": "da20952f_f66a42ec",
+      "revId": "a6f675d9c88bbfe8c946fecd2510fc125c7301d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_d674decf",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
