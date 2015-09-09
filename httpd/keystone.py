@@ -14,12 +14,24 @@
 
 import os
 
+from oslo_log import versionutils
+
 from keystone.server import wsgi as wsgi_server
 
+
+@versionutils.deprecated(
+    as_of=versionutils.deprecated.LIBERTY,
+    in_favor_of='keystone-wsgi-admin or keystone-wsgi-public',
+    remove_in=+2,
+    what='httpd/keystone.py')
+def deprecation_keystone_py_warning():
+        pass
 
 name = os.path.basename(__file__)
 
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
 # http://pythonpaste.org/deploy/
-application = wsgi_server.initialize_application(name)
+application = wsgi_server.initialize_application(
+    name,
+    post_log_configured_function=deprecation_keystone_py_warning)
