@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_a4dc3475",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-09T14:36:09Z",
+      "side": 1,
+      "message": "s/use/uses",
+      "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_648ffc75",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-09T14:36:09Z",
+      "side": 1,
+      "message": "I think its generally nicer to have an import per line.",
+      "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e4978c38",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-09T14:36:09Z",
+      "side": 1,
+      "message": "Should this mention \"initially in Kilo\" had padding and \"later in liberty\" it was removed?",
+      "revId": "70337ead6316796a82db3ab681d20979a5f8e3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
