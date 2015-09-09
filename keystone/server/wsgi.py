@@ -16,6 +16,8 @@ import logging
 
 from oslo_config import cfg
 import oslo_i18n
+from oslo_log import log
+from oslo_log import versionutils
 import oslo_middleware.cors as cors
 
 
@@ -28,12 +30,14 @@ oslo_i18n.enable_lazy()
 
 from keystone.common import environment
 from keystone import config
+from keystone.i18n import _LW
 import keystone.middleware.core as middleware_core
 from keystone.server import common
 from keystone import service as keystone_service
 
 
 CONF = cfg.CONF
+LOG = log.getLogger(__name__)
 
 KEYSTONE_HEADERS = [
     middleware_core.AUTH_TOKEN_HEADER,
@@ -47,7 +51,7 @@ KEYSTONE_HEADERS = [
 ]
 
 
-def initialize_application(name):
+def initialize_application(name, log_deprecation=False):
     common.configure()
 
     # Log the options used when starting if we're in debug mode...
@@ -55,6 +59,13 @@ def initialize_application(name):
         CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
 
     environment.use_stdlib()
+
+    versionutils.report_deprecated_feature(
+        LOG,
+        _LW('httpd/keystone.py is deprecated as of Liberty'
+            ' in favor of keystone-wsgi-admin or keystone-wsgi-public'
+            ' and may be removed in N.')
+    )
 
     def loadapp():
         return keystone_service.loadapp(
