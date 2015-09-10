@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_3096f594",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-10T13:53:07Z",
+      "side": 0,
+      "message": "This is an unfortunate change because it causes our Apache config to not work with an out of the box paste.ini.",
+      "revId": "3bac87ef2c8a72b7c3d4fc69b5c31ac54212d402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
