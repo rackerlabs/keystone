@@ -52,6 +52,24 @@
       "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3f3a4635",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-10T12:36:39Z",
+      "side": 1,
+      "message": "Dave, in this particular case persistent config makes reconfiguration to have no effect. I think critical section is not needed here.",
+      "parentUuid": "da20952f_27280b85",
+      "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
