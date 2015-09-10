@@ -19,6 +19,75 @@
     },
     {
       "key": {
+        "uuid": "da20952f_07cf07b4",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-10T07:05:36Z",
+      "side": 1,
+      "message": "++ revert these change since it\u0027s irrevlevant.",
+      "parentUuid": "da20952f_6f7b48f5",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_820b052b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-10T07:05:36Z",
+      "side": 1,
+      "message": "are you assume the combination of \u0027service_id\u0027 and \u0027region_id\u0027 is the key of the endpoint? where is this assumption based?",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c7334f61",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-10T07:05:36Z",
+      "side": 1,
+      "message": "you are not just dealing with the legacy endpoint here but all of the endpoints.",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_224c799c",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-10T07:05:36Z",
+      "side": 1,
+      "message": "These looks like hacking, you can get all of the endpoints and then write a method to covert it into V2 endpoints if it\u0027s V3 formatted, then it looks more clear I think.",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_ef72f7af",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 3
