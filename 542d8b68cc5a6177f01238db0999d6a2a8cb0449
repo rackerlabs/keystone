@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_7866aabc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4855,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-10T01:05:37Z",
+      "side": 1,
+      "message": "If we want to enabe the validation on the region id, there should be one region, this what this patch want to address.",
+      "parentUuid": "da20952f_00af037e",
+      "revId": "542d8b68cc5a6177f01238db0999d6a2a8cb0449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_6097dfeb",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 6
