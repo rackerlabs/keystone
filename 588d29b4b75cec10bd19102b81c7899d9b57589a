@@ -34,6 +34,24 @@
       "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_27280b85",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-10T05:26:12Z",
+      "side": 1,
+      "message": "I was thinking why persistent config could ignore the exception (RegionAlreadyConfigured) here?\n\nwhy not protect against race condition for such a request?",
+      "parentUuid": "da20952f_8c9cc05e",
+      "revId": "588d29b4b75cec10bd19102b81c7899d9b57589a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
