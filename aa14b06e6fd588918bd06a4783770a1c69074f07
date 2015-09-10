@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_6e8569cd",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-10T15:05:42Z",
+      "side": 1,
+      "message": "nit: add doc strings to be consistent with the rest of the methods in this class.",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_11417239",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-10T15:05:42Z",
+      "side": 1,
+      "message": "Per David\u0027s previous comment, I don\u0027t think this is raising an exception. It\u0027s just logging a warning.",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8e30fd08",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-10T15:05:42Z",
+      "side": 1,
+      "message": "suggest breaking this doc string up such that the first line summarizes the test. This would be consistent with other doc string conventions in keystone. \n\n    \"\"\"Test mapping with unavailable request variables.\n\n       This test calls rp.process .... \n\n    \"\"\"",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
