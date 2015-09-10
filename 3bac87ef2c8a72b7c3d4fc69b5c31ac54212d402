@@ -34,6 +34,24 @@
       "revId": "3bac87ef2c8a72b7c3d4fc69b5c31ac54212d402",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4b465822",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-10T14:16:58Z",
+      "side": 0,
+      "message": "If you take this config then you\u0027ll have to do something like s/composite:/composite:keystone-wsgi/ to our stock paste.ini.",
+      "parentUuid": "da20952f_50fda939",
+      "revId": "3bac87ef2c8a72b7c3d4fc69b5c31ac54212d402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
