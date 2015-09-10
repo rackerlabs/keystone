@@ -16,6 +16,24 @@
       "revId": "3bac87ef2c8a72b7c3d4fc69b5c31ac54212d402",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_50fda939",
+        "filename": "httpd/wsgi-keystone.conf",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-10T14:05:48Z",
+      "side": 0,
+      "message": "Why\u0027s that? This path didn\u0027t exist unless it was created by hand before this change, now the file is created automatically by pbr on install.",
+      "parentUuid": "da20952f_3096f594",
+      "revId": "3bac87ef2c8a72b7c3d4fc69b5c31ac54212d402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
