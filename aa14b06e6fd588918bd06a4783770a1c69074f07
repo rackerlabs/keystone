@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_114bb22c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-10T15:16:42Z",
+      "side": 1,
+      "message": "Any reason to not just rename _matches to matches?",
+      "parentUuid": "da20952f_6e8569cd",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_11417239",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 4
@@ -47,6 +65,41 @@
       "writtenOn": "2015-09-10T15:05:42Z",
       "side": 1,
       "message": "suggest breaking this doc string up such that the first line summarizes the test. This would be consistent with other doc string conventions in keystone. \n\n    \"\"\"Test mapping with unavailable request variables.\n\n       This test calls rp.process .... \n\n    \"\"\"",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_918ee225",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-10T15:16:42Z",
+      "side": 1,
+      "message": "++ http://docs.openstack.org/developer/hacking/#docstrings",
+      "parentUuid": "da20952f_8e30fd08",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7100ee66",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1490,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-10T15:16:42Z",
+      "side": 1,
+      "message": "I think this is very unexpected and worse then getting an IndexError. Something *is* wrong here and we need to let somebody know. An IndexError isn\u0027t good enough to convey what is happening so I think that is what needs to change.\n\nRemember just because there is no traceback doesn\u0027t mean the system did the right thing.",
       "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
