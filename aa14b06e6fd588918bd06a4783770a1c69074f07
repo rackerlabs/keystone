@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_7411bc03",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-10T15:32:08Z",
+      "side": 1,
+      "message": "Would it make sense to make a new exception maybe something along the lines of \u0027DirectMapNotFound\u0027 specifically for this case?",
+      "parentUuid": "da20952f_11417239",
+      "revId": "aa14b06e6fd588918bd06a4783770a1c69074f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_8e30fd08",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
