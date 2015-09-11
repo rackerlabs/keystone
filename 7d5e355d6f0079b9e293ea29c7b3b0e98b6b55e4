@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_a88cbe80",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-11T03:29:14Z",
+      "side": 1,
+      "message": "these docstring will not be rendered since it\u0027s private method, and the exception message is not correct, but this can be in a follow up review since it\u0027s not under the scope of the topic.",
+      "revId": "7d5e355d6f0079b9e293ea29c7b3b0e98b6b55e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
