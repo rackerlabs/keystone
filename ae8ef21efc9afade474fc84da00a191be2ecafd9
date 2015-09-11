@@ -16,6 +16,24 @@
       "revId": "ae8ef21efc9afade474fc84da00a191be2ecafd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c4177f52",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-11T19:56:44Z",
+      "side": 1,
+      "message": "The project domain ID will be used in the RequestContext so that it can be logged since it\u0027s part of the standard openstack log message format.",
+      "parentUuid": "da20952f_f6ee0bec",
+      "revId": "ae8ef21efc9afade474fc84da00a191be2ecafd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
