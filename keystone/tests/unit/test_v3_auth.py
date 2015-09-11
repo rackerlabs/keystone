@@ -386,7 +386,7 @@ class TokenAPITests(object):
         # Delete the v2 token using v3.
         resp = self.delete(
             '/auth/tokens', headers={'X-Subject-Token': v2_token})
-        self.assertEqual(resp.status_code, 204)
+        self.assertEqual(204, resp.status_code)
 
         # Attempting to use the deleted token on v2 should fail.
         self.admin_request(
