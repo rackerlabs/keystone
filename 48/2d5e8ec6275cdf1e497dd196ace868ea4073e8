@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Rajesh Tailor <rajesh.tailor@nttdata.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 11 Sep 2015 18:25:33 +0000
+Reviewed-on: https://review.openstack.org/217362
+Project: openstack/keystone
+Branch: refs/heads/master
