@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_ee5ec075",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-13T23:42:10Z",
+      "side": 1,
+      "message": "the commit message should say why the change is being made. I can\u0027t see any difference in the output with the change to the underline for description and mapping schema, and nothing in the rst docs that says the old style was incorrect.",
+      "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_8e54e454",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-13T23:42:10Z",
+      "side": 1,
+      "message": "revert this change.",
+      "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ae51a864",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-13T23:42:10Z",
+      "side": 1,
+      "message": "revert this change.",
+      "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
