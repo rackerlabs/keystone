@@ -18,7 +18,7 @@
 Setting up a Keystone development environment
 =============================================
 
-This document describes getting the source from keystone's `Git repository`_
+This document describes getting the source from Keystone's `Git repository`_
 for development purposes.
 
 To install Keystone from packaging, refer instead to Keystone's `User
@@ -27,26 +27,31 @@ Documentation`_.
 .. _`Git Repository`: http://git.openstack.org/cgit/openstack/keystone
 .. _`User Documentation`: http://docs.openstack.org/
 
-Prerequisites
-=============
-
+Installing system dependencies
+==============================
 This document assumes you are using Ubuntu, Fedora or openSUSE (SLE)
 
-And that you have the following tools available on your system:
+Ubuntu 14.04:
 
-- Python_ 2.7 and 3.4
-- git_
-- setuptools_
-- pip_
-- msgfmt (part of the gettext package)
-- virtualenv_
+.. code-block:: bash
 
-**Reminder**: If you're successfully using a different platform, or a
-different version of the above, please document your configuration here!
+    $ sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev \
+        libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
 
-.. _Python: http://www.python.org/
-.. _git: http://git-scm.com/
-.. _setuptools: http://pypi.python.org/pypi/setuptools
+
+Fedora 19+:
+
+.. code-block:: bash
+
+    $ sudo yum install python-lxml python-greenlet-devel python-ldap sqlite-devel \
+        openldap-devel python-devel libxslt-devel openssl-devel libffi-devel
+
+openSUSE 13.2 (SLE 12):
+
+.. code-block:: bash
+
+    $ sudo zypper install libxslt-devel openldap2-devel libopenssl-devel python-devel \
+        python-greenlet-devel python-ldap python-lxml python-pysqlite sqlite3-devel
 
 Getting the latest code
 =======================
@@ -63,64 +68,31 @@ When that is complete, you can:
 
     $ cd keystone
 
-Installing dependencies
-=======================
+Setting up a virtual environment
+================================
 
-Keystone maintains two lists of dependencies::
-
-    requirements.txt
-    test-requirements.txt
-
-The first is the list of dependencies needed for running keystone, the second list includes dependencies used for active development and testing of Keystone itself.
-
-These dependencies can be installed from PyPi_ using the Python tool pip_.
+To install dependencies from PyPi_ to virtualenv, install the Python tool pip_.
 
 .. _PyPi: http://pypi.python.org/
 .. _pip: http://pypi.python.org/pypi/pip
 
-However, your system *may* need additional dependencies that `pip` (and by
-extension, PyPi) cannot satisfy. These dependencies should be installed
-prior to using `pip`, and the installation method may vary depending on
-your platform.
-
-Ubuntu 14.04:
+Once pip has been installed, install ``tox``
 
 .. code-block:: bash
 
-    $ sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev \
-        libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
+    $ pip install tox
 
-
-Fedora 19+:
+To install dependencies within virtualenv, run:
 
 .. code-block:: bash
 
-    $ sudo yum install python-lxml python-greenlet-devel python-ldap sqlite-devel openldap-devel python-devel libxslt-devel openssl-devel libffi-devel
+    $ tox -e py27 --notest
 
-openSUSE 13.2 (SLE 12):
-
-.. code-block:: bash
-
-    $ sudo zypper install libxslt-devel openldap2-devel libopenssl-devel python-devel python-greenlet-devel python-ldap python-lxml python-pysqlite sqlite3-devel
-
-PyPi Packages and VirtualEnv
-----------------------------
-
-We recommend establishing a virtualenv to run Keystone within. virtualenv
-limits the Python environment to just what you're installing as dependencies,
-useful to keep a clean environment for working on Keystone. The tools directory
-in Keystone has a script already created to make this very simple:
+To activate virtual environment, run:
 
 .. code-block:: bash
 
-    $ python tools/install_venv.py
-
-This will create a local virtual environment in the directory ``.venv``.
-Once created, you can activate this virtualenv for your current shell using:
-
-.. code-block:: bash
-
-    $ source .venv/bin/activate
+    $ source .tox/py27/bin/activate
 
 The virtual environment can be disabled using the command:
 
@@ -128,39 +100,17 @@ The virtual environment can be disabled using the command:
 
     $ deactivate
 
-You can also use ``tools\with_venv.sh`` to prefix commands so that they run
-within the virtual environment. For more information on virtual environments,
-see virtualenv_.
-
-.. _virtualenv: http://www.virtualenv.org/
-
-If you want to run Keystone outside of a virtualenv, you can install the
-dependencies directly into your system from the requirements files:
-
-.. code-block:: bash
-
-    # Install the dependencies for running keystone
-    $ pip install -r requirements.txt
-
-    # Install the dependencies for developing, testing, and running keystone
-    $ pip install -r test-requirements.txt
-
-    # Use 'python setup.py' to link Keystone into Python's site-packages
-    $ python setup.py develop
-
-
 Verifying Keystone is set up
 ============================
 
-Once set up, either directly or within a virtualenv, you should be able to
-invoke Python and import the libraries. If you're using a virtualenv, don't
-forget to activate it:
+Once set up within a virtualenv, you should be able to invoke Python and
+import the libraries. Don't forget to activate it:
 
 .. code-block:: bash
 
-    $ source .venv/bin/activate
+    $ source .tox/py27/bin/activate
 
-You should then be able to `import keystone` using Python without issue:
+You should be able to `import keystone` using Python without issue:
 
 .. code-block:: bash
 
