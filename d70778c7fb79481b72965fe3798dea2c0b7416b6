@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_bdad478a",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-14T14:10:42Z",
+      "side": 1,
+      "message": "should unscoped tokens always have the user\u0027s domain_id?",
+      "revId": "d70778c7fb79481b72965fe3798dea2c0b7416b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
