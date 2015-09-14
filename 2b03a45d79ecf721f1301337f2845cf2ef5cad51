@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_df3a7de7",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-14T09:52:16Z",
+      "side": 1,
+      "message": "Why need this change? IIRC, there was patch to update from \u0027Keystone\u0027 to keystone since \"keystone\" is the recommened project name instead of \"Keystone\".\n\npls see: https://wiki.openstack.org/wiki/Documentation/Conventions",
+      "revId": "2b03a45d79ecf721f1301337f2845cf2ef5cad51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_116ea9c9",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-14T09:52:16Z",
+      "side": 1,
+      "message": "same here, I think all the project name with initial character in lowercase is intentional, besides, these change seems irrelevant.",
+      "revId": "2b03a45d79ecf721f1301337f2845cf2ef5cad51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_91c4f940",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-14T09:52:16Z",
+      "side": 1,
+      "message": "Unique identifier assigned to each user? or Unique identifiers assigned to users?",
+      "revId": "2b03a45d79ecf721f1301337f2845cf2ef5cad51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_713cc593",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-14T09:52:16Z",
+      "side": 1,
+      "message": "keystone CLI liberary will not be removed, right?",
+      "revId": "2b03a45d79ecf721f1301337f2845cf2ef5cad51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
