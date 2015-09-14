@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_b43484de",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 0,
+      "message": "Why remove this?",
+      "revId": "41f9e16eb770a025b999f00577e0304d9aa02a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f4419c3a",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 0,
+      "message": "And this?",
+      "revId": "41f9e16eb770a025b999f00577e0304d9aa02a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

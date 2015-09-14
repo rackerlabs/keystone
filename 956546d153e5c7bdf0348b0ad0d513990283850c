@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_36ee3b8c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 1,
+      "message": "It would be nice to mention the commit where those tools were removed for reference here.",
+      "revId": "956546d153e5c7bdf0348b0ad0d513990283850c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_96ef07b0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "956546d153e5c7bdf0348b0ad0d513990283850c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_969067ee",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 1,
+      "message": "s/it\u0027s/its",
+      "revId": "956546d153e5c7bdf0348b0ad0d513990283850c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_967e27ad",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 1,
+      "message": "After installing the dependencies.\n\nSomething has to be specified after \u0027python setup.py\u0027, otherwise you\u0027ll get an error message.  Usually \u0027install\u0027 or \u0027develop\u0027 are given.",
+      "revId": "956546d153e5c7bdf0348b0ad0d513990283850c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b677abd3",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:04:50Z",
+      "side": 1,
+      "message": "s/you/You",
+      "revId": "956546d153e5c7bdf0348b0ad0d513990283850c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
