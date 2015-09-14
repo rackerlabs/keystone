@@ -647,6 +647,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
     # auth validation
 
     def assertValidISO8601ExtendedFormatDatetime(self, dt):
+        self.assertIsInstance(dt, str)
         try:
             return timeutils.parse_strtime(dt, fmt=TIME_FORMAT)
         except Exception:
