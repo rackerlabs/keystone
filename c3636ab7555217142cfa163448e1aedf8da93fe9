@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_8a8dad7d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:22:01Z",
+      "side": 1,
+      "message": "better as \u0027Invalid user \"%s\" or password\u0027.  stating invalid twice is redundant",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ca93a5a2",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:22:01Z",
+      "side": 1,
+      "message": "better as \u0027Invalid user or password\u0027.  stating invalid twice is redundant",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_2ae9011b",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:22:01Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_4aeeb523",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:22:01Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_0808582c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
@@ -13,6 +81,41 @@
       "writtenOn": "2015-09-03T17:17:44Z",
       "side": 1,
       "message": "maybe put the %s between parenthesis ?",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_aadd1172",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:22:01Z",
+      "side": 1,
+      "message": "paraenthesis or \"%s\".  something to indicate the user id word differently",
+      "parentUuid": "da20952f_0808582c",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cadac578",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:22:01Z",
+      "side": 1,
+      "message": "ditto",
       "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
