@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_6ab9392e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T03:17:22Z",
+      "side": 1,
+      "message": "If as you stated in PS1 that this matches the original import (https://github.com/openstack/keystone/blob/c5b194300a4b6befbdc75e3142207e5709d42736/keystone/token/providers/fernet/token_formatters.py#L24), shouldn\u0027t it be:\n\nfrom six.moves import map, urllib\n\nnot:\n\nfrom six.moves import urllib, map",
+      "revId": "ce5f0415eeaaf31c38791d8d4b1fc74fa84f198b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
