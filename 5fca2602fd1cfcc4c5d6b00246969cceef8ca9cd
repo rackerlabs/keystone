@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_cfaaba70",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-14T16:56:35Z",
+      "side": 1,
+      "message": "I think all these \u0027get\u0027 are not needed here. For example:\n\ntry:\n\n    federation \u003d token_data[\u0027token\u0027][\u0027user\u0027][federation_constants.FEDERATION]\n\n    idp_id \u003d federation[\u0027identity_provider\u0027][\u0027id\u0027]\n\n    protocol_id \u003d federation[\u0027protocol\u0027][\u0027id\u0027]\n\nexcept KeyError:\n\n    return None",
+      "revId": "5fca2602fd1cfcc4c5d6b00246969cceef8ca9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
