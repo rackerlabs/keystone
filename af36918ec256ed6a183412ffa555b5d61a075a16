@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_c52cd9ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T17:57:21Z",
+      "side": 1,
+      "message": "Technically its \"http://\" that\u0027s being removed, but not a big deal.\n\ns/Json/JSON",
+      "revId": "af36918ec256ed6a183412ffa555b5d61a075a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_851d8175",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T17:57:21Z",
+      "side": 1,
+      "message": "it has been removed.",
+      "revId": "af36918ec256ed6a183412ffa555b5d61a075a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
