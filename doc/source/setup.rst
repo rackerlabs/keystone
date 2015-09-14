@@ -39,7 +39,6 @@ And that you have the following tools available on your system:
 - setuptools_
 - pip_
 - msgfmt (part of the gettext package)
-- virtualenv_
 
 **Reminder**: If you're successfully using a different platform, or a
 different version of the above, please document your configuration here!
@@ -63,8 +62,8 @@ When that is complete, you can:
 
     $ cd keystone
 
-Installing dependencies
-=======================
+Installing Keystone and its dependencies
+========================================
 
 Keystone maintains two lists of dependencies::
 
@@ -77,6 +76,20 @@ These dependencies can be installed from PyPi_ using the Python tool pip_.
 
 .. _PyPi: http://pypi.python.org/
 .. _pip: http://pypi.python.org/pypi/pip
+
+You can install the dependencies directly into your system from the
+requirements files:
+
+.. code-block:: bash
+
+    # Install the dependencies for running keystone
+    $ pip install -r requirements.txt
+
+    # Install the dependencies for developing, testing, and running keystone
+    $ pip install -r test-requirements.txt
+
+    # Use 'python setup.py' to link Keystone into Python's site-packages
+    $ python setup.py develop
 
 However, your system *may* need additional dependencies that `pip` (and by
 extension, PyPi) cannot satisfy. These dependencies should be installed
@@ -103,63 +116,10 @@ openSUSE 13.2 (SLE 12):
 
     $ sudo zypper install libxslt-devel openldap2-devel libopenssl-devel python-devel python-greenlet-devel python-ldap python-lxml python-pysqlite sqlite3-devel
 
-PyPi Packages and VirtualEnv
-----------------------------
-
-We recommend establishing a virtualenv to run Keystone within. virtualenv
-limits the Python environment to just what you're installing as dependencies,
-useful to keep a clean environment for working on Keystone. The tools directory
-in Keystone has a script already created to make this very simple:
-
-.. code-block:: bash
-
-    $ python tools/install_venv.py
-
-This will create a local virtual environment in the directory ``.venv``.
-Once created, you can activate this virtualenv for your current shell using:
-
-.. code-block:: bash
-
-    $ source .venv/bin/activate
-
-The virtual environment can be disabled using the command:
-
-.. code-block:: bash
-
-    $ deactivate
-
-You can also use ``tools\with_venv.sh`` to prefix commands so that they run
-within the virtual environment. For more information on virtual environments,
-see virtualenv_.
-
-.. _virtualenv: http://www.virtualenv.org/
-
-If you want to run Keystone outside of a virtualenv, you can install the
-dependencies directly into your system from the requirements files:
-
-.. code-block:: bash
-
-    # Install the dependencies for running keystone
-    $ pip install -r requirements.txt
-
-    # Install the dependencies for developing, testing, and running keystone
-    $ pip install -r test-requirements.txt
-
-    # Use 'python setup.py' to link Keystone into Python's site-packages
-    $ python setup.py develop
-
-
 Verifying Keystone is set up
 ============================
 
-Once set up, either directly or within a virtualenv, you should be able to
-invoke Python and import the libraries. If you're using a virtualenv, don't
-forget to activate it:
-
-.. code-block:: bash
-
-    $ source .venv/bin/activate
-
+Once set up, you should be able to invoke Python and import the libraries.
 You should then be able to `import keystone` using Python without issue:
 
 .. code-block:: bash
