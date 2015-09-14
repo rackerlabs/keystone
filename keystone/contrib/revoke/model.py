@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from datetime import timedelta
+
 from oslo_utils import timeutils
 from six.moves import map
 
@@ -90,7 +92,7 @@ class RevokeEvent(object):
             self.expires_at = self.expires_at.replace(microsecond=0)
 
         if self.revoked_at is None:
-            self.revoked_at = timeutils.utcnow()
+            self.revoked_at = timeutils.utcnow() + timedelta(seconds=1)
         if self.issued_before is None:
             self.issued_before = self.revoked_at
 
@@ -114,8 +116,7 @@ class RevokeEvent(object):
         if self.expires_at is not None:
             event['expires_at'] = utils.isotime(self.expires_at)
         if self.issued_before is not None:
-            event['issued_before'] = utils.isotime(self.issued_before,
-                                                   subsecond=True)
+            event['issued_before'] = utils.isotime(self.issued_before)
         return event
 
     def key_for_name(self, name):
