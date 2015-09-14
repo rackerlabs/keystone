@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_f7267e15",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-14T13:36:28Z",
+      "side": 1,
+      "message": "Should a create endpoint invalidate this?  I\u0027m just thinking of the case where I add an endpoint, then do a get catalog...and then endpoint isn\u0027t there....",
+      "revId": "53fb7d817f7f7c58067de6feff98271dd7072b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
