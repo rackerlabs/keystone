@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_8ff35b0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17277
+      },
+      "writtenOn": "2015-09-14T19:48:14Z",
+      "side": 1,
+      "message": "It is \"http://\" in the doc, it just gets parsed and shows up as \"http//\" as part of the URL. If we are all being technical.",
+      "parentUuid": "ba15a1d1_ef045716",
+      "revId": "af36918ec256ed6a183412ffa555b5d61a075a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_851d8175",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-14T17:57:21Z",
       "side": 1,
       "message": "it has been removed.",
+      "revId": "af36918ec256ed6a183412ffa555b5d61a075a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_8f583bfc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17277
+      },
+      "writtenOn": "2015-09-14T19:48:14Z",
+      "side": 1,
+      "message": "I would recommend something along these lines:\n\n\"The Json schema link has an extra \"http://\", which should be removed for the link to function properly.\"",
+      "parentUuid": "ba15a1d1_851d8175",
       "revId": "af36918ec256ed6a183412ffa555b5d61a075a16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
