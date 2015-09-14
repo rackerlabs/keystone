@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_d731faed",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-14T13:23:40Z",
+      "side": 1,
+      "message": "++, I think this is an unrelated change as it isn\u0027t detailed in the commit message.",
+      "parentUuid": "ba15a1d1_8e54e454",
+      "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ae51a864",
         "filename": "doc/source/mapping_schema.rst",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-13T23:42:10Z",
       "side": 1,
       "message": "revert this change.",
+      "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_37571604",
+        "filename": "doc/source/mapping_schema.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-14T13:23:40Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "parentUuid": "ba15a1d1_ae51a864",
       "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
