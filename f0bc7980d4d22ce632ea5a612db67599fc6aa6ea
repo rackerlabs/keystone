@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_2904b213",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-14T00:22:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_8e8944cd",
+      "revId": "f0bc7980d4d22ce632ea5a612db67599fc6aa6ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ae8688b7",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-14T00:19:41Z",
       "side": 1,
       "message": "add \"when request contains invalid blob.",
+      "revId": "f0bc7980d4d22ce632ea5a612db67599fc6aa6ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_c908962b",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-14T00:22:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_ae8688b7",
       "revId": "f0bc7980d4d22ce632ea5a612db67599fc6aa6ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
