@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_daee01ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-14T13:51:24Z",
+      "side": 1,
+      "message": "I think its better to just split these two changes into separate patches.  That is if the underline change is even needed.",
+      "revId": "a53d5e6e131a4c4e61285ad26dbaea0e6f122fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ee5ec075",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
