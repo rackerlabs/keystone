@@ -18,7 +18,6 @@ import uuid
 from oslo_config import cfg
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
-import six
 from testtools import matchers
 
 from keystone import auth
@@ -647,6 +646,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
     # auth validation
 
     def assertValidISO8601ExtendedFormatDatetime(self, dt):
+        self.assertIsInstance(dt, str)
         try:
             return timeutils.parse_strtime(dt, fmt=TIME_FORMAT)
         except Exception:
