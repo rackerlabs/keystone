@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_7a9575e2",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-14T14:03:56Z",
+      "side": 1,
+      "message": "Is this testing a trust scoped token? The name of the test doesn\u0027t really elude to what is being tested, or how.",
+      "revId": "02c1fd2d7f36fc0652e29ec3d9e25c97f9018296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_da7e01ae",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-14T14:03:56Z",
+      "side": 1,
+      "message": "federated_use or federated_user*?",
+      "revId": "02c1fd2d7f36fc0652e29ec3d9e25c97f9018296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
