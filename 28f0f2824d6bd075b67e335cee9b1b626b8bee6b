@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_b903d40c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:28:30Z",
+      "side": 1,
+      "message": "the commit message needs to explain the changes and it shouldn\u0027t be required to reference external reference to understand it.\n\nSee https://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages",
+      "revId": "28f0f2824d6bd075b67e335cee9b1b626b8bee6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
