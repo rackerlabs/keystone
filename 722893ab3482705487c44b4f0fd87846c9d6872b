@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_18d77324",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T12:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_da4b61af",
+      "revId": "722893ab3482705487c44b4f0fd87846c9d6872b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_da9041ef",
         "filename": "doc/source/services.rst",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-14T14:00:50Z",
       "side": 1,
       "message": "probably better to say \u0027service\u0027 instead of \u0027project\u0027 since you just defined \u0027projects\u0027 as entities in keystone.",
+      "revId": "722893ab3482705487c44b4f0fd87846c9d6872b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d8e01bfd",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T12:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_da9041ef",
       "revId": "722893ab3482705487c44b4f0fd87846c9d6872b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_f8babfe0",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T12:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_3ab05ddd",
+      "revId": "722893ab3482705487c44b4f0fd87846c9d6872b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_7a601536",
         "filename": "doc/source/services.rst",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-14T14:00:50Z",
       "side": 1,
       "message": "s/V3/v3 to be consistent with other references to v3",
+      "revId": "722893ab3482705487c44b4f0fd87846c9d6872b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_78cf8f7f",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T12:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_7a601536",
       "revId": "722893ab3482705487c44b4f0fd87846c9d6872b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
