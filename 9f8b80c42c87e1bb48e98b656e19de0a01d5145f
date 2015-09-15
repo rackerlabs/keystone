@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_77e25105",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-15T03:21:36Z",
+      "side": 1,
+      "message": "Is there any possible to assert it is timestr instead of just a str?",
+      "revId": "9f8b80c42c87e1bb48e98b656e19de0a01d5145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
