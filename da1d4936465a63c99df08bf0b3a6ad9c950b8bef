@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_5502940c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T12:30:40Z",
+      "side": 0,
+      "message": "this got lost moving over to the BaseProvider. Not sure how because I applied this in another patch? \n\nNew patch on the way with this in the BaseProvider, which should address the failing tests...",
+      "revId": "da1d4936465a63c99df08bf0b3a6ad9c950b8bef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
