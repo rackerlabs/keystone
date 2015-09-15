@@ -166,11 +166,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_users_with_static_admin_token_and_multiple_backends(self):
         # domain-specific operations with the bootstrap ADMIN token is
-        # disallowed when domain-specific drivers are enabled
+        # performed over default domain domain-specific drivers are enabled
+        user = self.new_user_ref(CONF.identity.default_domain_id)
+        user = self.identity_api.create_user(user)
         self.config_fixture.config(group='identity',
                                    domain_specific_drivers_enabled=True)
-        self.get('/users', token=CONF.admin_token,
-                 expected_status=exception.Unauthorized.code)
+        resource_url = '/users'
+        r = self.get(resource_url, token=CONF.admin_token)
+        self.assertValidUserListResponse(r, ref=user,
+                                         resource_url=resource_url)
 
     def test_list_users_no_default_project(self):
         """Call ``GET /users`` making sure no default_project_id."""
