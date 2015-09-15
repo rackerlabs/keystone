@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_d6031141",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-15T10:59:39Z",
+      "side": 1,
+      "message": "I recommend to change this line to \"JSON schema link has redundant prefix\". You can avoid the problem that way.",
+      "parentUuid": "ba15a1d1_8ff35b0a",
+      "revId": "af36918ec256ed6a183412ffa555b5d61a075a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_851d8175",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
