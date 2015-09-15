@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_f7a7414d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-15T03:47:15Z",
+      "side": 1,
+      "message": "I recommend removing this sentence, since you have stated almost the same thing below.",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
