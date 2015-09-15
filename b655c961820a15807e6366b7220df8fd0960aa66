@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_cc85bd07",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-15T13:58:46Z",
+      "side": 1,
+      "message": "Everything that is being passed to the this function is a Unicode string.  Causing this to fail every time.",
+      "revId": "b655c961820a15807e6366b7220df8fd0960aa66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
