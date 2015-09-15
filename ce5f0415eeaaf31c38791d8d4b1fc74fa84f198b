@@ -16,6 +16,24 @@
       "revId": "ce5f0415eeaaf31c38791d8d4b1fc74fa84f198b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_bbe761e3",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T13:05:23Z",
+      "side": 1,
+      "message": "Yes, good catch!",
+      "parentUuid": "ba15a1d1_6ab9392e",
+      "revId": "ce5f0415eeaaf31c38791d8d4b1fc74fa84f198b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
