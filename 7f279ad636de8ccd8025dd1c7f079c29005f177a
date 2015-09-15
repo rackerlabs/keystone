@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_cacb6c52",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-15T09:26:49Z",
+      "side": 0,
+      "message": "wow, that\u0027s a terrible bug to continue working around",
+      "revId": "7f279ad636de8ccd8025dd1c7f079c29005f177a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
