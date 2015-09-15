@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_2679e3c8",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 0,
+      "message": "this documentation still applies according to the code below.",
+      "revId": "1efcc38f7277ce0310587b7f93bcbee21d0db571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_266fa32c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 0,
+      "message": "Keep the summary line since the purpose of this function hasn\u0027t changed.",
+      "revId": "1efcc38f7277ce0310587b7f93bcbee21d0db571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_06a7ff4f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 0,
+      "message": "this documentation still applies according to the code below.",
+      "revId": "1efcc38f7277ce0310587b7f93bcbee21d0db571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_86ba2f6d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 0,
+      "message": "this documentation still applies according to the code below.",
+      "revId": "1efcc38f7277ce0310587b7f93bcbee21d0db571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

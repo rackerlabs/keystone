@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_660d9b8f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 1,
+      "message": "change \"Define\" to \"Defining\"",
+      "revId": "a623de96954e6382b480e07edca631e506ef9526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_26048348",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 1,
+      "message": "why did this parameter need to be added?",
+      "revId": "a623de96954e6382b480e07edca631e506ef9526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_067e1fae",
+        "filename": "keystone/service.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T20:26:45Z",
+      "side": 1,
+      "message": "change \"Define\" to \"Defining\". This applies to all the \"what\" parameters added.",
+      "revId": "a623de96954e6382b480e07edca631e506ef9526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
