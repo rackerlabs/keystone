@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_b180ce47",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17277
+      },
+      "writtenOn": "2015-09-15T19:08:28Z",
+      "side": 1,
+      "message": "This still isn\u0027t grammatically correct. Please fix this, such as:\n\n\"The redirect link provided for the Json schema has an extra \"http://\" embedded within the link. This has been removed to allow the link to function properly.\"",
+      "revId": "d54b262ceabe29e6d494661fb5d5b107fb146f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
