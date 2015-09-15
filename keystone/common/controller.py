@@ -708,6 +708,9 @@ class V3Controller(wsgi.Application):
         if context['query_string'].get('domain_id') is not None:
             return context['query_string'].get('domain_id')
 
+        if context['is_admin']:
+            return CONF.identity.default_domain_id
+
         token_ref = utils.get_token_ref(context)
 
         if token_ref.domain_scoped:
@@ -725,6 +728,9 @@ class V3Controller(wsgi.Application):
         being used.
 
         """
+        if context['is_admin']:
+            return CONF.identity.default_domain_id
+
         token_ref = utils.get_token_ref(context)
 
         if token_ref.domain_scoped:
