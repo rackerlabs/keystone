@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_32d4cb45",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2646,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-09-15T15:20:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_b1b58ded",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_563d1fc2",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 1
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_92c5978f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2653,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-09-15T15:20:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_563d1fc2",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_f1cc7536",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 1
@@ -119,6 +155,24 @@
       "writtenOn": "2015-08-07T16:28:30Z",
       "side": 1,
       "message": "You want to check for a subset right? Do you care if they are contiguous in the unfiltered list?",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_32a5abb4",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2655,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-09-15T15:20:53Z",
+      "side": 1,
+      "message": "Correct, we test if they are contiguous in the unfiltered list (the same method is used in the existing limit test method test_backend.LimitTests._test_list_entity_filtered_and_limited)",
+      "parentUuid": "1a4dcd0f_f1cc7536",
       "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +243,24 @@
       "writtenOn": "2015-08-07T16:00:06Z",
       "side": 1,
       "message": "matchers.HasLength should be used",
+      "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_32936b51",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2663,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-09-15T15:20:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_f679cb93",
       "revId": "07f31151fb2abef2291f2e813ae09a6546bf3e63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
