@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_2ae1c8fe",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-15T09:31:37Z",
+      "side": 1,
+      "message": "revert it back, this is irrelevant changs, if you think this is really needed then L689 and L736 and more place in the file also need to be updated.",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cad28c00",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-15T09:31:37Z",
+      "side": 1,
+      "message": "site-packages or dist-packages? in my env it\u0027s dist-packages.",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_f7a7414d",
         "filename": "doc/source/setup.rst",
         "patchSetId": 2
