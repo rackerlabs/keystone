@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_d956c8d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T22:15:50Z",
+      "side": 1,
+      "message": "which user? is this coming from a client?",
+      "revId": "fc9eab7a188a0576351c952b03e4714664be552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_6d581633",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T22:15:50Z",
+      "side": 1,
+      "message": "Validation error means that the client provided bad input. In this case the problem is that the admin configured their system incorrectly, so this needs to be a 500 Internal Server Error. This exception can be derived from the Exception built-in.",
+      "revId": "fc9eab7a188a0576351c952b03e4714664be552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_6d6fb6c5",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T22:15:50Z",
+      "side": 1,
+      "message": "This needs a comment saying what\u0027s special about it.",
+      "revId": "fc9eab7a188a0576351c952b03e4714664be552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ad838e55",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1468,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T22:15:50Z",
+      "side": 1,
+      "message": "since this test doesn\u0027t require starting up the test server this needs to be in a part that\u0027s not test_v3 (all the test_v3_* tests should be starting up the test server). Since this is testing stuff in the keystone.contrib.federation.utils module, this test belongs in keystone.tests.contrib.federation.test_utils",
+      "revId": "fc9eab7a188a0576351c952b03e4714664be552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_4d6512df",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1472,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T22:15:50Z",
+      "side": 1,
+      "message": "remove the extra indenting.",
+      "revId": "fc9eab7a188a0576351c952b03e4714664be552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_adeaae0d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1476,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-15T22:15:50Z",
+      "side": 1,
+      "message": "Isn\u0027t this checking that the exception is raised when the \"user\" tries to map request variables that aren\u0027t in the request?",
+      "revId": "fc9eab7a188a0576351c952b03e4714664be552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
