@@ -16,6 +16,24 @@
       "revId": "53fb7d817f7f7c58067de6feff98271dd7072b6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5be3a533",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-15T12:59:09Z",
+      "side": 1,
+      "message": "That\u0027s a good point. In order to accomplish that, we would have to get the user_id and the project_id in the create_endpoint call; to do something like - \n\n    self.get_catalog.invalidate(user_id, project_id)\n\nNot sure what the best way to do that would be though...",
+      "parentUuid": "ba15a1d1_f7267e15",
+      "revId": "53fb7d817f7f7c58067de6feff98271dd7072b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
