@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_fd011107",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T16:09:57Z",
+      "side": 1,
+      "message": "if the commit message needs to explain the code then the code should be made clearer instead, as in, add a comment to the code that explains why it\u0027s done the way it is.\n\nThen don\u0027t explain the change in the commit message since if the implementation details change the commit message will be out of date.",
+      "revId": "8f05d6ceca126422ecc3053174fcf50b5512f573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_9df01569",
         "filename": "httpd/keystone.py",
         "patchSetId": 6
