@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_d26761b5",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-16T13:59:46Z",
+      "side": 1,
+      "message": "see the comment below, \"it mainly about that v3 call should explicitly specify the domain id\" but the code branch here is out of this assumption.",
+      "revId": "a92ce20980baf859b66df5d4e0eda749f7ad58ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7d8f4b2a",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-16T13:59:46Z",
+      "side": 1,
+      "message": "default domain when ...",
+      "revId": "a92ce20980baf859b66df5d4e0eda749f7ad58ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
