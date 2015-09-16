@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_0fe04728",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T18:17:16Z",
+      "side": 1,
+      "message": "missing space at end of line",
+      "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cfe56f38",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T18:17:16Z",
+      "side": 1,
+      "message": "missing space at end of line",
+      "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_af659bb5",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T18:17:16Z",
+      "side": 1,
+      "message": "this should be using oslo_log.versionutils rather than rely on the name in keystone.common.controller.\n\nAlso, if mock.patch.object was used then could have a shorter line.\n\nAlso, no need to create the Mock yourself since mock.patch creates one by default, just put \"as mock_dep\" on the with statement.",
+      "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
