@@ -104,6 +104,24 @@
       "revId": "41f9e16eb770a025b999f00577e0304d9aa02a13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_571a667e",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-16T12:13:45Z",
+      "side": 0,
+      "message": "link is here: https://github.com/openstack/oslo-incubator/tree/master/tools",
+      "parentUuid": "ba15a1d1_555cadec",
+      "revId": "41f9e16eb770a025b999f00577e0304d9aa02a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
