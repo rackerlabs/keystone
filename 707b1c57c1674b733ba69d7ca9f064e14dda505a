@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_1aff20ab",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_confirm_config_registration.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "what\u0027s the point of checkfirst if not to check if the table already exists?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_dada084c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "If I got this message in a response I would have no idea what the problem was or to do... what\u0027s a registration?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_babcf4dc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "there\u0027s no locking / freeing going on. Suggest call it registering / deregistering.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7a397cf1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "I don\u0027t see the point of trying multiple times. If it fails it\u0027s because another admin was messing with domains at the same time. You\u0027re probably better off going and talking to whomever\u0027s messing with domain config at the same time. Rather than having this retry. Not retrying will make the code simpler.\n\nMaybe put the code to retry in a separate review to make this one easier to understand.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7aa97c8f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "what code is being referred to here?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5ad118f9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "This looks like we\u0027re checking for one sql driver, but there\u0027s no safe way to check. The process should be that we try to insert the row in the database and if that fails then report the error.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_da96883e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "we don\u0027t need to protect using the SQL driver, we need to protect assigning of the SQL driver to the domain.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_fa9d8c66",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "they don\u0027t need to all be Keystone server, right... could be keystone-manage? Suggest remove \"Keystone\".",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_3afb047b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "suggest change free to \"release\". free has too many meanings.\n\nAlso, suggest remove \"config\" from the method name. The api is already domain_config so all its method should be config-related.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ba2dd4ff",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "suggest remove \"get and hold a\"",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5a3fd823",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "remove \"of\"",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_1a4ac0ac",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "change \"we also\" to \"we are\"\n\nI don\u0027t see how we can say we\u0027re definitely fine. Another process could be in the middle of deleting the domain.\n\nOr another process could be in the middle of creating the domain and creation fails after they register it.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_1af88048",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "suggest remove \"config\"",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b5288587",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "this method is making a lot of calls on the domain_config_api, maybe this method should all be in there?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d57bb98a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "remove () since this isn\u0027t Java.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_155e1112",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "maybe the other process hasn\u0027t gotten around to creating the domain yet?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_158cd17d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "remove \"then try\"",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f5535de0",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "might be useful to debug log here.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_55f9e9c5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "the exception has SQL in it even if the type isn\u0027t SQL.\n\nI think this interface is being made overly broad if we don\u0027t really care about the type.",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_75566dcf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1399,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "raise NotImplemented?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_55f8097b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2946,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T20:44:00Z",
+      "side": 1,
+      "message": "why is this in test_backend_ldap?",
+      "revId": "707b1c57c1674b733ba69d7ca9f064e14dda505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
