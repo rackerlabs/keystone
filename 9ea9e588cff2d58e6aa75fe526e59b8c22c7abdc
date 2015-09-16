@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_f09dab66",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-09-16T21:05:59Z",
+      "side": 1,
+      "message": "2-cycle deprecation on API changes.",
+      "revId": "9ea9e588cff2d58e6aa75fe526e59b8c22c7abdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
