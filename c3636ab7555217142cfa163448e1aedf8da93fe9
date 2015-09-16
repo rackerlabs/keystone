@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_67748067",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-16T23:18:50Z",
+      "side": 1,
+      "message": "To make it easier for the translators I would recommend;\n\n_(\u0027Invalid user %(user_id)s or invalid password\u0027) % \u0027user_id\u0027: user_id)\n\nBecause the translators only receive what is passed to the \u0027_\u0027 function having a positional argument will help them better understand the context of the string.\n\nfor example in this context the \u0027%s\u0027 could be misinterpreted as a name.",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ca93a5a2",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 7
@@ -53,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_07da644c",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-16T23:18:50Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4aeeb523",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 7
@@ -64,6 +98,23 @@
       "writtenOn": "2015-09-14T03:22:01Z",
       "side": 1,
       "message": "ditto",
+      "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_c7df8c38",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-16T23:18:50Z",
+      "side": 1,
+      "message": "same as above",
       "revId": "c3636ab7555217142cfa163448e1aedf8da93fe9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
