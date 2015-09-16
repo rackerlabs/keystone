@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_5776e6a4",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-16T11:59:40Z",
+      "side": 1,
+      "message": "without this, we will see exception thrown out when the local conf is defined in the paste file (under some cases), pls refer to the bug desc for detail, this patch is not just deprecate the usage but it will really cause some exception and broken the pipeline.",
+      "parentUuid": "ba15a1d1_26048348",
+      "revId": "a623de96954e6382b480e07edca631e506ef9526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_067e1fae",
         "filename": "keystone/service.py",
         "patchSetId": 18
