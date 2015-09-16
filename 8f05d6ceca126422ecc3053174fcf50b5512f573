@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_9df01569",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T16:07:29Z",
+      "side": 1,
+      "message": "oslo.log provides a function you can call to report deprecation, so there\u0027s no need to use the decorator. The decorator use here is a little confusing.\n\nhttp://docs.openstack.org/developer/oslo.log/api/versionutils.html#oslo_log.versionutils.report_deprecated_feature",
+      "revId": "8f05d6ceca126422ecc3053174fcf50b5512f573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
