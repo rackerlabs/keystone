@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_e4f09500",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-16T19:09:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_0fe04728",
+      "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_cfe56f38",
         "filename": "keystone/common/controller.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_84f19903",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-16T19:09:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_cfe56f38",
+      "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_af659bb5",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-16T18:17:16Z",
       "side": 1,
       "message": "this should be using oslo_log.versionutils rather than rely on the name in keystone.common.controller.\n\nAlso, if mock.patch.object was used then could have a shorter line.\n\nAlso, no need to create the Mock yourself since mock.patch creates one by default, just put \"as mock_dep\" on the with statement.",
+      "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_048fc975",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-16T19:09:34Z",
+      "side": 1,
+      "message": "Changed to patch the oslo version (and removed the extra mock)...but could not make patch.object version work...hopefully this is good enough",
+      "parentUuid": "ba15a1d1_af659bb5",
       "revId": "c7525f11e98cbeead9f3bf398b401cd763ce99c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
