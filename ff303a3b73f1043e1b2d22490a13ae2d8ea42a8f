@@ -16,6 +16,24 @@
       "revId": "ff303a3b73f1043e1b2d22490a13ae2d8ea42a8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_03f82648",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-16T16:45:18Z",
+      "side": 1,
+      "message": "Yep..good idea - fixed up as suggested.",
+      "parentUuid": "ba15a1d1_3d7c691e",
+      "revId": "ff303a3b73f1043e1b2d22490a13ae2d8ea42a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
