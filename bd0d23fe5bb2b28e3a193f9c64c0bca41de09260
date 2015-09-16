@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_a9d7db49",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-16T17:25:44Z",
+      "side": 1,
+      "message": "Horizon added a new config WEBSSO_IDP_MAPPING for mapping the dropdown value to the IdP/Protocol values.\n\nHorizon doc update is on the way:\nhttps://review.openstack.org/#/c/220012/4/doc/source/topics/settings.rst",
+      "revId": "bd0d23fe5bb2b28e3a193f9c64c0bca41de09260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
