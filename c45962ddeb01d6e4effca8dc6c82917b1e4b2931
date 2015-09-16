@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_f542a13d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-16T06:20:54Z",
+      "side": 1,
+      "message": "OK,I will revert.",
+      "parentUuid": "ba15a1d1_2ae1c8fe",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_cad28c00",
         "filename": "doc/source/setup.rst",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_75753196",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-16T06:20:54Z",
+      "side": 1,
+      "message": "Oh, my env too. thank you.I will update.",
+      "parentUuid": "ba15a1d1_cad28c00",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_f7a7414d",
         "filename": "doc/source/setup.rst",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-15T03:47:15Z",
       "side": 1,
       "message": "I recommend removing this sentence, since you have stated almost the same thing below.",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d568bd89",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-16T06:20:54Z",
+      "side": 1,
+      "message": "Ok, I will remove.",
+      "parentUuid": "ba15a1d1_f7a7414d",
       "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
