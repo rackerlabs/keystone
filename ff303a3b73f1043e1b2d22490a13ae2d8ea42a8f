@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_3d7c691e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-16T15:58:50Z",
+      "side": 1,
+      "message": "there\u0027s no need for the lambda, use report_deprecated_feature instead:\n\nhttp://docs.openstack.org/developer/oslo.log/api/versionutils.html#oslo_log.versionutils.report_deprecated_feature",
+      "revId": "ff303a3b73f1043e1b2d22490a13ae2d8ea42a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
