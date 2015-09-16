@@ -1,0 +1,16 @@
+Verified+2: Jenkins
+Code-Review+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Henrique Truta <henrique@lsd.ufcg.edu.br>
+Code-Review+1: Rajesh Tailor <rajesh.tailor@nttdata.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Canh Truong <canh.v.truong@dektech.com.au>
+Submitted-by: Jenkins
+Submitted-at: Wed, 16 Sep 2015 09:19:40 +0000
+Reviewed-on: https://review.openstack.org/214641
+Project: openstack/keystone
+Branch: refs/heads/stable/kilo
