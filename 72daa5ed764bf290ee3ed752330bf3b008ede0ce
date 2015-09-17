@@ -34,6 +34,23 @@
       "revId": "72daa5ed764bf290ee3ed752330bf3b008ede0ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_fcdb0f7a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-17T21:38:04Z",
+      "side": 1,
+      "message": "It feels wrong (mostly: annoying) to start retro-actively issuing these warnings. People are using Fernet in stable/kilo and the current list of bugs stands as accurate as far as we know. I\u0027m not sure any of the tempest failures represent real blockers to production use.",
+      "revId": "72daa5ed764bf290ee3ed752330bf3b008ede0ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
