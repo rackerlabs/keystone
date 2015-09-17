@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_c87bedbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-17T19:20:54Z",
+      "side": 1,
+      "message": "Are you just replacing them in the test files?",
+      "revId": "e0988ec74160becabbd040ae95479d3c62f4ccfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
