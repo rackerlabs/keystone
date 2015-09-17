@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_5ea82177",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T02:53:23Z",
+      "side": 1,
+      "message": "revert back, irrelevant change.",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_3ec68d68",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T02:53:23Z",
+      "side": 1,
+      "message": "revert \"Keytone\" back to \"keystone\"\n\npls see: https://wiki.openstack.org/wiki/Documentation/Conventions",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_fe901545",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T02:53:23Z",
+      "side": 1,
+      "message": "revert these two lines back.",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_1e0b898f",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T02:53:23Z",
+      "side": 1,
+      "message": "which scripts we can use here?",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5e44a1b5",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T02:53:23Z",
+      "side": 1,
+      "message": "consider to use the this link (http://git.openstack.org/cgit/openstack/oslo-incubator/tree/tools)",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
