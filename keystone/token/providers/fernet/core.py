@@ -17,7 +17,7 @@ from keystone.common import dependency
 from keystone.common import utils as ks_utils
 from keystone.contrib.federation import constants as federation_constants
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LW
 from keystone.token import provider
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
@@ -33,6 +33,9 @@ class Provider(common.BaseProvider):
         super(Provider, self).__init__(*args, **kwargs)
 
         self.token_formatter = tf.TokenFormatter()
+
+        LOG.warning(_LW('The fernet token provider is experimental and should '
+                        'not be used in production environments.'))
 
     def needs_persistence(self):
         """Should the token be written to a backend."""
