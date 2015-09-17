@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_c8a029a2",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-17T13:58:41Z",
+      "side": 1,
+      "message": "should add line breaks on inline comments, such that the line or lines of code described by the inline comment is clearly delineated as such.\n\n  # This inline comment applies to the next line.\n  pass\n\n  # This inline comment applies to the next two lines.\n  pass\n  pass\n\n  pass  # The above inline comments do not apply here.",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_9008ccdb",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-17T13:58:41Z",
+      "side": 1,
+      "message": "... pep8? one import per line\n\n  https://www.python.org/dev/peps/pep-0008/#imports\n\nI don\u0027t understand why the pep8 tool didn\u0027t catch this.",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
