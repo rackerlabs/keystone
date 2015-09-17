@@ -252,7 +252,10 @@ FILE_OPTIONS = {
                    help='Controls the token construction, validation, and '
                         'revocation operations. Entrypoint in the '
                         'keystone.token.provider namespace. Core providers '
-                        'are [fernet|pkiz|pki|uuid].'),
+                        'are [uuid|pkiz|pki|fernet]. uuid is supported for '
+                        'production environments. fernet is experimental. '
+                        'pki and pkiz tokens are supported but not tested as '
+                        'part of the community integration tests.'),
         cfg.StrOpt('driver',
                    default='sql',
                    help='Entrypoint for the token persistence backend driver '

@@ -506,6 +506,10 @@ headers. Fernet tokens require symmetric encryption keys which can be
 established using ``keystone-manage fernet_setup`` and periodically rotated
 using ``keystone-manage fernet_rotate``.
 
+.. NOTE::
+    The ``fernet`` token provider is experimental. The keystone development has
+    not agreed that this is supported at this time.
+
 .. WARNING::
     UUID, PKI, PKIZ, and Fernet tokens are all bearer tokens, meaning that they
     must be protected from unnecessary disclosure to prevent unauthorized
