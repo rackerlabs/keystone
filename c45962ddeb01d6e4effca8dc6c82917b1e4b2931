@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_de119105",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T02:53:38Z",
+      "side": 1,
+      "message": "why need to chang from \u0027keystone\u0027  to \u0027Keystone\u0027?",
+      "parentUuid": "ba15a1d1_22c8d2a7",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_02c4ae8e",
         "filename": "doc/source/setup.rst",
         "patchSetId": 2
