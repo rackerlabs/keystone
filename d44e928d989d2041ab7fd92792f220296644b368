@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_d95c4b7f",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-17T05:32:53Z",
+      "side": 1,
+      "message": "any reason to chang from \u0027----\u0027 to \u0027\u003d\u003d\u003d\u003d\"? if this is valid change, could you pls include this in the commit message?",
+      "revId": "d44e928d989d2041ab7fd92792f220296644b368",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
