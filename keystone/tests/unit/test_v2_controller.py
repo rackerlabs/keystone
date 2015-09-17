@@ -103,6 +103,18 @@ class TenantTestCase(unit.TestCase):
         project_ref = self.resource_api.create_project(project['id'], project)
         return self.tenant_controller.v3_to_v2_project(project_ref)
 
+    def test_create_is_domain_project_fails(self):
+        """Test that the creation of a project acting as a domain fails."""
+        project = {'name': uuid.uuid4().hex, 'domain_id': 'default',
+                   'is_domain': True}
+
+        self.assertRaises(
+            exception.ValidationError,
+            self.tenant_controller.create_project,
+            _ADMIN_CONTEXT,
+            project
+        )
+
     def test_update_is_domain_project_not_found(self):
         """Test that update is_domain project is not allowed in v2."""
         project = self._create_is_domain_project()
