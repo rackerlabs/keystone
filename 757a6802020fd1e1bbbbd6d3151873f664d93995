@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_6b7c1bec",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T20:00:14Z",
+      "side": 1,
+      "message": "meant to update this with (unrelated) -- it\u0027s in the original code which this is just moving around.",
+      "parentUuid": "ba15a1d1_2bb3830b",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_cb99a77a",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 23
