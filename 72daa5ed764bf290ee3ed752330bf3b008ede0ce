@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_f1933859",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-17T21:02:20Z",
+      "side": 1,
+      "message": "considering fernet was already an option in kilo this seems like overkill https://github.com/openstack/keystone/blob/stable/kilo/etc/keystone.conf.sample#L1682",
+      "revId": "72daa5ed764bf290ee3ed752330bf3b008ede0ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
