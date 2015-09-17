@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_195403fd",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T03:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_5ea82177",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_3ec68d68",
         "filename": "doc/source/setup.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-17T02:53:23Z",
       "side": 1,
       "message": "revert \"Keytone\" back to \"keystone\"\n\npls see: https://wiki.openstack.org/wiki/Documentation/Conventions",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b954f7fd",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T03:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_3ec68d68",
       "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_d959ab36",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T03:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_fe901545",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_1e0b898f",
         "filename": "doc/source/setup.rst",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_197ba38d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T03:18:11Z",
+      "side": 1,
+      "message": "install_venv.py explained below.",
+      "parentUuid": "ba15a1d1_1e0b898f",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_5e44a1b5",
         "filename": "doc/source/setup.rst",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2015-09-17T02:53:23Z",
       "side": 1,
       "message": "consider to use the this link (http://git.openstack.org/cgit/openstack/oslo-incubator/tree/tools)",
+      "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7943bf42",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T03:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_5e44a1b5",
       "revId": "150d48a61fbcc9366c4143d683d5670b32e8d95b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
