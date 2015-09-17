@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_ab61d3d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T19:53:57Z",
+      "side": 1,
+      "message": "This changes the provider interface so there should be a bug.\n\nI\u0027m not sure it\u0027s even allowed if we decided the interface is stable.",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_2bc943ac",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T19:53:57Z",
+      "side": 1,
+      "message": "remove \"token_id\" from the method name -- any time we\u0027re validating non-persistent the only thing we\u0027re going to have to do the validation is the ID.\n\nAlso, remove v3 since there\u0027s no v2 version of this.",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ab0233b2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T19:53:57Z",
+      "side": 1,
+      "message": "the format is :raises keystone.exception.TokenNotFound: \u003ccondition\u003e",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_8b3def90",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T19:53:57Z",
+      "side": 1,
+      "message": "suggest don\u0027t rename the method. The original name is fine.",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_2bb3830b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T19:53:57Z",
+      "side": 1,
+      "message": "The argument to TokenNotFound is token_id",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cb99a77a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-17T19:53:57Z",
+      "side": 1,
+      "message": "(unrelated) move trust_ref down to before it\u0027s used, right before line 727",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
