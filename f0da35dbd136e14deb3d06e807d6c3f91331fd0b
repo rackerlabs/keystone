@@ -16,6 +16,24 @@
       "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_6b509b0b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-17T19:24:17Z",
+      "side": 1,
+      "message": "this patch is just a split. I just added because it was part of the fixes here: https://review.openstack.org/#/c/215167/6/keystone/resource/controllers.py",
+      "parentUuid": "ba15a1d1_62d3e060",
+      "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
