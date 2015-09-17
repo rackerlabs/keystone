@@ -88,6 +88,11 @@ class Tenant(controller.V2Controller):
             msg = _('Name field is required and cannot be empty')
             raise exception.ValidationError(message=msg)
 
+        if 'is_domain' in tenant_ref:
+            msg = _('The creation of projects acting as domains is not '
+                    'allowed in v2.')
+            raise exception.ValidationError(message=msg)
+
         self.assert_admin(context)
         tenant_ref['id'] = tenant_ref.get('id', uuid.uuid4().hex)
         tenant = self.resource_api.create_project(
