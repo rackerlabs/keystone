@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_11590c8e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-17T21:14:16Z",
+      "side": 1,
+      "message": "should this extend validationerror?",
+      "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
