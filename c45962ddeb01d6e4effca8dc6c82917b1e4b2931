@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_eda2b1ad",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_2ae1c8fe",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_82c19e56",
         "filename": "doc/source/setup.rst",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2015-09-16T12:28:43Z",
       "side": 1,
       "message": "I don\u0027t think we are documenting how to install Keystone in this section. It\u0027s only its dependencies though.\n\nI believe the old section name is accurate, i.e just \"Installing dependencies\".",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ada8398d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_82c19e56",
       "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_cdad6d9c",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_22c8d2a7",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_02c4ae8e",
         "filename": "doc/source/setup.rst",
         "patchSetId": 2
@@ -82,6 +136,24 @@
       "writtenOn": "2015-09-16T12:28:43Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_8d945543",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_02c4ae8e",
       "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +188,24 @@
       "writtenOn": "2015-09-16T06:20:54Z",
       "side": 1,
       "message": "Oh, my env too. thank you.I will update.",
+      "parentUuid": "ba15a1d1_cad28c00",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_4d9abd6f",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "ba15a1d1_cad28c00",
       "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -170,6 +260,42 @@
       "side": 1,
       "message": "In this case, I think it would be better to remove the \u0027then\u0027 in the sentence below.",
       "parentUuid": "ba15a1d1_d568bd89",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_0d96053f",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_f7a7414d",
+      "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cd9b2d65",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-17T00:40:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_8233deaa",
       "revId": "c45962ddeb01d6e4effca8dc6c82917b1e4b2931",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
