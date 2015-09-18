@@ -14,6 +14,7 @@
 
 import abc
 import datetime
+import time
 
 from oslo_config import cfg
 from oslo_log import log
@@ -228,6 +229,7 @@ class Manager(manager.Manager):
 
     def revoke(self, event):
         self.driver.revoke(event)
+        time.sleep(1)
         self._get_revoke_tree.invalidate(self)
 
 
