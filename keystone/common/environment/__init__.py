@@ -95,7 +95,7 @@ def use_stdlib():
     global httplib, subprocess
 
     import six.moves.http_client as _httplib
-    import subprocess as _subprocess
+    import subprocess as _subprocess  # nosec
 
     httplib = _httplib
     subprocess = _subprocess
