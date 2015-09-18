@@ -95,7 +95,8 @@ def use_stdlib():
     global httplib, subprocess
 
     import six.moves.http_client as _httplib
-    import subprocess as _subprocess
+    import subprocess as _subprocess  # nosec : We can't validate here whether
+    # users of the subprocess in this module are safe or not.
 
     httplib = _httplib
     subprocess = _subprocess
