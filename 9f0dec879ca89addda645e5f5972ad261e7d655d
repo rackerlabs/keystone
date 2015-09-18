@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_f4f3ff70",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T18:45:09Z",
+      "side": 1,
+      "message": "change \"visble\" to \"visible\".\n\nThe issue that the test shows is that deleted configurations aren\u0027t visible not new configurations, and therefore I won\u0027t be able to define a new sql driver until the cache period is over.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_14c31339",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T18:45:09Z",
+      "side": 1,
+      "message": "Error isn\u0027t the right choice since the message shouldn\u0027t be getting back to the client if it escapes somehow.\n\nThis should be a subclass of Exception then the server will return a 500 if it escapes somehow. (I thought this was pretty clear.)\n\nif you\u0027re going to use Error then you also need to set the title per the docstring.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_34ec17ba",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T18:45:09Z",
+      "side": 1,
+      "message": "suggest also put the # of retries in here.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_1448f3ca",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T18:45:09Z",
+      "side": 1,
+      "message": "the log message already says this.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d414bba0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T18:45:09Z",
+      "side": 1,
+      "message": "suggest put the attempt # in the message.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
