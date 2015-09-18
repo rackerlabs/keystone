@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_ac29dfe7",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-18T05:24:55Z",
+      "side": 1,
+      "message": "nit, this line is pointless since the assert is done in the delete call",
+      "revId": "7ae3e9516bd802ca150a200617cb0f4643e0e7d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
