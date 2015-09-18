@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_58fd47af",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T15:49:26Z",
+      "side": 1,
+      "message": "2 lines of comment that say exactly what the next 2 lines already say. Comments should say why the code is there rather than what the code does.",
+      "revId": "c124aeb583107c5a96c7d52a430c7503e47a5a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_183d8f8e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T15:49:26Z",
+      "side": 1,
+      "message": "is there a reason this needs to be info, seems like this is a normal situation even if tokenless auth is configured.",
+      "revId": "c124aeb583107c5a96c7d52a430c7503e47a5a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
