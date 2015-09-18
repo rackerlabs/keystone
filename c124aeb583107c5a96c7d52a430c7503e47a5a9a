@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_b8db434e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-18T15:50:25Z",
+      "side": 1,
+      "message": "++ this comment is redundant with the code",
+      "parentUuid": "ba15a1d1_58fd47af",
+      "revId": "c124aeb583107c5a96c7d52a430c7503e47a5a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_183d8f8e",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 3
