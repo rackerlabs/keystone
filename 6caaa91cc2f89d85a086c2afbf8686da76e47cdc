@@ -16,6 +16,24 @@
       "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5c98fb1b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-18T00:32:14Z",
+      "side": 1,
+      "message": "Steve, going off of Brant\u0027s comment, validationerror is suppose to be used for when a client enters something invalid.",
+      "parentUuid": "ba15a1d1_11590c8e",
+      "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
