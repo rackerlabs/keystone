@@ -16,6 +16,24 @@
       "revId": "6b685c09dc18bdef535f15128b139afdb2de1cc4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_c755faf9",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-18T14:45:36Z",
+      "side": 1,
+      "message": "good suggestion!",
+      "parentUuid": "ba15a1d1_691acec7",
+      "revId": "6b685c09dc18bdef535f15128b139afdb2de1cc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
