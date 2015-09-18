@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_3db5fe7c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-18T02:09:24Z",
+      "side": 1,
+      "message": "That wouldn\u0027t be a bad idea. Removing the option entirely leaves the impression we removed the feature.\n\nAdding something along the lines of uuid being the only officially supported format for production deployments would address Dolph\u0027s comment about PKI and PKIZ token formats, too.",
+      "parentUuid": "ba15a1d1_d128749c",
+      "revId": "72daa5ed764bf290ee3ed752330bf3b008ede0ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_fcdb0f7a",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "writtenOn": "2015-09-17T21:38:04Z",
       "side": 1,
       "message": "It feels wrong (mostly: annoying) to start retro-actively issuing these warnings. People are using Fernet in stable/kilo and the current list of bugs stands as accurate as far as we know. I\u0027m not sure any of the tempest failures represent real blockers to production use.",
+      "revId": "72daa5ed764bf290ee3ed752330bf3b008ede0ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_3d6c1e07",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-18T02:09:24Z",
+      "side": 1,
+      "message": "The only one that I can think of is the case of revocation events. You trigger a revocation event and as you get a new token, it\u0027s ends up being revoked. \n\nLike you said, I\u0027m not sure how much of a blocker this is since clients can re-authenticate on 401...",
+      "parentUuid": "ba15a1d1_fcdb0f7a",
       "revId": "72daa5ed764bf290ee3ed752330bf3b008ede0ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
