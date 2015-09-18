@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_691acec7",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-18T11:38:19Z",
+      "side": 1,
+      "message": "if you\u0027re going to do this, then do:\n\n  if not CONF.tokenless_auth.trusted_issuer:\n      return False\n\nso that you\u0027re more clearly illustrating the short circuit behavior, and avoiding unnecessarily indenting a huge block of code. it will also result in a smaller patch.",
+      "revId": "6b685c09dc18bdef535f15128b139afdb2de1cc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
