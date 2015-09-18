@@ -262,21 +262,24 @@ class AuthContextMiddleware(wsgi.Middleware):
         :returns: True if client_issuer is trusted; otherwise False
         """
 
-        client_issuer = env.get(CONF.tokenless_auth.issuer_attribute)
-        if not client_issuer:
-            msg = _LI('Cannot find client issuer in env by the '
-                      'issuer attribute - %s.')
-            LOG.info(msg, CONF.tokenless_auth.issuer_attribute)
-            return False
+        # Check to see if any trusted_issuer has been defined, if it
+        # is none, immediately return false without logging anything.
+        if CONF.tokenless_auth.trusted_issuer:
+            client_issuer = env.get(CONF.tokenless_auth.issuer_attribute)
+            if not client_issuer:
+                msg = _LI('Cannot find client issuer in env by the '
+                          'issuer attribute - %s.')
+                LOG.info(msg, CONF.tokenless_auth.issuer_attribute)
+                return False
 
-        if client_issuer in CONF.tokenless_auth.trusted_issuer:
-            return True
+            if client_issuer in CONF.tokenless_auth.trusted_issuer:
+                return True
 
-        msg = _LI('The client issuer %(client_issuer)s does not match with '
-                  'the trusted issuer %(trusted_issuer)s')
-        LOG.info(
-            msg, {'client_issuer': client_issuer,
-                  'trusted_issuer': CONF.tokenless_auth.trusted_issuer})
+            msg = _LI('The client issuer %(client_issuer)s does not match '
+                      'with the trusted issuer %(trusted_issuer)s')
+            LOG.info(
+                msg, {'client_issuer': client_issuer,
+                      'trusted_issuer': CONF.tokenless_auth.trusted_issuer})
 
         return False
 
