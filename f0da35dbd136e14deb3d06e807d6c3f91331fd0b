@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_68987a78",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-18T16:52:15Z",
+      "side": 1,
+      "message": "I\u0027ve just added the comment. The removal is made at lines 51-53. I\u0027ll remove the comment. The proposal of the patch is the call of the method below",
+      "parentUuid": "ba15a1d1_e1b10ee1",
+      "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_61a73ea7",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 1
@@ -84,6 +102,24 @@
       "writtenOn": "2015-09-18T14:15:07Z",
       "side": 1,
       "message": "this is an absolutely terrible function name -- i have absolutely no clue what this function is expected to do without being well aware of the implementation details.",
+      "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_68239a56",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-18T16:52:15Z",
+      "side": 1,
+      "message": "agreed. I can refactor it in another patch, since it wasn\u0027t created at this patch. what about \"_assert_project_does_not_act_as_domain\" ?",
+      "parentUuid": "ba15a1d1_61a73ea7",
       "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
