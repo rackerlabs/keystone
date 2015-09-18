@@ -52,6 +52,41 @@
       "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_e1b10ee1",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-18T14:15:07Z",
+      "side": 1,
+      "message": "I agree with Henry. This patch is entirely unclear, but seems to be fixing a high impact API bug.",
+      "parentUuid": "ba15a1d1_5518c2d2",
+      "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_61a73ea7",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-18T14:15:07Z",
+      "side": 1,
+      "message": "this is an absolutely terrible function name -- i have absolutely no clue what this function is expected to do without being well aware of the implementation details.",
+      "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
