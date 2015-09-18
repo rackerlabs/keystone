@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_a1cc7689",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-18T14:31:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_660d9b8f",
+      "revId": "a623de96954e6382b480e07edca631e506ef9526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_26048348",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 18
@@ -65,6 +83,24 @@
       "writtenOn": "2015-09-15T20:26:45Z",
       "side": 1,
       "message": "change \"Define\" to \"Defining\". This applies to all the \"what\" parameters added.",
+      "revId": "a623de96954e6382b480e07edca631e506ef9526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d8b4fe82",
+        "filename": "keystone/service.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-18T14:31:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_067e1fae",
       "revId": "a623de96954e6382b480e07edca631e506ef9526",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
