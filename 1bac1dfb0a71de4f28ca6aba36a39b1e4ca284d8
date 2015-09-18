@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_787a8bbe",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T15:58:21Z",
+      "side": 1,
+      "message": "would be nice to have a comment that says why it\u0027s ok to short-circuit, but it\u0027s obvious enough as-is. e.g.,\n\n  # No trusted issuers so none will be valid.",
+      "revId": "1bac1dfb0a71de4f28ca6aba36a39b1e4ca284d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
