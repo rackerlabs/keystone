@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_247f14e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-18T14:40:50Z",
+      "side": 1,
+      "message": "Why are we trying to fix something that\u0027s deprecated behavior? If it\u0027s deprecated we\u0027re just going to remove it, but if it hasn\u0027t been working then nobody\u0027s using it and we can just get rid of it rather than going through deprecation.",
+      "revId": "9034d7b974df328ab7ae11ad4a83a912bd129d70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
