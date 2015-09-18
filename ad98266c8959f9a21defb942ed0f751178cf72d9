@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_189b4f19",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_config_registration.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_98943f8b",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_92f65e8d",
         "filename": "keystone/common/sql/migrate_repo/versions/075_confirm_config_registration.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "Remove this comment. All of our migrations use checkfirst so this one isn\u0027t doing anything that requires a comment.",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_73162c4d",
+        "filename": "keystone/common/sql/migrate_repo/versions/075_confirm_config_registration.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_92f65e8d",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_1bf10695",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "So I have made this a subclass of Error (code 500), not sure this is what you meant....if different, maybe we can do that as a follow up.",
+      "parentUuid": "ba15a1d1_92709e73",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_92d97ef5",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "without saying what the \"specific config backend methods\" are I don\u0027t find this comment useful as someone reading the code.",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d3585833",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_92d97ef5",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_53b8c810",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_b2b28204",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_322e72a5",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "not necessary to set this since it\u0027s set at line 227... the only way it could be unknown at 266 is if REGISTRATION_ATTEMPTS is 0, but that would already be an error.",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b3a92492",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Since we include the value of domain_registered in the error msg on line 263, there is a pathological case where 227 keeps give \"not found\" and we never get to set it. I agree something is screwy if that happened, which is why I included it in the message.",
+      "parentUuid": "ba15a1d1_322e72a5",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_13e330da",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_2d3377f7",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4d1a6bc7",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -132,6 +258,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "self.domain_config_api.obtain_registration() could return the domain_registered, and could do both the insert and select in a single transaction so then this code wouldn\u0027t have to worry about not finding the row.",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_53be88ae",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "possible...perhaps I could leave that for further refinement?",
+      "parentUuid": "ba15a1d1_4d1a6bc7",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_0505270f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_ed4fbf68",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_2d6137d3",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -166,6 +328,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "consider LOG.debug",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_e5283388",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "I think this is the common case....but no harm, I guess.",
+      "parentUuid": "ba15a1d1_2d6137d3",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_25614bd3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_cd7d1b6e",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4d482bb3",
         "filename": "keystone/tests/unit/backend/domain_config/core.py",
         "patchSetId": 15
@@ -200,6 +398,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "change \"doesn\u0027t have the mutex\" to \"isn\u0027t registered\"",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_48457640",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_4d482bb3",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_488a5665",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "No, it really is the read that should throw the exception...",
+      "parentUuid": "ba15a1d1_4ddfcbd5",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_edf01f69",
         "filename": "keystone/tests/unit/backend/domain_config/core.py",
         "patchSetId": 15
@@ -240,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_2854c2c7",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_edf01f69",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_983f5fb3",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 15
@@ -251,6 +503,24 @@
       "writtenOn": "2015-09-18T15:45:47Z",
       "side": 1,
       "message": "Looks like I have to wait for the cache time to update the config? Mention this in the commit message since we should document it.",
+      "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_88706e73",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3028,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T17:17:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_983f5fb3",
       "revId": "ad98266c8959f9a21defb942ed0f751178cf72d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
