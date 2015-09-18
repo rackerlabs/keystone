@@ -303,6 +303,7 @@ class MiddlewareTest(BaseWSGITest):
     def test_middleware_local_config(self):
         class FakeMiddleware(wsgi.Middleware):
             def __init__(self, *args, **kwargs):
+                super(FakeMiddleware, self).__init__(*args, **kwargs)
                 self.kwargs = kwargs
 
         factory = FakeMiddleware.factory({}, testkey="test")
