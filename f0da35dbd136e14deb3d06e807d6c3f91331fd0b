@@ -34,6 +34,24 @@
       "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5518c2d2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-18T07:31:03Z",
+      "side": 1,
+      "message": "i didn\u0027t understand it then and I don\u0027t understand it now!  Where are we doing this removal?",
+      "parentUuid": "ba15a1d1_6b509b0b",
+      "revId": "f0da35dbd136e14deb3d06e807d6c3f91331fd0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
