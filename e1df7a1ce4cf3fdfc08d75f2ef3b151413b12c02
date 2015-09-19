@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_189fbab5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T09:12:10Z",
+      "side": 1,
+      "message": "nit: similar comment to early patch as to whether the sentence parses correctly....",
+      "revId": "e1df7a1ce4cf3fdfc08d75f2ef3b151413b12c02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
