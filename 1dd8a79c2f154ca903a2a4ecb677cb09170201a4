@@ -226,6 +226,24 @@
       "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_3f4dc8c4",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-19T03:23:18Z",
+      "side": 1,
+      "message": "this is a good suggestion",
+      "parentUuid": "da20952f_af55dffa",
+      "revId": "1dd8a79c2f154ca903a2a4ecb677cb09170201a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
