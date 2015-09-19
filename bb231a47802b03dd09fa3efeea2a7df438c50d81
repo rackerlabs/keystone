@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_95915355",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T07:12:47Z",
+      "side": 1,
+      "message": "If it did get through, it is a coding error on our part...so nothing a customer could do to fix it....\n\nI\u0027ll update the comment to say this.",
+      "parentUuid": "ba15a1d1_5fbafc0b",
+      "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_df44cc1c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 17
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_f58d2f2b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2979,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T07:12:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_df44cc1c",
+      "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_9f47341d",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 17
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-19T02:56:43Z",
       "side": 1,
       "message": "ditto",
+      "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5572db4a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3007,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T07:12:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_9f47341d",
       "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
