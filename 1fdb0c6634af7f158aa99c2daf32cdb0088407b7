@@ -34,6 +34,24 @@
       "revId": "1fdb0c6634af7f158aa99c2daf32cdb0088407b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_78e6f617",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2761,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T09:58:34Z",
+      "side": 1,
+      "message": "Actually, no, it won\u0027t run without this override, it\u0027s parent classes have the original test override that expects an error.",
+      "parentUuid": "da20952f_f2616aa9",
+      "revId": "1fdb0c6634af7f158aa99c2daf32cdb0088407b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
