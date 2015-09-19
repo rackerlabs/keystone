@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_957393e7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6864,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-19T08:44:08Z",
+      "side": 1,
+      "message": "all domain\u0027s name starts with \"domain\", cannot see whether filter is effective or not, suggest to test the filter seperately as what other testcase did.",
+      "revId": "5110b8f620fdf08cb45b1dcd8ad28e157ca1e32b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7524bfc5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6872,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-19T08:44:08Z",
+      "side": 1,
+      "message": "does this try to test how @response_truncated decorator works? this is not tied to what we want to test here.",
+      "revId": "5110b8f620fdf08cb45b1dcd8ad28e157ca1e32b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f548cf8c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6875,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-19T08:44:08Z",
+      "side": 1,
+      "message": "if there are other domain entities created in setup, the following assertion will fail, so what\u0027s the point of this? not quite understand the comments here.",
+      "revId": "5110b8f620fdf08cb45b1dcd8ad28e157ca1e32b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
