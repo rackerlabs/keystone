@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_4d681988",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T01:11:07Z",
+      "side": 1,
+      "message": "...and I updated the comment in the specific test to make this clearer.",
+      "parentUuid": "ba15a1d1_32a98025",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_14c31339",
         "filename": "keystone/exception.py",
         "patchSetId": 16
