@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_b86c8ed1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T09:08:48Z",
+      "side": 1,
+      "message": "nit: not sure this sentence parses....do you mean:\n\n\tThe new config flags use random.random to indicate...",
+      "revId": "560770ef581c99aaee5a9dc5651050ed2e85ae4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
