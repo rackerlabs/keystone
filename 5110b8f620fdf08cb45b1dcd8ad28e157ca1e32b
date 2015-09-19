@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_18301a9e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6854,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T09:41:29Z",
+      "side": 1,
+      "message": "Is there a reason you chose to do this is a separate class?  Maybe to ensure it only runs in the specific LDAP test class you want?  Since you have created a new class, this isn\u0027t being run in the SQL tests either (since you\u0027d have to add this class to test_backend_sql).\n\nThe other way of doing it is to put the test in the main class in test_backend, and then override with an expected failure where you expect it to not work (i.e. in non-multi-domain LDAP classes). Take a look at how we do this for test_list_role_assignment_by_user_with_domain_group_roles",
+      "revId": "5110b8f620fdf08cb45b1dcd8ad28e157ca1e32b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_957393e7",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 4
