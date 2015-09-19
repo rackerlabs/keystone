@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_5fbafc0b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-19T02:56:43Z",
+      "side": 1,
+      "message": "if this did get through to a client... what actions would they have to take to fix the problem?",
+      "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_df44cc1c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2979,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-19T02:56:43Z",
+      "side": 1,
+      "message": "nit: missing period at the end of the comment.",
+      "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_9f47341d",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3007,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-19T02:56:43Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "bb231a47802b03dd09fa3efeea2a7df438c50d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
