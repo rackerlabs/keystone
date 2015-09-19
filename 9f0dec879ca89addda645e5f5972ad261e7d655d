@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_32a98025",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T00:56:09Z",
+      "side": 1,
+      "message": "actually, I don\u0027t think that\u0027s what the test is showing.  The specific test you are referring to is where I am simulating a server crashing while deleting a domain and somehow the config remains, but the domain has been deleted. In this test, we can\u0027t self heal from this odd data situation until the cache is expressed.  Since we don\u0027t discuss this self-healing in the commit message, I actually think we should remove this comment about cache times as well - I think it is too much of a corner case to include here.",
+      "parentUuid": "ba15a1d1_f4f3ff70",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_14c31339",
         "filename": "keystone/exception.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-18T18:45:09Z",
       "side": 1,
       "message": "Error isn\u0027t the right choice since the message shouldn\u0027t be getting back to the client if it escapes somehow.\n\nThis should be a subclass of Exception then the server will return a 500 if it escapes somehow. (I thought this was pretty clear.)\n\nif you\u0027re going to use Error then you also need to set the title per the docstring.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_4d19f978",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T00:56:09Z",
+      "side": 1,
+      "message": "Done (was having problems with weird issues before when using Exception before...pilot error!)",
+      "parentUuid": "ba15a1d1_14c31339",
       "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_3248a0cc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T00:56:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_34ec17ba",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_1448f3ca",
         "filename": "keystone/identity/core.py",
         "patchSetId": 16
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_92364ce6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T00:56:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_1448f3ca",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_d414bba0",
         "filename": "keystone/identity/core.py",
         "patchSetId": 16
@@ -81,6 +153,24 @@
       "writtenOn": "2015-09-18T18:45:09Z",
       "side": 1,
       "message": "suggest put the attempt # in the message.",
+      "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_32fbc049",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-19T00:56:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_d414bba0",
       "revId": "9f0dec879ca89addda645e5f5972ad261e7d655d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
