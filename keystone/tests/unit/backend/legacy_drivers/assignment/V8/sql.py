@@ -19,6 +19,7 @@ class SqlIdentityV8(test_backend_sql.SqlIdentity):
     We use the SQL driver as an example of a V8 legacy driver.
 
     """
+
     def config_overrides(self):
         super(SqlIdentityV8, self).config_overrides()
         # V8 SQL specific driver overrides
