@@ -2167,3 +2167,61 @@ class AssignmentInheritanceDisabledTestCase(test_v3.RestfulTestCase):
         self.head(member_url, expected_status=http_client.NOT_FOUND)
         self.get(collection_url, expected_status=http_client.NOT_FOUND)
         self.delete(member_url, expected_status=http_client.NOT_FOUND)
+
+
+class ImpliedRoleTests(test_v3.RestfulTestCase, unit.TestCase):
+    def _create_role(self):
+        """Call ``POST /roles``."""
+        ref = unit.new_role_ref()
+        r = self.post(
+            '/roles',
+            body={'role': ref})
+        return self.assertValidRoleResponse(r, ref)
+
+    def test_list_implied_roles_none(self):
+        prior = self._create_role()
+        url = '/implied_roles/%s' % (prior['id'])
+        r = self.get(url)
+        self.assertEqual(r.result['prior_role_id'], prior['id'])
+        self.assertEqual(0, len(r.result['implied_roles']))
+
+    def _create_implied_role(self, prior, implied):
+        self.put('/implied_role/%s/implies/%s' % (prior['id'], implied['id']))
+
+    def _delete_implied_role(self, prior, implied):
+        self.delete('/implied_role/%s/implies/%s' %
+                    (prior['id'], implied['id']))
+
+    def test_CRD_implied_roles(self):
+        prior = self._create_role()
+        implied1 = self._create_role()
+        self._create_implied_role(prior, implied1)
+        implied2 = self._create_role()
+        self._create_implied_role(prior, implied2)
+
+        r = self.get('/implied_roles/%s' % (prior['id']))
+
+        self.assertEqual(prior['id'], r.result['prior_role_id'])
+        self.assertIn(implied1['id'], r.result['implied_roles'])
+        self.assertIn(implied2['id'], r.result['implied_roles'])
+        self.assertEqual(2, len(r.result['implied_roles']))
+
+        r = self.get('/implied_role/%s/implies/%s' %
+                     (prior['id'], implied1['id']),
+                     expected_status=http_client.NO_CONTENT)
+        r = self.get('/implied_role/%s/implies/%s' %
+                     (prior['id'], implied2['id']),
+                     expected_status=http_client.NO_CONTENT)
+
+        self._delete_implied_role(prior, implied2)
+        r = self.get('/implied_roles/%s' % (prior['id']))
+        self.assertEqual(prior['id'], r.result['prior_role_id'])
+        self.assertIn(implied1['id'], r.result['implied_roles'])
+        self.assertNotIn(implied2['id'], r.result['implied_roles'])
+        self.assertEqual(1, len(r.result['implied_roles']))
+        r = self.get('/implied_role/%s/implies/%s' %
+                     (prior['id'], implied1['id']),
+                     expected_status=http_client.NO_CONTENT)
+        r = self.get('/implied_role/%s/implies/%s' %
+                     (prior['id'], implied2['id']),
+                     expected_status=http_client.NOT_FOUND)
