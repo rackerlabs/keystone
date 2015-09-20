@@ -324,6 +324,22 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
         'href-template': '/roles/{role_id}',
         'href-vars': {
             'role_id': json_home.Parameters.ROLE_ID, }},
+    json_home.build_v3_resource_relation('implied_roles'): {
+        'href-template': '/implied_roles/{prior_role_id}',
+        'href-vars': {
+            'prior_role_id': json_home.Parameters.PRIOR_ROLE_ID
+        }},
+    json_home.build_v3_resource_relation('implied_role'): {
+        'href-template': '/implied_role/{prior_role_id}/{implied_role_id}',
+        'href-vars': {
+            'prior_role_id': json_home.Parameters.PRIOR_ROLE_ID,
+            'implied_role_id': json_home.Parameters.IMPLIED_ROLE_ID,
+        }},
+    json_home.build_v3_resource_relation('role'): {
+        'href-template': '/roles/{role_id}',
+        'href-vars': {
+            'role_id': json_home.Parameters.ROLE_ID, }},
+
     json_home.build_v3_resource_relation('role_assignments'): {
         'href': '/role_assignments'},
     json_home.build_v3_resource_relation('roles'): {'href': '/roles'},
