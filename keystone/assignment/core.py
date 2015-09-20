@@ -83,6 +83,32 @@ class Manager(manager.Manager):
         else:
             return []
 
+    def get_implied_roles(self, prior_role_id):
+        return self.role_api.list_implied_roles(prior_role_id)
+
+    def _add_implied_roles(self, roles):
+        # roles are passed in as IDs.
+        if not CONF.token.infer_roles:
+            return roles
+        try:
+            checked_roles = set()
+            roles_to_check = list(roles)
+            while(roles_to_check):
+                next_role = roles_to_check.pop()
+                if (next_role in checked_roles):
+                    continue
+                implied_roles = self.get_implied_roles(next_role)
+                for implied_role in implied_roles:
+                    implied_id = implied_role['implied_role_id']
+                    if implied_id in checked_roles:
+                        continue
+                    roles.append(implied_id)
+                    roles_to_check.append(implied_id)
+        except exception.NotImplemented:
+            pass
+
+        return roles
+
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
 
@@ -141,7 +167,10 @@ class Manager(manager.Manager):
         user_role_list = _get_user_project_roles(user_id, project_ref)
         group_role_list = _get_group_project_roles(user_id, project_ref)
         # Use set() to process the list to remove any duplicates
-        return list(set(user_role_list + group_role_list))
+
+        roles = self._add_implied_roles(user_role_list + group_role_list)
+
+        return list(set(roles))
 
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         """Get the roles associated with a user within given domain.
@@ -186,7 +215,8 @@ class Manager(manager.Manager):
         user_role_list = _get_user_domain_roles(user_id, domain_id)
         group_role_list = _get_group_domain_roles(user_id, domain_id)
         # Use set() to process the list to remove any duplicates
-        return list(set(user_role_list + group_role_list))
+        roles = self._add_implied_roles(user_role_list + group_role_list)
+        return roles
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
@@ -925,7 +955,7 @@ class AssignmentDriverV8(object):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
@@ -1220,6 +1250,10 @@ class RoleManager(manager.Manager):
         notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
 
+    @abc.abstractmethod
+    def list_implied_roles(self, prior_id):
+        return self.driver.list_implied_roles(prior_id)
+
 
 @six.add_metaclass(abc.ABCMeta)
 class RoleDriverV8(object):
@@ -1291,5 +1325,31 @@ class RoleDriverV8(object):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
+    @abc.abstractmethod
+    def create_implied_role(self, proir_role_id, implied_role_id):
+        """Creates a role inference rule
+
+        :raises: keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_implied_role(self, proir_role_id, implied_role_id):
+        """Deletes a role inference rule
+
+        :raises: keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_implied_roles(self, prior_id):
+        """Lists roles implied from the prior id
+
+        :raises: keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 RoleDriver = manager.create_legacy_driver(RoleDriverV8)
