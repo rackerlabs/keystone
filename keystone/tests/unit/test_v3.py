@@ -1294,7 +1294,8 @@ class AssignmentTestMixin(object):
 
         return link
 
-    def build_role_assignment_entity(self, link=None, **attribs):
+    def build_role_assignment_entity(
+            self, link=None, implied_link=None, **attribs):
         """Build and return a role assignment entity with provided attributes.
 
         Provided attributes are expected to contain: domain_id or project_id,
@@ -1322,5 +1323,8 @@ class AssignmentTestMixin(object):
 
         if attribs.get('inherited_to_projects'):
             entity['scope']['OS-INHERIT:inherited_to'] = 'projects'
+
+        if implied_link:
+            entity['links']['implied_role'] = implied_link
 
         return entity
