@@ -328,6 +328,31 @@ class RoleV3(controller.V3Controller):
         self.role_api.delete_role(role_id, initiator)
 
 
+@dependency.requires('role_api')
+class ImpliedRolesV3(controller.V3Controller):
+    """The V3 ImpliedRoles CRD APIs.  There is no Update."""
+
+    collection_name = 'implied_roles'
+    member_name = 'implied_role'
+
+    @controller.protected()
+    def create_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.create_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def delete_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.delete_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def list_implied_roles(self, context, prior_role_id):
+        ref = self.role_api.list_implied_roles(prior_role_id)
+        implied_roles = [r['implied_role_id'] for r in ref]
+        results = {'prior_role_id': prior_role_id,
+                   'implied_roles': implied_roles}
+
+        return results
+
+
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',
                      'role_api')
 class GrantAssignmentV3(controller.V3Controller):
