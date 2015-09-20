@@ -328,6 +328,47 @@ class RoleV3(controller.V3Controller):
         self.role_api.delete_role(role_id, initiator)
 
 
+@dependency.requires('role_api')
+class ImpliedRolesV3(controller.V3Controller):
+    """The V3 ImpliedRoles CRD APIs.  There is no Update."""
+
+    collection_name = 'implied_roles'
+    member_name = 'implied_role'
+
+    def _add_self_referential_link(self, context, ref):
+        ref.setdefault('links', {})
+        ref['links']['self'] = (
+            self.base_url(context) + '/' + ref['prior_role_id'])
+
+    @controller.protected()
+    def get_implied_role(self, context, prior_role_id, implied_role_id):
+
+        ref = self.role_api.get_implied_role(prior_role_id, implied_role_id)
+        self._add_self_referential_link(context, ref)
+        return ref
+
+    @controller.protected()
+    def check_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.get_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def create_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.create_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def delete_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.delete_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def list_implied_roles(self, context, prior_role_id):
+        ref = self.role_api.list_implied_roles(prior_role_id)
+        implied_roles = [r['implied_role_id'] for r in ref]
+        results = {'prior_role_id': prior_role_id,
+                   'implied_roles': implied_roles}
+
+        return results
+
+
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',
                      'role_api')
 class GrantAssignmentV3(controller.V3Controller):
@@ -547,7 +588,16 @@ class RoleAssignmentV3(controller.V3Controller):
             formatted_link += '/groups/%s' % entity['group_id']
 
         formatted_entity['role'] = {'id': entity['role_id']}
-        formatted_link += '/roles/%s' % entity['role_id']
+        implied_role_link = ''
+        if 'role_id' in entity.get('indirect', {}):
+            formatted_link += '/roles/%s' % entity['indirect']['role_id']
+            implied_role_link = (
+                '/implied_role/%(prior)s/implies/%(implied)s' % {
+                    'prior': entity['role_id'],
+                    'implied': entity['indirect']['role_id']
+                })
+        else:
+            formatted_link += '/roles/%s' % entity['role_id']
 
         if inherited_assignment:
             formatted_entity['scope']['OS-INHERIT:inherited_to'] = (
@@ -557,6 +607,9 @@ class RoleAssignmentV3(controller.V3Controller):
 
         formatted_entity['links']['assignment'] = self.base_url(context,
                                                                 formatted_link)
+        if implied_role_link:
+            formatted_entity['links']['implied_role'] = (
+                self.base_url(context, implied_role_link))
 
         return formatted_entity
 
