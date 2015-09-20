@@ -3186,3 +3186,50 @@ class AssignmentV3toV2MethodsTestCase(unit.TestCase):
         self.assertDictEqual(self.expected_project, self.project1)
         self.assertDictEqual(self.expected_project, self.project2)
         self.assertDictEqual(self.expected_project, self.project3)
+
+
+class ImpliedRoleTests(test_v3.RestfulTestCase, unit.TestCase):
+    def _create_role(self):
+        """Call ``POST /roles``."""
+        ref = unit.new_role_ref()
+        r = self.post(
+            '/roles',
+            body={'role': ref})
+        return self.assertValidRoleResponse(r, ref)
+
+    def test_list_implied_roles_none(self):
+        prior = self._create_role()
+        url = '/implied_roles/%s' % (prior['id'])
+        r = self.get(url)
+        self.assertEqual(r.result['prior_role_id'], prior['id'])
+        self.assertEqual(0, len(r.result['implied_roles']))
+
+    def _create_implied_role(self, prior, implied):
+        url = '/implied_role/%s/%s' % (prior['id'], implied['id'])
+        self.put(url)
+
+    def _delete_implied_role(self, prior, implied):
+        url = '/implied_role/%s/%s' % (prior['id'], implied['id'])
+        self.delete(url)
+
+    def test_CRD_implied_role(self):
+        prior = self._create_role()
+        implied1 = self._create_role()
+        self._create_implied_role(prior, implied1)
+        implied2 = self._create_role()
+        self._create_implied_role(prior, implied2)
+
+        r = self.get('/implied_roles/%s' % (prior['id']))
+
+        self.assertEqual(r.result['prior_role_id'], prior['id'])
+        self.assertIn(implied1['id'], r.result['implied_roles'])
+        self.assertIn(implied2['id'], r.result['implied_roles'])
+        self.assertEqual(2, len(r.result['implied_roles']))
+
+        self._delete_implied_role(prior, implied2)
+        r = self.get('/implied_roles/%s' % (prior['id']))
+
+        self.assertEqual(r.result['prior_role_id'], prior['id'])
+        self.assertIn(implied1['id'], r.result['implied_roles'])
+        self.assertNotIn(implied2['id'], r.result['implied_roles'])
+        self.assertEqual(1, len(r.result['implied_roles']))
