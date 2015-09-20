@@ -2000,6 +2000,10 @@
 # revocation will not be processed correctly. (string value)
 #hash_algorithm = md5
 
+# Add roles to token that are not explicitly added, but that are linked
+# implicitly to other roles. (boolean value)
+#infer_roles = true
+
 
 [tokenless_auth]
 
