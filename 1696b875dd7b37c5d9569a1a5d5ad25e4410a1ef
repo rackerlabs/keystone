@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_a0cae24d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-21T20:10:58Z",
+      "side": 1,
+      "message": "add punctuation to the end of this string.",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_69236706",
         "filename": "keystone/identity/core.py",
         "patchSetId": 18
@@ -30,6 +47,57 @@
       "writtenOn": "2015-09-21T15:40:21Z",
       "side": 1,
       "message": "suggest also put the # of retries in here.",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_202b32ed",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-21T20:10:58Z",
+      "side": 1,
+      "message": "add doc strings to these to be consistent with release_registration. this can be done in a separate patch though.",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_00386e3c",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-21T20:10:58Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_801b1eca",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2961,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-21T20:10:58Z",
+      "side": 1,
+      "message": "nit: s/an/a/",
       "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
