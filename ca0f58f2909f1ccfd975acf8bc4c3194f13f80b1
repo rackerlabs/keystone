@@ -16,6 +16,24 @@
       "revId": "ca0f58f2909f1ccfd975acf8bc4c3194f13f80b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ae93cf4e",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-21T12:49:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_938f24cc",
+      "revId": "ca0f58f2909f1ccfd975acf8bc4c3194f13f80b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
