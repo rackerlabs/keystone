@@ -37,7 +37,7 @@ class RevokeController(controller.V3Controller):
                     'links': {
                         'next': None,
                         'self': RevokeController.base_url(
-                            context,
+                            context['environment'],
                             path=context['path']),
                         'previous': None}
                     }
