@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_50d87bef",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-21T17:54:32Z",
+      "side": 1,
+      "message": "this change is unrelated to \"Move endpoint catalog filtering to default driver\", revert it.",
+      "revId": "cb68d57c71b9e5ec9fb0ed921554492da370b7c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_50ff1b34",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-21T17:54:32Z",
+      "side": 1,
+      "message": "This change is unrelated, revert it.",
+      "revId": "cb68d57c71b9e5ec9fb0ed921554492da370b7c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
