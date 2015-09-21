@@ -1081,7 +1081,7 @@ FILE_OPTIONS = {
                         'eventlet application. Defaults to number of CPUs '
                         '(minimum of 2).'),
         cfg.StrOpt('public_bind_host',
-                   default='0.0.0.0',
+                   default='0.0.0.0',  # nosec
                    deprecated_opts=[cfg.DeprecatedOpt('bind_host',
                                                       group='DEFAULT'),
                                     cfg.DeprecatedOpt('public_bind_host',
@@ -1096,7 +1096,7 @@ FILE_OPTIONS = {
                    help='The port number which the public service listens '
                         'on.'),
         cfg.StrOpt('admin_bind_host',
-                   default='0.0.0.0',
+                   default='0.0.0.0',  # nosec
                    deprecated_opts=[cfg.DeprecatedOpt('bind_host',
                                                       group='DEFAULT'),
                                     cfg.DeprecatedOpt('admin_bind_host',
