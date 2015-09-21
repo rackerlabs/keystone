@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_2079f2fc",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-21T20:25:16Z",
+      "side": 0,
+      "message": "Wasn\u0027t this change supposed to be reverted?",
+      "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
