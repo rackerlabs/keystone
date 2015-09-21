@@ -27,7 +27,6 @@ import webob
 from keystone.common import json_home
 from keystone import controllers
 from keystone.tests import unit
-from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -678,18 +677,6 @@ class VersionTestCase(unit.TestCase):
         self.public_app = self.loadapp('keystone', 'main')
         self.admin_app = self.loadapp('keystone', 'admin')
 
-        self.config_fixture.config(
-            public_endpoint='http://localhost:%(public_port)d',
-            admin_endpoint='http://localhost:%(admin_port)d')
-
-    def config_overrides(self):
-        super(VersionTestCase, self).config_overrides()
-        admin_port = random.randint(10000, 30000)
-        public_port = random.randint(40000, 60000)
-        self.config_fixture.config(group='eventlet_server',
-                                   public_port=public_port,
-                                   admin_port=admin_port)
-
     def _paste_in_port(self, response, port):
         for link in response['links']:
             if link['rel'] == 'self':
@@ -704,12 +691,10 @@ class VersionTestCase(unit.TestCase):
         for version in expected['versions']['values']:
             if version['id'].startswith('v3'):
                 self._paste_in_port(
-                    version, 'http://localhost:%s/v3/' %
-                    CONF.eventlet_server.public_port)
+                    version, 'http://localhost:80/v3/')
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
-                    version, 'http://localhost:%s/v2.0/' %
-                    CONF.eventlet_server.public_port)
+                    version, 'http://localhost:80/v2.0/')
         self.assertThat(data, _VersionsEqual(expected))
 
     def test_admin_versions(self):
@@ -721,17 +706,13 @@ class VersionTestCase(unit.TestCase):
         for version in expected['versions']['values']:
             if version['id'].startswith('v3'):
                 self._paste_in_port(
-                    version, 'http://localhost:%s/v3/' %
-                    CONF.eventlet_server.admin_port)
+                    version, 'http://localhost:80/v3/')
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
-                    version, 'http://localhost:%s/v2.0/' %
-                    CONF.eventlet_server.admin_port)
+                    version, 'http://localhost:80/v2.0/')
         self.assertThat(data, _VersionsEqual(expected))
 
     def test_use_site_url_if_endpoint_unset(self):
-        self.config_fixture.config(public_endpoint=None, admin_endpoint=None)
-
         for app in (self.public_app, self.admin_app):
             client = TestClient(app)
             resp = client.get('/')
@@ -742,10 +723,10 @@ class VersionTestCase(unit.TestCase):
                 # localhost happens to be the site url for tests
                 if version['id'].startswith('v3'):
                     self._paste_in_port(
-                        version, 'http://localhost/v3/')
+                        version, 'http://localhost:80/v3/')
                 elif version['id'] == 'v2.0':
                     self._paste_in_port(
-                        version, 'http://localhost/v2.0/')
+                        version, 'http://localhost:80/v2.0/')
             self.assertThat(data, _VersionsEqual(expected))
 
     def test_public_version_v2(self):
@@ -755,8 +736,7 @@ class VersionTestCase(unit.TestCase):
         data = jsonutils.loads(resp.body)
         expected = v2_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v2.0/' %
-                            CONF.eventlet_server.public_port)
+                            'http://localhost:80/v2.0/')
         self.assertEqual(expected, data)
 
     def test_admin_version_v2(self):
@@ -766,19 +746,18 @@ class VersionTestCase(unit.TestCase):
         data = jsonutils.loads(resp.body)
         expected = v2_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v2.0/' %
-                            CONF.eventlet_server.admin_port)
+                            'http://localhost:80/v2.0/')
         self.assertEqual(expected, data)
 
     def test_use_site_url_if_endpoint_unset_v2(self):
-        self.config_fixture.config(public_endpoint=None, admin_endpoint=None)
         for app in (self.public_app, self.admin_app):
             client = TestClient(app)
             resp = client.get('/v2.0/')
             self.assertEqual(200, resp.status_int)
             data = jsonutils.loads(resp.body)
             expected = v2_VERSION_RESPONSE
-            self._paste_in_port(expected['version'], 'http://localhost/v2.0/')
+            self._paste_in_port(expected['version'],
+                                'http://localhost:80/v2.0/')
             self.assertEqual(data, expected)
 
     def test_public_version_v3(self):
@@ -788,11 +767,9 @@ class VersionTestCase(unit.TestCase):
         data = jsonutils.loads(resp.body)
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v3/' %
-                            CONF.eventlet_server.public_port)
+                            'http://localhost:80/v3/')
         self.assertEqual(expected, data)
 
-    @utils.wip('waiting on bug #1381961')
     def test_admin_version_v3(self):
         client = TestClient(self.admin_app)
         resp = client.get('/v3/')
@@ -800,19 +777,17 @@ class VersionTestCase(unit.TestCase):
         data = jsonutils.loads(resp.body)
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v3/' %
-                            CONF.eventlet_server.admin_port)
+                            'http://localhost:80/v3/')
         self.assertEqual(expected, data)
 
     def test_use_site_url_if_endpoint_unset_v3(self):
-        self.config_fixture.config(public_endpoint=None, admin_endpoint=None)
         for app in (self.public_app, self.admin_app):
             client = TestClient(app)
             resp = client.get('/v3/')
             self.assertEqual(200, resp.status_int)
             data = jsonutils.loads(resp.body)
             expected = v3_VERSION_RESPONSE
-            self._paste_in_port(expected['version'], 'http://localhost/v3/')
+            self._paste_in_port(expected['version'], 'http://localhost:80/v3/')
             self.assertEqual(expected, data)
 
     @mock.patch.object(controllers, '_VERSIONS', ['v3'])
@@ -827,9 +802,7 @@ class VersionTestCase(unit.TestCase):
         self.assertEqual(200, resp.status_int)
         data = jsonutils.loads(resp.body)
         expected = v3_VERSION_RESPONSE
-        self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v3/' %
-                            CONF.eventlet_server.public_port)
+        self._paste_in_port(expected['version'], 'http://localhost:80/v3/')
         self.assertEqual(expected, data)
 
         # only v3 information should be displayed by requests to /
@@ -841,8 +814,7 @@ class VersionTestCase(unit.TestCase):
             }
         }
         self._paste_in_port(v3_only_response['versions']['values'][0],
-                            'http://localhost:%s/v3/' %
-                            CONF.eventlet_server.public_port)
+                            'http://localhost:80/v3/')
         resp = client.get('/')
         self.assertEqual(300, resp.status_int)
         data = jsonutils.loads(resp.body)
@@ -860,9 +832,7 @@ class VersionTestCase(unit.TestCase):
         self.assertEqual(200, resp.status_int)
         data = jsonutils.loads(resp.body)
         expected = v2_VERSION_RESPONSE
-        self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v2.0/' %
-                            CONF.eventlet_server.public_port)
+        self._paste_in_port(expected['version'], 'http://localhost:80/v2.0/')
         self.assertEqual(expected, data)
 
         # only v2 information should be displayed by requests to /
@@ -874,8 +844,7 @@ class VersionTestCase(unit.TestCase):
             }
         }
         self._paste_in_port(v2_only_response['versions']['values'][0],
-                            'http://localhost:%s/v2.0/' %
-                            CONF.eventlet_server.public_port)
+                            'http://localhost:80/v2.0/')
         resp = client.get('/')
         self.assertEqual(300, resp.status_int)
         data = jsonutils.loads(resp.body)
@@ -977,29 +946,12 @@ class VersionSingleAppTestCase(unit.TestCase):
         super(VersionSingleAppTestCase, self).setUp()
         self.load_backends()
 
-        self.config_fixture.config(
-            public_endpoint='http://localhost:%(public_port)d',
-            admin_endpoint='http://localhost:%(admin_port)d')
-
-    def config_overrides(self):
-        super(VersionSingleAppTestCase, self).config_overrides()
-        admin_port = random.randint(10000, 30000)
-        public_port = random.randint(40000, 60000)
-        self.config_fixture.config(group='eventlet_server',
-                                   public_port=public_port,
-                                   admin_port=admin_port)
-
     def _paste_in_port(self, response, port):
         for link in response['links']:
             if link['rel'] == 'self':
                 link['href'] = port
 
     def _test_version(self, app_name):
-        def app_port():
-            if app_name == 'admin':
-                return CONF.eventlet_server.admin_port
-            else:
-                return CONF.eventlet_server.public_port
         app = self.loadapp('keystone', app_name)
         client = TestClient(app)
         resp = client.get('/')
@@ -1009,10 +961,10 @@ class VersionSingleAppTestCase(unit.TestCase):
         for version in expected['versions']['values']:
             if version['id'].startswith('v3'):
                 self._paste_in_port(
-                    version, 'http://localhost:%s/v3/' % app_port())
+                    version, 'http://localhost:80/v3/')
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
-                    version, 'http://localhost:%s/v2.0/' % app_port())
+                    version, 'http://localhost:80/v2.0/')
         self.assertThat(data, _VersionsEqual(expected))
 
     def test_public(self):
@@ -1029,18 +981,8 @@ class VersionInheritEnabledTestCase(unit.TestCase):
         self.public_app = self.loadapp('keystone', 'main')
         self.admin_app = self.loadapp('keystone', 'admin')
 
-        self.config_fixture.config(
-            public_endpoint='http://localhost:%(public_port)d',
-            admin_endpoint='http://localhost:%(admin_port)d')
-
     def config_overrides(self):
         super(VersionInheritEnabledTestCase, self).config_overrides()
-        admin_port = random.randint(10000, 30000)
-        public_port = random.randint(40000, 60000)
-        self.config_fixture.config(group='eventlet_server',
-                                   public_port=public_port,
-                                   admin_port=admin_port)
-
         self.config_fixture.config(group='os_inherit', enabled=True)
 
     def test_json_home_v3(self):
