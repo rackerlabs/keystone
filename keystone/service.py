@@ -69,7 +69,7 @@ def public_app_factory(global_conf, **local_conf):
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [assignment.routers.Public(),
                                  token.routers.Router(),
-                                 routers.VersionV2('public'),
+                                 routers.VersionV2(),
                                  routers.Extension(False)])
 
 
@@ -81,20 +81,20 @@ def admin_app_factory(global_conf, **local_conf):
                                  assignment.routers.Admin(),
                                     token.routers.Router(),
                                     resource.routers.Admin(),
-                                    routers.VersionV2('admin'),
+                                    routers.VersionV2(),
                                     routers.Extension()])
 
 
 @fail_gracefully
 def public_version_app_factory(global_conf, **local_conf):
     return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('public')])
+                                [routers.Versions()])
 
 
 @fail_gracefully
 def admin_version_app_factory(global_conf, **local_conf):
     return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('admin')])
+                                [routers.Versions()])
 
 
 @fail_gracefully
@@ -127,5 +127,5 @@ def v3_app_factory(global_conf, **local_conf):
         routers_instance.append_v3_routers(mapper, sub_routers)
 
     # Add in the v3 version api
-    sub_routers.append(routers.VersionV3('public', _routers))
+    sub_routers.append(routers.VersionV3(_routers))
     return wsgi.ComposingRouter(mapper, sub_routers)

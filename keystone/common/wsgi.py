@@ -19,7 +19,6 @@
 """Utility methods for working with WSGI servers."""
 
 import copy
-import itertools
 import wsgiref.util
 
 from oslo_config import cfg
@@ -369,24 +368,9 @@ class Application(BaseApplication):
         token_ref = utils.get_token_ref(context)
         return token_ref.trust_id
 
-    @classmethod
-    def base_url(cls, context, endpoint_type):
-        url = CONF['%s_endpoint' % endpoint_type]
-
-        if url:
-            substitutions = dict(
-                itertools.chain(CONF.items(), CONF.eventlet_server.items()))
-
-            url = url % substitutions
-        else:
-            # NOTE(jamielennox): if url is not set via the config file we
-            # should set it relative to the url that the user used to get here
-            # so as not to mess with version discovery. This is not perfect.
-            # host_url omits the path prefix, but there isn't another good
-            # solution that will work for all urls.
-            url = context['host_url']
-
-        return url.rstrip('/')
+    @staticmethod
+    def base_url(environment):
+        return wsgiref.util.application_uri(environment).rstrip('/')
 
 
 class Middleware(Application):
@@ -806,18 +790,10 @@ def render_exception(error, context=None, request=None, user_locale=None):
     if isinstance(error, exception.AuthPluginException):
         body['error']['identity'] = error.authentication
     elif isinstance(error, exception.Unauthorized):
-        url = CONF.public_endpoint
-        if not url:
-            if request:
-                context = {'host_url': request.host_url}
-            if context:
-                url = Application.base_url(context, 'public')
-            else:
-                url = 'http://localhost:%d' % CONF.eventlet_server.public_port
+        if request:
+            url = Application.base_url(request.environ)
         else:
-            substitutions = dict(
-                itertools.chain(CONF.items(), CONF.eventlet_server.items()))
-            url = url % substitutions
+            url = 'http://localhost:%d' % CONF.eventlet_server.public_port
 
         headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % url))
     return render_response(status=(error.code, error.title),
