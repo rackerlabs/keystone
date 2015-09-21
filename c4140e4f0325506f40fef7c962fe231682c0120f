@@ -16,6 +16,75 @@
       "revId": "c4140e4f0325506f40fef7c962fe231682c0120f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_36787bf8",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-21T09:39:17Z",
+      "side": 1,
+      "message": "I think Henry\u0027s comments is reasonable, but looks like if we add this it will complicate the logic and may bloat the patch. :(",
+      "parentUuid": "ba15a1d1_9bf5bdcc",
+      "revId": "c4140e4f0325506f40fef7c962fe231682c0120f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_964aa7ab",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-21T09:39:17Z",
+      "side": 1,
+      "message": "this decorator is cool.",
+      "revId": "c4140e4f0325506f40fef7c962fe231682c0120f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_766b5386",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-21T09:39:17Z",
+      "side": 1,
+      "message": "this is wrong, CONF.cache.enabled is just the prerequisite of enabling of caching of each section. CONF.cache.enabled enabled doesn\u0027t mean cache is enabled for each section.",
+      "revId": "c4140e4f0325506f40fef7c962fe231682c0120f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b3a26899",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-21T09:39:17Z",
+      "side": 1,
+      "message": "nit: s/wihin/within",
+      "revId": "c4140e4f0325506f40fef7c962fe231682c0120f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
