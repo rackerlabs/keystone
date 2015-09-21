@@ -69,6 +69,23 @@
       "revId": "957c93790011c580b3c0bb1d6350384541486168",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f59e5206",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-21T23:41:59Z",
+      "side": 1,
+      "message": "recently the web context for horizon in devstack changed from \"/\" to \"/dashboard\"\n\n\"/dashboard\" is really not needed here. since that is devstack specific.\n\nI am fine either way (keeping or removing it), just wanted to point that out.",
+      "revId": "957c93790011c580b3c0bb1d6350384541486168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
