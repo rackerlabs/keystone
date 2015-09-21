@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_255b6730",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-21T07:33:27Z",
+      "side": 1,
+      "message": "True. A bit special in my case, that I\u0027m not sure if I\u0027m doing right on that commit. I don\u0027t want to base this commit on a uncertain commit.\nSo I added this line here so the tests won\u0027t fail. I\u0027ll remove this after that change is merged",
+      "parentUuid": "ba15a1d1_4a49ca8d",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ca5dda49",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-21T07:27:43Z",
       "side": 1,
       "message": "NIT: but should be Closes-Bug: #1480270",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_056d03cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-21T07:33:27Z",
+      "side": 1,
+      "message": "right, will fix it",
+      "parentUuid": "ba15a1d1_ca5dda49",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
