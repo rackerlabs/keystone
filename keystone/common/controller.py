@@ -416,12 +416,12 @@ class V3Controller(wsgi.Application):
     get_member_from_driver = None
 
     @classmethod
-    def base_url(cls, context, path=None):
-        endpoint = super(V3Controller, cls).base_url(context, 'public')
+    def base_url(cls, environment, path=None):
+        endpoint = super(V3Controller, cls).base_url(environment, 'public')
         if not path:
             path = cls.collection_name
 
-        return '%s/%s/%s' % (endpoint, 'v3', path.lstrip('/'))
+        return '%s/%s' % (endpoint, path.lstrip('/'))
 
     def get_auth_context(self, context):
         # TODO(dolphm): this method of accessing the auth context is terrible,
@@ -431,7 +431,7 @@ class V3Controller(wsgi.Application):
 
     @classmethod
     def full_url(cls, context, path=None):
-        url = cls.base_url(context, path)
+        url = cls.base_url(context['environment'], path)
         if context['environment'].get('QUERY_STRING'):
             url = '%s?%s' % (url, context['environment']['QUERY_STRING'])
 
@@ -461,7 +461,8 @@ class V3Controller(wsgi.Application):
     @classmethod
     def _add_self_referential_link(cls, context, ref):
         ref.setdefault('links', {})
-        ref['links']['self'] = cls.base_url(context) + '/' + ref['id']
+        ref['links']['self'] = cls.base_url(
+            context['environment']) + '/' + ref['id']
 
     @classmethod
     def wrap_member(cls, context, ref):

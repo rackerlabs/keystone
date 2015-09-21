@@ -414,7 +414,7 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
     @classmethod
     def _add_self_referential_link(cls, context, ref):
         path = '/users/%(user_id)s/credentials/OS-EC2/%(credential_id)s'
-        url = cls.base_url(context, path) % {
+        url = cls.base_url(context['environment'], path) % {
             'user_id': ref['user_id'],
             'credential_id': ref['access']}
         ref.setdefault('links', {})
