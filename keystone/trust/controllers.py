@@ -54,13 +54,13 @@ class TrustV3(controller.V3Controller):
     member_name = "trust"
 
     @classmethod
-    def base_url(cls, context, path=None):
+    def base_url(cls, environment, path=None):
         """Construct a path and pass it to V3Controller.base_url method."""
 
         # NOTE(stevemar): Overriding path to /OS-TRUST/trusts so that
         # V3Controller.base_url handles setting the self link correctly.
         path = '/OS-TRUST/' + cls.collection_name
-        return super(TrustV3, cls).base_url(context, path=path)
+        return super(TrustV3, cls).base_url(environment, path=path)
 
     def _get_user_id(self, context):
         try:
@@ -97,7 +97,8 @@ class TrustV3(controller.V3Controller):
                 trust_full_roles.append(full_role)
         trust['roles'] = trust_full_roles
         trust['roles_links'] = {
-            'self': (self.base_url(context) + "/%s/roles" % trust['id']),
+            'self': self.base_url(
+                context['environment']) + "/%s/roles" % trust['id'],
             'next': None,
             'previous': None}
 

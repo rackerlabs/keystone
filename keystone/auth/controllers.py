@@ -632,7 +632,8 @@ class Auth(controller.V3Controller):
         # several private methods.
         return {
             'catalog': self.catalog_api.get_v3_catalog(user_id, project_id),
-            'links': {'self': self.base_url(context, path='auth/catalog')}
+            'links': {'self': self.base_url(context['environment'],
+                                            path='auth/catalog')}
         }
 
 

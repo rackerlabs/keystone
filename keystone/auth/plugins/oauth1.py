@@ -50,7 +50,8 @@ class OAuth(auth.AuthMethodHandler):
             if now > expires:
                 raise exception.Unauthorized(_('Access token is expired'))
 
-        url = controller.V3Controller.base_url(context, context['path'])
+        url = controller.V3Controller.base_url(context['environment'],
+                                               context['path'])
         access_verifier = oauth.ResourceEndpoint(
             request_validator=validator.OAuthValidator(),
             token_generator=oauth.token_generator)
