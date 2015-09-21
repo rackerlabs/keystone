@@ -168,9 +168,9 @@ class Server(service.ServiceBase):
         """Wait until all servers have completed running."""
         try:
             self.pool.waitall()
-        except KeyboardInterrupt:
+        except KeyboardInterrupt:  # nosec
             pass
-        except greenlet.GreenletExit:
+        except greenlet.GreenletExit:  # nosec
             pass
 
     def reset(self):
@@ -198,7 +198,7 @@ class Server(service.ServiceBase):
                 socket, application, log=EventletFilteringLogger(logger),
                 debug=False, keepalive=CONF.eventlet_server.wsgi_keep_alive,
                 socket_timeout=socket_timeout)
-        except greenlet.GreenletExit:
+        except greenlet.GreenletExit:  # nosec
             # Wait until all servers have completed running
             pass
         except Exception:

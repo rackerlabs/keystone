@@ -176,7 +176,7 @@ def rotate_keys(keystone_user_id=None, keystone_group_id=None):
         if os.path.isfile(path):
             try:
                 key_id = int(filename)
-            except ValueError:
+            except ValueError:  # nosec
                 pass
             else:
                 key_files[key_id] = path
@@ -243,7 +243,7 @@ def load_keys():
             with open(path, 'r') as key_file:
                 try:
                     key_id = int(filename)
-                except ValueError:
+                except ValueError:  # nosec
                     pass
                 else:
                     keys[key_id] = key_file.read()
