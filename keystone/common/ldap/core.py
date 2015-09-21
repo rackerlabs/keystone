@@ -113,11 +113,11 @@ def enabled2py(val):
 
     try:
         return LDAP_VALUES[val]
-    except KeyError:
+    except KeyError:  # nosec
         pass
     try:
         return int(val)
-    except ValueError:
+    except ValueError:  # nosec
         pass
     return utf8_decode(val)
 
@@ -1354,7 +1354,7 @@ class BaseLdap(object):
                     continue
 
                 v = lower_res[map_attr.lower()]
-            except KeyError:
+            except KeyError:  # nosec
                 pass
             else:
                 try:
@@ -1383,7 +1383,7 @@ class BaseLdap(object):
         if values.get('name') is not None:
             try:
                 self.get_by_name(values['name'])
-            except exception.NotFound:
+            except exception.NotFound:  # nosec
                 pass
             else:
                 raise exception.Conflict(type=self.options_name,
@@ -1393,7 +1393,7 @@ class BaseLdap(object):
         if values.get('id') is not None:
             try:
                 self.get(values['id'])
-            except exception.NotFound:
+            except exception.NotFound:  # nosec
                 pass
             else:
                 raise exception.Conflict(type=self.options_name,
@@ -1840,7 +1840,7 @@ class EnabledEmuMixIn(BaseLdap):
         with self.get_connection() as conn:
             try:
                 conn.modify_s(self.enabled_emulation_dn, modlist)
-            except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):
+            except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):  # nosec
                 pass
 
     def create(self, values):
