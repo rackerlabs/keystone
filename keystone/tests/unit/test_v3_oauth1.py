@@ -146,7 +146,7 @@ class ConsumerCRUDTests(OAuth1Tests):
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
         resp = self.get(self.CONSUMER_URL + '/%s' % consumer_id)
-        self_url = ['http://localhost/v3', self.CONSUMER_URL,
+        self_url = ['http://localhost:80/v3', self.CONSUMER_URL,
                     '/', consumer_id]
         self_url = ''.join(self_url)
         self.assertEqual(self_url, resp.result['consumer']['links']['self'])
@@ -157,7 +157,7 @@ class ConsumerCRUDTests(OAuth1Tests):
         resp = self.get(self.CONSUMER_URL)
         entities = resp.result['consumers']
         self.assertIsNotNone(entities)
-        self_url = ['http://localhost/v3', self.CONSUMER_URL]
+        self_url = ['http://localhost:80/v3', self.CONSUMER_URL]
         self_url = ''.join(self_url)
         self.assertEqual(self_url, resp.result['links']['self'])
         self.assertValidListLinks(resp.result['links'])
@@ -311,7 +311,8 @@ class AccessTokenCRUDTests(OAuthFlowTests):
         entity = resp.result['access_token']
         self.assertEqual(self.access_token.key, entity['id'])
         self.assertEqual(self.consumer['key'], entity['consumer_id'])
-        self.assertEqual('http://localhost/v3' + url, entity['links']['self'])
+        self.assertEqual('http://localhost:80/v3' + url,
+                         entity['links']['self'])
 
     def test_get_access_token_dne(self):
         self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens/%(key)s'

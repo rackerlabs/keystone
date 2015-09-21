@@ -531,7 +531,8 @@ class RoleAssignmentV3(controller.V3Controller):
 
             if 'group_id' in entity.get('indirect', {}):
                 membership_url = (
-                    self.base_url(context, '/groups/%s/users/%s' % (
+                    self.base_url(context['environment'],
+                                  '/groups/%s/users/%s' % (
                         entity['indirect']['group_id'], entity['user_id'])))
                 formatted_entity['links']['membership'] = membership_url
                 formatted_link += '/groups/%s' % entity['indirect']['group_id']
@@ -550,8 +551,8 @@ class RoleAssignmentV3(controller.V3Controller):
             formatted_link = ('/OS-INHERIT%s/inherited_to_projects' %
                               formatted_link)
 
-        formatted_entity['links']['assignment'] = self.base_url(context,
-                                                                formatted_link)
+        formatted_entity['links']['assignment'] = self.base_url(
+            context['environment'], formatted_link)
 
         return formatted_entity
 

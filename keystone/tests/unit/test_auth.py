@@ -41,7 +41,7 @@ CONF = cfg.CONF
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
-HOST_URL = 'http://keystone:5001'
+HOST_URL = 'http://localhost'
 
 
 def _build_user_auth(token=None, user_id=None, username=None,
@@ -856,7 +856,11 @@ class AuthWithTrust(AuthTest):
             token_id=token_id,
             token_data=self.token_provider_api.validate_token(token_id))
         auth_context = authorization.token_to_auth_context(token_ref)
-        return {'environment': {authorization.AUTH_CONTEXT_ENV: auth_context},
+        return {'environment': {authorization.AUTH_CONTEXT_ENV: auth_context,
+                                'wsgi.url_scheme': 'http',
+                                'SCRIPT_NAME': '/v3',
+                                'SERVER_PORT': '80',
+                                'SERVER_NAME': 'localhost'},
                 'token_id': token_id,
                 'host_url': HOST_URL}
 
