@@ -425,7 +425,10 @@ def _sign_assertion(assertion):
             nspair={'saml': saml2.NAMESPACE,
                     'xmldsig': xmldsig.NAMESPACE}))
         command_list.append(file_path)
-        stdout = subprocess.check_output(command_list,
+        stdout = subprocess.check_output(command_list,  # nosec : The command
+                                         # is passed as a list rather than a
+                                         # string so we are protected from
+                                         # injection due to command parsing.
                                          stderr=subprocess.STDOUT)
     except Exception as e:
         msg = _LE('Error when signing assertion, reason: %(reason)s%(output)s')
