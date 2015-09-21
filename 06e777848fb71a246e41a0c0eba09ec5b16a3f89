@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_e993f74d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-21T15:39:28Z",
+      "side": 1,
+      "message": "I know this patch is just a refactor, but developers should not do this. Otherwise, how are developers expected to work on multiple projects with conflicting requirements?\n\nPerhaps this works in OpenStack-land when devstack is the only \"project,\" but it\u0027s a poor model for general Python development, where virtual environments are highly recommended.\n\nA note or something referencing \"follow these instructions within the confines of a venv\" would be very beneficial.\n\nOr, just build with tox, source .tox/py27/bin/activate (or whichever venv), and let tox do all the hard work for you, making half this document redundant.",
+      "revId": "06e777848fb71a246e41a0c0eba09ec5b16a3f89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
