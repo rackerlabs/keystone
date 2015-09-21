@@ -20,6 +20,10 @@
 
 import copy
 import itertools
+try:
+    import urlparse
+except ImportError:
+    import urllib.parse as urlparse
 import wsgiref.util
 
 from oslo_config import cfg
@@ -370,19 +374,32 @@ class Application(BaseApplication):
     @classmethod
     def base_url(cls, context, endpoint_type):
         url = CONF['%s_endpoint' % endpoint_type]
-
         if url:
             substitutions = dict(
                 itertools.chain(CONF.items(), CONF.eventlet_server.items()))
-
             url = url % substitutions
         else:
-            # NOTE(jamielennox): If url is not set via the config file we
-            # should set it relative to the url that the user used to get here
-            # so as not to mess with version discovery. This is not perfect.
-            # host_url omits the path prefix, but there isn't another good
-            # solution that will work for all urls.
-            url = context['host_url']
+            url = wsgiref.util.application_uri(context['environment'])
+            # remove version from the URL as it may be part of SCRIPT_NAME but
+            # it should not be part of base URL
+            url = url.rstrip('/')
+            if url.endswith('/v3'):
+                url = url[:-3]
+            elif url.endswith('/v2.0'):
+                url = url[:-4]
+
+        # now remove the default ports specified in RFC2616 and 2818
+        o = urlparse.urlparse(url)
+        netloc = o.netloc
+        if ':' in o.netloc:
+            host, port = netloc.split(':', 1)
+            if o.scheme.lower() == 'http' and port == '80':
+                netloc = host
+            if o.scheme.lower() == 'https' and port == '443':
+                netloc = host
+
+        url = urlparse.urlunparse(
+            (o.scheme, netloc, o.path, o.params, o.query, o.fragment))
 
         return url.rstrip('/')
 
@@ -812,18 +829,14 @@ def render_exception(error, context=None, request=None, user_locale=None):
     if isinstance(error, exception.AuthPluginException):
         body['error']['identity'] = error.authentication
     elif isinstance(error, exception.Unauthorized):
-        url = CONF.public_endpoint
-        if not url:
-            if request:
-                context = {'host_url': request.host_url}
-            if context:
-                url = Application.base_url(context, 'public')
-            else:
-                url = 'http://localhost:%d' % CONF.eventlet_server.public_port
+        if request:
+            if not context:
+                context = {}
+            context.setdefault('environment', request.environ)
+        if context and 'environment' in context:
+            url = Application.base_url(context, 'public')
         else:
-            substitutions = dict(
-                itertools.chain(CONF.items(), CONF.eventlet_server.items()))
-            url = url % substitutions
+            url = 'http://localhost:%d' % CONF.eventlet_server.public_port
 
         headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % url))
     return render_response(status=(error.code, error.title),
