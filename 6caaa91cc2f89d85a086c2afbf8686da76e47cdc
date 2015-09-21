@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_2fd016c9",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-21T14:36:07Z",
+      "side": 1,
+      "message": "Perhaps if you\u0027re going to suppress builtin error messages and re-raise your own completely useless error messages, it would be beneficial to log something about the information you\u0027re discarding?",
+      "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_11590c8e",
         "filename": "keystone/exception.py",
         "patchSetId": 7
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "Steve, going off of Brant\u0027s comment, validationerror is suppose to be used for when a client enters something invalid.",
       "parentUuid": "ba15a1d1_11590c8e",
+      "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_944db5c6",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-21T14:36:07Z",
+      "side": 1,
+      "message": "Perhaps you copied MigrationNotProvided, which is an error that is not raised to the HTTP API. Your new exception class extends the Python built-in Exception, which basically means you\u0027re supressing your IndexError by discarding all information about the actual exception and replacing it with your own. You\u0027ve actually removed all value to the exception, instead of contributing any whatsoever. Your message_format will never, ever be used.\n\nIf you do in fact intend to raise a 500, which is what this is doing, albeit in an unhandled manner, extend UnexpectedError, not Exception.\n\nAlso, what are operators meant to do when they receive this error message? There\u0027s very little clue in the message itself, beyond the keyword \"mapping.\" A more verbose error message would be much appreciated... *especially* if this is going to otherwise raise a generic 500.\n\nIf keystone has been configured incorrectly by the operator, a 500 may indeed be appropriate, but the error message is simply not useful in the context of a 500.",
+      "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_2f6d76cc",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-21T14:36:07Z",
+      "side": 1,
+      "message": "The phrase \"used by the unavailable request variable test\" is QUICKLY going to become an outdated and inaccurate comment. Describe why the data structure exists, not how it\u0027s used, which is redundant with the code itself. i.e. don\u0027t bother pointing out things that I can trivially grep, nor write comments that are going to become inaccurate without anyone having to touch the data structure here.\n\nI also don\u0027t know what you mean by \"higher\" in this context.",
       "revId": "6caaa91cc2f89d85a086c2afbf8686da76e47cdc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
