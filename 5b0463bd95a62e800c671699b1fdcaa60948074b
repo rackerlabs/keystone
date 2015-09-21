@@ -243,6 +243,24 @@
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_402be933",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-21T08:23:12Z",
+      "side": 1,
+      "message": "If the v3 parts of the mixed case is visible to v2 API, there is no need to fix. :), it\u0027s fine to have another testcase.",
+      "parentUuid": "ba15a1d1_00565106",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
