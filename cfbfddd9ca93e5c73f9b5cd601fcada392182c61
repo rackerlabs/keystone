@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_0fae5998",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-21T22:07:10Z",
+      "side": 1,
+      "message": "I\u0027ll let D. Kennedy answer this question.",
+      "parentUuid": "ba15a1d1_c0683624",
+      "revId": "cfbfddd9ca93e5c73f9b5cd601fcada392182c61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_436190a7",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-21T20:25:16Z",
       "side": 1,
       "message": "This is probably something that can be fixed later, but this algorithm feels strange the way inverts the catalog and pieces it back together later. For instance, if we got back a set of ints as associations then we would just look through the unfiltered catalog and delete things that are not in that set. I think that would read better.",
+      "revId": "cfbfddd9ca93e5c73f9b5cd601fcada392182c61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cf906151",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-21T22:07:10Z",
+      "side": 1,
+      "message": "Let me see if I can incorporate your suggestion in the next patch.",
+      "parentUuid": "ba15a1d1_436190a7",
       "revId": "cfbfddd9ca93e5c73f9b5cd601fcada392182c61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
