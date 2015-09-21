@@ -55,7 +55,8 @@ class Role(assignment.RoleDriverV8):
         self.role.check_allow_create()
         try:
             self.get_role(role_id)
-        except exception.NotFound:
+        except exception.NotFound:  # nosec
+            # The role doesn't already exist, good.
             pass
         else:
             msg = _('Duplicate ID, %s.') % role_id
@@ -63,7 +64,8 @@ class Role(assignment.RoleDriverV8):
 
         try:
             self.role.get_by_name(role['name'])
-        except exception.NotFound:
+        except exception.NotFound:  # nosec
+            # Another role with the same name doesn't exist, good.
             pass
         else:
             msg = _('Duplicate name, %s.') % role['name']
@@ -117,7 +119,8 @@ class RoleApi(RoleLdapStructureMixin, common_ldap.BaseLdap):
                 if old_role['id'] != role_id:
                     raise exception.Conflict(
                         _('Cannot duplicate name %s') % old_role)
-            except exception.NotFound:
+            except exception.NotFound:  # nosec
+                # Another role with the same name doesn't exist, good.
                 pass
         return super(RoleApi, self).update(role_id, role)
 
