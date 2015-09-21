@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_693cc72f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-21T15:40:21Z",
+      "side": 1,
+      "message": "this comment isn\u0027t needed since it\u0027s implied.",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_69236706",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-21T15:40:21Z",
+      "side": 1,
+      "message": "suggest also put the # of retries in here.",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_c9c63316",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 3031,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-21T15:40:21Z",
+      "side": 1,
+      "message": "suggest change comment to something like \"if the server was restarted then the cache would have been rebuilt\" ?\n\nAlthough that\u0027s not really the case since the cache might be in memcache.",
+      "revId": "1696b875dd7b37c5d9569a1a5d5ad25e4410a1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
