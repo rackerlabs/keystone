@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_2931dd0b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-21T21:35:20Z",
+      "side": 1,
+      "message": "You can safely remove this now.",
+      "parentUuid": "ba15a1d1_255b6730",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ca5dda49",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -258,6 +276,57 @@
       "side": 1,
       "message": "If the v3 parts of the mixed case is visible to v2 API, there is no need to fix. :), it\u0027s fine to have another testcase.",
       "parentUuid": "ba15a1d1_00565106",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f4565805",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-21T21:35:20Z",
+      "side": 1,
+      "message": "I\u0027d rather you used example strings that more closely match the expected value rather than uuid for most of these.",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_74b9e82d",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-21T21:35:20Z",
+      "side": 1,
+      "message": "There\u0027s another patch in-flight to remove hard-coded http error codes.  See https://review.openstack.org/#/c/224545/",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_34829053",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-21T21:35:20Z",
+      "side": 1,
+      "message": "There\u0027s another patch in-flight to remove hard-coded http error codes.  See https://review.openstack.org/#/c/224545/",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
