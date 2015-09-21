@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_a00c2243",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-21T20:17:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_97fe0504",
+      "revId": "957c93790011c580b3c0bb1d6350384541486168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_173af5cd",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-21T19:15:31Z",
       "side": 1,
       "message": "what code? do you have a commit ID?",
+      "revId": "957c93790011c580b3c0bb1d6350384541486168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_e011ba5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-21T20:17:07Z",
+      "side": 1,
+      "message": "sorry, this is wrong, looks like the example/help has been wrong for a while. i\u0027ll re-write this",
+      "parentUuid": "ba15a1d1_173af5cd",
       "revId": "957c93790011c580b3c0bb1d6350384541486168",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
