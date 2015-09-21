@@ -70,7 +70,7 @@ def filter_user(user_ref):
         try:
             user_ref['extra'].pop('password', None)
             user_ref['extra'].pop('tenants', None)
-        except KeyError:
+        except KeyError:  # nosec
             pass
     return user_ref
 
@@ -404,7 +404,7 @@ class DomainConfigs(dict):
             # specific driver for this domain.
             try:
                 del self[domain_id]
-            except KeyError:
+            except KeyError:  # nosec
                 # Allow this error in case we are unlucky and in a
                 # multi-threaded situation, two threads happen to be running
                 # in lock step.
