@@ -16,6 +16,24 @@
       "revId": "560770ef581c99aaee5a9dc5651050ed2e85ae4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ca54e822",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-21T14:47:57Z",
+      "side": 1,
+      "message": "Reworded this a bit. config flags don\u0027t use random.random.",
+      "parentUuid": "ba15a1d1_b86c8ed1",
+      "revId": "560770ef581c99aaee5a9dc5651050ed2e85ae4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
