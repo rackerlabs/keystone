@@ -425,7 +425,18 @@ def _sign_assertion(assertion):
             nspair={'saml': saml2.NAMESPACE,
                     'xmldsig': xmldsig.NAMESPACE}))
         command_list.append(file_path)
-        stdout = subprocess.check_output(command_list,
+        stdout = subprocess.check_output(command_list,  # nosec : The command
+                                         # is a list rather than a string so we
+                                         # are protected from attackers
+                                         # attempting command injection due to
+                                         # command string parsing. command_list
+                                         # is initialized earlier in this
+                                         # function to a list and it's still a
+                                         # list at this point in the function.
+                                         # The executable and arguments all
+                                         # either come from the config file or
+                                         # are hardcoded, so the inputs are
+                                         # coming from a trusted source.
                                          stderr=subprocess.STDOUT)
     except Exception as e:
         msg = _LE('Error when signing assertion, reason: %(reason)s%(output)s')
