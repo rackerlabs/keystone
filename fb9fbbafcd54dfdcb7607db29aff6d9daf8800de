@@ -34,6 +34,23 @@
       "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_1512e609",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-21T23:27:51Z",
+      "side": 0,
+      "message": "This one yield the follow SQL statement\n\n  SELECT service.id AS service_id, service.type AS service_type, service.enabled AS service_enabled, service.extra AS service_extra, endpoint_1.id AS endpoint_1_id, endpoint_1.legacy_endpoint_id AS endpoint_1_legacy_endpoint_id, endpoint_1.interface AS endpoint_1_interface, endpoint_1.region_id AS endpoint_1_region_id, endpoint_1.service_id AS endpoint_1_service_id, endpoint_1.url AS endpoint_1_url, endpoint_1.enabled AS endpoint_1_enabled, endpoint_1.extra AS endpoint_1_extra\n    FROM service LEFT OUTER JOIN endpoint AS endpoint_1 ON service.id \u003d endpoint_1.service_id\n    WHERE service.enabled \u003d 1\n\n\nThe other one actuall produces two SQL statements\n\n  SELECT service.id AS service_id, service.type AS service_type, service.enabled AS service_enabled, service.extra AS service_extra \n    FROM service JOIN endpoint ON service.id \u003d endpoint.service_id\n    WHERE service.enabled \u003d 1\n    \n  SELECT endpoint.id AS endpoint_id, endpoint.legacy_endpoint_id AS endpoint_legacy_endpoint_id, endpoint.interface AS endpoint_interface, endpoint.region_id AS endpoint_region_id, endpoint.service_id AS endpoint_service_id, endpoint.url AS endpoint_url, endpoint.enabled AS endpoint_enabled, endpoint.extra AS endpoint_extra\n    FROM endpoint\n    WHERE ? \u003d endpoint.service_id\n\nDavid (Kennedy), can you please explain why you make the change? Seem like the first one is more efficient.",
+      "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
