@@ -110,12 +110,18 @@ class Version(wsgi.Application):
 
         super(Version, self).__init__()
 
-    def _get_identity_url(self, context, version):
+    def _get_identity_url(self, environment, version=None):
         """Returns a URL to keystone's own endpoint."""
-        url = self.base_url(context, self.endpoint_url_type)
-        return '%s/%s/' % (url, version)
+        url = self.base_url(environment, self.endpoint_url_type)
+        if version:
+            # TODO(jd): The version argument is "bad" because it does not
+            # respect what might be configured into the Paste pipeline; it'd be
+            # better to look in the Paste pipeline for the WSGI application
+            # we're really looking for.
+            return '%s/%s/' % (url, version)
+        return url + "/"
 
-    def _get_versions_list(self, context):
+    def _get_versions_list(self, context, root=True):
         """The list of versions is dependent on the context."""
         versions = {}
         if 'v2.0' in _VERSIONS:
@@ -126,7 +132,8 @@ class Version(wsgi.Application):
                 'links': [
                     {
                         'rel': 'self',
-                        'href': self._get_identity_url(context, 'v2.0'),
+                        'href': self._get_identity_url(
+                            context['environment'], 'v2.0' if root else None),
                     }, {
                         'rel': 'describedby',
                         'type': 'text/html',
@@ -149,7 +156,8 @@ class Version(wsgi.Application):
                 'links': [
                     {
                         'rel': 'self',
-                        'href': self._get_identity_url(context, 'v3'),
+                        'href': self._get_identity_url(
+                            context['environment'], 'v3' if root else None),
                     }
                 ],
                 'media-types': [
@@ -179,7 +187,7 @@ class Version(wsgi.Application):
         })
 
     def get_version_v2(self, context):
-        versions = self._get_versions_list(context)
+        versions = self._get_versions_list(context, root=False)
         if 'v2.0' in _VERSIONS:
             return wsgi.render_response(body={
                 'version': versions['v2.0']
@@ -199,7 +207,7 @@ class Version(wsgi.Application):
         }
 
     def get_version_v3(self, context):
-        versions = self._get_versions_list(context)
+        versions = self._get_versions_list(context, root=False)
         if 'v3' in _VERSIONS:
             req_mime_type = v3_mime_type_best_match(context)
 
