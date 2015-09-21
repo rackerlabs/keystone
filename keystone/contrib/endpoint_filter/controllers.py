@@ -151,11 +151,11 @@ class EndpointGroupV3Controller(_ControllerBase):
         super(EndpointGroupV3Controller, self).__init__()
 
     @classmethod
-    def base_url(cls, context, path=None):
+    def base_url(cls, environment, path=None):
         """Construct a path and pass it to V3Controller.base_url method."""
 
         path = '/OS-EP-FILTER/' + cls.collection_name
-        return super(EndpointGroupV3Controller, cls).base_url(context,
+        return super(EndpointGroupV3Controller, cls).base_url(environment,
                                                               path=path)
 
     @controller.protected()

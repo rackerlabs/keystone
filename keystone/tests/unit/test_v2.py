@@ -678,16 +678,14 @@ class CoreApiTests(object):
         r = self.public_request(
             path='/v2.0/tenants',
             expected_status=http_client.UNAUTHORIZED)
-        self.assertEqual('Keystone uri="http://localhost"',
+        self.assertEqual('Keystone uri="http://localhost:5000"',
                          r.headers.get('WWW-Authenticate'))
 
     def test_www_authenticate_header_host(self):
-        test_url = 'http://%s:4187' % uuid.uuid4().hex
-        self.config_fixture.config(public_endpoint=test_url)
         r = self.public_request(
             path='/v2.0/tenants',
             expected_status=http_client.UNAUTHORIZED)
-        self.assertEqual('Keystone uri="%s"' % test_url,
+        self.assertEqual('Keystone uri="http://localhost:5000"',
                          r.headers.get('WWW-Authenticate'))
 
 
