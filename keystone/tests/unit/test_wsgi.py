@@ -201,7 +201,9 @@ class ApplicationTest(BaseWSGITest):
 
     def test_render_exception_host(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
-        context = {'host_url': 'http://%s:5000' % uuid.uuid4().hex}
+        req = self._make_request(url='/')
+        context = {'host_url': 'http://%s:5000' % uuid.uuid4().hex,
+                   'environment': req.environ}
         resp = wsgi.render_exception(e, context=context)
 
         self.assertEqual(http_client.UNAUTHORIZED, resp.status_int)
@@ -225,6 +227,36 @@ class ApplicationTest(BaseWSGITest):
         resp = req.get_response(FakeApp())
         self.assertEqual({'name': u'nonexit\xe8nt'},
                          jsonutils.loads(resp.body))
+
+    def test_base_url(self):
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                return self.base_url(context['environment'], 'public')
+        req = self._make_request(url='/')
+        req.environ.update({
+            'SCRIPT_NAME': '/identity',
+            'REQUEST_METHOD': 'GET',
+            'PATH_INFO': '/',
+            'SERVER_PROTOCOL': 'HTTP/1.1',
+            'QUERY_STRING': '',
+            'HTTP_CONNECTION': 'keep-alive',
+            'SERVER_NAME': '1.2.3.4',
+            'REMOTE_ADDR': '4.3.2.1',
+            'wsgi.url_scheme': 'http',
+            'SERVER_PORT': '80',
+            'wsgi.multiprocess': True,
+            'SERVER_ADDR': '4.5.6.7',
+            'SCRIPT_FILENAME': '/usr/local/bin/keystone-wsgi-public',
+            'HTTP_HOST': '1.2.3.4',
+            'CONTEXT_PREFIX': '/identity',
+            'wsgi.multithread': False,
+            'REQUEST_URI': '/identity',
+            'HTTP_ACCEPT': 'application/json',
+            'REMOTE_PORT': '59778',
+            'REQUEST_SCHEME': 'http',
+        })
+        resp = req.get_response(FakeApp())
+        self.assertEqual(b"http://1.2.3.4/identity", resp.body)
 
 
 class ExtensionRouterTest(BaseWSGITest):

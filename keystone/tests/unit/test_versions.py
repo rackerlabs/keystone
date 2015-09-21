@@ -742,10 +742,10 @@ class VersionTestCase(unit.TestCase):
                 # localhost happens to be the site url for tests
                 if version['id'].startswith('v3'):
                     self._paste_in_port(
-                        version, 'http://localhost/v3/')
+                        version, 'http://localhost:80/v3/')
                 elif version['id'] == 'v2.0':
                     self._paste_in_port(
-                        version, 'http://localhost/v2.0/')
+                        version, 'http://localhost:80/v2.0/')
             self.assertThat(data, _VersionsEqual(expected))
 
     def test_public_version_v2(self):
@@ -778,7 +778,8 @@ class VersionTestCase(unit.TestCase):
             self.assertEqual(http_client.OK, resp.status_int)
             data = jsonutils.loads(resp.body)
             expected = v2_VERSION_RESPONSE
-            self._paste_in_port(expected['version'], 'http://localhost/v2.0/')
+            self._paste_in_port(expected['version'],
+                                'http://localhost:80/v2.0/')
             self.assertEqual(data, expected)
 
     def test_public_version_v3(self):
@@ -812,7 +813,7 @@ class VersionTestCase(unit.TestCase):
             self.assertEqual(http_client.OK, resp.status_int)
             data = jsonutils.loads(resp.body)
             expected = v3_VERSION_RESPONSE
-            self._paste_in_port(expected['version'], 'http://localhost/v3/')
+            self._paste_in_port(expected['version'], 'http://localhost:80/v3/')
             self.assertEqual(expected, data)
 
     @mock.patch.object(controllers, '_VERSIONS', ['v3'])
