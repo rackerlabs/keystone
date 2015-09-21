@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_00f2d106",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-21T08:19:06Z",
+      "side": 1,
+      "message": "OK, I\u0027ll try to improve that",
+      "parentUuid": "ba15a1d1_e5732fe6",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4a49ca8d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -123,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_007bb17c",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-21T08:19:06Z",
+      "side": 1,
+      "message": "OK, not quite familiar about the convention. Thanks",
+      "parentUuid": "ba15a1d1_2587e7d8",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_45c69b17",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -157,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_60862d67",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-21T08:19:06Z",
+      "side": 1,
+      "message": "I didn\u0027t change this, which is actually not a question, but the explanation of the following if statement.\nwell, I think it\u0027s quite clear and the comment is unnecessary. I\u0027ll remove it in next commit",
+      "parentUuid": "ba15a1d1_05d0a3c8",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_c5886bc9",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 5
@@ -168,6 +222,24 @@
       "writtenOn": "2015-09-21T08:09:29Z",
       "side": 1,
       "message": "the name of testcase is not clear enough, what about the mix of v2 and v3 endpoints, should them visible by v2 API? I guess so, so why hightlight \u0027pure\u0027 here?",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_00565106",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-21T08:19:06Z",
+      "side": 1,
+      "message": "this test only test pure v3 endpoint visibility to v2 API, so I used this name.\nv2 endpoints (or the mix) already works via v2 API, and deserves another test (I\u0027m not sure if that exists, if not, I may add one)",
+      "parentUuid": "ba15a1d1_c5886bc9",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
