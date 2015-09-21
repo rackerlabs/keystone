@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_bac69b14",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-21T16:27:35Z",
+      "side": 1,
+      "message": "Do you know the reason to only add a log instead to raise a exception in this case?",
+      "revId": "358fd907340f743fe47b5b56844c227981e44785",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
