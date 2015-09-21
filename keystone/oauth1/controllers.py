@@ -48,12 +48,12 @@ class ConsumerCrudV3(controller.V3Controller):
     member_name = 'consumer'
 
     @classmethod
-    def base_url(cls, context, path=None):
+    def base_url(cls, environment, path=None):
         """Construct a path and pass it to V3Controller.base_url method."""
         # NOTE(stevemar): Overriding path to /OS-OAUTH1/consumers so that
         # V3Controller.base_url handles setting the self link correctly.
         path = '/OS-OAUTH1/' + cls.collection_name
-        return controller.V3Controller.base_url(context, path=path)
+        return controller.V3Controller.base_url(environment, path=path)
 
     @controller.protected()
     def create_consumer(self, context, consumer):
@@ -108,7 +108,8 @@ class AccessTokenCrudV3(controller.V3Controller):
         path = '/users/%(user_id)s/OS-OAUTH1/access_tokens' % {
             'user_id': cls._get_user_id(ref)
         }
-        ref['links']['self'] = cls.base_url(context, path) + '/' + ref['id']
+        ref['links']['self'] = cls.base_url(
+            context['environment'], path) + '/' + ref['id']
 
     @controller.protected()
     def get_access_token(self, context, user_id, access_token_id):
@@ -160,7 +161,8 @@ class AccessTokenCrudV3(controller.V3Controller):
                            'access_token_id': access_token_id})
 
         formatted_entity.setdefault('links', {})
-        formatted_entity['links']['roles'] = (self.base_url(context, url))
+        formatted_entity['links']['roles'] = self.base_url(
+            context['environment'], url)
 
         return formatted_entity
 
@@ -227,7 +229,7 @@ class OAuthControllerV3(controller.V3Controller):
         self.resource_api.get_project(requested_project_id)
         self.oauth_api.get_consumer(consumer_id)
 
-        url = self.base_url(context, context['path'])
+        url = self.base_url(context['environment'], context['path'])
 
         req_headers = {'Requested-Project-Id': requested_project_id}
         req_headers.update(headers)
@@ -294,7 +296,7 @@ class OAuthControllerV3(controller.V3Controller):
             if now > expires:
                 raise exception.Unauthorized(_('Request token is expired'))
 
-        url = self.base_url(context, context['path'])
+        url = self.base_url(context['environment'], context['path'])
 
         access_verifier = oauth1.AccessTokenEndpoint(
             request_validator=validator.OAuthValidator(),
