@@ -16,6 +16,24 @@
       "revId": "fa85b4985aef7bd57be6ed1da25062f69f3740d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_45c5f48b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-22T13:46:05Z",
+      "side": 1,
+      "message": "Partially, but I think there\u0027s also something in there to be considered about services that have endpoints that need formatting and have missing values for the format string.",
+      "parentUuid": "ba15a1d1_a2eac6aa",
+      "revId": "fa85b4985aef7bd57be6ed1da25062f69f3740d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
