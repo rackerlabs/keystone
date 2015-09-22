@@ -16,6 +16,24 @@
       "revId": "06e777848fb71a246e41a0c0eba09ec5b16a3f89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_72123164",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-22T16:44:41Z",
+      "side": 1,
+      "message": "I\u0027d think twice before installing opensource project suggesting any system-wide changes.",
+      "parentUuid": "ba15a1d1_e993f74d",
+      "revId": "06e777848fb71a246e41a0c0eba09ec5b16a3f89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
