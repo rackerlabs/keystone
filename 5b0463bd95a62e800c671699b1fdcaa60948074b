@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_d688d824",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-22T14:52:41Z",
+      "side": 1,
+      "message": "it doesn\u0027t seem like an issue, but was done on purpose, from the old code, that endpoints created by v3 API were ignored.",
+      "parentUuid": "ba15a1d1_100418be",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4a49ca8d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -178,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_96e7c0e3",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-22T14:52:41Z",
+      "side": 1,
+      "message": "it\u0027s fine for \"if\", but it looks weird to me when the comment line is above \"else\", which seems belong to \"if\"",
+      "parentUuid": "ba15a1d1_4578dbf8",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_2587e7d8",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -276,6 +312,24 @@
       "writtenOn": "2015-09-22T14:33:02Z",
       "side": 1,
       "message": "Why only an ID for public endpoints? In the old code it looks like there is always an ID.",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_16fdf039",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-22T14:52:41Z",
+      "side": 1,
+      "message": "v3 has (usually) 3 endpoints for a service in a region (so 3 ids), v2 has one endpoint for all interfaces (so 1 id).\nhere the logic is to assign v3 pubic interface\u0027s id as the returned v2 endpoint\u0027s id, to have a consistent id",
+      "parentUuid": "ba15a1d1_8bdd5d44",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
