@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_822c504b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-22T18:54:06Z",
+      "side": 1,
+      "message": "this may break existing deployments where Keystone is sitting behind an SSL proxy",
+      "revId": "d51ea2daa719fbd20839bd1dc6dde29482353616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
