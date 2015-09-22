@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_20aec798",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-22T02:29:34Z",
+      "side": 1,
+      "message": "Lance, I don\u0027t think so. Seen from this patch, it will raise \"testcase.TestSkipped(\u0027Cache globally enabled.\u0027)\" just as long as \u0027enabled\u0027 option is turned on for \u0027cache\u0027 section. L217 - 221 will be ignored here since you raise TestSkipped before that.\n\nBut we need to skip the testcase only in the case that \u0027cache globally enabled\u0027 and \u0027caching\u0027 enabled for the specfic section.\n\nThe impact is if \u0027CONF.cache.enabled\u0027 is true but \u0027caching\u0027 is not enabled for the specfic section, the testcase will be skipped. But actually, we shouldn\u0027t ignore such testcase since it\u0027s not cached for this section at all.",
+      "parentUuid": "ba15a1d1_1111b75d",
+      "revId": "c4140e4f0325506f40fef7c962fe231682c0120f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_b3a26899",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 5
