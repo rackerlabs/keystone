@@ -304,8 +304,8 @@ class EndpointPolicyDriverV8(object):
         :type service_id: string
         :param region_id: identity of the region to associate
         :type region_id: string
-        :raises: keystone.exception.PolicyAssociationNotFound if there is no
-                 match for the specified association
+        :raises keystone.exception.PolicyAssociationNotFound: if there is no
+            match for the specified association
         :returns: None
 
         """
@@ -343,7 +343,7 @@ class EndpointPolicyDriverV8(object):
         :type service_id: string
         :param region_id: identity of the region
         :type region_id: string
-        :raises: keystone.exception.PolicyAssociationNotFound if there is no
+        :raises keystone.exception.PolicyAssociationNotFound: if there is no
                  match for the specified association
         :returns: dict containing policy_id
 

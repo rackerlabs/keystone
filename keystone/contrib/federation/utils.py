@@ -183,7 +183,7 @@ def validate_groups_cardinality(group_ids, mapping_id):
     :param group_ids: list of group ids
     :type group_ids: list of str
 
-    :raises exception.MissingGroups: if ``group_ids`` cardinality is 0
+    :raises keystone.exception.MissingGroups: if ``group_ids`` cardinality is 0
 
     """
     if not group_ids:
@@ -250,7 +250,8 @@ def validate_groups_in_backend(group_ids, mapping_id, identity_api):
                          backend
     :type identity_api: identity.Manager
 
-    :raises: exception.MappedGroupNotFound
+    :raises keystone.exception.MappedGroupNotFound: If the group returned by
+        mapping was not found in the backend.
 
     """
     for group_id in group_ids:
@@ -275,8 +276,10 @@ def validate_groups(group_ids, mapping_id, identity_api):
                          backend
     :type identity_api: identity.Manager
 
-    :raises: exception.MappedGroupNotFound
-    :raises: exception.MissingGroups
+    :raises keystone.exception.MappedGroupNotFound: If the group returned by
+        mapping was not found in the backend.
+    :raises keystone.exception.MissingGroups: If ``group_ids`` cardinality
+        is 0.
 
     """
     validate_groups_cardinality(group_ids, mapping_id)
@@ -321,7 +324,7 @@ def transform_to_group_ids(group_names, mapping_id,
 
     :returns: generator object with group ids
 
-    :raises: excepton.MappedGroupNotFound: in case asked group doesn't
+    :raises keystone.excepton.MappedGroupNotFound: in case asked group doesn't
         exist in the backend.
 
     """
