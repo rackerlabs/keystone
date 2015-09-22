@@ -16,6 +16,24 @@
       "revId": "12ed2536d0600b5e87a2098f099a903591349ce7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_bf9bbfc8",
+        "filename": "bandit.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-22T13:06:09Z",
+      "side": 0,
+      "message": "None of these were ever run. We only ran the keystone_conservative profile.",
+      "parentUuid": "ba15a1d1_9c8609da",
+      "revId": "12ed2536d0600b5e87a2098f099a903591349ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

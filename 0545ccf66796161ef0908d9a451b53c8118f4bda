@@ -16,6 +16,24 @@
       "revId": "0545ccf66796161ef0908d9a451b53c8118f4bda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_df50f30c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-22T13:06:09Z",
+      "side": 1,
+      "message": "The bandit config wiki points to the keystone bandit.yaml as the exemplar: https://wiki.openstack.org/wiki/Security/Projects/Bandit",
+      "parentUuid": "ba15a1d1_7ce775e4",
+      "revId": "0545ccf66796161ef0908d9a451b53c8118f4bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
