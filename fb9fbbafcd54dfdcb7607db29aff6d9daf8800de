@@ -69,6 +69,24 @@
       "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_db001569",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-09-22T08:42:47Z",
+      "side": 0,
+      "message": "Thanks, David.  Yes, the first one uses a left outer join which returns services which have no endpoint.  The second does an inner join.  However, as you point out it\u0027s not a full inner join populating the fields required.  If the first query can be changed to use an inner join then that would be far better (and what I had initially intended).",
+      "parentUuid": "ba15a1d1_caca8c4f",
+      "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
