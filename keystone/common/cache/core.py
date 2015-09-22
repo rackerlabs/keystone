@@ -124,7 +124,7 @@ def configure_cache_region(region):
 
     :param region: optional CacheRegion object, if not provided a new region
                    will be instantiated
-    :raises: exception.ValidationError
+    :raises keystone.exception.ValidationError: attribute validation failed
     :returns: dogpile.cache.CacheRegion
     """
     if not isinstance(region, dogpile.cache.CacheRegion):

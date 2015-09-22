@@ -208,7 +208,8 @@ def base64_is_padded(text, pad='='):
     :param pad: pad character (must be single character) (default: '=')
     :type pad: string
     :returns: bool -- True if padded, False otherwise
-    :raises: ValueError, InvalidBase64Error
+    :raises ValueError: `pad` is not a single character.
+    :raises InvalidBase64Error: something unexpected happened with the `pad`.
     """
 
     _check_padding_length(pad)
@@ -242,7 +243,8 @@ def base64url_percent_encode(text):
     :param text: text containing ONLY characters in the base64url alphabet
     :type text: string
     :returns: string -- percent-encoded base64url text
-    :raises: InvalidBase64Error
+    :raises InvalidBase64Error: padded base64url text is not multiple of
+        4 characters.
     """
 
     if len(text) % 4 != 0:
@@ -281,7 +283,7 @@ def base64_strip_padding(text, pad='='):
     :param pad: pad character (must be single character) (default: '=')
     :type pad: string
     :returns: string -- base64 text without padding
-    :raises: ValueError
+    :raises ValueError: `pad` is not a single character.
     """
     _check_padding_length(pad)
 
@@ -333,7 +335,7 @@ def base64_assure_padding(text, pad='='):
     :param pad: pad character (must be single character) (default: '=')
     :type pad: string
     :returns: string -- input base64 text with padding
-    :raises: ValueError
+    :raises ValueError: `pad` is not a single character.
     """
     _check_padding_length(pad)
 
