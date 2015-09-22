@@ -87,6 +87,24 @@
       "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_427dea1a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T13:33:55Z",
+      "side": 0,
+      "message": "Yes, it can be and it seems to work fine. joinedload() take a kwarg \u0027innerjoin\u0027 that is a boolean. http://paste.openstack.org/show/473487/",
+      "parentUuid": "ba15a1d1_db001569",
+      "revId": "fb9fbbafcd54dfdcb7607db29aff6d9daf8800de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
