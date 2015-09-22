@@ -225,7 +225,7 @@ def setup_username(context, mapped_properties):
     :param mapped_properties: Properties issued by a RuleProcessor.
     :type: dictionary
 
-    :raises: exception.Unauthorized
+    :raises keystone.exception.Unauthorized: for authentication failure
     :returns: dictionary with user identification
     :rtype: dict
 
