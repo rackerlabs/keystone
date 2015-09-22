@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_100418be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:33:02Z",
+      "side": 1,
+      "message": "++ this doesn\u0027t make sense. Shouldn\u0027t it just be something like: Endpoints created using the V3 API were not being returned in the V2 API\u0027s endpoint list because of an issue in the way the data was being stored.",
+      "parentUuid": "ba15a1d1_00f2d106",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4a49ca8d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -142,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_b0e0ccfb",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:33:02Z",
+      "side": 1,
+      "message": "this actually doesn\u0027t bother me",
+      "parentUuid": "ba15a1d1_4578dbf8",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_2587e7d8",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -229,6 +265,23 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_8bdd5d44",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:33:02Z",
+      "side": 1,
+      "message": "Why only an ID for public endpoints? In the old code it looks like there is always an ID.",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_c5886bc9",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 5
@@ -293,6 +346,24 @@
       "writtenOn": "2015-09-21T21:35:20Z",
       "side": 1,
       "message": "I\u0027d rather you used example strings that more closely match the expected value rather than uuid for most of these.",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_6bca4970",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:33:02Z",
+      "side": 1,
+      "message": "We typically don\u0027t do this on purpose.",
+      "parentUuid": "ba15a1d1_f4565805",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
