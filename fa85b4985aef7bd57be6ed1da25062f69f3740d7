@@ -34,6 +34,23 @@
       "revId": "fa85b4985aef7bd57be6ed1da25062f69f3740d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f063a43f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-22T14:14:53Z",
+      "side": 1,
+      "message": "To keep it consistent s/1/one/",
+      "revId": "fa85b4985aef7bd57be6ed1da25062f69f3740d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
