@@ -16,6 +16,24 @@
       "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_565e21ea",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-22T03:50:38Z",
+      "side": 0,
+      "message": "\u0027dt\u0027 here is just unicode string, it\u0027s not an instance of datetime, but it will be after calling of \"timeutils.parse_strtime\"",
+      "parentUuid": "ba15a1d1_093e59da",
+      "revId": "74575a66f1113ac0452da9982b345dec18ec0f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
