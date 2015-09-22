@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_f98e2ccf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T15:59:56Z",
+      "side": 1,
+      "message": "Then change the text say why they were not being returned.",
+      "parentUuid": "ba15a1d1_d688d824",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4a49ca8d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -330,6 +348,24 @@
       "side": 1,
       "message": "v3 has (usually) 3 endpoints for a service in a region (so 3 ids), v2 has one endpoint for all interfaces (so 1 id).\nhere the logic is to assign v3 pubic interface\u0027s id as the returned v2 endpoint\u0027s id, to have a consistent id",
       "parentUuid": "ba15a1d1_8bdd5d44",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_5944f872",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T15:59:56Z",
+      "side": 1,
+      "message": "What happens when someone does a GET for that endpoint ID under V2?",
+      "parentUuid": "ba15a1d1_16fdf039",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
