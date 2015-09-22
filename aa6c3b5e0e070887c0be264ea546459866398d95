@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_a538903e",
+        "filename": "keystone/service.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T13:53:51Z",
+      "side": 1,
+      "message": "I think all of these messages need to change. It currently doesn\u0027t make sense. Suggest: Defining local configuration in the PasteDeploy INI is  deprecated in Liberty and will be removed in N. Configuration must be in keystone.conf.",
+      "revId": "aa6c3b5e0e070887c0be264ea546459866398d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
