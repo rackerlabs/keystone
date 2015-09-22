@@ -58,7 +58,8 @@ class CredentialDriverV8(object):
     def create_credential(self, credential_id, credential):
         """Creates a new credential.
 
-        :raises: keystone.exception.Conflict
+        :raises keystone.exception.Conflict: If a duplicated entry is already
+            existing.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -92,7 +93,8 @@ class CredentialDriverV8(object):
         """Get a credential by ID.
 
         :returns: credential_ref
-        :raises: keystone.exception.CredentialNotFound
+        :raises keystone.exception.CredentialNotFound: If credential doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -101,8 +103,10 @@ class CredentialDriverV8(object):
     def update_credential(self, credential_id, credential):
         """Updates an existing credential.
 
-        :raises: keystone.exception.CredentialNotFound,
-                 keystone.exception.Conflict
+        :raises keystone.exception.CredentialNotFound: If credential doesn't
+            exist.
+        :raises keystone.exception.Conflict: If a duplicated entry is already
+            existing.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -111,7 +115,8 @@ class CredentialDriverV8(object):
     def delete_credential(self, credential_id):
         """Deletes an existing credential.
 
-        :raises: keystone.exception.CredentialNotFound
+        :raises keystone.exception.CredentialNotFound: If credential doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
