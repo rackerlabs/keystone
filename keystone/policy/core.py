@@ -100,7 +100,8 @@ class PolicyDriverV8(object):
     def create_policy(self, policy_id, policy):
         """Store a policy blob.
 
-        :raises: keystone.exception.Conflict
+        :raises keystone.exception.Conflict: If a duplicated entry is already
+            existing.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -114,7 +115,7 @@ class PolicyDriverV8(object):
     def get_policy(self, policy_id):
         """Retrieve a specific policy blob.
 
-        :raises: keystone.exception.PolicyNotFound
+        :raises keystone.exception.PolicyNotFound: If the policy doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -123,7 +124,7 @@ class PolicyDriverV8(object):
     def update_policy(self, policy_id, policy):
         """Update a policy blob.
 
-        :raises: keystone.exception.PolicyNotFound
+        :raises keystone.exception.PolicyNotFound: If the policy doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -132,7 +133,7 @@ class PolicyDriverV8(object):
     def delete_policy(self, policy_id):
         """Remove a policy blob.
 
-        :raises: keystone.exception.PolicyNotFound
+        :raises keystone.exception.PolicyNotFound: If the policy doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
