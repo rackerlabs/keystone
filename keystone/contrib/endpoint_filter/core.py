@@ -96,7 +96,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_id: string
         :param project_id: identity of the project to be associated with
         :type project_id: string
-        :raises: keystone.exception.Conflict,
+        :raises keystone.exception.Conflict: If a duplicated entry exists.
         :returns: None.
 
         """
@@ -110,7 +110,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_id: string
         :param project_id: identity of the project associated with
         :type project_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """
@@ -124,7 +124,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_id: string
         :param project_id: identity of the project associated with
         :type project_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """
@@ -180,7 +180,8 @@ class EndpointFilterDriverV8(object):
 
         :param endpoint_group: endpoint group to create
         :type endpoint_group: dictionary
-        :raises: keystone.exception.Conflict,
+        :raises keystone.exception.Conflict: If a duplicated entry already
+            exists.
         :returns: an endpoint group representation.
 
         """
@@ -192,7 +193,7 @@ class EndpointFilterDriverV8(object):
 
         :param endpoint_group_id: identity of endpoint group to retrieve
         :type endpoint_group_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: an endpoint group representation.
 
         """
@@ -206,7 +207,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_group_id: string
         :param endpoint_group: A full or partial endpoint_group
         :type endpoint_group: dictionary
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: an endpoint group representation.
 
         """
@@ -218,7 +219,7 @@ class EndpointFilterDriverV8(object):
 
         :param endpoint_group_id: identity of endpoint group to delete
         :type endpoint_group_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """
@@ -232,7 +233,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_group_id: string
         :param project_id: identity of project to associate
         :type project_id: string
-        :raises: keystone.exception.Conflict,
+        :raises keystone.exception.Conflict: If a duplicated entry exists.
         :returns: None.
 
         """
@@ -246,7 +247,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_group_id: string
         :param project_id: identity of project to associate
         :type project_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: a project endpoint group representation.
 
         """
@@ -256,7 +257,7 @@ class EndpointFilterDriverV8(object):
     def list_endpoint_groups(self):
         """List all endpoint groups.
 
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """
@@ -268,7 +269,7 @@ class EndpointFilterDriverV8(object):
 
         :param project_id: identity of project to associate
         :type project_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """
@@ -280,7 +281,7 @@ class EndpointFilterDriverV8(object):
 
         :param endpoint_group_id: identity of endpoint to associate
         :type endpoint_group_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """
@@ -295,7 +296,7 @@ class EndpointFilterDriverV8(object):
         :type endpoint_group_id: string
         :param project_id: identity of project to associate
         :type project_id: string
-        :raises: exception.NotFound
+        :raises keystone.exception.NotFound: If the entity was not found.
         :returns: None.
 
         """

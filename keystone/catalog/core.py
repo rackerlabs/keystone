@@ -330,8 +330,9 @@ class CatalogDriverV8(object):
     def create_region(self, region_ref):
         """Creates a new region.
 
-        :raises: keystone.exception.Conflict
-        :raises: keystone.exception.RegionNotFound (if parent region invalid)
+        :raises keystone.exception.Conflict: If the region already exists.
+        :raises keystone.exception.RegionNotFound: If the parent region
+            is invalid.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -354,7 +355,7 @@ class CatalogDriverV8(object):
         """Get region by id.
 
         :returns: region_ref dict
-        :raises: keystone.exception.RegionNotFound
+        :raises keystone.exception.RegionNotFound: If the region doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -364,7 +365,7 @@ class CatalogDriverV8(object):
         """Update region by id.
 
         :returns: region_ref dict
-        :raises: keystone.exception.RegionNotFound
+        :raises keystone.exception.RegionNotFound: If the region doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -373,7 +374,7 @@ class CatalogDriverV8(object):
     def delete_region(self, region_id):
         """Deletes an existing region.
 
-        :raises: keystone.exception.RegionNotFound
+        :raises keystone.exception.RegionNotFound: If the region doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -382,7 +383,7 @@ class CatalogDriverV8(object):
     def create_service(self, service_id, service_ref):
         """Creates a new service.
 
-        :raises: keystone.exception.Conflict
+        :raises keystone.exception.Conflict: If a duplicated entry exists.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -405,7 +406,8 @@ class CatalogDriverV8(object):
         """Get service by id.
 
         :returns: service_ref dict
-        :raises: keystone.exception.ServiceNotFound
+        :raises keystone.exception.ServiceNotFound: If the service doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -415,7 +417,8 @@ class CatalogDriverV8(object):
         """Update service by id.
 
         :returns: service_ref dict
-        :raises: keystone.exception.ServiceNotFound
+        :raises keystone.exception.ServiceNotFound: If the service doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -424,7 +427,8 @@ class CatalogDriverV8(object):
     def delete_service(self, service_id):
         """Deletes an existing service.
 
-        :raises: keystone.exception.ServiceNotFound
+        :raises keystone.exception.ServiceNotFound: If the service doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -433,8 +437,9 @@ class CatalogDriverV8(object):
     def create_endpoint(self, endpoint_id, endpoint_ref):
         """Creates a new endpoint for a service.
 
-        :raises: keystone.exception.Conflict,
-                 keystone.exception.ServiceNotFound
+        :raises keystone.exception.Conflict: If a duplicated entry exists.
+        :raises keystone.exception.ServiceNotFound: If the service doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -444,7 +449,8 @@ class CatalogDriverV8(object):
         """Get endpoint by id.
 
         :returns: endpoint_ref dict
-        :raises: keystone.exception.EndpointNotFound
+        :raises keystone.exception.EndpointNotFound: If the endpoint doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -467,8 +473,10 @@ class CatalogDriverV8(object):
         """Get endpoint by id.
 
         :returns: endpoint_ref dict
-        :raises: keystone.exception.EndpointNotFound
-                 keystone.exception.ServiceNotFound
+        :raises keystone.exception.EndpointNotFound: If the endpoint doesn't
+            exist.
+        :raises keystone.exception.ServiceNotFound: If the service doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -477,7 +485,8 @@ class CatalogDriverV8(object):
     def delete_endpoint(self, endpoint_id):
         """Deletes an endpoint for a service.
 
-        :raises: keystone.exception.EndpointNotFound
+        :raises keystone.exception.EndpointNotFound: If the endpoint doesn't
+            exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -502,7 +511,7 @@ class CatalogDriverV8(object):
 
         :returns: A nested dict representing the service catalog or an
                   empty dict.
-        :raises: keystone.exception.NotFound
+        :raises keystone.exception.NotFound: If the endpoint doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -534,7 +543,7 @@ class CatalogDriverV8(object):
             }]
 
         :returns: A list representing the service catalog or an empty list
-        :raises: keystone.exception.NotFound
+        :raises keystone.exception.NotFound: If the endpoint doesn't exist.
 
         """
         v2_catalog = self.get_catalog(user_id, tenant_id)
