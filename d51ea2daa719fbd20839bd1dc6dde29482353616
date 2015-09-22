@@ -16,6 +16,24 @@
       "revId": "d51ea2daa719fbd20839bd1dc6dde29482353616",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_a234f4fa",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-09-22T19:06:06Z",
+      "side": 1,
+      "message": "It would be cool to not score patches if you are not sure then. :)",
+      "parentUuid": "ba15a1d1_822c504b",
+      "revId": "d51ea2daa719fbd20839bd1dc6dde29482353616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
