@@ -90,7 +90,7 @@ class ExampleDriver(object):
 
         :param data: example data
         :type data: string
-        :raises: keystone.exception,
+        :raises keystone.exception.NotImplemented
         :returns: None.
 
         """

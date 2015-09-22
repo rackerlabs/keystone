@@ -490,7 +490,7 @@ class Provider(object):
         :param token_data: token_data
         :type token_data: dict
         :returns: token version string
-        :raises: keystone.token.provider.UnsupportedTokenVersionException
+        :raises keystone.token.provider.UnsupportedTokenVersionException
         """
         raise exception.NotImplemented()  # pragma: no cover
 
@@ -548,7 +548,7 @@ class Provider(object):
         :param token_ref: the token reference
         :type token_ref: dict
         :returns: token data
-        :raises: keystone.exception.TokenNotFound
+        :raises keystone.exception.TokenNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -560,7 +560,7 @@ class Provider(object):
         :param token_ref: the token reference
         :type token_ref: dict
         :returns: token data
-        :raises: keystone.exception.TokenNotFound
+        :raises keystone.exception.TokenNotFound
         """
         raise exception.NotImplemented()  # pragma: no cover
 

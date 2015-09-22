@@ -179,7 +179,7 @@ class Manager(manager.Manager):
     def delete_trust(self, trust_id, initiator=None):
         """Remove a trust.
 
-        :raises: keystone.exception.TrustNotFound
+        :raises keystone.exception.TrustNotFound
 
         Recursively remove given and redelegated trusts
         """
@@ -247,8 +247,8 @@ class TrustDriverV8(object):
         """Consume one use when a trust was created with a limitation on its
         uses, provided there are still uses available.
 
-        :raises: keystone.exception.TrustUseLimitReached,
-                 keystone.exception.TrustNotFound
+        :raises keystone.exception.TrustUseLimitReached,
+                keystone.exception.TrustNotFound
         """
         raise exception.NotImplemented()  # pragma: no cover
 

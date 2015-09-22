@@ -107,7 +107,7 @@ class FederationDriverV8(object):
     def delete_idp(self, idp_id):
         """Delete an identity provider.
 
-        :raises: keystone.exception.IdentityProviderNotFound
+        :raises keystone.exception.IdentityProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -116,7 +116,7 @@ class FederationDriverV8(object):
     def list_idps(self):
         """List all identity providers.
 
-        :raises: keystone.exception.IdentityProviderNotFound
+        :raises keystone.exception.IdentityProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -125,7 +125,7 @@ class FederationDriverV8(object):
     def get_idp(self, idp_id):
         """Get an identity provider by ID.
 
-        :raises: keystone.exception.IdentityProviderNotFound
+        :raises keystone.exception.IdentityProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -134,7 +134,7 @@ class FederationDriverV8(object):
     def get_idp_from_remote_id(self, remote_id):
         """Get an identity provider by remote ID.
 
-        :raises: keystone.exception.IdentityProviderNotFound
+        :raises keystone.exception.IdentityProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -143,7 +143,7 @@ class FederationDriverV8(object):
     def update_idp(self, idp_id, idp):
         """Update an identity provider by ID.
 
-        :raises: keystone.exception.IdentityProviderNotFound
+        :raises keystone.exception.IdentityProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -152,7 +152,7 @@ class FederationDriverV8(object):
     def create_protocol(self, idp_id, protocol_id, protocol):
         """Add an IdP-Protocol configuration.
 
-        :raises: keystone.exception.IdentityProviderNotFound
+        :raises keystone.exception.IdentityProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -161,7 +161,7 @@ class FederationDriverV8(object):
     def update_protocol(self, idp_id, protocol_id, protocol):
         """Change an IdP-Protocol configuration.
 
-        :raises: keystone.exception.IdentityProviderNotFound,
+        :raises keystone.exception.IdentityProviderNotFound,
                  keystone.exception.FederatedProtocolNotFound
 
         """
@@ -171,7 +171,7 @@ class FederationDriverV8(object):
     def get_protocol(self, idp_id, protocol_id):
         """Get an IdP-Protocol configuration.
 
-        :raises: keystone.exception.IdentityProviderNotFound,
+        :raises keystone.exception.IdentityProviderNotFound,
                  keystone.exception.FederatedProtocolNotFound
 
         """
@@ -181,7 +181,7 @@ class FederationDriverV8(object):
     def list_protocols(self, idp_id):
         """List an IdP's supported protocols.
 
-        :raises: keystone.exception.IdentityProviderNotFound,
+        :raises keystone.exception.IdentityProviderNotFound,
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -190,7 +190,7 @@ class FederationDriverV8(object):
     def delete_protocol(self, idp_id, protocol_id):
         """Delete an IdP-Protocol configuration.
 
-        :raises: keystone.exception.IdentityProviderNotFound,
+        :raises keystone.exception.IdentityProviderNotFound,
                  keystone.exception.FederatedProtocolNotFound,
 
         """
@@ -260,8 +260,8 @@ class FederationDriverV8(object):
         :type idp_id: string
         :param protocol_id: id of the protocol
         :type protocol_id: string
-        :raises: keystone.exception.IdentityProviderNotFound,
-                 keystone.exception.FederatedProtocolNotFound,
+        :raises keystone.exception.IdentityProviderNotFound,
+                keystone.exception.FederatedProtocolNotFound,
         :returns: mapping_ref
 
         """
@@ -289,7 +289,7 @@ class FederationDriverV8(object):
         :param sp_id: id of the service provider
         :type sp_id: string
 
-        :raises: keystone.exception.ServiceProviderNotFound
+        :raises keystone.exception.ServiceProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -312,7 +312,7 @@ class FederationDriverV8(object):
         :type sp_id: string
 
         :returns: sp_ref
-        :raises: keystone.exception.ServiceProviderNotFound
+        :raises keystone.exception.ServiceProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -329,7 +329,7 @@ class FederationDriverV8(object):
         :returns: sp_ref
         :rtype: dict
 
-        :raises: keystone.exception.ServiceProviderNotFound
+        :raises keystone.exception.ServiceProviderNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover

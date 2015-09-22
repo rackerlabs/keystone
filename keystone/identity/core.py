@@ -1095,7 +1095,7 @@ class IdentityDriverV8(object):
     def authenticate(self, user_id, password):
         """Authenticate a given user and password.
         :returns: user_ref
-        :raises: AssertionError
+        :raises AssertionError
         """
         raise exception.NotImplemented()  # pragma: no cover
 
@@ -1105,7 +1105,7 @@ class IdentityDriverV8(object):
     def create_user(self, user_id, user):
         """Creates a new user.
 
-        :raises: keystone.exception.Conflict
+        :raises keystone.exception.Conflict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1140,7 +1140,7 @@ class IdentityDriverV8(object):
         """Get a user by ID.
 
         :returns: user_ref
-        :raises: keystone.exception.UserNotFound
+        :raises keystone.exception.UserNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1149,8 +1149,8 @@ class IdentityDriverV8(object):
     def update_user(self, user_id, user):
         """Updates an existing user.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.Conflict
+        :raises keystone.exception.UserNotFound,
+                keystone.exception.Conflict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1159,8 +1159,8 @@ class IdentityDriverV8(object):
     def add_user_to_group(self, user_id, group_id):
         """Adds a user to a group.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound
+        :raises keystone.exception.UserNotFound,
+                keystone.exception.GroupNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1169,8 +1169,8 @@ class IdentityDriverV8(object):
     def check_user_in_group(self, user_id, group_id):
         """Checks if a user is a member of a group.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound
+        :raises keystone.exception.UserNotFound,
+                keystone.exception.GroupNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1179,7 +1179,7 @@ class IdentityDriverV8(object):
     def remove_user_from_group(self, user_id, group_id):
         """Removes a user from a group.
 
-        :raises: keystone.exception.NotFound
+        :raises keystone.exception.NotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1188,7 +1188,7 @@ class IdentityDriverV8(object):
     def delete_user(self, user_id):
         """Deletes an existing user.
 
-        :raises: keystone.exception.UserNotFound
+        :raises keystone.exception.UserNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1198,7 +1198,7 @@ class IdentityDriverV8(object):
         """Get a user by name.
 
         :returns: user_ref
-        :raises: keystone.exception.UserNotFound
+        :raises keystone.exception.UserNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1209,7 +1209,7 @@ class IdentityDriverV8(object):
     def create_group(self, group_id, group):
         """Creates a new group.
 
-        :raises: keystone.exception.Conflict
+        :raises keystone.exception.Conflict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1244,7 +1244,7 @@ class IdentityDriverV8(object):
         """Get a group by ID.
 
         :returns: group_ref
-        :raises: keystone.exception.GroupNotFound
+        :raises keystone.exception.GroupNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1254,7 +1254,7 @@ class IdentityDriverV8(object):
         """Get a group by name.
 
         :returns: group_ref
-        :raises: keystone.exception.GroupNotFound
+        :raises keystone.exception.GroupNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1263,8 +1263,8 @@ class IdentityDriverV8(object):
     def update_group(self, group_id, group):
         """Updates an existing group.
 
-        :raises: keystone.exceptionGroupNotFound,
-                 keystone.exception.Conflict
+        :raises keystone.exceptionGroupNotFound,
+                keystone.exception.Conflict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1273,7 +1273,7 @@ class IdentityDriverV8(object):
     def delete_group(self, group_id):
         """Deletes an existing group.
 
-        :raises: keystone.exception.GroupNotFound
+        :raises keystone.exception.GroupNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover

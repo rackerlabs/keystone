@@ -240,7 +240,7 @@ class TokenDriverV8(object):
         :param token_id: identity of the token
         :type token_id: string
         :returns: token_ref
-        :raises: keystone.exception.TokenNotFound
+        :raises keystone.exception.TokenNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -276,7 +276,7 @@ class TokenDriverV8(object):
         :param token_id: identity of the token
         :type token_id: string
         :returns: None.
-        :raises: keystone.exception.TokenNotFound
+        :raises keystone.exception.TokenNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -304,7 +304,7 @@ class TokenDriverV8(object):
         :param consumer_id: identity of the consumer
         :type consumer_id: string
         :returns: The tokens that have been deleted.
-        :raises: keystone.exception.TokenNotFound
+        :raises keystone.exception.TokenNotFound
 
         """
         if not CONF.token.revoke_by_id:

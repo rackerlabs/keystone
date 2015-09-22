@@ -70,7 +70,7 @@ def find_paste_config():
         config_file = keystone-paste.ini
 
     :returns: The selected configuration filename
-    :raises: exception.ConfigFileNotFound
+    :raises keystone.exception.ConfigFileNotFound
 
     """
     if CONF.paste_deploy.config_file:
