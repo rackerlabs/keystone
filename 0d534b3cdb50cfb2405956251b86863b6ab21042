@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_cb7915fe",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_8b0c7d95",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ab0f0187",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_4b274512",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cb603538",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_4b55054e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1373,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_cbc7d510",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_8bd1ddcf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1450,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:32:31Z",
+      "side": 1,
+      "message": "I\u0027d rather see this stay explicit.",
+      "revId": "0d534b3cdb50cfb2405956251b86863b6ab21042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
