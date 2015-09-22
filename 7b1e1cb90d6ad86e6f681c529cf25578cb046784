@@ -16,6 +16,24 @@
       "revId": "7b1e1cb90d6ad86e6f681c529cf25578cb046784",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_85ca2ca0",
+        "filename": "bandit.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-22T13:45:36Z",
+      "side": 1,
+      "message": "this is copied from bandit.yaml, so make the fix in the bandit project and we\u0027ll pick it up next time we sync.",
+      "parentUuid": "ba15a1d1_82578201",
+      "revId": "7b1e1cb90d6ad86e6f681c529cf25578cb046784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
