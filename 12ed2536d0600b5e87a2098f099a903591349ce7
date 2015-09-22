@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_9c8609da",
+        "filename": "bandit.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-22T12:58:28Z",
+      "side": 0,
+      "message": "it looks like \n\n    any_other_function_with_shell_equals_true\n    ssl_with_bad_defaults\n\nwill not be run anymore? is this a regression we have to worry about? should we include those in what is now gate?",
+      "revId": "12ed2536d0600b5e87a2098f099a903591349ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

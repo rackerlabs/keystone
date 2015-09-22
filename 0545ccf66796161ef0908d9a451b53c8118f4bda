@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_7ce775e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-22T12:58:28Z",
+      "side": 1,
+      "message": "Is there a link to a ML thread for this or a discussion at all?",
+      "revId": "0545ccf66796161ef0908d9a451b53c8118f4bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
