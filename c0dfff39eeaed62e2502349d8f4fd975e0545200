@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_d6821852",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:38:40Z",
+      "side": 1,
+      "message": "I also have the same concern about cache invalidation. We need to make sure that modifications to the catalog will be reflected in the get catalog response in some reasonable time period.",
+      "revId": "c0dfff39eeaed62e2502349d8f4fd975e0545200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_164c106f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T14:38:40Z",
+      "side": 1,
+      "message": "I agree with the earlier comments. I think this should guard the for loop. So delete the raise and tab over the for loop.",
+      "revId": "c0dfff39eeaed62e2502349d8f4fd975e0545200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
