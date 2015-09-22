@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_82578201",
+        "filename": "bandit.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-22T13:25:54Z",
+      "side": 1,
+      "message": "s/equivilent/equivalent/",
+      "revId": "7b1e1cb90d6ad86e6f681c529cf25578cb046784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
