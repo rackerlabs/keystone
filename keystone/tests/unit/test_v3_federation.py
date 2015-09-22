@@ -2399,11 +2399,15 @@ class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin):
               self).auth_plugin_config_override(methods)
 
     def test_federated_unscoped_token(self):
+        self.config_fixture.config(group='fernet_tokens',
+                                   attempt_convert_uuids=True)
         resp = self._issue_unscoped_token()
         self.assertEqual(204, len(resp.headers['X-Subject-Token']))
         self.assertValidMappedUser(resp.json_body['token'])
 
     def test_federated_unscoped_token_with_multiple_groups(self):
+        self.config_fixture.config(group='fernet_tokens',
+                                   attempt_convert_uuids=True)
         assertion = 'ANOTHER_CUSTOMER_ASSERTION'
         resp = self._issue_unscoped_token(assertion=assertion)
         self.assertEqual(226, len(resp.headers['X-Subject-Token']))

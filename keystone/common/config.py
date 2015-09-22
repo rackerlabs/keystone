@@ -233,6 +233,12 @@ FILE_OPTIONS = {
                         'key, and one secondary key. Increasing this value '
                         'means that additional secondary keys will be kept in '
                         'the rotation.'),
+        cfg.BoolOpt('attempt_convert_uuids',
+                    default=False,
+                    help='Whether to attempt to convert the user ID into '
+                         'bytes to save space used by the token payload. This '
+                         'option should only be set to true if the IDs of '
+                         'your identity backend are UUID based.'),
     ],
     'token': [
         cfg.ListOpt('bind', default=[],
