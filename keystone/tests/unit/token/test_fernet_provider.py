@@ -205,7 +205,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_trust_id, trust_id)
 
     def test_unscoped_payload_with_non_uuid_user_id(self):
-        exp_user_id = 'someNonUuidUserId'
+        exp_user_id = 'someNonUuidUsrId?'
         exp_methods = ['password']
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
         exp_audit_ids = [provider.random_urlsafe_str()]
@@ -222,7 +222,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_project_scoped_payload_with_non_uuid_user_id(self):
-        exp_user_id = 'someNonUuidUserId'
+        exp_user_id = 'someNonUuidUsrId'
         exp_methods = ['password']
         exp_project_id = uuid.uuid4().hex
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
@@ -244,7 +244,7 @@ class TestPayloads(unit.TestCase):
     def test_project_scoped_payload_with_non_uuid_project_id(self):
         exp_user_id = uuid.uuid4().hex
         exp_methods = ['password']
-        exp_project_id = 'someNonUuidProjectId'
+        exp_project_id = 'someNonUuidPrjId'
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
         exp_audit_ids = [provider.random_urlsafe_str()]
 
@@ -262,7 +262,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_domain_scoped_payload_with_non_uuid_user_id(self):
-        exp_user_id = 'someNonUuidUserId'
+        exp_user_id = 'someNonUuidUsrId'
         exp_methods = ['password']
         exp_domain_id = uuid.uuid4().hex
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
@@ -282,7 +282,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_trust_scoped_payload_with_non_uuid_user_id(self):
-        exp_user_id = 'someNonUuidUserId'
+        exp_user_id = 'someNonUuidUsrId'
         exp_methods = ['password']
         exp_project_id = uuid.uuid4().hex
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
@@ -306,7 +306,7 @@ class TestPayloads(unit.TestCase):
     def test_trust_scoped_payload_with_non_uuid_project_id(self):
         exp_user_id = uuid.uuid4().hex
         exp_methods = ['password']
-        exp_project_id = 'someNonUuidProjectId'
+        exp_project_id = 'someNonUuidPrjId'
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_trust_id = uuid.uuid4().hex
@@ -326,11 +326,11 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_trust_id, trust_id)
 
     def test_federated_payload_with_non_uuid_ids(self):
-        exp_user_id = 'someNonUuidUserId'
+        exp_user_id = 'someNonUuidUsrId'
         exp_methods = ['password']
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
         exp_audit_ids = [provider.random_urlsafe_str()]
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGrpId'}],
                               'idp_id': uuid.uuid4().hex,
                               'protocol_id': uuid.uuid4().hex}
 
