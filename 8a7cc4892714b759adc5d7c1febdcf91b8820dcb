@@ -16,6 +16,23 @@
       "revId": "8a7cc4892714b759adc5d7c1febdcf91b8820dcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d74e88c0",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-22T21:35:36Z",
+      "side": 1,
+      "message": "Alexander, could you write a test that shows a use case for this?  I agree with David an error that says \n\n\u00272015-09-22 16:32:10.874001 is not a valid ISO 8601 extended format date time.\u0027\n\nthis is much more informative to the user than, \n\u0027MismatchError: \u00272015-09-22 16:32:10.874001\u0027 is not an instance of basestring\u0027\n\n(In this case i passed in a datetime object)",
+      "revId": "8a7cc4892714b759adc5d7c1febdcf91b8820dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
