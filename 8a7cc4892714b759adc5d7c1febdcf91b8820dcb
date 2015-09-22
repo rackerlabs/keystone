@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_9f47db76",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-22T13:20:19Z",
+      "side": 1,
+      "message": "Why even bother doing this? If it\u0027s not a string an AssertionError will be raised right?",
+      "revId": "8a7cc4892714b759adc5d7c1febdcf91b8820dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
