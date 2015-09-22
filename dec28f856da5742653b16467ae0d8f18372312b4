@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_5244eab5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-22T07:03:08Z",
+      "side": 1,
+      "message": "nit: I guess we are really marking it as \"not used in secure context\" (or something like that), given that the tag is #nosec ?",
+      "revId": "dec28f856da5742653b16467ae0d8f18372312b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
