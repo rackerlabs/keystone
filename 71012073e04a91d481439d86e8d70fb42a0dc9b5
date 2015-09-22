@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_7c9f7503",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-22T13:02:13Z",
+      "side": 1,
+      "message": "\"Left the new tests that we weren\u0027t running disabled\"?",
+      "revId": "71012073e04a91d481439d86e8d70fb42a0dc9b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_3c5fbd42",
+        "filename": "bandit.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-22T13:02:13Z",
+      "side": 1,
+      "message": "is there a bandit bug open for the false positives?",
+      "revId": "71012073e04a91d481439d86e8d70fb42a0dc9b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
