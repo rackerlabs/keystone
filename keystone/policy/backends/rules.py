@@ -51,7 +51,7 @@ def enforce(credentials, action, target, do_raise=True):
                       for object creation this should be a dictionary
                       representing the location of the object e.g.
                       {'project_id': object.project_id}
-       :raises: `exception.Forbidden` if verification fails.
+       :raises keystone.exception.Forbidden: if verification fails.
 
        Actions should be colon separated for clarity. For example:
 
