@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_17f88748",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-22T16:26:49Z",
+      "side": 1,
+      "message": "Sure, thanks for all your advices.",
+      "parentUuid": "ba15a1d1_f98e2ccf",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_4a49ca8d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -366,6 +384,24 @@
       "side": 1,
       "message": "What happens when someone does a GET for that endpoint ID under V2?",
       "parentUuid": "ba15a1d1_16fdf039",
+      "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d7ca0f1a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-22T16:26:49Z",
+      "side": 1,
+      "message": "there is no API for that. So I assume it\u0027s safe to do it.\nclient who want to get one endpoint, has to get the whole list and finding the specific endpoint there, in which case, the returned result is consistent.",
+      "parentUuid": "ba15a1d1_5944f872",
       "revId": "5b0463bd95a62e800c671699b1fdcaa60948074b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
