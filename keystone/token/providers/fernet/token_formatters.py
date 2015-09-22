@@ -341,12 +341,14 @@ class BasePayload(object):
         :returns: uuid value in bytes or value
 
         """
-        try:
-            return cls.convert_uuid_hex_to_bytes(value)
-        except ValueError:
-            # this might not be a UUID, depending on the situation (i.e.
-            # federation)
-            return value
+        if CONF.fernet_tokens.attempt_convert_uuids:
+            try:
+                return cls.convert_uuid_hex_to_bytes(value)
+            except ValueError:
+                # this might not be a UUID, depending on the situation (i.e.
+                # federation)
+                pass
+        return value
 
     @classmethod
     def attempt_convert_uuid_bytes_to_hex(cls, value):
@@ -356,10 +358,12 @@ class BasePayload(object):
         :returns: uuid value in hex or value
 
         """
-        try:
-            return cls.convert_uuid_bytes_to_hex(value)
-        except ValueError:
-            return value
+        if CONF.fernet_tokens.attempt_convert_uuids:
+            try:
+                return cls.convert_uuid_bytes_to_hex(value)
+            except ValueError:
+                pass
+        return value
 
 
 class UnscopedPayload(BasePayload):
