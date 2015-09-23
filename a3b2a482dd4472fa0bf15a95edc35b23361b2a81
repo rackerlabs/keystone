@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_cb823252",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-23T21:16:22Z",
+      "side": 1,
+      "message": "Wouldn\u0027t these need to be switched?  Since 2 lines above, \u0027response.status_code\u0027 was just validated for what they are expecting.  Then it is used to make sure the error code is correct making \u0027response.status_code\u0027 the expected and \u0027error[\u0027code\u0027]\u0027 what is be observed.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
