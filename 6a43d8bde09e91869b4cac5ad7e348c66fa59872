@@ -87,6 +87,24 @@
       "revId": "6a43d8bde09e91869b4cac5ad7e348c66fa59872",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_44606101",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-23T13:56:44Z",
+      "side": 1,
+      "message": "The only reason SAMPLE_V3_TOKEN  and token_data are used in the test code is because that\u0027s the only way to create a KeystoneToken. If I could create a KeystoneToken without it I would do it that way (and that might be a useful cleanup for later).\n\nSo this test isn\u0027t trying to verify that if the user id is removed from the token in the SAMPLE_V3_TOKEN, it\u0027s trying to verify that if the KeystoneToken doesn\u0027t have a user ID then that fails when it\u0027s passed to token_to_auth_context. It just turns out that the way the test sets up the KeystoneToken is to manipulate the token_data.",
+      "parentUuid": "ba15a1d1_d1cf667d",
+      "revId": "6a43d8bde09e91869b4cac5ad7e348c66fa59872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
