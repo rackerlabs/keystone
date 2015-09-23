@@ -16,6 +16,24 @@
       "revId": "8a6beae36f6a883fe61629338f0839931528020d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ea37f7ad",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-23T16:26:10Z",
+      "side": 1,
+      "message": "it could also be an empty string or 0 or an empty list. That wasn\u0027t the point of this change per the commit message.",
+      "parentUuid": "ba15a1d1_4a2e238d",
+      "revId": "8a6beae36f6a883fe61629338f0839931528020d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
