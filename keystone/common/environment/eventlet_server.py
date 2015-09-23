@@ -144,7 +144,7 @@ class Server(service.ServiceBase):
         if self.keepalive:
             dup_socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
 
-            if self.keepidle is not None:
+            if self.keepidle is not None and hasattr(socket, "TCP_KEEPIDLE"):
                 dup_socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPIDLE,
                                       self.keepidle)
 
