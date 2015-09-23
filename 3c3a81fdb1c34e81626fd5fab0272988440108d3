@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_ad56f95b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-23T16:57:50Z",
+      "side": 1,
+      "message": "Although I realise this is part of a large set of fixes to tests, there is nothing in this commit message that says this is just changing test code.  When I first read it, my first impression was that you are change the Identity API.",
+      "revId": "3c3a81fdb1c34e81626fd5fab0272988440108d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
