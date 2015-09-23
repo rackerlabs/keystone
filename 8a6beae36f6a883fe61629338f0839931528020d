@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_4a2e238d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-23T16:22:37Z",
+      "side": 1,
+      "message": "I suspect it\u0027s hardly possible that \u0027id\u0027 is present in identity provider (or protocol) structure above and equals to None, although I\u0027m comfortable with this as illustration :)",
+      "revId": "8a6beae36f6a883fe61629338f0839931528020d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
