@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 from oslo_utils import timeutils
 from six.moves import map
 
@@ -92,7 +94,8 @@ class RevokeEvent(object):
         if self.revoked_at is None:
             self.revoked_at = timeutils.utcnow()
         if self.issued_before is None:
-            self.issued_before = self.revoked_at
+            self.issued_before = (
+                self.revoked_at - datetime.timedelta(seconds=1))
 
     def to_dict(self):
         keys = ['user_id',
