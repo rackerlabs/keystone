@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba15a1d1_aae33fd7",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-23T16:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_ff55b7c5",
+      "revId": "25196f05858ef3915535b1045cf809236052e1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_3ffa4fbe",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-22T13:12:57Z",
       "side": 1,
       "message": "do we need to include a comment here? same for all occurrences in this file.",
+      "revId": "25196f05858ef3915535b1045cf809236052e1f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_ea1297b3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-23T16:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_3ffa4fbe",
       "revId": "25196f05858ef3915535b1045cf809236052e1f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
