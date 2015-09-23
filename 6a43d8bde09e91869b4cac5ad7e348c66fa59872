@@ -69,6 +69,24 @@
       "revId": "6a43d8bde09e91869b4cac5ad7e348c66fa59872",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_d1cf667d",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-23T03:49:33Z",
+      "side": 1,
+      "message": "since the testcase here is trying to copy V3 token and then del the user id from the token, and then verify whether it will work.\n\ntoken is the member of class: KeystoneToken, user id is the member of token.",
+      "parentUuid": "da20952f_c430df09",
+      "revId": "6a43d8bde09e91869b4cac5ad7e348c66fa59872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
