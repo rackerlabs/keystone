@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_cf1a4f6f",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-23T12:48:23Z",
+      "side": 1,
+      "message": "You can just delete all of these assertResponseStatus calls.",
+      "revId": "0b309e0853312a0e42168221ace4040efed93b1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
