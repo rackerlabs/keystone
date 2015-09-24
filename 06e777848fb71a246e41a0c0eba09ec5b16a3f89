@@ -34,6 +34,24 @@
       "revId": "06e777848fb71a246e41a0c0eba09ec5b16a3f89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_3318f1d2",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-24T06:16:48Z",
+      "side": 1,
+      "message": "There is PyPi Packages and VirtualEnv section under this section.",
+      "parentUuid": "ba15a1d1_e993f74d",
+      "revId": "06e777848fb71a246e41a0c0eba09ec5b16a3f89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
