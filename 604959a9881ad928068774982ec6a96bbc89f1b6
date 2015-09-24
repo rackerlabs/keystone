@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_85f921cb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "you\u0027re right. it\u0027s done for the same reason it was done before. It might be better to remove the comment",
+      "parentUuid": "da20952f_6753b13a",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_79f4c7ce",
         "filename": "keystone/resource/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-08T15:01:08Z",
       "side": 1,
       "message": "change raise to raises and use the full path pls.\n\n:raises keystone.exception.ValidationError",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c525d95c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_79f4c7ce",
       "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_459f895f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "the condition is the flag that was not set to true, which is always the case in LDAP. I don\u0027t think this change is necessary.",
+      "parentUuid": "da20952f_c39ff063",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_39fe4faf",
         "filename": "keystone/resource/core.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-08T15:01:08Z",
       "side": 1,
       "message": "same here.",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_0588b121",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_39fe4faf",
       "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_45ad4987",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_83e6d8ae",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a35afc28",
         "filename": "keystone/resource/core.py",
         "patchSetId": 13
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_e539fd42",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "it can\u0027t happen. in a consistent environment, every project has a domain_id",
+      "parentUuid": "da20952f_a35afc28",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_1974ab34",
         "filename": "keystone/resource/core.py",
         "patchSetId": 13
@@ -115,6 +223,24 @@
       "writtenOn": "2015-09-08T15:01:08Z",
       "side": 1,
       "message": "suggest to use project_id and project since tenant has been deprecated  for a long time. I know these still used in other places so it is nice to have.",
+      "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a5cea558",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-24T18:51:21Z",
+      "side": 1,
+      "message": "that\u0027s a good change to do, but we could do that in another refactoring patch, not this one. Those names were not changed at this patch",
+      "parentUuid": "da20952f_1974ab34",
       "revId": "604959a9881ad928068774982ec6a96bbc89f1b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
