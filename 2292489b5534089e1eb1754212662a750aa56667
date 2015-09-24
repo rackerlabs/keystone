@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_8096f792",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T15:52:46Z",
+      "side": 1,
+      "message": "the term is still used in reference to the v2 API, specifically",
+      "revId": "2292489b5534089e1eb1754212662a750aa56667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
