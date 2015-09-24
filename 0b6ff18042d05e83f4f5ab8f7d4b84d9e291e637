@@ -33,6 +33,24 @@
       "revId": "0b6ff18042d05e83f4f5ab8f7d4b84d9e291e637",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d2c7d843",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T20:16:21Z",
+      "side": 1,
+      "message": "Is this \u0027will only be\u0027 or \u0027can only be\u0027?",
+      "parentUuid": "9a1a9d01_2ac102e5",
+      "revId": "0b6ff18042d05e83f4f5ab8f7d4b84d9e291e637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
