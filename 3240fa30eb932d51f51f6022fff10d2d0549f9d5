@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_a5ac65ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-24T18:41:22Z",
+      "side": 1,
+      "message": "nit: \"most of all\" ?",
+      "revId": "3240fa30eb932d51f51f6022fff10d2d0549f9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_3976423f",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 20
@@ -13,6 +30,24 @@
       "writtenOn": "2015-09-24T17:04:20Z",
       "side": 1,
       "message": "considering that bind is entirely an undocumented API on v2, I wouldn\u0027t mind if we always raised 501, regardless of what the driver says!",
+      "revId": "3240fa30eb932d51f51f6022fff10d2d0549f9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_05d0b152",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-24T18:41:22Z",
+      "side": 1,
+      "message": "+1 What this \u0027bind\u0027 is?",
+      "parentUuid": "9a1a9d01_3976423f",
       "revId": "3240fa30eb932d51f51f6022fff10d2d0549f9d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
