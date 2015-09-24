@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_ea878ad5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-24T18:31:27Z",
+      "side": 1,
+      "message": "s/project/projects/",
+      "revId": "0b6ff18042d05e83f4f5ab8f7d4b84d9e291e637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2ac102e5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-24T18:31:27Z",
+      "side": 1,
+      "message": "How can we be sure, that \"subtree_ids will only be specified if project_id has also been specified\"?\n\nMaybe I missed something, though I can see a need for schema validation here.",
+      "revId": "0b6ff18042d05e83f4f5ab8f7d4b84d9e291e637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
