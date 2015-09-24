@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_3976423f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T17:04:20Z",
+      "side": 1,
+      "message": "considering that bind is entirely an undocumented API on v2, I wouldn\u0027t mind if we always raised 501, regardless of what the driver says!",
+      "revId": "3240fa30eb932d51f51f6022fff10d2d0549f9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f9dc4a1a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T17:04:20Z",
+      "side": 1,
+      "message": "if \u0027access\u0027 in token_data: would test what you\u0027re really looking for here (\"is this v2?\"), rather than testing the return value of .get(), which could be falsey in scenarios you should never expect",
+      "revId": "3240fa30eb932d51f51f6022fff10d2d0549f9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
