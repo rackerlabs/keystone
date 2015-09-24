@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_b1f27005",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T15:23:59Z",
+      "side": 0,
+      "message": "This should have a comment justifying why the exception is being swallowed by the except block justifying why it should be ignored by bandit.",
+      "revId": "be0a827a48f15bdc1c303d200a3eb00879f542b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f136a8b3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T15:23:59Z",
+      "side": 0,
+      "message": "same",
+      "revId": "be0a827a48f15bdc1c303d200a3eb00879f542b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
