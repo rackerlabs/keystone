@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_f9a0caa7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-24T17:04:43Z",
+      "side": 1,
+      "message": "keeping validate_non_persistent_token and removing \"id\" and \"v3\"",
+      "parentUuid": "ba15a1d1_2bc943ac",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_ab0233b2",
         "filename": "keystone/token/provider.py",
         "patchSetId": 23
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_99c74e45",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-24T17:04:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_ab0233b2",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_8b3def90",
         "filename": "keystone/token/provider.py",
         "patchSetId": 23
@@ -64,6 +100,24 @@
       "writtenOn": "2015-09-17T19:53:57Z",
       "side": 1,
       "message": "suggest don\u0027t rename the method. The original name is fine.",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_19e25ed6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-24T17:04:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_8b3def90",
       "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_99f50e85",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-24T17:04:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_2bb3830b",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_cb99a77a",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 23
@@ -116,6 +188,24 @@
       "writtenOn": "2015-09-17T19:53:57Z",
       "side": 1,
       "message": "(unrelated) move trust_ref down to before it\u0027s used, right before line 727",
+      "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_79f83a7d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-24T17:04:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_cb99a77a",
       "revId": "757a6802020fd1e1bbbbd6d3151873f664d93995",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
