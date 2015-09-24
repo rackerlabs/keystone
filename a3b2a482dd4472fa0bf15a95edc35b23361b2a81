@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_d6c6439b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "remove \"replaced\" stuff, they have been addressed in another patch (https://review.openstack.org/#/c/162570/), we can work together to get it done if you like.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_cb823252",
         "filename": "keystone/tests/unit/rest.py",
         "patchSetId": 2
@@ -13,6 +30,176 @@
       "writtenOn": "2015-09-23T21:16:22Z",
       "side": 1,
       "message": "Wouldn\u0027t these need to be switched?  Since 2 lines above, \u0027response.status_code\u0027 was just validated for what they are expecting.  Then it is used to make sure the error code is correct making \u0027response.status_code\u0027 the expected and \u0027error[\u0027code\u0027]\u0027 what is be observed.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_737bc9be",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2361,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "irrelvant change, pls revert it back, I have a patch pending there to address this separately (https://review.openstack.org/162570)",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f345996e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2928,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here, and other similar change in this file, pls revert all of them back.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b35c014c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2938,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7352e936",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2944,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_13328d10",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2950,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_93269dcc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2980,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_b323a1bc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2994,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_7329899a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3005,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_331eb170",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3015,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_96b0cb44",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-24T06:37:17Z",
+      "side": 1,
+      "message": "sad, all of these has been replaced by constants, so pls update accordingly.",
       "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
