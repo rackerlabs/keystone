@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_c3daac78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T21:29:34Z",
+      "side": 1,
+      "message": "(nit) s/or/and/ since we have both",
+      "revId": "170bb99736fa03059f301bd00c317c7442233434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c3486c30",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T21:29:34Z",
+      "side": 1,
+      "message": "I really don\u0027t like this here since I don\u0027t think this file should even know about httpd/keystone.py. Why not setup logging in httpd/keystone.py instead?",
+      "revId": "170bb99736fa03059f301bd00c317c7442233434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
