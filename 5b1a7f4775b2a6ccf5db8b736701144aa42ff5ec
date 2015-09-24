@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_0ceea322",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T15:36:58Z",
+      "side": 1,
+      "message": "unjustified",
+      "revId": "5b1a7f4775b2a6ccf5db8b736701144aa42ff5ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
