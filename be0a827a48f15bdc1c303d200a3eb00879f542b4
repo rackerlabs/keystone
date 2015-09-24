@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_b143506c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T15:31:56Z",
+      "side": 1,
+      "message": "why should bandit be ignored here?",
+      "revId": "be0a827a48f15bdc1c303d200a3eb00879f542b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
