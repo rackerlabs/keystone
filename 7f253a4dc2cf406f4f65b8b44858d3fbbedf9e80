@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_5582cd53",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:25:02Z",
+      "side": 1,
+      "message": "Need to update the version since this will be released in M. Deprecated for only one release? Should this use versionutils?",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7587d161",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:25:02Z",
+      "side": 1,
+      "message": "Same.",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_55e96d19",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:25:02Z",
+      "side": 1,
+      "message": "Why are we checking this twice?",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_35f879e5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:25:02Z",
+      "side": 1,
+      "message": "version thing again.",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f51d2110",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:25:02Z",
+      "side": 1,
+      "message": "do you really need to iterate through the list looking for a truthy value. i know that it\u0027s not a performance thing, it just look weird. what about just checking to see if the list has a value like \u0027if subtree_list\u0027?",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
