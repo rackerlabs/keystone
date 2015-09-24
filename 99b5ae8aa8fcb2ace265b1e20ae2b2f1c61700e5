@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_f510c150",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:11:13Z",
+      "side": 1,
+      "message": "There\u0027s no assertion in here on the v2_endpoint. Did you get back what you thought you should? The closest thing is a just counting that you got something back and then you check the v3_endpoint. I wouldn\u0027t even bother with that since I don\u0027t expect it to be changing.",
+      "revId": "99b5ae8aa8fcb2ace265b1e20ae2b2f1c61700e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_92587b58",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-24T23:11:13Z",
+      "side": 1,
+      "message": "The arguments here are backward. It should be (expected, observed).",
+      "revId": "99b5ae8aa8fcb2ace265b1e20ae2b2f1c61700e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
