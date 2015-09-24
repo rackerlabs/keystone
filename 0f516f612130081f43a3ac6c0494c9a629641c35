@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_ec732fb3",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-24T15:34:57Z",
+      "side": 1,
+      "message": "unjustified",
+      "revId": "0f516f612130081f43a3ac6c0494c9a629641c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
