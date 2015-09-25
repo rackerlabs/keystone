@@ -70,6 +70,23 @@
       "revId": "f776d3ca98d0492ef6bbf462f87d099c6a4e8ea2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a100cbab",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T02:44:12Z",
+      "side": 1,
+      "message": "What do you need extra for here?",
+      "revId": "f776d3ca98d0492ef6bbf462f87d099c6a4e8ea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
