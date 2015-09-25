@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_5aadfbe7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-25T16:47:50Z",
+      "side": 1,
+      "message": "s/if/If  -\u003e for consistency :)",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_da87cb5f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-25T16:47:50Z",
+      "side": 1,
+      "message": "s/if/If  -\u003e for consistency :)",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7a7c7f72",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-25T16:47:50Z",
+      "side": 1,
+      "message": "s/if/If  -\u003e for consistency :)",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
