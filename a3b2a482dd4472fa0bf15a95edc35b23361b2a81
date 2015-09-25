@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_d8582e59",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-25T20:22:24Z",
+      "side": 1,
+      "message": "Thank you for noticing my point of view.   Now that Rajesh knows our personal preferences we will let him decide  (◕‿◕)  \u003d puppy eyes so he leans my way. JK\n\nTo answer your question, either error, you get the same thing across … They aren\u0027t equal :p  If it were up to me i think the error should be changed to include an indicator to what each value represents, since we are applying all this effort to make sure they are in the right order.  If someone off the street looks at this error message they wouldn\u0027t realize that they are actually in a specific sequence.",
+      "parentUuid": "9a1a9d01_7dd6b4c6",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_737bc9be",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
