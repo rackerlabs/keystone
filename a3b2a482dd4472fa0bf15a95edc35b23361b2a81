@@ -144,6 +144,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_e509ca2d",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T21:36:00Z",
+      "side": 1,
+      "message": "To me that\u0027s what interesting. I\u0027m not as worried about the error message and think that bug is somewhat misguided. That code will likely be read way more than the error message it produces. We just need to make sure the intent of the test is there. That\u0027s why I really don\u0027t care either way as long as we decide what that intent it. The intent is *not* to satisfy that bug.",
+      "parentUuid": "9a1a9d01_d8582e59",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_737bc9be",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
