@@ -42,3 +42,6 @@ tempest>=11.0.0 # Apache-2.0
 
 # Functional tests.
 requests>=2.10.0 # Apache-2.0
+
+# Required to stop the clock in third party libraries
+freezegun  # Apache-2.0
