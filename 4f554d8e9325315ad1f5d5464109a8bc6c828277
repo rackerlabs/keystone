@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_27004634",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-25T09:14:21Z",
+      "side": 1,
+      "message": "this is related that bug, they are different scoped.",
+      "parentUuid": "9a1a9d01_d6033e0e",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_529e5557",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-25T07:39:59Z",
       "side": 1,
       "message": "you have missed this.",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_87eef289",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2313,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-25T09:14:21Z",
+      "side": 1,
+      "message": "see the comments there, https://review.openstack.org/#/c/162570/2/keystone/tests/unit/test_backend.py",
+      "parentUuid": "9a1a9d01_96a626c0",
       "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
