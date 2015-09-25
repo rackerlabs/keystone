@@ -136,3 +136,70 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         resp = self.get('/OS-REVOKE/events?since=%s' % _future_time_string())
         events = resp.json_body['events']
         self.assertEqual([], events)
+
+
+class RaceConditions(test_v3.RestfulTestCase):
+    def create_token(self):
+        r = self.v3_authenticate_token(
+            self.build_authentication_request(
+                user_id=self.user['id'],
+                password=self.user['password']))
+        return r.headers.get('X-Subject-Token')
+
+    def revocation_event(self, token=None):
+        token = token or self.create_token()
+        new_password = uuid.uuid4().hex
+        self.post(
+            '/users/%s/password' % self.user['id'],
+            body={'user': {
+                'password': new_password,
+                'original_password': self.user['password']}},
+            token=token,
+            expected_status=http_client.NO_CONTENT)
+        self.user['password'] = new_password
+
+    def validate_token(self, token, expected_status=http_client.OK):
+        self.head(
+            '/auth/tokens',
+            headers={'X-Subject-Token': token},
+            expected_status=expected_status)
+
+    def test_create_eq_revoke_eq_validate(self):
+        token = self.create_token()
+        self.revocation_event(token)
+        self.validate_token(token, expected_status=http_client.NOT_FOUND)
+
+    def test_create_lt_revoke_eq_validate(self):
+        token = self.create_token()
+        self.revocation_event(token)
+        self.validate_token(token, expected_status=http_client.NOT_FOUND)
+
+    def test_create_eq_revoke_lt_validate(self):
+        token = self.create_token()
+        self.revocation_event(token)
+        self.validate_token(token, expected_status=http_client.NOT_FOUND)
+
+    def test_create_lt_revoke_lt_validate(self):
+        token = self.create_token()
+        self.revocation_event(token)
+        self.validate_token(token, expected_status=http_client.NOT_FOUND)
+
+    def test_revoke_eq_create_eq_validate(self):
+        # NOTE(dolph): This is the same test case as
+        # test_create_eq_revoke_eq_validate().
+        pass
+
+    def test_revoke_lt_create_eq_validate(self):
+        self.revocation_event()
+        token = self.create_token()
+        self.validate_token(token, expected_status=http_client.OK)
+
+    def test_revoke_eq_create_lt_validate(self):
+        # NOTE(dolph): This is the same test case as
+        # test_create_eq_revoke_lt_validate().
+        pass
+
+    def test_revoke_lt_create_lt_validate(self):
+        self.revocation_event()
+        token = self.create_token()
+        self.validate_token(token, expected_status=http_client.OK)
