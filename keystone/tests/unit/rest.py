@@ -85,9 +85,16 @@ class RestfulTestCase(unit.TestCase):
         # sets environ['REMOTE_ADDR']
         kwargs.setdefault('remote_addr', 'localhost')
 
-        response = app.request(path, headers=headers,
-                               status=expected_status, body=body,
-                               **kwargs)
+        if isinstance(expected_status, tuple):
+            status = '*'
+        else:
+            status = expected_status
+
+        response = app.request(
+            path, headers=headers, status=status, body=body, **kwargs)
+
+        if isinstance(expected_status, tuple):
+            self.assertResponseStatus(response, expected_status)
 
         return response
 
@@ -116,11 +123,18 @@ class RestfulTestCase(unit.TestCase):
 
             self.assertResponseStatus(response, http_client.NO_CONTENT)
         """
-        self.assertEqual(
-            response.status_code,
-            expected_status,
-            'Status code %s is not %s, as expected\n\n%s' %
-            (response.status_code, expected_status, response.body))
+        if isinstance(expected_status, tuple):
+            self.assertIn(
+                response.status_code,
+                expected_status,
+                'Status code %s is not in %s, as expected\n\n%s' %
+                (response.status_code, expected_status, response.body))
+        else:
+            self.assertEqual(
+                response.status_code,
+                expected_status,
+                'Status code %s is not %s, as expected\n\n%s' %
+                (response.status_code, expected_status, response.body))
 
     def assertValidResponseHeaders(self, response):
         """Ensures that response headers appear as expected."""
