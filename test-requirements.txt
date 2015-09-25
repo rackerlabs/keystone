@@ -34,3 +34,6 @@ tempest-lib>=0.10.0
 
 # Functional tests.
 requests!=2.8.0,>=2.5.2
+
+# Required to stop the clock in third party libraries
+freezegun
