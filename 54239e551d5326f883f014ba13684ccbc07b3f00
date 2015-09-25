@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_46c78512",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T13:41:46Z",
+      "side": 1,
+      "message": "Where does %S3_SERVICE_PORT% come from?",
+      "revId": "54239e551d5326f883f014ba13684ccbc07b3f00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
