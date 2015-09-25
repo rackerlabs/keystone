@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_ff5bae52",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T12:41:16Z",
+      "side": 1,
+      "message": "Developers should not need to have Keystone installed",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b573174d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T12:41:16Z",
+      "side": 1,
+      "message": "i would leave this out. it sounds out of place",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d596cb93",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T12:41:16Z",
+      "side": 1,
+      "message": "activate seems like a better work then enable",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_15f3e30b",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T12:41:16Z",
+      "side": 1,
+      "message": "This only works in an activated shell.",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
