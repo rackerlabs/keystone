@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_c14b7f2a",
+        "filename": "keystone/endpoint_policy/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T02:40:42Z",
+      "side": 1,
+      "message": "Why is this only returning the id of a policy and the the association object? To me this should return the same type of obect that is returned in the list (except obviously just one object instead of a list).",
+      "revId": "d763389d703ae5303cdf651da1d00c5ff118afed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
