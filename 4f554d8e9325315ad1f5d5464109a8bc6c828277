@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_d6033e0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-09-25T07:39:59Z",
+      "side": 1,
+      "message": "IMO you can use Related-Bug: #1259292 flag.\n\n[1] https://bugs.launchpad.net/heat/+bug/1259292",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_529e5557",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 3
@@ -13,6 +30,23 @@
       "writtenOn": "2015-06-29T21:41:44Z",
       "side": 1,
       "message": "These should be changed to assertIs rather than assertEqual since the value needs to be a bool.",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_96a626c0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2313,
+      "author": {
+        "id": 10795
+      },
+      "writtenOn": "2015-09-25T07:39:59Z",
+      "side": 1,
+      "message": "you have missed this.",
       "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
