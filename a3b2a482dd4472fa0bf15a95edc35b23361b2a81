@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_7dd6b4c6",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-25T19:23:36Z",
+      "side": 1,
+      "message": "You are making the assumption that we want to test the error[\u0027code\u0027] against the passed in expected_status, and that is a fair assumption. You could also say that the test author was trying to highlight the relationship between error[\u0027code\u0027] and response.status_code because there is some significance there. And through a transitive property error[\u0027code\u0027] must equal the passed in expected_status. \n\nIn all honesty the bug isn\u0027t all that valuable anyway, I just enforce the \"rules\" so we can stop the clean up patches for it :-) Which of the error messages below is more valuable to you as a developer? \n\n  testtools.matchers._impl.MismatchError: \u0027b\u0027 !\u003d \u0027a\u0027\n\n  - or -\n\n  testtools.matchers._impl.MismatchError: \u0027a\u0027 !\u003d \u0027b\u0027",
+      "parentUuid": "9a1a9d01_7f6eb1ca",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_737bc9be",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
