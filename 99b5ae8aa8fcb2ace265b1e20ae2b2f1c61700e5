@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_06d18dcd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-25T02:38:28Z",
+      "side": 1,
+      "message": "v3 APIs",
+      "revId": "99b5ae8aa8fcb2ace265b1e20ae2b2f1c61700e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_f510c150",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 6
@@ -30,6 +47,24 @@
       "writtenOn": "2015-09-24T23:11:13Z",
       "side": 1,
       "message": "The arguments here are backward. It should be (expected, observed).",
+      "revId": "99b5ae8aa8fcb2ace265b1e20ae2b2f1c61700e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_01cad7a1",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-09-25T02:38:28Z",
+      "side": 1,
+      "message": "+1 David",
+      "parentUuid": "9a1a9d01_92587b58",
       "revId": "99b5ae8aa8fcb2ace265b1e20ae2b2f1c61700e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
