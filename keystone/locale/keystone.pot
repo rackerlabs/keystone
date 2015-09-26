@@ -6,16 +6,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.dev14\n"
+"Project-Id-Version: keystone 9.0.0.dev21\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-09-24 06:09+0000\n"
+"POT-Creation-Date: 2015-09-26 06:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.0\n"
+"Generated-By: Babel 2.1.1\n"
 
 #: keystone/exception.py:78
 #, python-format
@@ -1123,8 +1123,8 @@ msgid ""
 msgstr ""
 
 #: keystone/contrib/revoke/core.py:227 keystone/token/provider.py:197
-#: keystone/token/provider.py:221 keystone/token/provider.py:287
-#: keystone/token/provider.py:294
+#: keystone/token/provider.py:221 keystone/token/provider.py:285
+#: keystone/token/provider.py:292
 msgid "Failed to validate token"
 msgstr ""
 
