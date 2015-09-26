@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_1e10c4a7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-26T10:21:37Z",
+      "side": 1,
+      "message": "I am going to update part of them and keep rest of them as is since it is not capital before or after in the same section for some of them, this depends on the conext of these docstring. \n\nDue to the same reason, consistency :)",
+      "parentUuid": "9a1a9d01_5aadfbe7",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_dd0340b7",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-25T19:11:37Z",
       "side": 1,
       "message": "Shouldn\u0027t it be  \":raises: keystone.exception.RegionNotFound If .....\"\n\n(The colon before and after raises)",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5e64fc47",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-26T10:21:37Z",
+      "side": 1,
+      "message": "I don\u0027t think so, you can generate the doc and see whether it is necessary.",
+      "parentUuid": "9a1a9d01_dd0340b7",
       "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_3e61083a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-26T10:21:37Z",
+      "side": 1,
+      "message": "this is what is was but I am happy to update this.",
+      "parentUuid": "9a1a9d01_da87cb5f",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7a7c7f72",
         "filename": "keystone/common/utils.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-25T16:47:50Z",
       "side": 1,
       "message": "s/if/If  -\u003e for consistency :)",
+      "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_fe5ab082",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-26T10:21:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_7a7c7f72",
       "revId": "bc18b8cf1b8d794ab262c2d3c9b6ab29ca3232bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
