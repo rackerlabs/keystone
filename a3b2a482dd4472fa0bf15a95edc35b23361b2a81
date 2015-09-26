@@ -162,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_dc3b34d0",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-26T13:07:37Z",
+      "side": 1,
+      "message": "Agree that the bug itself is not such valuable unless one day something else won\u0027t be done based on the sequence of these arguements, but it seems not by far.",
+      "parentUuid": "9a1a9d01_e509ca2d",
+      "revId": "a3b2a482dd4472fa0bf15a95edc35b23361b2a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_737bc9be",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
