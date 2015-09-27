@@ -24,9 +24,15 @@ from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource as cadfresource
 
+from keystone.assignment import controllers as assignment_controllers
+from keystone.catalog import controllers as catalog_controllers
+from keystone.identity import controllers as identity_controllers
 from keystone import notifications
+from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+import testtools
+
 
 
 CONF = cfg.CONF
@@ -638,6 +644,51 @@ class CADFNotificationsForEntities(NotificationsForEntities):
         payload = audit['payload']
         self.assertEqual(self.user_id, payload['initiator']['id'])
         self.assertEqual(self.project_id, payload['initiator']['project_id'])
+
+class V2Notifications(BaseNotificationTest):
+
+    _CONTEXT = {'is_admin': True, 'query_string': {}}
+
+    def setUp(self):
+        V2Notifications.setUp(self)
+        self.config_fixture.config(notification_format='cadf')
+        self.project_controller = resource_controllers.Tenant()
+        self.role_controller = assignment_controllers.Role()
+        self.user_controller = identity_controllers.User()
+        self.endpoint_controller = catalog_controllers.Endpoint()
+        self.service_controller = catalog_controllers.Service()
+
+    @testtools.skipTest("reason")
+    def test_project(self):
+        v3_ref = self.new_project_ref(self.domain_id)
+        v2_ref = self.project_controller.v3_to_v2_project(v3_ref)
+        self.project_controller.create_project(self._CONTEXT, v2_ref)
+
+    @testtools.skipTest("reason")
+    def test_user(self):
+        v3_ref = self.new_user_ref(self.domain_id)
+        v2_ref = self.user_controller.v3_to_v2_user(v3_ref)
+        self.user_controller.create_user(self._CONTEXT, v2_ref)
+
+    @testtools.skipTest("reason")
+    def test_role(self):
+        v3_ref = self.new_role_ref()
+        self.role_controller.create_role(self._CONTEXT, v3_ref)
+
+    @testtools.skipTest("reason")
+    def test_endpoint(self):
+        ref = {
+            "publicurl": "http://host-3:8774/v1.1/$(tenant_id)s",
+            "internalurl": "http://host-3:8774/v1.1/$(tenant_id)s",
+            "adminurl": "http://host-3:8774/v1.1/$(tenant_id)s",
+            "service_id": self.service_id
+        }
+        self.endpoint_controller.create_endpoint(self._CONTEXT, ref)
+
+    @testtools.skipTest("reason")
+    def test_service(self):
+        ref = self.new_service_ref()
+        self.service_controller.create_service(self._CONTEXT, ref)
 
 
 class TestEventCallbacks(test_v3.RestfulTestCase):
