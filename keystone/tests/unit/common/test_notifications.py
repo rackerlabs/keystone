@@ -28,7 +28,6 @@ from keystone import notifications
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
-
 CONF = cfg.CONF
 
 EXP_RESOURCE_TYPE = uuid.uuid4().hex
@@ -638,6 +637,120 @@ class CADFNotificationsForEntities(NotificationsForEntities):
         payload = audit['payload']
         self.assertEqual(self.user_id, payload['initiator']['id'])
         self.assertEqual(self.project_id, payload['initiator']['project_id'])
+
+
+class V2Notifications(BaseNotificationTest):
+    def setUp(self):
+        super(V2Notifications, self).setUp()
+        self.config_fixture.config(notification_format='cadf')
+
+    def _assert_initiator_data_is_set(self, action, typeURI):
+        self.assertTrue(len(self._audits) > 0)
+        audit = self._audits[-1]
+        payload = audit['payload']
+        self.assertEqual(self.user_id, payload['initiator']['id'])
+        self.assertEqual(self.project_id, payload['initiator']['project_id'])
+        self.assertEqual(typeURI, payload['target']['typeURI'])
+        self.assertEqual(action, payload['action'])
+
+    def test_user(self):
+        token = self.get_scoped_token()
+        self.admin_request(
+            method='POST',
+            path='/v2.0/users',
+            body={
+                'user': {
+                    'name': uuid.uuid4().hex,
+                    'password': uuid.uuid4().hex,
+                    'enabled': True,
+                },
+            },
+            token=token,
+        )
+        self._assert_initiator_data_is_set('created.user',
+                                           cadftaxonomy.SECURITY_ACCOUNT_USER)
+
+    def test_role(self):
+        token = self.get_scoped_token()
+        self.admin_request(
+            method='POST',
+            path='/v2.0/OS-KSADM/roles',
+            body={
+                'role': {
+                    'name': uuid.uuid4().hex,
+                    'description': uuid.uuid4().hex,
+                },
+            },
+            token=token,
+        )
+        self._assert_initiator_data_is_set('created.role',
+                                           cadftaxonomy.SECURITY_ROLE)
+
+    def test_service(self):
+        token = self.get_scoped_token()
+        self.admin_request(
+            method='POST',
+            path='/v2.0/OS-KSADM/services',
+            body={
+                'OS-KSADM:service': {
+                    'name': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'description': uuid.uuid4().hex,
+                },
+            },
+            token=token,
+        )
+        self._assert_initiator_data_is_set('created.service',
+                                           cadftaxonomy.SECURITY_SERVICE)
+
+    def test_endpoint(self):
+        token = self.get_scoped_token()
+        resp = self.admin_request(
+            method='POST',
+            path='/v2.0/OS-KSADM/services',
+            body={
+                'OS-KSADM:service': {
+                    'name': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'description': uuid.uuid4().hex,
+                },
+            },
+            token=token,
+        )
+        service_id = resp.result.get('OS-KSADM:service').get('id')
+        self.admin_request(
+            method='POST',
+            path='/v2.0/endpoints',
+            body={
+                'endpoint': {
+                    'region': uuid.uuid4().hex,
+                    'service_id': service_id,
+                    'publicurl': uuid.uuid4().hex,
+                    'adminurl': uuid.uuid4().hex,
+                    'internalurl': uuid.uuid4().hex,
+                },
+            },
+            token=token,
+        )
+        self._assert_initiator_data_is_set('created.endpoint',
+                                           cadftaxonomy.SECURITY_ENDPOINT)
+
+    def test_project(self):
+        token = self.get_scoped_token()
+        self.admin_request(
+            method='POST',
+            path='/v2.0/tenants',
+            body={
+                'tenant': {
+                    'name': uuid.uuid4().hex,
+                    'description': uuid.uuid4().hex,
+                    'enabled': True
+                },
+            },
+            token=token,
+        )
+        self._assert_initiator_data_is_set('created.project',
+                                           cadftaxonomy.SECURITY_PROJECT)
 
 
 class TestEventCallbacks(test_v3.RestfulTestCase):
