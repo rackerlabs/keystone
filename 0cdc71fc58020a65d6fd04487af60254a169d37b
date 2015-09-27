@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_1ad76724",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-27T14:14:58Z",
+      "side": 1,
+      "message": "How about \"only the endpoints of the service which has the public interface endpoint will be  converted into v2 endpoints?\"",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_faddd314",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-27T14:14:58Z",
+      "side": 1,
+      "message": "maybe you can also use \u0027unit.new_endpoint_ref\u0027 here.",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7ad22302",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-27T14:14:58Z",
+      "side": 1,
+      "message": "same here for simplicity.",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
