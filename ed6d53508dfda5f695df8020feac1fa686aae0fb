@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_c0b55931",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "why did this change? There should be a comment why innerjoin is used here vs the default of \"left outer join\".\n\nThis change should probably be a separate commit. There\u0027s no explanation in the commit message why this is needed for the bug fix.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1b0ae021",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "this comment is unnecessary, it just says what the code below already does. Comments should say \"why\"... why return the unfiltered catalog for domain-scoped tokens?",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7b2afc7f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "there\u0027s no need to try to fit this all in 1 statement, and it\u0027s extra confusing. split it up.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5b75b895",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "suggest remove the else or be consistent in using else even when returning from if statement.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_fbd92c84",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "is the goal here to write code as obscure as possible?",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_27f6aaf9",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "use unit.new_service_ref()",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_07a36601",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "no need to copy.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c7c6ce99",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "suggest return the value from create_service. That\u0027s the service that was actually created.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e7dc3275",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "use unit.new_endpoint_ref()",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_27a8eada",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "no need to copy.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_67d7c24b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "suggest return the value from create_endpoint",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_8753f6e1",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "change \"catalogue\" to \"catalog\". This applies in other places where \"catalogue\" is used.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_070da6e7",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "replace these 2 lines with\n\n  new_endpoint.pop(\u0027service_id\u0027, None)\n\nAlso, I\u0027d prefer it if the tests didn\u0027t have to guess if the endpoint has a service ID or now.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c7224e52",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "suggest use the HasLength matcher so we get a nicer error message. This applies to all the other places where checking the length.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c7d00e22",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "provide a name for the \u0027user\u0027 and None parameters so we know what they\u0027re for.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_07e5a6da",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "there\u0027s an extra space after catalog.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c7d32e03",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "there\u0027s an extra \u0027, \u0027 at the end of the string. Check the other ones, too.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_87f0d692",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "whatever ... the config value is set to?",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2738ea3c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "these should be split up into separate test methods.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_877536fb",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "remove extra parenthesis. This applies in other places, too (e.g., line 745)",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6767c24d",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T21:06:21Z",
+      "side": 1,
+      "message": "use assertIn . This applies to the next line, too.",
+      "revId": "ed6d53508dfda5f695df8020feac1fa686aae0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
