@@ -16,6 +16,24 @@
       "revId": "5b1a7f4775b2a6ccf5db8b736701144aa42ff5ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_8f93124f",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T18:57:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_0ceea322",
+      "revId": "5b1a7f4775b2a6ccf5db8b736701144aa42ff5ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
