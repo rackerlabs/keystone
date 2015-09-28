@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_859f73b3",
+        "filename": "keystone/tests/unit/external/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T19:45:03Z",
+      "side": 1,
+      "message": "Would be nice to have a\n\n  README\n  \u003d\u003d\u003d\u003d\u003d\n\nline.",
+      "revId": "93b82ea503f26245ceca67342dc1e47ad9e9cf26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_65d1ff56",
+        "filename": "keystone/tests/unit/external/test_timeutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T19:45:03Z",
+      "side": 1,
+      "message": "There should be a comment saying why we think we need to test this.",
+      "revId": "93b82ea503f26245ceca67342dc1e47ad9e9cf26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e54c2f44",
+        "filename": "keystone/tests/unit/external/test_timeutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-28T19:45:03Z",
+      "side": 1,
+      "message": "should be a comment that makes it clear what\u0027s wrong with this.",
+      "revId": "93b82ea503f26245ceca67342dc1e47ad9e9cf26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
