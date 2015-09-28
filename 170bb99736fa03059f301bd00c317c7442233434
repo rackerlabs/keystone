@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_56583c32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-28T16:56:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_c3daac78",
+      "revId": "170bb99736fa03059f301bd00c317c7442233434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_c3486c30",
         "filename": "keystone/server/wsgi.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-24T21:29:34Z",
       "side": 1,
       "message": "I really don\u0027t like this here since I don\u0027t think this file should even know about httpd/keystone.py. Why not setup logging in httpd/keystone.py instead?",
+      "revId": "170bb99736fa03059f301bd00c317c7442233434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_168ba4c4",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-28T16:56:27Z",
+      "side": 1,
+      "message": "David,  I made your change in patch set 12, sorry I just got around to testing it this morning.  It looks like logging is not set up yet in keystone.py.  It looks like its set up in wsgi.py when common.configure() is called.  \ni think either i could;\n\n1) Pass in a function that has the decorator(patch set 5)\n\n2) Call the deprecation inside wsgi.py\n\nI am going to upload another patch that is going to be similar to number 1.   Thanks you for reviewing my patch! :)",
+      "parentUuid": "9a1a9d01_c3486c30",
       "revId": "170bb99736fa03059f301bd00c317c7442233434",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
