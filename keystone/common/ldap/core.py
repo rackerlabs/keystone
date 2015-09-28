@@ -25,6 +25,7 @@ import ldappool
 from oslo_log import log
 import six
 from six.moves import map, zip
+from six.moves.urllib import parse as urlparse
 
 from keystone import exception
 from keystone.i18n import _
@@ -509,7 +510,7 @@ class PythonLDAPHandler(LDAPHandler):
                                     tls_req_cert=tls_req_cert,
                                     debug_level=debug_level)
 
-        self.conn = ldap.initialize(url)
+        self.conn = ldap.initialize(','.join(url))
         self.conn.protocol_version = ldap.VERSION3
 
         if alias_dereferencing is not None:
@@ -582,13 +583,17 @@ def _common_ldap_initialization(url, use_tls=False, tls_cacertfile=None,
     if debug_level is not None:
         ldap.set_option(ldap.OPT_DEBUG_LEVEL, debug_level)
 
-    using_ldaps = url.lower().startswith("ldaps")
+    # Ensure each URL has the same scheme (either ldap or ldaps)
+    scheme = urlparse.urlparse(url[0]).scheme
+    for u in url:
+        if urlparse.urlparse(u).scheme != scheme:
+            raise AssertionError(_('Invalid combination of LDAP and LDAPS'))
 
-    if use_tls and using_ldaps:
+    if use_tls and scheme == 'ldaps':
         raise AssertionError(_('Invalid TLS / LDAPS combination'))
 
     # The certificate trust options apply for both LDAPS and TLS.
-    if use_tls or using_ldaps:
+    if use_tls or scheme == 'ldaps':
         if not ldap.TLS_AVAIL:
             raise ValueError(_('Invalid LDAP TLS_AVAIL option: %s. TLS '
                                'not available') % ldap.TLS_AVAIL)
