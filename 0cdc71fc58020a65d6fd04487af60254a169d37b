@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_a57c2073",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-28T15:49:40Z",
+      "side": 1,
+      "message": "It\u0027s better, thanks~",
+      "parentUuid": "9a1a9d01_1ad76724",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_faddd314",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-27T14:14:58Z",
       "side": 1,
       "message": "maybe you can also use \u0027unit.new_endpoint_ref\u0027 here.",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7071c8df",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-28T15:49:40Z",
+      "side": 1,
+      "message": "unit.new_endpoint_ref has some problem, and no http API call in tests is using it (the only place using it is a catalog_api call). I may commit another patch for that later.",
+      "parentUuid": "9a1a9d01_faddd314",
       "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
