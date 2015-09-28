@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_27c6c19a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-09-28T12:49:31Z",
+      "side": 1,
+      "message": "as per my comment on the 1st patch, I\u0027d really like us to mention somewhere in the commit message that we are talking about test methods here - not the main code itself",
+      "revId": "eb4c928d1d31d030d43966e920072a8e26553478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_6436f753",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
