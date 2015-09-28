@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_471df50d",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-28T12:52:32Z",
+      "side": 1,
+      "message": "we should rather put \u0027mapped\u0027 or \u0027saml2\u0027 here.",
+      "revId": "68b35be397389869c1da1f78929f95d461b8ab6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
