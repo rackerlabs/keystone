@@ -25,6 +25,7 @@ import ldappool
 from oslo_log import log
 import six
 from six.moves import map, zip
+from six.moves.urllib import parse as urlparse
 
 from keystone import exception
 from keystone.i18n import _
@@ -424,7 +425,7 @@ class LDAPHandler(object):
         self.conn = conn
 
     @abc.abstractmethod
-    def connect(self, url, page_size=0, alias_dereferencing=None,
+    def connect(self, urls, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None,
                 use_pool=None, pool_size=None, pool_retry_max=None,
@@ -495,21 +496,21 @@ class PythonLDAPHandler(LDAPHandler):
     def __init__(self, conn=None):
         super(PythonLDAPHandler, self).__init__(conn=conn)
 
-    def connect(self, url, page_size=0, alias_dereferencing=None,
+    def connect(self, urls, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None,
                 use_pool=None, pool_size=None, pool_retry_max=None,
                 pool_retry_delay=None, pool_conn_timeout=None,
                 pool_conn_lifetime=None):
 
-        _common_ldap_initialization(url=url,
+        _common_ldap_initialization(urls=urls,
                                     use_tls=use_tls,
                                     tls_cacertfile=tls_cacertfile,
                                     tls_cacertdir=tls_cacertdir,
                                     tls_req_cert=tls_req_cert,
                                     debug_level=debug_level)
 
-        self.conn = ldap.initialize(url)
+        self.conn = ldap.initialize(','.join(urls))
         self.conn.protocol_version = ldap.VERSION3
 
         if alias_dereferencing is not None:
@@ -569,11 +570,11 @@ class PythonLDAPHandler(LDAPHandler):
         return self.conn.delete_ext_s(dn, serverctrls, clientctrls)
 
 
-def _common_ldap_initialization(url, use_tls=False, tls_cacertfile=None,
+def _common_ldap_initialization(urls, use_tls=False, tls_cacertfile=None,
                                 tls_cacertdir=None, tls_req_cert=None,
                                 debug_level=None):
     """LDAP initialization for PythonLDAPHandler and PooledLDAPHandler."""
-    LOG.debug("LDAP init: url=%s", url)
+    LOG.debug("LDAP init: urls=%s", urls)
     LOG.debug('LDAP init: use_tls=%s tls_cacertfile=%s tls_cacertdir=%s '
               'tls_req_cert=%s tls_avail=%s',
               use_tls, tls_cacertfile, tls_cacertdir,
@@ -582,13 +583,17 @@ def _common_ldap_initialization(url, use_tls=False, tls_cacertfile=None,
     if debug_level is not None:
         ldap.set_option(ldap.OPT_DEBUG_LEVEL, debug_level)
 
-    using_ldaps = url.lower().startswith("ldaps")
+    # Ensure each URL has the same scheme (either ldap or ldaps)
+    scheme = urlparse.urlparse(urls[0]).scheme
+    for url in urls:
+        if urlparse.urlparse(url).scheme != scheme:
+            raise AssertionError(_('Invalid combination of LDAP and LDAPS'))
 
-    if use_tls and using_ldaps:
+    if use_tls and scheme == 'ldaps':
         raise AssertionError(_('Invalid TLS / LDAPS combination'))
 
     # The certificate trust options apply for both LDAPS and TLS.
-    if use_tls or using_ldaps:
+    if use_tls or scheme == 'ldaps':
         if not ldap.TLS_AVAIL:
             raise ValueError(_('Invalid LDAP TLS_AVAIL option: %s. TLS '
                                'not available') % ldap.TLS_AVAIL)
@@ -680,14 +685,14 @@ class PooledLDAPHandler(LDAPHandler):
         self.use_auth_pool = use_auth_pool
         self.conn_pool = None
 
-    def connect(self, url, page_size=0, alias_dereferencing=None,
+    def connect(self, urls, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None,
                 use_pool=None, pool_size=None, pool_retry_max=None,
                 pool_retry_delay=None, pool_conn_timeout=None,
                 pool_conn_lifetime=None):
 
-        _common_ldap_initialization(url=url,
+        _common_ldap_initialization(urls=urls,
                                     use_tls=use_tls,
                                     tls_cacertfile=tls_cacertfile,
                                     tls_cacertdir=tls_cacertdir,
@@ -704,14 +709,14 @@ class PooledLDAPHandler(LDAPHandler):
             self.set_option(ldap.OPT_REFERRALS, int(chase_referrals))
 
         if self.use_auth_pool:  # separate pool when use_auth_pool enabled
-            pool_url = self.auth_pool_prefix + url
+            pool_url = self.auth_pool_prefix + ','.join(urls)
         else:
-            pool_url = url
+            pool_url = ','.join(urls)
         try:
             self.conn_pool = self.connection_pools[pool_url]
         except KeyError:
             self.conn_pool = ldappool.ConnectionManager(
-                url,
+                urls,
                 size=pool_size,
                 retry_max=pool_retry_max,
                 retry_delay=pool_retry_delay,
@@ -870,14 +875,14 @@ class KeystoneLDAPHandler(LDAPHandler):
         # Disable the pagination from now on
         self.page_size = 0
 
-    def connect(self, url, page_size=0, alias_dereferencing=None,
+    def connect(self, urls, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None,
                 use_pool=None, pool_size=None,
                 pool_retry_max=None, pool_retry_delay=None,
                 pool_conn_timeout=None, pool_conn_lifetime=None):
         self.page_size = page_size
-        return self.conn.connect(url, page_size, alias_dereferencing,
+        return self.conn.connect(urls, page_size, alias_dereferencing,
                                  use_tls, tls_cacertfile, tls_cacertdir,
                                  tls_req_cert, chase_referrals,
                                  debug_level=debug_level,
@@ -1085,10 +1090,11 @@ def register_handler(prefix, handler):
     _HANDLERS[prefix] = handler
 
 
-def _get_connection(conn_url, use_pool=False, use_auth_pool=False):
+def _get_connection(conn_urls, use_pool=False, use_auth_pool=False):
     for prefix, handler in _HANDLERS.items():
-        if conn_url.startswith(prefix):
-            return handler()
+        for url in conn_urls:
+            if url.startswith(prefix):
+                return handler()
 
     if use_pool:
         return PooledLDAPHandler(use_auth_pool=use_auth_pool)

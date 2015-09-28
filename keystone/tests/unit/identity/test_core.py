@@ -141,7 +141,7 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(domain['id'], domain)
         # Override two config options for our domain
-        conf = {'ldap': {'url': uuid.uuid4().hex,
+        conf = {'ldap': {'url': [uuid.uuid4().hex],
                          'suffix': uuid.uuid4().hex,
                          'use_tls': 'True'},
                 'identity': {

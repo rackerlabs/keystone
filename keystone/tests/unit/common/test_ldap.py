@@ -299,7 +299,7 @@ class SslTlsTest(unit.TestCase):
         self.addCleanup(os.unlink, certfile)
         self.addCleanup(os.close, handle)
         self.config_fixture.config(group='ldap',
-                                   url='ldap://localhost',
+                                   url=['ldap://localhost'],
                                    use_tls=True,
                                    tls_cacertfile=certfile)
 
@@ -312,7 +312,7 @@ class SslTlsTest(unit.TestCase):
         # We need this to actually exist, so we create a tempdir.
         certdir = self.useFixture(fixtures.TempDir()).path
         self.config_fixture.config(group='ldap',
-                                   url='ldap://localhost',
+                                   url=['ldap://localhost'],
                                    use_tls=True,
                                    tls_cacertdir=certdir)
 
@@ -327,7 +327,7 @@ class SslTlsTest(unit.TestCase):
         self.addCleanup(os.unlink, certfile)
         self.addCleanup(os.close, handle)
         self.config_fixture.config(group='ldap',
-                                   url='ldaps://localhost',
+                                   url=['ldaps://localhost'],
                                    use_tls=False,
                                    tls_cacertfile=certfile)
 
@@ -340,7 +340,7 @@ class SslTlsTest(unit.TestCase):
         # We need this to actually exist, so we create a tempdir.
         certdir = self.useFixture(fixtures.TempDir()).path
         self.config_fixture.config(group='ldap',
-                                   url='ldaps://localhost',
+                                   url=['ldaps://localhost'],
                                    use_tls=False,
                                    tls_cacertdir=certdir)
 

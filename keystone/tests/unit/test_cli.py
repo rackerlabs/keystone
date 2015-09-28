@@ -101,21 +101,21 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         # The values below are the same as in the domain_configs_multi_ldap
         # directory of test config_files.
         default_config = {
-            'ldap': {'url': 'fake://memory',
+            'ldap': {'url': ['fake://memory'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
             'identity': {'driver': 'ldap'}
         }
         domain1_config = {
-            'ldap': {'url': 'fake://memory1',
+            'ldap': {'url': ['fake://memory1'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
             'identity': {'driver': 'ldap'}
         }
         domain2_config = {
-            'ldap': {'url': 'fake://memory',
+            'ldap': {'url': ['fake://memory'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=myroot,cn=com',
@@ -149,7 +149,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
         # The values below are the same as in the domain_configs_multi_ldap
         # directory of test config_files.
         default_config = {
-            'ldap': {'url': 'fake://memory',
+            'ldap': {'url': ['fake://memory'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
@@ -173,7 +173,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
     def test_no_overwrite_config(self):
         # Create a config for the default domain
         default_config = {
-            'ldap': {'url': uuid.uuid4().hex},
+            'ldap': {'url': [uuid.uuid4().hex]},
             'identity': {'driver': 'ldap'}
         }
         self.domain_config_api.create_config(

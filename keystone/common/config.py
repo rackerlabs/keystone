@@ -565,8 +565,14 @@ FILE_OPTIONS = {
                         'the keystone.endpoint_policy namespace.'),
     ],
     'ldap': [
-        cfg.StrOpt('url', default='ldap://localhost',
-                   help='URL for connecting to the LDAP server.'),
+        cfg.MultiStrOpt('url', default=['ldap://localhost'],
+                        help='URL(s) for connecting to the LDAP server. This '
+                             'configuration option may be repeated for '
+                             'multiple values. The first URL to successfully '
+                             'bind is used for the connection. '
+                             'For example: '
+                             'url=ldap://localhost:389 '
+                             'url=ldap://ldap.company.com:389'),
         cfg.StrOpt('user',
                    help='User BindDN to query the LDAP server.'),
         cfg.StrOpt('password', secret=True,

@@ -30,6 +30,7 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 from six import moves
+from six.moves.urllib import parse as urlparse
 
 from keystone.common.ldap import core
 from keystone import exception
@@ -234,22 +235,23 @@ class FakeLdap(core.LDAPHandler):
         super(FakeLdap, self).__init__(conn=conn)
         self._ldap_options = {ldap.OPT_DEREF: ldap.DEREF_NEVER}
 
-    def connect(self, url, page_size=0, alias_dereferencing=None,
+    def connect(self, urls, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None,
                 use_pool=None, pool_size=None, pool_retry_max=None,
                 pool_retry_delay=None, pool_conn_timeout=None,
                 pool_conn_lifetime=None):
-        if url.startswith('fake://memory'):
-            if url not in FakeShelves:
-                FakeShelves[url] = FakeShelve()
-            self.db = FakeShelves[url]
+        urls_str = ','.join(urls)
+        if urls_str.startswith('fake://memory'):
+            if urls_str not in FakeShelves:
+                FakeShelves[urls_str] = FakeShelve()
+            self.db = FakeShelves[urls_str]
         else:
-            self.db = shelve.open(url[7:])
+            self.db = shelve.open(urls[0][7:])
 
-        using_ldaps = url.lower().startswith("ldaps")
+        scheme = urlparse.urlparse(urls[0]).scheme
 
-        if use_tls and using_ldaps:
+        if use_tls and scheme == 'ldaps':
             raise AssertionError('Invalid TLS / LDAPS combination')
 
         if use_tls:
@@ -557,7 +559,7 @@ class FakeLdapPool(FakeLdap):
 
     def __init__(self, uri, retry_max=None, retry_delay=None, conn=None):
         super(FakeLdapPool, self).__init__(conn=conn)
-        self.url = uri
+        self.urls = uri
         self.connected = None
         self.conn = self
         self._connection_time = 5  # any number greater than 0
@@ -567,12 +569,13 @@ class FakeLdapPool(FakeLdap):
 
     def simple_bind_s(self, who=None, cred=None,
                       serverctrls=None, clientctrls=None):
-        if self.url.startswith('fakepool://memory'):
-            if self.url not in FakeShelves:
-                FakeShelves[self.url] = FakeShelve()
-            self.db = FakeShelves[self.url]
+        urls_str = ','.join(self.urls)
+        if urls_str.startswith('fakepool://memory'):
+            if urls_str not in FakeShelves:
+                FakeShelves[urls_str] = FakeShelve()
+            self.db = FakeShelves[urls_str]
         else:
-            self.db = shelve.open(self.url[11:])
+            self.db = shelve.open(self.urls[0][11:])
 
         if not who:
             who = 'cn=Admin'

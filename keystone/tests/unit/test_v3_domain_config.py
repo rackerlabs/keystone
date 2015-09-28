@@ -31,7 +31,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
         self.domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(self.domain['id'], self.domain)
-        self.config = {'ldap': {'url': uuid.uuid4().hex,
+        self.config = {'ldap': {'url': [uuid.uuid4().hex],
                                 'user_tree_dn': uuid.uuid4().hex},
                        'identity': {'driver': uuid.uuid4().hex}}
 
@@ -109,7 +109,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
     def test_get_non_existant_config_group(self):
         """Call ``GET /domains{domain_id}/config/{group_not_exist}``."""
-        config = {'ldap': {'url': uuid.uuid4().hex}}
+        config = {'ldap': {'url': [uuid.uuid4().hex]}}
         self.domain_config_api.create_config(self.domain['id'], config)
         self.get('/domains/%(domain_id)s/config/identity' % {
             'domain_id': self.domain['id']},
@@ -117,7 +117,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
     def test_get_non_existant_config_option(self):
         """Call ``GET /domains{domain_id}/config/group/{option_not_exist}``."""
-        config = {'ldap': {'url': uuid.uuid4().hex}}
+        config = {'ldap': {'url': [uuid.uuid4().hex]}}
         self.domain_config_api.create_config(self.domain['id'], config)
         self.get('/domains/%(domain_id)s/config/ldap/user_tree_dn' % {
             'domain_id': self.domain['id']},
@@ -126,7 +126,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
     def test_update_config(self):
         """Call ``PATCH /domains/{domain_id}/config``."""
         self.domain_config_api.create_config(self.domain['id'], self.config)
-        new_config = {'ldap': {'url': uuid.uuid4().hex},
+        new_config = {'ldap': {'url': [uuid.uuid4().hex]},
                       'identity': {'driver': uuid.uuid4().hex}}
         r = self.patch('/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']},
@@ -142,7 +142,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
     def test_update_config_group(self):
         """Call ``PATCH /domains/{domain_id}/config/{group}``."""
         self.domain_config_api.create_config(self.domain['id'], self.config)
-        new_config = {'ldap': {'url': uuid.uuid4().hex,
+        new_config = {'ldap': {'url': [uuid.uuid4().hex],
                                'user_filter': uuid.uuid4().hex}}
         r = self.patch('/domains/%(domain_id)s/config/ldap' % {
             'domain_id': self.domain['id']},

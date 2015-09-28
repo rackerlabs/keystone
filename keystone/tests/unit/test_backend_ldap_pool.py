@@ -80,12 +80,12 @@ class LdapPoolCommonTestMixin(object):
 
     def test_pool_size_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.pool_size, ldappool_cm.size)
 
     def test_pool_retry_max_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.pool_retry_max, ldappool_cm.retry_max)
 
     def test_pool_retry_delay_set(self):
@@ -93,28 +93,28 @@ class LdapPoolCommonTestMixin(object):
         self.identity_api.get_user(self.user_foo['id'])
 
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.pool_retry_delay, ldappool_cm.retry_delay)
 
     def test_pool_use_tls_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.use_tls, ldappool_cm.use_tls)
 
     def test_pool_timeout_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.pool_connection_timeout,
                          ldappool_cm.timeout)
 
     def test_pool_use_pool_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.use_pool, ldappool_cm.use_pool)
 
     def test_pool_connection_lifetime_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         self.assertEqual(CONF.ldap.pool_connection_lifetime,
                          ldappool_cm.max_lifetime)
 
@@ -123,7 +123,7 @@ class LdapPoolCommonTestMixin(object):
         who = CONF.ldap.user
         cred = CONF.ldap.password
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         ldappool_cm.size = 2
 
         # 3rd connection attempt should raise Max connection error
@@ -143,7 +143,7 @@ class LdapPoolCommonTestMixin(object):
         who = CONF.ldap.user
         cred = CONF.ldap.password
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[','.join(CONF.ldap.url)]
         ldappool_cm.size = 3
 
         def _get_conn():

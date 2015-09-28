@@ -1385,7 +1385,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_chase_referrals_off(self, mocked_fakeldap):
         self.config_fixture.config(
             group='ldap',
-            url='fake://memory',
+            url=['fake://memory'],
             chase_referrals=False)
         user_api = identity.backends.ldap.UserApi(CONF)
         user_api.get_connection(user=None, password=None)
@@ -1399,7 +1399,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_chase_referrals_on(self, mocked_fakeldap):
         self.config_fixture.config(
             group='ldap',
-            url='fake://memory',
+            url=['fake://memory'],
             chase_referrals=True)
         user_api = identity.backends.ldap.UserApi(CONF)
         user_api.get_connection(user=None, password=None)
@@ -1414,7 +1414,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         level = 12345
         self.config_fixture.config(
             group='ldap',
-            url='fake://memory',
+            url=['fake://memory'],
             debug_level=level)
         user_api = identity.backends.ldap.UserApi(CONF)
         user_api.get_connection(user=None, password=None)
@@ -2773,7 +2773,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
         # set in the standard primary config file
         self.assertFalse(conf.identity.domain_specific_drivers_enabled)
         # ..and make sure a domain-specific options is also set
-        self.assertEqual('fake://memory1', conf.ldap.url)
+        self.assertEqual(['fake://memory1'], conf.ldap.url)
 
     def test_delete_domain_with_user_added(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -2859,21 +2859,21 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         # The values below are the same as in the domain_configs_multi_ldap
         # cdirectory of test config_files.
         default_config = {
-            'ldap': {'url': 'fake://memory',
+            'ldap': {'url': ['fake://memory'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
             'identity': {'driver': 'ldap'}
         }
         domain1_config = {
-            'ldap': {'url': 'fake://memory1',
+            'ldap': {'url': ['fake://memory1'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
             'identity': {'driver': 'ldap'}
         }
         domain2_config = {
-            'ldap': {'url': 'fake://memory',
+            'ldap': {'url': ['fake://memory'],
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=myroot,cn=com',
@@ -2905,7 +2905,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         self.config_fixture.config(
             group='identity', domain_configurations_from_database=False)
         self.load_backends()
-        new_config = {'ldap': {'url': uuid.uuid4().hex}}
+        new_config = {'ldap': {'url': [uuid.uuid4().hex]}}
         self.domain_config_api.create_config(
             CONF.identity.default_domain_id, new_config)
         # Trigger the identity backend to initialise any domain specific
@@ -2926,7 +2926,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         # Create a new config for the default domain, hence overwriting the
         # current settings.
         new_config = {
-            'ldap': {'url': uuid.uuid4().hex},
+            'ldap': {'url': [uuid.uuid4().hex]},
             'identity': {'driver': 'ldap'}}
         self.domain_config_api.create_config(
             CONF.identity.default_domain_id, new_config)
@@ -2935,7 +2935,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         self.assertEqual(new_config['ldap']['url'], default_config.ldap.url)
 
         # Ensure updating is also honored
-        updated_config = {'url': uuid.uuid4().hex}
+        updated_config = {'url': [uuid.uuid4().hex]}
         self.domain_config_api.update_config(
             CONF.identity.default_domain_id, updated_config,
             group='ldap', option='url')
@@ -2976,7 +2976,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         # By using a slightly different config, we cause the driver to be
         # reloaded...and hence check if we can reuse the sql driver
         new_config = {'identity': {'driver': 'sql'},
-                      'ldap': {'url': 'fake://memory1'}}
+                      'ldap': {'url': ['fake://memory1']}}
         self.domain_config_api.create_config(
             CONF.identity.default_domain_id, new_config)
         self.identity_api.domain_configs.get_domain_conf(
