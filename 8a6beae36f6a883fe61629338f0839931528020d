@@ -34,6 +34,24 @@
       "revId": "8a6beae36f6a883fe61629338f0839931528020d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2ab75487",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-09-28T19:35:19Z",
+      "side": 1,
+      "message": "I agree with Alexander. idp_id and protocol_id can\u0027t be empty string or empty list. So please remove this code as part of cleanup.",
+      "parentUuid": "ba15a1d1_ea37f7ad",
+      "revId": "8a6beae36f6a883fe61629338f0839931528020d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
