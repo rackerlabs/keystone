@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_335b5a56",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-28T15:54:02Z",
+      "side": 1,
+      "message": "by \"some problem\", I mean \"region\" should be used, instead of \"region_id\", I\u0027ll see if some tests can be refactored, in another commit.",
+      "parentUuid": "9a1a9d01_7071c8df",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7ad22302",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 7
