@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_61457c15",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-28T16:13:44Z",
+      "side": 1,
+      "message": "Please shorten it like this:\n\nif not context[\u0027query_string\u0027].get(\u0027scope.project.id\u0027):",
+      "revId": "ee323689afae7a88190862bfd88297cf945cdd75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
