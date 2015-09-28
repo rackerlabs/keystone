@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_3aad7431",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-28T14:46:48Z",
+      "side": 1,
+      "message": "plenty of revocation tests that validate tokens already?",
+      "revId": "1b9f2b3a959d910ac5a48c6620e23e4db0d0ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_da07981a",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-28T14:46:48Z",
+      "side": 1,
+      "message": "do we want to document the expected outcome of each case, or I assume we\u0027ll leave that documented in the tests?",
+      "revId": "1b9f2b3a959d910ac5a48c6620e23e4db0d0ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1dfbcac2",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-28T14:46:48Z",
+      "side": 1,
+      "message": "This might be due to a timestamps being generated somewhere in Keystone without timeutils.py (thinking out loud).",
+      "revId": "1b9f2b3a959d910ac5a48c6620e23e4db0d0ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
