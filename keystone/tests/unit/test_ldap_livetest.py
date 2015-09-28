@@ -29,7 +29,7 @@ CONF = cfg.CONF
 
 
 def create_object(dn, attrs):
-    conn = ldap.initialize(CONF.ldap.url)
+    conn = ldap.initialize(','.join(CONF.ldap.url)
     conn.simple_bind_s(CONF.ldap.user, CONF.ldap.password)
     ldif = ldap.modlist.addModlist(attrs)
     conn.add_s(dn, ldif)
@@ -50,7 +50,7 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
         subprocess.call(['ldapdelete',
                          '-x',
                          '-D', CONF.ldap.user,
-                         '-H', CONF.ldap.url,
+                         '-H', ','.join(CONF.ldap.url),
                          '-w', CONF.ldap.password,
                          '-r', CONF.ldap.suffix],
                         stderr=devnull)

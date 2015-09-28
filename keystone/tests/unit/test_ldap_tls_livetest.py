@@ -26,7 +26,7 @@ CONF = cfg.CONF
 
 
 def create_object(dn, attrs):
-    conn = ldap.initialize(CONF.ldap.url)
+    conn = ldap.initialize(','.join(CONF.ldap.url)
     conn.simple_bind_s(CONF.ldap.user, CONF.ldap.password)
     ldif = ldap.modlist.addModlist(attrs)
     conn.add_s(dn, ldif)
