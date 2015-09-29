@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_e922bc51",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-29T04:36:52Z",
+      "side": 1,
+      "message": "we might be able to get away with making this cfg.MultiStrOpt, it\u0027ll look like\n\n  url \u003d ldap://localhost1\n  url \u003d ldap://localhost2\n  ...\n\nthis way it\u0027s actually backwards compatible too.",
+      "revId": "6b20a6afc58710f22a508ede09d24204fd0e90ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
