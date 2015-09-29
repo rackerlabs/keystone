@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_3a2607cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-29T02:46:06Z",
+      "side": 1,
+      "message": "it\u0027s not a typo. services are still using v2 APIs (generally, for all things) to get the endpoints created by v3 API (endpoints are created by the _one_ v3 API)",
+      "parentUuid": "9a1a9d01_06d18dcd",
+      "revId": "99b5ae8aa8fcb2ace265b1e20ae2b2f1c61700e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_f510c150",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 6
