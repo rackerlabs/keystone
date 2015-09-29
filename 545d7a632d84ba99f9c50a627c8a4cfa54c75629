@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_781e4fbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:45:38Z",
+      "side": 1,
+      "message": "these are all unrelated and I can\u0027t tell from the changes which ones are related to which part. This needs to be split up.",
+      "revId": "545d7a632d84ba99f9c50a627c8a4cfa54c75629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f8fb3f79",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:45:38Z",
+      "side": 1,
+      "message": "this change isn\u0027t mentioned in the commit message and there\u0027s no reason we can\u0027t cover this in a unit test.",
+      "revId": "545d7a632d84ba99f9c50a627c8a4cfa54c75629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b84147ab",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:45:38Z",
+      "side": 1,
+      "message": "The migration uses server_default\u003d\u00270\u0027 , so this should be the same.",
+      "revId": "545d7a632d84ba99f9c50a627c8a4cfa54c75629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d853db69",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:45:38Z",
+      "side": 1,
+      "message": "use assertIs(False, ref[\u0027is_domain\u0027]) then it\u0027ll also assert that the value is a boolean and not an int or string.",
+      "revId": "545d7a632d84ba99f9c50a627c8a4cfa54c75629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f8e57fa3",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:45:38Z",
+      "side": 1,
+      "message": "Add a comment why this is overridden.",
+      "revId": "545d7a632d84ba99f9c50a627c8a4cfa54c75629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_18a2b34b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1785,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:45:38Z",
+      "side": 1,
+      "message": "This was renamed in test_backend, but it\u0027s not renamed here.",
+      "revId": "545d7a632d84ba99f9c50a627c8a4cfa54c75629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
