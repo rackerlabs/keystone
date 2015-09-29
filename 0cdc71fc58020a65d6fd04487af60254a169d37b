@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_ad65a7b5",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-29T09:55:45Z",
+      "side": 1,
+      "message": "Tony - I think you meants some here (https://review.openstack.org/#/c/167534/), \"region_id\" cannot be used here just beacuse you have not create the region while \"region\" can be used just beacuse it\u0027s never got validated in manager layer.\n\nThe simply way imo is trying to create a region, the id would be \"RegionOne\" or whatever.\n\nDon\u0027t use \"region\" here two reasons:\n\n- \"region\" used here bascially mean nothing since it\u0027s neither used nor validated in the manager layer.\n\n- we use \"region_id\" instead of \"region\" in the V3 API, this is also true in the table schema, the assumption you use \"region\" here is already wrong.",
+      "parentUuid": "9a1a9d01_335b5a56",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7ad22302",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 7
