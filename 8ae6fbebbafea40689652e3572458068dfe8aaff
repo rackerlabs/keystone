@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_dbde7a10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-29T18:25:18Z",
+      "side": 1,
+      "message": "s/seperating/separating/",
+      "revId": "8ae6fbebbafea40689652e3572458068dfe8aaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1b7f12ac",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-29T18:25:18Z",
+      "side": 1,
+      "message": "If you want to use only 1 endpoint then you should do something like this:\n\nv3_endpoints.setdefault(key, endpoint)\n\nwithout any list stuff you are unpacking below.\n\nIt\u0027s also better to look for public endpoint here too.",
+      "revId": "8ae6fbebbafea40689652e3572458068dfe8aaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_763985d6",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-29T18:25:18Z",
+      "side": 1,
+      "message": "You can move this check to line:81 to select required endpoint instead of collecting everything.",
+      "revId": "8ae6fbebbafea40689652e3572458068dfe8aaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
