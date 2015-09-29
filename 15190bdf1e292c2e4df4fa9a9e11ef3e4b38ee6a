@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_c9246fc6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-29T20:57:48Z",
+      "side": 1,
+      "message": "It would be nice to indicate why this is experimental.  And it doesn\u0027t have to include a list of bugs, just some blurb about why.",
+      "revId": "15190bdf1e292c2e4df4fa9a9e11ef3e4b38ee6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c90b0f29",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-29T20:57:48Z",
+      "side": 1,
+      "message": "This comment notes uuid and fernet, but leaves me and probably others wondering what is the state of pkiz and pki.",
+      "revId": "15190bdf1e292c2e4df4fa9a9e11ef3e4b38ee6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
