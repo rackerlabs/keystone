@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_381a177e",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T19:52:33Z",
+      "side": 1,
+      "message": "there shouldn\u0027t be if checks in tests. The test should be asserting how the code is supposed to work, not react to it. If the store is supposed to be not is_configured here then assert that.",
+      "revId": "9c8021e716b8c18dfaf6eefec95da8da1648628b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
