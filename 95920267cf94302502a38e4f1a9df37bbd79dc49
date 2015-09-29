@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_c7322f5f",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-29T13:40:47Z",
+      "side": 1,
+      "message": "yeah, i\u0027ll add a comment to demo",
+      "parentUuid": "9a1a9d01_51f81d7b",
+      "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_b162d93c",
         "filename": "keystone/tests/unit/test_v3_os_revoke.py",
         "patchSetId": 10
@@ -64,6 +82,24 @@
       "writtenOn": "2015-09-29T13:14:01Z",
       "side": 1,
       "message": "should we add test doc strings to be consistent with line 263?",
+      "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_870f5787",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-29T13:40:47Z",
+      "side": 1,
+      "message": "i\u0027ll just remove them, they\u0027re already enumerated quite verbosely in the class docstr",
+      "parentUuid": "9a1a9d01_b162d93c",
       "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
