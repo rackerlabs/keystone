@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_b8971eeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-29T12:06:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a1a9d01_27c6c19a",
+      "revId": "eb4c928d1d31d030d43966e920072a8e26553478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_6436f753",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
