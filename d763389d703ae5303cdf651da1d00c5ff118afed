@@ -16,6 +16,24 @@
       "revId": "d763389d703ae5303cdf651da1d00c5ff118afed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_dea89e8e",
+        "filename": "keystone/endpoint_policy/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-09-29T22:45:51Z",
+      "side": 1,
+      "message": "Agreed, thus I changed the bug description and the fix. Thanks",
+      "parentUuid": "9a1a9d01_c14b7f2a",
+      "revId": "d763389d703ae5303cdf651da1d00c5ff118afed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
