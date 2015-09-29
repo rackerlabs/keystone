@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_f1bcd107",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-09-29T13:00:48Z",
+      "side": 1,
+      "message": "see: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#endpoints-v3-endpoints and https://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py.\n\nI think the spec you mentioned should be updated.",
+      "parentUuid": "9a1a9d01_6823fda7",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7ad22302",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 7
