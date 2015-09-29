@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_4cecfff2",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T14:52:14Z",
+      "side": 1,
+      "message": "I don\u0027t think we should deprecate this here in the base class. The subclasses should handle it instead.",
+      "revId": "4da4f1ab6f482648b4bb87ace953e1d5d3a8cd54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6c746367",
+        "filename": "keystone/service.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-29T14:52:14Z",
+      "side": 1,
+      "message": "I don\u0027t think we have to wait 2 releases to remove this since it was just ignored before, make it N release instead.",
+      "revId": "4da4f1ab6f482648b4bb87ace953e1d5d3a8cd54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
