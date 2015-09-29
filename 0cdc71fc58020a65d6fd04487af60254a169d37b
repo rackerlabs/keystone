@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_6823fda7",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-29T10:16:36Z",
+      "side": 1,
+      "message": "According to the specification here http://developer.openstack.org/api-ref-identity-v3.html#createEndpoint, http API accepts \"region\" instead of \"region_id\", and I checked the code, which will create region if \"region\" is posted.\n\nOn one hand, I prefer to sticking to the spec because \"regoin_id\" is not documented, which will cause confusion, on the other hand, \"region_id\" is better because everywhere else uses it.\n\nWhat do you think?",
+      "parentUuid": "9a1a9d01_ad65a7b5",
+      "revId": "0cdc71fc58020a65d6fd04487af60254a169d37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7ad22302",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 7
