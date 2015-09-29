@@ -1894,6 +1894,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
         r = self._issue_unscoped_token()
         token_resp = r.json_body['token']
+        self.assertIn('saml2', token_resp['methods'])
         self.assertValidMappedUser(token_resp)
         employee_unscoped_token_id = r.headers.get('X-Subject-Token')
         r = self.get('/auth/projects', token=employee_unscoped_token_id)
@@ -1906,6 +1907,10 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
         r = self.v3_authenticate_token(v3_scope_request)
         token_resp = r.result['token']
+        # NOTE(lbragstad): Check to make sure we have 'token' in the method
+        # list since we rescoped an unscoped token.
+        for m in ('saml2', 'token'):
+            self.assertIn(m, token_resp['methods'])
         self._check_project_scoped_token_attributes(token_resp, project['id'])
 
     def test_workflow_with_groups_deletion(self):
