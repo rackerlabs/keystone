@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_115145d8",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-29T13:14:01Z",
+      "side": 1,
+      "message": "both?",
+      "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b1d5f91c",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-29T13:14:01Z",
+      "side": 1,
+      "message": "we*",
+      "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_51f81d7b",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-29T13:14:01Z",
+      "side": 1,
+      "message": "Just to clarify, itertools.product will take 0 from the seconds set and use it with everything in the microseconds set, right?",
+      "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b162d93c",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-29T13:14:01Z",
+      "side": 1,
+      "message": "should we add test doc strings to be consistent with line 263?",
+      "revId": "95920267cf94302502a38e4f1a9df37bbd79dc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
