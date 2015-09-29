@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_1265beb3",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-29T15:21:52Z",
+      "side": 1,
+      "message": "I think this is suppose to be: \n\n    0.0, 0.999998, 0.999999, 58.0, 58.999990, 59.999999, ...\n\n1 doesn\u0027t seem to be in the set.",
+      "revId": "c2a481035d10661fd7676c9d12ee072f788c1c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
