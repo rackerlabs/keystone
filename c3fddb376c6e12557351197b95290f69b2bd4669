@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_35df820e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "maybe: \"If neither user_name nor user_id is set\"\n\nIt explains it next to #1 on line number 219",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_55da364d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "nit, should this be the same indentation as the above fix?",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d5cde685",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_35a302b4",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_913ea389",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "maybe: \"If the entity was not found\"  \n\nditto for the rest of \u0027NotFound\u0027 exceptions if you think its an adequate change.",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_71674fe9",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "maybe: \"If entity was not implemented\"",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_42436342",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1187,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "Maybe: \"If there is an invalid user or password",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_cf06bccd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "nit   s/nobody is registered./ if nobody is registered./",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_8fad2486",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-29T19:15:51Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be: \"If the trust doesn\u0027t exist.\"?",
+      "revId": "c3fddb376c6e12557351197b95290f69b2bd4669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
