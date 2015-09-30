@@ -16,6 +16,24 @@
       "revId": "f9f29e20620338e54e3e7022fd51a286c157be07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_81a714bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-30T13:08:55Z",
+      "side": 1,
+      "message": "This change renamed also the method list_projects_for_user() to  list_project_ids_for_user() in backends/ldap.py.\nlist_project_ids_for_user() in backends/ldap.py implements list_project_ids_for_user() in core.py.\nIs this behavior bug?",
+      "parentUuid": "9a1a9d01_2215ebe3",
+      "revId": "f9f29e20620338e54e3e7022fd51a286c157be07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
