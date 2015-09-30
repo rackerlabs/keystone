@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_3e53a418",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T23:53:35Z",
+      "side": 1,
+      "message": "This makes the code hard to follow when there\u0027s multiple exceptions so I\u0027m going to leave this the way it is.",
+      "parentUuid": "9a1a9d01_904af853",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_106d88cb",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-30T14:35:24Z",
       "side": 1,
       "message": "why does keystone consider this good? a comment adding why would be nice.",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_83005d03",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T23:53:35Z",
+      "side": 1,
+      "message": "Does this only apply to this one or does it apply to all of these where nosec is used? I don\u0027t want to go adding paragraphs of extra explanation to all of these only to find it out was only these 2 where it\u0027s needed. This code was pretty self-explanatory to begin with and there were no comments explaining it before.",
+      "parentUuid": "9a1a9d01_10c908ac",
       "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
