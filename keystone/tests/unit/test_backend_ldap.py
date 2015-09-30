@@ -1781,8 +1781,23 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
         self._assert_create_hierarchy_not_allowed()
 
-    def test_create_is_domain_project(self):
+    def test_create_project_passing_is_domain_flag_true(self):
+        # Creating a project passing is_domain=True is not supported by
+        # the LDAP backend
         self._assert_create_is_domain_project_not_allowed()
+
+    def test_create_project_passing_is_domain_flag_false(self):
+        # Passing a project with is_domain set False is allowed
+        project = {'id': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': CONF.identity.default_domain_id,
+                   'enabled': True,
+                   'name': uuid.uuid4().hex,
+                   'parent_id': None,
+                   'is_domain': False}
+
+        ref = self.resource_api.create_project(project['id'], project)
+        self.assertIs(False, ref['is_domain'])
 
     def test_create_project_with_parent_id_and_without_domain_id(self):
         self._assert_create_hierarchy_not_allowed()
