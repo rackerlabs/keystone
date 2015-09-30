@@ -16,6 +16,23 @@
       "revId": "1438cfeb4cf56773998e03c9801efee5f9673a75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6ad5dee2",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T21:47:16Z",
+      "side": 1,
+      "message": "not sure why the .real is here",
+      "revId": "1438cfeb4cf56773998e03c9801efee5f9673a75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
