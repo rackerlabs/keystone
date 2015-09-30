@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_0a99d47b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-09-30T15:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_3bb66df9",
+      "revId": "5644f1862e6eebdf67feac72159f244c6a496639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_5b07a181",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-30T14:56:28Z",
       "side": 1,
       "message": "just curious; but why change this?",
+      "revId": "5644f1862e6eebdf67feac72159f244c6a496639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_8a8ba41e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-09-30T15:22:14Z",
+      "side": 1,
+      "message": "There\u0027s no reason to not have it static since it does not depend on the object itself, it never uses \u0027self\u0027.",
+      "parentUuid": "9a1a9d01_5b07a181",
       "revId": "5644f1862e6eebdf67feac72159f244c6a496639",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_4a810cfa",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-09-30T15:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_bbdfddd4",
+      "revId": "5644f1862e6eebdf67feac72159f244c6a496639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_3bb8ad74",
         "filename": "keystone/controllers.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-30T14:56:28Z",
       "side": 1,
       "message": "nit: \n\n    # it\u0027d be better to look in the Paste pipeline for the WSGI application \n    # we\u0027re really looking for.",
+      "revId": "5644f1862e6eebdf67feac72159f244c6a496639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_8ab964ce",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-09-30T15:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_3bb8ad74",
       "revId": "5644f1862e6eebdf67feac72159f244c6a496639",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
