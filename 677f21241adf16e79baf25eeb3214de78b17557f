@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_01af842a",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "maybe \"If the entity was not found\" or since they are looking for an endpoint it could be \"If the endpoint doesn\u0027t exist.\" like you did in keystone/catalog/core.py.  But I\u0027m not 100% sure what to do since these are abstract methods and if they are not overrided they will raise a not implemented error.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a1a9f825",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_216c0807",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_416fbcfb",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e17a90bc",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_0176a4d6",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a180188c",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c17bccbc",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_614d2099",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2143a86d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c4d51ae5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T13:46:23Z",
+      "side": 1,
+      "message": "maybe \"If the entity was not found\"",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
