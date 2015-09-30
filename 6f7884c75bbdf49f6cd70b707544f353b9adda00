@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_904af853",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:35:24Z",
+      "side": 1,
+      "message": "nit: collapse these lines so that the comment looks like it\u0027s part of the # nosec.",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_106d88cb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:35:24Z",
+      "side": 1,
+      "message": "same comment applies here if possible.",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_10c908ac",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:35:24Z",
+      "side": 1,
+      "message": "why does keystone consider this good? a comment adding why would be nice.",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f0c25484",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:35:24Z",
+      "side": 1,
+      "message": "same comments apply here.",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_10dca844",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:35:24Z",
+      "side": 1,
+      "message": "collapse these comments to be on the same line. this comment applies to all changes in this patch.",
+      "revId": "6f7884c75bbdf49f6cd70b707544f353b9adda00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
