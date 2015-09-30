@@ -34,6 +34,24 @@
       "revId": "f9f29e20620338e54e3e7022fd51a286c157be07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2a0b7d7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-30T14:09:35Z",
+      "side": 1,
+      "message": "Change the name of the methods are not a bug, but before just remove this method, you have to find out if the problem here is because this method was not renamed in the previous patch, or if you just need remove it.\n\nI suggest go into #openstack-keystone and ask for henrynash (or other keystone-core) about it.",
+      "parentUuid": "9a1a9d01_81a714bc",
+      "revId": "f9f29e20620338e54e3e7022fd51a286c157be07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
