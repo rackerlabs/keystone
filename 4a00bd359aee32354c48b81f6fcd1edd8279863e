@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_af80f28b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1793,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T17:31:38Z",
+      "side": 1,
+      "message": "use new_project_ref: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/core.py#n267",
+      "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
