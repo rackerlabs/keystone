@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_b5c28e51",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:19:53Z",
+      "side": 1,
+      "message": "this seems to go against the assumption made in the commit message, saying keystone uses this in a safe context.",
+      "revId": "b4f57ea1161425b73c2800848297ee3366758582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
