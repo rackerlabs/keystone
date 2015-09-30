@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_63ed37b6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-30T05:00:12Z",
+      "side": 1,
+      "message": "I don\u0027t really think its needed in this case.  Or at least I haven\u0027t thought of a case where it matters.",
+      "parentUuid": "9a1a9d01_e37067a6",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_63469750",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-30T04:35:03Z",
       "side": 1,
       "message": "add a space after the period, or the generated sample will be wonky.",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_83facb73",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-30T05:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_63469750",
       "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_e30e278b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-30T05:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_a367cfe7",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_17335915",
         "filename": "keystone/tests/unit/test_ldap_livetest.py",
         "patchSetId": 2
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_03147b9d",
+        "filename": "keystone/tests/unit/test_ldap_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-30T05:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_039d5bbb",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_d73881f0",
         "filename": "keystone/tests/unit/test_ldap_tls_livetest.py",
         "patchSetId": 2
@@ -117,6 +189,24 @@
       "writtenOn": "2015-09-30T01:35:04Z",
       "side": 1,
       "message": "missing close parenthesis here?  or is that a gerrit UI bug?",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_23197fd7",
+        "filename": "keystone/tests/unit/test_ldap_tls_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-09-30T05:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_d73881f0",
       "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
