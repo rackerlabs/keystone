@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_357690d7",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T07:29:05Z",
+      "side": 1,
+      "message": "I prefer this way because the logic for v3 is simpler (regardless the processing later), and implicitly v3 is in higher priority than v2 (though it\u0027s v2 API).\nYou\u0027re right about readability. I hope you\u0027re OK with current order.",
+      "parentUuid": "9a1a9d01_32c3068b",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_d54874ce",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-30T07:07:18Z",
       "side": 1,
       "message": "nit: the word \"pure\" seem redundant, are there other type of v3_endpoint being tested?",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_355d3047",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T07:29:05Z",
+      "side": 1,
+      "message": "It\u0027s true, in this file. But if it\u0027s tested along with others, I think it\u0027s more clear in the long list. After all, not every one is aware there are test_catalog and test_v3_catalog",
+      "parentUuid": "9a1a9d01_d54874ce",
       "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_1845c144",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T07:29:05Z",
+      "side": 1,
+      "message": "Nice catch. I wasn\u0027t thinking of it. Actually, \"name\" is not an attribute of endpoint, I think it should be popped out in unit.new_endpoint_ref.\nI\u0027ll fix that.",
+      "parentUuid": "9a1a9d01_750e488d",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_35253008",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 10
@@ -81,6 +135,24 @@
       "writtenOn": "2015-09-30T07:07:18Z",
       "side": 1,
       "message": "should we check the other urls as well?\n\nnit: adding extra space to group v2 and v3 assertions would help with readability",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_18b38151",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T07:29:05Z",
+      "side": 1,
+      "message": "Right, I\u0027ll do that. Thanks",
+      "parentUuid": "9a1a9d01_35253008",
       "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
