@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_78287d33",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-30T07:39:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_ff5bae52",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_b573174d",
         "filename": "doc/source/setup.rst",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-25T12:41:16Z",
       "side": 1,
       "message": "i would leave this out. it sounds out of place",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_381f6509",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-30T07:39:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_b573174d",
       "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_f8148de9",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-30T07:39:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_d596cb93",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_15f3e30b",
         "filename": "doc/source/setup.rst",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-25T12:41:16Z",
       "side": 1,
       "message": "This only works in an activated shell.",
+      "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_98d6b126",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-09-30T07:39:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_15f3e30b",
       "revId": "f673efd217ebabce633fad9f48e75b80f7728978",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
