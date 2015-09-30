@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_e37067a6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T04:35:03Z",
+      "side": 1,
+      "message": "i\u0027m wondering if we need to deprecate something here, i don\u0027t think we do, even though we are changing the option type, any old deployment will still work, we\u0027re just adding new bits.",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_63469750",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T04:35:03Z",
+      "side": 1,
+      "message": "add a space after the period, or the generated sample will be wonky.",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7753b539",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_a367cfe7",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T04:35:03Z",
+      "side": 1,
+      "message": "nope, it\u0027s missing )",
+      "parentUuid": "9a1a9d01_7753b539",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_17335915",
         "filename": "keystone/tests/unit/test_ldap_livetest.py",
         "patchSetId": 2
@@ -30,6 +82,24 @@
       "writtenOn": "2015-09-30T01:35:04Z",
       "side": 1,
       "message": "missing close parenthesis here?  or is that a gerrit UI bug?",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_039d5bbb",
+        "filename": "keystone/tests/unit/test_ldap_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T04:35:03Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "9a1a9d01_17335915",
       "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
