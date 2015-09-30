@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_67e0d0cd",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "If the service with the specific service_id doesn\u0027t exist? \n\njust to be consistent with the other changes?",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_870ac488",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "same comment applies to the rest of these",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_677c50ec",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "lines 374 and 375 will need to be re-aligned with the indexing on line 373.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e7de20dc",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "are we suppose to add punctuation to raise messages? This is super nit picky, just curious if we have a convention for it since I some doc strings with it and some without.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_ea758563",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "punctuation, or no?",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_01af842a",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 6
@@ -13,6 +98,24 @@
       "writtenOn": "2015-09-30T13:46:23Z",
       "side": 1,
       "message": "maybe \"If the entity was not found\" or since they are looking for an endpoint it could be \"If the endpoint doesn\u0027t exist.\" like you did in keystone/catalog/core.py.  But I\u0027m not 100% sure what to do since these are abstract methods and if they are not overrided they will raise a not implemented error.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_aa19cd23",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "specifically if the entity ID isn\u0027t found, right?",
+      "parentUuid": "9a1a9d01_01af842a",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +275,74 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_ca99a17a",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "nit: I notice that some of these doc strings are indented 4 spaces on some and 8 spaces on others... do we have a preference?\n\nWhich of the following should we follow? \n\n\n    :raises keystone.exceptionNotImplemented: if entity was not\n            implemented\n\n    :raises keystone.exceptionNotImplemented: if entity was not\n        implemented\n\n    :raises keystone.exceptionNotImplemented: if entity was not\n                                              implemented",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4a9b5166",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "same comment here about indentation.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2ae61de8",
+        "filename": "keystone/endpoint_policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "indentation doesn\u0027t match up here",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_cad521e5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "same indentation comment applies here.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_c4d51ae5",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -183,6 +354,40 @@
       "writtenOn": "2015-09-30T13:46:23Z",
       "side": 1,
       "message": "maybe \"If the entity was not found\"",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4a37d14c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "I see some of these have been capitalized and others haven\u0027t.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_ca71a10d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:09:54Z",
+      "side": 1,
+      "message": "same indentation comment as before.",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
