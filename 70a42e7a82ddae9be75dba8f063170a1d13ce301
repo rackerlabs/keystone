@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_e80d76e8",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-30T22:32:21Z",
+      "side": 1,
+      "message": "is it sane to import oslo_log this early? before config, etc",
+      "revId": "70a42e7a82ddae9be75dba8f063170a1d13ce301",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
