@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_b837f5fd",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T07:59:04Z",
+      "side": 1,
+      "message": "It\u0027s not as simple as I think. Some places are using \"name\". It can be in extra after all. So I\u0027ll just remove this line.",
+      "parentUuid": "9a1a9d01_1845c144",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_35253008",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 10
