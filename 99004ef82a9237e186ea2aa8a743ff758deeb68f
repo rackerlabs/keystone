@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_75539617",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T14:15:15Z",
+      "side": 1,
+      "message": "just for reference, keystone-wsgi-admin and keystone-wsgi-public are keystone/server/wsgi.py, right?",
+      "revId": "99004ef82a9237e186ea2aa8a743ff758deeb68f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
