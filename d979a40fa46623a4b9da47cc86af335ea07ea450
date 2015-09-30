@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_f6756cca",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T15:14:35Z",
+      "side": 1,
+      "message": "Thanks, but is there some guideline about that?\nAs in this case, I think they belong to two paragraph. The NOTE part is like a footnote.",
+      "parentUuid": "9a1a9d01_504d4098",
+      "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_30468c7b",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-30T14:42:11Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2a129857",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-09-30T15:14:35Z",
+      "side": 1,
+      "message": "Oops, this comment should be removed, but I forgot to.",
+      "parentUuid": "9a1a9d01_30468c7b",
       "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
