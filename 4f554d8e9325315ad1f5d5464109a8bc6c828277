@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_47702ca4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-30T13:45:10Z",
+      "side": 1,
+      "message": "The big thing I don\u0027t like about this is that it changes the test semantics. They are no longer checking to see if the return value *is* True or False. Would assertIs be more accurate since True and False are singletons?",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_d6033e0e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -49,6 +66,24 @@
       "side": 1,
       "message": "Hi Dave,\n\nIMO since patch [1] got merged with partial bug flag, you can use Closes-Bug: #1259292 here, so that bug can be closed.\n\n[1] https://review.openstack.org/#/c/226677/2",
       "parentUuid": "9a1a9d01_27004634",
+      "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4446ea7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-09-30T13:45:10Z",
+      "side": 1,
+      "message": "That bug is about reversing order. This commit doesn\u0027t do that, so I agree that related in more accurate.",
+      "parentUuid": "9a1a9d01_447eea6a",
       "revId": "4f554d8e9325315ad1f5d5464109a8bc6c828277",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
