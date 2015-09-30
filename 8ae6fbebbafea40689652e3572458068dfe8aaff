@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_44b6eaf9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-30T13:32:56Z",
+      "side": 1,
+      "message": "I think you can just update commit message in gerrit :)",
+      "parentUuid": "9a1a9d01_1414b79d",
+      "revId": "8ae6fbebbafea40689652e3572458068dfe8aaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_1b7f12ac",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 9
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "It\u0027s v3 endpoints, so it\u0027s a list, not a single endpoint.\nGenerally, one service and one region has three endpoints: public, admin and internal ones. The list is traversed on line 108.\n\nAs for the public endpoint, surely it can be done here, but it looks more clear this way IMO. Actually, I did it in the first few commits, and I agreed with a comment that the logic is more clear with separation.",
       "parentUuid": "9a1a9d01_1b7f12ac",
+      "revId": "8ae6fbebbafea40689652e3572458068dfe8aaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2425f65a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-09-30T13:32:56Z",
+      "side": 1,
+      "message": "Ok, I\u0027m not strict about that",
+      "parentUuid": "9a1a9d01_f4002368",
       "revId": "8ae6fbebbafea40689652e3572458068dfe8aaff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
