@@ -16,6 +16,24 @@
       "revId": "99004ef82a9237e186ea2aa8a743ff758deeb68f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_be54a6c9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-09-30T18:18:15Z",
+      "side": 1,
+      "message": "Yes Lance, you are correct,  in the setup.cfg\n\nkeystone-wsgi-admin is defined as keystone.server.wsgi:initialize_admin_application and\n\nkeystone-wsgi-public is defined as keystone.server.wsgi:initialize_public_application",
+      "parentUuid": "9a1a9d01_75539617",
+      "revId": "99004ef82a9237e186ea2aa8a743ff758deeb68f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
