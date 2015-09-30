@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_0329bf9d",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_01e01e95",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_218be2c4",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-25T19:58:30Z",
       "side": 1,
       "message": "There are exceptions, specifically in the v3 -\u003e v2 case. The v2 API is limited to the \"default\" domain (perhaps domains should be introduced first?), so any reference to an entity outside the default domain would result in namespace collisions in v2, and thus result in 401\u0027s.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4dfda66c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "You can use token that you get through the v3 API to do anything on /v2.0/. I don\u0027t think there\u0027s anything that would result in a 401 if you did this. I can\u0027t figure out what you want me to change here, so I\u0027ll just leave it as is.",
+      "parentUuid": "fa1b9901_218be2c4",
       "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_0d2a4edb",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_2179a2c8",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_81466e79",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_0d06ce51",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_81466e79",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_c13786fd",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -81,6 +153,24 @@
       "writtenOn": "2015-08-25T19:58:30Z",
       "side": 1,
       "message": "I\u0027d put default in quotes, and then explain that it\u0027s not special from v3\u0027s perspective, but provide a single scope for the entirety of v2.0.",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_83614fab",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_c13786fd",
       "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_a36493b8",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_8c9c65c1",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_ac884972",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -149,6 +257,24 @@
       "writtenOn": "2015-08-25T19:58:30Z",
       "side": 1,
       "message": "grammar",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4357b7c9",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "I reworded this since it didn\u0027t make sense to me.",
+      "parentUuid": "fa1b9901_acefe91c",
       "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_23f7238c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "Raildo - I don\u0027t know what you want this to say, so just update the etherpad with the suggested text: https://etherpad.openstack.org/p/keystone-info",
+      "parentUuid": "1a4dcd0f_f663efdb",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_ec1401ea",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -200,6 +344,24 @@
       "writtenOn": "2015-08-25T19:58:30Z",
       "side": 1,
       "message": "any part of the hierarchy?",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_0343ffb2",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T16:23:21Z",
+      "side": 1,
+      "message": "I assume so if you use the ID.",
+      "parentUuid": "fa1b9901_ec1401ea",
       "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
