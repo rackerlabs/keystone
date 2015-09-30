@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_0d334a15",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-09-30T03:21:59Z",
+      "side": 1,
+      "message": "what are the thoughts on rolling this whole _validate_token method into validate_v3_token? \n\nI\u0027m not sure I have to context as to why we have validate_token, _validate_token, _validate_v2_token, and validate_v3_token all in this provider. Now, we are adding validate_non_persistent_token, too. Seems like a lot of methods for two token versions... \n\nThoughts? I\u0027d be happy to do the refactor",
+      "revId": "881fb2c31d18ee78b2e150f1bde718b9b5d1a8e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
