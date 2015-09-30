@@ -16,6 +16,24 @@
       "revId": "881fb2c31d18ee78b2e150f1bde718b9b5d1a8e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e3c38236",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-09-30T08:21:57Z",
+      "side": 1,
+      "message": "i see _validate_token is cached, whereas validate_v{2,3}_token is not....",
+      "parentUuid": "9a1a9d01_0d334a15",
+      "revId": "881fb2c31d18ee78b2e150f1bde718b9b5d1a8e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
