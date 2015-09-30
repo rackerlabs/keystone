@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_7753b539",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-09-30T01:35:04Z",
+      "side": 1,
+      "message": "missing close parenthesis here?  or is that a gerrit UI bug?",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_17335915",
+        "filename": "keystone/tests/unit/test_ldap_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-09-30T01:35:04Z",
+      "side": 1,
+      "message": "missing close parenthesis here?  or is that a gerrit UI bug?",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d73881f0",
+        "filename": "keystone/tests/unit/test_ldap_tls_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-09-30T01:35:04Z",
+      "side": 1,
+      "message": "missing close parenthesis here?  or is that a gerrit UI bug?",
+      "revId": "d434d2ceb45630948b695d7b2dd1651401e7ca79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
