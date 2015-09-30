@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_a4bd8603",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-09-30T13:30:33Z",
+      "side": 1,
+      "message": "third party middleware isn\u0027t affected by keystone code. They can do whatever they want, so this doesn\u0027t apply.\n\nAlso, this isn\u0027t what the code is doing anymore.",
+      "revId": "d36ce340e3287836c96a180c2277fb6f36779497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
