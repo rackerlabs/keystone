@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_059e9a06",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-30T20:07:34Z",
+      "side": 1,
+      "message": "I thought this would still land in Liberty. Isn\u0027it possible?",
+      "parentUuid": "9a1a9d01_c6263516",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7587d161",
         "filename": "keystone/identity/core.py",
         "patchSetId": 16
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_b85f4ce4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-30T20:07:34Z",
+      "side": 1,
+      "message": "forgot to remove this from the old code. Done",
+      "parentUuid": "9a1a9d01_55e96d19",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_35f879e5",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -98,6 +134,24 @@
       "writtenOn": "2015-09-24T23:25:02Z",
       "side": 1,
       "message": "do you really need to iterate through the list looking for a truthy value. i know that it\u0027s not a performance thing, it just look weird. what about just checking to see if the list has a value like \u0027if subtree_list\u0027?",
+      "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7883f404",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-09-30T20:07:34Z",
+      "side": 1,
+      "message": "Ok. I\u0027ll change that",
+      "parentUuid": "9a1a9d01_f51d2110",
       "revId": "7f253a4dc2cf406f4f65b8b44858d3fbbedf9e80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
