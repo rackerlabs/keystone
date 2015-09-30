@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_32c3068b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "nit: I would prefer switching the if/else condition, positive check for v2 is easier to READ than the negative check to see if its v3.",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d54874ce",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "nit: the word \"pure\" seem redundant, are there other type of v3_endpoint being tested?",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f54338ad",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "region_id doesn\u0027t need to be hard-coded, you can use uuid.uuid4().hex instead",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_750e488d",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "why are we testing the name matches?\n\nBased from the code implementation, this will be picked randomly from one of the three endpoints.",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_35253008",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "should we check the other urls as well?\n\nnit: adding extra space to group v2 and v3 assertions would help with readability",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f51a58c5",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "nit: the word \"pure\" seem redundant..",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b57f00df",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "region_id doesn\u0027t need to be hard-coded, you can use uuid.uuid4().hex instead",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_558224c9",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-09-30T07:07:18Z",
+      "side": 1,
+      "message": "the code from line 137 to here seems like just a copy/paste from the previous method, it could be pulled out into a separate method to remove code duplication",
+      "revId": "c3df5319bf6b68f7fd7284d50f81ff0e1c8c9e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
