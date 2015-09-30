@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_efb84913",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T05:32:27Z",
+      "side": 1,
+      "message": "reference bug https://bugs.launchpad.net/keystone/+bug/1501032\n\nRelated-Bug: #1501032",
+      "revId": "2451369867ac0e014e311e01d2a5b93352393e1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_efe1292b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1912,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-09-30T05:32:27Z",
+      "side": 1,
+      "message": "use an array, not a tuple",
+      "revId": "2451369867ac0e014e311e01d2a5b93352393e1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
