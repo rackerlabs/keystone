@@ -1784,6 +1784,34 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_create_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
+    def test_set_default_is_domain_project(self):
+        # Tests the internal method _set_default_is_domain_project, which
+        # allows either a project ref or a list or project refs
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'description': uuid.uuid4().hex,
+                   'is_domain': False}
+
+        # Calling it with a dict is valid
+        self.resource_api.driver._set_default_is_domain_project(project)
+
+        # So it is with a list of refs
+        refs_list = [project, project]
+        self.resource_api.driver._set_default_is_domain_project(refs_list)
+
+        # Passing another type is not allowed
+        self.assertRaises(ValueError,
+                          self.resource_api.driver.
+                          _set_default_is_domain_project,
+                          'foo_bar')
+
+        # A list with another type is not allowed either
+        wrong_list = [project, 'foo_bar']
+        self.assertRaises(ValueError,
+                          self.resource_api.driver.
+                          _set_default_is_domain_project,
+                          wrong_list)
+
     def test_create_project_with_parent_id_and_without_domain_id(self):
         self._assert_create_hierarchy_not_allowed()
 
