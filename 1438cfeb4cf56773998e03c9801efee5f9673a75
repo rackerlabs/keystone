@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_cafc2a74",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-09-30T21:47:51Z",
+      "side": 1,
+      "message": "p.s. i wish we had pep257 enforcement",
+      "revId": "1438cfeb4cf56773998e03c9801efee5f9673a75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_0ae0e2cb",
         "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
         "patchSetId": 2
