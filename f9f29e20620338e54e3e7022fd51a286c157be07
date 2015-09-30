@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_2215ebe3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-09-30T12:25:21Z",
+      "side": 1,
+      "message": "This change rename the method for list_project_ids_for_user() in the core.py, so I think that best solution is rename the method in the ldap driver and not remove this method.\n\nBtw, I suggest create a bug (of verify if there is some other related bug) for this behaviour.",
+      "revId": "f9f29e20620338e54e3e7022fd51a286c157be07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
