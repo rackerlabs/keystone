@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_46b80e2a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-01T04:54:00Z",
+      "side": 1,
+      "message": "nit: the word pure doesn\u0027t make sense, we don\u0027t have a mixed v3 endpoint. v3 endpoint is just v3 endpoint :)",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a649ea32",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-01T04:54:00Z",
+      "side": 1,
+      "message": "much cleaner than previous version",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_461c8e69",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-01T04:54:00Z",
+      "side": 1,
+      "message": "there is no need to generate the service_id, the id is already generated when new_service_ref() is used.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L229",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_866b86b6",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-01T04:54:00Z",
+      "side": 1,
+      "message": "I think this can be removed, the name was added before as side effect of using new_endpoint_ref()\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L230",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
