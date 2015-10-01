@@ -46,8 +46,6 @@ class TokenlessAuthHelper(object):
         :type env: dict
         """
 
-        self.env = env
-
     def _build_scope_info(self):
         """Build the token request scope based on the headers.
 
