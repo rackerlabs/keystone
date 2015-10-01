@@ -699,7 +699,6 @@ class MongoCache(unit.BaseTestCase):
 
     def test_additional_crud_method_arguments_support(self):
         """Additional arguments should works across find/insert/update."""
-
         self.arguments['wtimeout'] = 30000
         self.arguments['j'] = True
         self.arguments['continue_on_error'] = True
