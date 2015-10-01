@@ -339,8 +339,9 @@ class KeyValueStore(object):
 
     @contextlib.contextmanager
     def _action_with_lock(self, key, lock=None):
-        """Wrapper context manager to validate and handle the lock and lock
-        timeout if passed in.
+        """Context manager to validate and handle the lock and lock timeout.
+
+        If a lock is not passed in, this method has no side effects.
         """
         if not isinstance(lock, KeyValueStoreLock):
             # NOTE(morganfainberg): Locking only matters if a lock is passed in
@@ -362,8 +363,9 @@ class KeyValueStore(object):
 
 
 class KeyValueStoreLock(object):
-    """Basic KeyValueStoreLock context manager that hooks into the
-    dogpile.cache backend mutex allowing for distributed locking on resources.
+    """Basic context manager that allows for distributed locking on resource.
+
+    This is achieved by hooking into the dogpile.cache backend mutex.
 
     This is only a write lock, and will not prevent reads from occurring.
     """
@@ -407,8 +409,10 @@ class KeyValueStoreLock(object):
 
 
 def get_key_value_store(name, kvs_region=None):
-    """Instantiate a new :class:`.KeyValueStore` or return a previous
-    instantiation that has the same name.
+    """Return a :class:`.KeyValueStore` with the given name.
+
+    This function will either Instantiate a new :class:`.KeyValueStore` or
+    return a previous instantiation that has the same name.
     """
     global KEY_VALUE_STORE_REGISTRY
 

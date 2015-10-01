@@ -881,7 +881,7 @@ class FederatedIdentityProviderTests(FederationTests):
                                  ref=body)
 
     def test_create_idp_remote_repeated(self):
-        """Creates two IdentityProvider entities with some remote_ids
+        """Creates two IdentityProvider entities with some remote_ids.
 
         A remote_id is the same for both so the second IdP is not
         created because of the uniqueness of the remote_ids
@@ -1163,7 +1163,7 @@ class FederatedIdentityProviderTests(FederationTests):
                    expected_status=http_client.FORBIDDEN)
 
     def test_update_nonexistent_idp(self):
-        """Update nonexistent IdP
+        """Update nonexistent IdP.
 
         Expect HTTP 404 code.
 
@@ -1182,8 +1182,9 @@ class FederatedIdentityProviderTests(FederationTests):
         self._assign_protocol_to_idp(expected_status=http_client.CREATED)
 
     def test_protocol_composite_pk(self):
-        """Test whether Keystone let's add two entities with identical
-        names, however attached to different IdPs.
+        """Test whether Keystone allows two entities with identical names.
+
+        This should be allowed when they are attached to different IdPs.
 
         1. Add IdP and assign it protocol with predefined name
         2. Add another IdP and assign it a protocol with same name.
@@ -1466,7 +1467,7 @@ class MappingCRUDTests(FederationTests):
                  body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
 
     def test_create_mapping_with_blacklist_and_whitelist(self):
-        """Test for adding whitelist and blacklist in the rule
+        """Test for adding whitelist and blacklist in the rule.
 
         Server should respond with HTTP 400 error upon discovering both
         ``whitelist`` and ``blacklist`` keywords in the same rule.
@@ -1980,7 +1981,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
             scoped_token, expected_status=http_client.INTERNAL_SERVER_ERROR)
 
     def test_lists_with_missing_group_in_backend(self):
-        """Test a mapping that points to a group that does not exist
+        """Test a mapping that points to a group that does not exist.
 
         For explicit mappings, we expect the group to exist in the backend,
         but for lists, specifically blacklists, a missing group is expected
@@ -2034,7 +2035,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         self.federation_api.update_mapping(self.mapping['id'], rules)
 
     def test_empty_blacklist_passess_all_values(self):
-        """Test a mapping with empty blacklist specified
+        """Test a mapping with empty blacklist specified.
 
         Not adding a ``blacklist`` keyword to the mapping rules has the same
         effect as adding an empty ``blacklist``.
@@ -2184,7 +2185,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
             self.assertIn(group['id'], group_ids)
 
     def test_empty_whitelist_discards_all_values(self):
-        """Test that empty whitelist blocks all the values
+        """Test that empty whitelist blocks all the values.
 
         Not adding a ``whitelist`` keyword to the mapping value is different
         than adding empty whitelist.  The former case will simply pass all the
@@ -2247,7 +2248,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                           assertion='UNMATCHED_GROUP_ASSERTION')
 
     def test_not_setting_whitelist_accepts_all_values(self):
-        """Test that not setting whitelist passes
+        """Test that not setting whitelist passes.
 
         Not adding a ``whitelist`` keyword to the mapping value is different
         than adding empty whitelist.  The former case will simply pass all the

@@ -112,8 +112,9 @@ def validate_token_bind(context, token_ref):
 
 
 def best_match_language(req):
-    """Determines the best available locale from the Accept-Language
-    HTTP header passed in the request.
+    """Determine the best available locale for the request.
+
+    This is based on the Accept-Language HTTP header in the request.
     """
 
     if not req.accept_language:
@@ -151,7 +152,9 @@ class BaseApplication(object):
         return cls(**local_config)
 
     def __call__(self, environ, start_response):
-        r"""Subclasses will probably want to implement __call__ like this:
+        r"""Handle a WSGI request.
+
+        Subclasses will probably want to implement __call__ like this:
 
         @webob.dec.wsgify()
         def __call__(self, req):
@@ -329,7 +332,9 @@ class Application(BaseApplication):
             self.policy_api.enforce(creds, 'admin_required', {})
 
     def _attribute_is_empty(self, ref, attribute):
-        """Returns true if the attribute in the given ref (which is a
+        """Check if the specified attribute is "empty" in the given ref.
+
+        Returns true if the attribute in the given ref (which is a
         dict) is empty or None.
         """
         return ref.get(attribute) is None or ref.get(attribute) == ''

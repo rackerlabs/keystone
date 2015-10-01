@@ -746,8 +746,7 @@ class ResourceDriverV8(object):
 
     @abc.abstractmethod
     def list_projects_in_subtree(self, project_id):
-        """List all projects in the subtree below the hierarchy of the
-        given project.
+        """List all projects in the subtree below the given project.
 
         :param project_id: the driver will get the subtree under
                            this project.
@@ -982,7 +981,7 @@ class DomainConfigManager(manager.Manager):
         return config
 
     def create_config(self, domain_id, config):
-        """Create config for a domain
+        """Create config for a domain.
 
         :param domain_id: the domain in question
         :param config: the dict of config groups/options to assign to the
@@ -1017,7 +1016,7 @@ class DomainConfigManager(manager.Manager):
         return self._list_to_config(whitelisted)
 
     def get_config(self, domain_id, group=None, option=None):
-        """Get config, or partial config, for a domain
+        """Get config, or partial config, for a domain.
 
         :param domain_id: the domain in question
         :param group: an optional specific group of options
@@ -1059,7 +1058,7 @@ class DomainConfigManager(manager.Manager):
             domain_id=domain_id, group_or_option=msg)
 
     def update_config(self, domain_id, config, group=None, option=None):
-        """Update config, or partial config, for a domain
+        """Update config, or partial config, for a domain.
 
         :param domain_id: the domain in question
         :param config: the config dict containing and groups/options being

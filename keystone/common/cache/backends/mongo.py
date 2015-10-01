@@ -480,8 +480,7 @@ class MongoApi(object):
 
 @six.add_metaclass(abc.ABCMeta)
 class AbstractManipulator(object):
-    """Abstract class with methods which need to be implemented for custom
-    manipulation.
+    """Abstract class with methods to be implemented for custom manipulation.
 
     Adding this as a base class for :class:`.BaseTransform` instead of adding
     import dependency of pymongo specific class i.e.
@@ -512,7 +511,7 @@ class AbstractManipulator(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     def will_copy(self):
-        """Will this SON manipulator make a copy of the incoming document?
+        """Determine if this SON manipulator will copy the incoming document.
 
         Derived classes that do need to make a copy should override this
         method, returning `True` instead of `False`.
@@ -523,8 +522,7 @@ class AbstractManipulator(object):
 
 
 class BaseTransform(AbstractManipulator):
-    """Base transformation class to store and read dogpile cached data
-    from MongoDB.
+    """Base class to store and read dogpile cached data from MongoDB.
 
     This is needed as dogpile internally stores data as a custom class
     i.e. dogpile.cache.api.CachedValue

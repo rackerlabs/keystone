@@ -37,11 +37,11 @@ LOG = log.getLogger(__name__)
 
 
 class _MemcacheClient(memcache.Client):
-    """Thread global memcache client
+    """Thread global memcache client.
 
     As client is inherited from threading.local we have to restore object
     methods overloaded by threading.local so we can reuse clients in
-    different threads
+    different threads.
     """
     __delattr__ = object.__delattr__
     __getattribute__ = object.__getattribute__
@@ -56,7 +56,7 @@ _PoolItem = collections.namedtuple('_PoolItem', ['ttl', 'connection'])
 
 
 class ConnectionPool(queue.Queue):
-    """Base connection pool class
+    """Base connection pool class.
 
     This class implements the basic connection pool logic as an abstract base
     class.

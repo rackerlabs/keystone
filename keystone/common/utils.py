@@ -43,7 +43,7 @@ LOG = log.getLogger(__name__)
 
 
 def flatten_dict(d, parent_key=''):
-    """Flatten a nested dictionary
+    """Flatten a nested dictionary.
 
     Converts a dictionary with nested values to a single level flat
     dictionary, with dotted notation for each key.
@@ -191,7 +191,7 @@ def convert_v3_to_ec2_credential(credential):
 
 
 def unixtime(dt_obj):
-    """Format datetime object as unix timestamp
+    """Format datetime object as unix timestamp.
 
     :param dt_obj: datetime.datetime object
     :returns: float

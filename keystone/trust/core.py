@@ -244,8 +244,10 @@ class TrustDriverV8(object):
 
     @abc.abstractmethod
     def consume_use(self, trust_id):
-        """Consume one use when a trust was created with a limitation on its
-        uses, provided there are still uses available.
+        """Consume one use, provided there are still uses available.
+
+        This only applies when a trust was created with a limitation on its
+        uses.
 
         :raises: keystone.exception.TrustUseLimitReached,
                  keystone.exception.TrustNotFound
