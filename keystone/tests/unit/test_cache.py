@@ -54,6 +54,7 @@ class CacheIsolatingProxy(proxy.ProxyBackend):
     thing before storing data.
 
     """
+
     def get(self, key):
         return _copy_value(self.proxied.get(key))
 
