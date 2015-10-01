@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_c60ad91f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T08:20:51Z",
+      "side": 1,
+      "message": "should this be part of this patch?  I understand why we need it eventually (for top level projects acting as a domain).  We also don\u0027t test it in this patch either.",
+      "revId": "082b1e93efcbd052b62ad7515d7631da337b62bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
