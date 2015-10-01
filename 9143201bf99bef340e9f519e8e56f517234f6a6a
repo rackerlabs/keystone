@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_66942044",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-01T13:40:46Z",
+      "side": 1,
+      "message": "suggest to replace \"bad request\" with \"Bad Request\" to consistent with L773",
+      "revId": "9143201bf99bef340e9f519e8e56f517234f6a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
