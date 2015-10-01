@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_6fbdc701",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-01T17:46:54Z",
+      "side": 1,
+      "message": "It is actually more complicated. :)\n\nFrom two lines:\n\n1. service_id \u003d uuid.uuid4().hex\n\n2. service[\u0027id\u0027] \u003d service_id\n\nit can be changed to one liner:\n\n1. service_id \u003d service[\u0027id\u0027]",
+      "parentUuid": "9a1a9d01_973dee2c",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_260aba8a",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 13
