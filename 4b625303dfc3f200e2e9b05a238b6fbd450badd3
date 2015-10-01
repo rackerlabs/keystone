@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_1e634043",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-01T00:20:49Z",
+      "side": 1,
+      "message": "suggest remove \"v3\" since the call is to \"validate_non_persistent_token\" now (no v3 in the name), and there\u0027s no v3 token used, it\u0027s just a uuid.",
+      "revId": "4b625303dfc3f200e2e9b05a238b6fbd450badd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

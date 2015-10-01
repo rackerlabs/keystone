@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_7ea4bc49",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-01T00:20:49Z",
+      "side": 0,
+      "message": "I don\u0027t understand why this is being removed. It provides caching for v3 tokens.",
+      "revId": "3f587c5fd57761e85fc9e58909e6cb4cd35e8a82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
