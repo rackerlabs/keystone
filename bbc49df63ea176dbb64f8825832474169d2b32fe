@@ -34,6 +34,24 @@
       "revId": "bbc49df63ea176dbb64f8825832474169d2b32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2cb91ded",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-10-01T17:27:36Z",
+      "side": 1,
+      "message": "There\u0027s nothing preventing someone from using hostnames, so to preserve backward compatibility, I would leave as StrOpt and update the help text.",
+      "parentUuid": "9a1a9d01_9a96dc3d",
+      "revId": "bbc49df63ea176dbb64f8825832474169d2b32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
