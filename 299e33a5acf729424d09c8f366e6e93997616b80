@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_b2ae007f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T08:11:57Z",
+      "side": 1,
+      "message": "nit: Did you mean \"No remote ID attr...\" ?",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
