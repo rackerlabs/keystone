@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_37c3c239",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T07:36:14Z",
+      "side": 1,
+      "message": "this name does not suggest we will be setting things like domain_id....it sounds like it will just raise exceptions if constraints fail.",
+      "revId": "7f572112f7ee711d5834fd3e67ac3ec9640da759",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
