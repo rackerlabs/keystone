@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_46eb29dc",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "I just don\u0027t know a better word to describe the difference with the endpoints migrated from v2",
+      "parentUuid": "9a1a9d01_46b80e2a",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_91941e8b",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 13
@@ -47,6 +65,24 @@
       "writtenOn": "2015-10-01T06:09:57Z",
       "side": 1,
       "message": "just throw out a question here, what it will be if the v2 endpoint doesn\u0027t has public interface? return or not return?",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_461a49c7",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "public interface is required, as in the create_endpoint method in this class. I don\u0027t think we need to consider if the user manually update the database.",
+      "parentUuid": "9a1a9d01_91941e8b",
       "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_29e60644",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_260aba8a",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_86cdc667",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 13
@@ -168,6 +222,24 @@
       "writtenOn": "2015-10-01T06:09:57Z",
       "side": 1,
       "message": "in case of what?",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_069bf118",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "in case of anything unexpected. :)\nI just think more checks are better, to make sure the expected endpoint is returned.",
+      "parentUuid": "9a1a9d01_e6b7e282",
       "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_c63c19e3",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "Had a discussion with dstanek, that different names (and other attributes) can be set for different interfaces, e.g. name\u003dtest1 for interface\u003dpublic, name\u003dtest2 for interface\u003dadmin. To be consistent, all extra attributes are gotten rid of, so you won\u0027t get name\u003dtest1 first, and name\u003dtest2 for another GET.\nThis is to test the logic works.",
+      "parentUuid": "9a1a9d01_866b86b6",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_86614607",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 13
@@ -219,6 +309,24 @@
       "writtenOn": "2015-10-01T06:09:57Z",
       "side": 1,
       "message": "del/because",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_69e07e29",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_86614607",
       "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -242,6 +350,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_a9f1b602",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_c6397ef3",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_261e3a70",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 13
@@ -253,6 +379,24 @@
       "writtenOn": "2015-10-01T06:09:57Z",
       "side": 1,
       "message": "same here.",
+      "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e9eb2e11",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T08:54:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_261e3a70",
       "revId": "0d13a85e93737df8c9c130f194839b27d0781890",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
