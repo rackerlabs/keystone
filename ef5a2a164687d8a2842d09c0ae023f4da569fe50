@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_7d44c148",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-10-01T01:23:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_a1e498ab",
+      "revId": "ef5a2a164687d8a2842d09c0ae023f4da569fe50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_6198c01c",
         "filename": "doc/source/setup.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-30T13:25:04Z",
       "side": 1,
       "message": "trailing whitespace, redundant comma:\n\n\"Once set up within a virtualenv, you should be able to invoke python and\"\n\npython is not a language here - it\u0027s a binary, so don\u0027t capitalize it",
+      "revId": "ef5a2a164687d8a2842d09c0ae023f4da569fe50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5d453d40",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-10-01T01:23:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_6198c01c",
       "revId": "ef5a2a164687d8a2842d09c0ae023f4da569fe50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
