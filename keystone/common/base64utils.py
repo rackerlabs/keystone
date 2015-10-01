@@ -372,12 +372,12 @@ def base64_wrap_iter(text, width=64):
 
 
 def base64_wrap(text, width=64):
-    """Fold text into lines of text with max line length.
+    r"""Fold text into lines of text with max line length.
 
     Input is assumed to consist only of members of a base64
     alphabet (i.e no whitespace). Fold the text into lines whose
     line length is width chars long, terminate each line with line
-    ending (default is '\\n'). Return the wrapped text as a single
+    ending (default is '\n'). Return the wrapped text as a single
     string.
 
     Use the filter_formatting() function to assure the input text
