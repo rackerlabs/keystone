@@ -2381,6 +2381,7 @@ class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
     Setting backward_compatible_ids to False will enable this mapping.
 
     """
+
     def config_overrides(self):
         super(LdapIdentitySqlAssignmentWithMapping, self).config_overrides()
         self.config_fixture.config(group='identity_mapping',
@@ -2545,6 +2546,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
     domain.
 
     """
+
     def setUp(self):
         sqldb = self.useFixture(database.Database())
         super(MultiLDAPandSQLIdentity, self).setUp()
@@ -3048,6 +3050,7 @@ class DomainSpecificLDAPandSQLIdentity(
     Although the default driver still exists, we don't use it.
 
     """
+
     def setUp(self):
         sqldb = self.useFixture(database.Database())
         super(DomainSpecificLDAPandSQLIdentity, self).setUp()
@@ -3212,6 +3215,7 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
     - A separate SQL backend for domain1
 
     """
+
     def initial_setup(self, sqldb):
         # We aren't setting up any initial data ahead of switching to
         # domain-specific operation, so make the switch straight away.
