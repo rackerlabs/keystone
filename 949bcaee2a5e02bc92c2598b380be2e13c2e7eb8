@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_49648348",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-01T17:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_d784c6d3",
+      "revId": "949bcaee2a5e02bc92c2598b380be2e13c2e7eb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_17c23ee9",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_29c6ef16",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-01T17:28:19Z",
+      "side": 1,
+      "message": "nothing :P removed it",
+      "parentUuid": "9a1a9d01_17c23ee9",
+      "revId": "949bcaee2a5e02bc92c2598b380be2e13c2e7eb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_372e62a5",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 17
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-01T07:52:03Z",
       "side": 1,
       "message": "To make sure your change hasn\u0027t broken anything, I\u0027d suggest you improve this test to actually check that the project has moved to the new domain.",
+      "revId": "949bcaee2a5e02bc92c2598b380be2e13c2e7eb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e9e6b7af",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 828,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-01T17:28:19Z",
+      "side": 1,
+      "message": "ok. I\u0027ll do that in another patchset",
+      "parentUuid": "9a1a9d01_372e62a5",
       "revId": "949bcaee2a5e02bc92c2598b380be2e13c2e7eb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
