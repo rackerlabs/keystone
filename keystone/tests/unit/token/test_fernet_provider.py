@@ -119,7 +119,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, domain_id, exp_expires_at,
             exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.UnscopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -141,7 +142,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.ProjectScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -164,7 +166,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, exp_domain_id,
             exp_expires_at, exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, domain_id, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.DomainScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -187,7 +190,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, exp_domain_id,
             exp_expires_at, exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, domain_id, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.DomainScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -210,7 +214,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, exp_trust_id, federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids, trust_id) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.TrustScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -234,7 +239,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, domain_id, exp_expires_at,
             exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.UnscopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -256,7 +262,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.ProjectScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -279,7 +286,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.ProjectScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -302,7 +310,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, exp_domain_id,
             exp_expires_at, exp_audit_ids, trust_id, federated_info)
 
-        (user_id, methods, domain_id, expires_at, audit_ids) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.DomainScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -325,7 +334,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, exp_trust_id, federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids, trust_id) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.TrustScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -349,7 +359,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, exp_trust_id, federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids, trust_id) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.TrustScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -375,7 +386,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, domain_id, exp_expires_at,
             exp_audit_ids, trust_id, exp_federated_info)
 
-        (user_id, methods, expires_at, audit_ids, federated_info) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.FederatedUnscopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
@@ -405,8 +417,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, exp_project_id, domain_id,
             exp_expires_at, exp_audit_ids, trust_id, exp_federated_info)
 
-        (user_id, methods, project_id, expires_at, audit_ids,
-         federated_info) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.FederatedProjectScopedPayload.disassemble(
                 payload))
 
@@ -433,8 +445,8 @@ class TestPayloads(unit.TestCase):
             exp_user_id, exp_methods, project_id, exp_domain_id,
             exp_expires_at, exp_audit_ids, trust_id, exp_federated_info)
 
-        (user_id, methods, domain_id, expires_at, audit_ids,
-         federated_info) = (
+        (user_id, methods, project_id, domain_id, expires_at, audit_ids,
+         trust_id, federated_info) = (
             token_formatters.FederatedDomainScopedPayload.disassemble(
                 payload))
 

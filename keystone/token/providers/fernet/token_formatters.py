@@ -171,35 +171,12 @@ class TokenFormatter(object):
         versioned_payload = msgpack.unpackb(serialized_payload)
         version, payload = versioned_payload[0], versioned_payload[1:]
 
-        # depending on the formatter, these may or may not be defined
-        domain_id = None
-        project_id = None
-        trust_id = None
-        federated_info = None
-
-        if version == UnscopedPayload.version:
-            (user_id, methods, expires_at, audit_ids) = (
-                UnscopedPayload.disassemble(payload))
-        elif version == DomainScopedPayload.version:
-            (user_id, methods, domain_id, expires_at, audit_ids) = (
-                DomainScopedPayload.disassemble(payload))
-        elif version == ProjectScopedPayload.version:
-            (user_id, methods, project_id, expires_at, audit_ids) = (
-                ProjectScopedPayload.disassemble(payload))
-        elif version == TrustScopedPayload.version:
-            (user_id, methods, project_id, expires_at, audit_ids, trust_id) = (
-                TrustScopedPayload.disassemble(payload))
-        elif version == FederatedUnscopedPayload.version:
-            (user_id, methods, expires_at, audit_ids, federated_info) = (
-                FederatedUnscopedPayload.disassemble(payload))
-        elif version == FederatedProjectScopedPayload.version:
-            (user_id, methods, project_id, expires_at, audit_ids,
-             federated_info) = FederatedProjectScopedPayload.disassemble(
-                payload)
-        elif version == FederatedDomainScopedPayload.version:
-            (user_id, methods, domain_id, expires_at, audit_ids,
-             federated_info) = FederatedDomainScopedPayload.disassemble(
-                payload)
+        for payload_class in PAYLOAD_CLASSES:
+            if version == payload_class.version:
+                (user_id, methods, project_id, domain_id, expires_at,
+                 audit_ids, trust_id, federated_info) = (
+                    payload_class.disassemble(payload))
+                break
         else:
             # If the token_format is not recognized, raise ValidationError.
             raise exception.ValidationError(_(
@@ -360,7 +337,12 @@ class UnscopedPayload(BasePayload):
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
         expires_at_str = cls._convert_int_to_time_string(payload[2])
         audit_ids = list(map(provider.base64_encode, payload[3]))
-        return (user_id, methods, expires_at_str, audit_ids)
+        project_id = None
+        domain_id = None
+        trust_id = None
+        federated_info = None
+        return (user_id, methods, project_id, domain_id, expires_at_str,
+                audit_ids, trust_id, federated_info)
 
 
 class DomainScopedPayload(BasePayload):
@@ -419,8 +401,12 @@ class DomainScopedPayload(BasePayload):
                 raise
         expires_at_str = cls._convert_int_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
+        project_id = None
+        trust_id = None
+        federated_info = None
 
-        return (user_id, methods, domain_id, expires_at_str, audit_ids)
+        return (user_id, methods, project_id, domain_id, expires_at_str,
+                audit_ids, trust_id, federated_info)
 
 
 class ProjectScopedPayload(BasePayload):
@@ -465,8 +451,12 @@ class ProjectScopedPayload(BasePayload):
         project_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
         expires_at_str = cls._convert_int_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
+        domain_id = None
+        trust_id = None
+        federated_info = None
 
-        return (user_id, methods, project_id, expires_at_str, audit_ids)
+        return (user_id, methods, project_id, domain_id, expires_at_str,
+                audit_ids, trust_id, federated_info)
 
 
 class TrustScopedPayload(BasePayload):
@@ -516,9 +506,11 @@ class TrustScopedPayload(BasePayload):
         expires_at_str = cls._convert_int_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
         trust_id = cls.convert_uuid_bytes_to_hex(payload[5])
+        domain_id = None
+        federated_info = None
 
-        return (user_id, methods, project_id, expires_at_str, audit_ids,
-                trust_id)
+        return (user_id, methods, project_id, domain_id, expires_at_str,
+                audit_ids, trust_id, federated_info)
 
 
 class FederatedUnscopedPayload(BasePayload):
@@ -588,7 +580,11 @@ class FederatedUnscopedPayload(BasePayload):
         audit_ids = list(map(provider.base64_encode, payload[6]))
         federated_info = dict(group_ids=group_ids, idp_id=idp_id,
                               protocol_id=protocol_id)
-        return (user_id, methods, expires_at_str, audit_ids, federated_info)
+        project_id = None
+        domain_id = None
+        trust_id = None
+        return (user_id, methods, project_id, domain_id, expires_at_str,
+                audit_ids, trust_id, federated_info)
 
 
 class FederatedScopedPayload(FederatedUnscopedPayload):
@@ -640,6 +636,12 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
         scope_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
+        project_id = (
+            scope_id
+            if cls.version == FederatedProjectScopedPayload.version else None)
+        domain_id = (
+            scope_id
+            if cls.version == FederatedDomainScopedPayload.version else None)
         group_ids = list(map(cls.unpack_group_id, payload[3]))
         idp_id = cls.attempt_convert_uuid_bytes_to_hex(payload[4])
         protocol_id = payload[5]
@@ -647,8 +649,9 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         audit_ids = list(map(provider.base64_encode, payload[7]))
         federated_info = dict(idp_id=idp_id, protocol_id=protocol_id,
                               group_ids=group_ids)
-        return (user_id, methods, scope_id, expires_at_str, audit_ids,
-                federated_info)
+        trust_id = None
+        return (user_id, methods, project_id, domain_id, expires_at_str,
+                audit_ids, trust_id, federated_info)
 
 
 class FederatedProjectScopedPayload(FederatedScopedPayload):
