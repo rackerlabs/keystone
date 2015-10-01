@@ -86,6 +86,24 @@
       "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_3dbde901",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-01T01:29:33Z",
+      "side": 1,
+      "message": "It\u0027s not. However, the old code (line 85) handles it the same way (I\u0027m not sure if the endpoint cannot be changed after migrated from v2 though).\nI haven\u0027t seen how a _real_ v2 endpoint looks like, if it has not \"extra\" field, I think just popping it will do.",
+      "parentUuid": "9a1a9d01_ce00c736",
+      "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
