@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_6ccddf85",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T14:19:43Z",
+      "side": 1,
+      "message": "if you wanted to follow my design suggestion, this would just say it must not have a parent and it\u0027s domain_id should be None.",
+      "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_ec480f8d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T14:19:43Z",
+      "side": 1,
+      "message": "I still think this sentence is confusing.  How about:\n\nIf the caller has not specified the domain_id of the project, then it will be inferred from it\u0027s position in the hierarchy, i.e. unless it is a top level project then its domain will be the same domain as its parent. If this is a top level project, then it must be acting as a domain - and for such projects the domain_id is the project_id, so we don\u0027t bother to store a separate domain_id.",
+      "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4ceedbb5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T14:19:43Z",
+      "side": 1,
+      "message": "if you were following my design suggestion, this wouldn\u0027t be needed yet",
+      "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
