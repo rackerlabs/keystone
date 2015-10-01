@@ -48,6 +48,7 @@ dogpile.cache.register_backend(
 
 class DebugProxy(proxy.ProxyBackend):
     """Extra Logging ProxyBackend."""
+
     # NOTE(morganfainberg): Pass all key/values through repr to ensure we have
     # a clean description of the information.  Without use of repr, it might
     # be possible to run into encode/decode error(s). For logging/debugging
