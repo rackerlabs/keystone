@@ -69,6 +69,23 @@
       "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_ce00c736",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-01T01:14:21Z",
+      "side": 1,
+      "message": "A side-effect of doing this is that the v3 endpoint will have a name, description and maybe other things that don\u0027t appear in the v2 endpoints in the same list. Is that intended?",
+      "revId": "d979a40fa46623a4b9da47cc86af335ea07ea450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
