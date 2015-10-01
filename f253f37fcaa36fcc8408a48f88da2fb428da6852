@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_cb7095df",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-01T13:29:51Z",
+      "side": 1,
+      "message": "the comment at line 250 says that this works for v2 or v3.",
+      "revId": "f253f37fcaa36fcc8408a48f88da2fb428da6852",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
