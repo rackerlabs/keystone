@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_a6424566",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T08:44:01Z",
+      "side": 1,
+      "message": "nit: sentence doesn\u0027t quiet make sense, maybe drop the \"so\" out of it",
+      "revId": "e17db6489802a4b60f71260a763be33617c40330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a66b25f0",
+        "filename": "doc/source/developing.rst~",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T08:44:01Z",
+      "side": 1,
+      "message": "Did you mean to include this file?",
+      "revId": "e17db6489802a4b60f71260a763be33617c40330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_8675c1cb",
+        "filename": "keystone/common/sql/migrate_repo/README~",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T08:44:01Z",
+      "side": 1,
+      "message": "did you mean to include this file?",
+      "revId": "e17db6489802a4b60f71260a763be33617c40330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
