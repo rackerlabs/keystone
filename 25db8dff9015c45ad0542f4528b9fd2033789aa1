@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_30d503e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T11:16:15Z",
+      "side": 1,
+      "message": "I\u0027d certainly prefer at least a line or two here as to what we are exposing, rather than having to look up the bug - a commit comment should be able to stand alone.",
+      "revId": "25db8dff9015c45ad0542f4528b9fd2033789aa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_703dbb29",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2087,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T11:16:15Z",
+      "side": 1,
+      "message": "won\u0027t this cause ALL the backend tests to be run?  If so, seems  a bit of overkill",
+      "revId": "25db8dff9015c45ad0542f4528b9fd2033789aa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
