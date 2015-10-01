@@ -2084,6 +2084,37 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.assertEqual('Foo Bar', user_ref['name'])
 
 
+class LDAPUserList(BaseLDAPIdentity, unit.TestCase):
+
+    def setUp(self):
+        # NOTE(dstanek): The database must be setup prior to calling the
+        # parent's setUp. The parent's setUp uses services (like
+        # credentials) that require a database.
+        self.useFixture(database.Database())
+        super(LDAPUserList, self).setUp()
+        _assert_backends(self,
+                         assignment='ldap',
+                         identity='ldap',
+                         resource='ldap')
+
+    def load_fixtures(self, fixtures):
+        # Override super impl since need to create group container.
+        create_group_container(self.identity_api)
+        super(LDAPUserList, self).load_fixtures(fixtures)
+
+    def config_overrides(self):
+        super(LDAPUserList, self).config_overrides()
+        self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='identity',
+                                   list_limit=len(default_fixtures.USERS)-1)
+
+    def test_returned_list_size_is_limited(self):
+        users = self.identity_api.list_users()
+        # NOTE(amakarov): this exposes bug 1501698
+        # list_limit number of entries should be returned
+        self.assertEqual(len(default_fixtures.USERS), len(users))
+
+
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
         super(LDAPIdentityEnabledEmulation, self).setUp()
