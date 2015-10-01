@@ -78,7 +78,6 @@ def is_valid_base64(text):
     :type text: string
     :returns: bool -- True if text can be decoded as base64, False otherwise
     """
-
     text = filter_formatting(text)
 
     if base64_non_alphabet_re.search(text):
@@ -98,7 +97,6 @@ def is_valid_base64url(text):
     :returns: bool -- True if text can be decoded as base64url,
               False otherwise
     """
-
     text = filter_formatting(text)
 
     if base64url_non_alphabet_re.search(text):
@@ -210,7 +208,6 @@ def base64_is_padded(text, pad='='):
     :returns: bool -- True if padded, False otherwise
     :raises: ValueError, InvalidBase64Error
     """
-
     _check_padding_length(pad)
 
     text_len = len(text)
@@ -244,7 +241,6 @@ def base64url_percent_encode(text):
     :returns: string -- percent-encoded base64url text
     :raises: InvalidBase64Error
     """
-
     if len(text) % 4 != 0:
         raise InvalidBase64Error(_('padded base64url text must be '
                                    'multiple of 4 characters'))
@@ -263,7 +259,6 @@ def base64url_percent_decode(text):
     :type text: string
     :returns: string -- percent-decoded base64url text
     """
-
     decoded_text = urllib.parse.unquote(text)
 
     if len(decoded_text) % 4 != 0:
@@ -365,7 +360,6 @@ def base64_wrap_iter(text, width=64):
     :type width: int
     :returns: generator -- sequence of lines of base64 text.
     """
-
     text = six.text_type(text)
     for x in six.moves.range(0, len(text), width):
         yield text[x:x + width]
@@ -389,7 +383,6 @@ def base64_wrap(text, width=64):
     :type width: int
     :returns: string -- wrapped text.
     """
-
     buf = six.StringIO()
 
     for line in base64_wrap_iter(text, width):

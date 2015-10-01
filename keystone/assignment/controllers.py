@@ -503,7 +503,6 @@ class RoleAssignmentV3(controller.V3Controller):
         }
 
         """
-
         formatted_entity = {'links': {}}
         inherited_assignment = entity.get('inherited_to_projects')
 
