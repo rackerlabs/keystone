@@ -488,6 +488,7 @@ class AbstractManipulator(object):
     `pymongo.son_manipulator.SONManipulator` and using that as base class.
     This is done to avoid pymongo dependency if MongoDB backend is not used.
     """
+
     @abc.abstractmethod
     def transform_incoming(self, son, collection):
         """Used while saving data to MongoDB.
