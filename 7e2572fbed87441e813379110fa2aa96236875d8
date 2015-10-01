@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_d7104602",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-01T07:26:01Z",
+      "side": 1,
+      "message": "actually, would:\n\nserver_default\u003dsqlalchemy.sql.expression.false()\n\n...not be a safer thing to write? See catalog/backends/sql.py as an example.",
+      "revId": "7e2572fbed87441e813379110fa2aa96236875d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
