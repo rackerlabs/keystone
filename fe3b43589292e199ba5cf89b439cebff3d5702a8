@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_fff081cb",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-02T13:21:56Z",
+      "side": 1,
+      "message": "shouldn\u0027t payload_class be set to something so that we know about it outside the context of the for loop?",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1fc5355a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-02T13:21:56Z",
+      "side": 1,
+      "message": "how do we know what payload_class we\u0027re calling?",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1f9c5568",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-02T13:21:56Z",
+      "side": 1,
+      "message": "so, all classes are going to require these arguments in their assemble methods even though they aren\u0027t used?",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1fbbf50f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-02T13:21:56Z",
+      "side": 1,
+      "message": "An explanation about why the order would probably be useful here since it\u0027s not as easy to tell given the refactor.",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
