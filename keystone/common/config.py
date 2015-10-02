@@ -43,6 +43,16 @@ FILE_OPTIONS = {
                         'to set this value if the base URL contains a path '
                         '(e.g. /prefix/v3) or the endpoint should be found '
                         'on a different server.'),
+        cfg.StrOpt('internal_endpoint',
+                   help='The base internal endpoint URL for Keystone that is '
+                        'advertised to clients (NOTE: this does NOT affect '
+                        'how Keystone listens for connections). '
+                        'Defaults to the base host URL of the request. E.g. a '
+                        'request to http://server:5000/v3/users will '
+                        'default to http://server:5000. You should only need '
+                        'to set this value if the base URL contains a path '
+                        '(e.g. /prefix/v3) or the endpoint should be found '
+                        'on a different server.'),
         cfg.StrOpt('admin_endpoint',
                    help='The base admin endpoint URL for Keystone that is '
                         'advertised to clients (NOTE: this does NOT affect '
