@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_48af877d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-02T06:31:12Z",
+      "side": 1,
+      "message": "make part of fix for  1479452",
+      "revId": "66661626fea50360b952311acae04d5d6a2cfd12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
