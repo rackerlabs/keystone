@@ -16,6 +16,24 @@
       "revId": "082b1e93efcbd052b62ad7515d7631da337b62bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_804a7726",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T18:00:36Z",
+      "side": 1,
+      "message": "yes, that\u0027s it... I\u0027ll add some tests for it",
+      "parentUuid": "9a1a9d01_c60ad91f",
+      "revId": "082b1e93efcbd052b62ad7515d7631da337b62bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
