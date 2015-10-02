@@ -16,6 +16,24 @@
       "revId": "c1a508b8754e724698425bce24474e5e473df4b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_96e146d3",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-10-02T01:01:50Z",
+      "side": 1,
+      "message": "of course not, refactoring is related to improve readability and maintainability as well - which this patch is doing (btw, the code in master is mine and when I steped into it again, found that could be improved). there is no good reason for you be against the dict - I am in favor, sadly you gave a -2.",
+      "parentUuid": "ba15a1d1_05561cd2",
+      "revId": "c1a508b8754e724698425bce24474e5e473df4b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
