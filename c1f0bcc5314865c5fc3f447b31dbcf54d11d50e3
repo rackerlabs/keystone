@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_bad21733",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T14:05:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_0e2f4da2",
+      "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_ce171553",
         "filename": "keystone/identity/core.py",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-02T12:44:44Z",
       "side": 1,
       "message": "Same as above, would be clearer.",
+      "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1a1783ee",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 994,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T14:05:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_ce171553",
       "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_fa616fd4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T14:05:46Z",
+      "side": 1,
+      "message": "we don\u0027t have \"is_domain project\" at this point, all projects are non is_domain",
+      "parentUuid": "9a1a9d01_d92fddf4",
+      "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_396859ba",
         "filename": "keystone/resource/core.py",
         "patchSetId": 19
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_9ae15301",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T14:05:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_396859ba",
+      "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_3954d952",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 19
@@ -81,6 +153,24 @@
       "writtenOn": "2015-10-02T12:44:44Z",
       "side": 1,
       "message": "We don\u0027t need child_project_2, we could have done the test with child_project.",
+      "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_fa6baf83",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 900,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T14:05:46Z",
+      "side": 1,
+      "message": "true. I\u0027ll remove it",
+      "parentUuid": "9a1a9d01_3954d952",
       "revId": "c1f0bcc5314865c5fc3f447b31dbcf54d11d50e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
