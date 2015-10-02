@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_8e010b09",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2484,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-10-02T18:29:49Z",
+      "side": 1,
+      "message": "Should verify that \u0027token\u0027 or \u0027password\u0027 are not in methods.",
+      "revId": "d0bee92aabaf800bcb3bacdb3b48d0522c99811d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
