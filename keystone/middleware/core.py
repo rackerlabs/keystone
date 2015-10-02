@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import urlparse
+
 from oslo_config import cfg
 from oslo_context import context as oslo_context
 from oslo_log import log
@@ -158,6 +160,12 @@ class NormalizingFilter(wsgi.Middleware):
         # Rewrites path to root if no path is given.
         elif not request.environ['PATH_INFO']:
             request.environ['PATH_INFO'] = '/'
+
+    def process_response(self, request, response):
+        fix_discovery = FixVersionDiscoveryLinks()
+        if fix_discovery.is_version_discovery_request(request):
+            response = fix_discovery.process_response(request, response)
+        return response
 
 
 class RequestBodySizeLimiter(sizelimit.RequestBodySizeLimiter):
@@ -313,3 +321,46 @@ class AuthContextMiddleware(wsgi.Middleware):
             return
         LOG.debug('RBAC: auth_context: %s', auth_context)
         request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context
+
+
+class FixVersionDiscoveryLinks(object):
+    def _fix_links_url(self, request, links_elem):
+        for key in links_elem:
+            if key == "href":
+                try:
+                    o = urlparse.urlparse(links_elem[key])
+                    internal_o = urlparse.urlparse(CONF['internal_endpoint'])
+                    links_elem[key] = urlparse.urlunparse((
+                        internal_o.scheme, internal_o.netloc,
+                        o.path, o.params, o.query, o.fragment))
+                except Exception, e:
+                    LOG.warning(_LW('Failed to fix internal endpoint'))
+                    pass
+
+    def _fix_elem(self, request, json_elem):
+        for version in json_elem['versions']['values']:
+            for elem in version:
+                if isinstance(version[elem], list) and elem == "links":
+                    for link in version[elem]:
+                        self._fix_links_url(request, link)
+
+    def is_version_discovery_request(self, request):
+        # we only care about version discovery request coming from internal VIP
+        # and internal_endpoint is configured in keystone.conf
+        return (request.environ['PATH_INFO'] == '/' and
+                request.environ['REQUEST_METHOD'].upper() == 'GET' and
+                request.headers.get('X-Vip-Name') and
+                request.headers.get('X-Vip-Name').upper() == 'INTERNAL' and
+                'internal_endpoint' in CONF)
+
+    def process_response(self, request, response):
+        try:
+            json_body = jsonutils.loads(response.body)
+
+            # now lets fix the links
+            self._fix_elem(request, json_body)
+            response.body = jsonutils.dumps(json_body)
+        except:
+            # don't care as this may not be a json object
+            pass
+        return response
