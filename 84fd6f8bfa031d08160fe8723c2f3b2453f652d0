@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_19ac87ec",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-02T01:24:44Z",
+      "side": 1,
+      "message": "It\u0027s not really the fact that this is a list that makes this safe, it\u0027s that the list consists of all trusted input.",
+      "revId": "84fd6f8bfa031d08160fe8723c2f3b2453f652d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
