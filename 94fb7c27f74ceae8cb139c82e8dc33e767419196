@@ -16,6 +16,24 @@
       "revId": "94fb7c27f74ceae8cb139c82e8dc33e767419196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_bf73e9b3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-02T13:14:52Z",
+      "side": 1,
+      "message": "At this point, this is specific to non-persistent tokens.",
+      "parentUuid": "9a1a9d01_18048fc4",
+      "revId": "94fb7c27f74ceae8cb139c82e8dc33e767419196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
