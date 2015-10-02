@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_ebf20b6f",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-02T12:14:20Z",
+      "side": 1,
+      "message": "s/Setting/Getting",
+      "revId": "b01c5ded7f9086bca9651e2d8f568f1273cadfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_2bf9e34d",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-02T12:14:20Z",
+      "side": 1,
+      "message": "``pip``\n\nAlso, I\u0027d remove \u0027we\u0027",
+      "revId": "b01c5ded7f9086bca9651e2d8f568f1273cadfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4ed1c5fa",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-02T12:14:20Z",
+      "side": 1,
+      "message": "s/python/Python",
+      "revId": "b01c5ded7f9086bca9651e2d8f568f1273cadfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_ee08d993",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-02T12:14:20Z",
+      "side": 1,
+      "message": "s/don\u0027t/Don\u0027t",
+      "revId": "b01c5ded7f9086bca9651e2d8f568f1273cadfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
