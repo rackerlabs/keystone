@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_4be8ee16",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T17:58:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_6ccddf85",
+      "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_ec480f8d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_6bbe12d6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T17:58:31Z",
+      "side": 1,
+      "message": "almost agreed. except that the project_id is never the domain_id",
+      "parentUuid": "9a1a9d01_ec480f8d",
+      "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_4ceedbb5",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-01T14:19:43Z",
       "side": 1,
       "message": "if you were following my design suggestion, this wouldn\u0027t be needed yet",
+      "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_0b5756cb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-02T17:58:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_4ceedbb5",
       "revId": "33525f414655d7cba2908490ea80f09eda9eaa37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
