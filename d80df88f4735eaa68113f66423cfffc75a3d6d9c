@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_fa039374",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "non-relevant, but seems there is a duplicated \u0027each\u0027 here :)",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_054e50c1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "better to explicitly comment at the beginning of the line to tell us that \u0027subtree_ids\u0027 is a list of project ids.",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_88d035cb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "so, it\u0027s not just parent ids anymore, it\u0027s all the project ids in the tree, both the upward and downward projects in the tree, iiuc, can we change the name this variable?",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a58764d6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "fine as it is, just curious why the outermost brackets \u0027()\u0027 is needed here. :)",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5aa87f77",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6646,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "del/\u0027a\u0027 before \u0027when\u0027",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1a3a0799",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6676,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "nit: s/assignents/assignments",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_9a905750",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6683,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "why ignore this assignment on project1 itself?",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_fa871310",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6714,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-03T07:46:05Z",
+      "side": 1,
+      "message": "why this {\u0027user\u0027: 0, \u0027role\u0027: 2, \u0027project\u0027: 1} is redundant?",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
