@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_00505a09",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-03T12:09:43Z",
+      "side": 1,
+      "message": "(nit) that this is supported (for production ?) at this time.",
+      "revId": "29ea31aec0ca8cf01036fbc47d1fd65ef63e4e03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
