@@ -67,6 +67,23 @@
       "revId": "3c64a4b6628ef30bd029f2139eb9e49d0af2ffe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_45a8a477",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-03T10:17:14Z",
+      "side": 1,
+      "message": "so is the test meant to be without parent_id or parent_id is None - right now it is the latter",
+      "revId": "3c64a4b6628ef30bd029f2139eb9e49d0af2ffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
