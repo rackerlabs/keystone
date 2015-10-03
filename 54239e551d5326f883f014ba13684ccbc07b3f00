@@ -34,6 +34,23 @@
       "revId": "54239e551d5326f883f014ba13684ccbc07b3f00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6bced784",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-03T15:41:00Z",
+      "side": 1,
+      "message": "I propose you setting the port 3333 for those, as it should be the default in devstack [1].\n\nhttps://github.com/openstack-dev/devstack/blob/afe5074cddf7e3ca371227c5faf4c6a6e1a83865/stackrc#L634",
+      "revId": "54239e551d5326f883f014ba13684ccbc07b3f00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
