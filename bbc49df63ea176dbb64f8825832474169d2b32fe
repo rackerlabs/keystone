@@ -70,6 +70,24 @@
       "revId": "bbc49df63ea176dbb64f8825832474169d2b32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_00293a89",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-03T11:52:53Z",
+      "side": 1,
+      "message": "In eventlet, for example, the method called for discovering the IP address from the host is getaddrinfo [1][2], showing it is possible to use a hostname.\n\n[1] https://github.com/openstack/keystone/blob/13f1da5bd0cd12aefd5eb2c39c3c59d398ad30bc/keystone/common/environment/eventlet_server.py#L102-L105\n[2] https://docs.python.org/2/library/socket.html#socket.getaddrinfo",
+      "parentUuid": "9a1a9d01_85ab1c1e",
+      "revId": "bbc49df63ea176dbb64f8825832474169d2b32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
