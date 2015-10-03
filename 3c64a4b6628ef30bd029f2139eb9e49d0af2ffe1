@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_a5dc2047",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-03T10:06:09Z",
+      "side": 1,
+      "message": "what about the case when they try and create an is_domain project but have specified a domain_id (which should be illegal)",
+      "revId": "3c64a4b6628ef30bd029f2139eb9e49d0af2ffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_451504e3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-03T10:06:09Z",
+      "side": 1,
+      "message": "maybe a better wording would be:\n\n\"only root projects are allowed to act as domains\"",
+      "revId": "3c64a4b6628ef30bd029f2139eb9e49d0af2ffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a525005d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-03T10:06:09Z",
+      "side": 1,
+      "message": "shouldn\u0027t we check that this is true in this method.  E.g. what happens if they didn\u0027t specify a domain_id for a top level project?",
+      "revId": "3c64a4b6628ef30bd029f2139eb9e49d0af2ffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c55a74f2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-03T10:06:09Z",
+      "side": 1,
+      "message": "actually...sorry..having suggested this...it\u0027s not true (yet) I think that a top level project must be a domain is it? In which case this 2nd sentence should say something like:\n\n\"If this is a top level project action as a domain, the domain_id is the project_id, and for such projects we don\u0027t both to store a separate domain_id. If this is a non-domain top level project, then the domain_id must have been specified by the caller (this is checked as part of the project constraints).\"\n\nI also think this comment would be bette moved to before line 176.",
+      "revId": "3c64a4b6628ef30bd029f2139eb9e49d0af2ffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
