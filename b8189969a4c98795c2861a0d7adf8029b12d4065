@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_d0254b5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T03:41:20Z",
+      "side": 1,
+      "message": "The justification here should be that it would be better to have  constants defined in immutable lists (tuples) instead of simple lists.",
+      "revId": "b8189969a4c98795c2861a0d7adf8029b12d4065",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
