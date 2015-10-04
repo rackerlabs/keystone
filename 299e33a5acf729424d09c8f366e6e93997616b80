@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_7d01b805",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "(nit) Shouldn\u0027t we be grouping the comment below with this one for consistency ? As the one just above ...",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_10ff4302",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_9d5e0c44",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "(nit) Maybe we should move below part of the comment above saying why we are just passing here ?",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_b2ae007f",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -13,6 +64,108 @@
       "writtenOn": "2015-10-01T08:11:57Z",
       "side": 1,
       "message": "nit: Did you mean \"No remote ID attr...\" ?",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_dd6c840a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "Hmm, interesting. In the case the line above raises KeyError, \u0027tenants\u0027 would still be returned inside \u0027extra\u0027. Maybe a bug ?",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5daab41a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "We could simply raise the exception inside the except block",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7da53845",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1d63dc1b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_3d66e029",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_bdabd01d",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T02:39:08Z",
+      "side": 1,
+      "message": "(nit) We could simply return false inside the except block",
       "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
