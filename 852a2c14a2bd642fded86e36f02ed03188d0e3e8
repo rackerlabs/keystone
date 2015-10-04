@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_44209df7",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T17:54:23Z",
+      "side": 1,
+      "message": "Besides this, pep257 library needs to be pinned too, as in the global requirements\u0027 patch.\n\n[1] https://review.openstack.org/#/c/229685/2/global-requirements.txt",
+      "revId": "852a2c14a2bd642fded86e36f02ed03188d0e3e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
