@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_7f72087e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T19:11:51Z",
+      "side": 1,
+      "message": "I think we actually can\u0027t cache in those methods this way.\n\nSuppose we are deleting all the grants in a given domain_id. After that, querying for user_id and domain_id would return the cached values for the pair (user_id; domain_id).\n\nI suppose that\u0027s where your question come from, because that way we should check \u0027if user_id or domain_id:\u0027 instead of with an AND. However, how to know the other value (user or domain) to invalidate the cache, since the cache key is a pair user/domain ?\n\nThis can be solved if it\u0027s possible to invalidate all the cached valus where the keys match (*, domain_id), for example. I don\u0027t know if this library supports this.",
+      "parentUuid": "ba15a1d1_16bf30fc",
+      "revId": "9fedda4d322e8d73c4d1d64a3839a18a3ff4c35b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_9641000e",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-22T14:40:35Z",
       "side": 1,
       "message": "Same question here.",
+      "revId": "9fedda4d322e8d73c4d1d64a3839a18a3ff4c35b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_9f6d9c9b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T19:11:51Z",
+      "side": 1,
+      "message": "Same as above :)",
+      "parentUuid": "ba15a1d1_9641000e",
       "revId": "9fedda4d322e8d73c4d1d64a3839a18a3ff4c35b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
