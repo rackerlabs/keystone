@@ -16,6 +16,75 @@
       "revId": "2bab4b41bcfbd13d6de8202bc5eff12ac6e40bf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_709a3f70",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T04:00:47Z",
+      "side": 1,
+      "message": "++ Follow the rules for commit messages in that link",
+      "parentUuid": "da20952f_3e20519b",
+      "revId": "2bab4b41bcfbd13d6de8202bc5eff12ac6e40bf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_f0adef9b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T04:00:47Z",
+      "side": 1,
+      "message": "Trailing whitespaces",
+      "revId": "2bab4b41bcfbd13d6de8202bc5eff12ac6e40bf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b090d74f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T04:00:47Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "2bab4b41bcfbd13d6de8202bc5eff12ac6e40bf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_509ffb5e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T04:00:47Z",
+      "side": 1,
+      "message": "Remove these unrelated blanklines",
+      "revId": "2bab4b41bcfbd13d6de8202bc5eff12ac6e40bf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
