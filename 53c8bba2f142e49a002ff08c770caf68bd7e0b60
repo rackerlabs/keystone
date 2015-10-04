@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_c46cad0a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T18:10:39Z",
+      "side": 1,
+      "message": "++ And we don\u0027t need to add another test to test_cli for this (this test is currently missing)",
+      "parentUuid": "da20952f_859aca60",
+      "revId": "53c8bba2f142e49a002ff08c770caf68bd7e0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_abcc8689",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
