@@ -16,6 +16,24 @@
       "revId": "b8189969a4c98795c2861a0d7adf8029b12d4065",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_10bae3e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T03:50:40Z",
+      "side": 1,
+      "message": "However Boris\u0027 previous comment makes sense too...",
+      "parentUuid": "9a1a9d01_d0254b5c",
+      "revId": "b8189969a4c98795c2861a0d7adf8029b12d4065",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
