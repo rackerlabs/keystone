@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a1a9d01_bf43c06b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T20:57:02Z",
+      "side": 1,
+      "message": "\"it sets the is_domain project ref attribute to False.\"; we aren\u0027t checking it does so in the added tests.",
+      "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_9f727ce2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1789,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T20:57:02Z",
+      "side": 1,
+      "message": "(nit) a list *of* project refs",
+      "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_af80f28b",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 1
@@ -13,6 +47,58 @@
       "writtenOn": "2015-09-30T17:31:38Z",
       "side": 1,
       "message": "use new_project_ref: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/core.py#n267",
+      "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7f7768d4",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1793,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T20:57:02Z",
+      "side": 1,
+      "message": "++\nAlso, if we are checking the field is being set, the original project ref shouldn\u0027t contain the is_domain field, do you agree?",
+      "parentUuid": "9a1a9d01_af80f28b",
+      "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_3f81f08f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1796,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T20:57:02Z",
+      "side": 1,
+      "message": "How do I know the field was set ?",
+      "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5f7ce4b4",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1800,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T20:57:02Z",
+      "side": 1,
+      "message": "Same as above. Also, as both are the same object, how do I know it is setting the field for both objects and not for just one ?",
       "revId": "4a00bd359aee32354c48b81f6fcd1edd8279863e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
