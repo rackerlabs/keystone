@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_308b6720",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T04:07:05Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da20952f_3b99436f",
+      "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_db4607bf",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "This method will return the tenant_id, so if \u0027tenant_id\u0027 is already present in the auth object, we don\u0027t need get the tenant_id by name.",
       "parentUuid": "da20952f_db4607bf",
+      "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_50761b3f",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T04:07:05Z",
+      "side": 1,
+      "message": "It isn\u0027t just about extracting and returning the tenant_id form the auth info. It also does some validation on the tenant name. Although I agree it isn\u0027t documented in the method\u0027s doc.",
+      "parentUuid": "da20952f_1d4c61c6",
       "revId": "d755616cac3a5f2b337eedad9abe96edcec26af5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
