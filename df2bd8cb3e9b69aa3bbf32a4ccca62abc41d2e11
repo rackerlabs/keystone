@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_50629bd9",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T03:00:43Z",
+      "side": 0,
+      "message": "(nit) We could keep setting them explicitly to False, so the test is easier to understand ?",
+      "revId": "df2bd8cb3e9b69aa3bbf32a4ccca62abc41d2e11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
