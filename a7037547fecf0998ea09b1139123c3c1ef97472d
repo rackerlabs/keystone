@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_3d7ca0ea",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:57:01Z",
+      "side": 1,
+      "message": "I propose to use the @wip annotation [1] in this case, so the only thing we will need to do once it is fixed is to remove the annotation.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/utils.py#L55",
+      "revId": "a7037547fecf0998ea09b1139123c3c1ef97472d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_ff10e94f",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 1
@@ -66,6 +83,23 @@
       "writtenOn": "2015-07-29T07:12:10Z",
       "side": 1,
       "message": "Why comment instead of docstring wrapped with \"\"\" \"\"\" ?",
+      "revId": "a7037547fecf0998ea09b1139123c3c1ef97472d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_dd8244c8",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:57:01Z",
+      "side": 1,
+      "message": "Same as above, it would be better to use @wip",
       "revId": "a7037547fecf0998ea09b1139123c3c1ef97472d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
