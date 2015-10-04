@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_ddfd646f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:24:11Z",
+      "side": 1,
+      "message": "I believe service_id, region_id and interface are enough.",
+      "parentUuid": "fa1b9901_e336c7e6",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_cff9e081",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 3
@@ -48,6 +66,41 @@
       "side": 1,
       "message": "Sorry, this is a error in the merge. I\u0027ll remove this code.",
       "parentUuid": "7a016987_cff9e081",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1ddd1c14",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:24:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a016987_e5282d88",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_dde6c4e7",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_constraint_endpoint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:24:11Z",
+      "side": 1,
+      "message": "It should be 076 at this point.",
       "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -124,6 +177,40 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_fde948b8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:24:11Z",
+      "side": 1,
+      "message": "s/contraint/constraint",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_bdcc3062",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:24:11Z",
+      "side": 1,
+      "message": "tearDown already close all the sessions. Also, why are we instantiating the the session again? I believe we don\u0027t need these 3 lines at all.",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_8f4648be",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 3
@@ -152,6 +239,24 @@
       "writtenOn": "2015-05-31T09:34:36Z",
       "side": 1,
       "message": "You\u0027re right, I\u0027ll fix this.",
+      "parentUuid": "7a016987_8f4648be",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1d043c7c",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-04T01:24:11Z",
+      "side": 1,
+      "message": "++ Yeah, should be the same for any other duplicated entry.",
       "parentUuid": "7a016987_8f4648be",
       "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
