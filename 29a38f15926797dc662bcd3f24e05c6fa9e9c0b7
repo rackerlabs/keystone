@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_3d2070f7",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-05T16:53:53Z",
+      "side": 1,
+      "message": "If you use r\"\"\" at the beginning of the string, you should convert \u0027\\\\n\u0027 to \u0027\\n\u0027 as \u0027\\\u0027 here isn\u0027t an escape symbol anymore.",
+      "revId": "29a38f15926797dc662bcd3f24e05c6fa9e9c0b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
