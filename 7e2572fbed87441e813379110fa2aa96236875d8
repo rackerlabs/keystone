@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_5695143e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-05T14:03:30Z",
+      "side": 1,
+      "message": "link this to the reseller bp?",
+      "revId": "7e2572fbed87441e813379110fa2aa96236875d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_d7104602",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 9
