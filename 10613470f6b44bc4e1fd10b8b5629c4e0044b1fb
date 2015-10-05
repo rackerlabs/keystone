@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_307350e9",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-05T13:37:20Z",
+      "side": 1,
+      "message": "I suggest using the @wip annotation [1] in this case and test the correct behavior. In that case, the only thing we need to do once the behavior is fixed will be to remove the annotation.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/utils.py#L55",
+      "revId": "10613470f6b44bc4e1fd10b8b5629c4e0044b1fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
