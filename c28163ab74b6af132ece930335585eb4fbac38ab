@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_4de8af7c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-05T13:31:31Z",
+      "side": 1,
+      "message": "The trustee doesn\u0027t need to have the role in the project too, otherwise we wouldn\u0027t need to create a trust :)\n\nTesting trusts behavior isn\u0027t in the scope of this patch though ..",
+      "revId": "c28163ab74b6af132ece930335585eb4fbac38ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6d01f369",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-05T13:31:31Z",
+      "side": 1,
+      "message": "(nit) It would be clearer if calling user_ref as trustee_user_ref from the start",
+      "revId": "c28163ab74b6af132ece930335585eb4fbac38ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7038e83d",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-05T13:31:31Z",
+      "side": 1,
+      "message": "I don\u0027t know why it is being called token_id all over the place, when it actually is the token itself. I checked and it has the same naming inside the issue_v3_token method.",
+      "revId": "c28163ab74b6af132ece930335585eb4fbac38ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
