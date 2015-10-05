@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_93eee689",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2484,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T14:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_8e010b09",
+      "revId": "d0bee92aabaf800bcb3bacdb3b48d0522c99811d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_eb0e7431",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-02T19:56:03Z",
       "side": 1,
       "message": "I think we should use the @wip annotation here.\n\nYou should make the test as it should be. Theorically it would then fail, but will be skipped if using @wip. Once fixed in a subsequent patch, the test will pass and the @wip will make it to fail, and everything we will need to do is to remove the annotation, the test won\u0027t be touched anymore.\n\nSee [1] and test_get_policy_association at [2] for an example.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/utils.py#L55\n[2] https://review.openstack.org/#/c/212006/6/keystone/tests/unit/backend/endpoint_policy/test_sql.py",
+      "revId": "d0bee92aabaf800bcb3bacdb3b48d0522c99811d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_16ad5c88",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2500,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T14:04:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_eb0e7431",
       "revId": "d0bee92aabaf800bcb3bacdb3b48d0522c99811d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
