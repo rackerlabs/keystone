@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_e4a49809",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "change \"explicitely\" to \"explicitly\"",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_62a71b50",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "add a comment to explain why this is here.",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_249b70cb",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "change \"explicitely\" to \"explicitly\". (This applies throughout this change where \"explicitely\" is used.)",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_84b6043c",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "use assertItemsEqual (This applies to the other tests, too.)",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a4f9c0ca",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "change \"is having\" to \"has\"",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_44d8ec53",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_24a130aa",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T20:28:07Z",
+      "side": 1,
+      "message": "this should use values different from GROUP_IDS_ASSERTION so that the test will be specific.",
+      "revId": "40a4154e1a7283e805c1a7044c9ce4d70df5653b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
