@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_bd08002a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-05T16:40:47Z",
+      "side": 1,
+      "message": "Please provide bp/spec link here as it is clear that this change is a part of something bigger",
+      "revId": "ece0f73df3af6df8005d505f17ef593c3fa66626",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
