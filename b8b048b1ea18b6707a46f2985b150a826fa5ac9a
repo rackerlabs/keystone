@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_5cdbf5ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-05T14:50:00Z",
+      "side": 1,
+      "message": "It\u0027s a backwards compatibility during upgrades from kilo-\u003eliberty. If liberty is already fixed, then backwards compatibility does not have to exist in mitaka.\n\nBut anyway, this type of meta information belongs in the bug where multiple patches are being tracked, not in the patch\u0027s commit message.",
+      "parentUuid": "7a2fa921_3c8dd97b",
+      "revId": "b8b048b1ea18b6707a46f2985b150a826fa5ac9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_bc5b292e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-05T14:36:34Z",
       "side": 1,
       "message": "Where\u0027s the change that fixes the bug?",
+      "revId": "b8b048b1ea18b6707a46f2985b150a826fa5ac9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_dc94e5e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-05T14:50:00Z",
+      "side": 1,
+      "message": "It\u0027s already merged, unfortunately. This patch immediately re-opened the bug to merge a more complete fix. I\u0027m not sure if Partial-Bug or Closes-Bug is more applicable.",
+      "parentUuid": "7a2fa921_bc5b292e",
       "revId": "b8b048b1ea18b6707a46f2985b150a826fa5ac9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
