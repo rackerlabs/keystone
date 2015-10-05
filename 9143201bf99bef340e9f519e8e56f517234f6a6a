@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_9dd8a4f1",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-05T16:58:31Z",
+      "side": 1,
+      "message": "Unrelated change",
+      "revId": "9143201bf99bef340e9f519e8e56f517234f6a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_5d90ccec",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-05T16:58:31Z",
+      "side": 1,
+      "message": "Unrelated change. Please revert it or specify in the commit message that some docstrings were edited.",
+      "revId": "9143201bf99bef340e9f519e8e56f517234f6a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_f19308ff",
         "filename": "keystone/tests/hacking/checks.py",
         "patchSetId": 1
@@ -31,6 +65,23 @@
       "side": 1,
       "message": "yes, it is.",
       "parentUuid": "9a1a9d01_f19308ff",
+      "revId": "9143201bf99bef340e9f519e8e56f517234f6a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_bd6c8009",
+        "filename": "keystone/tests/unit/ksfixtures/cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-05T16:58:31Z",
+      "side": 1,
+      "message": "Unrelated change",
       "revId": "9143201bf99bef340e9f519e8e56f517234f6a6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
