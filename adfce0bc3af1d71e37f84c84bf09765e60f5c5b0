@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_cd109f51",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-05T21:28:59Z",
+      "side": 1,
+      "message": "Any reason why the default isn\u0027t REGION instead of None?",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
