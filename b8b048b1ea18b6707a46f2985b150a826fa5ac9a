@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_5f68c7ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T14:58:24Z",
+      "side": 1,
+      "message": "Could somebody go from kilo-\u003emitaka? If not maybe we need to note that in the release notes. (I thought we generally supported N+2 for deprecations.)",
+      "parentUuid": "7a2fa921_5cdbf5ed",
+      "revId": "b8b048b1ea18b6707a46f2985b150a826fa5ac9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_bc5b292e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "It\u0027s already merged, unfortunately. This patch immediately re-opened the bug to merge a more complete fix. I\u0027m not sure if Partial-Bug or Closes-Bug is more applicable.",
       "parentUuid": "7a2fa921_bc5b292e",
+      "revId": "b8b048b1ea18b6707a46f2985b150a826fa5ac9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_ff867364",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T14:58:24Z",
+      "side": 1,
+      "message": "I prefer Closes-Bug, otherwise I\u0027ll be looking for the change that finally fixes the problem.",
+      "parentUuid": "7a2fa921_dc94e5e9",
       "revId": "b8b048b1ea18b6707a46f2985b150a826fa5ac9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
