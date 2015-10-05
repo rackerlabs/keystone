@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_d97877fb",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T14:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_c8a029a2",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_9008ccdb",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 8
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_5989c7c9",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T14:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba15a1d1_9008ccdb",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_53992e6d",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 8
@@ -65,6 +101,24 @@
       "writtenOn": "2015-10-05T13:57:10Z",
       "side": 1,
       "message": "Wasn\u0027t it better to put in a constant ? Like LEGACY_FERNET_PADDING ?",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_d9bb9774",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T14:29:55Z",
+      "side": 1,
+      "message": "We could, but it\u0027s only used in one place.",
+      "parentUuid": "9a1a9d01_53992e6d",
       "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
