@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_f39d3c5a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2015-10-05T23:58:52Z",
+      "side": 1,
+      "message": "s/build/builds/",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_f3b45cd2",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2015-10-05T23:58:52Z",
+      "side": 1,
+      "message": "So, I think this is a bit of premature optimization. The single cache region for this one request can just as easily be invalidated with minimal consequence.\n\nWhat might not be obvious based on these comments is that this is just in case the current request does a subsequent call to get_catalog. Since the cache contents are not actually affected by dogpile\u0027s region invalidate (something, that, IMO, is a heinous crime and makes it really easy to accidentally screw things up badly in a distributed system), the only way individual catalogs already cached will be updated is by timing out. So invalidating the whole cache region is \"meh\", since it will only cause things in the life of this particular cache region object to refresh their cache contents. Since IIRC wsgi is going to make a new object each request.. just invalidate the whole thing, and we get a lot less code. :)",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_cd109f51",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 10
@@ -13,6 +47,24 @@
       "writtenOn": "2015-10-05T21:28:59Z",
       "side": 1,
       "message": "Any reason why the default isn\u0027t REGION instead of None?",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_59ad3187",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2015-10-05T23:58:52Z",
+      "side": 1,
+      "message": "Because you should not make defaults mutable:\n\nhttp://stackoverflow.com/questions/1132941/least-astonishment-in-python-the-mutable-default-argument\n\nhttp://docs.python-guide.org/en/latest/writing/gotchas/",
+      "parentUuid": "7a2fa921_cd109f51",
       "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
