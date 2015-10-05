@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_91416b3c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-05T18:21:28Z",
+      "side": 1,
+      "message": "The one line summary caused the closing quotes to be on a different line, which is a pep257 violation for one line docstrings.",
+      "parentUuid": "7a2fa921_9dd8a4f1",
+      "revId": "9143201bf99bef340e9f519e8e56f517234f6a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_5d90ccec",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
