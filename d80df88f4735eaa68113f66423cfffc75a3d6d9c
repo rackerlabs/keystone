@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_3894f335",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T22:11:45Z",
+      "side": 0,
+      "message": "we should be able to simplify router.Router to get rid of this since this was the only user.",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
