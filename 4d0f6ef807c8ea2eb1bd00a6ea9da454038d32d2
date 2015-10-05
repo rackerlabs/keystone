@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_bfa31b4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T15:09:35Z",
+      "side": 1,
+      "message": "Remove this last sentence.",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_df94d7e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-05T15:09:35Z",
+      "side": 1,
+      "message": "Use Closes-Bug otherwise I\u0027m going to be looking for the commit that fixes it.",
+      "revId": "4d0f6ef807c8ea2eb1bd00a6ea9da454038d32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_c8a029a2",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 8
