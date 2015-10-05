@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_85c7ec44",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T15:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_8096f792",
+      "revId": "2292489b5534089e1eb1754212662a750aa56667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_6ba3379f",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-03T16:33:19Z",
       "side": 1,
       "message": "The sentence \u0027The v3 API is also available by default if not disabled intentionally.\u0027 is redundant, since now we have \u0027You don\u0027t need to \"enable\" the v3 API in keystone, it is available via a separate pipeline from v2.0.\u0027\n\nPerhaps remove it and add \u0027by default\u0027 in the first sentence?\n\n    , as it is available by default via a separate pipeline from v2.0.",
+      "revId": "2292489b5534089e1eb1754212662a750aa56667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_45d8f41d",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T15:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_6ba3379f",
       "revId": "2292489b5534089e1eb1754212662a750aa56667",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_a534684a",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T15:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_8bd6cbc1",
+      "revId": "2292489b5534089e1eb1754212662a750aa56667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_ebc66715",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_4546b4c0",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T15:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_ebc66715",
+      "revId": "2292489b5534089e1eb1754212662a750aa56667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_abd06fca",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
@@ -81,6 +153,24 @@
       "writtenOn": "2015-10-03T16:33:19Z",
       "side": 1,
       "message": "(nit) s/keystone/keystone cli\n\nJust for clarity.",
+      "revId": "2292489b5534089e1eb1754212662a750aa56667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e55fc073",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-05T15:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_abd06fca",
       "revId": "2292489b5534089e1eb1754212662a750aa56667",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
