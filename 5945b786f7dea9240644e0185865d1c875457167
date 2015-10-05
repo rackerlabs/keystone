@@ -68,6 +68,24 @@
       "revId": "5945b786f7dea9240644e0185865d1c875457167",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6eca4ea3",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-05T12:25:22Z",
+      "side": 1,
+      "message": "We can workaround this by using the list_opts method and based on the _register method logic. Something like:\n\n    oslo_policy_opts \u003d oslo_policy.opts.list_opts()[0]\n    CONF.register_opts(oslo_policy_opts[1], group\u003doslo_policy_opts[0])",
+      "parentUuid": "ba3cc151_1d0efde4",
+      "revId": "5945b786f7dea9240644e0185865d1c875457167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
