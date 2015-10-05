@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_f6c0e0e2",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2506,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-05T14:13:25Z",
+      "side": 1,
+      "message": "Now you can remove this comment :)",
+      "revId": "c697ad40494e7dad069af08106756ab1e2ba151d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
