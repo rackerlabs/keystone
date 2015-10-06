@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_0b78a3f1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T13:48:22Z",
+      "side": 1,
+      "message": "I think it looks fine the way it is.",
+      "parentUuid": "9a1a9d01_7d01b805",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_10ff4302",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_2b4c7fc6",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T13:48:22Z",
+      "side": 1,
+      "message": "I think this is fine the way it is.",
+      "parentUuid": "9a1a9d01_9d5e0c44",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_b2ae007f",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -64,6 +100,24 @@
       "writtenOn": "2015-10-01T08:11:57Z",
       "side": 1,
       "message": "nit: Did you mean \"No remote ID attr...\" ?",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_6b527769",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T13:48:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_b2ae007f",
       "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_ebcc4737",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T13:48:22Z",
+      "side": 1,
+      "message": "KeyError would happen if there\u0027s no extra so this line wouldn\u0027t be reached.",
+      "parentUuid": "9a1a9d01_dd6c840a",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_5daab41a",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 7
@@ -98,6 +170,24 @@
       "writtenOn": "2015-10-04T02:39:08Z",
       "side": 1,
       "message": "We could simply raise the exception inside the except block",
+      "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_ebf3e771",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T13:48:22Z",
+      "side": 1,
+      "message": "sure, but that\u0027s not how the developer decided to write the code so I don\u0027t want to change it in this commit.",
+      "parentUuid": "9a1a9d01_5daab41a",
       "revId": "299e33a5acf729424d09c8f366e6e93997616b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
