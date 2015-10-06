@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_3714e042",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-06T14:49:11Z",
+      "side": 1,
+      "message": "i changed the method name to get_scoped_token_response",
+      "parentUuid": "7a2fa921_4e55494e",
+      "revId": "d056416d375f3707ece5dccfecd1680c8ea0e3f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_ee9a1514",
         "filename": "keystone/tests/functional/core.py",
         "patchSetId": 14
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_f71d0867",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-06T14:49:11Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "7a2fa921_ee9a1514",
+      "revId": "d056416d375f3707ece5dccfecd1680c8ea0e3f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_eef3f571",
         "filename": "keystone/tests/functional/core.py",
         "patchSetId": 14
@@ -98,6 +134,24 @@
       "writtenOn": "2015-10-06T14:10:12Z",
       "side": 1,
       "message": "This returns a string, representing an OpenStack token, right?",
+      "revId": "d056416d375f3707ece5dccfecd1680c8ea0e3f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_fc2f2f9f",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-06T14:49:11Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "7a2fa921_eef3f571",
       "revId": "d056416d375f3707ece5dccfecd1680c8ea0e3f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
