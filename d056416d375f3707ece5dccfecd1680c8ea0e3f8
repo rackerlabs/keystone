@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_ee0a15d2",
+        "filename": "tox.ini",
+        "patchSetId": 14
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-06T14:00:34Z",
+      "side": 1,
+      "message": "i think we should also pass those variables to debug environment, as this is a way to run functional tests with pdb in the code.",
+      "revId": "d056416d375f3707ece5dccfecd1680c8ea0e3f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
