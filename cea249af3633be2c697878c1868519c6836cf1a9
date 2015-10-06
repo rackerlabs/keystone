@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_8517b750",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-06T16:35:50Z",
+      "side": 1,
+      "message": "No, we can do this using inherited role assignments. We only can do this if we assign the role for the user on each project individually.",
+      "parentUuid": "7a2fa921_4500bf34",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_8b57d301",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
