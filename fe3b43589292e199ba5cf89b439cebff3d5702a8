@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_8e0fe1e0",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T14:27:40Z",
+      "side": 1,
+      "message": "python specifies that payload_class will still be defined outside the for loop.",
+      "parentUuid": "9a1a9d01_fff081cb",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_1fc5355a",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-02T13:21:56Z",
       "side": 1,
       "message": "how do we know what payload_class we\u0027re calling?",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_ce2cf94c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T14:27:40Z",
+      "side": 1,
+      "message": "This code doesn\u0027t care what payload_class we\u0027re calling.",
+      "parentUuid": "9a1a9d01_1fc5355a",
       "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_51faccbe",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T14:27:40Z",
+      "side": 1,
+      "message": "yes, they\u0027re all the same so that the caller doesn\u0027t need to know details about the subclasses.",
+      "parentUuid": "9a1a9d01_1f9c5568",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_1fbbf50f",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-02T13:21:56Z",
       "side": 1,
       "message": "An explanation about why the order would probably be useful here since it\u0027s not as easy to tell given the refactor.",
+      "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_f1943838",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-06T14:27:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_1fbbf50f",
       "revId": "fe3b43589292e199ba5cf89b439cebff3d5702a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
