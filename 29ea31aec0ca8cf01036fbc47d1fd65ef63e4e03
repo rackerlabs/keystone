@@ -16,6 +16,24 @@
       "revId": "29ea31aec0ca8cf01036fbc47d1fd65ef63e4e03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_5b03b40d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-06T22:24:44Z",
+      "side": 1,
+      "message": "May want to remove the last sentence.\n\n\"The keystone development team has not agreed that this is supported at this time.\"\n\nWe have to *support* it regardless. Experimental is just a tag signifying that the feature has not been battle tested and we it may change as things turn up.\n\nSupport is a product issue (i.e. whoever is selling an OpenStack distro).",
+      "parentUuid": "9a1a9d01_00505a09",
+      "revId": "29ea31aec0ca8cf01036fbc47d1fd65ef63e4e03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
