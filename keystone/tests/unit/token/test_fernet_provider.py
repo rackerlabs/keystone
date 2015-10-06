@@ -217,7 +217,11 @@ class TestTokenFormatter(unit.TestCase):
         strings_to_test = ['a', 'aa', 'aaa']
 
         for string in strings_to_test:
-            encoded_string = base64.urlsafe_b64encode(string)
+            # base64.urlsafe_b64encode takes bytes and returns bytes
+            # need to convert string to bytes first.
+            encoded_string = base64.urlsafe_b64encode(string.encode('utf-8'))
+            encoded_string = encoded_string.decode('utf-8')
+            # encode_string is now string.
             encoded_str_without_padding = encoded_string.rstrip('=')
             self.assertFalse(encoded_str_without_padding.endswith('='))
             encoded_str_with_padding_restored = (
@@ -231,33 +235,40 @@ class TestTokenFormatter(unit.TestCase):
         second_value = uuid.uuid4().hex
         payload = (first_value, second_value)
         msgpack_payload = msgpack.packb(payload)
+        # msgpack_payload is bytes.
+
+        tf = token_formatters.TokenFormatter()
 
         # NOTE(lbragstad): This method perserves the way that keystone used to
         # percent encode the tokens, prior to bug #1491926.
         def legacy_pack(payload):
-            tf = token_formatters.TokenFormatter()
+            # payload is bytes.
             encrypted_payload = tf.crypto.encrypt(payload)
+            # encrypted_payload is bytes.
 
             # the encrypted_payload is returned with padding appended
-            self.assertTrue(encrypted_payload.endswith('='))
+            self.assertTrue(encrypted_payload.endswith(b'='))
 
             # using urllib.parse.quote will percent encode the padding, like
             # keystone did in Kilo.
             percent_encoded_payload = urllib.parse.quote(encrypted_payload)
+            # percent_encoded_payload is string.
 
-            # ensure that the padding was actaully percent encoded
+            # ensure that the padding was actually percent encoded
             self.assertTrue(percent_encoded_payload.endswith('%3D'))
             return percent_encoded_payload
 
         token_with_legacy_padding = legacy_pack(msgpack_payload)
-        tf = token_formatters.TokenFormatter()
+        # token_with_legacy_padding is string.
 
         # demonstrate the we can validate a payload that has been percent
         # encoded with the Fernet logic that existed in Kilo
         serialized_payload = tf.unpack(token_with_legacy_padding)
+        # serialized_payload is bytes.
         returned_payload = msgpack.unpackb(serialized_payload)
-        self.assertEqual(first_value, returned_payload[0])
-        self.assertEqual(second_value, returned_payload[1])
+        # returned_payload contains bytes.
+        self.assertEqual(first_value, returned_payload[0].decode('utf-8'))
+        self.assertEqual(second_value, returned_payload[1].decode('utf-8'))
 
 
 class TestPayloads(unit.TestCase):
