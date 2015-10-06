@@ -274,7 +274,7 @@ class Provider(common.BaseProvider):
 
         :param token_data: token information
         :type token_data: dict
-        :raises keystone.exception.NotImplemented: when called
+        :rtype: str
         """
         return self.token_formatter.create_token(
             token_data['token']['user']['id'],
