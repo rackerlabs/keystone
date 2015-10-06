@@ -20,7 +20,6 @@ import msgpack
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
-import six
 from six.moves import map
 from six.moves import urllib
 
@@ -66,13 +65,22 @@ class TokenFormatter(object):
         return fernet.MultiFernet(fernet_instances)
 
     def pack(self, payload):
-        """Pack a payload for transport as a token."""
+        """Pack a payload for transport as a token.
+
+        :type payload: bytes
+        :rtype: str
+
+        """
         # base64 padding (if any) is not URL-safe
-        return self.crypto.encrypt(payload).rstrip('=')
+        return str(self.crypto.encrypt(payload).rstrip(b'=').decode('utf-8'))
 
     def unpack(self, token):
-        """Unpack a token, and validate the payload."""
-        token = six.binary_type(token)
+        """Unpack a token, and validate the payload.
+
+        :type token: string
+        :rtype: bytes
+
+        """
 
         # TODO(lbragstad): Restore padding on token before decoding it.
         # Initially in Kilo, Fernet tokens were returned to the user with
@@ -89,7 +97,7 @@ class TokenFormatter(object):
             token = TokenFormatter.restore_padding(token)
 
         try:
-            return self.crypto.decrypt(token)
+            return self.crypto.decrypt(token.encode('utf-8'))
         except fernet.InvalidToken:
             raise exception.ValidationError(
                 _('This is not a recognized Fernet token'))
@@ -99,6 +107,7 @@ class TokenFormatter(object):
         """Restore padding based on token size.
 
         :param token: token to restore padding on
+        :type token: string
         :returns: token with correct padding
 
         """
@@ -106,16 +115,16 @@ class TokenFormatter(object):
         mod_returned = len(token) % 4
         if mod_returned:
             missing_padding = 4 - mod_returned
-            token += b'=' * missing_padding
+            token += '=' * missing_padding
         return token
 
     @classmethod
     def creation_time(cls, fernet_token):
-        """Returns the creation time of a valid Fernet token."""
-        # tokens may be transmitted as Unicode, but they're just ASCII
-        # (pypi/cryptography will refuse to operate on Unicode input)
-        fernet_token = six.binary_type(fernet_token)
+        """Returns the creation time of a valid Fernet token.
 
+        :type fernet_token: str
+
+        """
         # Restore padding on token before decoding it
         fernet_token = TokenFormatter.restore_padding(fernet_token)
 
@@ -215,11 +224,11 @@ class TokenFormatter(object):
         return token
 
     def validate_token(self, token):
-        """Validates a Fernet token and returns the payload attributes."""
-        # Convert v2 unicode token to a string
-        if not isinstance(token, six.binary_type):
-            token = token.encode('ascii')
+        """Validates a Fernet token and returns the payload attributes.
 
+        :type token: string
+
+        """
         serialized_payload = self.unpack(token)
         versioned_payload = msgpack.unpackb(serialized_payload)
         version, payload = versioned_payload[0], versioned_payload[1:]
