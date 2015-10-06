@@ -99,7 +99,6 @@ def _create_new_key(keystone_user_id, keystone_group_id):
 
     Create a new key that is readable by the Keystone group and Keystone user.
     """
-    key = fernet.Fernet.generate_key()
 
     # This ensures the key created is not world-readable
     old_umask = os.umask(0o177)
@@ -117,6 +116,8 @@ def _create_new_key(keystone_user_id, keystone_group_id):
     key_file = os.path.join(CONF.fernet_tokens.key_repository, '0')
     try:
         with open(key_file, 'w') as f:
+            # generate_key() returns bytes, convert to string for the file.
+            key = fernet.Fernet.generate_key().decode('utf-8')
             f.write(key)
     finally:
         # After writing the key, set the umask back to it's original value. Do
