@@ -34,6 +34,24 @@
       "revId": "64c28885dd7fdaa47b5178071c591c72d34dcf8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_dde2839f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T07:47:58Z",
+      "side": 1,
+      "message": "..actually, I take it back about auth/token - they are calling the manager versions...",
+      "parentUuid": "7a2fa921_5d5d13e8",
+      "revId": "64c28885dd7fdaa47b5178071c591c72d34dcf8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
