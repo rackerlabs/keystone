@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_fc340fdf",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-06T14:32:47Z",
+      "side": 0,
+      "message": "Shouldn\u0027t we remove this line?",
+      "revId": "9a0235f953c2c3160f7d489bfa0489e24a2d19bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
