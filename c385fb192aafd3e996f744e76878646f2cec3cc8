@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_2d648120",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-06T21:12:35Z",
+      "side": 1,
+      "message": "we should be able to get this method signature onto 3 lines.\n\ne.g.\ndef _test_payload(self, payload_class, exp_user_id\u003dNone, exp_methods\u003dNone,\n                  exp_project_id\u003dNone, exp_domain_id\u003dNone,\n                  exp_trust_id\u003dNone, exp_federated_info\u003dNone):",
+      "revId": "c385fb192aafd3e996f744e76878646f2cec3cc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_3361423a",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-06T21:12:35Z",
+      "side": 1,
+      "message": "we can probably bump this up to the previous line \n\ne.g.\n(user_id, methods, project_id, domain_id, expires_at, audit_ids,\n trust_id, federated_info) \u003d payload_class.disassemble(payload)",
+      "revId": "c385fb192aafd3e996f744e76878646f2cec3cc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
