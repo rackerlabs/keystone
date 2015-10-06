@@ -99,7 +99,8 @@ def _create_new_key(keystone_user_id, keystone_group_id):
 
     Create a new key that is readable by the Keystone group and Keystone user.
     """
-    key = fernet.Fernet.generate_key()
+
+    key = fernet.Fernet.generate_key().decode('utf-8')
 
     # This ensures the key created is not world-readable
     old_umask = os.umask(0o177)
