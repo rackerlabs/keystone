@@ -16,6 +16,24 @@
       "revId": "64c28885dd7fdaa47b5178071c591c72d34dcf8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_5d5d13e8",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T07:29:16Z",
+      "side": 1,
+      "message": "well, the v2 API does support getting projects by name - but I agree, this should be an internal method since it is routed via the get_all_projects method. As an aside, it is also called a few other internal methods (e.g. auth \u0026 token).",
+      "parentUuid": "7a2fa921_4d17afa3",
+      "revId": "64c28885dd7fdaa47b5178071c591c72d34dcf8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
