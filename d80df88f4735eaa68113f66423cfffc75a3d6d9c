@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_7a6d4331",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "yep, I\u0027ll provide  follow on patch to fix that",
+      "parentUuid": "9a1a9d01_fa039374",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_054e50c1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-03T07:46:05Z",
       "side": 1,
       "message": "better to explicitly comment at the beginning of the line to tell us that \u0027subtree_ids\u0027 is a list of project ids.",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_3a77cb03",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_054e50c1",
       "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_03973891",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "good suggestion, done.",
+      "parentUuid": "9a1a9d01_88d035cb",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_a58764d6",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-03T07:46:05Z",
       "side": 1,
       "message": "fine as it is, just curious why the outermost brackets \u0027()\u0027 is needed here. :)",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e3523cdd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "So kind of personal preference - I prefer this to:\n\nsubtree_ids \u003d [\n    x[\u0027id\u0027] for x in\n    self.resource_api.list_projects_in_subtree(project_id)]\n\nsince I think it shows the \"loop\" and \"loop statement\" better",
+      "parentUuid": "9a1a9d01_a58764d6",
       "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_03fad8bd",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6646,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_5aa87f77",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_1a3a0799",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2015-10-03T07:46:05Z",
       "side": 1,
       "message": "nit: s/assignents/assignments",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_43269069",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6676,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_1a3a0799",
       "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_a3bf64cf",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6683,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "..because today, inherited assignments only apply to children, not the their anchor point. This is a hang over from when they were only application to domains.  We plan to change this when we move inheritance to core in Mitaka.",
+      "parentUuid": "9a1a9d01_9a905750",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_fa871310",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2015-10-03T07:46:05Z",
       "side": 1,
       "message": "why this {\u0027user\u0027: 0, \u0027role\u0027: 2, \u0027project\u0027: 1} is redundant?",
+      "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_63b06cf5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6714,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T08:43:39Z",
+      "side": 1,
+      "message": "...because of the comment above - inherited assignments don\u0027t currently apply to their anchor point.",
+      "parentUuid": "9a1a9d01_fa871310",
       "revId": "d80df88f4735eaa68113f66423cfffc75a3d6d9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
