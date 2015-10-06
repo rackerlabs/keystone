@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_6b24b70c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-06T13:54:39Z",
+      "side": 1,
+      "message": "nit: maybe say:\n\n(for when the cloud is deployed....",
+      "revId": "54ce50887812cee1835564327cafea1c36d06988",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
