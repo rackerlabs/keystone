@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_48c8c822",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-06T22:14:01Z",
+      "side": 1,
+      "message": "this won\u0027t matters if we are running Keystone with Apache mod_wsgi right?",
+      "revId": "7d07c0881fa601f531ab6d863e83733d14727c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
