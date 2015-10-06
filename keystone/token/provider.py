@@ -51,14 +51,26 @@ VERSIONS = token_model.VERSIONS
 
 
 def base64_encode(s):
-    """Encode a URL-safe string."""
-    return base64.urlsafe_b64encode(s).rstrip('=')
+    """Encode a URL-safe string.
+
+    :type s: string
+    :rtype: string
+
+    """
+
+    # base64.urlsafe_b64encode() returns bytes so need to convert to str first.
+    return base64.urlsafe_b64encode(s).decode('utf-8').rstrip('=')
 
 
 def random_urlsafe_str():
-    """Generate a random URL-safe string."""
+    """Generate a random URL-safe string.
+
+    :rtype: string
+
+    """
     # chop the padding (==) off the end of the encoding to save space
-    return base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+    # base64.urlsafe_b64encode returns bytes, convert to string
+    return base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2].decode('utf-8')
 
 
 def random_urlsafe_str_to_bytes(s):
