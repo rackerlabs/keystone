@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_71002835",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-06T14:48:11Z",
+      "side": 1,
+      "message": "so all ID strings that can be present in a payload",
+      "revId": "7a7bc1d2b28752388ad37bebd74a593fdb9dc3df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_9c495b8e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-06T14:48:11Z",
+      "side": 1,
+      "message": "we could explicitly say that this returns a tuple.",
+      "revId": "7a7bc1d2b28752388ad37bebd74a593fdb9dc3df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
