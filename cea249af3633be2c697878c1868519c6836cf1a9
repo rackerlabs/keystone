@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_08bf49fc",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "s/it\u0027s/its",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e63a3fcd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "I think including a quick note about subtree_ids would be worth it.",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_4bb53ecb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "(nit) maybe \"affect\" instead of \"effect\" (although not the primary goal of this patch)",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_8b57d301",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "We are doing the same operation at lines 852-855 in 4-lines; let\u0027s keep them consistent.",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a8edf58c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "I\u0027d join these two comments, as they are refering to the same thing/operation below.",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_8b6356b1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "Please include something about subtree_ids in this doc, since it currently doesn\u0027t apply to it because subtree_ids isn\u0027t a filter for assignment attributes.",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_ab3acf34",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6600,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "What about being more clear we use include_subtree and it\u0027s effective too ?\n\nSomething like test_list_effective_assignments_for_subtree ?",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_2b1ebfba",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6652,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "Same as above, what about including effective ?test_list_effective_assignments_for_subtree_with_inherited_parent_assignments (too big?)",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_abb96feb",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6734,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-06T14:17:12Z",
+      "side": 1,
+      "message": "What about a test with only include_subtree and project_id (not effective) ?\n\nWhat about a test where inherited assignments come from the domain too ?",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
