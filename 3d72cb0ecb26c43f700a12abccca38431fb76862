@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_4855414e",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-06T13:28:19Z",
+      "side": 1,
+      "message": "this was something that was added https://review.openstack.org/#/c/204801/8/doc/source/services.rst",
+      "parentUuid": "7a2fa921_4b032510",
+      "revId": "3d72cb0ecb26c43f700a12abccca38431fb76862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_7d6828bb",
         "filename": "doc/source/services.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-05T16:47:26Z",
       "side": 1,
       "message": "Which token are we talking about here when it says \u0027The response is different\u0027  could we say \u0027With the v3 token the response is different:\u0027",
+      "revId": "3d72cb0ecb26c43f700a12abccca38431fb76862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e8cc4d37",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-06T13:28:19Z",
+      "side": 1,
+      "message": "ditto - https://review.openstack.org/#/c/204801/8/doc/source/services.rst",
+      "parentUuid": "7a2fa921_7d6828bb",
       "revId": "3d72cb0ecb26c43f700a12abccca38431fb76862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
