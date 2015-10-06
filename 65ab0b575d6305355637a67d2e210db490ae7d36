@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_c40fea2c",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-06T19:18:07Z",
+      "side": 1,
+      "message": "I know this was in the original doc, nit s/keystone/Keystone/",
+      "revId": "65ab0b575d6305355637a67d2e210db490ae7d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
