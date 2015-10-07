@@ -55,15 +55,6 @@ class Manager(manager.Manager):
 
     def __init__(self):
         assignment_driver = CONF.assignment.driver
-
-        # If there is no explicit assignment driver specified, we let the
-        # identity driver tell us what to use. This is for backward
-        # compatibility reasons from the time when identity, resource and
-        # assignment were all part of identity.
-        if assignment_driver is None:
-            identity_driver = dependency.get_provider('identity_api').driver
-            assignment_driver = identity_driver.default_assignment_driver()
-
         super(Manager, self).__init__(assignment_driver)
 
     def _get_group_ids_for_user_id(self, user_id):
