@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_8608dd92",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-10-07T21:51:01Z",
+      "side": 1,
+      "message": "So currently domain ids are assumed always UUID.  The code does not use the attempt_* function.  And I don\u0027t think you can have domains in LDAP anyway, so they should be UUID.",
+      "parentUuid": "7a2fa921_13741ffb",
+      "revId": "8b97bab9fd01d10ede5b3820f145d3cae4779235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_d34ea795",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-07T16:26:43Z",
       "side": 1,
       "message": "nit: we could name the is_uuid variable to something like is_stored_as_bytes, since the boolean is there to determine if the value was in fact converted from hex to bytes. The is_uuid variable name makes it seem like we\u0027re actually doing an isinstance() check to determine that value.",
+      "revId": "8b97bab9fd01d10ede5b3820f145d3cae4779235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e6f99181",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-10-07T21:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_d34ea795",
       "revId": "8b97bab9fd01d10ede5b3820f145d3cae4779235",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
