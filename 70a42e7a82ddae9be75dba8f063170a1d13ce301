@@ -34,6 +34,24 @@
       "revId": "70a42e7a82ddae9be75dba8f063170a1d13ce301",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_d61e9262",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T16:50:24Z",
+      "side": 1,
+      "message": "I can\u0027t think of any headaches this specific import will cause, but it\u0027s generally bad form to import things used by the application in WSGI scripts before the application has a chance to.",
+      "parentUuid": "9a1a9d01_c992d39f",
+      "revId": "70a42e7a82ddae9be75dba8f063170a1d13ce301",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
