@@ -52,6 +52,24 @@
       "revId": "70a42e7a82ddae9be75dba8f063170a1d13ce301",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_f6470e49",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T16:52:05Z",
+      "side": 1,
+      "message": "if there\u0027s a concern the imports could be moved into the deprecation_warning function rather than done up front.",
+      "parentUuid": "7a2fa921_d61e9262",
+      "revId": "70a42e7a82ddae9be75dba8f063170a1d13ce301",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
