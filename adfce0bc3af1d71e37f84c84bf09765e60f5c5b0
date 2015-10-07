@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_f014eb44",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T20:32:08Z",
+      "side": 1,
+      "message": "Will fix if I have another patchset.",
+      "parentUuid": "7a2fa921_f39d3c5a",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_f3b45cd2",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-05T23:58:52Z",
       "side": 1,
       "message": "So, I think this is a bit of premature optimization. The single cache region for this one request can just as easily be invalidated with minimal consequence.\n\nWhat might not be obvious based on these comments is that this is just in case the current request does a subsequent call to get_catalog. Since the cache contents are not actually affected by dogpile\u0027s region invalidate (something, that, IMO, is a heinous crime and makes it really easy to accidentally screw things up badly in a distributed system), the only way individual catalogs already cached will be updated is by timing out. So invalidating the whole cache region is \"meh\", since it will only cause things in the life of this particular cache region object to refresh their cache contents. Since IIRC wsgi is going to make a new object each request.. just invalidate the whole thing, and we get a lot less code. :)",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_300a6322",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T20:32:08Z",
+      "side": 1,
+      "message": "I\u0027m not sure I follow what you\u0027re suggesting, nor do I understand how this is a premature optimization :( This seems to be the only way to invalidate an entire \"type\" of cached object, without enumerating through individual things in the cache (which is especially painful when we don\u0027t know what might be in the cache at the time of the request).\n\nThe cache invalidation behavior here in a distributed system is unfortunate, but I don\u0027t know of a way to improve that (?).",
+      "parentUuid": "7a2fa921_f3b45cd2",
       "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
