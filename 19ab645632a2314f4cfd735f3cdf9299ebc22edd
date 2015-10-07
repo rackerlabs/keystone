@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_380eda3b",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T15:50:53Z",
+      "side": 1,
+      "message": "That\u0027s blatantly not true. I\u0027m just submitting a follow-up patch.",
+      "parentUuid": "9a1a9d01_4dfda66c",
+      "revId": "19ab645632a2314f4cfd735f3cdf9299ebc22edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_2179a2c8",
         "filename": "doc/source/services.rst",
         "patchSetId": 6
