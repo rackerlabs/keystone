@@ -33,6 +33,23 @@
       "revId": "c385fb192aafd3e996f744e76878646f2cec3cc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_047e1019",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T17:41:23Z",
+      "side": 1,
+      "message": "could add an else here to make sure None is returned when it\u0027s suppose to be.\n\n    if exp_federated_info:\n        self.assertDictEqual(exp_federated_info, federated_info)\n    else:\n        self.assertEqual(exp_federated_info, federated_info)",
+      "revId": "c385fb192aafd3e996f744e76878646f2cec3cc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
