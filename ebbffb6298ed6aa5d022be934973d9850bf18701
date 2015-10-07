@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_98b84ee7",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T15:47:15Z",
+      "side": 1,
+      "message": "I wanted this description to be clear that the projects we\u0027re talking about here aren\u0027t the OpenStack nova, glance, etc., projects since some people refer to these as projects. The term is overloaded so it can be confusing for a little while.",
+      "revId": "ebbffb6298ed6aa5d022be934973d9850bf18701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_98104eaa",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T15:47:15Z",
+      "side": 1,
+      "message": "That v3 is a pipeline seems like an implementation detail that developers of other services wouldn\u0027t care about.",
+      "revId": "ebbffb6298ed6aa5d022be934973d9850bf18701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_98eb6eb0",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T15:47:15Z",
+      "side": 1,
+      "message": "this is wrapped at 80 chars vs 79?",
+      "revId": "ebbffb6298ed6aa5d022be934973d9850bf18701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
