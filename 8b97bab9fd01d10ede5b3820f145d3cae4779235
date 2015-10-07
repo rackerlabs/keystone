@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_13741ffb",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T16:02:02Z",
+      "side": 1,
+      "message": "Domain IDs can be user defined, shouldn\u0027t we test this similar to how we\u0027re testing project scoped payloads?",
+      "revId": "8b97bab9fd01d10ede5b3820f145d3cae4779235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
