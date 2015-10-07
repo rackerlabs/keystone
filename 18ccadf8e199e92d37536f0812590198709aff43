@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_7c376de3",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T13:38:42Z",
+      "side": 0,
+      "message": "If the data type is correct for cryptography\u0027s use up until it gets written to a file, then the .decode() should happen here.",
+      "revId": "18ccadf8e199e92d37536f0812590198709aff43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
