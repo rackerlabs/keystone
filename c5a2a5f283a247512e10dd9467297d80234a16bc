@@ -33,6 +33,24 @@
       "revId": "c5a2a5f283a247512e10dd9467297d80234a16bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_7f2c3102",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T18:07:17Z",
+      "side": 1,
+      "message": "I intended \"Further\" to be an \"In addition to the justification expressed in the rest of the paragraph\" but I\u0027ll remove it.",
+      "parentUuid": "7a2fa921_e48f54ca",
+      "revId": "c5a2a5f283a247512e10dd9467297d80234a16bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
