@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_64f7c4f5",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T17:33:36Z",
+      "side": 1,
+      "message": "should these have the same exp_ convention as the other variables used?",
+      "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_3310384e",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 2
@@ -13,6 +30,23 @@
       "writtenOn": "2015-10-07T16:38:24Z",
       "side": 1,
       "message": "revert this whitespace change? \n\nI think we have a change to make this consistent. https://review.openstack.org/#/c/229887/",
+      "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_2448ec2c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T17:33:36Z",
+      "side": 1,
+      "message": "I don\u0027t think we need to have this as a module level global variable do we? \n\nCan the TokenFormatter class keep track of this as a class variable?",
       "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
