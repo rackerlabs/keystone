@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_e41c34c3",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T17:48:19Z",
+      "side": 1,
+      "message": "remove duplicate \"is\"",
+      "revId": "c5a2a5f283a247512e10dd9467297d80234a16bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e48f54ca",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T17:48:19Z",
+      "side": 1,
+      "message": "This isn\u0027t \"Further\" the previous sentence -- the reason you can\u0027t mess keystone up with string parsing is because the command is passed as a list of strings rather than a string. E.g., you can\u0027t make keystone delete everything by setting CONF.saml.keyfile to \"; rm -rf / #\":\n\n xmlsec1 --sign --privkey-pem ; rm -rf / # ,cert2 --id-attr:ID Assertion\n\nbecause `certificates` isn\u0027t going to be split on spaces due to passing the command as a list.",
+      "revId": "c5a2a5f283a247512e10dd9467297d80234a16bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
