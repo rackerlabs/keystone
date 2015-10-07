@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_70ef7b87",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T20:51:01Z",
+      "side": 0,
+      "message": "what\u0027s the whitespace change for?",
+      "revId": "5e92e68431e075998f896a11972cffd4fb1532f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
