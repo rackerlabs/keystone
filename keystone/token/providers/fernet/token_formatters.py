@@ -255,11 +255,11 @@ class BasePayload(object):
         return uuid_obj.hex
 
     @classmethod
-    def _convert_time_string_to_int(cls, time_string):
-        """Convert a time formatted string to a timestamp integer.
+    def _convert_time_string_to_float(cls, time_string):
+        """Convert a time formatted string to a float.
 
         :param time_string: time formatted string
-        :returns: an integer timestamp
+        :returns: a timestamp as a float
 
         """
         time_object = timeutils.parse_isotime(time_string)
@@ -267,14 +267,14 @@ class BasePayload(object):
                 datetime.datetime.utcfromtimestamp(0)).total_seconds()
 
     @classmethod
-    def _convert_int_to_time_string(cls, time_int):
-        """Convert a timestamp integer to a string.
+    def _convert_float_to_time_string(cls, time_float):
+        """Convert a floating point timestamp to a string.
 
-        :param time_int: integer representing timestamp
+        :param time_float: integer representing timestamp
         :returns: a time formatted strings
 
         """
-        time_object = datetime.datetime.utcfromtimestamp(time_int)
+        time_object = datetime.datetime.utcfromtimestamp(time_float)
         return timeutils.isotime(time_object, subsecond=True)
 
     @classmethod
@@ -322,7 +322,7 @@ class UnscopedPayload(BasePayload):
         """
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
-        expires_at_int = cls._convert_time_string_to_int(expires_at)
+        expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                            audit_ids))
         return (b_user_id, methods, expires_at_int, b_audit_ids)
@@ -338,7 +338,7 @@ class UnscopedPayload(BasePayload):
         """
         user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
-        expires_at_str = cls._convert_int_to_time_string(payload[2])
+        expires_at_str = cls._convert_float_to_time_string(payload[2])
         audit_ids = list(map(provider.base64_encode, payload[3]))
         return (user_id, methods, expires_at_str, audit_ids)
 
@@ -368,7 +368,7 @@ class DomainScopedPayload(BasePayload):
                 b_domain_id = domain_id
             else:
                 raise
-        expires_at_int = cls._convert_time_string_to_int(expires_at)
+        expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                            audit_ids))
         return (b_user_id, methods, b_domain_id, expires_at_int, b_audit_ids)
@@ -392,7 +392,7 @@ class DomainScopedPayload(BasePayload):
                 domain_id = payload[2]
             else:
                 raise
-        expires_at_str = cls._convert_int_to_time_string(payload[3])
+        expires_at_str = cls._convert_float_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
 
         return (user_id, methods, domain_id, expires_at_str, audit_ids)
@@ -416,7 +416,7 @@ class ProjectScopedPayload(BasePayload):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
-        expires_at_int = cls._convert_time_string_to_int(expires_at)
+        expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                            audit_ids))
         return (b_user_id, methods, b_project_id, expires_at_int, b_audit_ids)
@@ -433,7 +433,7 @@ class ProjectScopedPayload(BasePayload):
         user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
         project_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
-        expires_at_str = cls._convert_int_to_time_string(payload[3])
+        expires_at_str = cls._convert_float_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
 
         return (user_id, methods, project_id, expires_at_str, audit_ids)
@@ -460,7 +460,7 @@ class TrustScopedPayload(BasePayload):
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
         b_trust_id = cls.convert_uuid_hex_to_bytes(trust_id)
-        expires_at_int = cls._convert_time_string_to_int(expires_at)
+        expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                            audit_ids))
 
@@ -479,7 +479,7 @@ class TrustScopedPayload(BasePayload):
         user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
         methods = auth_plugins.convert_integer_to_method_list(payload[1])
         project_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
-        expires_at_str = cls._convert_int_to_time_string(payload[3])
+        expires_at_str = cls._convert_float_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
         trust_id = cls.convert_uuid_bytes_to_hex(payload[5])
 
@@ -513,7 +513,7 @@ class FederatedPayload(BasePayload):
         b_idp_id = cls.attempt_convert_uuid_hex_to_bytes(
             federated_info['idp_id'])
         protocol_id = federated_info['protocol_id']
-        expires_at_int = cls._convert_time_string_to_int(expires_at)
+        expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
 
         return (b_user_id, methods, b_group_ids, b_idp_id, protocol_id,
@@ -539,7 +539,7 @@ class FederatedPayload(BasePayload):
         group_ids = map(unpack_group_ids, payload[2])
         idp_id = cls.attempt_convert_uuid_bytes_to_hex(payload[3])
         protocol_id = payload[4]
-        expires_at_str = cls._convert_int_to_time_string(payload[5])
+        expires_at_str = cls._convert_float_to_time_string(payload[5])
         audit_ids = map(provider.base64_encode, payload[6])
         federated_info = dict(group_ids=group_ids, idp_id=idp_id,
                               protocol_id=protocol_id)
