@@ -54,9 +54,6 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
     def default_role_driver(self):
         return 'sql'
 
-    def default_resource_driver(self):
-        return 'sql'
-
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
             query = session.query(RoleAssignment.actor_id)
