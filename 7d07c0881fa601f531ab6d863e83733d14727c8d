@@ -16,6 +16,24 @@
       "revId": "7d07c0881fa601f531ab6d863e83733d14727c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_7cac4ded",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T13:40:07Z",
+      "side": 1,
+      "message": "This whole module goes away when we stop supporting eventlet.",
+      "parentUuid": "7a2fa921_48c8c822",
+      "revId": "7d07c0881fa601f531ab6d863e83733d14727c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
