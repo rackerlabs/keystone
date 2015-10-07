@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_37bb4e10",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T13:58:22Z",
+      "side": 1,
+      "message": "change cryptography to Fernet?",
+      "revId": "586b79379de062d27e9d8edc88bafabb662234f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_d783fa54",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T13:58:22Z",
+      "side": 1,
+      "message": "use assertIsInstance",
+      "revId": "586b79379de062d27e9d8edc88bafabb662234f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
