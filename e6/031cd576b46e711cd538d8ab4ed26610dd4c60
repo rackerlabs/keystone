@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 07 Oct 2015 03:23:05 +0000
+Reviewed-on: https://review.openstack.org/220658
+Project: openstack/keystone
+Branch: refs/heads/master
