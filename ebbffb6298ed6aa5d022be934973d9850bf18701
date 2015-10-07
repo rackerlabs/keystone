@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_b3644849",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T16:46:31Z",
+      "side": 1,
+      "message": "Fixed in my subsequent commit by explaining that this means that (although it\u0027s up to the deployment) they\u0027re both available in parallel (which is something that clients care about whether or not they\u0027re developers from another service/project).",
+      "parentUuid": "7a2fa921_98104eaa",
+      "revId": "ebbffb6298ed6aa5d022be934973d9850bf18701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_98eb6eb0",
         "filename": "doc/source/services.rst",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2015-10-07T15:47:15Z",
       "side": 1,
       "message": "this is wrapped at 80 chars vs 79?",
+      "revId": "ebbffb6298ed6aa5d022be934973d9850bf18701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_93134cb8",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T16:46:31Z",
+      "side": 1,
+      "message": "fixed in my subsequent commit",
+      "parentUuid": "7a2fa921_98eb6eb0",
       "revId": "ebbffb6298ed6aa5d022be934973d9850bf18701",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
