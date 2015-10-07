@@ -34,6 +34,24 @@
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_0baf1182",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-07T13:43:08Z",
+      "side": 0,
+      "message": "\"Tox is a generic virtualenv management and test command line tool you can use for:\n    1) checking your package installs correctly with different Python versions and interpreters\n    2) running your tests in each of the environments, configuring your test tool of choice\n    3) acting as a frontend to Continuous Integration servers, greatly reducing boilerplate and merging CI and shell-based testing.\" - tox doc\n\n\n\"``virtualenv`` is a tool to create isolated Python environments.\n\nThe basic problem being addressed is one of dependencies and versions,\nand indirectly permissions. Imagine you have an application that\nneeds version 1 of LibFoo, but another application requires version\n2. How can you use both these applications? If you install\neverything into ``/usr/lib/python2.7/site-packages`` (or whatever your\nplatform\u0027s standard location is), it\u0027s easy to end up in a situation\nwhere you unintentionally upgrade an application that shouldn\u0027t be\nupgraded.\n\nOr more generally, what if you want to install an application *and\nleave it be*? If an application works, any change in its libraries or\nthe versions of those libraries can break the application.\n\nAlso, what if you can\u0027t install packages into the global\n``site-packages`` directory? For instance, on a shared host.\n\nIn all these cases, ``virtualenv`` can help you. It creates an\nenvironment that has its own installation directories, that doesn\u0027t\nshare libraries with other virtualenv environments (and optionally\ndoesn\u0027t access the globally installed libraries either).\"  -- PyPI\n\n\n\nAbout 1/5 the way down this link there is some good information to read about tox and how to use it: http://docs.openstack.org/developer/ironic/dev/dev-quickstart.html\n\nHere is the section you are changing: http://docs.openstack.org/developer/keystone/devref/development.environment.html#pypi-packages-and-virtualenv\n\nHere is a good video about tox: https://www.youtube.com/watch?v\u003dOldkj519o4A\n    - in this video they talk about the tox.ini file, here is a link to keystone\u0027s,  https://github.com/openstack/keystone/blob/master/tox.ini\n    - you don\u0027t need to watch the part about detox but its actually pretty interesting and it does work in keystone.\n\n\nAlso a good rule to go by is if you don\u0027t know what it does I wouldn\u0027t touch it or do research to find out what it is :p",
+      "parentUuid": "7a2fa921_66036843",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
