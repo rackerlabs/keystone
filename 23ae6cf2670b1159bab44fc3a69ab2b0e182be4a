@@ -16,6 +16,24 @@
       "revId": "23ae6cf2670b1159bab44fc3a69ab2b0e182be4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_9c836904",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-07T13:46:15Z",
+      "side": 1,
+      "message": "What servers like nova-api typically do is use the RequestContext rather than having their own auth_context. So what we can do in the near future is turn this over and have auth_context be RequestContext. It\u0027ll require defining our own keystone.common.RequestContext(oslo_context.RequestContext).",
+      "parentUuid": "7a2fa921_1410a900",
+      "revId": "23ae6cf2670b1159bab44fc3a69ab2b0e182be4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
