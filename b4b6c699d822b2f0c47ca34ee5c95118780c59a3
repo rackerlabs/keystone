@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_190e7d3b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T17:33:47Z",
+      "side": 1,
+      "message": "The period could be a \"because\". The first statement alone isn\u0027t true (a list itself provides no real protection).",
+      "revId": "b4b6c699d822b2f0c47ca34ee5c95118780c59a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a4515c10",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T17:33:47Z",
+      "side": 1,
+      "message": "I would either prefix this sentence with \"Critically, \" because it\u0027s really all that matters here, or move it to the beginning and restructure the paragraph accordingly.",
+      "revId": "b4b6c699d822b2f0c47ca34ee5c95118780c59a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
