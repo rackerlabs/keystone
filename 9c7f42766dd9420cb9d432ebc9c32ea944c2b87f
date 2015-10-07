@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_eb971c8e",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T20:58:58Z",
+      "side": 0,
+      "message": "unrelated whitespace change?",
+      "revId": "9c7f42766dd9420cb9d432ebc9c32ea944c2b87f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_4ba970de",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T20:58:58Z",
+      "side": 1,
+      "message": "i think we will have patches landing soon to make some changes to docstrings. \n\nhttps://review.openstack.org/#/c/229887/\n\njust a heads up incase that gets in before this does.",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
