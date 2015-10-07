@@ -16,6 +16,24 @@
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_66036843",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-10-07T08:00:00Z",
+      "side": 0,
+      "message": "I do not know how to deactivate using tox. \nCould you please teach me if you can deactivate using tox?",
+      "parentUuid": "7a2fa921_44f2fa70",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
