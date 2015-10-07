@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_3310384e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T16:38:24Z",
+      "side": 1,
+      "message": "revert this whitespace change? \n\nI think we have a change to make this consistent. https://review.openstack.org/#/c/229887/",
+      "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
