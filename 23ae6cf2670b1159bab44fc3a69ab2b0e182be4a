@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_1410a900",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-07T00:41:29Z",
+      "side": 1,
+      "message": "why can\u0027t we stuff the entire auth_context in there?",
+      "revId": "23ae6cf2670b1159bab44fc3a69ab2b0e182be4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
