@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_b97d30b3",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-07T00:30:46Z",
+      "side": 1,
+      "message": "but it is a trustee",
+      "parentUuid": "9a1a9d01_6d01f369",
+      "revId": "c28163ab74b6af132ece930335585eb4fbac38ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_7038e83d",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-10-05T13:31:31Z",
       "side": 1,
       "message": "I don\u0027t know why it is being called token_id all over the place, when it actually is the token itself. I checked and it has the same naming inside the issue_v3_token method.",
+      "revId": "c28163ab74b6af132ece930335585eb4fbac38ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_393fe0d7",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-07T00:30:46Z",
+      "side": 1,
+      "message": "there\u0027s a difference between token_id and token data. token_id is passed in X-Auth-Token or X-Subject-Token headers. Token data is something you get back in the response body for token validation.",
+      "parentUuid": "9a1a9d01_7038e83d",
       "revId": "c28163ab74b6af132ece930335585eb4fbac38ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
