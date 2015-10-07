@@ -34,6 +34,23 @@
       "revId": "23ae6cf2670b1159bab44fc3a69ab2b0e182be4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_2260e700",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-07T15:16:12Z",
+      "side": 1,
+      "message": "I assume the ambiguity as to whether these attributes are names or IDs has been through through and is somehow desirable? If so, L315 seems like a good place for an inline comment.",
+      "revId": "23ae6cf2670b1159bab44fc3a69ab2b0e182be4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
