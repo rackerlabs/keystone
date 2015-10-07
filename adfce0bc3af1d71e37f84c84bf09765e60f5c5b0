@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_cb1ca0c3",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2015-10-07T21:12:20Z",
+      "side": 1,
+      "message": "I\u0027m suggesting that you could just use the same region that the other cache bits use, reducing the number of global cache region objects. But on second thought, making it self contained has a nice benefit of simpler code, so it\u0027s probably fine.\n\nAlso, don\u0027t discount enumerating all of the things. It is definitely something you\u0027d want to do asynchronously, after the update, but that technique allows for a much wider scale, as one can use crazy high TTLs if one knows a bunch of workers will fire off pushing new catalogs into the cache on any changes.",
+      "parentUuid": "7a2fa921_300a6322",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_cd109f51",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 10
