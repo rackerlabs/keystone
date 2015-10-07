@@ -16,6 +16,23 @@
       "revId": "8b97bab9fd01d10ede5b3820f145d3cae4779235",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_d34ea795",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-07T16:26:43Z",
+      "side": 1,
+      "message": "nit: we could name the is_uuid variable to something like is_stored_as_bytes, since the boolean is there to determine if the value was in fact converted from hex to bytes. The is_uuid variable name makes it seem like we\u0027re actually doing an isinstance() check to determine that value.",
+      "revId": "8b97bab9fd01d10ede5b3820f145d3cae4779235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
