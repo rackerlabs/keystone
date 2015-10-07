@@ -16,6 +16,58 @@
       "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e697518e",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-07T21:34:08Z",
+      "side": 1,
+      "message": "no it\u0027s not, maybe move this to BaseNotificationTest?\n\nthis way we can change lines 635-639 in a follow up patch :)",
+      "parentUuid": "7a2fa921_107407cd",
+      "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_46e165fd",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-07T21:34:08Z",
+      "side": 1,
+      "message": "being picky here, but can you pass these in as two options? so we can re-use CREATED_OPERATION\n\n  self._assert_initiator_data(CREATED_OPERATION, \u0027user\u0027, cadftaxonomy.SECURITY_ACCOUNT_USER)\n\nand in the function, just set event type like the following:\n\n  action \u003d \u0027%s.%s\u0027 % (operation, resource_type)",
+      "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_46ce45b5",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-07T21:34:08Z",
+      "side": 1,
+      "message": "maybe have 1 test case here?\n\n  test_service_and_endpoint()?\n\nthe code for creating the service is duplicated, and not really necessary",
+      "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
