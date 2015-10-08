@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_572343a7",
+        "filename": "keystone/tests/unit/token/test_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-10-08T08:40:43Z",
+      "side": 1,
+      "message": "self.assertIsInstance(obj, cls, msg\u003dNone) is same as self.assertTrue(isinstance(obj, cls))\ni don\u0027t understand why do you want to do this change.",
+      "revId": "4cc7afe26ff502c9aa1cb73027738cdf8d962230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
