@@ -52,6 +52,24 @@
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_35232aa9",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-10-08T02:34:45Z",
+      "side": 0,
+      "message": "Sorry for spending your time..\nI noticed deactivate is vailid command even if using tox.",
+      "parentUuid": "7a2fa921_0baf1182",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
