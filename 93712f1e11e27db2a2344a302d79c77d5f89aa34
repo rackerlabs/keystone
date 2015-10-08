@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_c706a5cd",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-08T16:58:12Z",
+      "side": 1,
+      "message": "I think it\u0027s not better, because\n1) as a docstring, I\u0027d rather a simple structure, your suggestion is clear, but a bit more complex IMO.\n2) longer than 80 chars.\n\nI think your point is that the missing part is \"v3\", I\u0027ll try to add that, to make it clearer.",
+      "parentUuid": "7a2fa921_94fbfd7a",
+      "revId": "93712f1e11e27db2a2344a302d79c77d5f89aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_befb7d7a",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 2
