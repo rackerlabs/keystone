@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_e02707b4",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-10-08T21:01:09Z",
+      "side": 1,
+      "message": "yep, you got it!",
+      "parentUuid": "7a2fa921_e697518e",
+      "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_46e165fd",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 3
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_b63dd9de",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-10-08T21:01:09Z",
+      "side": 1,
+      "message": "done!",
+      "parentUuid": "7a2fa921_46e165fd",
+      "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_46ce45b5",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 3
@@ -65,6 +101,24 @@
       "writtenOn": "2015-10-07T21:34:08Z",
       "side": 1,
       "message": "maybe have 1 test case here?\n\n  test_service_and_endpoint()?\n\nthe code for creating the service is duplicated, and not really necessary",
+      "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_38ebf714",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-10-08T21:01:09Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "7a2fa921_46ce45b5",
       "revId": "02c65da485d20adbbd6076784a1aafa65872360d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
