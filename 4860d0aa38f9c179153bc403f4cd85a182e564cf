@@ -70,6 +70,91 @@
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_78ef2fe9",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T19:13:02Z",
+      "side": 0,
+      "message": "Why is this section removed?",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_b8a5c7a2",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T19:13:02Z",
+      "side": 0,
+      "message": "This is still valid right?",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_b614f94c",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T19:13:02Z",
+      "side": 0,
+      "message": "I think this whole section should be put back except this sentence should be deleted:\n\n\"The tools directory in Keystone has a script already created to make this very simple\"\n\n\nLet me know if I am going down the wrong track, Isn\u0027t it still recommended to run keystone inside a virtualenv?",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_582d9393",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T19:13:02Z",
+      "side": 0,
+      "message": "also this line should be:\n\n$ virtualenv venv\n\nHere is the doc on virtualenv that i referenced:\nhttp://docs.python-guide.org/en/latest/dev/virtualenvs/#basic-usage",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_7b240cc4",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T19:13:02Z",
+      "side": 0,
+      "message": "Is this suppose to be removed?  I don\u0027t think it has anything to do with ``tools\\with_venv.sh`` or ``tools/install_venv.py``",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
