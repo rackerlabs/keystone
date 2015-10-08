@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_7b716c75",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-08T18:21:48Z",
+      "side": 1,
+      "message": "builds* \n\nfrom Clint comment in patch set 10",
+      "revId": "7690fce72a5a56116f55046d3ca11f39c00f8320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
