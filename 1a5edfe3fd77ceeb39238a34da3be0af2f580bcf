@@ -16,6 +16,40 @@
       "revId": "1a5edfe3fd77ceeb39238a34da3be0af2f580bcf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_0497beec",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T15:58:26Z",
+      "side": 1,
+      "message": "your import statement should be in its own section between import  uuid and import sql\n\nHere is the doc to go off of: http://docs.openstack.org/developer/hacking/#imports",
+      "revId": "1a5edfe3fd77ceeb39238a34da3be0af2f580bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_1f2dcb94",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T15:58:26Z",
+      "side": 1,
+      "message": "It looks like this was not compatable according to pep8 \nhttp://logs.openstack.org/66/232566/1/check/gate-keystone-pep8/2443977/console.html#_2015-10-08_14_47_48_112",
+      "revId": "1a5edfe3fd77ceeb39238a34da3be0af2f580bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
