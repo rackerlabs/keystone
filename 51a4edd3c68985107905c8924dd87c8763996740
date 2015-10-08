@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_ad049f49",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-08T22:04:05Z",
+      "side": 1,
+      "message": "need another new line between the classes",
+      "revId": "51a4edd3c68985107905c8924dd87c8763996740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
