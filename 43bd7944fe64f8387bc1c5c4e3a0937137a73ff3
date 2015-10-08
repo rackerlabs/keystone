@@ -34,6 +34,24 @@
       "revId": "43bd7944fe64f8387bc1c5c4e3a0937137a73ff3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_f12cc39a",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T16:16:02Z",
+      "side": 0,
+      "message": "Oh i\u0027m sorry, i was just saying your change was a good catch!",
+      "parentUuid": "7a2fa921_84b2ee92",
+      "revId": "43bd7944fe64f8387bc1c5c4e3a0937137a73ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
