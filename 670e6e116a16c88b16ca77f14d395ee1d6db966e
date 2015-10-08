@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_ec672fe7",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3038,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-08T00:09:43Z",
+      "side": 1,
+      "message": "So on purpose, I did not over burden this API with supporting domain_id and subtree - since in Mitaka, when we merge all the reseller stuff, we will have projects acting as domains.  Once we have that you can simply pass a project_id for an is_domain project and get the same effect.",
+      "parentUuid": "7a2fa921_fef38e08",
+      "revId": "670e6e116a16c88b16ca77f14d395ee1d6db966e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_1ef76af6",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 7
