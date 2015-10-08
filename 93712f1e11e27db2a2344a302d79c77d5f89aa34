@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_bea85d8d",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T15:42:46Z",
+      "side": 1,
+      "message": "instead of: \n\n\u0027Test v2 API can\u0027t fetch endpoints of a service has no public url.\u0027\n\nmaybe:\n\nTest v3 endpoint without public url which can\u0027t be fetched via v2 API.\n\nNote: i think this should be changed back since the signature of the function says its testing the v3 API",
+      "revId": "93712f1e11e27db2a2344a302d79c77d5f89aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_befb7d7a",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T15:42:46Z",
+      "side": 1,
+      "message": "instead of: \n\n\u0027v3 endpoints of service which doesn\u0027t has public url will be ignored\u0027  \n\nmaybe:\n\n\u0027therefore v3 endpoints of a service which don\u0027t have public url will be ignored\u0027",
+      "revId": "93712f1e11e27db2a2344a302d79c77d5f89aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

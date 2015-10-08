@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_d96f73fa",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-08T15:42:46Z",
+      "side": 0,
+      "message": "Good catch, its funny that this line was doing the same thing as the line below it. http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/core.py#n244",
+      "revId": "43bd7944fe64f8387bc1c5c4e3a0937137a73ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
