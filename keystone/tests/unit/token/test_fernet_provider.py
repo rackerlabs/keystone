@@ -272,6 +272,19 @@ class TestTokenFormatter(unit.TestCase):
 
 
 class TestPayloads(unit.TestCase):
+    def assertTimestampsEqual(self, expected, actual):
+        # The timestamp that we get back when parsing the payload may not
+        # exactly match the timestamp that was put in the payload due to
+        # conversion to and from a float.
+
+        if expected == actual:
+            # shortcut.
+            return
+
+        exp_time = timeutils.parse_isotime(expected)
+        actual_time = timeutils.parse_isotime(actual)
+        self.assertTrue(abs(exp_time - actual_time).total_seconds() <= 1e-05)
+
     def test_uuid_hex_to_byte_conversions(self):
         payload_cls = token_formatters.BasePayload
 
@@ -288,8 +301,8 @@ class TestPayloads(unit.TestCase):
     def test_time_string_to_float_conversions(self):
         payload_cls = token_formatters.BasePayload
 
-        expected_time_str = utils.isotime(subsecond=True)
-        time_obj = timeutils.parse_isotime(expected_time_str)
+        original_time_str = utils.isotime(subsecond=True)
+        time_obj = timeutils.parse_isotime(original_time_str)
         expected_time_float = (
             (timeutils.normalize_time(time_obj) -
              datetime.datetime.utcfromtimestamp(0)).total_seconds())
@@ -301,12 +314,19 @@ class TestPayloads(unit.TestCase):
         self.assertIsInstance(expected_time_float, float)
 
         actual_time_float = payload_cls._convert_time_string_to_float(
-            expected_time_str)
+            original_time_str)
         self.assertIsInstance(actual_time_float, float)
         self.assertEqual(expected_time_float, actual_time_float)
 
+        # Generate expected_time_str using the same time float. Using
+        # original_time_str from utils.isotime will occasionally fail due to
+        # floating point rounding differences.
+        time_object = datetime.datetime.utcfromtimestamp(actual_time_float)
+        expected_time_str = utils.isotime(time_object, subsecond=True)
+
         actual_time_str = payload_cls._convert_float_to_time_string(
             actual_time_float)
+
         self.assertEqual(expected_time_str, actual_time_str)
 
     def test_unscoped_payload(self):
@@ -323,7 +343,7 @@ class TestPayloads(unit.TestCase):
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_project_scoped_payload(self):
@@ -343,7 +363,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_domain_scoped_payload(self):
@@ -363,7 +383,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_domain_id, domain_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_domain_scoped_payload_with_default_domain(self):
@@ -383,7 +403,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_domain_id, domain_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_trust_scoped_payload(self):
@@ -404,7 +424,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertEqual(exp_trust_id, trust_id)
 
@@ -422,7 +442,7 @@ class TestPayloads(unit.TestCase):
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_project_scoped_payload_with_non_uuid_user_id(self):
@@ -442,7 +462,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_project_scoped_payload_with_non_uuid_project_id(self):
@@ -462,7 +482,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_domain_scoped_payload_with_non_uuid_user_id(self):
@@ -482,7 +502,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_domain_id, domain_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_trust_scoped_payload_with_non_uuid_user_id(self):
@@ -503,7 +523,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertEqual(exp_trust_id, trust_id)
 
@@ -525,7 +545,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertEqual(exp_trust_id, trust_id)
 
@@ -547,7 +567,7 @@ class TestPayloads(unit.TestCase):
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertEqual(exp_federated_info['group_ids'][0]['id'],
                          federated_info['group_ids'][0]['id'])
@@ -578,7 +598,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertDictEqual(exp_federated_info, federated_info)
 
@@ -604,7 +624,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
         self.assertEqual(exp_domain_id, domain_id)
-        self.assertEqual(exp_expires_at, expires_at)
+        self.assertTimestampsEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
         self.assertDictEqual(exp_federated_info, federated_info)
 
