@@ -16,6 +16,24 @@
       "revId": "b1e30bdc0b28ff2ef97d07ce37aa32d52e1717b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_29f8a37a",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-10-08T11:52:01Z",
+      "side": 1,
+      "message": "I don\u0027t think there\u0027s any RFC that forbids that, but feel free to prove this otherwise.\n\nThis :80 comes from the HTTP_HOST env var that is set by the testing framework itself. wsgiref.util uses that var to build the app URL, and it\u0027s actually valid since using the host the client gaves in the response make very much sense.\n\nSo if you want to fix that, the way to fix it is to fix the testing framework to not include the port in the HTTP_HOST var. Or to not set this var at all.",
+      "parentUuid": "7a2fa921_b7918d9b",
+      "revId": "b1e30bdc0b28ff2ef97d07ce37aa32d52e1717b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
