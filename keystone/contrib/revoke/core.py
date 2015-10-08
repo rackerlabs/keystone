@@ -76,6 +76,12 @@ class Manager(manager.Manager):
     """
 
     driver_namespace = 'keystone.revoke'
+    revoke_tree = None
+    # Initialize last_fetch to minimum datetime value.
+    # It gets updated each time a new entry is added
+    # in the revocation_even table.
+
+    last_fetch = datetime.datetime(0o0001, 0o1, 0o1, 0, 0, 0)
 
     def __init__(self):
         super(Manager, self).__init__(CONF.revoke.driver)
@@ -206,12 +212,29 @@ class Manager(manager.Manager):
     def revoke_by_domain_role_assignment(self, domain_id, role_id):
         self.revoke(model.RevokeEvent(domain_id=domain_id, role_id=role_id))
 
-    @MEMOIZE
     def _get_revoke_tree(self):
-        events = self.driver.list_events()
-        revoke_tree = model.RevokeTree(revoke_events=events)
+        """Creates or rebuilds a tree from revocation entries
 
-        return revoke_tree
+        Create a tree if it is not initialized already.
+        If tree is initialized, get the latest revoked_at entry from DB.
+        Rebuild the tree only if there are any new revocation_event entries,
+        by checking if max_revoked_at > last_fetch.
+
+        :returns: latest copy of revoke_tree
+        """
+        max_revoked_at = None
+        if self.revoke_tree:
+            max_revoked_at = self.driver.check_max_entry()
+        if (self.revoke_tree is None or max_revoked_at is None or
+                max_revoked_at > self.last_fetch):
+            events = self.driver.list_events()
+            self.revoke_tree = model.RevokeTree(revoke_events=events)
+            if max_revoked_at:
+                self.last_fetch = max_revoked_at
+        return self.revoke_tree
+
+    def invalidate_tree(self):
+        self.revoke_tree = None
 
     def check_token(self, token_values):
         """Checks the values from a token against the revocation list
@@ -228,7 +251,7 @@ class Manager(manager.Manager):
 
     def revoke(self, event):
         self.driver.revoke(event)
-        self._get_revoke_tree.invalidate(self)
+        self.invalidate_tree()
 
 
 @six.add_metaclass(abc.ABCMeta)

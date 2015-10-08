@@ -12,6 +12,8 @@
 
 import uuid
 
+from sqlalchemy.sql import func
+
 from keystone.common import sql
 from keystone.contrib import revoke
 from keystone.contrib.revoke import model
@@ -102,3 +104,11 @@ class Revoke(revoke.RevokeDriverV8):
         with session.begin():
             session.add(record)
         self._prune_expired_events()
+
+    def check_max_entry(self):
+        session = sql.get_session()
+        query = session.query(func.max(RevocationEvent.revoked_at).
+                              label("revoked_at"))
+        result = query.one()
+        max_revoked_at = result.revoked_at
+        return max_revoked_at
