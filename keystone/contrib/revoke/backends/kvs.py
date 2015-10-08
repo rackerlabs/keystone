@@ -72,3 +72,6 @@ class Revoke(revoke.Driver):
                 if revoked_at > oldest:
                     pruned.append(event)
             self._store.set(_EVENT_KEY, pruned, lock)
+
+    def check_max_entry(self):
+        return None
