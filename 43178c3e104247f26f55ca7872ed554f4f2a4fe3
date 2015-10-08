@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_f0ea840e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-08T14:55:44Z",
+      "side": 1,
+      "message": "you mean using oslo_log.versionutils.report_deprecated_feature, right? because the one you said is a decorator, and we only want it to be called when a domain_id update happens.\n\nOk. I\u0027ll set the message to O",
+      "parentUuid": "7a2fa921_b2b6bbda",
+      "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_b260fb36",
         "filename": "keystone/resource/core.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-06T16:21:07Z",
       "side": 1,
       "message": "the comment should say why -- what\u0027s the problem if you change a domain_id?",
+      "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_d0f508ed",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-08T14:55:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_b260fb36",
       "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_70df5469",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-08T14:55:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_7244a373",
+      "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_723b43ec",
         "filename": "keystone/resource/core.py",
         "patchSetId": 20
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_90dc7074",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-08T14:55:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_723b43ec",
+      "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_2542633f",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 20
@@ -81,6 +153,24 @@
       "writtenOn": "2015-10-06T16:21:07Z",
       "side": 1,
       "message": "use unit.new_domain_ref here and unit.new_project_ref throughout these tests.",
+      "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_b0c72c97",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-08T14:55:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_2542633f",
       "revId": "43178c3e104247f26f55ca7872ed554f4f2a4fe3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
