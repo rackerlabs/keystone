@@ -16,6 +16,24 @@
       "revId": "4cc7afe26ff502c9aa1cb73027738cdf8d962230",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_6fcf7829",
+        "filename": "keystone/tests/unit/token/test_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-08T13:30:15Z",
+      "side": 1,
+      "message": "The message when the test fails is different so it\u0027s not the same. The message is more useful for assertIsInstance.",
+      "parentUuid": "7a2fa921_572343a7",
+      "revId": "4cc7afe26ff502c9aa1cb73027738cdf8d962230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
