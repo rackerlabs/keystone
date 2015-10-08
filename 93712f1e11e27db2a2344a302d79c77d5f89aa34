@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_9fda3be7",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-08T16:10:54Z",
+      "side": 1,
+      "message": "no, it\u0027s testing v2 API, to get v3 endpoints",
+      "parentUuid": "7a2fa921_bea85d8d",
+      "revId": "93712f1e11e27db2a2344a302d79c77d5f89aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_befb7d7a",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 2
