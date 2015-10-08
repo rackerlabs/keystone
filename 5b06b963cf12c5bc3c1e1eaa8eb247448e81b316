@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_726ae682",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-08T21:28:07Z",
+      "side": 1,
+      "message": "we should add a comment here just explain the time that we are using.",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_b222be50",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-08T21:28:07Z",
+      "side": 1,
+      "message": "i think we could use something like: \n\n    if self.revoke_tree \n\ninstead of using: \n\n    if Manager.revoke_tree",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_32bc6edb",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-08T21:28:07Z",
+      "side": 1,
+      "message": "in this if statement, what are we looking for? would we be able to add a comment to clarify what we\u0027re doing?",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
