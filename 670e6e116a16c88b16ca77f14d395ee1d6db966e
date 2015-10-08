@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_6c547ffe",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-08T00:08:02Z",
+      "side": 1,
+      "message": "oops, yes, I meant to change this - excellent catch.",
+      "parentUuid": "7a2fa921_fe570e00",
+      "revId": "670e6e116a16c88b16ca77f14d395ee1d6db966e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_fef38e08",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2015-10-06T23:08:47Z",
       "side": 1,
       "message": "?scope.project.id\u003dX?include_subtree",
+      "revId": "670e6e116a16c88b16ca77f14d395ee1d6db966e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_4c28a386",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3041,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-08T00:08:02Z",
+      "side": 1,
+      "message": "Yep, you are right",
+      "parentUuid": "7a2fa921_1ef76af6",
       "revId": "670e6e116a16c88b16ca77f14d395ee1d6db966e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
