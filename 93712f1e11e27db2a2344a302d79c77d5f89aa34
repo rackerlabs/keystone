@@ -145,6 +145,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_94668428",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T05:49:05Z",
+      "side": 1,
+      "message": "In v3 API, one service should normally have three endpoints with different interfaces (admin, internal, public), all of these endpoints which associated with the service will be ignored if there is no endpoint with public interface associated with that service. This happened in the latest change, i.e. when converting v3 endpoints to v2 endpoints.",
+      "parentUuid": "7a2fa921_b3dcfd73",
+      "revId": "93712f1e11e27db2a2344a302d79c77d5f89aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_befb7d7a",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 2
