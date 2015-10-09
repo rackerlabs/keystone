@@ -21,6 +21,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
 
@@ -177,7 +178,7 @@ class Catalog(catalog.CatalogDriverV8):
         return ref.to_dict()
 
     # Services
-    @sql.truncated
+    @driver_hints.truncated
     def list_services(self, hints):
         session = sql.get_session()
         services = session.query(Service)
@@ -246,7 +247,7 @@ class Catalog(catalog.CatalogDriverV8):
         session = sql.get_session()
         return self._get_endpoint(session, endpoint_id).to_dict()
 
-    @sql.truncated
+    @driver_hints.truncated
     def list_endpoints(self, hints):
         session = sql.get_session()
         endpoints = session.query(Endpoint)
