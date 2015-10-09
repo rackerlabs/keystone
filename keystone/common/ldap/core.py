@@ -26,6 +26,7 @@ from oslo_log import log
 import six
 from six.moves import map, zip
 
+from keystone.common import driver_hints
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LW
@@ -1454,20 +1455,37 @@ class BaseLdap(object):
         except IndexError:
             return None
 
-    def _ldap_get_all(self, ldap_filter=None):
+    @driver_hints.truncated
+    def _ldap_get_all(self, hints, ldap_filter=None):
         query = u'(&%s(objectClass=%s)(%s=*))' % (
             ldap_filter or self.ldap_filter or '',
             self.object_class,
             self.id_attr)
+        sizelimit = 0
+        if hints.limit:
+            sizelimit = hints.limit['limit']
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +
                                   list(self.attribute_mapping.values()) +
                                   list(self.extra_attr_mapping.keys()))))
-                return conn.search_s(self.tree_dn,
-                                     self.LDAP_SCOPE,
-                                     query,
-                                     attrs)
+                if sizelimit:
+                    lc = ldap.controls.libldap.SimplePagedResultsControl(
+                        criticality=True,
+                        size=sizelimit,
+                        cookie='')
+                    msgid = conn.search_ext(self.tree_dn,
+                                            self.LDAP_SCOPE,
+                                            query,
+                                            attrs,
+                                            serverctrls=[lc])
+                    rtype, rdata, rmsgid, serverctrls = conn.result3(msgid)
+                    return rdata
+                else:
+                    return conn.search_s(self.tree_dn,
+                                         self.LDAP_SCOPE,
+                                         query,
+                                         attrs)
             except ldap.NO_SUCH_OBJECT:
                 return []
 
@@ -1503,9 +1521,10 @@ class BaseLdap(object):
         except IndexError:
             raise self._not_found(name)
 
-    def get_all(self, ldap_filter=None):
+    def get_all(self, ldap_filter=None, hints=None):
+        hints = hints or driver_hints.Hints()
         return [self._ldap_res_to_model(x)
-                for x in self._ldap_get_all(ldap_filter)]
+                for x in self._ldap_get_all(hints, ldap_filter)]
 
     def update(self, object_id, values, old_obj=None):
         if old_obj is None:
@@ -1883,11 +1902,12 @@ class EnabledEmuMixIn(BaseLdap):
                 ref['enabled'] = self._get_enabled(object_id, conn)
             return ref
 
-    def get_all(self, ldap_filter=None):
+    def get_all(self, ldap_filter=None, hints=None):
+        hints = hints or driver_hints.Hints()
         if 'enabled' not in self.attribute_ignore and self.enabled_emulation:
             # had to copy BaseLdap.get_all here to ldap_filter by DN
             tenant_list = [self._ldap_res_to_model(x)
-                           for x in self._ldap_get_all(ldap_filter)
+                           for x in self._ldap_get_all(hints, ldap_filter)
                            if x[0] != self.enabled_emulation_dn]
             with self.get_connection() as conn:
                 for tenant_ref in tenant_list:
@@ -1895,7 +1915,7 @@ class EnabledEmuMixIn(BaseLdap):
                         tenant_ref['id'], conn)
             return tenant_list
         else:
-            return super(EnabledEmuMixIn, self).get_all(ldap_filter)
+            return super(EnabledEmuMixIn, self).get_all(ldap_filter, hints)
 
     def update(self, object_id, values, old_obj=None):
         if 'enabled' not in self.attribute_ignore and self.enabled_emulation:
