@@ -454,8 +454,10 @@ class LDAPHandler(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def search_s(self, base, scope,
-                 filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
+    def search_ext_s(self, base, scope,
+                     filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                     serverctrls=None, clientctrls=None,
+                     timeout=-1, sizelimit=0):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
@@ -538,10 +540,14 @@ class PythonLDAPHandler(LDAPHandler):
     def add_s(self, dn, modlist):
         return self.conn.add_s(dn, modlist)
 
-    def search_s(self, base, scope,
-                 filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
-        return self.conn.search_s(base, scope, filterstr,
-                                  attrlist, attrsonly)
+    def search_ext_s(self, base, scope,
+                     filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                     serverctrls=None, clientctrls=None,
+                     timeout=-1, sizelimit=0):
+        return self.conn.search_ext_s(base, scope,
+                                      filterstr, attrlist, attrsonly,
+                                      serverctrls, clientctrls,
+                                      timeout, sizelimit)
 
     def search_ext(self, base, scope,
                    filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
@@ -763,10 +769,14 @@ class PooledLDAPHandler(LDAPHandler):
         return conn.add_s(dn, modlist)
 
     @use_conn_pool
-    def search_s(self, conn, base, scope,
-                 filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
-        return conn.search_s(base, scope, filterstr, attrlist,
-                             attrsonly)
+    def search_ext_s(self, conn, base, scope,
+                     filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                     serverctrls=None, clientctrls=None,
+                     timeout=-1, sizelimit=0):
+        return conn.search_ext_s(base, scope,
+                                 filterstr, attrlist, attrsonly,
+                                 serverctrls, clientctrls,
+                                 timeout, sizelimit)
 
     def search_ext(self, base, scope,
                    filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
@@ -921,8 +931,10 @@ class KeystoneLDAPHandler(LDAPHandler):
                            for kind, values in ldap_attrs]
         return self.conn.add_s(dn_utf8, ldap_attrs_utf8)
 
-    def search_s(self, base, scope,
-                 filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
+    def search_ext_s(self, base, scope,
+                     filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                     serverctrls=None, clientctrls=None,
+                     timeout=-1, sizelimit=0):
         # NOTE(morganfainberg): Remove "None" singletons from this list, which
         # allows us to set mapped attributes to "None" as defaults in config.
         # Without this filtering, the ldap query would raise a TypeError since
@@ -942,9 +954,9 @@ class KeystoneLDAPHandler(LDAPHandler):
                 attrlist_utf8 = None
             else:
                 attrlist_utf8 = list(map(utf8_encode, attrlist))
-            ldap_result = self.conn.search_s(base_utf8, scope,
-                                             filterstr_utf8,
-                                             attrlist_utf8, attrsonly)
+            ldap_result = self.conn.search_ext_s(
+                base_utf8, scope, filterstr_utf8, attrlist_utf8, attrsonly,
+                serverctrls, clientctrls, timeout, sizelimit)
 
         py_result = convert_ldap_result(ldap_result)
 
@@ -1294,7 +1306,7 @@ class BaseLdap(object):
         if self.LDAP_SCOPE == ldap.SCOPE_ONELEVEL:
             return self._id_to_dn_string(object_id)
         with self.get_connection() as conn:
-            search_result = conn.search_s(
+            search_result = conn.search_ext_s(
                 self.tree_dn, self.LDAP_SCOPE,
                 u'(&(%(id_attr)s=%(id)s)(objectclass=%(objclass)s))' %
                 {'id_attr': self.id_attr,
@@ -1441,10 +1453,10 @@ class BaseLdap(object):
                 attrs = list(set(([self.id_attr] +
                                   list(self.attribute_mapping.values()) +
                                   list(self.extra_attr_mapping.keys()))))
-                res = conn.search_s(self.tree_dn,
-                                    self.LDAP_SCOPE,
-                                    query,
-                                    attrs)
+                res = conn.search_ext_s(self.tree_dn,
+                                        self.LDAP_SCOPE,
+                                        query,
+                                        attrs)
             except ldap.NO_SUCH_OBJECT:
                 return None
         try:
@@ -1462,10 +1474,10 @@ class BaseLdap(object):
                 attrs = list(set(([self.id_attr] +
                                   list(self.attribute_mapping.values()) +
                                   list(self.extra_attr_mapping.keys()))))
-                return conn.search_s(self.tree_dn,
-                                     self.LDAP_SCOPE,
-                                     query,
-                                     attrs)
+                return conn.search_ext_s(self.tree_dn,
+                                         self.LDAP_SCOPE,
+                                         query,
+                                         attrs)
             except ldap.NO_SUCH_OBJECT:
                 return []
 
@@ -1482,7 +1494,7 @@ class BaseLdap(object):
                      (query, ''.join([calc_filter(k, v) for k, v in
                                       query_params.items()])))
         with self.get_connection() as conn:
-            return conn.search_s(search_base, scope, query, attrlist)
+            return conn.search_ext_s(search_base, scope, query, attrlist)
 
     def get(self, object_id, ldap_filter=None):
         res = self._ldap_get(object_id, ldap_filter)
@@ -1594,7 +1606,7 @@ class BaseLdap(object):
                 filt = '(|(objectclass=*)(objectclass=ldapsubentry))'
                 # We only need the DNs of the entries.  Since no attributes
                 # will be returned, we do not have to specify attrsonly=1.
-                entries = conn.search_s(dn, scope, filt, attrlist=DN_ONLY)
+                entries = conn.search_ext_s(dn, scope, filt, attrlist=DN_ONLY)
                 if entries:
                     for dn in sorted((e[0] for e in entries),
                                      key=len, reverse=True):
@@ -1653,8 +1665,8 @@ class BaseLdap(object):
         not_deleted_nodes = []
         with self.get_connection() as conn:
             try:
-                nodes = conn.search_s(search_base, scope, query,
-                                      attrlist=DN_ONLY)
+                nodes = conn.search_ext_s(search_base, scope, query,
+                                          attrlist=DN_ONLY)
             except ldap.NO_SUCH_OBJECT:
                 LOG.debug('Could not find entry with dn=%s', search_base)
                 raise self._not_found(self._dn_to_id(search_base))
@@ -1809,9 +1821,9 @@ class EnabledEmuMixIn(BaseLdap):
         dn = self._id_to_dn(object_id)
         query = '(member=%s)' % dn
         try:
-            enabled_value = conn.search_s(self.enabled_emulation_dn,
-                                          ldap.SCOPE_BASE,
-                                          query, attrlist=DN_ONLY)
+            enabled_value = conn.search_ext_s(self.enabled_emulation_dn,
+                                              ldap.SCOPE_BASE,
+                                              query, attrlist=DN_ONLY)
         except ldap.NO_SUCH_OBJECT:
             return False
         else:

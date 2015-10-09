@@ -149,9 +149,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         enabled_attr_name = CONF.ldap.user_enabled_attribute
 
         ldap_ = self.identity_api.driver.user.get_connection()
-        res = ldap_.search_s(user_dn,
-                             ldap.SCOPE_BASE,
-                             u'(sn=%s)' % user['name'])
+        res = ldap_.search_ext_s(user_dn,
+                                 ldap.SCOPE_BASE,
+                                 u'(sn=%s)' % user['name'])
         if enabled_attr_name in res[0][1]:
             return res[0][1][enabled_attr_name]
         else:
