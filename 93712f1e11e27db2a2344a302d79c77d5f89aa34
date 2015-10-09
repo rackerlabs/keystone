@@ -127,6 +127,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_b3dcfd73",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-09T00:49:00Z",
+      "side": 1,
+      "message": "That\u0027s my initial version.\nIt\u0027s not v3 endpoints have (or not) public url, but the service has (or not)\n\nYou can see it\u0027s a bit tricky. I was doing compromises here.",
+      "parentUuid": "7a2fa921_bb114406",
+      "revId": "93712f1e11e27db2a2344a302d79c77d5f89aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_befb7d7a",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 2
