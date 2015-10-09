@@ -1875,7 +1875,8 @@ class EnabledEmuMixIn(BaseLdap):
                 ref['enabled'] = self._get_enabled(object_id, conn)
             return ref
 
-    def get_all(self, ldap_filter=None):
+    @truncated
+    def get_all(self, hints, ldap_filter=None):
         if 'enabled' not in self.attribute_ignore and self.enabled_emulation:
             # had to copy BaseLdap.get_all here to ldap_filter by DN
             tenant_list = [self._ldap_res_to_model(x)
