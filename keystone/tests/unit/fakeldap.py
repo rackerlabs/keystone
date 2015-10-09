@@ -444,11 +444,14 @@ class FakeLdap(core.LDAPHandler):
                      filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
                      serverctrls=None, clientctrls=None,
                      timeout=-1, sizelimit=0):
-        if serverctrls or clientctrls or timeout != -1 or sizelimit != 0:
+        if serverctrls or clientctrls or timeout != -1:
             raise NotImplementedError('one of the options used is not yet'
                                       ' supported')
         results = self.search_s(base, scope, filterstr, attrlist, attrsonly)
-        return results
+        if sizelimit:
+            return results[:sizelimit]
+        else:
+            return results
 
     def search_s(self, base, scope,
                  filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
