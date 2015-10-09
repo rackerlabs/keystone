@@ -260,8 +260,8 @@ class LDAPDeleteTreeTest(unit.TestCase):
         # verify that the three entries were created
         scope = ldap.SCOPE_SUBTREE
         filt = '(|(objectclass=*)(objectclass=ldapsubentry))'
-        entries = conn.search_s(base_dn, scope, filt,
-                                attrlist=common_ldap_core.DN_ONLY)
+        entries = conn.search_ext_s(base_dn, scope, filt,
+                                    attrlist=common_ldap_core.DN_ONLY)
         self.assertThat(entries, matchers.HasLength(3))
         sort_ents = sorted([e[0] for e in entries], key=len, reverse=True)
         self.assertEqual([grandchild_dn, child_dn, base_dn], sort_ents)
@@ -276,11 +276,11 @@ class LDAPDeleteTreeTest(unit.TestCase):
         # call our deleteTree implementation
         self.identity_api.user.deleteTree(base_id)
         self.assertRaises(ldap.NO_SUCH_OBJECT,
-                          conn.search_s, base_dn, ldap.SCOPE_BASE)
+                          conn.search_ext_s, base_dn, ldap.SCOPE_BASE)
         self.assertRaises(ldap.NO_SUCH_OBJECT,
-                          conn.search_s, child_dn, ldap.SCOPE_BASE)
+                          conn.search_ext_s, child_dn, ldap.SCOPE_BASE)
         self.assertRaises(ldap.NO_SUCH_OBJECT,
-                          conn.search_s, grandchild_dn, ldap.SCOPE_BASE)
+                          conn.search_ext_s, grandchild_dn, ldap.SCOPE_BASE)
 
 
 class SslTlsTest(unit.TestCase):
