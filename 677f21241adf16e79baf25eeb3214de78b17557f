@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_977c46ed",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1300,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_b34ebd94",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_5343a16c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-02T16:18:32Z",
       "side": 1,
       "message": "tabbed in to far",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_57822ec9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1302,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_5343a16c",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_9763e641",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_135e8945",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_9317f953",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-02T16:18:32Z",
       "side": 1,
       "message": "tabbed in to far",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_77d3aad5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_9317f953",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_9798c61d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "sure.",
+      "parentUuid": "9a1a9d01_67e0d0cd",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_870ac488",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2015-09-30T14:09:54Z",
       "side": 1,
       "message": "same comment applies to the rest of these",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_3788d2c4",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_870ac488",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_973446fc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_677c50ec",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_e7de20dc",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 6
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_820ba223",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "there is no convention about this IMO, and this is not the scope of this patch. I will add the punctuation to where it looks like a complete sentence.",
+      "parentUuid": "9a1a9d01_e7de20dc",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_ea758563",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 6
@@ -149,6 +293,24 @@
       "writtenOn": "2015-09-30T14:09:54Z",
       "side": 1,
       "message": "punctuation, or no?",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a277be9e",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "I am really not sure how to do this since this is what it was, and if add the punctuation here we might be also need to change ton of places in other place.",
+      "parentUuid": "9a1a9d01_ea758563",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_0250f2d2",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "we can do this since the code show us it\u0027s ProjectEndpoint not found, but we cannot do this for other occurrences since there might be different entities cannot be found where this method was implemented.\n\nAnd I don\u0027t postive to change the condition to \"endpoint doesn\u0027t exist\", if we do that we should update the class of exception as well and hence is not within the scope of the patch.",
+      "parentUuid": "9a1a9d01_aa19cd23",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_a1a9f825",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 6
@@ -201,6 +381,24 @@
       "writtenOn": "2015-09-30T13:46:23Z",
       "side": 1,
       "message": "Ditto",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e2c7f661",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_a1a9f825",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +490,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_22996e7c",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "see my expalination in the above and apply to other place.",
+      "parentUuid": "9a1a9d01_a180188c",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_c17bccbc",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 6
@@ -360,6 +576,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_62fd266d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "No difference for the first and the second if we are talking about the doc rendered, but the third one is not correct since it will be not rendered correctly. \n\nI am not sure how sphinx works but my inital thought is make it consistent within the context, which looks more neat or possibly the consideration of size limitation.",
+      "parentUuid": "9a1a9d01_ca99a17a",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_4a9b5166",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 6
@@ -377,6 +611,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_c2667a50",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "has already replied.",
+      "parentUuid": "9a1a9d01_4a9b5166",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_2ae61de8",
         "filename": "keystone/endpoint_policy/core.py",
         "patchSetId": 6
@@ -388,6 +640,24 @@
       "writtenOn": "2015-09-30T14:09:54Z",
       "side": 1,
       "message": "indentation doesn\u0027t match up here",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_c2cd1a32",
+        "filename": "keystone/endpoint_policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_2ae61de8",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -428,6 +698,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_c2f43a5c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_c4d51ae5",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_4a37d14c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -445,6 +733,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_228deed5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "based on the context, based on whether others has been capitalized for the fields in the same section.",
+      "parentUuid": "9a1a9d01_4a37d14c",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_ca71a10d",
         "filename": "keystone/trust/core.py",
         "patchSetId": 6
@@ -456,6 +762,24 @@
       "writtenOn": "2015-09-30T14:09:54Z",
       "side": 1,
       "message": "same indentation comment as before.",
+      "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_028eb2cf",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T07:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_ca71a10d",
       "revId": "677f21241adf16e79baf25eeb3214de78b17557f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
