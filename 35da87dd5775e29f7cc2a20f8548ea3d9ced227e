@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_187b90f6",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-09T00:27:57Z",
+      "side": 1,
+      "message": "these aren\u0027t expected values, they\u0027re just there to fill in the extra arguments.",
+      "parentUuid": "7a2fa921_64f7c4f5",
+      "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_3310384e",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_1862b03e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-09T00:27:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_3310384e",
+      "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_2448ec2c",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-07T17:33:36Z",
       "side": 1,
       "message": "I don\u0027t think we need to have this as a module level global variable do we? \n\nCan the TokenFormatter class keep track of this as a class variable?",
+      "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_58d90821",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-09T00:27:57Z",
+      "side": 1,
+      "message": "problem is you can\u0027t reference these symbols (TrustScopedPayload, etc.) in TokenFormatter since they\u0027re not defined yet.",
+      "parentUuid": "7a2fa921_2448ec2c",
       "revId": "35da87dd5775e29f7cc2a20f8548ea3d9ced227e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
