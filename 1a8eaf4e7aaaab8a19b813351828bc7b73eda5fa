@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_ef581a33",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-09T19:59:10Z",
+      "side": 1,
+      "message": "when 0.8.0 is release we can make this line:\n\n  oslo_cache.testing.CacheIsolatingProxy",
+      "revId": "1a8eaf4e7aaaab8a19b813351828bc7b73eda5fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
