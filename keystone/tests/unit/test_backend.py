@@ -2636,7 +2636,6 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
     @unit.skip_if_no_multiple_domains_support
-    # @test_utils.wip('waiting for sub projects acting as domains support')
     def test_project_name_domain_constraint(self):
         """Tests project name constraints.
 
@@ -2645,7 +2644,6 @@ class IdentityTests(AssignmentTestHelperMixin):
         and domain_id values. If it is a project acting as a domain, we can't
         have two or more with the same name.
         """
-
         # Create a project acting as a domain
         project = {'id': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
