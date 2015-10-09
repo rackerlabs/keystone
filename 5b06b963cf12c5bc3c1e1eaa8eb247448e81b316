@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_ba611eab",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-09T11:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_726ae682",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_9a5a22f1",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-09T11:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_44491d5f",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_b222be50",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 1
@@ -48,6 +84,24 @@
       "writtenOn": "2015-10-08T21:28:07Z",
       "side": 1,
       "message": "i think we could use something like: \n\n    if self.revoke_tree \n\ninstead of using: \n\n    if Manager.revoke_tree",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_fa6b1683",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-09T11:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_b222be50",
       "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_bcb35b4c",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-09T11:29:55Z",
+      "side": 1,
+      "message": "We\u0027re rebuilding the tree only if \n1. the tree does not exist already\n2. or max_revoked_at value is empty\n3. or there is a new entry in revocation_event (ensured by checking if max_revoked_at \u003e last_fetch)\n\n1st and 3rd cases are self-explanatory. Explanation of 2nd case:\nmax_revoked_at contains the \u0027revoked_at\u0027 value of the last token, returned by  check_max_entry() module in sql.\nWhile building the tree, the revocation_event table objects returned by sql, are converted into dict objects. This conversion is the real culprit in performance, which we need to avoid. Other drivers like kvs do not carry the dict object conversions and hence do not affect the performance. In that case, we don\u0027t check for max_revoked_at value and rebuild the tree each time. The check_max_entry() module in other driver like kvs thus returns None.\n\nPlease let us know if we should add this explanation in the code.",
+      "parentUuid": "7a2fa921_32bc6edb",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_84b17549",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 1
@@ -82,6 +154,24 @@
       "writtenOn": "2015-10-09T03:01:13Z",
       "side": 1,
       "message": "same comment as lance, use\n\n  self.revoke_tree \u003d None",
+      "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_1c7b6f7c",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-09T11:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_84b17549",
       "revId": "5b06b963cf12c5bc3c1e1eaa8eb247448e81b316",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
