@@ -479,10 +479,10 @@ class RoleApi(ldap_role.RoleLdapStructureMixin, common_ldap.BaseLdap):
                                                 group_dn_esc)
         with self.get_connection() as conn:
             try:
-                roles = conn.search_s(project_subtree,
-                                      ldap.SCOPE_SUBTREE,
-                                      query,
-                                      attrlist=common_ldap.DN_ONLY)
+                roles = conn.search_ext_s(project_subtree,
+                                          ldap.SCOPE_SUBTREE,
+                                          query,
+                                          attrlist=common_ldap.DN_ONLY)
             except ldap.NO_SUCH_OBJECT:
                 # Return no roles rather than raise an exception if the project
                 # subtree entry doesn't exist because an empty subtree is not
