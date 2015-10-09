@@ -2116,8 +2116,8 @@ class LDAPUserList(unit.TestCase):
         users = self.identity_api.list_users(hints=hints)
         # NOTE(amakarov): this exposes bug 1501698
         # list_limit number of entries should be returned
-        self.assertNotEqual(CONF.identity.list_limit, len(users))
-        self.assertEqual(len(default_fixtures.USERS), len(users))
+        self.assertEqual(CONF.identity.list_limit, len(users))
+        self.assertNotEqual(len(default_fixtures.USERS), len(users))
 
         # Finally, let's pretend we want to get the full list of entities,
         # even with the limits set, as part of some internal calculation.
