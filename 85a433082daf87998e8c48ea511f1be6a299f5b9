@@ -16,6 +16,24 @@
       "revId": "85a433082daf87998e8c48ea511f1be6a299f5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_780b967d",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-09T08:47:41Z",
+      "side": 1,
+      "message": "In that case, we will split this testcase into two with the same purpose. I think both is fine but just want keep it simple.",
+      "parentUuid": "3a50d1a3_dd2e9c8b",
+      "revId": "85a433082daf87998e8c48ea511f1be6a299f5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
