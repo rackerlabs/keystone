@@ -837,6 +837,12 @@ class SqlUpgradeTests(SqlMigrateBase):
         other_project['id'] = uuid.uuid4().hex
         self.insert_dict(session, 'project', other_project)
 
+    def test_drop_domain_id_FK_project_table(self):
+        self.upgrade(86)
+        self.assertIs(True, self.does_fk_exist('project', 'domain_id'))
+        self.upgrade(87)
+        self.assertIs(False, self.does_fk_exist('project', 'domain_id'))
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

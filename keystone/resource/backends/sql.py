@@ -250,8 +250,7 @@ class Project(sql.ModelBase, sql.DictBase):
                   'parent_id', 'is_domain']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
-                           nullable=True)
+    domain_id = sql.Column(sql.String(64), nullable=True)
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
