@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_a96bf71c",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-10T04:17:50Z",
+      "side": 1,
+      "message": "this function should really have a docstring that explains what is going on, it\u0027s not the easiest to follow\n\nAFAICT: if the tree has been initialized already, then just grab the time of the latest revoked event.\n\nif the tree or max_revoke is uninitialized, create the tree. also create the tree if latest revoked_event is \u003e last fetch",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e99a4f61",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-10T04:17:50Z",
+      "side": 1,
+      "message": "you can do this same check with:\n\n  if self.revoke_tree:",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_c958b38c",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-10T04:17:50Z",
+      "side": 1,
+      "message": "i think the parenthesis are pointless here? it\u0027s all or\u0027s\n\n  if not self.revoke_tree or not max_revoked_at or max_revoked_at \u003e self.last_fetch:",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a9a1b795",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-10T04:17:50Z",
+      "side": 1,
+      "message": "same result with fewer characters:\n\n  if max_revoked_at:",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_09b9cbcb",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-10T04:17:50Z",
+      "side": 1,
+      "message": "use self here:\n\n  self.revoke_tree \u003d None",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
