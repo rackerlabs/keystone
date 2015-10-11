@@ -540,7 +540,7 @@ class SamlIdentityProviderMetadata(BaseApp):
     def main():
         # NOTE(marek-denis): Since federation is currently an extension import
         # corresponding modules only when they are really going to be used.
-        from keystone.contrib.federation import idp
+        from keystone.federation import idp
         metadata = idp.MetadataGenerator().generate_metadata()
         print(metadata.to_string())
 
@@ -598,7 +598,7 @@ class MappingEngineTester(BaseApp):
 
     @classmethod
     def main(cls):
-        from keystone.contrib.federation import utils as mapping_engine
+        from keystone.federation import utils as mapping_engine
         if not CONF.command.engine_debug:
             mapping_engine.LOG.logger.setLevel('WARN')
 

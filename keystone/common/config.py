@@ -504,6 +504,9 @@ FILE_OPTIONS = {
                    help='Duration (in seconds) for the OAuth Access Token.'),
     ],
     'federation': [
+        cfg.BoolOpt('enabled',
+                    default=True,
+                    help='Enable federation functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
                    help='Entrypoint for the federation backend driver in the '
