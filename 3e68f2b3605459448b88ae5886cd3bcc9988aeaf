@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_59aea7e8",
+        "filename": "keystone/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-11T17:11:11Z",
+      "side": 1,
+      "message": "this reads like \"deprecating to what version?\". But since I think this will only be read by developers of Keystone, I don\u0027t think it\u0027s that big of a deal. \n\nCan\u0027t we use the in favor of code that dstanek wrote to do this too?",
+      "revId": "3e68f2b3605459448b88ae5886cd3bcc9988aeaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_79ab63d7",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-11T17:11:11Z",
+      "side": 1,
+      "message": "remove copyright?",
+      "revId": "3e68f2b3605459448b88ae5886cd3bcc9988aeaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
