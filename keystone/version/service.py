@@ -26,6 +26,7 @@ from keystone import catalog
 from keystone.common import wsgi
 from keystone import credential
 from keystone import endpoint_policy
+from keystone import federation
 from keystone import identity
 from keystone import policy
 from keystone import resource
@@ -120,6 +121,9 @@ def v3_app_factory(global_conf, **local_conf):
 
     if CONF.endpoint_policy.enabled:
         router_modules.append(endpoint_policy)
+
+    if CONF.federation.enabled:
+        router_modules.append(federation)
 
     for module in router_modules:
         routers_instance = module.routers.Routers()
