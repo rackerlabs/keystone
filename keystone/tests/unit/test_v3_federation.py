@@ -33,9 +33,9 @@ if not xmldsig:
 
 from keystone.auth import controllers as auth_controllers
 from keystone.common import environment
-from keystone.contrib.federation import controllers as federation_controllers
-from keystone.contrib.federation import idp as keystone_idp
 from keystone import exception
+from keystone.federation import controllers as federation_controllers
+from keystone.federation import idp as keystone_idp
 from keystone import notifications
 from keystone.tests.unit import core
 from keystone.tests.unit import federation_fixtures
