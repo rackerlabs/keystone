@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_5c1f7509",
+        "filename": "keystone/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-11T21:48:08Z",
+      "side": 1,
+      "message": "hmm? it does call versionutils.deprecated at line 30, i think that\u0027s the bit that dstanek wrote",
+      "parentUuid": "7a2fa921_59aea7e8",
+      "revId": "3e68f2b3605459448b88ae5886cd3bcc9988aeaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_79ab63d7",
         "filename": "keystone/version/service.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-11T17:11:11Z",
       "side": 1,
       "message": "remove copyright?",
+      "revId": "3e68f2b3605459448b88ae5886cd3bcc9988aeaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_fc2f613c",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-11T21:48:08Z",
+      "side": 1,
+      "message": "it\u0027s pretty much a copy of keystone/service.py so i think we maintain the copyright",
+      "parentUuid": "7a2fa921_79ab63d7",
       "revId": "3e68f2b3605459448b88ae5886cd3bcc9988aeaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
