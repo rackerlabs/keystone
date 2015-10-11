@@ -33,9 +33,9 @@ if not xmldsig:
 
 from keystone.auth import controllers as auth_controllers
 from keystone.common import environment
-from keystone.contrib.federation import controllers as federation_controllers
-from keystone.contrib.federation import idp as keystone_idp
 from keystone import exception
+from keystone.federation import controllers as federation_controllers
+from keystone.federation import idp as keystone_idp
 from keystone import notifications
 from keystone.tests.unit import core
 from keystone.tests.unit import federation_fixtures
@@ -55,12 +55,6 @@ XMLDIR = os.path.join(ROOTDIR, 'saml2/')
 
 def dummy_validator(*args, **kwargs):
     pass
-
-
-class FederationTests(test_v3.RestfulTestCase):
-
-    EXTENSION_NAME = 'federation'
-    EXTENSION_TO_ADD = 'federation_extension'
 
 
 class FederatedSetupMixin(object):
@@ -774,7 +768,7 @@ class FederatedSetupMixin(object):
             self.domainC['id'])
 
 
-class FederatedIdentityProviderTests(FederationTests):
+class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     """A test class for Identity Providers."""
 
     idp_keys = ['description', 'enabled']
@@ -1312,7 +1306,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.get(url, expected_status=http_client.NOT_FOUND)
 
 
-class MappingCRUDTests(FederationTests):
+class MappingCRUDTests(test_v3.RestfulTestCase):
     """A class for testing CRUD operations for Mappings."""
 
     MAPPING_URL = '/OS-FEDERATION/mappings/'
@@ -1479,7 +1473,7 @@ class MappingCRUDTests(FederationTests):
                  body={'mapping': mapping})
 
 
-class FederatedTokenTests(FederationTests, FederatedSetupMixin):
+class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
     def auth_plugin_config_override(self):
         methods = ['saml2']
@@ -1516,7 +1510,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         self.assertTrue(note['send_notification_called'])
 
     def load_fixtures(self, fixtures):
-        super(FederationTests, self).load_fixtures(fixtures)
+        super(FederatedTokenTests, self).load_fixtures(fixtures)
         self.load_federation_sample_data()
 
     def test_issue_unscoped_token_notify(self):
@@ -2390,7 +2384,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                           assertion='ANOTHER_LOCAL_USER_ASSERTION')
 
 
-class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin):
+class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'
 
     def load_fixtures(self, fixtures):
@@ -2463,7 +2457,7 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
               self).auth_plugin_config_override(methods)
 
 
-class JsonHomeTests(FederationTests, test_v3.JsonHomeTestMixin):
+class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/'
         '1.0/rel/identity_provider': {
@@ -2491,7 +2485,7 @@ def _load_xml(filename):
         return xml.read()
 
 
-class SAMLGenerationTests(FederationTests):
+class SAMLGenerationTests(test_v3.RestfulTestCase):
 
     SP_AUTH_URL = ('http://beta.com:5000/v3/OS-FEDERATION/identity_providers'
                    '/BETA/protocols/saml2/auth')
@@ -2963,7 +2957,7 @@ class SAMLGenerationTests(FederationTests):
         self.assertEqual(expected_log, logger_fixture.output)
 
 
-class IdPMetadataGenerationTests(FederationTests):
+class IdPMetadataGenerationTests(test_v3.RestfulTestCase):
     """A class for testing Identity Provider Metadata generation."""
 
     METADATA_URL = '/OS-FEDERATION/saml2/metadata'
@@ -3093,7 +3087,7 @@ class IdPMetadataGenerationTests(FederationTests):
         self.assertEqual(reference_file, r.result)
 
 
-class ServiceProviderTests(FederationTests):
+class ServiceProviderTests(test_v3.RestfulTestCase):
     """A test class for Service Providers."""
 
     MEMBER_NAME = 'service_provider'
@@ -3103,7 +3097,7 @@ class ServiceProviderTests(FederationTests):
                'relay_state_prefix', 'sp_url']
 
     def setUp(self):
-        super(FederationTests, self).setUp()
+        super(test_v3.RestfulTestCase, self).setUp()
         # Add a Service Provider
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.SP_REF = self.sp_ref()
@@ -3386,7 +3380,7 @@ class WebSSOTests(FederatedTokenTests):
         self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
 
 
-class K2KServiceCatalogTests(FederationTests):
+class K2KServiceCatalogTests(test_v3.RestfulTestCase):
     SP1 = 'SP1'
     SP2 = 'SP2'
     SP3 = 'SP3'
