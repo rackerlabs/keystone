@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_4f59d18d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-12T20:29:46Z",
+      "side": 1,
+      "message": "not sure if this belongs in this commit or not, but this should probably determine the padding the same as restore_padding does.",
+      "revId": "2f4bbf4b7ea5e26a6b87124d1a0477b78930468d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
