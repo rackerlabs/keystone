@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_8e805a8d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-10-12T15:20:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_45ed54ee",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_85e36c05",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_ee730ee6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-10-12T15:20:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_85e36c05",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_a580e8f8",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-12T04:39:30Z",
       "side": 1,
       "message": "this could be a bit slicker, just get the single admin id and pop it if it\u0027s in the list, or compare sets\n\n  admin_role_id \u003d self._get_admin_role_id()\n  role_list.pop(admin_role_id, None)\n\nor \n\n  admin_role_id \u003d self._get_admin_role_id()\n  role_list \u003d set([admin_role_id]) - set(role_list)\n\nhaving tried it, just spitballing",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_ae7d16b3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-10-12T15:20:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_a580e8f8",
       "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2015-10-12T06:50:05Z",
       "side": 1,
       "message": "++, \u0027if CONF.assignment.admin_project_id\u0027 will call CONF.assignment.admin_project_id.__nonzero__()\n\nhttps://docs.python.org/2/reference/datamodel.html#object.__nonzero__",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_61038f0e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-10-12T15:20:35Z",
+      "side": 1,
+      "message": "I don\u0027t want to make the config value be the ID, as that masks the fact that the string is \"admin\" and that is what we need to match on.  It needs to be the name",
+      "parentUuid": "7a2fa921_4b5ec513",
       "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
