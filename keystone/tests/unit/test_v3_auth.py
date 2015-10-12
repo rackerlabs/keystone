@@ -422,6 +422,33 @@ class TokenAPITests(object):
             headers={'X-Subject-Token': v3_token})
         self.assertValidProjectScopedTokenResponse(r, require_catalog=False)
 
+    def test_is_admin_token(self):
+
+        CONF.resource.admin_project_id = [self.project['id']]
+        self.config_fixture.config(
+            group='resource',
+            admin_project_id=[self.project['id']])
+
+        v3_token = self.get_requested_token(self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id']))
+        r = self.get('/auth/tokens', headers={'X-Subject-Token': v3_token})
+        self.assertValidProjectScopedTokenResponse(r, is_admin=True)
+
+    def test_token_for_non_admin_project_is_not_admin(self):
+        CONF.resource.admin_project_id = [uuid.uuid4().hex]
+        self.config_fixture.config(
+            group='resource',
+            admin_project_id=CONF.resource.admin_project_id)
+
+        v3_token = self.get_requested_token(self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id']))
+        r = self.get('/auth/tokens', headers={'X-Subject-Token': v3_token})
+        self.assertValidProjectScopedTokenResponse(r, is_admin=False)
+
 
 class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
     def config_overrides(self):

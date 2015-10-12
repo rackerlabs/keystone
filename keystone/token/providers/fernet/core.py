@@ -258,7 +258,6 @@ class Provider(common.BaseProvider):
         trust_ref = None
         if trust_id:
             trust_ref = self.trust_api.get_trust(trust_id)
-
         return self.v3_token_data_helper.get_token_data(
             user_id,
             method_names=methods,
