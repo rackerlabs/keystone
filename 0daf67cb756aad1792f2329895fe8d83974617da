@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_04097b31",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-12T21:13:19Z",
+      "side": 1,
+      "message": "Yes, because the assignment module is where the assignment cache is. If we need to invalidate it because of a changed group or user entity, we need to use the assignment module to do so.",
+      "parentUuid": "7a2fa921_c1729549",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_a1f19997",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-12T20:50:02Z",
       "side": 1,
       "message": "Don\u0027t we need to invalidate when we disable/delete/ groups and users?",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_24b5977d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1011,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-12T21:13:19Z",
+      "side": 1,
+      "message": "yes, that\u0027s done at line 939 and 1007",
+      "parentUuid": "7a2fa921_a1f19997",
       "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
