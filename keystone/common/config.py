@@ -432,6 +432,16 @@ FILE_OPTIONS = {
                         'ldap and sql. If an assignment driver is not '
                         'specified, the identity driver will choose the '
                         'assignment driver.'),
+        cfg.StrOpt('admin_project_id', default=None,
+                   help='Special project for performing administrative '
+                        'operations on remote services.  Only users assigned '
+                        'the `admin` role on this project will ever receive '
+                        'tokens that have the `admin` role listed in them.'),
+        cfg.StrOpt('admin_domain_id', default=None,
+                   help='Special domain for performing administrative '
+                        'operations on remote services.  Only users assigned '
+                        'the `admin` role on this domain will ever receive '
+                        'tokens that have the `admin` role listed in them.'),
     ],
     'resource': [
         cfg.StrOpt('driver',

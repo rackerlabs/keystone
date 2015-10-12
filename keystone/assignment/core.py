@@ -40,6 +40,7 @@ MEMOIZE = cache.get_memoization_decorator(section='role')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
                      'revoke_api', 'role_api')
 class Manager(manager.Manager):
+
     """Default pivot point for the Assignment backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -82,6 +83,24 @@ class Manager(manager.Manager):
                 self.resource_api.list_project_parents(project_id))]
         else:
             return []
+
+    def _get_admin_role(self):
+        admin_role = None
+        for role in self.role_api.list_roles():
+            if role['name'] == 'admin':
+                admin_role = role
+                break
+        return admin_role
+
+    def _strip_admin_role(self, role_list):
+        admin_role = self._get_admin_role()
+        if admin_role is not None:
+            stripped_role_list = []
+            for role in role_list:
+                if role != admin_role['id']:
+                    stripped_role_list.append(role)
+            role_list = stripped_role_list
+        return role_list
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
@@ -130,7 +149,9 @@ class Manager(manager.Manager):
                         user_id=user_id, project_id=p['id'],
                         inherited_to_projects=True)
                     role_list += [x['id'] for x in p_roles]
-
+            if (CONF.assignment.admin_project_id is not None and
+                    project_ref['id'] != CONF.assignment.admin_project_id):
+                role_list = self._strip_admin_role(role_list)
             return role_list
 
         project_ref = self.resource_api.get_project(tenant_id)
@@ -181,7 +202,11 @@ class Manager(manager.Manager):
         user_role_list = _get_user_domain_roles(user_id, domain_id)
         group_role_list = _get_group_domain_roles(user_id, domain_id)
         # Use set() to process the list to remove any duplicates
-        return list(set(user_role_list + group_role_list))
+        role_list = list(set(user_role_list + group_role_list))
+        if (CONF.assignment.admin_domain_id is not None and
+                domain_id != CONF.assignment.admin_domain_id):
+            role_list = self._strip_admin_role(role_list)
+        return role_list
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
@@ -926,7 +951,7 @@ class AssignmentDriverV8(object):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
@@ -1167,6 +1192,7 @@ Driver = manager.create_legacy_driver(AssignmentDriverV8)
 @dependency.provider('role_api')
 @dependency.requires('assignment_api')
 class RoleManager(manager.Manager):
+
     """Default pivot point for the Role backend."""
 
     driver_namespace = 'keystone.role'
