@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_e0232ba6",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-10-12T08:10:43Z",
+      "side": 1,
+      "message": "i think it\u0027s better with:\n\n        query \u003d session.query(func.max(RevocationEvent.revoked_at).\n                              label(\"revoked_at\"))",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_5d8f6ccc",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-10-12T08:10:43Z",
+      "side": 1,
+      "message": "Please add a newline at end of file\n\nwhen i run \u0027tox -e pep8\u0027, it will report \"W292 no newline at end of file\"\n\nhttp://pep8.readthedocs.org/en/latest/intro.html\nhttps://github.com/PyCQA/pep8/commit/588f1f49eb0567006564451923c439f77d33ff7e",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_a96bf71c",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 2
