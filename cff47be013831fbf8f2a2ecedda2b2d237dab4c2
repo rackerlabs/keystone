@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_dfba9771",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-10-12T01:59:08Z",
+      "side": 1,
+      "message": "please add \u0027from keystone.common import driver_hints\u0027",
+      "revId": "cff47be013831fbf8f2a2ecedda2b2d237dab4c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_bfb9db7b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-10-12T01:59:08Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "cff47be013831fbf8f2a2ecedda2b2d237dab4c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
