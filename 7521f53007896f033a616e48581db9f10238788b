@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_2fc1f580",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-12T20:20:41Z",
+      "side": 1,
+      "message": "no bug report? or not tracking it because its python 3?",
+      "revId": "7521f53007896f033a616e48581db9f10238788b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_2ff6d5d7",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-12T20:20:41Z",
+      "side": 1,
+      "message": "I\u0027m sure this will fail in places if it\u0027s ever reverted back to it\u0027s original from once we are on python3 but can we add a test?",
+      "revId": "7521f53007896f033a616e48581db9f10238788b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
