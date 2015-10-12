@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_c1729549",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-10-12T20:50:02Z",
+      "side": 1,
+      "message": "Do you really need identity module depend on assignment?  If we plan to separate identity, then we have unnecessary coupling",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a1f19997",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1011,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-10-12T20:50:02Z",
+      "side": 1,
+      "message": "Don\u0027t we need to invalidate when we disable/delete/ groups and users?",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
