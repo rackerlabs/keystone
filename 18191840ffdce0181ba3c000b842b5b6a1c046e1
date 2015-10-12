@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_45ed54ee",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-12T04:39:30Z",
+      "side": 1,
+      "message": "list roles has a \u0027name\u0027 query, we could use that and get rid of a lot of this https://github.com/openstack/keystone/blob/master/keystone/assignment/controllers.py#L299",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_85e36c05",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-12T04:39:30Z",
+      "side": 1,
+      "message": "we could make this a configuration option that defaults to \u0027admin\u0027\n\n  [assignment]\n  admin_role_name \u003d \u0027admin\u0027\n\njust to avoid having hard coded bits in the code",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a580e8f8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-12T04:39:30Z",
+      "side": 1,
+      "message": "this could be a bit slicker, just get the single admin id and pop it if it\u0027s in the list, or compare sets\n\n  admin_role_id \u003d self._get_admin_role_id()\n  role_list.pop(admin_role_id, None)\n\nor \n\n  admin_role_id \u003d self._get_admin_role_id()\n  role_list \u003d set([admin_role_id]) - set(role_list)\n\nhaving tried it, just spitballing",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_e58d802b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-12T04:39:30Z",
+      "side": 1,
+      "message": "\"is not None\" isn\u0027t needed here",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_a5978839",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-12T04:39:30Z",
+      "side": 1,
+      "message": "same",
+      "revId": "18191840ffdce0181ba3c000b842b5b6a1c046e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
