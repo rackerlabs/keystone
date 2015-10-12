@@ -1787,6 +1787,130 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertRoleAssignmentInListResponse(r, up_entity)
         self.assertRoleAssignmentInListResponse(r, up1_entity)
 
+    def _create_role(self):
+        """Call ``POST /roles``."""
+        ref = self.new_role_ref()
+        r = self.post(
+            '/roles',
+            body={'role': ref})
+        return r.json['role']
+
+    def _create_project(self):
+        project = self.new_project_ref(domain_id=self.domain['id'])
+        return self.resource_api.create_project(project['id'], project)
+
+    def _create_domain(self):
+        domain = self.new_domain_ref()
+        return self.resource_api.create_domain(domain['id'], domain)
+
+    def _admin_role(self):
+        for role in self.role_api.list_roles():
+            if role['name'] == 'admin':
+                return role
+        return None
+
+    def test_default_admin_project_is_none(self):
+        self.assertIsNone(CONF.assignment.admin_project_id)
+
+    def test_default_admin_domain_is_none(self):
+        self.assertIsNone(CONF.assignment.admin_domain_id)
+
+    def test_admin_role_removed_for_non_admin_project(self):
+        role = self._create_role()
+        project1 = self._create_project()
+        admin_project = self._create_project()
+        admin_role = self._admin_role()
+
+        self.put(self.build_role_assignment_link(
+            role_id=role['id'],
+            project_id=project1['id'],
+            user_id=self.user['id']))
+
+        self.put(self.build_role_assignment_link(
+            role_id=admin_role['id'],
+            project_id=project1['id'],
+            user_id=self.user['id']))
+
+        self.put(self.build_role_assignment_link(
+            role_id=role['id'],
+            project_id=admin_project['id'],
+            user_id=self.user['id']))
+
+        self.put(self.build_role_assignment_link(
+            role_id=admin_role['id'],
+            project_id=admin_project['id'],
+            user_id=self.user['id']))
+
+        CONF.assignment.admin_project_id = admin_project['id']
+
+        role_list_p1 = self.assignment_api.get_roles_for_user_and_project(
+            self.user['id'], project1['id'])
+
+        role_list_admin = self.assignment_api.get_roles_for_user_and_project(
+            self.user['id'], admin_project['id'])
+
+        self.assertEqual(2, len(role_list_admin))
+        self.assertEqual(1, len(role_list_p1))
+
+        CONF.assignment.admin_project_id = None
+
+        role_list_p1 = self.assignment_api.get_roles_for_user_and_project(
+            self.user['id'], project1['id'])
+
+        role_list_admin = self.assignment_api.get_roles_for_user_and_project(
+            self.user['id'], project1['id'])
+
+        self.assertEqual(2, len(role_list_p1))
+        self.assertEqual(2, len(role_list_admin))
+
+    def test_admin_role_removed_for_non_admin_domain(self):
+        role = self._create_role()
+        domain1 = self._create_domain()
+        admin_domain = self._create_domain()
+        admin_role = self._admin_role()
+
+        self.put(self.build_role_assignment_link(
+            role_id=role['id'],
+            domain_id=domain1['id'],
+            user_id=self.user['id']))
+
+        self.put(self.build_role_assignment_link(
+            role_id=admin_role['id'],
+            domain_id=domain1['id'],
+            user_id=self.user['id']))
+
+        self.put(self.build_role_assignment_link(
+            role_id=role['id'],
+            domain_id=admin_domain['id'],
+            user_id=self.user['id']))
+
+        self.put(self.build_role_assignment_link(
+            role_id=admin_role['id'],
+            domain_id=admin_domain['id'],
+            user_id=self.user['id']))
+
+        CONF.assignment.admin_domain_id = admin_domain['id']
+
+        role_list_p1 = self.assignment_api.get_roles_for_user_and_domain(
+            self.user['id'], domain1['id'])
+
+        role_list_admin = self.assignment_api.get_roles_for_user_and_domain(
+            self.user['id'], admin_domain['id'])
+
+        self.assertEqual(2, len(role_list_admin))
+        self.assertEqual(1, len(role_list_p1))
+
+        CONF.assignment.admin_domain_id = None
+
+        role_list_p1 = self.assignment_api.get_roles_for_user_and_domain(
+            self.user['id'], domain1['id'])
+
+        role_list_admin = self.assignment_api.get_roles_for_user_and_domain(
+            self.user['id'], domain1['id'])
+
+        self.assertEqual(2, len(role_list_p1))
+        self.assertEqual(2, len(role_list_admin))
+
 
 class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase,
                                  test_v3.AssignmentTestMixin):

@@ -83,6 +83,20 @@ class Manager(manager.Manager):
         else:
             return []
 
+    def _get_admin_role_id(self):
+        hints = driver_hints.Hints()
+        hints.add_filter('name', CONF.assignment.admin_role_name)
+        for role in self.role_api.list_roles(hints=hints):
+            if role['name'] == CONF.assignment.admin_role_name:
+                return role['id']
+        return None
+
+    def _strip_admin_role(self, role_list):
+        admin_role_id = self._get_admin_role_id()
+        if admin_role_id is not None:
+            role_list.remove(admin_role_id)
+        return role_list
+
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
 
@@ -130,7 +144,9 @@ class Manager(manager.Manager):
                         user_id=user_id, project_id=p['id'],
                         inherited_to_projects=True)
                     role_list += [x['id'] for x in p_roles]
-
+            if (CONF.assignment.admin_project_id and
+                    project_ref['id'] != CONF.assignment.admin_project_id):
+                role_list = self._strip_admin_role(role_list)
             return role_list
 
         project_ref = self.resource_api.get_project(tenant_id)
@@ -181,7 +197,11 @@ class Manager(manager.Manager):
         user_role_list = _get_user_domain_roles(user_id, domain_id)
         group_role_list = _get_group_domain_roles(user_id, domain_id)
         # Use set() to process the list to remove any duplicates
-        return list(set(user_role_list + group_role_list))
+        role_list = list(set(user_role_list + group_role_list))
+        if (CONF.assignment.admin_domain_id and
+                domain_id != CONF.assignment.admin_domain_id):
+            role_list = self._strip_admin_role(role_list)
+        return role_list
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
@@ -926,7 +946,7 @@ class AssignmentDriverV8(object):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
