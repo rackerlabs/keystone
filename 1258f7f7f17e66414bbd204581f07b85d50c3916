@@ -16,6 +16,24 @@
       "revId": "1258f7f7f17e66414bbd204581f07b85d50c3916",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_0f68b9b9",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-12T20:16:24Z",
+      "side": 1,
+      "message": "I agree, this should ensure we got the right project back.",
+      "parentUuid": "da20952f_4ee24fa1",
+      "revId": "1258f7f7f17e66414bbd204581f07b85d50c3916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
