@@ -298,3 +298,123 @@ class TestMapping(functests.BaseTestCase, MappingMixin):
                            json={'mapping': mapping})
 
         self.assertThat(r.status_code, is_bad_request)
+
+
+class TestProtocol(functests.BaseTestCase,
+                   IdentityProviderMixin,
+                   MappingMixin):
+
+    def setUp(self):
+        super(TestProtocol, self).setUp()
+        self.headers = self._http_headers(self.get_scoped_admin_token())
+        # Create Identity Provider
+        self.idp_id = uuid.uuid4().hex
+        idp_url = self._idp_url(self.idp_id)
+
+        self.idp = self.idp_ref()
+        requests.put(idp_url, headers=self.headers,
+                     json={'identity_provider': self.idp})
+
+        # Create Mapping
+        self.mapping_id = uuid.uuid4().hex
+        mapping_url = self._mapping_url(self.mapping_id)
+
+        self.mapping = self.mapping_ref()
+        requests.put(mapping_url, headers=self.headers,
+                     json={'mapping': self.mapping})
+
+    def _protocol_url(self, idp_id=None, id=''):
+        idp_id = idp_id or self.idp_id
+        return ('{public_url}/v3/OS-FEDERATION/identity_providers/{idp}/'
+                'protocols/{protocol}').format(public_url=self.PUBLIC_URL,
+                                               idp=idp_id,
+                                               protocol=id)
+
+    def _protocol_ref(self, mapping_id=None):
+        mapping_id = mapping_id or self.mapping_id
+        return {
+            'mapping_id': mapping_id
+        }
+
+    def test_protocol_crud(self):
+        """Create protocol CRUD operations.
+
+        Test scenario:
+        - Create protocol
+        - Update protocol
+            * set new mapping idp_id
+        - Remove protocol
+        - Make sure protocol not longer exist in keystone
+
+        """
+        protocol_id = uuid.uuid4().hex
+        protocol_url = self._protocol_url(id=protocol_id)
+
+        r_create = requests.put(url=protocol_url,
+                                headers=self.headers,
+                                json={'protocol': self._protocol_ref()})
+        self.assertThat(r_create.status_code, is_created)
+
+        r_get = requests.get(url=protocol_url, headers=self.headers)
+        self.assertThat(r_get.status_code, is_ok)
+
+        new_protocol_ref = self._protocol_ref()
+        new_protocol_ref['mapping_id'] = uuid.uuid4().hex
+
+        r_update = requests.patch(url=protocol_url,
+                                  headers=self.headers,
+                                  json={'protocol': new_protocol_ref})
+        self.assertThat(r_update.status_code, is_ok)
+
+        r_delete = requests.delete(url=protocol_url, headers=self.headers)
+        self.assertThat(r_delete.status_code, is_no_content)
+
+        r_get = requests.get(url=protocol_url, headers=self.headers)
+        self.assertThat(r_get.status_code, is_not_found)
+
+    def test_create_protocol_malformed_request(self):
+        """Create protocol with invalid input."""
+        protocol_id = uuid.uuid4().hex
+        protocol_url = self._protocol_url(id=protocol_id)
+
+        r_create = requests.put(url=protocol_url, headers=self.headers,
+                                json={})
+        self.assertThat(r_create.status_code, is_bad_request)
+
+        protocol = {uuid.uuid4().hex: uuid.uuid4().hex}
+
+        # NOTE(marek-denis) Server will respond with HTTP 403 as request body
+        # will operate on a parameter not know as mutable.
+        r_create = requests.put(url=protocol_url,
+                                headers=self.headers,
+                                json={'protocol': protocol})
+        self.assertThat(r_create.status_code, is_forbidden)
+
+        r_create = requests.put(url=protocol_url,
+                                headers=self.headers,
+                                json={uuid.uuid4().hex: uuid.uuid4().hex})
+        self.assertThat(r_create.status_code, is_bad_request)
+
+    def test_rud_nonexistent_protocol(self):
+        """Test protocol mapping RUD operation on non existing object.
+
+        Make sure keystone correctly responds with HTTP 404 error.
+
+        Test scenario:
+        - Get non existing protocol
+        - Update non existing protocol
+        - Delete non existing protocol
+
+        """
+
+        protocol_url = self._protocol_url(id=uuid.uuid4().hex)
+        r_get = requests.get(protocol_url, headers=self.headers)
+        self.assertThat(r_get.status_code, is_not_found)
+
+        protocol = self._protocol_ref()
+        r_update = requests.patch(url=protocol_url, headers=self.headers,
+                                  json={'protocol': protocol})
+        self.assertThat(r_update.status_code, is_not_found)
+
+        r_delete = requests.delete(url=protocol_url, headers=self.headers)
+        self.assertThat(r_delete.status_code, is_not_found)
