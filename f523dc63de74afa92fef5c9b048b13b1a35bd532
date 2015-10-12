@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_033f3826",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-12T18:44:22Z",
+      "side": 1,
+      "message": "Nit: small nit but i think you need a blank line between your class and function definitions.  Idk why pep8 doesn\u0027t look for this.\n\nHere is the link to the doc:\n\n\"Method definitions inside a class are surrounded by a single blank line.\" - \nhttps://www.python.org/dev/peps/pep-0008/#blank-lines\n\nYou don\u0027t have to change this if you don\u0027t want, since pep8 didn\u0027t complain :p",
+      "revId": "f523dc63de74afa92fef5c9b048b13b1a35bd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
