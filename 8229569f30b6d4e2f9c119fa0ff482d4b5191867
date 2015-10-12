@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_3e037b0f",
+        "filename": "keystone/service.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-12T14:05:20Z",
+      "side": 1,
+      "message": "In this file it will be easier if you make a private function that shows this warning and pass it local_conf since all the deprecation warnings are the same.  This will help clean up the code. \n\ne.g. \n\ndef _display_deprecation(local_conf):\n        if local_conf:\n                versionutils.report_deprecated_feature(\n                     LOG,\n                    _LW(\u0027Defining local configuration in PasteDeploy INI is \u0027\n                        \u0027deprecated in Mitaka and will be removed in N release. \u0027\n                        \u0027Configuration must be in keystone.conf.\u0027))",
+      "revId": "8229569f30b6d4e2f9c119fa0ff482d4b5191867",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
