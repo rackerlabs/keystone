@@ -380,6 +380,17 @@ FILE_OPTIONS = {
                                                       group='assignment')],
                    help='Maximum number of entities that will be returned '
                         'in a resource collection.'),
+        cfg.StrOpt('admin_project_domain_name', default=None,
+                   help='Name of the Domain that contains the special '
+                   'project for performing administrative operations on '
+                   'remote services.  Tokens scoped to this project will '
+                   'contain the key/value `is_admin_project=true`.'),
+
+        cfg.StrOpt('admin_project_name', default=None,
+                   help='Special project for performing administrative '
+                   'operations on remote services.  Tokens scoped to '
+                   'this project will be contain the key/value '
+                   '`is_admin_project=true`.'),
     ],
     'domain_config': [
         cfg.StrOpt('driver',
