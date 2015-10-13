@@ -121,6 +121,24 @@
       "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_2e2337bf",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-13T23:47:03Z",
+      "side": 1,
+      "message": "You are right get_project_users() should now return a UsersNotFound if the role assignment have a user that does not exists. I missed that part of the code to revert back too.\n\nGoing to fix in the next patch set.",
+      "parentUuid": "fa1b9901_aca497b9",
+      "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
