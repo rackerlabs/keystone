@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_1e656c44",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_e0232ba6",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_5d8f6ccc",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-12T08:10:43Z",
       "side": 1,
       "message": "Please add a newline at end of file\n\nwhen i run \u0027tox -e pep8\u0027, it will report \"W292 no newline at end of file\"\n\nhttp://pep8.readthedocs.org/en/latest/intro.html\nhttps://github.com/PyCQA/pep8/commit/588f1f49eb0567006564451923c439f77d33ff7e",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_9e865cb8",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "I see this warning message if I put the newline at the end -\nW391 blank line at end of file\n\nBut the test passes if there is no new line at the end. Also, I observer there are no new lines at the end of other files.",
+      "parentUuid": "7a2fa921_5d8f6ccc",
       "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_3ec4e83e",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_a96bf71c",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_e99a4f61",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-10T04:17:50Z",
       "side": 1,
       "message": "you can do this same check with:\n\n  if self.revoke_tree:",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_fedc301a",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_e99a4f61",
       "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_fe78b0fa",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "Modified the parenthesis location to make the code more clear. But it was needed as the line had to be split in two.\n\n\nWe have not added any unit tests as we observed that the existing tests already cover the newly added code path. Tests from class RevokeTests and RevokeTreeTests in test_revoke.py perform checks for all the basic functionality of revoke-events. For e.g. - \u0027test_expired_events_removed_validate_token_success\u0027 checks for pruning of expired events. \u0027test_by_user_expiration\u0027 checks if entry is revoked (and hence put in tree) on expiry.",
+      "parentUuid": "7a2fa921_c958b38c",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_a9a1b795",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 2
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_1ee24cd6",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_a9a1b795",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_09b9cbcb",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 2
@@ -115,6 +223,24 @@
       "writtenOn": "2015-10-10T04:17:50Z",
       "side": 1,
       "message": "use self here:\n\n  self.revoke_tree \u003d None",
+      "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_deeb74af",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 18618
+      },
+      "writtenOn": "2015-10-13T12:24:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_09b9cbcb",
       "revId": "094851080e6aac2bb1daede5351b89d6846a2139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
