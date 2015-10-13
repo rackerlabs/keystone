@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_a8519664",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-13T13:54:02Z",
+      "side": 1,
+      "message": "so that we can log the deprecated message.",
+      "parentUuid": "7a2fa921_970db439",
+      "revId": "7b611dd7a82b10a353bad69e307d470ee59cb55e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_b7e8f017",
         "filename": "keystone/identity/core.py",
         "patchSetId": 28
