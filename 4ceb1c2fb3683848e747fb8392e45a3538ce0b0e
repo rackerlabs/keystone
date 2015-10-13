@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_025f3442",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-13T21:02:17Z",
+      "side": 1,
+      "message": "Why not to point them all to v2.1, as it is the current version ? See http://developer.openstack.org/api-ref-compute-v2.1.html",
+      "revId": "4ceb1c2fb3683848e747fb8392e45a3538ce0b0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_22d910f4",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-13T21:02:17Z",
+      "side": 1,
+      "message": "As you are adding the volume service v2, please remove volume service v1, as it is deprecated already [1].\n\n[1] http://developer.openstack.org/api-ref-blockstorage-v1.html",
+      "revId": "4ceb1c2fb3683848e747fb8392e45a3538ce0b0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
