@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a2ca52d_124d5472",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-13T15:35:52Z",
+      "side": 0,
+      "message": "Surely you intended the above attributes to be instance attributes, not class attributes? You access them as instance attributes later.",
+      "revId": "e0e147cf8a916b204946dbd29d3aeb100d638533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_03f8ace4",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2015-10-13T14:25:25Z",
       "side": 0,
       "message": "The MEMOIZE call should keep this from being created every time.",
+      "revId": "e0e147cf8a916b204946dbd29d3aeb100d638533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_32a090f4",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-13T15:35:52Z",
+      "side": 0,
+      "message": "++ the code below just reimplements @MEMOIZE but hardcodes it to be stored using in-process memory.",
+      "parentUuid": "5a2ca52d_03f8ace4",
       "revId": "e0e147cf8a916b204946dbd29d3aeb100d638533",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

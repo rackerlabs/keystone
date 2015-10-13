@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a2ca52d_d7e7ceaa",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-13T15:35:52Z",
+      "side": 1,
+      "message": "Use the constant provided by datetime. I also don\u0027t see why you\u0027re bothering to use octals on the month and day? Finally, the last few arguments are optional, and you\u0027re not including all the optional arguments anyway, so just skip them.\n\n  # Inline comments go immediately before the code\n  # they describe, with no whitespace in between.\n  last_fetch \u003d datetime.datetime(datetime.MINYEAR, 1, 1)",
+      "revId": "64d43712aab6929fea9899000de7f58b71d2b886",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_e3e6d0e7",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 3
