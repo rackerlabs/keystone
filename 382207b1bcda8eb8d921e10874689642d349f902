@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a2fa921_c2c60816",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_endpoint_policy_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-13T05:36:54Z",
+      "side": 1,
+      "message": "i think so, it\u0027s on the original, if it was a clean rename it would be maintained, but since it\u0027s a copy (we keep the original for deprecation reasons), we should include it just the same",
+      "parentUuid": "1a4dcd0f_3787add8",
+      "revId": "382207b1bcda8eb8d921e10874689642d349f902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_1e8a1dc0",
         "filename": "keystone/contrib/endpoint_policy/migrate_repo/versions/001_add_endpoint_policy_table.py",
         "patchSetId": 13
