@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_9bb51380",
+        "filename": "rally-jobs/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10475
+      },
+      "writtenOn": "2015-10-13T10:16:57Z",
+      "side": 1,
+      "message": "@David, will done",
+      "parentUuid": "3afb71cf_9cbb67e5",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_dcc9df79",
         "filename": "rally-jobs/extra/README.rst",
         "patchSetId": 2
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_7b79172f",
+        "filename": "rally-jobs/extra/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10475
+      },
+      "writtenOn": "2015-10-13T10:16:57Z",
+      "side": 1,
+      "message": "@David, will done",
+      "parentUuid": "3afb71cf_dcc9df79",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_7c09cbdc",
         "filename": "rally-jobs/plugins/README.rst",
         "patchSetId": 2
@@ -83,6 +119,24 @@
       "writtenOn": "2015-06-08T23:58:01Z",
       "side": 1,
       "message": "What do you mean by \u0027there is no difference\u0027?",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_1be7c341",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10475
+      },
+      "writtenOn": "2015-10-13T10:16:57Z",
+      "side": 1,
+      "message": "This means that if you need custom rally plugin, you can write it and put into this directory, as well as submit it directly into rally project (somewhere into https://github.com/openstack/rally/tree/master/rally/plugins/openstack) - in both cases it will be loaded and ready for use",
+      "parentUuid": "3afb71cf_7c09cbdc",
       "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -118,6 +172,42 @@
       "side": 1,
       "message": "If we\u0027re suppose to contribute to Rally, we should add a link here pointing to the Rally contribution docs.",
       "parentUuid": "3afb71cf_dcbf9ff9",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_5be77b12",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10475
+      },
+      "writtenOn": "2015-10-13T10:16:57Z",
+      "side": 1,
+      "message": "@David, no, this means that there are some benefits of submitting useful plugins directly to rally code base because they will be always available and can be re-used by others.\n\nOf course, plugins located in local directory are also good choice :)",
+      "parentUuid": "3afb71cf_dcbf9ff9",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_1bf103ce",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10475
+      },
+      "writtenOn": "2015-10-13T10:16:57Z",
+      "side": 1,
+      "message": "@Lance, sure",
+      "parentUuid": "fa1b9901_4caffb29",
       "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
