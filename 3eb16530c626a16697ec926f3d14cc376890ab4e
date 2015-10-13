@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_60bf09d1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-13T18:15:11Z",
+      "side": 1,
+      "message": "good catch!\n\nThere are two other checks that are being executed twice, it get checked in _add_role_to_user_and_project_adapter too:\n\n* self.resource_api.get_project(tenant_id)\n* self.role_api.get_role(CONF.member_role_id)\n\nI\u0027m going to remove these two calls as well.",
+      "parentUuid": "fa1b9901_4c713b75",
+      "revId": "3eb16530c626a16697ec926f3d14cc376890ab4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af86dd1_2a1245b5",
         "filename": "keystone/tests/unit/test_v2_controller.py",
         "patchSetId": 17
