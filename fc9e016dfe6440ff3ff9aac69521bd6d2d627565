@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_6d1139ac",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-13T21:37:49Z",
+      "side": 1,
+      "message": "why set tenant instead of project?\n\noh thats why https://bugs.launchpad.net/oslo.context/+bug/1505827",
+      "revId": "fc9e016dfe6440ff3ff9aac69521bd6d2d627565",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
