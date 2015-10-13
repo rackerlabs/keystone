@@ -143,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_72e288a1",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-13T15:48:42Z",
+      "side": 1,
+      "message": "How about replacing that last sentence with something more like:\n\nThere is no need to write any extra configuration to (find then, or what?). Rally will treat (load, execute, run?) these plugins the same way as core plugins.",
+      "parentUuid": "5a2ca52d_1be7c341",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_dcbf9ff9",
         "filename": "rally-jobs/plugins/README.rst",
         "patchSetId": 2
@@ -208,6 +226,24 @@
       "side": 1,
       "message": "@Lance, sure",
       "parentUuid": "fa1b9901_4caffb29",
+      "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_3265f044",
+        "filename": "rally-jobs/plugins/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-13T15:48:42Z",
+      "side": 1,
+      "message": "You may want to clarify and say when we should pick local plugins over submitting upstream.",
+      "parentUuid": "5a2ca52d_5be77b12",
       "revId": "a3870b72a11c8be5e3ca6b84ff047d3cac50beee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
