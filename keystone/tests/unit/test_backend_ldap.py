@@ -26,6 +26,7 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import cache
+from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone import exception
@@ -2111,9 +2112,18 @@ class LDAPUserList(unit.TestCase):
         return config_files
 
     def test_returned_list_size_is_limited(self):
-        users = self.identity_api.list_users()
+        hints = driver_hints.Hints()
+        users = self.identity_api.list_users(hints=hints)
         # NOTE(amakarov): this exposes bug 1501698
         # list_limit number of entries should be returned
+        self.assertNotEqual(CONF.identity.list_limit, len(users))
+        self.assertEqual(len(default_fixtures.USERS), len(users))
+
+        # Finally, let's pretend we want to get the full list of entities,
+        # even with the limits set, as part of some internal calculation.
+        # Calling the API without a hints list should achieve this, and
+        # return all the entries we created.
+        users = self.identity_api.list_users()
         self.assertNotEqual(CONF.identity.list_limit, len(users))
         self.assertEqual(len(default_fixtures.USERS), len(users))
 
