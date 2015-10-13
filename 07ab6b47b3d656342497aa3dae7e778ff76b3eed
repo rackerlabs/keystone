@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_82b6e4da",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1801,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-13T20:50:35Z",
+      "side": 1,
+      "message": "How do we know all the itens in the list have been updated vs a single one ? Since all the elements in the list are the same ...",
+      "revId": "07ab6b47b3d656342497aa3dae7e778ff76b3eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
