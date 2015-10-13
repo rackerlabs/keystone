@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_02de546d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-13T20:42:36Z",
+      "side": 1,
+      "message": "Where is this method (restore_padding)? It doesn\u0027t exist in this class (TokenFormatter).",
+      "revId": "2ccb3ad8c2ea54fb910efbf2660d6bdf22738d15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
