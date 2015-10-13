@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_03f8ace4",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-10-13T14:25:25Z",
+      "side": 0,
+      "message": "The MEMOIZE call should keep this from being created every time.",
+      "revId": "e0e147cf8a916b204946dbd29d3aeb100d638533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
