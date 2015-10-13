@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a2fa921_37a380a0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-10-13T04:21:28Z",
+      "side": 1,
+      "message": "no longer an extension, can be imported normally.",
+      "revId": "f523dc63de74afa92fef5c9b048b13b1a35bd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_f7ac288e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-10-13T04:21:28Z",
+      "side": 1,
+      "message": "import normally.",
+      "revId": "f523dc63de74afa92fef5c9b048b13b1a35bd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_37f8607c",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-10-13T04:21:28Z",
+      "side": 1,
+      "message": "seems unnecessary.",
+      "revId": "f523dc63de74afa92fef5c9b048b13b1a35bd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_033f3826",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 3
@@ -13,6 +64,23 @@
       "writtenOn": "2015-10-12T18:44:22Z",
       "side": 1,
       "message": "Nit: small nit but i think you need a blank line between your class and function definitions.  Idk why pep8 doesn\u0027t look for this.\n\nHere is the link to the doc:\n\n\"Method definitions inside a class are surrounded by a single blank line.\" - \nhttps://www.python.org/dev/peps/pep-0008/#blank-lines\n\nYou don\u0027t have to change this if you don\u0027t want, since pep8 didn\u0027t complain :p",
+      "revId": "f523dc63de74afa92fef5c9b048b13b1a35bd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_d716cca6",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-10-13T04:21:28Z",
+      "side": 1,
+      "message": "remove",
       "revId": "f523dc63de74afa92fef5c9b048b13b1a35bd532",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
