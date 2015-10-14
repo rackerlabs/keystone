@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_f735f845",
+        "filename": "keystone/federation/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-14T14:13:23Z",
+      "side": 1,
+      "message": "@davechen, the actual path/route can\u0027t change, as that is part of the published API :(\n\nwe are moving these around so that 1) things are no longer in contrib, 2) they are included by default, can\u0027t be removed by default, 3) database migrations are run automatically.\n\nunforunately, we can\u0027t change the paths to be /v3/OS-FEDERATION/\u003cresource\u003e to just /v3/resource",
+      "parentUuid": "5a2ca52d_93038573",
+      "revId": "e2b0ea36fff7cab673a2f3d96342f99f849e8a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_dc9a6f14",
         "filename": "keystone/federation/routers.py",
         "patchSetId": 6
