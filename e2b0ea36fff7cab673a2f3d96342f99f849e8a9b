@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_93038573",
+        "filename": "keystone/federation/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-14T09:47:36Z",
+      "side": 1,
+      "message": "remove these and add rel\u003djson_home.build_v3_resource_relation(\u0027...\u0027) below.",
+      "parentUuid": "5a2ca52d_616b741f",
+      "revId": "e2b0ea36fff7cab673a2f3d96342f99f849e8a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_dc9a6f14",
         "filename": "keystone/federation/routers.py",
         "patchSetId": 6
