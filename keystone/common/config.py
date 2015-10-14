@@ -21,7 +21,7 @@ _DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'oauth1']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
 _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
-
+_CA_CERT = '/etc/keystone/ssl/certs/ca.pem'
 
 FILE_OPTIONS = {
     None: [
@@ -408,7 +408,7 @@ FILE_OPTIONS = {
                    default=_KEYFILE,
                    help='Path of the keyfile for token signing.'),
         cfg.StrOpt('ca_certs',
-                   default='/etc/keystone/ssl/certs/ca.pem',
+                   default=_CA_CERT,
                    help='Path of the CA for token signing.'),
         cfg.StrOpt('ca_key',
                    default='/etc/keystone/ssl/private/cakey.pem',
@@ -1010,7 +1010,7 @@ FILE_OPTIONS = {
                         'your PATH environment variable if the binary cannot '
                         'be found.'),
         cfg.StrOpt('certfile',
-                   default=_CERTFILE,
+                   default=_CA_CERT,
                    help='Path of the certfile for SAML signing. For '
                         'non-production environments, you may be interested '
                         'in using `keystone-manage pki_setup` to generate '
@@ -1159,7 +1159,7 @@ FILE_OPTIONS = {
                    deprecated_for_removal=True,
                    help='Path of the keyfile for SSL.'),
         cfg.StrOpt('ca_certs',
-                   default='/etc/keystone/ssl/certs/ca.pem',
+                   default=_CA_CERT,
                    deprecated_name='ca_certs', deprecated_group='ssl',
                    deprecated_for_removal=True,
                    help='Path of the CA cert file for SSL.'),
