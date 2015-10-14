@@ -38,7 +38,6 @@ from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
 from keystone.tests.unit import test_backend
-from keystone.tests.unit.utils import wip
 
 
 CONF = cfg.CONF
@@ -2113,10 +2112,6 @@ class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
         config_files = super(LDAPLimitTests, self).config_files()
         config_files.append(unit.dirs.tests_conf('backend_ldap.conf'))
         return config_files
-
-    @wip("limiting doesn't work due to bug 1501698")
-    def test_list_groups_filtered_and_limited(self):
-        self._test_list_entity_filtered_and_limited('group')
 
     def test_list_projects_filtered_and_limited(self):
         self.skipTest("ldap for storing projects is deprecated")
