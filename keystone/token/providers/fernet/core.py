@@ -185,7 +185,7 @@ class Provider(common.BaseProvider):
 
         :param token_dict: dictionary with data used for building token
         :param federated_dict: federated information such as identity provider
-            protocol and set of group IDs
+                protocol and set of group IDs
         :param user_id: user ID
         :param project_id: project ID the token is being scoped to
         :param domain_id: domain ID the token is being scoped to
@@ -237,7 +237,7 @@ class Provider(common.BaseProvider):
         :param token: a string describing the token to validate
         :returns: the token data
         :raises keystone.exception.TokenNotFound: if token format version isn't
-                                                 supported
+                supported
 
         """
         try:
@@ -274,7 +274,8 @@ class Provider(common.BaseProvider):
 
         :param token_data: token information
         :type token_data: dict
-        :raises keystone.exception.NotImplemented: when called
+        :raises keystone.exception.NotImplemented: if the action that is
+                requested is not implemented
         """
         return self.token_formatter.create_token(
             token_data['token']['user']['id'],
