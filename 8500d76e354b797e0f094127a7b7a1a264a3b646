@@ -16,6 +16,24 @@
       "revId": "8500d76e354b797e0f094127a7b7a1a264a3b646",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_4eff69aa",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-14T18:12:23Z",
+      "side": 0,
+      "message": "Out of band, i mentioned that this comment didn\u0027t need to be in the docs/ directory, but it should still be here.",
+      "parentUuid": "5a2ca52d_eb4ae782",
+      "revId": "8500d76e354b797e0f094127a7b7a1a264a3b646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a2ca52d_0e99711f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-14T18:12:23Z",
+      "side": 1,
+      "message": "You can also line wrap the body at 72 chars.",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_ae571d01",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -13,6 +30,41 @@
       "writtenOn": "2015-10-14T17:55:23Z",
       "side": 1,
       "message": "Closes-Bug\n\nProbably should remove the extra white spaces at the end of your lines too.",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_0ecbb11f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-14T18:12:23Z",
+      "side": 1,
+      "message": "With the space, the bots picked it up well enough to mark the bug as In Progress, but git-review didn\u0027t include the Change-Id with it because it didn\u0027t think it was a footer, and gerrit is refusing to link the entirety of \"Closes Bug\" to the bug report, due to the space.\n\nWhen you revise this, you can include them together, like so:\n\n  Closes-Bug: 1504891\n  Change-Id: I57f6a2a5287b2f6aa108586c1ad07b9a6235d53d\n\n(order doesn\u0027t matter)",
+      "parentUuid": "5a2ca52d_ae571d01",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_ce293939",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-14T18:12:23Z",
+      "side": 1,
+      "message": "++",
       "revId": "507cee99d8eab4c14821b853931aead1032de85f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
