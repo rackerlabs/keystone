@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a2ca52d_6b033743",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-14T17:45:20Z",
+      "side": 1,
+      "message": "Can we refactor this method so that we\u0027re not re-implementing it in another module?\n\n  https://github.com/openstack/keystone/blob/ffedc364e1611ef184ad2a579c37dd23028a565c/keystone/tests/unit/core.py#L646-L653",
+      "revId": "16fd29daddc9b3985d3a2567f4ac42b46db3fc92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_aff2e56d",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
