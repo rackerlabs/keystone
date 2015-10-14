@@ -2628,6 +2628,81 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
 
+    @unit.skip_if_no_multiple_domains_support
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_not_delete_domain_with_enabled_subdomains(self):
+        # It is not possible to delete a project acting as a domain that has
+        # a subproject acting as domain that is enabled.
+        projects_hierarchy = self._create_projects_hierarchy(
+            hierarchy_size=3, is_domain=True)
+
+        root_project = projects_hierarchy[0]
+        sub_project = projects_hierarchy[1]
+        last_project = projects_hierarchy[2]
+
+        # Disable the root project
+        root_project['enabled'] = False
+        self.resource_api.update_project(root_project['id'], root_project)
+
+        # Try to delete root project that is disabled but has enabled children
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.delete_project,
+                          root_project['id'])
+
+        # Disable the sub project
+        sub_project['enabled'] = False
+        self.resource_api.update_project(sub_project['id'], sub_project)
+
+        # Still can't delete root project, since last_project is enabled
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.delete_project,
+                          root_project['id'])
+
+        # Finally, disable the last project
+        last_project['enabled'] = False
+        self.resource_api.update_project(last_project['id'], last_project)
+
+        # And then, it is possible to delete the root
+        self.resource_api.delete_project(last_project['id'])
+
+    @unit.skip_if_no_multiple_domains_support
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_delete_is_domain_project_deletes_subdomain(self):
+        # Creating a root and a sub project, both acting as domains
+        projects_hierarchy = self._create_projects_hierarchy(is_domain=True)
+        root_project = projects_hierarchy[0]
+        sub_project_acting_as_domain = projects_hierarchy[1]
+        sub_regular_project = {'id': uuid.uuid4().hex,
+                               'name': uuid.uuid4().hex,
+                               'description': '',
+                               'domain_id': sub_project_acting_as_domain['id'],
+                               'enabled': True,
+                               'parent_id': sub_project_acting_as_domain['id'],
+                               'is_domain': False}
+        self.resource_api.create_project(sub_regular_project['id'],
+                                         sub_regular_project)
+
+        # Disabling the projects that act as domain
+        for project in projects_hierarchy:
+            project['enabled'] = False
+            self.resource_api.update_project(project['id'], project)
+
+        # Deleting the root project is supposed to delete its whole subtree
+        self.resource_api.delete_project(root_project['id'])
+
+        # None of the projects or domains exist anymore
+        for project in (projects_hierarchy):
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.get_project,
+                              project['id'])
+            self.assertRaises(exception.DomainNotFound,
+                              self.resource_api.get_domain,
+                              project['id'])
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          sub_regular_project['id'])
+
     def _create_projects_hierarchy(self, hierarchy_size=2,
                                    domain_id=DEFAULT_DOMAIN_ID,
                                    is_domain=False):
@@ -2745,6 +2820,103 @@ class IdentityTests(AssignmentTestHelperMixin):
         new_regular_project['parent_id'] = other_domain['id']
         self.resource_api.create_project(new_regular_project['id'],
                                          new_regular_project)
+
+    @unit.skip_if_no_multiple_domains_support
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_duplicate_is_domain_project_name_across_hierarchy_fails(self):
+        """Tests sub projects acting as domains name uniqueness
+
+        Check that we cannot create two projects acting as domains with the
+        same name, in any level of the hierarchy.
+        """
+        # Creating a hierarchy with two projects acting as domains
+        projects = self._create_projects_hierarchy(is_domain=True)
+        root_project = projects[0]
+        sub_project = projects[1]
+
+        new_project_ref = self.new_project_ref(is_domain=True,
+                                               parent_id=sub_project['id'])
+        new_project_ref['name'] = root_project['name']
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project,
+                          new_project_ref['id'],
+                          new_project_ref)
+
+        # We cannot create it as another root project either
+        new_root_project_ref = self.new_project_ref(is_domain=True)
+        new_root_project_ref['name'] = root_project['name']
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project,
+                          new_root_project_ref['id'],
+                          new_root_project_ref)
+
+    @unit.skip_if_no_multiple_domains_support
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_create_projects_same_parent_and_name_fails(self):
+        """Tests sub projects acting as domains name constraints
+
+        Check that we cannot create two projects with the same parent and
+        the same name.
+        """
+        # Creating a hierarchy with two projects acting as domains
+        projects = self._create_projects_hierarchy(is_domain=True)
+        root_project = projects[0]
+        sub_project = projects[1]
+
+        new_project_ref = self.new_project_ref(parent_id=root_project['id'])
+        new_project_ref['name'] = sub_project['name']
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project,
+                          new_project_ref['id'],
+                          new_project_ref)
+
+        new_project_ref['is_domain'] = True
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project,
+                          new_project_ref['id'],
+                          new_project_ref)
+
+    @unit.skip_if_no_multiple_domains_support
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_create_regular_project_with_is_domain_project_name(self):
+        """Tests duplicated projects name constraints
+
+        Check that we can create a regular project with the same name of a
+        project that acts as a domain, even if they are in the same domain.
+        In order to do that, we will create the following hierarchy:
+            ROOT
+            |--|
+            A  B
+               |
+               A
+        Where the project A that is immediately below the root acts as a
+        domain and the other project called A is a regular project.
+        """
+        # Creating a hierarchy with two projects acting as domains, where
+        # project_a is a project that acts as a domain, child of root_project
+        projects = self._create_projects_hierarchy(is_domain=True)
+        root_project = projects[0]
+        is_domain_project_a = projects[1]
+
+        # Creating the "B" project
+        regular_sub_project = self.new_project_ref(parent_id=root_project)
+        self.resource_api.create_project(regular_sub_project['id'],
+                                         regular_sub_project)
+
+        # We are now able to create a regular project with the same name of
+        # the project A
+        regular_project_a = self.new_project_ref(
+            parent_id=regular_sub_project)
+        regular_project_a['name'] = is_domain_project_a['name']
+        regular_project_a_ref = self.resource_api.create_project(
+            regular_project_a['id'], regular_project_a)
+
+        # They have the same name and are placed in the same domain
+        self.assertEqual(is_domain_project_a['name'],
+                         regular_project_a_ref['name'])
+        self.assertEqual(root_project['id'], is_domain_project_a['domain_id'])
+        self.assertEqual(is_domain_project_a['domain_id'],
+                         regular_project_a_ref['domain_id'])
 
     @unit.skip_if_no_multiple_domains_support
     def test_empty_domain_id_is_set_as_parent_id(self):

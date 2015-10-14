@@ -34,6 +34,7 @@ from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -2247,6 +2248,69 @@ class TestAuth(test_v3.RestfulTestCase):
             project_id=self.project['id'])
         r = self.v3_create_token(auth_data)
         self.assertValidProjectScopedTokenResponse(r)
+
+    def _create_projects_with_same_name(self, name):
+        root_project = self.new_project_ref(self.domain['id'], is_domain=True)
+        self.resource_api.create_project(root_project['id'], root_project)
+
+        project1 = self.new_project_ref(is_domain=True)
+
+        project1['name'] = name
+        self.resource_api.create_project(project1['id'], project1)
+
+        project2 = self.new_project_ref(project1['id'], is_domain=False)
+        project2['name'] = name
+        self.resource_api.create_project(project2['id'], project2)
+
+        return project1, project2
+
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_project_name_scoped_token_with_name_clash(self):
+        name = uuid.uuid4().hex
+        project1, project2 = self._create_projects_with_same_name(name)
+
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project1['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project2['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            user_domain_id=self.domain['id'],
+            password=self.user['password'],
+            project_domain_id=self.domain['id'],
+            project_name=name)
+        r = self.v3_authenticate_token(auth_data)
+        token = self.assertValidProjectScopedTokenResponse(r)
+
+        # The token must be scoped to the project with the is_domain
+        # flag disabled
+        self.assertEqual(project2['id'], token['project']['id'])
+
+    @test_utils.wip('waiting for sub projects acting as domains support')
+    def test_project_id_scoped_token_with_name_clash(self):
+        name = uuid.uuid4().hex
+        project1, project2 = self._create_projects_with_same_name(name)
+
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project1['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project2['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        for project_id in project1['id'], project2['id']:
+            auth_data = self.build_authentication_request(
+                username=self.user['name'],
+                user_domain_id=self.domain['id'],
+                password=self.user['password'],
+                project_domain_id=self.domain['id'],
+                project_id=project_id)
+            r = self.v3_authenticate_token(auth_data)
+            token = self.assertValidProjectScopedTokenResponse(r)
+            self.assertEqual(project_id, token['project']['id'])
 
     def test_domain_id_scoped_token_with_user_id(self):
         path = '/domains/%s/users/%s/roles/%s' % (
