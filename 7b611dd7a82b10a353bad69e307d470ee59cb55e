@@ -51,6 +51,24 @@
       "revId": "7b611dd7a82b10a353bad69e307d470ee59cb55e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_8ac5648f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-14T22:10:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_b7e8f017",
+      "revId": "7b611dd7a82b10a353bad69e307d470ee59cb55e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
