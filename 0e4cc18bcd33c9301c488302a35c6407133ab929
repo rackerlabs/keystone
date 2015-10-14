@@ -16,6 +16,24 @@
       "revId": "0e4cc18bcd33c9301c488302a35c6407133ab929",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_144e6496",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-14T19:06:51Z",
+      "side": 1,
+      "message": "This doesn\u0027t only happen on python3, on python2.7 key is also bytes. It just turns out that on python 2.7 str and bytes are the same.\n\n $ .tox/py27/bin/python\n Python 2.7.6 (default, Jun 22 2015, 17:58:13)\n [GCC 4.8.2] on linux2\n Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n \u003e\u003e\u003e isinstance(\u0027abc\u0027, bytes)\n True\n \u003e\u003e\u003e isinstance(\u0027abc\u0027, str)\n True\n \u003e\u003e\u003e isinstance(b\u0027abc\u0027, str)\n True\n \u003e\u003e\u003e isinstance(b\u0027abc\u0027, bytes)\n True\n \u003e\u003e\u003e\n\n $ .tox/py34/bin/python\n Python 3.4.3 (default, Jul 28 2015, 18:20:59)\n [GCC 4.8.4] on linux\n Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n \u003e\u003e\u003e isinstance(\u0027abc\u0027, bytes)\n False\n \u003e\u003e\u003e isinstance(\u0027abc\u0027, str)\n True\n \u003e\u003e\u003e isinstance(b\u0027abc\u0027, str)\n False\n \u003e\u003e\u003e isinstance(b\u0027abc\u0027, bytes)\n True\n \u003e\u003e\u003e",
+      "parentUuid": "5a2ca52d_943d94bd",
+      "revId": "0e4cc18bcd33c9301c488302a35c6407133ab929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
