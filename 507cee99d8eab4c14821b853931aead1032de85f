@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_51162ef2",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-14T18:30:27Z",
+      "side": 1,
+      "message": "Okay, so this value now matches the ini file.",
+      "parentUuid": "5a2ca52d_4e8f69cc",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_4b543b20",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 3

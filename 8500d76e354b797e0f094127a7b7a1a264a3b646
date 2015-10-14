@@ -52,6 +52,24 @@
       "revId": "8500d76e354b797e0f094127a7b7a1a264a3b646",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_b10f82e0",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-14T18:30:27Z",
+      "side": 0,
+      "message": "Apologize, I added the comment back. And didn\u0027t see the comment it the docs/ directory.",
+      "parentUuid": "5a2ca52d_4eff69aa",
+      "revId": "8500d76e354b797e0f094127a7b7a1a264a3b646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
