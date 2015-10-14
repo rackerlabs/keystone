@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_4e73e915",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-14T18:12:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_2fc1f580",
+      "revId": "7521f53007896f033a616e48581db9f10238788b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_2ff6d5d7",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 3
@@ -47,6 +65,42 @@
       "writtenOn": "2015-10-14T17:57:15Z",
       "side": 1,
       "message": "generate_key() doesn\u0027t belong in either the try or with block, but i think the decode() does",
+      "parentUuid": "7a2fa921_2ff6d5d7",
+      "revId": "7521f53007896f033a616e48581db9f10238788b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_4e4a09ae",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-14T18:12:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_0eedf124",
+      "revId": "7521f53007896f033a616e48581db9f10238788b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_ae9f1d02",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-14T18:12:21Z",
+      "side": 1,
+      "message": "Lance - The tests already exist, all it takes to test this is to call the function since there\u0027s no parameter to skip it. The tests aren\u0027t enabled but that\u0027s because there are other issues with python 3.4 in this module.",
       "parentUuid": "7a2fa921_2ff6d5d7",
       "revId": "7521f53007896f033a616e48581db9f10238788b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
