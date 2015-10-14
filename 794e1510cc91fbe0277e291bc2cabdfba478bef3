@@ -16,6 +16,23 @@
       "revId": "794e1510cc91fbe0277e291bc2cabdfba478bef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_71f258d4",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-14T13:46:35Z",
+      "side": 1,
+      "message": "As we do know it is as bytes, we could be using the method convert_uuid_bytes_to_hex instead of attempt_convert_uuid_bytes_to_hex.\n\nThis applies to all the occurrences below. In this case, the method attempt_convert_uuid_bytes_to_hex wouldn\u0027t be needed anymore.",
+      "revId": "794e1510cc91fbe0277e291bc2cabdfba478bef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
