@@ -34,6 +34,24 @@
       "revId": "0e4cc18bcd33c9301c488302a35c6407133ab929",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_d4154c49",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-14T19:10:27Z",
+      "side": 1,
+      "message": "Wow that seems like a bug in python2.7",
+      "parentUuid": "5a2ca52d_144e6496",
+      "revId": "0e4cc18bcd33c9301c488302a35c6407133ab929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
