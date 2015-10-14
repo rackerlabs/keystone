@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_df31e50c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-14T19:37:11Z",
+      "side": 1,
+      "message": "hah, i love that assertion!",
+      "parentUuid": "5a2ca52d_6b033743",
+      "revId": "16fd29daddc9b3985d3a2567f4ac42b46db3fc92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_aff2e56d",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
