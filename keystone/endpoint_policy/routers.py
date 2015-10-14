@@ -12,16 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import functools
-
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.endpoint_policy import controllers
-
-
-build_resource_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
-    extension_name='OS-ENDPOINT-POLICY', extension_version='1.0')
 
 
 class Routers(wsgi.RoutersBase):
@@ -35,13 +28,13 @@ class Routers(wsgi.RoutersBase):
             mapper, endpoint_policy_controller,
             path='/endpoints/{endpoint_id}' + self.PATH_PREFIX + '/policy',
             get_head_action='get_policy_for_endpoint',
-            rel=build_resource_relation(resource_name='endpoint_policy'),
+            rel=json_home.build_v3_resource_relation('OS-ENDPOINT-POLICY'),
             path_vars={'endpoint_id': json_home.Parameters.ENDPOINT_ID})
         self._add_resource(
             mapper, endpoint_policy_controller,
             path='/policies/{policy_id}' + self.PATH_PREFIX + '/endpoints',
             get_action='list_endpoints_for_policy',
-            rel=build_resource_relation(resource_name='policy_endpoints'),
+            rel=json_home.build_v3_resource_relation('OS-ENDPOINT-POLICY'),
             path_vars={'policy_id': json_home.Parameters.POLICY_ID})
         self._add_resource(
             mapper, endpoint_policy_controller,
@@ -50,8 +43,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_policy_association_for_endpoint',
             put_action='create_policy_association_for_endpoint',
             delete_action='delete_policy_association_for_endpoint',
-            rel=build_resource_relation(
-                resource_name='endpoint_policy_association'),
+            rel=json_home.build_v3_resource_relation('OS-ENDPOINT-POLICY'),
             path_vars={
                 'policy_id': json_home.Parameters.POLICY_ID,
                 'endpoint_id': json_home.Parameters.ENDPOINT_ID,
@@ -63,8 +55,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_policy_association_for_service',
             put_action='create_policy_association_for_service',
             delete_action='delete_policy_association_for_service',
-            rel=build_resource_relation(
-                resource_name='service_policy_association'),
+            rel=json_home.build_v3_resource_relation('OS-ENDPOINT-POLICY'),
             path_vars={
                 'policy_id': json_home.Parameters.POLICY_ID,
                 'service_id': json_home.Parameters.SERVICE_ID,
@@ -76,8 +67,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_policy_association_for_region_and_service',
             put_action='create_policy_association_for_region_and_service',
             delete_action='delete_policy_association_for_region_and_service',
-            rel=build_resource_relation(
-                resource_name='region_and_service_policy_association'),
+            rel=json_home.build_v3_resource_relation('OS-ENDPOINT-POLICY'),
             path_vars={
                 'policy_id': json_home.Parameters.POLICY_ID,
                 'service_id': json_home.Parameters.SERVICE_ID,
