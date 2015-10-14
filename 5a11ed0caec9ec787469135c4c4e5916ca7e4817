@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_ed877b5f",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-14T06:31:44Z",
+      "side": 1,
+      "message": "update the comment here to say it\u0027s now generic and avaiable to all backend.",
+      "revId": "5a11ed0caec9ec787469135c4c4e5916ca7e4817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
