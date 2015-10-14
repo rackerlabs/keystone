@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_fa8b8f1c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-14T21:58:47Z",
+      "side": 1,
+      "message": "I guess that was because we start with caching the get_catalog path and this seemed like the next logic step...",
+      "parentUuid": "5a2ca52d_082c4a49",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_c1729549",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -123,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_ff662128",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1279,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-14T21:58:47Z",
+      "side": 1,
+      "message": "This method is defined in the manager are line 931, and we also invalidate the cache in that method.",
+      "parentUuid": "5a2ca52d_88961a93",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_48e7a240",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -140,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_5f7875c4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1364,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-14T21:58:47Z",
+      "side": 1,
+      "message": "ditto to the same response above, but at line 1002.",
+      "parentUuid": "5a2ca52d_48e7a240",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_884b7a2b",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 8
@@ -151,6 +205,24 @@
       "writtenOn": "2015-10-13T13:47:04Z",
       "side": 1,
       "message": "Unrelated change ?",
+      "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_c31cc215",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1015,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-14T21:58:47Z",
+      "side": 1,
+      "message": "Nope, we have to do this because dogpile doesn\u0027t take keyword arguments when building a key.",
+      "parentUuid": "5a2ca52d_884b7a2b",
       "revId": "0daf67cb756aad1792f2329895fe8d83974617da",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
