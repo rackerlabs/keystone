@@ -21,10 +21,10 @@ from pycadf import cadftaxonomy
 from six.moves import http_client
 from six.moves import urllib
 
-from keystone.contrib import oauth1
-from keystone.contrib.oauth1 import controllers
-from keystone.contrib.oauth1 import core
 from keystone import exception
+from keystone import oauth1
+from keystone.oauth1 import controllers
+from keystone.oauth1 import core
 from keystone.tests.unit.common import test_notifications
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
@@ -34,9 +34,6 @@ CONF = cfg.CONF
 
 
 class OAuth1Tests(test_v3.RestfulTestCase):
-
-    EXTENSION_NAME = 'oauth1'
-    EXTENSION_TO_ADD = 'oauth1_extension'
 
     CONSUMER_URL = '/OS-OAUTH1/consumers'
 
