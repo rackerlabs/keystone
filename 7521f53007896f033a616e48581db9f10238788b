@@ -33,6 +33,24 @@
       "revId": "7521f53007896f033a616e48581db9f10238788b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_0eedf124",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-14T17:57:15Z",
+      "side": 1,
+      "message": "generate_key() doesn\u0027t belong in either the try or with block, but i think the decode() does",
+      "parentUuid": "7a2fa921_2ff6d5d7",
+      "revId": "7521f53007896f033a616e48581db9f10238788b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
