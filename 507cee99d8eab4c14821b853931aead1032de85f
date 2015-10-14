@@ -54,6 +54,42 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_d10c7e3d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-14T18:17:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_ae571d01",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_f14dfa72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-14T18:17:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_0ecbb11f",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_ce293939",
         "filename": "doc/source/http-api.rst",
         "patchSetId": 3
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_4e8f69cc",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-14T18:17:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_0b4e4396",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_4b543b20",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 3
@@ -99,6 +153,24 @@
       "writtenOn": "2015-10-14T17:48:25Z",
       "side": 1,
       "message": "these pipelines still have the comment, and moreover, it\u0027s still valid",
+      "revId": "507cee99d8eab4c14821b853931aead1032de85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_aed15dcf",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-14T18:17:52Z",
+      "side": 1,
+      "message": "Reverted the comment changes in the ini file",
+      "parentUuid": "5a2ca52d_4b543b20",
       "revId": "507cee99d8eab4c14821b853931aead1032de85f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
