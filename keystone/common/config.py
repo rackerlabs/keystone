@@ -494,6 +494,9 @@ FILE_OPTIONS = {
                         'keystone.credential namespace.'),
     ],
     'oauth1': [
+        cfg.BoolOpt('enabled',
+                    default=True,
+                    help='Enable OAuth1 delegation functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
                    help='Entrypoint for the OAuth backend driver in the '
