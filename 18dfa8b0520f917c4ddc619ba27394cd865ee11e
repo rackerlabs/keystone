@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_b81e5e61",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-15T13:07:44Z",
+      "side": 1,
+      "message": "Don\u0027t you need to define these as;\n\n\n\nglobal __tablename__        \n\nglobal attributes\n\n\nbefore you can edit a global variable?\n\nOr are these variables just in this functions scope?\n\nor last option,  am I wrong?",
+      "revId": "18dfa8b0520f917c4ddc619ba27394cd865ee11e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
