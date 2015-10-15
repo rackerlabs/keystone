@@ -208,13 +208,10 @@
 #rpc_zmq_bind_address = *
 
 # MatchMaker driver. (string value)
-#rpc_zmq_matchmaker = redis
+#rpc_zmq_matchmaker = local
 
-# Use REQ/REP pattern for all methods CALL/CAST/FANOUT. (boolean value)
-#rpc_zmq_all_req_rep = true
-
-# Type of concurrency used. Either "native" or "eventlet" (string value)
-#rpc_zmq_concurrency = eventlet
+# ZeroMQ receiver listening port. (integer value)
+#rpc_zmq_port = 9501
 
 # Number of ZeroMQ contexts, defaults to 1. (integer value)
 #rpc_zmq_contexts = 1
@@ -234,21 +231,11 @@
 # (integer value)
 #rpc_cast_timeout = 30
 
-# The default number of seconds that poll should wait. Poll raises timeout
-# exception when timeout expired. (integer value)
-#rpc_poll_timeout = 1
+# Heartbeat frequency. (integer value)
+#matchmaker_heartbeat_freq = 300
 
-# Shows whether zmq-messaging uses broker or not. (boolean value)
-#zmq_use_broker = true
-
-# Host to locate redis. (string value)
-#host = 127.0.0.1
-
-# Use this port to connect to redis host. (integer value)
-#port = 6379
-
-# Password for Redis server (optional). (string value)
-#password =
+# Heartbeat time-to-live. (integer value)
+#matchmaker_heartbeat_ttl = 600
 
 # Size of executor thread pool. (integer value)
 # Deprecated group/name - [DEFAULT]/rpc_thread_pool_size
@@ -1310,7 +1297,18 @@
 #port = 6379
 
 # Password for Redis server (optional). (string value)
-#password =
+#password = <None>
+
+
+[matchmaker_ring]
+
+#
+# From oslo.messaging
+#
+
+# Matchmaker ring file (JSON). (string value)
+# Deprecated group/name - [DEFAULT]/matchmaker_ringfile
+#ringfile = /etc/oslo/matchmaker_ring.json
 
 
 [memcache]
@@ -1425,26 +1423,6 @@
 # Accept clients using either SSL or plain TCP (boolean value)
 # Deprecated group/name - [amqp1]/allow_insecure_clients
 #allow_insecure_clients = false
-
-# Space separated list of acceptable SASL mechanisms (string value)
-# Deprecated group/name - [amqp1]/sasl_mechanisms
-#sasl_mechanisms =
-
-# Path to directory that contains the SASL configuration (string value)
-# Deprecated group/name - [amqp1]/sasl_config_dir
-#sasl_config_dir =
-
-# Name of configuration file (without .conf suffix) (string value)
-# Deprecated group/name - [amqp1]/sasl_config_name
-#sasl_config_name =
-
-# User name for message broker authentication (string value)
-# Deprecated group/name - [amqp1]/username
-#username =
-
-# Password for message broker authentication (string value)
-# Deprecated group/name - [amqp1]/password
-#password =
 
 
 [oslo_messaging_qpid]
