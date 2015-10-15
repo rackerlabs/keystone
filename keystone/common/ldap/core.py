@@ -21,6 +21,7 @@ import sys
 import weakref
 
 import ldap.filter
+import ldap3
 import ldappool
 from oslo_log import log
 import six
@@ -1921,3 +1922,59 @@ class ProjectLdapStructureMixin(object):
                                'enabled': 'enabled',
                                'domain_id': 'domain_id'}
     immutable_attrs = ['name']
+
+
+class ValidateLdapConfigDN(object):
+    """Validation for distinguished names in ldap config"""
+
+    @staticmethod
+    def validate_config_dn(config):
+        if not config.get('ldap'):
+            return
+
+        def _check_tree_dn(tree_dn):
+            invalid_chars = {',', '+', '"', '\\', '<', '>', ';'}
+            try:
+                # When the ldap function converts a string to distinguished
+                # name it will catch some cases of invalid characters
+                import pdb; pdb.set_trace()
+                _tree_dn_list = ldap3.utils.parse_dn(config['ldap'][tree_dn])
+
+            except ldap3.LDAPInvalidDnError:
+                msg = _('Invalid character in %(distinguished_name)s.') % {
+                    'distinguished_name': tree_dn}
+
+                raise exception.InvalidDomainConfig(reason=msg)
+
+            for local_tree_dn in _tree_dn_list:
+
+                for local_tree_dn_atribute in local_tree_dn:
+                    # Distinguished name contains a multi-valued RDN
+                    if local_tree_dn_atribute[2] > 1:
+                        continue
+
+                    local_tree_dn_value = list(local_tree_dn_atribute[1])
+
+                    contains_invalid_char = (
+                        invalid_chars.intersection(local_tree_dn_value))
+
+                    if contains_invalid_char:
+                        _invalid_char = [
+                            '\'' + x + '\'' for x in contains_invalid_char]
+
+                        msg = _('Invalid character in %(tree_dn)s:'
+                                ' %(invalid_chars)s') % {
+                                    'invalid_chars':
+                                        ', '.join(_invalid_char),
+                                    'tree_dn': tree_dn}
+
+                        raise exception.InvalidDomainConfig(reason=msg)
+
+        if config['ldap'].get('user'):
+            _check_tree_dn('user')
+
+        elif config['ldap'].get('user_tree_dn'):
+            _check_tree_dn('user_tree_dn')
+
+        elif config['ldap'].get('group_tree_dn'):
+            _check_tree_dn('group_tree_dn')
