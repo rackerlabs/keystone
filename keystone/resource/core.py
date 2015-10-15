@@ -14,6 +14,8 @@
 
 import abc
 
+from ldap import DECODING_ERROR
+from ldap.dn import str2dn as ldap_dn_str2dn
 from oslo_config import cfg
 from oslo_log import log
 import six
@@ -883,6 +885,8 @@ class DomainConfigManager(manager.Manager):
             for option in config[group]:
                 self._assert_valid_group_and_option(group, option)
 
+        self._validate_config_dn(config)
+
     def _assert_valid_group_and_option(self, group, option):
         """Ensure the combination of group and option is valid.
 
@@ -1011,6 +1015,59 @@ class DomainConfigManager(manager.Manager):
         # cache.
         self.get_config_with_sensitive_info.invalidate(self, domain_id)
         return self._list_to_config(whitelisted)
+
+    def _validate_config_dn(self, config):
+        if config.get('ldap'):
+
+            def _check_tree_dn(tree_dn):
+                invalid_chars = {',', '+', '"', '\\', '<', '>', ';', '=', '/'}
+                try:
+                    local_tree_dn_list = ldap_dn_str2dn(
+                        config['ldap'][tree_dn])
+                except DECODING_ERROR:
+                    msg = _('Inavlid character in '
+                            '%(distinguished_name)s.') % {
+                                'distinguished_name': tree_dn}
+
+                    raise exception.InvalidDomainConfig(
+                        reason=msg)
+
+                for local_tree_dn in local_tree_dn_list:
+
+                    for local_tree_dn_atribute in local_tree_dn:
+                        if local_tree_dn_atribute[2] > 1:
+                            continue
+
+                        local_tree_dn_value = list(
+                            local_tree_dn_atribute[1])
+
+                        contains_invalid_char = (
+                            invalid_chars.intersection(local_tree_dn_value))
+
+                        if contains_invalid_char:
+                            containing_invalid_char = [
+                                '\'' + x + '\'' for x
+                                in contains_invalid_char]
+
+                            msg = _('Inavlid character in '
+                                    '%(distinguished_name)s: '
+                                    '%(invalid_chars)s') % {
+                                        'invalid_chars':
+                                            ', '.join(
+                                                containing_invalid_char),
+                                        'distinguished_name': tree_dn}
+
+                            raise exception.InvalidDomainConfig(
+                                reason=msg)
+
+            if config['ldap'].get('user'):
+                _check_tree_dn('user')
+
+            elif config['ldap'].get('user_tree_dn'):
+                _check_tree_dn('user_tree_dn')
+
+            elif config['ldap'].get('group_tree_dn'):
+                _check_tree_dn('group_tree_dn')
 
     def get_config(self, domain_id, group=None, option=None):
         """Get config, or partial config, for a domain
