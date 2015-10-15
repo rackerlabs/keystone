@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_e773cf7e",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-15T14:30:39Z",
+      "side": 1,
+      "message": "feel free to put up another patch that renames this to:\n\n  _get_credential\n\nit only retrieves one, so keep it singular",
+      "revId": "f8017ad7eda700a4049943ca34648514a32e27dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
