@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_2d28dce1",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-15T08:33:33Z",
+      "side": 1,
+      "message": "These docstring will not be rendered since it is a private method, and this is over-indent which will cause the docstring rendered has a bad format.\n\n\nAs I replied to you and lance before either one of following is acceptable per my understanding.\n\nraises keystone.exception.NotImplemented: if the action that is\n    requested is not implemented   \n\nor\n\nraises keystone.exception.NotImplemented: if the action that is \n       requested is not implemented",
+      "revId": "153814df4070fd67da094c58d962fc3afcc8b324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
