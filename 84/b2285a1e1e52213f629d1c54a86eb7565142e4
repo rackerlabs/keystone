@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 15 Oct 2015 04:13:18 +0000
+Reviewed-on: https://review.openstack.org/231123
+Project: openstack/keystone
+Branch: refs/heads/master
