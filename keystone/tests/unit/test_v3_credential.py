@@ -16,17 +16,20 @@ import hashlib
 import json
 import uuid
 
+from keystone.contrib.ec2 import controllers
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 from oslo_config import cfg
 from six.moves import http_client
 from testtools import matchers
 
+from keystone.common import utils
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
 
 CONF = cfg.CONF
+CRED_TYPE_EC2 = controllers.CRED_TYPE_EC2
 
 
 class CredentialBaseTestCase(test_v3.RestfulTestCase):
@@ -43,7 +46,7 @@ class CredentialBaseTestCase(test_v3.RestfulTestCase):
         # This means we can test the dict->json workaround, added
         # as part of the bugfix for backwards compatibility works.
         credential['blob'] = blob
-        credential['type'] = 'ec2'
+        credential['type'] = CRED_TYPE_EC2
         # Create direct via the DB API to avoid validation failure
         self.credential_api.create_credential(
             credential_id,
@@ -107,7 +110,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         # because the type must be in the list of supported types
         ec2_credential = self.new_credential_ref(user_id=uuid.uuid4().hex,
                                                  project_id=self.project_id,
-                                                 cred_type='ec2')
+                                                 cred_type=CRED_TYPE_EC2)
 
         ec2_resp = self.credential_api.create_credential(
             ec2_credential['id'], ec2_credential)
@@ -125,7 +128,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         cred_ec2 = r_ec2.result['credentials'][0]
 
         self.assertValidCredentialListResponse(r_ec2, ref=ec2_resp)
-        self.assertEqual('ec2', cred_ec2['type'])
+        self.assertEqual(CRED_TYPE_EC2, cred_ec2['type'])
         self.assertEqual(ec2_credential['id'], cred_ec2['id'])
 
     def test_list_credentials_filtered_by_type_and_user_id(self):
@@ -135,7 +138,7 @@ class CredentialTestCase(CredentialBaseTestCase):
 
         # Creating credentials for two different users
         credential_user1_ec2 = self.new_credential_ref(
-            user_id=user1_id, cred_type='ec2')
+            user_id=user1_id, cred_type=CRED_TYPE_EC2)
         credential_user1_cert = self.new_credential_ref(
             user_id=user1_id)
         credential_user2_cert = self.new_credential_ref(
@@ -152,7 +155,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         self.assertValidCredentialListResponse(r, ref=credential_user1_ec2)
         self.assertThat(r.result['credentials'], matchers.HasLength(1))
         cred = r.result['credentials'][0]
-        self.assertEqual('ec2', cred['type'])
+        self.assertEqual(CRED_TYPE_EC2, cred['type'])
         self.assertEqual(user1_id, cred['user_id'])
 
     def test_create_credential(self):
@@ -195,7 +198,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
-        ref['type'] = 'ec2'
+        ref['type'] = CRED_TYPE_EC2
         r = self.post(
             '/credentials',
             body={'credential': ref})
@@ -254,7 +257,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
-        ref['type'] = 'ec2'
+        ref['type'] = CRED_TYPE_EC2
         # Assert bad request status when missing project_id
         self.post(
             '/credentials',
@@ -267,7 +270,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         ref = self.new_credential_ref(user_id=self.user['id'],
                                       project_id=self.project_id)
         ref['blob'] = '{"abc":"def"d}'
-        ref['type'] = 'ec2'
+        ref['type'] = CRED_TYPE_EC2
         # Assert bad request status when request contains invalid blob
         response = self.post(
             '/credentials',
@@ -330,7 +333,7 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
-        ref['type'] = 'ec2'
+        ref['type'] = CRED_TYPE_EC2
         r = self.post(
             '/credentials',
             body={'credential': ref},
@@ -397,7 +400,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
-        ref['type'] = 'ec2'
+        ref['type'] = CRED_TYPE_EC2
         r = self.post(
             '/credentials',
             body={'credential': ref})
@@ -446,6 +449,19 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertThat(ec2_cred['links']['self'],
                         matchers.EndsWith(uri))
 
+    def test_ec2_cannot_get_non_ec2_credential(self):
+        access_key = uuid.uuid4().hex
+        cred_id = utils.hash_access_key(access_key)
+        non_ec2_cred = self.new_credential_ref(
+            user_id=self.user_id,
+            project_id=self.project_id)
+        non_ec2_cred['id'] = cred_id
+        self.credential_api.create_credential(cred_id, non_ec2_cred)
+        uri = '/'.join([self._get_ec2_cred_uri(), access_key])
+        # if access_key is not found, ec2 controller raises Unauthorized
+        # exception
+        self.get(uri, expected_status=http_client.UNAUTHORIZED)
+
     def test_ec2_list_credentials(self):
         """Test ec2 credential listing."""
         self._get_ec2_cred()
@@ -456,13 +472,26 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertThat(r.result['links']['self'],
                         matchers.EndsWith(uri))
 
+        # non-EC2 credentials won't be fetched
+        non_ec2_cred = self.new_credential_ref(
+            user_id=self.user_id,
+            project_id=self.project_id)
+        non_ec2_cred['type'] = uuid.uuid4().hex
+        self.credential_api.create_credential(non_ec2_cred['id'],
+                                              non_ec2_cred)
+        r = self.get(uri)
+        cred_list_2 = r.result['credentials']
+        # still one element because non-EC2 credentials are not returned.
+        self.assertEqual(1, len(cred_list_2))
+        self.assertEqual(cred_list[0], cred_list_2[0])
+
     def test_ec2_delete_credential(self):
         """Test ec2 credential deletion."""
         ec2_cred = self._get_ec2_cred()
         uri = '/'.join([self._get_ec2_cred_uri(), ec2_cred['access']])
         cred_from_credential_api = (
             self.credential_api
-            .list_credentials_for_user(self.user_id))
+            .list_credentials_for_user(self.user_id, type=CRED_TYPE_EC2))
         self.assertEqual(1, len(cred_from_credential_api))
         self.delete(uri)
         self.assertRaises(exception.CredentialNotFound,
