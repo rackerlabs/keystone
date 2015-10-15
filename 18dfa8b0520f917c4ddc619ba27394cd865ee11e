@@ -16,6 +16,24 @@
       "revId": "18dfa8b0520f917c4ddc619ba27394cd865ee11e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_b8dc1e13",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-15T13:15:08Z",
+      "side": 1,
+      "message": "wow didn\u0027t realize they are defined in a class scope, sorry my coffee didn\u0027t kick in yet.  Ignore my last comment",
+      "parentUuid": "5a2ca52d_b81e5e61",
+      "revId": "18dfa8b0520f917c4ddc619ba27394cd865ee11e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
