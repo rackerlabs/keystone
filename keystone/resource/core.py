@@ -993,6 +993,8 @@ class DomainConfigManager(manager.Manager):
                 contains options we do not support
 
         """
+        self._validate_config_dn(config)
+
         self._assert_valid_config(config)
         whitelisted, sensitive = self._config_to_list(config)
         # Delete any existing config
@@ -1011,6 +1013,52 @@ class DomainConfigManager(manager.Manager):
         # cache.
         self.get_config_with_sensitive_info.invalidate(self, domain_id)
         return self._list_to_config(whitelisted)
+
+    def _validate_config_dn(self, config):
+        if config.get('ldap'):
+
+            def _check_tree_dn(tree_dn):
+                invalid_chars = {',', '+', '"', '\\', '<', '>', ';', '=', '/'}
+
+                local_tree_dn = config['ldap'][tree_dn].split(',')
+
+                for local_tree_dn_attribute in local_tree_dn:
+
+                    local_tree_dn_value = local_tree_dn_attribute.split('=')
+
+                    # Distinguished name with more that 1 '='
+                    if len(local_tree_dn_value) > 2:
+                        _display_error(tree_dn, ['='])
+
+                    last_val_dn = len(local_tree_dn_value) - 1
+
+                    local_tree_dn_value = list(
+                        local_tree_dn_value[last_val_dn])
+
+                    contains_invalid_char = invalid_chars.intersection(
+                        local_tree_dn_value)
+
+                    if contains_invalid_char:
+                        containing_invalid_char = [
+                            '\'' + x + '\'' for x in contains_invalid_char]
+                        _display_error(tree_dn, containing_invalid_char)
+
+            def _display_error(distinguished_name, invalid_chars):
+                msg = _('Inavlid character in %(distinguished_name)s: '
+                        '%(invalid_chars)s') % {
+                            'invalid_chars':
+                                ', '.join(invalid_chars),
+                            'distinguished_name': distinguished_name}
+
+                raise exception.InvalidDomainConfig(reason=msg)
+
+            if config['ldap'].get('user'):
+                _check_tree_dn('user')
+            if config['ldap'].get('user_tree_dn'):
+                _check_tree_dn('user_tree_dn')
+
+            if config['ldap'].get('group_tree_dn'):
+                _check_tree_dn('group_tree_dn')
 
     def get_config(self, domain_id, group=None, option=None):
         """Get config, or partial config, for a domain
@@ -1083,6 +1131,7 @@ class DomainConfigManager(manager.Manager):
             """Ensure the combination of config, group and option is valid."""
             self._assert_valid_config(config)
             self._assert_valid_group_and_option(group, option)
+            self._validate_config_dn(config)
 
             # If a group has been specified, then the request is to
             # explicitly only update the options in that group - so the config

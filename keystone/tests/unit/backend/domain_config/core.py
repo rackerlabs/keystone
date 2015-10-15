@@ -233,6 +233,46 @@ class DomainConfigTests(object):
             self.domain['id'])
         self.assertEqual(config, res)
 
+    def test_user_tree_dn_with_invalid_char(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'user_tree_dn':
+                               'CN=user1, CN=users, DC=Contoso<, DC=com',
+                           'password': uuid.uuid4().hex}}
+
+        self._assert_raises_InvalidDomainConfig(config)
+
+    def test_user_tree_dn_with_extra_equal_char(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'user_tree_dn': 'CN=' + uuid.uuid4().hex + '=',
+                           'password': uuid.uuid4().hex}}
+
+        self._assert_raises_InvalidDomainConfig(config)
+
+    def test_group_tree_dn_with_invalid_char(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'group_tree_dn':
+                               'CN=user1, CN=users, DC=Contoso<, DC=com',
+                           'password': uuid.uuid4().hex}}
+
+        self._assert_raises_InvalidDomainConfig(config)
+
+    def test_user_with_invalid_char(self):
+        config = {
+            'ldap': {'url': 'fake://memory',
+                     'user': 'cn=Adm\in',
+                     'password': 'password',
+                     'suffix': 'cn=example,cn=com'},
+            'identity': {'driver': 'ldap'}
+        }
+
+        self._assert_raises_InvalidDomainConfig(config)
+
+    def _assert_raises_InvalidDomainConfig(self, config):
+        self.assertRaises(exception.InvalidDomainConfig,
+                          self.domain_config_api.create_config,
+                          self.domain['id'],
+                          config)
+
     def test_get_partial_domain_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
                            'user_tree_dn': uuid.uuid4().hex,
