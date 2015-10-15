@@ -22,6 +22,7 @@ from keystone.common import cache
 from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
+from keystone.common.ldap.core import ValidateLdapConfigDN
 from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
@@ -882,6 +883,8 @@ class DomainConfigManager(manager.Manager):
                 raise exception.InvalidDomainConfig(reason=msg)
             for option in config[group]:
                 self._assert_valid_group_and_option(group, option)
+
+        ValidateLdapConfigDN.validate_config_dn(config)
 
     def _assert_valid_group_and_option(self, group, option):
         """Ensure the combination of group and option is valid.

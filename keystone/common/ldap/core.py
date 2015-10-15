@@ -21,6 +21,8 @@ import sys
 import weakref
 
 import ldap.filter
+import ldap3.core.exceptions as ldap3_exceptions
+import ldap3.utils.dn as ldap3_dn
 import ldappool
 from oslo_log import log
 import six
@@ -1921,3 +1923,36 @@ class ProjectLdapStructureMixin(object):
                                'enabled': 'enabled',
                                'domain_id': 'domain_id'}
     immutable_attrs = ['name']
+
+
+class ValidateLdapConfigDN(object):
+    """Validation for distinguished names in ldap config"""
+
+    @staticmethod
+    def validate_config_dn(config):
+        if not config.get('ldap'):
+            return
+
+        if config['ldap'].get('user'):
+            ValidateLdapConfigDN._check_tree_dn('user', config)
+
+        elif config['ldap'].get('user_tree_dn'):
+            ValidateLdapConfigDN._check_tree_dn('user_tree_dn', config)
+
+        elif config['ldap'].get('group_tree_dn'):
+            ValidateLdapConfigDN._check_tree_dn('group_tree_dn', config)
+
+    @staticmethod
+    def _check_tree_dn(tree_dn, config):
+        try:
+            # When the ldap3.utils.dn.parse_dn function converts a string
+            # to distinguished name it will catch cases of invalid
+            # characters. According to their docs it will verify dn
+            # compliance with RFC4514
+            ldap3_dn.parse_dn(config['ldap'][tree_dn])
+
+        except ldap3_exceptions.LDAPInvalidDnError:
+            msg = _('Invalid character in %(distinguished_name)s.') % {
+                'distinguished_name': tree_dn}
+
+            raise exception.InvalidDomainConfig(reason=msg)
