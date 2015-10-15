@@ -34,7 +34,6 @@ from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -2249,57 +2248,84 @@ class TestAuth(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data)
         self.assertValidProjectScopedTokenResponse(r)
 
-    def _create_projects_with_same_name(self, name):
+    def _create_projects_with_same_name_in_the_same_domain(self, name):
+        """Creates two projects with the same name in the same domain
+
+        Creates a regular project and a project that acts as a domain  with
+        the same name in the same domain, through the following hierarchy:
+            ROOT
+            |--|
+            A  B
+               |
+               A
+        Where the project A that is immediately below the root acts as a
+        domain and the other project A is a regular project.
+        """
         root_project = self.new_project_ref(self.domain['id'], is_domain=True)
         self.resource_api.create_project(root_project['id'], root_project)
 
-        project1 = self.new_project_ref(is_domain=True)
+        project1 = self.new_project_ref(is_domain=True,
+                                        parent_id=root_project['id'])
 
         project1['name'] = name
-        self.resource_api.create_project(project1['id'], project1)
+        project1_ref = self.resource_api.create_project(project1['id'],
+                                                        project1)
 
-        project2 = self.new_project_ref(project1['id'], is_domain=False)
+        other_project = self.new_project_ref(parent_id=root_project['id'])
+        self.resource_api.create_project(other_project['id'], other_project)
+
+        project2 = self.new_project_ref(is_domain=False,
+                                        parent_id=other_project['id'])
         project2['name'] = name
-        self.resource_api.create_project(project2['id'], project2)
+        project2_ref = self.resource_api.create_project(project2['id'],
+                                                        project2)
 
-        return project1, project2
+        # They both are in the same domain and have the same name
+        self.assertEqual(project1_ref['domain_id'], project2_ref['domain_id'])
+        self.assertEqual(project1_ref['name'], project2_ref['name'])
+        return project1_ref, project2_ref
 
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_project_name_scoped_token_with_name_clash(self):
         name = uuid.uuid4().hex
-        project1, project2 = self._create_projects_with_same_name(name)
+        project1, project2 = (
+            self._create_projects_with_same_name_in_the_same_domain(name))
 
-        path = '/projects/%s/users/%s/roles/%s' % (
-            project1['id'], self.user['id'], self.role['id'])
-        self.put(path=path)
-        path = '/projects/%s/users/%s/roles/%s' % (
-            project2['id'], self.user['id'], self.role['id'])
-        self.put(path=path)
+        domain_id = project1['domain_id']
+        self.assignment_api.create_grant(
+            user_id=self.user['id'],
+            project_id=project1['id'],
+            role_id=self.role['id'])
+        self.assignment_api.create_grant(
+            user_id=self.user['id'],
+            project_id=project2['id'],
+            role_id=self.role['id'])
 
         auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain['id'],
             password=self.user['password'],
-            project_domain_id=self.domain['id'],
+            project_domain_id=domain_id,
             project_name=name)
-        r = self.v3_authenticate_token(auth_data)
+        r = self.v3_create_token(auth_data)
         token = self.assertValidProjectScopedTokenResponse(r)
 
         # The token must be scoped to the project with the is_domain
         # flag disabled
         self.assertEqual(project2['id'], token['project']['id'])
 
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_project_id_scoped_token_with_name_clash(self):
         name = uuid.uuid4().hex
-        project1, project2 = self._create_projects_with_same_name(name)
+        project1, project2 = (
+            self._create_projects_with_same_name_in_the_same_domain(name))
 
-        path = '/projects/%s/users/%s/roles/%s' % (
-            project1['id'], self.user['id'], self.role['id'])
-        self.put(path=path)
-        path = '/projects/%s/users/%s/roles/%s' % (
-            project2['id'], self.user['id'], self.role['id'])
-        self.put(path=path)
+        self.assignment_api.create_grant(
+            user_id=self.user['id'],
+            project_id=project1['id'],
+            role_id=self.role['id'])
+        self.assignment_api.create_grant(
+            user_id=self.user['id'],
+            project_id=project2['id'],
+            role_id=self.role['id'])
 
         for project_id in project1['id'], project2['id']:
             auth_data = self.build_authentication_request(
@@ -2308,7 +2334,7 @@ class TestAuth(test_v3.RestfulTestCase):
                 password=self.user['password'],
                 project_domain_id=self.domain['id'],
                 project_id=project_id)
-            r = self.v3_authenticate_token(auth_data)
+            r = self.v3_create_token(auth_data)
             token = self.assertValidProjectScopedTokenResponse(r)
             self.assertEqual(project_id, token['project']['id'])
 

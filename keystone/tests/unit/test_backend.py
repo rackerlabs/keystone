@@ -2629,7 +2629,6 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertIn(project2['id'], project_ids)
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_not_delete_domain_with_enabled_subdomains(self):
         # It is not possible to delete a project acting as a domain that has
         # a subproject acting as domain that is enabled.
@@ -2645,7 +2644,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.update_project(root_project['id'], root_project)
 
         # Try to delete root project that is disabled but has enabled children
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.ForbiddenAction,
                           self.resource_api.delete_project,
                           root_project['id'])
 
@@ -2654,7 +2653,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.update_project(sub_project['id'], sub_project)
 
         # Still can't delete root project, since last_project is enabled
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.ForbiddenAction,
                           self.resource_api.delete_project,
                           root_project['id'])
 
@@ -2666,7 +2665,6 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.delete_project(last_project['id'])
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_delete_is_domain_project_deletes_subdomain(self):
         # Creating a root and a sub project, both acting as domains
         projects_hierarchy = self._create_projects_hierarchy(is_domain=True)
@@ -2822,7 +2820,6 @@ class IdentityTests(AssignmentTestHelperMixin):
                                          new_regular_project)
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_duplicate_is_domain_project_name_across_hierarchy_fails(self):
         """Tests sub projects acting as domains name uniqueness
 
@@ -2834,24 +2831,23 @@ class IdentityTests(AssignmentTestHelperMixin):
         root_project = projects[0]
         sub_project = projects[1]
 
-        new_project_ref = self.new_project_ref(is_domain=True,
+        new_project_ref = unit.new_project_ref(is_domain=True,
                                                parent_id=sub_project['id'])
         new_project_ref['name'] = root_project['name']
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Conflict,
                           self.resource_api.create_project,
                           new_project_ref['id'],
                           new_project_ref)
 
         # We cannot create it as another root project either
-        new_root_project_ref = self.new_project_ref(is_domain=True)
+        new_root_project_ref = unit.new_project_ref(is_domain=True)
         new_root_project_ref['name'] = root_project['name']
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Conflict,
                           self.resource_api.create_project,
                           new_root_project_ref['id'],
                           new_root_project_ref)
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_create_projects_same_parent_and_name_fails(self):
         """Tests sub projects acting as domains name constraints
 
@@ -2863,21 +2859,20 @@ class IdentityTests(AssignmentTestHelperMixin):
         root_project = projects[0]
         sub_project = projects[1]
 
-        new_project_ref = self.new_project_ref(parent_id=root_project['id'])
+        new_project_ref = unit.new_project_ref(parent_id=root_project['id'])
         new_project_ref['name'] = sub_project['name']
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Conflict,
                           self.resource_api.create_project,
                           new_project_ref['id'],
                           new_project_ref)
 
         new_project_ref['is_domain'] = True
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Conflict,
                           self.resource_api.create_project,
                           new_project_ref['id'],
                           new_project_ref)
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_create_regular_project_with_is_domain_project_name(self):
         """Tests duplicated projects name constraints
 
@@ -2899,14 +2894,15 @@ class IdentityTests(AssignmentTestHelperMixin):
         is_domain_project_a = projects[1]
 
         # Creating the "B" project
-        regular_sub_project = self.new_project_ref(parent_id=root_project)
+        regular_sub_project = unit.new_project_ref(
+            parent_id=root_project['id'])
         self.resource_api.create_project(regular_sub_project['id'],
                                          regular_sub_project)
 
         # We are now able to create a regular project with the same name of
         # the project A
-        regular_project_a = self.new_project_ref(
-            parent_id=regular_sub_project)
+        regular_project_a = unit.new_project_ref(
+            parent_id=regular_sub_project['id'])
         regular_project_a['name'] = is_domain_project_a['name']
         regular_project_a_ref = self.resource_api.create_project(
             regular_project_a['id'], regular_project_a)
@@ -2963,7 +2959,6 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertEqual(sub_project['id'], ref['parent_id'])
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_is_domain_sub_project_has_parent_domain_id(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
@@ -3090,7 +3085,6 @@ class IdentityTests(AssignmentTestHelperMixin):
                           project['id'], project)
 
     @unit.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_create_project_under_domain_hierarchy(self):
         projects_hierarchy = self._create_projects_hierarchy(is_domain=True)
         parent = projects_hierarchy[1]

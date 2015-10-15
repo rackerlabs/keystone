@@ -197,10 +197,24 @@ class AuthInfo(object):
                     raise exception.ValidationError(attribute='domain',
                                                     target='project')
                 domain_ref = self._lookup_domain(project_info['domain'])
-                project_ref = self.resource_api.get_project_by_name(
-                    project_name, domain_ref['id'], False)
+
+                # NOTE(htruta): It is possible to have two projects with the
+                # same name inside a domain, where one acts as a domain
+                # and the other does not. In case there is a name clashing,
+                # keystone will always scope the token to the project which
+                # is not acting as a domain.
+                try:
+                    project_ref = self.resource_api.get_project_by_name(
+                        project_name, domain_ref['id'], False)
+                except exception.ProjectNotFound:
+                    project_ref = self.resource_api.get_project_by_name(
+                        project_name, domain_ref['id'], True)
+
             else:
                 project_ref = self.resource_api.get_project(project_id)
+
+            # The domain_id is None for root projects acting as a domain
+            if project_ref['domain_id']:
                 # NOTE(morganfainberg): The _lookup_domain method will raise
                 # exception.Unauthorized if the domain isn't found or is
                 # disabled.
