@@ -17,7 +17,7 @@
 This service allows the creation of access/secret credentials used for
 the ec2 interop layer of OpenStack.
 
-A user can create as many access/secret pairs, each of which map to a
+A user can create as many access/secret pairs, each of which mapped to a
 specific project.  This is required because OpenStack supports a user
 belonging to multiple projects, whereas the signatures created on ec2-style
 requests don't allow specification of which project the user wishes to act
@@ -121,7 +121,7 @@ class Ec2ControllerCommon(object):
         if 'access' not in credentials:
             raise exception.Unauthorized(message='EC2 signature not supplied.')
 
-        creds_ref = self._get_credentials(credentials['access'])
+        creds_ref = self._get_credential(credentials['access'])
         self.check_signature(creds_ref, credentials)
 
         # TODO(termie): don't create new tokens every time
@@ -196,10 +196,10 @@ class Ec2ControllerCommon(object):
 
         self.identity_api.get_user(user_id)
         credential_refs = self.credential_api.list_credentials_for_user(
-            user_id)
+            user_id, type='ec2')
         return {'credentials':
                 [self._convert_v3_to_ec2_credential(credential)
-                    for credential in credential_refs]}
+                 for credential in credential_refs]}
 
     def get_credential(self, user_id, credential_id):
         """Retrieve a user's access/secret pair by the access key.
@@ -212,7 +212,7 @@ class Ec2ControllerCommon(object):
         """
 
         self.identity_api.get_user(user_id)
-        return {'credential': self._get_credentials(credential_id)}
+        return {'credential': self._get_credential(credential_id)}
 
     def delete_credential(self, user_id, credential_id):
         """Delete a user's access/secret pair.
@@ -225,7 +225,7 @@ class Ec2ControllerCommon(object):
         """
 
         self.identity_api.get_user(user_id)
-        self._get_credentials(credential_id)
+        self._get_credential(credential_id)
         ec2_credential_id = utils.hash_access_key(credential_id)
         return self.credential_api.delete_credential(ec2_credential_id)
 
@@ -245,7 +245,7 @@ class Ec2ControllerCommon(object):
                 'secret': blob.get('secret'),
                 'trust_id': blob.get('trust_id')}
 
-    def _get_credentials(self, credential_id):
+    def _get_credential(self, credential_id):
         """Return credentials from an ID.
 
         :param credential_id: id of credential
@@ -253,10 +253,10 @@ class Ec2ControllerCommon(object):
         :returns: credential: dict of ec2 credential.
         """
         ec2_credential_id = utils.hash_access_key(credential_id)
-        creds = self.credential_api.get_credential(ec2_credential_id)
-        if not creds:
+        cred = self.credential_api.get_credential(ec2_credential_id)
+        if not cred or cred['type'] != 'ec2':
             raise exception.Unauthorized(message='EC2 access key not found.')
-        return self._convert_v3_to_ec2_credential(creds)
+        return self._convert_v3_to_ec2_credential(cred)
 
 
 @dependency.requires('policy_api', 'token_provider_api')

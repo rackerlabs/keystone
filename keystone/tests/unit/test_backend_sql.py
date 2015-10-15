@@ -920,3 +920,10 @@ class SqlCredential(SqlTests):
         credentials = self.credential_api.list_credentials_for_user(
             self.user_foo['id'])
         self._validateCredentialList(credentials, self.user_credentials)
+
+        # list credentials of a specific type
+        cred = self.user_credentials[0]
+        credentials = self.credential_api.list_credentials_for_user(
+            self.user_foo['id'], type=cred['type'])
+        self.assertEqual(1, len(credentials))
+        self.assertEqual(cred['id'], credentials[0]['id'])
