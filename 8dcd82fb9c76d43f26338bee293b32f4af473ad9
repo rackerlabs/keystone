@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_27a9b990",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-15T18:35:38Z",
+      "side": 0,
+      "message": "F401 \u0027six\u0027 imported but unused",
+      "revId": "8dcd82fb9c76d43f26338bee293b32f4af473ad9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
