@@ -96,30 +96,46 @@ class Manager(manager.Manager):
         """Enforce project name constraint.
 
         The domain_id is nullable, so this check must be enforced in
-        the code, instead of the backend driver. There can not be two projects
-        with the same values of 'name', 'domain_id' and 'is_domain'. Also, we
-        can't have two or more projects acting as a domain with the same name.
+        the code, instead of the backend driver. We can not have more than
+        one project:
+        * With the same name and the same parent
+        * With the same values of 'name', 'domain_id' and 'is_domain'
+        * Acting as a domain with the same name
         """
         msg = None
         domain_id = (project_ref.get('domain_id')
                      if not project_ref['is_domain'] else None)
+        parent_id = project_ref['parent_id']
+        project_name = project_ref.get('name')
+        if parent_id and project_name:
+            self._assert_no_siblings_with_name(project_name, parent_id)
         try:
             # NOTE(rodrigods): calling the driver directly, we don't
             # want to hit the cache here
             self.driver.get_project_by_name(
-                project_ref['name'], domain_id, project_ref['is_domain'])
+                project_name, domain_id, project_ref['is_domain'])
             if project_ref['is_domain']:
                 msg = _('cannot create two or more projects '
                         'acting as domains with the same '
-                        'name: %s') % project_ref['name']
+                        'name: %s') % project_name
             else:
                 msg = _('cannot create two or more regular '
                         'projects with the same name (%s) in the '
-                        'same domain.') % project_ref['name']
+                        'same domain.') % project_name
             raise exception.Conflict(type='project', details=msg)
 
         except exception.ProjectNotFound:
             pass
+
+    def _assert_no_siblings_with_name(self, project_name, parent_id):
+        subtree = self.list_projects_in_subtree(parent_id)
+        for project in subtree:
+            if (project.get('name') == project_name and
+                    project['parent_id'] == parent_id):
+                msg = (_('cannot create two or more projects with the same '
+                         'name (%(name)s) in the same parent (%(parent)s)')
+                       % {'name': project_name, 'parent': parent_id})
+                raise exception.Conflict(type='project', details=msg)
 
     def _assert_is_domain_project_constraints(self, project_id, project_ref,
                                               parent_ref):
@@ -129,7 +145,8 @@ class Manager(manager.Manager):
 
         * multiple domains are enabled
         * the project name is not the reserved name for a federated domain
-        * the project is a root project
+        * if the project is not a root project, then its parent must also be
+                  acting as a domain
 
         :raises keystone.exception.ValidationError if one of the constraints
             was not satisfied.
@@ -142,9 +159,18 @@ class Manager(manager.Manager):
         self.assert_domain_not_federated(project_id, project_ref)
 
         if parent_ref:
-            raise exception.ValidationError(
-                message=_('only root projects are allowed to act as '
-                          'domains.'))
+            if not parent_ref['is_domain']:
+                raise exception.ValidationError(
+                    message=_('cannot create a project acting as a domain '
+                              'under %s, which is a regular project.')
+                    % parent_ref['id'])
+
+            if (project_ref['domain_id'] and
+                    project_ref['domain_id'] != parent_ref['id']):
+                raise exception.ValidationError(
+                    message=_('If a project acting as a domain is not root, '
+                              'its domain_id must be its parent_id: %s.')
+                    % project_ref['parent_id'])
 
     def _assert_regular_project_constraints(self, project_ref, parent_ref):
         """Enforces regular project hierarchy constraints

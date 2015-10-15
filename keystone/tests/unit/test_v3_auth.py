@@ -34,7 +34,6 @@ from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -2287,7 +2286,6 @@ class TestAuth(test_v3.RestfulTestCase):
         self.assertEqual(project1_ref['name'], project2_ref['name'])
         return project1_ref, project2_ref
 
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_project_name_scoped_token_with_name_clash(self):
         name = uuid.uuid4().hex
         project1, project2 = (
@@ -2316,7 +2314,6 @@ class TestAuth(test_v3.RestfulTestCase):
         # flag disabled
         self.assertEqual(project2['id'], token['project']['id'])
 
-    @test_utils.wip('waiting for sub projects acting as domains support')
     def test_project_id_scoped_token_with_name_clash(self):
         name = uuid.uuid4().hex
         project1, project2 = (
