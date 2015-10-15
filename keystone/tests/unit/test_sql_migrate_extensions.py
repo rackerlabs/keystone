@@ -37,21 +37,10 @@ from oslo_db.sqlalchemy import utils
 
 from keystone.contrib import endpoint_filter
 from keystone.contrib import endpoint_policy
-from keystone.contrib import example
 from keystone.contrib import federation
 from keystone.contrib import oauth1
 from keystone.contrib import revoke
 from keystone.tests.unit import test_sql_upgrade
-
-
-class SqlUpgradeExampleExtension(test_sql_upgrade.SqlMigrateBase):
-    def repo_package(self):
-        return example
-
-    def test_upgrade(self):
-        self.assertTableDoesNotExist('example')
-        self.upgrade(1, repository=self.repo_path)
-        self.assertTableColumns('example', ['id', 'type', 'extra'])
 
 
 class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
