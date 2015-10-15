@@ -196,10 +196,10 @@ class Ec2ControllerCommon(object):
 
         self.identity_api.get_user(user_id)
         credential_refs = self.credential_api.list_credentials_for_user(
-            user_id)
+            user_id, type='ec2')
         return {'credentials':
                 [self._convert_v3_to_ec2_credential(credential)
-                    for credential in credential_refs]}
+                 for credential in credential_refs]}
 
     def get_credential(self, user_id, credential_id):
         """Retrieve a user's access/secret pair by the access key.
@@ -253,10 +253,10 @@ class Ec2ControllerCommon(object):
         :returns: credential: dict of ec2 credential.
         """
         ec2_credential_id = utils.hash_access_key(credential_id)
-        creds = self.credential_api.get_credential(ec2_credential_id)
-        if not creds:
+        cred = self.credential_api.get_credential(ec2_credential_id)
+        if not cred or cred['type'] != 'ec2':
             raise exception.Unauthorized(message='EC2 access key not found.')
-        return self._convert_v3_to_ec2_credential(creds)
+        return self._convert_v3_to_ec2_credential(cred)
 
 
 @dependency.requires('policy_api', 'token_provider_api')
