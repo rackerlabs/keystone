@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+1: Jeffrey Bouter <root@ion-box.org>
+Submitted-by: Jenkins
+Submitted-at: Thu, 15 Oct 2015 03:05:13 +0000
+Reviewed-on: https://review.openstack.org/225160
+Project: openstack/keystone
+Branch: refs/heads/master
