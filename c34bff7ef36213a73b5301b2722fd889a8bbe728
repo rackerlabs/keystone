@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_bbce6bb2",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-10-15T07:00:55Z",
+      "side": 1,
+      "message": "You may write b\u0027\\xd0\\xaf\u0027 or u\u0027\\u042f\u0027.encoce(\u0027utf-8\u0027) to make it more explicit that you want to pass bytes to FakeTable constructor.\n\nBy the way, does the test pass on Python 3 if you pass *bytes* and not Unicode? (I have no idea if it makes sense to pass bytes, usually strings are Unicode on Python 3 and it\u0027s a bad accept to decode implicitly bytes.)",
+      "revId": "c34bff7ef36213a73b5301b2722fd889a8bbe728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_bb450b18",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-10-15T07:00:55Z",
+      "side": 1,
+      "message": "This one doesn\u0027t work yet on the CI: 3 tests failed with \"TypeError: execute_assignment_test_plan() missing 1 required positional argument: \u0027test_plan\u0027\", see logs. Another change is probably needed.",
+      "revId": "c34bff7ef36213a73b5301b2722fd889a8bbe728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
