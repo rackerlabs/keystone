@@ -21,6 +21,7 @@ from oslo_config import cfg
 from six.moves import http_client
 from testtools import matchers
 
+from keystone.common import utils
 from keystone import exception
 from keystone.tests.unit import test_v3
 
@@ -445,6 +446,19 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertThat(ec2_cred['links']['self'],
                         matchers.EndsWith(uri))
 
+    def test_ec2_cannot_get_non_ec2_credential(self):
+        access_key = uuid.uuid4().hex
+        cred_id = utils.hash_access_key(access_key)
+        non_ec2_cred = self.new_credential_ref(
+            user_id=self.user_id,
+            project_id=self.project_id)
+        non_ec2_cred['id'] = cred_id
+        self.credential_api.create_credential(cred_id, non_ec2_cred)
+        uri = '/'.join([self._get_ec2_cred_uri(), access_key])
+        # if access_key is not found, ec2 controller raises Unauthorized
+        # exception
+        self.get(uri, expected_status=http_client.UNAUTHORIZED)
+
     def test_ec2_list_credentials(self):
         """Test ec2 credential listing."""
         self._get_ec2_cred()
@@ -455,13 +469,25 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertThat(r.result['links']['self'],
                         matchers.EndsWith(uri))
 
+        # non ec2 credentials won't be fetched
+        non_ec2_cred = self.new_credential_ref(
+            user_id=self.user_id,
+            project_id=self.project_id)
+        non_ec2_cred['type'] = uuid.uuid4().hex
+        self.credential_api.create_credential(non_ec2_cred['id'],
+                                              non_ec2_cred)
+        r = self.get(uri)
+        cred_list = r.result['credentials']
+        # still one element because non-EC2 credentials are not returned.
+        self.assertEqual(1, len(cred_list))
+
     def test_ec2_delete_credential(self):
         """Test ec2 credential deletion."""
         ec2_cred = self._get_ec2_cred()
         uri = '/'.join([self._get_ec2_cred_uri(), ec2_cred['access']])
         cred_from_credential_api = (
             self.credential_api
-            .list_credentials_for_user(self.user_id))
+            .list_credentials_for_user(self.user_id, type='ec2'))
         self.assertEqual(1, len(cred_from_credential_api))
         self.delete(uri)
         self.assertRaises(exception.CredentialNotFound,
