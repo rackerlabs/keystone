@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_f8dcd6e5",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2015-10-15T13:17:59Z",
+      "side": 1,
+      "message": "Haven\u0027t noticed this one before: why did bot change it to dash??\ng-r has posix_ipc\nhttps://git.openstack.org/cgit/openstack/requirements/tree/global-requirements.txt?h\u003dstable/kilo#n97",
+      "revId": "65762b2072d6e66f0be8503c998d4610c1883430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
