@@ -586,6 +586,34 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertFalse(sp_table.c.auth_url.nullable)
         self.assertFalse(sp_table.c.sp_url.nullable)
 
+    def test_create_oauth_tables(self):
+        self.assertTableDoesNotExist('consumer')
+        self.assertTableDoesNotExist('request_token')
+        self.assertTableDoesNotExist('access_token')
+        self.upgrade(83)
+        self.assertTableColumns('consumer',
+                                ['id',
+                                 'description',
+                                 'secret',
+                                 'extra'])
+        self.assertTableColumns('request_token',
+                                ['id',
+                                 'request_secret',
+                                 'verifier',
+                                 'authorizing_user_id',
+                                 'requested_project_id',
+                                 'role_ids',
+                                 'consumer_id',
+                                 'expires_at'])
+        self.assertTableColumns('access_token',
+                                ['id',
+                                 'access_secret',
+                                 'authorizing_user_id',
+                                 'project_id',
+                                 'role_ids',
+                                 'consumer_id',
+                                 'expires_at'])
+
     def test_fixup_service_name_value_upgrade(self):
         """Update service name data from `extra` to empty string."""
         def add_service(**extra_data):
