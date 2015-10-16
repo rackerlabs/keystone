@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_efa12647",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T17:32:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_b43e2726",
+      "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_d4ce432c",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_eaad949b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T17:32:19Z",
+      "side": 1,
+      "message": "yes, didn\u0027t find documentation saying it is, but it has broken everything when I removed.",
+      "parentUuid": "5a2ca52d_d4ce432c",
+      "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_748e4fd1",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-16T17:01:48Z",
       "side": 1,
       "message": "s/there already is/There is already/\n\ns/configuration/combination/",
+      "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_0abc90da",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T17:32:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_748e4fd1",
       "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
