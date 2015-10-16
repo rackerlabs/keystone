@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_3053fe6c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T19:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_fc726f10",
+      "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_9cf01b69",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-15T22:27:48Z",
       "side": 1,
       "message": "\"the v2.0\" -\u003e \"v2.0\" (remove the)",
+      "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_d04deac4",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T19:12:59Z",
+      "side": 1,
+      "message": "I think I forgot to include \"API\"",
+      "parentUuid": "5a2ca52d_9cf01b69",
       "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_f04826b5",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T19:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_1c05eb44",
+      "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_dff8e54b",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-07T18:13:01Z",
       "side": 1,
       "message": "extra space here",
+      "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_7346607c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T19:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_dff8e54b",
       "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_134fec37",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T19:12:59Z",
+      "side": 1,
+      "message": "I think I worded this poorly. In this case, the token simply can\u0027t be validated against the v2 API (keystone uses v3 internally, essentially). I\u0027ll clarify.\n\nAlthough, I wonder if there are other calls in v2 that it wouldn\u0027t make sense to call? GET :5000/v2.0/tenants for example. I have no idea what the response to that would be if some tenants are outside the default domain. Exclude them? Raise 401?",
+      "parentUuid": "5a2ca52d_47562ccf",
+      "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_a7daa04a",
         "filename": "doc/source/services.rst",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2015-10-15T22:27:48Z",
       "side": 1,
       "message": "we might want to note here that services like heat that create users in their own domain by default won\u0027t work if auth_token doesn\u0027t use v3.",
+      "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_934d3c9c",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T19:12:59Z",
+      "side": 1,
+      "message": "Added as a new paragraph",
+      "parentUuid": "5a2ca52d_a7daa04a",
       "revId": "973f9e41b20a7969e6518fe8c10d8aa05eb1d22b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
