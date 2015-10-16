@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_b43e2726",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-16T17:01:48Z",
+      "side": 1,
+      "message": "this is third party and shouldn\u0027t be in this section",
+      "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_d4ce432c",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-16T17:01:48Z",
+      "side": 1,
+      "message": "Is the {} needed here?",
+      "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_748e4fd1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-16T17:01:48Z",
+      "side": 1,
+      "message": "s/there already is/There is already/\n\ns/configuration/combination/",
+      "revId": "b637ecf449084804bb5e3e7f66f1311f84a61fd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
