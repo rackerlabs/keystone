@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a2ca52d_6c60c9cf",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-10-16T15:02:02Z",
+      "side": 1,
+      "message": "why do we do it here and not in _require_matching_domain_id? It should happen there.",
+      "revId": "5a727973043a914c9c73ec2fbb23582dc84d9671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_8c5d2517",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-10-16T15:02:02Z",
+      "side": 1,
+      "message": "why do we do it here and not in _require_matching_domain_id? It should happen there.",
+      "revId": "5a727973043a914c9c73ec2fbb23582dc84d9671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_51c32aed",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 21
