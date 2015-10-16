@@ -649,7 +649,7 @@ class TestFernetKeyRotation(unit.TestCase):
 
         """
         # Load the keys into a list.
-        keys = fernet_utils.load_keys()
+        keys = fernet_utils.load_keys()  # keys is list of six.text_type.
 
         # Sort the list of keys by the keys themselves (they were previously
         # sorted by filename).
@@ -658,7 +658,8 @@ class TestFernetKeyRotation(unit.TestCase):
         # Create the thumbprint using all keys in the repository.
         signature = hashlib.sha1()
         for key in keys:
-            signature.update(key)
+            # Need to convert key to six.binary_type for update.
+            signature.update(key.encode('utf-8'))
         return signature.hexdigest()
 
     def assertRepositoryState(self, expected_size):
