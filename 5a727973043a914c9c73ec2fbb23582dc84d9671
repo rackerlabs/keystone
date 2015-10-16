@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_4f537ae2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T17:18:27Z",
+      "side": 1,
+      "message": "https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L684 has a comment from henry nash suggesting that we take that check from there. It should be better to keep this logic in here",
+      "parentUuid": "5a2ca52d_6c60c9cf",
+      "revId": "5a727973043a914c9c73ec2fbb23582dc84d9671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_8c5d2517",
         "filename": "keystone/identity/core.py",
         "patchSetId": 21
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_6f50b6d4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T17:18:27Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "5a2ca52d_8c5d2517",
+      "revId": "5a727973043a914c9c73ec2fbb23582dc84d9671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_51c32aed",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 21
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-16T14:55:54Z",
       "side": 1,
       "message": "is the second domain necessary? I think we can simplify the test by creating a domain-project without domain_id and try assigning it to a domain.",
+      "revId": "5a727973043a914c9c73ec2fbb23582dc84d9671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_3467774e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T17:18:27Z",
+      "side": 1,
+      "message": "actually, we need to pass a domain in here. The domain is set if not provided only in controller. But I\u0027ll create just one extra domain",
+      "parentUuid": "5a2ca52d_51c32aed",
       "revId": "5a727973043a914c9c73ec2fbb23582dc84d9671",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
