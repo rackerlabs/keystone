@@ -19,7 +19,7 @@ from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import utils
-from keystone.contrib.revoke import model
+from keystone.revoke import model
 from keystone.tests.unit import test_v3
 from keystone.token import provider
 
