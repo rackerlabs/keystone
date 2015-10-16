@@ -31,6 +31,7 @@ from keystone import identity
 from keystone import oauth1
 from keystone import policy
 from keystone import resource
+from keystone import revoke
 from keystone import token
 from keystone import trust
 from keystone.version import controllers
@@ -128,6 +129,9 @@ def v3_app_factory(global_conf, **local_conf):
 
     if CONF.oauth1.enabled:
         router_modules.append(oauth1)
+
+    if CONF.revoke.enabled:
+        router_modules.append(revoke)
 
     for module in router_modules:
         routers_instance = module.routers.Routers()

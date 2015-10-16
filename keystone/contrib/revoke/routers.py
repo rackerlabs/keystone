@@ -10,20 +10,20 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.common import json_home
+from oslo_log import versionutils
+
 from keystone.common import wsgi
-from keystone.contrib.revoke import controllers
 
 
-class RevokeExtension(wsgi.V3ExtensionRouter):
+_OLD = 'keystone.contrib.revoke.routers.RevokeExtension'
+_NEW = 'keystone.revoke.routers.Routers'
 
-    PATH_PREFIX = '/OS-REVOKE'
 
-    def add_routes(self, mapper):
-        revoke_controller = controllers.RevokeController()
-        self._add_resource(
-            mapper, revoke_controller,
-            path=self.PATH_PREFIX + '/events',
-            get_action='list_revoke_events',
-            rel=json_home.build_v3_extension_resource_relation(
-                'OS-REVOKE', '1.0', 'events'))
+class RevokeExtension(wsgi.Middleware):
+
+    @versionutils.deprecated(versionutils.deprecated.MITAKA,
+                             in_favor_of=_NEW,
+                             remove_in=1,
+                             what=_OLD)
+    def __init__(self, *args, **kwargs):
+        super(RevokeExtension, self).__init__(*args, **kwargs)
