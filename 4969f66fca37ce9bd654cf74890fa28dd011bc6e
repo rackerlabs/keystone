@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_61422b6a",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-16T06:15:28Z",
+      "side": 1,
+      "message": "is this supposed to be Mitaka?\n\nOtherwise, remove_in \u003d Liberty +1, which is this release.",
+      "revId": "4969f66fca37ce9bd654cf74890fa28dd011bc6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_21619305",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-16T06:15:28Z",
+      "side": 1,
+      "message": "same question",
+      "revId": "4969f66fca37ce9bd654cf74890fa28dd011bc6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_a11a837b",
+        "filename": "keystone/common/cache/backends/noop.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-16T06:15:28Z",
+      "side": 1,
+      "message": "same about using M",
+      "revId": "4969f66fca37ce9bd654cf74890fa28dd011bc6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_813e67d8",
+        "filename": "keystone/common/cache/backends/noop.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-10-16T06:15:28Z",
+      "side": 1,
+      "message": "nit: use single quote for consistency",
+      "revId": "4969f66fca37ce9bd654cf74890fa28dd011bc6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
