@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_de9bd564",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-16T09:48:48Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a41bdd9_50a41607",
+      "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_2d07fd82",
         "filename": "keystone/cmd/manage.py",
         "patchSetId": 4
@@ -149,6 +167,23 @@
       "writtenOn": "2015-07-17T12:11:58Z",
       "side": 1,
       "message": "there is no need of new line.",
+      "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_9ec9dd5b",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-16T09:48:48Z",
+      "side": 1,
+      "message": "Suggestion: This all can be simplified by a try: except like this, where you warn the user in the except block.",
       "revId": "cfb80ae7f276c5f0583bf492b4208625db7a8304",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
