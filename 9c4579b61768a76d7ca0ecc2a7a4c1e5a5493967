@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_3f28d499",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-16T01:30:23Z",
+      "side": 1,
+      "message": "DB hits isn\u0027t a great gain here in my opinion, think of how often a service is deleted.",
+      "revId": "9c4579b61768a76d7ca0ecc2a7a4c1e5a5493967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_12470f4c",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-16T01:30:23Z",
+      "side": 1,
+      "message": "What about this line here ? In the case of your proposal, it wouldn\u0027t be needed anymore.",
+      "revId": "9c4579b61768a76d7ca0ecc2a7a4c1e5a5493967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_bfc94428",
+        "filename": "keystone/common/sql/migrate_repo/versions/074_fk_endpoint_ondelete_cascade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-16T01:30:23Z",
+      "side": 1,
+      "message": "This needs to be 081 at this point.",
+      "revId": "9c4579b61768a76d7ca0ecc2a7a4c1e5a5493967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_1fe1589a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-16T01:30:23Z",
+      "side": 1,
+      "message": "I\u0027d prefer to define these internal methods at the very beginning, without mixing them with the test logic itself.\n\nBut this can be just my preference.",
+      "revId": "9c4579b61768a76d7ca0ecc2a7a4c1e5a5493967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
