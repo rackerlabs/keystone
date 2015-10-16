@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_8284000b",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T21:22:04Z",
+      "side": 0,
+      "message": "assert status like this ^",
+      "revId": "8bfb9aa303ff6741197e5114ec64e9a17b23ab57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

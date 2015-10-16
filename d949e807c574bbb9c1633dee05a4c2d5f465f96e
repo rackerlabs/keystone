@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_22996c7c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T21:22:04Z",
+      "side": 1,
+      "message": "Is there a positive version of this test already (to the effect of test_create_user_with_admin_token_and_domain to assert 200)? I\u0027m looking around this file, but don\u0027t see one. If there is not, this patch should add one.",
+      "revId": "d949e807c574bbb9c1633dee05a4c2d5f465f96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_c28e782d",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T21:22:04Z",
+      "side": 1,
+      "message": "nice docstr",
+      "revId": "d949e807c574bbb9c1633dee05a4c2d5f465f96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_e2f054cb",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-16T21:22:04Z",
+      "side": 1,
+      "message": "try not to reach into the implementation -- use http_client.BAD_REQUEST instead",
+      "revId": "d949e807c574bbb9c1633dee05a4c2d5f465f96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
