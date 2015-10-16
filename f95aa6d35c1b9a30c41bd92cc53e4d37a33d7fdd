@@ -16,6 +16,24 @@
       "revId": "f95aa6d35c1b9a30c41bd92cc53e4d37a33d7fdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_c1a75abb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2903,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-16T19:51:48Z",
+      "side": 0,
+      "message": "backport proposed - https://review.openstack.org/#/c/236071/",
+      "parentUuid": "5a2ca52d_765acef3",
+      "revId": "f95aa6d35c1b9a30c41bd92cc53e4d37a33d7fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
