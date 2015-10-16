@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_25bdffb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T17:57:18Z",
+      "side": 1,
+      "message": "remove \"mod:\"",
+      "revId": "8fb9383410f3175480b013f05ae20afd3e33b1b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_2532df5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T17:57:18Z",
+      "side": 1,
+      "message": "what is plain certificate information? How is it different than any other certificate information?",
+      "revId": "8fb9383410f3175480b013f05ae20afd3e33b1b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_0514839d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T17:57:18Z",
+      "side": 1,
+      "message": "A bug report would be useful.",
+      "revId": "8fb9383410f3175480b013f05ae20afd3e33b1b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
