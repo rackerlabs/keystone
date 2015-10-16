@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_7af08391",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-16T13:30:17Z",
+      "side": 1,
+      "message": "Not sure if we should amend this comment or not to include the match for whitespace at the beginning of the string. I don\u0027t think that is something that is included in rfc1738. \n\nTaking a look at https://www.ietf.org/rfc/rfc1738.txt and I\u0027m not seeing any docs saying what we\u0027re adding breaks.",
+      "revId": "9dbc5ca16b3c359670d7c3073f3aef09088350cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
