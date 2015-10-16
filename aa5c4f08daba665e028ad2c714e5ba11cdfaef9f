@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_dc9e6162",
+        "filename": "keystone/common/sql/migrate_repo/versions/081_add_endpoint_policy_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_909e92b7",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_507b1a7b",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-16T18:37:38Z",
       "side": 1,
       "message": "space missing at end of line.",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_1ca7f9aa",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_507b1a7b",
       "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_7c9b8d66",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_f08a6663",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_f0e1062b",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-16T18:37:38Z",
       "side": 1,
       "message": "suggest make the operator response clear -- as in, use keystone-manage db_sync.",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_5c98116a",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_f0e1062b",
       "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_dcac218e",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_5040fa06",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_705ad6f3",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 18
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_bcf4c55a",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "undid this change",
+      "parentUuid": "5a2ca52d_705ad6f3",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_d0196a23",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
@@ -115,6 +223,24 @@
       "writtenOn": "2015-10-16T18:37:38Z",
       "side": 1,
       "message": "there should also be a test for the case when the original migrations were run so the table does exist.",
+      "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_6211a45c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-16T21:31:41Z",
+      "side": 1,
+      "message": "i\u0027m not sure how to easily test this since we are removing the functionality that would setup the previous migration",
+      "parentUuid": "5a2ca52d_d0196a23",
       "revId": "aa5c4f08daba665e028ad2c714e5ba11cdfaef9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
