@@ -287,6 +287,9 @@ FILE_OPTIONS = {
                         "not be processed correctly."),
     ],
     'revoke': [
+        cfg.BoolOpt('enabled',
+                    default=True,
+                    help='Enable revocation events functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
                    help='Entrypoint for an implementation of the backend for '
