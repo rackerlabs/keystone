@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_fa7fb314",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T14:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_ddfd646f",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_cff9e081",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 3
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "7a016987_e5282d88",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_1a85cf05",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T14:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_1ddd1c14",
       "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -194,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_7a8e437a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T14:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_fde948b8",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_bdcc3062",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 3
@@ -205,6 +259,24 @@
       "writtenOn": "2015-10-04T01:24:11Z",
       "side": 1,
       "message": "tearDown already close all the sessions. Also, why are we instantiating the the session again? I believe we don\u0027t need these 3 lines at all.",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_9ae23f2e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T14:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_bdcc3062",
       "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -258,6 +330,24 @@
       "side": 1,
       "message": "++ Yeah, should be the same for any other duplicated entry.",
       "parentUuid": "7a016987_8f4648be",
+      "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_ba7e1b17",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-16T14:43:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_1d043c7c",
       "revId": "aa211104e66b1d2079bf0a4d7e7b2ae8b3822824",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
