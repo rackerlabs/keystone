@@ -3693,17 +3693,27 @@ class IdentityTests(AssignmentTestHelperMixin):
                           domain['id'])
 
     @unit.skip_if_no_multiple_domains_support
-    def test_create_domain_case_sensitivity(self):
+    def test_domain_name_case_sensitivity(self):
         # create a ref with a lowercase name
+        domain_name = 'test_domain'
         ref = {
             'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex.lower()}
-        self.resource_api.create_domain(ref['id'], ref)
+            'name': domain_name}
+        lower_case_domain = self.resource_api.create_domain(ref['id'], ref)
 
         # assign a new ID with the same name, but this time in uppercase
         ref['id'] = uuid.uuid4().hex
-        ref['name'] = ref['name'].upper()
-        self.resource_api.create_domain(ref['id'], ref)
+        ref['name'] = domain_name.upper()
+        upper_case_domain = self.resource_api.create_domain(ref['id'], ref)
+
+        # We can get each domain by name
+        lower_case_domain_ref = self.resource_api.get_domain_by_name(
+            domain_name)
+        self.assertEqual(lower_case_domain['id'], lower_case_domain_ref['id'])
+
+        upper_case_domain_ref = self.resource_api.get_domain_by_name(
+            domain_name.upper())
+        self.assertEqual(upper_case_domain['id'], upper_case_domain_ref['id'])
 
     def test_attribute_update(self):
         project = {
