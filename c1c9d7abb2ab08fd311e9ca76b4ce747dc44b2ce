@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_33a2289a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-16T19:03:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we also be including url in this constraint?\n\nThis will only allow for three unique endpoints for a service in a given region. This would be a pretty big issue for a deployment that has a lot of endpoints for a service in a region, thinking of something like compute.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
