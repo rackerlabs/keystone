@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 16 Oct 2015 21:39:04 +0000
+Reviewed-on: https://review.openstack.org/233062
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
