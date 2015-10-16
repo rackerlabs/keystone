@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Workflow+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 16 Oct 2015 12:46:08 +0000
+Reviewed-on: https://review.openstack.org/225692
+Project: openstack/keystone
+Branch: refs/heads/master
