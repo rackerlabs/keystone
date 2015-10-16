@@ -31,7 +31,6 @@ WARNING::
 
 from keystone.contrib import endpoint_filter
 from keystone.contrib import example
-from keystone.contrib import revoke
 from keystone.tests.unit import test_sql_upgrade
 
 
@@ -75,20 +74,3 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
                                 ['endpoint_id', 'project_id'])
         self.upgrade(2)
         self._assert_v2_tables()
-
-
-class RevokeExtension(test_sql_upgrade.SqlMigrateBase):
-
-    _REVOKE_COLUMN_NAMES = ['id', 'domain_id', 'project_id', 'user_id',
-                            'role_id', 'trust_id', 'consumer_id',
-                            'access_token_id', 'issued_before', 'expires_at',
-                            'revoked_at']
-
-    def repo_package(self):
-        return revoke
-
-    def test_upgrade(self):
-        self.assertTableDoesNotExist('revocation_event')
-        self.upgrade(1, repository=self.repo_path)
-        self.assertTableColumns('revocation_event',
-                                self._REVOKE_COLUMN_NAMES)
