@@ -34,6 +34,24 @@
       "revId": "9dbc5ca16b3c359670d7c3073f3aef09088350cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_a0502ad5",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-16T14:03:46Z",
+      "side": 1,
+      "message": "I agree with Boris. Section 2.1 lists the acceptable characters and whitespace isn\u0027t in that list.",
+      "parentUuid": "5a2ca52d_bab29b92",
+      "revId": "9dbc5ca16b3c359670d7c3073f3aef09088350cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
