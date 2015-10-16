@@ -31,6 +31,7 @@ from keystone import identity
 from keystone import oauth1
 from keystone import policy
 from keystone import resource
+from keystone import revoke
 from keystone import token
 from keystone import trust
 from keystone.version import controllers
@@ -116,6 +117,7 @@ def v3_app_factory(global_conf, **local_conf):
                       identity,
                       policy,
                       resource,
+                      revoke,
                       federation,
                       oauth1]
 
