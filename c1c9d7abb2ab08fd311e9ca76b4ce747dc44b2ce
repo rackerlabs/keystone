@@ -16,6 +16,108 @@
       "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_73f500eb",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:03:58Z",
+      "side": 1,
+      "message": "keystone uses Conflict for the case when the object already exists everywhere else.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_b30b98d5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:03:58Z",
+      "side": 1,
+      "message": "the message creation should be up in the manager so that the result is the same for all drivers.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_f3c27052",
+        "filename": "keystone/common/sql/migrate_repo/versions/081_add_constraint_endpoint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:03:58Z",
+      "side": 1,
+      "message": "there should be a test that shows what happens if the constraint can\u0027t be added because duplicate entries already exist.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_13804cf4",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:03:58Z",
+      "side": 1,
+      "message": "change new_endpoint_ref to have a default interface rather than having to change all the tests to include unnecessary information.\n\nAlso, shouldn\u0027t \u0027public\u0027 be the default interface?",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_b3e398d8",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:03:58Z",
+      "side": 1,
+      "message": "use \u0027 for strings for consistency.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_13ce0c63",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:03:58Z",
+      "side": 1,
+      "message": "use http_client.BAD_REQUEST for consistency.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
