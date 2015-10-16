@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_765acef3",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2903,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-16T19:26:19Z",
+      "side": 0,
+      "message": "did you consider picking up the other fixes to avoid the merge conflict?\n\nThe change this depends on is I7256a5e4d31d3c2e55fe956fb0170452bb241078 , which looks like it should be backported since it fixes a bug.",
+      "revId": "f95aa6d35c1b9a30c41bd92cc53e4d37a33d7fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
