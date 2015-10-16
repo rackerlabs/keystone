@@ -208,13 +208,10 @@
 #rpc_zmq_bind_address = *
 
 # MatchMaker driver. (string value)
-#rpc_zmq_matchmaker = redis
+#rpc_zmq_matchmaker = local
 
-# Use REQ/REP pattern for all methods CALL/CAST/FANOUT. (boolean value)
-#rpc_zmq_all_req_rep = true
-
-# Type of concurrency used. Either "native" or "eventlet" (string value)
-#rpc_zmq_concurrency = eventlet
+# ZeroMQ receiver listening port. (integer value)
+#rpc_zmq_port = 9501
 
 # Number of ZeroMQ contexts, defaults to 1. (integer value)
 #rpc_zmq_contexts = 1
@@ -234,21 +231,11 @@
 # (integer value)
 #rpc_cast_timeout = 30
 
-# The default number of seconds that poll should wait. Poll raises timeout
-# exception when timeout expired. (integer value)
-#rpc_poll_timeout = 1
+# Heartbeat frequency. (integer value)
+#matchmaker_heartbeat_freq = 300
 
-# Shows whether zmq-messaging uses broker or not. (boolean value)
-#zmq_use_broker = true
-
-# Host to locate redis. (string value)
-#host = 127.0.0.1
-
-# Use this port to connect to redis host. (integer value)
-#port = 6379
-
-# Password for Redis server (optional). (string value)
-#password =
+# Heartbeat time-to-live. (integer value)
+#matchmaker_heartbeat_ttl = 600
 
 # Size of executor thread pool. (integer value)
 # Deprecated group/name - [DEFAULT]/rpc_thread_pool_size
@@ -338,13 +325,13 @@
 [cache]
 
 #
-# From keystone
+# From oslo.cache
 #
 
 # Prefix for building the configuration dictionary for the cache region. This
 # should not need to be changed unless there is another dogpile.cache region
 # with the same configuration name. (string value)
-#config_prefix = cache.keystone
+#config_prefix = cache.oslo
 
 # Default TTL, in seconds, for any cached item in the dogpile.cache region.
 # This applies to any cached method that doesn't have an explicit cache
@@ -352,10 +339,10 @@
 #expiration_time = 600
 
 # Dogpile.cache backend module. It is recommended that Memcache with pooling
-# (keystone.cache.memcache_pool) or Redis (dogpile.cache.redis) be used in
+# (oslo_cache.memcache_pool) or Redis (dogpile.cache.redis) be used in
 # production deployments.  Small workloads (single process) like devstack can
 # use the dogpile.cache.memory backend. (string value)
-#backend = keystone.common.cache.noop
+#backend = dogpile.cache.null
 
 # Arguments supplied to the backend module. Specify this option once per
 # argument to be passed to the dogpile.cache backend. Example format:
@@ -367,8 +354,7 @@
 # (list value)
 #proxies =
 
-# Global toggle for all caching using the should_cache_fn mechanism. (boolean
-# value)
+# Global toggle for caching. (boolean value)
 #enabled = false
 
 # Extra debugging from the cache backend (cache keys, get/set/delete/etc
@@ -378,24 +364,24 @@
 #debug_cache_backend = false
 
 # Memcache servers in the format of "host:port". (dogpile.cache.memcache and
-# keystone.cache.memcache_pool backends only). (list value)
+# oslo_cache.memcache_pool backends only). (list value)
 #memcache_servers = localhost:11211
 
 # Number of seconds memcached server is considered dead before it is tried
-# again. (dogpile.cache.memcache and keystone.cache.memcache_pool backends
-# only). (integer value)
+# again. (dogpile.cache.memcache and oslo_cache.memcache_pool backends only).
+# (integer value)
 #memcache_dead_retry = 300
 
 # Timeout in seconds for every call to a server. (dogpile.cache.memcache and
-# keystone.cache.memcache_pool backends only). (integer value)
+# oslo_cache.memcache_pool backends only). (integer value)
 #memcache_socket_timeout = 3
 
 # Max total number of open connections to every memcached server.
-# (keystone.cache.memcache_pool backend only). (integer value)
+# (oslo_cache.memcache_pool backend only). (integer value)
 #memcache_pool_maxsize = 10
 
 # Number of seconds a connection to memcached is held unused in the pool before
-# it is closed. (keystone.cache.memcache_pool backend only). (integer value)
+# it is closed. (oslo_cache.memcache_pool backend only). (integer value)
 #memcache_pool_unused_timeout = 60
 
 # Number of seconds that an operation will wait to get a memcache client
@@ -1310,7 +1296,18 @@
 #port = 6379
 
 # Password for Redis server (optional). (string value)
-#password =
+#password = <None>
+
+
+[matchmaker_ring]
+
+#
+# From oslo.messaging
+#
+
+# Matchmaker ring file (JSON). (string value)
+# Deprecated group/name - [DEFAULT]/matchmaker_ringfile
+#ringfile = /etc/oslo/matchmaker_ring.json
 
 
 [memcache]
@@ -1425,26 +1422,6 @@
 # Accept clients using either SSL or plain TCP (boolean value)
 # Deprecated group/name - [amqp1]/allow_insecure_clients
 #allow_insecure_clients = false
-
-# Space separated list of acceptable SASL mechanisms (string value)
-# Deprecated group/name - [amqp1]/sasl_mechanisms
-#sasl_mechanisms =
-
-# Path to directory that contains the SASL configuration (string value)
-# Deprecated group/name - [amqp1]/sasl_config_dir
-#sasl_config_dir =
-
-# Name of configuration file (without .conf suffix) (string value)
-# Deprecated group/name - [amqp1]/sasl_config_name
-#sasl_config_name =
-
-# User name for message broker authentication (string value)
-# Deprecated group/name - [amqp1]/username
-#username =
-
-# Password for message broker authentication (string value)
-# Deprecated group/name - [amqp1]/password
-#password =
 
 
 [oslo_messaging_qpid]
