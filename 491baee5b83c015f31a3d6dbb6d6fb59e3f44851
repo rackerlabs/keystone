@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_1bb93615",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 18
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-17T08:35:51Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_801f135a",
+      "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_c0774b9e",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 18
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_9b5a26f1",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-17T08:35:51Z",
+      "side": 0,
+      "message": "\\o/",
+      "parentUuid": "5a2ca52d_c09e6bb8",
+      "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_00b9c32d",
         "filename": "setup.cfg",
         "patchSetId": 18
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_fb6b1a83",
+        "filename": "setup.cfg",
+        "patchSetId": 18
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-17T08:35:51Z",
+      "side": 0,
+      "message": "only SQL is implemented for endpoint filter, I have overrided all of them as not implemented in the next patchset.",
+      "parentUuid": "5a2ca52d_00b9c32d",
+      "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_20b4ff32",
         "filename": "setup.cfg",
         "patchSetId": 18
@@ -81,6 +135,24 @@
       "writtenOn": "2015-10-17T05:16:02Z",
       "side": 0,
       "message": "i don\u0027t think we can get rid of this, it\u0027s used at line 183, we probably just want to point it to\n\n  keystone.catalog.backends.sql:Catalog",
+      "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_9b11c606",
+        "filename": "setup.cfg",
+        "patchSetId": 18
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-17T08:35:51Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_20b4ff32",
       "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
