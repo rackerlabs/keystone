@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_a059ef36",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-17T05:16:02Z",
+      "side": 1,
+      "message": "meh, remove the underscore here\n\n  \"Enable endpoint filtering functionality\"",
+      "revId": "bf8206bcd4ed6a741d39db387c50b76becfe5e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_6040b734",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-17T05:16:02Z",
+      "side": 1,
+      "message": "MITAKA not liberty",
+      "revId": "bf8206bcd4ed6a741d39db387c50b76becfe5e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_004b035a",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-17T05:16:02Z",
+      "side": 1,
+      "message": "i think we\u0027ve been using +1 in the other extensions",
+      "revId": "bf8206bcd4ed6a741d39db387c50b76becfe5e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_606757e9",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-17T05:16:02Z",
+      "side": 1,
+      "message": "same as in sql",
+      "revId": "bf8206bcd4ed6a741d39db387c50b76becfe5e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_006223d8",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-17T05:16:02Z",
+      "side": 1,
+      "message": "same as in  sql",
+      "revId": "bf8206bcd4ed6a741d39db387c50b76becfe5e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
