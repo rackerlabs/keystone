@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_01c3048a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-17T17:52:38Z",
+      "side": 1,
+      "message": "by \"nave\", do you mean \"case\"?",
+      "revId": "75dd8dd2bc764ae434116cd6ea0b1518cd8ed7bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_613af89a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-17T17:52:38Z",
+      "side": 1,
+      "message": "I think this patch doesn\u0027t \"close\" the bug",
+      "revId": "75dd8dd2bc764ae434116cd6ea0b1518cd8ed7bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
