@@ -16,6 +16,24 @@
       "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c5087d2b",
+        "filename": "keystone/common/sql/migrate_repo/versions/084_add_revoke_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-18T13:08:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_eacea8b3",
+      "revId": "491baee5b83c015f31a3d6dbb6d6fb59e3f44851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
