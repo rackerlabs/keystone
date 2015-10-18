@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_8a261415",
+        "filename": "keystone/revoke/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-18T12:51:43Z",
+      "side": 1,
+      "message": "interesting, this is still hanging around.",
+      "revId": "8dbc7d3e2f2c85d26dd1bc5a8179eaac25995b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_4afc7c3e",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-18T12:51:43Z",
+      "side": 1,
+      "message": "nits: keystone.revoke.model.RevocationEvent",
+      "revId": "8dbc7d3e2f2c85d26dd1bc5a8179eaac25995b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
