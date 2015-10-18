@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_467eb4e5",
+        "filename": "keystone/revoke/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-18T18:29:08Z",
+      "side": 1,
+      "message": "yeah, when i last investigated this, we decided to keep the kvs backend around. i moved it to keep things in this patch consistent, but we should determine if we\u0027re keeping it or not (it was deprecated in juno...)",
+      "parentUuid": "3a29b11f_8a261415",
+      "revId": "8dbc7d3e2f2c85d26dd1bc5a8179eaac25995b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_4afc7c3e",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 2
