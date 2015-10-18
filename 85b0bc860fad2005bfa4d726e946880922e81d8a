@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_7e133e5d",
+        "filename": "keystone/common/sql/migrate_repo/versions/086_add_endpoint_groups.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-18T01:35:28Z",
+      "side": 1,
+      "message": "we could move these into 085, no need to have 2 migration scripts",
+      "revId": "85b0bc860fad2005bfa4d726e946880922e81d8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_3e1dc666",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-18T01:35:28Z",
+      "side": 1,
+      "message": "remove from here, set DEFAULT_EXTENSIONS to an empty list",
+      "revId": "85b0bc860fad2005bfa4d726e946880922e81d8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_fe4c2e78",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-18T01:35:28Z",
+      "side": 1,
+      "message": "this would need to be updated if you squashed the migrations",
+      "revId": "85b0bc860fad2005bfa4d726e946880922e81d8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
