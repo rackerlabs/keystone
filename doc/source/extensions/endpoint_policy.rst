@@ -22,14 +22,4 @@ To enable the endpoint policy extension:
 
     [endpoint_policy]
     driver = sql
-
-2. Add the ``endpoint_policy_extension`` policy to the ``api_v3`` pipeline in
-   ``keystone-paste.ini``. This must be added after ``json_body`` and before
-   the last entry in the pipeline. For example::
-
-    [pipeline:api_v3]
-    pipeline = sizelimit url_normalize build_auth_context token_auth admin_token_auth json_body ec2_extension_v3 s3_extension simple_cert_extension revoke_extension service_v3 endpoint_policy_extension service_v3
-
-3. Create the endpoint policy extension tables if using the provided SQL backend. For example::
-
-    ./bin/keystone-manage db_sync --extension endpoint_policy
+    enabled = True
