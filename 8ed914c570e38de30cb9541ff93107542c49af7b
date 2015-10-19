@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_7c76d43f",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-19T08:57:35Z",
+      "side": 0,
+      "message": "same question as with federation migrations - shouldn\u0027t we simply move logic somewhere else?",
+      "revId": "8ed914c570e38de30cb9541ff93107542c49af7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
