@@ -16,6 +16,24 @@
       "revId": "1d0ce11a6dfb25cc703529d16f94a6bc4820a8dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_807245e4",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T18:36:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_e7ad5389",
+      "revId": "1d0ce11a6dfb25cc703529d16f94a6bc4820a8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
