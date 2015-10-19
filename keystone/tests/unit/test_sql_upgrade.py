@@ -643,6 +643,38 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
 
+    def test_add_delegation(self):
+        delegation_table = 'delegation'
+        role_delegation_table = 'role_delegation'
+        self.upgrade(80)
+        self.assertTableExists('role')
+        self.assertTableColumns('role', ['id', 'name', 'extra'])
+        self.assertTableDoesNotExist(delegation_table)
+        self.assertTableDoesNotExist(role_delegation_table)
+        self.upgrade(81)
+        self.assertTableExists(delegation_table)
+        self.assertTableExists(role_delegation_table)
+        self.assertTableColumns(delegation_table,
+                                ['id',
+                                 'trustor_id',
+                                 'impersonation',
+                                 'origins',
+                                 'ancestors',
+                                 'strict',
+                                 'transitive',
+                                 'active',
+                                 'user_id',
+                                 'group_id',
+                                 'project_id',
+                                 'domain_id',
+                                 'inherited',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses'
+                                 ])
+        self.assertTableColumns(role_delegation_table,
+                                ['delegation_id', 'role_id'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
