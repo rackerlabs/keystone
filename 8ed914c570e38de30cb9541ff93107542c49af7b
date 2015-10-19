@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_d917e1a1",
+        "filename": "keystone/oauth1/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-19T15:57:00Z",
+      "side": 1,
+      "message": "it\u0027s needed to load the routes in keystone/version/service.py",
+      "parentUuid": "3a29b11f_78d01d54",
+      "revId": "8ed914c570e38de30cb9541ff93107542c49af7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_f8966d93",
         "filename": "keystone/oauth1/validator.py",
         "patchSetId": 6
