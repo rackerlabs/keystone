@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_82c4865f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_33a2289a",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_73f500eb",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-16T19:03:58Z",
       "side": 1,
       "message": "keystone uses Conflict for the case when the object already exists everywhere else.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_2206d2ce",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_73f500eb",
       "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_62c92a78",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_b30b98d5",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_f3c27052",
         "filename": "keystone/common/sql/migrate_repo/versions/081_add_constraint_endpoint.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-16T19:03:58Z",
       "side": 1,
       "message": "there should be a test that shows what happens if the constraint can\u0027t be added because duplicate entries already exist.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_a5974c8f",
+        "filename": "keystone/common/sql/migrate_repo/versions/081_add_constraint_endpoint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_f3c27052",
       "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_45d43846",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "public is the default interface. We set it to internal, since there already is a public one",
+      "parentUuid": "5a2ca52d_13804cf4",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_b3e398d8",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 6
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_a5c50c8f",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_b3e398d8",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_13ce0c63",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 6
@@ -115,6 +223,24 @@
       "writtenOn": "2015-10-16T19:03:58Z",
       "side": 1,
       "message": "use http_client.BAD_REQUEST for consistency.",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c5c0487f",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T20:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_13ce0c63",
       "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
