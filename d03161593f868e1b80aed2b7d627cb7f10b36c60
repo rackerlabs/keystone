@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_344057a5",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-19T17:04:59Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to make sense when reading; If not the admin, raise an error saying the admin token is not domain-scoped? This could use a comment describing the motive behind using context[\u0027is_admin\u0027] to determine if we\u0027re dealing with the admin token or not.\n\nCouldn\u0027t we also do something like;\n\n    token_id \u003d token_ref[\u0027id\u0027]\n    if CONF.admin_token \u003d\u003d token_id:\n        raise exception.ValidationError()\n\n\nHow does this tie into having the domain in the request body?",
+      "revId": "d03161593f868e1b80aed2b7d627cb7f10b36c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
