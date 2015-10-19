@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_d9bb61c3",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-19T16:00:32Z",
+      "side": 1,
+      "message": "I know it\u0027s good to have different commits for different things, but for some related typos, I think it\u0027s fine to there aren\u0027t many, to be included in one patch.",
+      "parentUuid": "3a29b11f_44b0cff4",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_be2c4b4b",
         "filename": "keystone/credential/backends/sql.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_5924310c",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-19T16:00:32Z",
+      "side": 1,
+      "message": "it\u0027s actually not two filters. SQLAlchemy will combine the two \"filter_by\"s to be one sql statement",
+      "parentUuid": "3a29b11f_be2c4b4b",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_adb0a7f5",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-19T15:48:28Z",
       "side": 1,
       "message": "Why not use _validateCredentialList here instead of the two assertEqual\u0027s bellow?",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_a40e7c32",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-10-19T16:00:32Z",
+      "side": 1,
+      "message": "The point is, with `type\u0027, only credentials whose type is the specified one will be returned, in this case, it\u0027s _one_ credential.\nSo the below two lines are to check that.",
+      "parentUuid": "3a29b11f_adb0a7f5",
       "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
