@@ -107,6 +107,23 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_6352b715",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-10-19T07:28:33Z",
+      "side": 1,
+      "message": "Can\u0027t you use a decorator on the method instead of checking six.PY2 inside the method?\n\n@testtools.skipUnless(six.PY2, \"test specific to Python 2\")",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_354f1894",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 6
