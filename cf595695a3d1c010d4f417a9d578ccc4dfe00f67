@@ -87,6 +87,24 @@
       "revId": "cf595695a3d1c010d4f417a9d578ccc4dfe00f67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_fb488a5d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3716,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-19T18:38:01Z",
+      "side": 1,
+      "message": "actually, we don\u0027t need it. We explicitely set two differente uuids to these variables in lines 3700 and 3704",
+      "parentUuid": "3a29b11f_4523dfbd",
+      "revId": "cf595695a3d1c010d4f417a9d578ccc4dfe00f67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
