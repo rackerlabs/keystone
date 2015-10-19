@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_fbf751f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T05:22:54Z",
+      "side": 1,
+      "message": "i think you must miss it in the patch, pls see one change here: L4772@https://review.openstack.org/#/c/205352/6/keystone/tests/unit/test_backend.py",
+      "parentUuid": "3a29b11f_7555901b",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_f548c089",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-19T04:00:33Z",
       "side": 1,
       "message": "remove this since you removed nose",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_1bd32d3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T05:22:54Z",
+      "side": 1,
+      "message": "I cannot remove this since you know python3 is using nose for testing, see: https://github.com/openstack/keystone/blob/master/tox.ini#L18.\n\nI am not importing nose into testing in every PS of this proposal but just want to slove the issue imported by nose.\n\nSo, we need update the name of some generic method since they have keyword \"test\" in the name of those methods. Or else, nose assume those method is testcases and try to execute it as a testcase. \n\nsee one example here: L2019@https://review.openstack.org/#/c/205352/6/keystone/tests/unit/test_backend.py",
+      "parentUuid": "3a29b11f_f548c089",
       "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_fbaf5192",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T05:22:54Z",
+      "side": 1,
+      "message": "no, i did this change beacuse we are using nose for python3.\n\nsee: https://github.com/openstack/keystone/blob/master/tox.ini#L18",
+      "parentUuid": "3a29b11f_55589456",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_354f1894",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-19T04:00:33Z",
       "side": 1,
       "message": "py3 seems to have UnicodeDecodeError: https://docs.python.org/3/library/exceptions.html#UnicodeDecodeError\n\nor do you mean that no exception is raising, and if so, why?",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_1b824d53",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T05:22:54Z",
+      "side": 1,
+      "message": "acutally, no exception will raise on python3, tbh, I am not sure why this was changed in python3, but this is truelly a difference between python2 and python3 which will break the pytho3 test.",
+      "parentUuid": "3a29b11f_354f1894",
       "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
