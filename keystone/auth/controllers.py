@@ -23,11 +23,11 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.common import config
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import wsgi
-from keystone import config
 from keystone.contrib.federation import constants as federation_constants
 from keystone import exception
 from keystone.i18n import _, _LI, _LW
