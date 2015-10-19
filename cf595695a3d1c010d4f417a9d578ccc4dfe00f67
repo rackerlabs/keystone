@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_eae51aa8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3698,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-19T18:17:18Z",
+      "side": 1,
+      "message": "Why not keep uuid.uuid4().hex.lower() ?",
+      "revId": "cf595695a3d1c010d4f417a9d578ccc4dfe00f67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
