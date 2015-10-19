@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_24d90c22",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T16:09:29Z",
+      "side": 1,
+      "message": "I think there are many people in the community that are willing to argue the opposite.  I am fine with what you have here since it needs to be done, just make sure to put what you are doing here in your commit message.",
+      "parentUuid": "3a29b11f_d9bb61c3",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_be2c4b4b",
         "filename": "keystone/credential/backends/sql.py",
         "patchSetId": 3
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_4473e880",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T16:09:29Z",
+      "side": 1,
+      "message": "That\u0027s really cool.  I did a quick google for it and could not find it anywhere. Do you have a good doc that references that?",
+      "parentUuid": "3a29b11f_5924310c",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_adb0a7f5",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "The point is, with `type\u0027, only credentials whose type is the specified one will be returned, in this case, it\u0027s _one_ credential.\nSo the below two lines are to check that.",
       "parentUuid": "3a29b11f_adb0a7f5",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_24182c1d",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T16:09:29Z",
+      "side": 1,
+      "message": "yes that is right but the one that is returned is in a list, if you look at _validateCredentialList it does the same thing.  Its up to you which you choose I just wanted to let you know that is available.",
+      "parentUuid": "3a29b11f_a40e7c32",
       "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
