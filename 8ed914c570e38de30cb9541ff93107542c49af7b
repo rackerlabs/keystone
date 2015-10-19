@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_78d01d54",
+        "filename": "keystone/oauth1/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T09:54:46Z",
+      "side": 1,
+      "message": "why import routers in this file? does this used anywhere?",
+      "revId": "8ed914c570e38de30cb9541ff93107542c49af7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_f8966d93",
+        "filename": "keystone/oauth1/validator.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T09:54:46Z",
+      "side": 1,
+      "message": "change to \"from keystone import oauth1\" and also in other occurance.",
+      "revId": "8ed914c570e38de30cb9541ff93107542c49af7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_12f8e7e4",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 6
