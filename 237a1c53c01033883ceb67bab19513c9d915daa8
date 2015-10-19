@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_86db611b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-19T08:11:20Z",
+      "side": 1,
+      "message": "This might be better, will update this if there is anything else must be change and I need to sync with dstanek about this patch at first, thanks!",
+      "parentUuid": "3a29b11f_6352b715",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_354f1894",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 6
