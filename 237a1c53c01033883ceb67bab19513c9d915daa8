@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_7555901b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-19T04:00:33Z",
+      "side": 1,
+      "message": "i\u0027m not seeing a change for this",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_f548c089",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-19T04:00:33Z",
+      "side": 1,
+      "message": "remove this since you removed nose",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_55589456",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-19T04:00:33Z",
+      "side": 1,
+      "message": "i think you can undo the changes to this file since you\u0027re not using nose?",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_354f1894",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-19T04:00:33Z",
+      "side": 1,
+      "message": "py3 seems to have UnicodeDecodeError: https://docs.python.org/3/library/exceptions.html#UnicodeDecodeError\n\nor do you mean that no exception is raising, and if so, why?",
+      "revId": "237a1c53c01033883ceb67bab19513c9d915daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
