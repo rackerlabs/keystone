@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_36f61790",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-19T19:07:04Z",
+      "side": 1,
+      "message": "I thought we don\u0027t have to specify port 80 as it is the default port for HTTP.",
+      "revId": "669f6b17adfd8b6297a95f4d855f84193f30a950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_7b5f9a72",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-19T19:07:04Z",
+      "side": 1,
+      "message": "use single quote for strings?\n\nAlso, add one more test with \u0027REQUEST_SCHEME\u0027: \u0027https\u0027 would be awsomer.",
+      "revId": "669f6b17adfd8b6297a95f4d855f84193f30a950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
