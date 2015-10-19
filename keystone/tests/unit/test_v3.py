@@ -264,10 +264,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         # The server adds 'enabled' and defaults to True.
         self.endpoint['enabled'] = True
 
-    def new_ref(self):
-        """Populates a ref with attributes common to some API entities."""
-        return unit.new_ref()
-
     def new_region_ref(self):
         return unit.new_region_ref()
 
