@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_80b9e5eb",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3698,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T18:27:07Z",
+      "side": 1,
+      "message": "It is possible to have a uuid that is all numbers.  It was mentioned by Brant in the previous patch where these tests were implemented.",
+      "parentUuid": "3a29b11f_eae51aa8",
+      "revId": "cf595695a3d1c010d4f417a9d578ccc4dfe00f67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_4523dfbd",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
