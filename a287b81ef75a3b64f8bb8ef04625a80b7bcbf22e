@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_8a7346b1",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-19T17:36:39Z",
+      "side": 1,
+      "message": "should we make it so that this won\u0027t conflict with https://review.openstack.org/#/c/229837/8 ?",
+      "revId": "a287b81ef75a3b64f8bb8ef04625a80b7bcbf22e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
