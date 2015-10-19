@@ -22,12 +22,12 @@ from oslo_log import log
 from oslo_serialization import jsonutils
 import pbr.version
 
+from keystone.common import config
 from keystone.common import driver_hints
 from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
-from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.server import backends
