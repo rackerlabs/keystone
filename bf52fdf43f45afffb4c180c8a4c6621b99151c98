@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_44b0cff4",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T15:48:28Z",
+      "side": 1,
+      "message": "I\u0027m not trying to be a stickler but this isn\u0027t related to this patch.  Could you make another patch for this change?",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_be2c4b4b",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T15:48:28Z",
+      "side": 1,
+      "message": "It looks like you are doing two filters in the same function if someone specifies the type.  To make 1 filter you can do this: \n \nif type:\n    query \u003d query.filter_by(user_id\u003duser_id, type\u003dtype)\nelse:\n    query \u003d query.filter_by(user_id\u003duser_id)\n\n\ninstead of the above 3 lines.",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_adb0a7f5",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T15:48:28Z",
+      "side": 1,
+      "message": "Why not use _validateCredentialList here instead of the two assertEqual\u0027s bellow?",
+      "revId": "bf52fdf43f45afffb4c180c8a4c6621b99151c98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
