@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_3f4035a5",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-10-19T16:26:47Z",
+      "side": 1,
+      "message": "\"from_project\"",
+      "revId": "0bbf4c5b73c4a49a9c8d574b3326d0a16cbf6c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
