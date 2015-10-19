@@ -16,6 +16,23 @@
       "revId": "d948e53c76af35569fb705381ff767a47369ca98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_b988e523",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-19T15:54:53Z",
+      "side": 1,
+      "message": "Also a semicolon after Implements",
+      "revId": "d948e53c76af35569fb705381ff767a47369ca98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
