@@ -23,12 +23,12 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
+from keystone.common import config
 from keystone.common import cache
 from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
-from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.mapping_backends import mapping
