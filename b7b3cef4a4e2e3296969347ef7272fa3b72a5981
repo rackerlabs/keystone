@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_a690dded",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-19T08:26:39Z",
+      "side": 1,
+      "message": "why not keep using constant? Just import it from different localization.",
+      "revId": "b7b3cef4a4e2e3296969347ef7272fa3b72a5981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c113835b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-19T08:26:39Z",
+      "side": 1,
+      "message": "nit: this could go to keystone.federation.constants",
+      "revId": "b7b3cef4a4e2e3296969347ef7272fa3b72a5981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
