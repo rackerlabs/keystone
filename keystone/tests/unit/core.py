@@ -239,28 +239,22 @@ class UnexpectedExit(Exception):
     pass
 
 
-def new_ref():
-    """Populates a ref with attributes common to some API entities."""
+def new_region_ref():
+    return {
+        'id': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'parent_region_id': None,
+    }
+
+
+def new_service_ref():
     return {
         'id': uuid.uuid4().hex,
         'name': uuid.uuid4().hex,
         'description': uuid.uuid4().hex,
-        'enabled': True}
-
-
-def new_region_ref():
-    ref = new_ref()
-    # Region doesn't have name or enabled.
-    del ref['name']
-    del ref['enabled']
-    ref['parent_region_id'] = None
-    return ref
-
-
-def new_service_ref():
-    ref = new_ref()
-    ref['type'] = uuid.uuid4().hex
-    return ref
+        'enabled': True,
+        'type': uuid.uuid4().hex,
+    }
 
 
 NEEDS_REGION_ID = object()
@@ -268,11 +262,16 @@ NEEDS_REGION_ID = object()
 
 def new_endpoint_ref(service_id, interface='public',
                      region_id=NEEDS_REGION_ID, **kwargs):
-    ref = new_ref()
-    del ref['enabled']  # enabled is optional
-    ref['interface'] = interface
-    ref['service_id'] = service_id
-    ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
+
+    ref = {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'interface': interface,
+        'service_id': service_id,
+        'url': 'https://' + uuid.uuid4().hex + '.com',
+    }
+
     if region_id is NEEDS_REGION_ID:
         ref['region_id'] = uuid.uuid4().hex
     elif region_id is None and kwargs.get('region', None) is not None:
@@ -297,38 +296,56 @@ def new_endpoint_ref_with_region(service_id, region, interface='public',
 
 
 def new_domain_ref():
-    ref = new_ref()
-    return ref
+    return {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'enabled': True
+    }
 
 
 def new_project_ref(domain_id=None, parent_id=None, is_domain=False):
-    ref = new_ref()
-    ref['domain_id'] = domain_id
-    ref['parent_id'] = parent_id
-    ref['is_domain'] = is_domain
-    return ref
+    return {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'enabled': True,
+        'domain_id': domain_id,
+        'parent_id': parent_id,
+        'is_domain': is_domain,
+    }
 
 
 def new_user_ref(domain_id, project_id=None):
-    ref = new_ref()
-    ref['domain_id'] = domain_id
-    ref['email'] = uuid.uuid4().hex
-    ref['password'] = uuid.uuid4().hex
+    ref = {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'enabled': True,
+        'domain_id': domain_id,
+        'email': uuid.uuid4().hex,
+        'password': uuid.uuid4().hex,
+    }
     if project_id:
         ref['default_project_id'] = project_id
     return ref
 
 
 def new_group_ref(domain_id):
-    ref = new_ref()
-    ref['domain_id'] = domain_id
-    return ref
+    return {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'enabled': True,
+        'domain_id': domain_id
+    }
 
 
 def new_credential_ref(user_id, project_id=None, cred_type=None):
-    ref = dict()
-    ref['id'] = uuid.uuid4().hex
-    ref['user_id'] = user_id
+    ref = {
+        'id': uuid.uuid4().hex,
+        'user_id': user_id,
+    }
     if cred_type == 'ec2':
         ref['type'] = 'ec2'
         ref['blob'] = uuid.uuid4().hex
@@ -341,32 +358,36 @@ def new_credential_ref(user_id, project_id=None, cred_type=None):
 
 
 def new_role_ref():
-    ref = new_ref()
-    # Roles don't have a description or the enabled flag
-    del ref['description']
-    del ref['enabled']
-    return ref
+    return {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+    }
 
 
 def new_policy_ref():
-    ref = new_ref()
-    ref['blob'] = uuid.uuid4().hex
-    ref['type'] = uuid.uuid4().hex
-    return ref
+    return {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid4().hex,
+        'description': uuid.uuid4().hex,
+        'enabled': True,
+        'blob': uuid.uuid4().hex,
+        'type': uuid.uuid4().hex,
+    }
 
 
 def new_trust_ref(trustor_user_id, trustee_user_id, project_id=None,
                   impersonation=None, expires=None, role_ids=None,
                   role_names=None, remaining_uses=None,
                   allow_redelegation=False):
-    ref = dict()
-    ref['id'] = uuid.uuid4().hex
-    ref['trustor_user_id'] = trustor_user_id
-    ref['trustee_user_id'] = trustee_user_id
-    ref['impersonation'] = impersonation or False
-    ref['project_id'] = project_id
-    ref['remaining_uses'] = remaining_uses
-    ref['allow_redelegation'] = allow_redelegation
+    ref = {
+        'id': uuid.uuid4().hex,
+        'trustor_user_id': trustor_user_id,
+        'trustee_user_id': trustee_user_id,
+        'impersonation': impersonation or False,
+        'project_id': project_id,
+        'remaining_uses': remaining_uses,
+        'allow_redelegation': allow_redelegation,
+    }
 
     if isinstance(expires, six.string_types):
         ref['expires_at'] = expires
