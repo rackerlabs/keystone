@@ -815,6 +815,40 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
 
+    def test_add_delegation(self):
+        delegation_table = 'delegation'
+        role_delegation_table = 'role_delegation'
+        attributes = ['id',
+                      'trustor_id',
+                      'impersonation',
+                      'user_chain',
+                      'delegation_chain',
+                      'strict_ancestry',
+                      'sealed',
+                      'executable',
+                      'inherited_to_projects',
+                      'user_id',
+                      'group_id',
+                      'project_id',
+                      'domain_id',
+                      'deleted_at',
+                      'expires_at',
+                      'remaining_uses'
+                      ]
+
+        self.upgrade(85)
+        self.assertTableExists('role')
+        self.assertTableColumns('role', ['id', 'name', 'extra'])
+        self.assertTableDoesNotExist(delegation_table)
+        self.assertTableDoesNotExist(role_delegation_table)
+
+        self.upgrade(86)
+        self.assertTableExists(delegation_table)
+        self.assertTableExists(role_delegation_table)
+        self.assertTableColumns(delegation_table, attributes)
+        self.assertTableColumns(role_delegation_table,
+                                ['delegation_id', 'role_id'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
