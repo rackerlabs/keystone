@@ -16,6 +16,24 @@
       "revId": "be9731101f9c80026460834563f90436dc4c72dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c4605838",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-19T16:12:14Z",
+      "side": 0,
+      "message": "these all tested the individual migrations that were in the federation repo, since they are being squashed into one, i just created a single test, here: https://review.openstack.org/#/c/234537/8/keystone/tests/unit/test_sql_upgrade.py\n\ni should still create a test here to make sure an exception is raised, refer to: https://review.openstack.org/#/c/171916/19/keystone/tests/unit/test_sql_migrate_extensions.py",
+      "parentUuid": "3a29b11f_2146f723",
+      "revId": "be9731101f9c80026460834563f90436dc4c72dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
