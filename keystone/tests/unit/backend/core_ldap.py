@@ -10,13 +10,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import ldap
+import extras
+ldap = extras.try_import('ldap')
 
 from oslo_config import cfg
 
 from keystone.common import cache
-from keystone.common import ldap as common_ldap
-from keystone.common.ldap import core as common_ldap_core
+common_ldap = extras.try_import('keystone.common.ldap')
+common_ldap_core = extras.try_import('keystone.common.ldap.core')
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import fakeldap

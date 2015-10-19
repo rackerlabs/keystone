@@ -15,15 +15,19 @@ import os
 import tempfile
 import uuid
 
+import extras
 import fixtures
-import ldap.dn
+try:
+    import ldap.dn
+except ImportError:
+    ldap = None
 import mock
 from oslo_config import cfg
 from testtools import matchers
 
 from keystone.common import driver_hints
-from keystone.common import ldap as ks_ldap
-from keystone.common.ldap import core as common_ldap_core
+ks_ldap = extras.try_import('keystone.common.ldap')
+common_ldap_core = extras.try_import('keystone.common.ldap.core')
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import fakeldap

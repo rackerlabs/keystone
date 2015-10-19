@@ -25,21 +25,22 @@ library to work with keystone.
 import re
 import shelve
 
-import ldap
+import extras
+ldap = extras.try_import('ldap')
 from oslo_config import cfg
 from oslo_log import log
 import six
 from six import moves
 
-from keystone.common.ldap import core
+core = extras.try_import('keystone.common.ldap.core')
 from keystone import exception
 
-
-SCOPE_NAMES = {
-    ldap.SCOPE_BASE: 'SCOPE_BASE',
-    ldap.SCOPE_ONELEVEL: 'SCOPE_ONELEVEL',
-    ldap.SCOPE_SUBTREE: 'SCOPE_SUBTREE',
-}
+if ldap is not None:
+    SCOPE_NAMES = {
+        ldap.SCOPE_BASE: 'SCOPE_BASE',
+        ldap.SCOPE_ONELEVEL: 'SCOPE_ONELEVEL',
+        ldap.SCOPE_SUBTREE: 'SCOPE_SUBTREE',
+    }
 
 # http://msdn.microsoft.com/en-us/library/windows/desktop/aa366991(v=vs.85).aspx  # noqa
 CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
@@ -211,7 +212,14 @@ class FakeShelve(dict):
 FakeShelves = {}
 
 
-class FakeLdap(core.LDAPHandler):
+if core is None:
+    class LDAPHandler(object):
+        pass
+else:
+    LDAPHandler = core.LDAPHandler
+
+
+class FakeLdap(LDAPHandler):
     """Emulate the python-ldap API.
 
     The python-ldap API requires all strings to be UTF-8 encoded. This
@@ -543,8 +551,10 @@ class FakeLdap(core.LDAPHandler):
                    timeout=-1, sizelimit=0):
         raise exception.NotImplemented()
 
-    def result3(self, msgid=ldap.RES_ANY, all=1, timeout=None,
+    def result3(self, msgid=None, all=1, timeout=None,
                 resp_ctrl_classes=None):
+        if msgid is None:
+            msgid = ldap.RES_ANY
         raise exception.NotImplemented()
 
 
