@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_945a724f",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-20T05:23:47Z",
+      "side": 1,
+      "message": "change to: https://git.openstack.org/cgit/openstack/sqlalchemy-migrate",
+      "revId": "37636b069324da2384ff4da988d8a4bca5f4f0d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d4478a75",
+        "filename": "keystone/common/sql/migrate_repo/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-20T05:23:47Z",
+      "side": 1,
+      "message": "change to: https://git.openstack.org/cgit/openstack/sqlalchemy-migrate",
+      "revId": "37636b069324da2384ff4da988d8a4bca5f4f0d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
