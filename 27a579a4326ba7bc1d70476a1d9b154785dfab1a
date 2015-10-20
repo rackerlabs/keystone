@@ -70,6 +70,24 @@
       "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_482416ae",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T20:26:55Z",
+      "side": 1,
+      "message": "++ this would be nice to see",
+      "parentUuid": "3a29b11f_cd16f8f0",
+      "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
