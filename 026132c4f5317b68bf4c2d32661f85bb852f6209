@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_837d2fe9",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T21:02:40Z",
+      "side": 1,
+      "message": "marek was talking about this blueprint (implemented in liberty): \n\n  https://blueprints.launchpad.net/keystone/+spec/assertion-extra-attributes\n\nit allows for attributes such as \u0027user_domain_name\u0027 and \u0027project_domain_name\u0027 in the assertion too",
+      "revId": "026132c4f5317b68bf4c2d32661f85bb852f6209",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_6361f338",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T21:02:40Z",
+      "side": 1,
+      "message": "just need to add \"openstack_user_domain\" here too",
+      "revId": "026132c4f5317b68bf4c2d32661f85bb852f6209",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
