@@ -159,20 +159,20 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
         """Test the case when request body is not provided."""
         self._assert_call_entity_method_fails(self.create_entity)
 
-    def test_create_entity_empty_request_body_with_decorator(self):
-        """Test the case when client passing in an empty entity reference."""
-        self._assert_call_entity_method_fails(self.create_entity, entity={})
-
     def test_update_entity_no_request_body_with_decorator(self):
         """Test the case when request body is not provided."""
         self._assert_call_entity_method_fails(self.update_entity,
                                               uuid.uuid4().hex)
 
+    def test_create_entity_empty_request_body_with_decorator(self):
+        """Test the case when request body is not provided."""
+        entity_create.pop('required')
+        self.create_entity(entity={})
+
     def test_update_entity_empty_request_body_with_decorator(self):
-        """Test the case when client passing in an empty entity reference."""
-        self._assert_call_entity_method_fails(self.update_entity,
-                                              uuid.uuid4().hex,
-                                              entity={})
+        """Test the case when request body is not provided."""
+        entity_update.pop('minProperties')
+        self.update_entity(uuid.uuid4().hex, entity={})
 
 
 class EntityValidationTestCase(unit.BaseTestCase):
@@ -905,6 +905,11 @@ class RegionValidationTestCase(unit.BaseTestCase):
     def test_validate_region_create_succeeds_with_extra_parameters(self):
         """Validate create region request with extra values."""
         request_to_validate = {'other_attr': uuid.uuid4().hex}
+        self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_create_succeeds_with_no_parameters(self):
+        """Validate create region request with no parameters."""
+        request_to_validate = {}
         self.create_region_validator.validate(request_to_validate)
 
     def test_validate_region_update_succeeds(self):
