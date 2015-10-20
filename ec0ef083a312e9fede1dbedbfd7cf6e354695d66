@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_d5ae8884",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T16:12:42Z",
+      "side": 1,
+      "message": "I would change these back since they are not related to your patch",
+      "revId": "ec0ef083a312e9fede1dbedbfd7cf6e354695d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
