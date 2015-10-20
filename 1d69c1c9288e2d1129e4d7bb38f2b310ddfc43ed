@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_03511f62",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T21:05:17Z",
+      "side": 1,
+      "message": "can we rename default_region_id to just \u0027region_id\u0027? you can check if region_id is None, and set it to some uuid if it\u0027s None",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_8df2406e",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T21:05:17Z",
+      "side": 1,
+      "message": "according to the docs, only region_id is needed: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#endpoints-v3-endpoints\n\nregion is deprecated, i\u0027d rather just see everything here just be `region_id`",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_0dadd030",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 1
