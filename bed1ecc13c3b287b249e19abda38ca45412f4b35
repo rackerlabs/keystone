@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_a847184a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-20T02:17:46Z",
+      "side": 1,
+      "message": "the second \u0027use\u0027 here is redundant",
+      "revId": "bed1ecc13c3b287b249e19abda38ca45412f4b35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
