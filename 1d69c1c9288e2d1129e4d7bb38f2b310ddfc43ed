@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_8afa1f42",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-10-20T23:17:01Z",
+      "side": 1,
+      "message": "I would be ok with it if it is within scope.\n\nAs for None v. UUID that is going to be interesting. There is test code which fails if both region and region_id are set. Some want one or the other. That is why I added the \u0027region\u0027 below. It got rid of a bunch of special cased code.",
+      "parentUuid": "3a29b11f_03511f62",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_8df2406e",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-20T21:05:17Z",
       "side": 1,
       "message": "according to the docs, only region_id is needed: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#endpoints-v3-endpoints\n\nregion is deprecated, i\u0027d rather just see everything here just be `region_id`",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_0a9daf09",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-10-20T23:17:01Z",
+      "side": 1,
+      "message": "I am willing to try and fix the broken tests then.",
+      "parentUuid": "3a29b11f_8df2406e",
       "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
