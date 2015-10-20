@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_6da244b0",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-20T20:06:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_81b772d7",
+      "revId": "43459d477be856d506014facbb68cbfe1b580562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_21ce9e5a",
         "filename": "doc/source/services.rst",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-10-20T17:28:33Z",
       "side": 1,
       "message": "As a follow up, we should add a section here about policy.json and whether or not it needs to be updated if you\u0027re using v3 (common mistake by folks is to assume they need to change it)",
+      "revId": "43459d477be856d506014facbb68cbfe1b580562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_cded98f0",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-20T20:06:59Z",
+      "side": 1,
+      "message": "this isn\u0027t a doc for how to set up keystone, it\u0027s for developers in other services to use keystone. docs for how to set up keystone don\u0027t belong in this doc.",
+      "parentUuid": "3a29b11f_21ce9e5a",
       "revId": "43459d477be856d506014facbb68cbfe1b580562",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
