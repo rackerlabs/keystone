@@ -19,7 +19,7 @@ from keystone import exception
 from keystone.i18n import _
 
 
-def validated(request_body_schema, resource_to_validate):
+def validated(request_body_schema, resource_to_validate, allow_empty=False):
     """Register a schema to validate a resource reference.
 
     Registered schema will be used for validating a request body just before
@@ -27,9 +27,11 @@ def validated(request_body_schema, resource_to_validate):
 
     :param request_body_schema: a schema to validate the resource reference
     :param resource_to_validate: the reference to validate
+    :param bool allow_empty: specify ``True`` if no request body or the
+        request body pass an empty dict is allowed. Default: ``False``.
     :raises keystone.exception.ValidationError: if `resource_to_validate` is
-            not passed by or passed with an empty value (see wrapper method
-            below).
+            not passed or passed with an empty value but not allowed by the
+            API (see wrapper method below).
     :raises TypeError: at decoration time when the expected resource to
                        validate isn't found in the decorated method's
                        signature
@@ -54,20 +56,20 @@ def validated(request_body_schema, resource_to_validate):
             else:
                 try:
                     resource = args[arg_index]
-                    # If resource to be validated is empty, no need to do
-                    # validation since the message given by jsonschema doesn't
-                    # help in this case.
                     if resource:
                         schema_validator.validate(resource)
                     else:
                         raise exception.ValidationError(
                             attribute=resource_to_validate,
                             target='request body')
-                # We cannot find the resource neither from kwargs nor args.
                 except IndexError:
-                    raise exception.ValidationError(
-                        attribute=resource_to_validate,
-                        target='request body')
+                    # No need to do validation if allow_empty is specified to
+                    # True, any valid request body (request body is neither
+                    # None nor empty) cannot be here.
+                    if not allow_empty:
+                        raise exception.ValidationError(
+                            attribute=resource_to_validate,
+                            target='request body')
             return func(*args, **kwargs)
         return wrapper
     return add_validator
