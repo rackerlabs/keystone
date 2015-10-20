@@ -217,9 +217,11 @@ class RegionV3(controller.V3Controller):
         return self.create_region(context, region)
 
     @controller.protected()
-    @validation.validated(schema.region_create, 'region')
-    def create_region(self, context, region):
-        ref = self._normalize_dict(region)
+    @validation.validated(schema.region_create, 'region', allow_empty=True)
+    def create_region(self, context, region=None):
+        ref = {}
+        if region:
+            ref = self._normalize_dict(region)
 
         if not ref.get('id'):
             ref = self._assign_unique_id(ref)

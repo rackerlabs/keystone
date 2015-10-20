@@ -127,6 +127,10 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
     def update_entity(self, entity_id, entity):
         pass
 
+    @validation.validated(entity_create, 'entity', allow_empty=True)
+    def create_entity_allow_empty(self, entity=None):
+        pass
+
     def _assert_call_entity_method_fails(self, method, *args, **kwargs):
         e = self.assertRaises(exception.ValidationError, method,
                               *args, **kwargs)
@@ -174,6 +178,12 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
         self._assert_call_entity_method_fails(self.update_entity,
                                               uuid.uuid4().hex,
                                               entity={})
+
+    def test_create_entity_empty_resource_pass_validation(self):
+        self.create_entity_allow_empty(entity={})
+
+    def test_create_entity_no_request_body_pass_validation(self):
+        self.create_entity_allow_empty()
 
 
 class EntityValidationTestCase(unit.BaseTestCase):
