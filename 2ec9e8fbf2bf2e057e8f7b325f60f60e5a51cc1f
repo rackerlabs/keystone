@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_28e8bab3",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-10-20T20:37:51Z",
+      "side": 1,
+      "message": "Maybe more clear and DRY like this:\n\ntry:\n    socket.inet_aton(san)\n    san_type \u003d \u0027IP\u0027  # san is a valid IP address\nexcept socket.error:\n   # assume san to be FQDN\n    san_type \u003d \u0027DNS\u0027\n\nsan_block \u003d (\u0027%s%s \u003d %s\\n\u0027 %\n                      (san_block,\n\t\t      (\u0027%s.%s\u0027 % (san_type, subject_alt_names.index(san))), san))",
+      "revId": "2ec9e8fbf2bf2e057e8f7b325f60f60e5a51cc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_07bb1810",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 8
