@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_e4ae6ae5",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-10-20T21:58:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_837d2fe9",
+      "revId": "026132c4f5317b68bf4c2d32661f85bb852f6209",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_6361f338",
         "filename": "doc/source/mapping_combinations.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-20T21:02:40Z",
       "side": 1,
       "message": "just need to add \"openstack_user_domain\" here too",
+      "revId": "026132c4f5317b68bf4c2d32661f85bb852f6209",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_449ddeba",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-10-20T21:58:27Z",
+      "side": 1,
+      "message": "Done, but how does openstack_user_domain work when tied into here. What does it affect?",
+      "parentUuid": "3a29b11f_6361f338",
       "revId": "026132c4f5317b68bf4c2d32661f85bb852f6209",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
