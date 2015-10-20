@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_41ff1a67",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T17:28:33Z",
+      "side": 1,
+      "message": "Maybe we should change this title into something snappier...",
+      "revId": "43459d477be856d506014facbb68cbfe1b580562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_81b772d7",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T17:28:33Z",
+      "side": 1,
+      "message": "which are* only",
+      "revId": "43459d477be856d506014facbb68cbfe1b580562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_21ce9e5a",
+        "filename": "doc/source/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T17:28:33Z",
+      "side": 1,
+      "message": "As a follow up, we should add a section here about policy.json and whether or not it needs to be updated if you\u0027re using v3 (common mistake by folks is to assume they need to change it)",
+      "revId": "43459d477be856d506014facbb68cbfe1b580562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
