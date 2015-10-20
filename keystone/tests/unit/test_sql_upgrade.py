@@ -358,18 +358,18 @@ class SqlUpgradeTests(SqlMigrateBase):
             return service_id
 
         def add_endpoint(service_id, region):
-            endpoint_id = uuid.uuid4().hex
-
+            # Make a older style endpoint by hand
             endpoint = {
-                'id': endpoint_id,
+                'id': uuid.uuid4().hex,
                 'interface': uuid.uuid4().hex[:8],
                 'service_id': service_id,
                 'url': uuid.uuid4().hex,
                 'region': region
             }
+
             self.insert_dict(session, 'endpoint', endpoint)
 
-            return endpoint_id
+            return endpoint['id']
 
         _service_id_ = add_service()
         add_endpoint(_service_id_, region=_long_region_name)

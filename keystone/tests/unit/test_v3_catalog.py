@@ -806,15 +806,7 @@ class TestCatalogAPISQL(unit.TestCase):
         self.config_fixture.config(group='catalog', driver='sql')
 
     def new_endpoint_ref(self, service_id):
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'interface': uuid.uuid4().hex[:8],
-            'service_id': service_id,
-            'url': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
-        }
+        return unit.new_endpoint_ref(service_id=service_id)
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
         user_id = uuid.uuid4().hex
@@ -907,15 +899,8 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         self.config_fixture.config(group='catalog', driver='sql')
 
     def new_endpoint_ref(self, service_id):
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'interface': uuid.uuid4().hex[:8],
-            'service_id': service_id,
-            'url': uuid.uuid4().hex,
-            'region_id': uuid.uuid4().hex,
-        }
+        return unit.new_endpoint_ref(service_id=service_id,
+                                     default_region_id=uuid.uuid4().hex)
 
     def test_get_catalog_returns_proper_endpoints_with_no_region(self):
         service_id = uuid.uuid4().hex

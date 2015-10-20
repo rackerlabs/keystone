@@ -309,16 +309,9 @@ class TestV2CatalogAPISQL(unit.TestCase):
         super(TestV2CatalogAPISQL, self).config_overrides()
         self.config_fixture.config(group='catalog', driver='sql')
 
-    def new_endpoint_ref(self, service_id):
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'interface': uuid.uuid4().hex[:8],
-            'service_id': service_id,
-            'url': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
-        }
+    def new_endpoint_ref(self, service_id, **kwargs):
+        return unit.new_endpoint_ref(service_id=service_id,
+                                     **kwargs)
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
         user_id = uuid.uuid4().hex
@@ -331,13 +324,14 @@ class TestV2CatalogAPISQL(unit.TestCase):
         self.assertEqual(1, len(self.catalog_api.list_endpoints()))
 
         # create a new, invalid endpoint - malformed type declaration
-        endpoint = self.new_endpoint_ref(self.service_id)
-        endpoint['url'] = 'http://keystone/%(tenant_id)'
+        endpoint = self.new_endpoint_ref(self.service_id,
+                                         url='http://keystone/%(tenant_id)')
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
         # create a new, invalid endpoint - nonexistent key
-        endpoint = self.new_endpoint_ref(self.service_id)
-        endpoint['url'] = 'http://keystone/%(you_wont_find_me)s'
+        endpoint = self.new_endpoint_ref(
+            self.service_id,
+            url='http://keystone/%(you_wont_find_me)s')
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
         # verify that the invalid endpoints don't appear in the catalog

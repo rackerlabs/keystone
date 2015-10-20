@@ -254,6 +254,7 @@ def new_endpoint_ref(service_id, interface='public', default_region_id=None,
     ref['interface'] = interface
     ref['service_id'] = service_id
     ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
+    ref['region'] = uuid.uuid4().hex
     ref['region_id'] = default_region_id
     ref.update(kwargs)
     return ref
