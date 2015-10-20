@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_0dadd030",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T20:52:28Z",
+      "side": 1,
+      "message": "why even have this function anymore? Why not just call unit.new_endpoint_ref directly?  It looks like you would be changing 3 more function calls in this file.",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_4345d714",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T20:52:28Z",
+      "side": 1,
+      "message": "I don\u0027t think this comment explains much and it can probably be removed.",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d28f73ca",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T20:52:28Z",
+      "side": 1,
+      "message": "This change is irrelevant",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
