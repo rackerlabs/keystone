@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_049da609",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-20T22:10:24Z",
+      "side": 1,
+      "message": "same as below, and this is a private method",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_44971eec",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-20T22:10:24Z",
+      "side": 1,
+      "message": "? This does not impact the rendered output.\n\nOriginal: http://docs.openstack.org/developer/keystone/api/keystone.token.providers.fernet.html#keystone.token.providers.fernet.core.Provider.validate_v3_token\n\nThis patchset: http://docs-draft.openstack.org/81/234881/4/check/gate-keystone-docs/9aef689//doc/build/html/api/keystone.token.providers.fernet.html#keystone.token.providers.fernet.core.Provider.validate_v3_token",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c48b2ec2",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-10-20T22:10:24Z",
+      "side": 1,
+      "message": "+1",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
