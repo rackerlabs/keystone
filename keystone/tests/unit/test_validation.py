@@ -138,9 +138,14 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
     def test_calling_create_with_invalid_entity_kwarg_fails(self):
         self.create_entity(entity=self.invalid_entity)
 
-    @expected_validation_failure
-    def test_calling_create_with_empty_entity_kwarg_fails(self):
+    def test_calling_create_with_empty_entity_kwarg_succeeds(self):
+        """Test the case when client passing in an empty entity reference."""
+        global entity_create
+        original_entity_create = entity_create.copy()
+        # pop 'required' from schema so that empty body is allowed.
+        entity_create.pop('required')
         self.create_entity(entity={})
+        entity_create = original_entity_create
 
     @expected_validation_failure
     def test_calling_create_with_kwarg_as_None_fails(self):
@@ -179,9 +184,14 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
     def test_calling_update_with_valid_entity_succeeds(self):
         self.update_entity(uuid.uuid4().hex, self.valid_entity)
 
-    @expected_validation_failure
-    def test_calling_update_with_invalid_entity_fails(self):
-        self.update_entity(uuid.uuid4().hex, self.invalid_entity)
+    def test_calling_update_with_empty_entity_kwarg_succeeds(self):
+        """Test the case when client passing in an empty entity reference."""
+        global entity_update
+        original_entity_update = entity_update.copy()
+        # pop 'minProperties' from schema so that empty body is allowed.
+        entity_update.pop('minProperties')
+        self.update_entity(uuid.uuid4().hex, entity={})
+        entity_update = original_entity_update
 
 
 class EntityValidationTestCase(unit.BaseTestCase):
@@ -914,6 +924,11 @@ class RegionValidationTestCase(unit.BaseTestCase):
     def test_validate_region_create_succeeds_with_extra_parameters(self):
         """Validate create region request with extra values."""
         request_to_validate = {'other_attr': uuid.uuid4().hex}
+        self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_create_succeeds_with_no_parameters(self):
+        """Validate create region request with no parameters."""
+        request_to_validate = {}
         self.create_region_validator.validate(request_to_validate)
 
     def test_validate_region_update_succeeds(self):
