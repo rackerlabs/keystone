@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_b293e24e",
+        "filename": "examples/pki/gen_pki.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T16:02:27Z",
+      "side": 1,
+      "message": "Doing some digging on specs it looks like bashate is looking for line length of 79. https://github.com/openstack-dev/bashate/tree/master/bashate/tests/samples\n\nThis line is 80\n\nI don\u0027t know how this passes, maybe bashate needs some unit tests :p",
+      "revId": "3aec6f67346052390dea7bc28a30e38383248957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
