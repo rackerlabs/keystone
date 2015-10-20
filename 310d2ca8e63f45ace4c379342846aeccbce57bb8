@@ -16,6 +16,24 @@
       "revId": "310d2ca8e63f45ace4c379342846aeccbce57bb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_7bf765f5",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-10-20T16:43:20Z",
+      "side": 1,
+      "message": "Whoops.",
+      "parentUuid": "3a29b11f_d8079f1a",
+      "revId": "310d2ca8e63f45ace4c379342846aeccbce57bb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
