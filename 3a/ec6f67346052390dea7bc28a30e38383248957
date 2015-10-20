@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+1: Gonzalo De La Torre <gonzalo_delatorre@live.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 20 Oct 2015 20:38:57 +0000
+Reviewed-on: https://review.openstack.org/237644
+Project: openstack/keystone
+Branch: refs/heads/master
