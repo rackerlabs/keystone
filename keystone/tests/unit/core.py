@@ -247,15 +247,35 @@ def new_service_ref():
     return ref
 
 
-def new_endpoint_ref(service_id, interface='public', default_region_id=None,
-                     **kwargs):
+class BogusRegionId(object):
+    pass
+
+
+bogus_region_id = BogusRegionId()
+
+
+def new_endpoint_ref(service_id, interface='public',
+                     region_id=bogus_region_id, **kwargs):
     ref = new_ref()
     del ref['enabled']  # enabled is optional
     ref['interface'] = interface
     ref['service_id'] = service_id
     ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
-    ref['region_id'] = default_region_id
+    if region_id is bogus_region_id:
+        ref['region_id'] = uuid.uuid4().hex
+    elif region_id is None and kwargs.get('region', None) is not None:
+        raise NotImplementedError("use new_endpoint_ref_with_region")
+    else:
+        ref['region_id'] = region_id
     ref.update(kwargs)
+    return ref
+
+
+def new_endpoint_ref_with_region(service_id, region, interface='public',
+                                 **kwargs):
+    ref = new_endpoint_ref(service_id, interface, region=region,
+                           region_id='invalid', **kwargs)
+    del ref['region_id']
     return ref
 
 
