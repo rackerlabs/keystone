@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_e693ee4d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-20T12:13:15Z",
+      "side": 1,
+      "message": "I\u0027d advise against using tabs",
+      "revId": "ea72b8d3eaeb6bc7c8e0a6dc7e0a89c8eee77999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c6def210",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-20T12:13:15Z",
+      "side": 1,
+      "message": "Although it\u0027s true it\u0027s not implemented, I think BadRequest is probably a better error.",
+      "revId": "ea72b8d3eaeb6bc7c8e0a6dc7e0a89c8eee77999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
