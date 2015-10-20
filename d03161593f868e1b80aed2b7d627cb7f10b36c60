@@ -16,6 +16,24 @@
       "revId": "d03161593f868e1b80aed2b7d627cb7f10b36c60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_f49ba6c7",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-10-20T04:39:26Z",
+      "side": 1,
+      "message": "\u003e If not the admin, raise an error saying the admin token is not domain-scoped?\nYou are reading it wrong. It is the other way around; if it *is* the admin token, raise an error ....\n\n\n\u003e This could use a comment describing the motive behind using context[\u0027is_admin\u0027] to determine if we\u0027re dealing with the admin token or not.\nUsing context seems to be the most common way. This file itself has 3 other instances of its usage.\n\n\n\u003e Couldn\u0027t we also do something like ...\nThat is how context[\u0027is_admin\u0027] is set in the first place in AdminTokenAuthMiddleware. Better not to dupe this logic. AFAICS, all checks for \"is it the admin token\" in the keystone codebase use context[\u0027is_admin\u0027].\n\n\n\u003e How does this tie into having the domain in the request body?\nIf the domain is specified in the body, execution flow never uses this code path. It is only when it is not provided, do we come here trying to get the token\u0027s domain. Since the admin_token is not a real token, we need to handle it explicitly and as the first step, which is what I do. I did not put this explanation along with my code change since the method doc says as much.",
+      "parentUuid": "3a29b11f_344057a5",
+      "revId": "d03161593f868e1b80aed2b7d627cb7f10b36c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
