@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_9e04a4c0",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-20T21:24:31Z",
+      "side": 1,
+      "message": "thanks :)",
+      "revId": "49fccd78041dd56ec344faf0e62c5990a230f31c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
