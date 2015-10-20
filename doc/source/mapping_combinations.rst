@@ -594,4 +594,48 @@ global username mapping.
         ]
     }
 
+Keystone to Keystone
+--------------------
 
+Keystone to Keystone federation also utilizes mappings, but has some
+differences.
+
+An attribute file (/etc/shibboleth/attribute-map.xml) is used to add
+attributes to the Keystone Identity Provider. An attribute looks like:
+``<Attribute name="openstack_user" id="openstack_user"/>``. alist of
+possible attributes can be found here:
+https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/idp.py#L166
+
+The Keystone Service Provider must contain a mapping as shown below.
+``"type": "openstack_user"`` matches to the attribute name we have in
+the Identity Provider. It will map any user of with the name ``user1``
+or ``admin`` in the ``openstack_user`` attribute to a group with id
+``abc1234`` or a user with name ``federated_user``.
+
+.. code-block:: javascript
+
+    {
+        rules = [
+            {
+                "local": [
+                    {
+                        "user": {
+                            "name": "federated_user"
+                        },
+                        "group": {
+                            "id": "abc1234"
+                        }
+                    }
+                ],
+                "remote": [
+                    {
+                        "type": "openstack_user",
+                        "any_one_of": [
+                            "user1",
+                            "admin"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
