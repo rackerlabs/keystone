@@ -273,6 +273,18 @@ class CoreApiTests(object):
             token=token)
         self.assertValidRoleListResponse(r)
 
+    def test_get_user_roles_without_tenant(self):
+        token = self.get_scoped_token()
+        if self.tenant_bar['id']:
+            return
+        self.admin_request(
+            method='GET',
+            path='/2.0/tenants/%(tenant_id)s/users/%(user_id)s/roles' % {
+                'tenant_id': None,
+                'user_id': self.user_foo['id'],
+            },
+            token=token, expected_status=http_client.NOT_IMPLEMENTED)
+     
     def test_get_user(self):
         token = self.get_scoped_token()
         r = self.admin_request(
@@ -281,7 +293,7 @@ class CoreApiTests(object):
             },
             token=token)
         self.assertValidUserResponse(r)
-
+    
     def test_get_user_by_name(self):
         token = self.get_scoped_token()
         r = self.admin_request(
