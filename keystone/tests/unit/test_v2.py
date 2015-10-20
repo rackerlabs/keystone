@@ -273,6 +273,10 @@ class CoreApiTests(object):
             token=token)
         self.assertValidRoleListResponse(r)
 
+    def test_get_user_roles_without_tenant(self):
+        tenant_id = self.tenant_bar['id']
+        self.assertRaises(TypeError, self.resource_api.get_project, tenant_id)
+ 
     def test_get_user(self):
         token = self.get_scoped_token()
         r = self.admin_request(
