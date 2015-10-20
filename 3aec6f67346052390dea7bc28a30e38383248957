@@ -16,6 +16,24 @@
       "revId": "3aec6f67346052390dea7bc28a30e38383248957",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d563e8da",
+        "filename": "examples/pki/gen_pki.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T16:04:55Z",
+      "side": 1,
+      "message": "\u0027Line longer than 79 characters\u0027 - docs\n\nI was wrong. This line is good.",
+      "parentUuid": "3a29b11f_b293e24e",
+      "revId": "3aec6f67346052390dea7bc28a30e38383248957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
