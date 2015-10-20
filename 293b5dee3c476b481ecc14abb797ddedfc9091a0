@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_91504460",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T04:16:29Z",
+      "side": 1,
+      "message": "need to import logging and oslo_log",
+      "revId": "293b5dee3c476b481ecc14abb797ddedfc9091a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
