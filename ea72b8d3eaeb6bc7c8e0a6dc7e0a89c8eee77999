@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_a7640d22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T14:06:34Z",
+      "side": 1,
+      "message": "Here is a good doc I base my commit message format on: \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages\n\n\nIf this does need to be back ported just; \ncheckout the branch your back porting too\n\nand \n\ngit-review -X gerrit-id\n\n# This will automatically add the cherry pick tag in your commit message.",
+      "parentUuid": "3a29b11f_74c1c47f",
+      "revId": "ea72b8d3eaeb6bc7c8e0a6dc7e0a89c8eee77999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_e693ee4d",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
