@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_ade3aa32",
+        "filename": "keystone/oauth1/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-20T01:46:02Z",
+      "side": 1,
+      "message": "Get it, thanks for the explanation.",
+      "parentUuid": "3a29b11f_d917e1a1",
+      "revId": "8ed914c570e38de30cb9541ff93107542c49af7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_f8966d93",
         "filename": "keystone/oauth1/validator.py",
         "patchSetId": 6
