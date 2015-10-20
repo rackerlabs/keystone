@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_3eaf9095",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-20T21:27:25Z",
+      "side": 1,
+      "message": "how come this was only caught by python 3.4 tests?",
+      "revId": "0657584e0396371c79ebbe5b9992a2198cb5e93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
