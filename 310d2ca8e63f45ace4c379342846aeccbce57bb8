@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_d8079f1a",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2015-10-20T16:40:49Z",
+      "side": 1,
+      "message": "Surely you cannot map to a user OR a group in the JSON. The JSON should contain one or the other.",
+      "revId": "310d2ca8e63f45ace4c379342846aeccbce57bb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
