@@ -52,6 +52,24 @@
       "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_cd16f8f0",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-10-20T20:04:30Z",
+      "side": 1,
+      "message": "But why assign to url twice? Why not\n\nurl \u003d cls.base_url(context, path) % {",
+      "parentUuid": "9aa53dc9_3e6adc81",
+      "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
