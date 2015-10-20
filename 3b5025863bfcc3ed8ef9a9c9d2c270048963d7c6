@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_bbcbbd1d",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-20T16:51:33Z",
+      "side": 1,
+      "message": "space",
+      "revId": "3b5025863bfcc3ed8ef9a9c9d2c270048963d7c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_3bd80def",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-20T16:51:33Z",
+      "side": 1,
+      "message": "afair we also issue user\u0027s domain.",
+      "revId": "3b5025863bfcc3ed8ef9a9c9d2c270048963d7c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
