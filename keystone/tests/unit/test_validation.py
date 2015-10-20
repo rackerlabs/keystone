@@ -158,21 +158,34 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
     def test_create_entity_no_request_body_with_decorator(self):
         """Test the case when request body is not provided."""
         self._assert_call_entity_method_fails(self.create_entity)
+        self._assert_call_entity_method_fails(self.create_entity,
+                                              None)
 
     def test_create_entity_empty_request_body_with_decorator(self):
         """Test the case when client passing in an empty entity reference."""
-        self._assert_call_entity_method_fails(self.create_entity, entity={})
+        global entity_create
+        original_entity_create = entity_create.copy()
+        # pop 'required' from schema so that empty body is allowed.
+        entity_create.pop('required')
+        self.create_entity(entity={})
+        entity_create = original_entity_create
 
     def test_update_entity_no_request_body_with_decorator(self):
         """Test the case when request body is not provided."""
         self._assert_call_entity_method_fails(self.update_entity,
                                               uuid.uuid4().hex)
+        self._assert_call_entity_method_fails(self.update_entity,
+                                              uuid.uuid4().hex,
+                                              None)
 
     def test_update_entity_empty_request_body_with_decorator(self):
         """Test the case when client passing in an empty entity reference."""
-        self._assert_call_entity_method_fails(self.update_entity,
-                                              uuid.uuid4().hex,
-                                              entity={})
+        global entity_update
+        original_entity_update = entity_update.copy()
+        # pop 'minProperties' from schema so that empty body is allowed.
+        entity_update.pop('minProperties')
+        self.update_entity(uuid.uuid4().hex, entity={})
+        entity_update = original_entity_update
 
 
 class EntityValidationTestCase(unit.BaseTestCase):
@@ -905,6 +918,11 @@ class RegionValidationTestCase(unit.BaseTestCase):
     def test_validate_region_create_succeeds_with_extra_parameters(self):
         """Validate create region request with extra values."""
         request_to_validate = {'other_attr': uuid.uuid4().hex}
+        self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_create_succeeds_with_no_parameters(self):
+        """Validate create region request with no parameters."""
+        request_to_validate = {}
         self.create_region_validator.validate(request_to_validate)
 
     def test_validate_region_update_succeeds(self):
