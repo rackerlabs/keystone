@@ -38,6 +38,7 @@ LOG = log.getLogger(__name__)
 
 @dependency.requires('assignment_api', 'identity_api', 'token_provider_api')
 class TenantAssignment(controller.V2Controller):
+
     """The V2 Project APIs that are processing assignments."""
 
     @controller.v2_deprecated
@@ -83,6 +84,7 @@ class TenantAssignment(controller.V2Controller):
 
 @dependency.requires('assignment_api', 'role_api')
 class Role(controller.V2Controller):
+
     """The Role management APIs."""
 
     @controller.v2_deprecated
@@ -126,6 +128,7 @@ class Role(controller.V2Controller):
 
 @dependency.requires('assignment_api', 'resource_api', 'role_api')
 class RoleAssignmentV2(controller.V2Controller):
+
     """The V2 Role APIs that are processing assignments."""
 
     # COMPAT(essex-3)
@@ -138,6 +141,9 @@ class RoleAssignmentV2(controller.V2Controller):
 
         """
         self.assert_admin(context)
+        if tenant_id is None:
+            raise exception.NotImplemented(
+                message=_('User roles not supported: tenant_id required'))
         roles = self.assignment_api.get_roles_for_user_and_project(
             user_id, tenant_id)
         return {'roles': [self.role_api.get_role(x)
@@ -252,6 +258,7 @@ class RoleAssignmentV2(controller.V2Controller):
 
 @dependency.requires('assignment_api', 'resource_api')
 class ProjectAssignmentV3(controller.V3Controller):
+
     """The V3 Project APIs that are processing assignments."""
 
     collection_name = 'projects'
@@ -271,6 +278,7 @@ class ProjectAssignmentV3(controller.V3Controller):
 
 @dependency.requires('role_api')
 class RoleV3(controller.V3Controller):
+
     """The V3 Role CRUD APIs."""
 
     collection_name = 'roles'
@@ -326,6 +334,7 @@ class RoleV3(controller.V3Controller):
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',
                      'role_api')
 class GrantAssignmentV3(controller.V3Controller):
+
     """The V3 Grant Assignment APIs."""
 
     collection_name = 'roles'
@@ -438,6 +447,7 @@ class GrantAssignmentV3(controller.V3Controller):
 
 @dependency.requires('assignment_api', 'identity_api', 'resource_api')
 class RoleAssignmentV3(controller.V3Controller):
+
     """The V3 Role Assignment APIs, really just list_role_assignment()."""
 
     # TODO(henry-nash): The current implementation does not provide a full
