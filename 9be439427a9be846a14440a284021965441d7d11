@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_832a0f7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T20:46:34Z",
+      "side": 1,
+      "message": "change this to:\n\n  Closes-Bug: #1507920",
+      "revId": "9be439427a9be846a14440a284021965441d7d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_63001302",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-20T20:46:34Z",
+      "side": 1,
+      "message": "undo these unrelated changes to docstrings",
+      "revId": "9be439427a9be846a14440a284021965441d7d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_f58f04ca",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
