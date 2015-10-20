@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_0d3cf02d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-20T20:15:01Z",
+      "side": 1,
+      "message": "lowercase keystone to match the openstack style guide. Also, see next line too.",
+      "revId": "bed1ecc13c3b287b249e19abda38ca45412f4b35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_a847184a",
         "filename": "keystone/exception.py",
         "patchSetId": 19
@@ -13,6 +30,40 @@
       "writtenOn": "2015-10-20T02:17:46Z",
       "side": 1,
       "message": "the second \u0027use\u0027 here is redundant",
+      "revId": "bed1ecc13c3b287b249e19abda38ca45412f4b35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_6d7a44f3",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-20T20:15:01Z",
+      "side": 1,
+      "message": "the \"1\" magic number should be given a name. (I assume it\u0027s the version.)",
+      "revId": "bed1ecc13c3b287b249e19abda38ca45412f4b35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_0d6ab01a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-20T20:15:01Z",
+      "side": 1,
+      "message": "there should also be a test for the case when the original migrations were run so the table does exist.\n\nIt doesn\u0027t matter whether it\u0027s easy or not. We could leave the old code there so that the extension migration could be run, just set a global variable or mock to enable it.",
       "revId": "bed1ecc13c3b287b249e19abda38ca45412f4b35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
