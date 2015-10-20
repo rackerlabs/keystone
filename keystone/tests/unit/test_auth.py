@@ -1334,17 +1334,11 @@ class AuthCatalog(unit.SQLDriverOverrides, AuthTest):
             return ref
 
         def create_endpoint(service_id, region, **kwargs):
-            id_ = uuid.uuid4().hex
-            ref = {
-                'id': id_,
-                'interface': 'public',
-                'region_id': region,
-                'service_id': service_id,
-                'url': 'http://localhost/%s' % uuid.uuid4().hex,
-            }
-            ref.update(kwargs)
-            self.catalog_api.create_endpoint(id_, ref)
-            return ref
+            endpoint = unit.new_endpoint_ref(region_id=region,
+                                             service_id=service_id, **kwargs)
+
+            self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+            return endpoint
 
         # Create a service for use with the endpoints.
         def create_service(**kwargs):
@@ -1392,13 +1386,9 @@ class AuthCatalog(unit.SQLDriverOverrides, AuthTest):
         self.assertEqual(
             1, len(token['access']['serviceCatalog'][0]['endpoints']))
 
-        exp_endpoint = {
-            'id': endpoint_ref['id'],
-            'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region_id'],
-        }
-
-        self.assertEqual(exp_endpoint, endpoint)
+        self.assertEqual(endpoint_ref['id'], endpoint['id'])
+        self.assertEqual(endpoint_ref['url'], endpoint['publicURL'])
+        self.assertEqual(endpoint_ref['region_id'], endpoint['region'])
 
     def test_validate_catalog_disabled_endpoint(self):
         """On validate, get back a catalog that excludes disabled endpoints."""
@@ -1424,13 +1414,9 @@ class AuthCatalog(unit.SQLDriverOverrides, AuthTest):
         self.assertEqual(
             1, len(token['access']['serviceCatalog'][0]['endpoints']))
 
-        exp_endpoint = {
-            'id': endpoint_ref['id'],
-            'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region_id'],
-        }
-
-        self.assertEqual(exp_endpoint, endpoint)
+        self.assertEqual(endpoint_ref['id'], endpoint['id'])
+        self.assertEqual(endpoint_ref['url'], endpoint['publicURL'])
+        self.assertEqual(endpoint_ref['region_id'], endpoint['region'])
 
 
 class NonDefaultAuthTest(unit.TestCase):

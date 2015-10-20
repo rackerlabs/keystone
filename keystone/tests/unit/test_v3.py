@@ -275,9 +275,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         return unit.new_service_ref()
 
     def new_endpoint_ref(self, service_id, interface='public', **kwargs):
-        return unit.new_endpoint_ref(
-            service_id, interface=interface, default_region_id=self.region_id,
-            **kwargs)
+        return unit.new_endpoint_ref(service_id, interface=interface,
+                                     region_id=self.region_id, **kwargs)
 
     def new_domain_ref(self):
         return unit.new_domain_ref()

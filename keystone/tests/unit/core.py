@@ -247,14 +247,13 @@ def new_service_ref():
     return ref
 
 
-def new_endpoint_ref(service_id, interface='public', default_region_id=None,
-                     **kwargs):
+def new_endpoint_ref(service_id, interface='public', region_id=None, **kwargs):
     ref = new_ref()
     del ref['enabled']  # enabled is optional
     ref['interface'] = interface
     ref['service_id'] = service_id
     ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
-    ref['region_id'] = default_region_id
+    ref['region_id'] = uuid.uuid4().hex if region_id is None else region_id
     ref.update(kwargs)
     return ref
 

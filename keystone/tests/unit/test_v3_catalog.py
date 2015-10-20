@@ -401,7 +401,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         region = self._create_region_with_parent_id(
             parent_id=parent_region_id)
         service = self._create_random_service()
-        ref = self.new_endpoint_ref(
+        ref = unit.new_endpoint_ref(
             service_id=service['id'],
             interface=interface,
             region_id=region.result['region']['id'])
@@ -798,23 +798,18 @@ class TestCatalogAPISQL(unit.TestCase):
         service = {'id': self.service_id, 'name': uuid.uuid4().hex}
         self.catalog_api.create_service(self.service_id, service)
 
-        endpoint = self.new_endpoint_ref(service_id=self.service_id)
+        self.create_endpoint(service_id=self.service_id)
+
+    def create_endpoint(self, service_id, **kwargs):
+        endpoint = unit.new_endpoint_ref(service_id=service_id, **kwargs)
+        endpoint['region_id'] = None
+
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+        return endpoint
 
     def config_overrides(self):
         super(TestCatalogAPISQL, self).config_overrides()
         self.config_fixture.config(group='catalog', driver='sql')
-
-    def new_endpoint_ref(self, service_id):
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'interface': uuid.uuid4().hex[:8],
-            'service_id': service_id,
-            'url': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
-        }
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
         user_id = uuid.uuid4().hex
@@ -827,14 +822,12 @@ class TestCatalogAPISQL(unit.TestCase):
         self.assertEqual(1, len(self.catalog_api.list_endpoints()))
 
         # create a new, invalid endpoint - malformed type declaration
-        ref = self.new_endpoint_ref(self.service_id)
-        ref['url'] = 'http://keystone/%(tenant_id)'
-        self.catalog_api.create_endpoint(ref['id'], ref)
+        self.create_endpoint(self.service_id,
+                             url='http://keystone/%(tenant_id)')
 
         # create a new, invalid endpoint - nonexistent key
-        ref = self.new_endpoint_ref(self.service_id)
-        ref['url'] = 'http://keystone/%(you_wont_find_me)s'
-        self.catalog_api.create_endpoint(ref['id'], ref)
+        self.create_endpoint(self.service_id,
+                             url='http://keystone/%(you_wont_find_me)s')
 
         # verify that the invalid endpoints don't appear in the catalog
         catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id)
@@ -843,9 +836,8 @@ class TestCatalogAPISQL(unit.TestCase):
         self.assertEqual(3, len(self.catalog_api.list_endpoints()))
 
         # create another valid endpoint - tenant_id will be replaced
-        ref = self.new_endpoint_ref(self.service_id)
-        ref['url'] = 'http://keystone/%(tenant_id)s'
-        self.catalog_api.create_endpoint(ref['id'], ref)
+        self.create_endpoint(self.service_id,
+                             url='http://keystone/%(tenant_id)s')
 
         # there are two valid endpoints, positive check
         catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id)
@@ -867,8 +859,7 @@ class TestCatalogAPISQL(unit.TestCase):
             'name': uuid.uuid4().hex,
         }
         self.catalog_api.create_service(named_svc['id'], named_svc)
-        endpoint = self.new_endpoint_ref(service_id=named_svc['id'])
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+        self.create_endpoint(service_id=named_svc['id'])
 
         # create a service, with no name
         unnamed_svc = {
@@ -876,8 +867,7 @@ class TestCatalogAPISQL(unit.TestCase):
             'type': uuid.uuid4().hex
         }
         self.catalog_api.create_service(unnamed_svc['id'], unnamed_svc)
-        endpoint = self.new_endpoint_ref(service_id=unnamed_svc['id'])
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+        self.create_endpoint(service_id=unnamed_svc['id'])
 
         catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id)
 
@@ -907,15 +897,8 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         self.config_fixture.config(group='catalog', driver='sql')
 
     def new_endpoint_ref(self, service_id):
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'interface': uuid.uuid4().hex[:8],
-            'service_id': service_id,
-            'url': uuid.uuid4().hex,
-            'region_id': uuid.uuid4().hex,
-        }
+        return unit.new_endpoint_ref(service_id=service_id,
+                                     region_id=uuid.uuid4().hex)
 
     def test_get_catalog_returns_proper_endpoints_with_no_region(self):
         service_id = uuid.uuid4().hex
