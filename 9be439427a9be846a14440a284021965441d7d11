@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_f58f04ca",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-20T16:29:40Z",
+      "side": 1,
+      "message": "I think it is a valid point Lance pointed out making this a BadRequest instead of NotImplemented.",
+      "revId": "9be439427a9be846a14440a284021965441d7d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
