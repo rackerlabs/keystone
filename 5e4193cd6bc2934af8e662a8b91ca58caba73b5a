@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_bc6ab7ec",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-21T09:23:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_4802d670",
+      "revId": "5e4193cd6bc2934af8e662a8b91ca58caba73b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_e86e422e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-20T20:40:18Z",
       "side": 1,
       "message": "add a test for:\n\n  self.create_entity_allow_empty(entity\u003d{})\n\nwhere you call the validator at L122",
+      "revId": "5e4193cd6bc2934af8e662a8b91ca58caba73b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_99dfcd0c",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-21T09:23:42Z",
+      "side": 1,
+      "message": "this case already covered by \nL167: test_create_entity_empty_request_body_with_decorator where default value for allow_empty is false.",
+      "parentUuid": "3a29b11f_e86e422e",
       "revId": "5e4193cd6bc2934af8e662a8b91ca58caba73b5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
