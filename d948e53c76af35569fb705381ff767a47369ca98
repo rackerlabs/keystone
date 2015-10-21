@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_995490fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-21T16:56:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_195319e3",
+      "revId": "d948e53c76af35569fb705381ff767a47369ca98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_b988e523",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-19T15:54:53Z",
       "side": 1,
       "message": "Also a semicolon after Implements",
+      "revId": "d948e53c76af35569fb705381ff767a47369ca98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_b9f5cced",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-10-21T16:56:50Z",
+      "side": 1,
+      "message": "I\u0027m not sure semicolon is necessary here: it\u0027s enough just to specify \"bp\" or \"blueprint\" to produce a link",
+      "parentUuid": "3a29b11f_b988e523",
       "revId": "d948e53c76af35569fb705381ff767a47369ca98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
