@@ -16,6 +16,41 @@
       "revId": "9c8021e716b8c18dfaf6eefec95da8da1648628b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_119ce20d",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-21T14:06:11Z",
+      "side": 1,
+      "message": "Yes, and if the value isn\u0027t available from the existing config, override it in setUp and make sure the store isn\u0027t configured yet",
+      "parentUuid": "9a1a9d01_381a177e",
+      "revId": "9c8021e716b8c18dfaf6eefec95da8da1648628b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_518edad0",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-10-21T14:06:11Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "9c8021e716b8c18dfaf6eefec95da8da1648628b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
