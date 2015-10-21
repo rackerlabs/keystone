@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_94b1b503",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:19:48Z",
+      "side": 1,
+      "message": "We can change this for something like:\n\nIf not allow_empty: \n    raise: exception.ValidationError \n       (...)\n\nI think that It\u0027s more clear",
+      "revId": "8ab630d92d50ced1cdee648acfebf237bd725351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
