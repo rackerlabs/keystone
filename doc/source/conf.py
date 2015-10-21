@@ -47,6 +47,9 @@ extensions = ['sphinx.ext.autodoc',
 
 todo_include_todos = True
 
+# The link to the browsable source code (for the left hand menu)
+oslosphinx_cgit_link = 'http://git.openstack.org/cgit/openstack/keystone'
+
 # Add any paths that contain templates here, relative to this directory.
 # if os.getenv('HUDSON_PUBLISH_DOCS'):
 #     templates_path = ['_ga', '_templates']
