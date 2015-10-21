@@ -61,6 +61,7 @@ class User(controller.V2Controller):
 
     # CRUD extension
     @controller.v2_deprecated
+    @validation.validated(schema.user_create_v2, 'user')
     def create_user(self, context, user):
         user = self._normalize_OSKSADM_password_on_request(user)
         user = self.normalize_username_in_request(user)
@@ -92,6 +93,7 @@ class User(controller.V2Controller):
         return {'user': new_user_ref}
 
     @controller.v2_deprecated
+    @validation.validated(schema.user_update_v2, 'user')
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         user = self.normalize_username_in_request(user)

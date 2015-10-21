@@ -212,7 +212,7 @@ class ClientDrivenTestCase(unit.TestCase):
         user = {
             'name': uuid.uuid4().hex,
             'password': uuid.uuid4().hex,
-            'email': uuid.uuid4().hex,
+            'email': 'sample@sample.com',
             'tenant_id': tenant['id'],
         }
         user_ref = admin_client.users.create(
@@ -408,7 +408,7 @@ class ClientDrivenTestCase(unit.TestCase):
         username = uuid.uuid4().hex
         password = uuid.uuid4().hex
         user = admin_client.users.create(name=username, password=password,
-                                         email=uuid.uuid4().hex)
+                                         email='sample@sample.com')
 
         # auth as user should work before a password change
         client = self._client(username=username, password=password)
@@ -438,7 +438,7 @@ class ClientDrivenTestCase(unit.TestCase):
         username = uuid.uuid4().hex
         password = uuid.uuid4().hex
         client.users.create(name=username, password=password,
-                            email=uuid.uuid4().hex)
+                            email='sample@sample.com')
 
         # auth as user should work before a password change
         client = self._client(username=username, password=password)
@@ -523,7 +523,7 @@ class ClientDrivenTestCase(unit.TestCase):
         username = uuid.uuid4().hex
         password = uuid.uuid4().hex
         user_id = admin_client.users.create(
-            name=username, password=password, email=uuid.uuid4().hex).id
+            name=username, password=password, email='sample@sample.com').id
 
         token_id = client.tokens.authenticate(
             username=username, password=password).id
@@ -607,7 +607,7 @@ class ClientDrivenTestCase(unit.TestCase):
         user = client.users.create(
             name=uuid.uuid4().hex,
             password=uuid.uuid4().hex,
-            email=uuid.uuid4().hex,
+            email='sample@sample.com',
             tenant_id=self.tenant_bar['id'])
 
         # attempting to update the tenant with the existing value should work
@@ -620,7 +620,7 @@ class ClientDrivenTestCase(unit.TestCase):
                           client.users.create,
                           name='test_user',
                           password=12345,
-                          email=uuid.uuid4().hex)
+                          email='sample@sample.com')
 
     def test_user_create_no_name(self):
         client = self.get_client(admin=True)
@@ -628,7 +628,7 @@ class ClientDrivenTestCase(unit.TestCase):
                           client.users.create,
                           name="",
                           password=uuid.uuid4().hex,
-                          email=uuid.uuid4().hex)
+                          email='sample@sample.com')
 
     def test_user_create_returns_not_found(self):
         client = self.get_client(admin=True)
@@ -636,7 +636,7 @@ class ClientDrivenTestCase(unit.TestCase):
                           client.users.create,
                           name=uuid.uuid4().hex,
                           password=uuid.uuid4().hex,
-                          email=uuid.uuid4().hex,
+                          email='sample@sample.com',
                           tenant_id=uuid.uuid4().hex)
 
     def test_user_get_returns_not_found(self):
