@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_a837bc4b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-21T16:06:51Z",
+      "side": 1,
+      "message": "I suspect this was asked before, but is there a reason we didn\u0027t use is_domain\u003dFalse here? That would save you changing all the places where is_domain can\u0027t be True.",
+      "revId": "b723921ba0ab19352b8b2853ee289c529efc27cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
