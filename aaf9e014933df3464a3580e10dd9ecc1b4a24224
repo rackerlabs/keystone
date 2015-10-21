@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_5460fd00",
+        "filename": "tools/sample_data_v3cloudsample.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:33:46Z",
+      "side": 1,
+      "message": "remove the whitespaces",
+      "revId": "aaf9e014933df3464a3580e10dd9ecc1b4a24224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
