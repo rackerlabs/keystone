@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_85fbc97a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-21T16:01:32Z",
+      "side": 1,
+      "message": "as per my earlier comment on a previous patch, this comment sounds like we should be checking for this in this method (whereas I think your point is that the controller will do this). In which case, we should say something like:\n\n\"Called when is_domain is false, and the project will contain a valid parent_id or domain_id (this is checked in the controller). If the parent....\"",
+      "revId": "23a05507b7aa009a042ac28a78475a87fb2b9bfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_4504d148",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-21T16:01:32Z",
+      "side": 1,
+      "message": "even though some of the words are mine, I think a few were missed out...I think the following would be clearer:\n\n\"If this is a top level project acting as a domain, then the project_id is, effectively, the domain_id - and so for such projects we don\u0027t bother to store a copy of it in the domain_id attribute. If this is a non-domain top.....\"",
+      "revId": "23a05507b7aa009a042ac28a78475a87fb2b9bfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
