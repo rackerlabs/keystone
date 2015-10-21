@@ -21,6 +21,27 @@ _identity_name = {
     'minLength': 1
 }
 
+# Schema for Identity v2.0 API
+_user_properties_v2 = {
+    'email': {
+        'type': ['string', 'null']
+    },
+    'enabled': parameter_types.boolean,
+    'name': _identity_name,
+    'password': {
+        'type': ['string', 'null']
+    },
+    'tenant_id': validation.nullable(parameter_types.id_string)
+}
+
+user_create_v2 = {
+    'type': 'object',
+    'properties': _user_properties_v2,
+    'minProperties': 1,
+    'additionalProperties': True
+}
+
+# Schema for Identity v3 API
 _user_properties = {
     'default_project_id': validation.nullable(parameter_types.id_string),
     'description': validation.nullable(parameter_types.description),
