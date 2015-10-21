@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_9e5476fe",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-21T16:37:59Z",
+      "side": 1,
+      "message": "I agree with you 100%, but you should state that.  Maybe its just me but if i was strolling through the code and come across this comment, I don\u0027t know if it would makes that much sense in the context. \n\nI would explain \"since the params are different here that new_endpoint_ref() cannot be used to initialize the endpoints.\" or something along those lines.",
+      "parentUuid": "3a29b11f_03ceff59",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_d28f73ca",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 1
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "Kind of. But since this was a cleanup patch I figured this was ok.",
       "parentUuid": "3a29b11f_d28f73ca",
+      "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_bea7f209",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-21T16:37:59Z",
+      "side": 1,
+      "message": "People don\u0027t really like when this stuff is added into a file since it will create merge conflicts down the line.",
+      "parentUuid": "3a29b11f_c3eec7b3",
       "revId": "1d69c1c9288e2d1129e4d7bb38f2b310ddfc43ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
