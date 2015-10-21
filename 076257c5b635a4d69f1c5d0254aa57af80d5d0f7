@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_69c2ff35",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-21T20:45:10Z",
+      "side": 1,
+      "message": "If we\u0027re going to pick a convention for indenting for params, it should be you indent by 4 spaces or you indent to where the text starts after the : . Indenting by 8 spaces isn\u0027t part of any convention.\n\nThis comment also applies to the change at line 240.",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_44971eec",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 4
@@ -65,6 +82,23 @@
       "writtenOn": "2015-10-20T22:10:24Z",
       "side": 1,
       "message": "+1",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d42406c6",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-21T20:45:10Z",
+      "side": 1,
+      "message": "I thought this was just left over from when the implementation was copied from the base class since that raises NotImplemented. I think this should just be removed instead since we\u0027re not expecting a NotImplemented error here.",
       "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
