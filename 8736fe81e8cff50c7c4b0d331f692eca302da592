@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_79cdf483",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1004,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "To keep the pattern that you made before, can be something like \"If role assignment tuple with the specific `role_id`, `target_id` `actor_id` doesn\u0027t exist.\"",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d9a208ae",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_9996d03c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "\"A entry with this values is already existing\" (or anything similar) makes more sense to me, since if the duplicated entry is already existing, we already have a db error.",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_793e5429",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "some comment that I made in assignment/core.py  for this case.",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_592838e2",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "s/service_id/`service_id` and the same comment for the other cases on this file",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_796c1435",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": ": The domain (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_3949bcb7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": ": There is (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_8cb9c27b",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 8
@@ -13,6 +132,159 @@
       "writtenOn": "2015-10-21T12:37:36Z",
       "side": 1,
       "message": "Is this file suppose to be part of this patch",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_59dd98de",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "For (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_19fac043",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "When (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_999c900f",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "When (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d9644823",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "On Failure (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_59603801",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "Same comment for the duplicate case",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_795df445",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "If",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_1956402a",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "If",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d9320810",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "If",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d919a889",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-21T17:13:28Z",
+      "side": 1,
+      "message": "If",
       "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
