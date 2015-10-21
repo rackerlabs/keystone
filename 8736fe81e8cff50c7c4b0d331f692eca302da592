@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_8cb9c27b",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-21T12:37:36Z",
+      "side": 1,
+      "message": "Is this file suppose to be part of this patch",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
