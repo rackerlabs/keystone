@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_89b99b17",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-21T19:55:00Z",
+      "side": 1,
+      "message": "the commit message should say why the change is being made. we can tell what the changes are because of the code in the review.",
+      "revId": "cb985dde4f304cb93a0973ccb50c7f05dacd6be0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_a9749767",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-21T19:55:00Z",
+      "side": 1,
+      "message": "This should be using oslo_log.versionutils.report_deprecated_feature , http://docs.openstack.org/developer/oslo.log/api/versionutils.html#module-oslo_log.versionutils . Then no lambda is needed.\n\nThis applies throughout the changes.",
+      "revId": "cb985dde4f304cb93a0973ccb50c7f05dacd6be0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_e9236f56",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-21T19:55:00Z",
+      "side": 1,
+      "message": "Since this isn\u0027t leaving a bug, remove the reference. The bug isn\u0027t very descriptive anyways.",
+      "revId": "cb985dde4f304cb93a0973ccb50c7f05dacd6be0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
