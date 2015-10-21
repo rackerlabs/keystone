@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_4f54e3fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-21T20:52:25Z",
+      "side": 1,
+      "message": "the commit message should say why.",
+      "revId": "d03161593f868e1b80aed2b7d627cb7f10b36c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_344057a5",
         "filename": "keystone/common/controller.py",
         "patchSetId": 11
