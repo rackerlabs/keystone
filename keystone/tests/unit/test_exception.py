@@ -131,7 +131,7 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
         self.config_fixture.config(debug=False)
         e = UnexpectedExceptionTestCase.SubClassExc(
             debug_info=self.exc_str)
-        self.assertEqual(exception.UnexpectedError._message_format,
+        self.assertEqual(exception.UnexpectedError.message_format,
                          six.text_type(e))
 
     def test_unexpected_error_subclass_debug(self):
@@ -148,7 +148,7 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
     def test_unexpected_error_custom_message_no_debug(self):
         self.config_fixture.config(debug=False)
         e = exception.UnexpectedError(self.exc_str)
-        self.assertEqual(exception.UnexpectedError._message_format,
+        self.assertEqual(exception.UnexpectedError.message_format,
                          six.text_type(e))
 
     def test_unexpected_error_custom_message_debug(self):
