@@ -16,6 +16,24 @@
       "revId": "b723921ba0ab19352b8b2853ee289c529efc27cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c5b8b32c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-22T14:35:49Z",
+      "side": 1,
+      "message": "you mean in the function\u0027s signature? we cannot pass kwargs to memoize methods, I guess",
+      "parentUuid": "3a29b11f_a837bc4b",
+      "revId": "b723921ba0ab19352b8b2853ee289c529efc27cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
