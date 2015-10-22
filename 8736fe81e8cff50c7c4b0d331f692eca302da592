@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_950e8539",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1004,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T01:31:48Z",
+      "side": 1,
+      "message": "i think we need not to be consistent at this point, but i am happy to do the update if the comments here is not understandable.\n\nif we update this, we need also update huge places, this is not what this patch want to address.",
+      "parentUuid": "3a29b11f_79cdf483",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_d9a208ae",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-21T17:13:28Z",
       "side": 1,
       "message": "same here",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_10012305",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T01:31:48Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "3a29b11f_d9a208ae",
       "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_5049db5e",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T01:31:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_592838e2",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_796c1435",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
@@ -98,6 +152,24 @@
       "writtenOn": "2015-10-21T17:13:28Z",
       "side": 1,
       "message": ": The domain (...)",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_b0670fe8",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T01:31:48Z",
+      "side": 1,
+      "message": "do you notice all of the sentences here is started with lowercase?",
+      "parentUuid": "3a29b11f_796c1435",
       "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +204,24 @@
       "writtenOn": "2015-10-21T12:37:36Z",
       "side": 1,
       "message": "Is this file suppose to be part of this patch",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_30a21ffe",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T01:31:48Z",
+      "side": 1,
+      "message": "trouble with get rebase.",
+      "parentUuid": "3a29b11f_8cb9c27b",
       "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -234,6 +324,24 @@
       "writtenOn": "2015-10-21T17:13:28Z",
       "side": 1,
       "message": "If",
+      "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_90c69398",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T01:31:48Z",
+      "side": 1,
+      "message": "i am going to change all of those to lowercase.",
+      "parentUuid": "3a29b11f_795df445",
       "revId": "8736fe81e8cff50c7c4b0d331f692eca302da592",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
