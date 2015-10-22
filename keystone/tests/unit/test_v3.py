@@ -240,11 +240,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.default_domain_user_id, self.project_id,
             self.role_id)
 
-        self.region_id = uuid.uuid4().hex
         self.region = self.new_region_ref()
-        self.region['id'] = self.region_id
-        self.catalog_api.create_region(
-            self.region.copy())
+        self.region_id = self.region['id']
+        self.catalog_api.create_region(self.region.copy())
 
         self.service = self.new_service_ref()
         self.service_id = self.service['id']
