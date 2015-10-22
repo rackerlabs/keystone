@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_85b95bce",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-22T14:42:27Z",
+      "side": 1,
+      "message": "IMO the nesting of the % operations is the bigger problem. It would be much clearer over multiple lines. It may be nicer to build this up using a list and join before returning.",
+      "parentUuid": "3a29b11f_28e8bab3",
+      "revId": "2ec9e8fbf2bf2e057e8f7b325f60f60e5a51cc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_07bb1810",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 8
