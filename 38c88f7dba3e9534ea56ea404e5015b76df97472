@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_0440e205",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-22T20:47:59Z",
+      "side": 1,
+      "message": "nit: \n\n    def test_region_initialization_race_condition(self): \n\n?",
+      "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_aa8d37d4",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-10-22T20:47:59Z",
+      "side": 1,
+      "message": "isn\u0027t this also done here - https://github.com/openstack/keystone/blob/a597a86b854215835a4d54885daeb161d7b0efb8/keystone/contrib/revoke/backends/kvs.py#L40",
+      "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
