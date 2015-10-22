@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_8d574725",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-22T14:19:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_69c2ff35",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_44971eec",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 4
@@ -99,6 +117,24 @@
       "writtenOn": "2015-10-21T20:45:10Z",
       "side": 1,
       "message": "I thought this was just left over from when the implementation was copied from the base class since that raises NotImplemented. I think this should just be removed instead since we\u0027re not expecting a NotImplemented error here.",
+      "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_e1de0adc",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-22T14:19:20Z",
+      "side": 1,
+      "message": "Stepping through the code there is no way that \u0027NotImplemented\u0027 will be raised.  Good Catch!",
+      "parentUuid": "3a29b11f_d42406c6",
       "revId": "076257c5b635a4d69f1c5d0254aa57af80d5d0f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
