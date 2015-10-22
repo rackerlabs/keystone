@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_20764a70",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-22T07:17:31Z",
+      "side": 1,
+      "message": "Lance, pls check my comment here:\nhttps://review.openstack.org/#/c/134095/3/keystone/catalog/backends/sql.py, Text cannnot be a part of unique constaint.",
+      "parentUuid": "5a2ca52d_33a2289a",
+      "revId": "c1c9d7abb2ab08fd311e9ca76b4ce747dc44b2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_73f500eb",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
