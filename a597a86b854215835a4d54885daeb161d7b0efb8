@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_32cc4eba",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-22T13:44:21Z",
+      "side": 0,
+      "message": "these 4 spaces should be put back",
+      "revId": "a597a86b854215835a4d54885daeb161d7b0efb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_d2c71a94",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-22T13:44:21Z",
+      "side": 0,
+      "message": "same here",
+      "revId": "a597a86b854215835a4d54885daeb161d7b0efb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
