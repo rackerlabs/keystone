@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_d3571c56",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-22T14:33:42Z",
+      "side": 1,
+      "message": "This is indented 8 spaces when it should be 4.",
+      "revId": "9e9a3a9321a30a157a69085c992fd06c1ad91ac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_b3df00d5",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-22T14:33:42Z",
+      "side": 1,
+      "message": "This is also indented 8 spaces when it should be 4.",
+      "revId": "9e9a3a9321a30a157a69085c992fd06c1ad91ac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
