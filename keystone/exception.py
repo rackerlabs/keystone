@@ -473,7 +473,6 @@ class SAMLSigningError(UnexpectedError):
                              'that this server does not have xmlsec1 '
                              'installed, or this is the result of '
                              'misconfiguration. Reason %(reason)s')
-    title = 'Error signing SAML assertion'
 
 
 class OAuthHeadersMissingError(UnexpectedError):
@@ -481,7 +480,6 @@ class OAuthHeadersMissingError(UnexpectedError):
                              'with OAuth related calls, if running under '
                              'HTTPd or Apache, ensure WSGIPassAuthorization '
                              'is set to On.')
-    title = 'Error retrieving OAuth headers'
 
 
 class TokenlessAuthConfigError(ValidationError):
