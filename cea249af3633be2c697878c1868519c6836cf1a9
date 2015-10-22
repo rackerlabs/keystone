@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_58080bda",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_08bf49fc",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_e63a3fcd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_9848e3cd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_e63a3fcd",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_4bb53ecb",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-06T14:17:12Z",
       "side": 1,
       "message": "(nit) maybe \"affect\" instead of \"effect\" (although not the primary goal of this patch)",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_38374f4e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "sounds like a clean up patch to me",
+      "parentUuid": "7a2fa921_4bb53ecb",
       "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_f8f6b78d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "That\u0027s correct - whether we are in effective mode or not we need the subtree_ids - so we build them once (line 893).",
+      "parentUuid": "7a2fa921_a3baebdf",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_8b57d301",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -135,6 +207,24 @@
       "writtenOn": "2015-10-06T14:17:12Z",
       "side": 1,
       "message": "We are doing the same operation at lines 852-855 in 4-lines; let\u0027s keep them consistent.",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_13f27406",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_8b57d301",
       "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_93f0c4ca",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_8b6356b1",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_ab3acf34",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 11
@@ -186,6 +294,24 @@
       "writtenOn": "2015-10-06T14:17:12Z",
       "side": 1,
       "message": "What about being more clear we use include_subtree and it\u0027s effective too ?\n\nSomething like test_list_effective_assignments_for_subtree ?",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_25c3a78a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6600,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_ab3acf34",
       "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -209,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_655afff3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6652,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_2b1ebfba",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_abb96feb",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 11
@@ -220,6 +364,24 @@
       "writtenOn": "2015-10-06T14:17:12Z",
       "side": 1,
       "message": "What about a test with only include_subtree and project_id (not effective) ?\n\nWhat about a test where inherited assignments come from the domain too ?",
+      "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_28c37e8a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6734,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-22T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a2fa921_abb96feb",
       "revId": "cea249af3633be2c697878c1868519c6836cf1a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
