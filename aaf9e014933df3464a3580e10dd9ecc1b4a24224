@@ -16,6 +16,24 @@
       "revId": "aaf9e014933df3464a3580e10dd9ecc1b4a24224",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_f5433911",
+        "filename": "tools/sample_data_v3cloudsample.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-10-22T00:40:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a29b11f_5460fd00",
+      "revId": "aaf9e014933df3464a3580e10dd9ecc1b4a24224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
