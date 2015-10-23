@@ -1,0 +1,17 @@
+Verified+2: Jenkins
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Workflow+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: Iury Gregory Melo Ferreira <iurygregory@gmail.com>
+Code-Review+1: venkatamahesh <venkatamaheshkotha@gmail.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 23 Oct 2015 20:49:47 +0000
+Reviewed-on: https://review.openstack.org/229837
+Project: openstack/keystone
+Branch: refs/heads/master
