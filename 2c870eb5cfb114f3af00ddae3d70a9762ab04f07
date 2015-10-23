@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_e2ffcc63",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "this change force region_id cannot be None, why?",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_82d4d8eb",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1391,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "what\u0027s the points of these change?",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_e236ec4f",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5463,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "Instead of assign None to endpoint[\u0027region_id\u0027], i\u0027d prefer to the old way -  let new_endpoint_ref accept None as the default value for region_id.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_822938e8",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "same here, why bother to do this change? keep the old way instead.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_a224740c",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_421fa0b6",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "Good catch!",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_424d60c2",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "delete this line.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_e57d966d",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "Not quite understand this change, why we need this? Could this also be applied to L528 for example?",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_828cd8da",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T06:24:29Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
