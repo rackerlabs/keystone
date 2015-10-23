@@ -2897,6 +2897,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
 
         # Create first trust with extended set of roles
         ref = self.redelegated_trust_ref
+        ref['expires_at'] = datetime.datetime.utcnow().replace(year=2031).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         ref['roles'].append({'id': role['id']})
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': ref})
@@ -2909,6 +2910,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         trust_token = self._get_trust_token(trust)
 
         # Chain second trust with roles subset
+        self.chained_trust_ref['expires_at'] = datetime.datetime.utcnow().replace(year=2030).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.chained_trust_ref},
                       token=trust_token)
@@ -2929,6 +2931,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             expires=dict(minutes=1),
             role_names=[self.role['name']],
             allow_redelegation=True)
+        ref['expires_at'] = datetime.datetime.utcnow().replace(year=2031).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': ref})
         trust = self.assertValidTrustResponse(r)
@@ -2942,6 +2945,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             impersonation=True,
             role_names=[self.role['name']],
             allow_redelegation=True)
+        ref['expires_at'] = datetime.datetime.utcnow().replace(year=2030).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': ref},
                       token=trust_token)
@@ -2974,12 +2978,14 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
                       expected_status=http_client.FORBIDDEN)
 
     def test_redelegation_terminator(self):
+        self.redelegated_trust_ref['expires_at'] = datetime.datetime.utcnow().replace(year=2031).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
         trust_token = self._get_trust_token(trust)
 
         # Build second trust - the terminator
+        self.chained_trust_ref['expires_at'] = datetime.datetime.utcnow().replace(year=2030).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         ref = dict(self.chained_trust_ref,
                    redelegation_count=1,
                    allow_redelegation=False)
@@ -3895,6 +3901,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             role_ids=[self.role_id])
 
         for i in range(3):
+            ref['expires_at'] = datetime.datetime.utcnow().replace(month=12).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
             r = self.post('/OS-TRUST/trusts', body={'trust': ref})
             self.assertValidTrustResponse(r, ref)
 
