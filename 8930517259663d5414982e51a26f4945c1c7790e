@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a29b11f_5f444e48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:06:55Z",
+      "side": 1,
+      "message": "Why use this bug? It isn\u0027t reported against our project.",
+      "revId": "8930517259663d5414982e51a26f4945c1c7790e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_3c05ea0f",
         "filename": "doc/source/extensions/endpoint_policy.rst",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2015-10-23T03:44:34Z",
       "side": 1,
       "message": "might needn\u0027t the sequence number \"1\" anymore.\n\n\"add the endpoint policy extension driver to ... and enable it\"",
+      "revId": "8930517259663d5414982e51a26f4945c1c7790e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_ac10e259",
+        "filename": "doc/source/extensions/endpoint_policy.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:06:55Z",
+      "side": 1,
+      "message": "I agree. We can also squash this sentence with \u0027To enable the ...\u0027",
+      "parentUuid": "3a29b11f_3c05ea0f",
       "revId": "8930517259663d5414982e51a26f4945c1c7790e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
