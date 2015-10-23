@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_02375dff",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a29b11f_e2ffcc63",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_5d3d36c2",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "service_id isn\u0027t a kwarg in the method definition so it should just be passed as the first arg.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_82d4d8eb",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 2
@@ -36,6 +71,58 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_fd87625e",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1391,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "It\u0027s just to replace the construction of an endpoint. The reason I don\u0027t like it is that it does change the semantics a little. Now the dictionaries don\u0027t have to be equal. If we are to do this then it should be a separate change with a commit message that explains why they can be different.",
+      "parentUuid": "3a29b11f_82d4d8eb",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_7d94b289",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1417,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_dd6066a7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5462,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "what about the interface? this is no longer using a uuid. Same issue with service_id.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_e236ec4f",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
@@ -47,6 +134,58 @@
       "writtenOn": "2015-10-23T06:24:29Z",
       "side": 1,
       "message": "Instead of assign None to endpoint[\u0027region_id\u0027], i\u0027d prefer to the old way -  let new_endpoint_ref accept None as the default value for region_id.",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_2257f926",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5463,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a29b11f_e236ec4f",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_7d703272",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5485,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_fd0a02d1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5508,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-23T11:58:45Z",
+      "side": 1,
+      "message": "Same as above",
       "revId": "2c870eb5cfb114f3af00ddae3d70a9762ab04f07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
