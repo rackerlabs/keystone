@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_89cf1855",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-23T10:26:08Z",
+      "side": 1,
+      "message": "i think typically you will splik openstack_user and openstack_user_domain, so i\u0027d put it into separate rules.",
+      "revId": "f08e1ce6a7f03f75120b4b5f2b3a049c3213086d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
