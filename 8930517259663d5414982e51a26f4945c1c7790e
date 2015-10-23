@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_3c05ea0f",
+        "filename": "doc/source/extensions/endpoint_policy.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-23T03:44:34Z",
+      "side": 1,
+      "message": "might needn\u0027t the sequence number \"1\" anymore.\n\n\"add the endpoint policy extension driver to ... and enable it\"",
+      "revId": "8930517259663d5414982e51a26f4945c1c7790e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
