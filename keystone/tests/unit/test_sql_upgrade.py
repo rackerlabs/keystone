@@ -779,6 +779,13 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
 
+    def test_add_trust_unique_constraint_upgrade(self):
+        self.upgrade(82)
+        inspector = reflection.Inspector.from_engine(self.engine)
+        constraints = inspector.get_unique_constraints('trust')
+        constraint_names = [constraint['name'] for constraint in constraints]
+        self.assertIn('duplicate_trust_constraint', constraint_names)
+
     def test_endpoint_filter_upgrade(self):
         def assert_tables_columns_exist():
             self.assertTableColumns('project_endpoint',
