@@ -6,16 +6,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 8.0.0.0b4.dev56\n"
+"Project-Id-Version: keystone 9.0.0.dev183\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-09-21 06:08+0000\n"
+"POT-Creation-Date: 2015-10-24 06:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.0\n"
+"Generated-By: Babel 2.1.1\n"
 
 #: keystone/notifications.py:379
 msgid "Failed to construct notifier"
@@ -72,23 +72,16 @@ msgid ""
 "listening on that port."
 msgstr ""
 
-#: keystone/common/cache/core.py:100
-#, python-format
-msgid ""
-"Unable to build cache config-key. Expected format \"<argname>:<value>\". "
-"Skipping unknown format: %s"
-msgstr ""
-
-#: keystone/common/environment/eventlet_server.py:112
+#: keystone/common/environment/eventlet_server.py:113
 #, python-format
 msgid "Could not bind to %(host)s:%(port)s"
 msgstr ""
 
-#: keystone/common/environment/eventlet_server.py:205
+#: keystone/common/environment/eventlet_server.py:206
 msgid "Server error"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:429
+#: keystone/contrib/federation/idp.py:442
 #, python-format
 msgid "Error when signing assertion, reason: %(reason)s%(output)s"
 msgstr ""
@@ -104,14 +97,14 @@ msgid ""
 "%(region_id)s."
 msgstr ""
 
-#: keystone/resource/core.py:488
+#: keystone/resource/core.py:489
 #, python-format
 msgid ""
 "Circular reference or a repeated entry found projects hierarchy - "
 "%(project_id)s."
 msgstr ""
 
-#: keystone/resource/core.py:966
+#: keystone/resource/core.py:967
 #, python-format
 msgid ""
 "Unexpected results in response for domain config - %(count)s responses, "
@@ -125,7 +118,7 @@ msgid ""
 "%(project_id)s."
 msgstr ""
 
-#: keystone/token/provider.py:285
+#: keystone/token/provider.py:283
 #, python-format
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr ""
