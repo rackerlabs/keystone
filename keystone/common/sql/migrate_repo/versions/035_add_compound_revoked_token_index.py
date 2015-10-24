@@ -19,7 +19,7 @@ def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
     token = sql.Table('token', meta, autoload=True)
-    idx = sql.Index('ix_token_expires_valid', token.c.expires, token.c.valid)
+    idx = sql.Index('ix_token_valid_expires', token.c.valid, token.c.expires)
     idx.create(migrate_engine)
 
 
@@ -27,5 +27,5 @@ def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
     token = sql.Table('token', meta, autoload=True)
-    idx = sql.Index('ix_token_expires_valid', token.c.expires, token.c.valid)
+    idx = sql.Index('ix_token_valid_expires', token.c.valid, token.c.expires)
     idx.drop(migrate_engine)
