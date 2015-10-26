@@ -16,6 +16,24 @@
       "revId": "7d86bf8bb3a9a229517a7192e01597232b32d37e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_24eeecec",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4941,
+      "author": {
+        "id": 12114
+      },
+      "writtenOn": "2015-10-26T17:15:54Z",
+      "side": 1,
+      "message": "Hi, as far as I\u0027m aware, it just needs a datetime object. I\u0027ve changed this line of code to get different expire times for each test",
+      "parentUuid": "3a29b11f_5e3e57b9",
+      "revId": "7d86bf8bb3a9a229517a7192e01597232b32d37e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
