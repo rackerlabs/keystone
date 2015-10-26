@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.dev93\n"
+"Project-Id-Version: keystone 9.0.0.dev185\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-10-09 06:13+0000\n"
+"POT-Creation-Date: 2015-10-26 06:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -383,14 +383,14 @@ msgid ""
 " %(reason)s"
 msgstr ""
 
-#: keystone/exception.py:485
+#: keystone/exception.py:484
 msgid ""
 "No Authorization headers found, cannot proceed with OAuth related calls, "
 "if running under HTTPd or Apache, ensure WSGIPassAuthorization is set to "
 "On."
 msgstr ""
 
-#: keystone/exception.py:493
+#: keystone/exception.py:491
 #, python-format
 msgid ""
 "Could not determine Identity Provider ID. The configuration option "
@@ -412,34 +412,34 @@ msgstr ""
 msgid "Name field is required and cannot be empty"
 msgstr ""
 
-#: keystone/assignment/controllers.py:155
-#: keystone/assignment/controllers.py:174
+#: keystone/assignment/controllers.py:157
+#: keystone/assignment/controllers.py:176
 msgid "User roles not supported: tenant_id required"
 msgstr ""
 
-#: keystone/assignment/controllers.py:338
-#: keystone/assignment/controllers.py:579
+#: keystone/assignment/controllers.py:340
+#: keystone/assignment/controllers.py:581
 msgid "Specify a domain or project, not both"
 msgstr ""
 
-#: keystone/assignment/controllers.py:341
+#: keystone/assignment/controllers.py:343
 msgid "Specify one of domain or project"
 msgstr ""
 
-#: keystone/assignment/controllers.py:346
-#: keystone/assignment/controllers.py:584
+#: keystone/assignment/controllers.py:348
+#: keystone/assignment/controllers.py:586
 msgid "Specify a user or group, not both"
 msgstr ""
 
-#: keystone/assignment/controllers.py:349
+#: keystone/assignment/controllers.py:351
 msgid "Specify one of user or group"
 msgstr ""
 
-#: keystone/assignment/controllers.py:568
+#: keystone/assignment/controllers.py:570
 msgid "Combining effective and group filter will always result in an empty list."
 msgstr ""
 
-#: keystone/assignment/controllers.py:573
+#: keystone/assignment/controllers.py:575
 msgid ""
 "Combining effective, domain and inherited filters will always result in "
 "an empty list."
@@ -512,7 +512,7 @@ msgid ""
 "conflicting values %(new)s and %(old)s"
 msgstr ""
 
-#: keystone/auth/controllers.py:344 keystone/middleware/core.py:227
+#: keystone/auth/controllers.py:344 keystone/middleware/core.py:225
 msgid "Scoping to both domain and project is not allowed"
 msgstr ""
 
@@ -568,7 +568,7 @@ msgstr ""
 msgid "rescope a scoped token"
 msgstr ""
 
-#: keystone/catalog/controllers.py:209
+#: keystone/catalog/controllers.py:212
 #, python-format
 msgid "Conflicting region IDs specified: \"%(url_id)s\" != \"%(ref_id)s\""
 msgstr ""
@@ -652,29 +652,6 @@ msgstr ""
 msgid "token reference must be a KeystoneToken type, got: %s"
 msgstr ""
 
-#: keystone/common/base64utils.py:71
-msgid "pad must be single character"
-msgstr ""
-
-#: keystone/common/base64utils.py:220
-#, python-format
-msgid "text is multiple of 4, but pad \"%s\" occurs before 2nd to last char"
-msgstr ""
-
-#: keystone/common/base64utils.py:224
-#, python-format
-msgid "text is multiple of 4, but pad \"%s\" occurs before non-pad last char"
-msgstr ""
-
-#: keystone/common/base64utils.py:230
-#, python-format
-msgid "text is not a multiple of 4, but contains pad \"%s\""
-msgstr ""
-
-#: keystone/common/base64utils.py:249 keystone/common/base64utils.py:270
-msgid "padded base64url text must be multiple of 4 characters"
-msgstr ""
-
 #: keystone/common/clean.py:24
 #, python-format
 msgid "%s cannot be empty."
@@ -701,7 +678,7 @@ msgid "Non-default domain is not supported"
 msgstr ""
 
 #: keystone/common/controller.py:329 keystone/common/controller.py:358
-#: keystone/identity/core.py:596 keystone/resource/core.py:788
+#: keystone/identity/core.py:584 keystone/resource/core.py:788
 #: keystone/resource/backends/ldap.py:66 keystone/resource/backends/ldap.py:74
 #, python-format
 msgid "Expected dict or list: %s"
@@ -764,45 +741,6 @@ msgstr ""
 #: keystone/common/cache/_memcache_pool.py:124
 #, python-format
 msgid "Unable to get a connection from pool id %(id)s after %(seconds)s seconds."
-msgstr ""
-
-#: keystone/common/cache/core.py:132
-msgid "region not type dogpile.cache.CacheRegion"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:231
-msgid "db_hosts value is required"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:236
-msgid "database db_name is required"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:241
-msgid "cache_collection name is required"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:252
-msgid "integer value expected for w (write concern attribute)"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:260
-msgid "replicaset_name required when use_replica is True"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:275
-msgid "integer value expected for mongo_ttl_seconds"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:301
-msgid "no ssl support available"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:310
-#, python-format
-msgid ""
-"Invalid ssl_cert_reqs value of %s, must be one of \"NONE\", \"OPTIONAL\","
-" \"REQUIRED\""
 msgstr ""
 
 #: keystone/common/kvs/core.py:70
@@ -986,20 +924,20 @@ msgstr ""
 msgid "Use a project scoped token when attempting to create a SAML assertion"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:477
+#: keystone/contrib/federation/idp.py:488
 #, python-format
 msgid "Cannot open certificate %(cert_file)s. Reason: %(reason)s"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:544
+#: keystone/contrib/federation/idp.py:555
 msgid "Ensure configuration option idp_entity_id is set."
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:547
+#: keystone/contrib/federation/idp.py:558
 msgid "Ensure configuration option idp_sso_endpoint is set."
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:567
+#: keystone/contrib/federation/idp.py:578
 msgid ""
 "idp_contact_type must be one of: [technical, other, support, "
 "administrative or billing."
@@ -1137,40 +1075,35 @@ msgstr ""
 msgid "Enabled field must be a boolean"
 msgstr ""
 
-#: keystone/identity/controllers.py:100
+#: keystone/identity/controllers.py:101
 msgid "Enabled field should be a boolean"
 msgstr ""
 
-#: keystone/identity/core.py:127
-#, python-format
-msgid "Database at /domains/%s/config"
-msgstr ""
-
-#: keystone/identity/core.py:271
+#: keystone/identity/core.py:259
 #, python-format
 msgid "Config API entity at /domains/%s/config"
 msgstr ""
 
-#: keystone/identity/core.py:277
+#: keystone/identity/core.py:265
 #, python-format
 msgid ""
 "Exceeded attempts to register domain %(domain)s to use the SQL driver, "
 "the last domain that appears to have had it is %(last_domain)s, giving up"
 msgstr ""
 
-#: keystone/identity/core.py:451 keystone/identity/backends/ldap.py:58
+#: keystone/identity/core.py:439 keystone/identity/backends/ldap.py:58
 #: keystone/identity/backends/ldap.py:60 keystone/identity/backends/ldap.py:66
 #: keystone/identity/backends/ldap.py:68 keystone/identity/backends/sql.py:104
 #: keystone/identity/backends/sql.py:106
 msgid "Invalid user / password"
 msgstr ""
 
-#: keystone/identity/core.py:861
+#: keystone/identity/core.py:849
 #, python-format
 msgid "User is disabled: %s"
 msgstr ""
 
-#: keystone/identity/core.py:903
+#: keystone/identity/core.py:891
 msgid "Cannot change user ID"
 msgstr ""
 
@@ -1193,17 +1126,17 @@ msgstr ""
 msgid "Found invalid token: scoped to both project and domain."
 msgstr ""
 
-#: keystone/resource/controllers.py:217
+#: keystone/resource/controllers.py:221
 msgid "The creation of projects acting as domains is not allowed yet."
 msgstr ""
 
-#: keystone/resource/controllers.py:251
+#: keystone/resource/controllers.py:255
 msgid ""
 "Cannot use parents_as_list and parents_as_ids query params at the same "
 "time."
 msgstr ""
 
-#: keystone/resource/controllers.py:257
+#: keystone/resource/controllers.py:261
 msgid ""
 "Cannot use subtree_as_list and subtree_as_ids query params at the same "
 "time."
@@ -1477,6 +1410,11 @@ msgstr ""
 #: keystone/token/providers/fernet/token_formatters.py:258
 #, python-format
 msgid "This is not a recognized Fernet payload version: %s"
+msgstr ""
+
+#: keystone/trust/controllers.py:116
+#, python-format
+msgid "role %s is not defined"
 msgstr ""
 
 #: keystone/trust/controllers.py:141

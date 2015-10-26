@@ -6,16 +6,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.dev14\n"
+"Project-Id-Version: keystone 9.0.0.dev185\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-09-24 06:09+0000\n"
+"POT-Creation-Date: 2015-10-26 06:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.0\n"
+"Generated-By: Babel 2.1.1\n"
 
 #: keystone/exception.py:48
 msgid "missing exception kwargs (programmer error)"
@@ -55,11 +55,11 @@ msgstr ""
 msgid "Ignoring file (%s) while scanning domain config directory"
 msgstr ""
 
-#: keystone/common/authorization.py:65
+#: keystone/common/authorization.py:69
 msgid "RBAC: Invalid user data in token"
 msgstr ""
 
-#: keystone/common/controller.py:84 keystone/middleware/core.py:199
+#: keystone/common/controller.py:84 keystone/middleware/core.py:197
 msgid "RBAC: Invalid token"
 msgstr ""
 
@@ -96,14 +96,6 @@ msgstr ""
 #: keystone/common/wsgi.py:251
 #, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
-msgstr ""
-
-#: keystone/common/cache/backends/mongo.py:407
-#, python-format
-msgid ""
-"TTL index already exists on db collection <%(c_name)s>, remove index "
-"<%(indx_name)s> first to make updated mongo_ttl_seconds value to be  "
-"effective"
 msgstr ""
 
 #: keystone/common/kvs/core.py:133
@@ -168,34 +160,34 @@ msgid ""
 "%(endpoint_id)s not found."
 msgstr ""
 
-#: keystone/identity/controllers.py:141
+#: keystone/identity/controllers.py:143
 #, python-format
 msgid "Unable to remove user %(user)s from %(tenant)s."
 msgstr ""
 
-#: keystone/identity/controllers.py:160
+#: keystone/identity/controllers.py:162
 #, python-format
 msgid "Unable to add user %(user)s to %(tenant)s."
 msgstr ""
 
-#: keystone/identity/core.py:137
+#: keystone/identity/core.py:125
 #, python-format
 msgid "Invalid domain name (%s) found in config file name"
 msgstr ""
 
-#: keystone/identity/core.py:175
+#: keystone/identity/core.py:163
 #, python-format
 msgid "Unable to locate domain config directory: %s"
 msgstr ""
 
-#: keystone/identity/core.py:692
+#: keystone/identity/core.py:680
 #, python-format
 msgid ""
 "Found multiple domains being mapped to a driver that does not support "
 "that (e.g. LDAP) - Domain ID: %(domain)s, Default Driver: %(driver)s"
 msgstr ""
 
-#: keystone/middleware/core.py:293
+#: keystone/middleware/core.py:291
 msgid ""
 "Auth context already exists in the request environment; it will be used "
 "for authorization instead of creating a new one."
