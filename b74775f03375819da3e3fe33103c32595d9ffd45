@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_ff73ace5",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-26T09:11:15Z",
+      "side": 1,
+      "message": "this change might not necessary as there is no guideline anywhere tell us there should be blank line before \"\"\"\n\nBut you said this should be consistent through the file so I am fine with it.",
+      "revId": "b74775f03375819da3e3fe33103c32595d9ffd45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
