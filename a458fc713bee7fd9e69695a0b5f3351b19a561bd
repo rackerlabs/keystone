@@ -16,6 +16,24 @@
       "revId": "a458fc713bee7fd9e69695a0b5f3351b19a561bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_ca861e65",
+        "filename": "keystone/common/sql/migrate_repo/versions/081_add_constraint_endpoint.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-10-26T23:21:45Z",
+      "side": 1,
+      "message": "Your comments was addressed.",
+      "parentUuid": "3a29b11f_00d6aef0",
+      "revId": "a458fc713bee7fd9e69695a0b5f3351b19a561bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
