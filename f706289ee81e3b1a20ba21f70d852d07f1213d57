@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_75959b3e",
+        "filename": "tools/sample_data_v3cloudsample.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-27T14:01:54Z",
+      "side": 1,
+      "message": "What is this comment for?",
+      "revId": "f706289ee81e3b1a20ba21f70d852d07f1213d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_f55d2bed",
+        "filename": "tools/sample_data_v3cloudsample.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-27T14:01:54Z",
+      "side": 1,
+      "message": "I think the default location for the keystone.conf is in etc/keystone/keystone.conf",
+      "revId": "f706289ee81e3b1a20ba21f70d852d07f1213d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_55173fed",
+        "filename": "tools/sample_data_v3cloudsample.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-27T14:01:54Z",
+      "side": 1,
+      "message": "etc/keystone/policy.json",
+      "revId": "f706289ee81e3b1a20ba21f70d852d07f1213d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
