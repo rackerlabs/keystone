@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_00c5d559",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:34:08Z",
+      "side": 1,
+      "message": "The revert should be done in a separate commit so that it\u0027s easier to review.",
+      "revId": "bbc539ff09769efa9c666caccc6a092e145ef342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_c08cbd37",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:34:08Z",
+      "side": 1,
+      "message": "Let\u0027s wait until oslo_middleware gets support for the \"egg:keystone#user_crud_extension\" format for specifying the filter factory and use that instead to be consistent and so we don\u0027t have to go back in and change this again later.",
+      "revId": "bbc539ff09769efa9c666caccc6a092e145ef342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_207c911f",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:34:08Z",
+      "side": 1,
+      "message": "sizelimit is a security feature and it should be first.",
+      "revId": "bbc539ff09769efa9c666caccc6a092e145ef342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
