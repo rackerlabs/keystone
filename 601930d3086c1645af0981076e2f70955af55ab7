@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_c04efd95",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-27T01:55:18Z",
+      "side": 1,
+      "message": "what\u0027s the difference between client does \"region\": {} and no body is given? Should there is an rule that body must be given for creating API?",
+      "parentUuid": "3a29b11f_85481789",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_0555e71b",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 4
