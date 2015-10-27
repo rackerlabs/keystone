@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_e5578b24",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-10-27T01:14:00Z",
+      "side": 1,
+      "message": "question: in this patch it is possible to have only root projects acting as domains, correct? A subproject can *never* be a domain, in this case, its domain_id should *always* match its parent domain_id, independently if it is a project acting as a domain or not. Correct?\n\nIf so, I think the \"not is_domain_parent\" part should be removed.",
+      "revId": "4691ed8000e2554470ce8a1971d364e677a36c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
