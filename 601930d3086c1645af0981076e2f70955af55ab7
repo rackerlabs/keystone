@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_45743fce",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:14:04Z",
+      "side": 1,
+      "message": "whether the body can be empty or not should be a property of the schema, we don\u0027t need another parameter.",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_85481789",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:14:04Z",
+      "side": 1,
+      "message": "the region is still required. It should be passed as an empty dict if the client does \"region\": {}. If the caller isn\u0027t doing that then the caller is wrong, not this code.",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_0555e71b",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:14:04Z",
+      "side": 1,
+      "message": "whether the body can be empty or not should be a property of request_body_schema. there shouldn\u0027t be a new parameter to the function for this.",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
