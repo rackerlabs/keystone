@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_c0303da1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:29:08Z",
+      "side": 1,
+      "message": "It\u0027s not a yen mark, although maybe it\u0027s displayed that way on your system. It\u0027s a backslash on my system.\n\nThere\u0027s no other use of ``[group] key`` in this doc so this isn\u0027t consistent.",
+      "revId": "3b5a6c44e4f94394c28f21b316487e688f571943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
