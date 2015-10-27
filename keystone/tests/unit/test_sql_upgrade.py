@@ -815,6 +815,16 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
 
+    def test_switch_index_order_in_token_table(self):
+        self.upgrade(87)
+        table = sqlalchemy.Table('token', self.metadata, autoload=True)
+        index_data = [(idx.name, list(idx.columns.keys()))
+                      for idx in table.indexes]
+        self.assertNotIn(('ix_token_expires_valid', ['expires', 'valid']),
+                         index_data)
+        self.assertIn(('ix_token_valid_expires', ['valid', 'expires']),
+                      index_data)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
