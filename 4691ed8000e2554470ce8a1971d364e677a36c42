@@ -16,6 +16,23 @@
       "revId": "4691ed8000e2554470ce8a1971d364e677a36c42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_40374de3",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-10-27T01:18:49Z",
+      "side": 1,
+      "message": "should have a comment explaining why it isn\u0027t nullable in some backends but the controller accepts it?",
+      "revId": "4691ed8000e2554470ce8a1971d364e677a36c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
