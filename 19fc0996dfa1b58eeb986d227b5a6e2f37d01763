@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_f05bf92c",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-27T14:16:29Z",
+      "side": 1,
+      "message": "and url.",
+      "revId": "19fc0996dfa1b58eeb986d227b5a6e2f37d01763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_b511f35f",
+        "filename": "keystone/common/sql/migrate_repo/versions/081_add_constraint_endpoint.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-27T14:16:29Z",
+      "side": 1,
+      "message": "I think there might be more work to be done here, suppose the deployment with the existed records doesn\u0027s match UniqueConstraint, the upgrade will fail, are you expecting they will clean the db manually before upgrading their env?\n\nSome work could be done here, don\u0027t let user face something they don\u0027t have know any context.",
+      "revId": "19fc0996dfa1b58eeb986d227b5a6e2f37d01763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_f52a0be7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-27T14:16:29Z",
+      "side": 1,
+      "message": "The testcase is not clear enough.\n\nsuppose only interface+service_id are all we had for UniqueConstraint, this testcase will still pass.\n\nThere need some testcases to test that interface+service_id+url+region_id are UniqueConstraint, for example, you can create two recodes which has the same interface, service_id, url, but it will raise DBDuplicateEntry if region_id is also the same.",
+      "revId": "19fc0996dfa1b58eeb986d227b5a6e2f37d01763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_10d0f552",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-27T14:16:29Z",
+      "side": 1,
+      "message": "same comment here, duplication will only happen when serivice_id + region_id + interface + url.\n\n\nany part of this set (serivice_id + region_id + interface + url) will success instead of raising exception.",
+      "revId": "19fc0996dfa1b58eeb986d227b5a6e2f37d01763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
