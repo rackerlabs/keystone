@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_80f7a5f4",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-27T01:25:42Z",
+      "side": 1,
+      "message": "this class should override base_url like the other subclasses do.",
+      "revId": "2ab3bd5fc94ccec30691a142a376259f284dc438",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
