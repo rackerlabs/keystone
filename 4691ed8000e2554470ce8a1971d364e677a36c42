@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_9c6dcd34",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-27T05:23:05Z",
+      "side": 1,
+      "message": "Actually, no. Because  the project that acts as a domain has domain_id None. That\u0027s why we need to check the first condition.",
+      "parentUuid": "3a29b11f_e5578b24",
+      "revId": "4691ed8000e2554470ce8a1971d364e677a36c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_40374de3",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-27T01:18:49Z",
       "side": 1,
       "message": "should have a comment explaining why it isn\u0027t nullable in some backends but the controller accepts it?",
+      "revId": "4691ed8000e2554470ce8a1971d364e677a36c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_7c49d1b6",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-27T05:23:05Z",
+      "side": 1,
+      "message": "ok. I\u0027ll do that in another patchset.",
+      "parentUuid": "3a29b11f_40374de3",
       "revId": "4691ed8000e2554470ce8a1971d364e677a36c42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
