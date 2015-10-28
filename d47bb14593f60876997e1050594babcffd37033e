@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_07dd0f42",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 26
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-28T01:23:08Z",
+      "side": 1,
+      "message": "change \"deprecate\" to \"deprecates\"\n\nchange \"the local config\" to \"local config\"\n\nchange \"remove\" to \"removes the\"",
+      "revId": "d47bb14593f60876997e1050594babcffd37033e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c76dd733",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-28T01:23:08Z",
+      "side": 1,
+      "message": "The deprecation message should be clarified to say what the server is going to do in the N release. Is it going to continue to ignore the config or is it going to fail to start if there\u0027s any local_conf?\n\nIf the server is going to continue to ignore the config options in paste.ini (which I think we should do), there\u0027s no reason to print a deprecation message since the behavior will be the same.\n\nThis could be changed to log a warning if there\u0027s any local_conf, the warning message could just say that the paste conf is being ignored.",
+      "revId": "d47bb14593f60876997e1050594babcffd37033e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
