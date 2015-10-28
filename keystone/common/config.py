@@ -357,6 +357,9 @@ FILE_OPTIONS = {
                         'ldap and sql. If an assignment driver is not '
                         'specified, the identity driver will choose the '
                         'assignment driver.'),
+        cfg.IntOpt('max_role_assignments',
+                   help='Maximum number of roles a user can be assigned to '
+                        'a project'),
     ],
     'resource': [
         cfg.StrOpt('driver',

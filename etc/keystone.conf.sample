@@ -307,6 +307,9 @@
 # value)
 #driver = <None>
 
+# Maximum number of roles a user can be assigned to a project (integer value)
+#max_role_assignments = <None>
+
 
 [auth]
 
