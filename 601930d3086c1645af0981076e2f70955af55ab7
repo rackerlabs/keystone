@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_a2a7694e",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-28T02:10:23Z",
+      "side": 1,
+      "message": "so, per my understanding, if you accept the emtpy body like this, there is no reason we don\u0027t accept the case when the request body is not given at all.",
+      "parentUuid": "3a29b11f_c04efd95",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_0555e71b",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 4
@@ -65,6 +83,24 @@
       "writtenOn": "2015-10-27T01:14:04Z",
       "side": 1,
       "message": "whether the body can be empty or not should be a property of request_body_schema. there shouldn\u0027t be a new parameter to the function for this.",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_a27449fd",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-28T02:10:23Z",
+      "side": 1,
+      "message": "empty body such as \"region\": {} is not allowed here anymore, which means the body like this \"region\": {} will raise a ValidationError exception from this method without this change.\n\nThis was did since there is a bug [1] complains the message from the jsonschema was not helpful. Its looks like this,\n\ncopy them here as well.\n\nWhen this body is provided:\n{\n   \"service\": {}\n}\n\nyou get this back:\n\n{\n    \"error\": {\n        \"message\": \"{} does not have enough properties\",\n        \"code\": 400,\n        \"title\": \"Bad Request\"\n    }\n}\n\nAnd per the review comments and opinions from different reviewers, we decides to the check it in this method and then we will know what acutally happened [2] [3].\n\nLet\u0027s back to the suggestion from you, this is acutally my inital thoughts about this bug, relax it here to accept an empty request body, but we must put up with the ambiguous error message from jsonschema.\n\nThe comments on this bug (https://bugs.launchpad.net/keystone/+bug/1501740) looks great to me since it avoid the backward compatible issue. And I didn\u0027t see anyting terrible from that suggestion and the implementation of that idea, i.e. this patch.\n\n\n[1] https://bugs.launchpad.net/keystone/+bug/1466872\n\n[2] https://review.openstack.org/#/c/195903/\n\n[3] https://review.openstack.org/#/c/195001/",
+      "parentUuid": "3a29b11f_0555e71b",
       "revId": "601930d3086c1645af0981076e2f70955af55ab7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
