@@ -247,6 +247,24 @@ class Manager(manager.Manager):
         self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+        """Adds a role to a user for a specific project
+
+        Args:
+            user_id
+            tenant_id
+            role_id
+
+        Raises:
+            exception.ForbiddenAction
+
+        """
+        roles = self.get_roles_for_user_and_project(user_id, tenant_id)
+        max_roles = CONF.assignment.max_role_assignments
+        if max_roles is not None and len(roles) >= max_roles:
+            raise exception.ForbiddenAction("Adding role %s failed because "
+                                            "the user has reached the maximum "
+                                            "number of roles allowed"
+                                            % (role_id,))
         self._add_role_to_user_and_project_adapter(
             role_id, user_id=user_id, project_id=tenant_id)
 
