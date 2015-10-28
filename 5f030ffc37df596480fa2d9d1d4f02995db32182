@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_3da138aa",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-10-28T02:35:12Z",
+      "side": 1,
+      "message": "maybe also add an \"assertIn(ix_token_expires_valid)\" before the migration?",
+      "revId": "5f030ffc37df596480fa2d9d1d4f02995db32182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
