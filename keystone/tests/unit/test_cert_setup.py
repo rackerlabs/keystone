@@ -128,7 +128,7 @@ class CertSetupTestCase(rest.RestfulTestCase):
         with open(CONF.signing.ca_certs) as f:
             self.assertEqual(f.read(), cacert_resp.text)
 
-        # NOTE(jamielennox): This is weird behaviour that we need to enforce.
+        # NOTE(jamielennox): This is weird behavior that we need to enforce.
         # It doesn't matter what you ask for it's always going to give text
         # with a text/html content_type.
 

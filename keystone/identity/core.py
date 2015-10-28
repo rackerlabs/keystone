@@ -155,7 +155,7 @@ class DomainConfigs(dict):
 
         - Create a new config structure, adding in the specific additional
           options defined in this config file
-        - Initialise a new instance of the required driver with this new config
+        - Initialize a new instance of the required driver with this new config
 
         """
         conf_dir = CONF.identity.domain_config_dir
@@ -297,7 +297,7 @@ class DomainConfigs(dict):
 
         - Create a new config structure, overriding any specific options
           defined in the resource backend
-        - Initialise a new instance of the required driver with this new config
+        - Initialize a new instance of the required driver with this new config
 
         """
         for domain in resource_api.list_domains():

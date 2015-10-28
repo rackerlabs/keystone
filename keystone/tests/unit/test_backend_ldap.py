@@ -2889,7 +2889,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
 
     def enable_multi_domain(self):
         # The values below are the same as in the domain_configs_multi_ldap
-        # cdirectory of test config_files.
+        # directory of test config_files.
         default_config = {
             'ldap': {'url': 'fake://memory',
                      'user': 'cn=Admin',
@@ -2940,7 +2940,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         new_config = {'ldap': {'url': uuid.uuid4().hex}}
         self.domain_config_api.create_config(
             CONF.identity.default_domain_id, new_config)
-        # Trigger the identity backend to initialise any domain specific
+        # Trigger the identity backend to initialize any domain specific
         # configurations
         self.identity_api.list_users()
         # Check that the new config has not been passed to the driver for

@@ -1461,7 +1461,7 @@
 # Deprecated group/name - [DEFAULT]/amqp_auto_delete
 #amqp_auto_delete = false
 
-# Send a single AMQP reply to call message. The current behaviour since oslo-
+# Send a single AMQP reply to call message. The current behavior since oslo-
 # incubator is to send two AMQP replies - first one with the payload, a second
 # one to ensure the other have finish to send the payload. We are going to
 # remove it in the N release, but we must keep backward compatible at the same
@@ -1534,7 +1534,7 @@
 # Deprecated group/name - [DEFAULT]/amqp_auto_delete
 #amqp_auto_delete = false
 
-# Send a single AMQP reply to call message. The current behaviour since oslo-
+# Send a single AMQP reply to call message. The current behavior since oslo-
 # incubator is to send two AMQP replies - first one with the payload, a second
 # one to ensure the other have finish to send the payload. We are going to
 # remove it in the N release, but we must keep backward compatible at the same
