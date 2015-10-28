@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_ebd8d51f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 114
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-28T07:47:18Z",
+      "side": 1,
+      "message": "What is a regular project? Also the message is a little confusing for the case when you try to create a project that has the same name as the domain that it is in.",
+      "revId": "2d38d47abbfbd9b877f77d8f08f0a6a6d113e097",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
