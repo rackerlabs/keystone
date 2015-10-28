@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_29324bf2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-28T14:30:02Z",
+      "side": 1,
+      "message": "This should be i18n compatible.   I think you should wrap the error with _(\"error\")   so it can be translated.",
+      "revId": "42ffc42b6ef9f9fd552d156fb8f3337488b1006f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
