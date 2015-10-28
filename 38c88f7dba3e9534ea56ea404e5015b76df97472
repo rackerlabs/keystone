@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_fd9e6006",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-28T02:46:10Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a29b11f_0440e205",
+      "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_aa8d37d4",
         "filename": "keystone/token/persistence/backends/kvs.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-22T20:47:59Z",
       "side": 1,
       "message": "isn\u0027t this also done here - https://github.com/openstack/keystone/blob/a597a86b854215835a4d54885daeb161d7b0efb8/keystone/contrib/revoke/backends/kvs.py#L40",
+      "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_9df96c50",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-28T02:46:10Z",
+      "side": 1,
+      "message": "guess it is, although it does not lock it. maybe it\u0027ll be correct to remove it at this point you mentioned",
+      "parentUuid": "3a29b11f_aa8d37d4",
       "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
