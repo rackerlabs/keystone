@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_3d1298b5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-28T02:43:29Z",
+      "side": 1,
+      "message": "There should also be tests for updating user and group.",
+      "revId": "25a6557919658ef814b89e91b992212756da7330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
