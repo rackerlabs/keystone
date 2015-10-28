@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_68f3540b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-28T21:03:10Z",
+      "side": 1,
+      "message": "Still missing some formatting.\n\nhttp://paste.openstack.org/show/477583/",
+      "revId": "104c9a0d2cbbb2ac78a1634a3e2d8cd8d4361a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_a82c0c4b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-28T21:03:10Z",
+      "side": 1,
+      "message": "You always want to put as little as possible inside a try.  It looks like the exceptions are originating from get_roles_for_user_and_project could we move max_roles and the if statement out of the try? \nLike this: paste.openstack.org/show/477584/",
+      "revId": "104c9a0d2cbbb2ac78a1634a3e2d8cd8d4361a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
