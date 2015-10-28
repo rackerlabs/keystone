@@ -401,6 +401,8 @@ class Manager(manager.Manager):
             LOG.debug('Received token with no audit_chain_id.')
             revoke_by_expires = True
 
+        do_delete = CONF.token.revoke_by_id and self._needs_persistence
+
         if revoke_by_expires:
             self.revoke_api.revoke_by_expiration(user_id, expires_at,
                                                  project_id=project_id,
@@ -410,9 +412,15 @@ class Manager(manager.Manager):
                                                      project_id=project_id,
                                                      domain_id=domain_id)
         else:
-            self.revoke_api.revoke_by_audit_id(audit_id)
+            # In a configuration where tokens persist in some store,
+            # deleting a token from the store is enough to revoke the token.
+            # We can and should avoid adding a new revocation event as
+            # growing number of revocation events causes bad performance
+            # in validation.
+            if not do_delete:
+                self.revoke_api.revoke_by_audit_id(audit_id)
 
-        if CONF.token.revoke_by_id and self._needs_persistence:
+        if do_delete:
             self._persistence.delete_token(token_id=token_id)
 
     def list_revoked_tokens(self):
