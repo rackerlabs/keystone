@@ -33,6 +33,24 @@
       "revId": "8f01f978f09e5fcad2d60b22eafb07d42a708d0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_61ddaf41",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-10-28T23:24:25Z",
+      "side": 1,
+      "message": "The class is inherited from test_backend.LimitTests and the method is defined there. It works in SQL and shouldn\u0027t work in LDAP.",
+      "parentUuid": "1a26ad4f_6bab4e8a",
+      "revId": "8f01f978f09e5fcad2d60b22eafb07d42a708d0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
