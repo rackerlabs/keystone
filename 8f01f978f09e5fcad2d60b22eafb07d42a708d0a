@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_4b93f25b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2094,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-28T21:44:57Z",
+      "side": 1,
+      "message": "Hopefully we\u0027ll move them into func tests with a real LDAP server in the near future.",
+      "revId": "8f01f978f09e5fcad2d60b22eafb07d42a708d0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_6bab4e8a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-10-28T21:44:57Z",
+      "side": 1,
+      "message": "why bother to put the test here?",
+      "revId": "8f01f978f09e5fcad2d60b22eafb07d42a708d0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
