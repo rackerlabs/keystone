@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_7e0c6f94",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-28T18:35:07Z",
+      "side": 1,
+      "message": "The colon after raises needs to be removed\n\nthe exception needs to be keystone.exception.ForbiddenAction\n\nremove the space before type",
+      "revId": "3301caa828563de17143528aa7ea5db8a224ab86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
