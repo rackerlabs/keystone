@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_fdbe49fe",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-28T16:27:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_4f4c6742",
+      "revId": "a19184b33f259871f28f334d00466b75bf9990ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_4f7d471b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-28T15:39:57Z",
       "side": 1,
       "message": "\"\"\"Adds a role to a user for a specific project\n\n        :param user_id:  what is user_id\n        : type user_id:  whats the type\n        :param tenant_id: what is tenant_id\n        : type tenant_id:  whats the type\n        :param role_id: what is role_id\n        : type role_id:  whats the type\n\n        :raises keystone.exception.ForbiddenAction: If the user has reached the maximum number of roles allowed\n\n        \"\"\"\n\nThis is just a start for you to build on. :)",
+      "revId": "a19184b33f259871f28f334d00466b75bf9990ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_bd3771af",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-28T16:27:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_4f7d471b",
       "revId": "a19184b33f259871f28f334d00466b75bf9990ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_7d58f9fa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-28T16:27:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_2f49eb5f",
+      "revId": "a19184b33f259871f28f334d00466b75bf9990ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_6c0a9128",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-28T15:39:57Z",
       "side": 1,
       "message": "I\u0027m sorry if i gave you the perception that this had to be in a double quotes. :(  Personally i think it should be in single quotes.",
+      "revId": "a19184b33f259871f28f334d00466b75bf9990ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_9d9e3555",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-10-28T16:27:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_6c0a9128",
       "revId": "a19184b33f259871f28f334d00466b75bf9990ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
