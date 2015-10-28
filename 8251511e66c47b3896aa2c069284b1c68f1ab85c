@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_c6ccd937",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is much better! Maybe say \"older versions\"",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_46d9a9f2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "are we insisting on US spelling?",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_069171f0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2068,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "same comment about US spelling",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_26b10d90",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2943,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "us vs uk spelling",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_867261e4",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "us vs uk/aus spelling?",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c64ff990",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "us vs uk/aus spelling?",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_067f31ab",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3450,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "us vs uk/aus spelling?",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_465c494b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "is encase the right word here? I think the author meant \"in case\"",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_e658f558",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-28T22:49:15Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
