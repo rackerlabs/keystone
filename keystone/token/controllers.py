@@ -28,6 +28,7 @@ from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LW
 from keystone.models import token_model
 from keystone.token import provider
 
@@ -388,13 +389,15 @@ class Auth(controller.V2Controller):
                 role_list = self.assignment_api.get_roles_for_user_and_project(
                     user_id, tenant_id)
             except exception.ProjectNotFound:
-                msg = _('Project ID not found: %(t_id)s') % {'t_id': tenant_id}
+                msg = _LW('Project ID not found: %(t_id)s')
+                LOG.warn(msg % {'t_id': tenant_id})
                 raise exception.Unauthorized(msg)
 
             if not role_list:
-                msg = _('User %(u_id)s is unauthorized for tenant %(t_id)s')
-                msg = msg % {'u_id': user_id, 't_id': tenant_id}
-                LOG.warning(msg)
+                msg = _LW('User %(u_id)s is unauthorized for tenant %(t_id)s')
+                LOG.warn(msg % {
+                    'u_id': user_id,
+                    't_id': tenant_id})
                 raise exception.Unauthorized(msg)
 
         return (tenant_ref, role_list)
