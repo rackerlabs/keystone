@@ -118,6 +118,23 @@
       "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_fda5d203",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T09:39:42Z",
+      "side": 1,
+      "message": "this line will give us the dict like this, \n {\u0027rules\u0027: [\u002755e192b6db094c149678cd508c26b183\u0027]}\n\nno difference with this line,\n mapping \u003d {\u0027rules\u0027: [uuid.uuid4().hex]}",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
