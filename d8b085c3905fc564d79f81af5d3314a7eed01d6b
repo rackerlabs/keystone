@@ -34,6 +34,24 @@
       "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_d0123809",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:23:29Z",
+      "side": 1,
+      "message": "Yes I agree with Brants comment to move it to a warning instead of a deprecation.  But following up on your comment when will the parameters be removed from app_factory.  \n\nCould you tack on at the end \u0027parameters will be removed from app_factory in N\u0027 ?\n\nI guess since we are ignoring the config option anyway its doesn\u0027t matter if you do or not.  The curtsy of letting them know that your not reading in the conf is good enough for me. :)",
+      "parentUuid": "1a26ad4f_971289b3",
+      "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
