@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_7dba2225",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-29T09:54:21Z",
+      "side": 1,
+      "message": "the is_domain flag will get added once we convert to project tokens instead of domain tokens",
+      "parentUuid": "7a2fa921_6c547ffe",
+      "revId": "670e6e116a16c88b16ca77f14d395ee1d6db966e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a2fa921_fef38e08",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 7
