@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_70cb2454",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_add_federation_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-29T13:35:59Z",
+      "side": 1,
+      "message": "change \u0027extension\u0027 to \u0027migration\u0027",
+      "revId": "1463b17ef7201bde1fd10e75a9b10db6f4c66114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_d0b318e8",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/008_add_relay_state_to_sp.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-29T13:35:59Z",
+      "side": 1,
+      "message": "should be changed to:\n\n  raise exception.MigrationMovedFailure(extension\u003d\u0027federation\u0027)\n\nand for all from 001-007",
+      "revId": "1463b17ef7201bde1fd10e75a9b10db6f4c66114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_90912055",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-29T13:35:59Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be version\u003dversion?",
+      "revId": "1463b17ef7201bde1fd10e75a9b10db6f4c66114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
