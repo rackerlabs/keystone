@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_5bc5fb39",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-29T02:50:17Z",
+      "side": 1,
+      "message": "federation is part of the core API, so why are we providing an option to disable? I don\u0027t think we should provide an option to disable it.",
+      "revId": "6dc9816771950e6a4ce6f1b2f686d57b119b3478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_5b4adbc6",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-29T02:50:17Z",
+      "side": 1,
+      "message": "change this to just \"sql\" since that\u0027s what they should be using.",
+      "revId": "6dc9816771950e6a4ce6f1b2f686d57b119b3478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_fb7087de",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-29T02:50:17Z",
+      "side": 1,
+      "message": "This middleware shoud now just print out a message saying to remove the federation_extension from the pipeline since the federation extension is already being run.",
+      "revId": "6dc9816771950e6a4ce6f1b2f686d57b119b3478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
