@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_1548ac86",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "separate each statement here with a blank line instead of just doing it in one place.",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_551ce476",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "does the default value \u0027\u0027 has any meaning here? can we create a mapping with that empty id?",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_701ece64",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "add \"- Get mapping\" here",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_9047ea4a",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "I assume there is nothing to be updated, but the tet scenario tell us Update mapping with \"* new mapping rules\", so, define a new mapping rule in the fixture then we update the mapping with it.",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_d0d9e284",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "mapping \u003d {uuid.uuid4().hex: uuid.uuid4().hex} is enough.",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_1013da0e",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "test_create_mapping_malformed_request and this one could be consolidate into one \"test_mapping_malformed_request\".\n\nBut I am okay with as is, up to you :)",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_10451a16",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T07:40:52Z",
+      "side": 1,
+      "message": "delete \"- Delete mapping\" since this testcase doesn\u0027t test it.",
+      "revId": "1c365f6f3037df81306d7c2a9fde4d2f8542abd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
