@@ -52,6 +52,24 @@
       "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c0b49df3",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-29T21:41:36Z",
+      "side": 1,
+      "message": "Why remove the parameters? This signature should be something like: http://pythonpaste.org/deploy/#paste-app-factory even if we don\u0027t use the extra params.",
+      "parentUuid": "1a26ad4f_d0123809",
+      "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
