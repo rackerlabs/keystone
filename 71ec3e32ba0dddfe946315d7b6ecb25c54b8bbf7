@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_e5120b09",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-29T21:37:15Z",
+      "side": 1,
+      "message": "Does \u0027string_to_sign\u0027 come in a bytes in Py3, but unicode in Py2? Later on \u0027string_to_sign\u0027 is passed into the _get_utf8_value method, which will have no effect in Py3. So I\u0027m wondering what effect it has in Py2.",
+      "revId": "71ec3e32ba0dddfe946315d7b6ecb25c54b8bbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_8597978f",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-29T21:37:15Z",
+      "side": 1,
+      "message": "Is there any reason to use _get_uft8_value here? Won\u0027t this always be returned as-is because it\u0027s a bytes type?",
+      "revId": "71ec3e32ba0dddfe946315d7b6ecb25c54b8bbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_6a4a48ae",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-29T21:37:15Z",
+      "side": 1,
+      "message": "This may not work in Python 3 because this will make the method return text instead of bytes. This isn\u0027t tested so I really don\u0027t know what it\u0027s here. Is it a just in case?",
+      "revId": "71ec3e32ba0dddfe946315d7b6ecb25c54b8bbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
