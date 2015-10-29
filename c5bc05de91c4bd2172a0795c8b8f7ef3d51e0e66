@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a26ad4f_24b7c0d9",
+        "filename": "keystone/exception.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-29T05:26:37Z",
+      "side": 1,
+      "message": "this should call the super __init__ with the new message rather than overriding __str__ like we do in Error.",
+      "revId": "c5bc05de91c4bd2172a0795c8b8f7ef3d51e0e66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c4fe0c38",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-29T05:26:37Z",
+      "side": 1,
+      "message": "it would be cleaner to make this a decorator.",
+      "revId": "c5bc05de91c4bd2172a0795c8b8f7ef3d51e0e66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_212c9201",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 22
