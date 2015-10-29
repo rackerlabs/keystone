@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_0f865d13",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "need blank line here to separate third party lib and python lib.\n\n import uuid\n\n import requests\n import testtools.matchers",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_2fbd5968",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "better to use \u0027keystone\u0027 and in other places to follow the convention.",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_8aeedbb2",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "blank line is intentional? why L73 doesn\u0027t have a blank there? can we make it consistently?",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_2a1307ba",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "better to get the idp back and assert desc, enabled, remoted_ids is updated indeed.",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_8a1c9bc2",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "nit: s/explicitely/explicitly",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_6a07bf1c",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "i think range(3) is enough but looks okay as is.",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_552aa47f",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T06:45:01Z",
+      "side": 1,
+      "message": "delete this scenario, \"Delete Identity Provider\" is not covered in this testcase.",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
