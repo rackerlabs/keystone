@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_7b547720",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T02:39:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_3bcb5f20",
+      "revId": "7c87fc78a8aa59b297565e896fdc36f41c624865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_5babbb1d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-29T02:36:46Z",
       "side": 1,
       "message": "Guess we should\u0027ve a bug report showing that this docstring is really wrongly rendered and mention it here",
+      "revId": "7c87fc78a8aa59b297565e896fdc36f41c624865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_bb5a0f4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T02:39:45Z",
+      "side": 1,
+      "message": "docstring is not operator or end user refer to, but the developer.",
+      "parentUuid": "1a26ad4f_5babbb1d",
       "revId": "7c87fc78a8aa59b297565e896fdc36f41c624865",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
