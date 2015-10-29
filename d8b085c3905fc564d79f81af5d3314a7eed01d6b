@@ -70,6 +70,24 @@
       "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_40a08d9f",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T21:45:07Z",
+      "side": 1,
+      "message": "That was my mistake I didn\u0027t realize they were keyword arguments.  How It was explained before I thought they were regular parameters.  Thank you David for clearing that up.",
+      "parentUuid": "1a26ad4f_c0b49df3",
+      "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
