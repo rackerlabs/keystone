@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_3bcb5f20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-29T02:36:46Z",
+      "side": 1,
+      "message": "s/correct/corrects",
+      "revId": "7c87fc78a8aa59b297565e896fdc36f41c624865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_5babbb1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-29T02:36:46Z",
+      "side": 1,
+      "message": "Guess we should\u0027ve a bug report showing that this docstring is really wrongly rendered and mention it here",
+      "revId": "7c87fc78a8aa59b297565e896fdc36f41c624865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
