@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_fce06bce",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-29T15:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_90ab60d6",
+      "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_703b24d2",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-29T14:19:59Z",
       "side": 1,
       "message": "This should be a private method",
+      "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_dcdd6f15",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-29T15:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_703b24d2",
       "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_3cc0232a",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-29T15:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_70424440",
+      "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_903da0bd",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-29T14:19:59Z",
       "side": 1,
       "message": "ditto",
+      "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_7cc69b4a",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-29T15:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_903da0bd",
       "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_5ccb9f53",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-29T15:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_1078b08e",
+      "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_b0f3fc09",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2015-10-29T14:19:59Z",
       "side": 1,
       "message": "\u0027AWS4\u0027",
+      "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_bcb3d3e8",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-29T15:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_b0f3fc09",
       "revId": "44439486eb2b2627e81d92c16c7ae477ac693d3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
