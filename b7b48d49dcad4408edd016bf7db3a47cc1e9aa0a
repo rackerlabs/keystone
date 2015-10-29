@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_b021c64f",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-29T07:53:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_0f865d13",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_2fbd5968",
         "filename": "keystone/tests/functional/federation/test_v3_crud.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_30d4d61e",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-29T07:53:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_2fbd5968",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_8aeedbb2",
         "filename": "keystone/tests/functional/federation/test_v3_crud.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-29T06:45:01Z",
       "side": 1,
       "message": "blank line is intentional? why L73 doesn\u0027t have a blank there? can we make it consistently?",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_50be32d5",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-29T07:53:26Z",
+      "side": 1,
+      "message": "blank line removed",
+      "parentUuid": "1a26ad4f_8aeedbb2",
       "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_10b8bae4",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-29T07:53:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_8a1c9bc2",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_6a07bf1c",
         "filename": "keystone/tests/functional/federation/test_v3_crud.py",
         "patchSetId": 11
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_d0ca426e",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-29T07:53:26Z",
+      "side": 1,
+      "message": "i am ok with 4",
+      "parentUuid": "1a26ad4f_6a07bf1c",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_552aa47f",
         "filename": "keystone/tests/functional/federation/test_v3_crud.py",
         "patchSetId": 11
@@ -115,6 +205,24 @@
       "writtenOn": "2015-10-29T06:45:01Z",
       "side": 1,
       "message": "delete this scenario, \"Delete Identity Provider\" is not covered in this testcase.",
+      "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_70c9ee77",
+        "filename": "keystone/tests/functional/federation/test_v3_crud.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-10-29T07:53:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_552aa47f",
       "revId": "b7b48d49dcad4408edd016bf7db3a47cc1e9aa0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
