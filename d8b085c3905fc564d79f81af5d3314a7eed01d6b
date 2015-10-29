@@ -16,6 +16,24 @@
       "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_971289b3",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-29T01:40:36Z",
+      "side": 1,
+      "message": "This is what I was thinking, deprecte it and maybe remove the parameters in the N.\n\nBut per the comments in the last patch, this was changed to keep it as is and just log a warning message.\n\n\nsee the comments there, https://review.openstack.org/#/c/134124/26/keystone/version/service.py",
+      "parentUuid": "1a26ad4f_f52f3d9f",
+      "revId": "d8b085c3905fc564d79f81af5d3314a7eed01d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
