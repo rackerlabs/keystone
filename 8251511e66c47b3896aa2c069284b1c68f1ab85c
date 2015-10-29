@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_61def86e",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_c6ccd937",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_46d9a9f2",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-28T22:49:15Z",
       "side": 1,
       "message": "are we insisting on US spelling?",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_013b849d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_46d9a9f2",
       "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_e13768ae",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2068,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_069171f0",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_26b10d90",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-28T22:49:15Z",
       "side": 1,
       "message": "us vs uk spelling",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_81c0f47d",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2943,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_26b10d90",
       "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_36fda43a",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_867261e4",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_c64ff990",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2015-10-28T22:49:15Z",
       "side": 1,
       "message": "us vs uk/aus spelling?",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_561ce0c0",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_c64ff990",
       "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_f6796cfd",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3450,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_067f31ab",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_465c494b",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_d638f03f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_465c494b",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_e658f558",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -149,6 +293,24 @@
       "writtenOn": "2015-10-28T22:49:15Z",
       "side": 1,
       "message": "ditto",
+      "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_162f48f7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-29T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_e658f558",
       "revId": "8251511e66c47b3896aa2c069284b1c68f1ab85c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
