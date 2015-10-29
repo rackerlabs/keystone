@@ -16,6 +16,24 @@
       "revId": "2d38d47abbfbd9b877f77d8f08f0a6a6d113e097",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_01a87b1e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 114
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-10-29T00:04:30Z",
+      "side": 1,
+      "message": "a regular project is a project that does not act as a domain. but with our new approach, looks like we can remove the \"regular\" from this phrase. I don\u0027t think I got your point about the same name as the domain",
+      "parentUuid": "1a26ad4f_ebd8d51f",
+      "revId": "2d38d47abbfbd9b877f77d8f08f0a6a6d113e097",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
