@@ -84,6 +84,74 @@
       "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_a2b404d1",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T01:27:55Z",
+      "side": 1,
+      "message": "use _() to mark the message for translation.",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_02aff881",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T01:27:55Z",
+      "side": 1,
+      "message": "instead of \"run by default\", put \"always available\". Saying that this the default indicates that there\u0027s a way to not run it.",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_e2bafcbf",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T01:27:55Z",
+      "side": 1,
+      "message": "add a . at the end of the sentence.\n\nAlso, this should say that the middleware is going to be removed in the O release.",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_02fe1837",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3079,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T01:27:55Z",
+      "side": 1,
+      "message": "This should be ServiceProviderTests",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
