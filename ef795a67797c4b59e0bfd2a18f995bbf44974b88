@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a26ad4f_c8003f04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-30T01:48:51Z",
+      "side": 1,
+      "message": "in py2 strings (str) is bytes and unicode is unicode; i like to just use the terms bytes and text when talking about this because it makes it easier to understand",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c84eff6e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-30T01:48:51Z",
+      "side": 1,
+      "message": "This is not true. It does exist. The reason the test fails is that in py3 unicode is the default so it just works. This test fails on py2 because it is a bad test. If you make the string a unicode string like u\u0027\u0027 then it should pass. I think this test should probably be deleted since it\u0027s really testing SQL behavior and not Keystone.",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_450e5a3c",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 7
@@ -13,6 +47,23 @@
       "writtenOn": "2015-10-30T01:46:20Z",
       "side": 1,
       "message": "This test is invalid and should just be removed. We can assume that sqlalchemy works as designed and has their own tests and I don\u0027t think anybody in keystone cares about creating columns with invalid ascii strings.\n\nAlternatively, the test could be changed to use a valid unicode string by changing col\u003d\u0027Я\u0027 to col\u003du\u0027Я\u0027.",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c8759f98",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-10-30T01:48:51Z",
+      "side": 1,
+      "message": "Why out of order?",
       "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
