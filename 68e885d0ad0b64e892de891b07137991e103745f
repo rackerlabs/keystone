@@ -16,6 +16,24 @@
       "revId": "68e885d0ad0b64e892de891b07137991e103745f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_e8097bde",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T01:56:46Z",
+      "side": 0,
+      "message": "Changed my mind, this is following a different code path.",
+      "parentUuid": "1a26ad4f_88f487f2",
+      "revId": "68e885d0ad0b64e892de891b07137991e103745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
