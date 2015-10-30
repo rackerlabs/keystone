@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_33efe4b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-30T02:41:05Z",
+      "side": 1,
+      "message": "since there is no byte type in python2, so I will only talk how to do it in python3.",
+      "parentUuid": "1a26ad4f_c8003f04",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_c84eff6e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-30T01:48:51Z",
       "side": 1,
       "message": "This is not true. It does exist. The reason the test fails is that in py3 unicode is the default so it just works. This test fails on py2 because it is a bad test. If you make the string a unicode string like u\u0027\u0027 then it should pass. I think this test should probably be deleted since it\u0027s really testing SQL behavior and not Keystone.",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_d3647023",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-30T02:41:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_c84eff6e",
       "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_a88703d6",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-30T02:41:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_450e5a3c",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_c8759f98",
         "filename": "tox.ini",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2015-10-30T01:48:51Z",
       "side": 1,
       "message": "Why out of order?",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c8611f3b",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-30T02:41:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_c8759f98",
       "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
