@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_e599a620",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T01:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_a2b404d1",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_02aff881",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 21
@@ -115,6 +133,24 @@
       "writtenOn": "2015-10-30T01:27:55Z",
       "side": 1,
       "message": "instead of \"run by default\", put \"always available\". Saying that this the default indicates that there\u0027s a way to not run it.",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_458bbac3",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T01:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_02aff881",
       "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +174,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_6586f6ba",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T01:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_e2bafcbf",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_02fe1837",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 21
@@ -149,6 +203,24 @@
       "writtenOn": "2015-10-30T01:27:55Z",
       "side": 1,
       "message": "This should be ServiceProviderTests",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_65511662",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3079,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T01:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_02fe1837",
       "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
