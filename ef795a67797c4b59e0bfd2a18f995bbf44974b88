@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_450e5a3c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T01:46:20Z",
+      "side": 1,
+      "message": "This test is invalid and should just be removed. We can assume that sqlalchemy works as designed and has their own tests and I don\u0027t think anybody in keystone cares about creating columns with invalid ascii strings.\n\nAlternatively, the test could be changed to use a valid unicode string by changing col\u003d\u0027Я\u0027 to col\u003du\u0027Я\u0027.",
+      "revId": "ef795a67797c4b59e0bfd2a18f995bbf44974b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
