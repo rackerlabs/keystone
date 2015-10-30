@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_0805d7ba",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T01:56:59Z",
+      "side": 1,
+      "message": "this should be removed in 2",
+      "revId": "7a82464e6542633b85653026cdfd16ba5e208a3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
