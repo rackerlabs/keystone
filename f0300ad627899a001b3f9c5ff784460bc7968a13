@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_5face7ec",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-30T00:11:32Z",
+      "side": 1,
+      "message": "no, this shouldn\u0027t use LW - since you are using the same message for both the exception and the log.  See hacking guidelines.",
+      "revId": "f0300ad627899a001b3f9c5ff784460bc7968a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_bf83bb55",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-10-30T00:11:32Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "f0300ad627899a001b3f9c5ff784460bc7968a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
