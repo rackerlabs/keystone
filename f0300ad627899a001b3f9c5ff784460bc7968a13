@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_e45f4d3f",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-30T19:54:04Z",
+      "side": 1,
+      "message": "I agree with henry. Here is the doc you are talking about: http://docs.openstack.org/developer/oslo.i18n/guidelines.html#choosing-a-marker-function\n\nI would base it off the example in this link and just use just the \u0027_\u0027",
+      "parentUuid": "1a26ad4f_5face7ec",
+      "revId": "f0300ad627899a001b3f9c5ff784460bc7968a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_bf83bb55",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
