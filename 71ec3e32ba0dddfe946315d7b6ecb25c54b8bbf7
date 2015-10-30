@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_dcd47848",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-30T07:56:52Z",
+      "side": 1,
+      "message": "in py2 it comes as str type",
+      "parentUuid": "1a26ad4f_e5120b09",
+      "revId": "71ec3e32ba0dddfe946315d7b6ecb25c54b8bbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_8597978f",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2015-10-29T21:37:15Z",
       "side": 1,
       "message": "This may not work in Python 3 because this will make the method return text instead of bytes. This isn\u0027t tested so I really don\u0027t know what it\u0027s here. Is it a just in case?",
+      "revId": "71ec3e32ba0dddfe946315d7b6ecb25c54b8bbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_1cee70ec",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-10-30T07:56:52Z",
+      "side": 1,
+      "message": "initially I got most code from another projects. and this function too.\nbut you are right - this block will not work here.",
+      "parentUuid": "1a26ad4f_6a4a48ae",
       "revId": "71ec3e32ba0dddfe946315d7b6ecb25c54b8bbf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
