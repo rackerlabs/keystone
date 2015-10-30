@@ -34,6 +34,40 @@
       "revId": "7d86bf8bb3a9a229517a7192e01597232b32d37e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_416f2592",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4941,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T07:16:27Z",
+      "side": 1,
+      "message": "what\u0027s the point of this change?",
+      "revId": "7d86bf8bb3a9a229517a7192e01597232b32d37e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_01692d8b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5069,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T07:16:27Z",
+      "side": 1,
+      "message": "we should have a test that checks if two trusts with expires_at not set also pass",
+      "revId": "7d86bf8bb3a9a229517a7192e01597232b32d37e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
