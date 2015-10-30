@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_3f56cb5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-10-30T01:07:02Z",
+      "side": 1,
+      "message": "Great commit message!",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_ff07f319",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-10-30T01:07:02Z",
+      "side": 1,
+      "message": "Looking forward to this being turned back into a constant.  Magic strings affect my OCD!",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_a2ce44b2",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-10-30T01:07:02Z",
+      "side": 1,
+      "message": "I always like how you remember put the imports in the proper place when you do this",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_e230bca0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-10-30T01:07:02Z",
+      "side": 1,
+      "message": "Nice removal!",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_42d0901f",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-10-30T01:07:02Z",
+      "side": 1,
+      "message": "Everytime I see this deprecaction approach I love it!!! I heard I should thank Brant for this appoach",
+      "revId": "b93b7c6064297b07cc02ce31b05ebfbbf928c31d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
