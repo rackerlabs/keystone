@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_8ee80fb6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-10-30T03:06:07Z",
+      "side": 1,
+      "message": "82 should be 83",
+      "revId": "1689934ac6c8f299a7660ea81b3ccc00a015dfd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
