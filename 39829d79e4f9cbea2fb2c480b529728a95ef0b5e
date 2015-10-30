@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_53d0601f",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-10-30T02:36:13Z",
+      "side": 1,
+      "message": "_ needs to be imported.\n\nThere should be a unit tests that uses this part because this should have failed.",
+      "revId": "39829d79e4f9cbea2fb2c480b529728a95ef0b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
