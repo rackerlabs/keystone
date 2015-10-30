@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_086e3795",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T02:04:57Z",
+      "side": 1,
+      "message": "removed this option",
+      "revId": "bd5b054b2365884aed991b0c4eb3b0c8a1b58eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_08a157a3",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T02:04:57Z",
+      "side": 1,
+      "message": "use \u0027sql\u0027",
+      "revId": "bd5b054b2365884aed991b0c4eb3b0c8a1b58eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_68924b59",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T02:04:57Z",
+      "side": 1,
+      "message": "remove in 2",
+      "revId": "bd5b054b2365884aed991b0c4eb3b0c8a1b58eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_88b1e7e3",
+        "filename": "keystone/contrib/oauth1/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-10-30T02:04:57Z",
+      "side": 1,
+      "message": "change this to match the federation deprecation",
+      "revId": "bd5b054b2365884aed991b0c4eb3b0c8a1b58eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
