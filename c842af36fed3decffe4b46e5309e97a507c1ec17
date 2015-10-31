@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_1dae5381",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-31T13:17:59Z",
+      "side": 1,
+      "message": "Just say something like \"should raise the exception if project/tenant id is not given when getting role for specific user, this will let end user know what is missed or happened instead of failing silently.\"",
+      "revId": "c842af36fed3decffe4b46e5309e97a507c1ec17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_3db30feb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-31T13:17:59Z",
+      "side": 1,
+      "message": "change to Closes-Bug: #1507920",
+      "revId": "c842af36fed3decffe4b46e5309e97a507c1ec17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_3d9c6f5c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-10-31T13:17:59Z",
+      "side": 1,
+      "message": "change to \"raise exception.NotImplemented\" to consistent with L160.  \n\nNormally, ProjectNotFound is used when you know the project id but just cannot get it from the backend driver.",
+      "revId": "c842af36fed3decffe4b46e5309e97a507c1ec17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
