@@ -16,6 +16,108 @@
       "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_e9e64114",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-31T01:22:49Z",
+      "side": 1,
+      "message": "assertlistequal might be a better assert to use here https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertListEqual",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_693311ac",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-31T01:22:49Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_09db7d50",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-31T01:22:49Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_8918ed1f",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-31T01:22:49Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_69da314e",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-31T01:22:49Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_49d5f519",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-10-31T01:22:49Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "afc05ee3721a56f83ae20f03a22c9705bc26b569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
