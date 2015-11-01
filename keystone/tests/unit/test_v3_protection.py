@@ -572,8 +572,8 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
           - domain_admin_user has role 'admin' on domainA,
           - project_admin_user has role 'admin' on the project,
           - just_a_user has a non-admin role on both domainA and the project.
-        - admin_domain has user cloud_admin_user, with an 'admin' role
-          on admin_domain.
+        - admin_domain has admin_project, and user cloud_admin_user, with an
+        'admin' role on admin_project.
 
         We test various api protection rules from the cloud sample policy
         file to make sure the sample is valid and that we correctly enforce it.
@@ -591,6 +591,13 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             group='oslo_policy',
             policy_file=unit.dirs.etc('policy.v3cloudsample.json'))
 
+        self.config_fixture.config(
+            group='resource',
+            admin_project_name=self.admin_project['name'])
+        self.config_fixture.config(
+            group='resource',
+            admin_project_domain_name=self.admin_domain['name'])
+
     def load_sample_data(self):
         # Start by creating a couple of domains
         self._populate_default_domain()
@@ -602,6 +609,11 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
                                                 name='Admin_domain')
         self.resource_api.create_domain(self.admin_domain['id'],
                                         self.admin_domain)
+
+        self.admin_project = unit.new_project_ref(
+            domain_id=self.admin_domain['id'])
+        self.resource_api.create_project(self.admin_project['id'],
+                                         self.admin_project)
 
         # And our users
         self.cloud_admin_user = unit.create_user(
