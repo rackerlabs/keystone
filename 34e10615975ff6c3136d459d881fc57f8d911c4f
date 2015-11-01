@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_a01ff36a",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-11-01T19:37:43Z",
+      "side": 1,
+      "message": "I don\u0027t fully agree with this. EC2 signature doesn\u0027t have any object named \u0027token\u0027. Historically, this layer takes \u0027token\u0027 object but this object contains \u0027string_to_sign\u0027 object.\n\ndocs are here - http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html\n\nSecond reason is that this exception can be passed to user and this is not convenient for ec2 user to see message about token because he doesn\u0027t know what is it.\nMaybe it can be something like \u0027Invalid request\u0027 or \u0027Internal error\u0027...",
+      "parentUuid": "1a26ad4f_c21557e5",
+      "revId": "34e10615975ff6c3136d459d881fc57f8d911c4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_02202f47",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 8
