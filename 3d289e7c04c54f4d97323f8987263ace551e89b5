@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_3b6b12f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "add the tag:\n\n  DocImpact\n\nso we know to make release notes about this",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_7bbe6a66",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "Maybe we should also say that this value can be specified multiple times?\n\n\"Multiple `admin_project_id` values can be given by specifying the option multiple times. This can be performed to signal that X project can blah\"",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_1b8976c9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "nit: we\u0027ve been using the convention where the single quotes line up with each other\n\nalso two spaces after \"Tokens\"",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_fb8b5ac1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "they will have the key/value:\n\n  `is_admin_project`\n\n:)",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_fbb27a93",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "there\u0027s no reason to shorten this, keep it `is_admin_project`, since i think we use `is_admin` to check if the token is the `admin_token` somewhere in the tests, reduce confusion \\o/",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_bba88221",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "is this needed? looks like it\u0027s being done one line below",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_dba53e47",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "change `is_admin` to `is_admin_project`",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_7b650a1c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:44:58Z",
+      "side": 1,
+      "message": "would be cool to see another test with multiple IDs set, and with no IDs set",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
