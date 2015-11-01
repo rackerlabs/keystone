@@ -67,6 +67,40 @@
       "revId": "34e10615975ff6c3136d459d881fc57f8d911c4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_c21557e5",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-01T09:08:08Z",
+      "side": 1,
+      "message": "this should be the token given is invalid rather than the signature is invalid, we are not validata the signature but the format of token.\n\npls change the message and the exception.",
+      "revId": "34e10615975ff6c3136d459d881fc57f8d911c4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_02202f47",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-01T09:08:08Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "34e10615975ff6c3136d459d881fc57f8d911c4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
