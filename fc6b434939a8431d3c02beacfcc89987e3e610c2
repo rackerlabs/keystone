@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_7b4c2a9e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:47:05Z",
+      "side": 1,
+      "message": "beef up the message!\n\nRelated-Bug: 968696\n\n?",
+      "revId": "fc6b434939a8431d3c02beacfcc89987e3e610c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_1b7736d4",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-01T23:47:05Z",
+      "side": 1,
+      "message": "this should probably go in the previous patch",
+      "revId": "fc6b434939a8431d3c02beacfcc89987e3e610c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
