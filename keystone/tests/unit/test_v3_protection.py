@@ -595,8 +595,8 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
           - domain_admin_user has role 'admin' on domainA,
           - project_admin_user has role 'admin' on the project,
           - just_a_user has a non-admin role on both domainA and the project.
-        - admin_domain has user cloud_admin_user, with an 'admin' role
-          on admin_domain.
+        - admin_domain has admin_project, and user cloud_admin_user, with an
+        'admin' role on admin_project.
 
         We test various api protection rules from the cloud sample policy
         file to make sure the sample is valid and that we correctly enforce it.
@@ -614,6 +614,11 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             group='oslo_policy',
             policy_file=unit.dirs.etc('policy.v3cloudsample.json'))
 
+        self.config_fixture.config(
+            group='resource',
+            admin_project_id=[self.admin_project['id']])
+        CONF.resource.admin_project_id = [self.admin_project['id']]
+
     def load_sample_data(self):
         # Start by creating a couple of domains
         self._populate_default_domain()
@@ -624,6 +629,11 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.admin_domain = {'id': 'admin_domain_id', 'name': 'Admin_domain'}
         self.resource_api.create_domain(self.admin_domain['id'],
                                         self.admin_domain)
+
+        self.admin_project = self.new_project_ref(
+            domain_id=self.admin_domain['id'])
+        self.resource_api.create_project(self.admin_project['id'],
+                                         self.admin_project)
 
         # And our users
         self.cloud_admin_user = self.new_user_ref(
@@ -662,7 +672,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         # The cloud admin just gets the admin role
         self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.cloud_admin_user['id'],
-                                         domain_id=self.admin_domain['id'])
+                                         project_id=self.admin_project['id'])
 
         # Assign roles to the domain
         self.assignment_api.create_grant(self.admin_role['id'],
@@ -796,8 +806,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
-
+            project_id=self.admin_project['id'])
         self._test_user_management(self.domainA['id'])
 
     def test_project_management(self):
@@ -828,7 +837,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_project['id'])
 
         # Check whether cloud admin can operate a domain
         # other than its own domain or not
@@ -862,7 +871,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_project['id'])
 
         self._test_grants('domains', self.domainA['id'])
 
@@ -898,7 +907,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_project['id'])
 
         collection_url = self.build_role_assignment_query_url(
             domain_id=self.domainA['id'])
@@ -972,7 +981,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_project['id'])
 
         collection_url = self.build_role_assignment_query_url(
             project_id=self.project['id'])
@@ -1044,7 +1053,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_project['id'])
 
         self._test_domain_management()
 
@@ -1164,7 +1173,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         admin_auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            project_id=self.admin_project['id'])
         admin_token = self.get_requested_token(admin_auth)
 
         user_auth = self.build_authentication_request(
