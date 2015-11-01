@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_6f9d4cbb",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-01T02:34:20Z",
+      "side": 1,
+      "message": "for what reason we it should be ProjectNotFound here while it\u0027s NotImplemented in L159?",
+      "revId": "b9225df0eccc2a30c8128d814609a7a98d51e74a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
