@@ -330,6 +330,13 @@ class KeystoneToken(dict):
         return None
 
     @property
+    def is_admin_project(self):
+        try:
+            return self.token_data['is_admin_project']
+        except KeyError:
+            return False
+
+    @property
     def metadata(self):
         return self.get('metadata', {})
 
