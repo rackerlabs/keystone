@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_38f8f37a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16237
+      },
+      "writtenOn": "2015-11-02T05:46:12Z",
+      "side": 1,
+      "message": "manila \u003d\u003e keystone",
+      "revId": "073d5bec96ca8995eb78b32a00ded6e9ff07dd43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
