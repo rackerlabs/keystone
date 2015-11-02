@@ -7,14 +7,13 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.dev20\n"
+"Project-Id-Version: keystone 9.0.0.dev205\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-10-04 06:10+0000\n"
+"POT-Creation-Date: 2015-11-02 06:12+0000\n"
 "PO-Revision-Date: 2015-09-03 12:54+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language: zh_Hant_TW\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/openstack/keystone/"
-"language/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan)\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -315,10 +314,6 @@ msgstr "無法驗證存取記號"
 msgid "Credential belongs to another user"
 msgstr "認證屬於另一個使用者"
 
-#, python-format
-msgid "Database at /domains/%s/config"
-msgstr "位於 /domains/%s/config 中的資料庫"
-
 msgid ""
 "Disabling an entity where the 'enable' attribute is ignored by configuration."
 msgstr "正在停用配置已忽略其 'enable' 屬性的實體。"
@@ -523,14 +518,6 @@ msgstr "規則 %(identity_value)s 無效。必須指定 'groups' 及 'domain' �
 
 msgid "Invalid signature"
 msgstr "無效的簽章"
-
-#, python-format
-msgid ""
-"Invalid ssl_cert_reqs value of %s, must be one of \"NONE\", \"OPTIONAL\", "
-"\"REQUIRED\""
-msgstr ""
-"%s 的 ssl_cert_reqs 值無效，必須是 \"NONE\"、\"OPTIONAL\" 及\"REQUIRED\" 的其"
-"中之一"
 
 msgid "Invalid user / password"
 msgstr "無效的使用者/密碼"
@@ -1025,9 +1012,6 @@ msgstr "auth_type 不是 Negotiate"
 msgid "authorizing user does not have role required"
 msgstr "授權使用者不具有必要的角色"
 
-msgid "cache_collection name is required"
-msgstr "需要 cache_collection 名稱"
-
 #, python-format
 msgid "cannot create a project in a branch containing a disabled project: %s"
 msgstr "無法在包含已停用專案的分支中建立專案：%s"
@@ -1050,12 +1034,6 @@ msgstr "無法停用專案 %s，因為其子樹狀結構包含已啟用的專案
 msgid "cannot enable project %s since it has disabled parents"
 msgstr "無法啟用專案 %s，因為它具有已停用的母項"
 
-msgid "database db_name is required"
-msgstr "需要資料庫 db_name"
-
-msgid "db_hosts value is required"
-msgstr "需要 db_hosts 值"
-
 msgid "delete the default domain"
 msgstr "刪除預設網域"
 
@@ -1068,12 +1046,6 @@ msgid ""
 "or billing."
 msgstr "idp_contact_type 必須是下列其中一個：技術、其他、支援、管理或計費。"
 
-msgid "integer value expected for mongo_ttl_seconds"
-msgstr "mongo_ttl_seconds 預期整數值"
-
-msgid "integer value expected for w (write concern attribute)"
-msgstr "w（WriteConcern 屬性）預期整數值"
-
 #, python-format
 msgid "invalid date format %s"
 msgstr "無效的日期格式 %s"
@@ -1082,18 +1054,9 @@ msgstr "無效的日期格式 %s"
 msgid "max hierarchy depth reached for %s branch."
 msgstr "已達到 %s 分支的最大階層深度。"
 
-msgid "no ssl support available"
-msgstr "無法使用 SSL 支援"
-
 #, python-format
 msgid "option %(option)s in group %(group)s"
 msgstr "群組 %(group)s 中的選項 %(option)s"
-
-msgid "pad must be single character"
-msgstr "填補必須是單一字元"
-
-msgid "padded base64url text must be multiple of 4 characters"
-msgstr "填補 base64url 文字必須是 4 個字元的倍數"
 
 msgid "provided consumer key does not match stored consumer key"
 msgstr "提供的消費者金鑰，與儲存的消費者金鑰不符"
@@ -1104,17 +1067,11 @@ msgstr "提供的要求金鑰，與儲存的要求金鑰不符"
 msgid "provided verifier does not match stored verifier"
 msgstr "提供的驗證器，與儲存的驗證器不符"
 
-msgid "region not type dogpile.cache.CacheRegion"
-msgstr "區域不是 dogpile.cache.CacheRegion 類型"
-
 msgid "remaining_uses must be a positive integer or null."
 msgstr "remaining_uses 必須是正整數或空值。"
 
 msgid "remaining_uses must not be set if redelegation is allowed"
 msgstr "如果容許重新委派，則不得設定 remaining_uses"
-
-msgid "replicaset_name required when use_replica is True"
-msgstr "use_replica 為 True 時需要 replicaset_name"
 
 #, python-format
 msgid ""
@@ -1124,18 +1081,6 @@ msgstr "要求更新群組 %(group)s，但提供的配置卻包含群組 %(group
 
 msgid "rescope a scoped token"
 msgstr "重新劃定已限定範圍之記號的範圍"
-
-#, python-format
-msgid "text is multiple of 4, but pad \"%s\" occurs before 2nd to last char"
-msgstr "文字是 4 的倍數，但填補 \"%s\" 出現於倒數第二個字元之前"
-
-#, python-format
-msgid "text is multiple of 4, but pad \"%s\" occurs before non-pad last char"
-msgstr "文字是 4 的倍數，但填補 \"%s\" 出現於最後一個字元（不可填補）之前"
-
-#, python-format
-msgid "text is not a multiple of 4, but contains pad \"%s\""
-msgstr "文字不是 4 的倍數，但包含填補 \"%s\""
 
 #, python-format
 msgid "tls_cacertdir %s not found or is not a directory"
