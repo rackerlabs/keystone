@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a26ad4f_8d39b9d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-02T14:47:01Z",
+      "side": 1,
+      "message": "s/if/If/\n\ns/u/you/",
+      "revId": "b9225df0eccc2a30c8128d814609a7a98d51e74a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_6d745d67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-02T14:47:01Z",
+      "side": 1,
+      "message": "For the last part of the sentence maybe this would work better \u0027we need a condition that checks tenant_id.\u0027",
+      "revId": "b9225df0eccc2a30c8128d814609a7a98d51e74a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_87c99a5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-02T14:47:01Z",
+      "side": 1,
+      "message": "As mentioned by Dave in patch set 7 this needs to be \u0027Closes-Bug: #1507920\u0027   as per this doc: https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "b9225df0eccc2a30c8128d814609a7a98d51e74a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_6f9d4cbb",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 9
