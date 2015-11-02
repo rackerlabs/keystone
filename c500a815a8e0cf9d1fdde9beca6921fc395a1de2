@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_add59a1c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-02T12:57:38Z",
+      "side": 1,
+      "message": "I hope these docstring should be updated to \n :raises keystone.exception.ProjectNotFound: condition.\n\nThere was a patch to do this, https://review.openstack.org/#/c/226225/, so we needn\u0027t respin again.\n\nThis is good as is since this is not under the scope of this patch.",
+      "revId": "c500a815a8e0cf9d1fdde9beca6921fc395a1de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
