@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_397bf9f6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-02T21:27:13Z",
+      "side": 1,
+      "message": "Didn\u0027t we also agreed to have an option to configure admin domain name and project name to enhanced deployability? i.e. don\u0027t have the create a project then reconfigure Keystone.",
+      "revId": "3d289e7c04c54f4d97323f8987263ace551e89b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_1b8976c9",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
