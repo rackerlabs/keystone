@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a26ad4f_b7f08968",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-02T12:25:48Z",
+      "side": 1,
+      "message": "could you pls explain a little bit why index of (valid, expires) is better than (expires, valid)?  i know it\u0027s hard to prove by the testcase but it will be helpful if given some explanation here. \n\nSeem like this depends on what\u0027s the value of token.valid and token.expires?",
+      "revId": "5f030ffc37df596480fa2d9d1d4f02995db32182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_f71e01ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-02T12:25:48Z",
+      "side": 1,
+      "message": "what does these statements means?",
+      "revId": "5f030ffc37df596480fa2d9d1d4f02995db32182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_3da138aa",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 6
