@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_060103af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-02T17:53:41Z",
+      "side": 1,
+      "message": "please remove this as the patch does not appear to fix 1495664",
+      "revId": "0c4b3ff645f82a99059a70c1052290bbc4f70a53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
