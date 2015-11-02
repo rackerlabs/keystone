@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_ff6b21b7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-02T22:25:25Z",
+      "side": 1,
+      "message": "Why add a new method when there is already _assert_valid_config?",
+      "revId": "5bf8e971b15c6bd55da30c6b451449991a83f4c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
