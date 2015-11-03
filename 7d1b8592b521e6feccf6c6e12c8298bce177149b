@@ -33,6 +33,24 @@
       "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_59c1d42d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-03T13:26:11Z",
+      "side": 1,
+      "message": "+1 Henry. I think it should be similar to the first change.\n\nFor e.g.\n msg \u003d _(\u0027User %(u_id)s is unauthorized for tenant %(t_id)s\u0027 % { \u0027u_id\u0027: user_id, \u0027t_id\u0027: tenant_id})",
+      "parentUuid": "1a26ad4f_2c516c36",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
