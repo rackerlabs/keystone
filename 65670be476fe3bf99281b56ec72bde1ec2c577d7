@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_e67b387a",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-03T16:12:28Z",
+      "side": 0,
+      "message": "as an aside, I don\u0027t think there\u0027s anything wrong with this really - agreed, they don\u0027t have to use the named substitutions (but I don\u0027t think this breaks the guidelines)",
+      "revId": "65670be476fe3bf99281b56ec72bde1ec2c577d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
