@@ -212,9 +212,12 @@ class DomainConfigTests(object):
             domain['id'], sensitive=True)
         self.assertThat(res, matchers.HasLength(0))
 
+    def _make_random_dn(self):
+        return 'CN=' + uuid.uuid4().hex
+
     def test_create_domain_config_including_sensitive_option(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex}}
         self.domain_config_api.create_config(self.domain['id'], config)
 
@@ -235,7 +238,7 @@ class DomainConfigTests(object):
 
     def test_get_partial_domain_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         self.domain_config_api.create_config(self.domain['id'], config)
@@ -255,7 +258,7 @@ class DomainConfigTests(object):
 
     def test_delete_partial_domain_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         self.domain_config_api.create_config(self.domain['id'], config)
@@ -291,7 +294,7 @@ class DomainConfigTests(object):
 
     def test_get_sensitive_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         res = self.domain_config_api.get_config_with_sensitive_info(
@@ -304,7 +307,7 @@ class DomainConfigTests(object):
 
     def test_update_partial_domain_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         self.domain_config_api.create_config(self.domain['id'], config)
@@ -367,7 +370,7 @@ class DomainConfigTests(object):
 
     def test_update_invalid_partial_domain_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         # An extra group, when specifying one group should fail
@@ -382,7 +385,7 @@ class DomainConfigTests(object):
 
         # Now try the right number of groups/options, but just not
         # ones that are in the config provided
-        config = {'ldap': {'user_tree_dn': uuid.uuid4().hex}}
+        config = {'ldap': {'user_tree_dn': self._make_random_dn()}}
         self.assertRaises(exception.InvalidDomainConfig,
                           self.domain_config_api.update_config,
                           self.domain['id'], config, group='identity')
@@ -393,7 +396,7 @@ class DomainConfigTests(object):
 
         # Now some valid groups/options, but just not ones that are in the
         # existing config
-        config = {'ldap': {'user_tree_dn': uuid.uuid4().hex}}
+        config = {'ldap': {'user_tree_dn': self._make_random_dn()}}
         self.domain_config_api.create_config(self.domain['id'], config)
         config_wrong_group = {'identity': {'driver': uuid.uuid4().hex}}
         self.assertRaises(exception.DomainConfigNotFound,
@@ -408,7 +411,7 @@ class DomainConfigTests(object):
 
         # And finally just some bad groups/options
         bad_group = uuid.uuid4().hex
-        config = {bad_group: {'user': uuid.uuid4().hex}}
+        config = {bad_group: {'user': self._make_random_dn()}}
         self.assertRaises(exception.InvalidDomainConfig,
                           self.domain_config_api.update_config,
                           self.domain['id'], config, group=bad_group,
@@ -438,7 +441,7 @@ class DomainConfigTests(object):
                           self.domain['id'], config)
         # Try an option that IS in the standard conf, but neither whitelisted
         # or marked as sensitive
-        config = {'ldap': {'role_tree_dn': uuid.uuid4().hex}}
+        config = {'ldap': {'role_tree_dn': self._make_random_dn()}}
         self.assertRaises(exception.InvalidDomainConfig,
                           self.domain_config_api.create_config,
                           self.domain['id'], config)
@@ -460,7 +463,7 @@ class DomainConfigTests(object):
         # Create a config that contains a whitelisted option that requires
         # substitution of a sensitive option.
         config = {'ldap': {'url': 'my_url/%(password)s',
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         self.domain_config_api.create_config(self.domain['id'], config)
@@ -478,7 +481,7 @@ class DomainConfigTests(object):
         mock_log = mock.Mock()
 
         invalid_option_config = {
-            'ldap': {'user_tree_dn': uuid.uuid4().hex,
+            'ldap': {'user_tree_dn': self._make_random_dn(),
                      'password': uuid.uuid4().hex},
             'identity': {'driver': uuid.uuid4().hex}}
 
@@ -503,7 +506,7 @@ class DomainConfigTests(object):
 
         escaped_option_config = {
             'ldap': {'url': 'my_url/%%(password)s',
-                     'user_tree_dn': uuid.uuid4().hex,
+                     'user_tree_dn': self._make_random_dn(),
                      'password': uuid.uuid4().hex},
             'identity': {'driver': uuid.uuid4().hex}}
 
@@ -520,7 +523,7 @@ class DomainConfigTests(object):
     @unit.skip_if_cache_disabled('domain_config')
     def test_cache_layer_get_sensitive_config(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
-                           'user_tree_dn': uuid.uuid4().hex,
+                           'user_tree_dn': self._make_random_dn(),
                            'password': uuid.uuid4().hex},
                   'identity': {'driver': uuid.uuid4().hex}}
         self.domain_config_api.create_config(self.domain['id'], config)
