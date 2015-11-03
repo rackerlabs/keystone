@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_718ff623",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T22:29:22Z",
+      "side": 1,
+      "message": "We already have a message that says\n\n Deprecated: direct import of driver is deprecated as of Liberty in favor\n of entrypoints and may be removed in N.\n\nSo I don\u0027t think we even need this message.",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_f682ffc7",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 29
