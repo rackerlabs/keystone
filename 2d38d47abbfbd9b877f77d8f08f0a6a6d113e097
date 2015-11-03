@@ -52,6 +52,24 @@
       "revId": "2d38d47abbfbd9b877f77d8f08f0a6a6d113e097",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_e19431e3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 114
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-03T22:21:18Z",
+      "side": 1,
+      "message": "I got it... but why do you think the message is confusing? any suggestion?",
+      "parentUuid": "1a26ad4f_05f382d7",
+      "revId": "2d38d47abbfbd9b877f77d8f08f0a6a6d113e097",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
