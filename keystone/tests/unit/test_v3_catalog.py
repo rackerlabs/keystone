@@ -794,8 +794,8 @@ class TestCatalogAPISQL(unit.TestCase):
         self.useFixture(database.Database())
         self.catalog_api = catalog.Manager()
 
-        self.service_id = uuid.uuid4().hex
-        service = {'id': self.service_id, 'name': uuid.uuid4().hex}
+        service = unit.new_service_ref()
+        self.service_id = service['id']
         self.catalog_api.create_service(self.service_id, service)
 
         self.create_endpoint(service_id=self.service_id)
@@ -853,19 +853,13 @@ class TestCatalogAPISQL(unit.TestCase):
         tenant_id = uuid.uuid4().hex
 
         # create a service, with a name
-        named_svc = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-        }
+        named_svc = unit.new_service_ref()
         self.catalog_api.create_service(named_svc['id'], named_svc)
         self.create_endpoint(service_id=named_svc['id'])
 
         # create a service, with no name
-        unnamed_svc = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex
-        }
+        unnamed_svc = unit.new_service_ref()
+        del unnamed_svc['name']
         self.catalog_api.create_service(unnamed_svc['id'], unnamed_svc)
         self.create_endpoint(service_id=unnamed_svc['id'])
 
@@ -897,8 +891,8 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         self.config_fixture.config(group='catalog', driver='sql')
 
     def test_get_catalog_returns_proper_endpoints_with_no_region(self):
-        service_id = uuid.uuid4().hex
-        service = {'id': service_id, 'name': uuid.uuid4().hex}
+        service = unit.new_service_ref()
+        service_id = service['id']
         self.catalog_api.create_service(service_id, service)
 
         endpoint = unit.new_endpoint_ref(service_id=service_id,
@@ -914,8 +908,8 @@ class TestCatalogAPISQLRegions(unit.TestCase):
             catalog[0]['endpoints'][0], ref=endpoint)
 
     def test_get_catalog_returns_proper_endpoints_with_region(self):
-        service_id = uuid.uuid4().hex
-        service = {'id': service_id, 'name': uuid.uuid4().hex}
+        service = unit.new_service_ref()
+        service_id = service['id']
         self.catalog_api.create_service(service_id, service)
 
         endpoint = unit.new_endpoint_ref(service_id=service_id)
