@@ -318,7 +318,7 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
                 session.add(RoleAssignment(
                     type=AssignmentType.USER_PROJECT,
                     actor_id=user_id, target_id=tenant_id,
-                    role_id=role_id, inherited=False))
+                    role_id=role_id, inherited=False, inherited_core=False))
         except sql.DBDuplicateEntry:
             msg = ('User %s already has role %s in tenant %s'
                    % (user_id, role_id, tenant_id))
@@ -473,7 +473,8 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
 
 class RoleAssignment(sql.ModelBase, sql.DictBase):
     __tablename__ = 'assignment'
-    attributes = ['type', 'actor_id', 'target_id', 'role_id', 'inherited']
+    attributes = ['type', 'actor_id', 'target_id', 'role_id', 'inherited',
+                  'inherited_core']
     # NOTE(henry-nash); Postgres requires a name to be defined for an Enum
     type = sql.Column(
         sql.Enum(AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT,
@@ -484,9 +485,11 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
     target_id = sql.Column(sql.String(64), nullable=False)
     role_id = sql.Column(sql.String(64), nullable=False)
     inherited = sql.Column(sql.Boolean, default=False, nullable=False)
+    inherited_core = sql.Column(sql.Boolean, default=False,
+                                server_default=false(), nullable=False)
     __table_args__ = (
         sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id', 'role_id',
-                                 'inherited'),
+                                 'inherited', 'inherited_core'),
         sql.Index('ix_actor_id', 'actor_id'),
     )
 

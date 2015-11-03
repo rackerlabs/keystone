@@ -42,6 +42,8 @@ from oslo_db.sqlalchemy import session as db_session
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
 from sqlalchemy import schema
+from sqlalchemy.sql.expression import false
+from sqlalchemy.sql.expression import true
 
 from keystone.common import sql
 from keystone.common.sql import migrate_repo
@@ -664,6 +666,42 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist(config_registration)
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
+
+    def test_add_inherited_core_to_assignment(self):
+        assignment_table_name = 'assignment'
+        self.upgrade(81)
+        assignment_entry = {
+            'type': 'UserProject',
+            'actor_id': uuid.uuid4().hex,
+            'target_id': uuid.uuid4().hex,
+            'role_id': uuid.uuid4().hex,
+            'inherited': true()
+        }
+        session = self.Session()
+        assignment_table = sqlalchemy.Table(
+            assignment_table_name, self.metadata, autoload=True)
+        self.insert_dict(session, assignment_table_name, assignment_entry,
+                         table=assignment_table)
+        session.close()
+        self.upgrade(82)
+        session = self.Session()
+        self.metadata.clear()
+        assignment_table = sqlalchemy.Table(
+            assignment_table_name, self.metadata, autoload=True)
+        self.assertTableColumns(
+            assignment_table, ['type', 'actor_id', 'target_id', 'role_id',
+                               'inherited', 'inherited_core'])
+        # Check that the upgrade default the new attribute to False. Since its
+        # part of the PK, just doing a select should prove this.
+        assignment_entry['inherited_core'] = false()
+        s = assignment_table.select().where(
+            (assignment_table.c.type == assignment_entry['type']) &
+            (assignment_table.c.actor_id == assignment_entry['actor_id']) &
+            (assignment_table.c.target_id == assignment_entry['target_id']) &
+            (assignment_table.c.role_id == assignment_entry['role_id']) &
+            (assignment_table.c.inherited == assignment_entry['inherited']) &
+            (assignment_table.c.inherited_core == false()))
+        self.assertIsNotNone(session.execute(s).fetchone())
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
