@@ -32,7 +32,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(self.domain['id'], self.domain)
         self.config = {'ldap': {'url': uuid.uuid4().hex,
-                                'user_tree_dn': uuid.uuid4().hex},
+                                'user_tree_dn': 'CN=' + uuid.uuid4().hex},
                        'identity': {'driver': uuid.uuid4().hex}}
 
     def test_create_config(self):
