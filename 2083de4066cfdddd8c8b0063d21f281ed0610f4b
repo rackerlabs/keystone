@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_29b6f3dc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-03T16:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_665eea77",
+      "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_26d8f2ee",
         "filename": "keystone/resource/core.py",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-30T14:30:06Z",
       "side": 1,
       "message": "colon after ValidationError\n\ncapitalize \u0027if\u0027",
+      "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_a9f983ca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-03T16:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_26d8f2ee",
       "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_49949736",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-03T16:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_66ecaa8f",
+      "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_ba35f2da",
         "filename": "keystone/resource/core.py",
         "patchSetId": 25
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_099e8f56",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-03T16:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_ba35f2da",
+      "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_1a10a64d",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 25
@@ -81,6 +153,24 @@
       "writtenOn": "2015-10-30T14:30:06Z",
       "side": 1,
       "message": "Remove this blank line (your pep8 failure)",
+      "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_69207bf8",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-03T16:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a26ad4f_1a10a64d",
       "revId": "2083de4066cfdddd8c8b0063d21f281ed0610f4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
