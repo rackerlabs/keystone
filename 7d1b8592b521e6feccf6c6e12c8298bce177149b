@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_ccb31899",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-03T08:45:07Z",
+      "side": 1,
+      "message": "So it is interesting to look at whether what you have done is closer to the guidance, as opposed to:\n\n msg \u003d _(\u0027Project ID not found: %s\u0027)\n LOG.warn(msg, tenant_id)   # Note comma here!\n raise exception.Unauthorized(msg % tenant_id)\n\nI think your version is preferable, since we know we need to build the full message string even if we are not logging warnings (see examples in http://docs.openstack.org/developer/oslo.i18n/guidelines.html)",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_2c516c36",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-03T08:45:07Z",
+      "side": 1,
+      "message": "however, this isn\u0027t right - since msg won\u0027t have had the substitutions when we raise the exception",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
