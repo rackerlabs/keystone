@@ -38,7 +38,7 @@ class Public(wsgi.ComposableRouter):
         mapper.connect('/tenants',
                        controller=tenant_controller,
                        action='get_projects_for_token',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET', 'HEAD']))
 
 
 class Admin(wsgi.ComposableRouter):
@@ -48,11 +48,11 @@ class Admin(wsgi.ComposableRouter):
         mapper.connect('/tenants/{tenant_id}/users/{user_id}/roles',
                        controller=roles_controller,
                        action='get_user_roles',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET', 'HEAD']))
         mapper.connect('/users/{user_id}/roles',
                        controller=roles_controller,
                        action='get_user_roles',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET', 'HEAD']))
 
 
 class Routers(wsgi.RoutersBase):

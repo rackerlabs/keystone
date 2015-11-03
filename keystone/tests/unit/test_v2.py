@@ -155,6 +155,12 @@ class CoreApiTests(object):
                                 token=self.get_scoped_token())
         self.assertValidTenantListResponse(r)
 
+    def test_head_tenants_for_token(self):
+        self.public_request(path='/v2.0/tenants',
+                            token=self.get_scoped_token(),
+                            method='HEAD',
+                            expected_status=http_client.OK)
+
     def test_validate_token(self):
         token = self.get_scoped_token()
         r = self.admin_request(
@@ -273,6 +279,16 @@ class CoreApiTests(object):
             token=token)
         self.assertValidRoleListResponse(r)
 
+    def test_head_user_roles_with_tenant(self):
+        self.admin_request(
+            path='/v2.0/tenants/%(tenant_id)s/users/%(user_id)s/roles' % {
+                'tenant_id': self.tenant_bar['id'],
+                'user_id': self.user_foo['id'],
+            },
+            token=self.get_scoped_token(),
+            method='HEAD',
+            expected_status=http_client.OK)
+
     def test_get_user(self):
         token = self.get_scoped_token()
         r = self.admin_request(
@@ -281,6 +297,15 @@ class CoreApiTests(object):
             },
             token=token)
         self.assertValidUserResponse(r)
+
+    def test_head_user(self):
+        self.admin_request(
+            path='/v2.0/users/%(user_id)s' % {
+                'user_id': self.user_foo['id'],
+            },
+            token=self.get_scoped_token(),
+            method='HEAD',
+            expected_status=http_client.OK)
 
     def test_get_user_by_name(self):
         token = self.get_scoped_token()

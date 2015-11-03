@@ -26,7 +26,7 @@ class Admin(wsgi.ComposableRouter):
         mapper.connect('/users/{user_id}',
                        controller=user_controller,
                        action='get_user',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET', 'HEAD']))
 
 
 class Routers(wsgi.RoutersBase):
