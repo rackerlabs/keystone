@@ -69,6 +69,24 @@
       "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_2aed7e8b",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-11-03T18:32:53Z",
+      "side": 1,
+      "message": "I can\u0027t imagine a use case when revocation engine is used before token driver is initialized.",
+      "parentUuid": "3a29b11f_aa8d37d4",
+      "revId": "38c88f7dba3e9534ea56ea404e5015b76df97472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
