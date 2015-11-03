@@ -69,6 +69,24 @@
       "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_20d3683a",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-03T15:46:22Z",
+      "side": 1,
+      "message": "Here is the output if you don\u0027t feel like running my little test.\n\n\n[call(u\u0027Found what looks like an unmatched config option substitution reference - domain: 59fa0ecb2fe1437d8c7d905e3f033ff9, group: ldap, option: url, value: my_url/%(passssword)s. Perhaps the config option to which it refers has yet to be added?\u0027)]",
+      "parentUuid": "fa80f949_7e77d6d4",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
