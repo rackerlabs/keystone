@@ -16,6 +16,24 @@
       "revId": "1c90648572dc7ef71766ec720b207a72e358f133",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_71f139cd",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-03T20:50:34Z",
+      "side": 1,
+      "message": "Actually I think this may be all full of fail. A 501 is not the correct response because that\u0027s at the server level (I\u0027ve had this conversation with the API-WG). The correct response would probably be some sort of 404 because the resource is not available. I would rather see a 403, but this was implemented as a URL driven resource. Is there any reason we carry this route at all in v2?",
+      "parentUuid": "fa80f949_9d48765d",
+      "revId": "1c90648572dc7ef71766ec720b207a72e358f133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
