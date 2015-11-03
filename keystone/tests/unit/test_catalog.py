@@ -31,12 +31,9 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         super(V2CatalogTestCase, self).setUp()
         self.useFixture(database.Database())
 
-        self.service_id = uuid.uuid4().hex
         self.service = unit.new_service_ref()
-        self.service['id'] = self.service_id
-        self.catalog_api.create_service(
-            self.service_id,
-            self.service.copy())
+        self.service_id = self.service['id']
+        self.catalog_api.create_service(self.service_id, self.service.copy())
 
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
@@ -83,9 +80,8 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         return region_id
 
     def _service_create(self):
-        service_id = uuid.uuid4().hex
         service = unit.new_service_ref()
-        service['id'] = service_id
+        service_id = service['id']
         self.catalog_api.create_service(service_id, service)
         return service_id
 
@@ -296,8 +292,8 @@ class TestV2CatalogAPISQL(unit.TestCase):
         self.useFixture(database.Database())
         self.catalog_api = catalog.Manager()
 
-        self.service_id = uuid.uuid4().hex
-        service = {'id': self.service_id, 'name': uuid.uuid4().hex}
+        service = unit.new_service_ref()
+        self.service_id = service['id']
         self.catalog_api.create_service(self.service_id, service)
 
         self.create_endpoint(service_id=self.service_id)
@@ -342,19 +338,13 @@ class TestV2CatalogAPISQL(unit.TestCase):
         tenant_id = uuid.uuid4().hex
 
         # create a service, with a name
-        named_svc = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-        }
+        named_svc = unit.new_service_ref()
         self.catalog_api.create_service(named_svc['id'], named_svc)
         self.create_endpoint(service_id=named_svc['id'])
 
         # create a service, with no name
-        unnamed_svc = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex
-        }
+        unnamed_svc = unit.new_service_ref()
+        del unnamed_svc['name']
         self.catalog_api.create_service(unnamed_svc['id'], unnamed_svc)
         self.create_endpoint(service_id=unnamed_svc['id'])
 
