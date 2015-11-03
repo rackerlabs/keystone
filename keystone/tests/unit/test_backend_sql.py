@@ -163,7 +163,8 @@ class SqlModels(SqlTests):
                 ('actor_id', sql.String, 64),
                 ('target_id', sql.String, 64),
                 ('role_id', sql.String, 64),
-                ('inherited', sql.Boolean, False))
+                ('inherited', sql.Boolean, False),
+                ('inherited_core', sql.Boolean, False))
         self.assertExpectedSchema('assignment', cols)
 
     def test_user_group_membership(self):
