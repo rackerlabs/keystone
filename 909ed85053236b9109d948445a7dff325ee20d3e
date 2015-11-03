@@ -16,6 +16,24 @@
       "revId": "909ed85053236b9109d948445a7dff325ee20d3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c041313b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T19:08:03Z",
+      "side": 0,
+      "message": "If somebody\u0027s using the default then their config is insecure and it\u0027s probably a mistake.",
+      "parentUuid": "fa1b9901_4d97273a",
+      "revId": "909ed85053236b9109d948445a7dff325ee20d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
