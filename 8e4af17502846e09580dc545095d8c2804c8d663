@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_31264e69",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T22:28:13Z",
+      "side": 1,
+      "message": "I think you should put this in quotes, the message looks weird, \u0027\"sql\"\u0027, or maybe we should change versionutils.deprecated to have an option to quote the values?",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_f682ffc7",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 29
@@ -64,6 +81,24 @@
       "writtenOn": "2015-11-03T20:56:37Z",
       "side": 1,
       "message": "isn\u0027t this the default? If not that seems like a bug in the wrapper.",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_d1c5825b",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T22:28:13Z",
+      "side": 1,
+      "message": "It\u0027s not the default, it just prints __init__() :( So better leave it as is.",
+      "parentUuid": "fa80f949_b14b212b",
       "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
