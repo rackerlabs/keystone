@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_9d48765d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-03T19:27:23Z",
+      "side": 1,
+      "message": "I think Dave brought up a very good point, on lines 159 and 178 they both use NotImplemented while you use ProjectNotFound.  I would say since it is not supported in v2 and supported in v3 \u0027NotImplemented\u0027 makes the most sense to me.",
+      "revId": "1c90648572dc7ef71766ec720b207a72e358f133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
