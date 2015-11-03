@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_11f8ede4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T20:56:37Z",
+      "side": 1,
+      "message": "open a bug so we don\u0027t forget.",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_31d09153",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 29
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T20:56:37Z",
+      "side": 1,
+      "message": "remove this since it\u0027s not used.",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_f682ffc7",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T20:56:37Z",
+      "side": 1,
+      "message": "this is the default, no need to specify it.",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_b14b212b",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-03T20:56:37Z",
+      "side": 1,
+      "message": "isn\u0027t this the default? If not that seems like a bug in the wrapper.",
+      "revId": "8e4af17502846e09580dc545095d8c2804c8d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
