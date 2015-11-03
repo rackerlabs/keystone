@@ -87,6 +87,24 @@
       "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_a3d1a2fd",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-03T16:04:41Z",
+      "side": 1,
+      "message": "Tom - the log message will be fine....it\u0027s that you then issue an exception with msg, rather than the substituted msg.",
+      "parentUuid": "fa80f949_20d3683a",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
