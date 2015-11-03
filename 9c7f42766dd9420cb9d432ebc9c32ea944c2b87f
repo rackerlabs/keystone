@@ -34,6 +34,23 @@
       "revId": "9c7f42766dd9420cb9d432ebc9c32ea944c2b87f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_eeb0e38d",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1187,
+      "author": {
+        "id": 18034
+      },
+      "writtenOn": "2015-11-03T22:13:14Z",
+      "side": 0,
+      "message": "I\u0027m confused, I don\u0027t have this extra line in the latest patchset.",
+      "revId": "9c7f42766dd9420cb9d432ebc9c32ea944c2b87f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
