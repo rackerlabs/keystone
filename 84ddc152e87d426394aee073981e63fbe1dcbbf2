@@ -16,6 +16,23 @@
       "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_35ecf3c6",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-04T03:25:51Z",
+      "side": 1,
+      "message": "you need to move these tests to a separate file and exclude it from py34 testenv since python-ldap is not supported in py34",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
