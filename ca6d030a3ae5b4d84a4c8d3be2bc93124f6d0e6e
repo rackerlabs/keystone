@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_8863471a",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-04T02:11:57Z",
+      "side": 1,
+      "message": "create an entry point in setup.cfg and use that?\nhttps://github.com/openstack/keystone/blob/master/setup.cfg#L189",
+      "revId": "ca6d030a3ae5b4d84a4c8d3be2bc93124f6d0e6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
