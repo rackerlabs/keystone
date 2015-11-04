@@ -16,6 +16,24 @@
       "revId": "a85a9cac6a8a9143812a78384132bdb135816d95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_b63be5d0",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:55:10Z",
+      "side": 1,
+      "message": "That makes sense, The bug that I fix in the patch that is dependent on this patch is to validate distinguished names in the config.  Since the ldap config is created in this test it will need to be in the correct format.    :)",
+      "parentUuid": "fa80f949_7fa014f5",
+      "revId": "a85a9cac6a8a9143812a78384132bdb135816d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
