@@ -155,6 +155,40 @@
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_1b2a1c2d",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-11-04T21:51:29Z",
+      "side": 0,
+      "message": "It seems like you removed this prerequisites section. In your version, we are missing information about the Python versions supported, which is important to be specified.",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_1bb8dce4",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-11-04T21:51:29Z",
+      "side": 0,
+      "message": "why remove the info about the requirements files?",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
