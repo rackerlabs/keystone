@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_5630799e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1920,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-04T22:17:40Z",
+      "side": 1,
+      "message": "Why is this a class? It has no data. You left the nested functions instead of making them (static)methods too.",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_f6208d9d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1934,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-04T22:17:40Z",
+      "side": 1,
+      "message": "Why the empty line?",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_76357dd8",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1942,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-04T22:17:40Z",
+      "side": 1,
+      "message": "Why the empty line?",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_56863966",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1960,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-04T22:17:40Z",
+      "side": 1,
+      "message": "Does this need to be dropped down a line?",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_36bb75e7",
+        "filename": "keystone/tests/unit/backend/domain_config/test_config_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-04T22:17:40Z",
+      "side": 1,
+      "message": "To be proper unit style tests, shouldn\u0027t these test ValidateLdapConfigDN directly?",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
