@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_7d63471b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-04T01:25:42Z",
+      "side": 1,
+      "message": "I am wondering how you can get this testcase passed? you are expect \"http_client.NOT_FOUND\" but you are raising \"exception.NotImplemented\" when tenant id is none.",
+      "revId": "953af88409dfb8f3057d68c1d30d94bfd55e09cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
