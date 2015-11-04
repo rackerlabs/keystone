@@ -17,6 +17,7 @@ import functools
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import importutils
+from oslo_utils import reflection
 import stevedore
 
 
@@ -122,7 +123,7 @@ def create_legacy_driver(driver_class):
 
     """
     module_name = driver_class.__module__
-    class_name = driver_class.__name__
+    class_name = reflection.get_class_name(driver_class)
 
     class Driver(driver_class):
 

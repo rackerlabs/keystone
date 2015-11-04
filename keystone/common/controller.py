@@ -18,6 +18,7 @@ import uuid
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import reflection
 from oslo_utils import strutils
 import six
 
@@ -806,7 +807,7 @@ class V3Controller(wsgi.Application):
             # No immutable parameters changed
             return
 
-        exception_args = {'target': cls.__name__,
+        exception_args = {'target': reflection.get_class_name(cls),
                           'attributes': ', '.join(blocked_keys)}
         raise exception.ImmutableAttributeError(**exception_args)
 
