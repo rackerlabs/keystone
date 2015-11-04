@@ -37,3 +37,6 @@ tempest-lib>=0.12.0
 
 # Functional tests.
 requests!=2.9.0,>=2.8.1
+
+# For fixtures from oslo.db
+testresources>=0.2.4
