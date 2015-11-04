@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_7fa014f5",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-04T08:17:38Z",
+      "side": 1,
+      "message": "So while there is nothing wrong with these changes, this is a unit tests for our storage of domain config params....it never actually gets sent to any kind of LDAP server....\n\nSame for all the tests here...",
+      "revId": "a85a9cac6a8a9143812a78384132bdb135816d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
