@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_1dad5be9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-11-04T00:50:55Z",
+      "side": 1,
+      "message": "In the first moment I\u0027ll just fix the transaction to follow the guidelines, but i saw that the other exception are very similar and I thought in add a log entry for that case.\n\nShould I just add a comment here to explain the log entry addition?",
+      "parentUuid": "fa80f949_06cf5cb1",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_ccb31899",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-03T08:45:07Z",
       "side": 1,
       "message": "So it is interesting to look at whether what you have done is closer to the guidance, as opposed to:\n\n msg \u003d _(\u0027Project ID not found: %s\u0027)\n LOG.warn(msg, tenant_id)   # Note comma here!\n raise exception.Unauthorized(msg % tenant_id)\n\nI think your version is preferable, since we know we need to build the full message string even if we are not logging warnings (see examples in http://docs.openstack.org/developer/oslo.i18n/guidelines.html)",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_7dffc701",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-11-04T00:50:55Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I understand your comment here, are you saying that you prefer my version than change for the way that you put in the comment or that I have to change for this way?",
+      "parentUuid": "1a26ad4f_ccb31899",
       "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -119,6 +155,24 @@
       "side": 1,
       "message": "Tom - the log message will be fine....it\u0027s that you then issue an exception with msg, rather than the substituted msg.",
       "parentUuid": "fa80f949_20d3683a",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_dd1a736e",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-11-04T00:50:55Z",
+      "side": 1,
+      "message": "++ The message in the exception are wrong, I\u0027ll add the parameters in the exception too.",
+      "parentUuid": "fa80f949_a3d1a2fd",
       "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
