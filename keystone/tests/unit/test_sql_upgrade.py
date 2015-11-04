@@ -665,6 +665,13 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
 
+    def test_change_url_type(self):
+        self.upgrade(82)
+        endpoint_table = sqlalchemy.Table('endpoint',
+                                          self.metadata,
+                                          autoload=True)
+        self.assertEqual(255, endpoint_table.c.url.type.length)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
