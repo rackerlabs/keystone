@@ -16,6 +16,24 @@
       "revId": "25a6557919658ef814b89e91b992212756da7330",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_704a70ae",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-04T16:44:43Z",
+      "side": 1,
+      "message": "actually, there shoud not, because we are not changing the behaviour of the user and groups update, just emiting a warning. I\u0027ll try to do a test showing that the warning is shown",
+      "parentUuid": "1a26ad4f_3d1298b5",
+      "revId": "25a6557919658ef814b89e91b992212756da7330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
