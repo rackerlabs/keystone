@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_89526612",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-04T06:55:19Z",
+      "side": 1,
+      "message": "why need these?",
+      "revId": "fd6bf30f551bdbfc6b06ca577a9d0cba6b10415e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_0938b6d2",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-04T06:55:19Z",
+      "side": 1,
+      "message": "you won\u0027t get your code pass the pep8 testing with these whitespace.",
+      "revId": "fd6bf30f551bdbfc6b06ca577a9d0cba6b10415e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c9314eee",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-04T06:55:19Z",
+      "side": 1,
+      "message": "revert it back, it\u0027s irrelevant.",
+      "revId": "fd6bf30f551bdbfc6b06ca577a9d0cba6b10415e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
