@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa80f949_93a4bea6",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-04T17:03:46Z",
+      "side": 1,
+      "message": "does this check need to be done? we can just remove the role, and if it\u0027s not there, it\u0027ll error out or silently do nothing",
+      "revId": "c500a815a8e0cf9d1fdde9beca6921fc395a1de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_add59a1c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 22
