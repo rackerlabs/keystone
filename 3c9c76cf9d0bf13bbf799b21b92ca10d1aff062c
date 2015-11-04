@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_c34e10c1",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-04T02:46:58Z",
+      "side": 1,
+      "message": "your testcase should test the code you modified, saying, If you want the code to raise exception.NotImplemented, the testcase should expect the same exception when you call the API with tenant id is none.\n\npls keep in mind, status code of exception.NotImplemented is 501, httpclient.NOT_FOUND is 404, and why you assert it will raise TypeError here.\n\nalso, pls remove the whitespace, or else it will not pass the pep8 in gating.\n\nIf you need any help, you can also ask for help in the IRC.",
+      "revId": "3c9c76cf9d0bf13bbf799b21b92ca10d1aff062c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
