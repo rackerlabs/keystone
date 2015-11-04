@@ -18,6 +18,7 @@ import uuid
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import reflection
 from oslo_utils import strutils
 import six
 
