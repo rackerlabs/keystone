@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_39be13d5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_28db227e",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_0873be81",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "Good point. Perhaps we move this code to keystone.common.ldap.core? Since this is LDAP-specific, it should belong there.",
       "parentUuid": "fa80f949_0873be81",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_5e073d1c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:02:59Z",
+      "side": 1,
+      "message": "Sorry I didn\u0027t realize there was a specific place for this sort of thing.  Let me know if what I did fixes your concerns. :)",
+      "parentUuid": "fa80f949_fe0cf13c",
       "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_08f99780",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:02:59Z",
+      "side": 1,
+      "message": "Good call! Done",
+      "parentUuid": "fa80f949_f7af56e1",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_28948289",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -100,6 +154,24 @@
       "writtenOn": "2015-11-04T15:27:35Z",
       "side": 1,
       "message": "shorten \"containing_invalid_char\" to \"invalid_chars\" and make your pep8 life easier",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_79681b88",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_28948289",
       "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_1906afce",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:02:59Z",
+      "side": 1,
+      "message": "Done.  I am disappointed in myself for not seeing that :(",
+      "parentUuid": "fa80f949_e8b67a3c",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_35ecf3c6",
         "filename": "keystone/tests/unit/backend/domain_config/core.py",
         "patchSetId": 2
@@ -134,6 +224,24 @@
       "writtenOn": "2015-11-04T03:25:51Z",
       "side": 1,
       "message": "you need to move these tests to a separate file and exclude it from py34 testenv since python-ldap is not supported in py34",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_7c1494f4",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-04T22:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_35ecf3c6",
       "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
