@@ -71,7 +71,8 @@ class SSLTestCase(unit.TestCase):
         ssl_kwargs = dict(cert=CERT, key=KEY, ca=CA)
 
         # Verify Admin
-        with appserver.AppServer(paste_conf, appserver.ADMIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.ADMIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '127.0.0.1', CONF.eventlet_server.admin_port)
             conn.request('GET', '/')
@@ -79,7 +80,8 @@ class SSLTestCase(unit.TestCase):
             self.assertEqual(300, resp.status)
 
         # Verify Public
-        with appserver.AppServer(paste_conf, appserver.MAIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.MAIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '127.0.0.1', CONF.eventlet_server.public_port)
             conn.request('GET', '/')
@@ -95,7 +97,8 @@ class SSLTestCase(unit.TestCase):
         ssl_kwargs = dict(cert=CERT, key=KEY, ca=CA, cert_required=True)
 
         # Verify Admin
-        with appserver.AppServer(paste_conf, appserver.ADMIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.ADMIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '127.0.0.1', CONF.eventlet_server.admin_port, CLIENT, CLIENT)
             conn.request('GET', '/')
@@ -103,7 +106,8 @@ class SSLTestCase(unit.TestCase):
             self.assertEqual(300, resp.status)
 
         # Verify Public
-        with appserver.AppServer(paste_conf, appserver.MAIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.MAIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '127.0.0.1', CONF.eventlet_server.public_port, CLIENT, CLIENT)
             conn.request('GET', '/')
@@ -118,7 +122,8 @@ class SSLTestCase(unit.TestCase):
         ssl_kwargs = dict(cert=CERT, key=KEY, ca=CA, host="::1")
 
         # Verify Admin
-        with appserver.AppServer(paste_conf, appserver.ADMIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.ADMIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '::1', CONF.eventlet_server.admin_port)
             conn.request('GET', '/')
@@ -126,7 +131,8 @@ class SSLTestCase(unit.TestCase):
             self.assertEqual(300, resp.status)
 
         # Verify Public
-        with appserver.AppServer(paste_conf, appserver.MAIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.MAIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '::1', CONF.eventlet_server.public_port)
             conn.request('GET', '/')
@@ -145,7 +151,8 @@ class SSLTestCase(unit.TestCase):
                           cert_required=True, host="::1")
 
         # Verify Admin
-        with appserver.AppServer(paste_conf, appserver.ADMIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.ADMIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '::1', CONF.eventlet_server.admin_port, CLIENT, CLIENT)
             conn.request('GET', '/')
@@ -153,7 +160,8 @@ class SSLTestCase(unit.TestCase):
             self.assertEqual(300, resp.status)
 
         # Verify Public
-        with appserver.AppServer(paste_conf, appserver.MAIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.MAIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '::1', CONF.eventlet_server.public_port, CLIENT, CLIENT)
             conn.request('GET', '/')
@@ -166,7 +174,8 @@ class SSLTestCase(unit.TestCase):
         ssl_kwargs = dict(cert=CERT, key=KEY, ca=CA, cert_required=True)
 
         # Verify Admin
-        with appserver.AppServer(paste_conf, appserver.ADMIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.ADMIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '127.0.0.1', CONF.eventlet_server.admin_port)
             try:
@@ -176,7 +185,8 @@ class SSLTestCase(unit.TestCase):
                 pass
 
         # Verify Public
-        with appserver.AppServer(paste_conf, appserver.MAIN, **ssl_kwargs):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.MAIN, **ssl_kwargs):
             conn = self.get_HTTPSConnection(
                 '127.0.0.1', CONF.eventlet_server.public_port)
             try:
