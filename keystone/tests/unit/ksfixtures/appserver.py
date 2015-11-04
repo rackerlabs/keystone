@@ -31,9 +31,10 @@ ADMIN = 'admin'
 class AppServer(fixtures.Fixture):
     """A fixture for managing an application server instance."""
 
-    def __init__(self, config, name, cert=None, key=None, ca=None,
-                 cert_required=False, host='127.0.0.1', port=0):
+    def __init__(self, config_fixture, config, name, cert=None, key=None,
+                 ca=None, cert_required=False, host='127.0.0.1', port=0):
         super(AppServer, self).__init__()
+        self.config_fixture = config_fixture
         self.config = config
         self.name = name
         self.cert = cert
@@ -71,8 +72,9 @@ class AppServer(fixtures.Fixture):
     def _update_config_opt(self):
         """Updates the config with the actual port used."""
         opt_name = self._get_config_option_for_section_name()
-        CONF.set_override(opt_name, self.port, group='eventlet_server',
-                          enforce_type=True)
+        self.config_fixture.config(
+            group='eventlet_server',
+            **{opt_name: self.port})
 
     def _get_config_option_for_section_name(self):
         """Maps Paster config section names to port option names."""

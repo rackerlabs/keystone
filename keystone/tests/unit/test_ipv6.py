@@ -35,7 +35,8 @@ class IPv6TestCase(unit.TestCase):
         paste_conf = self._paste_config('keystone')
 
         # Verify Admin
-        with appserver.AppServer(paste_conf, appserver.ADMIN, host="::1"):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.ADMIN, host="::1"):
             conn = environment.httplib.HTTPConnection(
                 '::1', CONF.eventlet_server.admin_port)
             conn.request('GET', '/')
@@ -43,7 +44,8 @@ class IPv6TestCase(unit.TestCase):
             self.assertEqual(300, resp.status)
 
         # Verify Public
-        with appserver.AppServer(paste_conf, appserver.MAIN, host="::1"):
+        with appserver.AppServer(self.config_fixture, paste_conf,
+                                 appserver.MAIN, host="::1"):
             conn = environment.httplib.HTTPConnection(
                 '::1', CONF.eventlet_server.public_port)
             conn.request('GET', '/')
