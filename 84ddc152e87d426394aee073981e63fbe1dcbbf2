@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_fe0cf13c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-04T17:07:42Z",
+      "side": 1,
+      "message": "Good point. Perhaps we move this code to keystone.common.ldap.core? Since this is LDAP-specific, it should belong there.",
+      "parentUuid": "fa80f949_0873be81",
+      "revId": "84ddc152e87d426394aee073981e63fbe1dcbbf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_f7af56e1",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
