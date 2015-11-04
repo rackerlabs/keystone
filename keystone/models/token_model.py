@@ -14,6 +14,7 @@
 
 from keystoneclient.common import cms
 from oslo_config import cfg
+from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
 
@@ -65,7 +66,7 @@ class KeystoneToken(dict):
     def __repr__(self):
         desc = ('<%(type)s (audit_id=%(audit_id)s, '
                 'audit_chain_id=%(audit_chain_id)s) at %(loc)s>')
-        return desc % {'type': self.__class__.__name__,
+        return desc % {'type': reflection.get_class_name(self),
                        'audit_id': self.audit_id,
                        'audit_chain_id': self.audit_chain_id,
                        'loc': hex(id(self))}
