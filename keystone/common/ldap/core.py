@@ -23,6 +23,7 @@ import weakref
 import ldap.filter
 import ldappool
 from oslo_log import log
+from oslo_utils import reflection
 import six
 from six.moves import map, zip
 
@@ -69,8 +70,10 @@ def utf8_encode(value):
     elif isinstance(value, six.binary_type):
         return value
     else:
+        value_name = reflection.get_class_name(value,
+                                               fully_qualified=False)
         raise TypeError("value must be basestring, "
-                        "not %s" % value.__class__.__name__)
+                        "not %s" % value_name)
 
 _utf8_decoder = codecs.getdecoder('utf-8')
 

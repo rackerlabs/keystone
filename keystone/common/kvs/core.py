@@ -25,6 +25,7 @@ from dogpile.core import nameregistry
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import importutils
+from oslo_utils import reflection
 
 from keystone import exception
 from keystone.i18n import _
@@ -131,12 +132,16 @@ class KeyValueStore(object):
                 if issubclass(pxy, proxy.ProxyBackend):
                     proxies.append(pxy)
                 else:
+                    pxy_name = reflection.get_class_name(pxy,
+                                                         fully_qualified=False)
                     LOG.warning(_LW('%s is not a dogpile.proxy.ProxyBackend'),
-                                pxy.__name__)
+                                pxy_name)
 
             for proxy_cls in reversed(proxies):
+                proxy_name = reflection.get_class_name(proxy_cls,
+                                                       fully_qualified=False)
                 LOG.info(_LI('Adding proxy \'%(proxy)s\' to KVS %(name)s.'),
-                         {'proxy': proxy_cls.__name__,
+                         {'proxy': proxy_name,
                           'name': self._region.name})
                 self._region.wrap(proxy_cls)
 
