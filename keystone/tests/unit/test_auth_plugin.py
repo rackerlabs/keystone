@@ -19,10 +19,15 @@ import mock
 from keystone import auth
 from keystone import exception
 from keystone.tests import unit
+from keystone.tests.unit.ksfixtures import auth_plugins
 
 
 # for testing purposes only
 METHOD_NAME = 'simple_challenge_response'
+METHOD_OPTS = {
+    METHOD_NAME:
+        'keystone.tests.unit.test_auth_plugin.SimpleChallengeResponse',
+}
 EXPECTED_RESPONSE = uuid.uuid4().hex
 DEMO_USER_ID = uuid.uuid4().hex
 
@@ -40,20 +45,7 @@ class SimpleChallengeResponse(auth.AuthMethodHandler):
 class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
     def setUp(self):
         super(TestAuthPlugin, self).setUp()
-        self.load_backends()
-
         self.api = auth.controllers.Auth()
-
-    def config_overrides(self):
-        super(TestAuthPlugin, self).config_overrides()
-        method_opts = {
-            METHOD_NAME:
-                'keystone.tests.unit.test_auth_plugin.SimpleChallengeResponse',
-        }
-
-        self.auth_plugin_config_override(
-            methods=['external', 'password', 'token', METHOD_NAME],
-            **method_opts)
 
     def test_unsupported_auth_method(self):
         method_name = uuid.uuid4().hex
@@ -66,6 +58,12 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
                           auth_data)
 
     def test_addition_auth_steps(self):
+        self.useFixture(
+            auth_plugins.ConfigAuthPlugins(self.config_fixture,
+                                           methods=[METHOD_NAME],
+                                           **METHOD_OPTS))
+        self.useFixture(auth_plugins.LoadAuthPlugins(METHOD_NAME))
+
         auth_data = {'methods': [METHOD_NAME]}
         auth_data[METHOD_NAME] = {
             'test': 'test'}
@@ -105,9 +103,9 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
 
     def test_duplicate_method(self):
         # Having the same method twice doesn't cause load_auth_methods to fail.
-        self.auth_plugin_config_override(
-            methods=['external', 'external'])
-        self.clear_auth_plugin_registry()
+        self.useFixture(
+            auth_plugins.ConfigAuthPlugins(self.config_fixture,
+                                           ['external', 'external']))
         auth.controllers.load_auth_methods()
         self.assertIn('external', auth.controllers.AUTH_METHODS)
 
@@ -128,8 +126,6 @@ class TestAuthPluginDynamicOptions(TestAuthPlugin):
 class TestMapped(unit.TestCase):
     def setUp(self):
         super(TestMapped, self).setUp()
-        self.load_backends()
-
         self.api = auth.controllers.Auth()
 
     def config_files(self):
@@ -137,12 +133,10 @@ class TestMapped(unit.TestCase):
         config_files.append(unit.dirs.tests_conf('test_auth_plugin.conf'))
         return config_files
 
-    def auth_plugin_config_override(self, methods=None, **method_classes):
-        # Do not apply the auth plugin overrides so that the config file is
-        # tested
-        pass
-
     def _test_mapped_invocation_with_method_name(self, method_name):
+        method_name = 'saml2'
+        self.useFixture(auth_plugins.LoadAuthPlugins(method_name))
+
         with mock.patch.object(auth.plugins.mapped.Mapped,
                                'authenticate',
                                return_value=None) as authenticate:
@@ -164,26 +158,31 @@ class TestMapped(unit.TestCase):
             self.assertEqual(method_name, auth_payload['protocol'])
 
     def test_mapped_with_remote_user(self):
+        # external plugin should fail and pass to mapped plugin
+        method_name = 'saml2'
+        auth_data = {'methods': [method_name]}
+        # put the method name in the payload so its easier to correlate
+        # method name with payload
+        auth_data[method_name] = {'protocol': method_name}
+        auth_data = {'identity': auth_data}
+
+        auth_context = {'extras': {},
+                        'method_names': [],
+                        'user_id': uuid.uuid4().hex}
+        environment = {'environment': {'REMOTE_USER': 'foo@idp.com'}}
+
+        self.useFixture(auth_plugins.LoadAuthPlugins(method_name))
+
         with mock.patch.object(auth.plugins.mapped.Mapped,
                                'authenticate',
                                return_value=None) as authenticate:
-            # external plugin should fail and pass to mapped plugin
-            method_name = 'saml2'
-            auth_data = {'methods': [method_name]}
-            # put the method name in the payload so its easier to correlate
-            # method name with payload
-            auth_data[method_name] = {'protocol': method_name}
-            auth_data = {'identity': auth_data}
             auth_info = auth.controllers.AuthInfo.create(None, auth_data)
-            auth_context = {'extras': {},
-                            'method_names': [],
-                            'user_id': uuid.uuid4().hex}
-            environment = {'environment': {'REMOTE_USER': 'foo@idp.com'}}
             self.api.authenticate(environment, auth_info, auth_context)
             # make sure Mapped plugin got invoked with the correct payload
             ((context, auth_payload, auth_context),
              kwargs) = authenticate.call_args
-            self.assertEqual(method_name, auth_payload['protocol'])
+
+        self.assertEqual(method_name, auth_payload['protocol'])
 
     def test_supporting_multiple_methods(self):
         for method_name in ['saml2', 'openid', 'x509']:
