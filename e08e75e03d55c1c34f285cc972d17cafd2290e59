@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_dfbfbdce",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-04T09:54:53Z",
+      "side": 1,
+      "message": "nit...maybe say \"Router without project id is defined, but we don\u0027t plan on implementing this.\"",
+      "revId": "e08e75e03d55c1c34f285cc972d17cafd2290e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
