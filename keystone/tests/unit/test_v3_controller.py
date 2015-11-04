@@ -14,6 +14,7 @@
 
 import uuid
 
+from oslo_utils import reflection
 import six
 from six.moves import range
 from testtools import matchers
@@ -49,6 +50,8 @@ class V3ControllerTestCase(unit.TestCase):
         ex = self.assertRaises(exception.ImmutableAttributeError,
                                self.api.check_immutable_params, ref)
         ex_msg = six.text_type(ex)
-        self.assertThat(ex_msg, matchers.Contains(self.api.__class__.__name__))
+        class_name = reflection.get_class_name(self.api, fully_qualified=False)
+        self.assertThat(ex_msg,
+                        matchers.Contains(class_name))
         for key in ref.keys():
             self.assertThat(ex_msg, matchers.Contains(key))

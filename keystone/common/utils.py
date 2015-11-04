@@ -26,6 +26,7 @@ import pwd
 from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
+from oslo_utils import reflection
 from oslo_utils import strutils
 from oslo_utils import timeutils
 import passlib.hash
@@ -296,8 +297,10 @@ def get_unix_user(user=None):
     elif user is None:
         user_info = pwd.getpwuid(os.geteuid())
     else:
+        user_cls_name = reflection.get_class_name(user,
+                                                  fully_qualified=False)
         raise TypeError('user must be string, int or None; not %s (%r)' %
-                        (user.__class__.__name__, user))
+                        (user_cls_name, user))
 
     return user_info.pw_uid, user_info.pw_name
 
@@ -354,8 +357,10 @@ def get_unix_group(group=None):
     elif group is None:
         group_info = grp.getgrgid(os.getegid())
     else:
+        group_cls_name = reflection.get_class_name(group,
+                                                   fully_qualified=False)
         raise TypeError('group must be string, int or None; not %s (%r)' %
-                        (group.__class__.__name__, group))
+                        (group_cls_name, group))
 
     return group_info.gr_gid, group_info.gr_name
 
