@@ -16,6 +16,24 @@
       "revId": "c00797d97230236413496274a30ea3c7d66069ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_a02aa22a",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-05T12:34:36Z",
+      "side": 0,
+      "message": "++",
+      "parentUuid": "fa80f949_8221b14f",
+      "revId": "c00797d97230236413496274a30ea3c7d66069ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
