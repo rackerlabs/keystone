@@ -107,6 +107,42 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_a8b7cf38",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-05T23:45:47Z",
+      "side": 1,
+      "message": "Good call. The use is obvious where it is called but not here where it is defined.",
+      "parentUuid": "fa80f949_513859a0",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_e8439740",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-05T23:45:47Z",
+      "side": 1,
+      "message": "The bogus_region_id exists because there are 3 use cases:\n\n - region_id\u003dNone\n - region_id\u003dsome provided ID\n - user did not specify a region_id. Steve Martinelli asked me to have the code generate a UUID in this case.\n\nTherefore I need a way to have a default value but to not use None as the indicator for that value. I thought just passing in \"object()\" was not clear enough so I created the BogusRegionID.",
+      "parentUuid": "fa80f949_c2b47236",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_3eb804e5",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 4
@@ -118,6 +154,24 @@
       "writtenOn": "2015-11-05T19:22:28Z",
       "side": 1,
       "message": "nit: if we\u0027re not doing anything else to `endpoint` should we just pass that instead of passing `endpoint.copy()`?",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_45a2cc4c",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-05T23:45:47Z",
+      "side": 1,
+      "message": "I was copying other code when I did this. I thought I removed these. Thanks for catching it.\n\nThere are tests where the copy is required because the ref passed into create_* is modified and the id replaced.",
+      "parentUuid": "fa80f949_3eb804e5",
       "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -141,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_a5d93824",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-05T23:45:47Z",
+      "side": 1,
+      "message": "Good catch on the kwargs. Not sure what happened there. Must have lost it when I merged a change.\n\nIt worked because the url (just a UUID) is already bogus so the intent of the test is retained.",
+      "parentUuid": "fa80f949_32512163",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_c1857e07",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 4
@@ -152,6 +224,24 @@
       "writtenOn": "2015-11-05T21:32:37Z",
       "side": 1,
       "message": "unrelated changes?",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_65dfd00d",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-05T23:45:47Z",
+      "side": 1,
+      "message": "No. The old code generated the UUID to store in endpoint_id. There is no need to do this since new_endpoint_ref does this. So the code simply gets the UUID from the new ref.",
+      "parentUuid": "fa80f949_c1857e07",
       "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
