@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_c0cb0d52",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T22:31:41Z",
+      "side": 1,
+      "message": "I agree with David\u0027s comment. Make sure to use a suggestive name like NEEDS_REGION_ID.",
+      "parentUuid": "fa80f949_41518ed7",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_513859a0",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2015-11-05T19:22:28Z",
       "side": 1,
       "message": "so the main point of having these two separate methods is to be able to generate consistent endpoint references both before and after 3.2, right? \n\nhttps://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#endpoints-v3endpoints\n\nThat might make a good comment?",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c2b47236",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T22:31:41Z",
+      "side": 1,
+      "message": "Yes I think that\u0027s the purpose of these methods.\n\nI think creating two separate methods, one that receives region_id and other just region, would be clearer. For me this code looks a bit confusing this way.\n\nAlso, we wouldn\u0027t need the bogus_region_id above.",
+      "parentUuid": "fa80f949_513859a0",
       "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
