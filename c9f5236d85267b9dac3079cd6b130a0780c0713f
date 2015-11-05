@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_89645b49",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_change_endpoint_url_column_type.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-05T18:15:03Z",
+      "side": 1,
+      "message": "URL is restricted to 255 chars now? That enough?",
+      "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
