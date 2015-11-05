@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_a518581f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T23:02:54Z",
+      "side": 1,
+      "message": "Yes, when deleting a user.",
+      "parentUuid": "fa80f949_226bfef2",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_053cc7e0",
         "filename": "keystone/identity/core.py",
         "patchSetId": 9
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "The cache introduced in this patch is specific to user + project/domain pairs.",
       "parentUuid": "fa80f949_053cc7e0",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c5ec7cf5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T23:02:54Z",
+      "side": 1,
+      "message": "Yeah, it was just to support my comment below.",
+      "parentUuid": "fa80f949_65011005",
       "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +242,24 @@
       "side": 1,
       "message": "Nope, we need to do this because memcache doesn\u0027t take kwargs when creating keys.",
       "parentUuid": "fa80f949_007d956d",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_85a8b48e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T23:02:54Z",
+      "side": 1,
+      "message": "Really ? That\u0027s bad, because we don\u0027t know if the method is cached when we\u0027re calling it, in order to decide if providing named params or not :(",
+      "parentUuid": "fa80f949_45cdecb5",
       "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
