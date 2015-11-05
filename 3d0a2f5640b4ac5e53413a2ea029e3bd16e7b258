@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_fe47dc1a",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:22:28Z",
+      "side": 1,
+      "message": "Should this follow the convention for global variable naming? \n\n    BOGUS_REGION_ID \u003d BogusRegionId()",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_513859a0",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:22:28Z",
+      "side": 1,
+      "message": "so the main point of having these two separate methods is to be able to generate consistent endpoint references both before and after 3.2, right? \n\nhttps://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#endpoints-v3endpoints\n\nThat might make a good comment?",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_3eb804e5",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:22:28Z",
+      "side": 1,
+      "message": "nit: if we\u0027re not doing anything else to `endpoint` should we just pass that instead of passing `endpoint.copy()`?",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
