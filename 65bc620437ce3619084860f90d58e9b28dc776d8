@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_e5e980e7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1003,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T23:02:44Z",
+      "side": 1,
+      "message": "We don\u0027t need to invalidate inside the for; just once :)",
+      "revId": "65bc620437ce3619084860f90d58e9b28dc776d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
