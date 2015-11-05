@@ -122,6 +122,24 @@
       "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_25f78bf6",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:22:24Z",
+      "side": 1,
+      "message": "I don\u0027t agree with this. For a list or dict I definitely agree because is making a static variable and that is typically not expected. In this case I think it\u0027s fine because it is actually what is expected and exactly what happens.",
+      "parentUuid": "7a2fa921_59ad3187",
+      "revId": "adfce0bc3af1d71e37f84c84bf09765e60f5c5b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
