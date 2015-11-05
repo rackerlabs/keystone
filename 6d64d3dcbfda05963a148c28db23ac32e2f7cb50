@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_d8380c40",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-05T08:03:56Z",
+      "side": 1,
+      "message": "Do we need the check \"if not cred\" ? While I am aware this is not related to your change, I think it\u0027s a good idea to remove redundant checks.\n\nPlease see\nhttps://github.com/openstack/keystone/blob/master/keystone/credential/backends/sql.py#L60\n\n_get_credential already checks for None.",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_7827a012",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-05T08:03:56Z",
+      "side": 1,
+      "message": "Should this exception not be exception.CredentialNotFound instead of exception.Unauthorized()?\n\nAgain not related to your change but if we agree on changing this then I would raise a new patch.",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
