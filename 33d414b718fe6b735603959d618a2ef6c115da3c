@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_cf034041",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T20:53:42Z",
+      "side": 1,
+      "message": "(nit) A comma after %(interface)s would help to keep consistency in the error message.",
+      "revId": "33d414b718fe6b735603959d618a2ef6c115da3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_4a2dfe44",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T20:53:42Z",
+      "side": 1,
+      "message": "endpoint_create schema allows an endpoint to be created without specifying region. In this case, we\u0027d get a KeyError here.\nAlso check in the db schema that this property is nullable.",
+      "revId": "33d414b718fe6b735603959d618a2ef6c115da3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
