@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_41518ed7",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:32:37Z",
+      "side": 1,
+      "message": "I\u0027d rather see BogusRegionId removed and just do something like NEEDS_ID \u003d object()",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_513859a0",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 4
@@ -47,6 +64,40 @@
       "writtenOn": "2015-11-05T19:22:28Z",
       "side": 1,
       "message": "nit: if we\u0027re not doing anything else to `endpoint` should we just pass that instead of passing `endpoint.copy()`?",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_32512163",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:32:37Z",
+      "side": 1,
+      "message": "I\u0027d rather replace **kwargs with url. Also right now kwargs isn\u0027t used so I\u0027m not sure how some of these tests actually work.",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c1857e07",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:32:37Z",
+      "side": 1,
+      "message": "unrelated changes?",
       "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
