@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_82c3caec",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T22:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_e58503ad",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_65935350",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_226bfef2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T22:53:44Z",
+      "side": 1,
+      "message": "Invalidating the cache when deleting a user you mean?",
+      "parentUuid": "fa80f949_6567d325",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_053cc7e0",
         "filename": "keystone/identity/core.py",
         "patchSetId": 9
@@ -82,6 +118,24 @@
       "writtenOn": "2015-11-05T21:54:37Z",
       "side": 1,
       "message": "Note that here we are just invalidating the cache of the method get_group, and not the cache region created at the assignment manager.",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_65011005",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T22:53:44Z",
+      "side": 1,
+      "message": "The cache introduced in this patch is specific to user + project/domain pairs.",
+      "parentUuid": "fa80f949_053cc7e0",
       "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_45f64cfa",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1014,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T22:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_c578ffc6",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_007d956d",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -116,6 +188,24 @@
       "writtenOn": "2015-11-05T21:54:37Z",
       "side": 1,
       "message": "Unrelated change?",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_45cdecb5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T22:53:44Z",
+      "side": 1,
+      "message": "Nope, we need to do this because memcache doesn\u0027t take kwargs when creating keys.",
+      "parentUuid": "fa80f949_007d956d",
       "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
