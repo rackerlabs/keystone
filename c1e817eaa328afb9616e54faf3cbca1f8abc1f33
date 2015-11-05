@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_e2867dda",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-11-05T06:11:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_327dbab1",
+      "revId": "c1e817eaa328afb9616e54faf3cbca1f8abc1f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_4d69bfbd",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-05T05:47:04Z",
       "side": 1,
       "message": "you *might* just want to leave one blank line here to consistent with L51.",
+      "revId": "c1e817eaa328afb9616e54faf3cbca1f8abc1f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_027aa1f1",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-11-05T06:11:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_4d69bfbd",
       "revId": "c1e817eaa328afb9616e54faf3cbca1f8abc1f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
