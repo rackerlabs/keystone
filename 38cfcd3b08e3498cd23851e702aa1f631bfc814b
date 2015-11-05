@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_ef073d1a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-05T11:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_d2d30e37",
+      "revId": "38cfcd3b08e3498cd23851e702aa1f631bfc814b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_72ca6270",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-05T03:32:49Z",
       "side": 1,
       "message": "not for what? add some code before here to show it\u0027s possible to create two endpoints which has the same reference data except \u0027id\u0027.",
+      "revId": "38cfcd3b08e3498cd23851e702aa1f631bfc814b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_6f134d67",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-05T11:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_72ca6270",
       "revId": "38cfcd3b08e3498cd23851e702aa1f631bfc814b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2015-11-05T03:32:49Z",
       "side": 1,
       "message": "I am still want to raise the question here, how it will be if the existing deployment already has those kind of duplicated endpoints?\n\nIn the current IMPL, it will fail to upgrade, right? you are expecting end user should clean the DB manually, cannot this be done in the migration code?",
+      "revId": "38cfcd3b08e3498cd23851e702aa1f631bfc814b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_af19358a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-05T11:39:19Z",
+      "side": 1,
+      "message": "it is not trivial to remove these duplicates. As discussed with bknudson in previous patchsets, we should only raise an error if it fails.",
+      "parentUuid": "fa80f949_52f95e7f",
       "revId": "38cfcd3b08e3498cd23851e702aa1f631bfc814b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
