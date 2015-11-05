@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_65935350",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:30:43Z",
+      "side": 1,
+      "message": "Do you need to invalidate here and on role update too?",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
