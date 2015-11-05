@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa80f949_e58503ad",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T21:54:37Z",
+      "side": 1,
+      "message": "As per my comment in the previous patch, I think we need to invalidate it here too.\n\nassignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_65935350",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -13,6 +30,92 @@
       "writtenOn": "2015-11-05T21:30:43Z",
       "side": 1,
       "message": "Do you need to invalidate here and on role update too?",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_80bae521",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T21:54:37Z",
+      "side": 1,
+      "message": "I don\u0027t think so. For create, there is no role assignment with the new role yet. For update, we can\u0027t change the role id, so the assignments are still fine.",
+      "parentUuid": "fa80f949_65935350",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_6567d325",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T21:54:37Z",
+      "side": 1,
+      "message": "Don\u0027t we need to invalidate all the region create on assignment manager here too ?\n\nassignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_053cc7e0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T21:54:37Z",
+      "side": 1,
+      "message": "Note that here we are just invalidating the cache of the method get_group, and not the cache region created at the assignment manager.",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c578ffc6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1014,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T21:54:37Z",
+      "side": 1,
+      "message": "Don\u0027t we need to invalidate all the cache region created in assignment manager here too ?\n\nassignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()",
+      "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_007d956d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T21:54:37Z",
+      "side": 1,
+      "message": "Unrelated change?",
       "revId": "14f899864247c29a69dfec5d63b6fb79dda77bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
