@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_b4edf3f0",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:52:50Z",
+      "side": 1,
+      "message": "we don\u0027t pass any kwargs in this commit, do we?",
+      "revId": "1c1fb946bf211452d9defcddca92971de2d3aa16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_d44c3744",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 5305,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:52:50Z",
+      "side": 1,
+      "message": "would it make more sense to name these:\n\n    service_reference \u003d unit.new_service_ref()\n\nor \n\n    service_ref \u003d unit.new_service_ref()\n\n?",
+      "revId": "1c1fb946bf211452d9defcddca92971de2d3aa16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_3413430f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:52:50Z",
+      "side": 1,
+      "message": "nit: irrelevant whitespace change?",
+      "revId": "1c1fb946bf211452d9defcddca92971de2d3aa16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
