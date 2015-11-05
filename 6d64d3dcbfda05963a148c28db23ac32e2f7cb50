@@ -33,6 +33,24 @@
       "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_1393d550",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-05T08:28:25Z",
+      "side": 1,
+      "message": "I can see it\u0027s for security. Keystone should not reveal if the access doesn\u0027t exist or access/secret don\u0027t match.\nWhen _check_credential_owner_and_user_id_match does the check for get and list, authenticate needs Unauthorized raised.\n\nAnd you\u0027re right that it won\u0027t work because credential api already raises a not found exception.\n\nI think the reasonable behavior is to raise different exceptions in different scenarios, and since multiple places need to be changed, and tests need to be added, I think a separate patch set is better, to handle this problem.",
+      "parentUuid": "fa80f949_7827a012",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
