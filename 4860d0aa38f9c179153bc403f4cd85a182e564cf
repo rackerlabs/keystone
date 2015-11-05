@@ -242,6 +242,24 @@
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_69001702",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2015-11-05T18:00:52Z",
+      "side": 0,
+      "message": "++ I think you should add back the rest of the dependencies as they are still valid. You could add tox as well. Adding minimum version for the packages (as per Ajaya\u0027s review) - while a big help for new developers - it would need constant maintenance so not sure if it\u0027s worth it.",
+      "parentUuid": "fa80f949_e6519fd9",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
