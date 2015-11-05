@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_5b5bab54",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-11-05T13:10:49Z",
+      "side": 1,
+      "message": "i think you can use exposed_message",
+      "revId": "d624fe179e00b19e83bc5252d57a197cc420c0de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
