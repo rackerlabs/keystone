@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_c27c72b7",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_change_endpoint_url_column_type.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-05T22:46:00Z",
+      "side": 1,
+      "message": "I don\u0027t think we even need this. An endpoint is can be uniquely identified by combination of region_id, service_id, and interface.",
+      "parentUuid": "fa80f949_afd7dceb",
+      "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_af1cbcc1",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 2
