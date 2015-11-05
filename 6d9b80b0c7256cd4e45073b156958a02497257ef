@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_22e53edb",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-05T22:37:20Z",
+      "side": 1,
+      "message": "Raildo, I don\u0027t think this needs to be changed. It seems like this is making the code more confusing.",
+      "revId": "6d9b80b0c7256cd4e45073b156958a02497257ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
