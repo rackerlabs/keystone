@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_425de277",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T22:40:12Z",
+      "side": 1,
+      "message": "huh, good question. I can dig into that and post a subsequent patch. I\u0027ll follow up with dolph, too. He might have an idea of why that is since he had a few iterations on this patch?",
+      "parentUuid": "fa80f949_851e7761",
+      "revId": "0bbf4c5b73c4a49a9c8d574b3326d0a16cbf6c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_45272fb6",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 14
