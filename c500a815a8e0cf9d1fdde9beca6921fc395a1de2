@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_acd4e31f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-05T10:54:42Z",
+      "side": 1,
+      "message": "So you are probably right, but I was just ensuring we executed the equivalent functionality as before. This ensures we don\u0027t change any error codes that might be generated (e.g. domain not supported).",
+      "parentUuid": "fa80f949_93a4bea6",
+      "revId": "c500a815a8e0cf9d1fdde9beca6921fc395a1de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a26ad4f_add59a1c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 22
