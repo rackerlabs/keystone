@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_0304d547",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-05T14:33:52Z",
+      "side": 1,
+      "message": "the only nit I have is you are starting the sentence with \u0027and\u0027 I would remove the period and lower \u0027And\u0027",
+      "revId": "69999c3c673c14c82f6769163a876c53b10ac262",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
