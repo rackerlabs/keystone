@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_82f50a58",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T22:42:13Z",
+      "side": 1,
+      "message": "Also, a good alternative to define old endpoint refs could be creating them by hand, as you do for services in the next patch in the chain. [1]\n\nThat way we only needed to keep 1 method here.\n\n[1] https://review.openstack.org/#/c/238283/4/keystone/tests/unit/test_sql_upgrade.py",
+      "parentUuid": "fa80f949_c2b47236",
+      "revId": "3d0a2f5640b4ac5e53413a2ea029e3bd16e7b258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_3eb804e5",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 4
