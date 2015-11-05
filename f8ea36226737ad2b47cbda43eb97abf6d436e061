@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_25a30802",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T22:56:49Z",
+      "side": 1,
+      "message": "(nit) parent_region_id could be better, as it is an ID :)",
+      "revId": "f8ea36226737ad2b47cbda43eb97abf6d436e061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
