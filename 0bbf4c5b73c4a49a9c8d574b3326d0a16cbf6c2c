@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa80f949_851e7761",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:22:04Z",
+      "side": 1,
+      "message": "(nit) why isn\u0027t CACHE_REGION the default value?",
+      "revId": "0bbf4c5b73c4a49a9c8d574b3326d0a16cbf6c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_45272fb6",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:22:04Z",
+      "side": 1,
+      "message": "same...",
+      "revId": "0bbf4c5b73c4a49a9c8d574b3326d0a16cbf6c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_3f4035a5",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 14
@@ -30,6 +64,24 @@
       "writtenOn": "2015-10-30T17:28:51Z",
       "side": 1,
       "message": "Could we add a function doc string explaining why/when should we use this decorator?",
+      "revId": "0bbf4c5b73c4a49a9c8d574b3326d0a16cbf6c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c5423f3e",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-05T21:22:04Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a26ad4f_2e58c431",
       "revId": "0bbf4c5b73c4a49a9c8d574b3326d0a16cbf6c2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
