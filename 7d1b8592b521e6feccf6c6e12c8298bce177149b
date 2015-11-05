@@ -176,6 +176,24 @@
       "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_22b21e07",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-05T22:32:34Z",
+      "side": 1,
+      "message": "Henry, thank you for the clarification. I thought you were talking about the log rather than the exception, that was my mistake.",
+      "parentUuid": "fa80f949_a3d1a2fd",
+      "revId": "7d1b8592b521e6feccf6c6e12c8298bce177149b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
