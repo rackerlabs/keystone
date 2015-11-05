@@ -16,6 +16,41 @@
       "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_afd7dceb",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_change_endpoint_url_column_type.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T20:34:17Z",
+      "side": 1,
+      "message": "Good question.",
+      "parentUuid": "fa80f949_89645b49",
+      "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_af1cbcc1",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-05T20:34:17Z",
+      "side": 1,
+      "message": "The name of the test is \"test_change_url_type\", and we aren\u0027t testing the type of URL has changed.\n\nWe should assert its previous type before upgrade, and then its type after upgrade (+ length, as doing here).",
+      "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
