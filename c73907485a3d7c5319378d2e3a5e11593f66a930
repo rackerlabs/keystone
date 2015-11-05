@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_749f8bb4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-05T19:46:48Z",
+      "side": 1,
+      "message": "can load_driver and load_auth_method be collapsed into a single method? Does it make sense to have two of them?",
+      "revId": "c73907485a3d7c5319378d2e3a5e11593f66a930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
