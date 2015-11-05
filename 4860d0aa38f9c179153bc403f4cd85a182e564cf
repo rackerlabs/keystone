@@ -175,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_013b869d",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-11-05T00:51:18Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "fa80f949_1b2a1c2d",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_1bb8dce4",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 12
@@ -186,6 +204,24 @@
       "writtenOn": "2015-11-04T21:51:29Z",
       "side": 0,
       "message": "why remove the info about the requirements files?",
+      "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_9e9fd702",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13111
+      },
+      "writtenOn": "2015-11-05T00:51:18Z",
+      "side": 0,
+      "message": "the info is used in PyPi Packages and VirtualEnv section(see below). i removed the info because new version is simplified by using tox.",
+      "parentUuid": "fa80f949_1bb8dce4",
       "revId": "4860d0aa38f9c179153bc403f4cd85a182e564cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
