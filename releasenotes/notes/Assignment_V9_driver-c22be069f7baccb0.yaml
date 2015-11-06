@@ -5,6 +5,7 @@ features:
   - The following methods have been removed from the driver
     - list_project_ids_for_user()
     - list_domain_ids_for_user()
+    - list_user_ids_for_project()
 issues:
   - None
 upgrade:
