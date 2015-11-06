@@ -161,13 +161,8 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests):
         self.group_name = uuid.uuid4().hex
 
         # 1) Create a domain for the user.
-        self.domain = {
-            'description': uuid.uuid4().hex,
-            'enabled': True,
-            'id': self.domain_id,
-            'name': self.domain_name,
-        }
-
+        self.domain = unit.new_domain_ref(id=self.domain_id,
+                                          name=self.domain_name)
         self.resource_api.create_domain(self.domain_id, self.domain)
 
         # 2) Create a project for the user.

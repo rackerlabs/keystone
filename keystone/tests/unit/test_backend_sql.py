@@ -381,14 +381,14 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         session.close()
 
     def test_list_domains_for_user(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
         user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
                 'domain_id': domain['id'], 'enabled': True}
 
-        test_domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        test_domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(test_domain1['id'], test_domain1)
-        test_domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        test_domain2 = unit.new_domain_ref()
         self.resource_api.create_domain(test_domain2['id'], test_domain2)
 
         user = self.identity_api.create_user(user)
@@ -407,7 +407,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # Create two groups each with a role on a different domain, and
         # make user1 a member of both groups.  Both these new domains
         # should now be included, along with any direct user grants.
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
         user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
                 'domain_id': domain['id'], 'enabled': True}
@@ -417,11 +417,11 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         group2 = {'name': uuid.uuid4().hex, 'domain_id': domain['id']}
         group2 = self.identity_api.create_group(group2)
 
-        test_domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        test_domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(test_domain1['id'], test_domain1)
-        test_domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        test_domain2 = unit.new_domain_ref()
         self.resource_api.create_domain(test_domain2['id'], test_domain2)
-        test_domain3 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        test_domain3 = unit.new_domain_ref()
         self.resource_api.create_domain(test_domain3['id'], test_domain3)
 
         self.identity_api.add_user_to_group(user['id'], group1['id'])
@@ -451,9 +451,9 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         - When listing domains for user, neither domain should be returned
 
         """
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        domain1 = unit.new_domain_ref()
         domain1 = self.resource_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        domain2 = unit.new_domain_ref()
         domain2 = self.resource_api.create_domain(domain2['id'], domain2)
         user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
                 'domain_id': domain1['id'], 'enabled': True}
@@ -709,7 +709,7 @@ class SqlFilterTests(SqlTests, test_backend.FilterTests):
         # since any domain filtering with LDAP is handled by the manager
         # layer (and is already tested elsewhere) not at the driver level.
         self.addCleanup(self.clean_up_entities)
-        self.domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(self.domain1['id'], self.domain1)
 
         self.entity_list = {}
