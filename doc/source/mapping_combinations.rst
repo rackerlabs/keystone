@@ -602,8 +602,11 @@ differences.
 
 An attribute file (/etc/shibboleth/attribute-map.xml) is used to add
 attributes to the Keystone Identity Provider. Attributes look as follows:
-``<Attribute name="openstack_user" id="openstack_user"/>``
-``<Attribute name="openstack_user_domain" id="openstack_user_domain"/>``
+
+.. code-block:: javascript
+
+    <Attribute name="openstack_user" id="openstack_user"/>
+    <Attribute name="openstack_user_domain" id="openstack_user_domain"/>
 
 The Keystone Service Provider must contain a mapping as shown below.
 ``openstack_user``, and ``openstack_user_domain`` match to the attribute
