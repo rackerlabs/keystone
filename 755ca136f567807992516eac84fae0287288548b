@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_7380ecf7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1898,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-11-06T09:43:08Z",
+      "side": 1,
+      "message": "if you want to ensure that only \u0027saml2\u0027 is in the list i suggest using\n\nself.assertListEqual([\u0027saml2\u0027], token_resp[\u0027methods\u0027])",
+      "revId": "755ca136f567807992516eac84fae0287288548b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_f374dc36",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2489,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-11-06T09:43:08Z",
+      "side": 1,
+      "message": "same",
+      "revId": "755ca136f567807992516eac84fae0287288548b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
