@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_2b1660f1",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T13:57:16Z",
+      "side": 1,
+      "message": "Does this correct?",
+      "revId": "818d64741efd4c55c4c682bd8742019bbe4e1056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_6bcea883",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T13:57:16Z",
+      "side": 1,
+      "message": "change this to:\n\n import os (sys lib)\n\n import fixtures (third party lib)\n from migrate.versioning import repository\n ...",
+      "revId": "818d64741efd4c55c4c682bd8742019bbe4e1056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_2bd740ee",
+        "filename": "test-requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T13:57:16Z",
+      "side": 1,
+      "message": "where does this used?",
+      "revId": "818d64741efd4c55c4c682bd8742019bbe4e1056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
