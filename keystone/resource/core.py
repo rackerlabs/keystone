@@ -282,7 +282,8 @@ class Manager(manager.Manager):
         subtree_enabled = [ref.get('enabled', True) for ref in subtree_list]
         return (not any(subtree_enabled))
 
-    def update_project(self, project_id, project, initiator=None):
+    def update_project(self, project_id, project, initiator=None,
+                       cascade=False):
         # Use the driver directly to prevent using old cached value.
         original_project = self.driver.get_project(project_id)
         project = project.copy()
@@ -307,29 +308,24 @@ class Manager(manager.Manager):
         if 'enabled' in project:
             project['enabled'] = clean.project_enabled(project['enabled'])
 
-        # NOTE(rodrigods): for the current implementation we only allow to
-        # disable a project if all projects below it in the hierarchy are
-        # already disabled. This also means that we can not enable a
-        # project that has disabled parents.
         original_project_enabled = original_project.get('enabled', True)
         project_enabled = project.get('enabled', True)
         if not original_project_enabled and project_enabled:
             self._assert_all_parents_are_enabled(project_id)
         if original_project_enabled and not project_enabled:
             # NOTE(htruta): In order to disable a regular project, all its
-            # children must already be disabled. However, to keep
-            # compatibility with the existing domain behaviour, we allow a
-            # project acting as a domain to be disabled irrespective of the
-            # state of its children. Disabling a project acting as domain
-            # effectively disables its children.
-            if (not original_project.get('is_domain') and not
-                    self._check_whole_subtree_is_disabled(project_id)):
-                raise exception.ForbiddenAction(
-                    action=_('cannot disable project %(project_id)s since its '
-                             'subtree contains enabled projects.')
-                    % {'project_id': project_id})
-
+            # children must already be disabled unless cascade is set to true.
+            # However, to keep compatibility with the existing domain behavior,
+            # we allow a project acting as a domain to be disabled
+            # irrespective of the state of its children. Disabling a project
+            # acting as domain effectively disables its children.
+            if not original_project.get('is_domain') and not cascade:
+                self._assert_whole_subtree_is_disabled(project_id)
             self._disable_project(project_id)
+        if cascade:
+            self._only_allow_enabled_to_update_cascade(project,
+                                                       original_project)
+            self._update_project_enabled_cascade(project_id, project_enabled)
 
         ret = self.driver.update_project(project_id, project)
         notifications.Audit.updated(self._PROJECT, project_id, initiator)
@@ -345,6 +341,27 @@ class Manager(manager.Manager):
             assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
         return ret
+
+    def _only_allow_enabled_to_update_cascade(self, project, original_project):
+        for attr in project:
+            if attr != 'enabled':
+                if project.get(attr) != original_project.get(attr):
+                    raise exception.ValidationError(
+                        message=_('Cascade update is only allowed for '
+                                  'enabled attribute.'))
+
+    def _update_project_enabled_cascade(self, project_id, enabled):
+        subtree = self.list_projects_in_subtree(project_id)
+        # Update enabled only if different from original value
+        subtree_to_update = [child for child in subtree
+                             if child['enabled'] != enabled]
+        for child in subtree_to_update:
+            child['enabled'] = enabled
+
+            if not enabled:
+                self._disable_project(child['id'])
+
+            self.driver.update_project(child['id'], child)
 
     def _pre_delete_cleanup_project(self, project_id, project, initiator=None):
         project_user_ids = (
