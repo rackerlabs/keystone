@@ -16,6 +16,24 @@
       "revId": "c04bb9da8d401e1ddacbc217e921da3049f0c16e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_ea5379e0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3698,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-06T11:18:18Z",
+      "side": 1,
+      "message": "actually, Marek, I made it like that to ensure that we\u0027ll never get an uuid made only of numbers.",
+      "parentUuid": "fa80f949_8e9d28be",
+      "revId": "c04bb9da8d401e1ddacbc217e921da3049f0c16e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
