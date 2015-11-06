@@ -74,7 +74,10 @@ class Manager(manager.Manager):
 
     def list_user_ids_for_project(self, tenant_id):
         self.resource_api.get_project(tenant_id)
-        return self.driver.list_user_ids_for_project(tenant_id)
+        assignment_list = self.list_role_assignments(
+            project_id=tenant_id, effective=True)
+        # Use set() to process the list to remove any duplicates
+        return list(set([x['user_id'] for x in assignment_list]))
 
     def _list_parent_ids_of_project(self, project_id):
         if CONF.os_inherit.enabled:
