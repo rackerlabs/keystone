@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_2d3e6d8c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-06T16:29:38Z",
+      "side": 1,
+      "message": "Because I studied German for two Semesters in College and it messed up mY abiLitY to propeRly capitalize.",
+      "parentUuid": "fa80f949_a7711c78",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_87973847",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-06T15:54:31Z",
       "side": 1,
       "message": "remove 1 space after \u0027Tokens\u0027\n\nIt looks like the format throughout the doc is 1 space after periods.",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_0d7609a4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-06T16:29:38Z",
+      "side": 1,
+      "message": "Two spaces is correct.  Fixing it everywhere else in this file would be beyond the scope of this patch.  Feel free to submit a patch fixing it after this one merges.",
+      "parentUuid": "fa80f949_87973847",
       "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_2d7bcd8d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-06T16:29:38Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "fa80f949_67a81478",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_27e44cdf",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-06T15:52:03Z",
       "side": 1,
       "message": "this isn\u0027t in the token, it\u0027s \"is_admin_project\"",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_cdc7a196",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-06T16:29:38Z",
+      "side": 1,
+      "message": "Sorry, missed that.",
+      "parentUuid": "fa80f949_27e44cdf",
       "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
