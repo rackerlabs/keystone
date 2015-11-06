@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_bf75c0fa",
+        "filename": "keystone/tests/functional/federation/fixtures.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T06:28:38Z",
+      "side": 1,
+      "message": "new_mapping[0][\u0027local\u0027][1][\u0027group\u0027] \u003d uuid.uuid4().hex might be better.",
+      "revId": "793860a89e7d1f19fecb96aad9638179200ac7d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
