@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_3c6b21f3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T03:18:10Z",
+      "side": 1,
+      "message": "I\u0027d say \u0027project role assingments\u0027 instead of just \u0027roles\u0027 in this context.",
+      "revId": "7e9da05a7d54ee846f38837aa10ce85bcace4972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_dc01b507",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T03:18:10Z",
+      "side": 1,
+      "message": "I suppose there was 1 project role assignment created in the setup, as a fixture. Is that right ? Because the limit is 1 and you didn\u0027t create any role assignment by yourself.\n\nPlease assert it existed when you start your test. That way it will be clearer why the next statement expects an exception when you didn\u0027t create any assignment.",
+      "revId": "7e9da05a7d54ee846f38837aa10ce85bcace4972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_1713965c",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T03:18:10Z",
+      "side": 1,
+      "message": "How about setting a lower limit, and then creating assignments up to the limit ? I think it would be a more useful test that way.",
+      "revId": "7e9da05a7d54ee846f38837aa10ce85bcace4972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
