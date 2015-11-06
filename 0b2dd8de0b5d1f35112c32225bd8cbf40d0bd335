@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_912d5697",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1898,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T01:31:34Z",
+      "side": 1,
+      "message": "(nit) IMO, the tests didn\u0027t need docs, as their names are very descriptive already. However, this should not block this patch, it looks good to me as it is.",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
