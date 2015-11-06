@@ -16,6 +16,24 @@
       "revId": "62b6fc8b058b15a700d33a3d782bc007ff98fbd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_dfbf64a8",
+        "filename": "keystone/tests/functional/federation/fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T06:21:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_9fa8fc8e",
+      "revId": "62b6fc8b058b15a700d33a3d782bc007ff98fbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
