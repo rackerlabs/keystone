@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa80f949_a7711c78",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-06T15:54:31Z",
+      "side": 1,
+      "message": "why is \u0027Special\u0027 capitalized?",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_87973847",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-06T15:54:31Z",
+      "side": 1,
+      "message": "remove 1 space after \u0027Tokens\u0027\n\nIt looks like the format throughout the doc is 1 space after periods.",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_67a81478",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-06T15:54:31Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "4f08560bb60f99e32cb017de481426e4831960a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_27e44cdf",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
