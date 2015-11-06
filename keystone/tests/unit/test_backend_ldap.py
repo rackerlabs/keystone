@@ -1743,6 +1743,12 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
                 project['id'])
             self.assertEqual(0, len(parents_list))
 
+    def test_update_project_enabled_cascade(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_cannot_enable_cascade_with_parent_disabled(self):
+        self._assert_create_hierarchy_not_allowed()
+
     def test_hierarchical_projects_crud(self):
         self._assert_create_hierarchy_not_allowed()
 

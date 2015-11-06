@@ -275,7 +275,7 @@ class Manager(manager.Manager):
                              'its subtree contains enabled '
                              'projects') % project_id)
 
-    def update_project(self, tenant_id, tenant, initiator=None):
+    def update_project(self, tenant_id, tenant, initiator=None, cascade=False):
         # Use the driver directly to prevent using old cached value.
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
@@ -299,24 +299,17 @@ class Manager(manager.Manager):
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
 
-        # NOTE(rodrigods): for the current implementation we only allow to
-        # disable a project if all projects below it in the hierarchy are
-        # already disabled. This also means that we can not enable a
-        # project that has disabled parents.
         original_tenant_enabled = original_tenant.get('enabled', True)
         tenant_enabled = tenant.get('enabled', True)
         if not original_tenant_enabled and tenant_enabled:
             self._assert_all_parents_are_enabled(tenant_id)
         if original_tenant_enabled and not tenant_enabled:
-            # NOTE(htruta): In order to disable a regular project, all its
-            # children must already be disabled. However, to keep
-            # compatibility with the existing domain behaviour, we allow a
-            # project acting as a domain to be disabled irrespective of the
-            # state of its children. Disabling a project acting as domain
-            # effectively disables its children.
-            if not original_tenant.get('is_domain'):
+            if not original_tenant.get('is_domain') and not cascade:
                 self._assert_whole_subtree_is_disabled(tenant_id)
             self._disable_project(tenant_id)
+        if cascade:
+            self._only_allow_enabled_to_update_cascade(tenant, original_tenant)
+            self._update_project_enabled_cascade(tenant_id, tenant_enabled)
 
         ret = self.driver.update_project(tenant_id, tenant)
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
@@ -324,6 +317,27 @@ class Manager(manager.Manager):
         self.get_project_by_name.invalidate(self, original_tenant['name'],
                                             original_tenant['domain_id'])
         return ret
+
+    def _only_allow_enabled_to_update_cascade(self, tenant, original_tenant):
+        for attr in tenant:
+            if attr != 'enabled':
+                if tenant.get(attr) != original_tenant.get(attr):
+                    raise exception.ValidationError(
+                        message=_('Cascade update is only allowed for '
+                                  'enabled attribute.'))
+
+    def _update_project_enabled_cascade(self, tenant_id, enabled):
+        subtree = self.list_projects_in_subtree(tenant_id)
+        # Update enabled only if different from original value
+        subtree_to_update = [child for child in subtree
+                             if child['enabled'] != enabled]
+        for child in subtree_to_update:
+            child['enabled'] = enabled
+
+            if not enabled:
+                self._disable_project(child['id'])
+
+            self.driver.update_project(child['id'], child)
 
     def delete_project(self, tenant_id, initiator=None):
         # Use the driver directly to prevent using old cached value.
