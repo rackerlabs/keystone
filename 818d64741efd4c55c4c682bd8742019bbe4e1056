@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa80f949_0b803c8a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T13:58:07Z",
+      "side": 1,
+      "message": "s/bans chema/ban schema",
+      "revId": "818d64741efd4c55c4c682bd8742019bbe4e1056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_2b1660f1",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 3
