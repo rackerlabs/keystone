@@ -2,7 +2,9 @@
 prelude: >
     New Assignment driver (V9)
 features:
-  - None
+  - The following methods have been removed from the V9 driver
+    - list_project_ids_for_user()
+    - list_domain_ids_for_user()
 issues:
   - None
 upgrade:
