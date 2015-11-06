@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_eb2db895",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-06T13:40:43Z",
+      "side": 1,
+      "message": "Personally (although I\u0027m OK with it if others really like it) I\u0027m not sure this use of a method is helpful...the various options used further down seem a bit convoluted and you lose track of what the ldap config is.\n\nI know you were responding to Brant\u0027s comment on this - I *think* Brant\u0027s point was to do simply do something like:\n\nuser_tree_dn: _make_CN()\n\nwhere\n\n_make_CN() returned \u0027CN\u003d\u0027 + uuid.uuid4().hex",
+      "revId": "f9e29f2ea3fdadd902d5c4b78e06c9d70024b7b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
