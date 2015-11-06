@@ -149,12 +149,7 @@ class TokenAPITests(object):
         # able to validate a v3 token with user in the new domain.
 
         # 1) Create a new domain for the user.
-        new_domain = {
-            'description': uuid.uuid4().hex,
-            'enabled': True,
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-        }
+        new_domain = unit.new_domain_ref()
         self.resource_api.create_domain(new_domain['id'], new_domain)
 
         # 2) Create user in new domain.
@@ -2155,7 +2150,7 @@ class TestAuth(test_v3.RestfulTestCase):
     def test_auth_token_cross_domain_group_and_project(self):
         """Verify getting a token in cross domain group/project roles."""
         # create domain, project and group and grant roles to user
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(domain1['id'], domain1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
