@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_457ce5b4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T17:50:23Z",
+      "side": 1,
+      "message": "Asking for domain and effective will always return an empty list. [1] I believe we had agreed that it wasn\u0027t a valid case.\n\nWe can either change the list_role_assignments behavior (can be dangerous ?) or just make two calls for it here (1 for user and another for groups), similar to the old code.\n\nAlso, this probably show that we haven\u0027t tested well this corner case.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L760-L763",
+      "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
