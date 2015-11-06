@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa80f949_89768aa2",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T04:11:13Z",
+      "side": 1,
+      "message": "This first part looks nice.",
+      "revId": "6d9b80b0c7256cd4e45073b156958a02497257ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_22e53edb",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2015-11-05T22:37:20Z",
       "side": 1,
       "message": "Raildo, I don\u0027t think this needs to be changed. It seems like this is making the code more confusing.",
+      "revId": "6d9b80b0c7256cd4e45073b156958a02497257ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_0944da47",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T04:11:13Z",
+      "side": 1,
+      "message": "I agree in this second part the code is more confusing after the change.\n\nAlso, I think what Henry reported in the bug is that there is something wrong with the pattern used here for translating the error message (with _()) + the substitutions + the exception being raised; something is out of the pattern. I couldn\u0027t understand very well, I\u0027d check with him.",
+      "parentUuid": "fa80f949_22e53edb",
       "revId": "6d9b80b0c7256cd4e45073b156958a02497257ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
