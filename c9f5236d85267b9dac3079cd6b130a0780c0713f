@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_b132daf0",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_change_endpoint_url_column_type.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-06T01:45:13Z",
+      "side": 1,
+      "message": "++\n\nThis will also get rid of the enforcement of unique constraint on the text type, I just cannot figure out when region_id, service_id, and interface are same but url.",
+      "parentUuid": "fa80f949_c27c72b7",
+      "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_af1cbcc1",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 2
