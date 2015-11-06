@@ -19,6 +19,7 @@ from oslo_config import cfg
 from oslo_serialization import jsonutils
 from six.moves import range
 
+from keystone.tests import unit
 from keystone.tests.unit import filtering
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
@@ -81,7 +82,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.user3 = self.identity_api.create_user(self.user3)
         self.user3['password'] = password
 
-        self.role = self.new_role_ref()
+        self.role = unit.new_role_ref()
         self.role_api.create_role(self.role['id'], self.role)
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user1['id'],
