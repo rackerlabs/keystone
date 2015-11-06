@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_d1e0be98",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-06T02:00:50Z",
+      "side": 1,
+      "message": "We have a check for no blank lines here. This is what is making pep8 checks to fail:\n\nD202  No blank lines allowed after function docstring\n\nHowever I agree that we don\u0027t get an useful message from the logs:\n\nhttp://logs.openstack.org/58/237758/5/check/gate-keystone-pep8/3005f83/console.html#_2015-11-05_23_56_22_971\n\nI was able to find it by looking at the logs of the next patches in the chain:\n\nhttp://logs.openstack.org/83/238283/5/check/gate-keystone-pep8/a844d24/console.html#_2015-11-06_00_46_49_428",
+      "revId": "2f2c6ad4868d2272f85c7c3dca33f7ba3bf7df57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
