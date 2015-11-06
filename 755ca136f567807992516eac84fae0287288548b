@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_5c3fec23",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1898,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-06T14:40:50Z",
+      "side": 1,
+      "message": "Good call, thanks!",
+      "parentUuid": "fa80f949_7380ecf7",
+      "revId": "755ca136f567807992516eac84fae0287288548b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_f374dc36",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-06T09:43:08Z",
       "side": 1,
       "message": "same",
+      "revId": "755ca136f567807992516eac84fae0287288548b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_dc32fc5e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2489,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-06T14:40:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_f374dc36",
       "revId": "755ca136f567807992516eac84fae0287288548b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
