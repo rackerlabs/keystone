@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_0713a10e",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-06T16:50:14Z",
+      "side": 1,
+      "message": "Do you think we could write a test for this, maybe something similar to whats in this patch?",
+      "revId": "c8a486f4fa0b30fcbdf62b0ec5a6f6bb842489a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
