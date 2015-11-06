@@ -75,7 +75,10 @@ class Manager(manager.Manager):
 
     def list_user_ids_for_project(self, tenant_id):
         self.resource_api.get_project(tenant_id)
-        return self.driver.list_user_ids_for_project(tenant_id)
+        assignment_list = self.list_role_assignments(
+            project_id=tenant_id, effective=True)
+        # Use set() to process the list to remove any duplicates
+        return list(set([x['user_id'] for x in assignment_list]))
 
     def _list_parent_ids_of_project(self, project_id):
         if CONF.os_inherit.enabled:
@@ -879,15 +882,6 @@ class AssignmentDriverBase(object):
         return CONF.assignment.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def list_user_ids_for_project(self, tenant_id):
-        """Lists all user IDs with a role assignment in the specified project.
-
-        :returns: a list of user_ids or an empty set.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         """Add a role to a user within given tenant.
 
@@ -1080,6 +1074,15 @@ class AssignmentDriverV8(AssignmentDriverBase):
         remove_in=+2)
     def __init__(self, *args, **kwargs):
         super(AssignmentDriverV8, self).__init__(*args, **kwargs)
+
+    @abc.abstractmethod
+    def list_user_ids_for_project(self, tenant_id):
+        """Lists all user IDs with a role assignment in the specified project.
+
+        :returns: a list of user_ids or an empty set.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
     def list_project_ids_for_user(self, user_id, group_ids, hints,
