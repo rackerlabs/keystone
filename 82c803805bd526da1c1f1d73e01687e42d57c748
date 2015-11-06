@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_b9015507",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-11-06T10:16:40Z",
+      "side": 1,
+      "message": "it\u0027s \u003e\u003eopenstack_user_domain\u003c\u003c",
+      "revId": "82c803805bd526da1c1f1d73e01687e42d57c748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
