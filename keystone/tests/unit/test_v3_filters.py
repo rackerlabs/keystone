@@ -56,11 +56,11 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         """
         # Start by creating a few domains
         self._populate_default_domain()
-        self.domainA = self.new_domain_ref()
+        self.domainA = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainA['id'], self.domainA)
-        self.domainB = self.new_domain_ref()
+        self.domainB = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainB['id'], self.domainB)
-        self.domainC = self.new_domain_ref()
+        self.domainC = unit.new_domain_ref()
         self.domainC['enabled'] = False
         self.resource_api.create_domain(self.domainC['id'], self.domainC)
 

@@ -209,19 +209,19 @@ class FederatedSetupMixin(object):
     def load_federation_sample_data(self):
         """Inject additional data."""
         # Create and add domains
-        self.domainA = self.new_domain_ref()
+        self.domainA = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainA['id'],
                                         self.domainA)
 
-        self.domainB = self.new_domain_ref()
+        self.domainB = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainB['id'],
                                         self.domainB)
 
-        self.domainC = self.new_domain_ref()
+        self.domainC = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainC['id'],
                                         self.domainC)
 
-        self.domainD = self.new_domain_ref()
+        self.domainD = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainD['id'],
                                         self.domainD)
 
