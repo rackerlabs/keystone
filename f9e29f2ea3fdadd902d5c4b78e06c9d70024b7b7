@@ -16,6 +16,24 @@
       "revId": "f9e29f2ea3fdadd902d5c4b78e06c9d70024b7b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_463dd9c2",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-06T14:00:16Z",
+      "side": 1,
+      "message": "yes, I was suggesting to have a function to create a DN that could be used everywhere. e.g.\n\n  def make_random_dn():\n      return \u0027CN\u003d\u0027 + uuid.uuid4().hex",
+      "parentUuid": "fa80f949_eb2db895",
+      "revId": "f9e29f2ea3fdadd902d5c4b78e06c9d70024b7b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
