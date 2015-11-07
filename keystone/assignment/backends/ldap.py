@@ -56,28 +56,6 @@ class Assignment(assignment.AssignmentDriverV9):
     def default_resource_driver(self):
         return 'ldap'
 
-    def list_role_ids_for_groups_on_project(
-            self, groups, project_id, project_domain_id, project_parents):
-        group_dns = [self.group._id_to_dn(group_id) for group_id in groups]
-        role_list = [self.role._dn_to_id(role_assignment.role_dn)
-                     for role_assignment in self.role.get_role_assignments
-                     (self.project._id_to_dn(project_id))
-                     if role_assignment.user_dn.upper() in group_dns]
-        # NOTE(morganfainberg): Does not support OS-INHERIT as domain
-        # metadata/roles are not supported by LDAP backend. Skip OS-INHERIT
-        # logic.
-        return role_list
-
-    def list_role_ids_for_groups_on_domain(self, group_ids, domain_id):
-        raise exception.NotImplemented()
-
-    def list_project_ids_for_groups(self, group_ids, hints,
-                                    inherited=False):
-        raise exception.NotImplemented()
-
-    def list_domain_ids_for_groups(self, group_ids, inherited=False):
-        raise exception.NotImplemented()
-
     def _subrole_id_to_dn(self, role_id, tenant_id):
         if tenant_id is None:
             return self.role._id_to_dn(role_id)
