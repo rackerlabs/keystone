@@ -34,6 +34,24 @@
       "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_9ff636d6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-07T20:54:58Z",
+      "side": 1,
+      "message": "Henry, the code I put in the link above is clear: (domain_id and inherited)\n\nSo yes, I got confused, the case that returns empty list is \"domain \u0026 inherited\", which is different from \"domain \u0026 effective\" that is used in your code.",
+      "parentUuid": "da85f559_fd2bd231",
+      "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
