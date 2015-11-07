@@ -16,6 +16,24 @@
       "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_fd2bd231",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-07T05:47:12Z",
+      "side": 1,
+      "message": "Samuel - thanks for the comment. However, I think you are getting muddled with \"domain \u0026 inherited \u0026 effective\" (which does indeed always return an empty list).  I think the code above is OK - and in fact is tested pretty comprehensively, (search for get_roles_for_user_and_domain in test_backend.py).",
+      "parentUuid": "fa80f949_457ce5b4",
+      "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
