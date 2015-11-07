@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_3fdb8a1d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-07T21:26:21Z",
+      "side": 1,
+      "message": "Remove the method from the driver signature as well.",
+      "revId": "ee3b1d5f6db4ca53923dce7810895e0a95526669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
