@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da85f559_9a108c50",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-07T03:02:12Z",
+      "side": 1,
+      "message": "Actually there is something very weird here. This class isn\u0027t used anywhere! May anyone else confirm this ?",
+      "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_e172397c",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 3
@@ -48,6 +65,24 @@
       "side": 1,
       "message": "Is this something that should be applied to all tokens? What do we do when a token isn\u0027t a binary_type or a text_type? I imagine this would be useful for the other token formats, too? Maybe this should be moved somewhere were it can be leveraged by all token providers instead of only the Fernet provider.",
       "parentUuid": "1a4dcd0f_e172397c",
+      "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_660c3443",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-07T03:02:12Z",
+      "side": 1,
+      "message": "Maybe we should just check that the token is not None ?\nWhat kind of object can arrive here other than (None, six.binary_type, six.text_type) ?\n\nI also agree with Marek and Lance suggestions.",
+      "parentUuid": "1a4dcd0f_ee408f36",
       "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
