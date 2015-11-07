@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_ebfead04",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-07T00:35:41Z",
+      "side": 1,
+      "message": "add backticks here as well:\n\n  ``/etc/shibboleth/attribute-map.xml``",
+      "revId": "9954cb452c3bb5fd05d6c47cbafde3387f5ec5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
