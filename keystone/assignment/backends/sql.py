@@ -49,7 +49,7 @@ class AssignmentType(object):
         raise exception.AssignmentTypeCalculationError(**locals())
 
 
-class Assignment(keystone_assignment.AssignmentDriverV8):
+class Assignment(keystone_assignment.AssignmentDriverV9):
 
     def default_role_driver(self):
         return 'sql'
