@@ -1,0 +1,19 @@
+---
+prelude: >
+    New Assingnment driver (V9)
+features:
+  - None
+issues:
+  - None
+upgrade:
+  - The V8 driver interface is deprecated, but still supported in Mitaka, so
+    and custom drivers based on the V8 interface should still work.
+critical:
+  - None
+security:
+  - None
+fixes:
+  - None
+other:
+  - Support for the V8 interface is planned to be removed in the 'O' release of
+    OpenStack.
