@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_d4d01ccc",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-08T17:01:39Z",
+      "side": 1,
+      "message": "I reverted the change in keystone/token/persistence/backends/kvs.py and this test still passed, so this test isn\u0027t going to prevent us from reintroducing the error.",
+      "revId": "e443f6dca492f80b0537e18fefd9ba30e9372295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_f45e8075",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-08T17:01:39Z",
+      "side": 1,
+      "message": "this needs a comment to explain why it\u0027s correct for store.configure to raise an exeption in this case.",
+      "revId": "e443f6dca492f80b0537e18fefd9ba30e9372295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b451d864",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-08T17:01:39Z",
+      "side": 1,
+      "message": "why passing dict in this case?",
+      "revId": "e443f6dca492f80b0537e18fefd9ba30e9372295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
