@@ -2081,6 +2081,15 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.assertEqual('Foo Bar', user_ref['name'])
 
 
+class LDAPIdentityV8(LDAPIdentity):
+    """Test that a V8 driver still passes the same tests."""
+
+    def config_overrides(self):
+        super(LDAPIdentityV8, self).config_overrides()
+        # V8 LDAP specific driver overrides
+        self.config_fixture.config(group='assignment', driver='ldapV8')
+
+
 class LDAPUserList(unit.TestCase):
 
     def setUp(self):
