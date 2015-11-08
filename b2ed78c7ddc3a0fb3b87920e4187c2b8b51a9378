@@ -52,6 +52,24 @@
       "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_02b98ae9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-08T03:43:09Z",
+      "side": 1,
+      "message": "no worries....better that we checked first!  Thanks for your analysis",
+      "parentUuid": "da85f559_9ff636d6",
+      "revId": "b2ed78c7ddc3a0fb3b87920e4187c2b8b51a9378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
