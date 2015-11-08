@@ -733,3 +733,29 @@ class SQLDriverOverrides(object):
         self.config_fixture.config(group='revoke', driver='sql')
         self.config_fixture.config(group='token', driver='sql')
         self.config_fixture.config(group='trust', driver='sql')
+        self.SQL_driver_version_overrides = {}
+
+    def use_specific_SQL_driver_version(self, driver_path, version):
+        """Add this versioned driver to the list that will be loaded.
+
+        :param driver_path: The path of the versionless driver, e.g.
+                            'keystone.assignment.backends'
+        :param version: The suffix for the version , e.g. 'V8'
+
+        This method assumes that versioned drivers are named:
+        <version>_<name of versionless driver>, e.g. 'V8_backends'.
+
+        """
+        driver_path_components = driver_path.split('.')
+        driver_path_root = ''
+        for x in range(0, len(driver_path_components) - 1):
+            driver_path_root += driver_path_components[x] + '.'
+        driver_path_root = driver_path_root.rstrip('.')
+        versionless_backend = driver_path_components[
+            len(driver_path_components) - 1]
+        # At this point driver_path_root might be something like
+        # 'keystone.assignment', versionless_backend might be something
+        # like 'backends'.
+        self.SQL_driver_version_overrides[driver_path_root] = {
+            'versionless_backend': versionless_backend,
+            'versioned_backend': version + '_' + versionless_backend}
