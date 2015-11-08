@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_f4b8c0e7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6610,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-08T16:12:59Z",
+      "side": 1,
+      "message": "Yes, the flag doesn\u0027t stop you creating assignments (hmm, maybe it should!), but it stops them having any effect.",
+      "parentUuid": "da85f559_dfeb5eaf",
+      "revId": "0227638a6203e3748f640aa4e0b5e4b644489a07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_bffd3a70",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-07T21:29:42Z",
       "side": 1,
       "message": "It is okay to expose the bug this way. However I advice to use the @wip annotation to the test, that way the only thing we need to do in the followon patch that fixes the issue, is to remove the @wip annotation.\n\nSee https://github.com/openstack/keystone/blob/master/keystone/tests/unit/utils.py#L55-L88",
+      "revId": "0227638a6203e3748f640aa4e0b5e4b644489a07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_74ee10ee",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6614,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-08T16:12:59Z",
+      "side": 1,
+      "message": "I have personal preference for this - since the wip_annotation doesn\u0027t point you at the line that is incorrect.",
+      "parentUuid": "da85f559_bffd3a70",
       "revId": "0227638a6203e3748f640aa4e0b5e4b644489a07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
