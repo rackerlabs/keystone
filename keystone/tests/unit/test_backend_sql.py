@@ -44,7 +44,7 @@ class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
 
     def setUp(self):
         super(SqlTests, self).setUp()
-        self.useFixture(database.Database())
+        self.useFixture(database.Database(self.SQL_driver_version_overrides))
         self.load_backends()
 
         # populate the engine with tables & fixtures
@@ -433,6 +433,17 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # No domains should be returned since both domains have only inherited
         # roles assignments.
         self.assertThat(user_domains, matchers.HasLength(0))
+
+
+class SqlIdentityV8(SqlIdentity):
+    """Test that a V8 driver still passes the same tests."""
+
+    def config_overrides(self):
+        super(SqlIdentityV8, self).config_overrides()
+        # V8 SQL specific driver overrides
+        self.config_fixture.config(group='assignment', driver='sqlV8')
+        self.use_specific_SQL_driver_version(
+            'keystone.assignment.backends', 'V8')
 
 
 class SqlTrust(SqlTests, test_backend.TrustTests):

@@ -826,8 +826,14 @@ class Manager(manager.Manager):
         pass
 
 
+# The AssignmentDriverBase class is the set of driver methods from earlier
+# drivers that we still support, that have not been removed or modified. This
+# class is then used to created the augmented V8 and V9 version driver classes.
+# IF you remove a method from V9, then move the asbtact methods from the Base
+# class to the V8 class. Do not modify any of the method signatures in the Base
+# class - changes should only be made in the V8 and subsequent classes.
 @six.add_metaclass(abc.ABCMeta)
-class AssignmentDriverV8(object):
+class AssignmentDriverBase(object):
 
     def _get_list_limit(self):
         return CONF.assignment.list_limit or CONF.list_limit
@@ -1056,6 +1062,20 @@ class AssignmentDriverV8(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+
+@six.add_metaclass(abc.ABCMeta)
+class AssignmentDriverV9(AssignmentDriverBase):
+    """New or augmented methods in V9."""
+
+    pass
+
+
+@six.add_metaclass(abc.ABCMeta)
+class AssignmentDriverV8(AssignmentDriverBase):
+    """Methods removed or augmented in later classes."""
+
+    pass
 
 
 Driver = manager.create_legacy_driver(AssignmentDriverV8)
