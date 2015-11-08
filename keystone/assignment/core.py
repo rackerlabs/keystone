@@ -19,6 +19,7 @@ import copy
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 import six
 
 from keystone.common import cache
@@ -65,6 +66,13 @@ class Manager(manager.Manager):
             assignment_driver = identity_driver.default_assignment_driver()
 
         super(Manager, self).__init__(assignment_driver)
+
+        # Make sure it is a driver version we support, and if it is a legacy
+        # driver, then wrap it.
+        if isinstance(self.driver, AssignmentDriverV8):
+            self.driver = V9AssignmentWrapperForV8Driver(self.driver)
+        elif not isinstance(self.driver, AssignmentDriverV9):
+            raise exception.UnsupportedDriverVersion(driver=assignment_driver)
 
     def _get_group_ids_for_user_id(self, user_id):
         # TODO(morganfainberg): Implement a way to get only group_ids
@@ -903,8 +911,15 @@ class Manager(manager.Manager):
         pass
 
 
+# The AssignmentDriverBase class is the set of driver methods from earlier
+# drivers that we still support, that have not been removed or modified. This
+# class is then used to created the augmented V8 and V9 version abstract driver
+# classes, without having to duplicate a lot of abstract method signatures.
+# If you remove a method from V9, then move the abstact methods from this Base
+# class to the V8 class. Do not modify any of the method signatures in the Base
+# class - changes should only be made in the V8 and subsequent classes.
 @six.add_metaclass(abc.ABCMeta)
-class AssignmentDriverV8(object):
+class AssignmentDriverBase(object):
 
     def _get_list_limit(self):
         return CONF.assignment.list_limit or CONF.list_limit
@@ -1137,6 +1152,66 @@ class AssignmentDriverV8(object):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
+
+class AssignmentDriverV8(AssignmentDriverBase):
+    """Removed or redefined methods from V8.
+
+    Move the abstract methods of any methods removed or modified in later
+    versions of the driver from AssignmentDriverBase to here. We maintain this
+    so that legacy drivers, which will be a subclass of AssignmentDriverV8, can
+    still reference it.
+
+    """
+
+    pass
+
+
+class AssignmentDriverV9(AssignmentDriverBase):
+    """New or redefined methods from V8.
+
+    Add any new V9 abstract methods (or those with modified signatures) to
+    this class.
+
+    """
+
+    pass
+
+
+class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
+    """Wrapper class to supported a V8 legacy driver.
+
+    In order to support legacy drivers without having to having to make the
+    manager code driver-version aware, we wrap legacy drivers so that they
+    look like the latest version. For the various changes made in a new driver,
+    here are the actions needed in this wrapper:
+
+    Method removed from new drver - no action required, since the new manager
+                                    won't call the old method any more.
+    Method signature (or meaning) changed - wrap the old method in a new
+                                            signature here, and munge the input
+                                            and output parameters accordingly.
+    New method added to new driver - add a method to impliment the new
+                                     functionality here if possible. If that is
+                                     not possible, then return NotImplemented,
+                                     since we do not guarantee to support new
+                                     functionality with legacy drivers.
+
+    """
+
+    @versionutils.deprecated(
+        as_of=versionutils.deprecated.MITAKA,
+        what='keystone.assignment.AssignmentDriverV8',
+        in_favor_of='keystone.assignment.AssignmentDriverV9',
+        remove_in=+2)
+    def __init__(self, *args, **kwargs):
+        super(V9AssignmentWrapperForV8Driver, self).__init__(*args, **kwargs)
+        self.driver = AssignmentDriverV9
+
+    def __getattr__(self, name):
+        # Avoid having to duplicate all the signatures again
+        f = getattr(self.driver, name)
+        setattr(self, name, f)
+        return f
 
 Driver = manager.create_legacy_driver(AssignmentDriverV8)
 
