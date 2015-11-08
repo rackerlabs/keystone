@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_48a1eca8",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-11-08T18:30:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_d4349c4b",
+      "revId": "26b3ed94183265c013be0cc46626103c1387fb9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_f439a042",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-08T16:45:20Z",
       "side": 1,
       "message": "this case must be covered by the unit tests.",
+      "revId": "26b3ed94183265c013be0cc46626103c1387fb9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_68a630c3",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-11-08T18:30:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_f439a042",
       "revId": "26b3ed94183265c013be0cc46626103c1387fb9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
