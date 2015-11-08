@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_5403ccb8",
+        "filename": "keystone/assignment/V8_backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-08T16:07:30Z",
+      "side": 1,
+      "message": "This file is just copy of what we currently had in backends/ldap.py",
+      "revId": "9da32b351be3d3ee29709708351bb1e58bfd2715",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b4f6b8d5",
+        "filename": "keystone/assignment/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-08T16:07:30Z",
+      "side": 1,
+      "message": "This file is just copy of what we currently had in backends/sql.py",
+      "revId": "9da32b351be3d3ee29709708351bb1e58bfd2715",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
