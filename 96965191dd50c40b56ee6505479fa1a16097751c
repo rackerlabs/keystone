@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_2274ce9a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2484,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-08T02:41:54Z",
+      "side": 1,
+      "message": "We have a check that sayd \"No blank lines after function docstring\", thus pep8 is failing",
+      "revId": "96965191dd50c40b56ee6505479fa1a16097751c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
