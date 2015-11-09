@@ -322,9 +322,15 @@ def new_user_ref(domain_id, project_id=None):
     return ref
 
 
-def new_group_ref(domain_id):
+def new_group_ref(domain_id, **kwargs):
     ref = new_ref()
+
+    # Many tests fail if 'enabled' is added to the ref. Delete it here but
+    # allow it to be passed as a kwarg when needed.
+    del ref['enabled']
+
     ref['domain_id'] = domain_id
+    ref.update(**kwargs)
     return ref
 
 
