@@ -308,18 +308,26 @@ class ProjectV3(controller.V3Controller):
         self._expand_project_ref(context, ref)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @controller.cascadeprotected()
     @validation.validated(schema.project_update, 'project')
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
         self._require_matching_domain_id(
             project_id, project, self.resource_api.get_project)
         initiator = notifications._get_request_audit_info(context)
+
+        # If `cascade` was passed as a filter in the API request, keystone will
+        # recursively enable/disable a project tree
+        params = context['query_string']
+        cascade = ('cascade' in params and
+                   self.query_filter_is_true(params['cascade']))
+
         ref = self.resource_api.update_project(project_id, project,
+                                               cascade=cascade,
                                                initiator=initiator)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @controller.cascadeprotected()
     def delete_project(self, context, project_id):
         initiator = notifications._get_request_audit_info(context)
         return self.resource_api.delete_project(project_id,
