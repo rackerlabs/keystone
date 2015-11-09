@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_57b1568e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-09T22:48:39Z",
+      "side": 1,
+      "message": "I don\u0027t see where config options are removed in the code changes.\n\nAlso, it wouldn\u0027t be backwards compatible to remove the config options.",
+      "revId": "5b06d66885c3ddbc87567fd62d369d128949abed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_d4dc9c48",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-09T22:48:39Z",
+      "side": 1,
+      "message": "these changes seem unnecessary -- self.base_url can continue to take a context and use the environment in it.",
+      "revId": "5b06d66885c3ddbc87567fd62d369d128949abed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
