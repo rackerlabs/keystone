@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_28647620",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1612,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-09T20:26:56Z",
+      "side": 1,
+      "message": "Ah. Yes. I had removed role_id and put it back avoid the irrelevant change complaints. Fair point.",
+      "parentUuid": "da85f559_e8350e46",
+      "revId": "ddc8e7e4e6833a9aee810b2f8b4b3827d329a41b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_b22699cc",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 3
