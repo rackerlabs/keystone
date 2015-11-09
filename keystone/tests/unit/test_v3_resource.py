@@ -1032,6 +1032,45 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 'project_id': self.project_id},
             body={'project': ref})
 
+    def test_update_project_cascade(self):
+        """Call ``PATCH /projects/{project_id}?cascade``."""
+        # Create the project hierarchy
+        parent, subproject = self._create_projects_hierarchy()
+        # Assign a role for the user on parent and subproject
+        for proj in (parent, subproject):
+            self.put(self.build_role_assignment_link(
+                role_id=self.role_id, user_id=self.user_id,
+                project_id=proj['project']['id']))
+
+        # Make the API call to disable the hierarchy on cascade
+        r = self.patch(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': parent['project']['id']},
+            body={'project': {'enabled': False}})
+
+        # Assert parent project was disabled
+        self.assertFalse(r.result['project']['enabled'])
+        # Make the API call to get the subtree
+        r = self.get('/projects/%(project_id)s?subtree_as_list' %
+                     {'project_id': parent['project']['id']})
+        # Assert subproject was disabled due the cascade option
+        subtree = r.result['project']['subtree']
+        self.assertFalse(subtree[0]['project']['enabled'])
+
+    def test_fail_update_project_cascade_without_assignment_on_subtree(self):
+        """Call ``PATCH /projects/{project_id}?cascade``."""
+        # Create a project hierarchy
+        projects = self._create_projects_hierarchy()
+        parent = projects[0]['project']
+        # We don't give any assignment on the subprojects
+        # try to update cascade to enable = false
+        # for the entiry subtree
+        self.patch(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': parent['id']},
+            body={'project': {'enabled': False}},
+            expected_status=exception.Forbidden.code)
+
     def test_update_project_domain_id(self):
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
         project = unit.new_project_ref(domain_id=self.domain['id'])
