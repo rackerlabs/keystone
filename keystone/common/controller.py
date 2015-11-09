@@ -249,6 +249,116 @@ def filterprotected(*filters, **callback):
     return _filterprotected
 
 
+def cascadeprotected():
+    """Wraps project tree API calls with role based access controls (RBAC).
+
+    When performing write or delete operations on a project, the option
+    `cascade` may be specified. In that case, the operation will be executed
+    for both the specified project and its subtree.
+
+    The semantic of a cascade operation is the same as executing the same API
+    for each node in the tree separately. That said, in addition to the
+    specified project, the policy check needs to be performed for every project
+    in the subtree.
+
+    The policy check on the specified node does not change, it is done as usual
+    with the provided token. When checking policy authorization for
+    subprojects, the behavior varies according to the type of token workflow
+    and is specified below:
+
+    1)  For domain scoped tokens, regardless it is obtained via trust,
+    federation or normal workflow, the token information remains the same and
+    only the target passed to the policy library varies according to the
+    current subproject.
+
+    2) For project scoped tokens, the idea is to check to see if the same token
+    workflow can be applied to the current subproject:
+
+        2.1) If the token was obtained via federation workflow, check to see if
+        the groups have roles assigned in the current subproject.
+
+        2.2) If the token was obtained via trust workflow, check to see if
+        there is a trust for the user in the current subproject.
+
+        2.3) If the token was obtained via normal workflow, check to see if the
+        user has role assignments in the current subproject.
+
+        If that's the case, build credentials based on that and pass it along
+        with the current target to the policy enforcement library; otherwise
+        raise unauthorized.
+
+        2.4) If unauthorized was raised in any of the cases above, try to do as
+        for domain scoped tokens, i.e try with existing token and vary only the
+        target project. This may work in the case the API only requires a valid
+        token to be perfomed: "update_project": ""
+
+    Note that if `cascade` is not present as a query parameter, or the project
+    does not contain any subtree, the policy check is still performed on the
+    specified project.
+
+    """
+    def _cascadeprotected(f):
+        @functools.wraps(f)
+        def wrapper(self, context, **kwargs):
+            if 'is_admin' in context and context['is_admin']:
+                LOG.warning(_LW('RBAC: Bypassing authorization'))
+            else:
+                # First check permission on the tree's root
+                root_id = kwargs.get('project_id')
+                prep_info = {'f_name': f.__name__, 'input_attr': kwargs}
+                self.check_protection(context, prep_info)
+
+                params = context['query_string']
+                cascade = ('cascade' in params and
+                           self.query_filter_is_true(params['cascade']))
+
+                if not cascade:
+                    return f(self, context, **kwargs)
+
+                # NOTE(samueldmq): In update calls, the controller receives the
+                # project dict to update. In that case, update each subproject
+                # accordingly to make sure the same info is available at policy
+                # enforcement, as it was being done with multiple API calls.
+                updated_root = kwargs.get('project', {})
+                updated_root.pop('id', None)
+
+                # Now check permission on every project in its subtree
+                subtree = self.resource_api.list_projects_in_subtree(root_id)
+                user_id = self.get_auth_context(context).get('user_id')
+                user_domain_id = self.get_auth_context(context).get(
+                    'user_domain_id')
+                for subproject in subtree:
+                    # TODO(samueldmq): Need to think about trusted and
+                    # federated authorization
+
+                    assignments = self.assignment_api.list_role_assignments(
+                        user_id=user_id, project_id=subproject['id'],
+                        effective=True, include_names=True)
+                    if not assignments:
+                        msg = _('Cannot perform cascade operation, because the'
+                                ' user %(user_id)s does not have access to the'
+                                ' whole subtree of project %(root_id)s.') % (
+                            {'user_id': user_id, 'root_id': root_id})
+                        raise exception.Forbidden(message=msg)
+
+                    role_names = [a['role_name'] for a in assignments]
+
+                    creds = {'user_id': user_id,
+                             'user_domain_id': user_domain_id,
+                             'project_id': subproject['id'],
+                             'project_domain_id': subproject['domain_id'],
+                             'roles': role_names}
+
+                    subproject.update(updated_root)
+                    prep_info['input_attr'] = {'project_id': subproject['id'],
+                                               'project': subproject}
+                    self.check_protection(context, prep_info, creds=creds)
+
+            return f(self, context, **kwargs)
+        return wrapper
+    return _cascadeprotected
+
+
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
@@ -786,7 +896,8 @@ class V3Controller(wsgi.Application):
         """Override v2 filter to let domain_id out for v3 calls."""
         return ref
 
-    def check_protection(self, context, prep_info, target_attr=None):
+    def check_protection(
+            self, context, prep_info, target_attr=None, creds=None):
         """Provide call protection for complex target attributes.
 
         As well as including the standard parameters from the original API
@@ -800,9 +911,10 @@ class V3Controller(wsgi.Application):
         else:
             action = 'identity:%s' % prep_info['f_name']
             # TODO(henry-nash) need to log the target attributes as well
-            creds = _build_policy_check_credentials(self, action,
-                                                    context,
-                                                    prep_info['input_attr'])
+            if creds is None:
+                creds = _build_policy_check_credentials(
+                    self, action, context, prep_info['input_attr'])
+
             # Build the dict the policy engine will check against from both the
             # parameters passed into the call we are protecting (which was
             # stored in the prep_info by protected()), plus the target
