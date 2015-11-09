@@ -44,6 +44,7 @@ class Routers(wsgi.RoutersBase):
                           resource_descriptions=self.v3_resources))
 
         config_controller = controllers.DomainConfigV3()
+        project_controller = controllers.ProjectV3()
 
         self._add_resource(
             mapper, config_controller,
@@ -92,3 +93,13 @@ class Routers(wsgi.RoutersBase):
             router.Router(controllers.ProjectV3(),
                           'projects', 'project',
                           resource_descriptions=self.v3_resources))
+
+        self._add_resource(
+            mapper, project_controller,
+            path='/projects/{project_id}/cascade',
+            patch_action='update_project_cascade',
+            rel=json_home.build_v3_resource_relation('project'),
+            status=json_home.Status.EXPERIMENTAL,
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID
+            })

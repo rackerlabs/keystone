@@ -1080,6 +1080,17 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 'project_id': self.project_id},
             body={'project': ref})
 
+    def test_update_project_cascade(self):
+        """Call ``PATCH /projects/{project_id}/cascade``."""
+        project = unit.new_project_ref(domain_id=self.domain['id'])
+        self.resource_api.create_project(project['id'], project)
+        project['enabled'] = False
+        r = self.patch(
+            '/projects/%(project_id)s/cascade' % {
+                'project_id': project['id']},
+            body={'project': project})
+        self.assertValidProjectResponse(r, project)
+
     def test_update_project_domain_id(self):
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
         project = unit.new_project_ref(domain_id=self.domain['id'])
