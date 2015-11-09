@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_b8f3e672",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-09T16:10:03Z",
+      "side": 1,
+      "message": "I\u0027ll set max_role_assignment to zero instead, so that it\u0027s clearer.",
+      "parentUuid": "fa80f949_dc01b507",
+      "revId": "7e9da05a7d54ee846f38837aa10ce85bcace4972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_1713965c",
         "filename": "keystone/tests/unit/assignment/test_core.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2015-11-06T03:18:10Z",
       "side": 1,
       "message": "How about setting a lower limit, and then creating assignments up to the limit ? I think it would be a more useful test that way.",
+      "revId": "7e9da05a7d54ee846f38837aa10ce85bcace4972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b3a0e9f5",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-09T16:10:03Z",
+      "side": 1,
+      "message": "I think that would be more thorough, however I feel that this test is a good enough test for the function.",
+      "parentUuid": "fa80f949_1713965c",
       "revId": "7e9da05a7d54ee846f38837aa10ce85bcace4972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
