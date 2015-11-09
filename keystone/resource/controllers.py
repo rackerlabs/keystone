@@ -306,6 +306,18 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.validated(schema.project_update, 'project')
+    def update_project_cascade(self, context, project_id, project):
+        self._require_matching_id(project_id, project)
+        self._require_matching_domain_id(
+            project_id, project, self.resource_api.get_project)
+        initiator = notifications._get_request_audit_info(context)
+        ref = self.resource_api.update_project(project_id, project,
+                                               cascade=True,
+                                               initiator=initiator)
+        return ProjectV3.wrap_member(context, ref)
+
+    @controller.protected()
     def delete_project(self, context, project_id):
         initiator = notifications._get_request_audit_info(context)
         return self.resource_api.delete_project(project_id,

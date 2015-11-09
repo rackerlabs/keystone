@@ -36,6 +36,7 @@ identity:list_projects                                     GET /v3/projects
 identity:list_user_projects                                GET /v3/users/{user_id}/projects
 identity:create_project                                    POST /v3/projects
 identity:update_project                                    PATCH /v3/projects/{project_id}
+identity:update_project_cascade                            PATCH /v3/projects/{project_id}/cascade
 identity:delete_project                                    DELETE /v3/projects/{project_id}
 
 identity:get_user                                          GET /v3/users/{user_id}
