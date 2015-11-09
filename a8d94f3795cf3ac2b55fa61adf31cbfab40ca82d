@@ -16,6 +16,24 @@
       "revId": "a8d94f3795cf3ac2b55fa61adf31cbfab40ca82d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_57f9567f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-11-09T22:40:54Z",
+      "side": 1,
+      "message": "yeah, Brant suggested we should have it here.",
+      "parentUuid": "fa80f949_f6184a20",
+      "revId": "a8d94f3795cf3ac2b55fa61adf31cbfab40ca82d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
