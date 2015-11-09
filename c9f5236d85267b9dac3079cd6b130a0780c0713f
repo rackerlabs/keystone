@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_f5f17ece",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_change_endpoint_url_column_type.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-09T14:36:00Z",
+      "side": 1,
+      "message": "so, we can never have two endpoints with different urls, for things lika HA? if we can\u0027t I agree that we don\u0027t need this change and we can remove the url from the constraint in the next patch",
+      "parentUuid": "fa80f949_b132daf0",
+      "revId": "c9f5236d85267b9dac3079cd6b130a0780c0713f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_af1cbcc1",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 2
