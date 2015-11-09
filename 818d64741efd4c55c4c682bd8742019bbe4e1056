@@ -70,6 +70,41 @@
     },
     {
       "key": {
+        "uuid": "da85f559_1db0e442",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-11-09T15:41:41Z",
+      "side": 1,
+      "message": "++ use logging",
+      "parentUuid": "da85f559_86a03892",
+      "revId": "818d64741efd4c55c4c682bd8742019bbe4e1056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_3d6608ee",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-11-09T15:41:41Z",
+      "side": 1,
+      "message": "a NOTE would be more appropriate.",
+      "revId": "818d64741efd4c55c4c682bd8742019bbe4e1056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_2bd740ee",
         "filename": "test-requirements.txt",
         "patchSetId": 3
