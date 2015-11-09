@@ -287,6 +287,7 @@ class Manager(manager.Manager):
 
     def update_project(self, project_id, project, initiator=None,
                        cascade=False):
+
         # Use the driver directly to prevent using old cached value.
         original_project = self.driver.get_project(project_id)
         project = project.copy()
