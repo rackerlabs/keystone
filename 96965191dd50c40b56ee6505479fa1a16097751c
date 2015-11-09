@@ -16,6 +16,23 @@
       "revId": "96965191dd50c40b56ee6505479fa1a16097751c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b7b0f58c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2484,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-11-09T03:09:04Z",
+      "side": 1,
+      "message": "remove L2484",
+      "revId": "96965191dd50c40b56ee6505479fa1a16097751c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
