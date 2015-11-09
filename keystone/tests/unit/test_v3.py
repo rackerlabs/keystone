@@ -264,9 +264,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def new_user_ref(self, domain_id, project_id=None):
         return unit.new_user_ref(domain_id, project_id=project_id)
 
-    def new_group_ref(self, domain_id):
-        return unit.new_group_ref(domain_id)
-
     def new_credential_ref(self, user_id, project_id=None, cred_type=None):
         return unit.new_credential_ref(user_id, project_id=project_id,
                                        cred_type=cred_type)
