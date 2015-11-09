@@ -598,16 +598,23 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         ref_child['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref_child)
 
-    def _create_projects_hierarchy(self, hierarchy_size=1):
+    def _create_projects_hierarchy(self, hierarchy_size=1, parent_id=None):
         """Creates a single-branched project hierarchy with the specified size.
 
         :param hierarchy_size: the desired hierarchy size, default is 1 -
                                a project with one child.
 
+        :param parent_id (optional): if the intention is to create a
+                    sub-hierarchy, sets the sub-hierarchy root.
+
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        new_ref = unit.new_project_ref(domain_id=self.domain_id)
+        if parent_id:
+            new_ref = unit.new_project_ref(parent_id=parent_id,
+                                           domain_id=self.domain_id)
+        else:
+            new_ref = unit.new_project_ref(domain_id=self.domain_id)
         resp = self.post('/projects', body={'project': new_ref})
 
         projects = [resp.result]
@@ -1031,6 +1038,66 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': self.project_id},
             body={'project': ref})
+
+    def test_update_large_project_cascade(self):
+        """Call ``PATCH /projects/{project_id}?cascade``.
+
+        Try update a large project with cascade true
+        Tree we will create::
+               +-p1-+
+               |    |
+              p5    p2
+               |    |
+              p6  +-p3-+
+                  |    |
+                  p7   p4
+        """
+        # create a hierarchy with 4 levels
+        projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=4)
+        p1 = projects_hierarchy[0]
+        # Add the left branch to the hierarchy (p5, p6)
+        self._create_projects_hierarchy(hierarchy_size=2,
+                                        parent_id=p1['project']['id'])
+        # Add p7 to the hierarchy
+        p3_id = projects_hierarchy[2]['project']['id']
+        self._create_projects_hierarchy(hierarchy_size=1,
+                                        parent_id=p3_id)
+
+        # Assign a inherited role for the user on root project
+        self.put(self.build_role_assignment_link(
+            role_id=self.role_id, user_id=self.user_id,
+            project_id=p1['project']['id'], inherited_to_projects=True))
+
+        # Make the API call to disable the hierarchy on cascade
+        r = self.patch(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': p1['project']['id']},
+            body={'project': {'enabled': False}})
+
+        # Assert root project was disabled
+        self.assertFalse(r.result['project']['enabled'])
+
+        # Make the API call to get the subtree
+        r = self.get('/projects/%(project_id)s?subtree_as_list' %
+                     {'project_id': p1['project']['id']})
+        # Assert subprojects was disabled due the cascade option
+        subtree = r.result['project']['subtree']
+        for subproject in subtree:
+            self.assertFalse(subproject['project']['enabled'])
+
+    def test_fail_update_project_cascade_without_assignment_on_subtree(self):
+        """Call ``PATCH /projects/{project_id}?cascade``."""
+        # Create a project hierarchy
+        projects = self._create_projects_hierarchy()
+        parent = projects[0]['project']
+        # We don't give any assignment on the subprojects
+        # try to update cascade to enable = false
+        # for the entiry subtree
+        self.patch(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': parent['id']},
+            body={'project': {'enabled': False}},
+            expected_status=exception.Forbidden.code)
 
     def test_update_project_domain_id(self):
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
