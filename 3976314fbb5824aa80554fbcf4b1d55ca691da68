@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_3894d689",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-09T15:53:50Z",
+      "side": 1,
+      "message": "javascript? looks like xml to me :)",
+      "revId": "3976314fbb5824aa80554fbcf4b1d55ca691da68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
