@@ -304,14 +304,43 @@ class ProjectV3(controller.V3Controller):
         self._expand_project_ref(context, ref)
         return ProjectV3.wrap_member(context, ref)
 
+    def _check_projects_list(self, subtree, user_id):
+        user_projects = self.assignment_api.list_projects_for_user(user_id)
+        for project in subtree:
+            if project not in user_projects:
+                msg = _('Cannot perform cascade operation, because the user '
+                        '%s does not have access in the whole '
+                        'subtree.') % user_id
+                raise exception.Forbidden(message=msg)
+
+    def _check_tree_protection(self, context, protection_info,
+                               project_id, project):
+        """Check protection for update project for tree API.
+        The policy rule might want to inspect if the user have access for
+        any project on the subtree.
+        """
+        if 'cascade' in protection_info['filter_attr'] and project_id:
+            subtree = self.resource_api.list_projects_in_subtree(project_id)
+            user_id = self.get_auth_context(context).get('user_id')
+            self._check_projects_list(subtree, user_id)
+            for project in subtree:
+                self.check_protection(context, protection_info, project)
+
+    @controller.filterprotected('cascade',
+                                callback=_check_tree_protection)
     @controller.protected()
     @validation.validated(schema.project_update, 'project')
-    def update_project(self, context, project_id, project):
+    def update_project(self, context, filters, project_id, project):
         self._require_matching_id(project_id, project)
         self._require_matching_domain_id(
             project_id, project, self.resource_api.get_project)
         initiator = notifications._get_request_audit_info(context)
+        hints = ProjectV3.build_driver_hints(context, filters).filters
+        # If cascade was passed as a filter in the API request, keystone will
+        # recursively enable/disable a project tree
+        cascade = bool([True for hint in hints if hint['name'] == 'cascade'])
         ref = self.resource_api.update_project(project_id, project,
+                                               cascade=cascade,
                                                initiator=initiator)
         return ProjectV3.wrap_member(context, ref)
 
