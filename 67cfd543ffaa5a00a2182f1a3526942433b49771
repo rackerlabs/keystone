@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_ec2f553c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1940,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-11-10T02:34:42Z",
+      "side": 1,
+      "message": "remove L1940",
+      "revId": "67cfd543ffaa5a00a2182f1a3526942433b49771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
