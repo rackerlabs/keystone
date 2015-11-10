@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_43042fbf",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T04:03:04Z",
+      "side": 1,
+      "message": "Generate it from where?  Is it generated from the config.py file?  If so, how do I set a default value?",
+      "parentUuid": "da85f559_aca2ad49",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_acb94d7b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-10T03:00:40Z",
       "side": 1,
       "message": "nit: add period to the end of the doc string to keep convention with the rest of the module (i.e. line 203).",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_63ba930c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T04:03:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_acb94d7b",
       "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_43566fd3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T04:03:04Z",
+      "side": 1,
+      "message": "It\u0027s hard to say what that default value should be.  However, since it is configurable, this can be added/changed later.",
+      "parentUuid": "da85f559_2078018f",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_8069adc0",
         "filename": "keystone/common/config.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-10T03:00:40Z",
       "side": 1,
       "message": "nit: add a period to the end of this string to keep the existing convention. \n\nShould we add a default?",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_030627ce",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T04:03:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_8069adc0",
       "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
