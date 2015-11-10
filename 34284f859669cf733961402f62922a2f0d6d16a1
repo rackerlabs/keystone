@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_014b5a2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-10T17:53:43Z",
+      "side": 1,
+      "message": "Sounds like you\u0027re just ripping things out, but in fact you are replacing it.\n\n\"Use sql.BigInteger instead of sql.DateTime for revocation events\"?",
+      "revId": "34284f859669cf733961402f62922a2f0d6d16a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_01e7da11",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-10T17:53:43Z",
+      "side": 1,
+      "message": "maybe create a constant for 1e6? and add a comment saying why it\u0027s needed?",
+      "revId": "34284f859669cf733961402f62922a2f0d6d16a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
