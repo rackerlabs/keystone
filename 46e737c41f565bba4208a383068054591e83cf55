@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_40f15300",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1794,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T21:47:41Z",
+      "side": 1,
+      "message": "use new_project_ref: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/core.py#n267",
+      "revId": "46e737c41f565bba4208a383068054591e83cf55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_c05303e1",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1800,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T21:47:41Z",
+      "side": 1,
+      "message": "this should use self.assertIs(False, updated_project_ref[\u0027is_domain\u0027])",
+      "revId": "46e737c41f565bba4208a383068054591e83cf55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_a0659fb5",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1805,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T21:47:41Z",
+      "side": 1,
+      "message": "use new_project_ref()",
+      "revId": "46e737c41f565bba4208a383068054591e83cf55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_204bef2b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1811,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T21:47:41Z",
+      "side": 1,
+      "message": "this should use self.assertIs(False, ref[\u0027is_domain\u0027])",
+      "revId": "46e737c41f565bba4208a383068054591e83cf55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_00fcabb6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1817,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T21:47:41Z",
+      "side": 1,
+      "message": "use uuid.uuid4().hex for random strings.",
+      "revId": "46e737c41f565bba4208a383068054591e83cf55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_20f9afc7",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1820,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T21:47:41Z",
+      "side": 1,
+      "message": "use uuid.uuid4().hex for random strings.",
+      "revId": "46e737c41f565bba4208a383068054591e83cf55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
