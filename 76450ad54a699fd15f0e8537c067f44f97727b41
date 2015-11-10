@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_aca2ad49",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-10T03:00:40Z",
+      "side": 1,
+      "message": "I think we have a job that will come through and generate the sample configuration automatically. There might not be a need to update it in this patch.",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_acb94d7b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-10T03:00:40Z",
+      "side": 1,
+      "message": "nit: add period to the end of the doc string to keep convention with the rest of the module (i.e. line 203).",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2078018f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-10T03:00:40Z",
+      "side": 1,
+      "message": "should we be defaulting this to a certain value?",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_8069adc0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-10T03:00:40Z",
+      "side": 1,
+      "message": "nit: add a period to the end of this string to keep the existing convention. \n\nShould we add a default?",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
