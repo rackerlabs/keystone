@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_df0d343f",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-10T16:27:00Z",
+      "side": 1,
+      "message": "add releasenotes to the envlist",
+      "revId": "827c095aea250a2c608975418a005337af97158a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
