@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_b56ac87f",
+        "filename": "releasenotes/source/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-10T19:24:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_75ba29c2",
+      "revId": "827c095aea250a2c608975418a005337af97158a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_df0d343f",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-10T16:27:00Z",
       "side": 1,
       "message": "add releasenotes to the envlist",
+      "revId": "827c095aea250a2c608975418a005337af97158a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_1572b47b",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-10T19:24:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_df0d343f",
       "revId": "827c095aea250a2c608975418a005337af97158a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
