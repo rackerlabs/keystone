@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime as dt
+
 import uuid
 
 from keystone.common import sql
@@ -31,14 +33,18 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     trust_id = sql.Column(sql.String(64))
     consumer_id = sql.Column(sql.String(64))
     access_token_id = sql.Column(sql.String(64))
-    issued_before = sql.Column(sql.DateTime(), nullable=False)
-    expires_at = sql.Column(sql.DateTime())
-    revoked_at = sql.Column(sql.DateTime(), nullable=False, index=True)
+    issued_before = sql.Column(sql.BigInteger(), nullable=False)
+    expires_at = sql.Column(sql.BigInteger())
+    revoked_at = sql.Column(sql.BigInteger(), nullable=False, index=True)
     audit_id = sql.Column(sql.String(32))
     audit_chain_id = sql.Column(sql.String(32))
 
 
 class Revoke(revoke.RevokeDriverV8):
+
+    # create an epoch datetime so we can determine total time since epoch
+    epoch = dt.datetime.utcfromtimestamp(0)
+
     def _flush_batch_size(self, dialect):
         batch_size = 0
         if dialect == 'ibm_db_sa':
@@ -58,7 +64,8 @@ class Revoke(revoke.RevokeDriverV8):
         return batch_size
 
     def _prune_expired_events(self):
-        oldest = revoke.revoked_before_cutoff_time()
+        oldest_dt = revoke.revoked_before_cutoff_time()
+        oldest = int((oldest_dt - self.epoch).total_seconds() * 1e6)
 
         session = sql.get_session()
         dialect = session.bind.dialect.name
@@ -86,13 +93,45 @@ class Revoke(revoke.RevokeDriverV8):
             RevocationEvent.revoked_at)
 
         if last_fetch:
-            query = query.filter(RevocationEvent.revoked_at > last_fetch)
+            # NOTE(lbragstad): last_fetch is actually an instance of datetime
+            # here. If we want to order things according to a datetime object,
+            # we will have to convert that datetime to be a timestamp integer
+            # since that is what revoked_at is stored as in the backend.
+            lf = int((last_fetch - self.epoch).total_seconds() * 1e6)
+            query = query.filter(RevocationEvent.revoked_at > lf)
 
-        events = [model.RevokeEvent(**e.to_dict()) for e in query]
+        events = list()
+        for e in query:
+            self._convert_integer_to_datetime(e)
+            event = model.RevokeEvent(**e.to_dict())
+            events.append(event)
 
         return events
 
+    def _convert_datetime_to_integer(self, event):
+        if event.issued_before:
+            ib = int((event.issued_before - self.epoch).total_seconds() * 1e6)
+            event.issued_before = ib
+        if event.revoked_at:
+            ra = int((event.revoked_at - self.epoch).total_seconds() * 1e6)
+            event.revoked_at = ra
+        if event.expires_at:
+            ea = int((event.expires_at - self.epoch).total_seconds() * 1e6)
+            event.expires_at = ea
+
+    def _convert_integer_to_datetime(self, event):
+        if event.issued_before:
+            ib = dt.datetime.utcfromtimestamp(event.issued_before / 1e6)
+            event.issued_before = ib
+        if event.revoked_at:
+            ra = dt.datetime.utcfromtimestamp(event.revoked_at / 1e6)
+            event.revoked_at = ra
+        if event.expires_at:
+            ea = dt.datetime.utcfromtimestamp(event.expires_at / 1e6)
+            event.expires_at = ea
+
     def revoke(self, event):
+        self._convert_datetime_to_integer(event)
         kwargs = dict()
         for attr in model.REVOKE_KEYS:
             kwargs[attr] = getattr(event, attr)
