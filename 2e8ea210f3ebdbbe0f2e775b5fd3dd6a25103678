@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_94856fae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-11-10T06:40:01Z",
+      "side": 1,
+      "message": "I\u0027m not sure I understand this change.  Yes, using an uuid is not a good example of a DN, but why go through and change  them all.  Is the testing somehow different?\n\nMaybe you could clarify this more in this commit message.  Thanks",
+      "revId": "2e8ea210f3ebdbbe0f2e775b5fd3dd6a25103678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
