@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_08cb8573",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-10T15:40:03Z",
+      "side": 1,
+      "message": "I would create a corresponding bug for this.  Maybe specify the error you are getting. https://bugs.launchpad.net/keystone/+filebug",
+      "revId": "0f2992cd17ec7e6c084b93333be1bb4fa30d1b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_48866d14",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-10T15:40:03Z",
+      "side": 1,
+      "message": "I would use single quotes for consistency",
+      "revId": "0f2992cd17ec7e6c084b93333be1bb4fa30d1b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_68901144",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-10T15:40:03Z",
+      "side": 1,
+      "message": "I would use single quotes for consistency",
+      "revId": "0f2992cd17ec7e6c084b93333be1bb4fa30d1b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
