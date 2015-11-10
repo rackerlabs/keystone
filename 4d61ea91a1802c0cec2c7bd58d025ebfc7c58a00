@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_4175e395",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T17:33:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_b46d1306",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_8f3d56bd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-10T07:22:39Z",
       "side": 1,
       "message": "i\u0027d drop the \"is\".  sounds a little awkward as \"is reached\"",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_81918b9b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T17:33:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_8f3d56bd",
       "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_61bee7d5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T17:33:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_6fb03244",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_2fba2a24",
         "filename": "keystone/tests/unit/assignment/test_core.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-10T07:22:39Z",
       "side": 1,
       "message": "2015",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_c1a473a7",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-10T17:33:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_2fba2a24",
       "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
