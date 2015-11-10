@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_a1d92e24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-10T18:26:36Z",
+      "side": 1,
+      "message": "++ good point",
+      "parentUuid": "da85f559_014b5a2b",
+      "revId": "34284f859669cf733961402f62922a2f0d6d16a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_01e7da11",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-10T17:53:43Z",
       "side": 1,
       "message": "maybe create a constant for 1e6? and add a comment saying why it\u0027s needed?",
+      "revId": "34284f859669cf733961402f62922a2f0d6d16a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_c1ed52b8",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-10T18:26:36Z",
+      "side": 1,
+      "message": "++ will do",
+      "parentUuid": "da85f559_01e7da11",
       "revId": "34284f859669cf733961402f62922a2f0d6d16a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
