@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_b46d1306",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-11-10T07:22:39Z",
+      "side": 1,
+      "message": "There is an OpenStack proposal bot that will automatically update this file after your commit merges.  So you can undo this change.",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_8f3d56bd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-11-10T07:22:39Z",
+      "side": 1,
+      "message": "i\u0027d drop the \"is\".  sounds a little awkward as \"is reached\"",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_6fb03244",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-11-10T07:22:39Z",
+      "side": 1,
+      "message": "Should there be a reasonable default?",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2fba2a24",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-11-10T07:22:39Z",
+      "side": 1,
+      "message": "2015",
+      "revId": "4d61ea91a1802c0cec2c7bd58d025ebfc7c58a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
