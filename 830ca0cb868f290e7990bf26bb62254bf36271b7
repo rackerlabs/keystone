@@ -52,6 +52,24 @@
       "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_add32603",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-11T19:13:51Z",
+      "side": 1,
+      "message": "ok, so there\u0027s a test missing. add the test.",
+      "parentUuid": "da85f559_944433b7",
+      "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
