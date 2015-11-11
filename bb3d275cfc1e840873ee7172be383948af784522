@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_4af5c054",
+        "filename": "keystone/tests/unit/backend/endpoint_policy/test_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T18:58:17Z",
+      "side": 1,
+      "message": "We haven\u0027t done anything to `self.association` have we? Just wondering why we need to perform a check on it when the test is focusing on `association`.",
+      "revId": "bb3d275cfc1e840873ee7172be383948af784522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0aeb3879",
+        "filename": "keystone/tests/unit/backend/endpoint_policy/test_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T18:58:17Z",
+      "side": 1,
+      "message": "Same comment applies here and to lines 151 and 169.",
+      "revId": "bb3d275cfc1e840873ee7172be383948af784522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
