@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_a829cb8b",
+        "filename": "keystone/tests/unit/backend/domain_config/test_config_validation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T22:58:25Z",
+      "side": 1,
+      "message": "Where are the successful (non failing) validations? You only show that the code raises exceptions but not that it ever passes.\n\nWhy not use mock to patch out the LDAP code so you can control success and failure and possibly make the test faster. It is not important that the LDAP code work they have their own tests. You just need to show that you use the module correctly.",
+      "revId": "c6ffdade6c08c9ba099cf9dff512a302e918078a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
