@@ -310,3 +310,10 @@ class ProjectV3(controller.V3Controller):
         initiator = notifications._get_request_audit_info(context)
         return self.resource_api.delete_project(project_id,
                                                 initiator=initiator)
+
+    @controller.protected()
+    def delete_project_cascade(self, context, project_id):
+        initiator = notifications._get_request_audit_info(context)
+        return self.resource_api.delete_project(project_id,
+                                                initiator=initiator,
+                                                cascade=True)
