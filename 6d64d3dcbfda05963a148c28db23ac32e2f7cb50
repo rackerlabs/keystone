@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da85f559_517b42f5",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:40:03Z",
+      "side": 1,
+      "message": "looks like this refactoring has nothing to do with the purpose of the patch",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_d8380c40",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 5
@@ -13,6 +30,24 @@
       "writtenOn": "2015-11-05T08:03:56Z",
       "side": 1,
       "message": "Do we need the check \"if not cred\" ? While I am aware this is not related to your change, I think it\u0027s a good idea to remove redundant checks.\n\nPlease see\nhttps://github.com/openstack/keystone/blob/master/keystone/credential/backends/sql.py#L60\n\n_get_credential already checks for None.",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b1e06e97",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:40:03Z",
+      "side": 1,
+      "message": "agreed. I\u0027d do this whole refactoring in a separate patch",
+      "parentUuid": "fa80f949_d8380c40",
       "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -48,6 +83,23 @@
       "side": 1,
       "message": "I can see it\u0027s for security. Keystone should not reveal if the access doesn\u0027t exist or access/secret don\u0027t match.\nWhen _check_credential_owner_and_user_id_match does the check for get and list, authenticate needs Unauthorized raised.\n\nAnd you\u0027re right that it won\u0027t work because credential api already raises a not found exception.\n\nI think the reasonable behavior is to raise different exceptions in different scenarios, and since multiple places need to be changed, and tests need to be added, I think a separate patch set is better, to handle this problem.",
       "parentUuid": "fa80f949_7827a012",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_91568a28",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:40:03Z",
+      "side": 1,
+      "message": "maybe this could be made in another patch, to make the patches as granular as possible.",
       "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
