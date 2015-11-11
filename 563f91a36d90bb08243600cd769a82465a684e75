@@ -51,6 +51,24 @@
       "revId": "563f91a36d90bb08243600cd769a82465a684e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_ad6fa629",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T19:16:00Z",
+      "side": 1,
+      "message": "No because \u0027name\u0027 and \u0027description\u0027 are not supported either. I have left this file alone in all of these related changesets for the same reason. You end up deleting a fair amount. In this particular case making these refs by hand made more sense.",
+      "parentUuid": "da85f559_2a14fc9d",
+      "revId": "563f91a36d90bb08243600cd769a82465a684e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
