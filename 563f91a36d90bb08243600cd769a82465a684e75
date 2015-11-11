@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_f757c157",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T18:35:07Z",
+      "side": 1,
+      "message": "I am not quite sure whether we need this, conversion from region to region_id has been done in the controller layer, so it will actually pass \u0027region_id\u0027 if only \u0027region\u0027 is given.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L329-L335\n\nAnd I also has a patch to tackle with this region_id/region stuff in the testcase (https://review.openstack.org/#/c/167534/) long time ago.",
+      "revId": "563f91a36d90bb08243600cd769a82465a684e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
