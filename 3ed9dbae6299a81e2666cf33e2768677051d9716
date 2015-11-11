@@ -34,6 +34,24 @@
       "revId": "3ed9dbae6299a81e2666cf33e2768677051d9716",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_45be1866",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T17:39:43Z",
+      "side": 1,
+      "message": "This allows developers to set ID or any other field not just \u0027enabled\u0027.\n\n\u0027enabled\u0027 is created by \u0027new_ref\u0027\u0027. I can fix the comment and adjust the code. Thanks for the catch.",
+      "parentUuid": "da85f559_55ceee82",
+      "revId": "3ed9dbae6299a81e2666cf33e2768677051d9716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
