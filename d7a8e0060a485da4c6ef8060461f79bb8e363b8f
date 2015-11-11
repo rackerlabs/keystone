@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_4b062f87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:10:16Z",
+      "side": 1,
+      "message": "nit: let add the thing that should be added to docs\n\n    DocImpact: Remove the endpoint_filter extension from keystone\u0027s paste pipeline.",
+      "revId": "d7a8e0060a485da4c6ef8060461f79bb8e363b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

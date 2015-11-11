@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_abed5bb8",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 27
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:10:16Z",
+      "side": 0,
+      "message": "this should be removed as well.",
+      "revId": "002ab48c8d66d1a41bb47559173e119b9be38c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
