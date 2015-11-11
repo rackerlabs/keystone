@@ -88,6 +88,24 @@
       "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_1e013a05",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-11T20:07:47Z",
+      "side": 1,
+      "message": "The testcase can be added in a follow-on review.",
+      "parentUuid": "da85f559_e39cdf0f",
+      "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
