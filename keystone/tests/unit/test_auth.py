@@ -715,14 +715,9 @@ class AuthWithPasswordCredentials(AuthTest):
 
         # 2) Create user "foo" in new domain with different password than
         #    default-domain foo.
-        new_user_password = uuid.uuid4().hex
-        new_user = {
-            'name': self.user_foo['name'],
-            'domain_id': new_domain_id,
-            'password': new_user_password,
-            'email': 'foo@bar2.com',
-        }
-
+        new_user = unit.new_user_ref(name=self.user_foo['name'],
+                                     domain_id=new_domain_id)
+        new_user_password = new_user['password']
         new_user = self.identity_api.create_user(new_user)
 
         # 3) Update the default_domain_id config option to the new domain

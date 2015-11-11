@@ -112,7 +112,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             domain_id=self.domain2['id'])
         self.resource_api.create_project(self.project2['id'], self.project2)
 
-        self.user2 = self.new_user_ref(
+        self.user2 = unit.new_user_ref(
             domain_id=self.domain2['id'],
             project_id=self.project2['id'])
         password = self.user2['password']
@@ -216,7 +216,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             domain_id=self.domain2['id'])
         self.resource_api.create_project(self.project2['id'], self.project2)
 
-        self.user2 = self.new_user_ref(
+        self.user2 = unit.new_user_ref(
             domain_id=self.domain2['id'],
             project_id=self.project2['id'])
         self.user2 = self.identity_api.create_user(self.user2)
@@ -340,7 +340,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.domain = unit.new_domain_ref()
         self.resource_api.create_domain(self.domain['id'], self.domain)
 
-        self.user2 = self.new_user_ref(domain_id=self.domain['id'])
+        self.user2 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user2['password']
         self.user2 = self.identity_api.create_user(self.user2)
         self.user2['password'] = password
@@ -1270,7 +1270,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
     def _create_new_user_and_assign_role_on_project(self):
         """Create a new user and assign user a role on a project."""
         # Create a new user
-        new_user = self.new_user_ref(domain_id=self.domain_id)
+        new_user = unit.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(new_user)
         # Assign the user a role on the project
         collection_url = (
@@ -1378,8 +1378,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         # Since the default fixtures already assign some roles to the
         # user it creates, we also need a new user that will not have any
         # existing assignments
-        self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user1 = unit.new_user_ref(domain_id=self.domain['id'])
         self.user1 = self.identity_api.create_user(self.user1)
 
         collection_url = '/role_assignments'
@@ -1465,13 +1464,11 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
           for each of the group members.
 
         """
-        self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user1 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user1['password']
         self.user1 = self.identity_api.create_user(self.user1)
         self.user1['password'] = password
-        self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user2 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user2['password']
         self.user2 = self.identity_api.create_user(self.user2)
         self.user2['password'] = password
@@ -1539,13 +1536,11 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
           know if we are getting effective roles or not
 
         """
-        self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user1 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user1['password']
         self.user1 = self.identity_api.create_user(self.user1)
         self.user1['password'] = password
-        self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user2 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user2['password']
         self.user2 = self.identity_api.create_user(self.user2)
         self.user2['password'] = password
@@ -1626,13 +1621,11 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         # Since the default fixtures already assign some roles to the
         # user it creates, we also need a new user that will not have any
         # existing assignments
-        self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user1 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user1['password']
         self.user1 = self.identity_api.create_user(self.user1)
         self.user1['password'] = password
-        self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user2 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user2['password']
         self.user2 = self.identity_api.create_user(self.user2)
         self.user2['password'] = password
@@ -1827,7 +1820,7 @@ class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase,
         # Create 3 users
         self.user_ids = []
         for i in range(3):
-            user = self.new_user_ref(domain_id=self.domain_id)
+            user = unit.new_user_ref(domain_id=self.domain_id)
             user = self.identity_api.create_user(user)
             self.user_ids.append(user['id'])
 
@@ -2174,7 +2167,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
     def test_get_token_from_inherited_user_domain_role_grants(self):
         # Create a new user to ensure that no grant is loaded from sample data
-        user = self.new_user_ref(domain_id=self.domain_id)
+        user = unit.new_user_ref(domain_id=self.domain_id)
         password = user['password']
         user = self.identity_api.create_user(user)
         user['password'] = password
@@ -2237,7 +2230,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
     def test_get_token_from_inherited_group_domain_role_grants(self):
         # Create a new group and put a new user in it to
         # ensure that no grant is loaded from sample data
-        user = self.new_user_ref(domain_id=self.domain_id)
+        user = unit.new_user_ref(domain_id=self.domain_id)
         password = user['password']
         user = self.identity_api.create_user(user)
         user['password'] = password
@@ -2401,8 +2394,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
-        user1 = self.new_user_ref(
-            domain_id=domain['id'])
+        user1 = unit.new_user_ref(domain_id=domain['id'])
         password = user1['password']
         user1 = self.identity_api.create_user(user1)
         user1['password'] = password
@@ -2497,8 +2489,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
-        user1 = self.new_user_ref(
-            domain_id=domain['id'])
+        user1 = unit.new_user_ref(domain_id=domain['id'])
         password = user1['password']
         user1 = self.identity_api.create_user(user1)
         user1['password'] = password
@@ -2589,13 +2580,11 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
-        user1 = self.new_user_ref(
-            domain_id=domain['id'])
+        user1 = unit.new_user_ref(domain_id=domain['id'])
         password = user1['password']
         user1 = self.identity_api.create_user(user1)
         user1['password'] = password
-        user2 = self.new_user_ref(
-            domain_id=domain['id'])
+        user2 = unit.new_user_ref(domain_id=domain['id'])
         password = user2['password']
         user2 = self.identity_api.create_user(user2)
         user2['password'] = password
@@ -2694,8 +2683,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
-        user1 = self.new_user_ref(
-            domain_id=domain['id'])
+        user1 = unit.new_user_ref(domain_id=domain['id'])
         password = user1['password']
         user1 = self.identity_api.create_user(user1)
         user1['password'] = password

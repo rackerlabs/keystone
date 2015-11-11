@@ -53,7 +53,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_create_user(self):
         """Call ``POST /users``."""
-        ref = self.new_user_ref(domain_id=self.domain_id)
+        ref = unit.new_user_ref(domain_id=self.domain_id)
         r = self.post(
             '/users',
             body={'user': ref})
@@ -71,7 +71,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # domain scoped token
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
-        user = self.new_user_ref(domain_id=domain['id'])
+        user = unit.new_user_ref(domain_id=domain['id'])
         password = user['password']
         user = self.identity_api.create_user(user)
         user['password'] = password
@@ -79,7 +79,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id, user_id=user['id'],
             domain_id=domain['id'])
 
-        ref = self.new_user_ref(domain_id=domain['id'])
+        ref = unit.new_user_ref(domain_id=domain['id'])
         ref_nd = ref.copy()
         ref_nd.pop('domain_id')
         auth = self.build_authentication_request(
@@ -90,7 +90,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidUserResponse(r, ref)
 
         # Now try the same thing without a domain token - which should fail
-        ref = self.new_user_ref(domain_id=domain['id'])
+        ref = unit.new_user_ref(domain_id=domain['id'])
         ref_nd = ref.copy()
         ref_nd.pop('domain_id')
         auth = self.build_authentication_request(
@@ -137,7 +137,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # domain scoped token
         domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
-        user = self.new_user_ref(domain_id=domain['id'])
+        user = unit.new_user_ref(domain_id=domain['id'])
         password = user['password']
         user = self.identity_api.create_user(user)
         user['password'] = password
@@ -145,7 +145,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id, user_id=user['id'],
             domain_id=domain['id'])
 
-        ref = self.new_user_ref(domain_id=domain['id'])
+        ref = unit.new_user_ref(domain_id=domain['id'])
         ref_nd = ref.copy()
         ref_nd.pop('domain_id')
         auth = self.build_authentication_request(
@@ -180,7 +180,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_users_no_default_project(self):
         """Call ``GET /users`` making sure no default_project_id."""
-        user = self.new_user_ref(self.domain_id)
+        user = unit.new_user_ref(self.domain_id)
         user = self.identity_api.create_user(user)
         resource_url = '/users'
         r = self.get(resource_url)
@@ -195,7 +195,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_get_user_with_default_project(self):
         """Call ``GET /users/{user_id}`` making sure of default_project_id."""
-        user = self.new_user_ref(domain_id=self.domain_id,
+        user = unit.new_user_ref(domain_id=self.domain_id,
                                  project_id=self.project_id)
         user = self.identity_api.create_user(user)
         r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
@@ -208,13 +208,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_groups_for_user(self):
         """Call ``GET /users/{user_id}/groups``."""
-        self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user1 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user1['password']
         self.user1 = self.identity_api.create_user(self.user1)
         self.user1['password'] = password
-        self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+        self.user2 = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user2['password']
         self.user2 = self.identity_api.create_user(self.user2)
         self.user2['password'] = password
@@ -276,7 +274,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_update_user(self):
         """Call ``PATCH /users/{user_id}``."""
-        user = self.new_user_ref(domain_id=self.domain_id)
+        user = unit.new_user_ref(domain_id=self.domain_id)
         del user['id']
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
@@ -285,7 +283,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_admin_password_reset(self):
         # bootstrap a user as admin
-        user_ref = self.new_user_ref(domain_id=self.domain['id'])
+        user_ref = unit.new_user_ref(domain_id=self.domain['id'])
         password = user_ref['password']
         user_ref = self.identity_api.create_user(user_ref)
 
@@ -321,7 +319,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_update_user_domain_id(self):
         """Call ``PATCH /users/{user_id}`` with domain_id."""
-        user = self.new_user_ref(domain_id=self.domain['id'])
+        user = unit.new_user_ref(domain_id=self.domain['id'])
         user = self.identity_api.create_user(user)
         user['domain_id'] = CONF.identity.default_domain_id
         r = self.patch('/users/%(user_id)s' % {
@@ -348,7 +346,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(self.credential, r)
         # Create a second credential with a different user
-        self.user2 = self.new_user_ref(
+        self.user2 = unit.new_user_ref(
             domain_id=self.domain['id'],
             project_id=self.project['id'])
         self.user2 = self.identity_api.create_user(self.user2)
@@ -449,7 +447,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         log_fix = self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
 
-        ref = self.new_user_ref(domain_id=self.domain_id)
+        ref = unit.new_user_ref(domain_id=self.domain_id)
         self.post(
             '/users',
             body={'user': ref})
@@ -463,7 +461,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         log_fix = self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
 
         # bootstrap a user as admin
-        user_ref = self.new_user_ref(domain_id=self.domain['id'])
+        user_ref = unit.new_user_ref(domain_id=self.domain['id'])
         password = user_ref['password']
         user_ref = self.identity_api.create_user(user_ref)
 
@@ -479,43 +477,59 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 class IdentityV3toV2MethodsTestCase(unit.TestCase):
     """Test users V3 to V2 conversion methods."""
 
+    def new_user_ref(self, **kwargs):
+        """Construct a bare bones user ref.
+
+        Omits all optional components.
+        """
+        ref = unit.new_user_ref(**kwargs)
+        # description is already omitted
+        del ref['email']
+        del ref['enabled']
+        del ref['password']
+        return ref
+
     def setUp(self):
         super(IdentityV3toV2MethodsTestCase, self).setUp()
         self.load_backends()
-        self.user_id = uuid.uuid4().hex
-        self.default_project_id = uuid.uuid4().hex
-        self.tenant_id = uuid.uuid4().hex
+        user_id = uuid.uuid4().hex
+        project_id = uuid.uuid4().hex
+
         # User with only default_project_id in ref
-        self.user1 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'default_project_id': self.default_project_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user1 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            project_id=project_id,
+            domain_id=CONF.identity.default_domain_id)
         # User without default_project_id or tenantId in ref
-        self.user2 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user2 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            domain_id=CONF.identity.default_domain_id)
         # User with both tenantId and default_project_id in ref
-        self.user3 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'default_project_id': self.default_project_id,
-                      'tenantId': self.tenant_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user3 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            project_id=project_id,
+            tenantId=project_id,
+            domain_id=CONF.identity.default_domain_id)
         # User with only tenantId in ref
-        self.user4 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'tenantId': self.tenant_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user4 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            tenantId=project_id,
+            domain_id=CONF.identity.default_domain_id)
 
         # Expected result if the user is meant to have a tenantId element
-        self.expected_user = {'id': self.user_id,
-                              'name': self.user_id,
-                              'username': self.user_id,
-                              'tenantId': self.default_project_id}
+        self.expected_user = {'id': user_id,
+                              'name': user_id,
+                              'username': user_id,
+                              'tenantId': project_id}
 
         # Expected result if the user is not meant to have a tenantId element
-        self.expected_user_no_tenant_id = {'id': self.user_id,
-                                           'name': self.user_id,
-                                           'username': self.user_id}
+        self.expected_user_no_tenant_id = {'id': user_id,
+                                           'name': user_id,
+                                           'username': user_id}
 
     def test_v3_to_v2_user_method(self):
 
@@ -552,7 +566,7 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(UserSelfServiceChangingPasswordsTestCase, self).setUp()
-        self.user_ref = self.new_user_ref(domain_id=self.domain['id'])
+        self.user_ref = unit.new_user_ref(domain_id=self.domain['id'])
         password = self.user_ref['password']
         self.user_ref = self.identity_api.create_user(self.user_ref)
         self.user_ref['password'] = password
