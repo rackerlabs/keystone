@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_143fe887",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:43:01Z",
+      "side": 1,
+      "message": "does this still address david\u0027s comment from patch set 4? It looks like we\u0027re using kwargs again?",
+      "revId": "978f90fc215d228ecf72f57f81efcdebc2914c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b45dbc16",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:43:01Z",
+      "side": 1,
+      "message": "looks like this already exists in keystone/tests/unit/test_catalog.py \n\nrandom nit: this should probably be addressed later but it would be nice to consolidate the `create_endpoint()` methods.",
+      "revId": "978f90fc215d228ecf72f57f81efcdebc2914c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
