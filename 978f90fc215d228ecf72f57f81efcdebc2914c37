@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_d725dd08",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T18:32:52Z",
+      "side": 1,
+      "message": "Ok, I think that makes sense. David will probably have to follow up separately if he has outstanding comments.",
+      "parentUuid": "da85f559_6580fcc0",
+      "revId": "978f90fc215d228ecf72f57f81efcdebc2914c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_b45dbc16",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 8
