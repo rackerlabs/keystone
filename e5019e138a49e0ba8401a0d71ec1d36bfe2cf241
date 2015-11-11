@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da85f559_cbb1bf48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:00:00Z",
+      "side": 1,
+      "message": "This should contain a DocImpact, right? \n\nDocImpact: You should no longer run the migrations for this extension",
+      "revId": "e5019e138a49e0ba8401a0d71ec1d36bfe2cf241",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_0b5587f8",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 10
