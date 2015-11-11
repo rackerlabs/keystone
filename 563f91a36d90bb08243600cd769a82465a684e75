@@ -34,6 +34,23 @@
       "revId": "563f91a36d90bb08243600cd769a82465a684e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2a14fc9d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T18:54:53Z",
+      "side": 1,
+      "message": "Cannot this be done by new_endpoint_ref_with_region?",
+      "revId": "563f91a36d90bb08243600cd769a82465a684e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
