@@ -779,9 +779,9 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         self.resource_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainB['id'], self.domainB)
-        self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
+        self.projectA = unit.new_project_ref(domain_id=self.domainA['id'])
         self.resource_api.create_project(self.projectA['id'], self.projectA)
-        self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
+        self.projectB = unit.new_project_ref(domain_id=self.domainA['id'])
         self.resource_api.create_project(self.projectB['id'], self.projectB)
 
         # Now create some users
@@ -907,7 +907,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   expected_status=http_client.NOT_FOUND)
 
     def role_data_fixtures(self):
-        self.projectC = self.new_project_ref(domain_id=self.domainA['id'])
+        self.projectC = unit.new_project_ref(domain_id=self.domainA['id'])
         self.resource_api.create_project(self.projectC['id'], self.projectC)
         self.user4 = unit.new_user_ref(domain_id=self.domainB['id'])
         password = self.user4['password']
@@ -1854,7 +1854,7 @@ class TestAuth(test_v3.RestfulTestCase):
         self.assertValidProjectScopedTokenResponse(r)
 
     def _second_project_as_default(self):
-        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref = unit.new_project_ref(domain_id=self.domain_id)
         r = self.post('/projects', body={'project': ref})
         project = self.assertValidProjectResponse(r, ref)
 
@@ -1990,7 +1990,7 @@ class TestAuth(test_v3.RestfulTestCase):
                                              disabled_endpoint_id)
 
     def test_project_id_scoped_token_with_user_id_unauthorized(self):
-        project = self.new_project_ref(domain_id=self.domain_id)
+        project = unit.new_project_ref(domain_id=self.domain_id)
         self.resource_api.create_project(project['id'], project)
 
         auth_data = self.build_authentication_request(
@@ -2024,7 +2024,7 @@ class TestAuth(test_v3.RestfulTestCase):
         """
         domainA = unit.new_domain_ref()
         self.resource_api.create_domain(domainA['id'], domainA)
-        projectA = self.new_project_ref(domain_id=domainA['id'])
+        projectA = unit.new_project_ref(domain_id=domainA['id'])
         self.resource_api.create_project(projectA['id'], projectA)
 
         user1 = unit.new_user_ref(domain_id=domainA['id'])
@@ -2134,8 +2134,7 @@ class TestAuth(test_v3.RestfulTestCase):
         # create domain, project and group and grant roles to user
         domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(domain1['id'], domain1)
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+        project1 = unit.new_project_ref(domain_id=domain1['id'])
         self.resource_api.create_project(project1['id'], project1)
         user_foo = unit.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         password = user_foo['password']
@@ -2636,7 +2635,7 @@ class TestAuth(test_v3.RestfulTestCase):
         self.resource_api.create_domain(domain['id'], domain)
 
         # create a project in the disabled domain
-        project = self.new_project_ref(domain_id=domain['id'])
+        project = unit.new_project_ref(domain_id=domain['id'])
         self.resource_api.create_project(project['id'], project)
 
         # assign some role to self.user for the project in the disabled domain
