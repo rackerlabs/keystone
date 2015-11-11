@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_89cd0887",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1916,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T14:04:05Z",
+      "side": 1,
+      "message": "Why not use @wip here too? As you did below .. :)",
+      "revId": "f1d431e31fcf5fefa676c2d7ccd2036849eb930e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
