@@ -1576,6 +1576,12 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_list_project_parents(self):
         self.skipTest('Resource LDAP has been removed')
 
+    def test_delete_project_cascade(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_cannot_delete_project_cascade_with_enabled_child(self):
+        self._assert_create_hierarchy_not_allowed()
+
     def test_hierarchical_projects_crud(self):
         self.skipTest('Resource LDAP has been removed')
 
