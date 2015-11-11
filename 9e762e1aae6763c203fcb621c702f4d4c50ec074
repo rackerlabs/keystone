@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_9977839f",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T20:59:23Z",
+      "side": 1,
+      "message": "see the commit message, and as my comment it in the much early review, it\u0027s better to some notes here, so no one will raise this again and again. :)",
+      "parentUuid": "da85f559_ee3931d8",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_90944943",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 31
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_196cf3cc",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T20:59:23Z",
+      "side": 1,
+      "message": "this was removed per the early review comments.",
+      "parentUuid": "da85f559_ae71e945",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_eef7f188",
         "filename": "keystone/federation/routers.py",
         "patchSetId": 31
@@ -83,6 +119,24 @@
       "writtenOn": "2015-11-11T16:25:32Z",
       "side": 1,
       "message": "Just a doubt, Are the API calls still keeping the \"OS-FEDERATION\" ?",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_79a73f0b",
+        "filename": "keystone/federation/routers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T20:59:23Z",
+      "side": 1,
+      "message": "I think this was for backward-compatibility.",
+      "parentUuid": "da85f559_eef7f188",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -152,6 +206,24 @@
       "writtenOn": "2015-11-11T16:25:32Z",
       "side": 1,
       "message": "Off-patch question: Is the code ok with this comment? Is it in alphabetic order or is it just a coincidence?",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_d96bcb83",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T20:59:23Z",
+      "side": 1,
+      "message": "most requently used routers should appear first?",
+      "parentUuid": "da85f559_4e339d14",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
