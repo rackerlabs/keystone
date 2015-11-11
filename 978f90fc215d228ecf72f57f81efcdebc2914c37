@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_6580fcc0",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T17:35:22Z",
+      "side": 1,
+      "message": "kwargs is supported on new_\u003ctype\u003e_ref() calls to allow the developer to override any of the fields. This is future proofing and consistency. My patch series ensures all of the related calls for all of the types behave this way. David pointed out that the method was taking kwargs but not actually using it. Now it is. His want of just URL was due to that being the only argument used at the moment and the unused variable. If you look at the entire patch series kwargs makes more sense.",
+      "parentUuid": "da85f559_143fe887",
+      "revId": "978f90fc215d228ecf72f57f81efcdebc2914c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_b45dbc16",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-11T16:43:01Z",
       "side": 1,
       "message": "looks like this already exists in keystone/tests/unit/test_catalog.py \n\nrandom nit: this should probably be addressed later but it would be nice to consolidate the `create_endpoint()` methods.",
+      "revId": "978f90fc215d228ecf72f57f81efcdebc2914c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_458a981c",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T17:35:22Z",
+      "side": 1,
+      "message": "Agreed on the consolidation.",
+      "parentUuid": "da85f559_b45dbc16",
       "revId": "978f90fc215d228ecf72f57f81efcdebc2914c37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
