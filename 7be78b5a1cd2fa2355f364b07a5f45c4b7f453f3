@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_0b426768",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:12:42Z",
+      "side": 1,
+      "message": "add to the DocImpact tag saying that uses no longer need to run the endpoint_filter extension migrations (similar to previous patches).",
+      "revId": "7be78b5a1cd2fa2355f364b07a5f45c4b7f453f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
