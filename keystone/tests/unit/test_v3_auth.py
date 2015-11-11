@@ -153,13 +153,8 @@ class TokenAPITests(object):
         self.resource_api.create_domain(new_domain['id'], new_domain)
 
         # 2) Create user in new domain.
-        new_user_password = uuid.uuid4().hex
-        new_user = {
-            'name': uuid.uuid4().hex,
-            'domain_id': new_domain['id'],
-            'password': new_user_password,
-            'email': uuid.uuid4().hex,
-        }
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
+        new_user_password = new_user['password']
         new_user = self.identity_api.create_user(new_user)
 
         # 3) Update the default_domain_id config option to the new domain
@@ -614,13 +609,12 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.domainA = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainA['id'], self.domainA)
 
-        self.userAdminA = self.new_user_ref(domain_id=self.domainA['id'])
+        self.userAdminA = unit.new_user_ref(domain_id=self.domainA['id'])
         password = self.userAdminA['password']
         self.userAdminA = self.identity_api.create_user(self.userAdminA)
         self.userAdminA['password'] = password
 
-        self.userNormalA = self.new_user_ref(
-            domain_id=self.domainA['id'])
+        self.userNormalA = unit.new_user_ref(domain_id=self.domainA['id'])
         password = self.userNormalA['password']
         self.userNormalA = self.identity_api.create_user(self.userNormalA)
         self.userNormalA['password'] = password
@@ -715,7 +709,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         # DomainB setup
         self.domainB = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainB['id'], self.domainB)
-        self.userAdminB = self.new_user_ref(domain_id=self.domainB['id'])
+        self.userAdminB = unit.new_user_ref(domain_id=self.domainB['id'])
         password = self.userAdminB['password']
         self.userAdminB = self.identity_api.create_user(self.userAdminB)
         self.userAdminB['password'] = password
@@ -791,20 +785,17 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         self.resource_api.create_project(self.projectB['id'], self.projectB)
 
         # Now create some users
-        self.user1 = self.new_user_ref(
-            domain_id=self.domainA['id'])
+        self.user1 = unit.new_user_ref(domain_id=self.domainA['id'])
         password = self.user1['password']
         self.user1 = self.identity_api.create_user(self.user1)
         self.user1['password'] = password
 
-        self.user2 = self.new_user_ref(
-            domain_id=self.domainB['id'])
+        self.user2 = unit.new_user_ref(domain_id=self.domainB['id'])
         password = self.user2['password']
         self.user2 = self.identity_api.create_user(self.user2)
         self.user2['password'] = password
 
-        self.user3 = self.new_user_ref(
-            domain_id=self.domainB['id'])
+        self.user3 = unit.new_user_ref(domain_id=self.domainB['id'])
         password = self.user3['password']
         self.user3 = self.identity_api.create_user(self.user3)
         self.user3['password'] = password
@@ -918,17 +909,15 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
     def role_data_fixtures(self):
         self.projectC = self.new_project_ref(domain_id=self.domainA['id'])
         self.resource_api.create_project(self.projectC['id'], self.projectC)
-        self.user4 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user4 = unit.new_user_ref(domain_id=self.domainB['id'])
         password = self.user4['password']
         self.user4 = self.identity_api.create_user(self.user4)
         self.user4['password'] = password
-        self.user5 = self.new_user_ref(
-            domain_id=self.domainA['id'])
+        self.user5 = unit.new_user_ref(domain_id=self.domainA['id'])
         password = self.user5['password']
         self.user5 = self.identity_api.create_user(self.user5)
         self.user5['password'] = password
-        self.user6 = self.new_user_ref(
-            domain_id=self.domainA['id'])
+        self.user6 = unit.new_user_ref(domain_id=self.domainA['id'])
         password = self.user6['password']
         self.user6 = self.identity_api.create_user(self.user6)
         self.user6['password'] = password
@@ -2038,14 +2027,12 @@ class TestAuth(test_v3.RestfulTestCase):
         projectA = self.new_project_ref(domain_id=domainA['id'])
         self.resource_api.create_project(projectA['id'], projectA)
 
-        user1 = self.new_user_ref(
-            domain_id=domainA['id'])
+        user1 = unit.new_user_ref(domain_id=domainA['id'])
         password = user1['password']
         user1 = self.identity_api.create_user(user1)
         user1['password'] = password
 
-        user2 = self.new_user_ref(
-            domain_id=domainA['id'])
+        user2 = unit.new_user_ref(domain_id=domainA['id'])
         password = user2['password']
         user2 = self.identity_api.create_user(user2)
         user2['password'] = password
@@ -2150,7 +2137,7 @@ class TestAuth(test_v3.RestfulTestCase):
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.resource_api.create_project(project1['id'], project1)
-        user_foo = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        user_foo = unit.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         password = user_foo['password']
         user_foo = self.identity_api.create_user(user_foo)
         user_foo['password'] = password
@@ -2577,8 +2564,8 @@ class TestAuth(test_v3.RestfulTestCase):
                              token_data['token']['bind'])
 
     def test_authenticating_a_user_with_no_password(self):
-        user = self.new_user_ref(domain_id=self.domain['id'])
-        user.pop('password', None)  # can't have a password for this test
+        user = unit.new_user_ref(domain_id=self.domain['id'])
+        del user['password']  # can't have a password for this test
         user = self.identity_api.create_user(user)
 
         auth_data = self.build_authentication_request(
@@ -2764,7 +2751,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
     def setUp(self):
         super(TestTrustRedelegation, self).setUp()
         # Create a trustee to delegate stuff to
-        trustee_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        trustee_user_ref = unit.new_user_ref(domain_id=self.domain_id)
         self.trustee_user = self.identity_api.create_user(trustee_user_ref)
         self.trustee_user['password'] = trustee_user_ref['password']
 
@@ -3000,7 +2987,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
         self.user_chain = list()
         self.trust_chain = list()
         for _ in range(3):
-            user_ref = self.new_user_ref(domain_id=self.domain_id)
+            user_ref = unit.new_user_ref(domain_id=self.domain_id)
             user = self.identity_api.create_user(user_ref)
             user['password'] = user_ref['password']
             self.user_chain.append(user)
@@ -3157,7 +3144,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         super(TestTrustAuth, self).setUp()
 
         # create a trustee to delegate stuff to
-        self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
+        self.trustee_user = unit.new_user_ref(domain_id=self.domain_id)
         password = self.trustee_user['password']
         self.trustee_user = self.identity_api.create_user(self.trustee_user)
         self.trustee_user['password'] = password
@@ -3461,7 +3448,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_v3_v2_intermix_project_not_in_default_domaini_failed(self):
         # create a trustee in default domain to delegate stuff to
-        trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        trustee_user = unit.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         password = trustee_user['password']
         trustee_user = self.identity_api.create_user(trustee_user)
         trustee_user['password'] = password
@@ -3501,7 +3488,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_v3_v2_intermix(self):
         # create a trustee in default domain to delegate stuff to
-        trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        trustee_user = unit.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         password = trustee_user['password']
         trustee_user = self.identity_api.create_user(trustee_user)
         trustee_user['password'] = password
@@ -3678,7 +3665,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
         """
         # create a sub-trustee user
-        sub_trustee_user = self.new_user_ref(
+        sub_trustee_user = unit.new_user_ref(
             domain_id=test_v3.DEFAULT_DOMAIN_ID)
         password = sub_trustee_user['password']
         sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
@@ -4167,7 +4154,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase):
 
     def _create_trust(self):
         # Create a trustee user
-        trustee_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        trustee_user_ref = unit.new_user_ref(domain_id=self.domain_id)
         trustee_user = self.identity_api.create_user(trustee_user_ref)
         trustee_user['password'] = trustee_user_ref['password']
         ref = self.new_trust_ref(

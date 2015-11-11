@@ -33,6 +33,13 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 class IdentityTestProtectedCase(test_v3.RestfulTestCase):
     """Test policy enforcement on the v3 Identity API."""
 
+    def create_user(self, domain_id, **kwargs):
+        user = unit.new_user_ref(domain_id=domain_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+        return user
+
     def setUp(self):
         """Setup for Identity Protection Test Cases.
 
@@ -74,23 +81,9 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.resource_api.create_domain(self.domainC['id'], self.domainC)
 
         # Now create some users, one in domainA and two of them in domainB
-        self.user1 = self.new_user_ref(domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.user1['password'] = password
-        self.user1 = self.identity_api.create_user(self.user1)
-        self.user1['password'] = password
-
-        self.user2 = self.new_user_ref(domain_id=self.domainB['id'])
-        password = uuid.uuid4().hex
-        self.user2['password'] = password
-        self.user2 = self.identity_api.create_user(self.user2)
-        self.user2['password'] = password
-
-        self.user3 = self.new_user_ref(domain_id=self.domainB['id'])
-        password = uuid.uuid4().hex
-        self.user3['password'] = password
-        self.user3 = self.identity_api.create_user(self.user3)
-        self.user3['password'] = password
+        self.user1 = self.create_user(domain_id=self.domainA['id'])
+        self.user2 = self.create_user(domain_id=self.domainB['id'])
+        self.user3 = self.create_user(domain_id=self.domainB['id'])
 
         self.group1 = unit.new_group_ref(domain_id=self.domainA['id'])
         self.group1 = self.identity_api.create_group(self.group1)
@@ -344,29 +337,22 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 class IdentityTestPolicySample(test_v3.RestfulTestCase):
     """Test policy enforcement of the policy.json file."""
 
+    def create_user(self, domain_id, **kwargs):
+        user = unit.new_user_ref(domain_id=domain_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+        return user
+
     def load_sample_data(self):
         self._populate_default_domain()
 
-        self.just_a_user = self.new_user_ref(
+        self.just_a_user = self.create_user(
             domain_id=CONF.identity.default_domain_id)
-        password = uuid.uuid4().hex
-        self.just_a_user['password'] = password
-        self.just_a_user = self.identity_api.create_user(self.just_a_user)
-        self.just_a_user['password'] = password
-
-        self.another_user = self.new_user_ref(
+        self.another_user = self.create_user(
             domain_id=CONF.identity.default_domain_id)
-        password = uuid.uuid4().hex
-        self.another_user['password'] = password
-        self.another_user = self.identity_api.create_user(self.another_user)
-        self.another_user['password'] = password
-
-        self.admin_user = self.new_user_ref(
+        self.admin_user = self.create_user(
             domain_id=CONF.identity.default_domain_id)
-        password = uuid.uuid4().hex
-        self.admin_user['password'] = password
-        self.admin_user = self.identity_api.create_user(self.admin_user)
-        self.admin_user['password'] = password
 
         self.role = unit.new_role_ref()
         self.role_api.create_role(self.role['id'], self.role)
@@ -581,6 +567,13 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
                                       test_v3.AssignmentTestMixin):
     """Test policy enforcement of the sample v3 cloud policy file."""
 
+    def create_user(self, domain_id, **kwargs):
+        user = unit.new_user_ref(domain_id=domain_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+        return user
+
     def setUp(self):
         """Setup for v3 Cloud Policy Sample Test Cases.
 
@@ -626,32 +619,12 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
                                         self.admin_domain)
 
         # And our users
-        self.cloud_admin_user = self.new_user_ref(
+        self.cloud_admin_user = self.create_user(
             domain_id=self.admin_domain['id'])
-        password = uuid.uuid4().hex
-        self.cloud_admin_user['password'] = password
-        self.cloud_admin_user = (
-            self.identity_api.create_user(self.cloud_admin_user))
-        self.cloud_admin_user['password'] = password
-        self.just_a_user = self.new_user_ref(domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.just_a_user['password'] = password
-        self.just_a_user = self.identity_api.create_user(self.just_a_user)
-        self.just_a_user['password'] = password
-        self.domain_admin_user = self.new_user_ref(
+        self.just_a_user = self.create_user(domain_id=self.domainA['id'])
+        self.domain_admin_user = self.create_user(domain_id=self.domainA['id'])
+        self.project_admin_user = self.create_user(
             domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.domain_admin_user['password'] = password
-        self.domain_admin_user = (
-            self.identity_api.create_user(self.domain_admin_user))
-        self.domain_admin_user['password'] = password
-        self.project_admin_user = self.new_user_ref(
-            domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.project_admin_user['password'] = password
-        self.project_admin_user = (
-            self.identity_api.create_user(self.project_admin_user))
-        self.project_admin_user['password'] = password
 
         # The admin role and another plain role
         self.admin_role = unit.new_role_ref(name='admin')
@@ -706,7 +679,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.delete(entity_url, auth=self.auth,
                     expected_status=status_no_data)
 
-        user_ref = self.new_user_ref(domain_id=domain_id)
+        user_ref = unit.new_user_ref(domain_id=domain_id)
         self.post('/users', auth=self.auth, body={'user': user_ref},
                   expected_status=status_created)
 
@@ -1079,7 +1052,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
 
     def test_get_and_delete_ec2_credentials(self):
         """Tests getting and deleting ec2 credentials through the ec2 API."""
-        another_user = self.new_user_ref(domain_id=self.domainA['id'])
+        another_user = unit.new_user_ref(domain_id=self.domainA['id'])
         password = another_user['password']
         another_user = self.identity_api.create_user(another_user)
 
