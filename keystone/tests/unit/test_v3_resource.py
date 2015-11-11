@@ -1190,6 +1190,26 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 'project_id': projects[0]['project']['id']},
             expected_status=http_client.FORBIDDEN)
 
+    def test_delete_project_cascade(self):
+        """Call ``DELETE /projects/{project_id}/cascade``."""
+        projects = self._create_projects_hierarchy()
+        project1 = projects[0]['project']
+        project2 = projects[1]['project']
+
+        for project in (project2, project1):
+            project['enabled'] = False
+            self.resource_api.update_project(project['id'], project)
+
+        self.delete(
+            '/projects/%(project_id)s/cascade' % {
+                'project_id': project1['id']})
+
+        for project in (project2, project1):
+            self.get(
+                '/projects/%(project_id)s' % {
+                    'project_id': project['id']},
+                expected_status=http_client.NOT_FOUND)
+
 
 class ResourceV3toV2MethodsTestCase(unit.TestCase):
     """Test domain V3 to V2 conversion methods."""
