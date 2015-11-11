@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_1f29339e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1928,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T22:04:29Z",
+      "side": 1,
+      "message": "What value is this class providing? A namespace? This just looks like two functions to me.\n\nYou could always add a file just for them to keep them separate if really needed.",
+      "revId": "315e92cc876a6b69f7fd4a5482e7ba3066d600b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
