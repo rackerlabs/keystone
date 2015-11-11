@@ -223,13 +223,29 @@ class Manager(manager.Manager):
                                             original_tenant['domain_id'])
         return ret
 
-    def delete_project(self, tenant_id, initiator=None):
-        if not self.driver.is_leaf_project(tenant_id):
+    def delete_project(self, tenant_id, initiator=None, cascade=False):
+        if not self.driver.is_leaf_project(tenant_id) and not cascade:
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
-                         'a leaf in the hierarchy.') % tenant_id)
+                         'a leaf in the hierarchy. Use the cascade option '
+                         'if you want to delete a whole subtree.') % tenant_id)
 
         project = self.driver.get_project(tenant_id)
+
+        def _delete_projects_cascade(child_id, child_subtree):
+            if child_subtree:
+                for project_id in child_subtree:
+                    project_subtree = child_subtree[project_id]
+                    _delete_projects_cascade(project_id, project_subtree)
+            self.delete_project(child_id)
+
+        if cascade:
+            self._assert_whole_subtree_is_disabled(tenant_id)
+            subtree = self.get_projects_in_subtree_as_ids(tenant_id)
+            for child_id in subtree:
+                child_subtree = subtree[child_id]
+                _delete_projects_cascade(child_id, child_subtree)
+
         project_user_ids = (
             self.assignment_api.list_user_ids_for_project(tenant_id))
         for user_id in project_user_ids:
