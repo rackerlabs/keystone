@@ -34,3 +34,6 @@ class SqlIdentityV8(test_backend_sql.SqlIdentity):
 
     def test_delete_projects_from_ids_with_no_existing_project_id(self):
         pass
+
+    def test_delete_project_cascade(self):
+        pass
