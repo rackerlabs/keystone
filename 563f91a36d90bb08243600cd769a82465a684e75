@@ -16,6 +16,24 @@
       "revId": "563f91a36d90bb08243600cd769a82465a684e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2a287c85",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T18:39:09Z",
+      "side": 1,
+      "message": "There are existing tests that depend on just region existing. This patch set is solely about refactoring for consistency. If there are old tests that need to be removed then we can do that and when nothing is using this function it can be removed as well.",
+      "parentUuid": "da85f559_f757c157",
+      "revId": "563f91a36d90bb08243600cd769a82465a684e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
