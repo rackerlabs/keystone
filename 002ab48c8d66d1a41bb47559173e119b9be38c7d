@@ -16,6 +16,24 @@
       "revId": "002ab48c8d66d1a41bb47559173e119b9be38c7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_9af77f58",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 27
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T17:21:58Z",
+      "side": 0,
+      "message": "This was also required to be kept here per the earlier review comments in PS18, and I also think it should be fine to remove them since this has been consolidated into catalog.",
+      "parentUuid": "da85f559_abed5bb8",
+      "revId": "002ab48c8d66d1a41bb47559173e119b9be38c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
