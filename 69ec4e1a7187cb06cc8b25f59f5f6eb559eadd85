@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_3b47944c",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-11T07:28:56Z",
+      "side": 1,
+      "message": "need to change this too....the only reason this worked before is that the router call effectively bypassed this method and went straight to the driver...",
+      "revId": "69ec4e1a7187cb06cc8b25f59f5f6eb559eadd85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
