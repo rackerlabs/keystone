@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_ee3931d8",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:25:32Z",
+      "side": 1,
+      "message": "makes sense. we\u0027d need to change the import",
+      "parentUuid": "da85f559_501581e2",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_90944943",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 31
@@ -30,6 +48,41 @@
       "writtenOn": "2015-11-11T15:45:44Z",
       "side": 1,
       "message": "are we missing a \u0027when\u0027 here? The keystone/contrib/federation/routers.py module says we are removing _OLD in the O release?",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_ae71e945",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:25:32Z",
+      "side": 1,
+      "message": "2 cycles is the default, that\u0027s why we don\u0027t need to pass the remove_in: https://github.com/openstack/oslo.log/blob/master/oslo_log/versionutils.py#L138",
+      "parentUuid": "da85f559_90944943",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_eef7f188",
+        "filename": "keystone/federation/routers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:25:32Z",
+      "side": 1,
+      "message": "Just a doubt, Are the API calls still keeping the \"OS-FEDERATION\" ?",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_6ef54155",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:25:32Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da85f559_abda3c49",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_4becf0f2",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 31
@@ -64,6 +135,23 @@
       "writtenOn": "2015-11-11T15:45:44Z",
       "side": 1,
       "message": "use the constant from the federation extension.",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_4e339d14",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-11T16:25:32Z",
+      "side": 1,
+      "message": "Off-patch question: Is the code ok with this comment? Is it in alphabetic order or is it just a coincidence?",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
