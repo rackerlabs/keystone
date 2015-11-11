@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa80f949_789fab50",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1920,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-11T21:28:26Z",
+      "side": 1,
+      "message": "I think this is okay that this is a class. would you recommend something different?",
+      "parentUuid": "fa80f949_5630799e",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_f6208d9d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-04T22:17:40Z",
       "side": 1,
       "message": "Why the empty line?",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b1e10001",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1934,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-11T21:28:26Z",
+      "side": 1,
+      "message": "oh I thought these were double lines. Done",
+      "parentUuid": "fa80f949_f6208d9d",
       "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_f1d78821",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1942,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-11T21:28:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa80f949_76357dd8",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_56863966",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_d1dcc41a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1960,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-11T21:28:26Z",
+      "side": 1,
+      "message": "good call",
+      "parentUuid": "fa80f949_56863966",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_36bb75e7",
         "filename": "keystone/tests/unit/backend/domain_config/test_config_validation.py",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2015-11-04T22:17:40Z",
       "side": 1,
       "message": "To be proper unit style tests, shouldn\u0027t these test ValidateLdapConfigDN directly?",
+      "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b13fc0d5",
+        "filename": "keystone/tests/unit/backend/domain_config/test_config_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-11T21:28:26Z",
+      "side": 1,
+      "message": "Yes! Done.",
+      "parentUuid": "fa80f949_36bb75e7",
       "revId": "1929466d7e1b3c0e20184b682a66d5ad7a437196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
