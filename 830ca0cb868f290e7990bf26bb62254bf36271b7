@@ -16,6 +16,24 @@
       "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b19aae6c",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T16:33:06Z",
+      "side": 1,
+      "message": "I think henry should hold the answer in the earlier review :),  bypassed and go straightly to the call the method in the driver layer.",
+      "parentUuid": "da85f559_d16ad2b2",
+      "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
