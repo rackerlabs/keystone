@@ -70,6 +70,24 @@
       "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e39cdf0f",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T20:04:10Z",
+      "side": 1,
+      "message": "Can we add the testcase in the following up review? this patch just correct the name of the method name, but we can address the testcase issue if testcase is missed.",
+      "parentUuid": "da85f559_add32603",
+      "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
