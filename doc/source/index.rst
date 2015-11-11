@@ -50,6 +50,7 @@ Getting Started
     devref/development.environment
     installing
     configuration
+    fernet_docs
     policy_mapping
     configure_federation
     mapping_combinations
