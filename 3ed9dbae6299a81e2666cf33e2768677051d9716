@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_55ceee82",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-11T02:55:20Z",
+      "side": 1,
+      "message": "no need for **kwargs. I don\u0027t think groups have the \u0027enabled\u0027 flag in its schema.",
+      "revId": "3ed9dbae6299a81e2666cf33e2768677051d9716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
