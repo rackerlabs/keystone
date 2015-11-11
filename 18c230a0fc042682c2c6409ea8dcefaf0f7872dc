@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_b7fa9973",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T18:31:04Z",
+      "side": 1,
+      "message": "++ thanks!",
+      "revId": "18c230a0fc042682c2c6409ea8dcefaf0f7872dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_570b2d8e",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T18:31:04Z",
+      "side": 1,
+      "message": "++ thanks!",
+      "revId": "18c230a0fc042682c2c6409ea8dcefaf0f7872dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
