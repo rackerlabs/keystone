@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_da84300c",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-11-11T14:56:02Z",
+      "side": 1,
+      "message": "I just don\u0027t know how to expose race conditions in unit tests. Neither I\u0027ve found any example of this.\nThis case illustrates how race condition happens, imitating it on the code similar to that being modified.\nI\u0027d really appreciate any suggestion how to do the test properly.",
+      "parentUuid": "da85f559_d4d01ccc",
+      "revId": "e443f6dca492f80b0537e18fefd9ba30e9372295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_f45e8075",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2015-11-08T17:01:39Z",
       "side": 1,
       "message": "why passing dict in this case?",
+      "revId": "e443f6dca492f80b0537e18fefd9ba30e9372295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_3ac21c35",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-11-11T14:56:02Z",
+      "side": 1,
+      "message": "That\u0027s because I want to pass exact ``backing_store`` parameter and don\u0027t want to rely on parameter order in third-party library.",
+      "parentUuid": "da85f559_b451d864",
       "revId": "e443f6dca492f80b0537e18fefd9ba30e9372295",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
