@@ -312,7 +312,9 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
 
     def test_propagate_remote_id_to_separate_column(self):
         """Make sure empty remote_id is not propagated.
+
         Test scenario:
+
         - Upgrade database to version 6 where identity_provider table has a
           remote_id column
         - Add 3 identity provider objects, where idp1 and idp2 have valid
