@@ -156,3 +156,54 @@ class TestMaterializedPath(unit.SQLDriverOverrides, unit.TestCase):
         leaves = query.filter(self.attached.descendants_filter).all()
         for leaf in leaves:
             self.assertEqual(expected_path, leaf.path)
+
+
+class ExampleMultiMPModel(ModelBase):
+    __tablename__ = 'testmultimpmodel'
+    id = sql.Column(sql.String(64), primary_key=True, unique=True)
+    path1 = sql.Column(sql.MaterializedPathType())
+    path1_parent = sql.MaterializedPathParent('path1')
+    path2 = sql.Column(sql.MaterializedPathType())
+    path2_parent = sql.MaterializedPathParent('path2')
+
+
+class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        super(TestMaterializedPathColumn, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+
+        ExampleMultiMPModel.__table__.create(sql.get_engine())
+
+        self.tree = self._create_branch()
+
+    def config_files(self):
+        config_files = super(TestMaterializedPathColumn, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def _create_node(self):
+        """Test node creation shortcut"""
+        return ExampleMultiMPModel(id=utils.new_uuid())
+
+    def _create_branch(self):
+        session = sql.get_session()
+        with session.begin():
+            a = self._create_node()
+            session.add(a)
+            b = self._create_node()
+            session.add(b)
+            b.path1_parent = a
+        return a
+
+    def test_tree(self):
+        # print self.tree.path1
+        # raise StandardError(str(type(ExampleMultiMPModel.path1)))
+        session = sql.get_session()
+        for instance in session.query(ExampleMultiMPModel).\
+                filter_by(path1_parent=self.tree).all():
+            print instance.id, instance.path1_parent, instance.path1
+        raise StandardError('instances displayed ^^')
+
+

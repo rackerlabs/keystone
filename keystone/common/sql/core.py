@@ -67,6 +67,8 @@ joinedload = sql.orm.joinedload
 # Suppress flake8's unused import warning for flag_modified:
 flag_modified = flag_modified
 
+SQL_WILDCARD = '%'
+
 
 def initialize():
     """Initialize the module."""
@@ -600,3 +602,121 @@ class MaterializedPathMixin(object):
         session.add(self)
         with session.begin():
             self.path = new_path
+
+
+class MaterializedPathType(sql_types.TypeDecorator):
+
+    DELIMITER = '/'
+    impl = sql.Text
+
+    def process_bind_param(self, value, dialect):
+        if value is None:
+            return None
+        elif isinstance(value, (list, tuple)):
+            return self.DELIMITER.join(value)
+        else:
+            raise ValueError("Array field accepts array"
+                             " types (list, tuple) only")
+
+    def process_result_value(self, value, dialect):
+        if value is None:
+            return None
+        return value.rsplit(self.DELIMITER)
+
+
+class MaterializedPathParent(hybrid.hybrid_property):
+
+    fdel = None
+    expr = None
+
+    def __init__(self, path_column, id_column='id'):
+        super(MaterializedPathParent, self).__init__(
+            self.fget, self.fset, self.fdel, self.expr
+        )
+        self.path = path_column
+        self.id_column = id_column
+        self._set_path_comparator()
+
+    def _set_path_comparator(self):
+
+        path_column = self.path
+        id_column = self.id_column
+
+        class _MaterializedPathParentComparator(hybrid.Comparator):
+
+            def __eq__(self, other):
+                path = getattr(other, path_column, None) or []
+                # Assuming 'id' is not null
+                id_ = getattr(other, id_column)
+                path.append(id_)
+                return self.__clause_element__() == path
+
+        self.comparator(
+            lambda cls: _MaterializedPathParentComparator(
+                getattr(cls, self.path))
+        )
+
+    def fget(self, instance):
+        """The node instance referenced by node's path tail"""
+        path = getattr(instance, self.path, [])
+        id_column = getattr(type(instance), self.id_column)
+        if path:
+            query = get_session().query(type(instance))
+            parent_id = path[-1]
+            return query.filter(id_column == parent_id).first()
+        else:
+            return None
+
+    def fset(self, instance, value):
+        if value is None:
+            new_path = []
+        elif isinstance(value, type(instance)):
+            instance_id = getattr(instance, self.id_column)
+            parent_id = getattr(value, self.id_column)
+            value_path = getattr(value, self.path, None) or []
+            new_path = value_path + [parent_id]
+
+            if instance_id in value_path:
+                msg = _("Cyclic parent references are not allowed in a "
+                        "hierarchy")
+                raise exception.ValidationError(msg)
+        else:
+            msg = _("Incompatible parent node model")
+            raise ValueError(msg)
+
+        # Perform subtree operations
+        self._update_path(instance, new_path)
+
+    def _update_path(self, instance, new_path):
+        """Update descendant paths"""
+
+        path_column = getattr(type(instance), self.path)
+        old_path = getattr(instance, self.path, None) or []
+
+        # Instance identifier
+        id_column = getattr(type(instance), self.id_column)
+        id_value = getattr(instance, self.id_column)
+
+        subtree_old_path = old_path + [id_value]
+        subtree_new_path = new_path + [id_value]
+
+        # Replacement function for query
+        delimiter = MaterializedPathType.DELIMITER
+        path_func = func.replace(path_column,
+                                 delimiter.join(subtree_old_path),
+                                 delimiter.join(subtree_new_path))
+
+        # Perform the update
+        pattern = delimiter.join(old_path + [SQL_WILDCARD])
+        statement = sql.update(type(instance).__table__,
+                               id_column.like(pattern),
+                               {path_column: path_func})
+
+        session = get_session()
+        session.execute(statement)
+
+        # Only now we can update own path
+        # as the old one was used to get descendants
+        # with session.begin():
+        #     session.add(instance)
+        setattr(instance, self.path, new_path)
