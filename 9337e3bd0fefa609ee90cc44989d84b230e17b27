@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_4a54e0fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-11T18:44:36Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "9337e3bd0fefa609ee90cc44989d84b230e17b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_ca40d036",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-11T18:44:36Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "9337e3bd0fefa609ee90cc44989d84b230e17b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_6abc4406",
+        "filename": "keystone/middleware/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-11T18:44:36Z",
+      "side": 1,
+      "message": "I don\u0027t think we should do this since it just makes 2 ways to reference the same thing, which makes it more difficult to find where it\u0027s used.",
+      "revId": "9337e3bd0fefa609ee90cc44989d84b230e17b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
