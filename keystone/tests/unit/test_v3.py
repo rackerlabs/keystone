@@ -196,10 +196,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         self.domain_id = self.domain['id']
         self.resource_api.create_domain(self.domain_id, self.domain)
 
-        self.project_id = uuid.uuid4().hex
-        self.project = self.new_project_ref(
-            domain_id=self.domain_id)
-        self.project['id'] = self.project_id
+        self.project = unit.new_project_ref(domain_id=self.domain_id)
+        self.project_id = self.project['id']
         self.resource_api.create_project(self.project_id, self.project)
 
         self.user = self.new_user_ref(domain_id=self.domain_id)
@@ -209,7 +207,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         self.user_id = self.user['id']
 
         self.default_domain_project_id = uuid.uuid4().hex
-        self.default_domain_project = self.new_project_ref(
+        self.default_domain_project = unit.new_project_ref(
             domain_id=DEFAULT_DOMAIN_ID)
         self.default_domain_project['id'] = self.default_domain_project_id
         self.resource_api.create_project(self.default_domain_project_id,
@@ -257,10 +255,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         """Populates a ref with attributes common to some API entities."""
         return unit.new_ref()
 
-    def new_project_ref(self, domain_id=None, parent_id=None, is_domain=False):
-        return unit.new_project_ref(domain_id=domain_id, parent_id=parent_id,
-                                    is_domain=is_domain)
-
     def new_user_ref(self, domain_id, project_id=None):
         return unit.new_user_ref(domain_id, project_id=project_id)
 
@@ -283,8 +277,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
     def create_new_default_project_for_user(self, user_id, domain_id,
                                             enable_project=True):
-        ref = self.new_project_ref(domain_id=domain_id)
-        ref['enabled'] = enable_project
+        ref = unit.new_project_ref(domain_id=domain_id, enabled=enable_project)
         r = self.post('/projects', body={'project': ref})
         project = self.assertValidProjectResponse(r, ref)
         # set the user's preferred project
