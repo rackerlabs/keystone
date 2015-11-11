@@ -68,7 +68,7 @@ class Manager(manager.Manager):
         self.driver.add_endpoint_to_project(endpoint_id, project_id)
         catalog.COMPUTED_CATALOG_REGION.invalidate()
 
-    def remove_endpoint_to_project(self, endpoint_id, project_id):
+    def remove_endpoint_from_project(self, endpoint_id, project_id):
         self.driver.remove_endpoint_to_project(endpoint_id, project_id)
         catalog.COMPUTED_CATALOG_REGION.invalidate()
 
