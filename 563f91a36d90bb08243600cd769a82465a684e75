@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_c8f44f5c",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-11T23:21:47Z",
+      "side": 1,
+      "message": "This function is easy to use. call new_endpoint_ref(service_id\u003dservice_id). If you do this the region_id will be generated. If you pass anything as a region_id it is accepted and applied. The exception is raised just to catch anyone trying to make older style refs with this function. I would still need it with or without the NEEDS_REGION_ID.\n\nNEEDS_REGION_ID exists because I was asked to generated a region_id if none was provided. I need someway to differentiate between a value of None, and ID, and the need to make an ID.",
+      "parentUuid": "da85f559_a8078b80",
+      "revId": "563f91a36d90bb08243600cd769a82465a684e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_f757c157",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 9
