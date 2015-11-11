@@ -178,14 +178,14 @@ class Manager(manager.Manager):
                     action=_('cannot enable project %s since it has '
                              'disabled parents') % project_id)
 
-    def _assert_whole_subtree_is_disabled(self, project_id):
+    def _assert_whole_subtree_is_disabled(self, project_id, action='disable'):
         subtree_list = self.list_projects_in_subtree(project_id)
         for ref in subtree_list:
             if ref.get('enabled', True):
                 raise exception.ForbiddenAction(
-                    action=_('cannot disable project %s since '
-                             'its subtree contains enabled '
-                             'projects') % project_id)
+                    action=_('cannot %(action)s project %(project_id)s since '
+                             'its subtree contains enabled projects') %
+                    {'action': action, 'project_id': project_id})
 
     def update_project(self, tenant_id, tenant, initiator=None):
         original_tenant = self.driver.get_project(tenant_id)
@@ -223,13 +223,29 @@ class Manager(manager.Manager):
                                             original_tenant['domain_id'])
         return ret
 
-    def delete_project(self, tenant_id, initiator=None):
-        if not self.driver.is_leaf_project(tenant_id):
+    def delete_project(self, tenant_id, initiator=None, cascade=False):
+        if not self.driver.is_leaf_project(tenant_id) and not cascade:
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
-                         'a leaf in the hierarchy.') % tenant_id)
+                         'a leaf in the hierarchy. Use the cascade option '
+                         'if you want to delete a whole subtree.') % tenant_id)
 
         project = self.driver.get_project(tenant_id)
+
+        def _delete_projects_cascade(child_id, child_subtree):
+            if child_subtree:
+                for project_id in child_subtree:
+                    project_subtree = child_subtree[project_id]
+                    _delete_projects_cascade(project_id, project_subtree)
+            self.delete_project(child_id)
+
+        if cascade:
+            self._assert_whole_subtree_is_disabled(tenant_id, action='delete')
+            subtree = self.get_projects_in_subtree_as_ids(tenant_id)
+            for child_id in subtree:
+                child_subtree = subtree[child_id]
+                _delete_projects_cascade(child_id, child_subtree)
+
         project_user_ids = (
             self.assignment_api.list_user_ids_for_project(tenant_id))
         for user_id in project_user_ids:
