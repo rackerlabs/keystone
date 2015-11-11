@@ -16,6 +16,24 @@
       "revId": "d627826e418bf8d4bcd16b2b5b1acebcbe2a0794",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_fa324b5d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T17:18:22Z",
+      "side": 1,
+      "message": "I think this was required to be removed per the comments in the earlier review since remove in +2 was the default setting.\n\nBut I am okay to add it back.",
+      "parentUuid": "da85f559_8b18971f",
+      "revId": "d627826e418bf8d4bcd16b2b5b1acebcbe2a0794",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
