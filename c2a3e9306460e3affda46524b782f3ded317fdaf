@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da85f559_6b3e938d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:00:26Z",
+      "side": 1,
+      "message": "I think this might need a different DocImpact tag.\n\nThis says we are leaving the database migrations, we should remove the oauth1 extension from the keystone paste pipeline, right? \n\n    DocImpact: update keystone-paste and remove oauth1 from pipeline",
+      "revId": "c2a3e9306460e3affda46524b782f3ded317fdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_ebc84424",
         "filename": "keystone/contrib/oauth1/backends/sql.py",
         "patchSetId": 15
