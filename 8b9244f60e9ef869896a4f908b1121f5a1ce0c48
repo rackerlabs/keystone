@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da85f559_085d8078",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-11T19:36:58Z",
+      "side": 1,
+      "message": "this isn\u0027t how the library works. It can log or it can raise depending on the setting of a config option.",
+      "revId": "8b9244f60e9ef869896a4f908b1121f5a1ce0c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_480b888e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 24
