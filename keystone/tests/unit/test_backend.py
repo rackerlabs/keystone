@@ -3223,6 +3223,46 @@ class IdentityTests(AssignmentTestHelperMixin):
         # no error.
         self.resource_api.driver.delete_projects_from_ids([uuid.uuid4().hex])
 
+    def test_delete_project_cascade(self):
+        # create a hierarchy with 3 levels
+        projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=3)
+        root_project = projects_hierarchy[0]
+        project1 = projects_hierarchy[1]
+        project2 = projects_hierarchy[2]
+
+        # Disabling all projects before attempting to delete
+        for project in (project2, project1, root_project):
+            project['enabled'] = False
+            self.resource_api.update_project(project['id'], project)
+
+        self.resource_api.delete_project(root_project['id'], cascade=True)
+
+        for project in projects_hierarchy:
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.get_project,
+                              project['id'])
+
+    def test_cannot_delete_project_cascade_with_enabled_child(self):
+        # create a hierarchy with 3 levels
+        projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=3)
+        root_project = projects_hierarchy[0]
+        project1 = projects_hierarchy[1]
+        project2 = projects_hierarchy[2]
+
+        project2['enabled'] = False
+        self.resource_api.update_project(project2['id'], project2)
+
+        # Cannot cascade delete root_project, since project1 is enabled
+        self.assertRaises(exception.ForbiddenAction,
+                          self.resource_api.delete_project,
+                          root_project['id'],
+                          cascade=True)
+
+        # Ensuring no project was deleted, not even project2
+        self.resource_api.get_project(root_project['id'])
+        self.resource_api.get_project(project1['id'])
+        self.resource_api.get_project(project2['id'])
+
     def test_hierarchical_projects_crud(self):
         # create a hierarchy with just a root project (which is a leaf as well)
         projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=1)

@@ -274,14 +274,16 @@ class Manager(manager.Manager):
                     action=_('cannot enable project %s since it has '
                              'disabled parents') % project_id)
 
-    def _assert_whole_subtree_is_disabled(self, project_id):
-        subtree_list = self.list_projects_in_subtree(project_id)
+    def _assert_whole_subtree_is_disabled(self, project_id, action='disable',
+                                          subtree_list=None):
+        if not subtree_list:
+            subtree_list = self.list_projects_in_subtree(project_id)
         for ref in subtree_list:
             if ref.get('enabled', True):
                 raise exception.ForbiddenAction(
-                    action=_('cannot disable project %s since '
-                             'its subtree contains enabled '
-                             'projects') % project_id)
+                    action=_('cannot %(action)s project %(project_id)s since '
+                             'its subtree contains enabled projects') %
+                    {'action': action, 'project_id': project_id})
 
     def update_project(self, tenant_id, tenant, initiator=None):
         original_tenant = self.driver.get_project(tenant_id)
@@ -332,7 +334,20 @@ class Manager(manager.Manager):
                                             original_tenant['domain_id'])
         return ret
 
-    def delete_project(self, tenant_id, initiator=None):
+    def _cleanup_project(self, project_id, project, initiator=None):
+        project_user_ids = (
+            self.assignment_api.list_user_ids_for_project(project_id))
+        for user_id in project_user_ids:
+            payload = {'user_id': user_id, 'project_id': project_id}
+            self._emit_invalidate_user_project_tokens_notification(payload)
+        self.assignment_api.delete_project_assignments(project_id)
+        self.get_project.invalidate(self, project_id)
+        self.get_project_by_name.invalidate(self, project['name'],
+                                            project['domain_id'])
+        self.credential_api.delete_credentials_for_project(project_id)
+        notifications.Audit.deleted(self._PROJECT, project_id, initiator)
+
+    def delete_project(self, tenant_id, initiator=None, cascade=False):
         project = self.driver.get_project(tenant_id)
         if project['is_domain'] and project['enabled']:
             raise exception.ValidationError(
@@ -340,23 +355,56 @@ class Manager(manager.Manager):
                           'domain. Please disable the project %s first.')
                 % project.get('id'))
 
-        if not self.driver.is_leaf_project(tenant_id):
+        if not self.driver.is_leaf_project(tenant_id) and not cascade:
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
-                         'a leaf in the hierarchy.') % tenant_id)
+                         'a leaf in the hierarchy. Use the cascade option '
+                         'if you want to delete a whole subtree.') % tenant_id)
 
-        project_user_ids = (
-            self.assignment_api.list_user_ids_for_project(tenant_id))
-        for user_id in project_user_ids:
-            payload = {'user_id': user_id, 'project_id': tenant_id}
-            self._emit_invalidate_user_project_tokens_notification(payload)
-        ret = self.driver.delete_project(tenant_id)
-        self.assignment_api.delete_project_assignments(tenant_id)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
-        self.credential_api.delete_credentials_for_project(tenant_id)
-        notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
+        project = self.driver.get_project(tenant_id)
+
+        def _get_subtree_ids_ordered(child_id, child_subtree, subtree_dict):
+            projects_id_list = []
+            if child_subtree:
+                for project_id in child_subtree:
+                    project_subtree = child_subtree[project_id]
+                    projects_id_list += _get_subtree_ids_ordered(
+                        project_id, project_subtree, subtree_dict)
+            self._cleanup_project(child_id, subtree_dict[child_id])
+            projects_id_list.append(child_id)
+            return projects_id_list
+
+        if cascade:
+            subtree_list = self.list_projects_in_subtree(tenant_id)
+            self._assert_whole_subtree_is_disabled(tenant_id, action='delete',
+                                                   subtree_list=subtree_list)
+
+            # From now on, we'll use the subtree in two different structure
+            # forms: first, the subtree_ids dict, that hierarchically
+            # stores the children's id of each project, and the second is
+            # the unstructured dict of the subtree, which we'll use to get a
+            # project ref from its id without needing to access the backend or
+            # to iterate in the subtree_list. This project ref will be used in
+            # the cleanup method.
+            subtree_ids = self.get_projects_in_subtree_as_ids(tenant_id)
+            subtree_dict = {p['id']: p for p in subtree_list}
+
+            # Recursively traverse the subtree, and create a list that starts
+            # on the leaf nodes and ends with the subtree root (the target
+            # project), not breaking the parent_id FK.
+            projects_id_list = []
+            for child_id in subtree_ids:
+                child_subtree = subtree_ids[child_id]
+                projects_id_list += _get_subtree_ids_ordered(
+                    child_id, child_subtree, subtree_dict)
+
+            self._cleanup_project(tenant_id, project, initiator)
+            projects_id_list.append(tenant_id)
+            ret = self.driver.delete_projects_from_ids(projects_id_list)
+
+        else:
+            self._cleanup_project(tenant_id, project, initiator)
+            ret = self.driver.delete_project(tenant_id)
         return ret
 
     def _filter_projects_list(self, projects_list, user_id):
