@@ -479,43 +479,59 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 class IdentityV3toV2MethodsTestCase(unit.TestCase):
     """Test users V3 to V2 conversion methods."""
 
+    def new_user_ref(self, **kwargs):
+        """Construct a bare bones user ref.
+
+        Omits all optional components.
+        """
+        ref = unit.new_user_ref(**kwargs)
+        del ref['description']
+        del ref['email']
+        del ref['enabled']
+        del ref['password']
+        return ref
+
     def setUp(self):
         super(IdentityV3toV2MethodsTestCase, self).setUp()
         self.load_backends()
-        self.user_id = uuid.uuid4().hex
-        self.default_project_id = uuid.uuid4().hex
-        self.tenant_id = uuid.uuid4().hex
+        user_id = uuid.uuid4().hex
+        project_id = uuid.uuid4().hex
+
         # User with only default_project_id in ref
-        self.user1 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'default_project_id': self.default_project_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user1 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            project_id=project_id,
+            domain_id=CONF.identity.default_domain_id)
         # User without default_project_id or tenantId in ref
-        self.user2 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user2 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            domain_id=CONF.identity.default_domain_id)
         # User with both tenantId and default_project_id in ref
-        self.user3 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'default_project_id': self.default_project_id,
-                      'tenantId': self.tenant_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user3 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            project_id=project_id,
+            tenantId=project_id,
+            domain_id=CONF.identity.default_domain_id)
         # User with only tenantId in ref
-        self.user4 = {'id': self.user_id,
-                      'name': self.user_id,
-                      'tenantId': self.tenant_id,
-                      'domain_id': CONF.identity.default_domain_id}
+        self.user4 = self.new_user_ref(
+            id=user_id,
+            name=user_id,
+            tenantId=project_id,
+            domain_id=CONF.identity.default_domain_id)
 
         # Expected result if the user is meant to have a tenantId element
-        self.expected_user = {'id': self.user_id,
-                              'name': self.user_id,
-                              'username': self.user_id,
-                              'tenantId': self.default_project_id}
+        self.expected_user = {'id': user_id,
+                              'name': user_id,
+                              'username': user_id,
+                              'tenantId': project_id}
 
         # Expected result if the user is not meant to have a tenantId element
-        self.expected_user_no_tenant_id = {'id': self.user_id,
-                                           'name': self.user_id,
-                                           'username': self.user_id}
+        self.expected_user_no_tenant_id = {'id': user_id,
+                                           'name': user_id,
+                                           'username': user_id}
 
     def test_v3_to_v2_user_method(self):
 

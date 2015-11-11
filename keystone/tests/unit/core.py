@@ -312,13 +312,14 @@ def new_project_ref(domain_id=None, parent_id=None, is_domain=False):
     return ref
 
 
-def new_user_ref(domain_id, project_id=None):
+def new_user_ref(domain_id, project_id=None, **kwargs):
     ref = new_ref()
     ref['domain_id'] = domain_id
     ref['email'] = uuid.uuid4().hex
     ref['password'] = uuid.uuid4().hex
     if project_id:
         ref['default_project_id'] = project_id
+    ref.update(**kwargs)
     return ref
 
 
