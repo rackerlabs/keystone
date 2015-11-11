@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_3c50dcd3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T14:22:29Z",
+      "side": 1,
+      "message": "No need to specify explicit name and password here.",
+      "revId": "8519846ced5fc1a9cedf888bb37fdf9b3d4ffd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_5cdfe068",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T14:22:29Z",
+      "side": 1,
+      "message": "This is making pep8 to fail :)",
+      "revId": "8519846ced5fc1a9cedf888bb37fdf9b3d4ffd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
