@@ -69,6 +69,9 @@ class AdminTokenAuthMiddleware(wsgi.Middleware):
     """
 
     def process_request(self, request):
+        if not CONF.admin_token:
+            return
+
         token = request.headers.get(AUTH_TOKEN_HEADER)
         context = request.environ.get(CONTEXT_ENV, {})
         context['is_admin'] = (token == CONF.admin_token)
@@ -175,7 +178,7 @@ class AuthContextMiddleware(wsgi.Middleware):
     """Build the authentication context from the request auth token."""
 
     def _build_auth_context(self, request, token_id):
-        if token_id == CONF.admin_token:
+        if (CONF.admin_token is not None and token_id == CONF.admin_token):
             # NOTE(gyee): no need to proceed any further as the special admin
             # token is being handled by AdminTokenAuthMiddleware. This code
             # will not be impacted even if AdminTokenAuthMiddleware is removed

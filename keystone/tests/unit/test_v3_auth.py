@@ -180,7 +180,7 @@ class TokenAPITests(object):
         # 5) Validate token using v2 API.
         self.admin_request(
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             method='GET')
 
     def test_v3_v2_intermix_domain_scoped_token_failed(self):
@@ -264,7 +264,7 @@ class TokenAPITests(object):
         # now validate the v3 token with v2 API
         r = self.admin_request(
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
+            token='ADMIN',
             method='GET')
         v2_token_data = r.result
 
@@ -290,7 +290,7 @@ class TokenAPITests(object):
         r = self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token)
+            token='ADMIN')
         v2_token_data = r.result
 
         self.assertEqual(v2_token_data['access']['user']['id'],
@@ -506,6 +506,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestPKITokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='pki')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestPKITokenAPIs, self).setUp()
@@ -567,6 +568,7 @@ class TestPKIZTokenAPIs(TestPKITokenAPIs):
     def config_overrides(self):
         super(TestPKIZTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='pkiz')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def verify_token(self, *args, **kwargs):
         return cms.pkiz_verify(*args, **kwargs)
@@ -576,6 +578,7 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestUUIDTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='uuid')
+        self.config_fixture.config(admin_token='ADMIN')
 
     def setUp(self):
         super(TestUUIDTokenAPIs, self).setUp()
@@ -596,6 +599,7 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestFernetTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+        self.config_fixture.config(admin_token='ADMIN')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
     def setUp(self):
@@ -3168,6 +3172,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             provider='pki',
             revoke_by_id=False)
         self.config_fixture.config(group='trust', enabled=True)
+        self.config_fixture.config(admin_token="ADMIN")
 
     def setUp(self):
         super(TestTrustAuth, self).setUp()
