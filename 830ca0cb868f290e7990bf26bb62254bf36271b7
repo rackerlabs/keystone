@@ -34,6 +34,24 @@
       "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_944433b7",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-11T18:13:16Z",
+      "side": 1,
+      "message": "yep, i had to scratch my head to work out why as well!",
+      "parentUuid": "da85f559_b19aae6c",
+      "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
