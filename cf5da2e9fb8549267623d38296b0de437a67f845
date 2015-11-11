@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_f55362e0",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-11T02:47:19Z",
+      "side": 1,
+      "message": "I thought we don\u0027t want to advertise the fact that region is hierarchical. :-)",
+      "revId": "cf5da2e9fb8549267623d38296b0de437a67f845",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
