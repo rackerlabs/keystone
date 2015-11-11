@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_10c13954",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:45:44Z",
+      "side": 0,
+      "message": "shouldn\u0027t this be replaced with:\n\n    from keystone.federation import constants as federation_constants",
+      "revId": "9ee582a48c15835bfa7de8e2b543ce58a37fbe6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_4b15d0e2",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:45:44Z",
+      "side": 0,
+      "message": "can\u0027t we still use these: \n\n    from keystone.federation import constants as federation_constants",
+      "revId": "9ee582a48c15835bfa7de8e2b543ce58a37fbe6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

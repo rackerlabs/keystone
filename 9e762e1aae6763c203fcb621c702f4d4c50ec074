@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_501581e2",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:45:44Z",
+      "side": 1,
+      "message": "should we still have a constant for this?",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_90944943",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:45:44Z",
+      "side": 1,
+      "message": "are we missing a \u0027when\u0027 here? The keystone/contrib/federation/routers.py module says we are removing _OLD in the O release?",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_abda3c49",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:45:44Z",
+      "side": 1,
+      "message": "this is already a constant somewhere else: \n\nhttps://github.com/openstack/keystone/blob/6500f81de25decce76413425371685cb3ef15a6a/keystone/contrib/federation/constants.py#L13",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_4becf0f2",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:45:44Z",
+      "side": 1,
+      "message": "use the constant from the federation extension.",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
