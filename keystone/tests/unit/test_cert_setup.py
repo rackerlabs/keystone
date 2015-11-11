@@ -76,11 +76,9 @@ class CertSetupTestCase(rest.RestfulTestCase):
 
         self.config_fixture.config(group='signing', certfile='invalid')
         password = 'fake1'
-        user = {
-            'name': 'fake1',
-            'password': password,
-            'domain_id': DEFAULT_DOMAIN_ID
-        }
+        user = unit.new_user_ref(name='fake1',
+                                 password=password,
+                                 domain_id=DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
         body_dict = {
             'passwordCredentials': {
