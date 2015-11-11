@@ -231,19 +231,18 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.resource_api.create_project(ref['id'], ref)
 
     def test_create_null_project_name(self):
-        tenant = {'id': uuid.uuid4().hex,
-                  'name': None,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+        project = unit.new_project_ref(name=None,
+                                       domain_id=DEFAULT_DOMAIN_ID)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
-                          tenant['id'],
-                          tenant)
+                          project['id'],
+                          project)
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project,
-                          tenant['id'])
+                          project['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
-                          tenant['name'],
+                          project['name'],
                           DEFAULT_DOMAIN_ID)
 
     def test_delete_project_with_user_association(self):
@@ -267,20 +266,16 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         This behavior is specific to the SQL driver.
 
         """
-        tenant_id = uuid.uuid4().hex
         arbitrary_key = uuid.uuid4().hex
         arbitrary_value = uuid.uuid4().hex
-        tenant = {
-            'id': tenant_id,
-            'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
-            arbitrary_key: arbitrary_value}
-        ref = self.resource_api.create_project(tenant_id, tenant)
+        project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        project[arbitrary_key] = arbitrary_value
+        ref = self.resource_api.create_project(project['id'], project)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
-        tenant['name'] = uuid.uuid4().hex
-        ref = self.resource_api.update_project(tenant_id, tenant)
+        project['name'] = uuid.uuid4().hex
+        ref = self.resource_api.update_project(project['id'], project)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
