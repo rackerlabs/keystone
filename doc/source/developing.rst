@@ -820,3 +820,30 @@ The documentation is generated with Sphinx using the tox command.  To create HTM
     $ tox -e docs
 
 The results are in the doc/build/html and doc/build/man directories respectively.
+
+
+Release Notes
+-------------
+
+The release notes for a patch should be included in the patch. If not, the
+release notes should be in a follow-on review.
+
+Keystone uses `reno <http://docs.openstack.org/developer/reno/usage.html>`_ to
+generate release notes. Please read the docs for details. In summary, use
+
+.. code-block:: bash
+
+  $ tox -e venv -- reno new <bug-,bp-,whatever>
+
+Then edit the sample file that was created and push it with your change.
+
+To see the results:
+
+.. code-block:: bash
+
+  $ git commit  # Commit the change because reno scans git log.
+
+  $ tox -e releasenotes
+
+Then look at the generated release notes files in releasenotes/build/html in
+your favorite browser.
