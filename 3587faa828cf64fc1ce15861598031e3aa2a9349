@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_b4f7fc57",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:54:08Z",
+      "side": 1,
+      "message": "This is kinda reads confusing, just because we say we\u0027re creating a service with \u0027name\u0027, but we don\u0027t pass anything to new_service_ref(). It would be helpful to update the comment here just saying that it is the default behavior of new_service_ref (and ultimately new_ref()) to populate \u0027name\u0027.",
+      "revId": "3587faa828cf64fc1ce15861598031e3aa2a9349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_74519435",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T16:54:08Z",
+      "side": 1,
+      "message": "We shouldn\u0027t have to pass None here for the name, since it will still exist in the unnamed_svc reference. Instead we could just update the comment saying: \n\n    # Service references returned from self.new_service_ref() have `name`\n    # attributes by default. We must manually delete the attribute from the\n    # dictionary before using it.\n\nand keep the delete statement.",
+      "revId": "3587faa828cf64fc1ce15861598031e3aa2a9349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
