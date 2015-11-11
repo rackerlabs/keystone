@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_485dbf45",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3069,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T23:33:01Z",
+      "side": 1,
+      "message": "(nit) unnecessary leading comma",
+      "revId": "860baf66c1146e050760108ed0da708ed01929e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0853373a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3197,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T23:33:01Z",
+      "side": 1,
+      "message": "(nit) unnecessary leading comma",
+      "revId": "860baf66c1146e050760108ed0da708ed01929e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_28107b56",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3253,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T23:33:01Z",
+      "side": 1,
+      "message": "We could also have kept group_name, like:\n\n    group \u003d unit.new_group_ref(domain_id\u003dDEFAULT_DOMAIN_ID)\n    group_name \u003d group[\u0027name\u0027]\n    group \u003d self.identity_api.create_group(group)",
+      "revId": "860baf66c1146e050760108ed0da708ed01929e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_d353a415",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T23:33:01Z",
+      "side": 1,
+      "message": "Need to remove this enable attribute, as groups don\u0027t contain it.",
+      "revId": "860baf66c1146e050760108ed0da708ed01929e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b377009f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T23:33:01Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "860baf66c1146e050760108ed0da708ed01929e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_9370bca5",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-11T23:33:01Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "860baf66c1146e050760108ed0da708ed01929e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
