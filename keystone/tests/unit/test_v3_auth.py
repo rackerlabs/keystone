@@ -153,13 +153,8 @@ class TokenAPITests(object):
         self.resource_api.create_domain(new_domain['id'], new_domain)
 
         # 2) Create user in new domain.
-        new_user_password = uuid.uuid4().hex
-        new_user = {
-            'name': uuid.uuid4().hex,
-            'domain_id': new_domain['id'],
-            'password': new_user_password,
-            'email': uuid.uuid4().hex,
-        }
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
+        new_user_password = new_user['password']
         new_user = self.identity_api.create_user(new_user)
 
         # 3) Update the default_domain_id config option to the new domain

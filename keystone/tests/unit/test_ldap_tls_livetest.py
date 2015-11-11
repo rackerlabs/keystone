@@ -50,9 +50,9 @@ class LiveTLSLDAPIdentity(test_ldap_livetest.LiveLDAPIdentity):
                                    tls_req_cert='demand')
         self.identity_api = identity.backends.ldap.Identity()
 
-        user = {'name': 'fake1',
-                'password': 'fakepass1',
-                'tenants': ['bar']}
+        user = self.new_user_ref(name='fake1',
+                                 password='fakepass1',
+                                 tenants=['bar'])
         user = self.identity_api.create_user('user')
         user_ref = self.identity_api.get_user(user['id'])
         self.assertEqual(user['id'], user_ref['id'])
@@ -71,10 +71,10 @@ class LiveTLSLDAPIdentity(test_ldap_livetest.LiveLDAPIdentity):
                                    tls_req_cert='demand')
         self.identity_api = identity.backends.ldap.Identity()
 
-        user = {'id': 'fake1',
-                'name': 'fake1',
-                'password': 'fakepass1',
-                'tenants': ['bar']}
+        user = unit.new_user_ref(id='fake1',
+                                 name='fake1',
+                                 password='fakepass1',
+                                 tenants=['bar'])
         self.identity_api.create_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual('fake1', user_ref['id'])
@@ -95,9 +95,9 @@ class LiveTLSLDAPIdentity(test_ldap_livetest.LiveLDAPIdentity):
             tls_cacertdir=None)
         self.identity_api = identity.backends.ldap.Identity()
 
-        user = {'name': 'fake1',
-                'password': 'fakepass1',
-                'tenants': ['bar']}
+        user = self.new_user_ref(name='fake1',
+                                 password='fakepass1',
+                                 tenants=['bar'])
         self.assertRaises(IOError, self.identity_api.create_user, user)
 
     def test_tls_bad_certdir(self):
@@ -109,7 +109,8 @@ class LiveTLSLDAPIdentity(test_ldap_livetest.LiveLDAPIdentity):
             tls_cacertdir='/etc/keystone/ssl/mythicalcertdir')
         self.identity_api = identity.backends.ldap.Identity()
 
-        user = {'name': 'fake1',
-                'password': 'fakepass1',
-                'tenants': ['bar']}
+        self.assertIs(True, False)
+        user = self.new_user_ref(name='fake1',
+                                 password='fakepass1',
+                                 tenants=['bar'])
         self.assertRaises(IOError, self.identity_api.create_user, user)
