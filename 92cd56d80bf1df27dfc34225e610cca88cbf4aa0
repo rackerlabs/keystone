@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_4b1b90ca",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-11T15:50:21Z",
+      "side": 1,
+      "message": "Add an assertion here for the \u0027idp_remote_ids\u0027 table. \n\n    self.assertTableColumns(self.remote_ids, columns)",
+      "revId": "92cd56d80bf1df27dfc34225e610cca88cbf4aa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
