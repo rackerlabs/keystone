@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_536c9434",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T23:55:27Z",
+      "side": 1,
+      "message": "++\n\ndefault value \"True\" will also return name of the module which should be the reason of python27/34 failure.",
+      "parentUuid": "da85f559_e5886cc7",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_e0713a77",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 4
@@ -47,6 +65,23 @@
       "writtenOn": "2015-11-11T17:54:02Z",
       "side": 1,
       "message": "reflection.get_class_name(proxy_cls, fully_qualified\u003dFalse)",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_93d3dcd4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-11T23:55:27Z",
+      "side": 1,
+      "message": "Nice! this change make the code looks more clear.",
       "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
