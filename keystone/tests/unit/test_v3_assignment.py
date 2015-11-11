@@ -3098,19 +3098,19 @@ class AssignmentV3toV2MethodsTestCase(unit.TestCase):
         self.domain_id = CONF.identity.default_domain_id
         self.parent_id = uuid.uuid4().hex
         # Project with only domain_id in ref
-        self.project1 = {'id': self.project_id,
-                         'name': self.project_id,
-                         'domain_id': self.domain_id}
+        self.project1 = unit.new_project_ref(id=self.project_id,
+                                             name=self.project_id,
+                                             domain_id=self.domain_id)
         # Project with both domain_id and parent_id in ref
-        self.project2 = {'id': self.project_id,
-                         'name': self.project_id,
-                         'domain_id': self.domain_id,
-                         'parent_id': self.parent_id}
+        self.project2 = unit.new_project_ref(id=self.project_id,
+                                             name=self.project_id,
+                                             domain_id=self.domain_id,
+                                             parent_id=self.parent_id)
         # Project with no domain_id and parent_id in ref
-        self.project3 = {'id': self.project_id,
-                         'name': self.project_id,
-                         'domain_id': self.domain_id,
-                         'parent_id': self.parent_id}
+        self.project3 = unit.new_project_ref(id=self.project_id,
+                                             name=self.project_id,
+                                             domain_id=self.domain_id,
+                                             parent_id=self.parent_id)
         # Expected result with no domain_id and parent_id
         self.expected_project = {'id': self.project_id,
                                  'name': self.project_id}
@@ -3179,6 +3179,13 @@ class AssignmentV3toV2MethodsTestCase(unit.TestCase):
 
     def test_v3_to_v2_project_method(self):
         self._setup_initial_projects()
+        del self.project1['enabled']
+        del self.project1['description']
+        del self.project2['enabled']
+        del self.project2['description']
+        del self.project3['enabled']
+        del self.project3['description']
+
         updated_project1 = controller.V2Controller.v3_to_v2_project(
             self.project1)
         self.assertIs(self.project1, updated_project1)
@@ -3195,6 +3202,9 @@ class AssignmentV3toV2MethodsTestCase(unit.TestCase):
     def test_v3_to_v2_project_method_list(self):
         self._setup_initial_projects()
         project_list = [self.project1, self.project2, self.project3]
+        for p in project_list:
+            del p['enabled']
+            del p['description']
         updated_list = controller.V2Controller.v3_to_v2_project(project_list)
 
         self.assertEqual(len(updated_list), len(project_list))
