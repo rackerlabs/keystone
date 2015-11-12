@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_736c3808",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-12T00:10:00Z",
+      "side": 1,
+      "message": "++ Nice catch",
+      "parentUuid": "da85f559_536c9434",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_e0713a77",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 4
@@ -65,6 +83,23 @@
       "writtenOn": "2015-11-11T17:54:02Z",
       "side": 1,
       "message": "reflection.get_class_name(proxy_cls, fully_qualified\u003dFalse)",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2e6c03cd",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-12T00:10:00Z",
+      "side": 1,
+      "message": "Is this going to be right ? From the docs: \"Returns if the given method is bound to an object.\"; which is different than just checking it is a method.\n\n\n[1] https://github.com/openstack/oslo.utils/blob/master/oslo_utils/reflection.py#L166-L168",
       "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
