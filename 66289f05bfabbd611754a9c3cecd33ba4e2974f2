@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_cc50da0d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "yes, this should use  fully_qualified\u003dFalse",
+      "parentUuid": "da85f559_736c3808",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_e0713a77",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 4
@@ -66,6 +84,24 @@
       "writtenOn": "2015-11-11T17:54:02Z",
       "side": 1,
       "message": "reflection.get_class_name(pxy, fully_qualified\u003dFalse)",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_4cc86aa6",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "Is fully_qualified class name better here for LOG?",
+      "parentUuid": "da85f559_e0713a77",
       "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,41 @@
     },
     {
       "key": {
+        "uuid": "da85f559_accc76bb",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "Is fully_qualified class name better here for LOG?",
+      "parentUuid": "da85f559_60330aac",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_ec64beb9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "use fully_qualified class name here ?",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_2e6c03cd",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -106,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_cc921a4c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "only bound_method has  \u0027__self__\u0027  which points to class, I think the check here is right,   before this change, an unbound method  will raise Attribute ERROR here.",
+      "parentUuid": "da85f559_2e6c03cd",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_93d3dcd4",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -117,6 +206,41 @@
       "writtenOn": "2015-11-11T23:55:27Z",
       "side": 1,
       "message": "Nice! this change make the code looks more clear.",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_4cd5cae5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "Actually , I\u0027m adding method get_class_name_by_method in https://review.openstack.org/#/c/241493/. \n\nIf that is merged , we just use\nreflection.get_class_name_by_method(callback, fully_qualified\u003dFalse).",
+      "parentUuid": "da85f559_93d3dcd4",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_8c82d2c6",
+        "filename": "keystone/tests/unit/test_v3_controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-12T03:26:09Z",
+      "side": 1,
+      "message": "this change doesn\u0027t work  on Python 3 before,  A fix just was merged in  https://review.openstack.org/#/c/241591/, \n\nwe need wait new release of oslo.utils to pick up the fix.",
       "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
