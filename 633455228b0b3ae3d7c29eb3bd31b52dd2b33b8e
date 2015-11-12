@@ -16,6 +16,24 @@
       "revId": "633455228b0b3ae3d7c29eb3bd31b52dd2b33b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_5412025a",
+        "filename": "keystone/tests/unit/test_entry_points.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 9717
+      },
+      "writtenOn": "2015-11-12T19:40:30Z",
+      "side": 1,
+      "message": "I don\u0027t think I quite understand how patch 10 is different from mine - it removes the actual loading test, but nothing else. The only difference I notice is that I\u0027m testing exclusive membership - making sure that all expected extensions are being loaded, and all loaded extensions are being tested. This will cause the test to fail if someone comes along and adds another extension, or if they remove that extension.",
+      "parentUuid": "da85f559_b13ca1e1",
+      "revId": "633455228b0b3ae3d7c29eb3bd31b52dd2b33b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
