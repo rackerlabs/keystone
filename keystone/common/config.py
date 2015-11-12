@@ -308,9 +308,6 @@ FILE_OPTIONS = {
                        'revocation_cache_time', group='token')]),
     ],
     'ssl': [
-        cfg.StrOpt('ca_key',
-                   default='/etc/keystone/ssl/private/cakey.pem',
-                   help='Path of the CA key file for SSL.'),
         cfg.IntOpt('key_size', default=1024, min=1024,
                    help='SSL key length (in bits) (auto generated '
                         'certificate).'),
@@ -335,9 +332,6 @@ FILE_OPTIONS = {
         cfg.StrOpt('ca_certs',
                    default='/etc/keystone/ssl/certs/ca.pem',
                    help='Path of the CA for token signing.'),
-        cfg.StrOpt('ca_key',
-                   default='/etc/keystone/ssl/private/cakey.pem',
-                   help='Path of the CA key for token signing.'),
         cfg.IntOpt('key_size', default=2048, min=1024,
                    help='Key size (in bits) for token signing cert '
                         '(auto generated certificate).'),
