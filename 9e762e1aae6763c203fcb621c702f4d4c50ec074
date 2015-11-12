@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_eb80ed4b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-12T21:41:08Z",
+      "side": 1,
+      "message": "Then I would add a note saying that this should be a constant again at some point. Or open a bug so that we don\u0027t lose track of it.",
+      "parentUuid": "da85f559_9977839f",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_90944943",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 31
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "this was removed per the early review comments.",
       "parentUuid": "da85f559_ae71e945",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0bed3125",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-12T21:41:08Z",
+      "side": 1,
+      "message": "Makes sense, thanks!",
+      "parentUuid": "da85f559_196cf3cc",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -178,6 +214,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_8bc0417e",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-12T21:41:08Z",
+      "side": 1,
+      "message": "Same comment as previous.",
+      "parentUuid": "da85f559_abda3c49",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_4becf0f2",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 31
@@ -224,6 +278,24 @@
       "side": 1,
       "message": "most requently used routers should appear first?",
       "parentUuid": "da85f559_4e339d14",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_8b47e11c",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-12T21:41:08Z",
+      "side": 1,
+      "message": "Yes, we don\u0027t order them alphabetically for that reason.",
+      "parentUuid": "da85f559_d96bcb83",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
