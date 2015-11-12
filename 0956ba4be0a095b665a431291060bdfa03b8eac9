@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_750885da",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 18835
+      },
+      "writtenOn": "2015-11-12T11:02:25Z",
+      "side": 1,
+      "message": "remove this blank line to keep the format.",
+      "revId": "0956ba4be0a095b665a431291060bdfa03b8eac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_75d64529",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 18835
+      },
+      "writtenOn": "2015-11-12T11:02:25Z",
+      "side": 1,
+      "message": "remove this blank line.",
+      "revId": "0956ba4be0a095b665a431291060bdfa03b8eac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
