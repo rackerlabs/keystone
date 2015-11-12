@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_d81e5c6f",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-12T01:57:04Z",
+      "side": 1,
+      "message": "I think internal renaming (inside a method) wouldn\u0027t break compatibility or be a problem when this commit needs to be reverted. It\u0027s kind of like fixing typos.\nThat being said, if more reviewers think this need to be in a separate commit, I\u0027ll do that.",
+      "parentUuid": "da85f559_517b42f5",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_d8380c40",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 5
@@ -134,6 +152,24 @@
       "writtenOn": "2015-11-11T16:40:03Z",
       "side": 1,
       "message": "maybe this could be made in another patch, to make the patches as granular as possible.",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_fbf0faca",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-12T01:57:04Z",
+      "side": 1,
+      "message": "Sorry, I don\u0027t quite understand.\nAs `Credential\u0027 class in sql.py is a subclass of this class, I think the function signatures should be consistent, if I understand correctly.",
+      "parentUuid": "da85f559_91568a28",
       "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
