@@ -16,6 +16,24 @@
       "revId": "0ce4dcabc5234874680dff9a847fb9d4de928771",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0c3798ff",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3642,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-12T17:06:08Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/242615/7/keystone/tests/unit/test_backend.py\n\nLine 3642,  it looks like it was covered in the previous patch",
+      "parentUuid": "da85f559_f833f311",
+      "revId": "0ce4dcabc5234874680dff9a847fb9d4de928771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
