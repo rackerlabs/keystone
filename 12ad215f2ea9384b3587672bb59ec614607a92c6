@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_9716434a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-12T13:49:06Z",
+      "side": 1,
+      "message": "It\u0027s not clear why this is no conditional - maybe this is meant to be in the follow on patch?",
+      "revId": "12ad215f2ea9384b3587672bb59ec614607a92c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_979963c6",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-12T13:49:06Z",
+      "side": 1,
+      "message": "...similar to my other comment...unclear why this is part of this patch?",
+      "revId": "12ad215f2ea9384b3587672bb59ec614607a92c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
