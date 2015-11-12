@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_6d08c7da",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-11-12T05:50:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_6360efcf",
+      "revId": "19f8ffcac41eebce12bb8f224f8eb170d6698488",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_a8b23492",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-11T19:51:04Z",
       "side": 1,
       "message": "new_user_ref is meant to be used in places where the test needs to create a user in a normal manner. Since this test is not creating a user in the normal manner it shouldn\u0027t be using new_user_ref.",
+      "revId": "19f8ffcac41eebce12bb8f224f8eb170d6698488",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_edfcb7b9",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-11-12T05:50:41Z",
+      "side": 1,
+      "message": "We want to pass a normal user (except for the absent domain id) so that the system-under-test does not fail for a different reason (e.g. invalid user) than what we are testing for.",
+      "parentUuid": "da85f559_a8b23492",
       "revId": "19f8ffcac41eebce12bb8f224f8eb170d6698488",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
