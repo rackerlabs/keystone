@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_c9e507dc",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-12T15:31:01Z",
+      "side": 1,
+      "message": "I am not sure what is better for the logs but if you think this is more beneficial i would do this in a follow up patch.",
+      "parentUuid": "da85f559_4cc86aa6",
+      "revId": "66289f05bfabbd611754a9c3cecd33ba4e2974f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_60330aac",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 4
