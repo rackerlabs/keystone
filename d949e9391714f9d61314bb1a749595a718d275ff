@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_eeda7b16",
+        "filename": "doc/source/fernet_docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-12T03:35:41Z",
+      "side": 1,
+      "message": "These should be changed.",
+      "revId": "d949e9391714f9d61314bb1a749595a718d275ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_424fdb36",
+        "filename": "doc/source/fernet_docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-12T03:35:41Z",
+      "side": 1,
+      "message": "s/it existence/it\u0027s existence",
+      "revId": "d949e9391714f9d61314bb1a749595a718d275ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_65c9c958",
+        "filename": "doc/source/fernet_docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-12T03:35:41Z",
+      "side": 1,
+      "message": "Good point! but this doesn\u0027t looks like the reason to choose Fernet over PKI or PKIZ. :)",
+      "revId": "d949e9391714f9d61314bb1a749595a718d275ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_cc08dadc",
+        "filename": "doc/source/fernet_docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-12T03:35:41Z",
+      "side": 1,
+      "message": "any idea on possibly failure here? the only place to find some clue is keystone.log?",
+      "revId": "d949e9391714f9d61314bb1a749595a718d275ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_8c6df2cd",
+        "filename": "doc/source/fernet_docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-12T03:35:41Z",
+      "side": 1,
+      "message": "s/be able/be able to?",
+      "revId": "d949e9391714f9d61314bb1a749595a718d275ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
