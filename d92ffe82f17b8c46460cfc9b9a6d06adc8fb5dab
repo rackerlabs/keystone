@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_cd1e780b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-12T14:27:52Z",
+      "side": 1,
+      "message": "Change \"If project\" to \"If a project\".\n\nThis comment applies to all these changes.",
+      "revId": "d92ffe82f17b8c46460cfc9b9a6d06adc8fb5dab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_cd70b874",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-12T14:27:52Z",
+      "side": 1,
+      "message": "remove \"specific\" from all these. Or change it to \"supplied\" or \"given\".\n\nThis comment applies to all these changes.",
+      "revId": "d92ffe82f17b8c46460cfc9b9a6d06adc8fb5dab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2d0864d9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-12T14:27:52Z",
+      "side": 1,
+      "message": "change \"already existing\" to \"exists\".\n\nThis applies to all these changes.",
+      "revId": "d92ffe82f17b8c46460cfc9b9a6d06adc8fb5dab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0d9b2067",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-12T14:27:52Z",
+      "side": 1,
+      "message": "change \"If parent region invalid.\" to \"If the parent region is invalid.\"",
+      "revId": "d92ffe82f17b8c46460cfc9b9a6d06adc8fb5dab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_4d7fe8df",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-12T14:27:52Z",
+      "side": 1,
+      "message": "change \"If the entity not found\" to \"If the entity was not found\".\n\nThis applies to all these changes.",
+      "revId": "d92ffe82f17b8c46460cfc9b9a6d06adc8fb5dab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_2df1446b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-12T14:27:52Z",
+      "side": 1,
+      "message": "Remove \"Raises\"",
+      "revId": "d92ffe82f17b8c46460cfc9b9a6d06adc8fb5dab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
