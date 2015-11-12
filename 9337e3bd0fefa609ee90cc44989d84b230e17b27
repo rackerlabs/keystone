@@ -50,6 +50,24 @@
       "revId": "9337e3bd0fefa609ee90cc44989d84b230e17b27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e2184fd5",
+        "filename": "keystone/middleware/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-11-12T00:48:59Z",
+      "side": 1,
+      "message": "I did give this a go and it means updating the module name in a lot of places throughout the tests. I\u0027ll change it if it\u0027s a real problem but given this is a fairly established pattern I\u0027d prefer to just leave it like this.",
+      "parentUuid": "da85f559_6abc4406",
+      "revId": "9337e3bd0fefa609ee90cc44989d84b230e17b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
