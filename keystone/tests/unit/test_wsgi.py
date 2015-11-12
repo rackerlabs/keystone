@@ -25,9 +25,9 @@ from oslo_serialization import jsonutils
 import six
 from six.moves import http_client
 from testtools import matchers
-import webob
 
 from keystone.common import environment
+from keystone.common import request
 from keystone.common import wsgi
 from keystone import exception
 from keystone.tests import unit
@@ -75,7 +75,7 @@ class BaseWSGITest(unit.TestCase):
         super(BaseWSGITest, self).setUp()
 
     def _make_request(self, url='/'):
-        req = webob.Request.blank(url)
+        req = request.Request.blank(url)
         args = {'action': 'index', 'controller': None}
         req.environ['wsgiorg.routing_args'] = [None, args]
         return req
@@ -319,8 +319,8 @@ class MiddlewareTest(BaseWSGITest):
 class LocalizedResponseTest(unit.TestCase):
     def test_request_match_default(self):
         # The default language if no Accept-Language is provided is None
-        req = webob.Request.blank('/')
-        self.assertIsNone(wsgi.best_match_language(req))
+        req = request.Request.blank('/')
+        self.assertIsNone(req.best_match_language)
 
     @mock.patch.object(oslo_i18n, 'get_available_languages')
     def test_request_match_language_expected(self, mock_gal):
@@ -330,8 +330,8 @@ class LocalizedResponseTest(unit.TestCase):
         language = uuid.uuid4().hex
         mock_gal.return_value = [language]
 
-        req = webob.Request.blank('/', headers={'Accept-Language': language})
-        self.assertEqual(language, wsgi.best_match_language(req))
+        req = request.Request.blank('/', headers={'Accept-Language': language})
+        self.assertEqual(language, req.best_match_language)
 
     @mock.patch.object(oslo_i18n, 'get_available_languages')
     def test_request_match_language_unexpected(self, mock_gal):
@@ -342,9 +342,9 @@ class LocalizedResponseTest(unit.TestCase):
         mock_gal.return_value = [supported_language]
 
         request_language = uuid.uuid4().hex
-        req = webob.Request.blank(
+        req = request.Request.blank(
             '/', headers={'Accept-Language': request_language})
-        self.assertIsNone(wsgi.best_match_language(req))
+        self.assertIsNone(req.best_match_language)
 
     def test_static_translated_string_is_lazy_translatable(self):
         # Statically created message strings are an object that can get
@@ -400,7 +400,7 @@ class LocalizedResponseTest(unit.TestCase):
             # Make the request with Accept-Language on the app, expect an error
             # response with the translated message.
 
-            req = webob.Request.blank('/')
+            req = request.Request.blank('/')
             args = {'action': 'index', 'controller': None}
             req.environ['wsgiorg.routing_args'] = [None, args]
             req.headers['Accept-Language'] = language
