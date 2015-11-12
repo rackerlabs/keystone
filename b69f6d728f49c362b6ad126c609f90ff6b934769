@@ -16,6 +16,24 @@
       "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_bbd240cf",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-12T18:31:15Z",
+      "side": 1,
+      "message": "It is there for developers to override any of the members. This series of patches makes all of the new_type_ref() functions take kwargs to reduce the need for creating refs manually.\n\nInstead of:\n\n    ref \u003d dict(a\u003d1, b\u003d2)\n\nThe dev can call:\n\n    ref \u003d new_type_ref(a\u003d1, b\u003d2)\n\nUsing kwargs makes the code resilient to changes in the models. We can always police the inputs if and when needed.",
+      "parentUuid": "da85f559_0250c130",
+      "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
