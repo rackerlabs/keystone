@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_b13ca1e1",
+        "filename": "keystone/tests/unit/test_entry_points.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-12T19:24:29Z",
+      "side": 1,
+      "message": "So i changed my tests just a little in patch set 10 from a suggestion from Dave since we decided that was the most efficient way to make the test.\n\nhttps://review.openstack.org/#/c/233839/10/keystonemiddleware/tests/unit/test_entry_points.py\n\nIt is very similar to what you have just a small difference in the string list comprehension\n\nThanks",
+      "revId": "633455228b0b3ae3d7c29eb3bd31b52dd2b33b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
