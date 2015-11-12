@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_ccf1ba6c",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-12T03:30:50Z",
+      "side": 1,
+      "message": "nice clean up",
+      "revId": "eb43e22a809d97006b3d5fb9145ac3e7ada870de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_aca1d647",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-12T03:30:50Z",
+      "side": 1,
+      "message": "this is valid? that makes me sad",
+      "revId": "eb43e22a809d97006b3d5fb9145ac3e7ada870de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_ecc27ee8",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-12T03:30:50Z",
+      "side": 1,
+      "message": "don\u0027t really need to set description\u003dNone here since it\u0027s deleted one line later",
+      "revId": "eb43e22a809d97006b3d5fb9145ac3e7ada870de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
