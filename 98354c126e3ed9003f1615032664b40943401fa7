@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_036f71fc",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-12T14:50:06Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this raise be removed?",
+      "revId": "98354c126e3ed9003f1615032664b40943401fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
