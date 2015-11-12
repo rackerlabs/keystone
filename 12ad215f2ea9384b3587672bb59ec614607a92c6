@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_3ae64045",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-12T22:23:52Z",
+      "side": 1,
+      "message": "..but surely domain_id is not nullable yet....that\u0027s in the next patch...or am I getting the wrong end of the stick?",
+      "parentUuid": "da85f559_31175146",
+      "revId": "12ad215f2ea9384b3587672bb59ec614607a92c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_979963c6",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 32
