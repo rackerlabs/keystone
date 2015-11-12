@@ -35,6 +35,7 @@ import webob.exc
 
 from keystone.common import dependency
 from keystone.common import json_home
+from keystone.common import request as request_mod
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
@@ -111,124 +112,17 @@ def validate_token_bind(context, token_ref):
             raise exception.Unauthorized()
 
 
-def best_match_language(req):
-    """Determines the best available locale from the Accept-Language
-    HTTP header passed in the request.
-    """
-    if not req.accept_language:
-        return None
-    return req.accept_language.best_match(
-        oslo_i18n.get_available_languages('keystone'))
-
-
-class BaseApplication(object):
-    """Base WSGI application wrapper. Subclasses need to implement __call__."""
-
-    @classmethod
-    def factory(cls, global_config, **local_config):
-        """Used for paste app factories in paste.deploy config files.
-
-        Any local configuration (that is, values under the [app:APPNAME]
-        section of the paste config) will be passed into the `__init__` method
-        as kwargs.
-
-        A hypothetical configuration would look like:
-
-            [app:wadl]
-            latest_version = 1.3
-            paste.app_factory = keystone.fancy_api:Wadl.factory
-
-        which would result in a call to the `Wadl` class as
-
-            import keystone.fancy_api
-            keystone.fancy_api.Wadl(latest_version='1.3')
-
-        You could of course re-implement the `factory` method in subclasses,
-        but using the kwarg passing it shouldn't be necessary.
-
-        """
-        return cls(**local_config)
-
-    def __call__(self, environ, start_response):
-        r"""Subclasses will probably want to implement __call__ like this:
-
-        @webob.dec.wsgify()
-        def __call__(self, req):
-          # Any of the following objects work as responses:
-
-          # Option 1: simple string
-          res = 'message\n'
-
-          # Option 2: a nicely formatted HTTP exception page
-          res = exc.HTTPForbidden(explanation='Nice try')
-
-          # Option 3: a webob Response object (in case you need to play with
-          # headers, or you want to be treated like an iterable, or or or)
-          res = Response();
-          res.app_iter = open('somefile')
-
-          # Option 4: any wsgi app to be run next
-          res = self.application
-
-          # Option 5: you can get a Response object for a wsgi app, too, to
-          # play with headers etc
-          res = req.get_response(self.application)
-
-          # You can then just return your response...
-          return res
-          # ... or set req.response and return None.
-          req.response = res
-
-        See the end of http://pythonpaste.org/webob/modules/dec.html
-        for more info.
-
-        """
-        raise NotImplementedError('You must implement __call__')
-
-
 @dependency.requires('assignment_api', 'policy_api', 'token_provider_api')
-class Application(BaseApplication):
-    @webob.dec.wsgify()
+class Application(object):
+
+    @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, req):
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
         del arg_dict['controller']
 
-        # allow middleware up the stack to provide context, params and headers.
-        context = req.environ.get(CONTEXT_ENV, {})
-
-        try:
-            context['query_string'] = dict(req.params.items())
-        except UnicodeDecodeError as e:
-            # The webob package throws UnicodeError when a request cannot be
-            # decoded. Raise ValidationError instead to avoid an UnknownError.
-            msg = _('Query string is not UTF-8 encoded')
-            raise exception.ValidationError(msg)
-
-        context['headers'] = dict(req.headers.items())
-        context['path'] = req.environ['PATH_INFO']
-        scheme = (None if not CONF.secure_proxy_ssl_header
-                  else req.environ.get(CONF.secure_proxy_ssl_header))
-        if scheme:
-            # NOTE(andrey-mp): "wsgi.url_scheme" contains the protocol used
-            # before the proxy removed it ('https' usually). So if
-            # the webob.Request instance is modified in order to use this
-            # scheme instead of the one defined by API, the call to
-            # webob.Request.relative_url() will return a URL with the correct
-            # scheme.
-            req.environ['wsgi.url_scheme'] = scheme
-        context['host_url'] = req.host_url
         params = req.environ.get(PARAMS_ENV, {})
-        # authentication and authorization attributes are set as environment
-        # values by the container and processed by the pipeline. The complete
-        # set is not yet known.
-        context['environment'] = req.environ
-        context['accept_header'] = req.accept
-        req.environ = None
-
         params.update(arg_dict)
-
-        context.setdefault('is_admin', False)
 
         # TODO(termie): do some basic normalization on methods
         method = getattr(self, action)
@@ -237,35 +131,38 @@ class Application(BaseApplication):
         # response code between GET and HEAD requests. The HTTP status should
         # be the same.
         LOG.info('%(req_method)s %(uri)s', {
-            'req_method': req.environ['REQUEST_METHOD'].upper(),
+            'req_method': req.method.upper(),
             'uri': wsgiref.util.request_uri(req.environ),
         })
 
         params = self._normalize_dict(params)
+        context_dict = req.context_dict
 
         try:
-            result = method(context, **params)
+            result = method(context_dict, **params)
         except exception.Unauthorized as e:
             LOG.warning(
                 _LW("Authorization failed. %(exception)s from "
                     "%(remote_addr)s"),
-                {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
-            return render_exception(e, context=context,
-                                    user_locale=best_match_language(req))
+                {'exception': e, 'remote_addr': req.remote_addr})
+            return render_exception(e,
+                                    request=req,
+                                    user_locale=req.best_match_language)
         except exception.Error as e:
             LOG.warning(six.text_type(e))
-            return render_exception(e, context=context,
-                                    user_locale=best_match_language(req))
+            return render_exception(e,
+                                    request=req,
+                                    user_locale=req.best_match_language)
         except TypeError as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.ValidationError(e),
-                                    context=context,
-                                    user_locale=best_match_language(req))
+                                    request=req,
+                                    user_locale=req.best_match_language)
         except Exception as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.UnexpectedError(exception=e),
-                                    context=context,
-                                    user_locale=best_match_language(req))
+                                    request=req,
+                                    user_locale=req.best_match_language)
 
         if result is None:
             return render_response(status=(204, 'No Content'))
@@ -277,8 +174,9 @@ class Application(BaseApplication):
             return result
 
         response_code = self._get_response_code(req)
-        return render_response(body=result, status=response_code,
-                               method=req.environ['REQUEST_METHOD'])
+        return render_response(body=result,
+                               status=response_code,
+                               method=req.method)
 
     def _get_response_code(self, req):
         req_method = req.environ['REQUEST_METHOD']
@@ -386,6 +284,31 @@ class Application(BaseApplication):
 
         return url.rstrip('/')
 
+    @classmethod
+    def factory(cls, global_config, **local_config):
+        """Used for paste app factories in paste.deploy config files.
+
+        Any local configuration (that is, values under the [app:APPNAME]
+        section of the paste config) will be passed into the `__init__` method
+        as kwargs.
+
+        A hypothetical configuration would look like:
+
+            [app:wadl]
+            latest_version = 1.3
+            paste.app_factory = keystone.fancy_api:Wadl.factory
+
+        which would result in a call to the `Wadl` class as
+
+            import keystone.fancy_api
+            keystone.fancy_api.Wadl(latest_version='1.3')
+
+        You could of course re-implement the `factory` method in subclasses,
+        but using the kwarg passing it shouldn't be necessary.
+
+        """
+        return cls(**local_config)
+
 
 class Middleware(Application):
     """Base WSGI middleware.
@@ -422,7 +345,7 @@ class Middleware(Application):
         """Do whatever you'd like to the response, based on the request."""
         return response
 
-    @webob.dec.wsgify()
+    @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, request):
         try:
             response = self.process_request(request)
@@ -433,17 +356,17 @@ class Middleware(Application):
         except exception.Error as e:
             LOG.warning(six.text_type(e))
             return render_exception(e, request=request,
-                                    user_locale=best_match_language(request))
+                                    user_locale=request.best_match_language)
         except TypeError as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.ValidationError(e),
                                     request=request,
-                                    user_locale=best_match_language(request))
+                                    user_locale=request.best_match_language)
         except Exception as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.UnexpectedError(exception=e),
                                     request=request,
-                                    user_locale=best_match_language(request))
+                                    user_locale=request.best_match_language)
 
 
 class Debug(Middleware):
@@ -454,7 +377,7 @@ class Debug(Middleware):
 
     """
 
-    @webob.dec.wsgify()
+    @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, req):
         if not hasattr(LOG, 'isEnabledFor') or LOG.isEnabledFor(LOG.debug):
             LOG.debug('%s %s %s', ('*' * 20), 'REQUEST ENVIRON', ('*' * 20))
@@ -518,7 +441,7 @@ class Router(object):
         self._router = routes.middleware.RoutesMiddleware(self._dispatch,
                                                           self.map)
 
-    @webob.dec.wsgify()
+    @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, req):
         """Route the incoming request to a controller based on self.map.
 
@@ -528,7 +451,7 @@ class Router(object):
         return self._router
 
     @staticmethod
-    @webob.dec.wsgify()
+    @webob.dec.wsgify(RequestClass=request_mod.Request)
     def _dispatch(req):
         """Dispatch the request to the appropriate controller.
 
@@ -542,7 +465,7 @@ class Router(object):
             msg = _('The resource could not be found.')
             return render_exception(exception.NotFound(msg),
                                     request=req,
-                                    user_locale=best_match_language(req))
+                                    user_locale=req.best_match_language)
         app = match['controller']
         return app
 
@@ -695,7 +618,7 @@ class V3ExtensionRouter(ExtensionRouter, RoutersBase):
     def _update_version_response(self, response_data):
         response_data['resources'].update(self.v3_resources)
 
-    @webob.dec.wsgify()
+    @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, request):
         if request.path_info != '/':
             # Not a request for version info so forward to super.
