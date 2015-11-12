@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_0250c130",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-11-12T17:28:24Z",
+      "side": 1,
+      "message": "why is **kwargs needed?",
+      "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
