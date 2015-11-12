@@ -34,6 +34,24 @@
       "revId": "633455228b0b3ae3d7c29eb3bd31b52dd2b33b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_74ab86d7",
+        "filename": "keystone/tests/unit/test_entry_points.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-12T19:50:04Z",
+      "side": 1,
+      "message": "So the problem comes in if another library adds an entry point, which is possible and will crash your test.  I would just remove that last assert.\n\nAlso in the list comprehension I am checking the module as well as the name of the factory, it might be possible for another library to define a factory with the same name.\n\nIf you need any more help pls feel free to message me on IRC",
+      "parentUuid": "da85f559_5412025a",
+      "revId": "633455228b0b3ae3d7c29eb3bd31b52dd2b33b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
