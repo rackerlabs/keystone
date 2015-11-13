@@ -253,7 +253,7 @@ def _get_callback_info(callback):
     """
     module_name = getattr(callback, '__module__', None)
     func_name = callback.__name__
-    if inspect.ismethod(callback):
+    if reflection.is_bound_method(callback):
         class_name = reflection.get_class_name(callback.__self__,
                                                fully_qualified=False)
         return [module_name, class_name, func_name]
