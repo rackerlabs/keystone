@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_e56795e8",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-13T14:58:58Z",
+      "side": 1,
+      "message": "I think this should be private, that way we are communicating to people writing test code that they should interact with build_authentication_request(). Unless these are exposed and used in the unit tests already?",
+      "revId": "7aa4f6c2ccb03b9ee73047fd7f002aa98ab8644b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0565f9df",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-13T14:58:58Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "7aa4f6c2ccb03b9ee73047fd7f002aa98ab8644b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_a502edb2",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-13T14:58:58Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "7aa4f6c2ccb03b9ee73047fd7f002aa98ab8644b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_45454115",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-13T14:58:58Z",
+      "side": 1,
+      "message": "we don\u0027t necessarily need to create `r`, might be easier to just return:\n\n    return requests.post(...)",
+      "revId": "7aa4f6c2ccb03b9ee73047fd7f002aa98ab8644b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
