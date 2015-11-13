@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_07a3c69f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "you could be ambitious and have \u0027default_project_id\u0027 be part of the kwargs that are passed in. \n\nlong term we want to remove the \u0027default_project_id\u0027 as it\u0027s mainly a v2.0ism, and not something we want in v3",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_a7bafabe",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "i think email can be a uuid here, and doesn\u0027t need to be passed in",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_077746d5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "so i\u0027m starting to realize that asking to replace all these hard-coded values might be out of scope for this patch, but if you do a follow on, please remove all these unnecessary hardcoded strings like NO_META and no_meta2",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e7548222",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "why delete description?",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_8717b653",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "again, for a follow on patch, remove name and password, and what the heck is \u0027tenants\u0027?",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e230f0ea",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_a2518810",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_42569c07",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e2ff90a8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2248,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_221d980f",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2325,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_82d24433",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2335,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_42dc5c46",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2345,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_02e73413",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2843,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e2ed50f0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2845,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "why delete description?",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_62b880e6",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2950,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_c2c7ec62",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2965,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "can use uuid here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_22927858",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3661,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "no reason to delete id or description here",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_828ec425",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:26:28Z",
+      "side": 1,
+      "message": "maybe do the ldap bits in a different patch?",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
