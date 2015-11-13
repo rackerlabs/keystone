@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_a5c3cd37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-13T15:04:15Z",
+      "side": 1,
+      "message": "nit: based",
+      "revId": "4253d64d95d9f6035c5d19a23c2bbd6d9a52caf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_c5d7f1eb",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-13T15:04:15Z",
+      "side": 1,
+      "message": "it would be nice to know why but i don\u0027t think it\u0027s worth holding this up. This is also a copy from oslo.cache, so it would probably have to be made there first.",
+      "revId": "4253d64d95d9f6035c5d19a23c2bbd6d9a52caf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
