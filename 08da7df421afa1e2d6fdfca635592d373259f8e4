@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_49d0eac9",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-13T21:58:55Z",
+      "side": 1,
+      "message": "is that in place of project_id?",
+      "parentUuid": "da85f559_07a3c69f",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_a7bafabe",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 6
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_892a52e6",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-13T21:58:55Z",
+      "side": 1,
+      "message": "I thought about it but I could not be sure if they were related to earlier bugs or issues.\n\nI can make a follow on patch.",
+      "parentUuid": "da85f559_077746d5",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_e7548222",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 6
@@ -64,6 +100,24 @@
       "writtenOn": "2015-11-13T13:26:28Z",
       "side": 1,
       "message": "why delete description?",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e9451eb3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-13T21:58:55Z",
+      "side": 1,
+      "message": "I get test failures with it.",
+      "parentUuid": "da85f559_e7548222",
       "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -234,6 +288,24 @@
       "writtenOn": "2015-11-13T13:26:28Z",
       "side": 1,
       "message": "why delete description?",
+      "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_897812fa",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2845,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-13T21:58:55Z",
+      "side": 1,
+      "message": "tests fail Every time you see me delete a field it is because tests did not pass with it present.",
+      "parentUuid": "da85f559_e2ed50f0",
       "revId": "08da7df421afa1e2d6fdfca635592d373259f8e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
