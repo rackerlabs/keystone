@@ -37,6 +37,57 @@
     },
     {
       "key": {
+        "uuid": "da85f559_07418639",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4049,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:05:55Z",
+      "side": 1,
+      "message": "i would think:\n\n  self.getUniqueString(prefix\u003d\u0027tdgrra\u0027)\n\ncan be replaced with some uuid",
+      "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_e747a249",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4055,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:05:55Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_67f732f6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-13T13:05:55Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_fca98291",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 5
