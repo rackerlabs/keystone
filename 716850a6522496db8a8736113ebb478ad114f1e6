@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_089d2959",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-13T04:57:13Z",
+      "side": 1,
+      "message": "some typos there, I meant *that line could be removed* after your changes.",
+      "parentUuid": "da85f559_08a9a9df",
+      "revId": "716850a6522496db8a8736113ebb478ad114f1e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_68e63546",
         "filename": "keystone/common/utils.py",
         "patchSetId": 6
