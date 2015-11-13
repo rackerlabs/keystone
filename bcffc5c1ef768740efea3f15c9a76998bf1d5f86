@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_f3022372",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1812,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-11-13T00:16:20Z",
+      "side": 1,
+      "message": "why would I want a fallback here? If i\u0027ve enabled use_group_config but not set a group_member_attribute and/or group_objectclass wouldn\u0027t that be a config error?\n\nThese come with defaults so having them be None would seem unlikey and breaks other things.",
+      "revId": "bcffc5c1ef768740efea3f15c9a76998bf1d5f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
