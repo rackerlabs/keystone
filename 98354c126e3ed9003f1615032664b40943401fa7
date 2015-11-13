@@ -34,6 +34,24 @@
       "revId": "98354c126e3ed9003f1615032664b40943401fa7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_f0a98c25",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-11-13T18:06:25Z",
+      "side": 1,
+      "message": "Tom, the domain property is available on the user or token, but not on the context.",
+      "parentUuid": "da85f559_a33f84b2",
+      "revId": "98354c126e3ed9003f1615032664b40943401fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
