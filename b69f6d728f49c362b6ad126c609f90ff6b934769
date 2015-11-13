@@ -34,6 +34,23 @@
       "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_fca98291",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-13T09:53:01Z",
+      "side": 1,
+      "message": "hmm, as an aside, is this even a valid test?  Isn\u0027t the group already in self.domain[\u0027id\u0027]?",
+      "revId": "b69f6d728f49c362b6ad126c609f90ff6b934769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
