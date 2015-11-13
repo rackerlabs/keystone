@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_a1cbca1d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 119
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-13T12:57:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_9c1bf180",
+      "revId": "625b6152de0956e6f37ff59ba75aeee8d56415ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_df33abf4",
         "filename": "keystone/resource/core.py",
         "patchSetId": 119
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_81c6c614",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 119
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-13T12:57:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_df33abf4",
+      "revId": "625b6152de0956e6f37ff59ba75aeee8d56415ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_7c85edcc",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 119
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-11T21:40:29Z",
       "side": 1,
       "message": "But \u0027other_project\u0027 does not have the same (name, domain_id, is_domain) values as \u0027project\u0027 or any other project because \u0027name\u0027 is a generated UUID.",
+      "revId": "625b6152de0956e6f37ff59ba75aeee8d56415ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_0713c65d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 119
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-13T12:57:06Z",
+      "side": 1,
+      "message": "yes, but we insert it twice, at lines 693 and 695, changing only the id",
+      "parentUuid": "da85f559_7c85edcc",
       "revId": "625b6152de0956e6f37ff59ba75aeee8d56415ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
