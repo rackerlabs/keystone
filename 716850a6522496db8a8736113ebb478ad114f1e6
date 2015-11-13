@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "da85f559_285fcd76",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-13T05:08:35Z",
+      "side": 1,
+      "message": "class_name is string  in the form \u0027modulename.classsname\u0027,  not a list type.we need module_name in line 125.",
+      "revId": "716850a6522496db8a8736113ebb478ad114f1e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_68e63546",
         "filename": "keystone/common/utils.py",
         "patchSetId": 6
@@ -48,6 +65,24 @@
       "writtenOn": "2015-11-13T04:50:09Z",
       "side": 1,
       "message": "miss this, pls change to:\n reflection.get_class_name(group, fully_qualified\u003dFalse)",
+      "revId": "716850a6522496db8a8736113ebb478ad114f1e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_c8508161",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-11-13T05:08:35Z",
+      "side": 1,
+      "message": "yea, I missed this.",
+      "parentUuid": "da85f559_68e63546",
       "revId": "716850a6522496db8a8736113ebb478ad114f1e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
