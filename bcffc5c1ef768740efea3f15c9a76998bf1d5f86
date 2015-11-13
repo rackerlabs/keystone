@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da85f559_9ff5d6cc",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1805,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-11-13T02:04:13Z",
+      "side": 1,
+      "message": "this is such a nit i feel like an idiot even mentioning it.\n\nif not X with an else always bugs me. I always have to double take by the time you get to else because it\u0027s a double negative.\n\nThis pattern is below and not something you need to change. Just a rant.",
+      "revId": "bcffc5c1ef768740efea3f15c9a76998bf1d5f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_f3022372",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
