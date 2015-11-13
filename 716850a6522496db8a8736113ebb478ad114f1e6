@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_08a9a9df",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-13T04:50:09Z",
+      "side": 1,
+      "message": "This like could be moved and L132 can be replaced by:\n    class_name[0]\n\nMore precisely, var: `class_name` can also be changed to a more accurate name.",
+      "revId": "716850a6522496db8a8736113ebb478ad114f1e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_68e63546",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-13T04:50:09Z",
+      "side": 1,
+      "message": "miss this, pls change to:\n reflection.get_class_name(group, fully_qualified\u003dFalse)",
+      "revId": "716850a6522496db8a8736113ebb478ad114f1e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
