@@ -34,6 +34,24 @@
       "revId": "bcffc5c1ef768740efea3f15c9a76998bf1d5f86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_bfc8daa9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1812,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-11-13T01:57:50Z",
+      "side": 1,
+      "message": "I would remove the or part, because of the defaults i\u0027m not even sure you could trigger it.",
+      "parentUuid": "da85f559_6402e70d",
+      "revId": "bcffc5c1ef768740efea3f15c9a76998bf1d5f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
