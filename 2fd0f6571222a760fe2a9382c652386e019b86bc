@@ -16,6 +16,24 @@
       "revId": "2fd0f6571222a760fe2a9382c652386e019b86bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_cb2b5b32",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-15T11:54:51Z",
+      "side": 0,
+      "message": "Maybe not in here...but maybe in the general developing.rst - like we already have a section there on developing drivers",
+      "parentUuid": "3a29b11f_e70313b7",
+      "revId": "2fd0f6571222a760fe2a9382c652386e019b86bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
