@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_cc9c0b6c",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T19:13:49Z",
+      "side": 1,
+      "message": "this could be on one line",
+      "revId": "f11d396546dfe8fa66143d3aaddf5873268eda9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_acc8a775",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T19:13:49Z",
+      "side": 1,
+      "message": "according to http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html#signature-v4-examples-python the msg variable should be utf8 encoded",
+      "revId": "f11d396546dfe8fa66143d3aaddf5873268eda9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
