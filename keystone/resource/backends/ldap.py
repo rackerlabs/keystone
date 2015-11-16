@@ -23,7 +23,7 @@ from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LW
 from keystone.identity.backends import ldap as ldap_identity
 from keystone import resource
 
@@ -164,6 +164,14 @@ class Resource(resource.ResourceDriverV8):
             # The manager layer will call assignments to delete the
             # role assignments, so we just have to delete the project itself.
             self.project.delete(tenant_id)
+
+    def delete_projects_from_ids(self, projects_ids):
+        for project_id in projects_ids:
+            try:
+                self.delete_project(project_id)
+            except exception.ProjectNotFound:
+                LOG.warn(_LW('Project %s does not exist and was not deleted.')
+                         % project_id)
 
     def create_domain(self, domain_id, domain):
         if domain_id == CONF.identity.default_domain_id:

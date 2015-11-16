@@ -3316,6 +3316,42 @@ class IdentityTests(AssignmentTestHelperMixin):
                           self.resource_api.get_project,
                           leaf_project['id'])
 
+    def test_delete_projects_list(self):
+        # Tests the resource backend call delete_projects_list
+        project1_ref = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        project2_ref = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        projects = (project1_ref, project2_ref)
+        for project in projects:
+            self.resource_api.create_project(project['id'], project)
+
+        # Setting up the id's list
+        projects_ids = [p['id'] for p in projects]
+        self.resource_api.driver.delete_projects_from_ids(projects_ids)
+
+        # Ensuring projects no longer exist at backend level
+        for project in projects:
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.driver.get_project,
+                              project['id'])
+
+    def test_delete_projects_list_with_no_existing_project_id(self):
+        # Tests the resource backend call delete_projects_list passing non
+        # existing project_ids, which are silently ignored by the backend.
+        project_ref = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        # Setting up the id's list
+        projects_ids = (project_ref['id'], uuid.uuid4().hex)
+        self.resource_api.driver.delete_projects_from_ids(projects_ids)
+        # The existing project was deleted.
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.driver.get_project,
+                          project_ref['id'])
+
+        # Even if we only have one project, and it does not exist, it returns
+        # no error.
+        self.resource_api.driver.delete_projects_from_ids([uuid.uuid4().hex])
+
     def test_hierarchical_projects_crud(self):
         # create a hierarchy with just a root project (which is a leaf as well)
         projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=1)

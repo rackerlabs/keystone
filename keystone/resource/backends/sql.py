@@ -167,6 +167,12 @@ class Resource(keystone_resource.ResourceDriverV8):
             tenant_ref = self._get_project(session, tenant_id)
             session.delete(tenant_ref)
 
+    @sql.handle_conflicts(conflict_type='project')
+    def delete_projects_from_ids(self, projects_ids):
+        with sql.transaction() as session:
+            (session.query(Project).filter(Project.id.in_(projects_ids)).
+                delete(synchronize_session='fetch'))
+
     # domain crud
 
     @sql.handle_conflicts(conflict_type='domain')
