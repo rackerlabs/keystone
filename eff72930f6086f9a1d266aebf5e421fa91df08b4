@@ -16,6 +16,24 @@
       "revId": "eff72930f6086f9a1d266aebf5e421fa91df08b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a2544054",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-16T14:31:58Z",
+      "side": 1,
+      "message": "just changed the message. We are testing it by deleting the whole subtree of projects, as it is done in the delete_domain_contents method.",
+      "parentUuid": "da85f559_b904237e",
+      "revId": "eff72930f6086f9a1d266aebf5e421fa91df08b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
