@@ -16,7 +16,7 @@ from oslo_log import log
 from keystone.common import clean
 from keystone.common import sql
 from keystone import exception
-from keystone.i18n import _LE
+from keystone.i18n import _, _LE
 from keystone import resource as keystone_resource
 
 
@@ -166,6 +166,18 @@ class Resource(keystone_resource.ResourceDriverV8):
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
             session.delete(tenant_ref)
+
+    @sql.handle_conflicts(conflict_type='project')
+    def delete_projects_from_ids(self, projects_ids):
+        with sql.transaction() as session:
+            query = session.query(Project).filter(Project.id.in_(
+                projects_ids))
+            project_refs = query.all()
+            for project in project_refs:
+                if project['id'] not in projects_ids:
+                    LOG.warn(_('Project %s does not exist and was not '
+                               'deleted.') % project['id'])
+            query.delete(synchronize_session='fetch')
 
     # domain crud
 
