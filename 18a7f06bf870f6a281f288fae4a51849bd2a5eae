@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_36463924",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T22:19:39Z",
+      "side": 1,
+      "message": "what about calling it \u0027delete_projects_from_ids\u0027, since we already have \u0027list_projects_from_ids\u0027",
+      "revId": "18a7f06bf870f6a281f288fae4a51849bd2a5eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
