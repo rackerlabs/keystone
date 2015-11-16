@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_56189d84",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-16T22:44:00Z",
+      "side": 1,
+      "message": "use the HasLength matcher since it will print more info on failure -- https://github.com/testing-cabal/testtools/blob/master/testtools/matchers/_basic.py#L326\n\nThis also applies where other assertEqual with len is used.",
+      "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8934aade",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-16T22:44:00Z",
+      "side": 1,
+      "message": "change \"its haven\u0027t\" to \"it hasn\u0027t\". This applies elsewhere, too.",
+      "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c9963294",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-16T22:44:00Z",
+      "side": 1,
+      "message": "it\u0027s a mistake to go through the REST API in all these tests.",
+      "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
