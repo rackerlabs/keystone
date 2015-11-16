@@ -16,6 +16,24 @@
       "revId": "06195d2b53b35831187f8ad5ab1a514a4e90770c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_320c0c94",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-16T19:55:05Z",
+      "side": 1,
+      "message": "it might be a good idea to go through and remove *all* optional fields once the other refactoring is done.",
+      "parentUuid": "ba8a016a_8fa6f5bf",
+      "revId": "06195d2b53b35831187f8ad5ab1a514a4e90770c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
