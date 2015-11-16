@@ -694,6 +694,17 @@ class ResourceDriverBase(object):
     def _get_list_limit(self):
         return CONF.resource.list_limit or CONF.list_limit
 
+    @abc.abstractmethod
+    def get_project_by_name(self, tenant_name, domain_id):
+        """Get a tenant by name.
+
+        :returns: tenant_ref
+        :raises keystone.exception.ProjectNotFound: if a project with the
+                             tenant_name does not exist within the domain
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
     # domain crud
     @abc.abstractmethod
     def create_domain(self, domain_id, domain):
@@ -982,6 +993,11 @@ class ResourceDriverV9(ResourceDriverBase):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
+    @abc.abstractmethod
+    def delete_projects_from_ids(self, project_ids):
+        """Deletes a list of projects."""
+        raise exception.NotImplemented()  # pragma: no cover
+
 
 class V9ResourceWrapperForV8Driver(ResourceDriverV9):
     """Wrapper class to supported a V8 legacy driver.
@@ -1060,6 +1076,9 @@ class V9ResourceWrapperForV8Driver(ResourceDriverV9):
 
     def delete_project(self, project_id):
         self.driver.delete_project(project_id)
+
+    def delete_projects_from_ids(self, project_ids):
+        raise exception.NotImplemented()  # pragma: no cover
 
     def list_project_parents(self, project_id):
         return self.driver.list_project_parents(project_id)
