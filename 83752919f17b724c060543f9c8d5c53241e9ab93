@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_2bdc59e3",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-16T07:30:14Z",
+      "side": 1,
+      "message": "s/crecreate/create",
+      "revId": "83752919f17b724c060543f9c8d5c53241e9ab93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
