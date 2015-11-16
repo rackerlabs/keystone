@@ -165,6 +165,14 @@ class Resource(resource.ResourceDriverV8):
             # role assignments, so we just have to delete the project itself.
             self.project.delete(tenant_id)
 
+    def delete_projects_from_ids(self, projects_ids):
+        for project_id in projects_ids:
+            try:
+                self.delete_project(project_id)
+            except exception.ProjectNotFound:
+                LOG.warn('Project %s does not exist and was not deleted.'
+                         % project_id)
+
     def create_domain(self, domain_id, domain):
         if domain_id == CONF.identity.default_domain_id:
             msg = _('Duplicate ID, %s.') % domain_id
