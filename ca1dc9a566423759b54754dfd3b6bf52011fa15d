@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_9f006aac",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-16T17:15:11Z",
+      "side": 1,
+      "message": "We could, however I don\u0027t think it is critical and I\u0027d prefer not to do another patch at this point.  However, if I do, I\u0027ll add it.",
+      "parentUuid": "ba8a016a_f60d2638",
+      "revId": "ca1dc9a566423759b54754dfd3b6bf52011fa15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_4b36cf04",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_5fd8c253",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-16T17:15:11Z",
+      "side": 1,
+      "message": "Yes, agree.",
+      "parentUuid": "ba8a016a_4b36cf04",
+      "revId": "ca1dc9a566423759b54754dfd3b6bf52011fa15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_5690b295",
         "filename": "keystone/tests/unit/assignment/test_core.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-16T15:22:39Z",
       "side": 1,
       "message": "use single quotes here since that is already done in the previous two lines. \n\n    self.role_id \u003d self.role_other[\u0027id\u0027]",
+      "revId": "ca1dc9a566423759b54754dfd3b6bf52011fa15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_825571c7",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2015-11-16T17:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_5690b295",
       "revId": "ca1dc9a566423759b54754dfd3b6bf52011fa15d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
