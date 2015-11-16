@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_c9a3929d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-16T22:45:07Z",
+      "side": 1,
+      "message": "This should have a bug since it\u0027s causing cache invalidation to fail.",
+      "revId": "830ca0cb868f290e7990bf26bb62254bf36271b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_d16ad2b2",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 2
