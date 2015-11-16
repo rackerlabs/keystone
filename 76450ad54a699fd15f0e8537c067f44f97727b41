@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_2b602b35",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-16T15:17:34Z",
+      "side": 1,
+      "message": "It generates the sample configuration file from config.py",
+      "parentUuid": "da85f559_43042fbf",
+      "revId": "76450ad54a699fd15f0e8537c067f44f97727b41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_acb94d7b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
