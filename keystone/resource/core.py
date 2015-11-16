@@ -730,6 +730,16 @@ class ResourceDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def delete_projects_from_ids(self, project_id):
+        """Deletes a list of projects.
+
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def list_project_parents(self, project_id):
         """List all parents from a project by its ID.
 
