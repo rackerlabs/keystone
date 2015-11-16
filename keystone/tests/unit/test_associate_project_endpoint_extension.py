@@ -18,6 +18,7 @@ import uuid
 from six.moves import http_client
 from testtools import matchers
 
+from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
 
@@ -241,6 +242,95 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
 
         r = self.get(association_url)
         self.assertValidEndpointListResponse(r, expected_length=0)
+
+    @unit.skip_if_cache_disabled('catalog')
+    def test_create_endpoint_project_association_invalidates_cache(self):
+        # NOTE(davechen) create another endpoint which will be added to
+        # default project, this should be done at first since
+        # `crecreate_endpoint` will also invalidate cache.
+        endpoint_id2 = uuid.uuid4().hex
+        endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
+                                          region_id=self.region_id,
+                                          interface='public',
+                                          id=endpoint_id2)
+        self.catalog_api.create_endpoint(endpoint_id2, endpoint2.copy())
+
+        # create endpoint project association.
+        self.put(self.default_request_url)
+
+        # should get back only one endpoint that was just created.
+        user_id = uuid.uuid4().hex
+        catalog = self.catalog_api.get_v3_catalog(
+            user_id,
+            self.default_domain_project_id)
+
+        # there is only one endpoints associated with the default project.
+        self.assertEqual(1, len(catalog[0]['endpoints']))
+        self.assertEqual(self.endpoint_id, catalog[0]['endpoints'][0]['id'])
+
+        # add second endpoint to default project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                     'project_id': self.default_domain_project_id,
+                     'endpoint_id': endpoint_id2})
+
+        # should get back two endpoints since the cache has been
+        # invalidated when the second endpoint was added to default project.
+        catalog = self.catalog_api.get_v3_catalog(
+            user_id,
+            self.default_domain_project_id)
+
+        self.assertEqual(2, len(catalog[0]['endpoints']))
+
+        ep_id_list = [catalog[0]['endpoints'][0]['id'],
+                      catalog[0]['endpoints'][1]['id']]
+        self.assertEqual(self.endpoint_id, catalog[0]['endpoints'][0]['id'])
+        self.assertListEqual([self.endpoint_id, endpoint_id2], ep_id_list)
+
+    @unit.skip_if_cache_disabled('catalog')
+    def test_remove_endpoint_from_project_invalidates_cache(self):
+        endpoint_id2 = uuid.uuid4().hex
+        endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
+                                          region_id=self.region_id,
+                                          interface='public',
+                                          id=endpoint_id2)
+        self.catalog_api.create_endpoint(endpoint_id2, endpoint2.copy())
+        # create endpoint project association.
+        self.put(self.default_request_url)
+
+        # add second endpoint to default project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                     'project_id': self.default_domain_project_id,
+                     'endpoint_id': endpoint_id2})
+
+        # should get back only one endpoint that was just created.
+        user_id = uuid.uuid4().hex
+        catalog = self.catalog_api.get_v3_catalog(
+            user_id,
+            self.default_domain_project_id)
+
+        # there are two endpoints associated with the default project.
+        ep_id_list = [catalog[0]['endpoints'][0]['id'],
+                      catalog[0]['endpoints'][1]['id']]
+        self.assertEqual(2, len(catalog[0]['endpoints']))
+        self.assertEqual(self.endpoint_id, catalog[0]['endpoints'][0]['id'])
+        self.assertListEqual([self.endpoint_id, endpoint_id2], ep_id_list)
+
+        # remove the endpoint2 from the default project.
+        self.delete('/OS-EP-FILTER/projects/%(project_id)s'
+                    '/endpoints/%(endpoint_id)s' % {
+                        'project_id': self.default_domain_project_id,
+                        'endpoint_id': endpoint_id2})
+
+        # should only get back one endpoint since the cache has been
+        # invalidated after the endpoint project association was removed.
+        catalog = self.catalog_api.get_v3_catalog(
+            user_id,
+            self.default_domain_project_id)
+
+        self.assertEqual(1, len(catalog[0]['endpoints']))
+        self.assertEqual(self.endpoint_id, catalog[0]['endpoints'][0]['id'])
 
 
 class EndpointFilterTokenRequestTestCase(TestExtensionCase):
