@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_66edf68a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2195,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-16T22:07:01Z",
+      "side": 1,
+      "message": "Yes, but I wanted to be explicit since the test is about ensuring enabled\u003dTrue. i can insert a comment instead if that is preferred.",
+      "parentUuid": "ba8a016a_40a53a02",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_004c1241",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 9
@@ -132,6 +150,24 @@
       "writtenOn": "2015-11-16T20:38:50Z",
       "side": 1,
       "message": "as a side note, i don\u0027t think this is necessary, since the generated ID is already in lower case. either the test is broken, or this can be simplified.",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c69382f9",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-16T22:07:01Z",
+      "side": 1,
+      "message": "Again, I left this as an explicit test. new_user_ref() could return all kinds of things some day. :-)",
+      "parentUuid": "ba8a016a_004c1241",
       "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -200,6 +236,24 @@
       "writtenOn": "2015-11-16T20:38:50Z",
       "side": 1,
       "message": "you can just pass in: self.user1[\u0027password\u0027] and delete the password assignment",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_93db771b",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-16T22:07:01Z",
+      "side": 1,
+      "message": "nope, the password is removed by identity_api.create_user().",
+      "parentUuid": "ba8a016a_80b6c2da",
       "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
