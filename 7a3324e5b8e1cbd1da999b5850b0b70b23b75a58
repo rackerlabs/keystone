@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_d5f9ea4e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "what happens if this argument is removed? i don\u0027t think it does anything",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_15ae922e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_75635e1b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_956842f7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c01daa67",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "i think we want to keep the name and password that are used here, since they use special characters",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_804d6274",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "more tenants! which i\u0027m pretty sure do nothing?",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_40a53a02",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2195,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "this is done by default",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_004c1241",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "as a side note, i don\u0027t think this is necessary, since the generated ID is already in lower case. either the test is broken, or this can be simplified.",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e000eeac",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "remove this line and don\u0027t pass it in the next line",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_602b9e31",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "set password after user creation\n\n  password \u003d user[\u0027password\u0027]\n\nor just use user[\u0027password\u0027] at line 85",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c0760a3e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2568,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "out of scope: this test seems broken, since we aren\u0027t even passing in the right password when authenticating",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_80b6c2da",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-16T20:38:50Z",
+      "side": 1,
+      "message": "you can just pass in: self.user1[\u0027password\u0027] and delete the password assignment",
+      "revId": "7a3324e5b8e1cbd1da999b5850b0b70b23b75a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
