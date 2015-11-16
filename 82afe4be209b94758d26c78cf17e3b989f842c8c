@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_f6c19181",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-16T22:22:10Z",
+      "side": 0,
+      "message": "why is this being removed? This should be explained in the commit message (and probably be done in a separate commit).",
+      "revId": "82afe4be209b94758d26c78cf17e3b989f842c8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
