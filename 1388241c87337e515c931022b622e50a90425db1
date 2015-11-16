@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_f4171b52",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-11-16T02:13:37Z",
+      "side": 1,
+      "message": "remove L633\n\nhttps://github.com/GreenSteam/pep257/blob/master/src/pep257.py#L1387",
+      "revId": "1388241c87337e515c931022b622e50a90425db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_141bbf81",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-11-16T02:13:37Z",
+      "side": 1,
+      "message": "same",
+      "revId": "1388241c87337e515c931022b622e50a90425db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_b411935f",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-11-16T02:13:37Z",
+      "side": 1,
+      "message": "save",
+      "revId": "1388241c87337e515c931022b622e50a90425db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
