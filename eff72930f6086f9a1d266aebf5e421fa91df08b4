@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_b904237e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-16T10:30:18Z",
+      "side": 1,
+      "message": "The message in exception raised in _assert_whole_subtree_is_disabled says \"cannot disable project...\" which is not appropriate for this case. So please change the message.\n\nI would not have made _delete_projects_cascade inner so that it can be tested independently.",
+      "revId": "eff72930f6086f9a1d266aebf5e421fa91df08b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
