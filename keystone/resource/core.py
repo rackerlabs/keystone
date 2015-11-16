@@ -960,7 +960,10 @@ class ResourceDriverV9(ResourceDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def delete_projects_from_ids(self, project_ids):
+        """Deletes a list of projects."""
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class V9ResourceWrapperForV8Driver(ResourceDriverV9):
@@ -1040,6 +1043,9 @@ class V9ResourceWrapperForV8Driver(ResourceDriverV9):
 
     def delete_project(self, project_id):
         self.driver.delete_project(project_id)
+
+    def delete_projects_from_ids(self, project_id):
+        raise exception.NotImplemented()  # pragma: no cover
 
     def list_project_parents(self, project_id):
         return self.driver.list_project_parents(project_id)
