@@ -1671,6 +1671,30 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
                           self.resource_api.update_project,
                           project['id'], project)
 
+    def test_delete_projects_from_ids_with_no_existing_project_id(self):
+        """Tests delete_projects_from_ids issues warning if not found.
+
+        Tests the resource backend call delete_projects_from_ids passing non
+        existing project_ids, which are logged and ignored by the backend.
+        """
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        # Setting up the id's list
+        projects_ids = (project_ref['id'], uuid.uuid4().hex)
+        with mock.patch('keystone.resource.backends.ldap.LOG') as mock_log:
+            self.resource_api.delete_projects_from_ids(projects_ids)
+            self.assertTrue(mock_log.warn.called)
+        # The existing project was deleted.
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.driver.get_project,
+                          project_ref['id'])
+
+        # Even if we only have one project, and it does not exist, it returns
+        # no error.
+        self.resource_api.driver.delete_projects_from_ids([uuid.uuid4().hex])
+
     def test_delete_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
