@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_5772a94a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-17T17:30:01Z",
+      "side": 1,
+      "message": "this one too",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_98b067f6",
         "filename": "keystone/tests/unit/test_ldap_pool_livetest.py",
         "patchSetId": 10
