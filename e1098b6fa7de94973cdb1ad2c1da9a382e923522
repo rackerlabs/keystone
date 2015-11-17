@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_b4851608",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T16:19:45Z",
+      "side": 1,
+      "message": "Better to use openSUSE to consistent with L133, I assume the dependencies on openSUSE and SUSE should be different.",
+      "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
