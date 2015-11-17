@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_21602ece",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T01:59:28Z",
+      "side": 1,
+      "message": "Brant - Thanks for teaching me, it will be definitely helpful for my future work.",
+      "parentUuid": "ba8a016a_56189d84",
+      "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8934aade",
         "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_81a55a05",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T01:59:28Z",
+      "side": 1,
+      "message": "my bad. :(",
+      "parentUuid": "ba8a016a_8934aade",
+      "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_c9963294",
         "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-16T22:44:00Z",
       "side": 1,
       "message": "it\u0027s a mistake to go through the REST API in all these tests.",
+      "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e1eea621",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T01:59:28Z",
+      "side": 1,
+      "message": "Somehow, it\u0027s okay to just call the API in manager directly but looks like all of the testcases in this file test in this way.\n\nBut, yep, good point.",
+      "parentUuid": "ba8a016a_c9963294",
       "revId": "b817b21305e5875d9b2476c1236e3fe1796a2d57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
