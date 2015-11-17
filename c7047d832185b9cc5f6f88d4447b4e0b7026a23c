@@ -34,6 +34,24 @@
       "revId": "c7047d832185b9cc5f6f88d4447b4e0b7026a23c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_324cfa41",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T03:23:41Z",
+      "side": 1,
+      "message": "I am fine with just remove them all, but keep them here will let us know why this should be configured like this, or else, some guys like me maybe curios about that and may not aware that it\u0027s invalid when the version is \u003c 2.4.",
+      "parentUuid": "ba8a016a_78eeea23",
+      "revId": "c7047d832185b9cc5f6f88d4447b4e0b7026a23c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
