@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_0a0073a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:45:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_cbb1bf48",
+      "revId": "e5019e138a49e0ba8401a0d71ec1d36bfe2cf241",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_0b5587f8",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-11T15:57:16Z",
       "side": 1,
       "message": "nit: pull \u0027consumer\u0027, \u0027request_token\u0027, and \u0027access_token\u0027 out in variables since they are used later.",
+      "revId": "e5019e138a49e0ba8401a0d71ec1d36bfe2cf241",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6a59fffd",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:45:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_0b5587f8",
       "revId": "e5019e138a49e0ba8401a0d71ec1d36bfe2cf241",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
