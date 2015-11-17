@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_0a5f130f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:40:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_6b3e938d",
+      "revId": "c2a3e9306460e3affda46524b782f3ded317fdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_ebc84424",
         "filename": "keystone/contrib/oauth1/backends/sql.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-11T15:54:25Z",
       "side": 1,
       "message": "Missing a \u0027when\u0027 here. Are we removing this in O?",
+      "revId": "c2a3e9306460e3affda46524b782f3ded317fdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8a7223ac",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:40:34Z",
+      "side": 1,
+      "message": "2 is the default",
+      "parentUuid": "da85f559_ebc84424",
       "revId": "c2a3e9306460e3affda46524b782f3ded317fdaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
