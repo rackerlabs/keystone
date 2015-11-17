@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_87453c18",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:30:49Z",
+      "side": 1,
+      "message": "i\u0027ll add a note",
+      "parentUuid": "da85f559_eb80ed4b",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_90944943",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 31
@@ -144,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_a72de047",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:30:49Z",
+      "side": 1,
+      "message": "yeah, i removed when\u003d for being too explicit",
+      "parentUuid": "da85f559_0bed3125",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_eef7f188",
         "filename": "keystone/federation/routers.py",
         "patchSetId": 31
@@ -173,6 +209,24 @@
       "side": 1,
       "message": "I think this was for backward-compatibility.",
       "parentUuid": "da85f559_eef7f188",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6727f864",
+        "filename": "keystone/federation/routers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:30:49Z",
+      "side": 1,
+      "message": "yep!",
+      "parentUuid": "da85f559_79a73f0b",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -232,6 +286,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_471d140e",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:30:49Z",
+      "side": 1,
+      "message": "i\u0027ll add a comment",
+      "parentUuid": "da85f559_8bc0417e",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_4becf0f2",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 31
@@ -243,6 +315,24 @@
       "writtenOn": "2015-11-11T15:45:44Z",
       "side": 1,
       "message": "use the constant from the federation extension.",
+      "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_07170cee",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T19:30:49Z",
+      "side": 1,
+      "message": "same deal",
+      "parentUuid": "da85f559_4becf0f2",
       "revId": "9e762e1aae6763c203fcb621c702f4d4c50ec074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
