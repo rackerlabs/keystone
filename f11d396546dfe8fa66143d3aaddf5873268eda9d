@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_5310724e",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-11-17T20:38:49Z",
+      "side": 1,
+      "message": "taking into account second comments - should I create new review only for this change?",
+      "parentUuid": "ba8a016a_cc9c0b6c",
+      "revId": "f11d396546dfe8fa66143d3aaddf5873268eda9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_acc8a775",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-16T19:13:49Z",
       "side": 1,
       "message": "according to http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html#signature-v4-examples-python the msg variable should be utf8 encoded",
+      "revId": "f11d396546dfe8fa66143d3aaddf5873268eda9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_585bb154",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-11-17T20:38:49Z",
+      "side": 1,
+      "message": "we pass only bytes to this func and seems that these bytes always utf8 decodable because they use only ASCII chars.\nscope[0] - timestamp\nscope[1] - region name\nscope[2] \u003d \u0027s3\u0027\n\nSo I think that no changes are needed at this line.",
+      "parentUuid": "ba8a016a_acc8a775",
       "revId": "f11d396546dfe8fa66143d3aaddf5873268eda9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
