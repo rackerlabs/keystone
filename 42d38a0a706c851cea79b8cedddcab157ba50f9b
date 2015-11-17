@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_dd600538",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2015-11-17T15:04:30Z",
+      "side": 1,
+      "message": "I kinda think a link to http://pip.readthedocs.org/en/stable/installing/#install-pip might be useful to let people know how to install pip correctly.",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_dd79e5fd",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2015-11-17T15:04:30Z",
+      "side": 1,
+      "message": "should be pip install -e . (note the trailing .)",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_9d359d47",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2015-11-17T15:04:30Z",
+      "side": 1,
+      "message": "python-lxml python-ldap and python-greenlet-devel all are not needed - they get installed by tox in the virtualenv",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_5d4095a5",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2015-11-17T15:04:30Z",
+      "side": 1,
+      "message": "Same thing here - also python-pysqlite is not needed",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
