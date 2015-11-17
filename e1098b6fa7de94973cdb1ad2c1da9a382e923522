@@ -34,6 +34,24 @@
       "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_41918b98",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T16:48:09Z",
+      "side": 1,
+      "message": "looks like it has been updated in this version, just went through your second version (https://review.openstack.org/#/c/246400/2), cool!",
+      "parentUuid": "ba8a016a_4f21b74c",
+      "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
