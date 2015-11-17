@@ -52,6 +52,23 @@
       "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8496a14a",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-17T17:22:47Z",
+      "side": 1,
+      "message": "setup ^",
+      "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
