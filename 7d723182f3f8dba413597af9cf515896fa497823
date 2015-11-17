@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_c71ca479",
+        "filename": "releasenotes/notes/deprecations-c4afc19dc5324b9c.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-17T19:43:32Z",
+      "side": 1,
+      "message": "lowercase keystone and eventlet.",
+      "revId": "7d723182f3f8dba413597af9cf515896fa497823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_2ab1b747",
+        "filename": "releasenotes/notes/deprecations-c4afc19dc5324b9c.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-17T19:43:32Z",
+      "side": 1,
+      "message": "we can\u0027t use `` in here to make keystone.conf a literal?",
+      "revId": "7d723182f3f8dba413597af9cf515896fa497823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
