@@ -52,6 +52,24 @@
       "revId": "c7047d832185b9cc5f6f88d4447b4e0b7026a23c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_39db7a7e",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-11-17T08:19:37Z",
+      "side": 1,
+      "message": "I also prefer keeping the notes here even if it is redundant with the example.",
+      "parentUuid": "ba8a016a_324cfa41",
+      "revId": "c7047d832185b9cc5f6f88d4447b4e0b7026a23c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
