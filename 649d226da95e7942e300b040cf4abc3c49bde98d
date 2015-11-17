@@ -33,6 +33,24 @@
       "revId": "649d226da95e7942e300b040cf4abc3c49bde98d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a6a5e504",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-17T18:42:50Z",
+      "side": 1,
+      "message": "I have rebased the patch and I am planning to work on it.\n\nI don\u0027t understand the internal notification stuff. Please give me an example of it so that I can use it here.",
+      "parentUuid": "1a4dcd0f_a397f0ea",
+      "revId": "649d226da95e7942e300b040cf4abc3c49bde98d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
