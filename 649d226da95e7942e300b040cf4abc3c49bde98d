@@ -51,6 +51,24 @@
       "revId": "649d226da95e7942e300b040cf4abc3c49bde98d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_39fb4fc3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-17T21:30:52Z",
+      "side": 1,
+      "message": "See the method _domain_deleted() in identity/core.py as an example....",
+      "parentUuid": "ba8a016a_a6a5e504",
+      "revId": "649d226da95e7942e300b040cf4abc3c49bde98d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
