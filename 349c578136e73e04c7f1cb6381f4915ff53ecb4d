@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_d0ea1fac",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-17T18:12:26Z",
+      "side": 1,
+      "message": "what self? This is a function, not a method on a class. I pulled this out because no class was shared in common for all of the uses.",
+      "parentUuid": "ba8a016a_583f5fb4",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_786ee3ca",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2015-11-17T05:08:13Z",
       "side": 1,
       "message": "\u0027self.identity_api\u0027 argument is not necessary given here.",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_10a507b4",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-17T18:12:26Z",
+      "side": 1,
+      "message": "Yes it really is. Look at the function in core.py. I cannot call api.create_user() without the api reference.",
+      "parentUuid": "ba8a016a_786ee3ca",
       "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_50edcfed",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-17T18:12:26Z",
+      "side": 1,
+      "message": "Unit tests broke. I will investigate and respond. Every \u0027del\u0027 you see I added because of a unit test failure. The LDAP tests are quite finnicky.",
+      "parentUuid": "ba8a016a_b82c4b4b",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_5772a94a",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 10
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_7021f34c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-17T18:12:26Z",
+      "side": 1,
+      "message": "Grrr, how are these sneaking through...... I swear the rebase is shifting something.",
+      "parentUuid": "ba8a016a_5772a94a",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_98b067f6",
         "filename": "keystone/tests/unit/test_ldap_pool_livetest.py",
         "patchSetId": 10
@@ -98,6 +170,24 @@
       "writtenOn": "2015-11-17T05:08:13Z",
       "side": 1,
       "message": "why this doesnt work in this patch? or you just miss this?",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_100987dd",
+        "filename": "keystone/tests/unit/test_ldap_pool_livetest.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-17T18:12:26Z",
+      "side": 1,
+      "message": "I have not setup a real live LDAP devstack to test it. stevemar said it could wait for another patch.",
+      "parentUuid": "ba8a016a_98b067f6",
       "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
