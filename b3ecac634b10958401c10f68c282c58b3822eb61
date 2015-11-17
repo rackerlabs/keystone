@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_05eb9db1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-11-17T13:05:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_97f75558",
+      "revId": "b3ecac634b10958401c10f68c282c58b3822eb61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_bbc8d775",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-16T21:06:35Z",
       "side": 1,
       "message": "If the deployer sets public_endpoint then that needs to take precendence over anything the environment or request is providing. That\u0027s the point of the public_endpoint option.",
+      "revId": "b3ecac634b10958401c10f68c282c58b3822eb61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a54091a6",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2015-11-17T13:05:34Z",
+      "side": 1,
+      "message": "Yeah this is what base_url() is doing.",
+      "parentUuid": "ba8a016a_bbc8d775",
       "revId": "b3ecac634b10958401c10f68c282c58b3822eb61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
