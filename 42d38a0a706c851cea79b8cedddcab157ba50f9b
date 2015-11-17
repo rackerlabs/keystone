@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_4347564b",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-17T15:57:03Z",
+      "side": 1,
+      "message": "Done in the pip link at line 75",
+      "parentUuid": "ba8a016a_dd600538",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_dd79e5fd",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-17T15:04:30Z",
       "side": 1,
       "message": "should be pip install -e . (note the trailing .)",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c3f6e6f8",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-17T15:57:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_dd79e5fd",
       "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_435196d7",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-17T15:57:03Z",
+      "side": 1,
+      "message": "Nice catch, thanks!",
+      "parentUuid": "ba8a016a_9d359d47",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_5d4095a5",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-17T15:04:30Z",
       "side": 1,
       "message": "Same thing here - also python-pysqlite is not needed",
+      "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_63213a4d",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-17T15:57:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_5d4095a5",
       "revId": "42d38a0a706c851cea79b8cedddcab157ba50f9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
