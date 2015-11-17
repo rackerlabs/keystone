@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_8dbb4b72",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T05:08:13Z",
+      "side": 1,
+      "message": "cannot this get updated in L326?",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_583f5fb4",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T05:08:13Z",
+      "side": 1,
+      "message": "do it like this:\n  self.identity_api.create_user(user)\n\nand get rid of \u0027api\u0027 parameter, and update all of the related changes.",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_786ee3ca",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T05:08:13Z",
+      "side": 1,
+      "message": "\u0027self.identity_api\u0027 argument is not necessary given here.",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_b82c4b4b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T05:08:13Z",
+      "side": 1,
+      "message": "why do this? I think the initial code has \u0027enable\u0027 field.",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_98b067f6",
+        "filename": "keystone/tests/unit/test_ldap_pool_livetest.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-17T05:08:13Z",
+      "side": 1,
+      "message": "why this doesnt work in this patch? or you just miss this?",
+      "revId": "349c578136e73e04c7f1cb6381f4915ff53ecb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
