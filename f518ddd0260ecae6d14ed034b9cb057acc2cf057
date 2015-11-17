@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_597413ce",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3792,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T22:08:42Z",
+      "side": 1,
+      "message": "no need to pass this in, just use uuid",
+      "revId": "f518ddd0260ecae6d14ed034b9cb057acc2cf057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_cb826a94",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3157,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-17T22:08:42Z",
+      "side": 1,
+      "message": "what\u0027s going on here?",
+      "revId": "f518ddd0260ecae6d14ed034b9cb057acc2cf057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
