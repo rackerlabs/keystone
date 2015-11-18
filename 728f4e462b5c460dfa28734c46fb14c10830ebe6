@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_c2ff0233",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_daa934e1",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_1aa01cf4",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-07T03:13:03Z",
       "side": 1,
       "message": "list returning a dict? that seems wrong",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_82f9fa4f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Not really.  It is a list, just the list is not the top object in the dictionary.",
+      "parentUuid": "da85f559_1aa01cf4",
       "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_82e25a9e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "inlined",
+      "parentUuid": "da85f559_5a8d447a",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_1a87bc62",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-07T03:13:03Z",
       "side": 1,
       "message": "undo this unrelated change",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_62e5f6a6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_1a87bc62",
       "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_42f31274",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_7adda86f",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_1ad57c42",
         "filename": "keystone/common/models.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2015-11-07T03:13:03Z",
       "side": 1,
       "message": "Implied Role object",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_02ed0a8b",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_1ad57c42",
       "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_a202fe3c",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_dace14b4",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_fa3678b3",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2015-11-07T03:13:03Z",
       "side": 1,
       "message": "shouldn\u0027t need to do this, let\u0027s not depend on extra",
+      "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_a2543e54",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-18T03:00:52Z",
+      "side": 1,
+      "message": "Nah, this allows us to not have to depend on extra.  UI pass false to make this code work without extra.",
+      "parentUuid": "da85f559_fa3678b3",
       "revId": "728f4e462b5c460dfa28734c46fb14c10830ebe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
