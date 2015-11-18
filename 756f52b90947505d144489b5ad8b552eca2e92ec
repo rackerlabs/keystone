@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_c876baa3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-18T18:04:50Z",
+      "side": 1,
+      "message": "When ldap related unit tests are run, stevedore has a problem with instantiating Assignment class when I remove this method from here. Similarly I think Keystone will have problems while starting up when ldap backend is used for assignment, although I am too lazy to verify that. :)",
+      "parentUuid": "ba8a016a_5c44d048",
+      "revId": "756f52b90947505d144489b5ad8b552eca2e92ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_5cfcd0b7",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 17
@@ -65,6 +83,24 @@
       "writtenOn": "2015-11-18T17:08:35Z",
       "side": 1,
       "message": "use unit.new_domain_ref, new_group_ref, user and so on...",
+      "revId": "756f52b90947505d144489b5ad8b552eca2e92ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_28e3c634",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 4276,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-11-18T18:04:50Z",
+      "side": 1,
+      "message": "Will do in the next patch. Thanks for the comments.",
+      "parentUuid": "ba8a016a_bc7ffc64",
       "revId": "756f52b90947505d144489b5ad8b552eca2e92ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
