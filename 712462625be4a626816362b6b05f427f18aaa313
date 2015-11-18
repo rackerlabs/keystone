@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_68af8ee2",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-18T18:04:54Z",
+      "side": 1,
+      "message": "I was inconsistent with this in my own patches.\n\nkwargs is a dict. It is ok to call dict.update(another_dict). The **kwargs form simply expands the dict to then reform the dict and then use it. So for this case we should prefer the no asterisk version.",
+      "parentUuid": "ba8a016a_8d6be4f0",
+      "revId": "712462625be4a626816362b6b05f427f18aaa313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_0fe4cca9",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 5
