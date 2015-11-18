@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_a64ff069",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T15:46:06Z",
+      "side": 1,
+      "message": "not sure why the driver method would have a leading underscore...",
+      "revId": "615aeee3ab0acb4f826c6c7b874bd26b101cdf2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
