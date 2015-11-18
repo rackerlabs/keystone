@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_0506e485",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-18T20:33:15Z",
+      "side": 1,
+      "message": "This can also be cached ? Since it depends on user roles on the given project.",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a53ef825",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-18T20:33:15Z",
+      "side": 1,
+      "message": "No need to do this inside the for loop for each role. Just do it once outside the for statement.",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a5259809",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-18T20:33:15Z",
+      "side": 1,
+      "message": "This can also be cached ? Since it depends on user roles on the given project.",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_057b44f6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-18T20:33:15Z",
+      "side": 1,
+      "message": "This can also be cached ? Since it depends on user roles on the given project.",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
