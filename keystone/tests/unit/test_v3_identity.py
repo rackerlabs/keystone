@@ -40,14 +40,12 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.group = self.identity_api.create_group(self.group)
         self.group_id = self.group['id']
 
-        self.credential_id = uuid.uuid4().hex
-        self.credential = self.new_credential_ref(
+        self.credential = unit.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project_id)
-        self.credential['id'] = self.credential_id
-        self.credential_api.create_credential(
-            self.credential_id,
-            self.credential)
+
+        self.credential_api.create_credential(self.credential['id'],
+                                              self.credential)
 
     # user crud tests
 
@@ -352,12 +350,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             domain_id=self.domain['id'],
             project_id=self.project['id'])
         self.user2 = self.identity_api.create_user(self.user2)
-        self.credential2 = self.new_credential_ref(
-            user_id=self.user2['id'],
-            project_id=self.project['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        credential2 = unit.new_credential_ref(user_id=self.user2['id'],
+                                              project_id=self.project['id'])
+        self.credential_api.create_credential(credential2['id'], credential2)
         # Create a token for this user which we can check later
         # gets deleted
         auth_data = self.build_authentication_request(
@@ -384,8 +379,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             self.user['id'])
         self.assertEqual(0, len(tokens))
         # But the credential for user2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
-        self.assertDictEqual(self.credential2, r)
+        r = self.credential_api.get_credential(credential2['id'])
+        self.assertDictEqual(credential2, r)
 
     # group crud tests
 

@@ -333,18 +333,24 @@ def new_group_ref(domain_id, **kwargs):
     return ref
 
 
-def new_credential_ref(user_id, project_id=None, cred_type=None):
+def new_credential_ref(user_id, project_id=None, cred_type=None, **kwargs):
     ref = dict()
     ref['id'] = uuid.uuid4().hex
     ref['user_id'] = user_id
-    if cred_type == 'ec2':
-        ref['type'] = 'ec2'
-        ref['blob'] = uuid.uuid4().hex
+    if 'type' in kwargs and 'blob' in kwargs:
+        if cred_type is not None:
+            raise Exception("do not pass cred_type with both type and blob")
     else:
-        ref['type'] = 'cert'
-        ref['blob'] = uuid.uuid4().hex
+        if cred_type == 'ec2':
+            ref['type'] = 'ec2'
+            ref['blob'] = uuid.uuid4().hex
+        else:
+            ref['type'] = 'cert'
+            ref['blob'] = uuid.uuid4().hex
     if project_id:
         ref['project_id'] = project_id
+
+    ref.update(kwargs)
     return ref
 
 
