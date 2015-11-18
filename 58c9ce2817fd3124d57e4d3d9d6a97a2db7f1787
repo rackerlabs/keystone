@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_5675ab95",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T08:06:04Z",
+      "side": 1,
+      "message": "I would think we want to decode the payload in the manager not here, and just pass in domain_id",
+      "revId": "58c9ce2817fd3124d57e4d3d9d6a97a2db7f1787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
