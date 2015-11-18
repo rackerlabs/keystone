@@ -1,0 +1,11 @@
+---
+upgrade:
+  - Keystone now uses oslo.cache, update the ``[cache]`` section of
+    ``keystone.conf`` to point to oslo.cache backends -
+    ``oslo_cache.memcache_pool``, ``oslo_cache.mongo``, or
+    ``oslo_cache.noop``, refer to sample config for examples.
+other:
+  - Deprecated ``keystone.common.cache.backends.memcache_pool``,
+    ``keystone.common.cache.backends.mongo``, and
+    ``keystone.common.cache.backends.noop``, in favor of oslo.cache backends.
+    The keystone backends will be removed in the 'O' release.

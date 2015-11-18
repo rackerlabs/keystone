@@ -1,0 +1,7 @@
+---
+fixes:
+  - Added content about the authenticated user to RequestContext. This change
+    adds information such as - user ID, project ID, and domain ID to log
+    entries. As a side effect of this change, both the user's domain ID and
+    project's domain ID are now included in ``auth_context``. See bug 1500222
+    for details.

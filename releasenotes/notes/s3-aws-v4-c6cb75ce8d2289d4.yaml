@@ -1,0 +1,4 @@
+---
+fixes:
+  - Keystone's s3 support can now perform validation using v4 of it's signing process.
+    See bug 1473042 for details.

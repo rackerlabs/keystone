@@ -1,0 +1,4 @@
+---
+fixes:
+  - Endpoints created when using v3 of the API will now be included when
+    listing endpoints via the v2.0 API. See bug 1480270 for details.

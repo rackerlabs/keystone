@@ -1,0 +1,8 @@
+---
+fixes:
+  - Hardcoded group LDAP schema attributes have been removed in favor of
+    configuration options. Two new configuration options have been added to
+    the ``[ldap]`` section, ``user_enabled_emulation_use_group_config`` and
+    ``project_enabled_emulation_use_group_config``, which allow deployers to
+    choose if they want to override the default hardcoded option. See bug
+    1515302 for details.

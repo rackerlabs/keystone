@@ -1,0 +1,8 @@
+---
+upgrade:
+  - The ``endpoint_policy`` extension migrations should no longer be run,
+    simply run the default keystone migrations.
+other:
+  - If ``keystone-manage db_sync --extension endpoint_policy`` is ran an error
+    will be returned, this is as designed, simply run
+    ``keystone-manage db_sync`` to run the main keystone migrations.
