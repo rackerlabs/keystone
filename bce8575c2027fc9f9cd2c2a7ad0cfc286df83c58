@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_bf792784",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-18T19:20:07Z",
+      "side": 1,
+      "message": "awesome, this was what the AWS spec said to do anyway",
+      "revId": "bce8575c2027fc9f9cd2c2a7ad0cfc286df83c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
