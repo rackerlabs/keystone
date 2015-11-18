@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_ff61ef39",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-18T19:31:56Z",
+      "side": 1,
+      "message": "can i make a patch changing all these to use \u0027kwargs\u0027? To me it seems not to make sense to use \u0027**kwargs\u0027   Does anyone have a reason on why use \u0027**kwargs\u0027 in this situation?",
+      "parentUuid": "ba8a016a_68af8ee2",
+      "revId": "712462625be4a626816362b6b05f427f18aaa313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_0fe4cca9",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 5
