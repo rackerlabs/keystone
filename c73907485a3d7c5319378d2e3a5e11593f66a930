@@ -16,6 +16,24 @@
       "revId": "c73907485a3d7c5319378d2e3a5e11593f66a930",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_b5287887",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-18T14:59:01Z",
+      "side": 1,
+      "message": "probably, but that\u0027s not the goal of this change.",
+      "parentUuid": "fa80f949_749f8bb4",
+      "revId": "c73907485a3d7c5319378d2e3a5e11593f66a930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
