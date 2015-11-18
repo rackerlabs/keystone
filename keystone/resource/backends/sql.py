@@ -161,7 +161,6 @@ class Resource(keystone_resource.ResourceDriverV8):
             tenant_ref.extra = new_project.extra
             return tenant_ref.to_dict(include_extra_dict=True)
 
-    @sql.handle_conflicts(conflict_type='project')
     def delete_project(self, tenant_id):
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
