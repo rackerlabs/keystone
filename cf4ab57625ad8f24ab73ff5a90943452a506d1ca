@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_e6189820",
+        "filename": "releasenotes/notes/httpd-keystone-d51b7335559b09c8.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T15:51:33Z",
+      "side": 1,
+      "message": "nit: maybe we should be consistent across our RNs about whether we say \"in the \u0027X\u0027 release\" or just \"in \u0027X\u0027\". Personally I prefer the former....but could be persuaded either way.",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
