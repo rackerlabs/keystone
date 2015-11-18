@@ -16,6 +16,23 @@
       "revId": "8c267aeb482cd4d418223340d008d165395b3cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e7497261",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T16:34:59Z",
+      "side": 1,
+      "message": "..this needs to be in the V9 driver below...",
+      "revId": "8c267aeb482cd4d418223340d008d165395b3cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
