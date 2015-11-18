@@ -38,13 +38,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.group = self.identity_api.create_group(self.group)
         self.group_id = self.group['id']
 
-        self.credential_id = uuid.uuid4().hex
-        self.credential = self.new_credential_ref(
-            user_id=self.user['id'],
-            project_id=self.project_id)
-        self.credential['id'] = self.credential_id
+        self.credential = unit.new_credential_ref(user_id=self.user['id'],
+                                                  project_id=self.project_id)
         self.credential_api.create_credential(
-            self.credential_id,
+            self.credential['id'],
             self.credential)
 
     # Domain CRUD tests
@@ -220,12 +217,9 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.group2 = unit.new_group_ref(domain_id=self.domain2['id'])
         self.group2 = self.identity_api.create_group(self.group2)
 
-        self.credential2 = self.new_credential_ref(
-            user_id=user2['id'],
-            project_id=self.project2['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        credential2 = unit.new_credential_ref(user_id=user2['id'],
+                                              project_id=self.project2['id'])
+        self.credential_api.create_credential(credential2['id'], credential2)
 
         # Now disable the new domain and delete it
         self.domain2['enabled'] = False
@@ -251,7 +245,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                           user2['id'])
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
-                          self.credential2['id'])
+                          credential2['id'])
 
         # ...and that all self.domain entities are still here
         r = self.resource_api.get_domain(self.domain['id'])
@@ -1020,12 +1014,9 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.project2 = self.new_project_ref(
             domain_id=self.domain['id'])
         self.resource_api.create_project(self.project2['id'], self.project2)
-        self.credential2 = self.new_credential_ref(
-            user_id=self.user['id'],
-            project_id=self.project2['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        credential2 = unit.new_credential_ref(user_id=self.user['id'],
+                                              project_id=self.project2['id'])
+        self.credential_api.create_credential(credential2['id'], credential2)
 
         # Now delete the project
         self.delete(
@@ -1038,8 +1029,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                           self.credential_api.get_credential,
                           credential_id=self.credential['id'])
         # But the credential for project2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
-        self.assertDictEqual(self.credential2, r)
+        r = self.credential_api.get_credential(credential2['id'])
+        self.assertDictEqual(credential2, r)
 
     def test_delete_not_leaf_project(self):
         """Call ``DELETE /projects/{project_id}``."""
