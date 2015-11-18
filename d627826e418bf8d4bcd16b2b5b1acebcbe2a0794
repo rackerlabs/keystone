@@ -52,6 +52,24 @@
       "revId": "d627826e418bf8d4bcd16b2b5b1acebcbe2a0794",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6b8b0169",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-18T21:01:29Z",
+      "side": 1,
+      "message": "makes sense, thanks for updating me!",
+      "parentUuid": "ba8a016a_ea1baf19",
+      "revId": "d627826e418bf8d4bcd16b2b5b1acebcbe2a0794",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
