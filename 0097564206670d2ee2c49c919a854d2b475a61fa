@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_517fcaaa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2015-11-18T22:29:46Z",
+      "side": 1,
+      "message": "I don\u0027t think this closes the bug on its own. We still need to actually change various places to make use of this new attribute of the token. E.g. only allow user creation when the token is scoped to the admin project, as mentioned in the bug description. That could be done under separate commits, but in that case this should be Partial-Bug.",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_31cec62e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2015-11-18T22:29:46Z",
+      "side": 1,
+      "message": "is CONF.resource really the best section in which to put these? I\u0027m not seeing how these relate to the other things in this section. I thought they would go in DEFAULT.",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_11062286",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2015-11-18T22:29:46Z",
+      "side": 1,
+      "message": "Following up on a comment in an earlier patch set... 2 spaces after a sentence is only correct with typewriters. See http://www.writersdigest.com/online-editor/how-many-spaces-after-a-period",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_11df020e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2015-11-18T22:29:46Z",
+      "side": 1,
+      "message": "s/ be//",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e39cf5c1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2015-11-18T22:29:46Z",
+      "side": 1,
+      "message": "I\u0027d like to see this moved to token_data[\u0027project\u0027][\u0027is_admin\u0027] so that all the project information is together.",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
