@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_032d7994",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-18T22:27:35Z",
+      "side": 1,
+      "message": "can we do \n\ncred_json \u003d self._create_dict_blob_credential()[0]\n\nto get rid of that un-used variable?",
+      "revId": "87752a80deb62e0b5a8a44cc7f88c833a815884d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
