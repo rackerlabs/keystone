@@ -33,6 +33,41 @@
       "revId": "f518ddd0260ecae6d14ed034b9cb057acc2cf057",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_39b585ed",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3157,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-18T01:58:21Z",
+      "side": 1,
+      "message": "Captured traceback:\n    ~~~~~~~~~~~~~~~~~~~\n        Traceback (most recent call last):\n          File \"keystone/tests/unit/test_v3_assignment.py\", line 3167, in test_v3_to_v2_project_method\n            self.assertDictEqual(self.expected_project, self.project1)\n          File \"/home/perryse/repos/openstack-related/mitaka/tmp/keystone/.tox/py27/local/lib/python2.7/site-packages/unittest2/case.py\", line 1128, in assertDictEqual\n            self.fail(self._formatMessage(msg, standardMsg))\n          File \"/home/perryse/repos/openstack-related/mitaka/tmp/keystone/.tox/py27/local/lib/python2.7/site-packages/unittest2/case.py\", line 690, in fail\n            raise self.failureException(msg)\n        AssertionError: {\u0027id\u0027: \u002788adce49021f4f6b823bd5e9cb24e185\u0027, [38 chars]185\u0027} !\u003d {\u0027name\u0027: \u002788adce49021f4f6b823bd5e9cb24e185\u0027[106 chars]True}\n        + {\u0027description\u0027: \u0027f04ea8fa001f4c399a8ace87e1cbe887\u0027,\n        +  \u0027enabled\u0027: True,\n        - {\u0027id\u0027: \u002788adce49021f4f6b823bd5e9cb24e185\u0027,\n        ? ^\n        \n        +  \u0027id\u0027: \u002788adce49021f4f6b823bd5e9cb24e185\u0027,\n        ? ^\n        \n           \u0027name\u0027: \u002788adce49021f4f6b823bd5e9cb24e185\u0027}",
+      "parentUuid": "ba8a016a_cb826a94",
+      "revId": "f518ddd0260ecae6d14ed034b9cb057acc2cf057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f9cffd7c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3182,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-18T01:58:21Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "f518ddd0260ecae6d14ed034b9cb057acc2cf057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
