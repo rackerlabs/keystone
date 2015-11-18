@@ -1,0 +1,5 @@
+---
+other:
+  - If ``keystone-manage db_sync --extension endpoint_policy`` is run an error
+    will be returned, this is as designed, simply run
+    ``keystone-manage db_sync`` to run the keystone migrations.
