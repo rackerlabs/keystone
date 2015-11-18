@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_4dde5cde",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T17:59:47Z",
+      "side": 1,
+      "message": "you need to rebase on master, these have been removed",
+      "revId": "30d9073509affbe2347c98d54aba0d9e2f02ca41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8db44482",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T17:59:47Z",
+      "side": 1,
+      "message": "is this meant to delete the role inferences as well?",
+      "revId": "30d9073509affbe2347c98d54aba0d9e2f02ca41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0d4854cb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T17:59:47Z",
+      "side": 1,
+      "message": "abstract method?\n\nshould this be in the role driver?",
+      "revId": "30d9073509affbe2347c98d54aba0d9e2f02ca41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0d761406",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-18T17:59:47Z",
+      "side": 1,
+      "message": "you need to create a new V9 driver -see my patch that creates one for assignment on how to do it: https://review.openstack.org/#/c/242853/",
+      "revId": "30d9073509affbe2347c98d54aba0d9e2f02ca41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
