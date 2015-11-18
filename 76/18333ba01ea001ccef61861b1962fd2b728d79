@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 18 Nov 2015 05:13:45 +0000
+Reviewed-on: https://review.openstack.org/245549
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
