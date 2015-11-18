@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_19573a27",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-18T17:08:48Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary, once he has already submitted the patch with an explicit dependency",
+      "parentUuid": "ba8a016a_ac76f1a1",
+      "revId": "8c267aeb482cd4d418223340d008d165395b3cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_e7497261",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
