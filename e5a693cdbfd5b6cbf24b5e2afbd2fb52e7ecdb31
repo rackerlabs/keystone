@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_8050490c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-11-19T18:09:15Z",
+      "side": 1,
+      "message": "maybe add a comment explaining what is the expected result here",
+      "revId": "e5a693cdbfd5b6cbf24b5e2afbd2fb52e7ecdb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
