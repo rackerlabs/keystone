@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_b7d10e25",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-19T19:55:59Z",
+      "side": 1,
+      "message": "should we have a note here on why this needs to be encoded to \u0027utf-8\u0027?",
+      "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_1a284132",
+        "filename": "keystone/tests/unit/test_v3_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-19T19:55:59Z",
+      "side": 1,
+      "message": "should we have a note here on why this needs to be encoded to \u0027utf-8\u0027?",
+      "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
