@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_0d5029d3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-11-19T12:58:03Z",
+      "side": 1,
+      "message": "s/project_id/project_ids",
+      "revId": "bb48ec7ed7e027fe1720619f52fec3d8787ec4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6d5775ca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-11-19T12:58:03Z",
+      "side": 1,
+      "message": "if one of the project_ids don\u0027t exist, right?",
+      "revId": "bb48ec7ed7e027fe1720619f52fec3d8787ec4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_4d1f1108",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3442,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-11-19T12:58:03Z",
+      "side": 1,
+      "message": "needs a test for the case where one of the projects in the list doesn\u0027t exist",
+      "revId": "bb48ec7ed7e027fe1720619f52fec3d8787ec4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
