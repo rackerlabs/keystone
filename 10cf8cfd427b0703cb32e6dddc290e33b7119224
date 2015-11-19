@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_4da14745",
+        "filename": "releasenotes/notes/deprecate-endpoint-policy-cfg-option-d018acab72a398a0.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-19T15:16:39Z",
+      "side": 1,
+      "message": "hope you can add some explanation here, we deprecate this just because it\u0027s was release in \u0027L\u0027",
+      "revId": "10cf8cfd427b0703cb32e6dddc290e33b7119224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
