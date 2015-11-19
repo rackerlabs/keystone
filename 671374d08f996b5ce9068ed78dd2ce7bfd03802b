@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_a7633c41",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-19T12:34:09Z",
+      "side": 1,
+      "message": "capitalize the first word of each phrase",
+      "revId": "671374d08f996b5ce9068ed78dd2ce7bfd03802b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a7ca5c19",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-19T12:34:09Z",
+      "side": 1,
+      "message": "s/need/needs s/i/I",
+      "revId": "671374d08f996b5ce9068ed78dd2ce7bfd03802b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
