@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_4446fc7b",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-19T16:22:11Z",
+      "side": 1,
+      "message": "(nit) s/hardcoded //",
+      "revId": "161fd7b910376c2f909b574824414bcdcb5d807f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
