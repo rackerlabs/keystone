@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_b1527365",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5489,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T23:03:47Z",
+      "side": 1,
+      "message": "future patch: replace _new_policy_ref with unit.new_policy_ref()",
+      "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d1cff726",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5492,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T23:03:47Z",
+      "side": 1,
+      "message": "future patch idea: replace assertEqualPolicies with assertDictEqual",
+      "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_1a284132",
         "filename": "keystone/tests/unit/test_v3_policy.py",
         "patchSetId": 2
@@ -30,6 +64,24 @@
       "writtenOn": "2015-11-19T19:55:59Z",
       "side": 1,
       "message": "should we have a note here on why this needs to be encoded to \u0027utf-8\u0027?",
+      "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f1e9db7f",
+        "filename": "keystone/tests/unit/test_v3_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T23:03:47Z",
+      "side": 1,
+      "message": "nothings being encoded here tom, we\u0027re just dumping out JSON data into a string, which is how the API expects the \u0027blob\u0027 to look like.\n\nwe were previously passing in uuid random strings, but this makes the test a bit more \u0027real\u0027",
+      "parentUuid": "ba8a016a_1a284132",
       "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
