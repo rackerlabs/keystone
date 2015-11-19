@@ -34,6 +34,24 @@
       "revId": "87752a80deb62e0b5a8a44cc7f88c833a815884d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f88f9e72",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-19T16:39:46Z",
+      "side": 1,
+      "message": "I guess the only reason i would worry is because i18n uses \u0027_\u0027 for translation. Since this is at test file i don\u0027t think we would see it here.  I am fine with leaving it as is.",
+      "parentUuid": "ba8a016a_236afd81",
+      "revId": "87752a80deb62e0b5a8a44cc7f88c833a815884d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
