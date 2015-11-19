@@ -15,7 +15,7 @@ from keystone.common import sql
 from keystone import exception
 
 
-class Role(assignment.RoleDriverV8):
+class Role(assignment.RoleDriverV9):
 
     @sql.handle_conflicts(conflict_type='role')
     def create_role(self, role_id, role):
