@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_d47e3e18",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:54:28Z",
+      "side": 1,
+      "message": "with the other patches we actually elected to remove this option, see the [federation] section\n\nand presently, AFAICT, nothing uses this option",
+      "revId": "dafbf5b8b2ef93ef0e785432fd34629a9d76b248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
