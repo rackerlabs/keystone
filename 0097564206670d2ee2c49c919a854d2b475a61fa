@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_ee5c9f4c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:46:10Z",
+      "side": 1,
+      "message": "But the bug is that there is no way to fix the policies today.  Once this is fixed, we can do so.  This will only close the Keystone side of the bug.",
+      "parentUuid": "ba8a016a_be1ee96d",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_31cec62e",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -48,6 +66,24 @@
       "writtenOn": "2015-11-18T22:29:46Z",
       "side": 1,
       "message": "is CONF.resource really the best section in which to put these? I\u0027m not seeing how these relate to the other things in this section. I thought they would go in DEFAULT.",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0e3a43e7",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:46:10Z",
+      "side": 1,
+      "message": "Projects fall under resource.  DEFAULT is for things global to the Keystone server.",
+      "parentUuid": "ba8a016a_31cec62e",
       "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_4e1b6b81",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:46:10Z",
+      "side": 1,
+      "message": "We cannot identify based on pattern.  That messed us up before, where we were assuming ids to be UUIDs, but that falls down, for example with LDAP assignments.",
+      "parentUuid": "ba8a016a_214f3c38",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_11062286",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_2e14e74a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:46:10Z",
+      "side": 1,
+      "message": "I wrote this on a typewriter.  And he lies.",
+      "parentUuid": "ba8a016a_11062286",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_11df020e",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -99,6 +171,24 @@
       "writtenOn": "2015-11-18T22:29:46Z",
       "side": 1,
       "message": "s/ be//",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ce0f5b35",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:46:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_11df020e",
       "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +223,24 @@
       "writtenOn": "2015-11-19T11:56:53Z",
       "side": 1,
       "message": "Makes sense to me. ++",
+      "parentUuid": "ba8a016a_e39cf5c1",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_297061a3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:46:10Z",
+      "side": 1,
+      "message": "I initially tried that.  However, aside from the difficullty in changing the internal objects used to create the token, there is the fact that this value is not an intrinsic property of the project itself, but rather an indicator at the token level how the token should be used.\n\nMoving back to practical considerations, adding it to the project means that we can\u0027t enforce policy on it without additional changes to the logic that pulls things out of the token;  this was a compromise.",
       "parentUuid": "ba8a016a_e39cf5c1",
       "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
