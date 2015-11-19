@@ -34,6 +34,40 @@
       "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8e1f13b6",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2864,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:32:03Z",
+      "side": 1,
+      "message": "Revert this change.  It changes the meaning of the unit tests.  If you need to test the exact configuration, add another test that tests it.",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_4e7ccbeb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2887,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-19T21:32:03Z",
+      "side": 1,
+      "message": "same as above and all the following expires_at changes.",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
