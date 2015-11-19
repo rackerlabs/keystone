@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Marek Denis <marek.denis@cern.ch>
+Submitted-by: Jenkins
+Submitted-at: Thu, 19 Nov 2015 03:28:13 +0000
+Reviewed-on: https://review.openstack.org/214775
+Project: openstack/keystone
+Branch: refs/heads/master
