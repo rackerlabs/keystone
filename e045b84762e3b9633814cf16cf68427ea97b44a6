@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_788e607a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-19T08:56:02Z",
+      "side": 1,
+      "message": "This all sounds a bit convoluted.  Maybe something a little simpler like:\n\n\"When we issue an audit notification on service creation we currently include the service_id that was passed into the create call. Instead we should be using the ID from the created entity that was returned from the driver (since we do not support caller-defined service IDs).\"",
+      "revId": "e045b84762e3b9633814cf16cf68427ea97b44a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
