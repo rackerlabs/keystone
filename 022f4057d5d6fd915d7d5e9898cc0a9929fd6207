@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_f7126456",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-19T05:45:06Z",
+      "side": 1,
+      "message": "not sure whether a bug not closed as fixed is appropriate to be tagged with \u0027fixes\u0027, maybe it\u0027s okay, but it looks weird.",
+      "revId": "022f4057d5d6fd915d7d5e9898cc0a9929fd6207",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_97ef58e8",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-19T05:45:06Z",
+      "side": 1,
+      "message": "with the chain got merged (\\o/), other pieces could be added now, but it\u0027s okay to be a follow-on patch.",
+      "revId": "022f4057d5d6fd915d7d5e9898cc0a9929fd6207",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
