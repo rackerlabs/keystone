@@ -200,7 +200,7 @@ class Manager(manager.Manager):
         service_ref.setdefault('enabled', True)
         service_ref.setdefault('name', '')
         ref = self.driver.create_service(service_id, service_ref)
-        notifications.Audit.created(self._SERVICE, service_id, initiator)
+        notifications.Audit.created(self._SERVICE, ref['id'], initiator)
         COMPUTED_CATALOG_REGION.invalidate()
         return ref
 
