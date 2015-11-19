@@ -260,9 +260,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         return unit.new_credential_ref(user_id, project_id=project_id,
                                        cred_type=cred_type)
 
-    def new_policy_ref(self):
-        return unit.new_policy_ref()
-
     def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
                       impersonation=None, expires=None, role_ids=None,
                       role_names=None, remaining_uses=None,
