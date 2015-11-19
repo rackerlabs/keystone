@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_e4cdb731",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-19T14:55:15Z",
+      "side": 1,
+      "message": "What about this .get(), shouldn\u0027t it at least have an empty dictionary(as set above)?",
+      "revId": "4acff5e619dcad7462c0af14d8504ca08164dfdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
