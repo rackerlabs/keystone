@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_5fc9f457",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-19T13:18:10Z",
+      "side": 1,
+      "message": "this whole message is confuse, you should be clearer on what the problem is. What about rephrase it to: \n\nNotification.Audit.update needed to be changed from service_id to ref[\u0027id\u0027] when create_service is called with service_id and service_ref parameters, once service_id may be not equal to ref[\u0027id\u0027].\nWe should use ref[\u0027id\u0027] instead of service_id when calling notifications.Audit.updated\u0027.",
+      "revId": "6e33f832682c4fee35a65b958f3a4d98f975136f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_67b5547c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-19T13:18:10Z",
+      "side": 1,
+      "message": "the correct usage is \n\nCloses-Bug: 1517751",
+      "revId": "6e33f832682c4fee35a65b958f3a4d98f975136f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
