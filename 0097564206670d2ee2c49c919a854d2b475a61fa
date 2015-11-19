@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_be1ee96d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T11:56:53Z",
+      "side": 1,
+      "message": "Yes, I agree we still need to update policies to make the fix complete.\n\nAdam is looking forward to have this line merged (me too!). :)",
+      "parentUuid": "ba8a016a_517fcaaa",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_31cec62e",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -30,6 +48,23 @@
       "writtenOn": "2015-11-18T22:29:46Z",
       "side": 1,
       "message": "is CONF.resource really the best section in which to put these? I\u0027m not seeing how these relate to the other things in this section. I thought they would go in DEFAULT.",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_214f3c38",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T11:56:53Z",
+      "side": 1,
+      "message": "I\u0027d prefer to have simply admin_project_domain and admin_project.\n\nThis way we would allow to specify only ID for admin_project, or name for both; this is aligned with what we o for auth.\n\nLet\u0027s allow specifying a name, but not restricting it to this ?",
       "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +116,24 @@
       "writtenOn": "2015-11-18T22:29:46Z",
       "side": 1,
       "message": "I\u0027d like to see this moved to token_data[\u0027project\u0027][\u0027is_admin\u0027] so that all the project information is together.",
+      "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8184e80a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T11:56:53Z",
+      "side": 1,
+      "message": "Makes sense to me. ++",
+      "parentUuid": "ba8a016a_e39cf5c1",
       "revId": "0097564206670d2ee2c49c919a854d2b475a61fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
