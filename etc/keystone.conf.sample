@@ -644,6 +644,9 @@
 # From keystone
 #
 
+# Enable endpoint filtering functionality. (boolean value)
+#enabled = true
+
 # Entrypoint for the endpoint filter backend driver in the
 # keystone.endpoint_filter namespace. (string value)
 #driver = sql
