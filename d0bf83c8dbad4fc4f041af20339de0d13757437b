@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_fee9aa7f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-19T22:49:29Z",
+      "side": 1,
+      "message": "So if you look at the dependant patch, you can see that as we remove methods we move them out of base into the V8...and new ones go in V9.  This way, we can allow V9 and V8 to still inherit those methods that are unchanged",
+      "parentUuid": "ba8a016a_7eecdaba",
+      "revId": "d0bf83c8dbad4fc4f041af20339de0d13757437b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_dbcf1827",
         "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
         "patchSetId": 16
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_1e982e1b",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-19T22:49:29Z",
+      "side": 1,
+      "message": "yep!",
+      "parentUuid": "ba8a016a_dbcf1827",
+      "revId": "d0bf83c8dbad4fc4f041af20339de0d13757437b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_fb5bfc83",
         "filename": "tox.ini",
         "patchSetId": 16
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-19T22:43:21Z",
       "side": 1,
       "message": "why do we need a new env for them? These tests still being picked up by other envs right?",
+      "revId": "d0bf83c8dbad4fc4f041af20339de0d13757437b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_7ea4da49",
+        "filename": "tox.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-19T22:49:29Z",
+      "side": 1,
+      "message": "\u0027cause otherwise there is a problem with our SQL test since we load all the models at the start..and we can\u0027t cope with model changes have way through the test.  These test below DON\u0027T run in the other ends, since they are not called test_xxx",
+      "parentUuid": "ba8a016a_fb5bfc83",
       "revId": "d0bf83c8dbad4fc4f041af20339de0d13757437b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
