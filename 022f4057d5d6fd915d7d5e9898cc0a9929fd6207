@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_2223cca8",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T05:55:39Z",
+      "side": 1,
+      "message": "it\u0027s related, i think it\u0027s fine",
+      "parentUuid": "ba8a016a_f7126456",
+      "revId": "022f4057d5d6fd915d7d5e9898cc0a9929fd6207",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_97ef58e8",
         "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-19T05:45:06Z",
       "side": 1,
       "message": "with the chain got merged (\\o/), other pieces could be added now, but it\u0027s okay to be a follow-on patch.",
+      "revId": "022f4057d5d6fd915d7d5e9898cc0a9929fd6207",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e23944d8",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T05:55:39Z",
+      "side": 1,
+      "message": "yeah, i\u0027ll add to this tomorrow :)",
+      "parentUuid": "ba8a016a_97ef58e8",
       "revId": "022f4057d5d6fd915d7d5e9898cc0a9929fd6207",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
