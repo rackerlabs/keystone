@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_f8fb3079",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-19T09:01:31Z",
+      "side": 1,
+      "message": "Maybe be a bit more specific, i.e.:\n\n\"Several #NOTE comments were missing the colon separator.\"",
+      "revId": "b51df26b5568d5a7269be49f1fdc4e6f116ec1b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
