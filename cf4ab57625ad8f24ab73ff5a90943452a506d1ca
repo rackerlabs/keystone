@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_f10b5428",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "whoops, looks like i was mid-thought",
+      "parentUuid": "ba8a016a_b9229ca1",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_3946ac4f",
         "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-18T23:27:00Z",
       "side": 1,
       "message": "\"bug 1489061\" should be a link to the bug. I wouldn\u0027t expect everybody reading this to know how to find it.",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f4aee2e4",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_3946ac4f",
       "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_347f8a67",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "true, we did that last release",
+      "parentUuid": "ba8a016a_796754e9",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_99a238fb",
         "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-18T23:27:00Z",
       "side": 1,
       "message": "change \"is ran\" to \"is run\"",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f4958286",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_99a238fb",
       "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_948e7677",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_79ae74e7",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_e6189820",
         "filename": "releasenotes/notes/httpd-keystone-d51b7335559b09c8.yaml",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2015-11-18T15:51:33Z",
       "side": 1,
       "message": "nit: maybe we should be consistent across our RNs about whether we say \"in the \u0027X\u0027 release\" or just \"in \u0027X\u0027\". Personally I prefer the former....but could be persuaded either way.",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f4dca274",
+        "filename": "releasenotes/notes/httpd-keystone-d51b7335559b09c8.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "in the \u0027X\u0027 release",
+      "parentUuid": "ba8a016a_e6189820",
       "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_b4e29a2d",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_9979d884",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_79951485",
         "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2015-11-18T23:27:00Z",
       "side": 1,
       "message": "the bug reference should be a link.",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_34446a19",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_79951485",
       "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_f44a6225",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_19e5e836",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_594db03c",
         "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
         "patchSetId": 1
@@ -166,6 +328,41 @@
       "writtenOn": "2015-11-18T23:27:00Z",
       "side": 1,
       "message": "Remove the first sentence. This is implementation details that deployers don\u0027t care about.",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_746512b3",
+        "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_594db03c",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_145606ce",
+        "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "added bug link",
       "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +386,41 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_f4f822c5",
+        "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_995558c3",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d4fb9ebf",
+        "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "added bug link",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_d90680cd",
         "filename": "releasenotes/notes/v3-endpoints-in-v2-list-b0439816938713d6.yaml",
         "patchSetId": 1
@@ -200,6 +432,41 @@
       "writtenOn": "2015-11-18T23:27:00Z",
       "side": 1,
       "message": "change \"the API\" to \"the keystone REST API\"",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_940196b1",
+        "filename": "releasenotes/notes/v3-endpoints-in-v2-list-b0439816938713d6.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_d90680cd",
+      "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_7433d2ab",
+        "filename": "releasenotes/notes/v3-endpoints-in-v2-list-b0439816938713d6.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-19T04:45:12Z",
+      "side": 1,
+      "message": "added bug link",
       "revId": "cf4ab57625ad8f24ab73ff5a90943452a506d1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
