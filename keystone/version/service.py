@@ -135,13 +135,11 @@ def v3_app_factory(global_conf, **local_conf):
                       resource,
                       revoke,
                       federation,
-                      oauth1]
+                      oauth1,
+                      endpoint_policy]
 
     if CONF.trust.enabled:
         router_modules.append(trust)
-
-    if CONF.endpoint_policy.enabled:
-        router_modules.append(endpoint_policy)
 
     for module in router_modules:
         routers_instance = module.routers.Routers()
