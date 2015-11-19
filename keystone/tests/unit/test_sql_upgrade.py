@@ -30,6 +30,7 @@ WARNING::
 """
 
 import copy
+import datetime
 import json
 import uuid
 
@@ -678,6 +679,70 @@ class SqlUpgradeTests(SqlMigrateBase):
         # It won't exist because we are mocking it, but we can verify
         # that 084 did not create the table.
         self.assertTableDoesNotExist('revocation_event')
+
+    def test_convert_datetime_to_integer(self):
+        # upgrade to 85
+        self.upgrade(85)
+        self.assertTableColumns('trust',
+                                ['id',
+                                 'trustor_user_id',
+                                 'trustee_user_id',
+                                 'project_id',
+                                 'impersonation',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'extra'])
+
+        # insert some dummy data to test with
+        # sql_datetime_str = '2015-10-16 18:14:09'
+        dt = datetime.datetime.utcnow()
+        trust = {
+            'id': uuid.uuid4().hex,
+            'trustor_user_id': uuid.uuid4().hex,
+            'trustee_user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'impersonation': 0,
+            'deleted_at': dt,
+            'expires_at': dt,
+            'remaining_uses': 3,
+            'extra': json.dumps({}),
+        }
+        session = self.Session()
+        self.insert_dict(session, 'trust', trust)
+
+        self.upgrade(86)
+        self.assertTableColumns('trust',
+                                ['id',
+                                 'trustor_user_id',
+                                 'trustee_user_id',
+                                 'project_id',
+                                 'impersonation',
+                                 'deleted_at',
+                                 'expires_at',
+                                 'remaining_uses',
+                                 'extra'])
+
+        trust_table = sqlalchemy.Table('trust', self.metadata, autoload=True)
+
+        # pull the one trust we put in the table out
+        trust = session.query(trust_table).one()
+
+        # get the integer representing deleted_at and convert to datetime
+        deleted_at_float = trust.deleted_at / 1e6
+        converted_deleted_at_dt = datetime.datetime.utcfromtimestamp(
+            deleted_at_float)
+
+        # assert that the datetime we put in matches the conversion
+        self.assertEqual(dt, converted_deleted_at_dt)
+
+        # get the integer representing expires_at and convert to datetime
+        expires_at_float = trust.expires_at / 1e6
+        converted_expires_at_dt = datetime.datetime.utcfromtimestamp(
+            expires_at_float)
+
+        # assert that the datetime we put in matches the conversion
+        self.assertEqual(dt, converted_expires_at_dt)
 
     def test_fixup_service_name_value_upgrade(self):
         """Update service name data from `extra` to empty string."""
