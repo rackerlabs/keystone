@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_e517e742",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-11-19T18:02:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_5498e769",
+      "revId": "98354c126e3ed9003f1615032664b40943401fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c51c236c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-11-19T18:02:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_baa51eb6",
+      "revId": "98354c126e3ed9003f1615032664b40943401fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_036f71fc",
         "filename": "keystone/common/controller.py",
         "patchSetId": 13
@@ -102,6 +138,24 @@
       "side": 1,
       "message": "Okay maybe I am confused. Your saying that the domain property is available on the user token, so at this point in the code how do you know that the missing domain property is the cause of the validation error?",
       "parentUuid": "da85f559_f0a98c25",
+      "revId": "98354c126e3ed9003f1615032664b40943401fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_45fd936c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 15225
+      },
+      "writtenOn": "2015-11-19T18:02:42Z",
+      "side": 1,
+      "message": "The admin token is not a real token, so it is meaningless to talk about what domain it is associated with. utils.get_token_ref() throws an exception while trying to lookup the admin token (it won\u0027t find it since it is not a real token). Since the same exception could be thrown for a bogus (non-admin) token too, we check context.get(\u0027is_admin\u0027). If that is true, then we know that it is the admin token and re-throw the exception with a useful error info about the admin token not being associated with a domain.\n\n\nThe full logic is as follows:\n\n\n1.Check if domain passed with user obj in the create-user request. If yes, use it.\n\n2.If not, fetch the token ref for the token string passed by the user. If it can\u0027t be fetched, check if it is because it is the admin token. If yes, display a better error message.\n\n3.If the token can be fetched, use the domain associated with the token",
+      "parentUuid": "da85f559_fa45e6b2",
       "revId": "98354c126e3ed9003f1615032664b40943401fa7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
