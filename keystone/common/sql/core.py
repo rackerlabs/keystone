@@ -51,6 +51,7 @@ Column = sql.Column
 Index = sql.Index
 String = sql.String
 Integer = sql.Integer
+BigInteger = sql.BigInteger
 Enum = sql.Enum
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
