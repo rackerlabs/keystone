@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_5bdcaf45",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T11:24:14Z",
+      "side": 1,
+      "message": "(nit) Actually it could be a proxy_cls_name, to be consistent with other occurrences, and since it is the name of the class, not the name of the object :)",
+      "revId": "3b1ad19e498986eb1d1c85973bf39055fd6e6b79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_7bb653fa",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T11:24:14Z",
+      "side": 1,
+      "message": "(nit) It is a value_cls_name, to be consistent with other occurrences, and since it is the name of the class, not the name of the object",
+      "revId": "3b1ad19e498986eb1d1c85973bf39055fd6e6b79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
