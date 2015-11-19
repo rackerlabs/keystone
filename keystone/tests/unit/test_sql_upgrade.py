@@ -30,6 +30,7 @@ WARNING::
 """
 
 import copy
+import datetime
 import json
 import uuid
 
@@ -678,6 +679,83 @@ class SqlUpgradeTests(SqlMigrateBase):
         # It won't exist because we are mocking it, but we can verify
         # that 084 did not create the table.
         self.assertTableDoesNotExist('revocation_event')
+
+    def test_convert_datetime_to_integer(self):
+        # upgrade to 86
+        self.upgrade(86)
+        self.assertTableColumns('revocation_event',
+                                ['id',
+                                 'domain_id',
+                                 'project_id',
+                                 'user_id',
+                                 'role_id',
+                                 'trust_id',
+                                 'consumer_id',
+                                 'access_token_id',
+                                 'issued_before',
+                                 'expires_at',
+                                 'revoked_at',
+                                 'audit_id',
+                                 'audit_chain_id'])
+
+        # insert some dummy data to test with
+        dt = datetime.datetime.utcnow()
+        expiration = dt + datetime.timedelta(days=1)
+        session = self.Session()
+        revocation_event = {
+            'id': uuid.uuid4().hex,
+            'user_id': uuid.uuid4().hex,
+            'issued_before': dt,
+            'expires_at': expiration,
+            'revoked_at': dt
+        }
+        self.insert_dict(session, 'revocation_event', revocation_event)
+
+        self.upgrade(87)
+        self.assertTableColumns('revocation_event',
+                                ['id',
+                                 'domain_id',
+                                 'project_id',
+                                 'user_id',
+                                 'role_id',
+                                 'trust_id',
+                                 'consumer_id',
+                                 'access_token_id',
+                                 'issued_before',
+                                 'expires_at',
+                                 'revoked_at',
+                                 'audit_id',
+                                 'audit_chain_id'])
+
+        revocation_table = sqlalchemy.Table('revocation_event',
+                                            self.metadata,
+                                            autoload=True)
+
+        # we only have one revocation event in the table, so grab it
+        revocation_event = session.query(revocation_table).one()
+
+        # get the integer representing revoked_at and convert to datetime
+        revoked_at_int = revocation_event.revoked_at / 1e6
+        revoked_at_dt = datetime.datetime.utcfromtimestamp(revoked_at_int)
+
+        # compare the integer we tranlsated from the datebase to the original
+        self.assertCloseEnoughForGovernmentWork(dt, revoked_at_dt, delta=1)
+
+        # get the integer representing issued_before and convert to datetime
+        issued_before_int = revocation_event.issued_before / 1e6
+        issued_before_dt = datetime.datetime.utcfromtimestamp(
+            issued_before_int)
+
+        # compare the integer we tranlsated from the datebase to the original
+        self.assertCloseEnoughForGovernmentWork(dt, issued_before_dt, delta=1)
+
+        # get the integer representing expires_at and convert to datetime
+        expires_at_int = revocation_event.expires_at / 1e6
+        expires_at_dt = datetime.datetime.utcfromtimestamp(expires_at_int)
+
+        # compare the integer we tranlsated from the datebase to the original
+        self.assertCloseEnoughForGovernmentWork(expiration, expires_at_dt,
+                                                delta=1)
 
     def test_fixup_service_name_value_upgrade(self):
         """Update service name data from `extra` to empty string."""
