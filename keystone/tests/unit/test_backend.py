@@ -5487,18 +5487,10 @@ class CatalogTests(object):
 
 class PolicyTests(object):
     def _new_policy_ref(self):
-        return {
-            'id': uuid.uuid4().hex,
-            'policy': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'endpoint_id': uuid.uuid4().hex,
-        }
+        return unit.new_policy_ref()
 
     def assertEqualPolicies(self, a, b):
-        self.assertEqual(a['id'], b['id'])
-        self.assertEqual(a['endpoint_id'], b['endpoint_id'])
-        self.assertEqual(a['policy'], b['policy'])
-        self.assertEqual(a['type'], b['type'])
+        self.assertDictEqual(a, b)
 
     def test_create(self):
         ref = self._new_policy_ref()

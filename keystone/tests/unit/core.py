@@ -16,6 +16,7 @@ from __future__ import absolute_import
 import atexit
 import datetime
 import functools
+import json
 import logging
 import os
 import re
@@ -362,10 +363,12 @@ def new_role_ref(**kwargs):
     return ref
 
 
-def new_policy_ref():
+def new_policy_ref(**kwargs):
     ref = new_ref()
-    ref['blob'] = uuid.uuid4().hex
+    ref['id'] = uuid.uuid4().hex
+    ref['blob'] = json.dumps({'data': uuid.uuid4().hex, })
     ref['type'] = uuid.uuid4().hex
+    ref.update(kwargs)
     return ref
 
 
