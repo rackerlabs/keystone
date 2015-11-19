@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_7143bd13",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T17:22:23Z",
+      "side": 1,
+      "message": "I think removing \u0027_association\u0027 from these methods would make it clearer.\n\nIn all the other places we talk about _association in this file, we are talking about explicitely associating a given policy with a given entity. This is why, for me, [create,check,delete]_default_policy(..) makes more sense.",
+      "revId": "f25d27b78df56543da836db9225fff4b4db24c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_47afdb7c",
+        "filename": "keystone/endpoint_policy/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T17:22:23Z",
+      "side": 1,
+      "message": "Maybe a better comment ? Like:\n\nOtherwise, check if there is a default policy associated ...",
+      "revId": "f25d27b78df56543da836db9225fff4b4db24c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_07d553e6",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T17:22:23Z",
+      "side": 1,
+      "message": "We should create a test for default policy instead. Yes, at backend too, besides the tests in test_v3_endpoint_policy",
+      "revId": "f25d27b78df56543da836db9225fff4b4db24c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_078d53d5",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-19T17:22:23Z",
+      "side": 1,
+      "message": "Nice test!",
+      "revId": "f25d27b78df56543da836db9225fff4b4db24c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
