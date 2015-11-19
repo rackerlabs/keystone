@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_d923b554",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-19T16:06:21Z",
+      "side": 1,
+      "message": "For this patch, I think we originally just wanted to target optimizing get_token_data(), specifically _populate_scope(). \n\nhttps://github.com/openstack/keystone/blob/40453931a907da7f169f7b60323cfbe8b6bbb0c8/keystone/token/providers/common.py#L268-L273\n\nMaybe something else could be open to continue optimizing the assignment api in the future?",
+      "parentUuid": "ba8a016a_0506e485",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_a53ef825",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-18T20:33:15Z",
       "side": 1,
       "message": "No need to do this inside the for loop for each role. Just do it once outside the for statement.",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d3df14d4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-19T16:06:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_a53ef825",
       "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_79d96956",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-19T16:06:21Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "parentUuid": "ba8a016a_a5259809",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_057b44f6",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-18T20:33:15Z",
       "side": 1,
       "message": "This can also be cached ? Since it depends on user roles on the given project.",
+      "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_39df613b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-19T16:06:21Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "parentUuid": "ba8a016a_057b44f6",
       "revId": "96e2dae796ff661cf377bffadcfa26e63c7845b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
