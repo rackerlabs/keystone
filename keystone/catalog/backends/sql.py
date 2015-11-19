@@ -254,6 +254,7 @@ class Catalog(catalog.CatalogDriverV8):
         endpoints = sql.filter_limit_query(Endpoint, endpoints, hints)
         return [e.to_dict() for e in list(endpoints)]
 
+    @sql.handle_conflicts(conflict_type='endpoint')
     def update_endpoint(self, endpoint_id, endpoint_ref):
         session = sql.get_session()
 
