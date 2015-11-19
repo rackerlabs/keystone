@@ -1207,8 +1207,14 @@ class RoleManager(manager.Manager):
         self.get_role.invalidate(self, role_id)
 
 
+# The RoleDriverBase class is the set of driver methods from earlier
+# drivers that we still support, that have not been removed or modified. This
+# class is then used to created the augmented V8 and V9 version driver classes.
+# IF you remove a method from V9, then move the asbtact methods from the Base
+# class to the V8 class. Do not modify any of the method signatures in the Base
+# class - changes should only be made in the V8 and subsequent classes.
 @six.add_metaclass(abc.ABCMeta)
-class RoleDriverV8(object):
+class RoleDriverBase(object):
 
     def _get_list_limit(self):
         return CONF.role.list_limit or CONF.list_limit
@@ -1276,6 +1282,26 @@ class RoleDriverV8(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+
+@six.add_metaclass(abc.ABCMeta)
+class RoleDriverV8(RoleDriverBase):
+    """Methods removed or augmented in later classes."""
+
+    @versionutils.deprecated(
+        as_of=versionutils.deprecated.MITAKA,
+        what='keystone.assignment.RoleDriverV8',
+        in_favor_of='keystone.assignment.RoleDriverV9',
+        remove_in=+2)
+    def __init__(self, *args, **kwargs):
+        super(RoleDriverV8, self).__init__(*args, **kwargs)
+
+
+@six.add_metaclass(abc.ABCMeta)
+class RoleDriverV9(RoleDriverBase):
+    """New or augmented methods in V9."""
+
+    pass
 
 
 RoleDriver = manager.create_legacy_driver(RoleDriverV8)
