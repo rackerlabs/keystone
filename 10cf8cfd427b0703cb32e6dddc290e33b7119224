@@ -16,6 +16,24 @@
       "revId": "10cf8cfd427b0703cb32e6dddc290e33b7119224",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_1b24cac2",
+        "filename": "releasenotes/notes/deprecate-endpoint-policy-cfg-option-d018acab72a398a0.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-19T18:43:21Z",
+      "side": 1,
+      "message": "not quite sure what\u0027s missing here, can you elaborate?",
+      "parentUuid": "ba8a016a_4da14745",
+      "revId": "10cf8cfd427b0703cb32e6dddc290e33b7119224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
