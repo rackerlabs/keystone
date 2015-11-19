@@ -476,6 +476,15 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_last_audit(service_ref['id'], CREATED_OPERATION,
                                 'service', cadftaxonomy.SECURITY_SERVICE)
 
+    def test_create_service(self):
+        service_ref = unit.new_service_ref()
+        service_id = self.service_id
+        self.catalog_api.create_service(service_id, service_ref)
+        self._assert_notify_sent(service_id, CREATED_OPERATION,
+                                 'service')
+        self._assert_last_audit(service_id, CREATED_OPERATION,
+                                'service', cadftaxonomy.SECURITY_SERVICE)
+
     def test_update_service(self):
         service_ref = unit.new_service_ref()
         self.catalog_api.create_service(service_ref['id'], service_ref)
