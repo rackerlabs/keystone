@@ -16,6 +16,24 @@
       "revId": "509bc9558317c04e6f0e5fd0272fe68ba208926c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_942e488a",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-19T19:04:45Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the test code be allowed to use these methods?",
+      "parentUuid": "ba8a016a_16aedfe5",
+      "revId": "509bc9558317c04e6f0e5fd0272fe68ba208926c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
