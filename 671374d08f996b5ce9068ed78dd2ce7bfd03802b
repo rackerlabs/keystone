@@ -33,6 +33,24 @@
       "revId": "671374d08f996b5ce9068ed78dd2ce7bfd03802b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_b2029808",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 14908
+      },
+      "writtenOn": "2015-11-19T12:37:21Z",
+      "side": 1,
+      "message": "I think \"so a sql.conflicts decorator was added\" sounds better then \"I add sql.conflicts decorator\"",
+      "parentUuid": "ba8a016a_a7ca5c19",
+      "revId": "671374d08f996b5ce9068ed78dd2ce7bfd03802b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
