@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_41bec7ae",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-20T08:53:54Z",
+      "side": 1,
+      "message": "maybe this is \"test_create_service_with_bad_service_id\"",
+      "revId": "9f5636911312ec65a3a2222baf4b2a8b5f6b7557",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_61d42beb",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-20T08:53:54Z",
+      "side": 1,
+      "message": "maybe a new uuid?",
+      "revId": "9f5636911312ec65a3a2222baf4b2a8b5f6b7557",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
