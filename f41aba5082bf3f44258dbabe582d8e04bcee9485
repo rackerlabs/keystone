@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_42622918",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-20T18:36:27Z",
+      "side": 1,
+      "message": "V3 of the Keystone API.  Not of the controller.",
+      "parentUuid": "ba8a016a_a60f772d",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_c501586c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 10
