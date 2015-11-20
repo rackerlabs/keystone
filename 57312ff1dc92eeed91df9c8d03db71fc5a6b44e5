@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_06b523cf",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1140,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:20:28Z",
+      "side": 1,
+      "message": "Yep, as noticed in https://review.openstack.org/#/c/242614/10/keystone/assignment/core.py\n\nThis doc isn\u0027t very descriptive.",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c6ae3b81",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1147,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:20:28Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_308f3d77",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 17
