@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_20e4b60b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T22:43:36Z",
+      "side": 1,
+      "message": "No, I mean redefining it as a metaclass. That should be inherited by subclasses already.",
+      "parentUuid": "ba8a016a_75b59ece",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_06b523cf",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 17
@@ -117,6 +135,24 @@
       "side": 1,
       "message": "apologies, not sure what you mean by entry point? Do you mean make it \u0027keystone.assignment.core.AssignmentDriverV8\"?",
       "parentUuid": "ba8a016a_d7425c68",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_40dc5a46",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T22:43:36Z",
+      "side": 1,
+      "message": "Actually, disregard my comment. I was thinking this was the implementation and not just the interface.",
+      "parentUuid": "ba8a016a_75dcbe18",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
