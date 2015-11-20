@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_eb478a75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:16:43Z",
+      "side": 1,
+      "message": "This looks to be big in a single change. From the list of things above, looks like it may easily be broken into smaller pieces.",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_4b57b626",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:16:43Z",
+      "side": 1,
+      "message": "No need to update this file manually anymore.",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a60f772d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:16:43Z",
+      "side": 1,
+      "message": "Aren\u0027t driver versions independent from API version ?\n\ne.g we have role and assingment drivers v8, while we have v3 API.\n\nIn this case, why don\u0027t we start with v1 ?",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_c501586c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 10
@@ -13,6 +64,24 @@
       "writtenOn": "2015-11-20T12:43:46Z",
       "side": 1,
       "message": "do we need this method?",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_665e6f14",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:16:43Z",
+      "side": 1,
+      "message": "No, we don\u0027t, and it also didn\u0027t need to contain the @abc.abstractmethod annotation",
+      "parentUuid": "ba8a016a_c501586c",
       "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
