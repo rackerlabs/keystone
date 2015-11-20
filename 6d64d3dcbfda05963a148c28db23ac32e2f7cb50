@@ -264,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_71d700ee",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T16:38:04Z",
+      "side": 1,
+      "message": "Ah, that\u0027s true, you already check that \u0027cred\u0027 is in the returned list.",
+      "parentUuid": "ba8a016a_3c6b9687",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_25daa418",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
