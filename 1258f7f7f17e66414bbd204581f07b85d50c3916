@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_2f31375a",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T03:22:55Z",
+      "side": 1,
+      "message": "Adding a test to show it is now possible to list role assignments would be great",
+      "revId": "1258f7f7f17e66414bbd204581f07b85d50c3916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_4ee24fa1",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 1
