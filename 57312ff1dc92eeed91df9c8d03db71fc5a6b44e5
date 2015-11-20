@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_308f3d77",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T13:58:52Z",
+      "side": 1,
+      "message": "(nit): maybe sql (lowercase) ?  We haven\u0027t been using the convention of uppercase on this so far, e.g SqlPolicyAssociationTable",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_90f5c9cc",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T13:58:52Z",
+      "side": 1,
+      "message": "keystone.assignment",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8b67dee9",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T13:58:52Z",
+      "side": 1,
+      "message": "I see you are using V9 and V8 everywhere, and I wondered if it\u0027s a pattern in keystone. I\u0027ve been always seeing V as lowercase when talking about versions, like v9 and v8.\n\nThis is just a comment/curiosity :)",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_10f23970",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T13:58:52Z",
+      "side": 1,
+      "message": "but still supported in Mitaka and N ?\n\nor perhaps but still supported for 2 releases, starting in Mitaka?",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
