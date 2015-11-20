@@ -228,6 +228,23 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_25daa418",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 18835
+      },
+      "writtenOn": "2015-11-20T13:11:45Z",
+      "side": 1,
+      "message": "Why don\u0027t you unify word about \"non ec2\" and \"non-EC2\"(L481)?",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_2c1865d2",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
