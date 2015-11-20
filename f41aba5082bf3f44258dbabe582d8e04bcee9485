@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_c501586c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-20T12:43:46Z",
+      "side": 1,
+      "message": "do we need this method?",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e5025c72",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-20T12:43:46Z",
+      "side": 1,
+      "message": "oops sorry, this comment was wrong - have now corrected it in the patch you are dependant on...",
+      "revId": "f41aba5082bf3f44258dbabe582d8e04bcee9485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
