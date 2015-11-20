@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_669bcf73",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1289,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:18:03Z",
+      "side": 1,
+      "message": "Yep, as noticed in https://review.openstack.org/#/c/242614/10/keystone/assignment/core.py\n\nThis doc isn\u0027t very descriptive.",
+      "revId": "8bc2e02d528344007880a160d2d4d8879e5132c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c6807bfa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1302,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:18:03Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "8bc2e02d528344007880a160d2d4d8879e5132c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_eb0f8a86",
         "filename": "releasenotes/notes/Role_V9_driver-971c3aae14d9963d.yaml",
         "patchSetId": 3
