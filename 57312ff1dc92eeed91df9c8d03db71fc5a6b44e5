@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_096d2ccc",
+        "filename": "keystone/assignment/V8_backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "I don\u0027t like the idea of maintaining two different versions of the models. For a variety of reasons I would rather have the V8 driver make any model changes transparent to V8 consumers.",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_1749c48e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "Is there any reason to redefine the metaclass?",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_06b523cf",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 17
@@ -30,6 +64,23 @@
       "writtenOn": "2015-11-20T14:20:28Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d7425c68",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "Should we use the entrypoint names here?",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_29e110ff",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "why move this? I have another patch that actually moves this to a more generic location so it can be used by other driver tests.",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8b67dee9",
         "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
         "patchSetId": 17
@@ -81,6 +149,24 @@
       "writtenOn": "2015-11-20T13:58:52Z",
       "side": 1,
       "message": "I see you are using V9 and V8 everywhere, and I wondered if it\u0027s a pattern in keystone. I\u0027ve been always seeing V as lowercase when talking about versions, like v9 and v8.\n\nThis is just a comment/curiosity :)",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_69087892",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "v9 or V9 doesn\u0027t matter much to me as long as we are consistent. The V9 more closely matches the class name.",
+      "parentUuid": "ba8a016a_8b67dee9",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +202,41 @@
       "side": 1,
       "message": "(I am making a suggestion to improve the text :))",
       "parentUuid": "ba8a016a_10f23970",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_498ed428",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "When we started down the versioned drivers path we declared we would support only the previous version in a release.",
+      "parentUuid": "ba8a016a_10f23970",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_290d9037",
+        "filename": "tox.ini",
+        "patchSetId": 17
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-11-20T17:29:36Z",
+      "side": 1,
+      "message": "What do you need this for? Can\u0027t the same be done already with the py27 target? e.g. tox -epy27 -- keystone.tests.unit.backend.legacy_drivers",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
