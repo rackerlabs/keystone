@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_f80d0ce9",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-20T20:16:44Z",
+      "side": 1,
+      "message": "i recommend changing this back",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d89fe84e",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-20T20:16:44Z",
+      "side": 1,
+      "message": "add to this  \"or when the credential type is not ec2 \"",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d3cd895e",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-20T20:16:44Z",
+      "side": 1,
+      "message": "I got a question here.   So to my understanding \u0027type\u0027 is part of the v3 token as per the bug where you say \u0027New credentials created by EC2 extension are with the \"type\" property\u0027\n\nI don\u0027t understand how a v2 token can come in here without at \u0027type\u0027 property and not fail?\n\n- Can someone point me to the doc explaining ec2 v2 credentials with keystone?\n\n- If all ec2 credentials have the \"type\" property maybe the bug should be updated.",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
