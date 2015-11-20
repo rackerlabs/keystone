@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_0cf1e16a",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T02:57:34Z",
+      "side": 1,
+      "message": "As there are several unrelated fixes at this file, I think having a separate patch for them would be better, as it make life easier for reviews, because we will only see what this patch is really supposed to do.\n\nAn alternative is to make clear in the commit message that you are fixing typos, etc",
+      "parentUuid": "da85f559_d81e5c6f",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_d8380c40",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 5
@@ -170,6 +188,57 @@
       "side": 1,
       "message": "Sorry, I don\u0027t quite understand.\nAs `Credential\u0027 class in sql.py is a subclass of this class, I think the function signatures should be consistent, if I understand correctly.",
       "parentUuid": "da85f559_91568a28",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0c632143",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T02:57:34Z",
+      "side": 1,
+      "message": "Perhaps adding the default value in the method signature would make it explicit that it is optional, as you actually do in the sql driver:\n\n    type\u003dNone",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ece81db5",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T02:57:34Z",
+      "side": 1,
+      "message": "We need to assert all the returned credentials have the expected type.",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_2c1865d2",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T02:57:34Z",
+      "side": 1,
+      "message": "Perhaps checking the cred_list is the same as the old one from L467 would be a good idea.",
       "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
