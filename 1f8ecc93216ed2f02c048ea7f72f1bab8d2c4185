@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_8f3035a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-20T21:08:57Z",
+      "side": 1,
+      "message": "Also i think you should add:\nrename some variables named \u0027tenant\u0027 to \u0027project\u0027",
+      "revId": "1f8ecc93216ed2f02c048ea7f72f1bab8d2c4185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_4c9d7b58",
         "filename": "keystone/tests/unit/test_v2_keystoneclient.py",
         "patchSetId": 10
@@ -30,6 +47,24 @@
       "writtenOn": "2015-11-20T20:43:01Z",
       "side": 1,
       "message": "In this case, yeah, I should get rid of the explicit id. But in general a test may want to pass a bogus ID or an explicit ID for some reason. Like testing duplicate IDs.",
+      "parentUuid": "ba8a016a_4c9d7b58",
+      "revId": "1f8ecc93216ed2f02c048ea7f72f1bab8d2c4185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6fb5d1ce",
+        "filename": "keystone/tests/unit/test_v2_keystoneclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-20T21:08:57Z",
+      "side": 1,
+      "message": "++",
       "parentUuid": "ba8a016a_4c9d7b58",
       "revId": "1f8ecc93216ed2f02c048ea7f72f1bab8d2c4185",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
