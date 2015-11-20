@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_4c87bbd7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "you should at least emit a warning here, saying that it failed. It will also make bandit happy.",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ec88efc8",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "remove the docstring",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_cc7debb2",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "I did it here: https://review.openstack.org/#/c/245916/3/keystone/resource/backends/sql.py and it seems to be working, if it might help",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ecaf8f29",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "missing the foreign keys to the role table",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ac574725",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "remove this comment",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_2c34b748",
+        "filename": "keystone/common/sql/migrate_repo/versions/086_implied_roles.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "rename it to implied_role",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_92993822",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3215,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-20T22:00:26Z",
+      "side": 1,
+      "message": "we don\u0027t have the U of CRUD here :/",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
