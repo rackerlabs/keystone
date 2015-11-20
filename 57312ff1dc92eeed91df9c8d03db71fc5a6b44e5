@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_75b59ece",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-20T22:18:59Z",
+      "side": 1,
+      "message": "Do you mean why change this from how it was?  So we can have a common class containing the unchanged methods between the drivers.",
+      "parentUuid": "ba8a016a_1749c48e",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_06b523cf",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 17
@@ -81,6 +99,24 @@
       "writtenOn": "2015-11-20T17:29:36Z",
       "side": 1,
       "message": "Should we use the entrypoint names here?",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_75dcbe18",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-20T22:18:59Z",
+      "side": 1,
+      "message": "apologies, not sure what you mean by entry point? Do you mean make it \u0027keystone.assignment.core.AssignmentDriverV8\"?",
+      "parentUuid": "ba8a016a_d7425c68",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
