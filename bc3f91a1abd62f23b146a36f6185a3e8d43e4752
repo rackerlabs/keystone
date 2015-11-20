@@ -16,6 +16,24 @@
       "revId": "bc3f91a1abd62f23b146a36f6185a3e8d43e4752",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_7c2b5795",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T16:58:27Z",
+      "side": 1,
+      "message": "Yes, it isn\u0027t explained why only apparently random get_db_version calls got this argument.\n\nAlso, I was wondering if it would be a good idea to have a single engine instantiated at the test class setup and have this engine shared in get_db_version calls across the different test.\n\nHowever sharing objects across unit tests probably isn\u0027t a good idea, because the object could be modified in a test and then don\u0027t work properly in the next call.",
+      "parentUuid": "3a50d1a3_8acbdaa3",
+      "revId": "bc3f91a1abd62f23b146a36f6185a3e8d43e4752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
