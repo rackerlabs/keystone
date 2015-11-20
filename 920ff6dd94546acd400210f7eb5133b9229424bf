@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_11feb405",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-20T22:04:35Z",
+      "side": 1,
+      "message": "if you want to change, maybe change to \"is mapped\"?",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_51b8bc2a",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-20T22:04:35Z",
+      "side": 1,
+      "message": "I think it\u0027s just the abbreviation of \"credentials reference\", but looks like a right change.",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0fa0c58f",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-20T22:04:35Z",
+      "side": 1,
+      "message": "better to define a constant, and use the constant instead of the hard coded value.",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f22444c7",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-20T22:04:35Z",
+      "side": 1,
+      "message": "These change also impact v2 APIs, but they are not tested, happy to see you also add the testcases for V2 API.\n\nI think it\u0027s should not work correctly without this patch for V2 API as well, this patch fix it and thus, some testcase there should be good.\n\nThe file you may refer to is here: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_contrib_ec2.py",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_d89fe84e",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 6
@@ -47,6 +115,24 @@
       "writtenOn": "2015-11-20T20:16:44Z",
       "side": 1,
       "message": "I got a question here.   So to my understanding \u0027type\u0027 is part of the v3 token as per the bug where you say \u0027New credentials created by EC2 extension are with the \"type\" property\u0027\n\nI don\u0027t understand how a v2 token can come in here without at \u0027type\u0027 property and not fail?\n\n- Can someone point me to the doc explaining ec2 v2 credentials with keystone?\n\n- If all ec2 credentials have the \"type\" property maybe the bug should be updated.",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ef3ea128",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-20T22:04:35Z",
+      "side": 1,
+      "message": "Tom -  ec2 credentials did has \"type\", currently, we have two types of credentials, \"ec2\" and \"cert\", it\u0027s not relevant with v2/v3.\n\nFor the rest of your question, sorry, I didn\u0027t get it. IIRC, the docs for ec2 v2 credentials has not been documented well in keystone.",
+      "parentUuid": "ba8a016a_d3cd895e",
       "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
