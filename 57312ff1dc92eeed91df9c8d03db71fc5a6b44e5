@@ -67,6 +67,24 @@
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6b739a16",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:08:39Z",
+      "side": 1,
+      "message": "(I am making a suggestion to improve the text :))",
+      "parentUuid": "ba8a016a_10f23970",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
