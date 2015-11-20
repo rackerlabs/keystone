@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_a1fe8136",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-20T15:06:14Z",
+      "side": 1,
+      "message": "I really think those renaming is not worth committing a separate patch set, even mentioning in commit message.\n\nBut OK, I\u0027ll add in commit message.",
+      "parentUuid": "ba8a016a_0cf1e16a",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_d8380c40",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 5
@@ -222,6 +240,24 @@
       "writtenOn": "2015-11-20T02:57:34Z",
       "side": 1,
       "message": "We need to assert all the returned credentials have the expected type.",
+      "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_3c6b9687",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-20T15:06:14Z",
+      "side": 1,
+      "message": "The returned credential is just `cred\u0027. Requesting by cred\u0027s type, and server returning cred, is enough for presenting it works.\n\nI think it\u0027s kind of redundant to check cred\u0027s type equals to cred\u0027s type",
+      "parentUuid": "ba8a016a_ece81db5",
       "revId": "6d64d3dcbfda05963a148c28db23ac32e2f7cb50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
