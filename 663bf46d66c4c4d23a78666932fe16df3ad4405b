@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_65f18295",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-20T15:31:42Z",
+      "side": 1,
+      "message": "for example*",
+      "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_654d02c4",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-20T15:31:42Z",
+      "side": 1,
+      "message": "The MITAKA_START variable is set to 81, mean that this won\u0027t be caught anyway, right?",
+      "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_25785af8",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-20T15:31:42Z",
+      "side": 1,
+      "message": "you mean to the exceptions list? \n\nSuggest moving this comment *into* the exception list so that it is more descriptive and explicit.",
+      "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_65fbc248",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-20T15:31:42Z",
+      "side": 1,
+      "message": "nit: I suggest passing `banned` as a kwarg since it is defined as one in the method signature.",
+      "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
