@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_4bc33639",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:10:08Z",
+      "side": 1,
+      "message": ": instead of @",
+      "revId": "8bc2e02d528344007880a160d2d4d8879e5132c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_eb0f8a86",
+        "filename": "releasenotes/notes/Role_V9_driver-971c3aae14d9963d.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-20T14:10:08Z",
+      "side": 1,
+      "message": "Same comment as previous patch in the chain. Perhaps clarifying that it is supported in Mitaka and in N is a good idea\n\n\"but still supported in Mitaka and N\" ?\n\nor perhaps \"but still supported for 2 releases, starting in Mitaka\"?",
+      "revId": "8bc2e02d528344007880a160d2d4d8879e5132c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
