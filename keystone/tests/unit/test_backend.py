@@ -3334,7 +3334,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
         # update the parent_id is not allowed
         leaf_project['parent_id'] = root_project1['id']
-        self.assertRaises(exception.ForbiddenAction,
+        self.assertRaises(exception.ValidationError,
                           self.resource_api.update_project,
                           leaf_project['id'],
                           leaf_project)
@@ -3423,7 +3423,7 @@ class IdentityTests(AssignmentTestHelperMixin):
 
         # try to update project3 parent to parent1
         project3['parent_id'] = project1['id']
-        self.assertRaises(exception.ForbiddenAction,
+        self.assertRaises(exception.ValidationError,
                           self.resource_api.update_project,
                           project3['id'],
                           project3)

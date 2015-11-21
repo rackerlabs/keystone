@@ -992,7 +992,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': leaf_project['id']},
             body={'project': leaf_project},
-            expected_status=http_client.FORBIDDEN)
+            expected_status=http_client.BAD_REQUEST)
 
     def test_update_project_is_domain_not_allowed(self):
         """Call ``PATCH /projects/{project_id}`` with is_domain.

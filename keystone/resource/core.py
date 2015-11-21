@@ -260,19 +260,21 @@ class Manager(manager.Manager):
                              'its subtree contains enabled '
                              'projects') % project_id)
 
+    def _assert_no_immutable_field_is_updated(self, original_ref, new_ref,
+                                              fields):
+        for field in fields:
+            if field in new_ref and new_ref[field] != original_ref[field]:
+                raise exception.ValidationError(
+                    message=_('Update of `%s` is not allowed.') % field)
+
     def update_project(self, tenant_id, tenant, initiator=None):
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
 
-        parent_id = original_tenant.get('parent_id')
-        if 'parent_id' in tenant and tenant.get('parent_id') != parent_id:
-            raise exception.ForbiddenAction(
-                action=_('Update of `parent_id` is not allowed.'))
-
-        if ('is_domain' in tenant and
-                tenant['is_domain'] != original_tenant['is_domain']):
-            raise exception.ValidationError(
-                message=_('Update of `is_domain` is not allowed.'))
+        immutable_fields = ('parent_id', 'is_domain')
+        self._assert_no_immutable_field_is_updated(original_tenant,
+                                                   tenant,
+                                                   immutable_fields)
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
