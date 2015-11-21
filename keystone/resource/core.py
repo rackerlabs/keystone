@@ -158,14 +158,14 @@ class Manager(manager.Manager):
             self._assert_max_hierarchy_depth(project_ref.get('parent_id'),
                                              parents_list)
 
-    def create_project(self, tenant_id, tenant, initiator=None):
-        tenant = tenant.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        tenant.setdefault('description', '')
-        tenant.setdefault('domain_id', None)
-        tenant.setdefault('parent_id', None)
-        tenant.setdefault('is_domain', False)
+    def create_project(self, project_id, project, initiator=None):
+        project = project.copy()
+        project.setdefault('enabled', True)
+        project['enabled'] = clean.project_enabled(project['enabled'])
+        project.setdefault('description', '')
+        project.setdefault('domain_id', None)
+        project.setdefault('parent_id', None)
+        project.setdefault('is_domain', False)
 
         # If this is a top level project acting as a domain, the project_id
         # is, effectively, the domain_id - and for such projects we don't
@@ -173,17 +173,17 @@ class Manager(manager.Manager):
         # If this is a non-domain top level project,then the domain_id must
         # have been specified by the caller (this is checked as part of the
         # project constraints)
-        domain_id = tenant.get('domain_id')
-        parent_id = tenant.get('parent_id')
+        domain_id = project.get('domain_id')
+        parent_id = project.get('parent_id')
         if not domain_id and parent_id:
-            tenant['domain_id'] = self._find_domain_id(tenant)
+            project['domain_id'] = self._find_domain_id(project)
 
-        self._enforce_project_constraints(tenant, parent_id)
+        self._enforce_project_constraints(project, parent_id)
 
-        ret = self.driver.create_project(tenant_id, tenant)
-        notifications.Audit.created(self._PROJECT, tenant_id, initiator)
+        ret = self.driver.create_project(project_id, project)
+        notifications.Audit.created(self._PROJECT, project_id, initiator)
         if MEMOIZE.should_cache(ret):
-            self.get_project.set(ret, self, tenant_id)
+            self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
                                          ret['domain_id'])
         return ret
@@ -260,74 +260,74 @@ class Manager(manager.Manager):
                              'its subtree contains enabled '
                              'projects') % project_id)
 
-    def update_project(self, tenant_id, tenant, initiator=None):
-        original_tenant = self.driver.get_project(tenant_id)
-        tenant = tenant.copy()
+    def update_project(self, project_id, project, initiator=None):
+        original_project = self.driver.get_project(project_id)
+        project = project.copy()
 
-        parent_id = original_tenant.get('parent_id')
-        if 'parent_id' in tenant and tenant.get('parent_id') != parent_id:
+        parent_id = original_project.get('parent_id')
+        if 'parent_id' in project and project.get('parent_id') != parent_id:
             raise exception.ForbiddenAction(
                 action=_('Update of `parent_id` is not allowed.'))
 
-        if ('is_domain' in tenant and
-                tenant['is_domain'] != original_tenant['is_domain']):
+        if ('is_domain' in project and
+                project['is_domain'] != original_project['is_domain']):
             raise exception.ValidationError(
                 message=_('Update of `is_domain` is not allowed.'))
 
-        if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        if 'enabled' in project:
+            project['enabled'] = clean.project_enabled(project['enabled'])
 
         # NOTE(rodrigods): for the current implementation we only allow to
         # disable a project if all projects below it in the hierarchy are
         # already disabled. This also means that we can not enable a
         # project that has disabled parents.
-        original_tenant_enabled = original_tenant.get('enabled', True)
-        tenant_enabled = tenant.get('enabled', True)
-        if not original_tenant_enabled and tenant_enabled:
-            self._assert_all_parents_are_enabled(tenant_id)
-        if original_tenant_enabled and not tenant_enabled:
+        original_project_enabled = original_project.get('enabled', True)
+        project_enabled = project.get('enabled', True)
+        if not original_project_enabled and project_enabled:
+            self._assert_all_parents_are_enabled(project_id)
+        if original_project_enabled and not project_enabled:
             # NOTE(htruta): In order to disable a regular project, all its
             # children must already be disabled. However, to keep
             # compatibility with the existing domain behaviour, we allow a
             # project acting as a domain to be disabled irrespective of the
             # state of its children. Disabling a project acting as domain
             # effectively disables its children.
-            if not original_tenant.get('is_domain'):
-                self._assert_whole_subtree_is_disabled(tenant_id)
-            self._disable_project(tenant_id)
+            if not original_project.get('is_domain'):
+                self._assert_whole_subtree_is_disabled(project_id)
+            self._disable_project(project_id)
 
-        ret = self.driver.update_project(tenant_id, tenant)
-        notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
+        ret = self.driver.update_project(project_id, project)
+        notifications.Audit.updated(self._PROJECT, project_id, initiator)
+        self.get_project.invalidate(self, project_id)
+        self.get_project_by_name.invalidate(self, original_project['name'],
+                                            original_project['domain_id'])
         return ret
 
-    def delete_project(self, tenant_id, initiator=None):
-        project = self.driver.get_project(tenant_id)
+    def delete_project(self, project_id, initiator=None):
+        project = self.driver.get_project(project_id)
         if project['is_domain'] and project['enabled']:
             raise exception.ValidationError(
                 message=_('cannot delete an enabled project acting as a '
                           'domain. Please disable the project %s first.')
                 % project.get('id'))
 
-        if not self.driver.is_leaf_project(tenant_id):
+        if not self.driver.is_leaf_project(project_id):
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
-                         'a leaf in the hierarchy.') % tenant_id)
+                         'a leaf in the hierarchy.') % project_id)
 
         project_user_ids = (
-            self.assignment_api.list_user_ids_for_project(tenant_id))
+            self.assignment_api.list_user_ids_for_project(project_id))
         for user_id in project_user_ids:
-            payload = {'user_id': user_id, 'project_id': tenant_id}
+            payload = {'user_id': user_id, 'project_id': project_id}
             self._emit_invalidate_user_project_tokens_notification(payload)
-        ret = self.driver.delete_project(tenant_id)
-        self.assignment_api.delete_project_assignments(tenant_id)
-        self.get_project.invalidate(self, tenant_id)
+        ret = self.driver.delete_project(project_id)
+        self.assignment_api.delete_project_assignments(project_id)
+        self.get_project.invalidate(self, project_id)
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
-        self.credential_api.delete_credentials_for_project(tenant_id)
-        notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
+        self.credential_api.delete_credentials_for_project(project_id)
+        notifications.Audit.deleted(self._PROJECT, project_id, initiator)
         return ret
 
     def _filter_projects_list(self, projects_list, user_id):
@@ -614,8 +614,8 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_project_by_name(self, project_name, domain_id):
+        return self.driver.get_project_by_name(project_name, domain_id)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
@@ -633,12 +633,12 @@ class ResourceDriverV8(object):
         return CONF.resource.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
-        """Get a tenant by name.
+    def get_project_by_name(self, project_name, domain_id):
+        """Get a project by name.
 
-        :returns: tenant_ref
+        :returns: project_ref
         :raises keystone.exception.ProjectNotFound: if a project with the
-                             tenant_name does not exist within the domain
+                             project_name does not exist within the domain
 
         """
         raise exception.NotImplemented()  # pragma: no cover
