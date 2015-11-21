@@ -91,9 +91,9 @@ class Resource(resource.ResourceDriverV9):
         project_ref = self._set_default_is_domain_project(project_ref)
         return self._set_default_parent_project(project_ref)
 
-    def get_project(self, tenant_id):
+    def get_project(self, project_id):
         return self._set_default_attributes(
-            self.project.get(tenant_id))
+            self.project.get(project_id))
 
     def list_projects(self, hints):
         return self._set_default_attributes(
@@ -127,17 +127,17 @@ class Resource(resource.ResourceDriverV9):
         # any domain specified
         return [x.id for x in self.list_projects(driver_hints.Hints())]
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, project_name, domain_id):
         self._validate_default_domain_id(domain_id)
         return self._set_default_attributes(
-            self.project.get_by_name(tenant_name))
+            self.project.get_by_name(project_name))
 
-    def create_project(self, tenant_id, tenant):
+    def create_project(self, project_id, project):
         self.project.check_allow_create()
-        self._validate_parent_project_is_none(tenant)
-        self._validate_is_domain_field_is_false(tenant)
-        tenant['name'] = clean.project_name(tenant['name'])
-        data = tenant.copy()
+        self._validate_parent_project_is_none(project)
+        self._validate_is_domain_field_is_false(project)
+        project['name'] = clean.project_name(project['name'])
+        data = project.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
         if 'description' in data and data['description'] in ['', None]:
@@ -145,23 +145,23 @@ class Resource(resource.ResourceDriverV9):
         return self._set_default_attributes(
             self.project.create(data))
 
-    def update_project(self, tenant_id, tenant):
+    def update_project(self, project_id, project):
         self.project.check_allow_update()
-        tenant = self._validate_default_domain(tenant)
-        self._validate_is_domain_field_is_false(tenant)
-        if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
+        project = self._validate_default_domain(project)
+        self._validate_is_domain_field_is_false(project)
+        if 'name' in project:
+            project['name'] = clean.project_name(project['name'])
         return self._set_default_attributes(
-            self.project.update(tenant_id, tenant))
+            self.project.update(project_id, project))
 
-    def delete_project(self, tenant_id):
+    def delete_project(self, project_id):
         self.project.check_allow_delete()
         if self.project.subtree_delete_enabled:
-            self.project.deleteTree(tenant_id)
+            self.project.deleteTree(project_id)
         else:
             # The manager layer will call assignments to delete the
             # role assignments, so we just have to delete the project itself.
-            self.project.delete(tenant_id)
+            self.project.delete(project_id)
 
     def create_domain(self, domain_id, domain):
         if domain_id == CONF.identity.default_domain_id:
