@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_7335b3f5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:29:42Z",
+      "side": 1,
+      "message": "Would rather it be explicit.",
+      "parentUuid": "ba8a016a_9be3dad8",
+      "revId": "e5a693cdbfd5b6cbf24b5e2afbd2fb52e7ecdb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8050490c",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 34
@@ -48,6 +66,24 @@
       "writtenOn": "2015-11-19T18:09:15Z",
       "side": 1,
       "message": "maybe add a comment explaining what is the expected result here",
+      "revId": "e5a693cdbfd5b6cbf24b5e2afbd2fb52e7ecdb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_333f2bd8",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:29:42Z",
+      "side": 1,
+      "message": "Seems clear enough to me:  name documents well enough.",
+      "parentUuid": "ba8a016a_8050490c",
       "revId": "e5a693cdbfd5b6cbf24b5e2afbd2fb52e7ecdb31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
