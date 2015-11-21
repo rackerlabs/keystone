@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.revoke import controllers
 
@@ -25,5 +24,6 @@ class Routers(wsgi.RoutersBase):
             mapper, revoke_controller,
             path=self.PATH_PREFIX + '/events',
             get_action='list_revoke_events',
-            rel=json_home.build_v3_extension_resource_relation(
-                'OS-REVOKE', '1.0', 'events'))
+            rel='events',
+            extension_name='OS-REVOKE',
+            extension_version='1.0')

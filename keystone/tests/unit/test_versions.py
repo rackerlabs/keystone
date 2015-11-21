@@ -100,67 +100,65 @@ VERSIONS_RESPONSE = {
 }
 
 _build_ec2tokens_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation, extension_name='OS-EC2',
+    json_home.build_v3_resource_relation, extension_name='OS-EC2',
     extension_version='1.0')
 
-REVOCATIONS_RELATION = json_home.build_v3_extension_resource_relation(
-    'OS-PKI', '1.0', 'revocations')
+REVOCATIONS_RELATION = json_home.build_v3_resource_relation(
+    'revocations', extension_name='OS-PKI', extension_version='1.0',)
 
 _build_simple_cert_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
+    json_home.build_v3_resource_relation,
     extension_name='OS-SIMPLE-CERT', extension_version='1.0')
 
 _build_trust_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation, extension_name='OS-TRUST',
+    json_home.build_v3_resource_relation, extension_name='OS-TRUST',
     extension_version='1.0')
 
 _build_federation_rel = functools.partial(
-    json_home.build_v3_extension_resource_relation,
+    json_home.build_v3_resource_relation,
     extension_name='OS-FEDERATION',
     extension_version='1.0')
 
 _build_oauth1_rel = functools.partial(
-    json_home.build_v3_extension_resource_relation,
+    json_home.build_v3_resource_relation,
     extension_name='OS-OAUTH1', extension_version='1.0')
 
 _build_ep_policy_rel = functools.partial(
-    json_home.build_v3_extension_resource_relation,
+    json_home.build_v3_resource_relation,
     extension_name='OS-ENDPOINT-POLICY', extension_version='1.0')
 
 _build_ep_filter_rel = functools.partial(
-    json_home.build_v3_extension_resource_relation,
+    json_home.build_v3_resource_relation,
     extension_name='OS-EP-FILTER', extension_version='1.0')
 
-TRUST_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-TRUST', '1.0', 'trust_id')
+TRUST_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'trust_id', extension_name='OS-TRUST', extension_version='1.0')
 
-IDP_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-FEDERATION', '1.0', 'idp_id')
+IDP_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'idp_id', extension_name='OS-FEDERATION', extension_version='1.0')
 
-PROTOCOL_ID_PARAM_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-FEDERATION', '1.0', 'protocol_id')
+PROTOCOL_ID_PARAM_RELATION = json_home.build_v3_parameter_relation(
+    'protocol_id', extension_name='OS-FEDERATION', extension_version='1.0')
 
-MAPPING_ID_PARAM_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-FEDERATION', '1.0', 'mapping_id')
+MAPPING_ID_PARAM_RELATION = json_home.build_v3_parameter_relation(
+    'mapping_id', extension_name='OS-FEDERATION', extension_version='1.0',)
 
-SP_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-FEDERATION', '1.0', 'sp_id')
+SP_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'sp_id', extension_name='OS-FEDERATION', extension_version='1.0')
 
-CONSUMER_ID_PARAMETER_RELATION = (
-    json_home.build_v3_extension_parameter_relation(
-        'OS-OAUTH1', '1.0', 'consumer_id'))
+CONSUMER_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'consumer_id', extension_name='OS-OAUTH1', extension_version='1.0')
 
-REQUEST_TOKEN_ID_PARAMETER_RELATION = (
-    json_home.build_v3_extension_parameter_relation(
-        'OS-OAUTH1', '1.0', 'request_token_id'))
+REQUEST_TOKEN_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'request_token_id', extension_name='OS-OAUTH1', extension_version='1.0')
 
-ACCESS_TOKEN_ID_PARAMETER_RELATION = (
-    json_home.build_v3_extension_parameter_relation(
-        'OS-OAUTH1', '1.0', 'access_token_id'))
+ACCESS_TOKEN_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'access_token_id', extension_name='OS-OAUTH1', extension_version='1.0')
 
-ENDPOINT_GROUP_ID_PARAMETER_RELATION = (
-    json_home.build_v3_extension_parameter_relation(
-        'OS-EP-FILTER', '1.0', 'endpoint_group_id'))
+ENDPOINT_GROUP_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'endpoint_group_id',
+    extension_name='OS-EP-FILTER',
+    extension_version='1.0')
 
 BASE_IDP_PROTOCOL = '/OS-FEDERATION/identity_providers/{idp_id}/protocols'
 BASE_EP_POLICY = '/policies/{policy_id}/OS-ENDPOINT-POLICY'
@@ -225,15 +223,15 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
             json_home.build_v3_parameter_relation('endpoint_id'), }},
     json_home.build_v3_resource_relation('endpoints'): {
         'href': '/endpoints'},
-    _build_ec2tokens_relation(resource_name='ec2tokens'): {
+    _build_ec2tokens_relation('ec2tokens'): {
         'href': '/ec2tokens'},
-    _build_ec2tokens_relation(resource_name='user_credential'): {
+    _build_ec2tokens_relation('user_credential'): {
         'href-template': '/users/{user_id}/credentials/OS-EC2/{credential_id}',
         'href-vars': {
             'credential_id':
             json_home.build_v3_parameter_relation('credential_id'),
             'user_id': json_home.Parameters.USER_ID, }},
-    _build_ec2tokens_relation(resource_name='user_credentials'): {
+    _build_ec2tokens_relation('user_credentials'): {
         'href-template': '/users/{user_id}/credentials/OS-EC2',
         'href-vars': {
             'user_id': json_home.Parameters.USER_ID, }},
@@ -242,23 +240,23 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
     'http://docs.openstack.org/api/openstack-identity/3/ext/OS-REVOKE/1.0/rel/'
     'events': {
         'href': '/OS-REVOKE/events'},
-    _build_simple_cert_relation(resource_name='ca_certificate'): {
+    _build_simple_cert_relation('ca_certificate'): {
         'href': '/OS-SIMPLE-CERT/ca'},
-    _build_simple_cert_relation(resource_name='certificates'): {
+    _build_simple_cert_relation('certificates'): {
         'href': '/OS-SIMPLE-CERT/certificates'},
-    _build_trust_relation(resource_name='trust'):
+    _build_trust_relation('trust'):
     {
         'href-template': '/OS-TRUST/trusts/{trust_id}',
         'href-vars': {'trust_id': TRUST_ID_PARAMETER_RELATION, }},
-    _build_trust_relation(resource_name='trust_role'): {
+    _build_trust_relation('trust_role'): {
         'href-template': '/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
         'href-vars': {
             'role_id': json_home.Parameters.ROLE_ID,
             'trust_id': TRUST_ID_PARAMETER_RELATION, }},
-    _build_trust_relation(resource_name='trust_roles'): {
+    _build_trust_relation('trust_roles'): {
         'href-template': '/OS-TRUST/trusts/{trust_id}/roles',
         'href-vars': {'trust_id': TRUST_ID_PARAMETER_RELATION, }},
-    _build_trust_relation(resource_name='trusts'): {
+    _build_trust_relation('trusts'): {
         'href': '/OS-TRUST/trusts'},
     'http://docs.openstack.org/api/openstack-identity/3/ext/s3tokens/1.0/rel/'
     's3tokens': {
@@ -347,162 +345,159 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
         'href-template': '/users/{user_id}/projects',
         'href-vars': {'user_id': json_home.Parameters.USER_ID, }},
     json_home.build_v3_resource_relation('users'): {'href': '/users'},
-    _build_federation_rel(resource_name='domains'): {
+    _build_federation_rel('domains'): {
         'href': '/auth/domains'},
-    _build_federation_rel(resource_name='websso'): {
+    _build_federation_rel('websso'): {
         'href-template': '/auth/OS-FEDERATION/websso/{protocol_id}',
         'href-vars': {
             'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
-    _build_federation_rel(resource_name='projects'): {
+    _build_federation_rel('projects'): {
         'href': '/auth/projects'},
-    _build_federation_rel(resource_name='saml2'): {
+    _build_federation_rel('saml2'): {
         'href': '/auth/OS-FEDERATION/saml2'},
-    _build_federation_rel(resource_name='ecp'): {
+    _build_federation_rel('ecp'): {
         'href': '/auth/OS-FEDERATION/saml2/ecp'},
-    _build_federation_rel(resource_name='metadata'): {
+    _build_federation_rel('metadata'): {
         'href': '/OS-FEDERATION/saml2/metadata'},
-    _build_federation_rel(resource_name='identity_providers'): {
+    _build_federation_rel('identity_providers'): {
         'href': '/OS-FEDERATION/identity_providers'},
-    _build_federation_rel(resource_name='service_providers'): {
+    _build_federation_rel('service_providers'): {
         'href': '/OS-FEDERATION/service_providers'},
-    _build_federation_rel(resource_name='mappings'): {
+    _build_federation_rel('mappings'): {
         'href': '/OS-FEDERATION/mappings'},
-    _build_federation_rel(resource_name='identity_provider'):
+    _build_federation_rel('identity_provider'):
     {
         'href-template': '/OS-FEDERATION/identity_providers/{idp_id}',
         'href-vars': {'idp_id': IDP_ID_PARAMETER_RELATION, }},
-    _build_federation_rel(resource_name='identity_providers'): {
+    _build_federation_rel('identity_providers'): {
         'href-template': FEDERATED_IDP_SPECIFIC_WEBSSO,
         'href-vars': {
             'idp_id': IDP_ID_PARAMETER_RELATION,
             'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
-    _build_federation_rel(resource_name='service_provider'):
+    _build_federation_rel('service_provider'):
     {
         'href-template': '/OS-FEDERATION/service_providers/{sp_id}',
         'href-vars': {'sp_id': SP_ID_PARAMETER_RELATION, }},
-    _build_federation_rel(resource_name='mapping'):
+    _build_federation_rel('mapping'):
     {
         'href-template': '/OS-FEDERATION/mappings/{mapping_id}',
         'href-vars': {'mapping_id': MAPPING_ID_PARAM_RELATION, }},
-    _build_federation_rel(resource_name='identity_provider_protocol'): {
+    _build_federation_rel('identity_provider_protocol'): {
         'href-template': BASE_IDP_PROTOCOL + '/{protocol_id}',
         'href-vars': {
             'idp_id': IDP_ID_PARAMETER_RELATION,
             'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
-    _build_federation_rel(resource_name='identity_provider_protocols'): {
+    _build_federation_rel('identity_provider_protocols'): {
         'href-template': BASE_IDP_PROTOCOL,
         'href-vars': {
             'idp_id': IDP_ID_PARAMETER_RELATION}},
-    _build_federation_rel(resource_name='identity_provider_protocol_auth'): {
+    _build_federation_rel('identity_provider_protocol_auth'): {
         'href-template': FEDERATED_AUTH_URL,
         'href-vars': {
             'idp_id': IDP_ID_PARAMETER_RELATION,
             'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
-    _build_oauth1_rel(resource_name='access_tokens'): {
+    _build_oauth1_rel('access_tokens'): {
         'href': '/OS-OAUTH1/access_token'},
-    _build_oauth1_rel(resource_name='request_tokens'): {
+    _build_oauth1_rel('request_tokens'): {
         'href': '/OS-OAUTH1/request_token'},
-    _build_oauth1_rel(resource_name='consumers'): {
+    _build_oauth1_rel('consumers'): {
         'href': '/OS-OAUTH1/consumers'},
-    _build_oauth1_rel(resource_name='authorize_request_token'):
+    _build_oauth1_rel('authorize_request_token'):
     {
         'href-template': '/OS-OAUTH1/authorize/{request_token_id}',
         'href-vars': {'request_token_id':
                       REQUEST_TOKEN_ID_PARAMETER_RELATION, }},
-    _build_oauth1_rel(resource_name='consumer'):
+    _build_oauth1_rel('consumer'):
     {
         'href-template': '/OS-OAUTH1/consumers/{consumer_id}',
         'href-vars': {'consumer_id': CONSUMER_ID_PARAMETER_RELATION, }},
-    _build_oauth1_rel(resource_name='user_access_token'):
+    _build_oauth1_rel('user_access_token'):
     {
         'href-template': BASE_ACCESS_TOKEN,
         'href-vars': {'user_id': json_home.Parameters.USER_ID,
                       'access_token_id':
                       ACCESS_TOKEN_ID_PARAMETER_RELATION, }},
-    _build_oauth1_rel(resource_name='user_access_tokens'):
+    _build_oauth1_rel('user_access_tokens'):
     {
         'href-template': '/users/{user_id}/OS-OAUTH1/access_tokens',
         'href-vars': {'user_id': json_home.Parameters.USER_ID, }},
-    _build_oauth1_rel(resource_name='user_access_token_role'):
+    _build_oauth1_rel('user_access_token_role'):
     {
         'href-template': BASE_ACCESS_TOKEN + '/roles/{role_id}',
         'href-vars': {'user_id': json_home.Parameters.USER_ID,
                       'role_id': json_home.Parameters.ROLE_ID,
                       'access_token_id':
                       ACCESS_TOKEN_ID_PARAMETER_RELATION, }},
-    _build_oauth1_rel(resource_name='user_access_token_roles'):
+    _build_oauth1_rel('user_access_token_roles'):
     {
         'href-template': BASE_ACCESS_TOKEN + '/roles',
         'href-vars': {'user_id': json_home.Parameters.USER_ID,
                       'access_token_id':
                       ACCESS_TOKEN_ID_PARAMETER_RELATION, }},
-    _build_ep_policy_rel(resource_name='endpoint_policy'):
+    _build_ep_policy_rel('endpoint_policy'):
     {
         'href-template': '/endpoints/{endpoint_id}/OS-ENDPOINT-POLICY/policy',
         'href-vars': {'endpoint_id': json_home.Parameters.ENDPOINT_ID, }},
-    _build_ep_policy_rel(resource_name='endpoint_policy_association'):
+    _build_ep_policy_rel('endpoint_policy_association'):
     {
         'href-template': BASE_EP_POLICY + '/endpoints/{endpoint_id}',
         'href-vars': {'endpoint_id': json_home.Parameters.ENDPOINT_ID,
                       'policy_id': json_home.Parameters.POLICY_ID, }},
-    _build_ep_policy_rel(resource_name='policy_endpoints'):
+    _build_ep_policy_rel('policy_endpoints'):
     {
         'href-template': BASE_EP_POLICY + '/endpoints',
         'href-vars': {'policy_id': json_home.Parameters.POLICY_ID, }},
-    _build_ep_policy_rel(
-        resource_name='region_and_service_policy_association'):
+    _build_ep_policy_rel('region_and_service_policy_association'):
     {
         'href-template': (BASE_EP_POLICY +
                           '/services/{service_id}/regions/{region_id}'),
         'href-vars': {'policy_id': json_home.Parameters.POLICY_ID,
                       'service_id': json_home.Parameters.SERVICE_ID,
                       'region_id': json_home.Parameters.REGION_ID, }},
-    _build_ep_policy_rel(resource_name='service_policy_association'):
+    _build_ep_policy_rel('service_policy_association'):
     {
         'href-template': BASE_EP_POLICY + '/services/{service_id}',
         'href-vars': {'policy_id': json_home.Parameters.POLICY_ID,
                       'service_id': json_home.Parameters.SERVICE_ID, }},
-    _build_ep_filter_rel(resource_name='endpoint_group'):
+    _build_ep_filter_rel('endpoint_group'):
     {
         'href-template': '/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}',
         'href-vars': {'endpoint_group_id':
                       ENDPOINT_GROUP_ID_PARAMETER_RELATION, }},
-    _build_ep_filter_rel(
-        resource_name='endpoint_group_to_project_association'):
+    _build_ep_filter_rel('endpoint_group_to_project_association'):
     {
         'href-template': BASE_EP_FILTER + '/projects/{project_id}',
         'href-vars': {'endpoint_group_id':
                       ENDPOINT_GROUP_ID_PARAMETER_RELATION,
                       'project_id': json_home.Parameters.PROJECT_ID, }},
-    _build_ep_filter_rel(resource_name='endpoint_groups'):
+    _build_ep_filter_rel('endpoint_groups'):
     {'href': '/OS-EP-FILTER/endpoint_groups'},
-    _build_ep_filter_rel(resource_name='endpoint_projects'):
+    _build_ep_filter_rel('endpoint_projects'):
     {
         'href-template': '/OS-EP-FILTER/endpoints/{endpoint_id}/projects',
         'href-vars': {'endpoint_id': json_home.Parameters.ENDPOINT_ID, }},
-    _build_ep_filter_rel(resource_name='endpoints_in_endpoint_group'):
+    _build_ep_filter_rel('endpoints_in_endpoint_group'):
     {
         'href-template': BASE_EP_FILTER + '/endpoints',
         'href-vars': {'endpoint_group_id':
                       ENDPOINT_GROUP_ID_PARAMETER_RELATION, }},
-    _build_ep_filter_rel(resource_name='project_endpoint_groups'):
+    _build_ep_filter_rel('project_endpoint_groups'):
     {
         'href-template': (BASE_EP_FILTER_PREFIX + '/projects/{project_id}' +
                           '/endpoint_groups'),
         'href-vars': {'project_id':
                       json_home.Parameters.PROJECT_ID, }},
-    _build_ep_filter_rel(resource_name='project_endpoint'):
+    _build_ep_filter_rel('project_endpoint'):
     {
         'href-template': ('/OS-EP-FILTER/projects/{project_id}'
                           '/endpoints/{endpoint_id}'),
         'href-vars': {'endpoint_id': json_home.Parameters.ENDPOINT_ID,
                       'project_id': json_home.Parameters.PROJECT_ID, }},
-    _build_ep_filter_rel(resource_name='project_endpoints'):
+    _build_ep_filter_rel('project_endpoints'):
     {
         'href-template': '/OS-EP-FILTER/projects/{project_id}/endpoints',
         'href-vars': {'project_id': json_home.Parameters.PROJECT_ID, }},
-    _build_ep_filter_rel(
-        resource_name='projects_associated_with_endpoint_group'):
+    _build_ep_filter_rel('projects_associated_with_endpoint_group'):
     {
         'href-template': BASE_EP_FILTER + '/projects',
         'href-vars': {'endpoint_group_id':
@@ -534,7 +529,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
 # with os-inherit enabled, there's some more resources.
 
 build_os_inherit_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
+    json_home.build_v3_resource_relation,
     extension_name='OS-INHERIT', extension_version='1.0')
 
 V3_JSON_HOME_RESOURCES_INHERIT_ENABLED = dict(
@@ -543,7 +538,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
     (
         (
             build_os_inherit_relation(
-                resource_name='domain_user_role_inherited_to_projects'),
+                'domain_user_role_inherited_to_projects'),
             {
                 'href-template': '/OS-INHERIT/domains/{domain_id}/users/'
                 '{user_id}/roles/{role_id}/inherited_to_projects',
@@ -556,7 +551,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
         ),
         (
             build_os_inherit_relation(
-                resource_name='domain_group_role_inherited_to_projects'),
+                'domain_group_role_inherited_to_projects'),
             {
                 'href-template': '/OS-INHERIT/domains/{domain_id}/groups/'
                 '{group_id}/roles/{role_id}/inherited_to_projects',
@@ -569,7 +564,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
         ),
         (
             build_os_inherit_relation(
-                resource_name='domain_user_roles_inherited_to_projects'),
+                'domain_user_roles_inherited_to_projects'),
             {
                 'href-template': '/OS-INHERIT/domains/{domain_id}/users/'
                 '{user_id}/roles/inherited_to_projects',
@@ -581,7 +576,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
         ),
         (
             build_os_inherit_relation(
-                resource_name='domain_group_roles_inherited_to_projects'),
+                'domain_group_roles_inherited_to_projects'),
             {
                 'href-template': '/OS-INHERIT/domains/{domain_id}/groups/'
                 '{group_id}/roles/inherited_to_projects',
@@ -593,7 +588,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
         ),
         (
             build_os_inherit_relation(
-                resource_name='project_user_role_inherited_to_projects'),
+                'project_user_role_inherited_to_projects'),
             {
                 'href-template': '/OS-INHERIT/projects/{project_id}/users/'
                 '{user_id}/roles/{role_id}/inherited_to_projects',
@@ -606,7 +601,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
         ),
         (
             build_os_inherit_relation(
-                resource_name='project_group_role_inherited_to_projects'),
+                'project_group_role_inherited_to_projects'),
             {
                 'href-template': '/OS-INHERIT/projects/{project_id}/groups/'
                 '{group_id}/roles/{role_id}/inherited_to_projects',

@@ -15,8 +15,6 @@
 
 """WSGI Routers for the Assignment service."""
 
-import functools
-
 from oslo_config import cfg
 
 from keystone.assignment import controllers
@@ -26,10 +24,6 @@ from keystone.common import wsgi
 
 
 CONF = cfg.CONF
-
-build_os_inherit_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
-    extension_name='OS-INHERIT', extension_version='1.0')
 
 
 class Public(wsgi.ComposableRouter):
@@ -57,6 +51,12 @@ class Admin(wsgi.ComposableRouter):
 
 class Routers(wsgi.RoutersBase):
 
+    def _add_inherit_resource(self, *args, **kwargs):
+        if CONF.os_inherit.enabled:
+            kwargs.setdefault('extension_name', 'OS-INHERIT')
+            kwargs.setdefault('extension_version', '1.0')
+            return self._add_resource(*args, **kwargs)
+
     def append_v3_routers(self, mapper, routers):
 
         project_controller = controllers.ProjectAssignmentV3()
@@ -64,7 +64,7 @@ class Routers(wsgi.RoutersBase):
             mapper, project_controller,
             path='/users/{user_id}/projects',
             get_action='list_user_projects',
-            rel=json_home.build_v3_resource_relation('user_projects'),
+            rel='user_projects',
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
             })
@@ -80,7 +80,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_grant',
             put_action='create_grant',
             delete_action='revoke_grant',
-            rel=json_home.build_v3_resource_relation('project_user_role'),
+            rel='project_user_role',
             path_vars={
                 'project_id': json_home.Parameters.PROJECT_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
@@ -92,7 +92,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_grant',
             put_action='create_grant',
             delete_action='revoke_grant',
-            rel=json_home.build_v3_resource_relation('project_group_role'),
+            rel='project_group_role',
             path_vars={
                 'group_id': json_home.Parameters.GROUP_ID,
                 'project_id': json_home.Parameters.PROJECT_ID,
@@ -102,7 +102,7 @@ class Routers(wsgi.RoutersBase):
             mapper, grant_controller,
             path='/projects/{project_id}/users/{user_id}/roles',
             get_action='list_grants',
-            rel=json_home.build_v3_resource_relation('project_user_roles'),
+            rel='project_user_roles',
             path_vars={
                 'project_id': json_home.Parameters.PROJECT_ID,
                 'user_id': json_home.Parameters.USER_ID,
@@ -111,7 +111,7 @@ class Routers(wsgi.RoutersBase):
             mapper, grant_controller,
             path='/projects/{project_id}/groups/{group_id}/roles',
             get_action='list_grants',
-            rel=json_home.build_v3_resource_relation('project_group_roles'),
+            rel='project_group_roles',
             path_vars={
                 'group_id': json_home.Parameters.GROUP_ID,
                 'project_id': json_home.Parameters.PROJECT_ID,
@@ -122,7 +122,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_grant',
             put_action='create_grant',
             delete_action='revoke_grant',
-            rel=json_home.build_v3_resource_relation('domain_user_role'),
+            rel='domain_user_role',
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
@@ -134,7 +134,7 @@ class Routers(wsgi.RoutersBase):
             get_head_action='check_grant',
             put_action='create_grant',
             delete_action='revoke_grant',
-            rel=json_home.build_v3_resource_relation('domain_group_role'),
+            rel='domain_group_role',
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group_id': json_home.Parameters.GROUP_ID,
@@ -144,7 +144,7 @@ class Routers(wsgi.RoutersBase):
             mapper, grant_controller,
             path='/domains/{domain_id}/users/{user_id}/roles',
             get_action='list_grants',
-            rel=json_home.build_v3_resource_relation('domain_user_roles'),
+            rel='domain_user_roles',
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'user_id': json_home.Parameters.USER_ID,
@@ -153,7 +153,7 @@ class Routers(wsgi.RoutersBase):
             mapper, grant_controller,
             path='/domains/{domain_id}/groups/{group_id}/roles',
             get_action='list_grants',
-            rel=json_home.build_v3_resource_relation('domain_group_roles'),
+            rel='domain_group_roles',
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group_id': json_home.Parameters.GROUP_ID,
@@ -165,82 +165,75 @@ class Routers(wsgi.RoutersBase):
                           resource_descriptions=self.v3_resources,
                           is_entity_implemented=False))
 
-        if CONF.os_inherit.enabled:
-            self._add_resource(
-                mapper, grant_controller,
-                path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
-                '{role_id}/inherited_to_projects',
-                get_head_action='check_grant',
-                put_action='create_grant',
-                delete_action='revoke_grant',
-                rel=build_os_inherit_relation(
-                    resource_name='domain_user_role_inherited_to_projects'),
-                path_vars={
-                    'domain_id': json_home.Parameters.DOMAIN_ID,
-                    'role_id': json_home.Parameters.ROLE_ID,
-                    'user_id': json_home.Parameters.USER_ID,
-                })
-            self._add_resource(
-                mapper, grant_controller,
-                path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
-                '{role_id}/inherited_to_projects',
-                get_head_action='check_grant',
-                put_action='create_grant',
-                delete_action='revoke_grant',
-                rel=build_os_inherit_relation(
-                    resource_name='domain_group_role_inherited_to_projects'),
-                path_vars={
-                    'domain_id': json_home.Parameters.DOMAIN_ID,
-                    'group_id': json_home.Parameters.GROUP_ID,
-                    'role_id': json_home.Parameters.ROLE_ID,
-                })
-            self._add_resource(
-                mapper, grant_controller,
-                path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
-                'inherited_to_projects',
-                get_action='list_grants',
-                rel=build_os_inherit_relation(
-                    resource_name='domain_group_roles_inherited_to_projects'),
-                path_vars={
-                    'domain_id': json_home.Parameters.DOMAIN_ID,
-                    'group_id': json_home.Parameters.GROUP_ID,
-                })
-            self._add_resource(
-                mapper, grant_controller,
-                path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
-                'inherited_to_projects',
-                get_action='list_grants',
-                rel=build_os_inherit_relation(
-                    resource_name='domain_user_roles_inherited_to_projects'),
-                path_vars={
-                    'domain_id': json_home.Parameters.DOMAIN_ID,
-                    'user_id': json_home.Parameters.USER_ID,
-                })
-            self._add_resource(
-                mapper, grant_controller,
-                path='/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/'
-                '{role_id}/inherited_to_projects',
-                get_head_action='check_grant',
-                put_action='create_grant',
-                delete_action='revoke_grant',
-                rel=build_os_inherit_relation(
-                    resource_name='project_user_role_inherited_to_projects'),
-                path_vars={
-                    'project_id': json_home.Parameters.PROJECT_ID,
-                    'user_id': json_home.Parameters.USER_ID,
-                    'role_id': json_home.Parameters.ROLE_ID,
-                })
-            self._add_resource(
-                mapper, grant_controller,
-                path='/OS-INHERIT/projects/{project_id}/groups/{group_id}/'
-                'roles/{role_id}/inherited_to_projects',
-                get_head_action='check_grant',
-                put_action='create_grant',
-                delete_action='revoke_grant',
-                rel=build_os_inherit_relation(
-                    resource_name='project_group_role_inherited_to_projects'),
-                path_vars={
-                    'project_id': json_home.Parameters.PROJECT_ID,
-                    'group_id': json_home.Parameters.GROUP_ID,
-                    'role_id': json_home.Parameters.ROLE_ID,
-                })
+        self._add_inherit_resource(
+            mapper, grant_controller,
+            path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
+            '{role_id}/inherited_to_projects',
+            get_head_action='check_grant',
+            put_action='create_grant',
+            delete_action='revoke_grant',
+            rel='domain_user_role_inherited_to_projects',
+            path_vars={
+                'domain_id': json_home.Parameters.DOMAIN_ID,
+                'role_id': json_home.Parameters.ROLE_ID,
+                'user_id': json_home.Parameters.USER_ID,
+            })
+        self._add_inherit_resource(
+            mapper, grant_controller,
+            path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
+            '{role_id}/inherited_to_projects',
+            get_head_action='check_grant',
+            put_action='create_grant',
+            delete_action='revoke_grant',
+            rel='domain_group_role_inherited_to_projects',
+            path_vars={
+                'domain_id': json_home.Parameters.DOMAIN_ID,
+                'group_id': json_home.Parameters.GROUP_ID,
+                'role_id': json_home.Parameters.ROLE_ID,
+            })
+        self._add_inherit_resource(
+            mapper, grant_controller,
+            path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
+            'inherited_to_projects',
+            get_action='list_grants',
+            rel='domain_group_roles_inherited_to_projects',
+            path_vars={
+                'domain_id': json_home.Parameters.DOMAIN_ID,
+                'group_id': json_home.Parameters.GROUP_ID,
+            })
+        self._add_inherit_resource(
+            mapper, grant_controller,
+            path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
+            'inherited_to_projects',
+            get_action='list_grants',
+            rel='domain_user_roles_inherited_to_projects',
+            path_vars={
+                'domain_id': json_home.Parameters.DOMAIN_ID,
+                'user_id': json_home.Parameters.USER_ID,
+            })
+        self._add_inherit_resource(
+            mapper, grant_controller,
+            path='/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/'
+            '{role_id}/inherited_to_projects',
+            get_head_action='check_grant',
+            put_action='create_grant',
+            delete_action='revoke_grant',
+            rel='project_user_role_inherited_to_projects',
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID,
+                'user_id': json_home.Parameters.USER_ID,
+                'role_id': json_home.Parameters.ROLE_ID,
+            })
+        self._add_inherit_resource(
+            mapper, grant_controller,
+            path='/OS-INHERIT/projects/{project_id}/groups/{group_id}/'
+            'roles/{role_id}/inherited_to_projects',
+            get_head_action='check_grant',
+            put_action='create_grant',
+            delete_action='revoke_grant',
+            rel='project_group_role_inherited_to_projects',
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID,
+                'group_id': json_home.Parameters.GROUP_ID,
+                'role_id': json_home.Parameters.ROLE_ID,
+            })
