@@ -13,22 +13,20 @@
 # under the License.
 """WSGI Routers for the Trust service."""
 
-import functools
-
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.trust import controllers
 
-
-_build_resource_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation, extension_name='OS-TRUST',
-    extension_version='1.0')
-
-TRUST_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-TRUST', '1.0', 'trust_id')
+TRUST_ID_PARAMETER_RELATION = json_home.build_v3_parameter_relation(
+    'trust_id', extension_name='OS-TRUST', extension_version='1.0')
 
 
 class Routers(wsgi.RoutersBase):
+
+    def _add_resource(self, *args, **kwargs):
+        kwargs.setdefault('extension_name', 'OS-TRUST')
+        kwargs.setdefault('extension_version', '1.0')
+        return super(Routers, self)._add_resource(*args, **kwargs)
 
     def append_v3_routers(self, mapper, routers):
         trust_controller = controllers.TrustV3()
@@ -38,13 +36,13 @@ class Routers(wsgi.RoutersBase):
             path='/OS-TRUST/trusts',
             get_action='list_trusts',
             post_action='create_trust',
-            rel=_build_resource_relation(resource_name='trusts'))
+            rel='trusts')
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}',
             get_action='get_trust',
             delete_action='delete_trust',
-            rel=_build_resource_relation(resource_name='trust'),
+            rel='trust',
             path_vars={
                 'trust_id': TRUST_ID_PARAMETER_RELATION,
             })
@@ -52,7 +50,7 @@ class Routers(wsgi.RoutersBase):
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles',
             get_action='list_roles_for_trust',
-            rel=_build_resource_relation(resource_name='trust_roles'),
+            rel='trust_roles',
             path_vars={
                 'trust_id': TRUST_ID_PARAMETER_RELATION,
             })
@@ -60,7 +58,7 @@ class Routers(wsgi.RoutersBase):
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
             get_head_action='get_role_for_trust',
-            rel=_build_resource_relation(resource_name='trust_role'),
+            rel='trust_role',
             path_vars={
                 'trust_id': TRUST_ID_PARAMETER_RELATION,
                 'role_id': json_home.Parameters.ROLE_ID,

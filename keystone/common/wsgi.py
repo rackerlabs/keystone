@@ -636,9 +636,9 @@ class RoutersBase(object):
     def _add_resource(self, mapper, controller, path, rel,
                       get_action=None, head_action=None, get_head_action=None,
                       put_action=None, post_action=None, patch_action=None,
-                      delete_action=None, get_post_action=None,
-                      path_vars=None, status=json_home.Status.STABLE,
-                      new_path=None):
+                      delete_action=None, get_post_action=None, path_vars=None,
+                      status=json_home.Status.STABLE, new_path=None,
+                      extension_name=None, extension_version=None):
         if get_head_action:
             getattr(controller, get_head_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=get_head_action,
@@ -671,6 +671,11 @@ class RoutersBase(object):
             getattr(controller, get_post_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=get_post_action,
                            conditions=dict(method=['GET', 'POST']))
+
+        rel = json_home.build_v3_resource_relation(
+            rel,
+            extension_name=extension_name,
+            extension_version=extension_version)
 
         resource_data = dict()
 

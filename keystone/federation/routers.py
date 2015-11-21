@@ -16,19 +16,13 @@ from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.federation import controllers
 
-
-build_resource_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
-    extension_name='OS-FEDERATION', extension_version='1.0')
-
 build_parameter_relation = functools.partial(
-    json_home.build_v3_extension_parameter_relation,
+    json_home.build_v3_parameter_relation,
     extension_name='OS-FEDERATION', extension_version='1.0')
 
-IDP_ID_PARAMETER_RELATION = build_parameter_relation(parameter_name='idp_id')
-PROTOCOL_ID_PARAMETER_RELATION = build_parameter_relation(
-    parameter_name='protocol_id')
-SP_ID_PARAMETER_RELATION = build_parameter_relation(parameter_name='sp_id')
+IDP_ID_PARAMETER_RELATION = build_parameter_relation('idp_id')
+PROTOCOL_ID_PARAMETER_RELATION = build_parameter_relation('protocol_id')
+SP_ID_PARAMETER_RELATION = build_parameter_relation('sp_id')
 
 
 class Routers(wsgi.RoutersBase):
@@ -95,6 +89,11 @@ class Routers(wsgi.RoutersBase):
     def _construct_url(self, suffix):
         return "/OS-FEDERATION/%s" % suffix
 
+    def _add_resource(self, *args, **kwargs):
+        kwargs.setdefault('extension_name', 'OS-FEDERATION')
+        kwargs.setdefault('extension_version', '1.0')
+        return super(Routers, self)._add_resource(*args, **kwargs)
+
     def append_v3_routers(self, mapper, routers):
         auth_controller = controllers.Auth()
         idp_controller = controllers.IdentityProvider()
@@ -114,7 +113,7 @@ class Routers(wsgi.RoutersBase):
             put_action='create_identity_provider',
             patch_action='update_identity_provider',
             delete_action='delete_identity_provider',
-            rel=build_resource_relation(resource_name='identity_provider'),
+            rel='identity_provider',
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
             })
@@ -122,7 +121,7 @@ class Routers(wsgi.RoutersBase):
             mapper, idp_controller,
             path=self._construct_url('identity_providers'),
             get_action='list_identity_providers',
-            rel=build_resource_relation(resource_name='identity_providers'))
+            rel='identity_providers')
 
         # Protocol CRUD operations
 
@@ -134,8 +133,7 @@ class Routers(wsgi.RoutersBase):
             put_action='create_protocol',
             patch_action='update_protocol',
             delete_action='delete_protocol',
-            rel=build_resource_relation(
-                resource_name='identity_provider_protocol'),
+            rel='identity_provider_protocol',
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
@@ -144,8 +142,7 @@ class Routers(wsgi.RoutersBase):
             mapper, protocol_controller,
             path=self._construct_url('identity_providers/{idp_id}/protocols'),
             get_action='list_protocols',
-            rel=build_resource_relation(
-                resource_name='identity_provider_protocols'),
+            rel='identity_provider_protocols',
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
             })
@@ -159,16 +156,15 @@ class Routers(wsgi.RoutersBase):
             put_action='create_mapping',
             patch_action='update_mapping',
             delete_action='delete_mapping',
-            rel=build_resource_relation(resource_name='mapping'),
+            rel='mapping',
             path_vars={
-                'mapping_id': build_parameter_relation(
-                    parameter_name='mapping_id'),
+                'mapping_id': build_parameter_relation('mapping_id'),
             })
         self._add_resource(
             mapper, mapping_controller,
             path=self._construct_url('mappings'),
             get_action='list_mappings',
-            rel=build_resource_relation(resource_name='mappings'))
+            rel='mappings')
 
         # Service Providers CRUD operations
 
@@ -179,7 +175,7 @@ class Routers(wsgi.RoutersBase):
             put_action='create_service_provider',
             patch_action='update_service_provider',
             delete_action='delete_service_provider',
-            rel=build_resource_relation(resource_name='service_provider'),
+            rel='service_provider',
             path_vars={
                 'sp_id': SP_ID_PARAMETER_RELATION,
             })
@@ -188,20 +184,20 @@ class Routers(wsgi.RoutersBase):
             mapper, sp_controller,
             path=self._construct_url('service_providers'),
             get_action='list_service_providers',
-            rel=build_resource_relation(resource_name='service_providers'))
+            rel='service_providers')
 
         self._add_resource(
             mapper, domain_controller,
             path=self._construct_url('domains'),
             new_path='/auth/domains',
             get_action='list_domains_for_groups',
-            rel=build_resource_relation(resource_name='domains'))
+            rel='domains')
         self._add_resource(
             mapper, project_controller,
             path=self._construct_url('projects'),
             new_path='/auth/projects',
             get_action='list_projects_for_groups',
-            rel=build_resource_relation(resource_name='projects'))
+            rel='projects')
 
         # Auth operations
         self._add_resource(
@@ -209,8 +205,7 @@ class Routers(wsgi.RoutersBase):
             path=self._construct_url('identity_providers/{idp_id}/'
                                      'protocols/{protocol_id}/auth'),
             get_post_action='federated_authentication',
-            rel=build_resource_relation(
-                resource_name='identity_provider_protocol_auth'),
+            rel='identity_provider_protocol_auth',
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
@@ -219,17 +214,17 @@ class Routers(wsgi.RoutersBase):
             mapper, auth_controller,
             path='/auth' + self._construct_url('saml2'),
             post_action='create_saml_assertion',
-            rel=build_resource_relation(resource_name='saml2'))
+            rel='saml2')
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('saml2/ecp'),
             post_action='create_ecp_assertion',
-            rel=build_resource_relation(resource_name='ecp'))
+            rel='ecp')
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('websso/{protocol_id}'),
             get_post_action='federated_sso_auth',
-            rel=build_resource_relation(resource_name='websso'),
+            rel='websso',
             path_vars={
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
             })
@@ -238,7 +233,7 @@ class Routers(wsgi.RoutersBase):
             path='/auth' + self._construct_url(
                  'identity_providers/{idp_id}/protocols/{protocol_id}/websso'),
             get_post_action='federated_idp_specific_sso_auth',
-            rel=build_resource_relation(resource_name='identity_providers'),
+            rel='identity_providers',
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
@@ -249,4 +244,4 @@ class Routers(wsgi.RoutersBase):
             mapper, saml_metadata_controller,
             path=self._construct_url('saml2/metadata'),
             get_action='get_metadata',
-            rel=build_resource_relation(resource_name='metadata'))
+            rel='metadata')
