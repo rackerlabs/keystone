@@ -12,16 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import functools
-
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.contrib.ec2 import controllers
-
-
-build_resource_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation, extension_name='OS-EC2',
-    extension_version='1.0')
 
 
 class Ec2Extension(wsgi.ExtensionRouter):
@@ -59,6 +52,11 @@ class Ec2Extension(wsgi.ExtensionRouter):
 
 class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
 
+    def _add_resource(self, *args, **kwargs):
+        kwargs.setdefault('extension_name', 'OS-EC2')
+        kwargs.setdefault('extension_version', '1.0')
+        return super(Ec2ExtensionV3, self)._add_resource(*args, **kwargs)
+
     def add_routes(self, mapper):
         ec2_controller = controllers.Ec2ControllerV3()
         # validation
@@ -66,7 +64,7 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
             mapper, ec2_controller,
             path='/ec2tokens',
             post_action='authenticate',
-            rel=build_resource_relation(resource_name='ec2tokens'))
+            rel='ec2tokens')
 
         # crud
         self._add_resource(
@@ -74,7 +72,7 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
             path='/users/{user_id}/credentials/OS-EC2',
             get_action='ec2_list_credentials',
             post_action='ec2_create_credential',
-            rel=build_resource_relation(resource_name='user_credentials'),
+            rel='user_credentials',
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
             })
@@ -83,7 +81,7 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
             path='/users/{user_id}/credentials/OS-EC2/{credential_id}',
             get_action='ec2_get_credential',
             delete_action='ec2_delete_credential',
-            rel=build_resource_relation(resource_name='user_credential'),
+            rel='user_credential',
             path_vars={
                 'credential_id':
                 json_home.build_v3_parameter_relation('credential_id'),

@@ -34,8 +34,8 @@ class JsonHomeTest(unit.BaseTestCase):
         extension_name = self.getUniqueString()
         extension_version = self.getUniqueString()
         resource_name = self.getUniqueString()
-        relation = json_home.build_v3_extension_resource_relation(
-            extension_name, extension_version, resource_name)
+        relation = json_home.build_v3_resource_relation(
+             resource_name, extension_name, extension_version)
         exp_relation = (
             'http://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/rel/'
             '%s' % (extension_name, extension_version, resource_name))
@@ -53,8 +53,8 @@ class JsonHomeTest(unit.BaseTestCase):
         extension_name = self.getUniqueString()
         extension_version = self.getUniqueString()
         parameter_name = self.getUniqueString()
-        relation = json_home.build_v3_extension_parameter_relation(
-            extension_name, extension_version, parameter_name)
+        relation = json_home.build_v3_parameter_relation(
+             parameter_name, extension_name, extension_version)
         exp_relation = (
             'http://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/'
             'param/%s' % (extension_name, extension_version, parameter_name))
