@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_e6a9e67c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Done, but I think that is wrong:  if the driver does not support implied roles, we are going to fill the log with warnings.  Going to see if just DEBUG will work.",
+      "parentUuid": "ba8a016a_4c87bbd7",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_ec88efc8",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-20T22:00:26Z",
       "side": 1,
       "message": "remove the docstring",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_26a04e90",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_ec88efc8",
       "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_669df658",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Done.  What does the (synchronize_session\u003d\u0027fetch\u0027) do, anyway?",
+      "parentUuid": "ba8a016a_cc7debb2",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_ecaf8f29",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-20T22:00:26Z",
       "side": 1,
       "message": "missing the foreign keys to the role table",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_46aa3287",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_ecaf8f29",
       "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_a62f5ef5",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Done.  Wasthinking I was going to go back and implement, but that is not required.",
+      "parentUuid": "ba8a016a_ac574725",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_2c34b748",
         "filename": "keystone/common/sql/migrate_repo/versions/086_implied_roles.py",
         "patchSetId": 12
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_263cce2e",
+        "filename": "keystone/common/sql/migrate_repo/versions/086_implied_roles.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_2c34b748",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_92993822",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 12
@@ -115,6 +223,24 @@
       "writtenOn": "2015-11-20T22:00:26Z",
       "side": 1,
       "message": "we don\u0027t have the U of CRUD here :/",
+      "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_460b127e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3215,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-11-21T02:42:56Z",
+      "side": 1,
+      "message": "Immutable.  CRD?  Done",
+      "parentUuid": "ba8a016a_92993822",
       "revId": "bf0897fcbf6679baaf3def9d3eeaf416410b694f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
