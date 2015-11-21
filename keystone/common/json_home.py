@@ -12,33 +12,29 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import functools
 
 from keystone import exception
 from keystone.i18n import _
 
-
-def build_v3_resource_relation(resource_name):
-    return ('http://docs.openstack.org/api/openstack-identity/3/rel/%s' %
-            resource_name)
+DOC_URL = 'http://docs.openstack.org/api/openstack-identity/3'
 
 
-def build_v3_extension_resource_relation(extension_name, extension_version,
-                                         resource_name):
-    return (
-        'http://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/rel/%s' %
-        (extension_name, extension_version, resource_name))
+def _create_doc_path(typ, ident, extension_name=None, extension_version=None):
+    if extension_name:
+        rel = '%s/ext/%s/%s/%s/%s' % (DOC_URL,
+                                      extension_name,
+                                      extension_version,
+                                      typ,
+                                      ident)
+    else:
+        rel = '%s/%s/%s' % (DOC_URL, typ, ident)
+
+    return rel
 
 
-def build_v3_parameter_relation(parameter_name):
-    return ('http://docs.openstack.org/api/openstack-identity/3/param/%s' %
-            parameter_name)
-
-
-def build_v3_extension_parameter_relation(extension_name, extension_version,
-                                          parameter_name):
-    return (
-        'http://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/param/'
-        '%s' % (extension_name, extension_version, parameter_name))
+build_v3_resource_relation = functools.partial(_create_doc_path, 'rel')
+build_v3_parameter_relation = functools.partial(_create_doc_path, 'param')
 
 
 class Parameters(object):
