@@ -105,4 +105,8 @@ class CredentialV3(controller.V3Controller):
 
     @controller.protected()
     def delete_credential(self, context, credential_id):
-        return self.credential_api.delete_credential(credential_id)
+        try:
+            ret = self.credential_api.delete_credential(credential_id)
+        except exception.NotFound:
+            raise exception.CredentialNotFound(credential_id=credential_id)
+        return ret

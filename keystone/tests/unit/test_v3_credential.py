@@ -188,6 +188,12 @@ class CredentialTestCase(CredentialBaseTestCase):
             '/credentials/%(credential_id)s' % {
                 'credential_id': self.credential_id})
 
+    def test_delete_credential_returns_not_found(self):
+        self.delete(
+            '/credentials/%(credential_id)s' % {
+                'credential_id': uuid.uuid4().hex},
+            expected_status=http_client.NOT_FOUND)
+
     def test_create_ec2_credential(self):
         """Call ``POST /credentials`` for creating ec2 credential."""
         ref = self.new_credential_ref(user_id=self.user['id'],
