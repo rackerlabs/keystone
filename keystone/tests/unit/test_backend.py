@@ -5158,6 +5158,16 @@ class CatalogTests(object):
                           self.catalog_api.get_service,
                           service_id)
 
+    def test_update_duplicate_service_name_fails(self):
+        service_ref = unit.new_service_ref()
+        service_id = service_ref['id']
+        service_ref = self.catalog_api.create_service(service_id, service_ref)
+        service_ref['id'] = 'fake2'
+        self.assertRaises(exception.Conflict, 
+                          self.catalog_api.update_service,
+                          service_id,
+                          service_ref)
+
     def _create_random_service(self):
         new_service = unit.new_service_ref()
         service_id = new_service['id']
