@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_3ab90c2f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T15:30:46Z",
+      "side": 1,
+      "message": "new trusts don\u0027t need `name`, `description`, or `enabled` do they? Should we delete those here?",
+      "revId": "2f28b7525e9b4aa10f0d253abf08de913f7ff6f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
