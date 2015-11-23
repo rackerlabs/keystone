@@ -16,6 +16,24 @@
       "revId": "f66badae63b1544c3bcc83e0c1afc8e9cdc71bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f9e5c7a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T18:33:32Z",
+      "side": 1,
+      "message": "I don\u0027t think there are any other changes to backport? At least I can\u0027t tell from the conflict: \n\nhttp://cdn.pasteraw.com/lgrkdmwv68el3z2es37roplxsz82akz",
+      "parentUuid": "ba8a016a_2bb9c02e",
+      "revId": "f66badae63b1544c3bcc83e0c1afc8e9cdc71bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
