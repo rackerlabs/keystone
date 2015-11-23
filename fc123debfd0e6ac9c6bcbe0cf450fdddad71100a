@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_f954dd54",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T22:45:55Z",
+      "side": 0,
+      "message": "I remove them intentionally, go though the code and found there is no exception raised anywhere.",
+      "parentUuid": "ba8a016a_992fd13d",
+      "revId": "fc123debfd0e6ac9c6bcbe0cf450fdddad71100a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_59296936",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-23T22:36:44Z",
       "side": 0,
       "message": "why was this removed?",
+      "revId": "fc123debfd0e6ac9c6bcbe0cf450fdddad71100a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_b94e55bf",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T22:45:55Z",
+      "side": 0,
+      "message": "same here.",
+      "parentUuid": "ba8a016a_59296936",
       "revId": "fc123debfd0e6ac9c6bcbe0cf450fdddad71100a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
