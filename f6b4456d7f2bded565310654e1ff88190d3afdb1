@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_507cdd71",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_b5cadb18",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_b5bf3b5f",
         "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-23T21:18:22Z",
       "side": 1,
       "message": "suggest change \"as designed\" to \"working as designed\"",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_f0e2b12e",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_b5bf3b5f",
       "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_d0e76d3e",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_95bc776d",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_7570f3dc",
         "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-23T21:18:22Z",
       "side": 1,
       "message": "why ; here? the use of punctuation in the sentence seems arbitrary.",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_70cd61b6",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "i will switch it to a period",
+      "parentUuid": "ba8a016a_7570f3dc",
       "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_50413d0a",
+        "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_300fd92f",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_152647ce",
         "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
         "patchSetId": 5
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_7044811a",
+        "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_152647ce",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_753eb3db",
         "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
         "patchSetId": 5
@@ -115,6 +223,24 @@
       "writtenOn": "2015-11-23T21:18:22Z",
       "side": 1,
       "message": "remove trailing space.",
+      "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_3047d91e",
+        "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:25:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_753eb3db",
       "revId": "f6b4456d7f2bded565310654e1ff88190d3afdb1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
