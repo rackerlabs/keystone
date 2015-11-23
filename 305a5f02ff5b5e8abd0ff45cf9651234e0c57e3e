@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_9fbc986d",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_7f71b4a7",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_3f3d6cbb",
         "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
         "patchSetId": 4
@@ -30,6 +48,41 @@
       "writtenOn": "2015-11-23T20:12:59Z",
       "side": 1,
       "message": "It would be nice if we had a standard format for bugs, like prefix with [bug 1489061], like\n\n - [bug 1489061] Caching has been added to catalog...",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_bfbf1c5f",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_3f3d6cbb",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ba296a8b",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "added [`blueprint move-extensions \u003chttps://blueprints.launchpad.net/keystone/+spec/move-extensions\u003e`_]",
       "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_da1d4e67",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_1f974891",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8418cf85",
         "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
         "patchSetId": 4
@@ -70,6 +141,41 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_5aa5de01",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_8418cf85",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_dab9ce2f",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "added a bit about group LDAP schema here",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_7fcd34b6",
         "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
         "patchSetId": 4
@@ -81,6 +187,24 @@
       "writtenOn": "2015-11-23T20:12:59Z",
       "side": 1,
       "message": "Change , after oslo.cache to .",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_3a925aa0",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_7fcd34b6",
       "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_fae2922e",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done, and i\u0027ll remove the noop one",
+      "parentUuid": "ba8a016a_3f47ac1e",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_3fe32c07",
         "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
         "patchSetId": 4
@@ -132,6 +274,24 @@
       "writtenOn": "2015-11-23T20:12:59Z",
       "side": 1,
       "message": "I think it would read better to remove \"Deprecated\" here and move it to the end... ... are deprecated in favor of oslo.cache backends.",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_9a5ee6e7",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_3fe32c07",
       "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_1a73d681",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_5f263069",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_1f96684c",
         "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
         "patchSetId": 4
@@ -166,6 +344,24 @@
       "writtenOn": "2015-11-23T20:12:59Z",
       "side": 1,
       "message": "This is a feature, not a bug.",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_1afaf6bd",
+        "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_1f96684c",
       "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +385,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_7a12220b",
+        "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_bfbddcd8",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_3f91ec52",
         "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
         "patchSetId": 4
@@ -200,6 +414,24 @@
       "writtenOn": "2015-11-23T20:12:59Z",
       "side": 1,
       "message": "change \"s3\" to \"S3 compatibility\" -- see https://aws.amazon.com/s3/\n\nchange \"validation using v4 of its signing process\" to \"authentication using AWS Signature Version 4\", see http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html",
+      "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_1ae8b6e1",
+        "filename": "releasenotes/notes/s3-aws-v4-c6cb75ce8d2289d4.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T20:41:20Z",
+      "side": 1,
+      "message": "Done, wasn\u0027t sure if you wanted the external links",
+      "parentUuid": "ba8a016a_3f91ec52",
       "revId": "305a5f02ff5b5e8abd0ff45cf9651234e0c57e3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
