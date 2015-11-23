@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_2f224cba",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "Change \"to\" to \"in\", and remove the part about \"in keystone.conf\", the whole doc is about keystone.con.\n\n  \"Configure the endpoint filter catalog driver in the ``[catalog]`` section. For example:\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_aa038a0c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "suggested wording:\n\n\"In the ``[endpoint_filter]`` section, set ``return_all_endpoints_if_no_filter`` to ``False`` to return an empty catalog if no associations are made\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0f8988ca",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1070,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "you can add a NOTE about support and a Spec link here",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_cf92a0f6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "add the word \"feature\" after \"Endpoint Policy\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_cf570025",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "since this is only 1 step, remove the new line between this section and the previous, and just remove the colon \":\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8fbb3875",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "add the word \"feature\" after \"OAuth 1.0a\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_ef544422",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "remove \"the\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_cfa94026",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "add the word \"feature\" after \"Revocation Events\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_cffb8046",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T05:24:05Z",
+      "side": 1,
+      "message": "you can attach this note and Spec link to the Inherit link in configuration.rst, and remove this block from this file",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
