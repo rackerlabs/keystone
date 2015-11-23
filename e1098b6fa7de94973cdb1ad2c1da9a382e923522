@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_014aa383",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 12972
+      },
+      "writtenOn": "2015-11-23T15:08:49Z",
+      "side": 1,
+      "message": "I do not think that the virtualenv is a strict requirement.\nBut it is suggested for a clean dev environment and mandatory for tox.\nDoes it make sense to have a dev environment without being able to run the tests?\n\nSo, would you mind to add explicit instuction on how to install it?\n\nI prefer documentation where every step is also provided as a command, so there is no need to search other documentation.\n\nMy idea for the older doc: https://review.openstack.org/#/c/248617/\n\nThanks!",
+      "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8496a14a",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 2
