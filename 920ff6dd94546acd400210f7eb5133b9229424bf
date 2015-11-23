@@ -136,6 +136,24 @@
       "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6be7c812",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-23T16:14:52Z",
+      "side": 1,
+      "message": "Dave thanks for the update. Its good to know the docs are out there, just need to find them. :)",
+      "parentUuid": "ba8a016a_ef3ea128",
+      "revId": "920ff6dd94546acd400210f7eb5133b9229424bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
