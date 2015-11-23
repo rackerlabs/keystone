@@ -16,6 +16,24 @@
       "revId": "2e939f6f327305d7b91c0db9061341230c24f1b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_bc816391",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 12612
+      },
+      "writtenOn": "2015-11-23T23:21:54Z",
+      "side": 1,
+      "message": "No, this doesn\u0027t build on-top of pep8\u0027s section, it\u0027s a section of its own, nor can it be done through substitution because it uses {posargs}",
+      "parentUuid": "ba8a016a_2b221602",
+      "revId": "2e939f6f327305d7b91c0db9061341230c24f1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
