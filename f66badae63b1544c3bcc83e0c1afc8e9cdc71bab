@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_2bb9c02e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T16:01:46Z",
+      "side": 1,
+      "message": "why the conflict? can\u0027t we backport the other change(s)?",
+      "revId": "f66badae63b1544c3bcc83e0c1afc8e9cdc71bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
