@@ -34,6 +34,24 @@
       "revId": "f66badae63b1544c3bcc83e0c1afc8e9cdc71bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6ed4acbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:13:55Z",
+      "side": 1,
+      "message": "This change is removing the function, and here the function has:\n\n  self._build_issued_at_info(token, token_data)\n\nwhereas the master version doesn\u0027t have it... that came from https://review.openstack.org/#/c/212953/4/keystone/token/providers/fernet/core.py ... I need to push back on conflicts more because this is supposed to be the stable branch.",
+      "parentUuid": "ba8a016a_f9e5c7a7",
+      "revId": "f66badae63b1544c3bcc83e0c1afc8e9cdc71bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
