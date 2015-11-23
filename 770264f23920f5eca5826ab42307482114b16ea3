@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_f64b8a29",
+        "filename": "releasenotes/notes/catalog-caching-12f2532cfb71325a.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T22:05:22Z",
+      "side": 1,
+      "message": "How does this affect end-users/deployers ?\n\nIn my opinion, we should only list new features/bug fixes/deprecations in the release notes; i.e things that affect end-users/deployers.\n\nFor example, this is the same reason we didn\u0027t add list role assignments refactoring to release notes last cycle.",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_1055f54e",
         "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
         "patchSetId": 6
@@ -37,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_3609122d",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T22:05:22Z",
+      "side": 1,
+      "message": "++ As it can disapear if the file is moved/deleted.",
+      "parentUuid": "ba8a016a_1055f54e",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_50d13dcc",
         "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
         "patchSetId": 6
@@ -48,6 +83,40 @@
       "writtenOn": "2015-11-23T21:40:40Z",
       "side": 1,
       "message": "remove \", which\"",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_768f9a23",
+        "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T22:05:22Z",
+      "side": 1,
+      "message": "So this is considered as a feature for deployers ? As they can now find more useful information in logs ?",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_76b6badd",
+        "filename": "releasenotes/notes/request_context-e143ba9c446a5952.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T22:05:22Z",
+      "side": 1,
+      "message": "How does this last sentence affects end-user/deployers ? Isn\u0027t this something only internal to our code ?",
       "revId": "770264f23920f5eca5826ab42307482114b16ea3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
