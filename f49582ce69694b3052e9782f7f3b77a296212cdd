@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_66413d39",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_2f224cba",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_aa038a0c",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-23T05:24:05Z",
       "side": 1,
       "message": "suggested wording:\n\n\"In the ``[endpoint_filter]`` section, set ``return_all_endpoints_if_no_filter`` to ``False`` to return an empty catalog if no associations are made\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_86bf81fb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_aa038a0c",
       "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_e611adb0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1070,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "I assume the `NOTE` and `SPEC` link about the Inherited is wanted.",
+      "parentUuid": "ba8a016a_0f8988ca",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_cf92a0f6",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-23T05:24:05Z",
       "side": 1,
       "message": "add the word \"feature\" after \"Endpoint Policy\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_a4a15eab",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_cf92a0f6",
       "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_c415829b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_cf570025",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8fbb3875",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2015-11-23T05:24:05Z",
       "side": 1,
       "message": "add the word \"feature\" after \"OAuth 1.0a\"",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_24cfae80",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_8fbb3875",
       "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_04c4ea5c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_ef544422",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_cfa94026",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_a4887e23",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1159,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_cfa94026",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_cffb8046",
         "filename": "doc/source/extensions.rst",
         "patchSetId": 4
@@ -149,6 +293,24 @@
       "writtenOn": "2015-11-23T05:24:05Z",
       "side": 1,
       "message": "you can attach this note and Spec link to the Inherit link in configuration.rst, and remove this block from this file",
+      "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e46c469e",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T16:48:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_cffb8046",
       "revId": "f49582ce69694b3052e9782f7f3b77a296212cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
