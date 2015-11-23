@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_ef4a04ac",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4789,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T05:25:00Z",
+      "side": 1,
+      "message": "looks like L4888 need this change to make it pass.",
+      "parentUuid": "ba8a016a_1f6cbd06",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_efed24f0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4932,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T05:25:00Z",
+      "side": 1,
+      "message": "This testcase could be expanded to make it more clear that we expect it\u0027s a combined unique constraint here.\n\nSuppose the unique constraint only apply to trustor_user_id, and not actually apply to other fields this testcase will also pass which is not we want.",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8e1f13b6",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 8
@@ -48,6 +83,24 @@
       "writtenOn": "2015-11-19T21:32:03Z",
       "side": 1,
       "message": "Revert this change.  It changes the meaning of the unit tests.  If you need to test the exact configuration, add another test that tests it.",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_8f49f890",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2864,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T05:25:00Z",
+      "side": 1,
+      "message": "looks like without this, these testcase will fail since it\u0027s violate unique constraint.\n\nKent - maybe you can consider to address it here\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L371 where the refer data was generated rather than in each testcase.\n\nJust give random string to \u0027expires_at\u0027 each time a trust refer is called.",
+      "parentUuid": "ba8a016a_8e1f13b6",
       "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
