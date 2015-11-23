@@ -105,7 +105,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         """
         region_id = self._region_create()
         service_id = self._service_create()
-        # create a v3 endpoint with three interfaces
+        # create v3 endpoints with three interfaces
         body = {
             'endpoint': unit.new_endpoint_ref(service_id, region_id=region_id)
         }
@@ -119,7 +119,8 @@ class V2CatalogTestCase(rest.RestfulTestCase):
 
         r = self.admin_request(token=self.get_scoped_token(),
                                path='/v2.0/endpoints')
-        # v3 endpoints having public url can be fetched via v2.0 API
+        # v3 endpoints of a service which has public url can be fetched
+        # via v2.0 API
         self.assertEqual(1, len(r.result['endpoints']))
         v2_endpoint = r.result['endpoints'][0]
         self.assertEqual(service_id, v2_endpoint['service_id'])
@@ -136,11 +137,11 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         self.assertEqual(service_id, v3_endpoint['service_id'])
 
     def test_pure_v3_endpoint_without_publicurl_invisible_from_v2(self):
-        """Test pure v3 endpoint without public url can't be fetched via v2 API.
+        """Test v2 API can't fetch v3 endpoints without a public url
 
-        V2 API will return endpoints created by v3 API, but because public url
-        is required for v2 API, so v3 endpoints without public url will be
-        ignored.
+        v2 API will return endpoints created by v3 API, but public url is
+        required for v2 API, therefore v3 endpoints of a service which
+        don't have public url will be ignored.
         """
         region_id = self._region_create()
         service_id = self._service_create()
@@ -160,7 +161,8 @@ class V2CatalogTestCase(rest.RestfulTestCase):
 
         r = self.admin_request(token=self.get_scoped_token(),
                                path='/v2.0/endpoints')
-        # v3 endpoints without public url won't be fetched via v2.0 API
+        # v3 endpoints of a service which doesn't have a public url can't  be
+        # fetched via v2.0 API
         self.assertEqual(0, len(r.result['endpoints']))
 
     def test_endpoint_create_with_null_adminurl(self):
