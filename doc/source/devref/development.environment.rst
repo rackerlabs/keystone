@@ -108,8 +108,24 @@ PyPi Packages and VirtualEnv
 
 We recommend establishing a virtualenv to run Keystone within. virtualenv
 limits the Python environment to just what you're installing as dependencies,
-useful to keep a clean environment for working on Keystone. The tools directory
-in Keystone has a script already created to make this very simple:
+useful to keep a clean environment for working on Keystone.
+
+First install the ``python-virtualenv`` package:
+
+Ubuntu 14.04:
+
+.. code-block:: bash
+
+    $ sudo apt-get install --yes python-virtualenv
+
+Fedora 19+ and openSUSE 13.2 (SLE 12):
+
+.. code-block:: bash
+
+    $ sudo yum install python-virtualenv
+
+The tools directory in Keystone has a script already created to make
+this very simple:
 
 .. code-block:: bash
 
