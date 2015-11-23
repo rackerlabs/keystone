@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_4b575a02",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T18:45:29Z",
+      "side": 1,
+      "message": "nit: I think we could rename this to not include \u0027Tests\u0027 in the class name. Only because this module doesn\u0027t actually have any tests in it, it\u0027s more of a utility method to do setup things.\n\n\n    class MiddlewareRequestsSetup(unit.TestCase): \n\n\nor something similar?",
+      "revId": "d2572d5c4341be2e5e450178e083c6303587624b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6b71fea7",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T18:45:29Z",
+      "side": 1,
+      "message": "nit: use punctuation at the end of doc-strings to be consistent with the other doc-strings in the module.",
+      "revId": "d2572d5c4341be2e5e450178e083c6303587624b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
