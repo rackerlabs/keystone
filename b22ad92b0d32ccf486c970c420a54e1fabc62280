@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_eb7c0eb7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T18:55:17Z",
+      "side": 1,
+      "message": "I\u0027m not sure this TODO still applies. If we\u0027re handling errors in a different place, then we could probably remove this TODO.",
+      "revId": "b22ad92b0d32ccf486c970c420a54e1fabc62280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6b701edd",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T18:55:17Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "b22ad92b0d32ccf486c970c420a54e1fabc62280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
