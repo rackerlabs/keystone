@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_3fab2cd8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_c931270d",
+      "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_746ece97",
         "filename": "keystone/contrib/example/core.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-17T16:18:56Z",
       "side": 1,
       "message": "change \"entity\" to \"operation\"",
+      "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0dc08d29",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_746ece97",
       "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_ede509a8",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_b4299639",
+      "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_995dc6ee",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-23T01:15:59Z",
       "side": 1,
       "message": "(nit) Please fix excepton to exception",
+      "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_6d44b973",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_995dc6ee",
       "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_185e8912",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1176,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:37:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_b9620aac",
+      "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_1972367d",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2015-11-23T01:15:59Z",
       "side": 1,
       "message": "(nit) if/If (just to be consistent with the other places you fixed",
+      "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_b82c1d4b",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:37:36Z",
+      "side": 1,
+      "message": "this was kept as lowcase since all the docstring here didn\u0027t capital the \u0027i\u0027, but it\u0027s okay to do the update.",
+      "parentUuid": "ba8a016a_1972367d",
       "revId": "52cb4e4de97b6bbbc772595828b6b6ac6a1fffe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
