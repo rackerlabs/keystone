@@ -16,6 +16,24 @@
       "revId": "4f6cc67941f76eb7bcd079515b765b7d9b7e66ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_970ed130",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-23T15:24:28Z",
+      "side": 0,
+      "message": "If so, then maybe this should be a dependent patch?",
+      "parentUuid": "ba8a016a_1996b694",
+      "revId": "4f6cc67941f76eb7bcd079515b765b7d9b7e66ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
