@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_39b4a5f0",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T22:36:44Z",
+      "side": 1,
+      "message": "surprising this isn\u0027t EndpointNotFound and ProjectNotFound.",
+      "revId": "f8ee2ba78a1b792f4627e9ea9147f2dec456e900",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_d9c31956",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T22:36:44Z",
+      "side": 1,
+      "message": "the argument should be an exception class.",
+      "revId": "f8ee2ba78a1b792f4627e9ea9147f2dec456e900",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_7988ed22",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T22:36:44Z",
+      "side": 1,
+      "message": "change \"credential\" to \"the credential\" (applies to the rest of these, too)",
+      "revId": "f8ee2ba78a1b792f4627e9ea9147f2dec456e900",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
