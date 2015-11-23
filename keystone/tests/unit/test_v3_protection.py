@@ -1264,3 +1264,75 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
 
         self.delete('/auth/tokens', token=admin_token,
                     headers={'X-Subject-Token': user_token})
+
+    def test_project_admin_get_project(self):
+        user_auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            project_id=self.project['id'])
+
+        self.get('/projects/%s' % self.project['id'], auth=user_auth,
+                 expected_status=exception.ForbiddenAction.code)
+
+        # Now, authenticate with a user that does have the project
+        # admin role
+        admin_auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.project['id'])
+
+        resp = self.get('/projects/%s' % self.project['id'], auth=admin_auth)
+        self.assertEqual(jsonutils.loads(resp.body)['project']['id'],
+                         self.project['id'])
+
+    def test_project_admin_list_assignments_of_project(self):
+        admin_auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.project['id'])
+
+        collection_url = self.build_role_assignment_query_url(
+            project_id=self.project['id'])
+        r = self.get(collection_url, auth=admin_auth)
+        self.assertValidRoleAssignmentListResponse(
+            r, expected_length=2, resource_url=collection_url)
+
+        # Building role assignment entity with project_id, user_id,
+        # and role_id to compare it with role assingment listing
+        project_admin_entity = self.build_role_assignment_entity(
+            project_id=self.project['id'],
+            user_id=self.project_admin_user['id'],
+            role_id=self.admin_role['id'],
+            inherited_to_projects=False)
+        project_user_entity = self.build_role_assignment_entity(
+            project_id=self.project['id'],
+            user_id=self.just_a_user['id'],
+            role_id=self.role['id'],
+            inherited_to_projects=False)
+
+        self.assertRoleAssignmentInListResponse(r, project_admin_entity)
+        self.assertRoleAssignmentInListResponse(r, project_user_entity)
+
+    def test_project_admin_list_assignments_of_another_project_failed(self):
+        projectB = self.new_project_ref(domain_id=self.domainA['id'])
+        self.resource_api.create_project(projectB['id'], projectB)
+        admin_auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.project['id'])
+
+        collection_url = self.build_role_assignment_query_url(
+            project_id=projectB['id'])
+        self.get(collection_url, auth=admin_auth,
+                 expected_status=http_client.FORBIDDEN)
+
+    def test_project_non_admin_list_assignments_of_project_failed(self):
+        user_auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            project_id=self.project['id'])
+
+        collection_url = self.build_role_assignment_query_url(
+            project_id=self.project['id'])
+        self.get(collection_url, auth=user_auth,
+                 expected_status=http_client.FORBIDDEN)
