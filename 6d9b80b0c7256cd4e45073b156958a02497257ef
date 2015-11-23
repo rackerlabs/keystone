@@ -51,6 +51,24 @@
       "revId": "6d9b80b0c7256cd4e45073b156958a02497257ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_30fef938",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-23T21:44:20Z",
+      "side": 1,
+      "message": "Samuel, Raildo, it looks like this in is the only way that correctly fixes this bug though.  I think i am going to have to redact may statement from earlier.  I think this is the right way to do it, which fixes the bug and stays with i18n standards. \nhttp://docs.openstack.org/developer/oslo.i18n/guidelines.html#adding-variables-to-log-messages",
+      "parentUuid": "fa80f949_0944da47",
+      "revId": "6d9b80b0c7256cd4e45073b156958a02497257ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
