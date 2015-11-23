@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_1055f54e",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T21:40:40Z",
+      "side": 1,
+      "message": "this link should point to something permanent, e.g., \n\n https://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone-paste.ini?h\u003dstable/mitaka",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_50d13dcc",
+        "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T21:40:40Z",
+      "side": 1,
+      "message": "remove \", which\"",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
