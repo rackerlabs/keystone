@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba8a016a_0e4e55c1",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T14:12:06Z",
+      "side": 1,
+      "message": "Note that the catalog format is:\n\n   {region_id: {service_id: {key: v}}}\n\nThis should be self.templates.keys()\n\nAlso, methods below need to be updated to reflect this.",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_69c59b3b",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T14:12:06Z",
+      "side": 1,
+      "message": "Where does this service_type come from ? Looking at parse_templates method, I see the catalog format as described in my comment above.",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_89579fc9",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T14:12:06Z",
+      "side": 1,
+      "message": "According to class docs, name, publicURL, internalURL and adminURL are the valid keys within a service. This way, we can put empty string directly.",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_29b47333",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T14:12:06Z",
+      "side": 1,
+      "message": "Why are we changing the backend tests currently use ?",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_1242d23e",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 8
@@ -19,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_a937034c",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T14:12:06Z",
+      "side": 1,
+      "message": "They aren\u0027t in this file, this should be removed",
+      "parentUuid": "fa1b9901_1242d23e",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_72446e1a",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 8
@@ -30,6 +116,24 @@
       "writtenOn": "2015-08-25T09:12:46Z",
       "side": 1,
       "message": "use \u0027templated\u0027 in favor of stevedore",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_493f7725",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T14:12:06Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa1b9901_72446e1a",
       "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
