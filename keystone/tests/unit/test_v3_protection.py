@@ -565,13 +565,13 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         The following data is created:
 
         - Three domains: domainA, domainB and admin_domain
-        - One project, which name is 'project'
+        - Two projects: projectA, projectB
         - domainA has three users: domain_admin_user, project_admin_user and
           just_a_user:
 
           - domain_admin_user has role 'admin' on domainA,
-          - project_admin_user has role 'admin' on the project,
-          - just_a_user has a non-admin role on both domainA and the project.
+          - project_admin_user has role 'admin' on the projectA,
+          - just_a_user has a non-admin role on both domainA and projectA.
         - admin_domain has user cloud_admin_user, with an 'admin' role
           on admin_domain.
 
@@ -637,14 +637,16 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
                                          domain_id=self.domainA['id'])
 
         # Create and assign roles to the project
-        self.project = self.new_project_ref(domain_id=self.domainA['id'])
-        self.resource_api.create_project(self.project['id'], self.project)
+        self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
+        self.resource_api.create_project(self.projectA['id'], self.projectA)
         self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.project_admin_user['id'],
-                                         project_id=self.project['id'])
+                                         project_id=self.projectA['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
-                                         project_id=self.project['id'])
+                                         project_id=self.projectA['id'])
+        self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
+        self.resource_api.create_project(self.projectB['id'], self.projectB)
 
     def _stati(self, expected_status):
         # Return the expected return codes for APIs with and without data
@@ -676,7 +678,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
 
     def _test_project_management(self, domain_id, expected=None):
         status_OK, status_created, status_no_data = self._stati(expected)
-        entity_url = '/projects/%s' % self.project['id']
+        entity_url = '/projects/%s' % self.projectA['id']
         list_url = '/projects?domain_id=%s' % domain_id
 
         self.get(entity_url, auth=self.auth,
@@ -834,9 +836,9 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            project_id=self.project['id'])
+            project_id=self.projectA['id'])
 
-        self._test_grants('projects', self.project['id'],
+        self._test_grants('projects', self.projectA['id'],
                           expected=exception.ForbiddenAction.code)
 
         # Now, authenticate with a user that does have the project
@@ -844,9 +846,9 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.auth = self.build_authentication_request(
             user_id=self.project_admin_user['id'],
             password=self.project_admin_user['password'],
-            project_id=self.project['id'])
+            project_id=self.projectA['id'])
 
-        self._test_grants('projects', self.project['id'])
+        self._test_grants('projects', self.projectA['id'])
 
     def test_project_grants_by_domain_admin(self):
         # Test project grants with a domain admin. This user should be
@@ -856,7 +858,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             password=self.domain_admin_user['password'],
             domain_id=self.domainA['id'])
 
-        self._test_grants('projects', self.project['id'])
+        self._test_grants('projects', self.projectA['id'])
 
     def test_cloud_admin_list_assignments_of_domain(self):
         self.auth = self.build_authentication_request(
@@ -939,18 +941,18 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             domain_id=self.admin_domain['id'])
 
         collection_url = self.build_role_assignment_query_url(
-            project_id=self.project['id'])
+            project_id=self.projectA['id'])
         r = self.get(collection_url, auth=self.auth)
         self.assertValidRoleAssignmentListResponse(
             r, expected_length=2, resource_url=collection_url)
 
         project_admin_entity = self.build_role_assignment_entity(
-            project_id=self.project['id'],
+            project_id=self.projectA['id'],
             user_id=self.project_admin_user['id'],
             role_id=self.admin_role['id'],
             inherited_to_projects=False)
         project_user_entity = self.build_role_assignment_entity(
-            project_id=self.project['id'],
+            project_id=self.projectA['id'],
             user_id=self.just_a_user['id'],
             role_id=self.role['id'],
             inherited_to_projects=False)
@@ -966,18 +968,18 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             domain_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
-            project_id=self.project['id'])
+            project_id=self.projectA['id'])
         r = self.get(collection_url, auth=self.auth)
         self.assertValidRoleAssignmentListResponse(
             r, expected_length=2, resource_url=collection_url)
 
         project_admin_entity = self.build_role_assignment_entity(
-            project_id=self.project['id'],
+            project_id=self.projectA['id'],
             user_id=self.project_admin_user['id'],
             role_id=self.admin_role['id'],
             inherited_to_projects=False)
         project_user_entity = self.build_role_assignment_entity(
-            project_id=self.project['id'],
+            project_id=self.projectA['id'],
             user_id=self.just_a_user['id'],
             role_id=self.role['id'],
             inherited_to_projects=False)
@@ -992,7 +994,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             domain_id=self.domainA['id'])
 
         collection_url = self.build_role_assignment_query_url(
-            project_id=self.project['id'])
+            project_id=self.projectA['id'])
         self.get(collection_url, auth=self.auth,
                  expected_status=http_client.FORBIDDEN)
 
@@ -1050,9 +1052,9 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         just_user_auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            project_id=self.project['id'])
+            project_id=self.projectA['id'])
         url = '/users/%s/credentials/OS-EC2' % self.just_a_user['id']
-        r = self.post(url, body={'tenant_id': self.project['id']},
+        r = self.post(url, body={'tenant_id': self.projectA['id']},
                       auth=just_user_auth)
 
         # another normal user can't get the credential
@@ -1264,3 +1266,71 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
 
         self.delete('/auth/tokens', token=admin_token,
                     headers={'X-Subject-Token': user_token})
+
+    def test_project_admin_get_project(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            project_id=self.projectA['id'])
+
+        self.get('/projects/%s' % self.projectA['id'], auth=self.auth,
+                 expected_status=exception.ForbiddenAction.code)
+
+        # Now, authenticate with a user that does have the project
+        # admin role
+        self.auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.projectA['id'])
+
+        resp = self.get('/projects/%s' % self.projectA['id'], auth=self.auth)
+        self.assertEqual(jsonutils.loads(resp.body)['project']['id'],
+                         self.projectA['id'])
+
+    def test_project_admin_list_assignments_of_project(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.projectA['id'])
+
+        collection_url = self.build_role_assignment_query_url(
+            project_id=self.projectA['id'])
+        r = self.get(collection_url, auth=self.auth)
+        self.assertValidRoleAssignmentListResponse(
+            r, expected_length=2, resource_url=collection_url)
+
+        project_admin_entity = self.build_role_assignment_entity(
+            project_id=self.projectA['id'],
+            user_id=self.project_admin_user['id'],
+            role_id=self.admin_role['id'],
+            inherited_to_projects=False)
+        project_user_entity = self.build_role_assignment_entity(
+            project_id=self.projectA['id'],
+            user_id=self.just_a_user['id'],
+            role_id=self.role['id'],
+            inherited_to_projects=False)
+
+        self.assertRoleAssignmentInListResponse(r, project_admin_entity)
+        self.assertRoleAssignmentInListResponse(r, project_user_entity)
+
+    def test_project_admin_list_assignments_of_another_project_failed(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.projectA['id'])
+
+        collection_url = self.build_role_assignment_query_url(
+            project_id=self.projectB['id'])
+        self.get(collection_url, auth=self.auth,
+                 expected_status=http_client.FORBIDDEN)
+
+    def test_project_user_list_assignments_of_project_failed(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            project_id=self.projectA['id'])
+
+        collection_url = self.build_role_assignment_query_url(
+            project_id=self.projectA['id'])
+        self.get(collection_url, auth=self.auth,
+                 expected_status=http_client.FORBIDDEN)
