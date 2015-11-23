@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_59a2c94c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-11-23T22:44:19Z",
+      "side": 1,
+      "message": "I didn\u0027t get why the previous rule \u0027admin_and_matching_target_project_domain_id\u0027 was not enough.\n\nSince, if I have admin role in a project X and this project is the same that my token was scoped, I think that policy will enforce the \u0027get_project\u0027 action (since the domain_id in the context is the same as the project_domain_id and I\u0027m admin) Am I missing something?",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
