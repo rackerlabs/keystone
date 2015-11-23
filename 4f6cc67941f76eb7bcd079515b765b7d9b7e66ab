@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_1996b694",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-23T00:55:50Z",
+      "side": 0,
+      "message": "Don\u0027t we still need to check that the extension is enabled ? Spec for making it core is still under review - https://review.openstack.org/#/c/200434/",
+      "revId": "4f6cc67941f76eb7bcd079515b765b7d9b7e66ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
