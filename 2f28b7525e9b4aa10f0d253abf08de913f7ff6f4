@@ -16,6 +16,24 @@
       "revId": "2f28b7525e9b4aa10f0d253abf08de913f7ff6f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_e4d67bf0",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-23T19:49:07Z",
+      "side": 1,
+      "message": "hence the use of \u0027dict\u0027 instead of \u0027new_ref()\u0027.",
+      "parentUuid": "ba8a016a_3ab90c2f",
+      "revId": "2f28b7525e9b4aa10f0d253abf08de913f7ff6f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
