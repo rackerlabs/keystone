@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_904a4582",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-23T21:47:08Z",
+      "side": 1,
+      "message": "this change for \"test_sql_migrate_extensions.py\" is not accessible in the current base.",
+      "revId": "17bff224062f626c4de29d89f105e70bd67bf39a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
