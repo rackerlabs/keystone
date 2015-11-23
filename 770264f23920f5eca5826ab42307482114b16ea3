@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_16640ee3",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-23T21:53:05Z",
+      "side": 1,
+      "message": "i didn\u0027t know about the query option, but good to know. i was thinking about the same issue when including the reference, but as of now that link won\u0027t work, it 404s since stable/mitaka doesn\u0027t exist",
+      "parentUuid": "ba8a016a_1055f54e",
+      "revId": "770264f23920f5eca5826ab42307482114b16ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_50d13dcc",
         "filename": "releasenotes/notes/ldap-emulation-91c4d535eb9c3d10.yaml",
         "patchSetId": 6
