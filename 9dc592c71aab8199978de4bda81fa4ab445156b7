@@ -16,6 +16,24 @@
       "revId": "9dc592c71aab8199978de4bda81fa4ab445156b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_63f85a7d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-23T13:40:14Z",
+      "side": 1,
+      "message": "if it helps, we\u0027re only changing positional arguments, so, unless someone explicitly passes it as kwargs, I don\u0027t think we\u0027ll have problems",
+      "parentUuid": "ba8a016a_36b4f9cf",
+      "revId": "9dc592c71aab8199978de4bda81fa4ab445156b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
