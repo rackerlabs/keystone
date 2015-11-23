@@ -27,21 +27,21 @@ Extension code base in the ``keystone/contrib/example`` folder.
   structure convention::
 
       keystone/contrib/
-      └── my_extension
-          ├── backends (optional)
-          │   ├── __init__.py (mandatory)
-          │   └── sql.py (optional)
-          │   └── kvs.py (optional)
-          ├── migrate_repo (optional)
-          │   ├── __init__.py (mandatory)
-          │   ├── migrate.cfg (mandatory)
-          │   └── versions (mandatory)
-          │       ├── 001_create_tables.py (mandatory)
-          │       └── __init__.py (mandatory)
-          ├── __init__.py (mandatory)
-          ├── core.py (mandatory)
-          ├── controllers.py (mandatory for API Extension)
-          └── routers.py (mandatory for API Extension)
+      `-- my_extension
+          |-- backends (optional)
+          |   |-- __init__.py (mandatory)
+          |   `-- sql.py (optional)
+          |   `-- kvs.py (optional)
+          |-- migrate_repo (optional)
+          |   |-- __init__.py (mandatory)
+          |   |-- migrate.cfg (mandatory)
+          |   `-- versions (mandatory)
+          |       |-- 001_create_tables.py (mandatory)
+          |       `-- __init__.py (mandatory)
+          |-- __init__.py (mandatory)
+          |-- core.py (mandatory)
+          |-- controllers.py (mandatory for API Extension)
+          `-- routers.py (mandatory for API Extension)
 
 - If the Extension implements an API Extension the ``controllers.py`` and
   ``routers.py`` must be present and correctly handle the API Extension
