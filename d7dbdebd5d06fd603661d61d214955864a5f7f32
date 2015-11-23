@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_e1718d45",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "The comment needs to explain why this code needs to be so complicated. We don\u0027t need comments to explain what the code does, we can see that already. Why is it correct to use the identity_value as is if literal_eval fails?",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_41fe596c",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "This extra documentation is just duplicating what\u0027s below so will get out of date. Remove it.",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_61d4bdbc",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "use assertItemsEqual since the order doesn\u0027t matter, then remove the call to sort the properties. (This applies to the other tests, too). Note that I made this same comment in patch set 11.",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_416df902",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "This extra documentation is just duplicating what\u0027s below so will get out of date. Remove it.",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_814a0182",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "use assertItemsEqual",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_215a3551",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "This extra documentation is just duplicating what\u0027s below so will get out of date. Remove it.",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_844d2f74",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-23T19:51:27Z",
+      "side": 1,
+      "message": "use assertItemsEqual",
+      "revId": "d7dbdebd5d06fd603661d61d214955864a5f7f32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
