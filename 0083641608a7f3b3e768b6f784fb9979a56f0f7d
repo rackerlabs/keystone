@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_d9928c57",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 10281
+      },
+      "writtenOn": "2015-11-24T18:33:23Z",
+      "side": 1,
+      "message": "Creating a new project and renaming project to projectA is needed for one test below and will be useful for any future test cases.",
+      "parentUuid": "9a8ffd7b_ae7bd27a",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_35d8981d",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 2
@@ -83,6 +101,24 @@
       "writtenOn": "2015-11-24T11:41:17Z",
       "side": 1,
       "message": "While these next methods are great tests, are they directly relevant to this change?  If they are not, maybe make them a follow on patch?",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_991724ed",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 10281
+      },
+      "writtenOn": "2015-11-24T18:33:23Z",
+      "side": 1,
+      "message": "These tests are related to this change, demonstrating that project admin can list role assignments of his project which is failing without changing policy file.",
+      "parentUuid": "9a8ffd7b_35d8981d",
       "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
