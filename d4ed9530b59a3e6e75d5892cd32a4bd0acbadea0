@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4d2c9e4a",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T17:17:49Z",
+      "side": 1,
+      "message": "Don\u0027t add a test that says it validates there\u0027s no race condition when it doesn\u0027t. Get rid of this.",
+      "revId": "d4ed9530b59a3e6e75d5892cd32a4bd0acbadea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
