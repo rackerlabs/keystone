@@ -16,6 +16,41 @@
       "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_f5d77021",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-24T11:41:17Z",
+      "side": 1,
+      "message": "I think the issue is that to get domain_id to match you must have a domain scoped token....but you should be able to do a get_project with a project scoped token.",
+      "parentUuid": "ba8a016a_59a2c94c",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_35d8981d",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-24T11:41:17Z",
+      "side": 1,
+      "message": "While these next methods are great tests, are they directly relevant to this change?  If they are not, maybe make them a follow on patch?",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
