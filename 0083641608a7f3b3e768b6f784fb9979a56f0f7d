@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_ae7bd27a",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-11-24T13:42:36Z",
+      "side": 1,
+      "message": "you don\u0027t need to add this project to all the tests if you\u0027re going to use only in your test. Complementing what Henry said, I don\u0027t think you should be creating this extra project and so you don\u0027t need to modify the other project name to ProjectA",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_35d8981d",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 2
