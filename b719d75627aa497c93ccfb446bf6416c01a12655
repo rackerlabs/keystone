@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a209a333",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T14:59:09Z",
+      "side": 1,
+      "message": "Can we log a warning in the case when the socket option isn\u0027t available so that the admin knows that even though they set keepidle in their config that it\u0027s being ignored?\n\nAlso, update the help text for the config option so that it says the option is ignored if the underlying system doesn\u0027t support the keep idle socket option ( http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/config.py#n1074 ).",
+      "revId": "b719d75627aa497c93ccfb446bf6416c01a12655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
