@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a8ffd7b_4d2b3eec",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "remove default\u003dNone since that\u0027s the default anyways. (same for the other config option)",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ad466abd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "lowercase Domain",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ed231204",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "single space after . (same for the other config option)",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_6d1722a4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "The help should say what happens by default. (same for the other config option)",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ade2ea9d",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "suggest use self.assertIs(True, token[\u0027is_admin_project\u0027]) so that the test also validates that it\u0027s a boolean.",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_cd896ecc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "combine these config settings to reduce duplication.",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_006e5dc9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "There should also be a test that shows that the authenticate response has is_admin_project\u003dTrue",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_dbf15802",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
@@ -13,6 +132,23 @@
       "writtenOn": "2015-11-20T00:24:38Z",
       "side": 1,
       "message": "What about the OR cases? When admin_project_name is set but admin_project_domain_name is not or vice versa. Shouldn\u0027t the test validate that check as well?",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_40d0e553",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-24T19:29:01Z",
+      "side": 1,
+      "message": "There should also be a test that shows that the authenticate response has is_admin_project\u003dFalse",
       "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
