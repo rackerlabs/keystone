@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import json
 import random
 import uuid
 
@@ -1428,6 +1429,56 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
             user_id=user1['id'], role_id=role_list[3]['id'],
             inherited_to_projects=True)
         self.assertRoleAssignmentInListResponse(r, up_entity)
+
+    def test_list_role_assignments_for_include_names(self):
+        # Create new refs
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        user1 = unit.create_user(self.identity_api, domain_id=domain['id'])
+        project1 = unit.new_project_ref(domain_id=domain['id'])
+        self.resource_api.create_project(project1['id'], project1)
+        # Add a role to the project
+        self.assignment_api.add_role_to_user_and_project(
+            user1['id'], project1['id'], role['id'])
+
+        collection_url = (
+            '/role_assignments?effective&user.id=%(user_id)s'
+            '&scope.project.id=%(project_id)s&include_names=False' % {
+                'user_id': user1['id'],
+                'project_id': project1['id']})
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
+                                                   expected_length=1,
+                                                   resource_url=collection_url)
+
+        self.assertEqual(rs.status_int, http_client.OK)
+        body = json.loads(rs.body)
+
+        expectDict = {
+            'links': {
+                'assignment': 'http://localhost/v3/projects/' + project1['id']
+                              + '/users/' + user1['id'] + '/roles/'
+                              + role['id']},
+            'role': {
+                'id': role['id'],
+                'name': role['name']},
+            'scope': {
+                'project': {
+                    'domain': {
+                        'id': project1['domain_id'],
+                        'name': domain['name']},
+                    'id': project1['id'],
+                    'name': project1['name']}
+            },
+            'user': {
+                'domain': {
+                    'id': user1['domain_id'],
+                    'name': domain['name']},
+                'id': user1['id'],
+                'name': user1['name']}}
+        self.assertDictEqual(expectDict, body['role_assignments'][0])
 
     def test_list_role_assignments_for_disabled_inheritance_extension(self):
         """Call ``GET /role_assignments with inherited domain grants``.
