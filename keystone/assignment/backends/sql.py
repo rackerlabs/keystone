@@ -299,7 +299,8 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
                               domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
+                              inherited_to_projects=None,
+                              include_names=None):
 
         def denormalize_role(ref):
             assignment = {}

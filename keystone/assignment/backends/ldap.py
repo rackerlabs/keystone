@@ -210,7 +210,8 @@ class Assignment(assignment.AssignmentDriverV9):
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
                               domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
+                              inherited_to_projects=None,
+                              include_names=False):
         role_assignments = []
 
         # Since the LDAP backend does not support assignments to domains, if
