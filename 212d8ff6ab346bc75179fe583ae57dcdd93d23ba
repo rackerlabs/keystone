@@ -16,6 +16,24 @@
       "revId": "212d8ff6ab346bc75179fe583ae57dcdd93d23ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_65029b0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-25T16:39:51Z",
+      "side": 1,
+      "message": "PKI and PKIZ tokens are involved in a security vulnerability. Until a formal OSSA/OSSN is sent out by the vulnerability management team, we should be as obscure as possible.",
+      "parentUuid": "9a8ffd7b_221c8976",
+      "revId": "212d8ff6ab346bc75179fe583ae57dcdd93d23ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
