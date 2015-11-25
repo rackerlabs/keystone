@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a8ffd7b_b573db7f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-25T14:27:44Z",
+      "side": 1,
+      "message": "Is this pattern going to be used with other parts of the v2 api? Maybe in subsequent patch sets?",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_756333dd",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1858,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-25T14:27:44Z",
+      "side": 1,
+      "message": "integers could also be tested here, too.",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa80f949_912d5697",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
