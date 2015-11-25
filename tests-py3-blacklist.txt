@@ -7,7 +7,6 @@ keystone.tests.unit.test_backend_templated
 keystone.tests.unit.test_cert_setup
 keystone.tests.unit.test_contrib_simple_cert
 keystone.tests.unit.test_hacking_checks
-keystone.tests.unit.test_ipv6
 keystone.tests.unit.test_v2
 keystone.tests.unit.test_v3
 keystone.tests.unit.test_v3_assignment
