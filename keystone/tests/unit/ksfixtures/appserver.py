@@ -15,12 +15,17 @@
 
 from __future__ import absolute_import
 
+import eventlet
 import fixtures
 from oslo_config import cfg
 from paste import deploy
 
-from keystone.common import environment
+from keystone.common.environment import eventlet_server
 
+# FIXME(xek)
+# This worked for me, then something broke, see test_v2_keystoneclient.py
+eventlet.patcher.monkey_patch(os=False, select=True, socket=True, time=True,
+                              psycopg=False, MySQLdb=False)
 
 CONF = cfg.CONF
 
@@ -47,13 +52,12 @@ class AppServer(fixtures.Fixture):
         super(AppServer, self).setUp()
 
         app = deploy.loadapp(self.config, name=self.name)
-        self.server = environment.Server(app, self.host, self.port)
+        self.server = eventlet_server.Server(app, self.host, self.port)
         self._setup_SSL_if_requested()
         self.server.start(key='socket')
 
         # some tests need to know the port we ran on.
         self.port = self.server.socket_info['socket'][1]
-        self._update_config_opt()
 
         self.addCleanup(self.server.stop)
 
@@ -67,12 +71,3 @@ class AppServer(fixtures.Fixture):
                                 keyfile=self.key,
                                 ca_certs=self.ca,
                                 cert_required=self.cert_required)
-
-    def _update_config_opt(self):
-        """Updates the config with the actual port used."""
-        opt_name = self._get_config_option_for_section_name()
-        CONF.set_override(opt_name, self.port, group='eventlet_server')
-
-    def _get_config_option_for_section_name(self):
-        """Maps Paster config section names to port option names."""
-        return {'admin': 'admin_port', 'main': 'public_port'}[self.name]

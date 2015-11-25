@@ -17,8 +17,8 @@ import os
 import ssl
 
 from oslo_config import cfg
+import six.moves.http_client as httplib
 
-from keystone.common import environment
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import appserver
 
@@ -58,12 +58,12 @@ class SSLTestCase(unit.TestCase):
     def get_HTTPSConnection(self, *args):
         """Simple helper to configure HTTPSConnection objects."""
         if self.context:
-            return environment.httplib.HTTPSConnection(
+            return httplib.HTTPSConnection(
                 *args,
                 context=self.context
             )
         else:
-            return environment.httplib.HTTPSConnection(*args)
+            return httplib.HTTPSConnection(*args)
 
     def test_1way_ssl_ok(self):
         """Make sure both public and admin API work with 1-way SSL."""
