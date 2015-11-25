@@ -232,8 +232,8 @@ class TestTemplatedCatalog(unit.TestCase, test_backend.CatalogTests):
         self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)
 
     def test_list_endpoints(self):
-        expected_urls = set(['http://localhost:$(public_port)s/v2.0',
-                             'http://localhost:$(admin_port)s/v2.0',
+        expected_urls = set(['http://localhost:5000/v2.0',
+                             'http://localhost:35357/v2.0',
                              'http://localhost:8774/v1.1/$(tenant_id)s'])
         endpoints = self.catalog_api.list_endpoints()
         self.assertEqual(expected_urls, set(e['url'] for e in endpoints))
