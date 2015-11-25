@@ -29,6 +29,11 @@ python-subunit>=0.0.18
 testrepository>=0.0.18
 testtools>=1.4.0
 
+# eventlet still needed for keystoneclient tests
+eventlet>=0.17.4
+greenlet>=0.3.2
+
+
 # For documentation
 oslosphinx!=3.4.0,>=2.5.0 # Apache-2.0
 reno>=0.1.1 # Apache2

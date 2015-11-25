@@ -15,12 +15,22 @@
 
 from __future__ import absolute_import
 
+import subprocess
+
+import eventlet
+from eventlet.green import subprocess as eventlet_subprocess
 import fixtures
+from keystoneclient.common import cms
 from oslo_config import cfg
 from paste import deploy
 
-from keystone.common import environment
+from keystone.common.environment import eventlet_server
 
+eventlet.patcher.monkey_patch(os=False, select=True, socket=True, time=True,
+                              psycopg=False, MySQLdb=False)
+# NOTE(xek): keystoneclient automatically detects eventlet monkey patching.
+# We don't want that, since other tests assume stdlib.
+cms.set_subprocess(subprocess)
 
 CONF = cfg.CONF
 
@@ -46,16 +56,21 @@ class AppServer(fixtures.Fixture):
     def setUp(self):
         super(AppServer, self).setUp()
 
+        cms.set_subprocess(eventlet_subprocess)
+
         app = deploy.loadapp(self.config, name=self.name)
-        self.server = environment.Server(app, self.host, self.port)
+        self.server = eventlet_server.Server(app, self.host, self.port)
         self._setup_SSL_if_requested()
         self.server.start(key='socket')
 
         # some tests need to know the port we ran on.
         self.port = self.server.socket_info['socket'][1]
-        self._update_config_opt()
 
         self.addCleanup(self.server.stop)
+
+    def tearDown(self):
+        super(AppServer, self).tearDown()
+        cms.set_subprocess(subprocess)
 
     def _setup_SSL_if_requested(self):
         # TODO(dstanek): fix environment.Server to take a SSLOpts instance
@@ -67,12 +82,3 @@ class AppServer(fixtures.Fixture):
                                 keyfile=self.key,
                                 ca_certs=self.ca,
                                 cert_required=self.cert_required)
-
-    def _update_config_opt(self):
-        """Updates the config with the actual port used."""
-        opt_name = self._get_config_option_for_section_name()
-        CONF.set_override(opt_name, self.port, group='eventlet_server')
-
-    def _get_config_option_for_section_name(self):
-        """Maps Paster config section names to port option names."""
-        return {'admin': 'admin_port', 'main': 'public_port'}[self.name]

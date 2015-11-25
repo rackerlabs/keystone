@@ -791,17 +791,10 @@ class PKIProviderTests(object):
         from keystoneclient.common import cms
         self.cms = cms
 
-        from keystone.common import environment
-        self.environment = environment
-
         old_cms_subprocess = cms.subprocess
         self.addCleanup(setattr, cms, 'subprocess', old_cms_subprocess)
 
-        old_env_subprocess = environment.subprocess
-        self.addCleanup(setattr, environment, 'subprocess', old_env_subprocess)
-
         self.cms.subprocess = self.target_subprocess
-        self.environment.subprocess = self.target_subprocess
 
         reload(pki)  # force module reload so the imports get re-evaluated
 
@@ -815,16 +808,6 @@ class PKIProviderTests(object):
         self.assertRaises(exception.UnexpectedError,
                           provider._get_token_id,
                           token_data)
-
-
-class TestPKIProviderWithEventlet(PKIProviderTests, unit.TestCase):
-
-    def setUp(self):
-        # force keystoneclient.common.cms to use eventlet's subprocess
-        from eventlet.green import subprocess
-        self.target_subprocess = subprocess
-
-        super(TestPKIProviderWithEventlet, self).setUp()
 
 
 class TestPKIProviderWithStdlib(PKIProviderTests, unit.TestCase):
