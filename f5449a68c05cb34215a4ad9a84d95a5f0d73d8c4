@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a32716b5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-25T18:20:12Z",
+      "side": 1,
+      "message": "would personally prefer this passed in as a param....but that is just that....personal preference.",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a712c360",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-25T18:20:12Z",
+      "side": 1,
+      "message": "don\u0027t we also need to do projects, domains and roles?",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
