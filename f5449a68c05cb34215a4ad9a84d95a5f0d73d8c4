@@ -36,6 +36,42 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_6ca6fb11",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-25T19:59:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_a32716b5",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_77ac84a0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-25T19:59:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_4c6a171c",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_4c7457ce",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-25T19:40:22Z",
       "side": 1,
       "message": "do entities normally have more than one type (user/group/etc)?\n\nyou can probably just do the name addition once at the end of the loop \n\n  if entity.get(\u0027user_id\u0027)\n    ref \u003d self.identity_api.get_user(entity[\u0027user_id\u0027])\n  elif entity.get(\u0027group_id\u0027)\n    ref \u003d self.identity_api.get_group(entity[\u0027group_id\u0027])\n  elif entity.get(\u0027project_id\u0027)\n    ...\n  elif entity.get(\u0027domain_id\u0027)\n    ...\n  elif entity.get(\u0027role_id\u0027)\n    ...\n  else\n     continue\n  role_assignments[location][\u0027name\u0027] \u003d ref[\u0027name\u0027]",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_17c5f859",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-25T19:59:10Z",
+      "side": 1,
+      "message": "we are thinking the same thing. Already done! (just not uploaded)  Done",
+      "parentUuid": "9a8ffd7b_4c7457ce",
       "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2015-11-25T19:40:22Z",
       "side": 1,
       "message": "yes we do!",
+      "parentUuid": "9a8ffd7b_a712c360",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_8ca9dfe1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-25T19:59:10Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "9a8ffd7b_a712c360",
       "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
