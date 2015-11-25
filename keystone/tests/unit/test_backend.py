@@ -4289,6 +4289,49 @@ class IdentityTests(AssignmentTestHelperMixin):
                                   {'name': self.role_member['name']})
         # If the previous line didn't raise an exception then the test passes.
 
+    def test_list_role_assignment_containing_names(self):
+        role1 = unit.new_role_ref()
+        self.role_api.create_role(role1['id'], role1)
+
+        new_domain = self._get_domain_fixture()
+        new_user = unit.new_user_ref(name='tom', domain_id=new_domain['id'])
+        new_user = self.identity_api.create_user(new_user)
+        new_project = {'id': uuid.uuid4().hex,
+                       'name': uuid.uuid4().hex,
+                       'domain_id': new_domain['id']}
+        new_group = unit.new_group_ref(domain_id=new_domain['id'])
+        new_group = self.identity_api.create_group(new_group)
+
+        self.resource_api.create_project(new_project['id'], new_project)
+
+        self.assignment_api.create_grant(user_id=new_user['id'],
+                                         project_id=new_project['id'],
+                                         role_id=role1['id'])
+        self.assignment_api.create_grant(group_id=new_group['id'],
+                                         project_id=new_project['id'],
+                                         role_id=role1['id'])
+
+        _asgmt_prj = self.assignment_api.list_role_assignments(
+            user_id=new_user['id'],
+            include_names=True)
+        _asgmt_grp = self.assignment_api.list_role_assignments(
+            group_id=new_group['id'],
+            include_names=True)
+
+        # Should be 1 assignment returned
+        self.assertEqual(1, len(_asgmt_prj))
+        self.assertEqual(1, len(_asgmt_grp))
+
+        # Checks the names are in the project response
+        self.assertEqual(new_user['name'], _asgmt_prj[0]['user_name'])
+        self.assertEqual(new_project['name'], _asgmt_prj[0]['project_name'])
+        self.assertEqual(role1['name'], _asgmt_prj[0]['role_name'])
+
+        # Checks the names are in the group response
+        self.assertEqual(new_group['name'], _asgmt_grp[0]['group_name'])
+        self.assertEqual(new_project['name'], _asgmt_grp[0]['project_name'])
+        self.assertEqual(role1['name'], _asgmt_grp[0]['role_name'])
+
 
 class TokenTests(object):
     def _create_token_id(self):

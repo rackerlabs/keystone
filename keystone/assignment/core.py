@@ -781,7 +781,7 @@ class Manager(manager.Manager):
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
-                              effective=None):
+                              effective=None, include_names=False):
         """List role assignments, honoring effective mode and provided filters.
 
         Returns a list of role assignments, where their attributes match the
@@ -803,6 +803,31 @@ class Manager(manager.Manager):
         inherited roles retrieval, inherited role assignments will be ignored.
 
         """
+        def _get_names_for_list_role_assin(role_assignments):
+
+            for role_asgmt in role_assignments:
+                if role_asgmt.get('user_id'):
+                    role_asgmt['user_name'] = (
+                        self.identity_api.get_user(role_asgmt['user_id'])
+                        ['name'])
+                if role_asgmt.get('group_id'):
+                    role_asgmt['group_name'] = (
+                        self.identity_api.get_group(role_asgmt['group_id'])
+                        ['name'])
+                if role_asgmt.get('role_id'):
+                    role_asgmt['role_name'] = (
+                        self.role_api.get_role(role_asgmt['role_id'])
+                        ['name'])
+                if role_asgmt.get('project_id'):
+                    role_asgmt['project_name'] = (
+                        self.resource_api.get_project(role_asgmt['project_id'])
+                        ['name'])
+                if role_asgmt.get('domain_id'):
+                    role_asgmt['domain_name'] = (
+                        self.resource_api.get_domain(role_asgmt['domain_id'])
+                        ['name'])
+            return role_assignments
+
         if not CONF.os_inherit.enabled:
             if inherited:
                 return []
@@ -815,13 +840,18 @@ class Manager(manager.Manager):
                     self.resource_api.list_projects_in_subtree(project_id)])
 
         if effective:
-            return self._list_effective_role_assignments(
+            role_assignments = self._list_effective_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
         else:
-            return self._list_direct_role_assignments(
+            role_assignments = self._list_direct_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
+
+        if include_names:
+            return _get_names_for_list_role_assin(role_assignments)
+        else:
+            return role_assignments
 
     def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments(role_id=role_id)
