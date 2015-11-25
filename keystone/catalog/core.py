@@ -37,8 +37,8 @@ from keystone import notifications
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 WHITELISTED_PROPERTIES = [
-    'tenant_id', 'user_id', 'public_bind_host', 'admin_bind_host',
-    'compute_host', 'admin_port', 'public_port',
+    'tenant_id', 'user_id',
+    'compute_host',
     'public_endpoint', 'admin_endpoint', ]
 
 # This is a general cache region for catalog administration (CRUD operations).
