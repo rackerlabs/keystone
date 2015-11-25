@@ -768,7 +768,7 @@ class Manager(manager.Manager):
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
-                              effective=None):
+                              effective=None, include_names=False):
         """List role assignments, honoring effective mode and provided filters.
 
         Returns a list of role assignments, where their attributes match the
@@ -786,6 +786,9 @@ class Manager(manager.Manager):
         Think of effective mode as being the list of assignments that actually
         affect a user, for example the roles that would be placed in a token.
 
+        If include_names is set to true the entities name's are returned
+        rather than their id's
+
         If OS-INHERIT extension is disabled or the used driver does not support
         inherited roles retrieval, inherited role assignments will be ignored.
 
@@ -802,13 +805,97 @@ class Manager(manager.Manager):
                     self.resource_api.list_projects_in_subtree(project_id)])
 
         if effective:
-            return self._list_effective_role_assignments(
+            role_assignments = self._list_effective_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
         else:
-            return self._list_direct_role_assignments(
+            role_assignments = self._list_direct_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
+
+        if include_names:
+            return self._get_names_from_role_assign(role_assignments)
+        return role_assignments
+
+    def _get_names_from_role_assign(self, role_assignments):
+
+        # Cache role assignment so we don't need to make
+        # redundant calls to the drivers
+        user_entity = group_entity = prj_entity = role_entity = dmn_entity = {}
+        role_entity_list = []
+        def _format_role_data(entity):
+            dmn_id = entity['domain_id']
+            cache_dmn = dmn_entity.get(dmn_id)
+            if cache_dmn:
+                    entity_dmn_name = cache_dmn['name']
+            else:
+                _domain = self.resource_api.get_domain(dmn_id)
+                formated_domain = {'id': _domain['id'],
+                                   'name': _domain['name']}
+                dmn_entity[dmn_id] = formated_domain
+                entity_dmn_name = formated_domain['name']
+            return {
+                'id': entity['id'],
+                'name': entity['name'],
+                'domain': {'id': entity['domain_id'],
+                           'name': entity_dmn_name}}
+
+        for role_asgmt in role_assignments:
+            new_rl = {}
+            user_id = role_asgmt.get('user_id')
+            if user_id:
+                if user_entity.get(user_id):
+                    new_rl['user_entity'] = user_entity[user_id]
+                else:
+                    _user = self.identity_api.get_user(user_id)
+                    formated_user = _format_role_data(_user)
+                    new_rl['user_entity'] = formated_user
+                    user_entity[user_id] = formated_user
+
+            grp_id = role_asgmt.get('group_id')
+            if grp_id:
+                if group_entity.get(grp_id):
+                    new_rl['group_entity'] = group_entity[grp_id]
+                else:
+                    _group = self.identity_api.get_group(grp_id)
+                    formated_group = _format_role_data(_group)
+                    new_rl['group_entity'] = formated_group
+                    group_entity[grp_id] = formated_group
+
+            prj_id = role_asgmt.get('project_id')
+            if prj_id:
+                if prj_entity.get(prj_id):
+                    new_rl['project_entity'] = prj_entity[prj_id]
+                else:
+                    _project = self.resource_api.get_project(prj_id)
+                    formated_project = _format_role_data(_project)
+                    new_rl['project_entity'] = formated_project
+                    prj_entity[prj_id] = formated_project
+
+            rl_id = role_asgmt.get('role_id')
+            if rl_id:
+                if role_entity.get(rl_id):
+                    new_rl['role_entity'] = role_entity[rl_id]
+                else:
+                    _role = self.role_api.get_role(rl_id)
+                    formated_role = {'id': _role['id'],
+                                     'name': _role['name']}
+                    new_rl['role_entity'] = formated_role
+                    role_entity[rl_id] = formated_role
+
+            dmn_id = role_asgmt.get('domain_id')
+            if dmn_id:
+                if dmn_entity.get(dmn_id):
+                    new_rl['domain_entity'] = dmn_entity[dmn_id]
+                else:
+                    _domain = self.resource_api.get_domain(dmn_id)
+                    formated_domain = {'id': _domain['id'],
+                                       'name': _domain['name']}
+                    new_rl['domain_entity'] = formated_domain
+                    dmn_entity[dmn_id] = formated_domain
+
+            role_entity_list.append(new_rl)
+        return role_entity_list
 
     def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments(role_id=role_id)
@@ -1225,7 +1312,8 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
                               domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
+                              inherited_to_projects=None,
+                              include_names=False):
         return self.driver.list_role_assignments(
             role_id=role_id,
             user_id=user_id, group_ids=group_ids,

@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import json
 import random
 import uuid
 
@@ -362,11 +363,11 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         user1 = unit.new_user_ref(domain_id=self.domain['id'])
         user1 = self.identity_api.create_user(user1)
 
-        collection_url = '/role_assignments'
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r,
+        collection_url = '/role_assignments?include_names'
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
                                                    resource_url=collection_url)
-        existing_assignments = len(r.result.get('role_assignments'))
+        existing_assignments = len(rs.result.get('role_assignments'))
 
         # Now add one of each of the four types of assignment, making sure
         # that we get them all back.
@@ -379,6 +380,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             r,
             expected_length=existing_assignments + 1,
             resource_url=collection_url)
+        import pdb; pdb.set_trace()
         self.assertRoleAssignmentInListResponse(r, gd_entity)
 
         ud_entity = self.build_role_assignment_entity(domain_id=self.domain_id,
@@ -1429,6 +1431,94 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
             inherited_to_projects=True)
         self.assertRoleAssignmentInListResponse(r, up_entity)
 
+    def test_list_role_assignments_for_projects_include_names(self):
+        # Create new refs
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        user1 = unit.create_user(self.identity_api, domain_id=domain['id'])
+        project1 = unit.new_project_ref(domain_id=domain['id'])
+        self.resource_api.create_project(project1['id'], project1)
+        # Add a role to the project
+        self.assignment_api.add_role_to_user_and_project(
+            user1['id'], project1['id'], role['id'])
+
+        collection_url = (
+            '/role_assignments?user.id=%(user_id)s'
+            '&scope.project.id=%(project_id)s&include_names=False' % {
+                'user_id': user1['id'],
+                'project_id': project1['id']})
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
+                                                   expected_length=1,
+                                                   resource_url=collection_url)
+
+        self.assertEqual(rs.status_int, http_client.OK)
+        body = json.loads(rs.body)
+
+        entities = {
+            'links': {
+                'assignment': 'http://localhost/v3/projects/' + project1['id']
+                              + '/users/' + user1['id'] + '/roles/'
+                              + role['id']},
+            'role': {
+                'id': role['id'],
+                'name': role['name']},
+            'scope': {
+                'project': {
+                    'domain': {
+                        'id': project1['domain_id'],
+                        'name': domain['name']},
+                    'id': project1['id'],
+                    'name': project1['name']}
+            },
+            'user': {
+                'domain': {
+                    'id': user1['domain_id'],
+                    'name': domain['name']},
+                'id': user1['id'],
+                'name': user1['name']}}
+
+        gd_entity = self.build_role_assignment_entity_include_names(
+            role_ref=role,
+            project_ref=project1,
+            user_ref=user1)
+        import pdb; pdb.set_trace()
+        self.assertDictEqual(entities, gd_entity)
+        self.assertDictEqual(entities, body['role_assignments'][0])
+
+    def test_list_role_assignments_for_domain_include_names(self):
+        # Since the default fixtures already assign some roles to the
+        # user it creates, we also need a new user that will not have any
+        # existing assignments
+        group = unit.new_group_ref(domain_id=self.domain_id)
+        group = self.identity_api.create_group(group)
+        group_id = group['id']
+        user1 = unit.new_user_ref(domain_id=self.domain['id'])
+        user1 = self.identity_api.create_user(user1)
+
+        collection_url = '/role_assignments?include_names'
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
+                                                   resource_url=collection_url)
+        existing_assignments = len(rs.result.get('role_assignments'))
+
+        import pdb; pdb.set_trace()
+        # Now add one of each of the four types of assignment, making sure
+        # that we get them all back.
+        gd_entity = self.build_role_assignment_entity_include_names(
+            domain_id=self.domain_id,
+            group_id=group_id,
+            role_id=self.role_id)
+        self.put(gd_entity['links']['assignment'])
+        r = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(
+            r,
+            expected_length=existing_assignments + 1,
+            resource_url=collection_url)
+        self.assertRoleAssignmentInListResponse(r, gd_entity)
+
     def test_list_role_assignments_for_disabled_inheritance_extension(self):
         """Call ``GET /role_assignments with inherited domain grants``.
 
@@ -1665,7 +1755,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
                                          resource_url=collection_url)
 
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
+            '/OS-INHERIT/domains/%(domain_id)s/groups/%(group_id)s/roles?include_names' % {
                 'domain_id': domain['id'],
                 'group_id': group1['id']})
         member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
@@ -1676,6 +1766,8 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
         self.put(member_url)
         self.head(member_url)
         r = self.get(collection_url)
+        import pdb; pdb.set_trace()
+
         self.assertValidRoleListResponse(r, ref=role_list[4],
                                          resource_url=collection_url)
 

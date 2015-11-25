@@ -513,9 +513,13 @@ class RoleAssignmentV3(controller.V3Controller):
         formatted_entity = {'links': {}}
         inherited_assignment = entity.get('inherited_to_projects')
 
-        if 'project_id' in entity:
-            formatted_entity['scope'] = {
-                'project': {'id': entity['project_id']}}
+        if 'project_id' in entity or 'project_entity' in entity:
+            if 'project_entity' in entity:
+                formatted_entity['scope'] = {
+                    'project': entity['project_entity']}
+            else:
+                formatted_entity['scope'] = {
+                    'project': {'id': entity['project_id']}}
 
             if 'domain_id' in entity.get('indirect', {}):
                 inherited_assignment = True
@@ -525,29 +529,49 @@ class RoleAssignmentV3(controller.V3Controller):
                 inherited_assignment = True
                 formatted_link = ('/projects/%s' %
                                   entity['indirect']['project_id'])
+            elif 'project_entity' in entity:
+                formatted_link = ('/projects/%s' % entity['project_entity']
+                                                         ['id'])
             else:
                 formatted_link = '/projects/%s' % entity['project_id']
-        elif 'domain_id' in entity:
-            formatted_entity['scope'] = {'domain': {'id': entity['domain_id']}}
-            formatted_link = '/domains/%s' % entity['domain_id']
+        elif 'domain_id' in entity or 'domain_entity' in entity:
+            if 'domain_entity' in entity:
+                formatted_entity['scope'] = {'domain': entity['domain_entity']}
+                formatted_link = '/domains/%s' % entity['domain_entity']['id']
+            else:
+                formatted_entity['scope'] = {
+                    'domain': {'id': entity['domain_id']}}
+                formatted_link = '/domains/%s' % entity['domain_id']
 
-        if 'user_id' in entity:
-            formatted_entity['user'] = {'id': entity['user_id']}
-
+        if 'user_id' in entity or 'user_entity' in entity:
+            if 'user_entity' in entity:
+                formatted_entity['user'] = entity['user_entity']
+            else:
+                formatted_entity['user'] = {'id': entity['user_id']}
             if 'group_id' in entity.get('indirect', {}):
                 membership_url = (
                     self.base_url(context, '/groups/%s/users/%s' % (
                         entity['indirect']['group_id'], entity['user_id'])))
                 formatted_entity['links']['membership'] = membership_url
                 formatted_link += '/groups/%s' % entity['indirect']['group_id']
+            elif 'user_entity' in entity:
+                formatted_link += '/users/%s' % entity['user_entity']['id']
             else:
                 formatted_link += '/users/%s' % entity['user_id']
-        elif 'group_id' in entity:
-            formatted_entity['group'] = {'id': entity['group_id']}
-            formatted_link += '/groups/%s' % entity['group_id']
+        elif 'group_id' in entity or 'group_entity' in entity:
+            if 'group_entity' in entity:
+                formatted_entity['group'] = entity['group_entity']
+                formatted_link += '/groups/%s' % entity['group_entity']['id']
+            else:
+                formatted_entity['group'] = {'id': entity['group_id']}
+                formatted_link += '/groups/%s' % entity['group_id']
 
-        formatted_entity['role'] = {'id': entity['role_id']}
-        formatted_link += '/roles/%s' % entity['role_id']
+        if 'role_entity' in entity:
+            formatted_entity['role'] = entity['role_entity']
+            formatted_link += '/roles/%s' % entity['role_entity']['id']
+        else:
+            formatted_entity['role'] = {'id': entity['role_id']}
+            formatted_link += '/roles/%s' % entity['role_id']
 
         if inherited_assignment:
             formatted_entity['scope']['OS-INHERIT:inherited_to'] = (
@@ -617,6 +641,9 @@ class RoleAssignmentV3(controller.V3Controller):
         effective = 'effective' in params and (
             self.query_filter_is_true(params['effective']))
 
+        include_names = 'include_names' in params and (
+            self.query_filter_is_true(params['include_names']))
+
         if 'scope.OS-INHERIT:inherited_to' in params:
             inherited = (
                 params['scope.OS-INHERIT:inherited_to'] == 'projects')
@@ -642,7 +669,8 @@ class RoleAssignmentV3(controller.V3Controller):
             domain_id=params.get('scope.domain.id'),
             project_id=params.get('scope.project.id'),
             include_subtree=include_subtree,
-            inherited=inherited, effective=effective)
+            inherited=inherited, effective=effective,
+            include_names=include_names)
 
         formatted_refs = [self._format_entity(context, ref) for ref in refs]
 
