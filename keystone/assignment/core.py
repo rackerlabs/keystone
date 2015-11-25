@@ -768,7 +768,7 @@ class Manager(manager.Manager):
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
-                              effective=None):
+                              effective=None, include_names=False):
         """List role assignments, honoring effective mode and provided filters.
 
         Returns a list of role assignments, where their attributes match the
@@ -786,6 +786,9 @@ class Manager(manager.Manager):
         Think of effective mode as being the list of assignments that actually
         affect a user, for example the roles that would be placed in a token.
 
+        If include_names is set to true the entities' names are returned
+        in addition to their id's
+
         If OS-INHERIT extension is disabled or the used driver does not support
         inherited roles retrieval, inherited role assignments will be ignored.
 
@@ -802,13 +805,53 @@ class Manager(manager.Manager):
                     self.resource_api.list_projects_in_subtree(project_id)])
 
         if effective:
-            return self._list_effective_role_assignments(
+            role_assignments = self._list_effective_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
         else:
-            return self._list_direct_role_assignments(
+            role_assignments = self._list_direct_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
+
+        if include_names:
+            return self._get_names_from_role_assignments(role_assignments)
+        return role_assignments
+
+    def _get_names_from_role_assignments(self, role_assignments):
+
+        role_entity_list = []
+
+        def _format_role_data(entity):
+            _domain = self.resource_api.get_domain(entity['domain_id'])
+            return {
+                'id': entity['id'],
+                'name': entity['name'],
+                'domain': {'id': entity['domain_id'],
+                           'name': _domain['name']}}
+
+        for role_asgmt in role_assignments:
+            new_entity = {}
+            for id_type, id_ in role_asgmt.items():
+                if id_type == 'domain_id':
+                    _domain = self.resource_api.get_domain(id_)
+                    new_entity['domain_entity'] = {'id': _domain['id'],
+                                                   'name': _domain['name']}
+                elif id_type == 'user_id':
+                    _user = self.identity_api.get_user(id_)
+                    formated_user = _format_role_data(_user)
+                    new_entity['user_entity'] = formated_user
+                elif id_type == 'group_id':
+                    _group = self.identity_api.get_group(id_)
+                    new_entity['group_entity'] = _format_role_data(_group)
+                elif id_type == 'project_id':
+                    _project = self.resource_api.get_project(id_)
+                    new_entity['project_entity'] = _format_role_data(_project)
+                elif id_type == 'role_id':
+                    _role = self.role_api.get_role(id_)
+                    new_entity['role_entity'] = {'id': _role['id'],
+                                                 'name': _role['name']}
+            role_entity_list.append(new_entity)
+        return role_entity_list
 
     def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments(role_id=role_id)
