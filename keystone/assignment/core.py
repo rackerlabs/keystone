@@ -796,7 +796,7 @@ class Manager(manager.Manager):
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
-                              effective=None):
+                              effective=None, include_names=False):
         """List role assignments, honoring effective mode and provided filters.
 
         Returns a list of role assignments, where their attributes match the
@@ -818,6 +818,42 @@ class Manager(manager.Manager):
         inherited roles retrieval, inherited role assignments will be ignored.
 
         """
+        def _get_names(role_assignments):
+
+            for role_asgmt in role_assignments:
+                if role_asgmt.get('user_id'):
+                    _user = self.identity_api.get_user(role_asgmt['user_id'])
+                    role_asgmt['user_name'] = _user['name']
+                    role_asgmt['user_domain_id'] = _user['domain_id']
+                    role_asgmt['user_domain_name'] = (
+                        self.resource_api.get_domain(_user['domain_id'])
+                        ['name'])
+                if role_asgmt.get('group_id'):
+                    _group = self.identity_api.get_group(
+                        role_asgmt['group_id'])
+                    role_asgmt['group_name'] = _group['name']
+                    role_asgmt['group_domain_id'] = _group['domain_id']
+                    role_asgmt['group_domain_name'] = (
+                        self.resource_api.get_domain(_group['domain_id'])
+                        ['name'])
+                if role_asgmt.get('role_id'):
+                    role_asgmt['role_name'] = (
+                        self.role_api.get_role(role_asgmt['role_id'])
+                        ['name'])
+                if role_asgmt.get('project_id'):
+                    _project = self.resource_api.get_project(
+                        role_asgmt['project_id'])
+                    role_asgmt['project_name'] = _project['name']
+                    role_asgmt['project_domain_id'] = _project['domain_id']
+                    role_asgmt['project_domain_name'] = (
+                        self.resource_api.get_domain(_project['domain_id'])
+                        ['name'])
+                if role_asgmt.get('domain_id'):
+                    role_asgmt['domain_name'] = (
+                        self.resource_api.get_domain(role_asgmt['domain_id'])
+                        ['name'])
+            return role_assignments
+
         if not CONF.os_inherit.enabled:
             if inherited:
                 return []
@@ -830,13 +866,17 @@ class Manager(manager.Manager):
                     self.resource_api.list_projects_in_subtree(project_id)])
 
         if effective:
-            return self._list_effective_role_assignments(
+            role_assignments = self._list_effective_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
         else:
-            return self._list_direct_role_assignments(
+            role_assignments = self._list_direct_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
+
+        if include_names:
+            return _get_names(role_assignments)
+        return role_assignments
 
     def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments(role_id=role_id)
@@ -1000,19 +1040,6 @@ class AssignmentDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_role_assignments(self, role_id=None,
-                              user_id=None, group_ids=None,
-                              domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
-        """Returns a list of role assignments for actors on targets.
-
-        Available parameters represent values in which the returned role
-        assignments attributes need to be filtered on.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
     def list_project_ids_for_user(self, user_id, group_ids, hints,
                                   inherited=False):
         """List all project ids associated with a given user.
@@ -1163,7 +1190,18 @@ class AssignmentDriverV8(AssignmentDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              domain_id=None, project_ids=None,
+                              inherited_to_projects=None):
+        """Returns a list of role assignments for actors on targets.
+
+        Available parameters represent values in which the returned role
+        assignments attributes need to be filtered on.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class AssignmentDriverV9(AssignmentDriverBase):
@@ -1174,7 +1212,19 @@ class AssignmentDriverV9(AssignmentDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              domain_id=None, project_ids=None,
+                              inherited_to_projects=None,
+                              include_names=False):
+        """Returns a list of role assignments for actors on targets.
+
+        Available parameters represent values in which the returned role
+        assignments attributes need to be filtered on.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
@@ -1258,7 +1308,8 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
                               domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
+                              inherited_to_projects=None,
+                              include_names=False):
         return self.driver.list_role_assignments(
             role_id=role_id,
             user_id=user_id, group_ids=group_ids,
