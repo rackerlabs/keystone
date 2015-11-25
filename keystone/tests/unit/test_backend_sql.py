@@ -567,12 +567,11 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
 
     def test_create_region_invalid_id(self):
         region = unit.new_region_ref(id='0' * 256,
-                                     description='',
                                      extra={})
 
         self.assertRaises(exception.StringLengthExceeded,
                           self.catalog_api.create_region,
-                          region.copy())
+                          region)
 
     def test_create_region_invalid_parent_id(self):
         region = unit.new_region_ref(parent_region_id='0' * 256)
