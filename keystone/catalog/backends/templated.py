@@ -13,6 +13,7 @@
 # under the License.
 
 import itertools
+
 import os.path
 
 from oslo_config import cfg
