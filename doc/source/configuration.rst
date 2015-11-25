@@ -45,48 +45,6 @@ To make the above change persistent,
 ``net.ipv4.ip_local_reserved_ports = 35357`` should be added to
 ``/etc/sysctl.conf`` or to ``/etc/sysctl.d/keystone.conf``.
 
-Starting and Stopping Keystone under Eventlet
-=============================================
-
-.. WARNING::
-
-    Running keystone under eventlet has been deprecated as of the Kilo release.
-    Support for utilizing eventlet will be removed as of the M-release. The
-    recommended deployment is to run keystone in a WSGI server
-    (e.g. ``mod_wsgi`` under ``HTTPD``).
-
-Keystone can be run using either its built-in eventlet server or it can be run
-embedded in a web server. While the eventlet server is convenient and easy to
-use, it's lacking in security features that have been developed into Internet-
-based web servers over the years. As such, running the eventlet server as
-described in this section is not recommended.
-
-Start Keystone services using the command:
-
-.. code-block:: bash
-
-    $ keystone-all
-
-Invoking this command starts up two ``wsgi.Server`` instances, ``admin`` (the
-administration API) and ``main`` (the primary/public API interface). Both
-services are configured to run in a single process.
-
-.. NOTE::
-
-    The separation into ``admin`` and ``main`` interfaces is a historical
-    anomaly. The new V3 API provides the same interface on both the admin and
-    main interfaces (this can be configured in ``keystone-paste.ini``, but the
-    default is to have both the same). The V2.0 API provides a limited public
-    API (getting and validating tokens) on ``main``, and an administrative API
-    (which can include creating users and such) on the ``admin`` interface.
-
-Stop the process using ``Control-C``.
-
-.. NOTE::
-
-    If you have not already configured Keystone, it may not start as expected.
-
-
 Configuration Files
 ===================
 
@@ -115,8 +73,6 @@ The primary configuration file is organized into the following sections:
 * ``[credential]`` - Credential system driver configuration
 * ``[endpoint_filter]`` - Endpoint filtering configuration
 * ``[endpoint_policy]`` - Endpoint policy configuration
-* ``[eventlet_server]`` - Eventlet server configuration
-* ``[eventlet_server_ssl]`` - Eventlet server SSL configuration
 * ``[federation]`` - Federation driver configuration
 * ``[identity]`` - Identity system driver configuration
 * ``[identity_mapping]`` - Identity mapping system driver configuration
@@ -976,18 +932,11 @@ certificates are just provided as an example.
 Configuration
 ^^^^^^^^^^^^^
 
-To enable SSL modify the ``etc/keystone.conf`` file under the ``[ssl]`` and
-``[eventlet_server_ssl]`` sections. The following is an SSL configuration
-example using the included sample certificates:
+To enable SSL modify the ``etc/keystone.conf`` file under the ``[ssl]``
+section. The following is an SSL configuration example using the included
+sample certificates:
 
 .. code-block:: ini
-
-    [eventlet_server_ssl]
-    enable = True
-    certfile = <path to keystone.pem>
-    keyfile = <path to keystonekey.pem>
-    ca_certs = <path to ca.pem>
-    cert_required = False
 
     [ssl]
     ca_key = <path to cakey.pem>
