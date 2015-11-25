@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_4c6a171c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-25T19:40:22Z",
+      "side": 1,
+      "message": "checking `include_names` before going into the function will also make the rest of this easier to read, since itll go tabbed back 4 spots.",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4c7457ce",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-25T19:40:22Z",
+      "side": 1,
+      "message": "do entities normally have more than one type (user/group/etc)?\n\nyou can probably just do the name addition once at the end of the loop \n\n  if entity.get(\u0027user_id\u0027)\n    ref \u003d self.identity_api.get_user(entity[\u0027user_id\u0027])\n  elif entity.get(\u0027group_id\u0027)\n    ref \u003d self.identity_api.get_group(entity[\u0027group_id\u0027])\n  elif entity.get(\u0027project_id\u0027)\n    ...\n  elif entity.get(\u0027domain_id\u0027)\n    ...\n  elif entity.get(\u0027role_id\u0027)\n    ...\n  else\n     continue\n  role_assignments[location][\u0027name\u0027] \u003d ref[\u0027name\u0027]",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_a712c360",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -30,6 +64,24 @@
       "writtenOn": "2015-11-25T18:20:12Z",
       "side": 1,
       "message": "don\u0027t we also need to do projects, domains and roles?",
+      "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_0c740ffb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-25T19:40:22Z",
+      "side": 1,
+      "message": "yes we do!",
+      "parentUuid": "9a8ffd7b_a712c360",
       "revId": "f5449a68c05cb34215a4ad9a84d95a5f0d73d8c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
