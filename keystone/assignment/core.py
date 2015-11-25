@@ -796,7 +796,7 @@ class Manager(manager.Manager):
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
-                              effective=None):
+                              effective=None, include_names=False):
         """List role assignments, honoring effective mode and provided filters.
 
         Returns a list of role assignments, where their attributes match the
@@ -818,6 +818,91 @@ class Manager(manager.Manager):
         inherited roles retrieval, inherited role assignments will be ignored.
 
         """
+
+        def _get_names(role_assignments):
+            gathered_ids = {'user_assign': [], 'group_assign': [],
+                            'project_assign': [], 'role_assign': [],
+                            'domain_assign': []}
+            new_role_assign = []
+
+            def _get_role_from_assign(temp_id, entity_type):
+                for entity in new_role_assign:
+                    if entity_type in entity:
+                        if temp_id in entity[entity_type].values():
+                            return entity[entity_type]
+
+            def _format_role_data(entity_identity):
+                entity_domain_name = self.resource_api.get_domain(
+                    entity_identity['domain_id'])['name']
+
+                return {
+                    'id': entity_identity['id'],
+                    'name': entity_identity['name'],
+                    'domain': {'id': entity_identity['domain_id'],
+                               'name': entity_domain_name}}
+
+            for role_asgmt in role_assignments:
+                new_role = {}
+                if role_asgmt.get('user_id'):
+                    user_id = role_asgmt['user_id']
+                    if user_id in gathered_ids['user_assign']:
+                        new_role['user_assign'] = _get_role_from_assign(
+                            user_id,
+                            'user')
+                    else:
+                        _user = self.identity_api.get_user(user_id)
+                        new_role['user_assign'] = _format_role_data(_user)
+                        gathered_ids['user_assign'].append(user_id)
+
+                if role_asgmt.get('group_id'):
+                    grp_id = role_asgmt['group_id']
+                    if group_id in gathered_ids['group_assign']:
+                        new_role['group_assign'] = _get_role_from_assign(
+                            grp_id,
+                            'group')
+                    else:
+                        _group = self.identity_api.get_group(grp_id)
+                        new_role['group_assign'] = _format_role_data(_group)
+                        gathered_ids['group_assign'].append(grp_id)
+
+                if role_asgmt.get('project_id'):
+                    prj_id = role_asgmt['project_id']
+                    if prj_id in gathered_ids['project_assign']:
+                        new_role['project_assign'] = _get_role_from_assign(
+                            prj_id,
+                            'project')
+                    else:
+                        _project = self.resource_api.get_project(prj_id)
+                        new_role['project_assign'] = _format_role_data(_project)
+                        gathered_ids['project_assign'].append(prj_id)
+
+                if role_asgmt.get('role_id'):
+                    rl_id = role_asgmt['role_id']
+                    if rl_id in gathered_ids['role_assign']:
+                        new_role['role_assign'] = _get_role_from_assign(rl_id,
+                                                                        'role')
+                    else:
+                        _role = self.role_api.get_role(rl_id)
+                        new_role['role_assign'] = {'id': _role['id'],
+                                            'name': _role['name']}
+                        gathered_ids['role_assign'].append(rl_id)
+
+                if role_asgmt.get('domain_id'):
+                    domain_id = role_asgmt['domain_id']
+                    if dmn_id in gathered_ids['domain_assign']:
+                        new_role['domain_assign'] = _get_role_from_assign(
+                            domain_id,
+                            'domain')
+                    else:
+                        _domain = self.resource_api.get_domain(dmn_id)
+                        new_role['domain_assign'] = {'id': _domain['id'],
+                                                     'name': _domain['name']}
+                        gathered_ids['domain_assign'].append(rl_id)
+
+                new_role_assign.append(new_role)
+
+            return new_role_assign
+
         if not CONF.os_inherit.enabled:
             if inherited:
                 return []
@@ -830,13 +915,17 @@ class Manager(manager.Manager):
                     self.resource_api.list_projects_in_subtree(project_id)])
 
         if effective:
-            return self._list_effective_role_assignments(
+            role_assignments = self._list_effective_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
         else:
-            return self._list_direct_role_assignments(
+            role_assignments = self._list_direct_role_assignments(
                 role_id, user_id, group_id, domain_id, project_id,
                 subtree_ids, inherited)
+
+        if include_names:
+            return _get_names(role_assignments)
+        return role_assignments
 
     def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments(role_id=role_id)
@@ -1000,19 +1089,6 @@ class AssignmentDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_role_assignments(self, role_id=None,
-                              user_id=None, group_ids=None,
-                              domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
-        """Returns a list of role assignments for actors on targets.
-
-        Available parameters represent values in which the returned role
-        assignments attributes need to be filtered on.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
     def list_project_ids_for_user(self, user_id, group_ids, hints,
                                   inherited=False):
         """List all project ids associated with a given user.
@@ -1163,7 +1239,18 @@ class AssignmentDriverV8(AssignmentDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              domain_id=None, project_ids=None,
+                              inherited_to_projects=None):
+        """Returns a list of role assignments for actors on targets.
+
+        Available parameters represent values in which the returned role
+        assignments attributes need to be filtered on.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class AssignmentDriverV9(AssignmentDriverBase):
@@ -1174,7 +1261,19 @@ class AssignmentDriverV9(AssignmentDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              domain_id=None, project_ids=None,
+                              inherited_to_projects=None,
+                              include_names=False):
+        """Returns a list of role assignments for actors on targets.
+
+        Available parameters represent values in which the returned role
+        assignments attributes need to be filtered on.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
@@ -1258,7 +1357,8 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
                               domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
+                              inherited_to_projects=None,
+                              include_names=False):
         return self.driver.list_role_assignments(
             role_id=role_id,
             user_id=user_id, group_ids=group_ids,
