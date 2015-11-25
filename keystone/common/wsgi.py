@@ -19,7 +19,6 @@
 """Utility methods for working with WSGI servers."""
 
 import copy
-import itertools
 import wsgiref.util
 
 from oslo_config import cfg
@@ -372,8 +371,7 @@ class Application(BaseApplication):
         url = CONF['%s_endpoint' % endpoint_type]
 
         if url:
-            substitutions = dict(
-                itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+            substitutions = dict(CONF.items())
 
             url = url % substitutions
         else:
@@ -819,10 +817,9 @@ def render_exception(error, context=None, request=None, user_locale=None):
             if context:
                 url = Application.base_url(context, 'public')
             else:
-                url = 'http://localhost:%d' % CONF.eventlet_server.public_port
+                url = 'http://localhost'
         else:
-            substitutions = dict(
-                itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+            substitutions = dict(CONF.items())
             url = url % substitutions
 
         headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % url))
