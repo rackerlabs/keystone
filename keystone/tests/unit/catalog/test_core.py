@@ -23,10 +23,8 @@ CONF = cfg.CONF
 class FormatUrlTests(unit.BaseTestCase):
 
     def test_successful_formatting(self):
-        url_template = ('http://$(public_bind_host)s:$(admin_port)d/'
-                        '$(tenant_id)s/$(user_id)s')
-        values = {'public_bind_host': 'server', 'admin_port': 9090,
-                  'tenant_id': 'A', 'user_id': 'B'}
+        url_template = ('http://server:9090/$(tenant_id)s/$(user_id)s')
+        values = {'tenant_id': 'A', 'user_id': 'B'}
         actual_url = core.format_url(url_template, values)
 
         expected_url = 'http://server:9090/A/B'
@@ -80,9 +78,7 @@ class FormatUrlTests(unit.BaseTestCase):
         # This is intentional behavior since we don't want to skip
         # all the later endpoints once there is an URL of endpoint
         # trying to replace 'tenant_id' with None.
-        url_template = ('http://$(public_bind_host)s:$(admin_port)d/'
-                        '$(tenant_id)s/$(user_id)s')
-        values = {'public_bind_host': 'server', 'admin_port': 9090,
-                  'user_id': 'B'}
+        url_template = ('http://server:9090/$(tenant_id)s/$(user_id)s')
+        values = {'user_id': 'B'}
         self.assertIsNone(core.format_url(url_template, values,
                           silent_keyerror_failures=['tenant_id']))
