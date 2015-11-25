@@ -1,0 +1,7 @@
+---
+prelude: >
+    Eventlet, along with keystone-all command is removed.
+upgrade:
+  - Removed ssl, eventlet_server and eventlet_server_ssl configuration
+    sections. Variables present in those sections, like public_port or
+    admin_bind_host can no longer be used in templated catalog driver.
