@@ -411,6 +411,30 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # roles assignments.
         self.assertThat(user_domains, matchers.HasLength(0))
 
+    def test_list_role_assignments_with_include_names(self):
+        """Test that domain name is correctly returned from sql
+
+        Only test domain name is correctly returned from sql since
+        domain grants are not supported by ldap
+        """
+        role1 = unit.new_role_ref()
+        self.role_api.create_role(role1['id'], role1)
+        new_domain = unit.new_domain_ref()
+        self.resource_api.create_domain(new_domain['id'], new_domain)
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
+        new_user = self.identity_api.create_user(new_user)
+
+        self.assignment_api.create_grant(domain_id=new_domain['id'],
+                                         user_id=new_user['id'],
+                                         role_id=role1['id'])
+        _asgmt_usr = self.assignment_api.list_role_assignments(
+            domain_id=new_domain['id'],
+            user_id=new_user['id'],
+            include_names=True)
+        _first_asgmt_usr = next(_asgmt_usr)
+        self.assertEqual(new_domain['name'],
+                         _first_asgmt_usr['domain_entity']['name'])
+
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
