@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ff77fd9c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2845,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-25T15:04:21Z",
+      "side": 1,
+      "message": "what is the point of having these tests?  Are they calling the above test differently?  When I put a break point in the  test \u0027BaseLDAPIdentity.test_list_domains_filtered_and_limited()\u0027 and remove this test it still runs.  Couldn\u0027t we just remove this?",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_df9b19c8",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3220,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-11-25T15:04:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
