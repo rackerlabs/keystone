@@ -12,6 +12,7 @@
 
 import os
 import random
+import subprocess
 from testtools import matchers
 import uuid
 
@@ -33,7 +34,6 @@ if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
 from keystone.auth import controllers as auth_controllers
-from keystone.common import environment
 from keystone.contrib.federation import routers
 from keystone import exception
 from keystone.federation import controllers as federation_controllers
@@ -47,8 +47,6 @@ from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
 from keystone.token.providers import common as token_common
 
-
-subprocess = environment.subprocess
 
 CONF = cfg.CONF
 ROOTDIR = os.path.dirname(os.path.abspath(__file__))

@@ -12,7 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import itertools
 import os.path
 
 from oslo_config import cfg
@@ -119,8 +118,7 @@ class Catalog(kvs.Catalog):
                   empty dict.
 
         """
-        substitutions = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+        substitutions = dict(CONF.items())
         substitutions.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:
