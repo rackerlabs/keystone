@@ -13,8 +13,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import itertools
-
 from oslo_config import cfg
 import sqlalchemy
 from sqlalchemy.sql import true
@@ -277,8 +275,8 @@ class Catalog(catalog.CatalogDriverV8):
                   empty dict.
 
         """
-        substitutions = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+        substitutions = dict(CONF.items())
+        substitutions.update(core.WHITELISTED_PROPERTIES_DEFAULTS)
         substitutions.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:
@@ -334,8 +332,8 @@ class Catalog(catalog.CatalogDriverV8):
         :returns: A list representing the service catalog or an empty list
 
         """
-        d = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+        d = dict(CONF.items())
+        d.update(core.WHITELISTED_PROPERTIES_DEFAULTS)
         d.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:

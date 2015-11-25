@@ -41,6 +41,21 @@ WHITELISTED_PROPERTIES = [
     'compute_host', 'admin_port', 'public_port',
     'public_endpoint', 'admin_endpoint', ]
 
+# For backwards compatibility, include a set of defaults for old eventlet
+# server config options. These values are used for substitutions in URLs
+# for the catalog. user_id and tenant_id are not included since these are
+# required when retrieving a catalog.
+WHITELISTED_PROPERTIES_DEFAULTS = {
+    'public_bind_host': '0.0.0.0',  # nosec : Bind to all interfaces by default
+                                    # for backwards compatibility.
+    'admin_bind_host': '0.0.0.0',   # nosec : same reason as above.
+    'compute_host': '0.0.0.0',      # nosec : same reason as above.
+    'admin_port': 35357,
+    'public_port': 5000,
+    'public_endpoint': None,
+    'admin_endpoint': None
+}
+
 # This is a general cache region for catalog administration (CRUD operations).
 MEMOIZE = cache.get_memoization_decorator(group='catalog')
 
