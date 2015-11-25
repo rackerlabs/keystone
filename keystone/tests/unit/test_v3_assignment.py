@@ -363,10 +363,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         user1 = self.identity_api.create_user(user1)
 
         collection_url = '/role_assignments'
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r,
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
                                                    resource_url=collection_url)
-        existing_assignments = len(r.result.get('role_assignments'))
+        existing_assignments = len(rs.result.get('role_assignments'))
 
         # Now add one of each of the four types of assignment, making sure
         # that we get them all back.
@@ -1429,6 +1429,61 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
             inherited_to_projects=True)
         self.assertRoleAssignmentInListResponse(r, up_entity)
 
+    def test_list_role_assignments_for_projects_include_names(self):
+        # Create new refs
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        user1 = unit.create_user(self.identity_api, domain_id=domain['id'])
+        project1 = unit.new_project_ref(domain_id=domain['id'])
+        self.resource_api.create_project(project1['id'], project1)
+        # Add a role to the project
+        self.assignment_api.add_role_to_user_and_project(
+            user1['id'], project1['id'], role['id'])
+
+        collection_url = (
+            '/role_assignments?include_names&user.id=%(user_id)s'
+            '&scope.project.id=%(project_id)s' % {
+                'user_id': user1['id'],
+                'project_id': project1['id']})
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
+                                                   expected_length=1,
+                                                   resource_url=collection_url)
+
+        self.assertEqual(rs.status_int, http_client.OK)
+        expected_entity = self.build_role_assignment_entity_include_names(
+            role_ref=role,
+            project_ref=project1,
+            user_ref=user1)
+        self.assertRoleAssignmentInListResponse(rs, expected_entity)
+
+    def test_list_role_assignments_for_domain_include_names(self):
+        # Create new refs
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        group = unit.new_group_ref(domain_id=self.domain_id)
+        group = self.identity_api.create_group(group)
+
+        expected_entity = self.build_role_assignment_entity_include_names(
+            role_ref=role,
+            domain_ref=self.domain,
+            group_ref=group)
+        self.put(expected_entity['links']['assignment'])
+
+        collection_url = (
+            '/role_assignments?include_names&group.id=%(group_id)s'
+            '&scope.domain.id=%(domain_id)s' % {
+                'group_id': group['id'],
+                'domain_id': self.domain_id})
+        rs = self.get(collection_url)
+        self.assertValidRoleAssignmentListResponse(rs,
+                                                   expected_length=1,
+                                                   resource_url=collection_url)
+        self.assertEqual(rs.status_int, http_client.OK)
+        self.assertRoleAssignmentInListResponse(rs, expected_entity)
+
     def test_list_role_assignments_for_disabled_inheritance_extension(self):
         """Call ``GET /role_assignments with inherited domain grants``.
 
@@ -1676,6 +1731,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
         self.put(member_url)
         self.head(member_url)
         r = self.get(collection_url)
+
         self.assertValidRoleListResponse(r, ref=role_list[4],
                                          resource_url=collection_url)
 
