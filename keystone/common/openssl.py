@@ -273,9 +273,8 @@ class ConfigureSSL(BaseCertificateConfigure):
     """
 
     def __init__(self, keystone_user, keystone_group, rebuild=False):
-        super(ConfigureSSL, self).__init__(CONF.ssl, CONF.eventlet_server_ssl,
-                                           keystone_user, keystone_group,
-                                           rebuild=rebuild)
+        super(ConfigureSSL, self).__init__(CONF.ssl, keystone_user,
+                                           keystone_group, rebuild=rebuild)
 
 
 BaseCertificateConfigure.sslconfig = """
