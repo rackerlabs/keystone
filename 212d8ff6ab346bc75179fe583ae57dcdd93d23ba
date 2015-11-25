@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_221c8976",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-11-25T16:25:31Z",
+      "side": 1,
+      "message": "Please describe the reason why PKI/z should be removed while UUID still there?\nWe will be referring this commit explaining people why their precious PKI is no more and it\u0027s better have it more informative for that!",
+      "revId": "212d8ff6ab346bc75179fe583ae57dcdd93d23ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
