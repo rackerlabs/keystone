@@ -90,6 +90,23 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_be96093c",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-26T18:48:52Z",
+      "side": 1,
+      "message": "(nit) No need to use self.auth, just use self.auth as it is from the test setup, or use another var. So in this case it could simply be auth\n\nThis comment also applies to the introduced test methods below.",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_35d8981d",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 2
@@ -119,6 +136,74 @@
       "side": 1,
       "message": "These tests are related to this change, demonstrating that project admin can list role assignments of his project which is failing without changing policy file.",
       "parentUuid": "9a8ffd7b_35d8981d",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_5e1b5dca",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-26T18:48:52Z",
+      "side": 1,
+      "message": "So this is well tested at this point. However the two calls below demonstrate that it is also possible to combine filters.\n\nI think a comment here would make it easier to understand.",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_7e22e153",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-26T18:48:52Z",
+      "side": 1,
+      "message": "Create another project (projectB in your current change) only within this test, as it is the only one using it.",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_9ef7858a",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-26T18:48:52Z",
+      "side": 1,
+      "message": "This is a great test that demonstrates resource isolation!",
+      "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_fe1331b6",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-26T18:48:52Z",
+      "side": 1,
+      "message": "Perhaps replacing user by nonadmin (or non_admin) would make this clearer.",
       "revId": "0083641608a7f3b3e768b6f784fb9979a56f0f7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
