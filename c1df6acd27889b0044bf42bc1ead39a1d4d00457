@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_2a368152",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-11-26T06:44:08Z",
+      "side": 1,
+      "message": "yeah, it does not need to explain what you do.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages",
+      "revId": "c1df6acd27889b0044bf42bc1ead39a1d4d00457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_9a108c50",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 3
