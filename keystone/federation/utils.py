@@ -42,7 +42,28 @@ MAPPING_SCHEMA = {
                 "additionalProperties": False,
                 "properties": {
                     "local": {
-                        "type": "array"
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": False,
+                            "properties": {
+                                "user": {
+                                    "type": "object"
+                                },
+                                "group": {
+                                    "type": "object"
+                                },
+                                "groups": {
+                                    "type": "object"
+                                },
+                                "group_ids": {
+                                    "type": "object"
+                                },
+                                "domain": {
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "remote": {
                         "minItems": 1,
