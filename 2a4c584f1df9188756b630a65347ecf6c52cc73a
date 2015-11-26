@@ -16,6 +16,23 @@
       "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_8f2a1f7d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-26T05:37:40Z",
+      "side": 1,
+      "message": "we could say Fernet or UUID here",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
