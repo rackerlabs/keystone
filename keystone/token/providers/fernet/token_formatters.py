@@ -365,6 +365,10 @@ class UnscopedPayload(BasePayload):
 
     @classmethod
     def disassemble(cls, payload):
+<<<<<<< HEAD
+=======
+       
+>>>>>>> Fix some inconsistency in docstrings
         (is_stored_as_bytes, user_id) = payload[0]
         if is_stored_as_bytes:
             user_id = cls.attempt_convert_uuid_bytes_to_hex(user_id)
@@ -406,6 +410,16 @@ class DomainScopedPayload(BasePayload):
 
     @classmethod
     def disassemble(cls, payload):
+<<<<<<< HEAD
+=======
+        """Disassemble a payload into the component data.
+
+        :param payload: the payload of a token
+        :returns: a tuple containing the user_id, auth methods, domain_id,
+                 expires_at_str, and audit_ids
+
+        """
+>>>>>>> Fix some inconsistency in docstrings
         (is_stored_as_bytes, user_id) = payload[0]
         if is_stored_as_bytes:
             user_id = cls.attempt_convert_uuid_bytes_to_hex(user_id)
@@ -448,6 +462,16 @@ class ProjectScopedPayload(BasePayload):
 
     @classmethod
     def disassemble(cls, payload):
+<<<<<<< HEAD
+=======
+        """Disassemble a payload into the component data.
+
+        :param payload: the payload of a token
+        :returns: a tuple containing the user_id, auth methods, project_id,
+                 expires_at_str, and audit_ids
+
+        """
+>>>>>>> Fix some inconsistency in docstrings
         (is_stored_as_bytes, user_id) = payload[0]
         if is_stored_as_bytes:
             user_id = cls.attempt_convert_uuid_bytes_to_hex(user_id)
@@ -542,6 +566,18 @@ class FederatedUnscopedPayload(BasePayload):
 
     @classmethod
     def disassemble(cls, payload):
+<<<<<<< HEAD
+=======
+        """Validate a federated payload.
+
+        :param token_string: a string representing the token
+        :returns: a tuple containing the user_id, auth methods, audit_ids, and
+                  a dictionary containing federated information such as the group
+                  IDs, the identity provider ID, the protocol ID, and the
+                  federated domain ID
+
+        """
+>>>>>>> Fix some inconsistency in docstrings
         (is_stored_as_bytes, user_id) = payload[0]
         if is_stored_as_bytes:
             user_id = cls.attempt_convert_uuid_bytes_to_hex(user_id)
