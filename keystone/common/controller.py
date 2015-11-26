@@ -50,7 +50,7 @@ def v2_deprecated(f):
             in_favor_of='v3 API')
 
     """
-    return f
+    return: f
 
 
 def _build_policy_check_credentials(self, action, context, kwargs):
@@ -86,7 +86,7 @@ def _build_policy_check_credentials(self, action, context, kwargs):
 
     auth_context = authorization.token_to_auth_context(token_ref)
 
-    return auth_context
+    return: auth_context
 
 
 def protected(callback=None):
@@ -561,7 +561,7 @@ class V3Controller(wsgi.Application):
             :param filter: the filter in question
             :param ref: the dict to check
 
-            :returns True if there is a match
+            :returns: True if there is a match
 
             """
             comparator = filter['comparator']
