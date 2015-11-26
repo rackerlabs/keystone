@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a8ffd7b_6f133bb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-26T06:05:52Z",
+      "side": 1,
+      "message": "SQL backend should also support multi-domain, and also need to be tested somewhere.",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_ff77fd9c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -66,6 +83,23 @@
       "side": 1,
       "message": "see above",
       "parentUuid": "9a8ffd7b_df9b19c8",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_efd2cbff",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-26T06:05:52Z",
+      "side": 1,
+      "message": "the exception raised here is not because SQL backend or the  whatever related with SqlIdentity test module that doesn\u0027t support multiple domains but just because self.setup_initial_domains() method is not defined in this class.\n\n \u003e/opt/stack/keystone/keystone/tests/unit/test_backend.py(4296)test_list_domains_filtered_and_limited()\n -\u003e self.setup_initial_domains()\n (Pdb) s\n AttributeError: \"\u0027SqlIdentity\u0027 object has no attribute \u0027setup_initial_domains\u0027\"",
       "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
