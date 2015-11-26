@@ -401,7 +401,7 @@ class UnscopedPayload(BasePayload):
         """Disassemble an unscoped payload into the component data.
 
         :param payload: the payload of an unscoped token
-        :return: a tuple containing the user_id, auth methods, expires_at, and
+        :returns: a tuple containing the user_id, auth methods, expires_at, and
                  audit_ids
 
         """
@@ -449,7 +449,7 @@ class DomainScopedPayload(BasePayload):
         """Disassemble a payload into the component data.
 
         :param payload: the payload of a token
-        :return: a tuple containing the user_id, auth methods, domain_id,
+        :returns: a tuple containing the user_id, auth methods, domain_id,
                  expires_at_str, and audit_ids
 
         """
@@ -499,7 +499,7 @@ class ProjectScopedPayload(BasePayload):
         """Disassemble a payload into the component data.
 
         :param payload: the payload of a token
-        :return: a tuple containing the user_id, auth methods, project_id,
+        :returns: a tuple containing the user_id, auth methods, project_id,
                  expires_at_str, and audit_ids
 
         """
@@ -615,7 +615,7 @@ class FederatedUnscopedPayload(BasePayload):
         """Validate a federated payload.
 
         :param token_string: a string representing the token
-        :return: a tuple containing the user_id, auth methods, audit_ids, and a
+        :returns: a tuple containing the user_id, auth methods, audit_ids, and a
                  dictionary containing federated information such as the group
                  IDs, the identity provider ID, the protocol ID, and the
                  federated domain ID
