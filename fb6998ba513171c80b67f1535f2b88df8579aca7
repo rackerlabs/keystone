@@ -16,6 +16,23 @@
       "revId": "fb6998ba513171c80b67f1535f2b88df8579aca7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_d20195b0",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-26T13:39:03Z",
+      "side": 1,
+      "message": "this line is too long and failing pep8",
+      "revId": "fb6998ba513171c80b67f1535f2b88df8579aca7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
