@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_d240c7a7",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-26T08:40:09Z",
+      "side": 1,
+      "message": "this isn\u0027t part of the doctstring....",
+      "revId": "277aa873dfadd30048df8e4ae47b540043db6344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_f2694b26",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-26T08:40:09Z",
+      "side": 1,
+      "message": "..same here...",
+      "revId": "277aa873dfadd30048df8e4ae47b540043db6344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
