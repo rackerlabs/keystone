@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_be54c9fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-26T18:34:54Z",
+      "side": 1,
+      "message": "And according to the links Tom posted and Henry\u0027s comment, it still doesn\u0027t, see http://docs.openstack.org/developer/oslo.i18n/guidelines.html#adding-variables-to-log-messages\n\nI am not saying this change is wrong, but we should be clearer about what we are doing (this is in agreement with what Henry said).\n\nPerhaps \"Message formatting consistency in token controller\" could be a good title ? Since, for me, you are putting the way we build the two messages in conformity. Also keep mentioning you added a warn message.",
+      "revId": "72a3d0d4681d2b602145bfbfbc239f5fe39e044c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
