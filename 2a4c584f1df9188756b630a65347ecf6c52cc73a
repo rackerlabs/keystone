@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_0f106f4d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-26T05:37:24Z",
+      "side": 1,
+      "message": "this isn\u0027t necessary, 2 is the default",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
