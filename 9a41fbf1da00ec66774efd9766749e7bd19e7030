@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e0bccbbc",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T15:51:28Z",
+      "side": 1,
+      "message": "(nit) ID",
+      "revId": "9a41fbf1da00ec66774efd9766749e7bd19e7030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a0b243e3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T15:51:28Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9a41fbf1da00ec66774efd9766749e7bd19e7030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e0e36bd7",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T15:51:28Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9a41fbf1da00ec66774efd9766749e7bd19e7030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
