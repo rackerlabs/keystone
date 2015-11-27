@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_42f04e67",
+        "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T11:10:22Z",
+      "side": 1,
+      "message": "Do we really need to specify a repeated blueprint reference for each entry here ?\n\nI wonder if there wasn\u0027t an alternative to specify the blueprint as an topic, and these items as subtopics.\n\nIt would also help adding some message as Henry suggested, saying these were deprecated and now are removed.",
+      "revId": "646e5d739757d514a81b4c9399ae50e0df094650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
