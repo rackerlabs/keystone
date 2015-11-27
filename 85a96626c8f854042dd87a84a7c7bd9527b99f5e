@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_16bfd5aa",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T16:24:11Z",
+      "side": 0,
+      "message": "Unrelated change ? Notice that the other methods you\u0027ve modified in this file also contain this blank line.\n\nPerhaps it\u0027s better to keep this blank space ?",
+      "revId": "85a96626c8f854042dd87a84a7c7bd9527b99f5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
