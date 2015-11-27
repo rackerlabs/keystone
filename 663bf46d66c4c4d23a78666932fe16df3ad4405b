@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_761f586c",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2015-11-27T10:02:52Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "ba8a016a_654d02c4",
+      "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_25785af8",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 6
@@ -64,6 +82,24 @@
       "writtenOn": "2015-11-20T15:31:42Z",
       "side": 1,
       "message": "you mean to the exceptions list? \n\nSuggest moving this comment *into* the exception list so that it is more descriptive and explicit.",
+      "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_8132b8f0",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2015-11-27T10:02:52Z",
+      "side": 1,
+      "message": "Yes. This was the wording used by Dan Smith, I think I will add a link to documentation, and instruct others to not allow things to be added here before reading the documentation.",
+      "parentUuid": "ba8a016a_25785af8",
       "revId": "663bf46d66c4c4d23a78666932fe16df3ad4405b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
