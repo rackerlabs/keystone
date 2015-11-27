@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_25650f1d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T13:36:51Z",
+      "side": 1,
+      "message": "You should pass the new ID here too, as it is the same within the entity (project[\u0027id\u0027] \u003d \u0027fake2\u0027)\n\nOtherwise we aren\u0027t sure the conflict isn\u0027t due to ID, thus not being different from the test above.",
+      "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c01f5106",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T13:36:51Z",
+      "side": 1,
+      "message": "(unrelated) I wonder if this shouldn\u0027t be conflict",
+      "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e0e4d5e0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T13:36:51Z",
+      "side": 1,
+      "message": "You just assigned project[\u0027id\u0027] to project_id var above, why not use it here then?",
+      "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_d754f4ca",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T13:36:51Z",
+      "side": 1,
+      "message": "As per the comment above, we still need to keep the domain_id and parent_id removal, as it was before.",
+      "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

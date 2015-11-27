@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_b7eff01c",
+        "filename": "keystone/tests/unit/test_v2_keystoneclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T13:36:51Z",
+      "side": 0,
+      "message": "(nit) We kept the custom tenant name in the test test_tenant_list_limit below, but not in this one",
+      "revId": "f468f32d8f5fa3f01799e5ad3022eb8e065dc32a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
