@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ac7c7fec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T15:38:13Z",
+      "side": 1,
+      "message": "This doesn\u0027t render the bp link, as it should not contain this slash:\n\nImplements bp removed-as-of-mitaka\n\nPerhaps you pasted your local branch name here :)",
+      "revId": "0401a8fcc099c695795f7e325165e63153ffbee9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
