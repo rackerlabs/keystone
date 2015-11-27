@@ -16,6 +16,24 @@
       "revId": "c92e1b8726a0e0e3085770b6a5eff79978a9590f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_96df4539",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-11-27T16:19:30Z",
+      "side": 1,
+      "message": "there is one true way to find out: https://review.openstack.org/250876",
+      "parentUuid": "9a8ffd7b_636c6535",
+      "revId": "c92e1b8726a0e0e3085770b6a5eff79978a9590f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
