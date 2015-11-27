@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_636c6535",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-11-27T16:09:08Z",
+      "side": 1,
+      "message": "(unrelated) Shouldn\u0027t the possible values be \"created\" or \"deleted\" ? As this doesn\u0027t match with what is described in L561 and what is done in L574.",
+      "revId": "c92e1b8726a0e0e3085770b6a5eff79978a9590f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
