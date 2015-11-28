@@ -16,6 +16,24 @@
       "revId": "c5b15b3c063dab0fc9e1d35810f274f0da7229fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_fe945b8b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-11-28T02:58:58Z",
+      "side": 1,
+      "message": "So it conflicts because I00bbff8066e3842e5a1db4f63ceb7dd9aec083a3 was not cherry-picked to kilo.  However a review was created, but later abandoned: \n\nhttps://review.openstack.org/#/c/223863/",
+      "parentUuid": "ba8a016a_8102133d",
+      "revId": "c5b15b3c063dab0fc9e1d35810f274f0da7229fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
