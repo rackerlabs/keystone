@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e8cc938a",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:27:07Z",
+      "side": 1,
+      "message": "unnecessary change",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ed5ca54c",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:27:07Z",
+      "side": 1,
+      "message": "this isn\u0027t accurate, maybe:\n\ntype of credentials to filter on",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_6d3755ff",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:27:07Z",
+      "side": 1,
+      "message": "this should be it\u0027s own test:\n\n  def test_list_credentials_for_user_and_type\n\nand another:\n\n  def test_list_credentials_for_type",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_48a4bfb8",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:27:07Z",
+      "side": 1,
+      "message": "where is this used?",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_68a743bd",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:27:07Z",
+      "side": 1,
+      "message": "nice re-use",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
