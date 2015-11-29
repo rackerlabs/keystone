@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_88f067ca",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:20:59Z",
+      "side": 1,
+      "message": "suggested rewording:\n\n\"As of the Mitaka release, querying with unsupported filters is deprecated. In the O release, querying with unsupported filters will result in an empty list being returned\"",
+      "revId": "a70cf9dcab3771894c44ae1bf2cc7c25f83a1022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_2db86d74",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:20:59Z",
+      "side": 1,
+      "message": "should be \"hints\" to match the implementation\n\nwe should also doc it, like this: https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L1212-L1213",
+      "revId": "a70cf9dcab3771894c44ae1bf2cc7c25f83a1022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c8998fc5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:20:59Z",
+      "side": 1,
+      "message": "nit, add whitespace before here",
+      "revId": "a70cf9dcab3771894c44ae1bf2cc7c25f83a1022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_287e1b6a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:20:59Z",
+      "side": 1,
+      "message": "use uuid both times:\n\n  context \u003d {\u0027query_string\u0027: {uuid.uuid4().hex: uuid.uuid4().hex}}",
+      "revId": "a70cf9dcab3771894c44ae1bf2cc7c25f83a1022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e894938b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:20:59Z",
+      "side": 1,
+      "message": "nit, add whitespace before here",
+      "revId": "a70cf9dcab3771894c44ae1bf2cc7c25f83a1022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_48ecbf29",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1037,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-29T17:20:59Z",
+      "side": 1,
+      "message": "a lot of duplicated code here with a few lines above, you could loop over it twice or create a small private function",
+      "revId": "a70cf9dcab3771894c44ae1bf2cc7c25f83a1022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
