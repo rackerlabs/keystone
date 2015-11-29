@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_7c994478",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-29T20:26:20Z",
+      "side": 1,
+      "message": "suggest to revert back all of these changes to focus on the real issue you want to address in this patch.\n\nall of these spelling changes could be addressed in another patch if really needed.",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_ed5ca54c",
         "filename": "keystone/credential/core.py",
         "patchSetId": 7
@@ -53,6 +70,58 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_3c8e5c2e",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-29T20:26:20Z",
+      "side": 1,
+      "message": "++ Good call!",
+      "parentUuid": "9a8ffd7b_6d3755ff",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_dc8070f9",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-29T20:26:20Z",
+      "side": 1,
+      "message": "change your affiliation.",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_dc971038",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-29T20:26:20Z",
+      "side": 1,
+      "message": "These is already a test module to test ec2 specific behavior, I am not insist on to move these into that one, but it\u0027s a good chance to expand the old one. Let\u0027s see is there any other inputs for this.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_contrib_ec2.py#L27-L29",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_48a4bfb8",
         "filename": "keystone/tests/unit/test_credential.py",
         "patchSetId": 7
@@ -64,6 +133,41 @@
       "writtenOn": "2015-11-29T17:27:07Z",
       "side": 1,
       "message": "where is this used?",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_bca1ec95",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-29T20:26:20Z",
+      "side": 1,
+      "message": "++\n\nIf import this let\u0027s reference with this method.",
+      "parentUuid": "9a8ffd7b_48a4bfb8",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_dcae3080",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-29T20:26:20Z",
+      "side": 1,
+      "message": "move this line to the next section. It\u0027s not belonged here.",
       "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
