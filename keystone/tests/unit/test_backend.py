@@ -5489,20 +5489,17 @@ class PolicyTests(object):
     def _new_policy_ref(self):
         return unit.new_policy_ref()
 
-    def assertEqualPolicies(self, a, b):
-        self.assertDictEqual(a, b)
-
     def test_create(self):
         ref = self._new_policy_ref()
         res = self.policy_api.create_policy(ref['id'], ref)
-        self.assertEqualPolicies(ref, res)
+        self.assertDictEqual(ref, res)
 
     def test_get(self):
         ref = self._new_policy_ref()
         res = self.policy_api.create_policy(ref['id'], ref)
 
         res = self.policy_api.get_policy(ref['id'])
-        self.assertEqualPolicies(ref, res)
+        self.assertDictEqual(ref, res)
 
     def test_list(self):
         ref = self._new_policy_ref()
@@ -5510,7 +5507,7 @@ class PolicyTests(object):
 
         res = self.policy_api.list_policies()
         res = [x for x in res if x['id'] == ref['id']][0]
-        self.assertEqualPolicies(ref, res)
+        self.assertDictEqual(ref, res)
 
     def test_update(self):
         ref = self._new_policy_ref()
@@ -5527,7 +5524,7 @@ class PolicyTests(object):
 
         ref['id'] = orig['id']
         res = self.policy_api.update_policy(orig['id'], ref)
-        self.assertEqualPolicies(ref, res)
+        self.assertDictEqual(ref, res)
 
     def test_delete(self):
         ref = self._new_policy_ref()
