@@ -474,6 +474,35 @@ class MaterializedPathParent(hybrid.hybrid_property):
         )
         self.path = path_column
         self.id_column = id_column
+        self._set_path_comparator()
+
+    def _set_path_comparator(self):
+
+        path_column = self.path
+        id_column = self.id_column
+
+        class _MaterializedPathParentComparator(hybrid.Comparator):
+            """Use path hybrid property in query filtering"""
+
+            def __eq__(self, other):
+                path = getattr(other, path_column, None) or []
+                # Assuming 'id' is not null
+                id_ = getattr(other, id_column)
+                path.append(id_)
+                return self.__clause_element__() == path
+
+            def startswith(self, other, **kwargs):
+
+                path = getattr(other, path_column, None) or []
+                id_ = getattr(other, id_column)
+                path.append(id_)
+
+                return self.__clause_element__().startswith(path)
+
+        self.comparator(
+            lambda cls: _MaterializedPathParentComparator(
+                getattr(cls, self.path))
+        )
 
     def fget(self, instance):
         """The node instance referenced by node's path tail"""

@@ -179,3 +179,27 @@ class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
             parent_node.parent1 = grandchild_node
 
         self.assertRaises(exception.ValidationError, raise_validation_error)
+
+    def test_subtree_request(self):
+
+        node1, node2, node3_1, node3_2 = \
+            [self._create_node() for _ in range(4)]
+
+        session = sql.get_session()
+        with session.begin():
+            session.add_all([node1, node2, node3_1, node3_2])
+            node2.parent1 = node1
+            node3_1.parent1 = node2
+            node3_2.parent1 = node2
+
+        stored_node2 = session.query(ExampleWithPathColumn).filter(
+            ExampleWithPathColumn.parent1 == node1
+        ).one()
+        self.assertEqual([node1.id], stored_node2.path1)
+
+        subtree_query = session.query(ExampleWithPathColumn).filter(
+            ExampleWithPathColumn.parent1.startswith(node2)
+        )
+        self.assertEqual(2, subtree_query.count())
+        for i in subtree_query.all():
+            self.assertEqual([node1.id, node2.id], i.path1)
