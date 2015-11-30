@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_a2ca036d",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-11-30T16:45:11Z",
+      "side": 1,
+      "message": "Correct. Those are the only items I have seen used in mappings. This patch shouldn\u0027t break older mappings that don\u0027t have those attributes, it just wouldn\u0027t allow for them in the future. I will do some testing with this and let you know.",
+      "parentUuid": "9a8ffd7b_4c758e30",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_5102070d",
         "filename": "keystone/federation/utils.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_ddd4c6be",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-11-30T16:45:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_5102070d",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_4cf02eca",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-30T15:54:31Z",
       "side": 1,
       "message": "The test fails because \"type\" isn\u0027t included in the list of required things? This doesn\u0027t fail because \"type\" should be in the \"user\" reference?",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_02cf4fb4",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-11-30T16:45:11Z",
+      "side": 1,
+      "message": "This fails because type isn\u0027t included in the list of required things. I can change this to something that would be less misleading.",
+      "parentUuid": "9a8ffd7b_4cf02eca",
       "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
