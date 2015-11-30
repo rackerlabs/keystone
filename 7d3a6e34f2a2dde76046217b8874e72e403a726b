@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_04bafa6e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T17:20:28Z",
+      "side": 1,
+      "message": "nit: link to the change ID? That way it\u0027s easier for reviewer to go back and verify the change and build context.",
+      "revId": "7d3a6e34f2a2dde76046217b8874e72e403a726b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
