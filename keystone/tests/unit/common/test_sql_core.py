@@ -15,6 +15,7 @@ import six
 from sqlalchemy.ext import declarative
 
 from keystone.common import sql
+from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import utils
@@ -61,6 +62,7 @@ class ExampleWithPathColumn(ModelBase):
     id = sql.Column(sql.String(64), primary_key=True, unique=True)
     path1 = sql.Column(sql.MaterializedPathType(), default=[])
     path2 = sql.Column(sql.MaterializedPathType(), default=[])
+    parent1 = sql.MaterializedPathParent('path1')
 
 
 class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
@@ -130,3 +132,42 @@ class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
 
         instance = self.session.query(ExampleWithPathColumn).one()
         self.assertEqual(example2, instance.path2)
+
+    def test_parent_assignment_updates_path(self):
+        parent_node = self._create_node()
+        child_node = self._create_node()
+
+        self.assertFalse(child_node.path1)
+
+        self.session.add(parent_node)
+        self.session.add(child_node)
+        with self.session.begin():
+            child_node.parent1 = parent_node
+
+        stored_child = self.session.query(
+            ExampleWithPathColumn).get(child_node.id)
+
+        self.assertEqual(parent_node.id, stored_child.parent1.id)
+        self.assertEqual([parent_node.id], child_node.path1)
+
+    def test_alien_node_is_rejected(self):
+        alien_node = ExampleAlienWithPathColumn(id=utils.new_uuid())
+        child_node = self._create_node()
+
+        def raise_value_error():
+            alien_node.parent1 = child_node
+
+        self.assertRaises(ValueError, raise_value_error)
+
+    def test_cyclic_reference_rejected(self):
+        parent_node = self._create_node()
+        child_node = self._create_node()
+        grandchild_node = self._create_node()
+
+        child_node.parent1 = parent_node
+        grandchild_node.parent1 = child_node
+
+        def raise_validation_error():
+            parent_node.parent1 = grandchild_node
+
+        self.assertRaises(exception.ValidationError, raise_validation_error)
