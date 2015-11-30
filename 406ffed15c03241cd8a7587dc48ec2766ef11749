@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_90e62015",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-11-30T18:34:47Z",
+      "side": 1,
+      "message": "yeah, not sure why these were added back, we shouldn\u0027t need these",
+      "parentUuid": "9a8ffd7b_44e1ec99",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_44f80c4a",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
