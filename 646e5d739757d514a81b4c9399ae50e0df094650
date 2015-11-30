@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a8ffd7b_7c006402",
+        "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-30T02:54:52Z",
+      "side": 1,
+      "message": "remove \u0027,\u0027 before \u0027have\u0027.",
+      "revId": "646e5d739757d514a81b4c9399ae50e0df094650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_42f04e67",
         "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
         "patchSetId": 1
