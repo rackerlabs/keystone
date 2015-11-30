@@ -175,7 +175,7 @@ class User(controller.V2Controller):
     def set_user_enabled(self, context, user_id, user):
         return self.update_user(context, user_id, user)
 
-    @controller.v2_deprecated
+    @controller.v2_auth_deprecated
     def set_user_password(self, context, user_id, user):
         user = self._normalize_OSKSADM_password_on_request(user)
         return self.update_user(context, user_id, user)
