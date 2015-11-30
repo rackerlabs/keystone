@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_f8b440d5",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:32:19Z",
+      "side": 1,
+      "message": "Won\u0027t this always be false? The `endpoint` is a reference, correct?",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_2492a8f7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:32:19Z",
+      "side": 1,
+      "message": "nit: project identifier",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c4b95c7b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:32:19Z",
+      "side": 1,
+      "message": "nit: identifiers*",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_db7056df",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:32:19Z",
+      "side": 1,
+      "message": "This seems a little confusing, only because it\u0027s named `refs` but it\u0027s traversed like a list. It\u0027s actually a dictionary of dictionaries (http://cdn.pasteraw.com/7rrl9jgw9zy5xg6ywpv70dr78obmhya). \n\nWe might be able to improve the name a bit: \n\n    # this is actually a dictionary where the key is the endpoint identifier and\n    # the value is the endpoint reference.\n    dict_of_endpoint_refs \u003d self.catalog_api.list_endpoints_for_project(project_id)",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_18990420",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:32:19Z",
+      "side": 1,
+      "message": "Since we aren\u0027t actually calling self.get_catalog anymore, I don\u0027t think we need the try/except.\n\n    for endpoint_id, endpoint in dict_of_endpoint_refs.items():\n        if not endpoint[\u0027enabled\u0027]:\n            # Skip disabled endpoints\n            continue\n        ...\n\n\n++ to not going back to the DB unless we have to!",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
