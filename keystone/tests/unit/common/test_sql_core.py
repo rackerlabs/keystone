@@ -15,6 +15,7 @@ from sqlalchemy.ext import declarative
 
 from keystone.common import sql
 from keystone.tests import unit
+from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import utils
 
 
@@ -50,3 +51,54 @@ class TestModelDictMixin(unit.BaseTestCase):
         m = TestModel(id=expected['id'], text=expected['text'])
         m.extra = 'this should not be in the dictionary'
         self.assertEqual(expected, m.to_dict())
+
+
+class ExampleWithPathColumn(ModelBase):
+
+    __tablename__ = 'examplewithpathcolumn'
+
+    id = sql.Column(sql.String(64), primary_key=True, unique=True)
+    path1 = sql.Column(sql.MaterializedPathType(), default=[])
+
+
+class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
+
+    # Initialization
+
+    def setUp(self):
+        super(TestMaterializedPathColumn, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+
+        ExampleWithPathColumn.__table__.create(sql.get_engine())
+
+    def config_files(self):
+        config_files = super(TestMaterializedPathColumn, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    # Tests
+
+    @staticmethod
+    def _create_node():
+        """Test node creation shortcut"""
+        node = ExampleWithPathColumn(id=utils.new_uuid())
+        return node
+
+    def test_create_node(self):
+        """Created node has empty path"""
+        node = self._create_node()
+        self.assertFalse(node.path1)
+
+    def test_path_column_stores_array(self):
+        """Stored and returned value has type list"""
+        node = self._create_node()
+        example = [utils.new_uuid(), utils.new_uuid()]
+
+        session = sql.get_session()
+        session.add(node)
+        with session.begin():
+            node.path1 = example
+
+        instance = session.query(ExampleWithPathColumn).one()
+        self.assertIsInstance(instance.path1, list)
