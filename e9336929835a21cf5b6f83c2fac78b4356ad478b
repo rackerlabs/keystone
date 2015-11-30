@@ -122,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_3f9bae19",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-30T01:11:31Z",
+      "side": 1,
+      "message": "Please check my comment about patch set 7.\n\nI saw your comment in last patch set about that, and I tried. But test_contrib_ec2.py is in Python 3 test list, and there seems to be some unicode related issue to call APIs.",
+      "parentUuid": "9a8ffd7b_dc971038",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_48a4bfb8",
         "filename": "keystone/tests/unit/test_credential.py",
         "patchSetId": 7
@@ -151,6 +169,42 @@
       "side": 1,
       "message": "++\n\nIf import this let\u0027s reference with this method.",
       "parentUuid": "9a8ffd7b_48a4bfb8",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_5f579225",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-30T01:11:31Z",
+      "side": 1,
+      "message": "I tried to make it clear in the FIXME.\n\nunit/test_v2.py and unit/test_v3.py inherit rest.RestfulTestCase and change the function signature (and how it works) of assertValidErrorResponse, but in method restful_request in unit/rest.py, it\u0027s called by the new way.\n\nIn short, assertValidErrorResponse in unit/rest.py checks if the status code equals to 400, and there is no way to change that from argument.\n\nSo I added a temp hack here, and I\u0027ll commit another patch to fix it after this merged.",
+      "parentUuid": "9a8ffd7b_48a4bfb8",
+      "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_1f4d8a99",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-11-30T01:11:31Z",
+      "side": 1,
+      "message": "It\u0027s inherited from rest.RestfulTestCase",
+      "parentUuid": "9a8ffd7b_bca1ec95",
       "revId": "e9336929835a21cf5b6f83c2fac78b4356ad478b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
