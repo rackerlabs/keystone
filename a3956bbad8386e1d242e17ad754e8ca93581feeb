@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4c758e30",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:54:31Z",
+      "side": 1,
+      "message": "This means we only ever allow \"user\", \"group\", \"groups\", and \"domain\". This means if anything else is passed in it fails validation? Is this something that might break existing deployments?",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_5102070d",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:54:31Z",
+      "side": 1,
+      "message": "This is a dictionary type, right? For any of these should we specify if they are strings or not?\n\nhttps://github.com/openstack/keystone/blob/933e118eee3b494401123f3dc23d025b6c4d4803/keystone/catalog/schema.py#L24",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4cf02eca",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T15:54:31Z",
+      "side": 1,
+      "message": "The test fails because \"type\" isn\u0027t included in the list of required things? This doesn\u0027t fail because \"type\" should be in the \"user\" reference?",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
