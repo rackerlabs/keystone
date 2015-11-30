@@ -10,11 +10,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-
+import six
 from sqlalchemy.ext import declarative
+
+from oslo_db import exception as db_exception
 
 from keystone.common import sql
 from keystone.tests import unit
+from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import utils
 
 
@@ -50,3 +53,96 @@ class TestModelDictMixin(unit.BaseTestCase):
         m = TestModel(id=expected['id'], text=expected['text'])
         m.extra = 'this should not be in the dictionary'
         self.assertEqual(expected, m.to_dict())
+
+
+class ExampleWithPathColumn(ModelBase):
+
+    __tablename__ = 'examplewithpathcolumn'
+
+    id = sql.Column(sql.String(64), primary_key=True, unique=True)
+    path1 = sql.Column(sql.MaterializedPathType(), default=[])
+    path2 = sql.Column(sql.MaterializedPathType(), default=[])
+
+
+class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
+
+    # Initialization
+
+    def setUp(self):
+        super(TestMaterializedPathColumn, self).setUp()
+        self.useFixture(database.Database())
+
+        ExampleWithPathColumn.__table__.create(sql.get_engine())
+
+        self.session = sql.get_session()
+
+    def config_files(self):
+        config_files = super(TestMaterializedPathColumn, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    # Tests
+
+    @staticmethod
+    def _create_node():
+        """Test node creation shortcut"""
+        node = ExampleWithPathColumn(id=utils.new_uuid())
+        return node
+
+    def test_create_node(self):
+        """Created node has empty path"""
+        node = self._create_node()
+        self.assertFalse(node.path1)
+
+    def test_path_column_stores_array_as_string_and_returns_array(self):
+        """Value is represented as list, stored as string"""
+        node = self._create_node()
+        example = [utils.new_uuid(), utils.new_uuid()]
+
+        self.session.add(node)
+        with self.session.begin():
+            node.path1 = example
+
+        rows = self.session.connection().execute(
+            sql.sql.text("select id, path1 from examplewithpathcolumn")
+        )
+        self.assertIsInstance(list(rows)[0]['path1'], six.text_type)
+
+        instance = self.session.query(ExampleWithPathColumn).one()
+        self.assertIsInstance(instance.path1, list)
+
+    def test_multiple_paths_independent(self):
+        """Manipulation with one path don't change another"""
+        node = self._create_node()
+        example1 = [utils.new_uuid(), utils.new_uuid()]
+        example2 = [utils.new_uuid(), utils.new_uuid()]
+
+        self.session.add(node)
+        with self.session.begin():
+            node.path1 = example1
+            node.path2 = example2
+
+        instance = self.session.query(ExampleWithPathColumn).one()
+        self.assertEqual(example2, instance.path2)
+
+        with self.session.begin():
+            node.path1 = node.path1 + [utils.new_uuid()]
+
+        instance = self.session.query(ExampleWithPathColumn).one()
+        self.assertNotEqual(example1, instance.path1)
+        self.assertEqual(example2, instance.path2)
+
+    def test_delimiter_in_path(self):
+        """Delimiter in stored path results in error
+
+        DBError is raised upon attempt to store path with an element,
+        containing path delimiter.
+        """
+        node = self._create_node()
+        example1 = [utils.new_uuid(),
+                    utils.new_uuid() + sql.MaterializedPathType.DELIMITER]
+
+        self.session.add(node)
+        self.session.begin()
+        node.path1 = example1
+        self.assertRaises(db_exception.DBError, self.session.commit)
