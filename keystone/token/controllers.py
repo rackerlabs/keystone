@@ -19,6 +19,7 @@ from keystone.common import utils
 from keystoneclient.common import cms
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 import six
@@ -34,6 +35,17 @@ from keystone.token import provider
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+
+def v2_deprecated(f):
+    versionutils.deprecated(
+        what='v2 API',
+        as_of=versionutils.deprecated.MITAKA,
+        in_favor_of=('v3 API, v2.0 authentication routes potentially sticking '
+                     'around indefinitely.'),
+        remove_in=None
+
+    return f
 
 
 class ExternalAuthNotApplicable(Exception):
