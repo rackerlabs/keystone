@@ -36,20 +36,32 @@ CONF = cfg.CONF
 
 
 def v2_deprecated(f):
-    """No-op decorator in preparation for deprecating Identity API v2.
+    versionutils.deprecated(
+        what='v2 API',
+        as_of=versionutils.deprecated.MITAKA,
+        in_favor_of='v3 API',
+        remove_in=+4)
 
-    This is a placeholder for the pending deprecation of v2. The implementation
-    of this decorator can be replaced with::
-
-        from oslo_log import versionutils
+    return f
 
 
-        v2_deprecated = versionutils.deprecated(
-            what='v2 API',
-            as_of=versionutils.deprecated.JUNO,
-            in_favor_of='v3 API')
+def v2_ec2_deprecated(f):
+    versionutils.deprecated(
+        what='v2 EC2 APIs',
+        as_of=versionutils.deprecated.MITAKA,
+        in_favor_of='v3 Credential APIs',
+        remove_in=0)
 
-    """
+    return f
+
+
+def v2_auth_deprecated(f):
+    versionutils.deprecated(
+        what='v2 Authentication APIs',
+        as_of=versionutils.deprecated.MITAKA,
+        in_favor_of='v3 Authentication APIs',
+        remove_in=0)
+
     return f
 
 
