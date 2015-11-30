@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_3b995520",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2015-11-30T19:04:53Z",
+      "side": 1,
+      "message": "The example here\n\nhttps://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-federation-ext.html#map-identities-to-multiple-groups-without-domain-reference\n\nshows group_ids as an allowed attribute",
+      "revId": "b23c375b6087070419c4f3e707b7698a31bcc015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
