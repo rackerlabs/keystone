@@ -429,3 +429,29 @@ def handle_conflicts(conflict_type='object'):
 
         return wrapper
     return decorator
+
+
+class MaterializedPathType(sql_types.TypeDecorator):
+    """Column type to store string array as a flat string"""
+
+    DELIMITER = '/'
+    impl = sql.Text
+
+    def _assert_delimiter(self, value):
+        if self.DELIMITER in value:
+            raise ValueError("Array value should not contain the delimiter")
+        return value
+
+    def process_bind_param(self, value, dialect):
+        if value is None:
+            return None
+        elif isinstance(value, (list, tuple)):
+            return self.DELIMITER.join(map(self._assert_delimiter, value))
+        else:
+            raise ValueError("Array field accepts array"
+                             " types (list, tuple) only")
+
+    def process_result_value(self, value, dialect):
+        if value is None:
+            return None
+        return value.rsplit(self.DELIMITER)
