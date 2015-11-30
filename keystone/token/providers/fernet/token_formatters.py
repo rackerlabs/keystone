@@ -615,8 +615,8 @@ class FederatedUnscopedPayload(BasePayload):
         """Validate a federated payload.
 
         :param token_string: a string representing the token
-        :returns: a tuple containing the user_id, auth methods, audit_ids, and a
-                 dictionary containing federated information such as the group
+        :returns: a tuple containing the user_id, auth methods, audit_ids, and
+                 a dictionary containing federated information such as the group
                  IDs, the identity provider ID, the protocol ID, and the
                  federated domain ID
 
