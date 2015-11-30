@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e486e015",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T14:47:31Z",
+      "side": 1,
+      "message": "We don\u0027t need to do the same thing here, do we? \n\nhttps://github.com/openstack/keystone/blob/933e118eee3b494401123f3dc23d025b6c4d4803/keystone/tests/unit/test_v3_federation.py#L51",
+      "revId": "1981aeaeed78576963d3d97b777e8c85969a8982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
