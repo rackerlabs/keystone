@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_9947244b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-30T21:44:52Z",
+      "side": 1,
+      "message": "Henry - so, per the docs from Sphinx and OpenStack hacking example, I believe both of them is okay, actually, I also believe that the same things like \u0027raise\u0027 and \u0027raises\u0027 are both fine. \n\nIf we cannot give the reason which one is better that the other, the only criteria is whether the docstring could be rendered correctly.",
+      "parentUuid": "9a8ffd7b_c86bc5ef",
+      "revId": "fb6998ba513171c80b67f1535f2b88df8579aca7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_b62e09f9",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 2
