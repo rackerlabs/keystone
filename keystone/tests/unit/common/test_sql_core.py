@@ -59,6 +59,7 @@ class ExampleWithPathColumn(ModelBase):
 
     id = sql.Column(sql.String(64), primary_key=True, unique=True)
     path1 = sql.Column(sql.MaterializedPathType(), default=[])
+    parent1 = sql.MaterializedPathParent('path1')
 
 
 class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
@@ -102,3 +103,20 @@ class TestMaterializedPathColumn(unit.SQLDriverOverrides, unit.TestCase):
 
         instance = session.query(ExampleWithPathColumn).one()
         self.assertIsInstance(instance.path1, list)
+
+    def test_parent_assignment_updates_path(self):
+        parent_node = self._create_node()
+        child_node = self._create_node()
+
+        self.assertFalse(child_node.path1)
+
+        session = sql.get_session()
+        session.add(parent_node)
+        session.add(child_node)
+        with session.begin():
+            child_node.parent1 = parent_node
+
+        stored_child = session.query(ExampleWithPathColumn).get(child_node.id)
+
+        self.assertEqual(parent_node.id, stored_child.parent1.id)
+        self.assertEqual([parent_node.id], child_node.path1)

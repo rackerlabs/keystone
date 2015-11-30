@@ -31,6 +31,7 @@ from oslo_serialization import jsonutils
 import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
+from sqlalchemy.ext import hybrid
 from sqlalchemy.orm.attributes import flag_modified, InstrumentedAttribute
 from sqlalchemy import types as sql_types
 
@@ -484,3 +485,56 @@ class MaterializedPathType(sql_types.TypeDecorator):
         if value is None:
             return None
         return value.rsplit(self.DELIMITER)
+
+
+class MaterializedPathParent(hybrid.hybrid_property):
+    """Materialized path convenience wrapper
+
+    SQLAlchemy hybrid property that should behave like an ordinary "parent"
+    column in widely used adjacency list tree models.
+    Assigning a node to be a "parent" for the current node updates current
+    node's corresponding path column.
+
+    Path column name and id column name should be specified in the property
+    declaration clause.
+    """
+
+    fdel = None
+    expr = None
+
+    def __init__(self, path_column, id_column='id'):
+        super(MaterializedPathParent, self).__init__(
+            self.fget, self.fset, self.fdel, self.expr
+        )
+        self.path = path_column
+        self.id_column = id_column
+
+    def fget(self, instance):
+        """The node instance referenced by node's path tail"""
+        path = getattr(instance, self.path, [])
+        id_column = getattr(type(instance), self.id_column)
+        if path:
+            query = get_session().query(type(instance))
+            parent_id = path[-1]
+            return query.filter(id_column == parent_id).first()
+        else:
+            return None
+
+    def fset(self, instance, value):
+        if value is None:
+            new_path = []
+        elif isinstance(value, type(instance)):
+            instance_id = getattr(instance, self.id_column)
+            id_value = getattr(value, self.id_column)
+            path_value = getattr(value, self.path, None) or []
+            new_path = path_value + [id_value]
+
+            if instance_id in path_value:
+                msg = _("Cyclic parent references are not allowed in a "
+                        "hierarchy")
+                raise exception.ValidationError(msg)
+        else:
+            msg = _("Incompatible parent node model")
+            raise ValueError(msg)
+
+        setattr(instance, self.path, new_path)
