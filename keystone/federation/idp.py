@@ -466,6 +466,8 @@ class MetadataGenerator(object):
         :returns: XML <EntityDescriptor> object.
         :raises keystone.exception.ValidationError: If the required
             config options aren't set.
+        
+
         """
         self._ensure_required_values_present()
         entity_descriptor = self._create_entity_descriptor()

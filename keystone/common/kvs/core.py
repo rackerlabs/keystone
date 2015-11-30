@@ -96,7 +96,6 @@ class KeyValueStore(object):
                         this instantiation
         :param region_config_args: key-word args passed to the dogpile.cache
                                    backend for configuration
-        :returns:
         """
         if self.is_configured:
             # NOTE(morganfainberg): It is a bad idea to reconfigure a backend,
