@@ -16,6 +16,24 @@
       "revId": "f468f32d8f5fa3f01799e5ad3022eb8e065dc32a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_dbf12903",
+        "filename": "keystone/tests/unit/test_v2_keystoneclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2015-11-30T18:51:02Z",
+      "side": 0,
+      "message": "Yeah, I might come back and remove that one later on.",
+      "parentUuid": "9a8ffd7b_b7eff01c",
+      "revId": "f468f32d8f5fa3f01799e5ad3022eb8e065dc32a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
