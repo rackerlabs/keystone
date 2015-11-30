@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_645426ca",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2056,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T17:09:38Z",
+      "side": 1,
+      "message": "do you still need to inherit unit.TestCase? Shouldn\u0027t that already be in the hierarchy of test_backend.LimitTests?",
+      "revId": "396bb400f257726112e9c4121d0191bfe1a8b6a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
