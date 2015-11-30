@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_2a36e5b4",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T17:40:16Z",
+      "side": 1,
+      "message": "since we have this here, we should remove calls to clean.py - https://github.com/openstack/keystone/blob/933e118eee3b494401123f3dc23d025b6c4d4803/keystone/identity/core.py#L812\n\n\nThe clean.py module was what validated requests prior to the jsonschema implementation.",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_756333dd",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
@@ -30,6 +47,24 @@
       "writtenOn": "2015-11-25T14:27:44Z",
       "side": 1,
       "message": "integers could also be tested here, too.",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ea7a1d77",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1858,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T17:40:16Z",
+      "side": 1,
+      "message": "This could be done in a follow on patch though.",
+      "parentUuid": "9a8ffd7b_756333dd",
       "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
