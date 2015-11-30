@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_84d7caec",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-11-30T17:13:37Z",
+      "side": 1,
+      "message": "I wonder if this should live in a common driver place, instead of in driver_hints. This isn\u0027t specific to driver_hints, is it?",
+      "revId": "0309a071f598ca02032dd98cd0952b5fc091cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
