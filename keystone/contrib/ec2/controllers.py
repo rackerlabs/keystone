@@ -37,6 +37,7 @@ import sys
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 import six
 
@@ -46,6 +47,17 @@ from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
+
+
+def v2_deprecated(f):
+    versionutils.deprecated(
+        what='v2 API',
+        as_of=versionutils.deprecated.MITAKA,
+        in_favor_of=('v3 API, v2.0 EC2 routes potentially sticking around '
+                     'indefinitely.'),
+        remove_in=None)
+
+    return f
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'credential_api',
