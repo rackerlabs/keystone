@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_c86bc5ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-11-30T08:42:28Z",
+      "side": 1,
+      "message": "So I think Dave is correct, it appears that :return: or :returns: is supported - although I agree with you that the specific OpenStack hacking example uses :returns:\n\nDave - I couldn\u0027t see in the Sphinx doc where it clarified where one form is better than another?",
+      "parentUuid": "9a8ffd7b_6bb8982a",
+      "revId": "fb6998ba513171c80b67f1535f2b88df8579aca7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_b62e09f9",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 2
