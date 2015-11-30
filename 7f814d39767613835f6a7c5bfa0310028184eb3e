@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_39e87816",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-30T21:51:57Z",
+      "side": 1,
+      "message": "remove the black space.",
+      "revId": "7f814d39767613835f6a7c5bfa0310028184eb3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_d96e0c96",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-11-30T21:51:57Z",
+      "side": 1,
+      "message": "either indent with 4 space or align with the \":\",  this also apply to others.",
+      "revId": "7f814d39767613835f6a7c5bfa0310028184eb3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
