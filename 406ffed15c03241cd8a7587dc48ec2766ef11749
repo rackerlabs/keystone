@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_44eeccb5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "no need for itertools.chain since there\u0027s only 1.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_e477c006",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "no need for itertools.chain since there\u0027s only 1. (there\u0027s a few of these, I won\u0027t comment on every one.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a458d88b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "didn\u0027t we get rid of compute_host? I thought it was deprecated.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a4b45882",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "should be able to get rid of this whole section.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_44e1ec99",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "what\u0027s up with this?",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_44f80c4a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "this obviously doesn\u0027t apply.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_847354e7",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "removing eventlet support means removing this.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_b8079817",
+        "filename": "keystone/tests/unit/ksfixtures/appserver.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "use self.addCleanup() rather than overriding tearDown.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_58478c4b",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "with the removal of eventlet there\u0027s no need to support creating ssl certs anymore.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_b8247860",
+        "filename": "test-requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-11-30T14:58:38Z",
+      "side": 1,
+      "message": "let\u0027s just get rid of the keystoneclient tests.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
