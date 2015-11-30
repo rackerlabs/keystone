@@ -16,6 +16,24 @@
       "revId": "396bb400f257726112e9c4121d0191bfe1a8b6a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_cd396eda",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2056,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-11-30T20:02:42Z",
+      "side": 1,
+      "message": "Yes. LimitTests inherits from FilterTests, FilterTests from object. So inheriting is still needed.",
+      "parentUuid": "9a8ffd7b_645426ca",
+      "revId": "396bb400f257726112e9c4121d0191bfe1a8b6a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
