@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_b0545154",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-12-01T14:47:09Z",
+      "side": 1,
+      "message": "this is correct, this test for testing that only admin_project_name was specified",
+      "parentUuid": "9a8ffd7b_3ff59c82",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_1fca1850",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 7
