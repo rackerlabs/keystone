@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4d13035d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-01T17:12:45Z",
+      "side": 1,
+      "message": "nit: update expires_at to be expires_at_str to be consistent with the documentation below.",
+      "revId": "5c0602ab5fd6a33151fdcd2c4a5e7306c7f384bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
