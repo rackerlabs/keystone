@@ -1,0 +1,15 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: ZhiQiang Fan <aji.zqfan@gmail.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 01 Dec 2015 08:09:56 +0000
+Reviewed-on: https://review.openstack.org/249988
+Project: openstack/keystone
+Branch: refs/heads/master
