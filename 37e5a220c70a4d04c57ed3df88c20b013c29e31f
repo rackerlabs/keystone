@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_065de778",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T15:11:00Z",
+      "side": 1,
+      "message": "True: only_admin_project_set, sorry",
+      "parentUuid": "9a8ffd7b_b0545154",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_1fca1850",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 7
