@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_d60b127c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-01T14:01:56Z",
+      "side": 1,
+      "message": "...because the the config settings (in this case) indicate that this is meant to only match a project acting as a domain....want to avoid confusion incase there is a project below the domain with the same name as the domain",
+      "parentUuid": "9a8ffd7b_1fca1850",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_63172155",
         "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
         "patchSetId": 7
