@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_8616c953",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T10:51:25Z",
+      "side": 1,
+      "message": "Oh, you\u0027re correct, perhaps this needs a follow on patch to fix this",
+      "parentUuid": "9a8ffd7b_fb442d1c",
+      "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_c01f5106",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 12
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "If you look at the definition of `new_project_ref` both parent_id and domain_id are set to None.",
       "parentUuid": "9a8ffd7b_d754f4ca",
+      "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a6498d90",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T10:51:25Z",
+      "side": 1,
+      "message": "But in this case, wouldn\u0027t the comment above need to be updated ?",
+      "parentUuid": "9a8ffd7b_bb3d45bd",
       "revId": "67f4bdacb51d3c98c09106b1d1ac53471ea91a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
