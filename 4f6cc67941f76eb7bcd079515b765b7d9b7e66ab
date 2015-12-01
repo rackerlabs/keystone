@@ -34,6 +34,24 @@
       "revId": "4f6cc67941f76eb7bcd079515b765b7d9b7e66ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c0ed9e8f",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-12-01T08:51:07Z",
+      "side": 0,
+      "message": "i moved it into the _add_inherit_resource function. Felt it made it neater but i can put it back.",
+      "parentUuid": "ba8a016a_970ed130",
+      "revId": "4f6cc67941f76eb7bcd079515b765b7d9b7e66ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
