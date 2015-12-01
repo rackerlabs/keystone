@@ -4344,7 +4344,8 @@ class TokenTests(object):
     def delete_token(self):
         token_id = uuid.uuid4().hex
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
-                'user': {'id': 'testuserid'}}
+                'user': {'id': 'testuserid'},
+                'token_data': {'token': {'audit_ids': [uuid.uuid4().hex]}}}
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         self.token_provider_api._persistence.delete_token(token_id)
@@ -4407,12 +4408,16 @@ class TokenTests(object):
         token_data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                       'expires': expire_time,
                       'trust_id': None,
-                      'user': {'id': 'testuserid'}}
+                      'user': {'id': 'testuserid'},
+                      'token_data': {'token': {
+                          'audit_ids': [uuid.uuid4().hex]}}}
         token2_id = uuid.uuid4().hex
         token2_data = {'id_hash': token2_id, 'id': token2_id, 'a': 'b',
                        'expires': expire_time,
                        'trust_id': None,
-                       'user': {'id': 'testuserid'}}
+                       'user': {'id': 'testuserid'},
+                       'token_data': {'token': {
+                           'audit_ids': [uuid.uuid4().hex]}}}
         # Create 2 Tokens.
         self.token_provider_api._persistence.create_token(token_id,
                                                           token_data)
@@ -4447,7 +4452,8 @@ class TokenTests(object):
     def _test_predictable_revoked_pki_token_id(self, hash_fn):
         token_id = self._create_token_id()
         token_id_hash = hash_fn(token_id.encode('utf-8')).hexdigest()
-        token = {'user': {'id': uuid.uuid4().hex}}
+        token = {'user': {'id': uuid.uuid4().hex},
+                 'token_data': {'token': {'audit_ids': [uuid.uuid4().hex]}}}
 
         self.token_provider_api._persistence.create_token(token_id, token)
         self.token_provider_api._persistence.delete_token(token_id)
@@ -4469,7 +4475,8 @@ class TokenTests(object):
 
     def test_predictable_revoked_uuid_token_id(self):
         token_id = uuid.uuid4().hex
-        token = {'user': {'id': uuid.uuid4().hex}}
+        token = {'user': {'id': uuid.uuid4().hex},
+                 'token_data': {'token': {'audit_ids': [uuid.uuid4().hex]}}}
 
         self.token_provider_api._persistence.create_token(token_id, token)
         self.token_provider_api._persistence.delete_token(token_id)
