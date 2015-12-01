@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_89b49ad1",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:00:44Z",
+      "side": 1,
+      "message": "I just ran \"tox -e pep8\" locally and this line is making that check to fail, see:\n\n./keystone/token/providers/fernet/token_formatters.py:619:80: E501 line too long (81 \u003e 79 characters)",
+      "revId": "2ee3232bf7171c360cb5c64d50b80c3af9cd1462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
