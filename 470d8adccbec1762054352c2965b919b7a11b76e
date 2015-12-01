@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_7a86d214",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T12:01:37Z",
+      "side": 1,
+      "message": "(nit) I\u0027d use exception.ForbiddenAction.code as you did in L1275, for consistency. Or change what\u0027s there to http_client.FORBIDDEN",
+      "revId": "470d8adccbec1762054352c2965b919b7a11b76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_fa72c248",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T12:01:37Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "470d8adccbec1762054352c2965b919b7a11b76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
