@@ -16,6 +16,24 @@
       "revId": "1981aeaeed78576963d3d97b777e8c85969a8982",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_b476aa04",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-01T01:28:54Z",
+      "side": 1,
+      "message": "it\u0027s less important in the tests",
+      "parentUuid": "9a8ffd7b_e486e015",
+      "revId": "1981aeaeed78576963d3d97b777e8c85969a8982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
