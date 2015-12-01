@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_6362c118",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-12-01T07:23:39Z",
+      "side": 1,
+      "message": "admin_project_domain_name should also be set here, to ensure the is_admin feature is correctly setup for this test",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_63172155",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-12-01T07:23:39Z",
+      "side": 1,
+      "message": "release note does not render correctly, see: http://docs-draft.openstack.org/19/240719/7/check/gate-keystone-releasenotes/578d4b8//releasenotes/build/html/unreleased.html",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a3fbc946",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-12-01T07:23:39Z",
+      "side": 1,
+      "message": "nit: remove extra space here",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
