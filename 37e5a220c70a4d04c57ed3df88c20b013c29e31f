@@ -19,6 +19,58 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_3fcefc5a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:29:21Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a8ffd7b_6362c118",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_3ff59c82",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:29:21Z",
+      "side": 1,
+      "message": "Same comment as above by Lin.",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_1fca1850",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:29:21Z",
+      "side": 1,
+      "message": "Why should we care about is_domain flag at all ?\n\nI think the admin project is specified, and it shouldn\u0027t matter if it\u0027s is_domain or not, because it still is a project.",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_63172155",
         "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
         "patchSetId": 7
@@ -30,6 +82,40 @@
       "writtenOn": "2015-12-01T07:23:39Z",
       "side": 1,
       "message": "release note does not render correctly, see: http://docs-draft.openstack.org/19/240719/7/check/gate-keystone-releasenotes/578d4b8//releasenotes/build/html/unreleased.html",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_3f3efcb8",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:29:21Z",
+      "side": 1,
+      "message": "(nit) perhaps a colon mark would look better: \"project:\" vs \"project.\"",
+      "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_bf03cc0c",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:29:21Z",
+      "side": 1,
+      "message": "Do we really need to put this in the release notes  ?\n\nHow did they get know about is_domain projects ? Perhaps they don\u0027t even know about it ? (there is nothing in the release notes so far about them)",
       "revId": "37e5a220c70a4d04c57ed3df88c20b013c29e31f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
