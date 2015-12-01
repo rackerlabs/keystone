@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_821bfa1b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-01T17:07:13Z",
+      "side": 1,
+      "message": "Should this be checking that project_id is also a required keyword argument of TrustScopedPayload.assemble()? Checking that trust_id is a keyword is enough to determine that we\u0027re dealing with a trust scoped token, but it doesn\u0027t check all the things required.\n\nIs that something we want this method to cover?",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_82777a3a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-01T17:07:13Z",
+      "side": 1,
+      "message": "Like this, should we be doing this with trust scoped tokens?",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
