@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_0a868113",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "You are all heathens",
+      "parentUuid": "9a8ffd7b_ed231204",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_6d1722a4",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -64,6 +82,24 @@
       "writtenOn": "2015-11-24T19:29:01Z",
       "side": 1,
       "message": "The help should say what happens by default. (same for the other config option)",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4abec9d5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_6d1722a4",
       "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_6adaad19",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_ade2ea9d",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_cd896ecc",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
@@ -151,6 +205,24 @@
       "writtenOn": "2015-11-24T19:29:01Z",
       "side": 1,
       "message": "combine these config settings to reduce duplication.",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ab2e4da3",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_cd896ecc",
       "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_6b170555",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_006e5dc9",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_dbf15802",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
@@ -185,6 +275,24 @@
       "writtenOn": "2015-11-20T00:24:38Z",
       "side": 1,
       "message": "What about the OR cases? When admin_project_name is set but admin_project_domain_name is not or vice versa. Shouldn\u0027t the test validate that check as well?",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_0b099931",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "did \"project only\" but domain only will be changed shortly to handle domain as a project.",
+      "parentUuid": "ba8a016a_dbf15802",
       "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_ab05ed14",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_40d0e553",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_e94e86c0",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 6
@@ -219,6 +345,24 @@
       "writtenOn": "2015-11-25T08:48:58Z",
       "side": 1,
       "message": "The spec says that we should support the ability for a project acting as a domain to be the special project.  The proposed change is that this should also match if:\n\n(r.admin_project_name \u003d\u003d None and project[\u0027is_domain\u0027] \u003d\u003d True and project[\u0027name\u0027] \u003d\u003d r.admin_project_domain_name)\n\nWe should either include this check now, or put a TODO to come back and fix that when the rest of the code for projects acting as a domain lands.",
+      "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_94a60b52",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-01T02:49:12Z",
+      "side": 1,
+      "message": "Will add the todo and the code in a comment:  can\u0027t really implement until we can confirm that domain-is-a-project.",
+      "parentUuid": "9a8ffd7b_e94e86c0",
       "revId": "a62780d8a531fd6fdec3428bacf89b057538df37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
