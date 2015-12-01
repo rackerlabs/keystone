@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_d5755132",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2015-12-01T12:03:20Z",
+      "side": 1,
+      "message": "ok, I\u0027m removing the ssl generation code",
+      "parentUuid": "9a8ffd7b_90e62015",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_44f80c4a",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -184,6 +202,24 @@
       "writtenOn": "2015-11-30T14:58:38Z",
       "side": 1,
       "message": "let\u0027s just get rid of the keystoneclient tests.",
+      "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_356a9d1b",
+        "filename": "test-requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2015-12-01T12:03:20Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "9a8ffd7b_b8247860",
       "revId": "406ffed15c03241cd8a7587dc48ec2766ef11749",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
