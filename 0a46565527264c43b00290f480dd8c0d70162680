@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_fab5e230",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:36:53Z",
+      "side": 1,
+      "message": "How was the table ? What type of tokens were there ? I think we need more information about how the tests were performed.\n\nI believe Matt Fischer (mfisch) and Dolph Mathews (dolphm) in #openstack-keystone are great resources to ask about how to properly setup token performance tests and post your results for supporting you commit message.",
+      "revId": "0a46565527264c43b00290f480dd8c0d70162680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_9feda890",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-01T11:36:53Z",
+      "side": 1,
+      "message": "Assert the old order before upgrade",
+      "revId": "0a46565527264c43b00290f480dd8c0d70162680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
