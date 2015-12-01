@@ -36,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_f276423d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-01T22:51:49Z",
+      "side": 1,
+      "message": "++ Why leave out UUID? It is still a viable option.",
+      "parentUuid": "9a8ffd7b_8f2a1f7d",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_32a4caa4",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-01T22:51:49Z",
+      "side": 1,
+      "message": "Fernet or UUID",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_4345a143",
         "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
         "patchSetId": 8
