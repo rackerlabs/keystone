@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_8a025ab3",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-01T05:40:47Z",
+      "side": 1,
+      "message": "All should actually be of type object. With Strings set the unit tests will return the following errors:\n\n2015-11-30 16:58:49.044 |     {u\u0027id\u0027: u\u00270cd5e9\u0027} is not of type \u0027string\u0027\n2015-11-30 16:58:49.044 |     {u\u0027id\u0027: u\u0027123\u0027} is not of type \u0027string\u0027\n2015-11-30 16:58:49.044 |     {u\u0027id\u0027: u\u0027xyz\u0027} is not of type \u0027string\u0027\n2015-11-30 16:58:49.044 |     {u\u0027name\u0027: u\u0027{0} {1}\u0027, u\u0027email\u0027: u\u0027{2}\u0027} is not of type \u0027string\u0027\n2015-11-30 16:58:49.044 |     {u\u0027name\u0027: u\u0027{0}\u0027, u\u0027email\u0027: u\u0027{1}\u0027} is not of type \u0027string\u0027\n2015-11-30 16:58:49.044 |     {u\u0027name\u0027: u\u0027{0}\u0027} is not of type \u0027string\u0027",
+      "parentUuid": "9a8ffd7b_ddd4c6be",
+      "revId": "a3956bbad8386e1d242e17ad754e8ca93581feeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_4cf02eca",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 2
