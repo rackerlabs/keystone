@@ -22,6 +22,7 @@ import grp
 import hashlib
 import os
 import pwd
+import uuid
 
 from oslo_config import cfg
 from oslo_log import log
@@ -40,6 +41,27 @@ from keystone.i18n import _, _LE, _LW
 CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
+
+
+# uuid5 namespace for id transformation.
+# NOTE(stevemar): This UUID must stay the same, forever, across all
+# of keystone to preserve its value as a URN namespace.
+RESOURCE_ID_NAMESPACE = uuid.UUID('4332ecab-770b-4288-a680-b9aca3b1b153')
+
+
+def resource_uuid(value):
+    try:
+        try:
+            return uuid.UUID(value)
+        except ValueError:
+            if len(value) <= 64:
+                if six.PY2:
+                    value = value.encode('utf-8')
+                return uuid.uuid5(RESOURCE_ID_NAMESPACE, value)
+            raise ValueError(
+                'transformable resource id >255 max allowed characters')
+    except Exception as e:
+        raise ValueError(e)
 
 
 def flatten_dict(d, parent_key=''):
