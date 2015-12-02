@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_e47ac987",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-02T18:42:45Z",
+      "side": 1,
+      "message": "Lance - in the original code at line 141 all that was checked is that trust_id is supplied, so it must have been enough to only check trust_id before otherwise there\u0027s an existing bug in the code.",
+      "parentUuid": "9a8ffd7b_821bfa1b",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_82777a3a",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-01T17:07:13Z",
       "side": 1,
       "message": "Like this, should we be doing this with trust scoped tokens?",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_84f09dfe",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-02T18:42:45Z",
+      "side": 1,
+      "message": "Lance - see previous response. This is what the code was doing before. The goal of this change was to not change the behavior at all, assuming the original behavior was correct. If the original behavior wasn\u0027t correct then we should fix that first, but I think it was right and the tests pass.",
+      "parentUuid": "9a8ffd7b_82777a3a",
       "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
