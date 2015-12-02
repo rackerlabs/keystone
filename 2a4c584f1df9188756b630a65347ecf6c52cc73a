@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_f7e4c63c",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-02T15:52:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_0f106f4d",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_8f2a1f7d",
         "filename": "keystone/token/providers/pki.py",
         "patchSetId": 8
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_37dfae6a",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-02T15:52:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_f276423d",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_32a4caa4",
         "filename": "keystone/token/providers/pkiz.py",
         "patchSetId": 8
@@ -65,6 +101,24 @@
       "writtenOn": "2015-12-01T22:51:49Z",
       "side": 1,
       "message": "Fernet or UUID",
+      "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_57c35289",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-02T15:52:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_32a4caa4",
       "revId": "2a4c584f1df9188756b630a65347ecf6c52cc73a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
