@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_0ec28c34",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-02T18:14:53Z",
+      "side": 1,
+      "message": "you should pass None here: https://github.com/openstack/oslo.log/blob/master/oslo_log/versionutils.py#L79",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_2ebf50ab",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-02T18:14:53Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
