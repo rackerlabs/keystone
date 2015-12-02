@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a8ffd7b_8e575c59",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-02T18:16:53Z",
+      "side": 1,
+      "message": "to deprecate*",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_ceefa485",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-02T18:16:53Z",
+      "side": 1,
+      "message": "You should also mention here that the auth and EC2 routes aren\u0027t going to be removed",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_0ec28c34",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 4
