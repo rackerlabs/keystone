@@ -19,6 +19,7 @@ import functools
 import inspect
 import logging
 import socket
+import uuid
 
 from oslo_config import cfg
 from oslo_log import log
@@ -501,8 +502,17 @@ def _get_request_audit_info(context, user_id=None):
                                     {}).get('domain_id')
 
     host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
-    initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
-                                  id=user_id, host=host)
+    initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER, host=host)
+
+    # NOTE(stevemar): If user_id is a UUID, then use that as the ID. Otherwise,
+    # let pyCADF generate a UUID and pass in the user_id as an extra field.
+    if user_id:
+        try:
+            uuid.UUID(user_id)
+            initiator.id = user_id
+        except ValueError:
+            initiator.user_id = user_id
+
     if project_id:
         initiator.project_id = project_id
     if domain_id:
