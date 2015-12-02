@@ -16,6 +16,58 @@
       "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_5d403aa5",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-02T23:30:40Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "9a8ffd7b_bd5926ff",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_dd12eab3",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-02T23:30:40Z",
+      "side": 1,
+      "message": "you can remove this line, we now have to wait 2 releases as per the deprecation policy, and \"2\" is the default value.",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_7d241e0c",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-02T23:30:40Z",
+      "side": 1,
+      "message": "you can add another argument:\n\n  in_favor\u003d\u0027sql role backend\u0027",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
