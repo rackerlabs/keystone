@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_04e58d36",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-02T18:43:19Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a8ffd7b_2a36e5b4",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_756333dd",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
