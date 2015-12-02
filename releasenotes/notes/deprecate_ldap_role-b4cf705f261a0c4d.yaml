@@ -1,0 +1,6 @@
+---
+other:
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, ldap role backend has been deprecated.
+    It will be removed in the 'O' release.
