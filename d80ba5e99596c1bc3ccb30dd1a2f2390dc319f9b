@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_bd5926ff",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-12-02T23:12:03Z",
+      "side": 1,
+      "message": "MITAKA? :)",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
