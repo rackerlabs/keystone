@@ -14,6 +14,7 @@ from __future__ import absolute_import
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 
 from keystone import assignment
 from keystone.common import ldap as common_ldap
@@ -28,7 +29,10 @@ LOG = log.getLogger(__name__)
 
 
 class Role(assignment.RoleDriverV8):
-
+    @versionutils.deprecated(
+        versionutils.deprecated.LIBERTY,
+        remove_in=+1,
+        what='ldap role')
     def __init__(self):
         super(Role, self).__init__()
         self.LDAP_URL = CONF.ldap.url
