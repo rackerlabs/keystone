@@ -1,0 +1,4 @@
+---
+other:
+  - As of the Mitaka release, the LDAP Role backend has been deprecated.
+    It will be removed in the 'O' release.
