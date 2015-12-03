@@ -338,7 +338,6 @@ class Manager(manager.Manager):
             # project-scoped token, fill in the v2 token data
             # all we care are the role IDs
 
-            # FIXME(gyee): is there really a need to store roles in metadata?
             role_ids = [r['id'] for r in token_data['token']['roles']]
             metadata_ref = {'roles': role_ids}
 
