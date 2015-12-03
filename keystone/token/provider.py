@@ -101,7 +101,7 @@ def audit_info(parent_audit_id):
 
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('assignment_api', 'revoke_api', 'resource_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -283,11 +283,43 @@ class Manager(manager.Manager):
                               'determining token expiry: %s'), token)
             raise exception.TokenNotFound(_('Failed to validate token'))
 
+        self._check_domain_and_project_enabled(token)
+
         if current_time < expiry:
             self.check_revocation(token)
             # Token has not expired and has not been revoked.
             return None
         else:
+            raise exception.TokenNotFound(_('Failed to validate token'))
+
+    def _check_domain_and_project_enabled(self, token):
+        """Check if token properties are enabled.
+
+        Explicitly check that the projects and domains associated with a token
+        are enabled. If they are not enabled then the token is invalid.
+        """
+        try:
+            # Try V3, fall back to V2 for domains and projects
+            token_data = token.get('token', token.get('access'))
+            user_domain = token_data['user'].get('domain', {})
+            federated_domain = CONF.federation.federated_domain_name
+            if user_domain and user_domain['name'] != federated_domain:
+                self.resource_api.assert_domain_enabled(user_domain['id'])
+
+            # V3 domain scope tokens
+            domain = token_data.get('domain', {})
+            if domain:
+                self.resource_api.assert_domain_enabled(domain['id'])
+
+            project = None
+            if token_data.get('project'):
+                project = token_data['project']
+            else:
+                if token_data.get('token'):
+                    project = token_data['token'].get('tenant', {})
+            if project:
+                self.resource_api.assert_project_enabled(project['id'])
+        except (KeyError, AssertionError):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def _token_belongs_to(self, token, belongs_to):
