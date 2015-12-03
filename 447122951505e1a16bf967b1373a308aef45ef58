@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_f080ca48",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-03T20:20:25Z",
+      "side": 1,
+      "message": "I have not tested this yet, but it should do the trick. What do you think?",
+      "revId": "447122951505e1a16bf967b1373a308aef45ef58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
