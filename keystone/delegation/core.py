@@ -15,11 +15,41 @@
 import abc
 import six
 
+from keystone.common import dependency
+from keystone.common import manager
 from oslo_config import cfg
 from oslo_log import log
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+
+class BaseManager(manager.Manager):
+    """Base for default pivot point for the Delegation backend.
+
+    See :class:`keystone.common.manager.Manager` for more details on how this
+    dynamically calls the backend.
+
+    """
+
+    driver_namespace = 'keystone.delegation'
+
+    def __init__(self):
+        delegation_driver = CONF.delegation.driver
+        super(BaseManager, self).__init__(delegation_driver)
+
+    def validate_delegation(self, delegation):
+        pass
+
+
+@dependency.provider('delegation_api')
+class Manager(manager.Manager):
+    """Base for default pivot point for the Delegation backend.
+
+    See :class:`keystone.common.manager.Manager` for more details on how this
+    dynamically calls the backend.
+
+    """
 
 
 @six.add_metaclass(abc.ABCMeta)

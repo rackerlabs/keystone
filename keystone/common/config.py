@@ -1121,6 +1121,10 @@ FILE_OPTIONS = {
                     help='Require client certificate.'),
     ],
     'delegation': [
+        cfg.StrOpt('driver',
+                   default='sql',
+                   help='Entrypoint for the delegation backend driver in the '
+                        'keystone.delegation namespace.'),
         cfg.IntOpt('expiration',
                    default=0,
                    help='Default delegation TTL (in seconds), 0 to disable'),
