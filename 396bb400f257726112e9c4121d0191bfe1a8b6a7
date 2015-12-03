@@ -52,6 +52,24 @@
       "revId": "396bb400f257726112e9c4121d0191bfe1a8b6a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_044aff83",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2056,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-03T18:07:07Z",
+      "side": 1,
+      "message": "interesting, it would be nice if it used the same inheritance, but that can be done in a separate patch.",
+      "parentUuid": "9a8ffd7b_58088d2d",
+      "revId": "396bb400f257726112e9c4121d0191bfe1a8b6a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
