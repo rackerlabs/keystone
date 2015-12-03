@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_fa942ee9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T18:49:02Z",
+      "side": 0,
+      "message": "True but we are not changing the previous behavior, this is just a new API call. So, I suggest add something explaining it instead of remove the whole note.",
+      "parentUuid": "7a740942_3a55d6c5",
+      "revId": "cdaa4b65ec5ad47954c8795bde6076bf93c1818a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_29527614",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
