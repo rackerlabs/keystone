@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_4dbde766",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-03T01:46:04Z",
+      "side": 1,
+      "message": "calling this \u0027domain2\u0027 is kinda pointless, but i guess that\u0027s how the second domain is represented.\n\ni\u0027m okay with this patch as-is",
+      "revId": "ea464bc4e0a4858d08929873e08602eeee0abfc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
