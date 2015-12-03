@@ -2845,6 +2845,41 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         - role1 is then deleted
         - Check the tokens on Project A and B, and DomainA are revoked, but not
           the one for Project C
+=======
+        events_response = self.get('/OS-REVOKE/events').json_body
+
+        self.assertValidRevokedTokenResponse(
+            events_response,
+            audit_id=response['audit_ids'][0])
+
+    def test_revoke_by_id_false_returns_gone(self):
+        self.get('/auth/tokens/OS-PKI/revoked',
+                 expected_status=http_client.GONE)
+
+    def assertEventDataInList(self, events, **kwargs):
+        found = False
+        for e in events:
+            for key, value in kwargs.items():
+                try:
+                    if e[key] != value:
+                        break
+                except KeyError:
+                    # Break the loop and present a nice error instead of
+                    # KeyError
+                    break
+            else:
+                # If the value of the event[key] matches the value of the kwarg
+                # for each item in kwargs, the event was fully matched and
+                # the assertTrue below should succeed.
+                found = True
+        self.assertTrue(found,
+                        'event with correct values not in list, expected to '
+                        'find event with key-value pairs. Expected: '
+                        '"%(expected)s" Events: "%(events)s"' %
+                        {'expected': ','.join(
+                            ["'%s=%s'" % (k, v) for k, v in kwargs.items()]),
+                         'events': events})
+>>>>>>> Reduce revoke events for disabled domains and projects.
 
         """
         self.role_data_fixtures()
