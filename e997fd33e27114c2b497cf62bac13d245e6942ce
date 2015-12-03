@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_1f09ec95",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T18:23:23Z",
+      "side": 1,
+      "message": "same question that I made here: https://review.openstack.org/#/c/243585/2/keystone/resource/routers.py",
+      "revId": "e997fd33e27114c2b497cf62bac13d245e6942ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
