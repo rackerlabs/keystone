@@ -546,23 +546,6 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_last_audit(policy_ref['id'], DELETED_OPERATION,
                                 'policy', cadftaxonomy.SECURITY_POLICY)
 
-    def test_disable_domain(self):
-        domain_ref = unit.new_domain_ref()
-        self.resource_api.create_domain(domain_ref['id'], domain_ref)
-        domain_ref['enabled'] = False
-        self.resource_api.update_domain(domain_ref['id'], domain_ref)
-        self._assert_notify_sent(domain_ref['id'], 'disabled', 'domain',
-                                 public=False)
-
-    def test_disable_of_disabled_domain_does_not_notify(self):
-        domain_ref = unit.new_domain_ref(enabled=False)
-        self.resource_api.create_domain(domain_ref['id'], domain_ref)
-        # The domain_ref above is not changed during the create process. We
-        # can use the same ref to perform the update.
-        self.resource_api.update_domain(domain_ref['id'], domain_ref)
-        self._assert_notify_not_sent(domain_ref['id'], 'disabled', 'domain',
-                                     public=False)
-
     def test_update_group(self):
         group_ref = unit.new_group_ref(domain_id=self.domain_id)
         group_ref = self.identity_api.create_group(group_ref)
@@ -579,24 +562,6 @@ class NotificationsForEntities(BaseNotificationTest):
             project_ref['id'], UPDATED_OPERATION, 'project', public=True)
         self._assert_last_audit(project_ref['id'], UPDATED_OPERATION,
                                 'project', cadftaxonomy.SECURITY_PROJECT)
-
-    def test_disable_project(self):
-        project_ref = unit.new_project_ref(domain_id=self.domain_id)
-        self.resource_api.create_project(project_ref['id'], project_ref)
-        project_ref['enabled'] = False
-        self.resource_api.update_project(project_ref['id'], project_ref)
-        self._assert_notify_sent(project_ref['id'], 'disabled', 'project',
-                                 public=False)
-
-    def test_disable_of_disabled_project_does_not_notify(self):
-        project_ref = unit.new_project_ref(domain_id=self.domain_id,
-                                           enabled=False)
-        self.resource_api.create_project(project_ref['id'], project_ref)
-        # The project_ref above is not changed during the create process. We
-        # can use the same ref to perform the update.
-        self.resource_api.update_project(project_ref['id'], project_ref)
-        self._assert_notify_not_sent(project_ref['id'], 'disabled', 'project',
-                                     public=False)
 
     def test_update_project_does_not_send_disable(self):
         project_ref = unit.new_project_ref(domain_id=self.domain_id)
