@@ -230,19 +230,6 @@ class Manager(manager.Manager):
         if not project.get('enabled', True):
             raise AssertionError(_('Project is disabled: %s') % project_id)
 
-    @notifications.disabled(_PROJECT, public=False)
-    def _disable_project(self, project_id):
-        """Emit a notification to the callback system project is been disabled.
-
-        This method, and associated callback listeners, removes the need for
-        making direct calls to other managers to take action (e.g. revoking
-        project scoped tokens) when a project is disabled.
-
-        :param project_id: project identifier
-        :type project_id: string
-        """
-        pass
-
     def _assert_all_parents_are_enabled(self, project_id):
         parents_list = self.list_project_parents(project_id)
         for project in parents_list:
@@ -294,7 +281,6 @@ class Manager(manager.Manager):
             # effectively disables its children.
             if not original_tenant.get('is_domain'):
                 self._assert_whole_subtree_is_disabled(tenant_id)
-            self._disable_project(tenant_id)
 
         ret = self.driver.update_project(tenant_id, tenant)
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
@@ -512,12 +498,6 @@ class Manager(manager.Manager):
             domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
         notifications.Audit.updated(self._DOMAIN, domain_id, initiator)
-        # disable owned users & projects when the API user specifically set
-        #     enabled=False
-        if (original_domain.get('enabled', True) and
-                not domain.get('enabled', True)):
-            notifications.Audit.disabled(self._DOMAIN, domain_id, initiator,
-                                         public=False)
 
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, original_domain['name'])
