@@ -2845,7 +2845,6 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         - role1 is then deleted
         - Check the tokens on Project A and B, and DomainA are revoked, but not
           the one for Project C
-
         """
         self.role_data_fixtures()
 
