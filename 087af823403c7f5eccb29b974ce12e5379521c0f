@@ -16,6 +16,24 @@
       "revId": "087af823403c7f5eccb29b974ce12e5379521c0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_83c10c83",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-03T16:27:13Z",
+      "side": 1,
+      "message": "So I think (looking at previous releases) it is the date the API was frozen...which is typically a little bit after m3 for a given release - so Sept 15th looks right to me.",
+      "parentUuid": "7a740942_88092b34",
+      "revId": "087af823403c7f5eccb29b974ce12e5379521c0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
