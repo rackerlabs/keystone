@@ -138,6 +138,7 @@ class DomainConfigs(dict):
         config.configure(conf=domain_config['cfg'])
         domain_config['cfg'](args=[], project='keystone',
                              default_config_files=file_list)
+        #import pdb; pdb.set_trace()
         domain_config['driver'] = self._load_driver(domain_config)
         _assert_no_more_than_one_sql_driver(domain_ref['id'],
                                             domain_config,
@@ -858,8 +859,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
-    @manager.response_truncated
     @domains_configured
+    @manager.response_truncated
     @exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
         driver = self._select_identity_driver(domain_scope)

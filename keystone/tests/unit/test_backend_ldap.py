@@ -3121,6 +3121,7 @@ class DomainSpecificLDAPandSQLIdentity(
         # Override the standard list users, since we have added an extra user
         # to the default domain, so the number of expected users is one more
         # than in the standard test.
+        import pdb; pdb.set_trace()
         users = self.identity_api.list_users(
             domain_scope=self._set_domain_scope(
                 CONF.identity.default_domain_id))
