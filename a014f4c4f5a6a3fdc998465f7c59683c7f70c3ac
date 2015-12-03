@@ -34,6 +34,24 @@
       "revId": "a014f4c4f5a6a3fdc998465f7c59683c7f70c3ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0be212d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T17:11:20Z",
+      "side": 1,
+      "message": "Thanks for the explanation Brad!",
+      "parentUuid": "7a740942_f7c0d2e2",
+      "revId": "a014f4c4f5a6a3fdc998465f7c59683c7f70c3ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
