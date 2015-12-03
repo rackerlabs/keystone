@@ -181,7 +181,9 @@ class Endpoint(controller.V2Controller):
                                              initiator)
 
         legacy_endpoint_ref['id'] = legacy_endpoint_id
-        return {'endpoint': legacy_endpoint_ref}
+        return wsgi.render_response(
+            {'endpoint': legacy_endpoint_ref},
+            status=(201, 'Created'))
 
     @controller.v2_deprecated
     def delete_endpoint(self, context, endpoint_id):
@@ -353,7 +355,9 @@ class EndpointV3(controller.V3Controller):
         ref = self._validate_endpoint_region(ref, context)
         initiator = notifications._get_request_audit_info(context)
         ref = self.catalog_api.create_endpoint(ref['id'], ref, initiator)
-        return EndpointV3.wrap_member(context, ref)
+        return wsgi.render_response(
+            EndpointV3.wrap_member(context, ref),
+            status=(201, 'Created'))
 
     @controller.filterprotected('interface', 'service_id', 'region_id')
     def list_endpoints(self, context, filters):
