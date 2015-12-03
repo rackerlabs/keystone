@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_9fa07c92",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-03T18:21:39Z",
+      "side": 0,
+      "message": "removing this results in keystone-8.0.1.dev305-py2-none-any.whl on master... even though master isn\u0027t version 8.0, it\u0027s version 9.0.",
+      "revId": "5fb8db8a5d89447d2dab5bdee76a978e3f52aea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
