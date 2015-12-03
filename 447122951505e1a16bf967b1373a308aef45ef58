@@ -16,6 +16,24 @@
       "revId": "447122951505e1a16bf967b1373a308aef45ef58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_76e4d23a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-03T20:56:29Z",
+      "side": 1,
+      "message": "This won\u0027t work as the decorators are executed from bottom up. So the domain_configure load won\u0027t happen. The real solution is to save the configure passed into driver loading and use that instead of the global CONF.",
+      "parentUuid": "7a740942_f080ca48",
+      "revId": "447122951505e1a16bf967b1373a308aef45ef58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
