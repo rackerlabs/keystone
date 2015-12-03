@@ -14,6 +14,7 @@
 
 import datetime
 
+import mock
 from oslo_config import cfg
 from oslo_utils import timeutils
 
@@ -336,8 +337,13 @@ SAMPLE_V3_TOKEN = {
         },
         "OS-TRUST:trust": {
             "id": "abc123",
-            "trustee_user_id": "123456",
-            "trustor_user_id": "333333",
+            "id": "018b83c06d4d420082cc8f82aabaa281",
+            "trustee_user": {
+                "id": "123456"
+            },
+            "trustor_user": {
+                "id": "333333"
+            },
             "impersonation": False
         }
     }
@@ -666,6 +672,20 @@ def create_v2_token():
                     "id": "01257",
                     "name": "service"
                 }
+            },
+            "user": {
+                "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+                "name": "nova",
+                "roles": [
+                    {
+                        "name": "_member_"
+                    },
+                    {
+                        "name": "admin"
+                    }
+                ],
+                "roles_links": [],
+                "username": "nova"
             }
         }
     }
@@ -681,6 +701,20 @@ SAMPLE_V2_TOKEN_EXPIRED = {
                 "id": "01257",
                 "name": "service"
             }
+        },
+        "user": {
+            "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+            "name": "nova",
+            "roles": [
+                {
+                    "name": "_member_"
+                },
+                {
+                    "name": "admin"
+                }
+            ],
+            "roles_links": [],
+            "username": "nova"
         }
     }
 }
@@ -692,6 +726,14 @@ def create_v3_token():
             'methods': [],
             "expires_at": utils.isotime(timeutils.utcnow() + FUTURE_DELTA),
             "issued_at": "2013-05-21T00:02:43.941473Z",
+            "user": {
+                "domain": {
+                    "id": "41d89f277c834cb8b1bf416d418bd9f6",
+                    "name": "domain"
+                },
+                "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+                "name": "nova"
+            },
         }
     }
 
@@ -767,9 +809,15 @@ class TestTokenProvider(unit.TestCase):
                           token.provider.Manager)
 
     def test_provider_token_expiration_validation(self):
+        # Check for disabled project
+        resource_api = self.token_api.token_provider_api.resource_api
+        resource_api.assert_domain_enabled = mock.Mock(side_effect=None)
+        resource_api.assert_project_enabled = mock.Mock(side_effect=None)
+
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._is_valid_token,
                           SAMPLE_V2_TOKEN_EXPIRED)
+        SAMPLE_V3_TOKEN_EXPIRED['token']['user'] = {}
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._is_valid_token,
                           SAMPLE_V3_TOKEN_EXPIRED)
@@ -780,6 +828,58 @@ class TestTokenProvider(unit.TestCase):
             self.token_provider_api._is_valid_token(create_v2_token()))
         self.assertIsNone(
             self.token_provider_api._is_valid_token(create_v3_token()))
+
+    def test_provider_v2_token_enabled_validation(self):
+        # Mock 'resource_api' assertion methods
+        resource_api = self.token_api.token_provider_api.resource_api
+        resource_api.assert_domain_enabled = mock.Mock(side_effect=None)
+        resource_api.assert_project_enabled = mock.Mock(
+            side_effect=(AssertionError(), None))
+
+        # Check for disabled tenant
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V2_TOKEN)
+
+        self.assertIsNone(
+            self.token_provider_api._check_domain_and_project_enabled(
+                SAMPLE_V2_TOKEN))
+
+    def test_provider_v3_token_enabled_validation(self):
+        # Mock 'identity_api' get_user
+        identity_api = self.token_api.token_provider_api.identity_api
+        identity_api.get_user = mock.Mock(return_value={"domain_id": "123"})
+
+        # Check for disabled project
+        resource_api = self.token_api.token_provider_api.resource_api
+        resource_api.assert_domain_enabled = mock.Mock(side_effect=(None,
+                                                                    None))
+        resource_api.assert_project_enabled = mock.Mock(
+            side_effect=(AssertionError()))
+
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)
+
+        # Check for disabled domain
+        resource_api.assert_domain_enabled = mock.Mock(
+            side_effect=(AssertionError()))
+        resource_api.assert_project_enabled = mock.Mock(side_effect=None)
+
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)
+
+        # Check for enabled project and domain
+        resource_api.assert_domain_enabled = mock.Mock(side_effect=None)
+        resource_api.assert_project_enabled = mock.Mock(side_effect=None)
+
+        self.assertIsNone(
+            self.token_provider_api._check_domain_and_project_enabled(
+                SAMPLE_V3_TOKEN))
 
 
 # NOTE(ayoung): renamed to avoid automatic test detection
