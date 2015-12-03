@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_5a31c2eb",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-03T18:34:37Z",
+      "side": 0,
+      "message": "And this is all it does today.\n\nhttps://github.com/openstack/keystone/blob/5070039/keystone/identity/core.py#L804",
+      "revId": "8dd27d3368ce0aa396386010f6aec5ed6304d687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_1a79fa93",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-03T18:34:37Z",
+      "side": 0,
+      "message": "Bug is now fixed: https://bugs.launchpad.net/keystone/+bug/1347318",
+      "revId": "8dd27d3368ce0aa396386010f6aec5ed6304d687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_da7292ad",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-03T18:34:37Z",
+      "side": 0,
+      "message": "We aren\u0027t accessing roles by metadata here.",
+      "revId": "8dd27d3368ce0aa396386010f6aec5ed6304d687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
