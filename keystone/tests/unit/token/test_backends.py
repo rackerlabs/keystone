@@ -16,6 +16,7 @@ import hashlib
 import uuid
 
 from keystoneclient.common import cms
+import mock
 from oslo_utils import timeutils
 import six
 from six.moves import range
@@ -465,6 +466,13 @@ class TokenCacheInvalidation(object):
             domain_id=CONF.identity.default_domain_id)
         self.tenant = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
+        self.domain = unit.new_domain_ref(id=CONF.identity.default_domain_id)
+
+        # Mock domain and project for enabled check
+        self.token_api.token_provider_api.resource_api.get_project = mock.Mock(
+            return_value=self.tenant)
+        self.token_api.token_provider_api.resource_api.get_domain = mock.Mock(
+            return_value=self.domain)
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
