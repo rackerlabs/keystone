@@ -14,6 +14,7 @@
 
 import datetime
 
+import mock
 from oslo_config import cfg
 from oslo_utils import timeutils
 
@@ -666,6 +667,20 @@ def create_v2_token():
                     "id": "01257",
                     "name": "service"
                 }
+            },
+            "user": {
+                "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+                "name": "nova",
+                "roles": [
+                    {
+                        "name": "_member_"
+                    },
+                    {
+                        "name": "admin"
+                    }
+                ],
+                "roles_links": [],
+                "username": "nova"
             }
         }
     }
@@ -681,6 +696,20 @@ SAMPLE_V2_TOKEN_EXPIRED = {
                 "id": "01257",
                 "name": "service"
             }
+        },
+        "user": {
+            "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+            "name": "nova",
+            "roles": [
+                {
+                    "name": "_member_"
+                },
+                {
+                    "name": "admin"
+                }
+            ],
+            "roles_links": [],
+            "username": "nova"
         }
     }
 }
@@ -692,6 +721,14 @@ def create_v3_token():
             'methods': [],
             "expires_at": utils.isotime(timeutils.utcnow() + FUTURE_DELTA),
             "issued_at": "2013-05-21T00:02:43.941473Z",
+            "user": {
+                "domain": {
+                    "id": "41d89f277c834cb8b1bf416d418bd9f6",
+                    "name": "domain"
+                },
+                "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+                "name": "nova"
+            },
         }
     }
 
@@ -767,6 +804,16 @@ class TestTokenProvider(unit.TestCase):
                           token.provider.Manager)
 
     def test_provider_token_expiration_validation(self):
+        # Mock domain and project for enabled check
+        v2_token = create_v2_token()
+        tenant = v2_token['access']['token']['tenant']
+        tenant['domain_id'] = 'default'
+        self.token_api.token_provider_api.resource_api.get_project = mock.Mock(
+            return_value=tenant)
+        domain = {'id': 'default', 'name': 'Default', 'enabled': True}
+        self.token_api.token_provider_api.resource_api.get_domain = mock.Mock(
+            return_value=domain)
+
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._is_valid_token,
                           SAMPLE_V2_TOKEN_EXPIRED)
@@ -777,9 +824,69 @@ class TestTokenProvider(unit.TestCase):
                           self.token_provider_api._is_valid_token,
                           SAMPLE_MALFORMED_TOKEN)
         self.assertIsNone(
-            self.token_provider_api._is_valid_token(create_v2_token()))
+            self.token_provider_api._is_valid_token(v2_token))
         self.assertIsNone(
             self.token_provider_api._is_valid_token(create_v3_token()))
+
+    def test_provider_v2_token_enabled_validation(self):
+        # mock domain and project for enabled check
+        tenant = SAMPLE_V2_TOKEN['access']['token']['tenant']
+        tenant['domain_id'] = 'default'
+        tenant['enabled'] = False
+        self.token_api.token_provider_api.resource_api.get_project = mock.Mock(
+            return_value=tenant)
+        domain = {'id': 'default', 'name': 'default', 'enabled': True}
+        self.token_api.token_provider_api.resource_api.get_domain = mock.Mock(
+            return_value=domain)
+
+        # Check for disabled tenant
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V2_TOKEN)
+
+        # Check for enabled tenants
+        tenant['enabled'] = True
+
+        self.assertIsNone(
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V2_TOKEN)
+
+    def test_provider_v3_token_enabled_validation(self):
+        # mock domain and project for enabled check
+        project = SAMPLE_V3_TOKEN['token']['project']
+        project['domain_id'] = 'default'
+        project['enabled'] = False
+
+        self.token_api.token_provider_api.resource_api.get_project = mock.Mock(
+            return_value=project)
+
+        domain = {'id': 'default', 'name': 'default', 'enabled': True}
+        self.token_api.token_provider_api.resource_api.get_domain = mock.Mock(
+            return_value=domain)
+
+        # Check for disabled project
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)
+
+        # Check for disabled domain
+        project['enabled'] = True
+        domain['enabled'] = False
+
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)
+
+        # Check for enabled project and domain
+        project['enabled'] = True
+        domain['enabled'] = True
+
+        self.assertIsNone(
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)
 
 
 # NOTE(ayoung): renamed to avoid automatic test detection
