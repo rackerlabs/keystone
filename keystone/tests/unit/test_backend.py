@@ -5202,6 +5202,16 @@ class TokenCacheInvalidation(object):
     def _create_test_data(self):
         self.user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
         self.tenant = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        self.domain = unit.new_domain_ref(id=DEFAULT_DOMAIN_ID)
+
+        # load_fixtures expects 'tenants' attribute on users
+        self.user['tenants'] = []
+
+        # Load test data
+        default_fixtures.USERS.append(self.user)
+        default_fixtures.TENANTS.append(self.tenant)
+        default_fixtures.DOMAINS.append(self.domain)
+        self.load_fixtures(default_fixtures)
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
