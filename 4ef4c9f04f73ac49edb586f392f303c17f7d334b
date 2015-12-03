@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_6d530b18",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-03T01:25:48Z",
+      "side": 1,
+      "message": "drop the \"1\" since it seems pointless",
+      "revId": "4ef4c9f04f73ac49edb586f392f303c17f7d334b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_cd42373e",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-03T01:25:48Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "4ef4c9f04f73ac49edb586f392f303c17f7d334b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
