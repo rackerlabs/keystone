@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_93e5330a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-03T00:08:57Z",
+      "side": 1,
+      "message": "Lets try now to break potential backward compatibility. How about this?\n\n\"cloud_admin\": \"(rule:admin_required and domain_id:admin_domain_id) or is_admin_project:True\",",
+      "revId": "2e2d5c2fab9db6c4e633f4a71a01c5404a77f1f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
