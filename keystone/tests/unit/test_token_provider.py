@@ -667,6 +667,20 @@ def create_v2_token():
                     "id": "01257",
                     "name": "service"
                 }
+            },
+            "user": {
+                "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+                "name": "nova",
+                "roles": [
+                    {
+                        "name": "_member_"
+                    },
+                    {
+                        "name": "admin"
+                    }
+                ],
+                "roles_links": [],
+                "username": "nova"
             }
         }
     }
@@ -682,6 +696,20 @@ SAMPLE_V2_TOKEN_EXPIRED = {
                 "id": "01257",
                 "name": "service"
             }
+        },
+        "user": {
+            "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+            "name": "nova",
+            "roles": [
+                {
+                    "name": "_member_"
+                },
+                {
+                    "name": "admin"
+                }
+            ],
+            "roles_links": [],
+            "username": "nova"
         }
     }
 }
@@ -693,6 +721,14 @@ def create_v3_token():
             'methods': [],
             "expires_at": utils.isotime(timeutils.utcnow() + FUTURE_DELTA),
             "issued_at": "2013-05-21T00:02:43.941473Z",
+            "user": {
+                "domain": {
+                    "id": "41d89f277c834cb8b1bf416d418bd9f6",
+                    "name": "domain"
+                },
+                "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
+                "name": "nova"
+            },
         }
     }
 
@@ -725,6 +761,29 @@ class TestTokenProvider(unit.TestCase):
             )
         )
         self.load_backends()
+        self._load_test_data()
+
+    # FIX_ME(jorge_munoz) Retrieve data from SAMPLE tokens
+    def _load_test_data(self):
+        # Create domains of SAMPLE tokens
+        domain = unit.new_domain_ref(id='default')
+        self.resource_api.create_domain('default', domain)
+        domain = unit.new_domain_ref(id='41d89f277c834cb8b1bf416d418bd9f6')
+        self.resource_api.create_domain('41d89f277c834cb8b1bf416d418bd9f6',
+                                        domain)
+        # Create projects of SAMPLE tokens
+        project = unit.new_project_ref(id='01257', domain_id='default')
+        self.resource_api.create_project('01257', project)
+
+        # Create users of SAMPLE tokens
+        user = unit.new_user_ref(domain_id='default')
+        user_ref = self.identity_api.create_user(user)
+
+        # Set valid id for trustee user
+        v3_token_trust = SAMPLE_V3_TOKEN['token']['OS-TRUST:trust']
+        v3_token_trust['trustee_user_id'] = user_ref['id']
+        v2_token_trust = SAMPLE_V2_TOKEN['access']['trust']
+        v2_token_trust['trustee_user_id'] = user_ref['id']
 
     def test_get_token_version(self):
         self.assertEqual(
@@ -770,6 +829,7 @@ class TestTokenProvider(unit.TestCase):
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._is_valid_token,
                           SAMPLE_V2_TOKEN_EXPIRED)
+        SAMPLE_V3_TOKEN_EXPIRED['token']['user'] = {}
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._is_valid_token,
                           SAMPLE_V3_TOKEN_EXPIRED)
@@ -786,3 +846,36 @@ class TestTokenProvider(unit.TestCase):
             exception.TokenNotFound,
             self.token_provider_api.validate_token,
             None)
+
+    def test_provider_v2_token_enabled_validation(self):
+        # Check with enabled project
+        self.assertIsNone(
+            self.token_provider_api._check_domain_and_project_enabled(
+                SAMPLE_V2_TOKEN))
+
+        # Disable tenant
+        self.resource_api.update_project('01257', {"enabled": False})
+
+        # Check for disabled tenant
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V2_TOKEN)
+
+    def test_provider_v3_token_disabled_project(self):
+        # Disable project
+        self.resource_api.update_project('01257', {"enabled": False})
+
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)
+
+    def test_provider_v3_token_disabled_domain(self):
+        # Disable domain
+        self.resource_api.update_domain('default', {"enabled": False})
+
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.token_provider_api._check_domain_and_project_enabled,
+            SAMPLE_V3_TOKEN)

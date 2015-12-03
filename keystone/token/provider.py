@@ -51,7 +51,8 @@ VERSIONS = token_model.VERSIONS
 
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('assignment_api', 'identity_api', 'resource_api',
+                     'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -184,6 +185,7 @@ class Manager(manager.Manager):
     def _is_valid_token(self, token, window_seconds=0):
         """Verify the token is valid format and has not expired."""
         current_time = timeutils.normalize_time(timeutils.utcnow())
+        msg = _('Failed to validate token')
 
         try:
             # Get the data we need from the correct location (V2 and V3 tokens
@@ -203,14 +205,42 @@ class Manager(manager.Manager):
         except Exception:
             LOG.exception('Unexpected error or malformed token '
                           'determining token expiry: %s', token)
-            raise exception.TokenNotFound(_('Failed to validate token'))
+            raise exception.TokenNotFound(msg)
 
-        if current_time < expiry:
-            self.check_revocation(token)
-            # Token has not expired and has not been revoked.
-            return None
-        else:
-            raise exception.TokenNotFound(_('Failed to validate token'))
+        if current_time >= expiry:
+            # The token is expired so it is considered invalid.
+            raise exception.TokenNotFound(msg)
+
+        # If the token is project-scoped check to make sure the project is
+        # enabled.
+        project_id = token_data.get('project', {}).get('id')
+        domain_id = token_data.get('domain', {}).get('id')
+        user_domain_id = token_data.get('user', {}).get('domain', {}).get('id')
+        if project_id:
+            try:
+                project_ref = self.resource_api.get_project(project_id)
+                if not project_ref['enabled']:
+                    # The project is disabled so the token is considered
+                    # invalid.
+                    raise exception.TokenNotFound(msg)
+            except exception.ProjectNotFound:
+                # The project wasn't found so the token considered invalid.
+                raise exception.TokenNotFound(msg)
+        if domain_id:
+            try:
+                self.resource_api.assert_domain_enabled(domain_id)
+            except AssertionError as e:
+                # If the domain is disabled, then the token is also considered
+                # invalid.
+                raise exception.TokenNotFound(_('Invalid token: %s') % e)
+        try:
+            self.resource_api.assert_domain_enabled(user_domain_id)
+        except AssertionError as e:
+            # If the domain is disabled, then the token is also considered
+            # invalid.
+            raise exception.TokenNotFound(_('Invalid token: %s') % e)
+
+        self.check_revocation(token)
 
     def issue_token(self, user_id, method_names, expires_at=None,
                     project_id=None, is_domain=False, domain_id=None,

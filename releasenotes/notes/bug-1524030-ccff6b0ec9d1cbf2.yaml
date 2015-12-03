@@ -4,7 +4,11 @@ fixes:
     [`bug 1524030 <https://bugs.launchpad.net/keystone/+bug/1524030>`_]
     During token validation we have reduced the number of revocation events
     returned, only returning a subset of events relevant to the token. Thus,
-    improving overall token validation performance.
+    improving overall token validation performance. The revocation API no
+    longer persists revocation events for disabled domains and projects.
+    Instead, the domain or project referenced in a token's scope is checked
+    during token validation to see if it is enabled. This reduces the number
+    of events in the revocation API backend.
 other:
   - >
     [`bug 1524030 <https://bugs.launchpad.net/keystone/+bug/1524030>`_]
