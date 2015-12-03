@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_74094031",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T15:36:43Z",
+      "side": 1,
+      "message": "Is it not necessary add some DocImpact for this subject?",
+      "revId": "a014f4c4f5a6a3fdc998465f7c59683c7f70c3ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
