@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_3a55d6c5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-03T18:38:57Z",
+      "side": 0,
+      "message": "because now we are able to disable a project with projects below not disabled, by using cascade.",
+      "parentUuid": "7a740942_69b63e3f",
+      "revId": "cdaa4b65ec5ad47954c8795bde6076bf93c1818a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_29527614",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-03T18:16:26Z",
       "side": 0,
       "message": "ditto",
+      "revId": "cdaa4b65ec5ad47954c8795bde6076bf93c1818a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ba0ea6e3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-03T18:38:57Z",
+      "side": 0,
+      "message": "we can disable regular projects via cascade. The comments aren\u0027t valid anymore",
+      "parentUuid": "7a740942_29527614",
       "revId": "cdaa4b65ec5ad47954c8795bde6076bf93c1818a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
