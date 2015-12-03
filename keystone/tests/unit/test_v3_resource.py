@@ -87,19 +87,17 @@ class ResourceTestCase(test_v3.RestfulTestCase,
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
         # Create a 2nd set of entities in a 2nd domain
-        self.domain2 = unit.new_domain_ref()
-        self.resource_api.create_domain(self.domain2['id'], self.domain2)
+        domain2 = unit.new_domain_ref()
+        self.resource_api.create_domain(domain2['id'], domain2)
 
-        self.project2 = self.new_project_ref(
-            domain_id=self.domain2['id'])
-        self.resource_api.create_project(self.project2['id'], self.project2)
+        project2 = self.new_project_ref(domain_id=domain2['id'])
+        self.resource_api.create_project(project2['id'], project2)
 
         user2 = unit.create_user(self.identity_api,
-                                 domain_id=self.domain2['id'],
-                                 project_id=self.project2['id'])
+                                 domain_id=domain2['id'],
+                                 project_id=project2['id'])
 
-        self.assignment_api.add_user_to_project(self.project2['id'],
-                                                user2['id'])
+        self.assignment_api.add_user_to_project(project2['id'], user2['id'])
 
         # First check a user in that domain can authenticate. The v2 user
         # cannot authenticate because they exist outside the default domain.
@@ -109,7 +107,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                     'userId': user2['id'],
                     'password': user2['password']
                 },
-                'tenantId': self.project2['id']
+                'tenantId': project2['id']
             }
         }
         self.admin_request(
@@ -119,15 +117,15 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         auth_data = self.build_authentication_request(
             user_id=user2['id'],
             password=user2['password'],
-            project_id=self.project2['id'])
+            project_id=project2['id'])
         self.v3_create_token(auth_data)
 
         # Now disable the domain
-        self.domain2['enabled'] = False
+        domain2['enabled'] = False
         r = self.patch('/domains/%(domain_id)s' % {
-            'domain_id': self.domain2['id']},
+            'domain_id': domain2['id']},
             body={'domain': {'enabled': False}})
-        self.assertValidDomainResponse(r, self.domain2)
+        self.assertValidDomainResponse(r, domain2)
 
         # Make sure the user can no longer authenticate, via
         # either API
@@ -137,7 +135,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                     'userId': user2['id'],
                     'password': user2['password']
                 },
-                'tenantId': self.project2['id']
+                'tenantId': project2['id']
             }
         }
         self.admin_request(
@@ -148,15 +146,15 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         auth_data = self.build_authentication_request(
             user_id=user2['id'],
             password=user2['password'],
-            project_id=self.project2['id'])
+            project_id=project2['id'])
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
         auth_data = self.build_authentication_request(
             username=user2['name'],
-            user_domain_id=self.domain2['id'],
+            user_domain_id=domain2['id'],
             password=user2['password'],
-            project_id=self.project2['id'])
+            project_id=project2['id'])
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
@@ -196,43 +194,38 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.credential_api.create_credential(credential['id'], credential)
 
         # Create a 2nd set of entities in a 2nd domain
-        self.domain2 = unit.new_domain_ref()
-        self.resource_api.create_domain(self.domain2['id'], self.domain2)
+        domain2 = unit.new_domain_ref()
+        self.resource_api.create_domain(domain2['id'], domain2)
 
-        self.project2 = self.new_project_ref(
-            domain_id=self.domain2['id'])
-        self.resource_api.create_project(self.project2['id'], self.project2)
+        project2 = self.new_project_ref(domain_id=domain2['id'])
+        self.resource_api.create_project(project2['id'], project2)
 
-        user2 = unit.new_user_ref(domain_id=self.domain2['id'],
-                                  project_id=self.project2['id'])
+        user2 = unit.new_user_ref(domain_id=domain2['id'],
+                                  project_id=project2['id'])
         user2 = self.identity_api.create_user(user2)
 
-        group2 = unit.new_group_ref(domain_id=self.domain2['id'])
+        group2 = unit.new_group_ref(domain_id=domain2['id'])
         group2 = self.identity_api.create_group(group2)
 
-        self.credential2 = self.new_credential_ref(
-            user_id=user2['id'],
-            project_id=self.project2['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        credential2 = self.new_credential_ref(user_id=user2['id'],
+                                              project_id=project2['id'])
+        self.credential_api.create_credential(credential2['id'], credential2)
 
         # Now disable the new domain and delete it
-        self.domain2['enabled'] = False
+        domain2['enabled'] = False
         r = self.patch('/domains/%(domain_id)s' % {
-            'domain_id': self.domain2['id']},
+            'domain_id': domain2['id']},
             body={'domain': {'enabled': False}})
-        self.assertValidDomainResponse(r, self.domain2)
-        self.delete('/domains/%(domain_id)s' % {
-            'domain_id': self.domain2['id']})
+        self.assertValidDomainResponse(r, domain2)
+        self.delete('/domains/%(domain_id)s' % {'domain_id': domain2['id']})
 
         # Check all the domain2 relevant entities are gone
         self.assertRaises(exception.DomainNotFound,
                           self.resource_api.get_domain,
-                          self.domain2['id'])
+                          domain2['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project,
-                          self.project2['id'])
+                          project2['id'])
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           group2['id'])
@@ -241,7 +234,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                           user2['id'])
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
-                          self.credential2['id'])
+                          credential2['id'])
 
         # ...and that all self.domain entities are still here
         r = self.resource_api.get_domain(self.domain['id'])
@@ -323,11 +316,11 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         becomes invalid once that domain is disabled.
 
         """
-        self.domain = unit.new_domain_ref()
-        self.resource_api.create_domain(self.domain['id'], self.domain)
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
 
         user2 = unit.create_user(self.identity_api,
-                                 domain_id=self.domain['id'])
+                                 domain_id=domain['id'])
 
         # build a request body
         auth_body = self.build_authentication_request(
@@ -345,8 +338,8 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                   expected_status=http_client.OK)
 
         # now disable the domain
-        self.domain['enabled'] = False
-        url = "/domains/%(domain_id)s" % {'domain_id': self.domain['id']}
+        domain['enabled'] = False
+        url = "/domains/%(domain_id)s" % {'domain_id': domain['id']}
         self.patch(url,
                    body={'domain': {'enabled': False}})
 
@@ -1040,15 +1033,12 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)
         # Create a second credential with a different project
-        self.project2 = self.new_project_ref(
-            domain_id=self.domain['id'])
-        self.resource_api.create_project(self.project2['id'], self.project2)
-        self.credential2 = self.new_credential_ref(
+        project2 = self.new_project_ref(domain_id=self.domain['id'])
+        self.resource_api.create_project(project2['id'], project2)
+        credential2 = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project2['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+            project_id=project2['id'])
+        self.credential_api.create_credential(credential2['id'], credential2)
 
         # Now delete the project
         self.delete(
@@ -1061,8 +1051,8 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                           self.credential_api.get_credential,
                           credential_id=credential['id'])
         # But the credential for project2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
-        self.assertDictEqual(self.credential2, r)
+        r = self.credential_api.get_credential(credential2['id'])
+        self.assertDictEqual(credential2, r)
 
     def test_delete_not_leaf_project(self):
         """Call ``DELETE /projects/{project_id}``."""
