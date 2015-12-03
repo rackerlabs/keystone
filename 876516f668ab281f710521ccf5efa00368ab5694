@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_547d03e6",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T03:07:13Z",
+      "side": 1,
+      "message": "Lance - I don\u0027t think so, the endpoint here is a dict and we should compare the \u0027key\u0027 in the endpoint with the one defined in filter.\n\n -\u003e if endpoint[key] !\u003d value:\n (Pdb) p endpoint\n {\u0027region_id\u0027: u\u002766eac4debc484612bdf29d674b7e9be8\u0027, \u0027url\u0027:    u\u0027https://ebcef791e1af4bb8a3512adbfedf49cb.com\u0027, u\u0027description\u0027: u\u002711fe57179eeb4b23bb7dcb046b0e7726\u0027, \u0027enabled\u0027: True, \u0027legacy_endpoint_id\u0027: None, \u0027interface\u0027: u\u0027public\u0027, \u0027service_id\u0027: u\u00275f115484e2484e56ad64c354871f82af\u0027, \u0027id\u0027: u\u0027559a671d117e4765bfd1b9b501a4a96b\u0027, u\u0027name\u0027: u\u002789fdcb59b7e443eabc4513490b332fce\u0027}\n (Pdb) p value\n u\u002751ae5b561fa5475b816adf255d0239e4\u0027\n (Pdb) p key\n u\u0027service_id\u0027\n\n (Pdb) endpoint[key]\n u\u00275f115484e2484e56ad64c354871f82af\u0027\n (Pdb) endpoint[key] !\u003d value\n True\n\n\nBasically, these code was copied from here: https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L391, \n\nCopy them here and not removed them from controller layer since they are also referenced by other API.\n\nHope it\u0027s clear.",
+      "parentUuid": "9a8ffd7b_f8b440d5",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_2492a8f7",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-30T15:32:19Z",
       "side": 1,
       "message": "nit: project identifier",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_720c9294",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T03:07:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_2492a8f7",
       "revId": "876516f668ab281f710521ccf5efa00368ab5694",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_326e0a30",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T03:07:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_c4b95c7b",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_551a5870",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T03:07:13Z",
+      "side": 1,
+      "message": "should check the existence of endpoints?\n\n  for ref in refs:\n      try:\n          endpoint \u003d self.get_endpoint(ref[\u0027endpoint_id\u0027])\n          ref[\u0027endpoint_id\u0027] \u003d endpoint\n      except exception.EndpointNotFound:\n          self.catalog_api.remove_endpoint_from_project(entry[\u0027endpoint_id\u0027], project_id)",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_db7056df",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 1
@@ -70,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_362230a4",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T03:07:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_db7056df",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_18990420",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 1
@@ -81,6 +170,24 @@
       "writtenOn": "2015-11-30T15:32:19Z",
       "side": 1,
       "message": "Since we aren\u0027t actually calling self.get_catalog anymore, I don\u0027t think we need the try/except.\n\n    for endpoint_id, endpoint in dict_of_endpoint_refs.items():\n        if not endpoint[\u0027enabled\u0027]:\n            # Skip disabled endpoints\n            continue\n        ...\n\n\n++ to not going back to the DB unless we have to!",
+      "revId": "876516f668ab281f710521ccf5efa00368ab5694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_96319cef",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T03:07:13Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "9a8ffd7b_18990420",
       "revId": "876516f668ab281f710521ccf5efa00368ab5694",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
