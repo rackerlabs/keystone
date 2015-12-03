@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_1d336963",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-03T15:05:58Z",
+      "side": 1,
+      "message": "I would also add the commit id here too.",
+      "revId": "e86f85b681b84084f10d12ad60f00a703ac9b9f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
