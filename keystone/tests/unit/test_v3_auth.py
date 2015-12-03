@@ -1639,29 +1639,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.get('/auth/tokens/OS-PKI/revoked',
                  expected_status=http_client.GONE)
 
-    def test_list_delete_project_shows_in_event_list(self):
-        self.role_data_fixtures()
-        events = self.get('/OS-REVOKE/events').json_body['events']
-        self.assertEqual([], events)
-        self.delete(
-            '/projects/%(project_id)s' % {'project_id': self.projectA['id']})
-        events_response = self.get('/OS-REVOKE/events').json_body
-
-        self.assertValidDeletedProjectResponse(events_response,
-                                               self.projectA['id'])
-
-    def test_disable_domain_shows_in_event_list(self):
-        events = self.get('/OS-REVOKE/events').json_body['events']
-        self.assertEqual([], events)
-        disable_body = {'domain': {'enabled': False}}
-        self.patch(
-            '/domains/%(project_id)s' % {'project_id': self.domainA['id']},
-            body=disable_body)
-
-        events = self.get('/OS-REVOKE/events').json_body
-
-        self.assertDomainInList(events, self.domainA['id'])
-
     def assertEventDataInList(self, events, **kwargs):
         found = False
         for e in events:
