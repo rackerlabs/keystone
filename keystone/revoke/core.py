@@ -92,13 +92,11 @@ class Manager(manager.Manager):
 
     def _project_callback(self, service, resource_type, operation,
                           payload):
-        self.revoke(
-            model.RevokeEvent(project_id=payload['resource_info']))
+        pass
 
     def _domain_callback(self, service, resource_type, operation,
                          payload):
-        self.revoke(
-            model.RevokeEvent(domain_id=payload['resource_info']))
+        pass
 
     def _trust_callback(self, service, resource_type, operation,
                         payload):
