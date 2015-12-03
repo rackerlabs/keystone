@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_ffb980ed",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T18:19:16Z",
+      "side": 1,
+      "message": "Is that the right way to handle with new API calls? I think that are out of the pattern. I don\u0027t know if this is wrong, but it\u0027s odd don\u0027t see other project API routers here.\n\nI suggest ask for some core opinion on it.",
+      "revId": "12c2deae957987483793c2991f5976b3fc2447bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
