@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "7a740942_8517c6ec",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-03T20:01:54Z",
+      "side": 0,
+      "message": "We need context for the audit event.",
+      "revId": "8dd27d3368ce0aa396386010f6aec5ed6304d687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_1a79fa93",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 1
