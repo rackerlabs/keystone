@@ -50,6 +50,23 @@
       "revId": "8dd27d3368ce0aa396386010f6aec5ed6304d687",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_bc2223b8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T19:13:35Z",
+      "side": 0,
+      "message": "We keep storing the roles in metadata, I think that this FIXME still valid. (Or we don\u0027t need add this roles on metadata and we can remove this FIXME)",
+      "revId": "8dd27d3368ce0aa396386010f6aec5ed6304d687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
