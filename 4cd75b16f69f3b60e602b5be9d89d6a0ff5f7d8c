@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_3faaa81a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T18:32:16Z",
+      "side": 1,
+      "message": "please change this for a NOTE(name)",
+      "revId": "4cd75b16f69f3b60e602b5be9d89d6a0ff5f7d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_1f680cf5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T18:32:16Z",
+      "side": 1,
+      "message": "change FK for foreign key",
+      "revId": "4cd75b16f69f3b60e602b5be9d89d6a0ff5f7d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
