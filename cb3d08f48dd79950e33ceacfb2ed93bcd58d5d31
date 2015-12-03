@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_8c4f3191",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T14:06:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_8e575c59",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_ceefa485",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-02T18:16:53Z",
       "side": 1,
       "message": "You should also mention here that the auth and EC2 routes aren\u0027t going to be removed",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_2f6cf7ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T14:06:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_ceefa485",
       "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_4f6ffbc3",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T14:06:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_0ec28c34",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_2ebf50ab",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-12-02T18:14:53Z",
       "side": 1,
       "message": "ditto",
+      "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_cf89ab70",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-03T14:06:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_2ebf50ab",
       "revId": "cb3d08f48dd79950e33ceacfb2ed93bcd58d5d31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
