@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_ee679f23",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-12-03T15:31:32Z",
+      "side": 1,
+      "message": "whoops.. I guess I was trying to speed up the process?  :-)",
+      "parentUuid": "9a8ffd7b_bd5926ff",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_dd12eab3",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_d42b5432",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-12-03T15:31:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_dd12eab3",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_7d241e0c",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "writtenOn": "2015-12-02T23:30:40Z",
       "side": 1,
       "message": "you can add another argument:\n\n  in_favor\u003d\u0027sql role backend\u0027",
+      "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_9425cc5d",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-12-03T15:31:32Z",
+      "side": 1,
+      "message": "Done!  I also noticed that lance bragstad added a release notes file for mitaka deprecations in his patch. Can i wait for his patch to merge and then update his release notes file as a separate patch?",
+      "parentUuid": "9a8ffd7b_7d241e0c",
       "revId": "d80ba5e99596c1bc3ccb30dd1a2f2390dc319f9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
