@@ -359,7 +359,7 @@ class Manager(manager.Manager):
         return self.role_api.list_roles_from_ids(grant_ids)
 
     @notifications.role_assignment('deleted')
-    def _emit_revoke_user_grant(self, role_id, user_id, domain_id, project_id,
+    def _emit_revoke_user_grant(self, role_id, user_id, project_id,
                                 inherited_to_projects, context):
         self._emit_invalidate_grant_token_persistence(user_id, project_id)
 
@@ -369,11 +369,9 @@ class Manager(manager.Manager):
         if group_id is None:
             self.revoke_api.revoke_by_grant(user_id=user_id,
                                             role_id=role_id,
-                                            domain_id=domain_id,
                                             project_id=project_id)
-            self._emit_revoke_user_grant(
-                role_id, user_id, domain_id, project_id,
-                inherited_to_projects, context)
+            self._emit_revoke_user_grant(role_id, user_id, project_id,
+                                         inherited_to_projects, context)
         else:
             try:
                 # Group may contain a lot of users so revocation will be
@@ -392,7 +390,7 @@ class Manager(manager.Manager):
                     for user in self.identity_api.list_users_in_group(
                             group_id):
                         self._emit_revoke_user_grant(
-                            role_id, user['id'], domain_id, project_id,
+                            role_id, user['id'], project_id,
                             inherited_to_projects, context)
             except exception.GroupNotFound:
                 LOG.debug('Group %s not found, no tokens to invalidate.',
