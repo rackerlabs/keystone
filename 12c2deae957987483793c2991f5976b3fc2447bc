@@ -16,6 +16,24 @@
       "revId": "12c2deae957987483793c2991f5976b3fc2447bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_7add9e6f",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-03T18:37:45Z",
+      "side": 1,
+      "message": "this is the right way to add one single route. The call above (92-95) adds the CRUD basic routes for the project object. And when we need extra ones, we add them separately. Example: https://review.openstack.org/#/c/158752/",
+      "parentUuid": "7a740942_ffb980ed",
+      "revId": "12c2deae957987483793c2991f5976b3fc2447bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
