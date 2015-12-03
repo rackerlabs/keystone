@@ -120,7 +120,6 @@ class Manager(manager.Manager):
                                   payload):
         info = payload['resource_info']
         self.revoke_by_grant(role_id=info['role_id'], user_id=info['user_id'],
-                             domain_id=info.get('domain_id'),
                              project_id=info.get('project_id'))
 
     def _register_listeners(self):
@@ -188,12 +187,9 @@ class Manager(manager.Manager):
                                       domain_id=domain_id,
                                       project_id=project_id))
 
-    def revoke_by_grant(self, role_id, user_id=None,
-                        domain_id=None, project_id=None):
+    def revoke_by_grant(self, role_id, user_id=None, project_id=None):
         self.revoke(
-            model.RevokeEvent(user_id=user_id,
-                              role_id=role_id,
-                              domain_id=domain_id,
+            model.RevokeEvent(user_id=user_id, role_id=role_id,
                               project_id=project_id))
 
     def revoke_by_user_and_project(self, user_id, project_id):
