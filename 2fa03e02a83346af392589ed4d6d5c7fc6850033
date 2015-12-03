@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_67532418",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-03T04:46:01Z",
+      "side": 1,
+      "message": "prefer to mention the *instructions* or the reason clearly in the commit message, no one knows what was talked in the the mailing list if check the history by this commit message.\n\nalthough some clue could be found from the parent patch but it\u0027s in another repo.",
+      "revId": "2fa03e02a83346af392589ed4d6d5c7fc6850033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
