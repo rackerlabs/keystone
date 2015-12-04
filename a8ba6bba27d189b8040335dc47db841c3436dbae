@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_c9829d00",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-04T15:23:02Z",
+      "side": 1,
+      "message": "This should make sure the right role was deleted.",
+      "revId": "a8ba6bba27d189b8040335dc47db841c3436dbae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
