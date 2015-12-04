@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_c3e9061c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "remove this `raises` or better to check role\u0027s existence in IMPL. since role\u0027s existence is not checked anywhere.",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_83f3fe09",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1498,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "remove this too, or better to check role\u0027s existence in IMPL.",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a3f63af7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1507,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "ditto.",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c3d02656",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "move this up to the first section.\n\n from sqlalchemy import and_\n\n from keystone import assignment\n from keystone.common import sql\n from keystone import exception",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_e3d3e25d",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "check the existence of `prior_role_id` and `implied_role_id`, raise RoleNotFound if not exists.",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_43c5168c",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "add this option `include_extra_dict` is not necessary, afaik, there are other entities in keystone such as IdP don\u0027t has \u0027extra\u0027 field but all of them work without this change.",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_03bf0efc",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "where is \u0027include_extra_dict\u0027 used?",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c337c6ae",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "nit, add whitespace before here",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a344fa1a",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T23:44:24Z",
+      "side": 1,
+      "message": "this change should be in a separate review.",
+      "revId": "ae0ac2593e3f31305db9735094176c1dd18e7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
