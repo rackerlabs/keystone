@@ -671,9 +671,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         return token
 
-    def assertValidProjectTrustScopedTokenResponse(self, r, *args, **kwargs):
-        self.assertValidProjectScopedTokenResponse(r, *args, **kwargs)
-
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
