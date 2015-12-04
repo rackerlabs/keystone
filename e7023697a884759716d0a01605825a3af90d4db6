@@ -16,6 +16,23 @@
       "revId": "e7023697a884759716d0a01605825a3af90d4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_071bb773",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T12:48:02Z",
+      "side": 1,
+      "message": "I\u0027d suggest \"will have the key/pair ...\", as you did in the config option description.",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
