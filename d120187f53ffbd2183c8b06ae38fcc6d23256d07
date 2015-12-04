@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_212354bf",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T04:35:03Z",
+      "side": 0,
+      "message": "this testcase looks to me should be kept in AssignmentTestCase.",
+      "revId": "d120187f53ffbd2183c8b06ae38fcc6d23256d07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_4c09f72b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T04:35:03Z",
+      "side": 0,
+      "message": "this one too.",
+      "revId": "d120187f53ffbd2183c8b06ae38fcc6d23256d07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0c144f42",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T04:35:03Z",
+      "side": 0,
+      "message": "and this one.",
+      "revId": "d120187f53ffbd2183c8b06ae38fcc6d23256d07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

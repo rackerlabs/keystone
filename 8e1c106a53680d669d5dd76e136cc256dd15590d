@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2c490b32",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T04:35:03Z",
+      "side": 1,
+      "message": "now that they has been splited, pls don\u0027t inherit from `test_v3.AssignmentTestMixin`\n - if there are some testcases still need this, then they should be belong to `test_v3_assignment.py` rather than here. \n - if they do belong to this test module, pls provide a private a method to do that.",
+      "revId": "8e1c106a53680d669d5dd76e136cc256dd15590d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
