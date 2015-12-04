@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_34028a0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-04T21:14:17Z",
+      "side": 1,
+      "message": "nit: suggest keeping this under 70 characters. \n\nSome good guidelines on commit messages can be found here - https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "5c5d7d34072f415f16bb31e4582228867a2e71f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_f79e44b7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-04T21:14:17Z",
+      "side": 1,
+      "message": "do we need to remove project_id here, too?",
+      "revId": "5c5d7d34072f415f16bb31e4582228867a2e71f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_576958bd",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-04T21:14:17Z",
+      "side": 1,
+      "message": "I believe the .get() method will default to None, so this could probably be simplified:\n\n    if token_data.get(\u0027project\u0027):",
+      "revId": "5c5d7d34072f415f16bb31e4582228867a2e71f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_776494e4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-04T21:14:17Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "5c5d7d34072f415f16bb31e4582228867a2e71f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
