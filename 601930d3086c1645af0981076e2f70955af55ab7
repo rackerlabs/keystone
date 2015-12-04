@@ -121,6 +121,24 @@
       "revId": "601930d3086c1645af0981076e2f70955af55ab7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_544076a5",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T21:01:40Z",
+      "side": 1,
+      "message": "Lance, maybe I am overthinking about it, let\u0027s see the special case as `creating region` which could be done with empty body and actually empty body doesn\u0027t bear any info.\n\nIf keystone allows to create a region with empty body why not allows to create the region with None body, it\u0027s basically the same, right? or anything I missed somewhere?",
+      "parentUuid": "7a740942_9219117c",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
