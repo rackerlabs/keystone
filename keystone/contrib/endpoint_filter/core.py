@@ -40,7 +40,6 @@ extension_data = {
     'links': [
         {
             'rel': 'describedby',
-            # TODO(ayoung): needs a description
             'type': 'text/html',
             'href': 'https://github.com/openstack/identity-api/blob/master'
                     '/openstack-identity-api/v3/src/markdown/'
