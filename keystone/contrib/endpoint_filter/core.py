@@ -41,9 +41,8 @@ extension_data = {
         {
             'rel': 'describedby',
             'type': 'text/html',
-            'href': 'https://github.com/openstack/identity-api/blob/master'
-                    '/openstack-identity-api/v3/src/markdown/'
-                    'identity-api-v3-os-ep-filter-ext.md',
+            'href': 'http://docs.openstack.org/developer/keystone/'
+                    'extensions.html#endpoint-filtering',
         }
     ]}
 extension.register_admin_extension(extension_data['alias'], extension_data)
