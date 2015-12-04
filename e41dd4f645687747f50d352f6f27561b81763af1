@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_af4abf81",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T12:22:52Z",
+      "side": 1,
+      "message": "You should add a test for filtering only by type, as suggested by Steve in the previous patchset",
+      "revId": "e41dd4f645687747f50d352f6f27561b81763af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
