@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_ef20c7f9",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T11:50:12Z",
+      "side": 1,
+      "message": "Brant\u0027s concern still applies here. You better not talking about race_condition in the method name, since it is not validating it.\n\nI believe just removing \"_race_condition\" from the end would be fine.",
+      "revId": "f157e3dc24d942246cf4ce95db475e8015aaf42d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
