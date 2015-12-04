@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_ba01836c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-04T22:08:30Z",
+      "side": 1,
+      "message": "Why is this not just \u0027for role_assignment in role_assignments\u0027 and then use role_assignment instead of role_assignments[location]?",
+      "revId": "a6d4d9d5384cb6d6f62c0ab5b7f1781bd1a4c9b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_5a409fa5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-04T22:08:30Z",
+      "side": 1,
+      "message": "This isn\u0027t needed since you define role_assignments in both cases below",
+      "revId": "a6d4d9d5384cb6d6f62c0ab5b7f1781bd1a4c9b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
