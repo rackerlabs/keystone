@@ -677,9 +677,29 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('domain', token)
-        self.assertIn('id', token['domain'])
-        self.assertIn('name', token['domain'])
+        schema = voluptuous.Schema({
+            voluptuous.Required('audit_ids'): list,
+            voluptuous.Optional('catalog'): list,
+            voluptuous.Optional('bind'): dict,
+            voluptuous.Required('expires_at'): unicode or str,
+            voluptuous.Required('issued_at'): unicode or str,
+            voluptuous.Required('methods'): list,
+            voluptuous.Required('domain'): {
+                voluptuous.Required('id'): unicode or str,
+                voluptuous.Required('name'): unicode or str
+            },
+            voluptuous.Required('roles'): list,
+            voluptuous.Required('user'): {
+                voluptuous.Required('domain'): {
+                    voluptuous.Required('id'): unicode or str,
+                    voluptuous.Required('name'): unicode or str
+                },
+                voluptuous.Required('id'): unicode or str,
+                voluptuous.Required('name'): unicode or str
+            }
+        })
+
+        schema(token)
 
         return token
 
