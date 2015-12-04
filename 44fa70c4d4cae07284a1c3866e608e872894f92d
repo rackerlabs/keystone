@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_5a93db5b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T12:10:02Z",
+      "side": 1,
+      "message": "A test for missing X-Auth-Token is also needed, according to the bug report title.",
+      "revId": "44fa70c4d4cae07284a1c3866e608e872894f92d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
