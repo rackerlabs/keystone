@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_8cc7c611",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-04T14:56:29Z",
+      "side": 1,
+      "message": "A comment here explaining the fact we now have an order dependency would be a good thing.",
+      "revId": "bac4d9d21afa0043f98d9243b2abe76a7c6e2ed0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
