@@ -46,9 +46,8 @@ EXTENSION_DATA = {
         {
             'rel': 'describedby',
             'type': 'text/html',
-            'href': ('https://github.com/openstack/identity-api/blob/master/'
-                     'openstack-identity-api/v3/src/markdown/'
-                     'identity-api-v3-os-revoke-ext.md'),
+            'href': ('http://docs.openstack.org/developer/keystone/'
+                     'extensions.html#revocation-events'),
         }
     ]}
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)

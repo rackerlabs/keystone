@@ -37,7 +37,8 @@ EXTENSION_DATA = {
     'links': [{
         'rel': 'describedby',
         'type': 'text/html',
-        'href': 'https://github.com/openstack/identity-api'
+        'href': 'http://docs.openstack.org/developer/keystone/'
+                'configure_federation.html',
     }]}
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
