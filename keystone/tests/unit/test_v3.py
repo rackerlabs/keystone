@@ -624,29 +624,55 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertValidProjectScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
+        scoped_format = {
+            voluptuous.Required('audit_ids'): list,
+            voluptuous.Optional('catalog'): list,
+            voluptuous.Optional('bind'): dict,
+            voluptuous.Required('expires_at'): unicode or str,
+            voluptuous.Required('issued_at'): unicode or str,
+            voluptuous.Required('methods'): list,
+            voluptuous.Required('project'): {
+                voluptuous.Required('domain'): {
+                    voluptuous.Required('id'): unicode or str,
+                    voluptuous.Required('name'): unicode or str
+                },
+                voluptuous.Required('id'): unicode or str,
+                voluptuous.Required('name'): unicode or str
+            },
+            voluptuous.Required('roles'): list,
+            voluptuous.Required('user'): {
+                voluptuous.Required('domain'): {
+                    voluptuous.Required('id'): unicode or str,
+                    voluptuous.Required('name'): unicode or str
+                },
+                voluptuous.Required('id'): unicode or str,
+                voluptuous.Required('name'): unicode or str
+            }
+        }
 
-        self.assertIn('project', token)
-        self.assertIn('id', token['project'])
-        self.assertIn('name', token['project'])
-        self.assertIn('domain', token['project'])
-        self.assertIn('id', token['project']['domain'])
-        self.assertIn('name', token['project']['domain'])
+        if token.get('OS-TRUST:trust'):
+            scoped_format[voluptuous.Required('OS-TRUST:trust')] = {
+                voluptuous.Required('id'): unicode or str,
+                voluptuous.Required('impersonation'): bool,
+                voluptuous.Required('trustor_user'): {
+                    voluptuous.Required('id'): unicode or str
+                },
+                voluptuous.Required('trustee_user'): {
+                    voluptuous.Required('id'): unicode or str
+                }
+            }
 
+        schema = voluptuous.Schema(scoped_format)
+
+        schema(token)
+
+        # TODO(lbragstad): Find a way to build this check into the schema.
         self.assertEqual(self.role_id, token['roles'][0]['id'])
 
         return token
 
     def assertValidProjectTrustScopedTokenResponse(self, r, *args, **kwargs):
-        token = self.assertValidProjectScopedTokenResponse(r, *args, **kwargs)
-
-        trust = token.get('OS-TRUST:trust')
-        self.assertIsNotNone(trust)
-        self.assertIsNotNone(trust.get('id'))
-        self.assertIsInstance(trust.get('impersonation'), bool)
-        self.assertIsNotNone(trust.get('trustor_user'))
-        self.assertIsNotNone(trust.get('trustee_user'))
-        self.assertIsNotNone(trust['trustor_user'].get('id'))
-        self.assertIsNotNone(trust['trustee_user'].get('id'))
+        self.assertValidProjectScopedTokenResponse(r, *args, **kwargs)
 
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
