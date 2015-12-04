@@ -21,6 +21,9 @@ sphinx!=1.2.0,!=1.3b1,<1.3,>=1.1.2
 # test wsgi apps without starting an http server
 WebTest>=2.0
 
+# tool for dictionary type checking
+voluptuous>=0.8.7
+
 # mox was removed in favor of mock. We should not re-enable this module. See
 # discussion: http://lists.openstack.org/pipermail/openstack-dev/2013-July/012484.html
 #mox>=0.5.3

@@ -20,6 +20,7 @@ from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 from six.moves import http_client
 from testtools import matchers
+import voluptuous
 
 from keystone import auth
 from keystone.common import authorization
@@ -561,10 +562,30 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
-        self.assertNotIn('roles', token)
-        self.assertNotIn('catalog', token)
-        self.assertNotIn('project', token)
-        self.assertNotIn('domain', token)
+        # NOTE(lbragstad): This makes it easier to detect data creep in the
+        # token response. Instead of just checking that an attribute exists in
+        # the response, this checks that the attribute exists and is the right
+        # type. This also checks to make sure there are no extra attributes in
+        # the response. If we want to add more attributes or data to the token
+        # response, this will have to be modified.
+        schema = voluptuous.Schema({
+            voluptuous.Required('audit_ids'): list,
+            voluptuous.Optional('bind'): dict,
+            voluptuous.Required('expires_at'): unicode or str,
+            voluptuous.Required('issued_at'): unicode or str,
+            voluptuous.Required('methods'): list,
+            voluptuous.Required('user'): {
+                voluptuous.Required('domain'): {
+                    voluptuous.Required('id'): unicode or str,
+                    voluptuous.Required('name'): unicode or str
+                },
+                voluptuous.Required('id'): unicode or str,
+                voluptuous.Required('name'): unicode or str
+            }
+        })
+
+        # validate the token response against the unscoped schema
+        schema(token)
 
         return token
 
