@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_dd4a4983",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-04T22:51:54Z",
+      "side": 1,
+      "message": "yeah, don\u0027t  do this...done by new_ref",
+      "parentUuid": "9a8ffd7b_a200ec02",
+      "revId": "c47b50b8b6698b79ce13024c269778d8c58948eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_b7d10e25",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 2
