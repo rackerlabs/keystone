@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_75f3480b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T12:24:05Z",
+      "side": 1,
+      "message": "(nit) in favor of fernet or UUID.",
+      "revId": "8304ffadc131df09d8646f65177567bdb5498e2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
