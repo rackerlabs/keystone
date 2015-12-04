@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_b488d623",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T11:26:05Z",
+      "side": 0,
+      "message": "These tests check the output of /projects/ . It\u0027s true that, in their setups we use role assignements, but they are tests on resource (projects).\n\nI think it\u0027s fine to keep them at test_v3_resource.",
+      "parentUuid": "7a740942_212354bf",
+      "revId": "d120187f53ffbd2183c8b06ae38fcc6d23256d07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_4c09f72b",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 3

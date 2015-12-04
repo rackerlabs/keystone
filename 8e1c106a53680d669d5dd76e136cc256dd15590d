@@ -16,6 +16,24 @@
       "revId": "8e1c106a53680d669d5dd76e136cc256dd15590d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_14c20a34",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-04T11:26:05Z",
+      "side": 1,
+      "message": "The superclass provides help assignments functions that are needed in this class too.\n\nWhy should a test belong there, just because of the fact it needs a new role assignment in its setup? Examples are the tests you commented in the previous file.\n\nI don\u0027t think either we should duplicate the code.",
+      "parentUuid": "7a740942_2c490b32",
+      "revId": "8e1c106a53680d669d5dd76e136cc256dd15590d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
