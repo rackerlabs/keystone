@@ -16,6 +16,24 @@
       "revId": "2e2d5c2fab9db6c4e633f4a71a01c5404a77f1f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_3db58d30",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-04T22:23:27Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a8ffd7b_93e5330a",
+      "revId": "2e2d5c2fab9db6c4e633f4a71a01c5404a77f1f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
