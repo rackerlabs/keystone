@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_6f6ef030",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-05T11:14:34Z",
+      "side": 1,
+      "message": "Role list contains id and name, doesn\u0027t it?\n\nI think we should make this check more accurate.",
+      "revId": "d74080bcadd8dca27a77c43713a6da668ca92d15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_2f78e8f1",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-05T11:14:34Z",
+      "side": 1,
+      "message": "I don\u0027t think so, the schema is for asserting the format of the token, and that the expected keys are there. This is checking on a specific value of an attribute, hence doesn\u0027t belong to a schema check.\n\nDoes this make sense ?",
+      "revId": "d74080bcadd8dca27a77c43713a6da668ca92d15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
