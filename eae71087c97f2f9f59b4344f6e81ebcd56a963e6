@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_ef60a037",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-05T11:17:36Z",
+      "side": 1,
+      "message": "Same comment as in previous patch.\n\nI believe we should check what is in the list. It is a list of ids and names, isn\u0027t it ?",
+      "revId": "eae71087c97f2f9f59b4344f6e81ebcd56a963e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
