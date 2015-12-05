@@ -43,6 +43,12 @@ notifier_opts = [
                     'the resource being operated on. A "cadf" notification '
                     'has the same information, as well as information about '
                     'the initiator of the event.'),
+    cfg.MultiStrOpt('notification_opt_out', default=[],
+                    help='Define the notification options to '
+                         'opt-out of. The value expected is '
+                         'identity.<resource_type>.<operation>. '
+                         'This field can be set multiple times in order '
+                         'to add more notifications to opt-out of.'),
 ]
 
 config_section = None
@@ -452,6 +458,11 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
+    event_type = '%s.%s.%s' % (SERVICE, resource_type, operation)
+
+    if _check_notification_opt_out(event_type):
+        return
+
     payload = {'resource_info': resource_id}
 
     notify_event_callbacks(SERVICE, resource_type, operation, payload)
@@ -709,6 +720,9 @@ def _send_audit_notification(action, initiator, outcome, target,
         key-value pairs to the CADF event.
 
     """
+    if _check_notification_opt_out(event_type):
+        return
+
     event = eventfactory.EventFactory().new_event(
         eventType=cadftype.EVENTTYPE_ACTIVITY,
         outcome=outcome,
@@ -733,6 +747,23 @@ def _send_audit_notification(action, initiator, outcome, target,
             LOG.exception(_LE(
                 'Failed to send %(action)s %(event_type)s notification'),
                 {'action': action, 'event_type': event_type})
+
+
+def _check_notification_opt_out(event_type):
+    """Check if a particular event_type has been opted-out of.
+
+    This method checks the opted-out events in the keystone configuration.
+
+    :param event_type: An OpenStack-ism, typically this is the meter name that
+        Ceilometer uses to poll events.
+
+    """
+    opt_out = CONF.notification_opt_out
+
+    if event_type in opt_out:
+        return True
+
+    return False
 
 
 emit_event = CadfNotificationWrapper

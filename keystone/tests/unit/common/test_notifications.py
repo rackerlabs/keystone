@@ -174,8 +174,10 @@ class NotificationsWrapperTestCase(unit.BaseTestCase):
 class NotificationsTestCase(unit.BaseTestCase):
 
     def test_send_notification(self):
-        """Test the private method _send_notification to ensure event_type,
-        payload, and context are built and passed properly.
+        """Test the private method _send_notification.
+
+        Tests to ensure that event_type, payload, and context are built and
+        passed properly.
         """
         resource = uuid.uuid4().hex
         resource_type = EXP_RESOURCE_TYPE
@@ -200,6 +202,65 @@ class NotificationsTestCase(unit.BaseTestCase):
             notifications._send_notification(operation, resource_type,
                                              resource)
             mocked.assert_called_once_with(*expected_args)
+
+    def test_send_notification_with_opt_out(self):
+        """Test the private method _send_notification with opt-out.
+
+        Test that _send_notification does not notify when a valid
+        notification_opt_out configuration is provided.
+        """
+        resource = uuid.uuid4().hex
+        resource_type = EXP_RESOURCE_TYPE
+        operation = CREATED_OPERATION
+
+        # NOTE(diazjf): Here we add notification_opt_out to the
+        # configuration so that we should return before _get_notifer is
+        # called. This is because we are opting out notifications for the
+        # passed resource_type and operation.
+        conf = self.useFixture(config_fixture.Config(CONF))
+        conf.config(
+            notification_opt_out={'identity.%s.created' % resource_type})
+
+        with mock.patch.object(notifications._get_notifier(),
+                               '_notify') as mocked:
+
+            notifications._send_notification(operation, resource_type,
+                                             resource)
+            mocked.assert_not_called()
+
+    def test_send_audit_notification_with_opt_out(self):
+        """Test the private method _send_audit_notification with opt-out.
+
+        Test that _send_audit_notification does not notify when a valid
+        notification_opt_out configuration is provided.
+        """
+        resource = uuid.uuid4().hex
+        resource_type = EXP_RESOURCE_TYPE
+
+        action = CREATED_OPERATION + '.' + resource_type
+        initiator = mock
+        target = mock
+        outcome = 'success'
+        event_type = 'identity.%s.created' % resource_type
+        kwargs = {'resource_info': resource}
+
+        # NOTE(diazjf): Here we add notification_opt_out to the
+        # configuration so that we should return before _get_notifer is
+        # called. This is because we are opting out notifications for the
+        # passed event type.
+        conf = self.useFixture(config_fixture.Config(CONF))
+        conf.config(notification_opt_out=event_type)
+
+        with mock.patch.object(notifications._get_notifier(),
+                               '_notify') as mocked:
+
+            notifications._send_audit_notification(action,
+                                                   initiator,
+                                                   outcome,
+                                                   target,
+                                                   event_type,
+                                                   **kwargs)
+            mocked.assert_not_called()
 
 
 class BaseNotificationTest(test_v3.RestfulTestCase):
