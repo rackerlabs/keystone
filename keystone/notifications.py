@@ -43,6 +43,12 @@ notifier_opts = [
                     'the resource being operated on. A "cadf" notification '
                     'has the same information, as well as information about '
                     'the initiator of the event.'),
+    cfg.MultiStrOpt('notification_opt_out', default=[],
+                    help='Define the notification options to '
+                         'opt-out of. The value expected is '
+                         'identity.<resource_type>.<operation>. '
+                         'This field can be set multiple times in order '
+                         'to add more notifications to opt-out of.'),
 ]
 
 config_section = None
@@ -116,16 +122,22 @@ class Audit(object):
         # send the notification externally. Thus, we should check
         # the desired notification format in the function instead
         # of before it.
-        _send_notification(
-            operation,
-            resource_type,
-            resource_id,
-            public=public)
 
-        if CONF.notification_format == 'cadf' and public:
-            outcome = taxonomy.OUTCOME_SUCCESS
-            _create_cadf_payload(operation, resource_type, resource_id,
-                                 outcome, initiator)
+        opt_out = CONF.notification_opt_out
+        event = 'identity.' + resource_type + '.' + operation
+
+        if event not in opt_out:
+
+            _send_notification(
+                operation,
+                resource_type,
+                resource_id,
+                public=public)
+
+            if CONF.notification_format == 'cadf' and public:
+                outcome = taxonomy.OUTCOME_SUCCESS
+                _create_cadf_payload(operation, resource_type, resource_id,
+                                     outcome, initiator)
 
     @classmethod
     def created(cls, resource_type, resource_id, initiator=None,
@@ -709,33 +721,33 @@ def _send_audit_notification(action, initiator, outcome, target,
         key-value pairs to the CADF event.
 
     """
-    event = eventfactory.EventFactory().new_event(
-        eventType=cadftype.EVENTTYPE_ACTIVITY,
-        outcome=outcome,
-        action=action,
-        initiator=initiator,
-        target=target,
-        observer=resource.Resource(typeURI=taxonomy.SERVICE_SECURITY))
+    opt_out = CONF.notification_opt_out
+    if event_type not in opt_out:
 
-    for key, value in kwargs.items():
-        setattr(event, key, value)
+        event = eventfactory.EventFactory().new_event(
+            eventType=cadftype.EVENTTYPE_ACTIVITY,
+            outcome=outcome,
+            action=action,
+            initiator=initiator,
+            target=target,
+            observer=resource.Resource(typeURI=taxonomy.SERVICE_SECURITY))
 
-    context = {}
-    payload = event.as_dict()
-    notifier = _get_notifier()
+        for key, value in kwargs.items():
+            setattr(event, key, value)
 
-    if notifier:
-        try:
-            notifier.info(context, event_type, payload)
-        except Exception:
-            # diaper defense: any exception that occurs while emitting the
-            # notification should not interfere with the API request
-            LOG.exception(_LE(
-                'Failed to send %(action)s %(event_type)s notification'),
-                {'action': action, 'event_type': event_type})
+        context = {}
+        payload = event.as_dict()
+        notifier = _get_notifier()
 
+        if notifier:
+            try:
+                notifier.info(context, event_type, payload)
+            except Exception:
+                # diaper defense: any exception that occurs while emitting the
+                # notification should not interfere with the API request
+                LOG.exception(_LE(
+                    'Failed to send %(action)s %(event_type)s notification'),
+                    {'action': action, 'event_type': event_type})
 
 emit_event = CadfNotificationWrapper
-
-
 role_assignment = CadfRoleAssignmentNotificationWrapper
