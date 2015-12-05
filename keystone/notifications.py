@@ -43,6 +43,12 @@ notifier_opts = [
                     'the resource being operated on. A "cadf" notification '
                     'has the same information, as well as information about '
                     'the initiator of the event.'),
+    cfg.MultiStrOpt('notification_opt_out', default=[],
+                    help='Define the notification options to '
+                         'opt-out of. The value expected is '
+                         'identity.<resource_type>.<operation>. '
+                         'This field can be set multiple times in order '
+                         'to add more notifications to opt-out of.'),
 ]
 
 config_section = None
@@ -116,6 +122,7 @@ class Audit(object):
         # send the notification externally. Thus, we should check
         # the desired notification format in the function instead
         # of before it.
+
         _send_notification(
             operation,
             resource_type,
@@ -452,6 +459,13 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
+
+    opt_out = CONF.notification_opt_out
+    event = 'identity.' + resource_type + '.' + operation
+
+    if event in opt_out:
+        return
+
     payload = {'resource_info': resource_id}
 
     notify_event_callbacks(SERVICE, resource_type, operation, payload)
@@ -709,6 +723,12 @@ def _send_audit_notification(action, initiator, outcome, target,
         key-value pairs to the CADF event.
 
     """
+
+    opt_out = CONF.notification_opt_out
+
+    if event_type in opt_out:
+        return
+
     event = eventfactory.EventFactory().new_event(
         eventType=cadftype.EVENTTYPE_ACTIVITY,
         outcome=outcome,
@@ -734,8 +754,5 @@ def _send_audit_notification(action, initiator, outcome, target,
                 'Failed to send %(action)s %(event_type)s notification'),
                 {'action': action, 'event_type': event_type})
 
-
 emit_event = CadfNotificationWrapper
-
-
 role_assignment = CadfRoleAssignmentNotificationWrapper

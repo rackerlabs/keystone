@@ -92,6 +92,11 @@
 # Allowed values: basic, cadf
 #notification_format = basic
 
+# Define the notification events to opt-out of. Notification events are
+# defined as "identity.<resource_type>.<operation>". Notification opt-out can
+# be set multiple times in order to add more opt-out options. (multi valued)
+#notification_opt_out =
+
 #
 # From oslo.log
 #
