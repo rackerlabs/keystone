@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_311b711d",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_drop_project_domain_id_fk.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-05T06:29:08Z",
+      "side": 1,
+      "message": "change to:\n\n import sqlalchemy as sql\n\n from keystone.common.sql import migration_helpers",
+      "revId": "4eead62b8ac5ab9106b137112f2afe15d6b06990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_f1a169aa",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-05T06:29:08Z",
+      "side": 1,
+      "message": "now that the domain table will be dropped, what is the point of keeping domain_id? where this field comes from?",
+      "revId": "4eead62b8ac5ab9106b137112f2afe15d6b06990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_519b9d72",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-05T06:29:08Z",
+      "side": 1,
+      "message": "where this method used?",
+      "revId": "4eead62b8ac5ab9106b137112f2afe15d6b06990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_717d791b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-05T06:29:08Z",
+      "side": 1,
+      "message": "assert that before upgrade that fk does exist.",
+      "revId": "4eead62b8ac5ab9106b137112f2afe15d6b06990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
