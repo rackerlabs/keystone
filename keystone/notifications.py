@@ -43,6 +43,9 @@ notifier_opts = [
                     'the resource being operated on. A "cadf" notification '
                     'has the same information, as well as information about '
                     'the initiator of the event.'),
+    cfg.StrOpt('notification_opt_out', default=None,
+               help='Define the notification options to opt-out of.'),
+
 ]
 
 config_section = None
@@ -116,16 +119,28 @@ class Audit(object):
         # send the notification externally. Thus, we should check
         # the desired notification format in the function instead
         # of before it.
-        _send_notification(
-            operation,
-            resource_type,
-            resource_id,
-            public=public)
 
-        if CONF.notification_format == 'cadf' and public:
-            outcome = taxonomy.OUTCOME_SUCCESS
-            _create_cadf_payload(operation, resource_type, resource_id,
-                                 outcome, initiator)
+        # TODO(diazjf): Since authenticate does not have a resource_type
+        # we must have an exception for it
+
+        # generates a list of notifications to opt out of
+        try:
+            opt_out = CONF.notification_opt_out.split(',')
+        except AttributeError:
+            opt_out = None
+
+        if not opt_out or resource_type + '.' + operation not in opt_out:
+
+            _send_notification(
+                operation,
+                resource_type,
+                resource_id,
+                public=public)
+
+            if CONF.notification_format == 'cadf' and public:
+                outcome = taxonomy.OUTCOME_SUCCESS
+                _create_cadf_payload(operation, resource_type, resource_id,
+                                     outcome, initiator)
 
     @classmethod
     def created(cls, resource_type, resource_id, initiator=None,
@@ -452,27 +467,28 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
-    payload = {'resource_info': resource_id}
+    if operation == 'created' and resource_type == 'group':
+        payload = {'resource_info': resource_id}
 
-    notify_event_callbacks(SERVICE, resource_type, operation, payload)
+        notify_event_callbacks(SERVICE, resource_type, operation, payload)
 
-    # Only send this notification if the 'basic' format is used, otherwise
-    # let the CADF functions handle sending the notification. But we check
-    # here so as to not disrupt the notify_event_callbacks function.
-    if public and CONF.notification_format == 'basic':
-        notifier = _get_notifier()
-        if notifier:
-            context = {}
-            event_type = '%(service)s.%(resource_type)s.%(operation)s' % {
-                'service': SERVICE,
-                'resource_type': resource_type,
-                'operation': operation}
-            try:
-                notifier.info(context, event_type, payload)
-            except Exception:
-                LOG.exception(_LE(
-                    'Failed to send %(res_id)s %(event_type)s notification'),
-                    {'res_id': resource_id, 'event_type': event_type})
+        # Only send this notification if the 'basic' format is used, otherwise
+        # let the CADF functions handle sending the notification. But we check
+        # here so as to not disrupt the notify_event_callbacks function.
+        if public and CONF.notification_format == 'basic':
+            notifier = _get_notifier()
+            if notifier:
+                context = {}
+                event_type = '%(service)s.%(resource_type)s.%(operation)s' % {
+                    'service': SERVICE,
+                    'resource_type': resource_type,
+                    'operation': operation}
+                try:
+                    notifier.info(context, event_type, payload)
+                except Exception:
+                    LOG.exception(_LE(
+                        'Failed to send %(res_id)s %(event_type)s notification'),
+                        {'res_id': resource_id, 'event_type': event_type})
 
 
 def _get_request_audit_info(context, user_id=None):
@@ -733,6 +749,12 @@ def _send_audit_notification(action, initiator, outcome, target,
             LOG.exception(_LE(
                 'Failed to send %(action)s %(event_type)s notification'),
                 {'action': action, 'event_type': event_type})
+
+
+
+
+
+
 
 
 emit_event = CadfNotificationWrapper
