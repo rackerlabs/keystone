@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_af0cd894",
+        "filename": "test-requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-05T11:05:41Z",
+      "side": 1,
+      "message": "Needs to be in global requirements first",
+      "revId": "0b7f47c81c4fb68f1300653d1e1772695a09eafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
