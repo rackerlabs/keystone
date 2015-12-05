@@ -92,6 +92,11 @@
 # Allowed values: basic, cadf
 #notification_format = basic
 
+# Define the notification events to opt-out. Notification events are
+# defined as "resource_type.operation". Notification opt-out must be
+# in the format of comma separated string. (string value)
+#notification_opt_out =
+
 #
 # From oslo.log
 #
