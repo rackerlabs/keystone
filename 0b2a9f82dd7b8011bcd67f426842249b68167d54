@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_ed1bc519",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-05T22:46:30Z",
+      "side": 1,
+      "message": "@dave, we are removing ldap support for role_assignment and resource, i think this was just missed when we split the assignment driver up... it won\u0027t work without the other backends, and is pretty pointless. we can bring it up at the next meeting if you\u0027d like an official decision.",
+      "parentUuid": "7a740942_af5ab14e",
+      "revId": "0b2a9f82dd7b8011bcd67f426842249b68167d54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_6c8873e8",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 3
