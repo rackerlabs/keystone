@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_50f5d080",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T04:52:52Z",
+      "side": 1,
+      "message": "According to the bug report, it just because project admin cannot access his project, \u0027keystone assumes that the project does not exist\u0027 is not accurate.",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_30e924e7",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T04:52:52Z",
+      "side": 1,
+      "message": "nits:\n switch the order, the signature of assertEqual is:\n     def assertEqual(self, expected, observed, message\u003d\u0027\u0027):\n         ...",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_302844e2",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T04:52:52Z",
+      "side": 1,
+      "message": "I agree that at least this testcase should fail when revert the change in the policy.v3cloudsample.json, the testcase should prove the given changes is correct.\n\nThe new rule you add is \"rule:admin_required and project_id:%(target.project.id)\", so for what reason we must run the testcase as a project admin on a project with its name?\n\nIf this is impossible, can you pls do some refactoring about that and depend this one on that?",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_50c71045",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T04:52:52Z",
+      "side": 1,
+      "message": "nits: s/assingment/assignment",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
