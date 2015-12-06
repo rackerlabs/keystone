@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a740942_a77dd1e8",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T22:21:36Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this return a boolean value ? Same for the next classes based on BasePayload",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_821bfa1b",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 5
