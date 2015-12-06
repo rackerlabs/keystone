@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_540dbd8e",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:59:17Z",
+      "side": 1,
+      "message": "(nit) LDAP",
+      "revId": "cfa3319cd6c1ef3714b67947900b86cc8757d2e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_7410f9a8",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:59:17Z",
+      "side": 1,
+      "message": "(nit) SQL",
+      "revId": "cfa3319cd6c1ef3714b67947900b86cc8757d2e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b41661a5",
+        "filename": "releasenotes/notes/deprecate_ldap_role-b4cf705f261a0c4d.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:59:17Z",
+      "side": 1,
+      "message": "(nit) LDAP",
+      "revId": "cfa3319cd6c1ef3714b67947900b86cc8757d2e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
