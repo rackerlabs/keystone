@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_135f520f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T07:31:22Z",
+      "side": 1,
+      "message": "@steve, thanks for clarification, I will improve the commit message a little bit.",
+      "parentUuid": "7a740942_ed1bc519",
+      "revId": "0b2a9f82dd7b8011bcd67f426842249b68167d54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_6c8873e8",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "writtenOn": "2015-12-04T05:02:49Z",
       "side": 1,
       "message": "change to \"ldap role backend\".",
+      "revId": "0b2a9f82dd7b8011bcd67f426842249b68167d54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_30604401",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T07:31:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_6c8873e8",
       "revId": "0b2a9f82dd7b8011bcd67f426842249b68167d54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
