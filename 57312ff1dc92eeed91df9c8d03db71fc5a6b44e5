@@ -176,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_1eef59b1",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-06T11:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_308f3d77",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_90f5c9cc",
         "filename": "keystone/tests/unit/ksfixtures/database.py",
         "patchSetId": 17
@@ -187,6 +205,24 @@
       "writtenOn": "2015-11-20T13:58:52Z",
       "side": 1,
       "message": "keystone.assignment",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_5ef5e180",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-06T11:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8a016a_90f5c9cc",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +327,42 @@
       "writtenOn": "2015-11-20T17:29:36Z",
       "side": 1,
       "message": "When we started down the versioned drivers path we declared we would support only the previous version in a release.",
+      "parentUuid": "ba8a016a_10f23970",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_7e369d53",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-06T11:00:05Z",
+      "side": 1,
+      "message": "Does doing one release satisfy the standard project requirements...which though was a standard of +2....",
+      "parentUuid": "ba8a016a_498ed428",
+      "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_de2f91f4",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-06T11:00:05Z",
+      "side": 1,
+      "message": "I changed it to simply say \"this release\".  The statement on future support is below in the \"other\" section.",
       "parentUuid": "ba8a016a_10f23970",
       "revId": "57312ff1dc92eeed91df9c8d03db71fc5a6b44e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
