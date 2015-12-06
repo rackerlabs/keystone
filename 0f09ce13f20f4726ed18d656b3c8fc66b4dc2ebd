@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_147e5519",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1484,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:34:14Z",
+      "side": 1,
+      "message": "(typo) implement",
+      "revId": "0f09ce13f20f4726ed18d656b3c8fc66b4dc2ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b493c14e",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:34:14Z",
+      "side": 1,
+      "message": "Please remove trailing space",
+      "revId": "0f09ce13f20f4726ed18d656b3c8fc66b4dc2ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
