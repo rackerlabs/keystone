@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_0def31b1",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T00:13:22Z",
+      "side": 1,
+      "message": "How about \"Test the v2.0 API can\u0027t fetch v3 endpoints of the service that doestn\u0027t have a public interface endpoint\"?",
+      "revId": "d8741aaf8db9ef8dcebdc8118fa58aeba9fdfdfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_cd2fe9f4",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-06T00:13:22Z",
+      "side": 1,
+      "message": "is required for the service in V2.0 API, ...",
+      "revId": "d8741aaf8db9ef8dcebdc8118fa58aeba9fdfdfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
