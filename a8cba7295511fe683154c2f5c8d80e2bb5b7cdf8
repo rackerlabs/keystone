@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_34f6f1d7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1194,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:28:43Z",
+      "side": 1,
+      "message": "(typo) implement",
+      "revId": "a8cba7295511fe683154c2f5c8d80e2bb5b7cdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_341d910f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1206,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:28:43Z",
+      "side": 1,
+      "message": "Nice, so anyone following the old driver signature (with our legacy driver or with their own), will get the deprecation message",
+      "revId": "a8cba7295511fe683154c2f5c8d80e2bb5b7cdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
