@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_19c1b32e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T11:51:50Z",
+      "side": 1,
+      "message": "Perhaps adding a reference to [1] would be good.\n\n[1] http://docs.openstack.org/developer/oslo.log/api/log.html#oslo_log.log.set_defaults",
+      "revId": "9a4e3dcd3935a69f8952f7d71844bb9463b12f08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
