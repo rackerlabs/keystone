@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_b4d74122",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-06T19:29:12Z",
+      "side": 1,
+      "message": "Is it a feature ? Looks like \"upgrade\" or \"other\" would be more appropriate sections.",
+      "revId": "c7ad92e7143c3241a05a585d19fa57c46105b6de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
