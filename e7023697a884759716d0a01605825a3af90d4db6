@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a740942_22167df1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:36:37Z",
+      "side": 1,
+      "message": "this can be simplified:\n\n  Name of the domain that contains `admin_project_name`. Defaults to None.",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_42fce9b7",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:36:37Z",
+      "side": 1,
+      "message": "use self.assertTrue(token[\u0027is_admin_project\u0027])",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_3af69c5d",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 8
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_e28075c2",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:36:37Z",
+      "side": 1,
+      "message": "yeah, but meh",
+      "parentUuid": "9a8ffd7b_3af69c5d",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_54c5d68b",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 8
@@ -30,6 +82,41 @@
       "writtenOn": "2015-12-04T20:52:19Z",
       "side": 1,
       "message": "project acting as domain?",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c2a3f9b0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:36:37Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a740942_54c5d68b",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c2be9964",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:36:37Z",
+      "side": 1,
+      "message": "this should have been it\u0027s own function:\n\n  _populate_is_admin_project(token_data, project_id)\n\nbecause now in \"populate scope\" you are setting the project xor domain and the admin_project field",
       "revId": "e7023697a884759716d0a01605825a3af90d4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +151,24 @@
       "writtenOn": "2015-12-04T20:52:19Z",
       "side": 1,
       "message": "... project acting as domain is merged.",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c22d39ff",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:36:37Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a740942_f485e258",
       "revId": "e7023697a884759716d0a01605825a3af90d4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
