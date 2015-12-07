@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_540a797a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-07T15:29:56Z",
+      "side": 1,
+      "message": "Samuel - this is how the code worked before. there\u0027s no need to convert to a bool, this is how python works.",
+      "parentUuid": "7a740942_a77dd1e8",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_821bfa1b",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 5
