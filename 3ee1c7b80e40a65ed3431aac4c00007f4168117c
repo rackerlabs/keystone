@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a740942_dda2fefc",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-07T20:41:57Z",
+      "side": 1,
+      "message": "Actually I just looked at our implementation of JsonBlob....won\u0027t this just be a dictionary in the real world and our type object with encode/decode?",
+      "revId": "3ee1c7b80e40a65ed3431aac4c00007f4168117c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_829df10b",
         "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
         "patchSetId": 3
