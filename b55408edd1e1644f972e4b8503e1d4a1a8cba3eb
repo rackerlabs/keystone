@@ -16,6 +16,24 @@
       "revId": "b55408edd1e1644f972e4b8503e1d4a1a8cba3eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_2f13d65c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-07T15:36:13Z",
+      "side": 1,
+      "message": "I don\u0027t understand the comment so have no idea what to change.",
+      "parentUuid": "7a740942_8e63fedb",
+      "revId": "b55408edd1e1644f972e4b8503e1d4a1a8cba3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
