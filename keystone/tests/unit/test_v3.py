@@ -24,6 +24,7 @@ from testtools import matchers
 from keystone import auth
 from keystone.common import authorization
 from keystone.common import cache
+from keystone.common.validation import validators
 from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules
@@ -544,10 +545,39 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
-        self.assertNotIn('roles', token)
-        self.assertNotIn('catalog', token)
-        self.assertNotIn('project', token)
-        self.assertNotIn('domain', token)
+        unscoped_properties = {
+            'audit_ids': {'type': ['array']},
+            'bind': {'type': ['object']},
+            'expires_at': {'type': ['string']},
+            'issued_at': {'type': ['string']},
+            'methods': {'type': ['array']},
+            'user': {
+                'type': ['object'],
+                'required': ['id', 'name', 'domain'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'name': {'type': ['string']},
+                    'domain': {
+                        'type': ['object'],
+                        'properties': {
+                            'id': {'type': ['string']},
+                            'name': {'type': ['string']}
+                        },
+                        'required': ['id', 'name']
+                    }
+                }
+            }
+        }
+        unscoped_token_schema = {
+            'type': 'object',
+            'properties': unscoped_properties,
+            'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
+                         'user'],
+            'optional': ['bind'],
+            'additionalProperties': False
+        }
+        validator_object = validators.SchemaValidator(unscoped_token_schema)
+        validator_object.validate(token)
 
         return token
 

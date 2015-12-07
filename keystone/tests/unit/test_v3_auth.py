@@ -484,6 +484,15 @@ class TokenAPITests(object):
         self.assertValidProjectScopedTokenResponse(r, is_admin_project=False)
 
 
+class TokenDataTests(object):
+    """Test the data in specific token types."""
+
+    def test_unscoped_token_format(self):
+        # ensure the unscoped token response contains the appropriate data
+        r = self.get('/auth/tokens', headers=self.headers)
+        self.assertValidUnscopedTokenResponse(r)
+
+
 class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
     def config_overrides(self):
         super(AllowRescopeScopedTokenDisabledTests, self).config_overrides()
@@ -563,7 +572,7 @@ class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
             expected_status=http_client.FORBIDDEN)
 
 
-class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
     def config_overrides(self):
         super(TestPKITokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='pki')
@@ -633,7 +642,8 @@ class TestPKIZTokenAPIs(TestPKITokenAPIs):
         return cms.pkiz_verify(*args, **kwargs)
 
 
-class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
+                        TokenDataTests):
     def config_overrides(self):
         super(TestUUIDTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='uuid')
@@ -653,7 +663,8 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         self.assertFalse(cms.is_asn1_token(token_id))
 
 
-class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
+                          TokenDataTests):
     def config_overrides(self):
         super(TestFernetTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
