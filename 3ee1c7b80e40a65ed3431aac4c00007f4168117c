@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_829df10b",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-07T20:38:21Z",
+      "side": 1,
+      "message": "Your comment in keystone.tests.unit.core implies that this is wrong because it\u0027s not JSON encoded.",
+      "revId": "3ee1c7b80e40a65ed3431aac4c00007f4168117c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
