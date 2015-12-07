@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_e2115205",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T21:32:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_22167df1",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_42fce9b7",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-07T20:36:37Z",
       "side": 1,
       "message": "use self.assertTrue(token[\u0027is_admin_project\u0027])",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c223f656",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T21:32:21Z",
+      "side": 1,
+      "message": "Added a note to say we explicitly want to check it\u0027s a boolean",
+      "parentUuid": "7a740942_42fce9b7",
       "revId": "e7023697a884759716d0a01605825a3af90d4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_e2287235",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T21:32:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_c2a3f9b0",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_c2be9964",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 8
@@ -117,6 +171,24 @@
       "writtenOn": "2015-12-07T20:36:37Z",
       "side": 1,
       "message": "this should have been it\u0027s own function:\n\n  _populate_is_admin_project(token_data, project_id)\n\nbecause now in \"populate scope\" you are setting the project xor domain and the admin_project field",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_4218661e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T21:32:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_c2be9964",
       "revId": "e7023697a884759716d0a01605825a3af90d4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -169,6 +241,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "7a740942_f485e258",
+      "revId": "e7023697a884759716d0a01605825a3af90d4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_621562e3",
+        "filename": "releasenotes/notes/is-admin-24b34238c83b3a82.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T21:32:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_c22d39ff",
       "revId": "e7023697a884759716d0a01605825a3af90d4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
