@@ -69,6 +69,24 @@
       "revId": "da7e1b97e7091e9e3c868af71d97669229f10bb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ad56f927",
+        "filename": "keystone/tests/unit/backend/policy/test_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T13:40:52Z",
+      "side": 1,
+      "message": "Policy is created in setUp. Test for get_policy ensures it was created correctly.",
+      "parentUuid": "fa1b9901_7c116a51",
+      "revId": "da7e1b97e7091e9e3c868af71d97669229f10bb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
