@@ -16,6 +16,24 @@
       "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_88df4f68",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T22:21:18Z",
+      "side": 1,
+      "message": "Actually, pep8 failed to me when I added a space here:\n\n    ./keystone/token/providers/common.py:274:13: E129 visually indented line with same indent as next logical line\n                project[\u0027domain\u0027][\u0027name\u0027] \u003d\u003d r.admin_project_domain_name):\n                ^",
+      "parentUuid": "7a740942_251f646d",
+      "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
