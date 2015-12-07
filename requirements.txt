@@ -35,5 +35,5 @@ oauthlib>=0.6
 pysaml2>=2.4.0
 dogpile.cache>=0.5.4
 jsonschema!=2.5.0,<3.0.0,>=2.0.0
-pycadf>=1.1.0
+pycadf!=2.0.0,>=1.1.0
 msgpack-python>=0.4.0
