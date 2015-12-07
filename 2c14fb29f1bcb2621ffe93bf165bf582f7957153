@@ -34,6 +34,24 @@
       "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_28dadb4c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-12-07T22:26:57Z",
+      "side": 1,
+      "message": "try indenting 4 more spaces",
+      "parentUuid": "7a740942_88df4f68",
+      "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
