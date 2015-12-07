@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_4c966d94",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-07T16:08:13Z",
+      "side": 1,
+      "message": "Make this an empty list instead of None so that the confusing \u0027if\u0027 statement below can be rewritten",
+      "revId": "035555468db31b71a1b5c1f18e87974ea25d86bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
