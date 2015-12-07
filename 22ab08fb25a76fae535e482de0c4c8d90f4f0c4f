@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_6818e375",
+        "filename": "releasenotes/notes/deprecate-ldap-role-ad28dce16863bbb1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-07T22:15:28Z",
+      "side": 1,
+      "message": "Actually, shouldn\u0027t the deprecations section be used instead of other?\n\nhttp://docs.openstack.org/developer/reno/usage.html#creating-new-release-notes",
+      "revId": "22ab08fb25a76fae535e482de0c4c8d90f4f0c4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
