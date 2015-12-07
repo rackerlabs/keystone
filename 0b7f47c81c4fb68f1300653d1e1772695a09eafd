@@ -16,6 +16,24 @@
       "revId": "0b7f47c81c4fb68f1300653d1e1772695a09eafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c59d5967",
+        "filename": "test-requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-07T14:16:51Z",
+      "side": 1,
+      "message": "Yeah, I have a patch ready to go for it locally.\n\nI\u0027m still exploring other alternatives. I might try and rewrite this using jsonschema and compare the two.",
+      "parentUuid": "7a740942_af0cd894",
+      "revId": "0b7f47c81c4fb68f1300653d1e1772695a09eafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
