@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_fb490db8",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T17:57:36Z",
+      "side": 1,
+      "message": "I have been staring at the sentence for a while now and I am having trouble trying to make yours fit under 80 characters. :( \nhttp://docs.openstack.org/developer/hacking/#docstrings\n\nThe main difference between ours is you have \u0027endpoints of the service\u0027 instead of \"endpoints\u0027\u0027.  Is it needed? or can we leave it since this is a summary and its covered in the below paragraph.",
+      "parentUuid": "7a740942_0def31b1",
+      "revId": "d8741aaf8db9ef8dcebdc8118fa58aeba9fdfdfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_cd2fe9f4",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-06T00:13:22Z",
       "side": 1,
       "message": "is required for the service in V2.0 API, ...",
+      "revId": "d8741aaf8db9ef8dcebdc8118fa58aeba9fdfdfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_7bb99d78",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T17:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_cd2fe9f4",
       "revId": "d8741aaf8db9ef8dcebdc8118fa58aeba9fdfdfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
