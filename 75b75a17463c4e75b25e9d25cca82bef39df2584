@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_e7d72749",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:06:04Z",
+      "side": 1,
+      "message": "link to http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-federation-ext.html",
+      "revId": "75b75a17463c4e75b25e9d25cca82bef39df2584",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a7cd9fb8",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:06:04Z",
+      "side": 1,
+      "message": "link to http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-oauth1-ext.html",
+      "revId": "75b75a17463c4e75b25e9d25cca82bef39df2584",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_27ba0f0b",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:06:04Z",
+      "side": 1,
+      "message": "link to: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-revoke-ext.html",
+      "revId": "75b75a17463c4e75b25e9d25cca82bef39df2584",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_873f4386",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T20:06:04Z",
+      "side": 1,
+      "message": "also, remove the ()\u0027s from here?",
+      "revId": "75b75a17463c4e75b25e9d25cca82bef39df2584",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
