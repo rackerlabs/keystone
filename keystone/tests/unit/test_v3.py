@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import uuid
 
 from oslo_config import cfg
@@ -122,6 +123,56 @@ class AuthTestMixin(object):
 
 class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                       common_auth.AuthTestMixin):
+
+    # NOTE(lbragstad): Common token properties found in all token formats,
+    # regardless of scope.
+    token_properties = {
+        'audit_ids': {
+            'type': 'array',
+            'items': {
+                'type': 'string',
+            },
+            'minItems': 1,
+            'maxItems': 2,
+        },
+        'bind': {
+            'type': 'object',
+            'properties': {
+                'kerberos': {
+                    'type': 'string',
+                },
+            },
+            'required': ['kerberos'],
+            'additionalProperties': False,
+        },
+        'expires_at': {'type': 'string'},
+        'issued_at': {'type': 'string'},
+        'methods': {
+            'type': 'array',
+            'items': {
+                'type': 'string',
+            },
+        },
+        'user': {
+            'type': 'object',
+            'required': ['id', 'name', 'domain'],
+            'properties': {
+                'id': {'type': 'string'},
+                'name': {'type': 'string'},
+                'domain': {
+                    'type': 'object',
+                    'properties': {
+                        'id': {'type': 'string'},
+                        'name': {'type': 'string'}
+                    },
+                    'required': ['id', 'name'],
+                    'additonalProperties': False,
+                }
+            },
+            'additionalProperties': False,
+        }
+    }
+
     def config_files(self):
         config_files = super(RestfulTestCase, self).config_files()
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
@@ -536,55 +587,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
-        unscoped_properties = {
-            'audit_ids': {
-                'type': 'array',
-                'items': {
-                    'type': 'string',
-                },
-                'minItems': 1,
-                'maxItems': 2,
-            },
-            'bind': {
-                'type': 'object',
-                'properties': {
-                    'kerberos': {
-                        'type': 'string',
-                    },
-                },
-                'required': ['kerberos', ],
-                'additionalProperties': False,
-            },
-            'expires_at': {'type': 'string'},
-            'issued_at': {'type': 'string'},
-            'methods': {
-                'type': 'array',
-                'items': {
-                    'type': 'string',
-                },
-            },
-            'user': {
-                'type': 'object',
-                'required': ['id', 'name', 'domain'],
-                'properties': {
-                    'id': {'type': 'string'},
-                    'name': {'type': 'string'},
-                    'domain': {
-                        'type': 'object',
-                        'properties': {
-                            'id': {'type': 'string'},
-                            'name': {'type': 'string'}
-                        },
-                        'required': ['id', 'name'],
-                        'additonalProperties': False,
-                    }
-                },
-                'additionalProperties': False,
-            }
-        }
         unscoped_token_schema = {
             'type': 'object',
-            'properties': unscoped_properties,
+            'properties': self.token_properties,
             'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
                          'user'],
             'optional': ['bind'],
@@ -664,9 +669,44 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('domain', token)
-        self.assertIn('id', token['domain'])
-        self.assertIn('name', token['domain'])
+        # NOTE(lbragstad): The self.token_properties dictionary is a class
+        # level variable. If it is modified in one test, those changes can be
+        # carried over to another test. These tests add different things to the
+        # self.token_properties dictionary because they test different scope
+        # cases. The self.token_properties dictionary contains common
+        # attributes of a token, regardless of scope. This means that we can't
+        # modify self.token_properties and expect it to not alter the result of
+        # other tests that depend on it. To effectively use
+        # self.token_properties without failing other tests, we must make a
+        # deep copy and modify that copy of self.token_properties. The copy
+        # should consist of everything necessary for checking domain scoped
+        # formats.
+        domain_scoped_properties = copy.deepcopy(self.token_properties)
+        domain_scoped_properties['catalog'] = {'type': ['array']}
+        domain_scoped_properties['domain'] = {
+            'domain': {
+                'type': 'object',
+                'required': ['id', 'name'],
+                'properties': {
+                    'id': {'type': 'string'},
+                    'name': {'type': 'string'}
+                },
+                'additionalProperties': False
+            }
+        }
+        domain_scoped_properties['roles'] = {'type': 'array'}
+
+        domain_scoped_token_schema = {
+            'type': 'object',
+            'properties': domain_scoped_properties,
+            'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
+                         'user', 'domain'],
+            'optional': 'catalog',
+            'additionalProperties': False
+        }
+        validator_object = validators.SchemaValidator(
+            domain_scoped_token_schema)
+        validator_object.validate(token)
 
         return token
 
