@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "7a740942_7360f2a5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T15:47:03Z",
+      "side": 1,
+      "message": "For some reason i didn\u0027t think this was possible to mutate the original dictionary like this, Thanks.  I learned something new.",
+      "parentUuid": "7a740942_ba01836c",
+      "revId": "a6d4d9d5384cb6d6f62c0ab5b7f1781bd1a4c9b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ac2ba281",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T15:47:03Z",
+      "side": 1,
+      "message": "not covered in test",
+      "revId": "a6d4d9d5384cb6d6f62c0ab5b7f1781bd1a4c9b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_5a409fa5",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 4
@@ -30,6 +65,24 @@
       "writtenOn": "2015-12-04T22:08:30Z",
       "side": 1,
       "message": "This isn\u0027t needed since you define role_assignments in both cases below",
+      "revId": "a6d4d9d5384cb6d6f62c0ab5b7f1781bd1a4c9b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_d801c507",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T15:47:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_5a409fa5",
       "revId": "a6d4d9d5384cb6d6f62c0ab5b7f1781bd1a4c9b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
