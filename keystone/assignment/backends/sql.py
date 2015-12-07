@@ -18,9 +18,15 @@ import sqlalchemy
 from sqlalchemy.sql.expression import false
 
 from keystone import assignment as keystone_assignment
+from keystone.assignment.role_backends.sql import RoleTable
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _
+from keystone.identity.backends.sql import Group
+from keystone.identity.backends.sql import User
+from keystone.identity.mapping_backends.sql import IDMapping
+from keystone.resource.backends.sql import Domain
+from keystone.resource.backends.sql import Project
 
 
 CONF = cfg.CONF
@@ -348,24 +354,50 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
                               inherited_to_projects=None):
 
         def denormalize_role(ref):
+            ref = jref[0]
+            role_name = jref[1]
+            idmap = jref[2]
+            domain_name = jref[3]
+            project_name = jref[4]
+            uname = jref[5]
+            gname = jref[6]
+            user_name = uname if uname else\
+                (idmap.local_id if idmap else "")
+
+            group_name = gname if gname else\
+                (idmap.local_id if idmap else "")
+
             assignment = {}
             if ref.type == AssignmentType.USER_PROJECT:
                 assignment['user_id'] = ref.actor_id
+                if user_name:
+                    assignment['user_name'] = user_name
                 assignment['project_id'] = ref.target_id
+                assignment['project_name'] = project_name
             elif ref.type == AssignmentType.USER_DOMAIN:
                 assignment['user_id'] = ref.actor_id
+                if user_name:
+                    assignment['user_name'] = user_name
                 assignment['domain_id'] = ref.target_id
+                assignment['domain_name'] = domain_name
             elif ref.type == AssignmentType.GROUP_PROJECT:
                 assignment['group_id'] = ref.actor_id
+                if group_name:
+                    assignment['group_name'] = group_name
                 assignment['project_id'] = ref.target_id
+                assignment['project_name'] = project_name
             elif ref.type == AssignmentType.GROUP_DOMAIN:
                 assignment['group_id'] = ref.actor_id
+                if group_name:
+                    assignment['group_name'] = group_name
                 assignment['domain_id'] = ref.target_id
+                assignment['domain_name'] = domain_name
             else:
                 raise exception.Error(message=_(
                     'Unexpected assignment type encountered, %s') %
                     ref.type)
             assignment['role_id'] = ref.role_id
+            assignment['role_name'] = role_name
             if ref.inherited:
                 assignment['inherited_to_projects'] = 'projects'
             return assignment
@@ -387,6 +419,14 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
                 actors = [user_id]
 
             query = session.query(RoleAssignment)
+            query = session.query(RoleAssignment, RoleTable.name, IDMapping,
+                                  Domain.name, Project.name, User.name, Group.name)\
+                .join(RoleTable, RoleTable.id == RoleAssignment.role_id)\
+                .outerjoin(IDMapping, IDMapping.public_id == RoleAssignment.actor_id)\
+                .outerjoin(Domain, RoleAssignment.target_id == Domain.id)\
+                .outerjoin(Project, RoleAssignment.target_id == Project.id)\
+                .outerjoin(User, IDMapping.local_id == User.id)\
+                .outerjoin(Group, IDMapping.local_id == Group.id)\
 
             if role_id:
                 query = query.filter_by(role_id=role_id)

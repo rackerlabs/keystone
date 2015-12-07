@@ -516,6 +516,9 @@ class RoleAssignmentV3(controller.V3Controller):
         if 'project_id' in entity:
             formatted_entity['scope'] = (
                 {'project': {'id': entity['project_id']}})
+            if entity.get('project_name'):
+                formatted_entity['scope']['project']['name'] = (
+                    entity['project_name'])
 
             if 'domain_id' in entity.get('indirect', {}):
                 inherited_assignment = True
@@ -529,10 +532,15 @@ class RoleAssignmentV3(controller.V3Controller):
                 formatted_link = '/projects/%s' % entity['project_id']
         elif 'domain_id' in entity:
             formatted_entity['scope'] = {'domain': {'id': entity['domain_id']}}
+            if entity.get('domain_name'):
+                formatted_entity['scope']['domain']['name'] = (
+                        entity['domain_name'])
             formatted_link = '/domains/%s' % entity['domain_id']
 
         if 'user_id' in entity:
             formatted_entity['user'] = {'id': entity['user_id']}
+            if entity.get('user_name'):
+                formatted_entity['user']['name'] = entity['user_name']
 
             if 'group_id' in entity.get('indirect', {}):
                 membership_url = (
@@ -544,9 +552,13 @@ class RoleAssignmentV3(controller.V3Controller):
                 formatted_link += '/users/%s' % entity['user_id']
         elif 'group_id' in entity:
             formatted_entity['group'] = {'id': entity['group_id']}
+            if entity.get('group_name'):
+                formatted_entity['group']['name'] = entity['group_name']
             formatted_link += '/groups/%s' % entity['group_id']
 
         formatted_entity['role'] = {'id': entity['role_id']}
+        if entity.get('role_name'):
+            formatted_entity['role']['name'] = entity['role_name']
         formatted_link += '/roles/%s' % entity['role_id']
 
         if inherited_assignment:
