@@ -16,6 +16,24 @@
       "revId": "22ab08fb25a76fae535e482de0c4c8d90f4f0c4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a8dc8b73",
+        "filename": "releasenotes/notes/deprecate-ldap-role-ad28dce16863bbb1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T22:21:16Z",
+      "side": 1,
+      "message": "there is no deprecations section :(",
+      "parentUuid": "7a740942_6818e375",
+      "revId": "22ab08fb25a76fae535e482de0c4c8d90f4f0c4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
