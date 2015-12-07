@@ -623,12 +623,85 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidProjectScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('project', token)
-        self.assertIn('id', token['project'])
-        self.assertIn('name', token['project'])
-        self.assertIn('domain', token['project'])
-        self.assertIn('id', token['project']['domain'])
-        self.assertIn('name', token['project']['domain'])
+        project_scoped_properties = {
+            'audit_ids': {'type': ['array']},
+            'bind': {'type': ['object']},
+            'is_admin_project': {'type': ['boolean']},
+            'catalog': {'type': ['array']},
+            'expires_at': {'type': ['string']},
+            'issued_at': {'type': ['string']},
+            'methods': {'type': ['array']},
+            'project': {
+                'type': ['object'],
+                'required': ['id', 'name', 'domain'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'name': {'type': ['string']},
+                    'domain': {
+                        'type': ['object'],
+                        'required': ['id', 'name'],
+                        'properties': {
+                            'id': {'type': ['string']},
+                            'name': {'type': ['string']}
+                        }
+                    }
+                }
+            },
+            'roles': {'type': ['array']},
+            'user': {
+                'type': ['object'],
+                'required': ['id', 'name', 'domain'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'name': {'type': ['string']},
+                    'domain': {
+                        'type': ['object'],
+                        'required': ['id', 'name'],
+                        'properties': {
+                            'id': {'type': ['string']},
+                            'name': {'type': ['string']}
+                        }
+                    }
+                }
+            }
+        }
+        if token.get('OS-TRUST:trust'):
+            project_scoped_properties['OS-TRUST:trust'] = {
+                'type': ['object'],
+                'required': ['id', 'impersonation', 'trustor_user',
+                             'trustee_user'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'impersonation': {'type': ['boolean']},
+                    'trustor_user': {
+                        'type': ['object'],
+                        'required': ['id'],
+                        'properties': {
+                            'id': {'type': ['string']}
+                        }
+                    },
+                    'trustee_user': {
+                        'type': ['object'],
+                        'required': ['id'],
+                        'properties': {
+                            'id': {'type': ['string']}
+                        }
+                    }
+                }
+            }
+
+        project_scoped_token_schema = {
+            'type': 'object',
+            'properties': project_scoped_properties,
+            'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
+                         'user', 'project'],
+            'optional': ['bind', 'catalog', 'OS-TRUST:trust',
+                         'is_admin_project'],
+            'additionalProperties': False
+        }
+        validator_object = validators.SchemaValidator(
+            project_scoped_token_schema)
+        validator_object.validate(token)
 
         self.assertEqual(self.role_id, token['roles'][0]['id'])
 
