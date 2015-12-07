@@ -121,6 +121,56 @@ class AuthTestMixin(object):
 
 class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                       AuthTestMixin):
+
+    # NOTE(lbragstad): Common token properties found in all token format,
+    # regardless of scope.
+    token_properties = {
+        'audit_ids': {
+            'type': 'array',
+            'items': {
+                'type': 'string',
+            },
+            'minItems': 1,
+            'maxItems': 2,
+        },
+        'bind': {
+            'type': 'object',
+            'properties': {
+                'kerberos': {
+                    'type': 'string',
+                },
+            },
+            'required': ['kerberos', ],
+            'additionalProperties': False,
+        },
+        'expires_at': {'type': 'string'},
+        'issued_at': {'type': 'string'},
+        'methods': {
+            'type': 'array',
+            'items': {
+                'type': 'string',
+            },
+        },
+        'user': {
+            'type': 'object',
+            'required': ['id', 'name', 'domain'],
+            'properties': {
+                'id': {'type': 'string'},
+                'name': {'type': 'string'},
+                'domain': {
+                    'type': 'object',
+                    'properties': {
+                        'id': {'type': 'string'},
+                        'name': {'type': 'string'}
+                    },
+                    'required': ['id', 'name'],
+                    'additonalProperties': False,
+                }
+            },
+            'additionalProperties': False,
+        }
+    }
+
     def config_files(self):
         config_files = super(RestfulTestCase, self).config_files()
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
@@ -535,55 +585,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
-        unscoped_properties = {
-            'audit_ids': {
-                'type': 'array',
-                'items': {
-                    'type': 'string',
-                },
-                'minItems': 1,
-                'maxItems': 2,
-            },
-            'bind': {
-                'type': 'object',
-                'properties': {
-                    'kerberos': {
-                        'type': 'string',
-                    },
-                },
-                'required': ['kerberos', ],
-                'additionalProperties': False,
-            },
-            'expires_at': {'type': 'string'},
-            'issued_at': {'type': 'string'},
-            'methods': {
-                'type': 'array',
-                'items': {
-                    'type': 'string',
-                },
-            },
-            'user': {
-                'type': 'object',
-                'required': ['id', 'name', 'domain'],
-                'properties': {
-                    'id': {'type': 'string'},
-                    'name': {'type': 'string'},
-                    'domain': {
-                        'type': 'object',
-                        'properties': {
-                            'id': {'type': 'string'},
-                            'name': {'type': 'string'}
-                        },
-                        'required': ['id', 'name'],
-                        'additonalProperties': False,
-                    }
-                },
-                'additionalProperties': False,
-            }
-        }
         unscoped_token_schema = {
             'type': 'object',
-            'properties': unscoped_properties,
+            'properties': self.token_properties,
             'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
                          'user'],
             'optional': ['bind'],
@@ -663,9 +667,32 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('domain', token)
-        self.assertIn('id', token['domain'])
-        self.assertIn('name', token['domain'])
+        # add domain specific properties to the common token validation schema
+        self.token_properties['catalog'] = {'type': ['array']}
+        self.token_properties['domain'] = {
+            'domain': {
+                'type': ['object'],
+                'required': ['id', 'name'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'name': {'type': ['string']}
+                },
+                'additionalProperties': False
+            }
+        }
+        self.token_properties['roles'] = {'type': ['array']}
+
+        domain_scoped_token_schema = {
+            'type': 'object',
+            'properties': self.token_properties,
+            'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
+                         'user', 'domain'],
+            'optional': ['bind', 'catalog'],
+            'additionalProperties': False
+        }
+        validator_object = validators.SchemaValidator(
+            domain_scoped_token_schema)
+        validator_object.validate(token)
 
         return token
 
