@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_14d15123",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-07T15:36:45Z",
+      "side": 1,
+      "message": "yes, I don\u0027t like the duplication too, but the method is defined as the private method in the controller and referenced by other API in the controller.",
+      "parentUuid": "7a740942_5bbac56f",
+      "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_1bff5d35",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_7438d53d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-07T15:36:45Z",
+      "side": 1,
+      "message": "this logic is moved from `catalog_sql.py`, i will check whether there was testcases somewhere and possibly add a testcase in the follow up if this was not tested.",
+      "parentUuid": "7a740942_1bff5d35",
+      "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_5b7165df",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-12-07T06:10:57Z",
       "side": 1,
       "message": "no way to call the controller here? or have the controller call these new functions?",
+      "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_74a2154d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-07T15:36:45Z",
+      "side": 1,
+      "message": "I think the controller cannot call these functions since `endpoint_filter.sql` backend need these in the API layer rather than controller layer.\n\nI am also not quite sure API layer could call the the private method from the controller layer.",
+      "parentUuid": "7a740942_5b7165df",
       "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
