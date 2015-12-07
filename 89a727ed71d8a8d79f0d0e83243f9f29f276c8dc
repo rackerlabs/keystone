@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_f8fa97bc",
+        "filename": "releasenotes/notes/deprecate-ldap-role-ad28dce16863bbb1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-07T04:57:50Z",
+      "side": 1,
+      "message": "Not sure if the link of the PB should be given here.",
+      "revId": "89a727ed71d8a8d79f0d0e83243f9f29f276c8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
