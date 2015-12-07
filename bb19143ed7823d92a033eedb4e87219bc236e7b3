@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_b612b707",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10281
+      },
+      "writtenOn": "2015-12-07T19:04:21Z",
+      "side": 1,
+      "message": "it was stated so as openstack client fails saying \"Could not find resource project_a\", reworded the entire commit message.",
+      "parentUuid": "7a740942_50f5d080",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_30e924e7",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-06T04:52:52Z",
       "side": 1,
       "message": "nits:\n switch the order, the signature of assertEqual is:\n     def assertEqual(self, expected, observed, message\u003d\u0027\u0027):\n         ...",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_76968f94",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 10281
+      },
+      "writtenOn": "2015-12-07T19:04:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_30e924e7",
       "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_d63983a5",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 10281
+      },
+      "writtenOn": "2015-12-07T19:04:21Z",
+      "side": 1,
+      "message": "Dave, I am moving these tests cases to a separate patch.",
+      "parentUuid": "7a740942_302844e2",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_50c71045",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-12-06T04:52:52Z",
       "side": 1,
       "message": "nits: s/assingment/assignment",
+      "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b644f71a",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 10281
+      },
+      "writtenOn": "2015-12-07T19:04:21Z",
+      "side": 1,
+      "message": "Ditto, moving these tests cases to a separate patch.",
+      "parentUuid": "7a740942_50c71045",
       "revId": "bb19143ed7823d92a033eedb4e87219bc236e7b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
