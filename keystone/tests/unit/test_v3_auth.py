@@ -506,6 +506,18 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
         self.assertValidDomainScopedTokenResponse(r)
 
+    def test_project_scoped_token_format(self):
+        # ensure project scoped token responses contains the appropriate data
+        project_scoped_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.default_domain_user['id'],
+                password=self.default_domain_user['password'],
+                project_id=self.default_domain_project['id'])
+        )
+        self.headers['X-Subject-Token'] = project_scoped_token
+        r = self.get('/auth/tokens', headers=self.headers)
+        self.assertValidProjectScopedTokenResponse(r)
+
 
 class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
     def config_overrides(self):
