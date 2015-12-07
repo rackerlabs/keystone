@@ -34,6 +34,24 @@
       "revId": "0b7f47c81c4fb68f1300653d1e1772695a09eafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b9a8788e",
+        "filename": "test-requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T15:09:00Z",
+      "side": 1,
+      "message": "Nice, I think it\u0027s a good plan :)\n\nThanks for clarifying.",
+      "parentUuid": "7a740942_c59d5967",
+      "revId": "0b7f47c81c4fb68f1300653d1e1772695a09eafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
