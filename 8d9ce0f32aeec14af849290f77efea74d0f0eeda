@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_ccbed264",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T20:02:26Z",
+      "side": 1,
+      "message": "oh good call.",
+      "parentUuid": "7a740942_ec65ceb4",
+      "revId": "8d9ce0f32aeec14af849290f77efea74d0f0eeda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_6c955e3d",
         "filename": "keystone/tests/unit/test_catalog.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-07T19:46:24Z",
       "side": 1,
       "message": "s/the/that the/",
+      "revId": "8d9ce0f32aeec14af849290f77efea74d0f0eeda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0c57fa26",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-07T20:02:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_6c955e3d",
       "revId": "8d9ce0f32aeec14af849290f77efea74d0f0eeda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
