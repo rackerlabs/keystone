@@ -609,9 +609,50 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('domain', token)
-        self.assertIn('id', token['domain'])
-        self.assertIn('name', token['domain'])
+        domain_scoped_properties = {
+            'audit_ids': {'type': ['array']},
+            'bind': {'type': ['object']},
+            'catalog': {'type': ['array']},
+            'expires_at': {'type': ['string']},
+            'issued_at': {'type': ['string']},
+            'methods': {'type': ['array']},
+            'domain': {
+                'type': ['object'],
+                'required': ['id', 'name'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'name': {'type': ['string']}
+                }
+            },
+            'roles': {'type': ['array']},
+            'user': {
+                'type': ['object'],
+                'required': ['id', 'name', 'domain'],
+                'properties': {
+                    'id': {'type': ['string']},
+                    'name': {'type': ['string']},
+                    'domain': {
+                        'type': ['object'],
+                        'properties': {
+                            'id': {'type': ['string']},
+                            'name': {'type': ['string']}
+                        },
+                        'required': ['id', 'name']
+                    }
+                }
+            }
+        }
+        domain_scoped_token_schema = {
+            'type': 'object',
+            'properties': domain_scoped_properties,
+            'required': ['audit_ids', 'expires_at', 'issued_at', 'methods',
+                         'user', 'domain'],
+            'optional': ['bind', 'catalog'],
+            'additionalProperties': False
+        }
+        validator_object = validators.SchemaValidator(
+            domain_scoped_token_schema)
+        validator_object.validate(token)
 
         return token
 
