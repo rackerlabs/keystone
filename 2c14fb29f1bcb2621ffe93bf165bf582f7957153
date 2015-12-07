@@ -52,6 +52,24 @@
       "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a8f7ab89",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-07T22:31:10Z",
+      "side": 1,
+      "message": "Yep, looks better now!",
+      "parentUuid": "7a740942_28dadb4c",
+      "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
