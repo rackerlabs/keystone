@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_251f646d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-07T22:16:28Z",
+      "side": 1,
+      "message": "add a space here, it\u0027ll fail pep8",
+      "revId": "2c14fb29f1bcb2621ffe93bf165bf582f7957153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
