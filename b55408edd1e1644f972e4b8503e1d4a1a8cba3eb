@@ -34,6 +34,24 @@
       "revId": "b55408edd1e1644f972e4b8503e1d4a1a8cba3eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_bcf7ed89",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 18835
+      },
+      "writtenOn": "2015-12-08T00:37:48Z",
+      "side": 1,
+      "message": "I think should update L651 since there is comment about list in L651.\n(e.g. \"Load the keys into a list (type is \u0027six.text_type\u0027).\")\nWhy do you divided a comment?",
+      "parentUuid": "7a740942_2f13d65c",
+      "revId": "b55408edd1e1644f972e4b8503e1d4a1a8cba3eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
