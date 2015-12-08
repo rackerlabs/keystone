@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_40fcb76f",
+        "filename": "keystone/tests/unit/tests/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-08T14:24:00Z",
+      "side": 1,
+      "message": "I don\u0027t think this is possible since exc.SAWarning\u0027s type is calling a builtin warning class.\n\nhttps://github.com/zzzeek/sqlalchemy/blob/master/lib/sqlalchemy/exc.py#L373\n\nand LOG is just the logging package.",
+      "revId": "6afc4cc7209d9cdf05f0d877ea88c73a4fe61a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
