@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_532fa83e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-08T17:01:31Z",
+      "side": 1,
+      "message": "Should we also check for the specific role that we expect?\n\nI would expect the collection_url to always be the value of self because that\u0027s what the GET was getting.",
+      "revId": "9e4ce59f765103c0bf73b8aed437724ff597c7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
