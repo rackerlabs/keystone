@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_0911e15c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T22:56:37Z",
+      "side": 1,
+      "message": "This is going to require a new version of the driver interface, as such you should look at https://review.openstack.org/#/c/242853/ . You\u0027re going to have to write an adapter for the V8 driver that removes the include_names parameter.",
+      "revId": "fa06329c70c5c79d29620f54071716450ba68a6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
