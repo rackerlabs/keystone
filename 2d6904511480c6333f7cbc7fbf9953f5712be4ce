@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_93945743",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-08T04:50:51Z",
+      "side": 1,
+      "message": "rebase this on: https://review.openstack.org/#/c/247257/ ?",
+      "revId": "2d6904511480c6333f7cbc7fbf9953f5712be4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
