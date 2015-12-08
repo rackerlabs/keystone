@@ -13,7 +13,6 @@
 #   under the License.
 
 import sys
-import warnings
 
 from oslo_log import log
 from sqlalchemy import exc
@@ -44,10 +43,10 @@ class TestTestCase(unit.TestCase):
 
     def test_sa_warning(self):
         self.assertThat(
-            lambda: warnings.warn('test sa warning error', exc.SAWarning),
+            lambda: LOG.warn('test sa warning error', exc.SAWarning),
             matchers.raises(exc.SAWarning))
 
     def test_deprecation_warnings_are_raised_as_exceptions_in_tests(self):
         self.assertThat(
-            lambda: warnings.warn('this is deprecated', DeprecationWarning),
+            lambda: LOG.warn('this is deprecated', DeprecationWarning),
             matchers.raises(DeprecationWarning))
