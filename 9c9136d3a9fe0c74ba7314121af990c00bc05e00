@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_3e14234b",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-08T17:33:23Z",
+      "side": 1,
+      "message": "So the idea is that the changes to the code below will ensure that we do NOT load a competing driver....i.e. if you have asked for V8 it will only load V8 and not any other version (include the latest one)",
+      "parentUuid": "7a740942_ca4f5d32",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_07d0fef4",
         "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
         "patchSetId": 29
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_f911d552",
+        "filename": "setup.cfg",
+        "patchSetId": 29
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-08T17:33:23Z",
+      "side": 1,
+      "message": "blimey...no idea where that came from!",
+      "parentUuid": "7a740942_c7be76ad",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_47b286e6",
         "filename": "tox.ini",
         "patchSetId": 29
@@ -82,6 +118,24 @@
       "writtenOn": "2015-12-08T16:12:29Z",
       "side": 1,
       "message": "Is there any reason we are singling out the legacy tests?",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b92eed89",
+        "filename": "tox.ini",
+        "patchSetId": 29
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-08T17:33:23Z",
+      "side": 1,
+      "message": "so that they don\u0027t run combined with the standard tests and cause multiple competing models to be loaded",
+      "parentUuid": "7a740942_47b286e6",
       "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
