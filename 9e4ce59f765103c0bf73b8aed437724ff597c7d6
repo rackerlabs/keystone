@@ -16,6 +16,24 @@
       "revId": "9e4ce59f765103c0bf73b8aed437724ff597c7d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_731e6471",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-08T17:09:48Z",
+      "side": 1,
+      "message": "Yes and yes.\n\n1) we already check the specific role in the line above, when we pass \u0027ref\u003dself.role\u0027, that ref is ensured to be in the list.\n\n2) The collection URL is the asme of the member URL without the role ID. Do you suggest to remove this check ? As perhaps it is something obvious ?",
+      "parentUuid": "7a740942_532fa83e",
+      "revId": "9e4ce59f765103c0bf73b8aed437724ff597c7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
