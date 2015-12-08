@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_97cc4a6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-08T01:10:25Z",
+      "side": 1,
+      "message": "Please move this below the description.  Also add a title line.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "0fb8a7399d3446f61d591422da626a33cbe5b65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_d7e412e1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-08T01:10:25Z",
+      "side": 1,
+      "message": "Avoid using \\.  See the hacking rules.",
+      "revId": "0fb8a7399d3446f61d591422da626a33cbe5b65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
