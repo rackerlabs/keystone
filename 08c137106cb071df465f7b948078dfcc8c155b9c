@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2ea2ae99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "change \"users are\" to \"users\"",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ceac4a8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "change \"users names\" to \"users\u0027 names\"",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ae953e33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "what query parameter?",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_6ee996b6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "since this function is embedded in the method, no need to duplicate the method name in the function name.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ee1a66c5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "you\u0027re going to need to provide the user\u0027s domain name, too.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_4e829ac9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "you\u0027re going to need to provide the group\u0027s domain name, too.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ee71060d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "you\u0027re going to need to provide the project\u0027s domain name, too.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ae31be5b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "it would be fancier and could lead to a more efficient implementation to use a generator for this.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0edfb2d9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "suggest remove the else since the interpreter will never get past the if/else block.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ee8d86d3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4297,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "use a random string for the name.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_4eb5ba7b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "use the HasLength matcher then we\u0027ll get better output in the case of mismatch.",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_8e664228",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-08T18:41:06Z",
+      "side": 1,
+      "message": "I assume you\u0027re planning to also add a domain assignment?",
+      "revId": "08c137106cb071df465f7b948078dfcc8c155b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
