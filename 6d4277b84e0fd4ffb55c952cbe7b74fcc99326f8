@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2a0e21e5",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2015-12-08T16:33:53Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in the format default_domain[\u0027id\u0027]?",
+      "revId": "6d4277b84e0fd4ffb55c952cbe7b74fcc99326f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_2a9e2107",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2015-12-08T16:33:53Z",
+      "side": 1,
+      "message": "projects*",
+      "revId": "6d4277b84e0fd4ffb55c952cbe7b74fcc99326f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
