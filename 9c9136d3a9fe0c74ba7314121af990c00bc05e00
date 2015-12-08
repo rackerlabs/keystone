@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_475cc67c",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-08T16:12:29Z",
+      "side": 1,
+      "message": "I\u0027m not clear how this works in the full unit test run since the old and the new will be imported into the same process. Does it work accidentally because of ordering?",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_07d0fef4",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 29
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-08T16:12:29Z",
+      "side": 1,
+      "message": "(ni) s/should/will/ ?",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c7be76ad",
+        "filename": "setup.cfg",
+        "patchSetId": 29
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-08T16:12:29Z",
+      "side": 1,
+      "message": "Was this added back on accident?",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_47b286e6",
+        "filename": "tox.ini",
+        "patchSetId": 29
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-12-08T16:12:29Z",
+      "side": 1,
+      "message": "Is there any reason we are singling out the legacy tests?",
+      "revId": "9c9136d3a9fe0c74ba7314121af990c00bc05e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
