@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_764a92ae",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T17:42:40Z",
+      "side": 1,
+      "message": "looks like this is done by https://review.openstack.org/#/c/255070/1",
+      "parentUuid": "7a740942_d697c638",
+      "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_1bff5d35",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "I think the controller cannot call these functions since `endpoint_filter.sql` backend need these in the API layer rather than controller layer.\n\nI am also not quite sure API layer could call the the private method from the controller layer.",
       "parentUuid": "7a740942_5b7165df",
+      "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_56e436ab",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T17:42:40Z",
+      "side": 1,
+      "message": "looks like this is done by - https://review.openstack.org/#/c/255070/1",
+      "parentUuid": "7a740942_74a2154d",
       "revId": "f86448a3113fc594e78d3d9410f44c1f64a9ad58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
