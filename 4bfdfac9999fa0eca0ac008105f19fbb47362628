@@ -36,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "7a740942_eb58ff32",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-09T05:33:15Z",
+      "side": 1,
+      "message": "++ I think raise ProjectNotFound is better like what we did for other entities.",
+      "parentUuid": "7a740942_a4446f49",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_6b9e5264",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-09T05:33:15Z",
+      "side": 1,
+      "message": "update the docstring per what you did in the ldap backend and what will be updated in the SQL backend. :)\n\n :raises keystone.exception.ProjectNotFound: if project_id does not\n                                             exist",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_a161c106",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 6
@@ -47,6 +82,40 @@
       "writtenOn": "2015-12-09T00:29:56Z",
       "side": 1,
       "message": "actually this calls: delete_projects_from_ids\n\nuse docstrings instead of comments to describe a test",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_eb58028c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3195,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-09T05:33:15Z",
+      "side": 1,
+      "message": "you can just `self.resource_api.delete_projects_from_ids(projects_ids)` since you have added the interface there and this will cover your change about that.",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ab119753",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3205,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-09T05:33:15Z",
+      "side": 1,
+      "message": "why silent? looks like you do it intentionally. does log something better?",
       "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
