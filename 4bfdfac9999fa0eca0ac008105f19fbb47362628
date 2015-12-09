@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_0146957a",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-09T00:29:56Z",
+      "side": 1,
+      "message": "this change is not necessary since we are removing this backend, but doesn\u0027t matter.",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a4446f49",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-09T00:29:56Z",
+      "side": 1,
+      "message": "is there anyway to determine if one of the project_ids was not found and we can log that? similar to how you did for the ldap backend?",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a161c106",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-09T00:29:56Z",
+      "side": 1,
+      "message": "actually this calls: delete_projects_from_ids\n\nuse docstrings instead of comments to describe a test",
+      "revId": "4bfdfac9999fa0eca0ac008105f19fbb47362628",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
