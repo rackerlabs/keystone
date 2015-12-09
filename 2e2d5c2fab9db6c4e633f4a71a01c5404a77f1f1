@@ -106,6 +106,24 @@
       "revId": "2e2d5c2fab9db6c4e633f4a71a01c5404a77f1f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0db8d4e4",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-09T20:20:55Z",
+      "side": 1,
+      "message": "That is very not true.  It just means that the project token you have is for the admin project, but it could have any role on it, not just admin. We need to check for both.",
+      "parentUuid": "7a740942_c3b6e6db",
+      "revId": "2e2d5c2fab9db6c4e633f4a71a01c5404a77f1f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
