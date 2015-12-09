@@ -16,6 +16,24 @@
       "revId": "c1b8682ee9f3cee78a4ef752d1f9b3a96bbe5aa4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_e8b8efea",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-09T13:08:59Z",
+      "side": 1,
+      "message": "Unit tests? Or in tempest?",
+      "parentUuid": "7a740942_40caac4f",
+      "revId": "c1b8682ee9f3cee78a4ef752d1f9b3a96bbe5aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
