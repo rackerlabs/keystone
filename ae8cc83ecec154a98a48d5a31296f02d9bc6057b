@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_ec4543b3",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T23:52:58Z",
+      "side": 1,
+      "message": "This also verifies tokens passed in the \u0027X-Auth-Token\u0027 header. A domain could be disabled after a token has been generated.\n\nStill working on making sure trusts works.",
+      "parentUuid": "7a740942_8d8cc480",
+      "revId": "ae8cc83ecec154a98a48d5a31296f02d9bc6057b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_0d5bf42f",
         "filename": "keystone/token/provider.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-09T20:18:54Z",
       "side": 1,
       "message": "Good to note here that this also checks if the projects domain is enabled.",
+      "revId": "ae8cc83ecec154a98a48d5a31296f02d9bc6057b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_07af48e4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T23:52:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_0d5bf42f",
       "revId": "ae8cc83ecec154a98a48d5a31296f02d9bc6057b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
