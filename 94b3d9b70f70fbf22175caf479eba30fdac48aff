@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_6b686b88",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T19:49:51Z",
+      "side": 1,
+      "message": "Yes, \u0027domain_id\u0027 is only returned when retrieving the tenant entity from the backend.",
+      "parentUuid": "7a740942_6292d0f8",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_a5ae82e5",
         "filename": "keystone/tests/unit/test_token_provider.py",
         "patchSetId": 12
@@ -47,6 +65,24 @@
       "writtenOn": "2015-12-09T16:39:18Z",
       "side": 1,
       "message": "we could add one more case here right?\n\n\n    project[\u0027enabled\u0027] \u003d True\n    domain[\u0027enabled\u0027] \u003d True\n\nand verify that we don\u0027t raise an exception.",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_1cafac95",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T19:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_a5ae82e5",
       "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_b988eac7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T19:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_0513d60e",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_252a92e8",
         "filename": "keystone/token/provider.py",
         "patchSetId": 12
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_7c6b5086",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T19:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_252a92e8",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_c5caae6e",
         "filename": "keystone/token/provider.py",
         "patchSetId": 12
@@ -98,6 +170,24 @@
       "writtenOn": "2015-12-09T16:39:18Z",
       "side": 1,
       "message": "we should try and be a bit more specific about the exception we\u0027re catching here. \n\nShould we except KeyErrors, ProjectNotFound, DomainNotFound, etc...\n\nIf we use a blanket Exception it can potentially make future issues harder to debug.",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_dcf5a4cb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-09T19:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_c5caae6e",
       "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
