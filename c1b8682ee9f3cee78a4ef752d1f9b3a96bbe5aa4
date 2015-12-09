@@ -52,6 +52,40 @@
       "revId": "c1b8682ee9f3cee78a4ef752d1f9b3a96bbe5aa4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_fc5aeb29",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-12-09T15:38:43Z",
+      "side": 1,
+      "message": "btw, is there any real need to move project between domains?",
+      "revId": "c1b8682ee9f3cee78a4ef752d1f9b3a96bbe5aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_5cbd3f01",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-12-09T15:38:43Z",
+      "side": 1,
+      "message": "questionable. As for me, passing kwargs is more explicit",
+      "revId": "c1b8682ee9f3cee78a4ef752d1f9b3a96bbe5aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
