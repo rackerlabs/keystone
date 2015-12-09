@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_8da60452",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-09T20:28:42Z",
+      "side": 1,
+      "message": "it is not common to have kwargs in the backend calls, I think it\u0027s duo to cache issues",
+      "parentUuid": "7a740942_d2734be6",
+      "revId": "d6f889c967377582af8d7b478b031d0d9c4b2062",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_d2ca6b6e",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 36
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-09T20:14:29Z",
       "side": 1,
       "message": "Would be nice if you could create another test case just like this one - 2 projects with the same name but in different domains -, but passing the domain_id, so as to test if the right project is retrieved.",
+      "revId": "d6f889c967377582af8d7b478b031d0d9c4b2062",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ad25000b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-09T20:28:42Z",
+      "side": 1,
+      "message": "We create this in the follow-up patchset, where the is_domain parameter is enforced with the name in the code, instead of in the sql backend",
+      "parentUuid": "7a740942_d2ca6b6e",
       "revId": "d6f889c967377582af8d7b478b031d0d9c4b2062",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
