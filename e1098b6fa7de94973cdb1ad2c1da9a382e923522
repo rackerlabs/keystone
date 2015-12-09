@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_9dd97df5",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 12972
+      },
+      "writtenOn": "2015-12-09T08:25:52Z",
+      "side": 1,
+      "message": "Thanks for the clarification.\n\nHowever something is still unclear to me.\n\nThe “Python and testing environments” seems\noptional, but the section “Verifying keystone is set up”\nrefers to an installed tox.\n\nAlso this section “PyPI packages and virtualenv” seems\nto be indipendent from the next “Python and testing environments”.\n\nBut you really need some (not sure if all) the system packages\nmentioned in “Python and testing environments” to  get keystone\nrunning in a virtualenv.  Also please add the test for virtualenv only:\n\n$VIRTUAL_ENV/bin/python -c \u0027import keystone\u0027\n\nMy suggestion is to reorder the sections so the instruction can\nbe followed sequentially leving out the pain to jump back and forth.\n\nThanks again.\n\nSide note:\nI am now in the situation where:\npip install -r requirements.txt\nfailed:\n    In file included from greenlet.c:5:0:\n    greenlet.h:8:20: fatal error: Python.h: No such file or directory\n     #include \u003cPython.h\u003e\n                        ^\n    compilation terminated.\n compilation terminated.\n    error: command \u0027x86_64-linux-gnu-gcc\u0027 failed with exit status 1\n    \n    ----------------------------------------\nCommand \"/home/vagrant/.venv/bin/python -c \"import setuptools, tokenize;__file__\u003d\u0027/tmp/pip-build-Mb2oZA/greenlet/setup.py\u0027;exec(compile(getattr(tokenize, \u0027open\u0027, open)(__file__).read().replace(\u0027\\r\\n\u0027, \u0027\\n\u0027), __file__, \u0027exec\u0027))\" install --record /tmp/pip-xeSBhR-record/install-record.txt --single-version-externally-managed --compile --install-headers /home/vagrant/.venv/include/site/python2.7/greenlet\" failed with error code 1 in /tmp/pip-build-Mb2oZA/greenlet\n\nBut:\n\n$VIRTUAL_ENV/bin/python -c \u0027import keystone\u0027\n\nWorks!\n\nI guess this test is not enough for a telling if the developer environment is\nproperly working. Or the developer should be reassured that some errors in pip install are not fatal.",
+      "parentUuid": "7a740942_f4c36555",
+      "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8496a14a",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 2
