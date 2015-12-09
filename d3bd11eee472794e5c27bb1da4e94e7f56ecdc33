@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_1b79eb2f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-09T22:07:19Z",
+      "side": 1,
+      "message": "This still breaking backward compatibility. If we are going to check both is_admin_project and role that\u0027s fine. But lets not break deployments which using this template.\n\n\"cloud_admin\": \"rule:admin_required and (domain_id:admin_domain_id or is_admin_project:True)\"",
+      "revId": "d3bd11eee472794e5c27bb1da4e94e7f56ecdc33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
