@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_155bfa55",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T21:32:56Z",
+      "side": 1,
+      "message": "just curious, but why do we need to add this to the tokens?",
+      "revId": "ff14cc92051ebe180f999904c09678c984ab189e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_3559568f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T21:32:56Z",
+      "side": 1,
+      "message": "could collapse this into an elif: \n\n    elif token_data.get(\u0027token\u0027):\n        project \u003d token_data[\u0027token\u0027].get(\u0027tenant\u0027, {})",
+      "revId": "ff14cc92051ebe180f999904c09678c984ab189e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_15d8daee",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T21:32:56Z",
+      "side": 1,
+      "message": "could pass in the token_id here:\n\nhttps://github.com/openstack/keystone/blob/507003981206440313cc6fd692ef58c748742435/keystone/token/persistence/core.py#L60\n\nif we have it available to us.",
+      "revId": "ff14cc92051ebe180f999904c09678c984ab189e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
