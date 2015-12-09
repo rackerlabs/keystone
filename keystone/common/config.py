@@ -20,6 +20,7 @@ from oslo_config import cfg
 from oslo_log import log
 import oslo_messaging
 from oslo_middleware import cors
+from osprofiler import opts as profiler
 import passlib.utils
 
 from keystone import exception
@@ -1191,6 +1192,9 @@ def configure(conf=None):
         cfg.PortOpt('pydev-debug-port',
                     help='Port to connect to for remote debugger.'))
 
+    # configure OSprofiler options
+    profiler.set_defaults(conf)
+
     for section in FILE_OPTIONS:
         for option in FILE_OPTIONS[section]:
             if section:
@@ -1225,7 +1229,7 @@ def list_opts():
 
     :returns: a list of (group_name, opts) tuples
     """
-    return list(FILE_OPTIONS.items())
+    return list(FILE_OPTIONS.items()) + profiler.list_opts()
 
 
 def set_middleware_defaults():
