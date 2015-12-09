@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_8d8cc480",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-09T20:18:54Z",
+      "side": 1,
+      "message": "this is a safe check, but pretty sure that we would not get here if the users domain was disabled, as the user could not authenticate.\n\nYou want to make sure this works for trusts: trustor.domain_id and trustee.domain_id must both be enabled.",
+      "revId": "ae8cc83ecec154a98a48d5a31296f02d9bc6057b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0d5bf42f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-09T20:18:54Z",
+      "side": 1,
+      "message": "Good to note here that this also checks if the projects domain is enabled.",
+      "revId": "ae8cc83ecec154a98a48d5a31296f02d9bc6057b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
