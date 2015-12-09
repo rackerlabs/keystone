@@ -1689,6 +1689,22 @@
 #list_limit = <None>
 
 
+[profiler]
+
+#
+# From keystone
+#
+
+# If False fully disable profiling feature. (boolean value)
+#enabled = false
+
+# If False doesn't trace SQL requests. (boolean value)
+#trace_sqlalchemy = false
+
+# Secret key to use to sign Keystone tracing messages. (string value)
+#hmac_keys = SECRET_KEY
+
+
 [resource]
 
 #
