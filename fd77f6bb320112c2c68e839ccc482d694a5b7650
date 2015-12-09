@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_91c3888a",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2015-12-09T17:54:49Z",
+      "side": 1,
+      "message": "This statement is not correct.\n\nSee current sample template:\nhttps://github.com/openstack/keystone/blob/master/etc/default_catalog.templates\n\nIt\u0027s:\n\n    {region_id: {service_type: {key: value}}}",
+      "parentUuid": "ba8a016a_0e4e55c1",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_69c59b3b",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_1181d84d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2015-12-09T17:54:49Z",
+      "side": 1,
+      "message": "I see nothing wrong in this code. The data is coming from the templated catalog in Keystone.\n\nEach entry in the template file has the following format:\n\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.id \u003d \u003cservice_id\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.description \u003d \u003cservice_description\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.publicURL \u003d \u003cservice_publicURL\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.internalURL \u003d \u003cservice_internalURL\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.adminURL \u003d \u003cservice_adminURL\u003e\n\nself.templates contains everything after \"catalog.\" and structured as explained above.",
+      "parentUuid": "ba8a016a_69c59b3b",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_89579fc9",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2015-11-23T14:12:06Z",
       "side": 1,
       "message": "According to class docs, name, publicURL, internalURL and adminURL are the valid keys within a service. This way, we can put empty string directly.",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_51e68045",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2015-12-09T17:54:49Z",
+      "side": 1,
+      "message": "I do not understand your comment. Do you mean the templated catalog shouldn\u0027t return a service description if one is provided by the template?\n\nkeystone service-list does show the service description column and I would like to be able to populate it.",
+      "parentUuid": "ba8a016a_89579fc9",
       "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
