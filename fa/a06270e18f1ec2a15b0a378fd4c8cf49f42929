@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Henrique Truta <henrique@lsd.ufcg.edu.br>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Code-Review+1: Sean Perry <sean.perry@hpe.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Toshiya Shiga <tos-shiga@yk.jp.nec.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 09 Dec 2015 05:51:51 +0000
+Reviewed-on: https://review.openstack.org/248116
+Project: openstack/keystone
+Branch: refs/heads/master
