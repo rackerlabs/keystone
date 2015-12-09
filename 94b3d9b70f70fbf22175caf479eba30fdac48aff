@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_9cd087f9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T16:39:18Z",
+      "side": 1,
+      "message": "We can add a little more context here around why we want to change this and how it effects us.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_6292d0f8",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T16:39:18Z",
+      "side": 1,
+      "message": "this has to be here because it\u0027s not allowed to be in the create_v2_token() method, right?",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a5ae82e5",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T16:39:18Z",
+      "side": 1,
+      "message": "we could add one more case here right?\n\n\n    project[\u0027enabled\u0027] \u003d True\n    domain[\u0027enabled\u0027] \u003d True\n\nand verify that we don\u0027t raise an exception.",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0513d60e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T16:39:18Z",
+      "side": 1,
+      "message": "nit: to someone looking at this comment down the line, it might not be apparent how this method reduced revocation events. We could reword this to be a little more clear: \n\n    Explicitly check that the projects and domains associated with a token\n    are enabled. If they are not enabled then the token is invalid.",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_252a92e8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T16:39:18Z",
+      "side": 1,
+      "message": "Should this default to an empty dict? \n\n    .get(\u0027domain\u0027, {})",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c5caae6e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-12-09T16:39:18Z",
+      "side": 1,
+      "message": "we should try and be a bit more specific about the exception we\u0027re catching here. \n\nShould we except KeyErrors, ProjectNotFound, DomainNotFound, etc...\n\nIf we use a blanket Exception it can potentially make future issues harder to debug.",
+      "revId": "94b3d9b70f70fbf22175caf479eba30fdac48aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
