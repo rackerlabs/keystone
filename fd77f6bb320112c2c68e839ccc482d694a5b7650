@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "7a740942_b1500460",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2015-12-09T18:01:52Z",
+      "side": 1,
+      "message": "There is no id in the default templated_catalog. This means code crashes for me when it\u0027s not provided in /etc/keystone/default_catalog.templates\n\nAn other change proposed auto-generating it:\nhttps://review.openstack.org/#/c/120011/\n\nMaybe there could be an hybrid way where one is auto-generated when not provided and otherwise, provided one is used.",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_89579fc9",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 8
