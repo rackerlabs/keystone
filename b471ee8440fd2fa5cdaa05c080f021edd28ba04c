@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_8f7103e3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T07:49:30Z",
+      "side": 1,
+      "message": "make this private?",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_cf670b24",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T07:49:30Z",
+      "side": 1,
+      "message": "give \u0027lc\u0027 a better name? i don\u0027t know what this does",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_2f5ecf45",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T07:49:30Z",
+      "side": 1,
+      "message": "why bother passing this in? it defaults to None",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_af2abfe5",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1469,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T07:49:30Z",
+      "side": 1,
+      "message": "new parameters should be added to the end, but this is the only instance of it... so it\u0027s OK",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
