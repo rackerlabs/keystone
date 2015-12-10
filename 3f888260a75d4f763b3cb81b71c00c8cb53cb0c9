@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_60370ce4",
+        "filename": "tox.ini",
+        "patchSetId": 21
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 0,
+      "message": "irrelevant change, revert it back and possibly in another review.",
+      "revId": "3f888260a75d4f763b3cb81b71c00c8cb53cb0c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

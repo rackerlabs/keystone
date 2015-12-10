@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a0865411",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "why not just say \"Creates an implied role\"?",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_9ea93e27",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "nice! :)",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_1e9eae07",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "change to:\n\n from oslo_db import exception as db_exception\n from sqlalchemy import and_\n\n from keystone import assignment\n from keystone.common import sql\n from keystone import exception",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_40f9b0c7",
+        "filename": "keystone/common/sql/migrate_repo/versions/086_implied_roles.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "IMPLIED_ROLE_TABLE\u003d\u0027implied_role\u0027, fine as it is.",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c05da0ed",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2039,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "\"\"\"Call ``PUT /implied_role/{prior_role_id}/{implied_role_id}``.\"\"\", fine as it is.",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a05c14ee",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2043,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "\"\"\"Call ``DELETE /implied_role/{prior_role_id}/{implied_role_id}``.\"\"\", fine as it is.",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c0cfe0b1",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2056,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "pls switch the order for this assertion, the correct signature is\n self.assertEqual(expected, actual)",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_208d847b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2064,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "pls switch the order for this assertion, the correct signature is\n self.assertEqual(expected, actual)",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_205fc40f",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T05:03:36Z",
+      "side": 1,
+      "message": "duplicated with L326~L325, remove those unnecessary code block.",
+      "revId": "186e8307ae14437d83f7053254b5a436c202cdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
