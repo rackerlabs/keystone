@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_05614ba8",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-10T18:35:37Z",
+      "side": 1,
+      "message": "Sounds good.",
+      "parentUuid": "7a740942_cfd364d4",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_ef1180b0",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "writtenOn": "2015-12-10T18:16:25Z",
       "side": 1,
       "message": "I get this error when trying to run the bootstrap:\n\n Conflict: Conflict occurred attempting to store domain - Duplicate Entry\n\nThis is after following the developer docs. Examining the sqlite table shows the default domain is already created.",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a525d75c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-10T18:35:37Z",
+      "side": 1,
+      "message": "Hm. I\u0027ll need to see what is going on, this should just clear out via the except, but i might be grabbing the wrong exception.",
+      "parentUuid": "7a740942_ef1180b0",
       "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
