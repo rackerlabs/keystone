@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_c35fea73",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2015-12-10T05:48:42Z",
+      "side": 1,
+      "message": "I think it would be nice to add the above tenant as default_project for this user. Thoughts?",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
