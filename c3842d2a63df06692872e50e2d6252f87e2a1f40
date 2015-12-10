@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a3b8a12b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T03:40:29Z",
+      "side": 1,
+      "message": "If you pass a non-existed project_ids list, you will never get here, and the log will be never be logged, the logic here is wrong.\n\n -\u003e for project in project_refs:\n (Pdb) p project_refs\n []\n (Pdb) p projects_ids\n [\u0027a130fc6511da4630acb25d8b65e95d21\u0027]\n (Pdb) n\n \u003e   /opt/stack/keystone/keystone/resource/backends/sql.py(182)delete_project s_from_ids()\n -\u003e query.delete(synchronize_session\u003d\u0027fetch\u0027)\n\n\nThe problem is that you are using query in L173 filter by the project_ids, and the project you get if there is must be in project_ids.\n\nDon\u0027t query the Project table by the project_ids should be fine.",
+      "revId": "c3842d2a63df06692872e50e2d6252f87e2a1f40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_e86c4838",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3204,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T03:40:29Z",
+      "side": 1,
+      "message": "\"resource backend delete non-existing project ids issue warning.\" to differ the docstring with the first testcase.",
+      "revId": "c3842d2a63df06692872e50e2d6252f87e2a1f40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_e8f7688a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3221,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-10T03:40:29Z",
+      "side": 1,
+      "message": "i think it\u0027s possible to verify that the warning is logged, nice to see this scenario is covered in the testcase.",
+      "revId": "c3842d2a63df06692872e50e2d6252f87e2a1f40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
