@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_b94a1cab",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-10T00:40:04Z",
+      "side": 1,
+      "message": "We might need to also allow configuring domains here rather than assuming default domain is \"ok\".",
+      "revId": "b5bfe2d579b113cfe6b9aca285061d79d9025ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
