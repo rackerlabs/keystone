@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_ca085694",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-10T09:07:57Z",
+      "side": 1,
+      "message": "Maybe just \"Bootstrap project for initializing the cloud\"",
+      "parentUuid": "7a740942_cf2aab7e",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_c35fea73",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "I am against that pattern in all cases. This is something I don\u0027t want to continue to encourage. \"default_project\" is a terrible thing to encode in the user data, and especially here, it is not needed.",
       "parentUuid": "7a740942_c35fea73",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_4ac78645",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-10T09:07:57Z",
+      "side": 1,
+      "message": "+1 on not using default project",
+      "parentUuid": "7a740942_af4cff76",
       "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
