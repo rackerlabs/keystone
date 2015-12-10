@@ -16,6 +16,24 @@
       "revId": "a9971cc1dacdd3651380084cc6f391e2bc339c82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_f0815c90",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-10T21:21:25Z",
+      "side": 0,
+      "message": "Readability.",
+      "parentUuid": "7a740942_6c332963",
+      "revId": "a9971cc1dacdd3651380084cc6f391e2bc339c82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
