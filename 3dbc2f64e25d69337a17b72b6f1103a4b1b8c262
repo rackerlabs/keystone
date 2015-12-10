@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_4f6f9b92",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T07:35:26Z",
+      "side": 1,
+      "message": "add a comment here saying we don\u0027t support these options in our fake ldap",
+      "revId": "3dbc2f64e25d69337a17b72b6f1103a4b1b8c262",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
