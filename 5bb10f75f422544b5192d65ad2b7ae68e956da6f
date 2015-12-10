@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_142c4aaa",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-10T07:28:11Z",
+      "side": 1,
+      "message": "This is a case where we might need both forms, as this is also meant to be managed via CMS tools (such as puppet). Ideally this user\u0027s password would be changed or the user would be deleted once keystone is setup.\n\nI\u0027ll need to mull over the best way to address both use-cases elegantly. Remember, this is really only ever to be used for initial setup of keystone not on an ongoing basis (in fact, if this is used outside of bootstrapping, I\u0027d be somewhat worried).",
+      "parentUuid": "7a740942_494b1b2c",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_8957c3c9",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_cf2aab7e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-10T07:28:11Z",
+      "side": 1,
+      "message": "Hah. I can see that. This actually should become a better string. Please let me know if you have any suggestions.",
+      "parentUuid": "7a740942_8957c3c9",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_c35fea73",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-12-10T05:48:42Z",
       "side": 1,
       "message": "I think it would be nice to add the above tenant as default_project for this user. Thoughts?",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_af4cff76",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-10T07:28:11Z",
+      "side": 1,
+      "message": "I am against that pattern in all cases. This is something I don\u0027t want to continue to encourage. \"default_project\" is a terrible thing to encode in the user data, and especially here, it is not needed.",
+      "parentUuid": "7a740942_c35fea73",
       "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
