@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_0015b999",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2015-12-10T19:04:32Z",
+      "side": 1,
+      "message": "Eric that\u0027s a bit of a flawed argument. This command line tool _must_ be idempotent or it\u0027s not going to be useful to puppet users either.\n\nI think environment variables are a pretty common paradigm here, and all of the tools that need to run this automatically will be able to do that quite easily.",
+      "parentUuid": "7a740942_c0433112",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_ef1180b0",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
