@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a740942_494b1b2c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-10T06:38:19Z",
+      "side": 1,
+      "message": "I recommend not introducing command line that takes a password as an argument.  It shows up in history and in the output of ps.\n\nIt\u0027s much better to use a prompt like getpass",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_8957c3c9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-10T06:38:19Z",
+      "side": 1,
+      "message": "\"Cloud Init\" makes me think of cloud-init",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_c35fea73",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
