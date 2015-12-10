@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2849c9b7",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-10T16:10:21Z",
+      "side": 0,
+      "message": "The real bug is that this shouldn\u0027t be returning two different data types.",
+      "revId": "f01b564036dacd42562dab55afcf3738e7fbae1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
