@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "7a740942_cfd364d4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2015-12-10T18:16:25Z",
+      "side": 1,
+      "message": "Speaking for puppet, we would really prefer to be able to specify passwords as environment variables rather than command line options. The command shows up in the process table, in debug outputs, and sometimes in logs or reports, which in many environments is a security risk.",
+      "parentUuid": "7a740942_142c4aaa",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_ef1180b0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2015-12-10T18:16:25Z",
+      "side": 1,
+      "message": "I get this error when trying to run the bootstrap:\n\n Conflict: Conflict occurred attempting to store domain - Duplicate Entry\n\nThis is after following the developer docs. Examining the sqlite table shows the default domain is already created.",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_8957c3c9",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
