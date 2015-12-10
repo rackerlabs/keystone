@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a740942_63cb9673",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T05:37:31Z",
+      "side": 1,
+      "message": "tenant? *groans*\n\nname if project you luddite",
+      "revId": "0930020adafe87327fa82abfdd437c73bbc81b79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_2d11025e",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 2
@@ -13,6 +30,23 @@
       "writtenOn": "2015-12-10T02:53:55Z",
       "side": 1,
       "message": "you could extract this to another method and put a return instead of an empty \"pass\" to make bandit happy. Another option is logging here that the domain already exists",
+      "revId": "0930020adafe87327fa82abfdd437c73bbc81b79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c387ea10",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-10T05:37:31Z",
+      "side": 1,
+      "message": "may want to assert some of the output here",
       "revId": "0930020adafe87327fa82abfdd437c73bbc81b79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
