@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_c0433112",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-10T18:52:44Z",
+      "side": 1,
+      "message": "Don\u0027t use puppet myself, but as for Ansible this would be more useful as an Ansible module and not a command.  Command lines tools are generally not idempotent.\n\nAnother alternative is a argument that takes a password file.",
+      "parentUuid": "7a740942_142c4aaa",
+      "revId": "5bb10f75f422544b5192d65ad2b7ae68e956da6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_ef1180b0",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
