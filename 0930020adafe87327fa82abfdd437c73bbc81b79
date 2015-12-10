@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2d11025e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-10T02:53:55Z",
+      "side": 1,
+      "message": "you could extract this to another method and put a return instead of an empty \"pass\" to make bandit happy. Another option is logging here that the domain already exists",
+      "revId": "0930020adafe87327fa82abfdd437c73bbc81b79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
