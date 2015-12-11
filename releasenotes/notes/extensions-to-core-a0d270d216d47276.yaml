@@ -1,5 +1,5 @@
 ---
-other:
+deprecations:
   - >
     [`blueprint move-extensions <https://blueprints.launchpad.net/keystone/+spec/move-extensions>`_]
     If any extension migrations are run, for example: ``keystone-manage db_sync

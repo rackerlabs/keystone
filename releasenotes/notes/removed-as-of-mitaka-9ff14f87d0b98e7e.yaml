@@ -1,5 +1,5 @@
 ---
-other:
+deprecations:
   - >
     [`blueprint removed-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-mitaka>`_]
     Removed ``extras`` from token responses. These fields should not be
