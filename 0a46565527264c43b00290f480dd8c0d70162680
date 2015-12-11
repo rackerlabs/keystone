@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_31a1e6f8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18981
+      },
+      "writtenOn": "2015-12-11T22:25:38Z",
+      "side": 1,
+      "message": "It is the token table, token type is PKIZ. You can check the test program and result here:\n\nhttps://gist.github.com/arkxu/a2cd8b24d9196552798c\n\nLet me know if you have any further questions.",
+      "parentUuid": "9a8ffd7b_fab5e230",
+      "revId": "0a46565527264c43b00290f480dd8c0d70162680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_9feda890",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-01T11:36:53Z",
       "side": 1,
       "message": "Assert the old order before upgrade",
+      "revId": "0a46565527264c43b00290f480dd8c0d70162680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_b7d3cc37",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 18981
+      },
+      "writtenOn": "2015-12-11T22:25:38Z",
+      "side": 1,
+      "message": "Thanks for the feedback. I am not sure it is the right place to test previous migration function. If it has to be tested, it should be done in version 44, but hostly I don\u0027t think it is necessary (I don\u0027t see any test cases for 44 either).",
+      "parentUuid": "9a8ffd7b_9feda890",
       "revId": "0a46565527264c43b00290f480dd8c0d70162680",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
