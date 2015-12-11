@@ -46,6 +46,14 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.assertEqual(self.config, r.result['config'])
         self.assertEqual(self.config, res)
 
+    def test_create_config_invalid_domain(self):
+        """Call ``PUT /domains/{domain_id}/config`` with invalid domain id."""
+        invalid_domain_id = uuid.uuid4().hex
+        url = '/domains/%(domain_id)s/config' % {
+            'domain_id': invalid_domain_id}
+        self.put(url, body={'config': self.config},
+                 expected_status=exception.DomainNotFound.code)
+
     def test_create_config_twice(self):
         """Check multiple creates don't throw error"""
         self.put('/domains/%(domain_id)s/config' % {
@@ -66,6 +74,14 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain['id']},
             expected_status=exception.DomainConfigNotFound.code)
 
+    def test_delete_config_invalid_domain(self):
+        """Call ``DELETE /domains{domain_id}/config`` with invalid domain id."""
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        invalid_domain_id = uuid.uuid4().hex
+        self.delete('/domains/%(domain_id)s/config' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
+
     def test_delete_config_by_group(self):
         """Call ``DELETE /domains{domain_id}/config/{group}``."""
         self.domain_config_api.create_config(self.domain['id'], self.config)
@@ -73,6 +89,16 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain['id']})
         res = self.domain_config_api.get_config(self.domain['id'])
         self.assertNotIn('ldap', res)
+
+    def test_delete_config_by_group_invalid_domain(self):
+        """Call ``DELETE /domains{domain_id}/config/{group}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        invalid_domain_id = uuid.uuid4().hex
+        self.delete('/domains/%(domain_id)s/config/ldap' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
 
     def test_get_head_config(self):
         """Call ``GET & HEAD for /domains{domain_id}/config``."""
@@ -92,6 +118,16 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.assertEqual({'ldap': self.config['ldap']}, r.result['config'])
         self.head(url, expected_status=http_client.OK)
 
+    def test_get_config_by_group_invalid_domain(self):
+        """Call ``GET & HEAD /domains{domain_id}/config/{group}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        invalid_domain_id = uuid.uuid4().hex
+        self.get('/domains/%(domain_id)s/config/ldap' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
+
     def test_get_config_by_option(self):
         """Call ``GET & HEAD /domains{domain_id}/config/{group}/{option}``."""
         self.domain_config_api.create_config(self.domain['id'], self.config)
@@ -102,11 +138,30 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
                          r.result['config'])
         self.head(url, expected_status=http_client.OK)
 
+    def test_get_config_by_option_invalid_domain(self):
+        """Call ``GET & HEAD /domains{domain_id}/config/{group}/{option}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        invalid_domain_id = uuid.uuid4().hex
+        self.get('/domains/%(domain_id)s/config/ldap/url' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
+
     def test_get_non_existant_config(self):
         """Call ``GET /domains{domain_id}/config when no config defined``."""
         self.get('/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']},
             expected_status=http_client.NOT_FOUND)
+
+    def test_get_non_existant_config_invalid_domain(self):
+        """Call ``GET /domains{domain_id}/config when no config defined``
+        with invalid domain id.
+        """
+        invalid_domain_id = uuid.uuid4().hex
+        self.get('/domains/%(domain_id)s/config' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
 
     def test_get_non_existant_config_group(self):
         """Call ``GET /domains{domain_id}/config/{group_not_exist}``."""
@@ -116,6 +171,17 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain['id']},
             expected_status=http_client.NOT_FOUND)
 
+    def test_get_non_existant_config_group_invalid_domain(self):
+        """Call ``GET /domains{domain_id}/config/{group_not_exist}``
+        with invalid domain id.
+        """
+        config = {'ldap': {'url': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+        invalid_domain_id = uuid.uuid4().hex
+        self.get('/domains/%(domain_id)s/config/identity' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
+
     def test_get_non_existant_config_option(self):
         """Call ``GET /domains{domain_id}/config/group/{option_not_exist}``."""
         config = {'ldap': {'url': uuid.uuid4().hex}}
@@ -123,6 +189,17 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.get('/domains/%(domain_id)s/config/ldap/user_tree_dn' % {
             'domain_id': self.domain['id']},
             expected_status=http_client.NOT_FOUND)
+
+    def test_get_non_existant_config_option_invalid_domain(self):
+        """Call ``GET /domains{domain_id}/config/group/{option_not_exist}``
+        with invalid domain id.
+        """
+        config = {'ldap': {'url': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+        invalid_domain_id = uuid.uuid4().hex
+        self.get('/domains/%(domain_id)s/config/ldap/user_tree_dn' % {
+                'domain_id': invalid_domain_id},
+            expected_status=exception.DomainNotFound.code)
 
     def test_update_config(self):
         """Call ``PATCH /domains/{domain_id}/config``."""
@@ -140,6 +217,19 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.assertEqual(expected_config, r.result['config'])
         self.assertEqual(expected_config, res)
 
+    def test_update_config_invalid_domain(self):
+        """Call ``PATCH /domains/{domain_id}/config``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        new_config = {'ldap': {'url': uuid.uuid4().hex},
+                      'identity': {'driver': uuid.uuid4().hex}}
+        invalid_domain_id = uuid.uuid4().hex
+        self.patch('/domains/%(domain_id)s/config' % {
+                'domain_id': invalid_domain_id},
+            body={'config': new_config},
+            expected_status=exception.DomainNotFound.code)
+
     def test_update_config_group(self):
         """Call ``PATCH /domains/{domain_id}/config/{group}``."""
         self.domain_config_api.create_config(self.domain['id'], self.config)
@@ -155,6 +245,19 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             new_config['ldap']['user_filter'])
         self.assertEqual(expected_config, r.result['config'])
         self.assertEqual(expected_config, res)
+
+    def test_update_config_group_invalid_domain(self):
+        """Call ``PATCH /domains/{domain_id}/config/{group}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        new_config = {'ldap': {'url': uuid.uuid4().hex,
+                               'user_filter': uuid.uuid4().hex}}
+        invalid_domain_id = uuid.uuid4().hex
+        self.patch('/domains/%(domain_id)s/config/ldap' % {
+                'domain_id': invalid_domain_id},
+            body={'config': new_config},
+            expected_status=exception.DomainNotFound.code)
 
     def test_update_config_invalid_group(self):
         """Call ``PATCH /domains/{domain_id}/config/{invalid_group}``."""
@@ -179,6 +282,24 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             body={'config': new_config},
             expected_status=http_client.NOT_FOUND)
 
+    def test_update_config_invalid_group_invalid_domain(self):
+        """Call ``PATCH /domains/{domain_id}/config/{invalid_group}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+
+        # Trying to update an invalid group with an invalid domain id
+        # should result in domain NotFound.
+        invalid_group = uuid.uuid4().hex
+        new_config = {invalid_group: {'url': uuid.uuid4().hex,
+                                      'user_filter': uuid.uuid4().hex}}
+        invalid_domain_id = uuid.uuid4().hex
+        self.patch('/domains/%(domain_id)s/config/%(invalid_group)s' % {
+                'domain_id': invalid_domain_id,
+                'invalid_group': invalid_group},
+            body={'config': new_config},
+            expected_status=exception.DomainNotFound.code)
+
     def test_update_config_option(self):
         """Call ``PATCH /domains/{domain_id}/config/{group}/{option}``."""
         self.domain_config_api.create_config(self.domain['id'], self.config)
@@ -191,6 +312,18 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         expected_config['ldap']['url'] = new_config['url']
         self.assertEqual(expected_config, r.result['config'])
         self.assertEqual(expected_config, res)
+
+    def test_update_config_option_invalid_domain(self):
+        """Call ``PATCH /domains/{domain_id}/config/{group}/{option}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        new_config = {'url': uuid.uuid4().hex}
+        invalid_domain_id = uuid.uuid4().hex
+        self.patch('/domains/%(domain_id)s/config/ldap/url' % {
+                'domain_id': invalid_domain_id},
+            body={'config': new_config},
+            expected_status=exception.DomainNotFound.code)
 
     def test_update_config_invalid_option(self):
         """Call ``PATCH /domains/{domain_id}/config/{group}/{invalid}``."""
@@ -213,3 +346,21 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
                 'domain_id': self.domain['id']},
             body={'config': new_config},
             expected_status=http_client.NOT_FOUND)
+
+    def test_update_config_invalid_option_invalid_domain(self):
+        """Call ``PATCH /domains/{domain_id}/config/{group}/{invalid}``
+        with invalid domain id.
+        """
+        self.domain_config_api.create_config(self.domain['id'], self.config)
+        invalid_option = uuid.uuid4().hex
+        new_config = {'ldap': {invalid_option: uuid.uuid4().hex}}
+
+        # Trying to update an invalid option with an invalid domain id
+        # should result in domain NotFound.
+        invalid_domain_id = uuid.uuid4().hex
+        self.patch(
+            '/domains/%(domain_id)s/config/ldap/%(invalid_option)s' % {
+                'domain_id': invalid_domain_id,
+                'invalid_option': invalid_option},
+            body={'config': new_config},
+            expected_status=exception.DomainNotFound.code)
