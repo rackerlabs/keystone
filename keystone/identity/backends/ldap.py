@@ -17,6 +17,7 @@ import uuid
 import ldap.filter
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 import six
 
 from keystone.common import clean
@@ -30,6 +31,18 @@ from keystone import identity
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+
+def ldap_write_deprecated(f):
+    @six.wraps(f)
+    def wrapper(*args, **kwargs):
+        x = versionutils.deprecated(
+            what=f.__name__ + ' for the LDAP identity backend',
+            as_of=versionutils.deprecated.MITAKA,
+            in_favor_of='read-only identity LDAP access.',
+            remove_in=2)
+        return x(f)
+    return wrapper()
 
 
 class Identity(identity.IdentityDriverV8):
@@ -86,11 +99,13 @@ class Identity(identity.IdentityDriverV8):
         return self.user.filter_attributes(self.user.get_by_name(user_name))
 
     # CRUD
+    @ldap_write_deprecated
     def create_user(self, user_id, user):
         self.user.check_allow_create()
         user_ref = self.user.create(user)
         return self.user.filter_attributes(user_ref)
 
+    @ldap_write_deprecated
     def update_user(self, user_id, user):
         self.user.check_allow_update()
         old_obj = self.user.get(user_id)
@@ -109,6 +124,7 @@ class Identity(identity.IdentityDriverV8):
         self.user.update(user_id, user, old_obj)
         return self.user.get_filtered(user_id)
 
+    @ldap_write_deprecated
     def delete_user(self, user_id):
         self.user.check_allow_delete()
         user = self.user.get(user_id)
@@ -121,6 +137,7 @@ class Identity(identity.IdentityDriverV8):
             self.project.remove_user(user.tenant_id, user_dn)
         self.user.delete(user_id)
 
+    @ldap_write_deprecated
     def create_group(self, group_id, group):
         self.group.check_allow_create()
         group['name'] = clean.group_name(group['name'])
@@ -134,21 +151,25 @@ class Identity(identity.IdentityDriverV8):
         # parameter left in so this matches the Driver specification
         return self.group.get_filtered_by_name(group_name)
 
+    @ldap_write_deprecated
     def update_group(self, group_id, group):
         self.group.check_allow_update()
         if 'name' in group:
             group['name'] = clean.group_name(group['name'])
         return common_ldap.filter_entity(self.group.update(group_id, group))
 
+    @ldap_write_deprecated
     def delete_group(self, group_id):
         self.group.check_allow_delete()
         return self.group.delete(group_id)
 
+    @ldap_write_deprecated
     def add_user_to_group(self, user_id, group_id):
         user_ref = self._get_user(user_id)
         user_dn = user_ref['dn']
         self.group.add_user(user_dn, group_id, user_id)
 
+    @ldap_write_deprecated
     def remove_user_from_group(self, user_id, group_id):
         user_ref = self._get_user(user_id)
         user_dn = user_ref['dn']
