@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_690b102b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-11T18:19:11Z",
+      "side": 1,
+      "message": "This is failing for me locally. Need to figure out why.",
+      "revId": "4c9055d4ae0f63997d9bf94d3f4dbaac1f0d8d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
