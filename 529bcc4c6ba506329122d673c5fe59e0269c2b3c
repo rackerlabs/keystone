@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2853bb18",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:52:53Z",
+      "side": 1,
+      "message": "a docstring here saying what this will do would be nice for folks who are looking at it for the first time",
+      "revId": "529bcc4c6ba506329122d673c5fe59e0269c2b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a50a7424",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:52:53Z",
+      "side": 1,
+      "message": "i think crinkle mentioned that a conflict exception is raised, might want to check both",
+      "revId": "529bcc4c6ba506329122d673c5fe59e0269c2b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_65000c03",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:52:53Z",
+      "side": 1,
+      "message": "this and the next line should become one",
+      "revId": "529bcc4c6ba506329122d673c5fe59e0269c2b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_88142f44",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:52:53Z",
+      "side": 1,
+      "message": "use self.username here",
+      "revId": "529bcc4c6ba506329122d673c5fe59e0269c2b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
