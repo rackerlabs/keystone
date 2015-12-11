@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a51ef409",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:38:42Z",
+      "side": 1,
+      "message": "rather than in _emit(), you can slot this logic into _send_notification()",
+      "revId": "8c58b29cf84b3fa83899be4c7145337d1cd6fa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c5b0e0ff",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:38:42Z",
+      "side": 1,
+      "message": "you\u0027re currently missing it here, but if you move the check *into* send_notification, then no need to change this :)",
+      "revId": "8c58b29cf84b3fa83899be4c7145337d1cd6fa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c5d9c057",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:38:42Z",
+      "side": 1,
+      "message": "you could do it here, and just check it in one spot.\n\nyou want to check the opt-out stuff before it gets to `notifier.info` (line 483) that\u0027s what actually sends the notifications, the rest of this is creating the payload which is just compute power and pretty cheap.",
+      "revId": "8c58b29cf84b3fa83899be4c7145337d1cd6fa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a57a7422",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-11T20:38:42Z",
+      "side": 1,
+      "message": "a small suggestion here, it\u0027s a matter of style but you could do the following instead:\n\n  if event_type in opt_out:\n    return\n\n  \u003crest of code should run\u003e\n\nI say style because it means you won\u0027t have to tab everything in by 4 spots.",
+      "revId": "8c58b29cf84b3fa83899be4c7145337d1cd6fa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
