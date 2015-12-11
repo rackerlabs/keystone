@@ -295,6 +295,9 @@ FILE_OPTIONS = {
                     'allow_rescoped_scoped_token to false prevents a user '
                     'from exchanging a scoped token for any other token.'),
         cfg.StrOpt('hash_algorithm', default='md5',
+                   deprecated_for_removal=True,
+                   deprecated_reason='PKI token support has been '
+                                     'deprecated in the M release.',
                    help='The hash algorithm to use for PKI tokens. This can '
                         'be set to any algorithm that hashlib supports. '
                         'WARNING: Before changing this value, the auth_token '
