@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_8542d83c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2015-12-11T20:36:49Z",
+      "side": 1,
+      "message": "Is it the last patch in the chain? If so, shouldn\u0027t it be just Implements: bp project-tree-deletion ?",
+      "revId": "35b3cdd9daf4e0e2cb2e2f741f01e79f85370b9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
