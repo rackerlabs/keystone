@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_955c587e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-11T18:45:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_1ff8b348",
+      "revId": "43f9fd758fa20af1b599f6d6a0c6e38621e5409c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_9fa2634a",
         "filename": "keystone/notifications.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_20cc4069",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-11T18:45:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a740942_9fa2634a",
+      "revId": "43f9fd758fa20af1b599f6d6a0c6e38621e5409c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_7f445773",
         "filename": "keystone/notifications.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-12-10T22:38:29Z",
       "side": 1,
       "message": "you don\u0027t need this block, just check \"CONF.notification_opt_out\" on line 135 instead of \"opt_out\", it default to an empty array, so you\u0027re safe",
+      "revId": "43f9fd758fa20af1b599f6d6a0c6e38621e5409c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_a0def00e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-11T18:45:24Z",
+      "side": 1,
+      "message": "Awesome",
+      "parentUuid": "7a740942_7f445773",
       "revId": "43f9fd758fa20af1b599f6d6a0c6e38621e5409c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2015-12-10T22:38:29Z",
       "side": 1,
       "message": "you can move it here, and just check if event_type is in the list of opt_out_notifications",
+      "revId": "43f9fd758fa20af1b599f6d6a0c6e38621e5409c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_db00d1ad",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-11T18:45:24Z",
+      "side": 1,
+      "message": "Makes sense since it is only a CADF notification, but event_type would be set to \"identity.authenticate\". In opt_out_notifications it  would be set as \"authenticate\". I changed the requirements to have identity in the conf file.\n\nI can do this, but wouldn\u0027t it be good to do all the checks in just one-place(\u0027_emit()\u0027) instead of having code here for pretty much just one option?",
+      "parentUuid": "7a740942_b1f1936c",
       "revId": "43f9fd758fa20af1b599f6d6a0c6e38621e5409c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
