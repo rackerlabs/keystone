@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_e842930e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 124
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2015-12-11T21:05:05Z",
+      "side": 1,
+      "message": "It would be simpler and fit in one line if you replace this by:\n\nupdate_domain \u003d tenant.get(\u0027name\u0027, None) !\u003d original_tenant[\u0027name\u0027]",
+      "revId": "509774a7ef9b219aa30824ba34cde8d63a2edc3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_c80b17d4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 124
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2015-12-11T21:05:05Z",
+      "side": 1,
+      "message": "same here:\n\nupdate_domain \u003d tenant.get(\u0027domain_id\u0027, None) !\u003d original_tenant[\u0027domain_id\u0027]",
+      "revId": "509774a7ef9b219aa30824ba34cde8d63a2edc3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
