@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a5457e43",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-12T23:34:23Z",
+      "side": 1,
+      "message": "Can we have the option here to interactively prompt for password with getpass?  Would be nice.",
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
