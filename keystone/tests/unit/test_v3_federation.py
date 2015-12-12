@@ -1015,6 +1015,58 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         ids_intersection = entities_ids.intersection(ids)
         self.assertEqual(ids_intersection, ids)
 
+    def test_filter_list_idp_by_id(self):
+        def get_id(resp):
+            r = self._fetch_attribute_from_response(resp,
+                                                    'identity_provider')
+            return r.get('id')
+
+        idp1_id = get_id(self._create_default_idp())
+        idp2_id = get_id(self._create_default_idp())
+
+        # list the IdP, should get two IdP.
+        url = self.base_url()
+        resp = self.get(url)
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        entities_ids = [e['id'] for e in entities]
+        self.assertItemsEqual(entities_ids, [idp1_id, idp2_id])
+
+        # filter the IdP by ID.
+        url = self.base_url() + '?id=' + idp1_id
+        resp = self.get(url)
+        filtered_service_list = resp.json['identity_providers']
+        self.assertThat(filtered_service_list, matchers.HasLength(1))
+        self.assertEqual(idp1_id, filtered_service_list[0].get('id'))
+
+    def test_filter_list_idp_by_enabled(self):
+        resp = self._create_default_idp()
+        idp1 = self._fetch_attribute_from_response(resp,
+                                                   'identity_provider')
+        idp1_id = idp1.get('id')
+
+        body = self.default_body.copy()
+        body['enabled'] = False
+        resp = self._create_default_idp(body=body)
+        idp2 = self._fetch_attribute_from_response(resp,
+                                                   'identity_provider')
+        idp2_id = idp2.get('id')
+
+        # list the IdP, should get two IdP.
+        url = self.base_url()
+        resp = self.get(url)
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        entities_ids = [e['id'] for e in entities]
+        self.assertItemsEqual(entities_ids, [idp1_id, idp2_id])
+
+        # filter the IdP by 'enabled'.
+        url = self.base_url() + '?enabled=' + '1'
+        resp = self.get(url)
+        filtered_service_list = resp.json['identity_providers']
+        self.assertThat(filtered_service_list, matchers.HasLength(1))
+        self.assertEqual(idp1_id, filtered_service_list[0].get('id'))
+
     def test_check_idp_uniqueness(self):
         """Add same IdP twice.
 

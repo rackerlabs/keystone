@@ -602,56 +602,76 @@ class V3Controller(wsgi.Application):
         return refs
 
     @classmethod
-    def build_driver_hints(cls, context, supported_filters):
+    def build_driver_hints(cls, context, supported_filters,
+                           ignore_arbitrary_query=False):
         """Build list hints based on the context query string.
 
         :param context: contains the query_string from which any list hints can
                         be extracted
-        :param supported_filters: list of filters supported, so ignore any
-                                  keys in query_dict that are not in this list.
+        :param supported_filters: list of filters supported.
+        :param bool ignore_arbitrary_query: ignore any arbitrary query (not in
+                                            `supported_filters` list nor an
+                                            `extra` attribute.)
 
         """
         query_dict = context['query_string']
         hints = driver_hints.Hints()
 
+        def _check_inexact_filter(key, hints):
+            """Check if it is an inexact filter
+
+            See if this entry in query_dict matches a known key with an
+            inexact suffix added.  If it doesn't match, then that just means
+            that there is no inexact filter for that key in this query.
+
+            """
+            base_key, comparator = key.split('__', 1)
+
+            # We map the query-style inexact of, for example:
+            #
+            # {'email__contains', 'myISP'}
+            #
+            # into a list directive add filter call parameters of:
+            #
+            # name = 'email'
+            # value = 'myISP'
+            # comparator = 'contains'
+            # case_sensitive = True
+
+            case_sensitive = True
+            if comparator.startswith('i'):
+                case_sensitive = False
+                comparator = comparator[1:]
+            hints.add_filter(base_key, query_dict[key],
+                             comparator=comparator,
+                             case_sensitive=case_sensitive)
+
         if query_dict is None:
             return hints
-
+        key_indexed = False
         for key in query_dict:
-            # Check if this is an exact filter
-            if supported_filters is None or key in supported_filters:
-                hints.add_filter(key, query_dict[key])
-                continue
-
-            # Check if it is an inexact filter
             for valid_key in supported_filters:
-                # See if this entry in query_dict matches a known key with an
-                # inexact suffix added.  If it doesn't match, then that just
-                # means that there is no inexact filter for that key in this
-                # query.
                 if not key.startswith(valid_key + '__'):
                     continue
+                _check_inexact_filter(key, hints)
+                key_indexed = True
 
-                base_key, comparator = key.split('__', 1)
-
-                # We map the query-style inexact of, for example:
-                #
-                # {'email__contains', 'myISP'}
-                #
-                # into a list directive add filter call parameters of:
-                #
-                # name = 'email'
-                # value = 'myISP'
-                # comparator = 'contains'
-                # case_sensitive = True
-
-                case_sensitive = True
-                if comparator.startswith('i'):
-                    case_sensitive = False
-                    comparator = comparator[1:]
-                hints.add_filter(base_key, query_dict[key],
-                                 comparator=comparator,
-                                 case_sensitive=case_sensitive)
+            if not key_indexed:
+                if ignore_arbitrary_query:
+                    versionutils.report_deprecated_feature(
+                        LOG,
+                        _LW('As of the Mitaka release, querying with '
+                            'unsupported filters (not in `supported_filters` '
+                            'list nor an `extra` attribute.) is deprecated. '
+                            'In the O release, querying with unsupported '
+                            'filters will result in an empty list being '
+                            'returned.'))
+                    # Check if this is an exact filter
+                    if supported_filters is None or key in supported_filters:
+                        hints.add_filter(key, query_dict[key])
+                else:
+                    # Any query string should count
+                    hints.add_filter(key, query_dict[key])
 
         # NOTE(henry-nash): If we were to support pagination, we would pull any
         # pagination directives out of the query_dict here, and add them into
