@@ -16,6 +16,24 @@
       "revId": "cc290a21f6ac2e59f81ea454c4b2c3d3f56e7a00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_9f177544",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-12T19:08:13Z",
+      "side": 1,
+      "message": "Because domain scope is at best moderately supported. There just isn\u0027t a good reason to use domain role assignment for bootstrapping.",
+      "parentUuid": "7a740942_a4a4a44a",
+      "revId": "cc290a21f6ac2e59f81ea454c4b2c3d3f56e7a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
