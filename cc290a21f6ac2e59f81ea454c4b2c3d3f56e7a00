@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a4a4a44a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-12T18:58:31Z",
+      "side": 1,
+      "message": "why do you assign the role to user and project and not to user and domain?",
+      "revId": "cc290a21f6ac2e59f81ea454c4b2c3d3f56e7a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
