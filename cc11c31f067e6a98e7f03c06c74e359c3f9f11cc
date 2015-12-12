@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_e594e68b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-12T23:46:55Z",
+      "side": 1,
+      "message": "That\u0027s properly true, but the testcase in the test_backend_sql.py should be updated.",
+      "parentUuid": "9a8ffd7b_09f04690",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_ff77fd9c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
