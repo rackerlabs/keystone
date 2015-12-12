@@ -142,25 +142,49 @@ class BootStrap(BaseApp):
                                    'cloud.',
                     'name': self.project_name},
         )
-        LOG.info(_LI('Creating user %s'), self.username)
-        user = self.identity_manager.create_user(
-            user_ref={'name': self.username,
-                      'enabled': True,
-                      'domain_id': default_domain['id'],
-                      'password': self.password
-                      }
-        )
-        LOG.info(_LI('Creating Role %s'), self.role_name)
-        self.role_manager.create_role(
-            role_id=self.role_id,
-            role={'name': self.role_name,
-                  'id': self.role_id},
-        )
-        self.assignment_manager.add_role_to_user_and_project(
-            user_id=user['id'],
-            tenant_id=self.tenant_id,
-            role_id=self.role_id
-        )
+        # NOTE(morganfainberg): Do not create the user if it already exists.
+        try:
+            user = self.identity_manager.create_user(
+                user_ref={'name': self.username,
+                          'enabled': True,
+                          'domain_id': default_domain['id'],
+                          'password': self.password
+                          }
+            )
+            LOG.info(_LI('Created user %s'), self.username)
+        except exception.Conflict:
+            LOG.info(_LI('User %s already exists, skipping creation.'),
+                     self.username)
+            user = self.identity_manager.get_user_by_name(self.username,
+                                                          default_domain['id'])
+
+        try:
+            self.role_manager.create_role(
+                role_id=self.role_id,
+                role={'name': self.role_name,
+                      'id': self.role_id},
+            )
+            LOG.info(_LI('Created Role %s'), self.role_name)
+        except exception.Conflict:
+            LOG.info(_LI('Role %s exists, skipping creation.'), self.role_name)
+
+        try:
+            self.assignment_manager.add_role_to_user_and_project(
+                user_id=user['id'],
+                tenant_id=self.tenant_id,
+                role_id=self.role_id
+            )
+            LOG.info(_LI('Granted %{role}s on %{project}s to user'
+                         ' %{username}s.'),
+                     {'role': self.role_name,
+                      'project':self.project_name,
+                      'username': self.username})
+        except exception.Conflict:
+            LOG.info(_LI('User %{username}s already has %{role}s on '
+                         '%{project}s.'),
+                     {'username': self.username,
+                      'role': self.role_name,
+                      'project': self.project_name})
 
     @classmethod
     def main(cls):
