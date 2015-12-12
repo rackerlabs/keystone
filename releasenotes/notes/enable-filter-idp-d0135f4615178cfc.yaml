@@ -1,0 +1,5 @@
+---
+features:
+  - >
+    [`bug 1525317 <https://bugs.launchpad.net/keystone/+bug/1525317>`_]
+    Enable to list Identity Provider based on ``id``, ``enabled`` attributes.
