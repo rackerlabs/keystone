@@ -16,6 +16,24 @@
       "revId": "79f141b81afa877fbe23efe7af4d78b9802ab113",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_1cc70597",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-12-13T22:20:05Z",
+      "side": 0,
+      "message": "the webtest linter ensures that environment variables are supposed to just be strings. doesn\u0027t change the content of the test.",
+      "parentUuid": "7a740942_fa2e47a4",
+      "revId": "79f141b81afa877fbe23efe7af4d78b9802ab113",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
