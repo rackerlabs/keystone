@@ -153,6 +153,13 @@ class UtilsTestCase(unit.BaseTestCase):
         expected_json = '{"field":"value"}'
         self.assertEqual(expected_json, json)
 
+    def test_url_safe_check(self):
+        reserved_chars = ":/?#[]@!$&'()*+,;="
+        base_str = 'i am safe'
+        self.assertFalse(common_utils.is_not_url_safe(base_str))
+        for i in reserved_chars:
+            self.assertTrue(common_utils.is_not_url_safe(base_str + i))
+
 
 class ServiceHelperTests(unit.BaseTestCase):
 
