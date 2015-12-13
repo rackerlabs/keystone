@@ -1,0 +1,5 @@
+---
+features:
+  - The names of projects and domains can optionally be ensured to be url safe,
+    to support the future ability to specify projects using hierarchical
+    naming.
