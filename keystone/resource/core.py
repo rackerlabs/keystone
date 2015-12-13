@@ -539,6 +539,7 @@ class Manager(manager.Manager):
                     'characters: %s')
             raise exception.ValidationError(
                 message=msg % utils.list_url_unsafe_chars(domain['name']))
+
         if 'enabled' in domain:
             domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
