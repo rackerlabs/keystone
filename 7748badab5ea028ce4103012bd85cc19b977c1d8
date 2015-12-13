@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_9770b941",
+        "filename": "releasenotes/notes/deprecate-ldap-write-7915944a1767c8eb.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T03:40:23Z",
+      "side": 1,
+      "message": "cool! thanks for updating us reno  is supporting deprecations section.",
+      "revId": "7748badab5ea028ce4103012bd85cc19b977c1d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
