@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_1785a9cd",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T04:19:34Z",
+      "side": 1,
+      "message": "add the link of blueprint deprecated-as-of-mitaka or blueprint assignment-manager-cleanup? fine as it is.",
+      "revId": "330796266b00a08ab5635ff17833339e724f4d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_971af9c4",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T04:19:34Z",
+      "side": 1,
+      "message": "it\u0027s now shown in the deprecations section, but it\u0027s not clear what was deprecated and what should be used from these note, \"an error will be returned\" doesn\u0027t mean it was properly deprecated. maybe reword a little bit for these desc?",
+      "revId": "330796266b00a08ab5635ff17833339e724f4d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_f7081d82",
+        "filename": "releasenotes/notes/httpd-keystone-d51b7335559b09c8.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T04:19:34Z",
+      "side": 1,
+      "message": "add the link of blueprint deprecated-as-of-mitaka?",
+      "revId": "330796266b00a08ab5635ff17833339e724f4d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_571811d3",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T04:19:34Z",
+      "side": 1,
+      "message": "all of these deprecation is happened in Mitaka, should blueprint deprecated-as-of-mitaka apply to all these change?",
+      "revId": "330796266b00a08ab5635ff17833339e724f4d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_372c6501",
+        "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T04:19:34Z",
+      "side": 1,
+      "message": "Does the remove deprecations also fall into this section? If it is, what is deprecated? looks like the other section is not bad.",
+      "revId": "330796266b00a08ab5635ff17833339e724f4d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_77466dc1",
+        "filename": "releasenotes/notes/x509-auth-df0a229780b8e3ff.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-13T04:19:34Z",
+      "side": 1,
+      "message": "looks like reno doesn\u0027t care about this, the releasenote was also rendered correctly without this change, good catch though!",
+      "revId": "330796266b00a08ab5635ff17833339e724f4d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
