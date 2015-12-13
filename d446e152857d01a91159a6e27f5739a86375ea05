@@ -16,6 +16,24 @@
       "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_771d0dbd",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-13T04:00:48Z",
+      "side": 1,
+      "message": "Sure. I\u0027ll see what i can do about including it as a followup patch.",
+      "parentUuid": "7a740942_a5457e43",
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
