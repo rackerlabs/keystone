@@ -153,6 +153,20 @@ class UtilsTestCase(unit.BaseTestCase):
         expected_json = '{"field":"value"}'
         self.assertEqual(expected_json, json)
 
+    RESERVED_CHARS = ":/?#[]@!$&'()*+,;="
+
+    def test_url_safe_check(self):
+        base_str = 'i am safe'
+        self.assertFalse(common_utils.is_not_url_safe(base_str))
+        for i in self.RESERVED_CHARS:
+            self.assertTrue(common_utils.is_not_url_safe(base_str + i))
+
+    def test_url_safe_with_unicode_check(self):
+        base_str = u'i am \xe7afe'
+        self.assertFalse(common_utils.is_not_url_safe(base_str))
+        for i in self.RESERVED_CHARS:
+            self.assertTrue(common_utils.is_not_url_safe(base_str + i))
+
 
 class ServiceHelperTests(unit.BaseTestCase):
 
