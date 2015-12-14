@@ -136,9 +136,8 @@ class SqlMigrateBase(unit.SQLDriverOverrides, unit.TestCase):
             # global default DB already being under migrate control. This is
             # only needed if the DB is not-in-memory
             db_file = unit.dirs.tmp('keystone_migrate_test.db')
-            self.config_fixture.config(
-                group='database',
-                connection='sqlite:///%s' % db_file)
+            conn_str = 'sqlite:///%s' % db_file
+            self.config_fixture.config(group='database', connection=conn_str)
 
         # create and share a single sqlalchemy engine for testing
         self.engine = sql.get_engine()
@@ -149,8 +148,7 @@ class SqlMigrateBase(unit.SQLDriverOverrides, unit.TestCase):
         self.repo_path = migration_helpers.find_migrate_repo(
             self.repo_package())
         self.schema = versioning_api.ControlledSchema.create(
-            self.engine,
-            self.repo_path, self.initial_db_version)
+            self.engine, self.repo_path, self.initial_db_version)
 
         # auto-detect the highest available schema version in the migrate_repo
         self.max_version = self.schema.repository.version().version
