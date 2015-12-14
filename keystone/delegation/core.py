@@ -17,6 +17,7 @@ import six
 
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import notifications
 from oslo_config import cfg
 from oslo_log import log
 
@@ -79,3 +80,68 @@ class DelegationDriverV8(object):
     @abc.abstractmethod
     def get_delegation(self, delegation):
         pass
+
+
+class TrustManagaer(BaseManager):
+    """Trust interface manager using delegation."""
+
+    @staticmethod
+    def _to_trust(delegation_ref):
+        trust_ref = {
+            'id': delegation_ref['id'],
+            'trustor_user_id': delegation_ref['trustor_id'],
+            'trustee_user_id': delegation_ref['user_chain'][-1],
+            'project_id': delegation_ref['project_id'],
+            'impersonation': delegation_ref['impersonation'],
+            'expires_at': delegation_ref['expires_at'],
+            'remaining_uses': delegation_ref['remaining_uses'],
+            'deleted_at': delegation_ref['deleted_at'],
+            'redelegated_trust_id': delegation_ref['delegation_chain'][-1],
+            'redelegation_count': CONF.trust.max_redelegation_count,
+            'roles': delegation_ref['roles']
+        }
+        return trust_ref
+
+    @staticmethod
+    def _from_trust_no_ancestry(trust_ref, roles):
+        ref = {
+            'id': trust_ref['id'],
+            'trustor_id': trust_ref['trustor_user_id'],
+            'project_id': trust_ref['project_id'],
+            'impersonation': trust_ref['impersonation'],
+            'expires_at': trust_ref['expires_at'],
+            'deleted_at': trust_ref['deleted_at'],
+            'roles': trust_ref.get('roles', roles)
+        }
+        return ref
+
+    def get_trust(self, trust_id, deleted=False):
+        delegation_ref = self.driver.get_delegation(delegation=trust_id)
+        self.validate_delegation(delegation_ref)
+        return self._to_trust(delegation_ref)
+
+    def create_trust(self, trust_id, trust, roles, redelegated_trust=None,
+                     initiator=None):
+        if redelegated_trust:
+            base_delegation = self.driver.get_trust(redelegated_trust['id'])
+        else:
+            base_delegation = None
+        self.driver.derive_delegation(
+            base_delegation=base_delegation,
+            agent=trust['trustor_user_id'],
+            user=trust['trustee_user_id'],
+            group=None,
+            impersonation=trust['impersonation'],
+            roles=roles,
+            project=trust['project_id'],
+            domain=None,
+            strict_ancestry=True,
+            executable=True,
+            sealed=trust.get('allow_redelegation', False))
+
+        notifications.Audit.created(self._TRUST, trust_id, initiator=initiator)
+
+    def delete_trust(self, trust_id, initiator=None):
+        self.driver.revoke_delegation(delegation=trust_id)
+        notifications.Audit.deleted(self._TRUST, trust_id, initiator)
+
