@@ -222,7 +222,7 @@ FILE_OPTIONS = {
                    help='Entrypoint for the trust backend driver in the '
                         'keystone.trust namespace.')],
     'os_inherit': [
-        cfg.BoolOpt('enabled', default=False,
+        cfg.BoolOpt('enabled', default=True,
                     help='role-assignment inheritance to projects from '
                          'owning domain or from projects higher in the '
                          'hierarchy can be optionally enabled.'),
