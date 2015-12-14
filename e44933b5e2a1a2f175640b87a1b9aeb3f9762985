@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_21e7f641",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-14T18:41:10Z",
+      "side": 1,
+      "message": "You could put a docstring here explaining this hierarchy you created and some sort of test plan.",
+      "revId": "e44933b5e2a1a2f175640b87a1b9aeb3f9762985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_41c1e22d",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-14T18:41:10Z",
+      "side": 1,
+      "message": "could also add tests creating more than one hierarchy and getting the parent of node1 (null)",
+      "revId": "e44933b5e2a1a2f175640b87a1b9aeb3f9762985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
