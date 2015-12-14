@@ -1,0 +1,7 @@
+---
+upgrade:
+  - >
+    The default configuration value of os_inherit is changed to True
+    from False for enabling os_inherit of v3 API.
+    If necessary to disable it, deployers need to specify False on the
+    configuration without depending on the default value.
