@@ -423,7 +423,7 @@ class GrantAssignmentV3(controller.V3Controller):
 
         self.assignment_api.get_grant(
             role_id, user_id, group_id, domain_id, project_id,
-            self._check_if_inherited(context))
+            self._check_if_inherited(context), context)
 
     # NOTE(lbragstad): This will allow users to clean up role assignments
     # from the backend in the event the user was removed prior to the role
