@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_7c3cc52f",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T19:02:37Z",
+      "side": 1,
+      "message": ":)",
+      "revId": "bcef740c24e249186449c311fac22de30fa2de43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
