@@ -336,7 +336,7 @@ class Manager(manager.Manager):
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None,
-                  inherited_to_projects=False):
+                  inherited_to_projects=False, context=None):
         role_ref = self.role_api.get_role(role_id)
         if domain_id:
             self.resource_api.get_domain(domain_id)
