@@ -144,3 +144,26 @@ class TrustManagaer(BaseManager):
         self.driver.revoke_delegation(delegation=trust_id)
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
 
+
+class AssignmentManager(BaseManager):
+    """Assignment manager using delegation model"""
+
+    @notifications.role_assignment('created')
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False, context=None):
+        agent = context['user_id']
+        base_delegation = None
+
+        self.driver.derive_delegation(
+            base_delegation=base_delegation,
+            agent=agent,
+            user=user_id,
+            group=group_id,
+            impersonation=False,
+            roles=[role_id],
+            project=project_id,
+            domain=domain_id,
+            strict_ancestry=True,
+            executable=True,
+            sealed=False)
