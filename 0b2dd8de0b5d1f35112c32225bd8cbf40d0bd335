@@ -54,6 +54,58 @@
     },
     {
       "key": {
+        "uuid": "5a710552_c7808249",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T19:16:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a8ffd7b_04e58d36",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_4769f28a",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T19:16:18Z",
+      "side": 1,
+      "message": "Doesn\u0027t jsonschema have an email type?",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_e75d7eed",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T19:16:18Z",
+      "side": 1,
+      "message": "Just like v3 user create below:\n\n  \u0027required\u0027: [\u0027name\u0027],\n\nWhich makes \u0027minProperties\u0027 redundant.\n\nIt would also be cool if you copied the v3 \u0027user_create\u0027 object and simply mutated it into what v2 expects for validation (for example, v2 expects tenant_id rather than default_project_id), rather than copy/pasting the whole thing. That would make it easier to maintain.",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_756333dd",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
@@ -100,6 +152,24 @@
       "writtenOn": "2015-11-06T01:31:34Z",
       "side": 1,
       "message": "(nit) IMO, the tests didn\u0027t need docs, as their names are very descriptive already. However, this should not block this patch, it looks good to me as it is.",
+      "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_078d2a31",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1898,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T19:16:18Z",
+      "side": 1,
+      "message": "The tests below have docstrings, and why on earth would you turn down totally valid docstrings?!",
+      "parentUuid": "fa80f949_912d5697",
       "revId": "0b2dd8de0b5d1f35112c32225bd8cbf40d0bd335",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

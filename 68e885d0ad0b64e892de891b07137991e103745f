@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_87483a2f",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T19:16:18Z",
+      "side": 0,
+      "message": "^",
+      "revId": "68e885d0ad0b64e892de891b07137991e103745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
