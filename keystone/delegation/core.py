@@ -16,7 +16,9 @@ import abc
 import six
 
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import manager
+from keystone import exception
 from keystone import notifications
 from oslo_config import cfg
 from oslo_log import log
@@ -144,3 +146,56 @@ class TrustManagaer(BaseManager):
         self.driver.revoke_delegation(delegation=trust_id)
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
 
+
+@dependency.requires('role_api')
+class AssignmentManager(BaseManager):
+    """Assignment manager using delegation model"""
+
+    @notifications.role_assignment('created')
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False, context=None):
+        agent = context['user_id']
+        base_delegation = None
+
+        self.driver.derive_delegation(
+            base_delegation=base_delegation,
+            agent=agent,
+            user=user_id,
+            group=group_id,
+            roles=[role_id],
+            project=project_id,
+            domain=domain_id,
+            inherited_to_projects=inherited_to_projects)
+
+    def get_grant(self, role_id, user_id=None, group_id=None,
+                  domain_id=None, project_id=None,
+                  inherited_to_projects=False):
+        """Checks if a role has been granted on either a domain or project.
+
+        :return: role
+        """
+        # TODO(amakarov): consider project inheritance
+        # TODO(amakarov): remember implied/hierarchical roles
+
+        hints = driver_hints.Hints()
+        hints.add_filter(name='role_id', value=role_id, case_sensitive=True)
+        hints.add_filter(name='user_id', value=user_id, case_sensitive=True)
+        hints.add_filter(name='group_id', value=group_id, case_sensitive=True)
+        hints.add_filter(name='domain_id', value=domain_id,
+                         case_sensitive=True)
+        hints.add_filter(name='project_id', value=project_id,
+                         case_sensitive=True)
+        hints.add_filter(name='inherited_to_projects',
+                         value='inherited_to_projects', case_sensitive=True)
+        hints.set_limit(1)
+
+        delegation_list = self.driver.list_delegations(hints)
+
+        if len(delegation_list) == 0:
+            raise exception.RoleAssignmentNotFound(
+                role_id=role_id, actor_id=user_id or group_id,
+                target_id=domain_id or project_id)
+
+        role_ref = self.role_api.get_role(role_id)
+        return role_ref
