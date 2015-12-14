@@ -16,7 +16,9 @@ import abc
 import six
 
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import manager
+from keystone import exception
 from keystone import notifications
 from oslo_config import cfg
 from oslo_log import log
@@ -144,3 +146,79 @@ class TrustManagaer(BaseManager):
         self.driver.revoke_delegation(delegation=trust_id)
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
 
+
+@dependency.requires('role_api')
+class AssignmentManager(BaseManager):
+    """Assignment manager using delegation model"""
+
+    def _to_assignments(self, delegations):
+        for d in delegations:
+            assignment_ref = {
+
+            }
+            yield assignment_ref
+
+    @notifications.role_assignment('created')
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False, context=None):
+        agent = context['user_id']
+        base_delegation = None
+
+        self.driver.derive_delegation(
+            base_delegation=base_delegation,
+            agent=agent,
+            user=user_id,
+            group=group_id,
+            roles=[role_id],
+            project=project_id,
+            domain=domain_id,
+            inherited_to_projects=inherited_to_projects)
+
+    def get_grant(self, role_id, user_id=None, group_id=None,
+                  domain_id=None, project_id=None,
+                  inherited_to_projects=False):
+        """Checks if a role has been granted on either a domain or project.
+
+        :return: role
+        """
+
+        # TODO(amakarov): consider implied/hierarchical roles
+        roles = self.list_grant_role_ids(user_id, group_id, domain_id,
+                                         project_id, inherited_to_projects)
+        if role_id not in roles:
+            raise exception.RoleAssignmentNotFound(
+                role_id=role_id, actor_id=user_id or group_id,
+                target_id=domain_id or project_id)
+
+        role_ref = self.role_api.get_role(role_id)
+        return role_ref
+
+    def list_grant_role_ids(self, user_id=None, group_id=None,
+                            domain_id=None, project_id=None,
+                            inherited_to_projects=False):
+        # TODO(amakarov): consider project inheritance
+
+        hints = driver_hints.Hints()
+        hints.add_filter(name='user_id', value=user_id, case_sensitive=True)
+        hints.add_filter(name='group_id', value=group_id, case_sensitive=True)
+        hints.add_filter(name='domain_id', value=domain_id,
+                         case_sensitive=True)
+        hints.add_filter(name='project_id', value=project_id,
+                         case_sensitive=True)
+        hints.add_filter(name='inherited_to_projects',
+                         value=inherited_to_projects)
+
+        delegation_list = self.driver.list_delegations(hints)
+
+        roles = six.reduce(lambda a, d: a | set(d.roles),
+                           delegation_list, set())
+        return list(roles)
+
+    def list_user_ids_for_project(self, tenant_id):
+        # TODO(amakarov): consider project inheritance
+        hints = driver_hints.Hints()
+        hints.add_filter(name='project_id', value=tenant_id,
+                         case_sensitive=True)
+        delegation_list = self.driver.list_delegations(hints)
+        return [d['user_id'] for d in delegation_list]
