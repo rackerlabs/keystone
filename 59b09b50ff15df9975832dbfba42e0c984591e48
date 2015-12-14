@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "5a710552_67b0ae8c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4795,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T20:45:51Z",
+      "side": 1,
+      "message": "This seems to be introducing a race condition with the new behavior, where two tests could run in the exact same second and the second raises a conflict - but I ran keystone.tests.unit.test_backend_sql.SqlTrust about 500 times and did not produce a failure.",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_efed24f0",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 8
@@ -66,6 +83,23 @@
       "writtenOn": "2015-11-23T05:25:00Z",
       "side": 1,
       "message": "This testcase could be expanded to make it more clear that we expect it\u0027s a combined unique constraint here.\n\nSuppose the unique constraint only apply to trustor_user_id, and not actually apply to other fields this testcase will also pass which is not we want.",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_ef5d50ed",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2851,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T20:45:51Z",
+      "side": 1,
+      "message": "all these \"2031\"s should really be datetime.MAXYEAR",
       "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -101,6 +135,23 @@
       "side": 1,
       "message": "looks like without this, these testcase will fail since it\u0027s violate unique constraint.\n\nKent - maybe you can consider to address it here\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L371 where the refer data was generated rather than in each testcase.\n\nJust give random string to \u0027expires_at\u0027 each time a trust refer is called.",
       "parentUuid": "ba8a016a_8e1f13b6",
+      "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_af5748c9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2865,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T20:45:51Z",
+      "side": 1,
+      "message": "and datetime.MAXYEAR - 1",
       "revId": "59b09b50ff15df9975832dbfba42e0c984591e48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
