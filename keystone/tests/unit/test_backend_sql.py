@@ -20,6 +20,7 @@ import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db import options
+from oslo_db.sqlalchemy import enginefacade
 from six.moves import range
 import sqlalchemy
 from sqlalchemy import exc
@@ -174,7 +175,7 @@ class SqlModels(SqlTests):
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_password_hashed(self):
-        session = sql.get_session()
+        session = enginefacade.get_legacy_facade().get_session()
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
         self.assertNotEqual(self.user_foo['password'], user_ref['password'])
 
@@ -305,7 +306,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_sql_user_to_dict_null_default_project_id(self):
         user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
-        session = sql.get_session()
+        session = enginefacade.get_legacy_facade().get_session()
         query = session.query(identity_sql.User)
         query = query.filter_by(id=user['id'])
         raw_user_ref = query.one()

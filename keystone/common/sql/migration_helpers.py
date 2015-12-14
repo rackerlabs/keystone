@@ -20,6 +20,7 @@ import sys
 import migrate
 from migrate import exceptions
 from oslo_config import cfg
+from oslo_db.sqlalchemy import enginefacade
 from oslo_db.sqlalchemy import migration
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
@@ -143,7 +144,7 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
 def _sync_common_repo(version):
     abs_path = find_migrate_repo()
     init_version = migrate_repo.DB_INIT_VERSION
-    engine = sql.get_engine()
+    engine = enginefacade.get_legacy_facade().get_engine()
     _assert_not_schema_downgrade(version=version)
     migration.db_sync(engine, abs_path, version=version,
                       init_version=init_version, sanity_check=False)
@@ -166,7 +167,7 @@ def _sync_extension_repo(extension, version):
         raise exception.MigrationMovedFailure(extension=extension)
 
     init_version = 0
-    engine = sql.get_engine()
+    engine = enginefacade.get_legacy_facade().get_engine()
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
@@ -177,7 +178,8 @@ def _sync_extension_repo(extension, version):
     try:
         abs_path = find_migrate_repo(package)
         try:
-            migration.db_version_control(sql.get_engine(), abs_path)
+            migration.db_version_control(
+                enginefacade.get_legacy_facade().get_engine(), abs_path)
         # Register the repo with the version control API
         # If it already knows about the repo, it will throw
         # an exception that we can safely ignore
@@ -207,8 +209,9 @@ def sync_database_to_version(extension=None, version=None):
 
 def get_db_version(extension=None):
     if not extension:
-        return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
+        return migration.db_version(
+            enginefacade.get_legacy_facade().get_engine(), find_migrate_repo(),
+            migrate_repo.DB_INIT_VERSION)
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
@@ -218,7 +221,8 @@ def get_db_version(extension=None):
                           % package_name)
 
     return migration.db_version(
-        sql.get_engine(), find_migrate_repo(package), 0)
+        enginefacade.get_legacy_facade().get_engine(),
+        find_migrate_repo(package), 0)
 
 
 def print_db_version(extension=None):

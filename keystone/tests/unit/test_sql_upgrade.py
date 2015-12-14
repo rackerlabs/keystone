@@ -37,6 +37,7 @@ from migrate.versioning import api as versioning_api
 import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
+from oslo_db.sqlalchemy import enginefacade
 from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import session as db_session
 from sqlalchemy.engine import reflection
@@ -141,7 +142,7 @@ class SqlMigrateBase(unit.SQLDriverOverrides, unit.TestCase):
                 connection='sqlite:///%s' % db_file)
 
         # create and share a single sqlalchemy engine for testing
-        self.engine = sql.get_engine()
+        self.engine = enginefacade.get_legacy_facade().get_engine()
         self.Session = db_session.get_maker(self.engine, autocommit=False)
         self.addCleanup(sqlalchemy.orm.session.Session.close_all)
 
@@ -256,8 +257,9 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('user')
 
     def test_start_version_db_init_version(self):
-        version = migration.db_version(sql.get_engine(), self.repo_path,
-                                       migrate_repo.DB_INIT_VERSION)
+        version = migration.db_version(
+            enginefacade.get_legacy_facade().get_engine(),
+            self.repo_path, migrate_repo.DB_INIT_VERSION)
         self.assertEqual(
             migrate_repo.DB_INIT_VERSION,
             version,
