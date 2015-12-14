@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_77fcfbb4",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T16:48:38Z",
+      "side": 1,
+      "message": "This is equivalent to:\n\n  is_valid \u0026\u003d os.access(CONF.fernet_tokens.key_repository, os.W_OK)",
+      "revId": "0aaa3ab1710c3bd9ca7800cc2156a483bd463a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b7e4a30c",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T16:48:38Z",
+      "side": 1,
+      "message": "Since we\u0027re checking them separately anyway -- in the event that we\u0027re missing write permission, it\u0027d be handy to log a more specific error message just regarding write permission, rather than logging the same generic error message in either condition.",
+      "revId": "0aaa3ab1710c3bd9ca7800cc2156a483bd463a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b76fc390",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T16:48:38Z",
+      "side": 1,
+      "message": "By convention, python uses a space after the \"if\" and before the condition expression, because if isn\u0027t a callable.",
+      "revId": "0aaa3ab1710c3bd9ca7800cc2156a483bd463a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
