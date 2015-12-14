@@ -492,7 +492,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         if ref:
             for k in keys:
                 msg = '%s not equal: %s != %s' % (k, ref[k], entity[k])
-                self.assertEqual(ref[k], entity[k])
+                self.assertEqual(ref[k], entity[k], msg)
 
         return entity
 
