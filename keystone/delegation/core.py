@@ -69,3 +69,36 @@ class DelegationDriverV8(object):
     @abc.abstractmethod
     def get_delegation(self, delegation_id):
         pass
+
+
+class TrustManagaer(Manager):
+    """Trust interface manager using delegation."""
+
+    @staticmethod
+    def _to_trust(delegation_ref):
+        trust_ref = {
+            'id': delegation_ref['id'],
+            'trustor_user_id': delegation_ref['trustor_id'],
+            'trustee_user_id': delegation_ref['user_chain'][-1],
+            'project_id': delegation_ref['project_id'],
+            'impersonation': delegation_ref['impersonation'],
+            'expires_at': delegation_ref['expires_at'],
+            'remaining_uses': delegation_ref['remaining_uses'],
+            'deleted_at': delegation_ref['deleted_at'],
+            'redelegated_trust_id': delegation_ref['delegation_chain'][-1],
+            'redelegation_count': CONF.trust.max_redelegation_count,
+            'roles': delegation_ref['roles']
+        }
+        return trust_ref
+
+    def get_trust(self, trust_id, deleted=False):
+        delegation_ref = self.get_delegation(delegation_id=trust_id)
+        self.validate_delegation(delegation_ref)
+        return self._to_trust(delegation_ref)
+
+    def create_trust(self, trust_id, trust, roles, redelegated_trust=None,
+                     initiator=None):
+        pass
+
+    def delete_trust(self, trust_id, initiator=None):
+        pass
