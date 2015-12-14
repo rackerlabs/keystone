@@ -17,6 +17,7 @@ import os
 import fixtures
 from oslo_config import cfg
 from oslo_db import options as db_options
+from oslo_db.sqlalchemy import enginefacade
 
 from keystone.common import sql
 from keystone.tests import unit

@@ -86,11 +86,11 @@ class Token(token.persistence.TokenDriverV8):
     def get_token(self, token_id):
         if token_id is None:
             raise exception.TokenNotFound(token_id=token_id)
-        session = sql.get_session()
-        token_ref = session.query(TokenModel).get(token_id)
-        if not token_ref or not token_ref.valid:
-            raise exception.TokenNotFound(token_id=token_id)
-        return token_ref.to_dict()
+        with sql.session_for_read() as session:
+            token_ref = session.query(TokenModel).get(token_id)
+            if not token_ref or not token_ref.valid:
+                raise exception.TokenNotFound(token_id=token_id)
+            return token_ref.to_dict()
 
     def create_token(self, token_id, data):
         data_copy = copy.deepcopy(data)
@@ -101,14 +101,12 @@ class Token(token.persistence.TokenDriverV8):
 
         token_ref = TokenModel.from_dict(data_copy)
         token_ref.valid = True
-        session = sql.get_session()
-        with session.begin():
+        with sql.session_for_write() as session:
             session.add(token_ref)
         return token_ref.to_dict()
 
     def delete_token(self, token_id):
-        session = sql.get_session()
-        with session.begin():
+        with sql.session_for_write() as session:
             token_ref = session.query(TokenModel).get(token_id)
             if not token_ref or not token_ref.valid:
                 raise exception.TokenNotFound(token_id=token_id)
@@ -124,9 +122,8 @@ class Token(token.persistence.TokenDriverV8):
         or the trustor's user ID, so will use trust_id to query the tokens.
 
         """
-        session = sql.get_session()
         token_list = []
-        with session.begin():
+        with sql.session_for_write() as session:
             now = timeutils.utcnow()
             query = session.query(TokenModel)
             query = query.filter_by(valid=True)
@@ -167,38 +164,37 @@ class Token(token.persistence.TokenDriverV8):
                 return False
 
     def _list_tokens_for_trust(self, trust_id):
-        session = sql.get_session()
-        tokens = []
-        now = timeutils.utcnow()
-        query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires > now)
-        query = query.filter(TokenModel.trust_id == trust_id)
+        with sql.session_for_read() as session:
+            tokens = []
+            now = timeutils.utcnow()
+            query = session.query(TokenModel)
+            query = query.filter(TokenModel.expires > now)
+            query = query.filter(TokenModel.trust_id == trust_id)
 
-        token_references = query.filter_by(valid=True)
-        for token_ref in token_references:
-            token_ref_dict = token_ref.to_dict()
-            tokens.append(token_ref_dict['id'])
-        return tokens
+            token_references = query.filter_by(valid=True)
+            for token_ref in token_references:
+                token_ref_dict = token_ref.to_dict()
+                tokens.append(token_ref_dict['id'])
+            return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
-        session = sql.get_session()
-        tokens = []
-        now = timeutils.utcnow()
-        query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires > now)
-        query = query.filter(TokenModel.user_id == user_id)
+        with sql.session_for_read() as session:
+            tokens = []
+            now = timeutils.utcnow()
+            query = session.query(TokenModel)
+            query = query.filter(TokenModel.expires > now)
+            query = query.filter(TokenModel.user_id == user_id)
 
-        token_references = query.filter_by(valid=True)
-        for token_ref in token_references:
-            token_ref_dict = token_ref.to_dict()
-            if self._tenant_matches(tenant_id, token_ref_dict):
-                tokens.append(token_ref['id'])
-        return tokens
+            token_references = query.filter_by(valid=True)
+            for token_ref in token_references:
+                token_ref_dict = token_ref.to_dict()
+                if self._tenant_matches(tenant_id, token_ref_dict):
+                    tokens.append(token_ref['id'])
+            return tokens
 
     def _list_tokens_for_consumer(self, user_id, consumer_id):
         tokens = []
-        session = sql.get_session()
-        with session.begin():
+        with sql.session_for_write() as session:
             now = timeutils.utcnow()
             query = session.query(TokenModel)
             query = query.filter(TokenModel.expires > now)
@@ -223,19 +219,19 @@ class Token(token.persistence.TokenDriverV8):
             return self._list_tokens_for_user(user_id, tenant_id)
 
     def list_revoked_tokens(self):
-        session = sql.get_session()
-        tokens = []
-        now = timeutils.utcnow()
-        query = session.query(TokenModel.id, TokenModel.expires)
-        query = query.filter(TokenModel.expires > now)
-        token_references = query.filter_by(valid=False)
-        for token_ref in token_references:
-            record = {
-                'id': token_ref[0],
-                'expires': token_ref[1],
-            }
-            tokens.append(record)
-        return tokens
+        with sql.session_for_read() as session:
+            tokens = []
+            now = timeutils.utcnow()
+            query = session.query(TokenModel.id, TokenModel.expires)
+            query = query.filter(TokenModel.expires > now)
+            token_references = query.filter_by(valid=False)
+            for token_ref in token_references:
+                record = {
+                    'id': token_ref[0],
+                    'expires': token_ref[1],
+                }
+                tokens.append(record)
+            return tokens
 
     def _expiry_range_strategy(self, dialect):
         """Choose a token range expiration strategy
@@ -263,18 +259,18 @@ class Token(token.persistence.TokenDriverV8):
         return _expiry_range_all
 
     def flush_expired_tokens(self):
-        session = sql.get_session()
-        dialect = session.bind.dialect.name
-        expiry_range_func = self._expiry_range_strategy(dialect)
-        query = session.query(TokenModel.expires)
-        total_removed = 0
-        upper_bound_func = timeutils.utcnow
-        for expiry_time in expiry_range_func(session, upper_bound_func):
-            delete_query = query.filter(TokenModel.expires <=
-                                        expiry_time)
-            row_count = delete_query.delete(synchronize_session=False)
-            total_removed += row_count
-            LOG.debug('Removed %d total expired tokens', total_removed)
+        with sql.session_for_write() as session:
+            dialect = session.bind.dialect.name
+            expiry_range_func = self._expiry_range_strategy(dialect)
+            query = session.query(TokenModel.expires)
+            total_removed = 0
+            upper_bound_func = timeutils.utcnow
+            for expiry_time in expiry_range_func(session, upper_bound_func):
+                delete_query = query.filter(TokenModel.expires <=
+                                            expiry_time)
+                row_count = delete_query.delete(synchronize_session=False)
+                total_removed += row_count
+                LOG.debug('Removed %d total expired tokens', total_removed)
 
-        session.flush()
-        LOG.info(_LI('Total expired tokens removed: %d'), total_removed)
+            session.flush()
+            LOG.info(_LI('Total expired tokens removed: %d'), total_removed)
