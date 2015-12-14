@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_ada3dd4e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-12-14T17:32:03Z",
+      "side": 0,
+      "message": "I\u0027m ok with this removal as trust is to be replaced with delegation anyway. Also it would be nice to check user matching the trust considering impersonation flag.",
+      "revId": "e0be6bf9757fbbeaf06958faa25fcf7cdc8fe5e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
