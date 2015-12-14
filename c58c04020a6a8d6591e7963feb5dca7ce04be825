@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_56252ac0",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-14T18:32:46Z",
+      "side": 1,
+      "message": "nit: why are we calling it parent1 and path1, instead of just parent and project?",
+      "revId": "c58c04020a6a8d6591e7963feb5dca7ce04be825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_4148025c",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-14T18:32:46Z",
+      "side": 1,
+      "message": "should reverse this, right? Isn\u0027t the order (actual, expected) ?",
+      "revId": "c58c04020a6a8d6591e7963feb5dca7ce04be825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
