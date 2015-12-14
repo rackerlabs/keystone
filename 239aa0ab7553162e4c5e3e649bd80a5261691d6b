@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_07bbeac5",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-14T23:03:35Z",
+      "side": 0,
+      "message": "I have a few concerns with this change. I would have expected some trust test to fail since all revocation events for disabled domains/project are no longer sent and I was missing the trust checks. I\u0027m about summit a change to only prevent revocation events when operation \u003d\u003d \u0027disabled\u0027. I\u0027m still not fully sure what else can call these methods. I will add the missing trust test cases.",
+      "parentUuid": "7a740942_97cc076b",
+      "revId": "239aa0ab7553162e4c5e3e649bd80a5261691d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_e1b56ed0",
         "filename": "keystone/tests/unit/test_token_provider.py",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-14T18:53:15Z",
       "side": 0,
       "message": "So, it looks like you have to change this test because the newly referenced domain and the 01257 project doesn\u0027t actually exist in the backend? :(\n\nI wish we could just fix that instead because I hate mocking. So fragile and hard to maintain!",
+      "revId": "239aa0ab7553162e4c5e3e649bd80a5261691d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_853fcd24",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-14T23:03:35Z",
+      "side": 0,
+      "message": "These test don\u0027t seem to instantiate a backend.  I had to mock the methods that would make calls to the backend. I can work on creating funcional test for these.",
+      "parentUuid": "5a710552_e1b56ed0",
       "revId": "239aa0ab7553162e4c5e3e649bd80a5261691d6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

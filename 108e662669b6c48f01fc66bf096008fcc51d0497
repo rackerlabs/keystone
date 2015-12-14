@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_27770604",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-14T23:03:35Z",
+      "side": 1,
+      "message": "\u0027domain_id\u0027 is not present in a tenant on a token. I was building a tenant object using on the SAMPLE_V2_TOKEN values.",
+      "parentUuid": "5a710552_8174aacf",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_412c82ab",
         "filename": "keystone/tests/unit/test_token_provider.py",
         "patchSetId": 19
@@ -47,6 +65,24 @@
       "writtenOn": "2015-12-14T18:53:15Z",
       "side": 1,
       "message": "missing whitespace after this paragraph",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_07cc4a34",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-14T23:03:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a710552_dc4cd978",
       "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_2ffcb83d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-14T23:03:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a710552_fcd43548",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_5cdd496f",
         "filename": "keystone/token/provider.py",
         "patchSetId": 19
@@ -98,6 +152,24 @@
       "writtenOn": "2015-12-14T18:53:15Z",
       "side": 1,
       "message": "You can/should write an explicit error message here. It will be suppressed outside of debug mode, so there\u0027s no security risk.",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_0f9a1c15",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-12-14T23:03:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a710552_5cdd496f",
       "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
