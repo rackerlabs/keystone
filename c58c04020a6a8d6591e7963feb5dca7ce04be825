@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_fc2af57d",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-12-14T18:49:22Z",
+      "side": 1,
+      "message": "Initially I\u0027ve planned to have 2 hierarchies demonstrating the possibility for a node to be in several hierarchies simultaneously which is required for unified delegation model",
+      "parentUuid": "5a710552_56252ac0",
+      "revId": "c58c04020a6a8d6591e7963feb5dca7ce04be825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_4148025c",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-14T18:32:46Z",
       "side": 1,
       "message": "should reverse this, right? Isn\u0027t the order (actual, expected) ?",
+      "revId": "c58c04020a6a8d6591e7963feb5dca7ce04be825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_e149ee8f",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-12-14T18:49:22Z",
+      "side": 1,
+      "message": "No, this is the assert closure:\n\n    def assertEqual(self, expected, observed, message\u003d\u0027\u0027):",
+      "parentUuid": "5a710552_4148025c",
       "revId": "c58c04020a6a8d6591e7963feb5dca7ce04be825",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
