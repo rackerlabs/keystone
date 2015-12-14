@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "5a710552_2c4e06c2",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-14T20:45:01Z",
+      "side": 1,
+      "message": "I think we should get rid of the \u0027\\\u0027\nhttp://paste.openstack.org/show/481874/",
+      "revId": "e44933b5e2a1a2f175640b87a1b9aeb3f9762985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_41c1e22d",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 2
@@ -30,6 +47,40 @@
       "writtenOn": "2015-12-14T18:41:10Z",
       "side": 1,
       "message": "could also add tests creating more than one hierarchy and getting the parent of node1 (null)",
+      "revId": "e44933b5e2a1a2f175640b87a1b9aeb3f9762985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_99ff3e34",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-14T20:45:01Z",
+      "side": 1,
+      "message": "For better output:\nself.assertThat(subtree_query.count(), matchers.HasLength(2))",
+      "revId": "e44933b5e2a1a2f175640b87a1b9aeb3f9762985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_f99442e9",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-14T20:45:01Z",
+      "side": 1,
+      "message": "assertListEqual may show better output here too",
       "revId": "e44933b5e2a1a2f175640b87a1b9aeb3f9762985",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
