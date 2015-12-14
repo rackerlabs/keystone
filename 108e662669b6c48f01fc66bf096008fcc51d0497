@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_8174aacf",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 1,
+      "message": "why not just put this line in the sample token?",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_412c82ab",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 1,
+      "message": "these would be easier to read if it was clear that you were manipulating the SAMPLE_V2_TOKEN itself",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_dc4cd978",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 1,
+      "message": "missing whitespace after this paragraph",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_bca9cde1",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 1,
+      "message": "out of scope / not your fault: magic values suck",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_fcd43548",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 1,
+      "message": "How can either of these occur? Write an inline comment explaining when you\u0027re expecting each of them, because that\u0027s a looong try block.",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_5cdd496f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 1,
+      "message": "You can/should write an explicit error message here. It will be suppressed outside of debug mode, so there\u0027s no security risk.",
+      "revId": "108e662669b6c48f01fc66bf096008fcc51d0497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

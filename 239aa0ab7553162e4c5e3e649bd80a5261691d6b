@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_97cc076b",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 0,
+      "message": "Can these methods just be deleted?",
+      "revId": "239aa0ab7553162e4c5e3e649bd80a5261691d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_e1b56ed0",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 0,
+      "message": "So, it looks like you have to change this test because the newly referenced domain and the 01257 project doesn\u0027t actually exist in the backend? :(\n\nI wish we could just fix that instead because I hate mocking. So fragile and hard to maintain!",
+      "revId": "239aa0ab7553162e4c5e3e649bd80a5261691d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_5c41c938",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-14T18:53:15Z",
+      "side": 0,
+      "message": "method docstrings should end like this one ^",
+      "revId": "239aa0ab7553162e4c5e3e649bd80a5261691d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
