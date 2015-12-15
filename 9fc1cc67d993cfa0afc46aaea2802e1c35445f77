@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_ceff2433",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14413
+      },
+      "writtenOn": "2015-12-15T06:28:40Z",
+      "side": 1,
+      "message": "Actually I was adding tests there. The problem I met is that there seems to be some Python 3 related issues with public_request, so I created a new file",
+      "parentUuid": "5a710552_2e2ca849",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_6ee71041",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 9
