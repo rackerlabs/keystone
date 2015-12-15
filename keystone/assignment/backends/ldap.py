@@ -95,7 +95,8 @@ class Assignment(assignment.AssignmentDriverV9):
                                     inherited=False):
         raise exception.NotImplemented()
 
-    def list_domain_ids_for_user(self, user_id, group_ids, hints):
+    def list_domain_ids_for_user(self, user_id, group_ids, hints,
+                                 inherited=False):
         raise exception.NotImplemented()
 
     def list_domain_ids_for_groups(self, group_ids, inherited=False):
