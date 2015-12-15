@@ -13,7 +13,7 @@
 from oslo_policy import policy
 
 IDENTITY = 'identity:%s'
-RULE_ADMIN_REQUIRED = 'rule:admin_required'
+RULE_ADMIN_REQUIRED = '(rule:admin_required and is_admin_project:True)'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
 RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     'rule:admin_required or '
@@ -37,7 +37,7 @@ rules = [
         check_str='role:admin or is_admin:1'),
     policy.RuleDefault(
         name='service_role',
-        check_str='role:service'),
+        check_str='(role:service and is_admin_project:True)'),
     policy.RuleDefault(
         name='service_or_admin',
         check_str='rule:admin_required or rule:service_role'),
