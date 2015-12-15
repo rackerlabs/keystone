@@ -20,9 +20,9 @@ grant_policies = [
         check_str=base.RULE_ADMIN_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'list_grants',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str='role:admin or is_admin:1'),
     policy.RuleDefault(
-        name=base.IDENTITY % 'create_grant',
+        name='role:admin or is_admin:1',
         check_str=base.RULE_ADMIN_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'revoke_grant',

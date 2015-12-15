@@ -21,9 +21,11 @@ domain_policies = [
         description='Show domain details.',
         operations=[{'path': '/v3/domains/{domain_id}',
                      'method': 'GET'}]),
+    # TODO(ayoung): This is probably wrong, but Tempest is
+    # currently requiring it.
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domains',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin or is_admin:1',
         description='List domains.',
         operations=[{'path': '/v3/domains',
                      'method': 'GET'}]),

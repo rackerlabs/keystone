@@ -27,9 +27,10 @@ user_policies = [
     policy.RuleDefault(
         name=base.IDENTITY % 'list_domains_for_user',
         check_str=''),
+    # TODO(ayoung): This needs a proper scope check
     policy.RuleDefault(
         name=base.IDENTITY % 'create_user',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str='role:admin or is_admin:1'),
     policy.RuleDefault(
         name=base.IDENTITY % 'update_user',
         check_str=base.RULE_ADMIN_REQUIRED),

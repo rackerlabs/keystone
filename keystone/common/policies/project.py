@@ -33,9 +33,10 @@ project_policies = [
         description='List projects for user.',
         operations=[{'path': '/v3/users/{user_id}/projects',
                      'method': 'GET'}]),
+    # TODO(ayoung): This needs a proper scope check
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_project',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin or is_admin:1',
         description='Create project.',
         operations=[{'path': '/v3/projects',
                      'method': 'POST'}]),
