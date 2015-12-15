@@ -130,16 +130,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             password=self.user['password'],
             project_id=self.project['id'])
 
-        # TODO(henry-nash): Due to bug #1283539 we currently automatically
-        # use the default domain_id if a domain scoped token is not being
-        # used. For now we just check that a deprecation warning has been
-        # issued. Change the code below to expect a failure once this bug is
-        # fixed.
-        with mock.patch(
-                'oslo_log.versionutils.report_deprecated_feature') as mock_dep:
-            r = self.post('/users', body={'user': ref_nd}, auth=auth)
-            self.assertTrue(mock_dep.called)
-
+        r = self.post('/users', body={'user': ref_nd}, auth=auth)
         ref['domain_id'] = CONF.identity.default_domain_id
         return self.assertValidUserResponse(r, ref)
 
@@ -275,13 +266,12 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             password=user['password'],
             project_id=project['id'])
 
-        # First try using a domain scoped token
+        # domain scoped tokens must be filtered to the domain
         resource_url = '/users'
-        r = self.get(resource_url, auth=dom_auth)
-        self.assertValidUserListResponse(r, ref=user,
-                                         resource_url=resource_url)
+        r = self.get(resource_url, auth=dom_auth,
+                     expected_status=http_client.FORBIDDEN)
 
-        # Now try using a project scoped token
+        # Now try using an admin project scoped token
         resource_url = '/users'
         r = self.get(resource_url, auth=project_auth)
         self.assertValidUserListResponse(r, ref=user,
