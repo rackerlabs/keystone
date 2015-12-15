@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_4e879db5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-15T14:03:15Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a710552_b1555cc7",
+      "revId": "ee8b9b7b81a6e6db75c3e23e34488ee60e4c7e27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_a2e764ab",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -30,6 +48,41 @@
       "writtenOn": "2015-12-14T19:38:02Z",
       "side": 1,
       "message": "looking into making this more efficient next :-)",
+      "revId": "ee8b9b7b81a6e6db75c3e23e34488ee60e4c7e27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_5970c972",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-15T14:03:15Z",
+      "side": 1,
+      "message": "It worth verify if you already have the information, since you probably have more than one assignment for role, project and domain?\n\nSo, you don\u0027t need to go to db, in every request, since you already have this information.",
+      "parentUuid": "5a710552_a2e764ab",
+      "revId": "ee8b9b7b81a6e6db75c3e23e34488ee60e4c7e27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_79d105cd",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4109,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-12-15T14:03:15Z",
+      "side": 1,
+      "message": "I think that you can use the refs to keep the pattern, like: \ndomain \u003d unit.new_domain_ref()\nproject \u003d unit.new_project_ref(domain_id\u003ddomain[\u0027\u0027id\u0027])\n\nplease see line 4010 for reference.",
       "revId": "ee8b9b7b81a6e6db75c3e23e34488ee60e4c7e27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
