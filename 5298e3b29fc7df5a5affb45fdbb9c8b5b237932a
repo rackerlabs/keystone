@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_774da471",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T07:59:08Z",
+      "side": 1,
+      "message": "ugh.... i think we have to make a new V9 driver for this :(",
+      "revId": "5298e3b29fc7df5a5affb45fdbb9c8b5b237932a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_74184285",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1063,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T07:59:08Z",
+      "side": 1,
+      "message": "should this be \"enabled\u003dtrue\"?",
+      "revId": "5298e3b29fc7df5a5affb45fdbb9c8b5b237932a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_972b7082",
+        "filename": "releasenotes/notes/enable-filter-idp-d0135f4615178cfc.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T07:59:08Z",
+      "side": 1,
+      "message": "small rewording suggestion:\n\n\"Enable filtering of identity providers based on ``id``, and ``enabled`` attributes.\"",
+      "revId": "5298e3b29fc7df5a5affb45fdbb9c8b5b237932a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
