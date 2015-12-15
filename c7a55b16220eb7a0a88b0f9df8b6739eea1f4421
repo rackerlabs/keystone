@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_b0cb2072",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T02:20:47Z",
+      "side": 1,
+      "message": "i think pep8 will fail here, the docstrings are supposed to be:\n\n  \"\"\"one line summary\n\n  more content goes after a line break\n  \"\"\"",
+      "revId": "c7a55b16220eb7a0a88b0f9df8b6739eea1f4421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
