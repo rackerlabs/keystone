@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a710552_b1555cc7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T07:47:19Z",
+      "side": 1,
+      "message": "you might need to do something similar with \"include_names\"",
+      "revId": "ee8b9b7b81a6e6db75c3e23e34488ee60e4c7e27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_a2e764ab",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
