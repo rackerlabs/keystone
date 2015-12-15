@@ -132,7 +132,6 @@ def filterprotected(*filters, **callback):
                 # list of filters, so it can augment these and then call
                 # the check_protection() method.
                 check_function = callback['callback']
-
             protected_wrapper(
                 self, f, check_function, request, filter_attr, **kwargs)
             return f(self, request, filters, **kwargs)
