@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Code-Review+1: Dan Nguyen <dan.nguyens.mail@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Brad Pokorny <brad_pokorny@symantec.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 15 Dec 2015 10:01:16 +0000
+Reviewed-on: https://review.openstack.org/220452
+Project: openstack/keystone
+Branch: refs/heads/master
