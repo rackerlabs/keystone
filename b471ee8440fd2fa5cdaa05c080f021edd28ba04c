@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_8786c711",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-15T15:49:25Z",
+      "side": 1,
+      "message": "It\u0027s the same as on line 987. I think it\u0027s for \"ldap control\".\n\nIf it should be changed here, it should be changed on L987 too.",
+      "parentUuid": "7a740942_cf670b24",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_2f5ecf45",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -64,6 +82,24 @@
       "writtenOn": "2015-12-10T07:49:30Z",
       "side": 1,
       "message": "new parameters should be added to the end, but this is the only instance of it... so it\u0027s OK",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_3541403a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1469,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-15T15:49:25Z",
+      "side": 1,
+      "message": "I also did it because the method is private.",
+      "parentUuid": "7a740942_af2abfe5",
       "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
