@@ -53,13 +53,13 @@ class OAuth(auth.AuthMethodHandler):
         access_verifier = oauth.ResourceEndpoint(
             request_validator=validator.OAuthValidator(),
             token_generator=oauth.token_generator)
-        result, request = access_verifier.validate_protected_resource_request(
+        result = access_verifier.validate_protected_resource_request(
             url,
             http_method='POST',
             body=context['query_string'],
             headers=headers,
             realms=None
-        )
+        )[0]
         if not result:
             msg = _('Could not validate the access token')
             raise exception.Unauthorized(msg)
