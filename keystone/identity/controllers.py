@@ -16,6 +16,7 @@
 
 from oslo_log import log
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -210,12 +211,28 @@ class UserV3(controller.V3Controller):
         ref['group'] = self.identity_api.get_group(group_id)
         self.check_protection(request, prep_info, ref)
 
-    @controller.protected()
     def create_user(self, request, user):
+        request.assert_authenticated()
+        try:
+            domain_id = user['domain_id']
+        except KeyError:
+            domain_id = request.context.domain_id
+            if domain_id is None:
+                domain_id = CONF.identity.default_domain_id
+            user['domain_id'] = domain_id
+        kwargs = {'user': user}
+        prep_info = {'f_name': 'create_user',
+                     'input_attr': kwargs}
+        args = [self, request, user]
+
         validation.lazy_validate(schema.user_create, user)
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
         ref = self._normalize_domain_id(request, ref)
+
+        authorization.check_protection(self, request, prep_info, None,
+                                       None, *args, **kwargs)
+
         ref = self.identity_api.create_user(
             ref, initiator=request.audit_initiator
         )
