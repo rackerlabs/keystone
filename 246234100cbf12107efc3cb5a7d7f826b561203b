@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a710552_76d7b8bf",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T22:33:10Z",
+      "side": 1,
+      "message": "this one is one of the few APIs that deal with a full auth flow for v2.\n\nfull auth flow -\u003e authenticate using default project, list projects, authenticate again based off that.\n\nthis controller actually maps to /v2.0/tenants --\u003e https://github.com/openstack/keystone/blob/98fce2954087e85b4709341e5509a7c2d8147cf6/keystone/assignment/routers.py#L35-L41\n\nwhich is one of the few non-admin APIs we want to keep alive for end users who have migrated over",
+      "parentUuid": "5a710552_93fef669",
+      "revId": "246234100cbf12107efc3cb5a7d7f826b561203b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_33d702ef",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 8
@@ -30,6 +48,41 @@
       "writtenOn": "2015-12-15T21:51:40Z",
       "side": 1,
       "message": "why this is \"v2_auth_deprecated\"?",
+      "revId": "246234100cbf12107efc3cb5a7d7f826b561203b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_76225803",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T22:33:10Z",
+      "side": 1,
+      "message": "this can be reverted",
+      "parentUuid": "5a710552_33d702ef",
+      "revId": "246234100cbf12107efc3cb5a7d7f826b561203b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_598aedc0",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T22:33:10Z",
+      "side": 1,
+      "message": "i think i\u0027ll revert this as well",
       "revId": "246234100cbf12107efc3cb5a7d7f826b561203b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
