@@ -1,6 +1,6 @@
 {
-    "admin_required": "role:admin or is_admin:1",
-    "service_role": "role:service",
+    "admin_required": "role:admin and is_admin_project:True",
+    "service_role": "role:service and is_admin_project:True",
     "service_or_admin": "rule:admin_required or rule:service_role",
     "owner" : "user_id:%(user_id)s",
     "admin_or_owner": "rule:admin_required or rule:owner",
