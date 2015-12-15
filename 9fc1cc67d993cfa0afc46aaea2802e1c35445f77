@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_2e2ca849",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T06:18:32Z",
+      "side": 1,
+      "message": "this can be merged with https://github.com/openstack/keystone/blob/44d0c2f5a5c678fa866a3220db38b8881a7cb9ed/keystone/tests/unit/test_contrib_ec2.py i think\n\ni\u0027ll post a follow on patch",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_6ee71041",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-15T06:18:32Z",
+      "side": 1,
+      "message": "this should be it\u0027s own test",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
