@@ -364,6 +364,16 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
                                          user_id=self.admin_user['id'],
                                          project_id=self.project['id'])
 
+        default_domain = self.resource_api.get_domain(
+            CONF.identity.default_domain_id)
+
+        self.config_fixture.config(
+            group='resource',
+            admin_project_name=self.project['name'])
+        self.config_fixture.config(
+            group='resource',
+            admin_project_domain_name=default_domain['name'])
+
     def test_user_validate_same_token(self):
         # Given a non-admin user token, the token can be used to validate
         # itself.
