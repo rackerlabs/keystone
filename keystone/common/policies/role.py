@@ -20,7 +20,7 @@ role_policies = [
         check_str=base.RULE_ADMIN_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'list_roles',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str='role:admin or is_admin:1'),
     policy.RuleDefault(
         name=base.IDENTITY % 'create_role',
         check_str=base.RULE_ADMIN_REQUIRED),
