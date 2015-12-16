@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_2681ccc3",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-16T16:45:21Z",
+      "side": 1,
+      "message": "dependencies",
+      "revId": "80481a3f10e09a7156113a6e404d6f2a78a05642",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
