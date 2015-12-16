@@ -52,7 +52,7 @@ MEMOIZE_COMPUTED_ASSIGNMENTS = cache.get_memoization_decorator(
 @notifications.listener
 @dependency.provider('assignment_api')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
-                     'revoke_api', 'role_api')
+                     'revoke_api', 'role_api', 'token_provider_api')
 class Manager(manager.Manager):
     """Default pivot point for the Assignment backend.
 
@@ -380,42 +380,44 @@ class Manager(manager.Manager):
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
-        if group_id is None:
-            self.revoke_api.revoke_by_grant(user_id=user_id,
-                                            role_id=role_id,
-                                            domain_id=domain_id,
-                                            project_id=project_id)
-            self._emit_revoke_user_grant(
-                role_id, user_id, domain_id, project_id,
-                inherited_to_projects, context)
-        else:
-            try:
-                # Group may contain a lot of users so revocation will be
-                # by role & domain/project
-                if domain_id is None:
-                    self.revoke_api.revoke_by_project_role_assignment(
-                        project_id, role_id
-                    )
-                else:
-                    self.revoke_api.revoke_by_domain_role_assignment(
-                        domain_id, role_id
-                    )
-                if CONF.token.revoke_by_id:
-                    # NOTE(morganfainberg): The user ids are the important part
-                    # for invalidating tokens below, so extract them here.
-                    for user in self.identity_api.list_users_in_group(
-                            group_id):
-                        self._emit_revoke_user_grant(
-                            role_id, user['id'], domain_id, project_id,
-                            inherited_to_projects, context)
-            except exception.GroupNotFound:
-                LOG.debug('Group %s not found, no tokens to invalidate.',
-                          group_id)
+        if self.token_provider_api._needs_persistence:
+            if group_id is None:
+                self.revoke_api.revoke_by_grant(user_id=user_id,
+                                                role_id=role_id,
+                                                domain_id=domain_id,
+                                                project_id=project_id)
+                self._emit_revoke_user_grant(
+                    role_id, user_id, domain_id, project_id,
+                    inherited_to_projects, context)
+            else:
+                try:
+                    # Group may contain a lot of users so revocation will be
+                    # by role & domain/project
+                    if domain_id is None:
+                        self.revoke_api.revoke_by_project_role_assignment(
+                            project_id, role_id
+                        )
+                    else:
+                        self.revoke_api.revoke_by_domain_role_assignment(
+                            domain_id, role_id
+                        )
+                    if CONF.token.revoke_by_id:
+                        # NOTE(morganfainberg): The user ids are the important
+                        # part for invalidating tokens below, so extract them
+                        # here.
+                        for user in self.identity_api.list_users_in_group(
+                                group_id):
+                            self._emit_revoke_user_grant(
+                                role_id, user['id'], domain_id, project_id,
+                                inherited_to_projects, context)
+                except exception.GroupNotFound:
+                    LOG.debug('Group %s not found, no tokens to invalidate.',
+                              group_id)
 
         # TODO(henry-nash): While having the call to get_role here mimics the
-        # previous behavior (when it was buried inside the driver delete call),
-        # this seems an odd place to have this check, given what we have
-        # already done so far in this method. See Bug #1406776.
+        # previous behavior (when it was buried inside the driver delete
+        # call), this seems an odd place to have this check, given what we
+        # have already done so far in this method. See Bug #1406776.
         self.role_api.get_role(role_id)
 
         if domain_id:
