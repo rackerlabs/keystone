@@ -314,19 +314,22 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         The revocation should be independently to the presence
         of the revoke API.
         """
+        user1_ref = unit.new_user_ref(domain_id=self.domain['id'])
+        user1 = self.identity_api.create_user(user1_ref)
+        user1['password'] = user1_ref['password']
         # creates grant from group on project.
         self.assignment_api.create_grant(role_id=self.role['id'],
                                          project_id=self.project['id'],
                                          group_id=self.group['id'])
 
         # adds user to the group.
-        self.identity_api.add_user_to_group(user_id=self.user['id'],
+        self.identity_api.add_user_to_group(user_id=user1['id'],
                                             group_id=self.group['id'])
 
         # creates a token for the user
         auth_body = self.build_authentication_request(
-            user_id=self.user['id'],
-            password=self.user['password'],
+            user_id=user1['id'],
+            password=user1['password'],
             project_id=self.project['id'])
         token_resp = self.post('/auth/tokens', body=auth_body)
         token = token_resp.headers.get('x-subject-token')
