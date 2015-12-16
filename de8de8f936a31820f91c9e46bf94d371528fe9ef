@@ -16,6 +16,24 @@
       "revId": "de8de8f936a31820f91c9e46bf94d371528fe9ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_8062f1ab",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2015-12-16T13:42:23Z",
+      "side": 1,
+      "message": "Guang, we need this because this call was creating a duplicate endpoint, once there already is an endpoint with this service and wigh the public interface",
+      "parentUuid": "5a710552_ae25f8c2",
+      "revId": "de8de8f936a31820f91c9e46bf94d371528fe9ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
