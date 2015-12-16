@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_b8897928",
+        "filename": "releasenotes/notes/enable-inherit-on-default-54ac435230261a6a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-16T08:18:17Z",
+      "side": 1,
+      "message": "(nit): While OK, here\u0027s a suggested re-wording that might make this text more closely match other examples:\n\n\"The default setting for the os_inherit configuration option is changed to True. If it is required to continue with this portion of the API disabled, then override the default setting by explcitely specifying the os_inherit option as False.\"",
+      "revId": "e1deb36fe78c1457d4fed076b74fd682394774f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
