@@ -36,7 +36,6 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone import token
-from keystone.token import provider
 from keystone import trust
 
 
@@ -77,6 +76,11 @@ def _build_user_auth(token=None, user_id=None, username=None,
 
 
 class AuthTest(unit.TestCase):
+
+    def config_overrides(self):
+        super(AuthTest, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
     def setUp(self):
         self.useFixture(database.Database())
         super(AuthTest, self).setUp()
@@ -433,30 +437,12 @@ class AuthWithToken(AuthTest):
     def test_token_auth_with_binding(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth()
-        unscoped_token = self.controller.authenticate(
-            self.context_with_remote_user, body_dict)
 
-        # the token should have bind information in it
-        bind = unscoped_token['access']['token']['bind']
-        self.assertEqual('FOO', bind['kerberos'])
-
-        body_dict = _build_user_auth(
-            token=unscoped_token['access']['token'],
-            tenant_name='BAR')
-
-        # using unscoped token without remote user context fails
-        self.assertRaises(
-            exception.Unauthorized,
-            self.controller.authenticate,
-            self.empty_context, body_dict)
-
-        # using token with remote user context succeeds
-        scoped_token = self.controller.authenticate(
-            self.context_with_remote_user, body_dict)
-
-        # the bind information should be carried over from the original token
-        bind = scoped_token['access']['token']['bind']
-        self.assertEqual('FOO', bind['kerberos'])
+        # fernet tokens don't support bind
+        self.assertRaises(exception.NotImplemented,
+                          self.controller.authenticate,
+                          self.context_with_remote_user,
+                          body_dict)
 
     def test_deleting_role_revokes_token(self):
         role_controller = assignment.controllers.Role()
@@ -605,71 +591,40 @@ class AuthWithToken(AuthTest):
         # audit_chain_id will also return None.
         return [None, None]
 
-    def test_revoke_with_no_audit_info(self):
-        self.config_fixture.config(group='token', revoke_by_id=False)
-        context = {}
 
-        with mock.patch.object(provider, 'audit_info', self._mock_audit_info):
-            # get a token
-            body_dict = _build_user_auth(username='FOO', password='foo2')
-            unscoped_token = self.controller.authenticate(context, body_dict)
-            token_id = unscoped_token['access']['token']['id']
-            self.time_fixture.advance_time_seconds(1)
+class AuthWithUuidToken(AuthWithToken):
 
-            # get a second token
-            body_dict = _build_user_auth(
-                token=unscoped_token['access']['token'])
-            unscoped_token_2 = self.controller.authenticate(context, body_dict)
-            token_2_id = unscoped_token_2['access']['token']['id']
-            self.time_fixture.advance_time_seconds(1)
+    def config_overrides(self):
+        super(AuthWithUuidToken, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
 
-            self.token_provider_api.revoke_token(token_id, revoke_chain=True)
-            self.time_fixture.advance_time_seconds(1)
+    def test_token_auth_with_binding(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        body_dict = _build_user_auth()
+        unscoped_token = self.controller.authenticate(
+            self.context_with_remote_user, body_dict)
 
-            revoke_events = self.revoke_api.list_events()
-            self.assertThat(revoke_events, matchers.HasLength(1))
-            revoke_event = revoke_events[0].to_dict()
-            self.assertIn('expires_at', revoke_event)
-            self.assertEqual(unscoped_token_2['access']['token']['expires'],
-                             revoke_event['expires_at'])
+        # the token should have bind information in it
+        bind = unscoped_token['access']['token']['bind']
+        self.assertEqual('FOO', bind['kerberos'])
 
-            self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_id)
-            self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_2_id)
+        body_dict = _build_user_auth(
+            token=unscoped_token['access']['token'],
+            tenant_name='BAR')
 
-            # get a new token, with no audit info
-            body_dict = _build_user_auth(username='FOO', password='foo2')
-            unscoped_token = self.controller.authenticate(context, body_dict)
-            token_id = unscoped_token['access']['token']['id']
-            self.time_fixture.advance_time_seconds(1)
-            # get a second token
-            body_dict = _build_user_auth(
-                token=unscoped_token['access']['token'])
-            unscoped_token_2 = self.controller.authenticate(context, body_dict)
-            token_2_id = unscoped_token_2['access']['token']['id']
-            self.time_fixture.advance_time_seconds(1)
+        # using unscoped token without remote user context fails
+        self.assertRaises(
+            exception.Unauthorized,
+            self.controller.authenticate,
+            self.empty_context, body_dict)
 
-            # Revoke by audit_id, no audit_info means both parent and child
-            # token are revoked.
-            self.token_provider_api.revoke_token(token_id)
-            self.time_fixture.advance_time_seconds(1)
+        # using token with remote user context succeeds
+        scoped_token = self.controller.authenticate(
+            self.context_with_remote_user, body_dict)
 
-            revoke_events = self.revoke_api.list_events()
-            self.assertThat(revoke_events, matchers.HasLength(2))
-            revoke_event = revoke_events[1].to_dict()
-            self.assertIn('expires_at', revoke_event)
-            self.assertEqual(unscoped_token_2['access']['token']['expires'],
-                             revoke_event['expires_at'])
-
-            self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_id)
-            self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_2_id)
+        # the bind information should be carried over from the original token
+        bind = scoped_token['access']['token']['bind']
+        self.assertEqual('FOO', bind['kerberos'])
 
 
 class AuthWithPasswordCredentials(AuthTest):
@@ -833,9 +788,11 @@ class AuthWithRemoteUser(AuthTest):
     def test_bind_with_kerberos(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth(tenant_name="BAR")
-        token = self.controller.authenticate(self.context_with_remote_user,
-                                             body_dict)
-        self.assertEqual('FOO', token['access']['token']['bind']['kerberos'])
+        # fernet tokens don't support bind operations
+        self.assertRaises(exception.NotImplemented,
+                          self.controller.authenticate,
+                          self.context_with_remote_user,
+                          body_dict)
 
     def test_bind_without_config_opt(self):
         self.config_fixture.config(group='token', bind=['x509'])
@@ -843,6 +800,20 @@ class AuthWithRemoteUser(AuthTest):
         token = self.controller.authenticate(self.context_with_remote_user,
                                              body_dict)
         self.assertNotIn('bind', token['access']['token'])
+
+
+class UuidAuthWithRemoteUser(AuthTest):
+
+    def config_overrides(self):
+        super(UuidAuthWithRemoteUser, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
+    def test_bind_with_kerberos(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        body_dict = _build_user_auth(tenant_name="BAR")
+        token = self.controller.authenticate(self.context_with_remote_user,
+                                             body_dict)
+        self.assertEqual('FOO', token['access']['token']['bind']['kerberos'])
 
 
 class AuthWithTrust(AuthTest):
@@ -1140,15 +1111,6 @@ class AuthWithTrust(AuthTest):
         token_count = len(tokens)
         self.assertEqual(expected_value, token_count)
 
-    def test_delete_tokens_for_user_invalidates_tokens_from_trust(self):
-        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        self.assert_token_count_for_trust(new_trust, 0)
-        self.fetch_v2_token_from_trust(new_trust)
-        self.assert_token_count_for_trust(new_trust, 1)
-        self.token_provider_api._persistence.delete_tokens_for_user(
-            self.trustee['id'])
-        self.assert_token_count_for_trust(new_trust, 0)
-
     def test_token_from_trust_cant_get_another_token(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
         auth_response = self.fetch_v2_token_from_trust(new_trust)
@@ -1164,17 +1126,14 @@ class AuthWithTrust(AuthTest):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
         context = self._create_auth_context(
             unscoped_token['access']['token']['id'])
-        self.fetch_v2_token_from_trust(new_trust)
+        token_from_trust = self.fetch_v2_token_from_trust(new_trust)
         trust_id = new_trust['id']
-        tokens = self.token_provider_api._persistence._list_tokens(
-            self.trustor['id'],
-            trust_id=trust_id)
-        self.assertEqual(1, len(tokens))
         self.trust_controller.delete_trust(context, trust_id=trust_id)
-        tokens = self.token_provider_api._persistence._list_tokens(
-            self.trustor['id'],
-            trust_id=trust_id)
-        self.assertEqual(0, len(tokens))
+        self.assertRaises(
+            exception.TokenNotFound,
+            self.controller.validate_token,
+            dict(is_admin=True, query_string={}),
+            token_id=token_from_trust['access']['token']['id'])
 
     def test_token_from_trust_with_no_role_fails(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
@@ -1321,7 +1280,10 @@ class TokenExpirationTest(AuthTest):
         r = self.controller.validate_token(
             dict(is_admin=True, query_string={}),
             token_id=unscoped_token_id)
-        self.assertEqual(original_expiration, r['access']['token']['expires'])
+
+        self.assertEqual(
+            timeutils.parse_isotime(original_expiration),
+            timeutils.parse_isotime(r['access']['token']['expires']))
 
         mock_utcnow.return_value = now + datetime.timedelta(seconds=2)
 
@@ -1341,7 +1303,9 @@ class TokenExpirationTest(AuthTest):
         r = self.controller.validate_token(
             dict(is_admin=True, query_string={}),
             token_id=scoped_token_id)
-        self.assertEqual(original_expiration, r['access']['token']['expires'])
+        self.assertEqual(
+            timeutils.parse_isotime(original_expiration),
+            timeutils.parse_isotime(r['access']['token']['expires']))
 
     def test_maintain_uuid_token_expiration(self):
         self.config_fixture.config(group='token', provider='uuid')

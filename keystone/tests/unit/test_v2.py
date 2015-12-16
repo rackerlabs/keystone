@@ -979,6 +979,10 @@ class LegacyV2UsernameTests(object):
 
 class RestfulTestCase(rest.RestfulTestCase):
 
+    def config_overrides(self):
+        super(RestfulTestCase, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
     def setUp(self):
         super(RestfulTestCase, self).setUp()
 
@@ -1267,6 +1271,7 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
         If the server is configured for md5, then the revocation list has
         tokens hashed with MD5.
         """
+        self.skip_if_fernet()
         # The default hash algorithm is md5.
         hash_algorithm = 'md5'
 
@@ -1280,6 +1285,7 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
         If the server is configured for sha256, then the revocation list has
         tokens hashed with SHA256.
         """
+        self.skip_if_fernet()
         hash_algorithm = 'sha256'
         self.config_fixture.config(group='token',
                                    hash_algorithm=hash_algorithm)
