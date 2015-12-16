@@ -11,6 +11,7 @@
 # under the License.
 
 import datetime
+import time
 import uuid
 
 from six.moves import http_client
@@ -87,6 +88,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.delete(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']})
 
+        time.sleep(1)
         # ensure the trust is not found
         self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
@@ -146,7 +148,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         # delete the trust
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust['id']})
-
+        time.sleep(1)
         # ensure the trust isn't found
         self.get('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust['id']},

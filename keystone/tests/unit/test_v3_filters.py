@@ -15,6 +15,7 @@
 
 from oslo_config import cfg
 from oslo_serialization import jsonutils
+from six.moves import http_client
 from six.moves import range
 
 from keystone.tests import unit
@@ -212,8 +213,8 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         user = self.user1
         user['name'] = '%my%name%'
         self.identity_api.update_user(user['id'], user)
-
         url_by_name = '/users?name=%my%name%'
+        import time; time.sleep(1)
         r = self.get(url_by_name, auth=self.auth)
 
         self.assertEqual(1, len(r.result.get('users')))

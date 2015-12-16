@@ -465,21 +465,30 @@ class TokenCacheInvalidation(object):
             domain_id=CONF.identity.default_domain_id)
         self.tenant = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
+        tenant = self.resource_api.create_project(self.tenant['id'],
+                                                  self.tenant)
+        user = self.identity_api.create_user(self.user)
+        role_ref = unit.new_role_ref(id='fake', name='fakename')
+        role = self.role_api.create_role('fake', role_ref)
+        self.assignment_api.create_grant(role['id'],
+                                         user_id=user['id'],
+                                         project_id=tenant['id'])
 
         # Create an equivalent of a scoped token
-        token_dict = {'user': self.user, 'tenant': self.tenant,
+        token_dict = {'user': user, 'tenant': tenant,
                       'metadata': {}, 'id': 'placeholder'}
         token_id, data = self.token_provider_api.issue_v2_token(token_dict)
         self.scoped_token_id = token_id
 
         # ..and an un-scoped one
-        token_dict = {'user': self.user, 'tenant': None,
+        token_dict = {'user': user, 'tenant': None,
                       'metadata': {}, 'id': 'placeholder'}
         token_id, data = self.token_provider_api.issue_v2_token(token_dict)
         self.unscoped_token_id = token_id
 
         # Validate them, in the various ways possible - this will load the
         # responses into the token cache.
+        # TODO(raildo): verify why this check are breaking with fernet tokens
         self._check_scoped_tokens_are_valid()
         self._check_unscoped_tokens_are_valid()
 
@@ -526,17 +535,20 @@ class TokenCacheInvalidation(object):
         self.token_provider_api.validate_v2_token(self.unscoped_token_id)
 
     def test_delete_unscoped_token(self):
+        self.skip_if_fernet()
         self.token_provider_api._persistence.delete_token(
             self.unscoped_token_id)
         self._check_unscoped_tokens_are_invalid()
         self._check_scoped_tokens_are_valid()
 
     def test_delete_scoped_token_by_id(self):
+        self.skip_if_fernet()
         self.token_provider_api._persistence.delete_token(self.scoped_token_id)
         self._check_scoped_tokens_are_invalid()
         self._check_unscoped_tokens_are_valid()
 
     def test_delete_scoped_token_by_user(self):
+        self.skip_if_fernet()
         self.token_provider_api._persistence.delete_tokens(self.user['id'])
         # Since we are deleting all tokens for this user, they should all
         # now be invalid.
@@ -544,6 +556,7 @@ class TokenCacheInvalidation(object):
         self._check_unscoped_tokens_are_invalid()
 
     def test_delete_scoped_token_by_user_and_tenant(self):
+        self.skip_if_fernet()
         self.token_provider_api._persistence.delete_tokens(
             self.user['id'],
             tenant_id=self.tenant['id'])

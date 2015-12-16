@@ -11,6 +11,7 @@
 # under the License.
 
 import random
+import time
 import uuid
 
 from oslo_config import cfg
@@ -201,6 +202,12 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.head(collection_url, expected_status=http_client.OK)
 
         self.delete(member_url)
+        # TODO(ayoung): the revocation event is catching the admin toker used
+        # to validate the users token as well.  Just scrolling the time
+        # forward with the Oslo Fixture does not handle it, but a real
+        # delay fixes it.  Not sure why.
+        time.sleep(1)
+
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0,
                                          resource_url=collection_url)
@@ -242,6 +249,12 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.head(collection_url, expected_status=http_client.OK)
 
         self.delete(member_url)
+        # TODO(ayoung): the revocation event is catching the admin toker used
+        # to validate the users token as well.  Just scrolling the time
+        # forward with the Oslo Fixture does not handle it, but a real
+        # delay fixes it.  Not sure why.
+        time.sleep(1)
+
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0,
                                          resource_url=collection_url)
@@ -314,19 +327,22 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         The revocation should be independently to the presence
         of the revoke API.
         """
+        user1_ref = unit.new_user_ref(domain_id=self.domain['id'])
+        user1 = self.identity_api.create_user(user1_ref)
+        user1['password'] = user1_ref['password']
         # creates grant from group on project.
         self.assignment_api.create_grant(role_id=self.role['id'],
                                          project_id=self.project['id'],
                                          group_id=self.group['id'])
 
         # adds user to the group.
-        self.identity_api.add_user_to_group(user_id=self.user['id'],
+        self.identity_api.add_user_to_group(user_id=user1['id'],
                                             group_id=self.group['id'])
 
         # creates a token for the user
         auth_body = self.build_authentication_request(
-            user_id=self.user['id'],
-            password=self.user['password'],
+            user_id=user1['id'],
+            password=user1['password'],
             project_id=self.project['id'])
         token_resp = self.post('/auth/tokens', body=auth_body)
         token = token_resp.headers.get('x-subject-token')
@@ -340,6 +356,11 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assignment_api.delete_grant(role_id=self.role['id'],
                                          project_id=self.project['id'],
                                          group_id=self.group['id'])
+        # TODO(ayoung): the revocation event is catching the admin toker used
+        # to validate the users token as well.  Just scrolling the time
+        # forward with the Oslo Fixture does not handle it, but a real
+        # delay fixes it.  Not sure why.
+        time.sleep(1)
 
         # validates the same token again; it should not longer be valid.
         self.head('/auth/tokens',
@@ -561,9 +582,17 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         # from the collection.
 
         self.delete(gd_entity['links']['assignment'])
+        # TODO(ayoung): the revocation event is catching the admin toker used
+        # to validate the users token as well.  Just scrolling the time
+        # forward with the Oslo Fixture does not handle it, but a real
+        # delay fixes it.  Not sure why.
+        time.sleep(1)
         self.delete(ud_entity['links']['assignment'])
+        time.sleep(1)
         self.delete(gp_entity['links']['assignment'])
+        time.sleep(1)
         self.delete(up_entity['links']['assignment'])
+        time.sleep(1)
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(
             r,

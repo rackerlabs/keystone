@@ -875,6 +875,15 @@ class TestCase(BaseTestCase):
         if not self.ipv6_enabled:
             raise self.skipTest("IPv6 is not enabled in the system")
 
+    def skip_if_env_not_set(self, env_var):
+        if not os.environ.get(env_var):
+            self.skipTest('Env variable %s is not set.' % env_var)
+
+    def skip_if_fernet(self):
+        if CONF.token.provider == 'fernet':
+            self.skipTest('Invalid Test for Fernet due to no persistence or '
+                          'use of revocation events only.')
+
 
 class SQLDriverOverrides(object):
     """A mixin for consolidating sql-specific test overrides."""
