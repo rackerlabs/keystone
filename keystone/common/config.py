@@ -780,6 +780,8 @@ FILE_OPTIONS = {
                    help='End user auth connection pool size.'),
         cfg.IntOpt('auth_pool_connection_lifetime', default=60,
                    help='End user auth connection lifetime in seconds.'),
+        cfg.StrOpt('user_dn_key', default='dn',
+                   help='Key to extract user dn from LDAP entry'),
     ],
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,

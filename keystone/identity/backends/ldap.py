@@ -44,6 +44,7 @@ class Identity(identity.IdentityDriverV8):
             self.conf = CONF
         else:
             self.conf = conf
+        self.user_dn_key = self.conf.ldap.user_dn_key
         self.user = UserApi(self.conf)
         self.group = GroupApi(self.conf)
 
@@ -67,7 +68,7 @@ class Identity(identity.IdentityDriverV8):
             raise AssertionError(_('Invalid user / password'))
         conn = None
         try:
-            conn = self.user.get_connection(user_ref['dn'],
+            conn = self.user.get_connection(user_ref[self.user_dn_key],
                                             password, end_user_auth=True)
             if not conn:
                 raise AssertionError(_('Invalid user / password'))
@@ -125,7 +126,7 @@ class Identity(identity.IdentityDriverV8):
         versionutils.report_deprecated_feature(LOG, msg)
         self.user.check_allow_delete()
         user = self.user.get(user_id)
-        user_dn = user['dn']
+        user_dn = user[self.user_dn_key]
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
             self.group.remove_user(user_dn, group['id'], user_id)
@@ -167,19 +168,19 @@ class Identity(identity.IdentityDriverV8):
         msg = _DEPRECATION_MSG % "add_user_to_group"
         versionutils.report_deprecated_feature(LOG, msg)
         user_ref = self._get_user(user_id)
-        user_dn = user_ref['dn']
+        user_dn = user_ref[self.user_dn_key]
         self.group.add_user(user_dn, group_id, user_id)
 
     def remove_user_from_group(self, user_id, group_id):
         msg = _DEPRECATION_MSG % "remove_user_from_group"
         versionutils.report_deprecated_feature(LOG, msg)
         user_ref = self._get_user(user_id)
-        user_dn = user_ref['dn']
+        user_dn = user_ref[self.user_dn_key]
         self.group.remove_user(user_dn, group_id, user_id)
 
     def list_groups_for_user(self, user_id, hints):
         user_ref = self._get_user(user_id)
-        user_dn = user_ref['dn']
+        user_dn = user_ref[self.user_dn_key]
         return self.group.list_user_groups_filtered(user_dn, hints)
 
     def list_groups(self, hints):
@@ -188,7 +189,12 @@ class Identity(identity.IdentityDriverV8):
     def list_users_in_group(self, group_id, hints):
         users = []
         for user_dn in self.group.list_group_users(group_id):
-            user_id = self.user._dn_to_id(user_dn)
+            try:
+                user_id = self.user._dn_to_id(user_dn)
+            except ldap.DECODING_ERROR:
+                # OpenDirectory uses different entry layout
+                # and stores user id as it is
+                user_id = user_dn
             try:
                 users.append(self.user.get_filtered(user_id))
             except exception.UserNotFound:
