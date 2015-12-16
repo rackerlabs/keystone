@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_ab44ca73",
+        "filename": "releasenotes/notes/enable-inherit-on-default-54ac435230261a6a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-16T04:34:24Z",
+      "side": 1,
+      "message": "not sure if it\u0027s appropriate to say this is an extension but I feel okay as it is.",
+      "revId": "930454d299bacbafe51891132e51140f26d97ad9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
