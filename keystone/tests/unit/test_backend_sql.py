@@ -33,6 +33,7 @@ from keystone import resource
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.ksfixtures import key_repository
 from keystone.tests.unit import test_backend
 from keystone.token.persistence.backends import sql as token_sql
 
@@ -809,6 +810,7 @@ class SqlImpliedRoles(SqlTests, test_backend.ImpliedRoleTests):
 class SqlTokenCacheInvalidation(SqlTests, test_backend.TokenCacheInvalidation):
     def setUp(self):
         super(SqlTokenCacheInvalidation, self).setUp()
+        self.useFixture(key_repository.KeyRepository(self.config_fixture))
         self._create_test_data()
 
 

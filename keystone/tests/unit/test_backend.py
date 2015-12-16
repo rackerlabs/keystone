@@ -5378,10 +5378,8 @@ class TokenTests(object):
 
 class TokenCacheInvalidation(object):
     def _create_test_data(self):
-        self.user = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
-        self.tenant = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+        self.user = self.user_foo
+        self.tenant = self.tenant_bar
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
@@ -5443,17 +5441,18 @@ class TokenCacheInvalidation(object):
         self.token_provider_api.validate_v2_token(self.unscoped_token_id)
 
     def test_delete_unscoped_token(self):
-        self.token_provider_api._persistence.delete_token(
+        self.token_provider_api.revoke_token(
             self.unscoped_token_id)
         self._check_unscoped_tokens_are_invalid()
         self._check_scoped_tokens_are_valid()
 
     def test_delete_scoped_token_by_id(self):
-        self.token_provider_api._persistence.delete_token(self.scoped_token_id)
+        self.token_provider_api.revoke_token(self.scoped_token_id)
         self._check_scoped_tokens_are_invalid()
         self._check_unscoped_tokens_are_valid()
 
     def test_delete_scoped_token_by_user(self):
+        self.skip_if_fernet()
         self.token_provider_api._persistence.delete_tokens(self.user['id'])
         # Since we are deleting all tokens for this user, they should all
         # now be invalid.
@@ -5461,6 +5460,7 @@ class TokenCacheInvalidation(object):
         self._check_unscoped_tokens_are_invalid()
 
     def test_delete_scoped_token_by_user_and_tenant(self):
+        self.skip_if_fernet()
         self.token_provider_api._persistence.delete_tokens(
             self.user['id'],
             tenant_id=self.tenant['id'])
