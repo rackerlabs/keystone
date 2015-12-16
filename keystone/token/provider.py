@@ -239,7 +239,10 @@ class Manager(manager.Manager):
             # is one where the token providers just handle data and the
             # controller layers handle interpreting the token data in a format
             # that makes sense for the request.
-            v3_token_ref = self.validate_non_persistent_token(token_id)
+            try:
+                v3_token_ref = self.validate_non_persistent_token(token_id)
+            except exception.Unauthorized:
+                raise exception.TokenNotFound(_('Failed to validate token'))
             v2_token_data_helper = providers.common.V2TokenDataHelper()
             token = v2_token_data_helper.v3_to_v2_token(v3_token_ref)
 
