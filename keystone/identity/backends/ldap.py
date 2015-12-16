@@ -37,6 +37,7 @@ class Identity(identity.IdentityDriverV8):
         super(Identity, self).__init__()
         if conf is None:
             conf = CONF
+        self.ldap_user_dn_key = conf.ldap.user_dn_key
         self.user = UserApi(conf)
         self.group = GroupApi(conf)
 
@@ -156,7 +157,7 @@ class Identity(identity.IdentityDriverV8):
 
     def list_groups_for_user(self, user_id, hints):
         user_ref = self._get_user(user_id)
-        user_dn = user_ref['dn']
+        user_dn = user_ref[self.ldap_user_dn_key]
         return self.group.list_user_groups_filtered(user_dn, hints)
 
     def list_groups(self, hints):
@@ -165,7 +166,12 @@ class Identity(identity.IdentityDriverV8):
     def list_users_in_group(self, group_id, hints):
         users = []
         for user_dn in self.group.list_group_users(group_id):
-            user_id = self.user._dn_to_id(user_dn)
+            try:
+                user_id = self.user._dn_to_id(user_dn)
+            except ldap.DECODING_ERROR:
+                # OpenDirectory uses different entry layout
+                # and stores user id as it is
+                user_id = user_dn
             try:
                 users.append(self.user.get_filtered(user_id))
             except exception.UserNotFound:
