@@ -264,7 +264,7 @@ FILE_OPTIONS = {
                    help='Amount of time a token should remain valid '
                         '(in seconds).'),
         cfg.StrOpt('provider',
-                   default='uuid',
+                   default='fernet',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Entrypoint in the '
                         'keystone.token.provider namespace. Core providers '
