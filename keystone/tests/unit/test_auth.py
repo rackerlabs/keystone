@@ -31,6 +31,7 @@ from keystone import exception
 from keystone.models import token_model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone import token
 from keystone.token import provider
@@ -73,6 +74,11 @@ def _build_user_auth(token=None, user_id=None, username=None,
 
 
 class AuthTest(unit.TestCase):
+
+    def config_overrides(self):
+        super(AuthTest, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
     def setUp(self):
         self.useFixture(database.Database())
         super(AuthTest, self).setUp()
