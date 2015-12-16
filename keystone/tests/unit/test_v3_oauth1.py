@@ -30,7 +30,6 @@ from keystone.oauth1 import controllers
 from keystone.oauth1 import core
 from keystone.tests import unit
 from keystone.tests.unit.common import test_notifications
-from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
 
@@ -493,14 +492,8 @@ class AuthTokenTests(OAuthFlowTests):
             expected_status=http_client.FORBIDDEN)
 
     def test_delete_keystone_tokens_by_consumer_id(self):
-        self.test_oauth_flow()
-        self.token_provider_api._persistence.get_token(self.keystone_token_id)
-        self.token_provider_api._persistence.delete_tokens(
-            self.user_id,
-            consumer_id=self.consumer['key'])
-        self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api._persistence.get_token,
-                          self.keystone_token_id)
+        # NOTE(lbragstad): Fernet tokens are never persisted in the backend.
+        pass
 
     def _create_trust_get_token(self):
         ref = unit.new_trust_ref(
@@ -600,16 +593,21 @@ class AuthTokenTests(OAuthFlowTests):
                  expected_status=http_client.FORBIDDEN)
 
 
-class FernetAuthTokenTests(AuthTokenTests):
+class UuidAuthTokenTests(AuthTokenTests):
 
     def config_overrides(self):
-        super(FernetAuthTokenTests, self).config_overrides()
-        self.config_fixture.config(group='token', provider='fernet')
-        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+        super(UuidAuthTokenTests, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
 
     def test_delete_keystone_tokens_by_consumer_id(self):
-        # NOTE(lbragstad): Fernet tokens are never persisted in the backend.
-        pass
+        self.test_oauth_flow()
+        self.token_provider_api._persistence.get_token(self.keystone_token_id)
+        self.token_provider_api._persistence.delete_tokens(
+            self.user_id,
+            consumer_id=self.consumer['key'])
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api._persistence.get_token,
+                          self.keystone_token_id)
 
 
 class MaliciousOAuth1Tests(OAuth1Tests):

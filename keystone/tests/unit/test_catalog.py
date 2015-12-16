@@ -18,6 +18,7 @@ from six.moves import http_client
 
 from keystone import catalog
 from keystone.tests import unit
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import rest
 
@@ -45,6 +46,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
     def config_overrides(self):
         super(V2CatalogTestCase, self).config_overrides()
         self.config_fixture.config(group='catalog', driver='sql')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
     def _get_token_id(self, r):
         """Applicable only to JSON."""
