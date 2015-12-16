@@ -78,7 +78,12 @@ def _internal_attr(attr_name, value_or_values):
             norm.append([(name, val, i)])
         return core.utf8_decode(ldap.dn.dn2str(norm))
 
-    if attr_name in ('member', 'roleOccupant'):
+    if CONF.ldap.posix_group:
+        dn_format_attrs = ('roleOccupant',)
+    else:
+        dn_format_attrs = ('member', 'roleOccupant')
+
+    if attr_name in dn_format_attrs:
         attr_fn = normalize_dn
     else:
         attr_fn = normalize_value
