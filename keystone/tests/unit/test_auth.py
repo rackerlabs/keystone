@@ -31,6 +31,7 @@ from keystone import exception
 from keystone.models import token_model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone import token
 from keystone.token import provider
@@ -73,6 +74,11 @@ def _build_user_auth(token=None, user_id=None, username=None,
 
 
 class AuthTest(unit.TestCase):
+
+    def config_overrides(self):
+        super(AuthTest, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
     def setUp(self):
         self.useFixture(database.Database())
         super(AuthTest, self).setUp()
@@ -401,30 +407,12 @@ class AuthWithToken(AuthTest):
     def test_token_auth_with_binding(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth()
-        unscoped_token = self.controller.authenticate(
-            self.context_with_remote_user, body_dict)
 
-        # the token should have bind information in it
-        bind = unscoped_token['access']['token']['bind']
-        self.assertEqual('FOO', bind['kerberos'])
-
-        body_dict = _build_user_auth(
-            token=unscoped_token['access']['token'],
-            tenant_name='BAR')
-
-        # using unscoped token without remote user context fails
-        self.assertRaises(
-            exception.Unauthorized,
-            self.controller.authenticate,
-            self.empty_context, body_dict)
-
-        # using token with remote user context succeeds
-        scoped_token = self.controller.authenticate(
-            self.context_with_remote_user, body_dict)
-
-        # the bind information should be carried over from the original token
-        bind = scoped_token['access']['token']['bind']
-        self.assertEqual('FOO', bind['kerberos'])
+        # fernet tokens don't support bind
+        self.assertRaises(exception.NotImplemented,
+                          self.controller.authenticate,
+                          self.context_with_remote_user,
+                          body_dict)
 
     def test_deleting_role_revokes_token(self):
         role_controller = assignment.controllers.Role()
@@ -638,6 +626,41 @@ class AuthWithToken(AuthTest):
                               token_id=token_2_id)
 
 
+class AuthWithUuidToken(AuthWithToken):
+
+    def config_overrides(self):
+        super(AuthWithUuidToken, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
+    def test_token_auth_with_binding(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        body_dict = _build_user_auth()
+        unscoped_token = self.controller.authenticate(
+            self.context_with_remote_user, body_dict)
+
+        # the token should have bind information in it
+        bind = unscoped_token['access']['token']['bind']
+        self.assertEqual('FOO', bind['kerberos'])
+
+        body_dict = _build_user_auth(
+            token=unscoped_token['access']['token'],
+            tenant_name='BAR')
+
+        # using unscoped token without remote user context fails
+        self.assertRaises(
+            exception.Unauthorized,
+            self.controller.authenticate,
+            self.empty_context, body_dict)
+
+        # using token with remote user context succeeds
+        scoped_token = self.controller.authenticate(
+            self.context_with_remote_user, body_dict)
+
+        # the bind information should be carried over from the original token
+        bind = scoped_token['access']['token']['bind']
+        self.assertEqual('FOO', bind['kerberos'])
+
+
 class AuthWithPasswordCredentials(AuthTest):
     def test_auth_invalid_user(self):
         """Verify exception is raised if invalid user."""
@@ -799,9 +822,11 @@ class AuthWithRemoteUser(AuthTest):
     def test_bind_with_kerberos(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth(tenant_name="BAR")
-        token = self.controller.authenticate(self.context_with_remote_user,
-                                             body_dict)
-        self.assertEqual('FOO', token['access']['token']['bind']['kerberos'])
+        # fernet tokens don't support bind operations
+        self.assertRaises(exception.NotImplemented,
+                          self.controller.authenticate,
+                          self.context_with_remote_user,
+                          body_dict)
 
     def test_bind_without_config_opt(self):
         self.config_fixture.config(group='token', bind=['x509'])
@@ -809,6 +834,20 @@ class AuthWithRemoteUser(AuthTest):
         token = self.controller.authenticate(self.context_with_remote_user,
                                              body_dict)
         self.assertNotIn('bind', token['access']['token'])
+
+
+class UuidAuthWithRemoteUser(AuthTest):
+
+    def config_overrides(self):
+        super(UuidAuthWithRemoteUser, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
+    def test_bind_with_kerberos(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        body_dict = _build_user_auth(tenant_name="BAR")
+        token = self.controller.authenticate(self.context_with_remote_user,
+                                             body_dict)
+        self.assertEqual('FOO', token['access']['token']['bind']['kerberos'])
 
 
 class AuthWithTrust(AuthTest):
