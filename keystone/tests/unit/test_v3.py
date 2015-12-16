@@ -28,6 +28,7 @@ from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules
 from keystone.tests import unit
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import rest
 
 
@@ -155,6 +156,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             app_conf = 'config:%s' % (new_paste_file)
 
         super(RestfulTestCase, self).setUp(app_conf=app_conf)
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
         self.empty_context = {'environment': {}}
 
