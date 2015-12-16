@@ -1761,6 +1761,8 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         super(TestAuthExternalDomain, self).config_overrides()
         self.kerberos = False
         self.auth_plugin_config_override(external='Domain')
+        # the Fernet token provider doesn't support bind authentication
+        self.config_fixture.config(group='token', provider='uuid')
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
@@ -1873,6 +1875,7 @@ class TestAuthKerberos(TestAuthExternalDomain):
         self.kerberos = True
         self.auth_plugin_config_override(
             methods=['kerberos', 'password', 'token'])
+        self.config_fixture.config(group='token', provider='uuid')
 
 
 class TestAuth(test_v3.RestfulTestCase):
