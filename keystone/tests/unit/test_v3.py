@@ -30,6 +30,7 @@ from keystone import exception
 from keystone import middleware
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import rest
 
 
@@ -268,6 +269,10 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             unit.remove_generated_paste_config(self.EXTENSION_TO_ADD)
         except AttributeError:
             pass
+
+    def config_overrides(self):
+        super(RestfulTestCase, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
     def setUp(self, app_conf='keystone'):
         """Setup for v3 Restful Test Cases."""
