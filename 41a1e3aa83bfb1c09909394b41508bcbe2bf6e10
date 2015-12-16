@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_55cb7ba5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-16T09:24:58Z",
+      "side": 1,
+      "message": "This text needs to be updated, since it is now enabled by default",
+      "revId": "41a1e3aa83bfb1c09909394b41508bcbe2bf6e10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_b5789f90",
+        "filename": "releasenotes/notes/enable-inherit-on-default-54ac435230261a6a.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-16T09:24:58Z",
+      "side": 1,
+      "message": "(nit): While OK, here\u0027s a suggested re-wording that might make this text more closely match other examples:\n\n\"The default setting for the os_inherit configuration option is changed to True. If it is required to continue with this portion of the API disabled, then override the default setting by explcitely specifying the os_inherit option as False.\"",
+      "revId": "41a1e3aa83bfb1c09909394b41508bcbe2bf6e10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
