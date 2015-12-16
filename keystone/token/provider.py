@@ -206,7 +206,7 @@ class Manager(manager.Manager):
         # NOTE(morganfainberg): Ensure we never use the long-form token_id
         # (PKI) as part of the cache_key.
         token = self._validate_token(unique_id)
-        self._token_belongs_to(token, belongs_to)
+        self._token_belongs_to(unique_id, token, belongs_to)
         self._is_valid_token(token)
         return token
 
@@ -239,13 +239,16 @@ class Manager(manager.Manager):
             # is one where the token providers just handle data and the
             # controller layers handle interpreting the token data in a format
             # that makes sense for the request.
-            v3_token_ref = self.validate_non_persistent_token(token_id)
+            try:
+                v3_token_ref = self.validate_non_persistent_token(token_id)
+            except exception.Unauthorized:
+                raise exception.TokenNotFound(_('Failed to validate token'))
             v2_token_data_helper = providers.common.V2TokenDataHelper()
             token = v2_token_data_helper.v3_to_v2_token(v3_token_ref)
 
         # these are common things that happen regardless of token provider
         token['access']['token']['id'] = token_id
-        self._token_belongs_to(token, belongs_to)
+        self._token_belongs_to(token_id, token, belongs_to)
         self._is_valid_token(token)
         return token
 
@@ -287,8 +290,9 @@ class Manager(manager.Manager):
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
 
-    @MEMOIZE
+#    @MEMOIZE
     def _validate_token(self, token_id):
+
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
 
@@ -308,11 +312,11 @@ class Manager(manager.Manager):
             return self.driver.validate_v2_token(token_ref)
         raise exception.UnsupportedTokenVersionException()
 
-    @MEMOIZE
+#    @MEMOIZE
     def _validate_v2_token(self, token_id):
         return self.driver.validate_v2_token(token_id)
 
-    @MEMOIZE
+#    @MEMOIZE
     def _validate_v3_token(self, token_id):
         return self.driver.validate_v3_token(token_id)
 
@@ -342,7 +346,7 @@ class Manager(manager.Manager):
         else:
             raise exception.TokenNotFound(_('Failed to validate token'))
 
-    def _token_belongs_to(self, token, belongs_to):
+    def _token_belongs_to(self, token_id, token, belongs_to):
         """Check if the token belongs to the right tenant.
 
         This is only used on v2 tokens.  The structural validity of the token
@@ -350,10 +354,17 @@ class Manager(manager.Manager):
 
         """
         if belongs_to:
-            token_data = token['access']['token']
-            if ('tenant' not in token_data or
-                    token_data['tenant']['id'] != belongs_to):
-                raise exception.Unauthorized()
+            if 'access' in token:
+                token_data = token['access']['token']
+                if('tenant' not in token_data or
+                        token_data['tenant']['id'] != belongs_to):
+                    raise exception.Unauthorized()
+            else:
+                token_data = token_model.KeystoneToken(token_id, token)
+                if not token_data.audit_id:
+                    if ('project_id' not in token_data or
+                            token_data.project_id != belongs_to):
+                        raise exception.Unauthorized()
 
     def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
         token_id, token_data = self.driver.issue_v2_token(
@@ -423,10 +434,13 @@ class Manager(manager.Manager):
         # invalidated? We maintain a cached revocation list, which should be
         # consulted before accepting a token as valid.  For now we will
         # do the explicit individual token invalidation.
-
-        self._validate_token.invalidate(self, token_id)
-        self._validate_v2_token.invalidate(self, token_id)
-        self._validate_v3_token.invalidate(self, token_id)
+        pass
+        # Below is the origianl logic, that does the cache invalidation,
+        # but since those decorators are commented out, the functions they
+        # generate do not exist.
+        # self._validate_token.invalidate(self, token_id)
+        # self._validate_v2_token.invalidate(self, token_id)
+        # self._validate_v3_token.invalidate(self, token_id)
 
     def revoke_token(self, token_id, revoke_chain=False):
         token_ref = token_model.KeystoneToken(

@@ -90,6 +90,11 @@ class V2TokenDataHelper(object):
                    'API.')
             raise exception.Unauthorized(msg)
 
+        if 'OS-FEDERATION' in v3_token['user']:
+            msg = _('Unable to validate Federation tokens using the version '
+                    'v2.0 API.')
+            raise exception.Unauthorized(msg)
+
         # Set user roles
         user['roles'] = []
         role_ids = []
@@ -767,17 +772,20 @@ class BaseProvider(provider.Provider):
         if access_token_id:
             access_token = self.oauth_api.get_access_token(access_token_id)
 
-        return self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names=methods,
-            domain_id=domain_id,
-            project_id=project_id,
-            issued_at=created_at,
-            expires=expires_at,
-            trust=trust_ref,
-            token=token_dict,
-            access_token=access_token,
-            audit_info=audit_ids)
+        try:
+            return self.v3_token_data_helper.get_token_data(
+                user_id,
+                method_names=methods,
+                domain_id=domain_id,
+                project_id=project_id,
+                issued_at=created_at,
+                expires=expires_at,
+                trust=trust_ref,
+                token=token_dict,
+                access_token=access_token,
+                audit_info=audit_ids)
+        except exception.Unauthorized:
+            raise exception.TokenNotFound(token_id=token_id)
 
     def validate_v3_token(self, token_ref):
         # FIXME(gyee): performance or correctness? Should we return the

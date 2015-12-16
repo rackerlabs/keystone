@@ -455,7 +455,7 @@ class TokenAPITests(object):
         trustor_update_ref = dict(enabled=False)
         self.identity_api.update_user(self.user['id'], trustor_update_ref)
         # Ensure validating a token for a disabled user fails
-        self.assertRaises(exception.TokenNotFound,
+        self.assertRaises(exception.Error,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
 
@@ -486,7 +486,7 @@ class TokenAPITests(object):
         trustor_update_ref = dict(password='Password1')
         self.identity_api.update_user(self.user['id'], trustor_update_ref)
         # Ensure updating trustor's password revokes existing user's tokens
-        self.assertRaises(exception.TokenNotFound,
+        self.assertRaises(exception.Error,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
 
@@ -2465,6 +2465,8 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         super(TestAuthExternalDomain, self).config_overrides()
         self.kerberos = False
         self.auth_plugin_config_override(external='Domain')
+        # the Fernet token provider doesn't support bind authentication
+        self.config_fixture.config(group='token', provider='uuid')
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
@@ -2553,6 +2555,37 @@ class TestAuthExternalDefaultDomain(test_v3.RestfulTestCase):
         remote_user = self.default_domain_user['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
+
+        # This should return NotImplemented since Fernet doesn't support bind.
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.NOT_IMPLEMENTED)
+
+    def test_unscoped_bind_with_remote_user(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        auth_data = self.build_authentication_request(kerberos=self.kerberos)
+        remote_user = self.default_domain_user['name']
+        self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
+                                             'AUTH_TYPE': 'Negotiate'})
+
+        # This should return NotImplemented since Fernet doesn't support bind.
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.NOT_IMPLEMENTED)
+
+
+class TestAuthExternalDefaultDomainWithUuid(TestAuthExternalDefaultDomain):
+
+    def config_overrides(self):
+        super(TestAuthExternalDefaultDomainWithUuid, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
+    def test_project_id_scoped_with_remote_user(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        auth_data = self.build_authentication_request(
+            project_id=self.default_domain_project['id'],
+            kerberos=self.kerberos)
+        remote_user = self.default_domain_user['name']
+        self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
+                                             'AUTH_TYPE': 'Negotiate'})
         r = self.v3_create_token(auth_data)
         token = self.assertValidProjectScopedTokenResponse(r)
         self.assertEqual(self.default_domain_user['name'],
@@ -2577,6 +2610,7 @@ class TestAuthKerberos(TestAuthExternalDomain):
         self.kerberos = True
         self.auth_plugin_config_override(
             methods=['kerberos', 'password', 'token'])
+        self.config_fixture.config(group='token', provider='uuid')
 
 
 class TestAuth(test_v3.RestfulTestCase):
@@ -3249,13 +3283,9 @@ class TestAuth(test_v3.RestfulTestCase):
         remote_user = self.default_domain_user['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
-
-        token = self.get_requested_token(auth_data)
-        headers = {'X-Subject-Token': token}
-        r = self.get('/auth/tokens', headers=headers, token=token)
-        token = self.assertValidProjectScopedTokenResponse(r)
-        self.assertEqual(self.default_domain_user['name'],
-                         token['bind']['kerberos'])
+        # Bind not current supported by Fernet, see bug 1433311.
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.NOT_IMPLEMENTED)
 
     def test_auth_with_bind_token(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
@@ -3264,22 +3294,9 @@ class TestAuth(test_v3.RestfulTestCase):
         remote_user = self.default_domain_user['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
-        r = self.v3_create_token(auth_data)
-
-        # the unscoped token should have bind information in it
-        token = self.assertValidUnscopedTokenResponse(r)
-        self.assertEqual(remote_user, token['bind']['kerberos'])
-
-        token = r.headers.get('X-Subject-Token')
-
-        # using unscoped token with remote user succeeds
-        auth_params = {'token': token, 'project_id': self.project_id}
-        auth_data = self.build_authentication_request(**auth_params)
-        r = self.v3_create_token(auth_data)
-        token = self.assertValidProjectScopedTokenResponse(r)
-
-        # the bind information should be carried over from the original token
-        self.assertEqual(remote_user, token['bind']['kerberos'])
+        # Bind not current supported by Fernet, see bug 1433311.
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.NOT_IMPLEMENTED)
 
     def test_v2_v3_bind_token_intermix(self):
         self.config_fixture.config(group='token', bind='kerberos')
@@ -3290,28 +3307,11 @@ class TestAuth(test_v3.RestfulTestCase):
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
         body = {'auth': {}}
-        resp = self.admin_request(path='/v2.0/tokens',
-                                  method='POST',
-                                  body=body)
-
-        v2_token_data = resp.result
-
-        bind = v2_token_data['access']['token']['bind']
-        self.assertEqual(self.default_domain_user['name'], bind['kerberos'])
-
-        v2_token_id = v2_token_data['access']['token']['id']
-        # NOTE(gyee): self.get() will try to obtain an auth token if one
-        # is not provided. When REMOTE_USER is present in the request
-        # environment, the external user auth plugin is used in conjunction
-        # with the password auth for the admin user. Therefore, we need to
-        # cleanup the REMOTE_USER information from the previous call.
-        del self.admin_app.extra_environ['REMOTE_USER']
-        headers = {'X-Subject-Token': v2_token_id}
-        resp = self.get('/auth/tokens', headers=headers)
-        token_data = resp.result
-
-        self.assertDictEqual(v2_token_data['access']['token']['bind'],
-                             token_data['token']['bind'])
+        # Bind not current supported by Fernet, see bug 1433311.
+        self.admin_request(path='/v2.0/tokens',
+                           method='POST',
+                           body=body,
+                           expected_status=http_client.NOT_IMPLEMENTED)
 
     def test_authenticating_a_user_with_no_password(self):
         user = unit.new_user_ref(domain_id=self.domain['id'])
@@ -4726,6 +4726,12 @@ class TestAuthFernetTokenProvider(TestAuth):
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
         self.config_fixture.config(group='token', provider='fernet')
 
+
+class TestAuthUuidTokenProvider(TestAuth):
+    def config_overrides(self):
+        super(TestAuthUuidTokenProvider, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
     def test_verify_with_bound_token(self):
         self.config_fixture.config(group='token', bind='kerberos')
         auth_data = self.build_authentication_request(
@@ -4733,9 +4739,13 @@ class TestAuthFernetTokenProvider(TestAuth):
         remote_user = self.default_domain_user['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
-        # Bind not current supported by Fernet, see bug 1433311.
-        self.v3_create_token(auth_data,
-                             expected_status=http_client.NOT_IMPLEMENTED)
+
+        token = self.get_requested_token(auth_data)
+        headers = {'X-Subject-Token': token}
+        r = self.get('/auth/tokens', headers=headers, token=token)
+        token = self.assertValidProjectScopedTokenResponse(r)
+        self.assertEqual(self.default_domain_user['name'],
+                         token['bind']['kerberos'])
 
     def test_v2_v3_bind_token_intermix(self):
         self.config_fixture.config(group='token', bind='kerberos')
@@ -4746,11 +4756,28 @@ class TestAuthFernetTokenProvider(TestAuth):
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
         body = {'auth': {}}
-        # Bind not current supported by Fernet, see bug 1433311.
-        self.admin_request(path='/v2.0/tokens',
-                           method='POST',
-                           body=body,
-                           expected_status=http_client.NOT_IMPLEMENTED)
+        resp = self.admin_request(path='/v2.0/tokens',
+                                  method='POST',
+                                  body=body)
+
+        v2_token_data = resp.result
+
+        bind = v2_token_data['access']['token']['bind']
+        self.assertEqual(self.default_domain_user['name'], bind['kerberos'])
+
+        v2_token_id = v2_token_data['access']['token']['id']
+        # NOTE(gyee): self.get() will try to obtain an auth token if one
+        # is not provided. When REMOTE_USER is present in the request
+        # environment, the external user auth plugin is used in conjunction
+        # with the password auth for the admin user. Therefore, we need to
+        # cleanup the REMOTE_USER information from the previous call.
+        del self.admin_app.extra_environ['REMOTE_USER']
+        headers = {'X-Subject-Token': v2_token_id}
+        resp = self.get('/auth/tokens', headers=headers)
+        token_data = resp.result
+
+        self.assertDictEqual(v2_token_data['access']['token']['bind'],
+                             token_data['token']['bind'])
 
     def test_auth_with_bind_token(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
@@ -4759,9 +4786,23 @@ class TestAuthFernetTokenProvider(TestAuth):
         remote_user = self.default_domain_user['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
-        # Bind not current supported by Fernet, see bug 1433311.
-        self.v3_create_token(auth_data,
-                             expected_status=http_client.NOT_IMPLEMENTED)
+
+        r = self.v3_create_token(auth_data)
+
+        # the unscoped token should have bind information in it
+        token = self.assertValidUnscopedTokenResponse(r)
+        self.assertEqual(remote_user, token['bind']['kerberos'])
+
+        token = r.headers.get('X-Subject-Token')
+
+        # using unscoped token with remote user succeeds
+        auth_params = {'token': token, 'project_id': self.project_id}
+        auth_data = self.build_authentication_request(**auth_params)
+        r = self.v3_create_token(auth_data)
+        token = self.assertValidProjectScopedTokenResponse(r)
+
+        # the bind information should be carried over from the original token
+        self.assertEqual(remote_user, token['bind']['kerberos'])
 
 
 class TestAuthTOTP(test_v3.RestfulTestCase):
@@ -4937,6 +4978,7 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
     def test_ids_token(self):
         # When there's a revoked token, it's in the response, and the response
         # is signed.
+        self.skip_if_fernet()
         token_res = self.v3_create_token(
             self.build_authentication_request(
                 user_id=self.user['id'],
@@ -4974,6 +5016,7 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
     def test_audit_id_only_token(self):
         # When there's a revoked token and ?audit_id_only is used, the
         # response contains the audit_id of the token and is not signed.
+        self.skip_if_fernet()
         token_res = self.v3_create_token(
             self.build_authentication_request(
                 user_id=self.user['id'],

@@ -12,6 +12,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import time
 
 from oslo_config import cfg
 from oslo_serialization import jsonutils
@@ -212,8 +213,8 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         user = self.user1
         user['name'] = '%my%name%'
         self.identity_api.update_user(user['id'], user)
-
         url_by_name = '/users?name=%my%name%'
+        time.sleep(1)
         r = self.get(url_by_name, auth=self.auth)
 
         self.assertEqual(1, len(r.result.get('users')))
