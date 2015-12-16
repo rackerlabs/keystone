@@ -1,0 +1,8 @@
+---
+fixes:
+  - fixed support for posixGroup version of LDAP backends
+    (bug 1526462). If "group_objectclass" has been set to
+    "posixGroup" (which is commonly used by UNIX environments
+    and OpenDirectory) for keystone to expect MemberUID,
+    containing just user id in a group, specify config parameter
+    posix_group=True in "ldap" config section.

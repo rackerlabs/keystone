@@ -781,6 +781,12 @@ FILE_OPTIONS = {
                    help='End user auth connection pool size.'),
         cfg.IntOpt('auth_pool_connection_lifetime', default=60,
                    help='End user auth connection lifetime in seconds.'),
+        cfg.BoolOpt('posix_group', default=False,
+                    help='If "group_objectclass" has been set to "posixGroup" '
+                         '(which is commonly used by UNIX environments and OpenDirectory), '
+                         'it is recommended to set this option to True. By doing so, '
+                         'user IDs are not expected to be full DNs.The posixGroup version '
+                         'is generally used in UNIX'),
     ],
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,
