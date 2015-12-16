@@ -14,10 +14,12 @@
 
 import os
 
+
 from six.moves import http_client
 import webtest
 
 from keystone.tests import unit
+from keystone.tests.unit.ksfixtures import key_repository
 
 
 class TestNoAdminTokenAuth(unit.TestCase):
@@ -26,6 +28,7 @@ class TestNoAdminTokenAuth(unit.TestCase):
         self.load_backends()
 
         self._generate_paste_config()
+        self.useFixture(key_repository.KeyRepository(self.config_fixture))
 
         self.admin_app = webtest.TestApp(
             self.loadapp(unit.dirs.tmp('no_admin_token_auth'), name='admin'),
