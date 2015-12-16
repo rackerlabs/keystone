@@ -148,8 +148,8 @@ class Provider(common.BaseProvider):
         if audit_ids:
             parent_audit_id = token_data['access']['token'].get(
                 'parent_audit_id')
-            audit_ids = provider.audit_info(parent_audit_id)
             if parent_audit_id:
+                audit_ids = provider.audit_info(parent_audit_id)
                 methods.append('token')
         project_id = token_data['access']['token'].get('tenant', {}).get('id')
         trust_id = token_data['access'].get('trust', {}).get('id')
