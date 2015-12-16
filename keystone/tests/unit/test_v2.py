@@ -975,6 +975,10 @@ class LegacyV2UsernameTests(object):
 
 class RestfulTestCase(rest.RestfulTestCase):
 
+    def config_overrides(self):
+        super(RestfulTestCase, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
     def setUp(self):
         super(RestfulTestCase, self).setUp()
 

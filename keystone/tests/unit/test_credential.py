@@ -19,12 +19,18 @@ from six.moves import http_client
 from keystone.common import utils
 from keystone.contrib.ec2 import controllers
 from keystone.tests import unit
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import rest
 
 CRED_TYPE_EC2 = controllers.CRED_TYPE_EC2
 
 
 class TestCredentialEc2(rest.RestfulTestCase):
+
+    def config_overrides(self):
+        super(TestCredentialEc2, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
     def setUp(self):
         super(TestCredentialEc2, self).setUp()
         self.user_id = self.user_foo['id']
