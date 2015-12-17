@@ -22,6 +22,30 @@
       "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_ec9a40c5",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 18835
+      },
+      "writtenOn": "2015-12-17T01:53:19Z",
+      "side": 1,
+      "message": "agree that use conf.ldap.user_dn_key.",
+      "parentUuid": "3a7e1126_7b1dab0e",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 49
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
