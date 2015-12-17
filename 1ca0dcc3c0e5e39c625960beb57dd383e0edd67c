@@ -22,6 +22,30 @@
       "revId": "1ca0dcc3c0e5e39c625960beb57dd383e0edd67c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_6d55e31b",
+        "filename": "releasenotes/notes/enable-inherit-on-default-54ac435230261a6a.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6167
+      },
+      "writtenOn": "2015-12-17T05:46:26Z",
+      "side": 1,
+      "message": "Thanks, done",
+      "parentUuid": "3a7e1126_be10d74f",
+      "range": {
+        "startLine": 6,
+        "startChar": 62,
+        "endLine": 6,
+        "endChar": 72
+      },
+      "revId": "1ca0dcc3c0e5e39c625960beb57dd383e0edd67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
