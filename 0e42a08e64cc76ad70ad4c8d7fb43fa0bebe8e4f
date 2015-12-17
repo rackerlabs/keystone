@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_39c04be0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-17T15:07:03Z",
+      "side": 1,
+      "message": "These were origianlly separate commits, and people have asked for them to be split.  I listed the litany here to orient reviewers what to expect in this commit.  I\u0027d like to leave it.",
+      "parentUuid": "3a7e1126_bab68a3b",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_6aa4d756",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 25
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-17T09:43:52Z",
       "side": 1,
       "message": "missing GET, to retrieve a single implied role?\n\nhttp://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#get-role-inference-rule",
+      "range": {
+        "startLine": 333,
+        "startChar": 14,
+        "endLine": 333,
+        "endChar": 26
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_6b1efa64",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-17T15:07:03Z",
+      "side": 1,
+      "message": "I was origianlly going to skip it, as there does not seem to be a way to get a single inference rule, as the rules are identified by a composite key.  In other  words, to get a single rule, you need to know all the data about that rule anyway.\n\nUpon reflection, I think we do need it. The GET can be used to confirm a single inference rule.",
+      "parentUuid": "3a7e1126_6aa4d756",
       "range": {
         "startLine": 333,
         "startChar": 14,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_8bc0062c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-17T15:07:03Z",
+      "side": 1,
+      "message": "This is more than just a copy.  We start with the initial set of roles in the role_to_check list.  As each is checked, it is removed.  However, Since one role implies another, those new roles have to be checked and they are added to this list, if they have never ben seen before.\n\nI have not heard that copy is more or less efficient than creating a new list, but this manner ensures that what we have is a list, regardless of the collection that was passed in.",
+      "parentUuid": "3a7e1126_77eefb23",
+      "range": {
+        "startLine": 100,
+        "startChar": 29,
+        "endLine": 100,
+        "endChar": 33
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_57317f0a",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 25
@@ -140,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_abcb8252",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-17T15:07:03Z",
+      "side": 1,
+      "message": "Now, we needd the list of implied roles for determining what roles a user has, whether explicitly assigned or implicitly inferred.  If we do it in the token provider we cannot use them for delegations like oauth and trusts.",
+      "parentUuid": "3a7e1126_9a206ef9",
+      "range": {
+        "startLine": 134,
+        "startChar": 21,
+        "endLine": 134,
+        "endChar": 39
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_c5f13ccf",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 25
@@ -151,6 +247,24 @@
       "writtenOn": "2015-12-17T09:43:52Z",
       "side": 1,
       "message": "will role inference come in another patch later on? that\u0027s OK if it does, small patches ftw, just leave a TODO comment somewhere here\n\nrole inference: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#list-all-role-inference-rules",
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_8b4566b4",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-17T15:07:03Z",
+      "side": 1,
+      "message": "Ah...missed that.  Will get that in this patch.  I would like it to be self contained.",
+      "parentUuid": "3a7e1126_c5f13ccf",
       "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -214,6 +328,30 @@
       "writtenOn": "2015-12-17T09:43:52Z",
       "side": 1,
       "message": "this should default to false since it\u0027s the first time we are adding a new feature",
+      "range": {
+        "startLine": 295,
+        "startChar": 42,
+        "endLine": 295,
+        "endChar": 43
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_19130fba",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-17T15:07:03Z",
+      "side": 1,
+      "message": "I think making it disabled by default is not necessary here.\n\nThis really is a kill switch, and I debated even putting it in.  Since no implied roles are defined by default,  there is no change in behavior by default; enabling the is will do nothing.\n\nIn the future, we may decide that we want to expand roles in the policy file as opposed to in the token, to minimize transfer size.  If that is the case, then we can disable this here as well.\n\n\nDisabling implied roles will  prevent people from being able to use the feature if it is disabled by default, delaying adoption. Is that wise.",
+      "parentUuid": "3a7e1126_85825451",
       "range": {
         "startLine": 295,
         "startChar": 42,
