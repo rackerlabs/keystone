@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_bab68a3b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "you can remove all of this, just describe what you\u0027re implementing for folks who don\u0027t know what the heck implied roles are",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_6aa4d756",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "missing GET, to retrieve a single implied role?\n\nhttp://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#get-role-inference-rule",
+      "range": {
+        "startLine": 333,
+        "startChar": 14,
+        "endLine": 333,
+        "endChar": 26
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_77527b15",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "using \"role_ids\" instead of \"roles\" would be more obvious, and save you the trouble of making the comment one line lower",
+      "range": {
+        "startLine": 94,
+        "startChar": 33,
+        "endLine": 94,
+        "endChar": 38
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_77eefb23",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "make a copy instead and just iterate over the copy:\n\nIf you need to modify the sequence you are iterating over while inside the loop (for example to duplicate selected items), it is recommended that you first make a copy. Iterating over a sequence does not implicitly make a copy.\n\nhttps://docs.python.org/2/tutorial/controlflow.html",
+      "range": {
+        "startLine": 100,
+        "startChar": 29,
+        "endLine": 100,
+        "endChar": 33
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_57317f0a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "the () here are redundant",
+      "range": {
+        "startLine": 103,
+        "startChar": 20,
+        "endLine": 103,
+        "endChar": 29
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_9a206ef9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "so i originally envisioned this logic going into the token bits.\n\nthe functions you are modifying here may be used by other things aside from just populating roles for the token. so, my question is, will other keystone functionality benefit from having implied roles in their role list? or is it strictly for tokens?\n\nI had thought we would create a function like _get_implied_roles right after the _get_roles_for_user in the token provider:\n\nhttps://github.com/openstack/keystone/blob/4f4bd6f7a2dd2d676d6e1ee3420eb6a25ad2d95f/keystone/token/providers/common.py#L395-L397\n\nwhich i thought was a more clean and less intrusive way",
+      "range": {
+        "startLine": 134,
+        "startChar": 21,
+        "endLine": 134,
+        "endChar": 39
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_c5f13ccf",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "will role inference come in another patch later on? that\u0027s OK if it does, small patches ftw, just leave a TODO comment somewhere here\n\nrole inference: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#list-all-role-inference-rules",
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_e569d88c",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "missing the \"implies\" between the two IDs\n\nhttp://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#create-role-inference-rule",
+      "range": {
+        "startLine": 89,
+        "startChar": 46,
+        "endLine": 89,
+        "endChar": 49
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_05fae4bd",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "needs a GET action",
+      "range": {
+        "startLine": 90,
+        "startChar": 12,
+        "endLine": 90,
+        "endChar": 22
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_85825451",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T09:43:52Z",
+      "side": 1,
+      "message": "this should default to false since it\u0027s the first time we are adding a new feature",
+      "range": {
+        "startLine": 295,
+        "startChar": 42,
+        "endLine": 295,
+        "endChar": 43
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
