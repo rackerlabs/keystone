@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_885b132e",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-17T22:40:27Z",
+      "side": 1,
+      "message": "no whitespace needed between `six` and `from sqlalchemy.ext import declarative`\n\nboth of them are third party dependencies.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 0
+      },
+      "revId": "89c8a9dec594686dbdc80faad74350c63aa72719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_6b834105",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-17T22:40:27Z",
+      "side": 1,
+      "message": "remove this line, you needn\u0027t load backends here. If this was needed by the follow-up patches add this line in the follow up.",
+      "range": {
+        "startLine": 73,
+        "startChar": 13,
+        "endLine": 73,
+        "endChar": 26
+      },
+      "revId": "89c8a9dec594686dbdc80faad74350c63aa72719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_ab4b6986",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-17T22:40:27Z",
+      "side": 1,
+      "message": "Stored as a flat string but returned value is list?",
+      "range": {
+        "startLine": 98,
+        "startChar": 22,
+        "endLine": 98,
+        "endChar": 30
+      },
+      "revId": "89c8a9dec594686dbdc80faad74350c63aa72719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
