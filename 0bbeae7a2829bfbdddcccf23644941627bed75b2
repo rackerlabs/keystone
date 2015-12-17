@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_1078b2f1",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-17T18:26:08Z",
+      "side": 1,
+      "message": "Nice! I like clear and concise error messages.",
+      "range": {
+        "startLine": 266,
+        "startChar": 72,
+        "endLine": 266,
+        "endChar": 75
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
