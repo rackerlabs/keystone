@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_5da77c4f",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-17T04:46:51Z",
+      "side": 1,
+      "message": "only have session ,not self.session",
+      "revId": "a96ab2c6d65e6ff31dcb06a62f01dde9096071c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
