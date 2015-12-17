@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_af0c1843",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T07:35:59Z",
+      "side": 1,
+      "message": "can you deprecate this option? in 2 release I\u0027d like to remove the option these routes are always enabled.",
+      "range": {
+        "startLine": 225,
+        "startChar": 12,
+        "endLine": 225,
+        "endChar": 19
+      },
+      "revId": "8500cb08271773e05fc1ae8a212ad98ad3f79f41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_6a34dedd",
+        "filename": "releasenotes/notes/enable-inherit-on-default-54ac435230261a6a.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-17T07:35:59Z",
+      "side": 1,
+      "message": "also add a \u0027deprecations\u0027 section that says:\n\n  The \"enabled\" option in the os_inherit configuration group has been deprecated, and will be removed in the \u0027O\u0027 release.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 7
+      },
+      "revId": "8500cb08271773e05fc1ae8a212ad98ad3f79f41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
