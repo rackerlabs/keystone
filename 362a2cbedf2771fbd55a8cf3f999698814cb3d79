@@ -46,6 +46,53 @@
       "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_1fdc4511",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-17T17:32:54Z",
+      "side": 1,
+      "message": "++, Also not sure if \u0027user_dn_key\u0027 is the appropriate name as user DN is being extracted all over the place. See line 150, 155, etc. It may confuse folks maintaining this code later on. How about \u0027user_group_member_attribute\u0027?",
+      "parentUuid": "3a7e1126_ec9a40c5",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 49
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_3fe1019b",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-17T17:32:54Z",
+      "side": 1,
+      "message": "This would work fine if the group member attribute is either a DN or user ID. Otherwise, if user_id_attribute is different than user group member attribute, this may be problematic. If we can put in a safeguard check to make sure these two attributes are the same then that would be awesome.",
+      "range": {
+        "startLine": 174,
+        "startChar": 26,
+        "endLine": 174,
+        "endChar": 33
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
