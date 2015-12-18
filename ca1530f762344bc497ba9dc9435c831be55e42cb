@@ -22,6 +22,30 @@
       "revId": "ca1530f762344bc497ba9dc9435c831be55e42cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_05c6219a",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_Add_identity_and_password_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-18T02:36:46Z",
+      "side": 1,
+      "message": "yes, agree with Dave.\nhttp://docs.openstack.org/developer/keystone/developing.html\nAs of Kilo, Schema downgrades are not supported",
+      "parentUuid": "3a7e1126_91725aac",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 13
+      },
+      "revId": "ca1530f762344bc497ba9dc9435c831be55e42cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
