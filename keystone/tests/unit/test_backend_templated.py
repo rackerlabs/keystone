@@ -241,3 +241,6 @@ class TestTemplatedCatalog(unit.TestCase, test_backend.CatalogTests):
     @unit.skip_if_cache_disabled('catalog')
     def test_invalidate_cache_when_updating_endpoint(self):
         self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)
+
+    def test_delete_invalid_endpoint_from_endpoint_project(self):
+        self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)

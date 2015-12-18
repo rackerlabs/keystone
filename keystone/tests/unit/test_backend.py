@@ -5324,6 +5324,24 @@ class CatalogTests(object):
         current_endpoint = self.catalog_api.get_endpoint(endpoint['id'])
         self.assertEqual(new_url['url'], current_endpoint['url'])
 
+    def test_delete_invalid_endpoint_from_endpoint_project(self):
+        # call list_endpoints_for_project will remove the endpoints
+        # which is invalid but exist in endpoint project association.
+
+        # create endpoint project association
+        project_id = self.tenant_baz['id']
+        random_endpoint_id = uuid.uuid4().hex
+        self.catalog_api.add_endpoint_to_project(random_endpoint_id,
+                                                 project_id)
+        refs = self.catalog_api.driver.list_endpoints_for_project(project_id)
+        self.assertThat(refs, matchers.HasLength(1))
+
+        # list endpoints for project will remove the invalid endpoints
+        self.catalog_api.list_endpoints_for_project(project_id)
+
+        refs = self.catalog_api.driver.list_endpoints_for_project(project_id)
+        self.assertThat(refs, matchers.HasLength(0))
+
 
 class PolicyTests(object):
     def test_create(self):

@@ -156,6 +156,9 @@ class KvsCatalog(unit.TestCase, test_backend.CatalogTests):
     def test_service_filtering(self):
         self.skipTest("kvs backend doesn't support filtering")
 
+    def test_delete_invalid_endpoint_from_endpoint_project(self):
+        self.skipTest("kvs backend doesn't support filtering")
+
 
 class KvsTokenCacheInvalidation(unit.TestCase,
                                 test_backend.TokenCacheInvalidation):
