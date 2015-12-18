@@ -255,9 +255,11 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Attempting to delete the default domain results in 403 Forbidden.
 
         # Need to disable it first.
+        # it is expected to fail.
         self.patch('/domains/%(domain_id)s' % {
             'domain_id': CONF.identity.default_domain_id},
-            body={'domain': {'enabled': False}})
+            body={'domain': {'enabled': False}},
+            expected_status=exception.ForbiddenAction.code)
 
         self.delete('/domains/%(domain_id)s' % {
             'domain_id': CONF.identity.default_domain_id},
@@ -282,7 +284,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                                    default_domain_id=new_domain_id)
 
         # Attempt to delete the new domain
-
         self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id},
                     expected_status=exception.ForbiddenAction.code)
 
@@ -294,22 +295,62 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         new_domain = unit.new_domain_ref()
         new_domain_id = new_domain['id']
         self.resource_api.create_domain(new_domain_id, new_domain)
-
         old_default_domain_id = CONF.identity.default_domain_id
+
+        # Change the default domain
+        self.config_fixture.config(group='identity',
+                                   default_domain_id=new_domain_id)
 
         # Disable the default domain so we can delete it later.
         self.patch('/domains/%(domain_id)s' % {
             'domain_id': old_default_domain_id},
             body={'domain': {'enabled': False}})
 
-        # Change the default domain
+        # Delete the old default domain
+        self.delete(
+            '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
+
+    def test_disable_default_domain_fails(self):
+        # attempting to disable the default domain should result
+        # in 403 Forbidden
+
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': CONF.identity.default_domain_id},
+            body={'domain': {'enabled': False}},
+            expected_status=exception.ForbiddenAction.code)
+
+    def test_disable_new_default_domain_fails(self):
+        # if a domain is set to default domain disabling it, must return
+        # 403 Forbidden
+
+        # create a new domain and set it as default
+        new_domain = unit.new_domain_ref()
+        new_domain_id = new_domain['id']
+        self.resource_api.create_domain(new_domain_id, new_domain)
         self.config_fixture.config(group='identity',
                                    default_domain_id=new_domain_id)
 
-        # Delete the old default domain
+        # attempt to disable the dafult domain
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': new_domain_id},
+            body={'domain': {'enabled': False}},
+            expected_status=exception.ForbiddenAction.code)
 
-        self.delete(
-            '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
+    def test_disable_old_default_domain(self):
+        # if default domain is changed, disabling the old default
+        # domain works
+
+        # create new domain and set it as default domain
+        new_domain = unit.new_domain_ref()
+        new_domain_id = new_domain['id']
+        self.resource_api.create_domain(new_domain_id, new_domain)
+        # old_default_domain_id = CONF.identity.default_domain_id
+        self.config_fixture.config(group='identity',
+                                   default_domain_id=new_domain_id)
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': new_domain_id},
+            body={'domain': {'enabled': False}},
+            expected_status=exception.ForbiddenAction.code)
 
     def test_token_revoked_once_domain_disabled(self):
         """Test token from a disabled domain has been invalidated.

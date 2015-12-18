@@ -509,6 +509,14 @@ class Manager(manager.Manager):
         self.assert_domain_not_federated(domain_id, domain)
         original_domain = self.driver.get_domain(domain_id)
         if 'enabled' in domain:
+            # explicitly forbid disabling the default domain (this should
+            # be a carefully orchestrated manual process involving
+            # configuration
+            # changes, etc)
+            if (domain_id in CONF.identity.default_domain_id and
+                    domain['enabled'] is False):
+                raise exception.ForbiddenAction(action=_('disable the '
+                                                         'default domain'))
             domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
         notifications.Audit.updated(self._DOMAIN, domain_id, initiator)
