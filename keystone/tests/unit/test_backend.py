@@ -4290,14 +4290,6 @@ class TokenTests(object):
         self.assertEqual(1, len(tokens))
         self.assertIn(token_id5, tokens)
 
-    def test_get_token_returns_not_found(self):
-        self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api._persistence.get_token,
-                          uuid.uuid4().hex)
-        self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api._persistence.get_token,
-                          None)
-
     def test_delete_token_returns_not_found(self):
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._persistence.delete_token,
