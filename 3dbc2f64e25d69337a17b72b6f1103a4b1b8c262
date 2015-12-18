@@ -16,6 +16,24 @@
       "revId": "3dbc2f64e25d69337a17b72b6f1103a4b1b8c262",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_cf07da1a",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-18T01:57:14Z",
+      "side": 1,
+      "message": "isn\u0027t line 546 obvious?",
+      "parentUuid": "7a740942_4f6f9b92",
+      "revId": "3dbc2f64e25d69337a17b72b6f1103a4b1b8c262",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
