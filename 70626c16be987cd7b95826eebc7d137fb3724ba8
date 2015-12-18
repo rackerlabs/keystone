@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_fe684289",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-12-18T04:44:15Z",
+      "side": 1,
+      "message": "An inline comment explaining that you need a second endpoint to work with in addition to \"self.endpoint_id\" would explain why you\u0027re naming this \"endpoint_id2\" (the 2 is not self-evident until you get to the end of the test!).",
+      "revId": "70626c16be987cd7b95826eebc7d137fb3724ba8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
