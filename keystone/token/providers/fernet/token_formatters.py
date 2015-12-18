@@ -81,6 +81,9 @@ class TokenFormatter(object):
         :rtype: six.binary_type
 
         """
+        if not token:
+            raise exception.TokenNotFound(token_id='')
+
         # TODO(lbragstad): Restore padding on token before decoding it.
         # Initially in Kilo, Fernet tokens were returned to the user with
         # padding appended to the token. Later in Liberty this padding was
