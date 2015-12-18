@@ -1,0 +1,11 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Toshiya Shiga <tos-shiga@yk.jp.nec.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 18 Dec 2015 07:50:38 +0000
+Reviewed-on: https://review.openstack.org/232711
+Project: openstack/keystone
+Branch: refs/heads/master
