@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_826e8aff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18835
+      },
+      "writtenOn": "2015-12-18T01:06:28Z",
+      "side": 1,
+      "message": "should use single quotation mark of 1-byte characters.",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 59
+      },
+      "revId": "0bc2301722857e7b880381538d7b7faf531f0207",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
