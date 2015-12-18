@@ -54,12 +54,6 @@ class TestFernetTokenProvider(unit.TestCase):
             self.provider.validate_v3_token,
             uuid.uuid4().hex)
 
-    def test_invalid_v2_token_raises_token_not_found(self):
-        self.assertRaises(
-            exception.TokenNotFound,
-            self.provider.validate_v2_token,
-            uuid.uuid4().hex)
-
 
 class TestValidate(unit.TestCase):
     def setUp(self):
