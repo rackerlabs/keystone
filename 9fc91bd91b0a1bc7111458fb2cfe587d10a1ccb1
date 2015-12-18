@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_b80f0487",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2015-12-18T20:41:11Z",
+      "side": 1,
+      "message": "Did the same as in \"test_send_notification_with_opt_out\", making sure that _get_notifier is not called if a valid opt_out is provided",
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
