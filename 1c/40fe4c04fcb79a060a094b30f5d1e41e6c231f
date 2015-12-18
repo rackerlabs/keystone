@@ -1,0 +1,13 @@
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 18 Dec 2015 03:04:40 +0000
+Reviewed-on: https://review.openstack.org/242574
+Project: openstack/keystone
+Branch: refs/heads/master
