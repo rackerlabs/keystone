@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_856518b6",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-18T13:26:47Z",
+      "side": 1,
+      "message": "It works indeed, but perhaps returning a boolean would make the code clearer ? Anyway, I am fine with this as it is",
+      "parentUuid": "7a740942_540a797a",
+      "revId": "1d1c6b0b6d17d7a5577371f4a05907bb4311f0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_821bfa1b",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 5
