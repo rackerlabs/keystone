@@ -60,7 +60,6 @@ class TestFernetTokenProvider(unit.TestCase):
             self.provider.validate_v2_token,
             uuid.uuid4().hex)
 
-
 class TestValidate(unit.TestCase):
     def setUp(self):
         super(TestValidate, self).setUp()
