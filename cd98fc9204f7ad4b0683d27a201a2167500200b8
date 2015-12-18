@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_25aea481",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2015-12-18T13:30:45Z",
+      "side": 1,
+      "message": "(nit) I thought you had renamed this to proxy_cls_name too :)",
+      "range": {
+        "startLine": 141,
+        "startChar": 16,
+        "endLine": 141,
+        "endChar": 26
+      },
+      "revId": "cd98fc9204f7ad4b0683d27a201a2167500200b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
