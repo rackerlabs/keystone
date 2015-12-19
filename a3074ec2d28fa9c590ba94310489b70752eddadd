@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_8660a202",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5334,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:54:01Z",
+      "side": 1,
+      "message": "This was not validated when the endpoint is added, maybe we can do that.\n\nI was thinking there should be a FK in the table but catalog has other backends besides SQL although only SQL works for this endpoint filter. So, it might be okay to check the logic in the code instead of in SQL schema.",
+      "parentUuid": "3a7e1126_e6008668",
+      "range": {
+        "startLine": 5334,
+        "startChar": 25,
+        "endLine": 5334,
+        "endChar": 48
+      },
+      "revId": "a3074ec2d28fa9c590ba94310489b70752eddadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_a63efe25",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-19T06:20:56Z",
       "side": 1,
       "message": "why did calling it a second time remove the endpoints? as opposed to the first time at line 5336?",
+      "range": {
+        "startLine": 5340,
+        "startChar": 25,
+        "endLine": 5340,
+        "endChar": 51
+      },
+      "revId": "a3074ec2d28fa9c590ba94310489b70752eddadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_061a727d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5340,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:54:01Z",
+      "side": 1,
+      "message": "since self.catalog_api.driver.list_endpoints_for_project will check whether the endpoints is valid or not.\n\nremove the endpoint if the endpoint is invalid.\nsee: https://github.com/openstack/keystone/blob/master/keystone/catalog/core.py#L367-L370\n\nI moved these code from catalog_sql.py to catalog manager.\n\nThis logic is not tested anywhere, this patch just want to cover this.",
+      "parentUuid": "3a7e1126_a63efe25",
       "range": {
         "startLine": 5340,
         "startChar": 25,
