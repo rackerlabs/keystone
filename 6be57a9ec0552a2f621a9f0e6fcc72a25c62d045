@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a7e1126_868bc2c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:35:58Z",
+      "side": 1,
+      "message": "one line summery (\u003c\u003d50 characters)\n\ndescription ... (\u003c\u003d72)",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "6be57a9ec0552a2f621a9f0e6fcc72a25c62d045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_46faba44",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:35:58Z",
+      "side": 1,
+      "message": "change to:\n self.token_provider_api.validate_token\n\nwhere `_validate_token` is actually called.",
+      "range": {
+        "startLine": 787,
+        "startChar": 17,
+        "endLine": 787,
+        "endChar": 35
+      },
+      "revId": "6be57a9ec0552a2f621a9f0e6fcc72a25c62d045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_e6116605",
         "filename": "keystone/tests/unit/test_token_provider.py",
         "patchSetId": 3
@@ -13,6 +59,52 @@
       "writtenOn": "2015-12-19T05:43:40Z",
       "side": 1,
       "message": "add another new line here to pass pep8",
+      "revId": "6be57a9ec0552a2f621a9f0e6fcc72a25c62d045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_c6da2a4b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:35:58Z",
+      "side": 1,
+      "message": "the message from this exception will be “Could not find token: ”.\n\ntry to make the message more accurate, maybe:\n\n  raise exception.TokenNotFound(_(\u0027empty or none token is given\u0027)) ?",
+      "range": {
+        "startLine": 270,
+        "startChar": 18,
+        "endLine": 270,
+        "endChar": 27
+      },
+      "revId": "6be57a9ec0552a2f621a9f0e6fcc72a25c62d045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_a66cbe35",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:35:58Z",
+      "side": 1,
+      "message": "remove the code from PersistenceManager, code there is redundant and not needed anymore.\n\n\nhttps://github.com/openstack/keystone/blob/e6d8901109342b72d23ce394828827cca75b454d/keystone/token/persistence/core.py#L63-L67",
+      "range": {
+        "startLine": 274,
+        "startChar": 25,
+        "endLine": 274,
+        "endChar": 37
+      },
       "revId": "6be57a9ec0552a2f621a9f0e6fcc72a25c62d045",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
