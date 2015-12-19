@@ -69,6 +69,30 @@
       "revId": "25e0af566fa3952c0e0fb612fa82f9d774ab9a64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_0665921c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-19T06:41:00Z",
+      "side": 0,
+      "message": "this testcase should be kept here.",
+      "parentUuid": "3a7e1126_c60c6aee",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 59
+      },
+      "revId": "25e0af566fa3952c0e0fb612fa82f9d774ab9a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
