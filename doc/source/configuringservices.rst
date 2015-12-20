@@ -38,8 +38,39 @@ The middleware will pass those data down to the service as headers. More
 details on the architecture of that setup is described in the
 `authentication middleware documentation`_.
 
-Setting up credentials
-======================
+Setting up credentials with ``keystone-manage bootstrap``
+=========================================================
+
+Setting up projects, users, and roles
+-------------------------------------
+
+The ``keystone-manage bootstrap`` command will create a user, project and role,
+and will assign the role to the newly created user on the newly created
+project. By default, the names of these new resources will be called ``admin``.
+The defaults may be overridden by calling ``--bootstrap-username``,
+``--bootstrap-project-name`` and ``--bootstrap-role-name``. Each of these have
+an environment variable equivalent, ``OS_BOOTSTRAP_USERNAME``,
+``OS_BOOTSTRAP_PROJECT_NAME`` and ``OS_BOOTSTRAP_ROLE_NAME``.
+
+A user password must also be supplied. This can be passed in as either
+``--bootstrap-password``, or set as an environment variable using
+``OS_BOOTSTRAP_PASSWORD``.
+
+Minimally, keystone can be bootstrapped with:
+
+.. code-block:: bash
+
+    $ keystone-manage bootsrap --bootstrap-password s3cr3t.
+
+This will create an ``admin`` user with the ``admin`` role on the ``admin``
+project. The user will have the password specified in the command.
+
+Using this technique, deployers will be able to authenticate as the ``admin``
+user and configure endpoints and services; never having to use or configure
+the ``admin_token`` (described below).
+
+Setting up credentials with Admin Token
+=======================================
 
 Admin Token
 -----------
