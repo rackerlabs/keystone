@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_40ecd7f2",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-20T05:49:58Z",
+      "side": 1,
+      "message": "remove the extra \"\u003d\u003d\u003d\"",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 59
+      },
+      "revId": "4e6fc2cd1af432cec07f1962f8f4fef9e38448b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_20c66b68",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-20T05:49:58Z",
+      "side": 1,
+      "message": "can we bootstrap with multiple projects, uers, roles based on the example given below, I think it\u0027s not necessary, so it might be better to say \"Setting up project, user, and role\"?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 37
+      },
+      "revId": "4e6fc2cd1af432cec07f1962f8f4fef9e38448b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_20ef4bea",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-20T05:49:58Z",
+      "side": 1,
+      "message": "change from ``admin_token`` to Admin Token? since ``admin_token`` is just a configuration item in the conf file.",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "4e6fc2cd1af432cec07f1962f8f4fef9e38448b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_00da4f4c",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-20T05:49:58Z",
+      "side": 1,
+      "message": "nit: remove the whitespace",
+      "range": {
+        "startLine": 43,
+        "startChar": 29,
+        "endLine": 43,
+        "endChar": 34
+      },
+      "revId": "4e6fc2cd1af432cec07f1962f8f4fef9e38448b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
