@@ -93,6 +93,30 @@
       "revId": "25e0af566fa3952c0e0fb612fa82f9d774ab9a64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_552eacfb",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-12-21T16:18:22Z",
+      "side": 0,
+      "message": "The flow always comes from controller and in the controller we are checking it. This method will never be called directly.  There are 2 options, add this check in every provider or add it in controller.  We have this bug because we forgot to add in fernet provider. Instead if move this check to controller, there is no necessity to add this check when a new provider is added",
+      "parentUuid": "3a7e1126_0665921c",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 59
+      },
+      "revId": "25e0af566fa3952c0e0fb612fa82f9d774ab9a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
