@@ -4430,14 +4430,17 @@ class TokenTests(object):
         self.token_provider_api._persistence.create_token(token2_id,
                                                           token2_data)
         # Verify the revocation list is empty.
+        audit_id_only = False
         self.assertEqual(
-            [], self.token_provider_api._persistence.list_revoked_tokens())
+            [], self.token_provider_api._persistence.list_revoked_tokens(
+                audit_id_only))
         self.assertEqual([], self.token_provider_api.list_revoked_tokens())
         # Delete a token directly, bypassing the manager.
         self.token_provider_api._persistence.driver.delete_token(token_id)
         # Verify the revocation list is still empty.
         self.assertEqual(
-            [], self.token_provider_api._persistence.list_revoked_tokens())
+            [], self.token_provider_api._persistence.list_revoked_tokens(
+                audit_id_only))
         self.assertEqual([], self.token_provider_api.list_revoked_tokens())
         # Invalidate the revocation list.
         self.token_provider_api._persistence.invalidate_revocation_list()
@@ -4469,7 +4472,9 @@ class TokenTests(object):
         self._assert_revoked_token_list_matches_token_persistence(revoked_ids)
         self.assertIn(token_id_hash, revoked_ids)
         self.assertNotIn(token_id, revoked_ids)
-        for t in self.token_provider_api._persistence.list_revoked_tokens():
+        audit_id_only = False
+        for t in self.token_provider_api._persistence.list_revoked_tokens(
+                audit_id_only):
             self.assertIn('expires', t)
 
     def test_predictable_revoked_pki_token_id_default(self):

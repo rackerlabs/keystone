@@ -353,10 +353,17 @@ class Token(token.persistence.TokenDriverV8):
                 tokens.append(token_id)
         return tokens
 
-    def list_revoked_tokens(self):
+    def list_revoked_tokens(self, audit_id_only=False):
         revoked_token_list = self._get_key_or_default(self.revocation_key,
                                                       default=[])
         if isinstance(revoked_token_list, list):
+            if audit_id_only:
+                new_list = []
+                for x in revoked_token_list:
+                    # Remove token ID from the entries.
+                    new_x = x.copy()
+                    del new_x['id']
+                return new_list
             return revoked_token_list
         return []
 
