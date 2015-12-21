@@ -4326,3 +4326,24 @@ class TestAuthFernetTokenProvider(TestAuth):
         # Bind not current supported by Fernet, see bug 1433311.
         self.v3_create_token(auth_data,
                              expected_status=http_client.NOT_IMPLEMENTED)
+
+
+class TestFetchRevocationList(test_v3.RestfulTestCase):
+    """Test fetch token revocation list on the v3 Identity API."""
+
+    def config_overrides(self):
+        super(TestFetchRevocationList, self).config_overrides()
+        self.config_fixture.config(group='revoke', driver='kvs')
+        self.config_fixture.config(group='token', revoke_by_id=True)
+
+    def test_cms_encoded_no_tokens(self):
+        res = self.get('/auth/tokens/OS-PKI/revoked')
+        signed = res.json['signed']
+        clear = cms.cms_verify(signed, CONF.signing.certfile,
+                               CONF.signing.ca_certs)
+        payload = json.loads(clear)
+        self.assertEqual({'revoked': []}, payload)
+
+    def test_audit_ids_only_no_tokens(self):
+        res = self.get('/auth/tokens/OS-PKI/revoked?audit_id_only')
+        self.assertEqual({'revoked': []}, res.json)
