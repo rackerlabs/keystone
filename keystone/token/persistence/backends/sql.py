@@ -222,7 +222,8 @@ class Token(token.persistence.TokenDriverV8):
         else:
             return self._list_tokens_for_user(user_id, tenant_id)
 
-    def list_revoked_tokens(self):
+    def list_revoked_tokens(self, audit_id_only=False):
+        # FIXME:(blk-u): implement audit_id_only
         session = sql.get_session()
         tokens = []
         now = timeutils.utcnow()
@@ -240,10 +241,11 @@ class Token(token.persistence.TokenDriverV8):
                 audit_ids = token_data['token']['audit_ids']
 
             record = {
-                'id': token_ref[0],
                 'expires': token_ref[1],
                 'audit_id': audit_ids[0],
             }
+            if not audit_id_only:
+                record['id'] = token_ref[0]
             tokens.append(record)
         return tokens
 

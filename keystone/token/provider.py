@@ -414,8 +414,8 @@ class Manager(manager.Manager):
         if CONF.token.revoke_by_id and self._needs_persistence:
             self._persistence.delete_token(token_id=token_id)
 
-    def list_revoked_tokens(self):
-        return self._persistence.list_revoked_tokens()
+    def list_revoked_tokens(self, audit_id_only=False):
+        return self._persistence.list_revoked_tokens(audit_id_only)
 
     def _trust_deleted_event_callback(self, service, resource_type, operation,
                                       payload):

@@ -111,8 +111,8 @@ class PersistenceManager(manager.Manager):
         self.invalidate_revocation_list()
 
     @REVOCATION_MEMOIZE
-    def list_revoked_tokens(self):
-        return self.driver.list_revoked_tokens()
+    def list_revoked_tokens(self, audit_id_only):
+        return self.driver.list_revoked_tokens(audit_id_only=audit_id_only)
 
     def invalidate_revocation_list(self):
         # NOTE(morganfainberg): Note that ``self`` needs to be passed to
@@ -345,10 +345,11 @@ class TokenDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_revoked_tokens(self):
+    def list_revoked_tokens(self, audit_id_only=False):
         """Returns a list of all revoked tokens
 
-        :returns: list of token_id's
+        :param bool audit_id_only: do not include token ID, only audit_id.
+        :returns: [{'id': <id>, 'expires': <timestamp>, 'audit_id': <id>}, ...]
 
         """
         raise exception.NotImplemented()  # pragma: no cover
