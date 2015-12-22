@@ -189,6 +189,29 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_b1ba586d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:48:13Z",
+      "side": 1,
+      "message": "This comment should be moved so that it is still just before the return statement",
+      "range": {
+        "startLine": 132,
+        "startChar": 10,
+        "endLine": 132,
+        "endChar": 64
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_9a206ef9",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 25
@@ -260,6 +283,23 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_341ad66f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:48:13Z",
+      "side": 1,
+      "message": "Don\u0027t we need to add in the implied roles here? IF so, we also need to add tests for that as well, showing how in effective mode the implied roles are added, but in regular mode they are not",
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_c5f13ccf",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 25
@@ -289,6 +329,52 @@
       "side": 1,
       "message": "Ah...missed that.  Will get that in this patch.  I would like it to be self contained.",
       "parentUuid": "3a7e1126_c5f13ccf",
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_6ed88ff0",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:48:13Z",
+      "side": 1,
+      "message": "is there a reason this is not get_head_action ?",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 22
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_ae10b7a9",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:48:13Z",
+      "side": 1,
+      "message": "So I think we agreed that all new major API changes would be marked as experimental? We should there add here:\n\n            status\u003djson_home.Status.EXPERIMENTAL",
+      "range": {
+        "startLine": 84,
+        "startChar": 12,
+        "endLine": 84,
+        "endChar": 13
+      },
       "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -334,6 +420,53 @@
         "startChar": 12,
         "endLine": 90,
         "endChar": 22
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_6eff2f35",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:48:13Z",
+      "side": 1,
+      "message": "and if so, should it be get_head_action ?",
+      "parentUuid": "3a7e1126_05fae4bd",
+      "range": {
+        "startLine": 90,
+        "startChar": 12,
+        "endLine": 90,
+        "endChar": 22
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_ce78a3fb",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:48:13Z",
+      "side": 1,
+      "message": "same here for experimental",
+      "range": {
+        "startLine": 96,
+        "startChar": 12,
+        "endLine": 96,
+        "endChar": 13
       },
       "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
