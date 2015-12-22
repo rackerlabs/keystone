@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a7b0d38_63dbb81c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-22T21:39:36Z",
+      "side": 1,
+      "message": "--bootstrap-domain-name?",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 34
+      },
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_a5457e43",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
@@ -31,6 +54,70 @@
       "side": 1,
       "message": "Sure. I\u0027ll see what i can do about including it as a followup patch.",
       "parentUuid": "7a740942_a5457e43",
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_634978d0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-22T21:39:36Z",
+      "side": 1,
+      "message": "or read it from a file as this command is likely used by the automation scripts. We don\u0027t want password to show up on the command line logs.",
+      "parentUuid": "7a740942_771d0dbd",
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_8373444d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-22T21:39:36Z",
+      "side": 1,
+      "message": "CONF.identity.default_domain_id?",
+      "range": {
+        "startLine": 68,
+        "startChar": 13,
+        "endLine": 68,
+        "endChar": 20
+      },
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_238ff024",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-12-22T21:39:36Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 71,
+        "startChar": 13,
+        "endLine": 71,
+        "endChar": 20
+      },
       "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
