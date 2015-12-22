@@ -22,6 +22,7 @@ import weakref
 
 import ldap.controls
 import ldap.filter
+from ldap3.utils import dn as ldap_dn
 import ldappool
 from oslo_log import log
 from oslo_utils import reflection
@@ -248,6 +249,33 @@ def is_ava_value_equal(attribute_type, val1, val2):
     return prep_case_insensitive(val1) == prep_case_insensitive(val2)
 
 
+def combine_dn_parts(parsed_dn):
+    """Combine AVAs from parsed dn.
+
+    Given a result of :func:`ldap3.utils.dn.parse_dn`, collect AVAs in each
+    RDN.
+
+    :func:`ldap3.utils.dn.parse_dn` generates a list of AVAs, like
+    (attribute, value, indicator), where the indicator is ``+`` if the next
+    value is part of the same RDN, ``,`` if the next value is the start of the
+    next RDN, or '' if this is the last value. So if the indicator is
+    ``+``, combine.
+
+    The result is a list of the RDNs, where each RDN is a list of the AVAs like
+    (attribute, value).
+
+    """
+    def gen_rdns(parsed_dn):
+        rdn = []
+        for ava in parsed_dn:
+            rdn.append((ava[0], ava[1]))
+            if ava[2] != '+':
+                yield rdn
+                rdn = []
+
+    return list(gen_rdns(parsed_dn))
+
+
 def is_rdn_equal(rdn1, rdn2):
     """Return True if and only if the RDNs are equal.
 
@@ -267,9 +295,9 @@ def is_rdn_equal(rdn1, rdn2):
     if len(rdn1) != len(rdn2):
         return False
 
-    for attr_type_1, val1, dummy in rdn1:
+    for attr_type_1, val1 in rdn1:
         found = False
-        for attr_type_2, val2, dummy in rdn2:
+        for attr_type_2, val2 in rdn2:
             if attr_type_1.lower() != attr_type_2.lower():
                 continue
 
@@ -283,24 +311,8 @@ def is_rdn_equal(rdn1, rdn2):
     return True
 
 
-def is_dn_equal(dn1, dn2):
-    """Return True if and only if the DNs are equal.
-
-    Two DNs are equal if they've got the same number of RDNs and if the RDNs
-    are the same at each position. See RFC4517.
-
-    Note that this function uses is_rdn_equal to compare RDNs so the
-    limitations of that function apply here.
-
-    :param dn1: Either a string DN or a DN parsed by ldap.dn.str2dn.
-    :param dn2: Either a string DN or a DN parsed by ldap.dn.str2dn.
-
-    """
-    if not isinstance(dn1, list):
-        dn1 = ldap.dn.str2dn(utf8_encode(dn1))
-    if not isinstance(dn2, list):
-        dn2 = ldap.dn.str2dn(utf8_encode(dn2))
-
+def _is_dn_equal(dn1, dn2):
+    # dn1 and dn2 are combine_dn_parts(ldap_dn.parse_dn(dn))
     if len(dn1) != len(dn2):
         return False
 
@@ -310,23 +322,60 @@ def is_dn_equal(dn1, dn2):
     return True
 
 
+def is_dn_equal(dn1, dn2):
+    """Return True if and only if the DNs are equal.
+
+    Two DNs are equal if they've got the same number of RDNs and if the RDNs
+    are the same at each position. See RFC4517.
+
+    Note that this function uses is_rdn_equal to compare RDNs so the
+    limitations of that function apply here.
+
+    :param dn1: Either a string DN or a DN parsed by
+                :func:`ldap3.utils.dn.parse_dn`.
+    :param dn2: Either a string DN or a DN parsed by
+                :func:`ldap3.utils.dn.parse_dn`.
+
+    :returns: True if and only if the DNs are equal.
+    :rtype: bool
+
+    """
+    if not isinstance(dn1, list):
+        dn1 = ldap_dn.parse_dn(dn1)
+    if not isinstance(dn2, list):
+        dn2 = ldap_dn.parse_dn(dn2)
+
+    dn1 = combine_dn_parts(dn1)
+    dn2 = combine_dn_parts(dn2)
+
+    return _is_dn_equal(dn1, dn2)
+
+
 def dn_startswith(descendant_dn, dn):
     """Return True if and only if the descendant_dn is under the dn.
 
-    :param descendant_dn: Either a string DN or a DN parsed by ldap.dn.str2dn.
-    :param dn: Either a string DN or a DN parsed by ldap.dn.str2dn.
+    :param descendant_dn: Either a string DN or a DN parsed by
+                          :func:`ldap3.utils.dn.parse_dn`.
+    :param dn: Either a string DN or a DN parsed by
+               :func:`ldap3.utils.dn.parse_dn`.
+
+    :returns: True if and only if the descendant_dn is under the dn.
+    :rtype: bool
 
     """
     if not isinstance(descendant_dn, list):
-        descendant_dn = ldap.dn.str2dn(utf8_encode(descendant_dn))
+        descendant_dn = ldap_dn.parse_dn(descendant_dn)
     if not isinstance(dn, list):
-        dn = ldap.dn.str2dn(utf8_encode(dn))
+        dn = ldap_dn.parse_dn(dn)
+
+    descendant_dn = combine_dn_parts(descendant_dn)
+    dn = combine_dn_parts(dn)
 
     if len(descendant_dn) <= len(dn):
         return False
 
     # Use the last len(dn) RDNs.
-    return is_dn_equal(descendant_dn[-len(dn):], dn)
+    return _is_dn_equal(descendant_dn[-len(dn):], dn)
 
 
 @six.add_metaclass(abc.ABCMeta)
