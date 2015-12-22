@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_13e020cc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4293,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-22T08:41:52Z",
+      "side": 0,
+      "message": "why were these tests removed? state why in the commit message",
+      "range": {
+        "startLine": 4293,
+        "startChar": 4,
+        "endLine": 4293,
+        "endChar": 47
+      },
+      "revId": "6aee4dde1056f42e8b353ca701f349beb1d3daea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
