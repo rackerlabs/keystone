@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_aefbec77",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5334,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-22T05:34:22Z",
+      "side": 1,
+      "message": "ah, this was checked in the controller layer, the code there to remove the invalid endpoint might be redundant.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L410-L416",
+      "parentUuid": "3a7e1126_8660a202",
+      "range": {
+        "startLine": 5334,
+        "startChar": 25,
+        "endLine": 5334,
+        "endChar": 48
+      },
+      "revId": "a3074ec2d28fa9c590ba94310489b70752eddadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_a63efe25",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 1
