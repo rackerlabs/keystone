@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_9fdc0348",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-12-22T16:02:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_d9271961",
+      "revId": "27f845f53d8562d5ee09ecf0326781c0548b2fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_1392604c",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2015-12-22T08:41:52Z",
       "side": 1,
       "message": "nit: what about: \"No token in request\"  \"No token passed\"  \"Cannot identity token\"",
+      "range": {
+        "startLine": 270,
+        "startChar": 45,
+        "endLine": 270,
+        "endChar": 73
+      },
+      "revId": "27f845f53d8562d5ee09ecf0326781c0548b2fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_546d2231",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-12-22T16:02:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_1392604c",
       "range": {
         "startLine": 270,
         "startChar": 45,
