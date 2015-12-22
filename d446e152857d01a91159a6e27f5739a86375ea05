@@ -78,6 +78,23 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_46948a36",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-12-22T22:09:58Z",
+      "side": 1,
+      "message": "Can you please add domain role assignment?  If we are using v3_cloud_admin_policy, then we need domain roles for bootstrap. (In that case project is not required)",
+      "revId": "d446e152857d01a91159a6e27f5739a86375ea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_8373444d",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 11
