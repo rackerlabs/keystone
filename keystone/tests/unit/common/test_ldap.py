@@ -16,9 +16,12 @@ import tempfile
 import uuid
 
 import fixtures
-import ldap.dn
+import ldap
+from ldap3.core import exceptions as ldap_exceptions
+from ldap3.utils import dn as ldap_dn
 import mock
 from oslo_config import cfg
+import testtools
 from testtools import matchers
 
 from keystone.common import driver_hints
@@ -77,53 +80,104 @@ class DnCompareTest(unit.BaseTestCase):
         # is_ava_value_equal returns False if the values aren't the same.
         self.assertFalse(ks_ldap.is_ava_value_equal('cn', 'val1', 'val2'))
 
+    def test_combine_dn_parts_single_rdn(self):
+        attr = 'cn'
+        val = uuid.uuid4().hex
+        dn = ldap_dn.parse_dn('%s=%s' % (attr, val))
+        exp = [[(attr, val)]]
+        self.assertEqual(exp, ks_ldap.combine_dn_parts(dn))
+
+    def test_combine_dn_parts_single_rdn_multi_ava(self):
+        attr1 = 'cn'
+        val1 = uuid.uuid4().hex
+        attr2 = 'ou'
+        val2 = uuid.uuid4().hex
+        dn = ldap_dn.parse_dn('%s=%s+%s=%s' % (attr1, val1, attr2, val2))
+        exp = [[(attr1, val1), (attr2, val2)]]
+        self.assertEqual(exp, ks_ldap.combine_dn_parts(dn))
+
+    def test_combine_dn_parts_multi_rdn(self):
+        attr1 = 'cn'
+        val1 = uuid.uuid4().hex
+        attr2 = 'ou'
+        val2 = uuid.uuid4().hex
+        dn = ldap_dn.parse_dn('%s=%s,%s=%s' % (attr1, val1, attr2, val2))
+        exp = [[(attr1, val1)], [(attr2, val2)]]
+        self.assertEqual(exp, ks_ldap.combine_dn_parts(dn))
+
+    def test_combine_dn_parts_multi_ava_rdn_start(self):
+        attr1 = 'cn'
+        val1 = uuid.uuid4().hex
+        attr2 = 'ou'
+        val2 = uuid.uuid4().hex
+        attr3 = 'sn'
+        val3 = uuid.uuid4().hex
+        dn = ldap_dn.parse_dn('%s=%s+%s=%s,%s=%s' % (attr1, val1, attr2, val2,
+                                                     attr3, val3))
+        exp = [[(attr1, val1), (attr2, val2)], [(attr3, val3)]]
+        self.assertEqual(exp, ks_ldap.combine_dn_parts(dn))
+
+    def test_combine_dn_parts_multi_ava_rdn_end(self):
+        attr1 = 'cn'
+        val1 = uuid.uuid4().hex
+        attr2 = 'ou'
+        val2 = uuid.uuid4().hex
+        attr3 = 'sn'
+        val3 = uuid.uuid4().hex
+        dn = ldap_dn.parse_dn('%s=%s,%s=%s+%s=%s' % (attr1, val1, attr2, val2,
+                                                     attr3, val3))
+        exp = [[(attr1, val1)], [(attr2, val2), (attr3, val3)]]
+        self.assertEqual(exp, ks_ldap.combine_dn_parts(dn))
+
     def test_rdn_same(self):
         # is_rdn_equal returns True if the two values are the same.
-        rdn = ldap.dn.str2dn('cn=val1')[0]
+        rdn = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=val1'))[0]
         self.assertTrue(ks_ldap.is_rdn_equal(rdn, rdn))
 
     def test_rdn_diff_length(self):
         # is_rdn_equal returns False if the RDNs have a different number of
         # AVAs.
-        rdn1 = ldap.dn.str2dn('cn=cn1')[0]
-        rdn2 = ldap.dn.str2dn('cn=cn1+ou=ou1')[0]
+        rdn1 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1'))[0]
+        rdn2 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1+ou=ou1'))[0]
         self.assertFalse(ks_ldap.is_rdn_equal(rdn1, rdn2))
 
     def test_rdn_multi_ava_same_order(self):
         # is_rdn_equal returns True if the RDNs have the same number of AVAs
         # and the values are the same.
-        rdn1 = ldap.dn.str2dn('cn=cn1+ou=ou1')[0]
-        rdn2 = ldap.dn.str2dn('cn=CN1+ou=OU1')[0]
+        rdn1 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1+ou=ou1'))[0]
+        rdn2 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=CN1+ou=OU1'))[0]
         self.assertTrue(ks_ldap.is_rdn_equal(rdn1, rdn2))
 
     def test_rdn_multi_ava_diff_order(self):
         # is_rdn_equal returns True if the RDNs have the same number of AVAs
         # and the values are the same, even if in a different order
-        rdn1 = ldap.dn.str2dn('cn=cn1+ou=ou1')[0]
-        rdn2 = ldap.dn.str2dn('ou=OU1+cn=CN1')[0]
+        rdn1 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1+ou=ou1'))[0]
+        rdn2 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('ou=OU1+cn=CN1'))[0]
         self.assertTrue(ks_ldap.is_rdn_equal(rdn1, rdn2))
 
     def test_rdn_multi_ava_diff_type(self):
         # is_rdn_equal returns False if the RDNs have the same number of AVAs
         # and the attribute types are different.
-        rdn1 = ldap.dn.str2dn('cn=cn1+ou=ou1')[0]
-        rdn2 = ldap.dn.str2dn('cn=cn1+sn=sn1')[0]
+        rdn1 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1+ou=ou1'))[0]
+        rdn2 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1+sn=sn1'))[0]
         self.assertFalse(ks_ldap.is_rdn_equal(rdn1, rdn2))
 
     def test_rdn_attr_type_case_diff(self):
         # is_rdn_equal returns True for same RDNs even when attr type case is
         # different.
-        rdn1 = ldap.dn.str2dn('cn=cn1')[0]
-        rdn2 = ldap.dn.str2dn('CN=cn1')[0]
+        rdn1 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1'))[0]
+        rdn2 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('CN=cn1'))[0]
         self.assertTrue(ks_ldap.is_rdn_equal(rdn1, rdn2))
 
     def test_rdn_attr_type_alias(self):
         # is_rdn_equal returns False for same RDNs even when attr type alias is
         # used. Note that this is a limitation since an LDAP server should
         # consider them equal.
-        rdn1 = ldap.dn.str2dn('cn=cn1')[0]
-        rdn2 = ldap.dn.str2dn('2.5.4.3=cn1')[0]
-        self.assertFalse(ks_ldap.is_rdn_equal(rdn1, rdn2))
+        rdn1 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('cn=cn1'))[0]
+        # ldap3 doesn't accept . in attribute name in DN for some reason.
+        with testtools.ExpectedException(ldap_exceptions.LDAPInvalidDnError):
+            rdn2 = ks_ldap.combine_dn_parts(ldap_dn.parse_dn('2.5.4.3=cn1'))[0]
+            self.assertFalse(ks_ldap.is_rdn_equal(rdn1, rdn2))
 
     def test_dn_same(self):
         # is_dn_equal returns True if the DNs are the same.
@@ -151,8 +205,8 @@ class DnCompareTest(unit.BaseTestCase):
 
     def test_dn_parsed_dns(self):
         # is_dn_equal can also accept parsed DNs.
-        dn_str1 = ldap.dn.str2dn('cn=Babs Jansen,ou=OpenStack+cn=OpenSource')
-        dn_str2 = ldap.dn.str2dn('CN=Babs Jansen,cn=OpenSource+ou=OpenStack')
+        dn_str1 = ldap_dn.parse_dn('cn=Babs Jansen,ou=OpenStack+cn=OpenSource')
+        dn_str2 = ldap_dn.parse_dn('CN=Babs Jansen,cn=OpenSource+ou=OpenStack')
         self.assertTrue(ks_ldap.is_dn_equal(dn_str1, dn_str2))
 
     def test_startswith_under_child(self):
@@ -190,8 +244,8 @@ class DnCompareTest(unit.BaseTestCase):
 
     def test_startswith_parsed_dns(self):
         # dn_startswith also accepts parsed DNs.
-        descendant = ldap.dn.str2dn('cn=Babs Jansen,ou=OpenStack')
-        dn = ldap.dn.str2dn('ou=OpenStack')
+        descendant = ldap_dn.parse_dn('cn=Babs Jansen,ou=OpenStack')
+        dn = ldap_dn.parse_dn('ou=OpenStack')
         self.assertTrue(ks_ldap.dn_startswith(descendant, dn))
 
     def test_startswith_unicode(self):
