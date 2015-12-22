@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_f3b79482",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T09:16:04Z",
+      "side": 1,
+      "message": "`rfc3986 \u003chttp://tools.ietf.org/html/rfc3986\u003e`_",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_5ec22f54",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T09:16:04Z",
+      "side": 1,
+      "message": "nit: attempts",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_7e984b78",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T09:16:04Z",
+      "side": 1,
+      "message": "same",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_b91ecd5c",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T09:16:04Z",
+      "side": 1,
+      "message": "exception.Unauthorized(message\u003dmsg)",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
