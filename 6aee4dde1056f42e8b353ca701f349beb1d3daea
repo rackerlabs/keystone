@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_169ec362",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4293,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-22T12:53:56Z",
+      "side": 0,
+      "message": "since the relevant code has been removed in this patch\nhttps://review.openstack.org/#/c/259563/6/keystone/token/persistence/core.py",
+      "parentUuid": "3a7e1126_13e020cc",
+      "range": {
+        "startLine": 4293,
+        "startChar": 4,
+        "endLine": 4293,
+        "endChar": 47
+      },
+      "revId": "6aee4dde1056f42e8b353ca701f349beb1d3daea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_f933f511",
         "filename": "keystone/token/persistence/core.py",
         "patchSetId": 6
@@ -36,6 +60,24 @@
       "writtenOn": "2015-12-22T09:31:25Z",
       "side": 0,
       "message": "please add the reason in commit-msg",
+      "revId": "6aee4dde1056f42e8b353ca701f349beb1d3daea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_567f6b14",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-22T12:53:56Z",
+      "side": 0,
+      "message": "since the change here made these code redundant\nhttps://review.openstack.org/#/c/259563/6/keystone/token/provider.py",
+      "parentUuid": "3a7e1126_f933f511",
       "revId": "6aee4dde1056f42e8b353ca701f349beb1d3daea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
