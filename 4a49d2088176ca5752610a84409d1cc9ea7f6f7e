@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_d33ff884",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T08:42:48Z",
+      "side": 1,
+      "message": "please add \u0027,\u0027",
+      "revId": "4a49d2088176ca5752610a84409d1cc9ea7f6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_33643cb7",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T08:42:48Z",
+      "side": 1,
+      "message": "please add \u0027,\u0027",
+      "revId": "4a49d2088176ca5752610a84409d1cc9ea7f6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_33d99c57",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T08:42:48Z",
+      "side": 1,
+      "message": "\u0027option\u0027: option, \u0027group\u0027: group}",
+      "revId": "4a49d2088176ca5752610a84409d1cc9ea7f6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
