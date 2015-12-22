@@ -12,11 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from datetime import datetime
+import datetime
+import six
 import uuid
 
 from keystone.common import config
 from keystone.common import sql
+from keystone.delegation import core
 
 CONF = config.CONF
 
@@ -24,12 +26,12 @@ CONF = config.CONF
 def expiration_value():
     ttl = CONF.delegation.expiration
     if ttl:
-        return datetime.now() + ttl
+        return datetime.datetime.now() + ttl
     else:
         return None
 
 
-class DelegationModel(sql.DictBase):
+class DelegationModel(sql.ModelBase, sql.DictBase):
     """Unified delegation model
 
     'trustor_id': the user considered the source of delegated rights
@@ -133,3 +135,77 @@ class RoleDelegationModel(sql.DictBase):
     role_id = sql.Column(sql.String(64), nullable=False)
 
     __table_args__ = (sql.PrimaryKeyConstraint('delegation_id', 'role_id'), )
+
+
+class Driver(core.DelegationDriverV8):
+
+    def derive_delegation(self, id, base_delegation,
+                          agent, user, group, impersonation,
+                          roles, project, domain, inherited_to_projects,
+                          strict_ancestry, sealed, executable):
+        session = sql.get_session()
+        try:
+            if isinstance(base_delegation, DelegationModel):
+                base = base_delegation
+            elif isinstance(base_delegation, six.text_type):
+                base = session.query(DelegationModel).get(base_delegation)
+            else:
+                raise sql.NotFound()
+            # TODO(amakarov): check sealed flag
+            # check roles subset
+            trustor_id = base['trustor_id']
+            user_chain = base['user_chain'] + [agent]
+            delegation_chain = base['delegation_chain'] + base['id']
+        except sql.NotFound:
+            # TODO(amakarov): check available delegations
+            trustor_id = agent
+            user_chain = [agent]
+            delegation_chain = []
+
+        new_delegation_ref = {
+            'id': id,
+            'trustor_id': trustor_id,
+            'impersonation': impersonation,
+            'user_chain': user_chain,
+            'delegation_chain': delegation_chain,
+            'strict_ancestry': strict_ancestry,
+            'sealed': sealed,
+            'executable': executable,
+            'inherited_to_projects': inherited_to_projects,
+            'user_id': user,
+            'group_id': group,
+            'project_id': project,
+            'domain_id': domain,
+            'deleted_at': None,
+            'expires_at': datetime.datetime.now() + datetime.timedelta(
+                CONF.delegation.expiration),
+            'remaining_uses': 1
+        }
+        delegation = DelegationModel.from_dict(new_delegation_ref)
+        with session.begin():
+            session.add(delegation)
+            for role in roles:
+                session.add(RoleDelegationModel(delegation_id=id,
+                                                role_id=role))
+
+    def update_delegation(self, delegation, grant_roles, revoke_roles):
+        pass
+
+    def revoke_delegation(self, delegation):
+        session = sql.get_session()
+        with session.begin():
+            (session.query(DelegationModel).filter(id=delegation)
+             .update(deleted_at=datetime.now()))
+
+    def list_delegations(self, hints, user, group, project, domain, role,
+                         expanded=False):
+        pass
+
+    def get_delegation(self, delegation):
+
+        session = sql.get_session()
+        delegation = (session.query(DelegationModel)
+                      .options(sql.joinedload(RoleDelegationModel.role_id))
+                      .get(delegation))
+        delegation_ref = delegation.to_dict()
+        return delegation_ref

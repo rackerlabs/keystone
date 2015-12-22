@@ -27,6 +27,7 @@ from testtools import matchers
 
 from keystone.common import driver_hints
 from keystone.common import sql
+from keystone.delegation import core as delegation_core
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
 from keystone.tests import unit
@@ -782,3 +783,16 @@ class SqlCredential(SqlTests):
         credentials = self.credential_api.list_credentials_for_user(
             self.user_foo['id'])
         self._validateCredentialList(credentials, self.user_credentials)
+
+
+class SqlDelegationTrust(SqlTests, test_backend.TrustTests):
+    def setUp(self):
+        super(SqlDelegationTrust, self).setUp()
+        self.trust_api = self.delegation_trust_api
+
+    def config_overrides(self):
+        super(SqlDelegationTrust, self).config_overrides()
+        self.config_fixture.config(group='delegation', driver='sql')
+
+    def load_extra_backends(self):
+        return {'delegation_trust_api': delegation_core.TrustManager()}
