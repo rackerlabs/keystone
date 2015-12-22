@@ -45,6 +45,23 @@
       "revId": "b03864cb2a1e76a412fc77df7595caef11ef12e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_b0aee22b",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T08:28:23Z",
+      "side": 1,
+      "message": "Remove L58 and L59",
+      "revId": "b03864cb2a1e76a412fc77df7595caef11ef12e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
