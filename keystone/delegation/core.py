@@ -82,7 +82,8 @@ class DelegationDriverV8(object):
         pass
 
 
-class TrustManagaer(BaseManager):
+@dependency.provider('delegation_trust_api')
+class TrustManager(BaseManager):
     """Trust interface manager using delegation."""
 
     @staticmethod
