@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a7b0d38_202ff0a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-22T17:18:12Z",
+      "side": 1,
+      "message": "I don\u0027t get the intentions. How do you want to integrate it?",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_d40d8d38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-22T17:18:12Z",
+      "side": 1,
+      "message": "This is an awesome idea. Maybe there should be a bp about this?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 0
+      },
+      "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_15e44439",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 1
@@ -13,6 +59,70 @@
       "writtenOn": "2015-12-10T08:19:26Z",
       "side": 1,
       "message": "this is blowing my mind",
+      "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_b47b217b",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-22T17:18:12Z",
+      "side": 1,
+      "message": "we heard you like keystone, so we put keystonemiddleware in your keystone so that you could keystonemiddleware while you keystone",
+      "parentUuid": "7a740942_15e44439",
+      "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_a0b3e009",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-22T17:18:12Z",
+      "side": 1,
+      "message": "unrelated",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 68
+      },
+      "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_c0b86ce8",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-22T17:18:12Z",
+      "side": 1,
+      "message": "unrelated",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 74
+      },
       "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
