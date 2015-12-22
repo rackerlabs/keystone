@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_2b9cb968",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:08:08Z",
+      "side": 1,
+      "message": "oops, thanks!",
+      "parentUuid": "3a7e1126_f3b79482",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_5ec22f54",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-22T09:16:04Z",
       "side": 1,
       "message": "nit: attempts",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_ab398943",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:08:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_5ec22f54",
       "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_4b3fc525",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:08:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_7e984b78",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_b91ecd5c",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2015-12-22T09:16:04Z",
       "side": 1,
       "message": "exception.Unauthorized(message\u003dmsg)",
+      "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_cb5f3574",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-22T15:08:08Z",
+      "side": 1,
+      "message": "Nice catch - I changed the v3 ones to Unauthorised, and missed this one!",
+      "parentUuid": "3a7e1126_b91ecd5c",
       "revId": "07646dcfa910b5a10b730c56465125c8cca1832c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
