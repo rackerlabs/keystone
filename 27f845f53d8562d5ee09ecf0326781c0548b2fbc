@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a7e1126_d9271961",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2015-12-22T09:31:25Z",
+      "side": 1,
+      "message": "nit: remove a \u0027the\u0027",
+      "revId": "27f845f53d8562d5ee09ecf0326781c0548b2fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_1392604c",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
