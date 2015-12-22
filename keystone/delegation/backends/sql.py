@@ -13,10 +13,14 @@
 # under the License.
 
 import datetime
+from oslo_utils import timeutils
+import six
 import uuid
 
 from keystone.common import config
 from keystone.common import sql
+from keystone.delegation import core
+from keystone import exception
 
 CONF = config.CONF
 
@@ -106,6 +110,18 @@ class DelegationModel(sql.ModelBase, sql.DictBase):
                       'impersonation', 'expires_at',
                       name='duplicate_trust_delegation_constraint'),)
 
+    @classmethod
+    def to_instance(cls, delegation):
+        if isinstance(delegation, cls):
+            return delegation
+        elif isinstance(delegation, six.string_types):
+            session = sql.get_session()
+            return session.query(cls).get(delegation)
+        elif isinstance(delegation, dict):
+            return cls.from_dict(delegation)
+        else:
+            raise sql.NotFound()
+
 
 class RoleDelegationModel(sql.ModelBase):
     """Many-to-many table between delegation and role"""
@@ -118,3 +134,160 @@ class RoleDelegationModel(sql.ModelBase):
     role_id = sql.Column(sql.String(64), nullable=False)
 
     __table_args__ = (sql.PrimaryKeyConstraint('delegation_id', 'role_id'), )
+
+    @classmethod
+    def get_delegation_roles(cls, delegation_id):
+        session = sql.get_session()
+        roles_query = session.query(cls).filter_by(
+            delegation_id=delegation_id)
+        return roles_query.all()
+
+
+class Driver(core.DelegationDriverV8):
+
+    @sql.handle_conflicts(conflict_type='delegation')
+    def derive_delegation(self, id, base_delegation,
+                          agent, user, group, impersonation,
+                          roles, project, domain, inherited_to_projects,
+                          strict_ancestry, sealed, executable, expires_at):
+        session = sql.get_session()
+        if base_delegation is None:
+            # Try to find not sealed delegation to derive from.
+            # We need a delegation where agent is the trustee,
+            # resource match that requested,
+            # and roles are a superset of the requested roles.
+            candidates = session.query(DelegationModel).filter_by(
+                sealed=False, user_id=agent,
+                project_id=project, domain_id=domain
+            )
+            matches = []
+            requested_roles = set((r['id'] for r in roles))
+            for candidate in candidates:
+                candidate_roles = set([r['id'] for r in RoleDelegationModel.
+                                       get_delegation_roles(candidate.id)])
+                if requested_roles < candidate_roles:
+                    matches.append(candidate)
+            if len(matches) == 0:
+                raise exception.Forbidden(
+                    "Agent cannot delegate requested scope")
+            elif len(matches) == 1:
+                base_delegation = matches[0]
+            else:
+                # Ok, what if several candidates are found?
+                if strict_ancestry:
+                    raise exception.Forbidden(
+                        "Several matching delegations found, not sure which "
+                        "one to derive from")
+                else:
+                    # If we don't care about delegation parents
+                    base_delegation = matches[0]
+        try:
+            base = DelegationModel.to_instance(base_delegation)
+            # check sealed flag
+            if base.sealed:
+                raise exception.TrustNotFound(trust_id=base.id)
+            # check roles subset
+            base_roles = [r['id'] for r in base.get_roles()]
+            if any(1 for r in roles if r['id'] not in base_roles):
+                raise exception.Forbidden("Requested role cannot be granted")
+            trustor_id = base['trustor_id']
+            user_chain = base['user_chain'] + [agent]
+            delegation_chain = base['delegation_chain'] + base['id']
+        except sql.NotFound:
+            raise exception.Forbidden("Base delegation not found")
+
+        new_delegation_ref = {
+            'id': id,
+            'trustor_id': trustor_id,
+            'impersonation': impersonation,
+            'user_chain': user_chain,
+            'delegation_chain': delegation_chain,
+            'strict_ancestry': strict_ancestry,
+            'sealed': sealed,
+            'executable': executable,
+            'inherited_to_projects': inherited_to_projects,
+            'user_id': user,
+            'group_id': group,
+            'project_id': project,
+            'domain_id': domain,
+            'deleted_at': None,
+            'expires_at': expires_at or timeutils.normalize_time(
+                datetime.datetime.now() +
+                datetime.timedelta(CONF.delegation.expiration)
+            ),
+            'remaining_uses': 1,
+        }
+
+        delegation = DelegationModel.from_dict(new_delegation_ref)
+        new_delegation_ref['roles'] = []
+        with session.begin():
+            session.add(delegation)
+            for role in roles:
+                if isinstance(role, dict):
+                    role = role['id']
+                session.add(RoleDelegationModel(delegation_id=id,
+                                                role_id=role))
+                new_delegation_ref['roles'].append({'id': role})
+
+        return new_delegation_ref
+
+    def update_delegation(self, delegation, grant_roles, revoke_roles):
+        pass
+
+    def revoke_delegation(self, delegation):
+        instance = DelegationModel.to_instance(delegation)
+        session = sql.get_session()
+        with session.begin():
+            session.add(instance)
+            instance.deleted_at = datetime.datetime.now()
+
+    def list_delegations(self, hints=None, user=None, group=None,
+                         project=None, domain=None, role=None,
+                         expanded=False):
+        # TODO(amakarov): Type autodiscover
+        user_id = user
+        group_id = group
+        project_id = project
+        domain_id = domain
+        role_id = role
+
+        filter_dict = {}
+        user_id and filter_dict.update(user_id=user_id)
+        group_id and filter_dict.update(group_id=group_id)
+        project_id and filter_dict.update(project_id=project_id)
+        domain_id and filter_dict.update(domain_id=domain_id)
+
+        # TODO(amakarov): handle expanded flag
+        session = sql.get_session()
+        query = session.query(DelegationModel)
+        if filter_dict:
+            query = query.filter_by(**filter_dict)
+
+        delegations = map(self.get_delegation, query.all())
+        found = []
+        for ref in delegations:
+            if role_id is None:
+                found.append(ref)
+            else:
+                for r in ref['roles']:
+                    if r['id'] == role_id:
+                        found.append(ref)
+                        break
+        return found
+
+    def get_delegation(self, delegation):
+
+        session = sql.get_session()
+        if isinstance(delegation, six.string_types):
+            delegation = session.query(DelegationModel).get(delegation)
+            delegation_ref = delegation.to_dict()
+        elif isinstance(delegation, DelegationModel):
+            delegation_ref = delegation.to_dict()
+        elif isinstance(delegation, dict):
+            delegation_ref = delegation
+        else:
+            raise ValueError('Delegation type mismatch')
+
+        roles = RoleDelegationModel.get_delegation_roles(delegation_ref['id'])
+        delegation_ref['roles'] = [{'id': r.role_id} for r in roles]
+        return delegation_ref
