@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_b434814a",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-12-22T17:26:51Z",
+      "side": 0,
+      "message": "I could not get it for some time until I looked at previous patches.\n\nThis should either be squashed with previous patch or there should be a more descriptive commit message, saying \"the previous patch did x, y and z and duplicates this check and that\u0027s why the check is no longer required\"",
+      "range": {
+        "startLine": 714,
+        "startChar": 0,
+        "endLine": 720,
+        "endChar": 61
+      },
+      "revId": "f7b740fb9683a782be502619b053d1b8d3f2eae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
