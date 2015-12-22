@@ -82,21 +82,27 @@ class DelegationDriverV8(object):
         pass
 
 
-class TrustManagaer(BaseManager):
+@dependency.provider('delegation_trust_api')
+class TrustManager(BaseManager):
     """Trust interface manager using delegation."""
+
+    _TRUST = "OS-TRUST:trust"
 
     @staticmethod
     def _to_trust(delegation_ref):
+        redelegated_trust_id = (delegation_ref['delegation_chain'][-1]
+                                if delegation_ref['delegation_chain']
+                                else None)
         trust_ref = {
             'id': delegation_ref['id'],
             'trustor_user_id': delegation_ref['trustor_id'],
-            'trustee_user_id': delegation_ref['user_chain'][-1],
+            'trustee_user_id': delegation_ref['user_id'],
             'project_id': delegation_ref['project_id'],
             'impersonation': delegation_ref['impersonation'],
             'expires_at': delegation_ref['expires_at'],
             'remaining_uses': delegation_ref['remaining_uses'],
             'deleted_at': delegation_ref['deleted_at'],
-            'redelegated_trust_id': delegation_ref['delegation_chain'][-1],
+            'redelegated_trust_id': redelegated_trust_id,
             'redelegation_count': CONF.trust.max_redelegation_count,
             'roles': delegation_ref['roles']
         }
@@ -126,7 +132,7 @@ class TrustManagaer(BaseManager):
             base_delegation = self.driver.get_trust(redelegated_trust['id'])
         else:
             base_delegation = None
-        self.driver.derive_delegation(
+        created = self.driver.derive_delegation(
             id=trust_id,
             base_delegation=base_delegation,
             agent=trust['trustor_user_id'],
@@ -142,6 +148,11 @@ class TrustManagaer(BaseManager):
             sealed=trust.get('allow_redelegation', False))
 
         notifications.Audit.created(self._TRUST, trust_id, initiator=initiator)
+
+        return self._to_trust(created)
+
+    def list_trusts(self):
+        return [self._to_trust(ref) for ref in self.driver.list_delegations()]
 
     def delete_trust(self, trust_id, initiator=None):
         self.driver.revoke_delegation(delegation=trust_id)
