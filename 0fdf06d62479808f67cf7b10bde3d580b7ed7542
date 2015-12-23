@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_7ffca03e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-23T03:55:48Z",
+      "side": 1,
+      "message": "instead of 404, use http_client.NOT_FOUND",
+      "range": {
+        "startLine": 407,
+        "startChar": 49,
+        "endLine": 407,
+        "endChar": 52
+      },
+      "revId": "0fdf06d62479808f67cf7b10bde3d580b7ed7542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_3f63781c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-23T03:55:48Z",
+      "side": 1,
+      "message": "you probably don\u0027t need this here since _validate_token is called just before this step?",
+      "range": {
+        "startLine": 253,
+        "startChar": 8,
+        "endLine": 253,
+        "endChar": 24
+      },
+      "revId": "0fdf06d62479808f67cf7b10bde3d580b7ed7542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
