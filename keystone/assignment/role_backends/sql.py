@@ -17,18 +17,40 @@ from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
 
+NULL_DOMAIN_ID = 'null'
+
 
 class Role(assignment.RoleDriverV9):
 
     @sql.handle_conflicts(conflict_type='role')
     def create_role(self, role_id, role):
+
+        def _ensure_domain_id_not_none(role):
+            if 'domain_id' not in role or role['domain_id'] is None:
+                new_role = role.copy()
+                new_role['domain_id'] = NULL_DOMAIN_ID
+                return new_role
+            else:
+                return role
+
+        new_role = _ensure_domain_id_not_none(role)
         with sql.transaction() as session:
-            ref = RoleTable.from_dict(role)
+            ref = RoleTable.from_dict(new_role)
             session.add(ref)
             return ref.to_dict()
 
     @driver_hints.truncated
     def list_roles(self, hints):
+        # If there is a filter on domain_id and the value is None, then to
+        # ensure that the sql filtering works correctly, we need to patch
+        # the value to be NULL_DOMAIN_ID. This is safe to do here since we
+        # know we are able to satisfy any filter of this type in the call to
+        # filter_limit_query() below, which will remove the filter from the
+        # hints (hence ensuring our substitution is not exposed to the caller).
+        for f in hints.filters:
+            if (f['name'] == 'domain_id' and f['value'] is None):
+                f['value'] = NULL_DOMAIN_ID
+
         with sql.transaction() as session:
             query = session.query(RoleTable)
             refs = sql.filter_limit_query(RoleTable, query, hints)
@@ -56,11 +78,23 @@ class Role(assignment.RoleDriverV9):
 
     @sql.handle_conflicts(conflict_type='role')
     def update_role(self, role_id, role):
+
+        def _ensure_domain_id_not_none(role):
+            if 'domain_id' in role and role['domain_id'] is None:
+                new_role = role.copy()
+                new_role['domain_id'] = NULL_DOMAIN_ID
+                return new_role
+            else:
+                return role
+
+        update_role = _ensure_domain_id_not_none(role)
         with sql.transaction() as session:
             ref = self._get_role(session, role_id)
             old_dict = ref.to_dict()
-            for k in role:
-                old_dict[k] = role[k]
+            for k in update_role:
+                old_dict[k] = update_role[k]
+            if old_dict['domain_id'] is None:
+                old_dict['domain_id'] = NULL_DOMAIN_ID
             new_role = RoleTable.from_dict(old_dict)
             for attr in RoleTable.attributes:
                 if attr != 'id':
@@ -150,9 +184,25 @@ class ImpliedRoleTable(sql.ModelBase, sql.DictBase):
 
 
 class RoleTable(sql.ModelBase, sql.DictBase):
+    # NOTE(henry-nash): From the manager and above perspective, the domain_id
+    # is nullable.  However, to ensure uniqueness in multi-process
+    # configurations, it is better to still use the sql uniqueness constraint.
+    # Since the support for a nullable component of a uniqueness constraint
+    # across different sql databases is mixed, we instead store a special value
+    # to represent null, as defined in NULL_DOMAIN_ID above.
+
+    def to_dict(self, include_extra_dict=False):
+        d = super(RoleTable, self).to_dict(
+            include_extra_dict=include_extra_dict)
+        if d['domain_id'] == NULL_DOMAIN_ID:
+            d['domain_id'] = None
+        return d
+
     __tablename__ = 'role'
-    attributes = ['id', 'name']
+    attributes = ['id', 'name', 'domain_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(255), unique=True, nullable=False)
+    name = sql.Column(sql.String(255), nullable=False)
+    domain_id = sql.Column(sql.String(64), nullable=False,
+                           server_default=NULL_DOMAIN_ID)
     extra = sql.Column(sql.JsonBlob())
-    __table_args__ = (sql.UniqueConstraint('name'), {})
+    __table_args__ = (sql.UniqueConstraint('name', 'domain_id', ), {})

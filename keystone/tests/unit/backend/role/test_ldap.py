@@ -148,6 +148,25 @@ class LdapRole(LdapRoleCommon, core_ldap.BaseBackendLdap, unit.TestCase):
         self.assertEqual(self.role_member['id'], role_ref['id'])
         self.assertNotIn('name', role_ref)
 
+    def test_assert_domain_roles_not_supported(self):
+        domain = unit.new_domain_ref()
+        role = unit.new_role_ref(domain_id=domain['id'])
+        self.assertRaises(exception.NotImplemented,
+                          self.role_api.create_role,
+                          role['id'],
+                          role)
+
+        # The domain_id of a role is immutable for both SQL and LDAP, and this
+        # is caught in the manager - and a Validation error is issued. For
+        # completeness, we confirm this here.
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        role['domain_id'] = domain['id']
+        self.assertRaises(exception.ValidationError,
+                          self.role_api.update_role,
+                          role['id'],
+                          role)
+
 
 class LdapIdentitySqlEverythingElseRole(
     core_ldap.BaseBackendLdapIdentitySqlEverythingElse, LdapRoleCommon,
