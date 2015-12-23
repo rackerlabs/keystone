@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_3082c753",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-23T06:22:37Z",
+      "side": 1,
+      "message": "looks like a rebase failed here",
+      "revId": "2b5c2717f847d3c2a4a581af562e7ff32e8cc38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
