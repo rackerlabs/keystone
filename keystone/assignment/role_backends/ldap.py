@@ -44,17 +44,42 @@ class Role(assignment.RoleDriverV9):
         self.user = ldap_identity.UserApi(CONF)
         self.role = RoleApi(CONF, self.user)
 
+    def _append_null_domain_id(self, role_or_list):
+        def _append_null_domain_id_to_dict(role):
+            if 'domain_id' not in role:
+                role['domain_id'] = None
+            return role
+
+        if isinstance(role_or_list, list):
+            return [_append_null_domain_id_to_dict(x) for x in role_or_list]
+        else:
+            return _append_null_domain_id_to_dict(role_or_list)
+
+    def _trim_and_assert_null_domain_id(self, role):
+        if 'domain_id' in role:
+            if role['domain_id'] is not None:
+                raise exception.NotImplemented(
+                    _('Domain specific roles are not supported in the LDAP '
+                      'role driver'))
+            else:
+                new_role = role.copy()
+                new_role.pop('domain_id')
+                return new_role
+        else:
+            return role
+
     def get_role(self, role_id):
-        return self.role.get(role_id)
+        return self._append_null_domain_id(self.role.get(role_id))
 
     def list_roles(self, hints):
-        return self.role.get_all()
+        return self._append_null_domain_id(self.role.get_all())
 
     def list_roles_from_ids(self, ids):
-        return [self.get_role(id) for id in ids]
+        return self._append_null_domain_id([self.get_role(id) for id in ids])
 
     def create_role(self, role_id, role):
         self.role.check_allow_create()
+        new_role = self._trim_and_assert_null_domain_id(role)
         try:
             self.get_role(role_id)
         except exception.NotFound:  # nosec
@@ -71,7 +96,7 @@ class Role(assignment.RoleDriverV9):
             raise exception.Conflict(type='role', details=msg)
 
         try:
-            self.role.get_by_name(role['name'])
+            self.role.get_by_name(new_role['name'])
         except exception.NotFound:  # nosec
             # The call to self.role.get_by_name() raises this exception when a
             # role with the given name doesn't exist. This was done to ensure
@@ -82,10 +107,10 @@ class Role(assignment.RoleDriverV9):
             # security issue with ignoring it.
             pass
         else:
-            msg = _('Duplicate name, %s.') % role['name']
+            msg = _('Duplicate name, %s.') % new_role['name']
             raise exception.Conflict(type='role', details=msg)
 
-        return self.role.create(role)
+        return self._append_null_domain_id(self.role.create(new_role))
 
     def delete_role(self, role_id):
         self.role.check_allow_delete()
@@ -93,8 +118,9 @@ class Role(assignment.RoleDriverV9):
 
     def update_role(self, role_id, role):
         self.role.check_allow_update()
+        new_role = self._trim_and_assert_null_domain_id(role)
         self.get_role(role_id)
-        return self.role.update(role_id, role)
+        return self._append_null_domain_id(self.role.update(role_id, new_role))
 
     def create_implied_role(self, prior_role_id, implied_role_id):
         raise exception.NotImplemented()  # pragma: no cover
