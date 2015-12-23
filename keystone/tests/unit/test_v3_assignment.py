@@ -2441,3 +2441,72 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
             response, user, project, 0, 1)
         self._assert_effective_role_for_implied_has_prior_in_links(
             response, user, project, 1, 2)
+
+
+class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
+    def _create_role(self, domain_id=None):
+        """Call ``POST /roles``."""
+        ref = unit.new_role_ref(domain_id=domain_id)
+        r = self.post(
+            '/roles',
+            body={'role': ref})
+        return self.assertValidRoleResponse(r, ref)
+
+    def test_CRUD_domain_specific_roles(self):
+        domainA = unit.new_domain_ref()
+        self.resource_api.create_domain(domainA['id'], domainA)
+        domainB = unit.new_domain_ref()
+        self.resource_api.create_domain(domainB['id'], domainB)
+
+        global_role1 = self._create_role()
+        global_role2 = self._create_role()
+        # Since there maybe other global roles already created, let's count
+        # them, so we can ensure we can check subsequent list responses
+        # are correct
+        r = self.get('/roles')
+        existing_global_roles = len(r.result['roles'])
+
+        # And now create some domain specific roles
+        domainA_role1 = self._create_role(domain_id=domainA['id'])
+        domainA_role2 = self._create_role(domain_id=domainA['id'])
+        domainB_role = self._create_role(domain_id=domainB['id'])
+
+        # Check we can get a domain specific role
+        r = self.get('/roles/%s' % domainA_role1['id'])
+        self.assertValidRoleResponse(r, domainA_role1)
+
+        # If we list without specifying a domain, we should only get global
+        # roles back.
+        r = self.get('/roles')
+        self.assertValidRoleListResponse(
+            r, expected_length=existing_global_roles)
+        self.assertRoleInListResponse(r, global_role1)
+        self.assertRoleInListResponse(r, global_role2)
+        self.assertRoleNotInListResponse(r, domainA_role1)
+        self.assertRoleNotInListResponse(r, domainA_role2)
+        self.assertRoleNotInListResponse(r, domainB_role)
+
+        # Now list those in domainA, making sure that's all we get back
+        r = self.get('/roles?domain_id=%s' % domainA['id'])
+        self.assertValidRoleListResponse(r, expected_length=2)
+        self.assertRoleInListResponse(r, domainA_role1)
+        self.assertRoleInListResponse(r, domainA_role2)
+
+        # Check the update functionality
+        domainA_role1['name'] = uuid.uuid4().hex
+        self.patch('/roles/%(role_id)s' % {
+            'role_id': domainA_role1['id']},
+            body={'role': domainA_role1})
+        r = self.get('/roles/%s' % domainA_role1['id'])
+        self.assertValidRoleResponse(r, domainA_role1)
+
+        # Check delete only removes that one domain role
+        self.delete('/roles/%(role_id)s' % {
+            'role_id': domainA_role1['id']})
+
+        self.get('/roles/%s' % domainA_role1['id'],
+                 expected_status=http_client.NOT_FOUND)
+        # Now re-list those in domainA, making sure there's only one left
+        r = self.get('/roles?domain_id=%s' % domainA['id'])
+        self.assertValidRoleListResponse(r, expected_length=1)
+        self.assertRoleInListResponse(r, domainA_role2)
