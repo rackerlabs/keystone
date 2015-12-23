@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_63caafa3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-23T21:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_77527b15",
+      "range": {
+        "startLine": 94,
+        "startChar": 33,
+        "endLine": 94,
+        "endChar": 38
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_77eefb23",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 25
@@ -177,6 +201,30 @@
       "writtenOn": "2015-12-17T09:43:52Z",
       "side": 1,
       "message": "the () here are redundant",
+      "range": {
+        "startLine": 103,
+        "startChar": 20,
+        "endLine": 103,
+        "endChar": 29
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_b409ab97",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-23T21:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_57317f0a",
       "range": {
         "startLine": 103,
         "startChar": 20,
@@ -358,6 +406,30 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_de6c969e",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-23T21:36:08Z",
+      "side": 1,
+      "message": "This should be returning a list, not a HEAD type action",
+      "parentUuid": "1a7b0d38_6ed88ff0",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 22
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_ae10b7a9",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 25
@@ -369,6 +441,30 @@
       "writtenOn": "2015-12-22T15:48:13Z",
       "side": 1,
       "message": "So I think we agreed that all new major API changes would be marked as experimental? We should there add here:\n\n            status\u003djson_home.Status.EXPERIMENTAL",
+      "range": {
+        "startLine": 84,
+        "startChar": 12,
+        "endLine": 84,
+        "endChar": 13
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_a304177e",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-23T21:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_ae10b7a9",
       "range": {
         "startLine": 84,
         "startChar": 12,
@@ -439,6 +535,30 @@
       "side": 1,
       "message": "and if so, should it be get_head_action ?",
       "parentUuid": "3a7e1126_05fae4bd",
+      "range": {
+        "startLine": 90,
+        "startChar": 12,
+        "endLine": 90,
+        "endChar": 22
+      },
+      "revId": "0e42a08e64cc76ad70ad4c8d7fb43fa0bebe8e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_636dcf03",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-12-23T21:36:08Z",
+      "side": 1,
+      "message": "I think HEAD is appropriate for this one.",
+      "parentUuid": "1a7b0d38_6eff2f35",
       "range": {
         "startLine": 90,
         "startChar": 12,
