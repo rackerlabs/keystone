@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_dd258ac2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-23T13:58:31Z",
+      "side": 1,
+      "message": "i feel like this is needn\u0027t, no matter it\u0027s a authenticate an token based on the existing token (X-Subject-Token) or not.\n\ncode here is called before this method since there is a decorator there @controller.protected(). I think this apply both validate_v2_token from L223  or validate_v3_token.\n\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L75-L78",
+      "range": {
+        "startLine": 254,
+        "startChar": 18,
+        "endLine": 254,
+        "endChar": 27
+      },
+      "revId": "171f0e2193f336c02646e4366764d53336b10c8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
