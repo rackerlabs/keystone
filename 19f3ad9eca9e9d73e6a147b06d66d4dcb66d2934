@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_96035c73",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-23T16:47:12Z",
+      "side": 1,
+      "message": "why is neutron given the admin role? this seems dangerous.",
+      "revId": "19f3ad9eca9e9d73e6a147b06d66d4dcb66d2934",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
