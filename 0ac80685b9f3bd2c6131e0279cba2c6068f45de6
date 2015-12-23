@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_a692e09d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-23T22:33:55Z",
+      "side": 1,
+      "message": "Don\u0027t we need to add in the implied roles here? If so, we also need to add tests for that as well, showing how in effective mode the implied roles are added, but in regular mode they are not",
+      "revId": "0ac80685b9f3bd2c6131e0279cba2c6068f45de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
