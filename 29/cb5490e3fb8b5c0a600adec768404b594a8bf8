@@ -1,0 +1,11 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 23 Dec 2015 16:30:22 +0000
+Reviewed-on: https://review.openstack.org/226773
+Project: openstack/keystone
+Branch: refs/heads/master
