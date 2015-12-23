@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_f076683d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-12-23T17:34:56Z",
+      "side": 1,
+      "message": "Fixed the test code and modified the commit message (test will be run for both SQL and LDAP backends)",
+      "parentUuid": "7a740942_e594e68b",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_ff77fd9c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -153,6 +171,24 @@
       "writtenOn": "2015-12-02T18:31:53Z",
       "side": 1,
       "message": "I don\u0027t think we should have this test",
+      "parentUuid": "9a8ffd7b_efd2cbff",
+      "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_d0632cb0",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-12-23T17:34:56Z",
+      "side": 1,
+      "message": "Added domains creation code to the test in test_backend.py, now the test will be run for SQL backend.",
       "parentUuid": "9a8ffd7b_efd2cbff",
       "revId": "cc11c31f067e6a98e7f03c06c74e359c3f9f11cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
