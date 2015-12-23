@@ -22,6 +22,30 @@
       "revId": "171f0e2193f336c02646e4366764d53336b10c8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_354062a5",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-12-23T15:43:27Z",
+      "side": 1,
+      "message": "please check the following 2 lines https://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L528  and\n\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L544\n\nInside the method subject token is retrieved, but it is not validated for None.  @decorator will only handle X-Auth-Token case which is validate_token call",
+      "parentUuid": "1a7b0d38_dd258ac2",
+      "range": {
+        "startLine": 254,
+        "startChar": 18,
+        "endLine": 254,
+        "endChar": 27
+      },
+      "revId": "171f0e2193f336c02646e4366764d53336b10c8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
