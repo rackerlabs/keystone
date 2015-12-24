@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_2aed3def",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-24T14:14:42Z",
+      "side": 1,
+      "message": "change from \"keystone-py3kcompat\" to python3. keystone-py3kcompat is not a valid bp anymore.",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 18
+      },
+      "revId": "27c617032171290c9872474cf1fb5b74a2ec5bb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_4fb1bb8e",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-24T14:14:42Z",
+      "side": 1,
+      "message": "Is there any need to add this file to this list? this list is for testcases on py34, i think core.py is not the module that hold testcases.\n\nand the change you made in core.py doesn\u0027t make any difference for adding this file into this list or not. I can run py34 against successfully without the change in core.py",
+      "range": {
+        "startLine": 29,
+        "startChar": 21,
+        "endLine": 29,
+        "endChar": 25
+      },
+      "revId": "27c617032171290c9872474cf1fb5b74a2ec5bb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
