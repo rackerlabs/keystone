@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_e53bf5e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T08:50:32Z",
+      "side": 1,
+      "message": "\"string\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 22
+      },
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_80353fdb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T08:50:32Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_20248bad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T08:50:32Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 14,
+        "startChar": 41,
+        "endLine": 14,
+        "endChar": 44
+      },
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_40751796",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T08:50:32Z",
+      "side": 1,
+      "message": "\"string\"",
+      "range": {
+        "startLine": 76,
+        "startChar": 61,
+        "endLine": 76,
+        "endChar": 64
+      },
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_609ff3b4",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T08:50:32Z",
+      "side": 1,
+      "message": "ditto.",
+      "range": {
+        "startLine": 79,
+        "startChar": 23,
+        "endLine": 79,
+        "endChar": 26
+      },
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
