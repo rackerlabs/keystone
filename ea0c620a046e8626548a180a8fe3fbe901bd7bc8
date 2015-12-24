@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_0c4bd388",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T01:37:27Z",
+      "side": 1,
+      "message": "it is \u0027import\u0027 ,not \u0027mport\u0027.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "ea0c620a046e8626548a180a8fe3fbe901bd7bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_4c59db59",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-24T01:37:27Z",
+      "side": 1,
+      "message": "import",
+      "revId": "ea0c620a046e8626548a180a8fe3fbe901bd7bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
