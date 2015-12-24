@@ -170,6 +170,17 @@ class ApplicationTest(BaseWSGITest):
         self.assertEqual('Some-Value', resp.headers.get('Custom-Header'))
         self.assertEqual('X-Auth-Token', resp.headers.get('Vary'))
 
+    def test_render_response_non_byte_string_headers_converted(self):
+        resp = wsgi.render_response(
+            headers=[('Byte-Header', 'Byte-Value'),
+                     (u'Unicode-Header', u'Unicode-Value')])
+        # assert that all headers are identified.
+        self.assertThat(resp.headers, matchers.HasLength(4))
+        self.assertEqual('Unicode-Value', resp.headers.get('Unicode-Header'))
+        # assert that unicode value is converted.
+        self.assertEqual(six.binary_type,
+                         type(resp.headers.get('Unicode-Header')))
+
     def test_render_response_no_body(self):
         resp = wsgi.render_response()
         self.assertEqual('204 No Content', resp.status)
@@ -448,14 +459,12 @@ class ServerTest(unit.TestCase):
         server.start()
         self.addCleanup(server.stop)
 
-        if hasattr(socket, 'TCP_KEEPIDLE'):
-            self.assertEqual(2, mock_sock_dup.setsockopt.call_count)
-            # Test the last set of call args i.e. for the keepidle
-            mock_sock_dup.setsockopt.assert_called_with(socket.IPPROTO_TCP,
-                                                        socket.TCP_KEEPIDLE,
-                                                        1)
-        else:
-            self.assertEqual(1, mock_sock_dup.setsockopt.call_count)
+        self.assertEqual(2, mock_sock_dup.setsockopt.call_count)
+
+        # Test the last set of call args i.e. for the keepidle
+        mock_sock_dup.setsockopt.assert_called_with(socket.IPPROTO_TCP,
+                                                    socket.TCP_KEEPIDLE,
+                                                    1)
 
         self.assertTrue(mock_listen.called)
 

@@ -743,6 +743,23 @@ def render_response(body=None, status=None, headers=None, method=None):
                 headers.append(('Content-Type', 'application/json'))
         status = status or (200, 'OK')
 
+    # NOTE(davechen): mod_wsgi will fail if any value from response headers
+    # are not byte string, convert those values to byte string if not.
+    # see bug: https://bugs.launchpad.net/keystone/+bug/1528981.
+    def _convert_to_byte_string(headers):
+        byte_str_headers = []
+        for header in headers:
+            byte_str_header = []
+            for value in header:
+                if not isinstance(value, six.binary_type):
+                    byte_str_header.append(six.binary_type(value))
+                else:
+                    byte_str_header.append(value)
+            byte_str_headers.append(tuple(byte_str_header))
+        return byte_str_headers
+
+    headers = _convert_to_byte_string(headers)
+
     resp = webob.Response(body=body,
                           status='%s %s' % status,
                           headerlist=headers)
