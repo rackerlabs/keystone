@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_a0b5db31",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-24T08:46:47Z",
+      "side": 1,
+      "message": "those new tables should be tested, create some tesecases for those new table.\n\nexample: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_upgrade.py#L659",
+      "range": {
+        "startLine": 11,
+        "startChar": 9,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "ea0c620a046e8626548a180a8fe3fbe901bd7bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_4c59db59",
         "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 1
