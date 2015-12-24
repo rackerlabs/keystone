@@ -213,6 +213,24 @@
       "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_c8127c09",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-24T19:09:31Z",
+      "side": 1,
+      "message": "yea, mod_wsgi gets cranky with unicode types even under py3, this is because mod_wsgi needs byte_str type internally.",
+      "parentUuid": "1a7b0d38_d4f69bf8",
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
