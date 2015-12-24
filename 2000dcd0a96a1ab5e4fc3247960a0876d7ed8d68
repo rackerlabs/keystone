@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_34911f9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-24T15:44:48Z",
+      "side": 1,
+      "message": "The translation should be done wherever the code deals with mod_wsgi, not way down in the token formatter.",
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_20248bad",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -176,6 +193,23 @@
         "endLine": 79,
         "endChar": 26
       },
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_d4f69bf8",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-24T15:44:48Z",
+      "side": 1,
+      "message": "why not using six.binary_type()? We don\u0027t have python3 working but I\u0027d think mod_wsgi on python3 would have the same issue with unicode strings.",
       "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
