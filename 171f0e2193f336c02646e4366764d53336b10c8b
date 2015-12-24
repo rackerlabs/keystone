@@ -46,6 +46,30 @@
       "revId": "171f0e2193f336c02646e4366764d53336b10c8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_8c27c311",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-24T01:22:11Z",
+      "side": 1,
+      "message": "no, it\u0027s also handled within the decorator.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L134-L138\n\nAnd acutally, there are duplicated code there, they are validated two times. I will try to clean it up with this in the future.",
+      "parentUuid": "1a7b0d38_354062a5",
+      "range": {
+        "startLine": 254,
+        "startChar": 18,
+        "endLine": 254,
+        "endChar": 27
+      },
+      "revId": "171f0e2193f336c02646e4366764d53336b10c8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
