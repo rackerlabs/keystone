@@ -743,6 +743,35 @@ def render_response(body=None, status=None, headers=None, method=None):
                 headers.append(('Content-Type', 'application/json'))
         status = status or (200, 'OK')
 
+    # NOTE(davechen): `mod_wsgi` needs the value in response header is binary
+    # type(str) on python2, and unicode string(str) on python3, or else
+    # mod_wsgi will fail and keystone will be broken.
+    # keystone needs check the data type of each header and convert the type
+    # if needed.
+    # see bug: https://bugs.launchpad.net/keystone/+bug/1528981,
+    # and the method definition of wsgi_convert_headers_to_bytes(...),
+    # wsgi_convert_string_to_bytes(...) and wsgi_validate_header_value(...)
+    # from `mod_wsgi` for the details.
+    def _convert_to_str(headers):
+        str_headers = []
+        for header in headers:
+            str_header = []
+            for value in header:
+                if six.PY2:
+                    if not isinstance(value, six.binary_type):
+                        str_header.append(six.binary_type(value))
+                    else:
+                        str_header.append(value)
+                else:
+                    if not isinstance(value, six.text_type):
+                        str_header.append(six.text_type(value))
+                    else:
+                        str_header.append(value)
+            str_headers.append(tuple(str_header))
+        return str_headers
+
+    headers = _convert_to_str(headers)
+
     resp = webob.Response(body=body,
                           status='%s %s' % status,
                           headerlist=headers)
