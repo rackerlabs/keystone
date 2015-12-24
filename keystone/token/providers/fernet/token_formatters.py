@@ -72,7 +72,12 @@ class TokenFormatter(object):
 
         """
         # base64 padding (if any) is not URL-safe
-        return self.crypto.encrypt(payload).rstrip(b'=').decode('utf-8')
+        # NOTE(davechen) mod_wsgi will fail on python27 if the value returned
+        # is unicode, so convert it manually from unicode to str to make it
+        # work on python27.
+        # This is also expected to work on python3 since no change will be made
+        # if convert a str to str.
+        return str(self.crypto.encrypt(payload).rstrip(b'=').decode('utf-8'))
 
     def unpack(self, token):
         """Unpack a token, and validate the payload.
