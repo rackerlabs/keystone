@@ -68,6 +68,30 @@
       "revId": "8d99af84fc16a3606e59767c6687d779c014e16b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_22d4931e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-24T07:34:02Z",
+      "side": 1,
+      "message": "this change will make it always return str regardless it\u0027s on python3 or python2. and what we need is not return unicode on python2.\n\nsix.binary_type will made it return byte on python3, but actually, decode(\u0027utf-8\u0027) should return str on python3 and unicode on python2.\n\nonly encode will return byte.",
+      "parentUuid": "1a7b0d38_62913b99",
+      "range": {
+        "startLine": 78,
+        "startChar": 10,
+        "endLine": 79,
+        "endChar": 34
+      },
+      "revId": "8d99af84fc16a3606e59767c6687d779c014e16b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
