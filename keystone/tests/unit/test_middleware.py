@@ -40,7 +40,7 @@ def make_request(**kwargs):
     req = webob.Request.blank('/', **kwargs)
     req.method = method
     if body is not None:
-        req.body = body
+        req.body = body.encode('utf-8')
     if accept is not None:
         req.accept = accept
     return req
@@ -135,6 +135,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests):
     def setUp(self):
         super(AuthContextMiddlewareTest, self).setUp()
         self.client_issuer = uuid.uuid4().hex
+        self.client_issuer = self.client_issuer.encode('utf-8')
         self.untrusted_client_issuer = uuid.uuid4().hex
         self.trusted_issuer = self.client_issuer
         self.config_fixture.config(group='tokenless_auth',
