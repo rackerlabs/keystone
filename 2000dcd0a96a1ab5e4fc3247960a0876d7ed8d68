@@ -249,6 +249,24 @@
       "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_6affbb67",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-25T02:21:46Z",
+      "side": 1,
+      "message": "but morgan bring a good info, i am going to update this to six.binary_type() in the next PS.\n\nand see if there any better place as brant mentioned can accommodate this change.",
+      "parentUuid": "1a7b0d38_2ad3f305",
+      "revId": "2000dcd0a96a1ab5e4fc3247960a0876d7ed8d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
