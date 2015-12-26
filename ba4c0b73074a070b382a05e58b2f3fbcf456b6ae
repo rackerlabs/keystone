@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_1b5990fe",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:24:48Z",
+      "side": 1,
+      "message": "you could just import common utils and refer to _RESERVED_CHARS from there",
+      "range": {
+        "startLine": 156,
+        "startChar": 4,
+        "endLine": 156,
+        "endChar": 18
+      },
+      "revId": "ba4c0b73074a070b382a05e58b2f3fbcf456b6ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
