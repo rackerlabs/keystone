@@ -51,7 +51,6 @@ from keystone.token.providers import common as token_common
 subprocess = environment.subprocess
 
 CONF = cfg.CONF
-LOG = log.getLogger(__name__)
 ROOTDIR = os.path.dirname(os.path.abspath(__file__))
 XMLDIR = os.path.join(ROOTDIR, 'saml2/')
 
