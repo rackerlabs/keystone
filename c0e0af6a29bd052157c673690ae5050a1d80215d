@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_f8ca8a6d",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17081
+      },
+      "writtenOn": "2015-12-26T07:12:42Z",
+      "side": 1,
+      "message": "This will be used in #L85",
+      "parentUuid": "1a7b0d38_18275665",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 24
+      },
+      "revId": "c0e0af6a29bd052157c673690ae5050a1d80215d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_7830da9e",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-26T07:06:04Z",
       "side": 1,
       "message": "remove this",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "c0e0af6a29bd052157c673690ae5050a1d80215d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_98c9067b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17081
+      },
+      "writtenOn": "2015-12-26T07:12:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_7830da9e",
       "range": {
         "startLine": 22,
         "startChar": 0,
