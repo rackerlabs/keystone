@@ -16,6 +16,75 @@
       "revId": "0ac80685b9f3bd2c6131e0279cba2c6068f45de6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_1b0af021",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:12:38Z",
+      "side": 1,
+      "message": "i think you need a new line between this import and the docstring",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 45
+      },
+      "revId": "0ac80685b9f3bd2c6131e0279cba2c6068f45de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_7b2a1480",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:12:38Z",
+      "side": 1,
+      "message": "bump this line over a few characters to line up the single quotes",
+      "range": {
+        "startLine": 300,
+        "startChar": 20,
+        "endLine": 300,
+        "endChar": 25
+      },
+      "revId": "0ac80685b9f3bd2c6131e0279cba2c6068f45de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_5b4e3870",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:12:38Z",
+      "side": 1,
+      "message": "needs a few more tests to complete the coverage:\n\n  - make sure an implied role name can\u0027t match the name of \u0027global\u0027 role\n\n  - a test that uses \"ImpliedRoleNotFound\"",
+      "range": {
+        "startLine": 2172,
+        "startChar": 0,
+        "endLine": 2172,
+        "endChar": 63
+      },
+      "revId": "0ac80685b9f3bd2c6131e0279cba2c6068f45de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
