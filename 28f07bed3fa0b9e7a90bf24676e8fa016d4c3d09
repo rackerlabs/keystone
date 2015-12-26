@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_5b907843",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:40:15Z",
+      "side": 1,
+      "message": "\"value in response header *to be* binary...\"",
+      "range": {
+        "startLine": 746,
+        "startChar": 43,
+        "endLine": 746,
+        "endChar": 77
+      },
+      "revId": "28f07bed3fa0b9e7a90bf24676e8fa016d4c3d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_dba468a7",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:40:15Z",
+      "side": 1,
+      "message": "instead of \"mod_wsgi will fail and keystone will be broken\" how about \"Fernet tokens will be unusable in keystone and mod_wsgi\"",
+      "range": {
+        "startLine": 748,
+        "startChar": 38,
+        "endLine": 748,
+        "endChar": 52
+      },
+      "revId": "28f07bed3fa0b9e7a90bf24676e8fa016d4c3d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_7bba14c2",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:40:15Z",
+      "side": 1,
+      "message": "needs *to* check",
+      "range": {
+        "startLine": 749,
+        "startChar": 15,
+        "endLine": 749,
+        "endChar": 26
+      },
+      "revId": "28f07bed3fa0b9e7a90bf24676e8fa016d4c3d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_5bb718d8",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-26T08:40:15Z",
+      "side": 1,
+      "message": "Include a link to the mod_wsgi source, since these are functions in mod_wsgi",
+      "range": {
+        "startLine": 752,
+        "startChar": 5,
+        "endLine": 754,
+        "endChar": 38
+      },
+      "revId": "28f07bed3fa0b9e7a90bf24676e8fa016d4c3d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
