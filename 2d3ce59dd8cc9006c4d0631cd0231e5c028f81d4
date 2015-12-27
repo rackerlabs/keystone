@@ -22,6 +22,30 @@
       "revId": "2d3ce59dd8cc9006c4d0631cd0231e5c028f81d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_35425069",
+        "filename": "releasenotes/notes/bp-url-safe-naming-ad90d6a659f5bf3c.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-27T15:10:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_db96a84b",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 79
+      },
+      "revId": "2d3ce59dd8cc9006c4d0631cd0231e5c028f81d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
