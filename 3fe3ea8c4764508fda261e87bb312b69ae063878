@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_443f2f87",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-27T19:00:21Z",
+      "side": 1,
+      "message": "In general we tend to make these class names singular (e.g. RoleV3), so maybe this should be: ImpliedRoleV3 ?",
+      "range": {
+        "startLine": 332,
+        "startChar": 6,
+        "endLine": 332,
+        "endChar": 20
+      },
+      "revId": "3fe3ea8c4764508fda261e87bb312b69ae063878",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_2472237c",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-27T19:00:21Z",
+      "side": 1,
+      "message": "This was an error from my patch when I created the V9 role driver - I have a patch that fixes this - suggest you rebase on: https://review.openstack.org/#/c/261841/",
+      "range": {
+        "startLine": 31,
+        "startChar": 22,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "3fe3ea8c4764508fda261e87bb312b69ae063878",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
