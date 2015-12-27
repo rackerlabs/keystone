@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a7b0d38_15f954c7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-27T13:24:08Z",
+      "side": 1,
+      "message": "the common code here could be wrapped in a method, fine as it is.",
+      "revId": "ba4c0b73074a070b382a05e58b2f3fbcf456b6ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_1b5990fe",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 6
