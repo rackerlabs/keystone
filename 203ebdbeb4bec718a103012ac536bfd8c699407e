@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_01ca7e4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-12-27T02:07:37Z",
+      "side": 1,
+      "message": "You can probably make note of this blueprint/spec since its related.\n\nhttps://blueprints.launchpad.net/keystone/+spec/python3\n\nhttps://github.com/openstack/keystone-specs/blob/master/specs/mitaka/python3.rst",
+      "revId": "203ebdbeb4bec718a103012ac536bfd8c699407e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
