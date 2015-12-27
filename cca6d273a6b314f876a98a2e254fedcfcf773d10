@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_d050bad6",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-27T16:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_aac6df65",
+      "range": {
+        "startLine": 57,
+        "startChar": 5,
+        "endLine": 57,
+        "endChar": 13
+      },
+      "revId": "cca6d273a6b314f876a98a2e254fedcfcf773d10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_ead06721",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-27T11:23:49Z",
       "side": 1,
       "message": "change this to \":\" or else the command below will not be rendered correctly.\n\nsee: http://docs-draft.openstack.org/30/259730/2/check/gate-keystone-docs/65510de//doc/build/html/configuringservices.html?highlight\u003dconfiguring%20services#setting-up-credentials-with-keystone-manage-bootstrap",
+      "range": {
+        "startLine": 59,
+        "startChar": 44,
+        "endLine": 59,
+        "endChar": 46
+      },
+      "revId": "cca6d273a6b314f876a98a2e254fedcfcf773d10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_7060e6a5",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-27T16:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_ead06721",
       "range": {
         "startLine": 59,
         "startChar": 44,
