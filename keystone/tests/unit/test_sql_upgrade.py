@@ -815,6 +815,16 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
 
+    def test_create_identity_password_tables(self):
+        self.assertTableDoesNotExist('identity')
+        self.assertTableDoesNotExist('password')
+        self.upgrade(87)
+        self.assertTableColumns('identity',
+                                ['identity_id', 'extra', 'enabled'])
+        self.assertTableColumns('password',
+                                ['password_id', 'identity_id', 'user_name',
+                                 'namespace', 'password', 'expires_at'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
