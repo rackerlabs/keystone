@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_27ca254f",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T00:06:43Z",
+      "side": 1,
+      "message": "This is actually fixed in another patch, need to mplied-roles to be re-based on that in order to remove this....",
+      "range": {
+        "startLine": 31,
+        "startChar": 32,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "aa3002c22582c9cb0fecccb8e0e33d2ea9871759",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
