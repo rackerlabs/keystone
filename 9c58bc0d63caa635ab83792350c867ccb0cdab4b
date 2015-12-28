@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_a71935d9",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T00:21:52Z",
+      "side": 1,
+      "message": "this is fixed in a separate patch...which implied roles needs to be rebased upon...",
+      "range": {
+        "startLine": 31,
+        "startChar": 32,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "9c58bc0d63caa635ab83792350c867ccb0cdab4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
