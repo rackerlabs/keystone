@@ -12,7 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
+
 from oslo_config import cfg
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy import orm
 
 from keystone.common import driver_hints
 from keystone.common import sql
@@ -26,25 +31,107 @@ CONF = cfg.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
-    __tablename__ = 'user'
-    attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id']
-    id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(255), nullable=False)
-    domain_id = sql.Column(sql.String(64), nullable=False)
-    password = sql.Column(sql.String(128))
-    enabled = sql.Column(sql.Boolean)
+    __tablename__ = 'identity'
+    attributes = ['id', 'extra', 'enabled', 'default_project_id', 'name',
+                  'password', 'domain_id', 'password_id']
+
+    id = sql.Column('identity_id', sql.String(64), primary_key=True)
     extra = sql.Column(sql.JsonBlob())
+    enabled = sql.Column(sql.Boolean)
     default_project_id = sql.Column(sql.String(64))
-    # Unique constraint across two columns to create the separation
-    # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
+    passwords = orm.relationship('Password', backref='identity')
+
+    # name property
+    @hybrid_property
+    def name(self):
+        if self.passwords:
+            return self.passwords[0].user_name
+        else:
+            return None
+
+    @name.setter
+    def name(self, value):
+        if not self.passwords:
+            self.passwords.apend(Password())
+        self.passwords[0].user_name = value
+
+    @name.expression
+    def name(cls):
+        return Password.user_name
+
+    # password property
+    @hybrid_property
+    def password(self):
+        if self.passwords:
+            return self.passwords[0].password
+        else:
+            return None
+
+    @password.setter
+    def password(self, value):
+        if not self.passwords:
+            self.passwords.append(Password())
+        self.passwords[0].password = value
+
+    @password.expression
+    def password(cls):
+        return Password.password
+
+    # domain_id property
+    @hybrid_property
+    def domain_id(self):
+        if self.passwords:
+            return self.passwords[0].namespace
+        else:
+            return None
+
+    @domain_id.setter
+    def domain_id(self, value):
+        if not self.passwords:
+            self.passwords.append(Password())
+        self.passwords[0].namespace = value
+
+    @domain_id.expression
+    def domain_id(cls):
+        return Password.namespace
+
+    # password_id property
+    @hybrid_property
+    def password_id(self):
+        if self.passwords:
+            return self.passwords[0].password_id
+        else:
+            return None
+
+    @password_id.setter
+    def password_id(self, value):
+        if not self.passwords:
+            self.passwords.append(Password())
+        self.passwords[0].password_id = value
+
+    @password_id.expression
+    def password_id(cls):
+        return Password.password_id
 
     def to_dict(self, include_extra_dict=False):
         d = super(User, self).to_dict(include_extra_dict=include_extra_dict)
         if 'default_project_id' in d and d['default_project_id'] is None:
             del d['default_project_id']
         return d
+
+
+class Password(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'password'
+    attributes = ['password_id', 'identity_id', 'user_name', 'namespace',
+                  'password', 'expires_at']
+
+    password_id = sql.Column(sql.String(64), primary_key=True)
+    identity_id = sql.Column(sql.String(64),
+                             sql.ForeignKey('identity.identity_id'))
+    user_name = sql.Column(sql.String(255), nullable=False)
+    namespace = sql.Column(sql.String(64), nullable=False)
+    password = sql.Column(sql.String(128))
+    expires_at = sql.Column(sql.DateTime())
 
 
 class Group(sql.ModelBase, sql.DictBase):
@@ -65,7 +152,7 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
 
     __tablename__ = 'user_group_membership'
     user_id = sql.Column(sql.String(64),
-                         sql.ForeignKey('user.id'),
+                         sql.ForeignKey('identity.identity_id'),
                          primary_key=True)
     group_id = sql.Column(sql.String(64),
                           sql.ForeignKey('group.id'),
@@ -112,6 +199,7 @@ class Identity(identity.IdentityDriverV8):
 
     @sql.handle_conflicts(conflict_type='user')
     def create_user(self, user_id, user):
+        user['password_id'] = uuid.uuid4().hex
         user = utils.hash_user_password(user)
         session = sql.get_session()
         with session.begin():
@@ -138,9 +226,9 @@ class Identity(identity.IdentityDriverV8):
 
     def get_user_by_name(self, user_name, domain_id):
         session = sql.get_session()
-        query = session.query(User)
-        query = query.filter_by(name=user_name)
-        query = query.filter_by(domain_id=domain_id)
+        query = session.query(User).join(User.passwords)
+        query = query.filter(Password.user_name == user_name)
+        query = query.filter(Password.namespace == domain_id)
         try:
             user_ref = query.one()
         except sql.NotFound:
