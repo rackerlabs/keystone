@@ -20,21 +20,17 @@ class Router(wsgi.ComposableRouter):
     def __init__(self, controller, collection_key, key,
                  resource_descriptions=None,
                  is_entity_implemented=True,
-                 overrides=None):
+                 method_name=None):
         self.controller = controller
         self.key = key
         self.collection_key = collection_key
         self._resource_descriptions = resource_descriptions
         self._is_entity_implemented = is_entity_implemented
-        self.overrides = overrides
+        self.method_name = '%s'
+        if method_name is not None:
+            self.method_name = method_name
 
     def add_routes(self, mapper):
-        def _assign_action(action, key, overrides):
-            if overrides is not None and action in overrides:
-                return overrides[action]
-            else:
-                return '%(action)s_%(key)s' % {'action': action, 'key': key}
-
         collection_path = '/%(collection_key)s' % {
             'collection_key': self.collection_key}
         entity_path = '/%(collection_key)s/{%(key)s_id}' % {
@@ -44,27 +40,27 @@ class Router(wsgi.ComposableRouter):
         mapper.connect(
             collection_path,
             controller=self.controller,
-            action=_assign_action('create', self.key, self.overrides),
+            action=self.method_name % 'create_%s' % self.key,
             conditions=dict(method=['POST']))
         mapper.connect(
             collection_path,
             controller=self.controller,
-            action=_assign_action('list', self.collection_key, self.overrides),
+            action=self.method_name % 'list_%s' % self.collection_key,
             conditions=dict(method=['GET']))
         mapper.connect(
             entity_path,
             controller=self.controller,
-            action=_assign_action('get', self.key, self.overrides),
+            action=self.method_name % 'get_%s' % self.key,
             conditions=dict(method=['GET']))
         mapper.connect(
             entity_path,
             controller=self.controller,
-            action=_assign_action('update', self.key, self.overrides),
+            action=self.method_name % 'update_%s' % self.key,
             conditions=dict(method=['PATCH']))
         mapper.connect(
             entity_path,
             controller=self.controller,
-            action=_assign_action('delete', self.key, self.overrides),
+            action=self.method_name % 'delete_%s' % self.key,
             conditions=dict(method=['DELETE']))
 
         # Add the collection resource and entity resource to the resource
