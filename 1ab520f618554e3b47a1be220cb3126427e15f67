@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_8762f93c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 125
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T00:29:55Z",
+      "side": 1,
+      "message": "I don\u0027t think this is true - and in fact doing it in code here is not multi-process safe.  See my patch of domain specific roles for one way of doing this: https://review.openstack.org/#/c/261870/2/keystone/assignment/role_backends/sql.py",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 16
+      },
+      "revId": "1ab520f618554e3b47a1be220cb3126427e15f67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
