@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a7b0d38_c56b02b8",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-28T18:39:00Z",
+      "side": 1,
+      "message": "i think this should be a colon",
+      "range": {
+        "startLine": 52,
+        "startChar": 34,
+        "endLine": 52,
+        "endChar": 35
+      },
+      "revId": "8d5bd72ea9c04551627e43d4a33744ae49d99ca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_05282a85",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 3
