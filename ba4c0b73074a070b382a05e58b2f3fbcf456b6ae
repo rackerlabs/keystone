@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_6e8eabd1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T23:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_15f954c7",
+      "revId": "ba4c0b73074a070b382a05e58b2f3fbcf456b6ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_99fc8c73",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_0e8a871b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T23:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_99fc8c73",
+      "revId": "ba4c0b73074a070b382a05e58b2f3fbcf456b6ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_1b5990fe",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 6
@@ -47,6 +83,30 @@
       "writtenOn": "2015-12-26T08:24:48Z",
       "side": 1,
       "message": "you could just import common utils and refer to _RESERVED_CHARS from there",
+      "range": {
+        "startLine": 156,
+        "startChar": 4,
+        "endLine": 156,
+        "endChar": 18
+      },
+      "revId": "ba4c0b73074a070b382a05e58b2f3fbcf456b6ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_6e9a2b70",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T23:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_1b5990fe",
       "range": {
         "startLine": 156,
         "startChar": 4,
