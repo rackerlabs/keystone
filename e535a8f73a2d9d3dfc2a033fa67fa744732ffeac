@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_0f336ef7",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-28T14:31:41Z",
+      "side": 1,
+      "message": "It\u0027s here.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/contrib/user_crud/core.py#L131-L134",
+      "revId": "e535a8f73a2d9d3dfc2a033fa67fa744732ffeac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
