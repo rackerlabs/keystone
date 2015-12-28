@@ -101,6 +101,12 @@ class CrudExtension(wsgi.ExtensionRouter):
             action='delete_user',
             conditions=dict(method=['DELETE']))
 
+        mapper.connect('/OS-KSCRUD/users/{user_id}',
+                       controller=user_controller,
+                       action='set_user_password',
+                       conditions=dict(method=['PATCH']))
+
+
         # COMPAT(diablo): the copy with no OS-KSADM is from diablo
         mapper.connect(
             '/users/{user_id}/password',
