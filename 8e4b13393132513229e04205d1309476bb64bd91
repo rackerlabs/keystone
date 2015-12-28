@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_d3bd1ab8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-28T09:55:15Z",
+      "side": 1,
+      "message": "i think configuration doesn\u0027t need quotation mark (\u0027\u0027) to tell us it\u0027s string or not.",
+      "range": {
+        "startLine": 1267,
+        "startChar": 28,
+        "endLine": 1267,
+        "endChar": 33
+      },
+      "revId": "8e4b13393132513229e04205d1309476bb64bd91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_f074cc36",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-28T09:55:15Z",
+      "side": 1,
+      "message": "change to ``new`` to align with ``off`` and ``strict``.",
+      "range": {
+        "startLine": 1271,
+        "startChar": 31,
+        "endLine": 1271,
+        "endChar": 36
+      },
+      "revId": "8e4b13393132513229e04205d1309476bb64bd91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_30cd7466",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1273,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-28T09:55:15Z",
+      "side": 1,
+      "message": "BAD REQUEST should be 400, 401 is UNAUTHORIZED, change 401 to 400.",
+      "range": {
+        "startLine": 1273,
+        "startChar": 36,
+        "endLine": 1273,
+        "endChar": 39
+      },
+      "revId": "8e4b13393132513229e04205d1309476bb64bd91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_b0c96428",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-28T09:55:15Z",
+      "side": 1,
+      "message": "mention here that create project or domain with an unsafe name when the option is set to ``strict`` will also cause bad request to be returned.",
+      "range": {
+        "startLine": 1274,
+        "startChar": 39,
+        "endLine": 1275,
+        "endChar": 75
+      },
+      "revId": "8e4b13393132513229e04205d1309476bb64bd91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_7324665f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2792,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-28T09:55:15Z",
+      "side": 1,
+      "message": "add one testcase here that show authentication will be successful if set the option to `new` to differentiate with `strict` option.",
+      "revId": "8e4b13393132513229e04205d1309476bb64bd91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
