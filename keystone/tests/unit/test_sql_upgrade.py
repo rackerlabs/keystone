@@ -196,6 +196,23 @@ class SqlMigrateBase(unit.SQLDriverOverrides, unit.TestCase):
         s = sqlalchemy.select([table])
         return s
 
+    def assertTableCountsMatch(self, table1_name, table2_name):
+        try:
+            table1 = self.select_table(table1_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table1_name)
+        try:
+            table2 = self.select_table(table2_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table2_name)
+        session = self.Session()
+        table1_count = session.execute(table1.count()).scalar()
+        table2_count = session.execute(table2.count()).scalar()
+        if table1_count != table2_count:
+            raise AssertionError('Table counts do not match: {0} ({1}), {2} '
+                                 '({3})'.format(table1_name, table1_count,
+                                                table2_name, table2_count))
+
     def assertTableExists(self, table_name):
         try:
             self.select_table(table_name)
@@ -821,6 +838,41 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraints = inspector.get_unique_constraints('trust')
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
+
+    def test_create_identity_password_tables(self):
+        identity_table = 'identity'
+        password_table = 'password'
+        federated_table = 'federated_identity'
+        self.upgrade(87)
+        self.assertTableDoesNotExist(identity_table)
+        self.assertTableDoesNotExist(password_table)
+        self.assertTableDoesNotExist(federated_table)
+        self.upgrade(88)
+        self.assertTableColumns(identity_table,
+                                ['id',
+                                 'extra',
+                                 'enabled',
+                                 'default_project_id'])
+        self.assertTableColumns(password_table,
+                                ['name',
+                                 'domain_id',
+                                 'identity_id',
+                                 'password',
+                                 'expires_at'])
+        self.assertTableColumns(federated_table,
+                                ['id',
+                                 'identity_id',
+                                 'protocol_id',
+                                 'unique_id',
+                                 'display_name'])
+
+    def test_migrate_identity_password_tables(self):
+        identity_table = 'identity'
+        password_table = 'password'
+        user_table = 'user'
+        self.upgrade(89)
+        self.assertTableCountsMatch(user_table, identity_table)
+        self.assertTableCountsMatch(identity_table, password_table)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
