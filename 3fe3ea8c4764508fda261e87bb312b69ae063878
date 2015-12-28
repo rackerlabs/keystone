@@ -45,6 +45,30 @@
       "revId": "3fe3ea8c4764508fda261e87bb312b69ae063878",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_9f76a7d5",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-28T17:43:52Z",
+      "side": 1,
+      "message": "This patch has now merged",
+      "parentUuid": "1a7b0d38_2472237c",
+      "range": {
+        "startLine": 31,
+        "startChar": 22,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "3fe3ea8c4764508fda261e87bb312b69ae063878",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
