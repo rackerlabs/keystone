@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a7b0d38_a5c35688",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17211
+      },
+      "writtenOn": "2015-12-28T18:44:26Z",
+      "side": 1,
+      "message": "Incorrectly spelling, although, I think this stems from the blueprint having a typo as well:\n\nhttps://blueprints.launchpad.net/fuel/+spec/dynamically-build-bootstrap-docs",
+      "range": {
+        "startLine": 12,
+        "startChar": 15,
+        "endLine": 12,
+        "endChar": 23
+      },
+      "revId": "8d5bd72ea9c04551627e43d4a33744ae49d99ca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_c56b02b8",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 3
