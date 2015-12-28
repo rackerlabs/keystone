@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a7b0d38_88d0af20",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-12-28T20:08:00Z",
+      "side": 1,
+      "message": "This logic is backwards? This should iirc always be binary_type not text_type.",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_45f07291",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
