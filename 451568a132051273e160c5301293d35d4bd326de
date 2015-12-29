@@ -161,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_94cb8972",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2015-12-29T22:08:31Z",
+      "side": 1,
+      "message": "As you can see, I have used \"outer join\" operations with the \u0027user\u0027 and \u0027group\u0027 tables, for precisely the reason that you mention: the user or group might originate from an ldap back-end and therefore be absent from the database. I suppose the tables themselves should always be there.",
+      "parentUuid": "fa69d971_04d8ca52",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_4e1e4fbc",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
