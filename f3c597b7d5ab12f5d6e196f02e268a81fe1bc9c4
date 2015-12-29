@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_2abb5f10",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-29T16:01:12Z",
+      "side": 1,
+      "message": "We shouldn\u0027t do this here - we should do it once inside list_role_assignments() - since we need that to expand implied roles anyway (when listing in effective mode).  However, doing it there is a little more complex (since you must create the indirect block dicts etc.). I\u0027d be happy to do that for you if you would like, since I know that code very well.",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 138,
+        "endChar": 40
+      },
+      "revId": "f3c597b7d5ab12f5d6e196f02e268a81fe1bc9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8a404b09",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-29T16:01:12Z",
+      "side": 1,
+      "message": "We shouldn\u0027t do this here - we should do it once inside list_role_assignments() - since we need that to expand implied roles anyway (when listing in effective mode).  However, doing it there is a little more complex (since you must create the indirect block dicts etc.). I\u0027d be happy to do that for you if you would like, since I know that code very well.",
+      "range": {
+        "startLine": 154,
+        "startChar": 8,
+        "endLine": 154,
+        "endChar": 40
+      },
+      "revId": "f3c597b7d5ab12f5d6e196f02e268a81fe1bc9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8a57ebc9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1505,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-29T16:01:12Z",
+      "side": 1,
+      "message": "These don\u0027t go here..they go in the V9 driver class.\n\nInstead, here (I would suggest) we would raise not implemented for get/create/delete...and just return a list containing the prior_id for list_implied_roles (since that would mean that all code except CRUD of implied roles would function with a V8 driver)",
+      "range": {
+        "startLine": 1505,
+        "startChar": 4,
+        "endLine": 1505,
+        "endChar": 63
+      },
+      "revId": "f3c597b7d5ab12f5d6e196f02e268a81fe1bc9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
