@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_cafe4305",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-29T15:58:26Z",
+      "side": 1,
+      "message": "yes we should be able to cache the domain name too. i will do it now. thanks!",
+      "parentUuid": "1a7b0d38_8eb2f792",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_eeea9b73",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-29T00:16:09Z",
       "side": 1,
       "message": "We can avoid calling _get_role_from_assign() function by caching the fully formatted entity instead of just its id.",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_fab32298",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-29T15:58:26Z",
+      "side": 1,
+      "message": "the only reason i didn\u0027t do it like you say is i am going to be formatting a dictionary with the id\u0027s as the keys and the value as the entity then pass that to another dictionary to pretty much store the same information. I still need to clean this up, i will try it like you say and see if there are better performance gains.",
+      "parentUuid": "1a7b0d38_eeea9b73",
       "revId": "451568a132051273e160c5301293d35d4bd326de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a7b0d38_5d3ef08c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-29T15:58:26Z",
+      "side": 1,
+      "message": "I will look into this, i like the idea, i just don\u0027t know if it is possible. Since all these names are stored in different tables i would need to import all the tables and join them together to get the names. Do you think that would be more efficient then just getting one name at a time?",
+      "parentUuid": "1a7b0d38_ee14db4d",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_4e1e4fbc",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2015-12-29T00:16:09Z",
       "side": 1,
       "message": "Bug: use domain_id instead of rl_id!",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_1d0ce839",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-29T15:58:26Z",
+      "side": 1,
+      "message": "thanks! currently this whole things is a bug since the return in the \u0027effective\u0027 if statement will make all this code unreachable. lol :p  (that was pulled in from the merge i did in the last patch)",
+      "parentUuid": "1a7b0d38_4e1e4fbc",
       "revId": "451568a132051273e160c5301293d35d4bd326de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
