@@ -143,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_04d8ca52",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-29T19:12:42Z",
+      "side": 1,
+      "message": "yes I have seen that patch. How do you know these tables exist? Can\u0027t a client store their users in an ldap backend while the assignments are in an sql backend?",
+      "parentUuid": "fa69d971_9e82cdc7",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_4e1e4fbc",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
