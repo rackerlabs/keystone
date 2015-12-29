@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_3e69618c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2015-12-29T18:51:16Z",
+      "side": 1,
+      "message": "Yes, caching the complete entities will certainly result in better performance than caching just the id and going again through the result set to retrieve the entity..",
+      "parentUuid": "1a7b0d38_fab32298",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_ee14db4d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "I will look into this, i like the idea, i just don\u0027t know if it is possible. Since all these names are stored in different tables i would need to import all the tables and join them together to get the names. Do you think that would be more efficient then just getting one name at a time?",
       "parentUuid": "1a7b0d38_ee14db4d",
+      "revId": "451568a132051273e160c5301293d35d4bd326de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9e82cdc7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2015-12-29T18:51:16Z",
+      "side": 1,
+      "message": "Please have a look at this patch: https://review.openstack.org/#/c/254456/ that uses a seven table sql join query to retrieve the roll_name, domain_name, project_name, user_name and group_name attributes that pretty much lies within the capabilities of the mysql or postgresql engines, despite the inefficiency of the current db schema. It will definitely result in improved performance especially with large result sets of more than 1000 records for instance. It is actually up to you.. In case you decide not to modify the lower level sql back-end driver as part of the current patch, I will try to implement this optimization as a separate commit.",
+      "parentUuid": "1a7b0d38_5d3ef08c",
       "revId": "451568a132051273e160c5301293d35d4bd326de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
