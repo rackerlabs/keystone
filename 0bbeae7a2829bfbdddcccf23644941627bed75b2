@@ -2,6 +2,80 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_314e6fc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "-\u003e duplicate",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b1d01fcb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "this should be done in a separate commit so that it\u0027s easier for reviewers to tell which tests this is referring to.",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_31fc2f3e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "based on the docs I don\u0027t think the {} is necessary -- http://docs.sqlalchemy.org/en/latest/orm/extensions/declarative/table_config.html",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_31aaef1a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "The backend might not be based on an SQL database, so I don\u0027t think we should rely on the backend raising DBDuplicateEntry. There could be a specific error for it (or use exception.Conflict).",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_1078b2f1",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 14
@@ -19,6 +93,57 @@
         "endLine": 266,
         "endChar": 75
       },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9174fbcf",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_unique_constraint_endpoint.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "suggest move this down to where it\u0027s used. this is only used in one place, so no need to make it module scoped.",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_114fab93",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_unique_constraint_endpoint.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "I think we\u0027ll need to catch whatever exception is raised when the new constraint can\u0027t be applied and print a useful message that explains why it\u0027s failing and what to do about it.",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_111d6b73",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T21:37:35Z",
+      "side": 1,
+      "message": "this should be in test_backends. We don\u0027t have to go through the whole request stack to validate this behavior.",
       "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
