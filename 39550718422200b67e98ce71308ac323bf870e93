@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_9492a956",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "suggest change \"sqlalchemy models\" to \"database schema\". sqlalchemy models are an implementation detail.",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5473d14d",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "remove the copyright unless you work for the openstack foundation.",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_34497dd1",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "suggest change \"thing\" to \"resource\".",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 17
+      },
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d487c1d5",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "add a comment what this test is for.",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7454d553",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "suggest give a name to the [\u0027Column\u0027] magic value so that readers know what it is (banned_resources)\n\nsame comment applies at line 65.",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_34773d04",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "add a comment what this test is for.",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_1468f9f4",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "suggest move these down to where they\u0027re used.",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_1436b903",
+        "filename": "test-requirements.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T22:41:03Z",
+      "side": 1,
+      "message": "this should be oslo.db[fixtures] ?",
+      "revId": "39550718422200b67e98ce71308ac323bf870e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
