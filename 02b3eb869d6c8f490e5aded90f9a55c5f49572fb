@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_a7577dc9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T23:09:29Z",
+      "side": 1,
+      "message": "suggest change str to six.text_type",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_6720a54a",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T23:09:29Z",
+      "side": 1,
+      "message": "we shouldn\u0027t be coding keystone to mod_wsgi, we should be coding it to the wsgi standard. What does the standard say?\n\nIf we need to do something for mod_wsgi, let\u0027s do it in a filter in the paste pipeline instead.",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_88d0af20",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
