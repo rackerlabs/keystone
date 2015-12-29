@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_47eec1ed",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T23:10:58Z",
+      "side": 1,
+      "message": "I think this is the section: https://www.python.org/dev/peps/pep-3333/#unicode-issues",
+      "parentUuid": "fa69d971_6720a54a",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_88d0af20",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
