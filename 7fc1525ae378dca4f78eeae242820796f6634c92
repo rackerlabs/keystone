@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_7f6a731c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T20:58:34Z",
+      "side": 1,
+      "message": "(nit) change \"signs\" to \"sets\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 16,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_dfc6ff15",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T20:58:34Z",
+      "side": 1,
+      "message": "suggest add some text saying that the ability to move entities between domains will be removed in a future release.",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5148c35b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T20:58:34Z",
+      "side": 1,
+      "message": "is this code supposed to check domain_id_immutable somewhere?",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_1f06d720",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T20:58:34Z",
+      "side": 1,
+      "message": "(nit) remove the ,s or the (). either one is adequate.",
+      "range": {
+        "startLine": 210,
+        "startChar": 22,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_31342fdd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T20:58:34Z",
+      "side": 1,
+      "message": "suggest move after the raises since there\u0027s no need for a message if the operation isn\u0027t going to proceed.",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_11d56b42",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-29T20:58:34Z",
+      "side": 1,
+      "message": "suggest have a new exception. ValidationError is supposed to be for missing attributes.",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
