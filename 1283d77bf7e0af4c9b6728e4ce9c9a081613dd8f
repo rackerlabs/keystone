@@ -22,6 +22,30 @@
       "revId": "1283d77bf7e0af4c9b6728e4ce9c9a081613dd8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_633159a2",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-30T21:18:20Z",
+      "side": 1,
+      "message": "i was going to do something like Cristian said about making some joins in the sql driver to get all the names. This was just here prematurely lol.",
+      "parentUuid": "fa69d971_4374559b",
+      "range": {
+        "startLine": 303,
+        "startChar": 30,
+        "endLine": 303,
+        "endChar": 50
+      },
+      "revId": "1283d77bf7e0af4c9b6728e4ce9c9a081613dd8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
