@@ -65,14 +65,9 @@ class TokenFormatter(object):
         return fernet.MultiFernet(fernet_instances)
 
     def pack(self, payload):
-        """Pack a payload for transport as a token.
-
-        :type payload: six.binary_type
-        :rtype: six.text_type
-
-        """
+        """Pack a payload for transport as a token."""
         # base64 padding (if any) is not URL-safe
-        return self.crypto.encrypt(payload).rstrip(b'=').decode('utf-8')
+        return self.crypto.encrypt(payload).rstrip('=')
 
     def unpack(self, token):
         """Unpack a token, and validate the payload.
