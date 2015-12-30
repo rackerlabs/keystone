@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_4374559b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-30T21:01:36Z",
+      "side": 1,
+      "message": "Not sure why we need to add to this interface - we don\u0027t use include_names here do we?  The driver signature does not need to match the manager signature - so it\u0027s OK if include_names is handled at the manager level only",
+      "range": {
+        "startLine": 303,
+        "startChar": 30,
+        "endLine": 303,
+        "endChar": 50
+      },
+      "revId": "1283d77bf7e0af4c9b6728e4ce9c9a081613dd8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
