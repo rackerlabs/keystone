@@ -46,6 +46,30 @@
       "revId": "1283d77bf7e0af4c9b6728e4ce9c9a081613dd8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_03fe5d6b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-30T21:31:12Z",
+      "side": 1,
+      "message": "Ah, right - Ok. (reading up the earlier comments now!). Sounds like maybe that would be worth doing in a separate patch (but your call) - since I think you are going to have to have code in the manager to do this for the (common case) when users/groups are in LDAP. That would also allow for the manager to cope with V8 drivers (who would not understand the include_names parameter anyway)",
+      "parentUuid": "fa69d971_633159a2",
+      "range": {
+        "startLine": 303,
+        "startChar": 30,
+        "endLine": 303,
+        "endChar": 50
+      },
+      "revId": "1283d77bf7e0af4c9b6728e4ce9c9a081613dd8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
