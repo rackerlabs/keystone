@@ -72,6 +72,42 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_45f1d9cc",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-30T02:31:37Z",
+      "side": 1,
+      "message": "I am misunderstanding about this from this doc?\n\nQuote from pep-3333:\n\nWSGI therefore defines two kinds of \"string\":\n\n\"Native\" strings (which are always implemented using the type named str ) that are used for request/response headers and metadata\n\"Bytestrings\" (which are implemented using the bytes type in Python 3, and str elsewhere), that are used for the bodies of requests and responses (e.g. POST/PUT input data and HTML page outputs).\n\n\nWe are handling with the headers instead of body, all we should do is making sure it is \"Native\" strings, right?\n\n\nQuote from pep-3333:\n\nDo not be confused however: even if Python\u0027s str type is actually Unicode \"under the hood\", the content of native strings must still be translatable to bytes via the Latin-1 encoding! (See the section on Unicode Issues later in this document for more details.)\n\n\nOn python3, `mod_wsgi` use `PyUnicode_AsLatin1String` to translate unicode_based string (str) to bytes internally.",
+      "parentUuid": "fa69d971_6795053f",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e5afad92",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-12-30T02:31:37Z",
+      "side": 1,
+      "message": "Quote from this section:\n\nAll encoding/decoding must be handled by the application; all strings passed to or from the server must be of type str or bytes , never unicode .\n\n\nIt is saying all strings passed to or from must *str* or bytes. Is there anything wrong to use type str?",
+      "parentUuid": "fa69d971_47eec1ed",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_88d0af20",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
