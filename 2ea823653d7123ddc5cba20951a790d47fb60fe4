@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_a6dbea1a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4108,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-12-30T15:17:33Z",
+      "side": 1,
+      "message": "Fixed (assigned the returned domain to the domains dict.)",
+      "parentUuid": "1a7b0d38_0a02933d",
+      "range": {
+        "startLine": 4108,
+        "startChar": 16,
+        "endLine": 4108,
+        "endChar": 68
+      },
+      "revId": "2ea823653d7123ddc5cba20951a790d47fb60fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_aa47bfba",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_6604127e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4112,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-12-30T15:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0d38_aa47bfba",
+      "range": {
+        "startLine": 4112,
+        "startChar": 22,
+        "endLine": 4112,
+        "endChar": 52
+      },
+      "revId": "2ea823653d7123ddc5cba20951a790d47fb60fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_8ac3e3ec",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 6
@@ -59,6 +107,30 @@
       "writtenOn": "2015-12-27T12:21:04Z",
       "side": 1,
       "message": "how do you know it returns domain5 and domain15?  suppose it returns domain4 and domain14, does those assertion is wise enough to prove the filtering is working as expected?",
+      "range": {
+        "startLine": 4134,
+        "startChar": 8,
+        "endLine": 4136,
+        "endChar": 54
+      },
+      "revId": "2ea823653d7123ddc5cba20951a790d47fb60fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_260cda93",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4136,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2015-12-30T15:17:33Z",
+      "side": 1,
+      "message": "Changed these lines (check against the list with 2 domains: 5 and 15)",
+      "parentUuid": "1a7b0d38_8ac3e3ec",
       "range": {
         "startLine": 4134,
         "startChar": 8,
