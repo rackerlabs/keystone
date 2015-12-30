@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_43ba15e3",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-30T21:18:12Z",
+      "side": 1,
+      "message": "So I assume at some point in the patch chain we will require the url_safeness to be set to \"strict\"...which means than we know the \u0027/\u0027 can\u0027t be in a project or domain name...?",
+      "range": {
+        "startLine": 437,
+        "startChar": 4,
+        "endLine": 437,
+        "endChar": 19
+      },
+      "revId": "7ab45049c35ee50e478f9b22a6d2cd2da201ffdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a300b1ab",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 11
