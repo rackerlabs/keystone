@@ -108,6 +108,41 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_699f0860",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-30T14:02:27Z",
+      "side": 1,
+      "message": "I agree that https://www.python.org/dev/peps/pep-3333/#a-note-on-string-types says that headers should be str, so I\u0027d be fine with that as a solution.",
+      "parentUuid": "fa69d971_e5afad92",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_49bb24c5",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-30T14:02:27Z",
+      "side": 1,
+      "message": "since wsgi requires str, it\u0027s confusing to use six here, just use str.",
+      "revId": "02b3eb869d6c8f490e5aded90f9a55c5f49572fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_88d0af20",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
