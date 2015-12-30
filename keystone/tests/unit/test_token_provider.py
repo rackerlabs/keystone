@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+from six.moves import reload_module
 
 from oslo_config import cfg
 from oslo_utils import timeutils
@@ -809,7 +810,8 @@ class PKIProviderTests(object):
         self.cms.subprocess = self.target_subprocess
         self.environment.subprocess = self.target_subprocess
 
-        reload(pki)  # force module reload so the imports get re-evaluated
+        # force module reload so the imports get re-evaluated
+        reload_module(pki)
 
     def test_get_token_id_error_handling(self):
         # cause command-line failure
