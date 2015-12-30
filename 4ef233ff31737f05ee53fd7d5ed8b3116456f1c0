@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_46722ee7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-30T15:12:04Z",
+      "side": 1,
+      "message": "I would suggest you use unit.new_domain_ref() instead of this line",
+      "range": {
+        "startLine": 4107,
+        "startChar": 12,
+        "endLine": 4107,
+        "endChar": 66
+      },
+      "revId": "4ef233ff31737f05ee53fd7d5ed8b3116456f1c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
