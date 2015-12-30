@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_04467123",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-30T14:24:00Z",
+      "side": 0,
+      "message": "This should be split up into separate changes - 1 to remove default_resource_driver (and default_role_driver?) and a separate one to remove ldap drivers.",
+      "revId": "6d7e9e40375c5d4a661b7c08692841a127681cac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
