@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_e3ff8932",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-30T21:41:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_354de972",
+      "range": {
+        "startLine": 750,
+        "startChar": 8,
+        "endLine": 750,
+        "endChar": 29
+      },
+      "revId": "5d7a642baf9ec95509b4f5f71ef4aa2c60a79bc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_d837e4e1",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-30T12:37:26Z",
       "side": 1,
       "message": "Is it possible to rename these vars? status_OK makes me believe the status is always `OK`, `created` etc. but actually, it could be ForbiddenAction for example.\n\nGood as it is, I saw this is used in other places.",
+      "range": {
+        "startLine": 751,
+        "startChar": 8,
+        "endLine": 751,
+        "endChar": 49
+      },
+      "revId": "5d7a642baf9ec95509b4f5f71ef4aa2c60a79bc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a3f9914f",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-30T21:41:35Z",
+      "side": 1,
+      "message": "I added a comment to make this clearer.",
+      "parentUuid": "fa69d971_d837e4e1",
       "range": {
         "startLine": 751,
         "startChar": 8,
