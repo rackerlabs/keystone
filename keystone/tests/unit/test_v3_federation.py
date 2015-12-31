@@ -1154,7 +1154,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
         url = self.base_url(suffix=idp_id)
         self.patch(url, body={'identity_provider': body},
-                   expected_status=http_client.FORBIDDEN)
+                   expected_status=http_client.BAD_REQUEST)
 
     def test_update_nonexistent_idp(self):
         """Update nonexistent IdP
