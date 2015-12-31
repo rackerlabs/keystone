@@ -46,6 +46,30 @@
       "revId": "392ffc40609259d27e6afc47297858800e1d891a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_65494b8b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-31T14:52:41Z",
+      "side": 1,
+      "message": "I agree with Dave",
+      "parentUuid": "fa69d971_346b8b20",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "392ffc40609259d27e6afc47297858800e1d891a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
