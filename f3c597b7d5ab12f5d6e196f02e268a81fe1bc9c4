@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_f238a03f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-12-31T16:20:52Z",
+      "side": 1,
+      "message": "do we ever update checked_roles?",
+      "range": {
+        "startLine": 102,
+        "startChar": 12,
+        "endLine": 102,
+        "endChar": 25
+      },
+      "revId": "f3c597b7d5ab12f5d6e196f02e268a81fe1bc9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_2abb5f10",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 29
