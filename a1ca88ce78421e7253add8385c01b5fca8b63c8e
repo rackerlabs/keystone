@@ -16,6 +16,24 @@
       "revId": "a1ca88ce78421e7253add8385c01b5fca8b63c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_80378daf",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-31T15:08:50Z",
+      "side": 1,
+      "message": "We should be able to get rid of this when we remove eventlet support.",
+      "parentUuid": "fa69d971_c0b90530",
+      "revId": "a1ca88ce78421e7253add8385c01b5fca8b63c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
