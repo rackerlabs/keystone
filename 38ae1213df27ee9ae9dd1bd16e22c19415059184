@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_52797dfb",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1722,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-31T04:30:50Z",
+      "side": 1,
+      "message": "\"url\" is not a word.\n\"URL\"",
+      "range": {
+        "startLine": 1722,
+        "startChar": 63,
+        "endLine": 1722,
+        "endChar": 66
+      },
+      "revId": "38ae1213df27ee9ae9dd1bd16e22c19415059184",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b21d59bf",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1723,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-31T04:30:50Z",
+      "side": 1,
+      "message": "URL",
+      "range": {
+        "startLine": 1723,
+        "startChar": 75,
+        "endLine": 1723,
+        "endChar": 78
+      },
+      "revId": "38ae1213df27ee9ae9dd1bd16e22c19415059184",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b27479fd",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1729,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-31T04:30:50Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1729,
+        "startChar": 74,
+        "endLine": 1729,
+        "endChar": 77
+      },
+      "revId": "38ae1213df27ee9ae9dd1bd16e22c19415059184",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
