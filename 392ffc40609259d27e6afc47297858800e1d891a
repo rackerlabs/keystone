@@ -70,6 +70,30 @@
       "revId": "392ffc40609259d27e6afc47297858800e1d891a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_127a14f2",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-12-31T16:26:15Z",
+      "side": 1,
+      "message": "hi,\n\nimport six was not required as it is used in mock, so i have removed it.\n\nThank you for your reviews.",
+      "parentUuid": "fa69d971_65494b8b",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "392ffc40609259d27e6afc47297858800e1d891a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
