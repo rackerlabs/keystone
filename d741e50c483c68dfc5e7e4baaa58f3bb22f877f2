@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_f73e63b7",
+        "filename": "releasenotes/notes/bp-url-safe-naming-ad90d6a659f5bf3c.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-31T02:13:20Z",
+      "side": 1,
+      "message": "remove the extra \"blueprint\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "d741e50c483c68dfc5e7e4baaa58f3bb22f877f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
