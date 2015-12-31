@@ -55,7 +55,6 @@ class IdentityProvider(_ControllerBase):
     collection_name = 'identity_providers'
     member_name = 'identity_provider'
 
-    _mutable_parameters = frozenset(['description', 'enabled', 'remote_ids'])
     _public_parameters = frozenset(['id', 'enabled', 'description',
                                     'remote_ids', 'links'
                                     ])
@@ -95,7 +94,6 @@ class IdentityProvider(_ControllerBase):
     def create_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
         identity_provider.setdefault('enabled', False)
-        IdentityProvider.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(context, idp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
@@ -119,7 +117,6 @@ class IdentityProvider(_ControllerBase):
     @validation.validated(schema.identity_provider_update, 'identity_provider')
     def update_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
-        IdentityProvider.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
         return IdentityProvider.wrap_member(context, idp_ref)
 
@@ -464,8 +461,6 @@ class ServiceProvider(_ControllerBase):
     collection_name = 'service_providers'
     member_name = 'service_provider'
 
-    _mutable_parameters = frozenset(['auth_url', 'description', 'enabled',
-                                     'relay_state_prefix', 'sp_url'])
     _public_parameters = frozenset(['auth_url', 'id', 'enabled', 'description',
                                     'links', 'relay_state_prefix', 'sp_url'])
 
@@ -476,7 +471,6 @@ class ServiceProvider(_ControllerBase):
         service_provider.setdefault('enabled', False)
         service_provider.setdefault('relay_state_prefix',
                                     CONF.saml.relay_state_prefix)
-        ServiceProvider.check_immutable_params(service_provider)
         sp_ref = self.federation_api.create_sp(sp_id, service_provider)
         response = ServiceProvider.wrap_member(context, sp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
@@ -500,7 +494,6 @@ class ServiceProvider(_ControllerBase):
     @validation.validated(schema.service_provider_update, 'service_provider')
     def update_service_provider(self, context, sp_id, service_provider):
         service_provider = self._normalize_dict(service_provider)
-        ServiceProvider.check_immutable_params(service_provider)
         sp_ref = self.federation_api.update_sp(sp_id, service_provider)
         return ServiceProvider.wrap_member(context, sp_ref)
 

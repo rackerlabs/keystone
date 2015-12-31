@@ -1136,26 +1136,6 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
             else:
                 self.assertEqual(body[key], updated_idp.get(key))
 
-    def test_update_idp_immutable_attributes(self):
-        """Update IdP's immutable parameters.
-
-        Expect HTTP BAD REQUEST.
-
-        """
-        default_resp = self._create_default_idp()
-        default_idp = self._fetch_attribute_from_response(default_resp,
-                                                          'identity_provider')
-        idp_id = default_idp.get('id')
-        self.assertIsNotNone(idp_id)
-
-        body = self._http_idp_input()
-        body['id'] = uuid.uuid4().hex
-        body['protocols'] = [uuid.uuid4().hex, uuid.uuid4().hex]
-
-        url = self.base_url(suffix=idp_id)
-        self.patch(url, body={'identity_provider': body},
-                   expected_status=http_client.BAD_REQUEST)
-
     def test_update_nonexistent_idp(self):
         """Update nonexistent IdP
 
@@ -3206,18 +3186,6 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
         self.assertDictEqual(patch_result['service_provider'],
                              get_result['service_provider'])
-
-    def test_update_service_provider_immutable_parameters(self):
-        """Update immutable attributes in service provider.
-
-        In this particular case the test will try to change ``id`` attribute.
-        The server should return an HTTP 403 Forbidden error code.
-
-        """
-        new_sp_ref = {'id': uuid.uuid4().hex}
-        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
-        self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=http_client.BAD_REQUEST)
 
     def test_update_service_provider_unknown_parameter(self):
         new_sp_ref = self.sp_ref()
