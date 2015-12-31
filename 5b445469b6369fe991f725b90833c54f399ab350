@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_2593535d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-31T14:33:21Z",
+      "side": 1,
+      "message": "we shouldn\u0027t be coding keystone to work with mod_wsgi, but instead with the wsgi standard. Reference  https://www.python.org/dev/peps/pep-3333/#a-note-on-string-types",
+      "revId": "5b445469b6369fe991f725b90833c54f399ab350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_257a7325",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-31T14:33:21Z",
+      "side": 1,
+      "message": "No need to mention mod_wsgi. We need to follow the standard.",
+      "revId": "5b445469b6369fe991f725b90833c54f399ab350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a5098397",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-12-31T14:33:21Z",
+      "side": 1,
+      "message": "This should be moved up to line 727 where this function is already dealing with headers.",
+      "revId": "5b445469b6369fe991f725b90833c54f399ab350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
