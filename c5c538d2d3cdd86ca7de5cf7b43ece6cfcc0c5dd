@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_3230789e",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2015-12-31T16:05:27Z",
+      "side": 1,
+      "message": "maybe we could bump this down to the next line so we don\u0027t have to use the forward slash (doc: http://docs.openstack.org/developer/hacking/#general)\n\npreferred:\nhttp://paste.openstack.org/show/482895",
+      "range": {
+        "startLine": 158,
+        "startChar": 65,
+        "endLine": 158,
+        "endChar": 66
+      },
+      "revId": "c5c538d2d3cdd86ca7de5cf7b43ece6cfcc0c5dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
