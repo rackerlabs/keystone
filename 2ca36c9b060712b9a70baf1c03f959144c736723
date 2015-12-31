@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_34cb9655",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1935,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-31T05:50:38Z",
+      "side": 1,
+      "message": "Add a \".\" after the \"body\".",
+      "range": {
+        "startLine": 1935,
+        "startChar": 62,
+        "endLine": 1935,
+        "endChar": 65
+      },
+      "revId": "2ca36c9b060712b9a70baf1c03f959144c736723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_54c88a55",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1945,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2015-12-31T05:50:38Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1945,
+        "startChar": 61,
+        "endLine": 1945,
+        "endChar": 64
+      },
+      "revId": "2ca36c9b060712b9a70baf1c03f959144c736723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
