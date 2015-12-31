@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_17fe976b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-31T03:11:36Z",
+      "side": 1,
+      "message": "this line is causing a pep8 failure",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "96f51a0c742e074b47405fda66c3c2bdaf7b8b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_77303357",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-31T03:11:36Z",
+      "side": 1,
+      "message": "this try/catch block seems unnecessary. it\u0027s a test, are we really expecting things to break unexpectedly?",
+      "range": {
+        "startLine": 4108,
+        "startChar": 12,
+        "endLine": 4111,
+        "endChar": 38
+      },
+      "revId": "96f51a0c742e074b47405fda66c3c2bdaf7b8b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
