@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_5cee768c",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-12-31T01:52:13Z",
+      "side": 1,
+      "message": "this should go in the next section of imports, since six is a third party library",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 35
+      },
+      "revId": "bed39eb78c93083887bfe348a6ca0d80018b7f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
