@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_ec575f00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "role id, user_id or group id, project id or domain id.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 60
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0c72f3ad",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "change all of these to ({...}) or remove the remove all of the extra () for consistency. Good as is!",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8c47c34a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "Give some words here to explain the new param `include_names`, what\u0027s the new params used for and how to use.",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_6cba8f25",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "I like the idea of cache, but you need update the cache once the name of these entities got changed.\n\none example is user, i can update user\u0027s name but once user\u0027s name has been updated, the cache should sync up with the change.",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_6c636fdd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "change the name of the var that is more meaningful.",
+      "range": {
+        "startLine": 835,
+        "startChar": 12,
+        "endLine": 835,
+        "endChar": 18
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4c9f8bb4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "how about:\n user_id \u003d role_asgmt.get(\u0027user_id\u0027)\n if user_id:\n     ...\n\ngood as it is.",
+      "range": {
+        "startLine": 836,
+        "startChar": 0,
+        "endLine": 837,
+        "endChar": 47
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4ced4b24",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T12:24:44Z",
+      "side": 1,
+      "message": "rather than call the API here, could we get all of these data from the backend driver when the assignment is assembled?\n\n\nthe pros for this is the api call will not be needed and backend call will be done only once.\n\n\nthen if you want all of these name info, you can just pick it up.",
+      "range": {
+        "startLine": 841,
+        "startChar": 20,
+        "endLine": 841,
+        "endChar": 63
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
