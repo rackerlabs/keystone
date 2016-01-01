@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_59674c25",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-01T20:08:35Z",
+      "side": 1,
+      "message": "I need to add deprecation warning here....",
+      "range": {
+        "startLine": 955,
+        "startChar": 8,
+        "endLine": 955,
+        "endChar": 36
+      },
+      "revId": "6fe4074537709c4c479fdf26128cd1a469c85baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
