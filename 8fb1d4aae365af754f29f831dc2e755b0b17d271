@@ -76,6 +76,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_19ba346f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-01T20:05:51Z",
+      "side": 1,
+      "message": "isn\u0027t this just a cache during the life of processing this call? In which case, I\u0027m not sure we need to worry about that...",
+      "parentUuid": "fa69d971_6cba8f25",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_6c636fdd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
