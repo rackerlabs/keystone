@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_9b037f42",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-01T20:04:26Z",
+      "side": 0,
+      "message": "do we need to move this in this patch?",
+      "range": {
+        "startLine": 966,
+        "startChar": 8,
+        "endLine": 966,
+        "endChar": 31
+      },
+      "revId": "2d6c113e36f836fd5990146ee9cd9191674c9e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
