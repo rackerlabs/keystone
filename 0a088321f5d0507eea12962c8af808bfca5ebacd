@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_06a3b250",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T11:29:41Z",
+      "side": 1,
+      "message": "looks like you forgot to deprecate this.",
+      "range": {
+        "startLine": 434,
+        "startChar": 0,
+        "endLine": 435,
+        "endChar": 36
+      },
+      "revId": "0a088321f5d0507eea12962c8af808bfca5ebacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_617858f3",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T11:29:41Z",
+      "side": 1,
+      "message": "just out of curiosity, why you name this as `api_v3.py` but `sql.py` for other similar work you have done.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 1
+      },
+      "revId": "0a088321f5d0507eea12962c8af808bfca5ebacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_41643448",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T11:29:41Z",
+      "side": 1,
+      "message": "what about other testcases? ServiceProviderTests or MappingCRUDTests for example.",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 57
+      },
+      "revId": "0a088321f5d0507eea12962c8af808bfca5ebacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_cc0ffb2c",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T11:29:41Z",
+      "side": 1,
+      "message": "L29 haven\u0027t cover this?",
+      "revId": "0a088321f5d0507eea12962c8af808bfca5ebacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_61305802",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T11:29:41Z",
+      "side": 1,
+      "message": "why do this change?",
+      "revId": "0a088321f5d0507eea12962c8af808bfca5ebacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ac140744",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-01T11:29:41Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "0a088321f5d0507eea12962c8af808bfca5ebacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
