@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_6fdcbe12",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T02:09:50Z",
+      "side": 1,
+      "message": "agreed, so I mentioned the standard here and provide the link, keep `mod_wsgi` here since the issue is raised from mod_wsgi.",
+      "parentUuid": "fa69d971_257a7325",
+      "revId": "5b445469b6369fe991f725b90833c54f399ab350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a5098397",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2015-12-31T14:33:21Z",
       "side": 1,
       "message": "This should be moved up to line 727 where this function is already dealing with headers.",
+      "revId": "5b445469b6369fe991f725b90833c54f399ab350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_afd2b6fe",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T02:09:50Z",
+      "side": 1,
+      "message": "emm, I did this intentionally since here is where headers will be actually passed out. And headers still be modified between L727 and here.",
+      "parentUuid": "fa69d971_a5098397",
       "revId": "5b445469b6369fe991f725b90833c54f399ab350",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
