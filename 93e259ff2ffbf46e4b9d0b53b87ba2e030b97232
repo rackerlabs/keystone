@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_48ea1011",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "change this to project[\u0027id\u0027], i believe this tesetcase gives the wrong value for this parameters, this could be a separate review.",
+      "range": {
+        "startLine": 806,
+        "startChar": 26,
+        "endLine": 806,
+        "endChar": 36
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ed73d6e5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "could you pls switch to use unit.new_project_ref()?",
+      "range": {
+        "startLine": 810,
+        "startChar": 0,
+        "endLine": 814,
+        "endChar": 61
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_68ed9424",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "change this to project[\u0027id\u0027]",
+      "range": {
+        "startLine": 818,
+        "startChar": 26,
+        "endLine": 818,
+        "endChar": 37
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_6803540e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 2518,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "create a new test to test the new feature rather than modify existing testcase that still valid.",
+      "range": {
+        "startLine": 2518,
+        "startChar": 8,
+        "endLine": 2518,
+        "endChar": 43
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c814c045",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 2592,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "pls use unit.new_project_ref() and also apply to other occurrence.",
+      "range": {
+        "startLine": 2586,
+        "startChar": 0,
+        "endLine": 2592,
+        "endChar": 42
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_28247cad",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "every domain in ldap backend should count?",
+      "range": {
+        "startLine": 172,
+        "startChar": 29,
+        "endLine": 172,
+        "endChar": 46
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a8306ce9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T13:12:08Z",
+      "side": 1,
+      "message": "this testcase should in test_backend.py and override if needed, comments the reason if the domain deletion is totally banned for ldap backend.",
+      "range": {
+        "startLine": 1709,
+        "startChar": 4,
+        "endLine": 1709,
+        "endChar": 32
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
