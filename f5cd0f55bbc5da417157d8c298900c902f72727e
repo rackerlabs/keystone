@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_f299756f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3214,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-02T06:24:08Z",
+      "side": 0,
+      "message": "actually, this statue code is wrong, and this testcase is needed since the testcase should be in test_validation.py rather than the restful test like this.",
+      "range": {
+        "startLine": 3214,
+        "startChar": 41,
+        "endLine": 3214,
+        "endChar": 65
+      },
+      "revId": "f5cd0f55bbc5da417157d8c298900c902f72727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
