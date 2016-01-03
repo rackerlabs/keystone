@@ -404,7 +404,11 @@ class V3TokenDataHelper(object):
                 refs = [{'role_id': role['id']} for role in trust['roles']]
                 effective_roles = self.assignment_api.add_implied_roles(refs)
                 for trust_role in effective_roles:
-
+                    # As part of stripping out any roles the trustor no longer
+                    # has, this will also strip out any domain roles (since
+                    # these will not appear in 'roles', having already been
+                    # removed by the calls made in self._get_roles_for_user()
+                    # above.
                     match_roles = [x for x in roles
                                    if x['id'] == trust_role['role_id']]
                     if match_roles:
