@@ -622,41 +622,45 @@ class Manager(manager.Manager):
             indirect['role_id'] = prior_ref['role_id']
             return implied_ref
 
-        if not CONF.token.infer_roles:
-            # If we could not have had inferred roles then there won't be any
-            # filtering required.
-            return refs
-        try:
-            implied_roles_cache = {}
-            refs_to_check = list(refs)
-            ref_results = list(refs)
-            while(refs_to_check):
-                next_ref = refs_to_check.pop()
-                next_role_id = next_ref['role_id']
-                if next_role_id in implied_roles_cache:
-                    implied_roles = implied_roles_cache[next_role_id]
-                else:
-                    implied_roles = (
-                        self.role_api.list_implied_roles(next_role_id))
-                    implied_roles_cache[next_role_id] = implied_roles
-                for implied_role in implied_roles:
-                    implied_ref = (
-                        _make_implied_ref_copy(
-                            next_ref, implied_role['implied_role_id']))
-                    ref_results.append(implied_ref)
-                    refs_to_check.append(implied_ref)
-        except exception.NotImplemented:
-            LOG.debug('Role driver does not support implied roles.')
+        def _role_is_global(role_id):
+            ref = self.role_api.get_role(role_id)
+            return (ref['domain_id'] is None)
 
-        # Finally, if we need to filer by role_id, only return those that match
-        if role_id:
-            filter_results = []
-            for ref in ref_results:
-                if ref['role_id'] == role_id:
-                    filter_results.append(ref)
-            return filter_results
-        else:
-            return ref_results
+        ref_results = list(refs)
+        if CONF.token.infer_roles:
+            try:
+                implied_roles_cache = {}
+                refs_to_check = list(refs)
+                while(refs_to_check):
+                    next_ref = refs_to_check.pop()
+                    next_role_id = next_ref['role_id']
+                    if next_role_id in implied_roles_cache:
+                        implied_roles = implied_roles_cache[next_role_id]
+                    else:
+                        implied_roles = (
+                            self.role_api.list_implied_roles(next_role_id))
+                        implied_roles_cache[next_role_id] = implied_roles
+                    for implied_role in implied_roles:
+                        implied_ref = (
+                            _make_implied_ref_copy(
+                                next_ref, implied_role['implied_role_id']))
+                        ref_results.append(implied_ref)
+                        refs_to_check.append(implied_ref)
+            except exception.NotImplemented:
+                LOG.debug('Role driver does not support implied roles.')
+
+        # Finally, strip out any domain specific roles that are in the output,
+        # since they have done their job at inferring whatever global roles
+        # were in their inference rules. At the same time we apply the post
+        # processing filter by role_id, if one was defined.
+
+        filter_results = []
+        for ref in ref_results:
+            if (_role_is_global(ref['role_id']) and
+                    (not role_id or ref['role_id'] == role_id)):
+                filter_results.append(ref)
+
+        return filter_results
 
     def _list_effective_role_assignments(self, role_id, user_id, group_id,
                                          domain_id, project_id, subtree_ids,
