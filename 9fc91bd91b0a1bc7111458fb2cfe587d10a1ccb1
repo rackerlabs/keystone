@@ -2,6 +2,121 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_e99bc3c7",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-03T14:00:24Z",
+      "side": 1,
+      "message": "irrelevant change.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c9a83fde",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-03T14:00:24Z",
+      "side": 1,
+      "message": "is that possible to support the config like this? i think most of config do it in this way.\n\nnotification_opt_out \u003d identity.user.created, identity.role.created",
+      "range": {
+        "startLine": 432,
+        "startChar": 0,
+        "endLine": 433,
+        "endChar": 48
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_495e8f13",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-03T14:00:24Z",
+      "side": 1,
+      "message": "Don\u0027t update the file manually, Bot will take care of this.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 23
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a97ceb72",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-03T14:00:24Z",
+      "side": 1,
+      "message": "i am wondering why the docstring wrote like this can pass pep8? anyway, suggest to follow the convention.\n\n\"one line summary\none blank line here.\ndesc go to here.\"",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 11
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2991db99",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-03T14:00:24Z",
+      "side": 1,
+      "message": "the same.",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 230,
+        "endChar": 11
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_b80f0487",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 7
