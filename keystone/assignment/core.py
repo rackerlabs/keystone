@@ -632,11 +632,24 @@ class Manager(manager.Manager):
 
         return ref_results
 
-    def _filter_by_role_id(self, role_id, ref_results):
-        # if we arrive here, we  need to filer by role_id.
+    def _strip_domain_roles_and_filter_by_role_id(self, role_id, ref_results):
+        """Post process assignment list for domain roles and role filter.
+
+        Domain roles are only designed to do the job of inferring other roles
+        and since that has been done before this method is called, we need to
+        remove any assignments that include a domain role. In addition, if
+        role_id is specified, this means that we should only return any
+        assignment refs that include this role.
+
+        """
+        def _role_is_global(role_id):
+            ref = self.role_api.get_role(role_id)
+            return (ref['domain_id'] is None)
+
         filter_results = []
         for ref in ref_results:
-            if ref['role_id'] == role_id:
+            if (_role_is_global(ref['role_id']) and
+                    (not role_id or ref['role_id'] == role_id)):
                 filter_results.append(ref)
         return filter_results
 
@@ -792,8 +805,7 @@ class Manager(manager.Manager):
                 subtree_ids=subtree_ids)
 
         refs = self._add_implied_roles(refs)
-        if role_id:
-            refs = self._filter_by_role_id(role_id, refs)
+        refs = self._strip_domain_roles_and_filter_by_role_id(role_id, refs)
 
         return refs
 
