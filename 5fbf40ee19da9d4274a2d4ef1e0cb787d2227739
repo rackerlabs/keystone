@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_1a0e7e3b",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T17:32:41Z",
+      "side": 1,
+      "message": "Would the use of oslo.utils reflection module help to extract the class name?  It looks like it helps with some py3 compatibility as well. http://docs.openstack.org/developer/oslo.utils/api/reflection.html#oslo_utils.reflection.get_class_name\n\nhere is a change that is using it:\nhttps://review.openstack.org/#/c/241494/",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "5fbf40ee19da9d4274a2d4ef1e0cb787d2227739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c291d89a",
+        "filename": "releasenotes/notes/deprecate-v2-apis-894284c17be881d2.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T17:32:41Z",
+      "side": 1,
+      "message": "This part of the sentence is a little confusing. Instead maybe\n\n\u0027and will not be removed in \u0027Q\u0027",
+      "range": {
+        "startLine": 7,
+        "startChar": 50,
+        "endLine": 8,
+        "endChar": 28
+      },
+      "revId": "5fbf40ee19da9d4274a2d4ef1e0cb787d2227739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
