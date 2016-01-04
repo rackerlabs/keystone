@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_7df0c3fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-04T22:07:48Z",
+      "side": 1,
+      "message": "nit: project admin should not be able to list role assignments of a project they don\u0027t have the admin role on",
+      "range": {
+        "startLine": 13,
+        "startChar": 18,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "3938945c1740a1d1a5935a57824880f57ca7e3f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9d6a5780",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-04T22:07:48Z",
+      "side": 1,
+      "message": "nit: \n\n    test_project_admin_can_list_role_assignments_on_project(self):",
+      "revId": "3938945c1740a1d1a5935a57824880f57ca7e3f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
