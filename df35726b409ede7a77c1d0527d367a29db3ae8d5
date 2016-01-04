@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_9a27ceb5",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-04T15:23:01Z",
+      "side": 1,
+      "message": "This should not require decoding. This specific test change resulted in https://bugs.launchpad.net/keystone/+bug/1528981",
+      "revId": "df35726b409ede7a77c1d0527d367a29db3ae8d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
