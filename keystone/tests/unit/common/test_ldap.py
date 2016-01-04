@@ -220,6 +220,8 @@ class LDAPDeleteTreeTest(unit.TestCase):
     def config_overrides(self):
         super(LDAPDeleteTreeTest, self).config_overrides()
         self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='assignment', driver='ldap')
+        self.config_fixture.config(group='resource', driver='ldap')
 
     def config_files(self):
         config_files = super(LDAPDeleteTreeTest, self).config_files()
@@ -370,6 +372,8 @@ class LDAPPagedResultsTest(unit.TestCase):
     def config_overrides(self):
         super(LDAPPagedResultsTest, self).config_overrides()
         self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='assignment', driver='ldap')
+        self.config_fixture.config(group='resource', driver='ldap')
 
     def config_files(self):
         config_files = super(LDAPPagedResultsTest, self).config_files()
