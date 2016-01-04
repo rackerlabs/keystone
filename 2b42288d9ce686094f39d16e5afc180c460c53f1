@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_fcde076c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-04T15:52:47Z",
+      "side": 1,
+      "message": "trustee is only one of the entities that you need to check;  trustor and any users in the redelgation of trusts chain.",
+      "revId": "2b42288d9ce686094f39d16e5afc180c460c53f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
