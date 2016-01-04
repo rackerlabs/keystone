@@ -632,6 +632,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_40a2b24c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-04T22:45:04Z",
+      "side": 1,
+      "message": "this is the signature of the driver method....not the manager method - and that\u0027s not changing in this patch, I think?",
+      "parentUuid": "fa69d971_9d7fb7aa",
+      "range": {
+        "startLine": 1230,
+        "startChar": 30,
+        "endLine": 1230,
+        "endChar": 43
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_799490e1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
