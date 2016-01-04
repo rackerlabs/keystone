@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_2db8dce4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-04T20:55:44Z",
+      "side": 1,
+      "message": "++ to not changing those in this patch",
+      "parentUuid": "fa69d971_72e1d3cf",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_8c47c34a",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
