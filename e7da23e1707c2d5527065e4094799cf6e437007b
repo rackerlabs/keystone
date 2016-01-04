@@ -22,6 +22,30 @@
       "revId": "e7da23e1707c2d5527065e4094799cf6e437007b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_17108900",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 2587,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 0,
+      "message": "they\u0027re not exactly useless. This is done to make the patches chain smalles. The one after this, for example, have about 800 lines. If you could review it and give us some suggestions on where to split, it\u0027d be awesome!",
+      "parentUuid": "fa69d971_682a7480",
+      "range": {
+        "startLine": 2587,
+        "startChar": 4,
+        "endLine": 2587,
+        "endChar": 19
+      },
+      "revId": "e7da23e1707c2d5527065e4094799cf6e437007b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

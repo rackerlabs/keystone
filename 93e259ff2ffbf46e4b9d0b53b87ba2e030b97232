@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_3c3fb4d7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "That\u0027s true.. I\u0027ll fix in a follow-up patchset",
+      "parentUuid": "fa69d971_48ea1011",
+      "range": {
+        "startLine": 806,
+        "startChar": 26,
+        "endLine": 806,
+        "endChar": 36
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_ed73d6e5",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 36
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-02T13:12:08Z",
       "side": 1,
       "message": "could you pls switch to use unit.new_project_ref()?",
+      "range": {
+        "startLine": 810,
+        "startChar": 0,
+        "endLine": 814,
+        "endChar": 61
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_57004101",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_ed73d6e5",
       "range": {
         "startLine": 810,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_375b4d30",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_68ed9424",
+      "range": {
+        "startLine": 818,
+        "startChar": 26,
+        "endLine": 818,
+        "endChar": 37
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_6803540e",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 36
@@ -82,6 +154,30 @@
       "writtenOn": "2016-01-02T13:12:08Z",
       "side": 1,
       "message": "create a new test to test the new feature rather than modify existing testcase that still valid.",
+      "range": {
+        "startLine": 2518,
+        "startChar": 8,
+        "endLine": 2518,
+        "endChar": 43
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_57836156",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 2518,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "this test does not make sense as it is... some design things were changed during this process, like the fact that the root_project has no longer a domain_id",
+      "parentUuid": "fa69d971_6803540e",
       "range": {
         "startLine": 2518,
         "startChar": 8,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_37802d46",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 2592,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_c814c045",
+      "range": {
+        "startLine": 2586,
+        "startChar": 0,
+        "endLine": 2592,
+        "endChar": 42
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_28247cad",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 36
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_f7693526",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "yes, in LDAP there is only 1 domain, and it\u0027ll be a project, until we remove ldap as resource backend :(",
+      "parentUuid": "fa69d971_28247cad",
+      "range": {
+        "startLine": 172,
+        "startChar": 29,
+        "endLine": 172,
+        "endChar": 46
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a8306ce9",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 36
@@ -151,6 +295,30 @@
       "writtenOn": "2016-01-02T13:12:08Z",
       "side": 1,
       "message": "this testcase should in test_backend.py and override if needed, comments the reason if the domain deletion is totally banned for ldap backend.",
+      "range": {
+        "startLine": 1709,
+        "startChar": 4,
+        "endLine": 1709,
+        "endChar": 32
+      },
+      "revId": "93e259ff2ffbf46e4b9d0b53b87ba2e030b97232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b74addaa",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T20:14:28Z",
+      "side": 1,
+      "message": "domain is immutable in LDAP... anyway, let\u0027s not pay much attention to that, once it should be removed in this release",
+      "parentUuid": "fa69d971_a8306ce9",
       "range": {
         "startLine": 1709,
         "startChar": 4,
