@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_08e866b3",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-04T21:17:52Z",
+      "side": 1,
+      "message": "Adam - is this right? should this be \u0027prior_role\u0027 ?",
+      "range": {
+        "startLine": 79,
+        "startChar": 19,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "cf418cf34e110e4eca77f715631a98a43a36ede7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_88c5363d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-04T21:17:52Z",
+      "side": 1,
+      "message": "Adam - is this right?  I think it is meant to be:\n\n/prior_role/{prior_role_id}/implies/{implied_role_id}",
+      "range": {
+        "startLine": 90,
+        "startChar": 19,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "cf418cf34e110e4eca77f715631a98a43a36ede7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
