@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_9199ec21",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-04T18:44:36Z",
+      "side": 1,
+      "message": "Although not a big deal, the \"\u003d\" should be the length of the string above it as seen in http://documentation-style-guide-sphinx.readthedocs.org/en/latest/style-guide.html#headings",
+      "parentUuid": "fa69d971_e99bc3c7",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_c9a83fde",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-03T14:00:24Z",
       "side": 1,
       "message": "is that possible to support the config like this? i think most of config do it in this way.\n\nnotification_opt_out \u003d identity.user.created, identity.role.created",
+      "range": {
+        "startLine": 432,
+        "startChar": 0,
+        "endLine": 433,
+        "endChar": 48
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e5e3c631",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-04T18:44:36Z",
+      "side": 1,
+      "message": "Since \u0027notification_opt_out\u0027 is MultiStrOpt it can be be set multiple times. Similar to \u0027notification_driver\u0027. This way it is more readable to the user.",
+      "parentUuid": "fa69d971_c9a83fde",
       "range": {
         "startLine": 432,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_11865cb9",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-04T18:44:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_495e8f13",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 23
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a97ceb72",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 7
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_d102040b",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-04T18:44:36Z",
+      "side": 1,
+      "message": "This should be fine, I\u0027m keeping it uniform with test_send_notifications seen above.",
+      "parentUuid": "fa69d971_a97ceb72",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 11
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_2991db99",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 7
@@ -105,6 +201,30 @@
       "writtenOn": "2016-01-03T14:00:24Z",
       "side": 1,
       "message": "the same.",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 230,
+        "endChar": 11
+      },
+      "revId": "9fc91bd91b0a1bc7111458fb2cfe587d10a1ccb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_63002b02",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-04T18:44:36Z",
+      "side": 1,
+      "message": "See line 207",
+      "parentUuid": "fa69d971_2991db99",
       "range": {
         "startLine": 228,
         "startChar": 0,
