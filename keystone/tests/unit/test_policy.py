@@ -91,6 +91,7 @@ class PolicyTestCase(BasePolicyTestCase):
             "example:early_or_success": [["rule:true"], ["false:false"]],
             "example:lowercase_admin": [["role:admin"], ["role:sysadmin"]],
             "example:uppercase_admin": [["role:ADMIN"], ["role:sysadmin"]],
+            "example:henry": [["None:%(henry)s"]],
         }
 
         # NOTE(vish): then overload underlying policy engine
@@ -124,6 +125,12 @@ class PolicyTestCase(BasePolicyTestCase):
         rules.enforce(credentials, action, target_mine)
         self.assertRaises(exception.ForbiddenAction, rules.enforce,
                           credentials, action, target_not_mine)
+
+    def test_henry(self):
+        target_mine = {'project_id': None}
+        credentials = {'project_id': 'fake', 'roles': [], 'henry': None}
+        action = "example:henry"
+        rules.enforce(credentials, action, target_mine)
 
     def test_early_AND_enforcement(self):
         action = "example:early_and_fail"
