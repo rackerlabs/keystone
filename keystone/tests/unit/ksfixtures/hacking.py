@@ -219,8 +219,8 @@ class HackingLogging(fixtures.Fixture):
                 LOG.info(_('text'))
                 class C:
                     def __init__(self):
-                        LOG.warn(oslo_i18n('text', {}))
-                        LOG.warn(_LW('text', {}))
+                        LOG.warning(oslo_i18n('text', {}))
+                        LOG.warning(_LW('text', {}))
             """,
             'expected_errors': [
                 (3, 9, 'K006'),
@@ -287,7 +287,7 @@ class HackingLogging(fixtures.Fixture):
                 LOG = logging.getLogger()
 
                 # ensure the correct helper is being used
-                LOG.warn(_LI('this should cause an error'))
+                LOG.warning(_LI('this should cause an error'))
 
                 # debug should not allow any helpers either
                 LOG.debug(_LI('this should cause an error'))
@@ -302,7 +302,7 @@ class HackingLogging(fixtures.Fixture):
                 # this should not be an error
                 L = log.getLogger(__name__)
                 msg = _('text')
-                L.warn(msg)
+                L.warning(msg)
                 raise Exception(msg)
             """,
             'expected_errors': [],
@@ -312,7 +312,7 @@ class HackingLogging(fixtures.Fixture):
                 L = log.getLogger(__name__)
                 def f():
                     msg = _('text')
-                    L2.warn(msg)
+                    L2.warning(msg)
                     something = True  # add an extra statement here
                     raise Exception(msg)
             """,
@@ -323,7 +323,7 @@ class HackingLogging(fixtures.Fixture):
                 LOG = log.getLogger(__name__)
                 def func():
                     msg = _('text')
-                    LOG.warn(msg)
+                    LOG.warning(msg)
                     raise Exception('some other message')
             """,
             'expected_errors': [
@@ -337,7 +337,7 @@ class HackingLogging(fixtures.Fixture):
                     msg = _('text')
                 else:
                     msg = _('text')
-                LOG.warn(msg)
+                LOG.warning(msg)
                 raise Exception(msg)
             """,
             'expected_errors': [
@@ -350,7 +350,7 @@ class HackingLogging(fixtures.Fixture):
                     msg = _('text')
                 else:
                     msg = _('text')
-                LOG.warn(msg)
+                LOG.warning(msg)
             """,
             'expected_errors': [
                 (6, 9, 'K006'),
@@ -360,7 +360,7 @@ class HackingLogging(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 msg = _LW('text')
-                LOG.warn(msg)
+                LOG.warning(msg)
                 raise Exception(msg)
             """,
             'expected_errors': [
@@ -371,7 +371,7 @@ class HackingLogging(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 msg = _LW('text')
-                LOG.warn(msg)
+                LOG.warning(msg)
                 msg = _('something else')
                 raise Exception(msg)
             """,
@@ -381,7 +381,7 @@ class HackingLogging(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 msg = _LW('hello %s') % 'world'
-                LOG.warn(msg)
+                LOG.warning(msg)
                 raise Exception(msg)
             """,
             'expected_errors': [
@@ -392,7 +392,7 @@ class HackingLogging(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 msg = _LW('hello %s') % 'world'
-                LOG.warn(msg)
+                LOG.warning(msg)
             """,
             'expected_errors': [],
         },
