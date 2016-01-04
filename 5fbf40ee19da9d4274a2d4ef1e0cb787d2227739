@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_bc4ac4aa",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-04T19:56:11Z",
+      "side": 1,
+      "message": "As we discussed on IRC, we decided to keep on this way, since it looks like reflections doesn\u0027t have the exact method we are looking for. ( get_callable_name with fully_qualified\u003dFalse) http://docs.openstack.org/developer/oslo.utils/api/reflection.html#oslo_utils.reflection.get_callable_name\n\nWe can update this later.",
+      "parentUuid": "fa69d971_eb7dd71c",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "5fbf40ee19da9d4274a2d4ef1e0cb787d2227739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_c291d89a",
         "filename": "releasenotes/notes/deprecate-v2-apis-894284c17be881d2.yaml",
         "patchSetId": 9
