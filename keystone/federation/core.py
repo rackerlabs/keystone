@@ -313,7 +313,7 @@ class FederationDriverV8(object):
     def list_sps(self):
         """List all service providers.
 
-        :returns List of sp_ref objects
+        :returns: List of sp_ref objects
         :rtype: list of dicts
 
         """
