@@ -16,6 +16,29 @@
       "revId": "4773956730c933f643a035041ca69f16b46cf253",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ffffdca7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-04T15:08:27Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be closes-bug for keystone?",
+      "range": {
+        "startLine": 13,
+        "startChar": 11,
+        "endLine": 13,
+        "endChar": 12
+      },
+      "revId": "4773956730c933f643a035041ca69f16b46cf253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
