@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_179ac963",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "oh man. I can\u0027t believe i forgot this. thanks dave!",
+      "parentUuid": "fa69d971_8c47c34a",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_43ec078f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -70,6 +88,24 @@
       "writtenOn": "2016-01-04T19:52:16Z",
       "side": 1,
       "message": "Maybe it\u0027s better to have \"include_names\" just append some additional attributes, like \"user_name\", \"user_domain_name\", \"group_name\", and not change the format altogether by storing instead the entire entity as \"user_assign\", \"group_assign\" etc. This way the life of the openstack client will be a bit easier..",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_776225af",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "That makes sense. It is just done here because adding 15ish new attributes here is kinda messy for both this method and _format_entity()",
+      "parentUuid": "fa69d971_43ec078f",
       "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -111,6 +147,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_ab783ff3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "Dave, henry is correct this is just a temporary cache",
+      "parentUuid": "fa69d971_19ba346f",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b92bb693",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -128,6 +182,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_f71cd514",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "yes that is a good call. i thought for sure i already did this. good catch!",
+      "parentUuid": "fa69d971_b92bb693",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_6c636fdd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -139,6 +211,30 @@
       "writtenOn": "2016-01-01T12:24:44Z",
       "side": 1,
       "message": "change the name of the var that is more meaningful.",
+      "range": {
+        "startLine": 835,
+        "startChar": 12,
+        "endLine": 835,
+        "endChar": 18
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8bf21b6e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_6c636fdd",
       "range": {
         "startLine": 835,
         "startChar": 12,
@@ -174,6 +270,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_f7e37503",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "I like your better :)",
+      "parentUuid": "fa69d971_4c9f8bb4",
+      "range": {
+        "startLine": 836,
+        "startChar": 0,
+        "endLine": 837,
+        "endChar": 47
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_d9857cad",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -185,6 +305,30 @@
       "writtenOn": "2016-01-01T20:04:26Z",
       "side": 1,
       "message": "So this is the key that you are passing up to the controller to interpret, I think. Although a minor point, I find the \u0027xxxx_assign\u0027 label a bit confusing...this isn\u0027t an assignment you are storing, it\u0027s the full entity. I\u0027d find it more obvious if it was called \u0027user_entity\u0027, \u0027group_entity\" etc...",
+      "range": {
+        "startLine": 839,
+        "startChar": 28,
+        "endLine": 839,
+        "endChar": 39
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7cbd3767",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_d9857cad",
       "range": {
         "startLine": 839,
         "startChar": 28,
@@ -232,6 +376,30 @@
       "side": 1,
       "message": "I understand the modifications to the back-end driver will be addressed by a separate patch. But at this level we should give the lower-level driver the chance of implementing this operation more efficiently: check for the presence of the name attributes: user_name, group_name, role_name etc. inside the record set returned by the driver and only make the api call when the names are absent.",
       "parentUuid": "fa69d971_4ced4b24",
+      "range": {
+        "startLine": 841,
+        "startChar": 20,
+        "endLine": 841,
+        "endChar": 63
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_f7f4d587",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T20:11:35Z",
+      "side": 1,
+      "message": "yes i think this will be done in a separate patch since it is going to be quite large.",
+      "parentUuid": "fa69d971_b9b5f631",
       "range": {
         "startLine": 841,
         "startChar": 20,
