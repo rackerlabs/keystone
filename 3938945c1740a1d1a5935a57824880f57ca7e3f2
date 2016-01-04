@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_00e7da11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-04T22:33:46Z",
+      "side": 1,
+      "message": "Maybe add another test when a user(non-admin) in a project should not be able to list role assignments of any other project?",
+      "range": {
+        "startLine": 15,
+        "startChar": 29,
+        "endLine": 15,
+        "endChar": 36
+      },
+      "revId": "3938945c1740a1d1a5935a57824880f57ca7e3f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_9d6a5780",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 2
