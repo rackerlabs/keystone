@@ -815,6 +815,13 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
 
+    def test_add_service_type_unique_constraint_upgrade(self):
+        self.upgrade(87)
+        inspector = reflection.Inspector.from_engine(self.engine)
+        constraints = inspector.get_unique_constraints('service')
+        constraint_names = [constraint['name'] for constraint in constraints]
+        self.assertIn('add_service_type_unique', constraint_names)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
