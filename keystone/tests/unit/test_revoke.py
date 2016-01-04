@@ -61,8 +61,8 @@ def _matches(event, token_values):
     value for the attribute, and it does not match the token, no match
     is possible, so skip the remaining checks.
 
-    :param event one revocation event to match
-    :param token_values dictionary with set of values taken from the
+    :param event: one revocation event to match
+    :param token_values: dictionary with set of values taken from the
     token
     :returns if the token matches the revocation event, indicating the
     token has been revoked
