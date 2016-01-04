@@ -53,9 +53,6 @@ class Assignment(assignment.AssignmentDriverV9):
     def default_role_driver(self):
         return 'ldap'
 
-    def default_resource_driver(self):
-        return 'ldap'
-
     def list_role_ids_for_groups_on_project(
             self, groups, project_id, project_domain_id, project_parents):
         group_dns = [self.group._id_to_dn(group_id) for group_id in groups]
