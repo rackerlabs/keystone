@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_2ac0e6df",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-04T05:03:47Z",
+      "side": 1,
+      "message": "could you pls update this as well?",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 12
+      },
+      "revId": "63a1877279bb5fbf584536301de80177d41f2294",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
