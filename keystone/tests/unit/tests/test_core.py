@@ -39,15 +39,15 @@ class TestTestCase(unit.TestCase):
         # If the arguments are invalid for the string in a log it raises an
         # exception during testing.
         self.assertThat(
-            lambda: LOG.warn('String %(p1)s %(p2)s', {'p1': 'something'}),
+            lambda: LOG.warning('String %(p1)s %(p2)s', {'p1': 'something'}),
             matchers.raises(KeyError))
 
     def test_sa_warning(self):
         self.assertThat(
-            lambda: warnings.warn('test sa warning error', exc.SAWarning),
+            lambda: warnings.warning('test sa warning error', exc.SAWarning),
             matchers.raises(exc.SAWarning))
 
     def test_deprecation_warnings_are_raised_as_exceptions_in_tests(self):
         self.assertThat(
-            lambda: warnings.warn('this is deprecated', DeprecationWarning),
+            lambda: warnings.warning('this is deprecated', DeprecationWarning),
             matchers.raises(DeprecationWarning))
