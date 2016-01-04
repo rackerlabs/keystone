@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_4ed423bc",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-04T23:56:13Z",
+      "side": 1,
+      "message": "If we back out this line the patch is working as designed. If deployments intentionally set ADMIN_ENDPOINT and PUBLIC_ENDPOINT in keystone.conf, we leave them alone because we can\u0027t assume what they are. If they are not set, then we can use whatever request URL that is passed down from the environment. If we want to take it a step further, we can submit another patch to deprecate ADMIN_ENDPOINT and PUBLIC_ENDPOINT.",
+      "range": {
+        "startLine": 377,
+        "startChar": 43,
+        "endLine": 377,
+        "endChar": 45
+      },
+      "revId": "06d55bf4086f0ea2287ec462c5e86e645b4b7cba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
