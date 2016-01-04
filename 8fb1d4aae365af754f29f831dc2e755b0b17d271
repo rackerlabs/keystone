@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_28244aad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_ec575f00",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 60
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_0c72f3ad",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 16
@@ -113,6 +137,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_5a1aa57e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_179ac963",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_43ec078f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -142,6 +184,24 @@
       "side": 1,
       "message": "That makes sense. It is just done here because adding 15ish new attributes here is kinda messy for both this method and _format_entity()",
       "parentUuid": "fa69d971_43ec078f",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7da203ff",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "I have been pondering this problem the whole time I have been working on this patch. Knowing that it will add roughly 15 new variables and be very repetitive in this method would you recommend it? Thanks in advance :)",
+      "parentUuid": "fa69d971_776225af",
       "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -236,6 +296,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_fd24b3c5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_f71cd514",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_6c636fdd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -318,6 +396,30 @@
       "side": 1,
       "message": "I like your better :)",
       "parentUuid": "fa69d971_4c9f8bb4",
+      "range": {
+        "startLine": 836,
+        "startChar": 0,
+        "endLine": 837,
+        "endChar": 47
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7d320361",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "yours ^^",
+      "parentUuid": "fa69d971_f7e37503",
       "range": {
         "startLine": 836,
         "startChar": 0,
@@ -465,6 +567,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_fd1fd305",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "Done. thanks :)",
+      "parentUuid": "fa69d971_19368252",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_fbeb9b76",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -476,6 +596,30 @@
       "writtenOn": "2016-01-01T20:04:26Z",
       "side": 1,
       "message": "do we still need to do this in this patch?",
+      "range": {
+        "startLine": 1230,
+        "startChar": 30,
+        "endLine": 1230,
+        "endChar": 43
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9d7fb7aa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T22:33:37Z",
+      "side": 1,
+      "message": "I thought since the signature of the method is changing it has to be moved. Did i mess something up?",
+      "parentUuid": "fa69d971_fbeb9b76",
       "range": {
         "startLine": 1230,
         "startChar": 30,
