@@ -948,9 +948,9 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.useFixture(database.Database())
         super(LDAPIdentity, self).setUp()
         _assert_backends(self,
-                         assignment='ldap',
+                         assignment='sql',
                          identity='ldap',
-                         resource='ldap')
+                         resource='sql')
 
     def load_fixtures(self, fixtures):
         # Override super impl since need to create group container.
@@ -1686,37 +1686,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self._assert_create_is_domain_project_not_allowed()
 
     def test_set_default_is_domain_project(self):
-        # Tests the internal method _set_default_is_domain_project, which
-        # allows either a project ref or a list of project refs
-        new_project_ref = unit.new_project_ref()
-
-        # Calling it with a dict is valid
-        updated_project_ref = (self.resource_api.driver.
-                               _set_default_is_domain_project(new_project_ref))
-
-        self.assertFalse(updated_project_ref['is_domain'])
-
-        # So it is with a list of refs
-        another_new_project_ref = unit.new_project_ref()
-        refs_list = [new_project_ref, another_new_project_ref]
-        new_refs_list = (self.resource_api.driver.
-                         _set_default_is_domain_project(refs_list))
-
-        for ref in new_refs_list:
-            self.assertFalse(ref['is_domain'])
-
-        # Passing another type is not allowed
-        self.assertRaises(ValueError,
-                          self.resource_api.driver.
-                          _set_default_is_domain_project,
-                          'foo_bar')
-
-        # A list with another type is not allowed either
-        wrong_list = [new_project_ref, 'foo_bar']
-        self.assertRaises(ValueError,
-                          self.resource_api.driver.
-                          _set_default_is_domain_project,
-                          wrong_list)
+        self.skipTest('N/A: LDAP support for resource backend is removed')
 
     def test_create_project_with_parent_id_and_without_domain_id(self):
         self._assert_create_hierarchy_not_allowed()
@@ -2023,9 +1993,9 @@ class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
 
         self.load_fixtures(default_fixtures)
         _assert_backends(self,
-                         assignment='ldap',
+                         assignment='sql',
                          identity='ldap',
-                         resource='ldap')
+                         resource='sql')
 
     def config_overrides(self):
         super(LDAPLimitTests, self).config_overrides()
@@ -2060,9 +2030,9 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                     self.user_two, self.user_badguy]:
             obj.setdefault('enabled', True)
         _assert_backends(self,
-                         assignment='ldap',
+                         assignment='sql',
                          identity='ldap',
-                         resource='ldap')
+                         resource='sql')
 
     def load_fixtures(self, fixtures):
         # Override super impl since need to create group container.
@@ -3275,7 +3245,7 @@ class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
         sqldb.recreate()
-        _assert_backends(self, assignment='ldap', identity='ldap')
+        _assert_backends(self, assignment='sql', identity='ldap')
 
     def config_overrides(self):
         super(LdapFilterTests, self).config_overrides()
