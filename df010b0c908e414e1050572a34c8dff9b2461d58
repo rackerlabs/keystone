@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_c8c56e8e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T21:29:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_adb5ac31",
+      "range": {
+        "startLine": 684,
+        "startChar": 8,
+        "endLine": 684,
+        "endChar": 69
+      },
+      "revId": "df010b0c908e414e1050572a34c8dff9b2461d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_0df4f8ef",
         "filename": "keystone/resource/core.py",
         "patchSetId": 39
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "I suspect what we want to do is actually check if is_domain is True, in which case we return NotFound, else if it is False, we call the driver method",
       "parentUuid": "fa69d971_0df4f8ef",
+      "range": {
+        "startLine": 1007,
+        "startChar": 69,
+        "endLine": 1007,
+        "endChar": 76
+      },
+      "revId": "df010b0c908e414e1050572a34c8dff9b2461d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_68f24271",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-04T21:29:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_edc0847e",
       "range": {
         "startLine": 1007,
         "startChar": 69,
