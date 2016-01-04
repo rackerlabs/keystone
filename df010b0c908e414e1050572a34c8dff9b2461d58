@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_adb5ac31",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-04T20:49:26Z",
+      "side": 1,
+      "message": "No - you should remove the meth signature from the base class altogether.  This old one goes in the ResourceDriverV8 class, and the  new one goes in the ResourceDriverV9 class (which you have done).",
+      "range": {
+        "startLine": 684,
+        "startChar": 8,
+        "endLine": 684,
+        "endChar": 69
+      },
+      "revId": "df010b0c908e414e1050572a34c8dff9b2461d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0df4f8ef",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-04T20:49:26Z",
+      "side": 1,
+      "message": "No, you can\u0027t call a V8 driver with this parameter - it won\u0027t understand it.  You should just call it without this parameter - which will mean it will operate as it did before.",
+      "range": {
+        "startLine": 1007,
+        "startChar": 69,
+        "endLine": 1007,
+        "endChar": 76
+      },
+      "revId": "df010b0c908e414e1050572a34c8dff9b2461d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
