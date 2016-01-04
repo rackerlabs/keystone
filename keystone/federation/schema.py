@@ -103,3 +103,23 @@ identity_provider_update = {
     'minProperties': 1,
     'additionalProperties': False
 }
+
+_federation_protocol_properties = {
+    'mapping_id': parameter_types.id_string
+}
+
+federation_protocol_create = {
+    'type': 'object',
+    'properties': _federation_protocol_properties,
+    # `mapping_id` is the property that cannot be ignored
+    'minProperties': 1,
+    'additionalProperties': False
+}
+
+federation_protocol_update = {
+    'type': 'object',
+    'properties': _federation_protocol_properties,
+    # `mapping_id` is the property that cannot be ignored
+    'minProperties': 1,
+    'additionalProperties': False
+}

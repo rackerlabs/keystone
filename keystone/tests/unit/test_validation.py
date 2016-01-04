@@ -1980,3 +1980,56 @@ class IdentityProviderValidationTestCase(unit.BaseTestCase):
         request_to_validate = {'remote_ids': None}
         self.create_idp_validator.validate(request_to_validate)
         self.update_idp_validator.validate(request_to_validate)
+
+
+class FederationProtocolValidationTestCase(unit.BaseTestCase):
+    """Test for V3 Federation Protocol API validation."""
+
+    def setUp(self):
+        super(FederationProtocolValidationTestCase, self).setUp()
+
+        create = federation_schema.federation_protocol_create
+        update = federation_schema.federation_protocol_update
+        self.create_protocol_validator = validators.SchemaValidator(create)
+        self.update_protocol_validator = validators.SchemaValidator(update)
+
+    def test_validate_protocol_request_succeeds(self):
+        """Test that we validate a protocol request successfully."""
+        request_to_validate = {'mapping_id': uuid.uuid4().hex}
+        self.create_protocol_validator.validate(request_to_validate)
+        self.update_protocol_validator.validate(request_to_validate)
+
+    def test_validate_protocol_request_fails_with_invalid_params(self):
+        """Exception raised when unknown parameter is found."""
+        request_to_validate = {'bogus': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_protocol_validator.validate,
+                          request_to_validate)
+
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_protocol_validator.validate,
+                          request_to_validate)
+
+    def test_validate_protocol_request_no_parameters(self):
+        """Test that schema validation with empty request body."""
+        request_to_validate = {}
+        # 'mapping_id' is required.
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_protocol_validator.validate,
+                          request_to_validate)
+
+        # 'mapping_id' is required.
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_protocol_validator.validate,
+                          request_to_validate)
+
+    def test_validate_protocol_request_fails_with_invalid_mapping_id(self):
+        """Exception raised when mapping_id is not string."""
+        request_to_validate = {'mapping_id': 12334}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_protocol_validator.validate,
+                          request_to_validate)
+
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_protocol_validator.validate,
+                          request_to_validate)
