@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_d940eaa7",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-04T19:53:35Z",
+      "side": 1,
+      "message": "nit -\u003e the consistency through keystone is using single quotes instead of double quotes",
+      "range": {
+        "startLine": 58,
+        "startChar": 28,
+        "endLine": 58,
+        "endChar": 29
+      },
+      "revId": "ace4dc2dabea694c0ab4b63fda8aee8b05049e09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
