@@ -361,19 +361,17 @@ FILE_OPTIONS = {
     ],
     'assignment': [
         cfg.StrOpt('driver',
+                   default='sql',
                    help='Entrypoint for the assignment backend driver in the '
                         'keystone.assignment namespace. Supplied drivers are '
-                        'ldap and sql. If an assignment driver is not '
-                        'specified, the identity driver will choose the '
-                        'assignment driver.'),
+                        'ldap and sql.'),
     ],
     'resource': [
         cfg.StrOpt('driver',
+                   default='sql',
                    help='Entrypoint for the resource backend driver in the '
                         'keystone.resource namespace. Supplied drivers are '
-                        'ldap and sql. If a resource driver is not specified, '
-                        'the assignment driver will choose the resource '
-                        'driver.'),
+                        'ldap and sql.'),
         cfg.BoolOpt('caching', default=True,
                     deprecated_opts=[cfg.DeprecatedOpt('caching',
                                                        group='assignment')],

@@ -78,9 +78,6 @@ class Identity(identity.IdentityDriverV8):
     def __init__(self, conf=None):
         super(Identity, self).__init__()
 
-    def default_assignment_driver(self):
-        return 'sql'
-
     @property
     def is_sql(self):
         return True

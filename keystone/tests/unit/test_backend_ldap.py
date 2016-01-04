@@ -138,6 +138,8 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def config_overrides(self):
         super(BaseLDAPIdentity, self).config_overrides()
         self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='assignment', driver='ldap')
+        self.config_fixture.config(group='resource', driver='ldap')
 
     def config_files(self):
         config_files = super(BaseLDAPIdentity, self).config_files()
@@ -2030,6 +2032,8 @@ class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
     def config_overrides(self):
         super(LDAPLimitTests, self).config_overrides()
         self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='assignment', driver='ldap')
+        self.config_fixture.config(group='resource', driver='ldap')
         self.config_fixture.config(group='identity',
                                    list_limit=len(default_fixtures.USERS) - 1)
 
@@ -3280,6 +3284,8 @@ class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
     def config_overrides(self):
         super(LdapFilterTests, self).config_overrides()
         self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='assignment', driver='ldap')
+        self.config_fixture.config(group='resource', driver='ldap')
 
     def config_files(self):
         config_files = super(LdapFilterTests, self).config_files()

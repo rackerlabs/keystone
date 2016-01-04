@@ -27,9 +27,6 @@ LOG = log.getLogger(__name__)
 
 class Resource(keystone_resource.ResourceDriverV8):
 
-    def default_assignment_driver(self):
-        return 'sql'
-
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
         if project_ref is None:
