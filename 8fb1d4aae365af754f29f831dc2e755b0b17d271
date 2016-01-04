@@ -59,6 +59,23 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_43ec078f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-01-04T19:52:16Z",
+      "side": 1,
+      "message": "Maybe it\u0027s better to have \"include_names\" just append some additional attributes, like \"user_name\", \"user_domain_name\", \"group_name\", and not change the format altogether by storing instead the entire entity as \"user_assign\", \"group_assign\" etc. This way the life of the openstack client will be a bit easier..",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_6cba8f25",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -88,6 +105,23 @@
       "side": 1,
       "message": "isn\u0027t this just a cache during the life of processing this call? In which case, I\u0027m not sure we need to worry about that...",
       "parentUuid": "fa69d971_6cba8f25",
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b92bb693",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-01-04T19:52:16Z",
+      "side": 1,
+      "message": "Check the cache for the domain entity before the api call. After the call, cache the entity for future re-use.",
       "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -180,6 +214,47 @@
         "endLine": 841,
         "endChar": 63
       },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b9b5f631",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-01-04T19:52:16Z",
+      "side": 1,
+      "message": "I understand the modifications to the back-end driver will be addressed by a separate patch. But at this level we should give the lower-level driver the chance of implementing this operation more efficiently: check for the presence of the name attributes: user_name, group_name, role_name etc. inside the record set returned by the driver and only make the api call when the names are absent.",
+      "parentUuid": "fa69d971_4ced4b24",
+      "range": {
+        "startLine": 841,
+        "startChar": 20,
+        "endLine": 841,
+        "endChar": 63
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_19368252",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-01-04T19:52:16Z",
+      "side": 1,
+      "message": "Bug: use dmn_id instead of rl_id!",
       "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
