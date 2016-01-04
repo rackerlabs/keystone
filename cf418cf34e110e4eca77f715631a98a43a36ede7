@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_5d4fff6a",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-04T21:57:31Z",
+      "side": 1,
+      "message": "Correction; we fixed the spec...that needs to change",
+      "parentUuid": "fa69d971_5d013f04",
+      "range": {
+        "startLine": 79,
+        "startChar": 19,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "cf418cf34e110e4eca77f715631a98a43a36ede7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_88c5363d",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 32
