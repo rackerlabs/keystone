@@ -63,6 +63,8 @@ class BaseBackendLdapCommon(object):
     def config_overrides(self):
         super(BaseBackendLdapCommon, self).config_overrides()
         self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='assignment', driver='ldap')
+        self.config_fixture.config(group='resource', driver='ldap')
 
     def config_files(self):
         config_files = super(BaseBackendLdapCommon, self).config_files()

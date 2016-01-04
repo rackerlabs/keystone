@@ -49,9 +49,6 @@ class Resource(resource.ResourceDriverV8):
 
         self.project = ProjectApi(CONF)
 
-    def default_assignment_driver(self):
-        return 'ldap'
-
     def _set_default_parent_project(self, ref):
         """If the parent project ID has not been set, set it to None."""
         if isinstance(ref, dict):
