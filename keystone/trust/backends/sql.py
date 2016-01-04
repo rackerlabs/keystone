@@ -46,7 +46,7 @@ class TrustModel(sql.ModelBase, sql.DictBase):
     __table_args__ = (sql.UniqueConstraint(
                       'trustor_user_id', 'trustee_user_id', 'project_id',
                       'impersonation', 'expires_at',
-                      name='duplicate_trust_constraint'),)
+                      name='duplicate_trust_constraint'), {})
 
 
 class TrustRole(sql.ModelBase):
