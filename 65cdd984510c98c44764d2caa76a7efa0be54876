@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_2355641c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-04T12:50:46Z",
+      "side": 1,
+      "message": "remove \u0027.\u0027 and no return here.",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "65cdd984510c98c44764d2caa76a7efa0be54876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a33f14d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-04T12:50:46Z",
+      "side": 1,
+      "message": "Closes-Bug: #125..",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "65cdd984510c98c44764d2caa76a7efa0be54876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4356585d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-04T12:50:46Z",
+      "side": 1,
+      "message": "this change is needn\u0027t, `__table_args__` could be a dict, a tuple, or the tuple with Keyword arguments.\n\nI don\u0027t know why keystone use {} it everywhere, but I bet it\u0027s useless, besides, it\u0027s irrelevant.\n\n\nsee: http://docs.sqlalchemy.org/en/rel_0_8/orm/extensions/declarative.html#table-configuration for details.",
+      "range": {
+        "startLine": 62,
+        "startChar": 62,
+        "endLine": 62,
+        "endChar": 65
+      },
+      "revId": "65cdd984510c98c44764d2caa76a7efa0be54876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_237ec4ae",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_service_type_unique.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-04T12:50:46Z",
+      "side": 1,
+      "message": "this change needs a testcase that prove the duplicate service creation will hit http_client.CONFLICT exception.\n\nyou may consider to add a testcase in test_v3_catalog.py.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 61
+      },
+      "revId": "65cdd984510c98c44764d2caa76a7efa0be54876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
