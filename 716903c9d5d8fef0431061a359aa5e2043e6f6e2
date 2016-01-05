@@ -16,6 +16,40 @@
       "revId": "716903c9d5d8fef0431061a359aa5e2043e6f6e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_14c4fc8e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-05T00:37:43Z",
+      "side": 1,
+      "message": "this text needs to be updated.",
+      "revId": "716903c9d5d8fef0431061a359aa5e2043e6f6e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d4b98416",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-05T00:37:43Z",
+      "side": 1,
+      "message": "this text needs to be updated.",
+      "revId": "716903c9d5d8fef0431061a359aa5e2043e6f6e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
