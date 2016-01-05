@@ -94,6 +94,54 @@
       "revId": "392ffc40609259d27e6afc47297858800e1d891a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ce548500",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18494
+      },
+      "writtenOn": "2016-01-05T08:59:30Z",
+      "side": 1,
+      "message": "I think you mean \u0027s/six.moves.builtins.print/builtins.print\u0027 but again IMO this is not required as per my above comment.",
+      "parentUuid": "fa69d971_6f884ce8",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "392ffc40609259d27e6afc47297858800e1d891a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8e23eda6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18494
+      },
+      "writtenOn": "2016-01-05T08:59:30Z",
+      "side": 1,
+      "message": "Thanks for the comments Dave.\n\nFirst of all I think you mean \u0027builtins.print\u0027 in the comment.\nSecondly to mock an object we need to specify its fully qualified name like \u0027six.moves.buitlins.print\u0027. Another example: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_kvs.py#L574\n\nKindly Refer: https://docs.python.org/3/library/unittest.mock.html#patch",
+      "parentUuid": "fa69d971_346b8b20",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "392ffc40609259d27e6afc47297858800e1d891a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
