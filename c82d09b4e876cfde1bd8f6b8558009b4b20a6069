@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_ad72570f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:16:40Z",
+      "side": 1,
+      "message": "bd? is this suppose to be: \n\n    project_ids_from_db\n\n?",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b815b740",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:16:40Z",
+      "side": 1,
+      "message": "nit: end the comment with a period.",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_185ac32a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3204,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:16:40Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b86a97b1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:16:40Z",
+      "side": 1,
+      "message": "So we don\u0027t actually tell the user that the project didn\u0027t get deleted because it doesn\u0027t exist? They have to check the logs for that information?",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_78b73f3a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:16:40Z",
+      "side": 1,
+      "message": "same comment as previous.",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
