@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_38d5471b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:35:21Z",
+      "side": 1,
+      "message": "This should have had docstrings already, but we should take the opportunity to add them now, since we are changing the method signature.",
+      "revId": "a2ac62935d39954f7304e2c3c4b9fee749db0431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_588fdb29",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:35:21Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be: \n\n    if attr \u003d\u003d \u0027enabled\u0027:\n\nat least how the method name reads. That logic makes it so that we check every attribute except \u0027enabled\u0027, right?",
+      "range": {
+        "startLine": 322,
+        "startChar": 15,
+        "endLine": 322,
+        "endChar": 18
+      },
+      "revId": "a2ac62935d39954f7304e2c3c4b9fee749db0431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_580b5b8e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2663,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:35:21Z",
+      "side": 1,
+      "message": "why do we have to create project3 manually when the hierarchy_size above is 3? Should we technically have 3 projects in our `projects_hierarchy` list?",
+      "revId": "a2ac62935d39954f7304e2c3c4b9fee749db0431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_78f09f91",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2699,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:35:21Z",
+      "side": 1,
+      "message": "here we could also make the assertion that `subtree[0]` is in-fact the same project as `project2`.",
+      "revId": "a2ac62935d39954f7304e2c3c4b9fee749db0431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_387b07f7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:35:21Z",
+      "side": 1,
+      "message": "project2 doesn\u0027t have a subtree, does it? we should maybe add a project3 under project2 so that we know it has a subtree.",
+      "revId": "a2ac62935d39954f7304e2c3c4b9fee749db0431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
