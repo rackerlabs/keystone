@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_3ef0cf66",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T22:36:00Z",
+      "side": 1,
+      "message": "nit: end with a period.",
+      "range": {
+        "startLine": 485,
+        "startChar": 49,
+        "endLine": 485,
+        "endChar": 58
+      },
+      "revId": "935297c8441c834c0d9ecfb7317fdb1d473e4a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7e7f27ab",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T22:36:00Z",
+      "side": 1,
+      "message": "nit: could we elaborate the test name so that it\u0027s a little more apparent what the outcome is?",
+      "revId": "935297c8441c834c0d9ecfb7317fdb1d473e4a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7e56472b",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T22:36:00Z",
+      "side": 1,
+      "message": "suggest adding a comment here to clarify why these variables are named the way they are.  The variable name `node3_1` doesn\u0027t clearly tell me what 3_1 means. Maybe just name them all sequentially and add a comment describing in more detail their relationships to each other.",
+      "range": {
+        "startLine": 185,
+        "startChar": 22,
+        "endLine": 185,
+        "endChar": 38
+      },
+      "revId": "935297c8441c834c0d9ecfb7317fdb1d473e4a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9ef77b58",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T22:36:00Z",
+      "side": 1,
+      "message": "suggest wrapping this in parenthesis so that we don\u0027t have to use a backslash for line continuation.",
+      "range": {
+        "startLine": 185,
+        "startChar": 41,
+        "endLine": 185,
+        "endChar": 42
+      },
+      "revId": "935297c8441c834c0d9ecfb7317fdb1d473e4a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
