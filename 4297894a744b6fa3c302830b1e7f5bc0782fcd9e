@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_6af0c5fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "bp shadow-users * (remove the / and replace it with a space)",
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8ae5f938",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "nit: order standard library dependencies first, then third party libraries. \n\n    import uuid\n\n\n    import sqlalchemy as sql",
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0a24a95d",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "The identity table doesn\u0027t exist does it? Or was this added in a previous patch set?",
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ca7e9118",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "nit: maybe instead of \"values\" we can rename this to \"records\"? A list of password_values makes it seem like: \n\n    password_values \u003d [\u0027password\u0027, \u0027p@assword\u0027, \u0027secrete\u0027, \u0027qwerty\u0027]\n\nWhen it really consists of a list of rows to be inserted into the table.",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4ab861c8",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "nit: suggest using either \u0027 or \" \n\n    \u0027identity_id\u0027: user[\u0027id\u0027],",
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0ae589da",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "we should ensure that we upgrade to at least 86 before making the following assertions: \n\n    self.upgrade(86)",
+      "range": {
+        "startLine": 818,
+        "startChar": 8,
+        "endLine": 818,
+        "endChar": 44
+      },
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_aaed5db8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T20:37:26Z",
+      "side": 1,
+      "message": "nit: we could move the table names into variables: \n\n    identity_table \u003d \u0027identity\u0027\n    password_table \u003d \u0027password\u0027\n    federated_identity_table \u003d \u0027federated_identity\u0027\n    self.assertTableColumns(identity_table, [...])",
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
