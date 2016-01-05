@@ -142,6 +142,30 @@
       "revId": "392ffc40609259d27e6afc47297858800e1d891a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_bc894b77",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-05T09:30:17Z",
+      "side": 1,
+      "message": "yep, just remove the import is fine, i agree this is needn\u0027t.",
+      "parentUuid": "fa69d971_ce548500",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "392ffc40609259d27e6afc47297858800e1d891a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
