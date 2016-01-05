@@ -948,9 +948,9 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.useFixture(database.Database())
         super(LDAPIdentity, self).setUp()
         _assert_backends(self,
-                         assignment='ldap',
+                         assignment='sql',
                          identity='ldap',
-                         resource='ldap')
+                         resource='sql')
 
     def load_fixtures(self, fixtures):
         # Override super impl since need to create group container.
@@ -2023,9 +2023,9 @@ class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
 
         self.load_fixtures(default_fixtures)
         _assert_backends(self,
-                         assignment='ldap',
+                         assignment='sql',
                          identity='ldap',
-                         resource='ldap')
+                         resource='sql')
 
     def config_overrides(self):
         super(LDAPLimitTests, self).config_overrides()
@@ -2060,9 +2060,9 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                     self.user_two, self.user_badguy]:
             obj.setdefault('enabled', True)
         _assert_backends(self,
-                         assignment='ldap',
+                         assignment='sql',
                          identity='ldap',
-                         resource='ldap')
+                         resource='sql')
 
     def load_fixtures(self, fixtures):
         # Override super impl since need to create group container.
@@ -3275,7 +3275,7 @@ class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
         sqldb.recreate()
-        _assert_backends(self, assignment='ldap', identity='ldap')
+        _assert_backends(self, assignment='sql', identity='ldap')
 
     def config_overrides(self):
         super(LdapFilterTests, self).config_overrides()
