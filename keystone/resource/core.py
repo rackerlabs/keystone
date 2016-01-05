@@ -31,7 +31,6 @@ from keystone import notifications
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(group='resource')
 
 
 def calc_default_domain():
@@ -42,8 +41,6 @@ def calc_default_domain():
             'id': CONF.identity.default_domain_id,
             'name': u'Default'}
 
-
-@dependency.provider('resource_api')
 @dependency.requires('assignment_api', 'credential_api', 'domain_config_api',
                      'identity_api', 'revoke_api')
 class Manager(manager.Manager):
@@ -59,7 +56,7 @@ class Manager(manager.Manager):
     _DOMAIN = 'domain'
     _PROJECT = 'project'
 
-    def __init__(self):
+    def __init__(self, memoizer):
         # If there is a specific driver specified for resource, then use it.
         # Otherwise retrieve the driver type from the assignment driver.
         resource_driver = CONF.resource.driver
@@ -69,6 +66,8 @@ class Manager(manager.Manager):
             resource_driver = assignment_manager.default_resource_driver()
 
         super(Manager, self).__init__(resource_driver)
+
+        self.memoizer = memoizer
 
     def _get_hierarchy_depth(self, parents_list):
         return len(parents_list) + 1
@@ -197,10 +196,6 @@ class Manager(manager.Manager):
 
         ret = self.driver.create_project(tenant_id, tenant)
         notifications.Audit.created(self._PROJECT, tenant_id, initiator)
-        if MEMOIZE.should_cache(ret):
-            self.get_project.set(ret, self, tenant_id)
-            self.get_project_by_name.set(ret, self, ret['name'],
-                                         ret['domain_id'])
         return ret
 
     def assert_domain_enabled(self, domain_id, domain=None):
@@ -319,9 +314,6 @@ class Manager(manager.Manager):
 
         ret = self.driver.update_project(tenant_id, tenant)
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
@@ -344,9 +336,6 @@ class Manager(manager.Manager):
             self._emit_invalidate_user_project_tokens_notification(payload)
         ret = self.driver.delete_project(tenant_id)
         self.assignment_api.delete_project_assignments(tenant_id)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
         return ret
@@ -485,14 +474,6 @@ class Manager(manager.Manager):
             project_id, _projects_indexed_by_parent(subtree_list))
         return subtree_as_ids
 
-    @MEMOIZE
-    def get_domain(self, domain_id):
-        return self.driver.get_domain(domain_id)
-
-    @MEMOIZE
-    def get_domain_by_name(self, domain_name):
-        return self.driver.get_domain_by_name(domain_name)
-
     def create_domain(self, domain_id, domain, initiator=None):
         if (not self.identity_api.multiple_domains_supported and
                 domain_id != CONF.identity.default_domain_id):
@@ -507,10 +488,6 @@ class Manager(manager.Manager):
         ret = self.driver.create_domain(domain_id, domain)
 
         notifications.Audit.created(self._DOMAIN, domain_id, initiator)
-
-        if MEMOIZE.should_cache(ret):
-            self.get_domain.set(ret, self, domain_id)
-            self.get_domain_by_name.set(ret, self, ret['name'])
         return ret
 
     @manager.response_truncated
@@ -548,8 +525,6 @@ class Manager(manager.Manager):
             notifications.Audit.disabled(self._DOMAIN, domain_id, initiator,
                                          public=False)
 
-        self.get_domain.invalidate(self, domain_id)
-        self.get_domain_by_name.invalidate(self, original_domain['name'])
         return ret
 
     def delete_domain(self, domain_id, initiator=None):
@@ -585,8 +560,6 @@ class Manager(manager.Manager):
         # (see Bug #1277847)
         self.driver.delete_domain(domain_id)
         notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
-        self.get_domain.invalidate(self, domain_id)
-        self.get_domain_by_name.invalidate(self, domain['name'])
 
     def _delete_domain_contents(self, domain_id):
         """Delete the contents of a domain.
@@ -612,7 +585,7 @@ class Manager(manager.Manager):
                 _delete_projects(proj, projects, examined)
 
             try:
-                self.delete_project(project['id'])
+                self.memoizer.delete_project(project['id'])
             except exception.ProjectNotFound:
                 LOG.debug(('Project %(projectid)s not found when '
                            'deleting domain contents for %(domainid)s, '
@@ -637,14 +610,6 @@ class Manager(manager.Manager):
     # driver hints for it.
     def list_projects_in_domain(self, domain_id):
         return self.driver.list_projects_in_domain(domain_id)
-
-    @MEMOIZE
-    def get_project(self, project_id):
-        return self.driver.get_project(project_id)
-
-    @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)

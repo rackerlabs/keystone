@@ -21,6 +21,7 @@ from keystone import identity
 from keystone import oauth1
 from keystone import policy
 from keystone import resource
+from keystone.resource import memoizer
 from keystone import revoke
 from keystone import token
 from keystone import trust
@@ -51,7 +52,7 @@ def load_backends():
         identity_api=_IDENTITY_API,
         oauth_api=oauth1.Manager(),
         policy_api=policy.Manager(),
-        resource_api=resource.Manager(),
+        resource_api=memoizer.Memoizer,
         revoke_api=revoke.Manager(),
         role_api=assignment.RoleManager(),
         token_api=token.persistence.Manager(),
