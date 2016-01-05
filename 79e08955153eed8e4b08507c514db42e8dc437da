@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_74bc58dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-05T00:48:31Z",
+      "side": 1,
+      "message": "When was this deprecated? I don\u0027t see any deprecation messages removed in the changes so it was never deprecated, so we can\u0027t remove it. Why is it required to remove this function in order to remove the LDAP drivers? What we could do instead is remove support just for the LDAP identity driver (if you don\u0027t specify the assignment driver when you use ldap as identity driver the server will fail to start).",
+      "revId": "79e08955153eed8e4b08507c514db42e8dc437da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
