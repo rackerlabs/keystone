@@ -54,6 +54,29 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_3a3fa688",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-05T03:48:05Z",
+      "side": 1,
+      "message": "add a space between the URL and the bracket (",
+      "range": {
+        "startLine": 757,
+        "startChar": 6,
+        "endLine": 757,
+        "endChar": 50
+      },
+      "revId": "5b445469b6369fe991f725b90833c54f399ab350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a5098397",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 9
