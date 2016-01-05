@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_a1ce0d2c",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-05T02:10:29Z",
+      "side": 1,
+      "message": "yes, i will amend soon.",
+      "parentUuid": "fa69d971_ff16fcef",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 1
+      },
+      "revId": "e43d5ada5d8479ee345a64198540b9728c6c4f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_5fde2840",
         "filename": "keystone/federation/schema.py",
         "patchSetId": 1
