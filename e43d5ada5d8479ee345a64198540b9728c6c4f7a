@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_ba9dd667",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-05T03:58:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_ff16fcef",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 1
+      },
+      "revId": "e43d5ada5d8479ee345a64198540b9728c6c4f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_5fde2840",
         "filename": "keystone/federation/schema.py",
         "patchSetId": 1
@@ -60,6 +84,30 @@
       "writtenOn": "2016-01-04T15:10:32Z",
       "side": 1,
       "message": "since these are the same, did you want to combine them?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 1
+      },
+      "revId": "e43d5ada5d8479ee345a64198540b9728c6c4f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_3a8006f7",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-05T03:58:07Z",
+      "side": 1,
+      "message": "great suggestion! so we eventually get rid of lot of redundant code! thanks you!",
+      "parentUuid": "fa69d971_5fde2840",
       "range": {
         "startLine": 111,
         "startChar": 0,
