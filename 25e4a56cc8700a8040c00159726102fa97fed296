@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_f6059479",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-05T14:17:46Z",
+      "side": 1,
+      "message": "Isn\u0027t \"None\" the correct to pass here? https://github.com/openstack/oslo.log/blob/master/oslo_log/versionutils.py#L81",
+      "range": {
+        "startLine": 58,
+        "startChar": 12,
+        "endLine": 58,
+        "endChar": 24
+      },
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
