@@ -656,6 +656,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_16a2a8fd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-05T16:23:06Z",
+      "side": 1,
+      "message": "Oh that makes sense.  Thanks for the explanation.  So if i ever change a driver method, i would need to do this.",
+      "parentUuid": "fa69d971_40a2b24c",
+      "range": {
+        "startLine": 1230,
+        "startChar": 30,
+        "endLine": 1230,
+        "endChar": 43
+      },
+      "revId": "8fb1d4aae365af754f29f831dc2e755b0b17d271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_799490e1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
