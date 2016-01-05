@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_318ecb79",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T17:56:44Z",
+      "side": 1,
+      "message": "This try except is incase a previous test run isn\u0027t cleaned up properly? Technically we shouldn\u0027t have a conflict if we always iterate x.",
+      "range": {
+        "startLine": 4110,
+        "startChar": 19,
+        "endLine": 4110,
+        "endChar": 28
+      },
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_51d6dff1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T17:56:44Z",
+      "side": 1,
+      "message": "Should we be using `unfiltered_domains` here?",
+      "range": {
+        "startLine": 4135,
+        "startChar": 28,
+        "endLine": 4135,
+        "endChar": 35
+      },
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
