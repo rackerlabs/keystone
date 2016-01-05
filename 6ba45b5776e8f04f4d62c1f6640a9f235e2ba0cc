@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_a98ef976",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-05T00:08:08Z",
+      "side": 1,
+      "message": "revert this change.",
+      "revId": "6ba45b5776e8f04f4d62c1f6640a9f235e2ba0cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
