@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_f36b50b7",
+        "filename": "keystone/resource/V8_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T21:44:17Z",
+      "side": 1,
+      "message": "nit: make this a constant explaining it.",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "3df6bfc48a786352a421526c1b2f730a9a981e30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
