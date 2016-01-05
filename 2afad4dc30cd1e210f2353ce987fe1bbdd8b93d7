@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_1e0ceb39",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T22:10:36Z",
+      "side": 1,
+      "message": "and should be used with caution in production environments.",
+      "revId": "2afad4dc30cd1e210f2353ce987fe1bbdd8b93d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_be3cbfc8",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-05T22:10:36Z",
+      "side": 1,
+      "message": "suggest keeping this to one line.",
+      "revId": "2afad4dc30cd1e210f2353ce987fe1bbdd8b93d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
