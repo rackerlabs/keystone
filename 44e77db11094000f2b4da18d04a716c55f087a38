@@ -22,6 +22,30 @@
       "revId": "44e77db11094000f2b4da18d04a716c55f087a38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b525b509",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-06T02:56:24Z",
+      "side": 1,
+      "message": "you\u0027re right. the name of the test does not make sense at all. I\u0027ll put a better name and a description",
+      "parentUuid": "fa69d971_01b327ea",
+      "range": {
+        "startLine": 246,
+        "startChar": 8,
+        "endLine": 246,
+        "endChar": 54
+      },
+      "revId": "44e77db11094000f2b4da18d04a716c55f087a38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
