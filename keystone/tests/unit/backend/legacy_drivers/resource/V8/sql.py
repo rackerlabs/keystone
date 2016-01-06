@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone import exception
 from keystone.tests.unit import test_backend_sql
 
 
@@ -28,3 +29,11 @@ class SqlIdentityV8(test_backend_sql.SqlIdentity):
             driver='keystone.resource.V8_backends.sql.Resource')
         self.use_specific_sql_driver_version(
             'keystone.resource', 'backends', 'V8_')
+
+    def test_storing_null_domain_id_in_project_ref(self):
+        # V8 drivers do not support the storing of domain IDs that are None
+        # so override this test
+        self.assertRaises(
+            exception.UnexpectedError,
+            super(SqlIdentityV8, self).
+            test_storing_null_domain_id_in_project_ref)
