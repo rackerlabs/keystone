@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_249bb267",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T19:36:06Z",
+      "side": 1,
+      "message": "y, like this or maybe turn region_create into an object that has a schema attribute and allow_empty:\n\n region_create \u003d Validation(schema\u003d{\u0027type: \u0027object\u0027, ...}, allow_empty\u003dTrue)",
+      "parentUuid": "fa69d971_5e31d958",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_0555e71b",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 4
