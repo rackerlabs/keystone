@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_0124635b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-06T17:37:51Z",
+      "side": 1,
+      "message": "maybe add at least some description as to what is happening in the migration.",
+      "revId": "127d03a9fd318a2fcb073979b720a4faa3bba30a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
