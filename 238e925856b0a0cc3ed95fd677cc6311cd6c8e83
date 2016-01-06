@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_f96bfcee",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-06T23:50:56Z",
+      "side": 1,
+      "message": "Now that oslo.config 3.2.0 is g-r and soon to be merged in keystone requirements.txt, can you please add the deprecated_reason here also.  Thanks",
+      "revId": "238e925856b0a0cc3ed95fd677cc6311cd6c8e83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
