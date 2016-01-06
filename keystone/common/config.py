@@ -29,6 +29,8 @@ _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
 _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
 
+_DEPRECATE_PKI_MSG = ('PKI token support has been deprecated in the M '
+                      'release and will be removed in the O release.')
 
 FILE_OPTIONS = {
     None: [
@@ -230,6 +232,9 @@ FILE_OPTIONS = {
     'os_inherit': [
         cfg.BoolOpt('enabled', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='In the O release, this option will be '
+                                      'removed and this portion of the API '
+                                      'will be always enabled.',
                     help='role-assignment inheritance to projects from '
                          'owning domain or from projects higher in the '
                          'hierarchy can be optionally disabled. In the '
@@ -296,9 +301,7 @@ FILE_OPTIONS = {
                     'from exchanging a scoped token for any other token.'),
         cfg.StrOpt('hash_algorithm', default='md5',
                    deprecated_for_removal=True,
-                   deprecated_reason='PKI token support has been deprecated '
-                                     'in the M release and will be removed '
-                                     'in the O release.',
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    help='The hash algorithm to use for PKI tokens. This can '
                         'be set to any algorithm that hashlib supports. '
                         'WARNING: Before changing this value, the auth_token '
@@ -348,6 +351,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('certfile',
                    default=_CERTFILE,
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    help='Path of the certfile for token signing. For '
                         'non-production environments, you may be interested '
                         'in using `keystone-manage pki_setup` to generate '
@@ -355,25 +359,31 @@ FILE_OPTIONS = {
         cfg.StrOpt('keyfile',
                    default=_KEYFILE,
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    help='Path of the keyfile for token signing.'),
         cfg.StrOpt('ca_certs',
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    default='/etc/keystone/ssl/certs/ca.pem',
                    help='Path of the CA for token signing.'),
         cfg.StrOpt('ca_key',
                    default='/etc/keystone/ssl/private/cakey.pem',
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    help='Path of the CA key for token signing.'),
         cfg.IntOpt('key_size', default=2048, min=1024,
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    help='Key size (in bits) for token signing cert '
                         '(auto generated certificate).'),
         cfg.IntOpt('valid_days', default=3650,
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    help='Days the token signing cert is valid for '
                         '(auto generated certificate).'),
         cfg.StrOpt('cert_subject',
                    deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_PKI_MSG,
                    default=('/C=US/ST=Unset/L=Unset/O=Unset/'
                             'CN=www.example.com'),
                    help='Certificate subject (auto generated certificate) for '
@@ -541,6 +551,9 @@ FILE_OPTIONS = {
         cfg.BoolOpt('enabled',
                     default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The endpoint policy extension should '
+                                      'always be enabled. This option will be '
+                                      'removed in the O release.',
                     help='Enable endpoint_policy functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
