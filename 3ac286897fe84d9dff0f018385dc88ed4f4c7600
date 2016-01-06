@@ -16,6 +16,24 @@
       "revId": "3ac286897fe84d9dff0f018385dc88ed4f4c7600",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2d7e356a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-06T20:42:17Z",
+      "side": 0,
+      "message": "True, i was just thinking if the variable is there we might as well use it. :-)",
+      "parentUuid": "fa69d971_049eae06",
+      "revId": "3ac286897fe84d9dff0f018385dc88ed4f4c7600",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
