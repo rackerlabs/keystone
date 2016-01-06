@@ -707,7 +707,7 @@
 # Its value may be silently ignored in the future.
 #public_bind_host = 0.0.0.0
 
-# The port number which the public service listens on. (integer value)
+# The port number which the public service listens on. (port value)
 # Minimum value: 1
 # Maximum value: 65535
 # Deprecated group/name - [DEFAULT]/public_port
@@ -723,7 +723,7 @@
 # Its value may be silently ignored in the future.
 #admin_bind_host = 0.0.0.0
 
-# The port number which the admin service listens on. (integer value)
+# The port number which the admin service listens on. (port value)
 # Minimum value: 1
 # Maximum value: 65535
 # Deprecated group/name - [DEFAULT]/admin_port
