@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_11fe0eae",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-06T07:46:02Z",
+      "side": 1,
+      "message": "see slight modified wording in where you copied this from...that explains this a little better...",
+      "range": {
+        "startLine": 59,
+        "startChar": 10,
+        "endLine": 64,
+        "endChar": 36
+      },
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_3176b270",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-06T07:46:02Z",
+      "side": 1,
+      "message": "s/sdefined/defined/",
+      "range": {
+        "startLine": 284,
+        "startChar": 28,
+        "endLine": 284,
+        "endChar": 36
+      },
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
