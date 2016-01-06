@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_e787dcb2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T20:13:56Z",
+      "side": 1,
+      "message": "I don\u0027t understand the except, either. It seems like the test is broken (not cleaning up domain name\u003d\u0027domain18\u0027, for example, and this is trying to hide it without any explanation.\n\nJust add a self.cleanUp() for each domain you create. Better yet, do this work in setUp and clean it up there.",
+      "parentUuid": "fa69d971_318ecb79",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_51d6dff1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
