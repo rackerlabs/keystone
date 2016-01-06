@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_780b8dd6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:20:33Z",
+      "side": 1,
+      "message": "++ to what Brant said",
+      "parentUuid": "fa69d971_812e10a3",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_cf670b24",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_3828b532",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:20:33Z",
+      "side": 1,
+      "message": "renaming to \u0027results_control\u0027 or even just \u0027control\u0027 would make it better. We can also fix the old, bad naming in a later patch.",
+      "parentUuid": "7a740942_8786c711",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_2f5ecf45",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -100,6 +136,24 @@
       "writtenOn": "2015-12-10T07:49:30Z",
       "side": 1,
       "message": "why bother passing this in? it defaults to None",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d8239954",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:20:33Z",
+      "side": 1,
+      "message": "++\n\nI noticed we also do that in the later use of SimplePagedResultsControl",
+      "parentUuid": "7a740942_2f5ecf45",
       "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
