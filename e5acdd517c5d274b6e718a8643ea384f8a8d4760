@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_fa1a20c5",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T16:07:21Z",
+      "side": 1,
+      "message": "Is there a reason why we pass the copied version versus just using endpoint2?",
+      "range": {
+        "startLine": 1208,
+        "startChar": 64,
+        "endLine": 1208,
+        "endChar": 71
+      },
+      "revId": "e5acdd517c5d274b6e718a8643ea384f8a8d4760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7aa15045",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T16:07:21Z",
+      "side": 1,
+      "message": "same comment here",
+      "range": {
+        "startLine": 1276,
+        "startChar": 64,
+        "endLine": 1276,
+        "endChar": 71
+      },
+      "revId": "e5acdd517c5d274b6e718a8643ea384f8a8d4760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
