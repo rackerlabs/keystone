@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_a170f440",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-06T19:17:54Z",
+      "side": 1,
+      "message": "It\u0027s a new table added in previous the file (087...).  However, I\u0027m running this several times, so want to ensure the data gets cleared out.",
+      "parentUuid": "fa69d971_0a24a95d",
+      "revId": "4297894a744b6fa3c302830b1e7f5bc0782fcd9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_ca7e9118",
         "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 10
