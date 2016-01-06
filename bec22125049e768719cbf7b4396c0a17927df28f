@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_a5e0f929",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 1531,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-06T21:53:37Z",
+      "side": 1,
+      "message": "Someone was in a Star Wars mood.",
+      "range": {
+        "startLine": 1531,
+        "startChar": 36,
+        "endLine": 1531,
+        "endChar": 43
+      },
+      "revId": "bec22125049e768719cbf7b4396c0a17927df28f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
