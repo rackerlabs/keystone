@@ -1,0 +1,12 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Toshiya Shiga <tos-shiga@yk.jp.nec.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 06 Jan 2016 21:05:28 +0000
+Reviewed-on: https://review.openstack.org/254881
+Project: openstack/keystone
+Branch: refs/heads/master
