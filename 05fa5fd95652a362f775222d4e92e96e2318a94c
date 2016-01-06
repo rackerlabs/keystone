@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_e1702f42",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_switch_index_order_in_token_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T17:41:25Z",
+      "side": 1,
+      "message": "will this lock the table?",
+      "range": {
+        "startLine": 26,
+        "startChar": 3,
+        "endLine": 27,
+        "endChar": 39
+      },
+      "revId": "05fa5fd95652a362f775222d4e92e96e2318a94c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
