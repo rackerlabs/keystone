@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_ea4251ad",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T14:58:35Z",
+      "side": 1,
+      "message": "This sentence should be removed, as it is entirely redundant with the docstr summary line.",
+      "revId": "1ba0153fddc4161d0cee77072e1d4b62e0256d46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

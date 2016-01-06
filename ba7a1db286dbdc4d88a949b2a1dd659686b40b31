@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_6a98a11c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T14:58:35Z",
+      "side": 0,
+      "message": "This test should still pass if the code you\u0027ve removed is redundant with jsonschema validation - why is it being deleted?",
+      "revId": "ba7a1db286dbdc4d88a949b2a1dd659686b40b31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_aa9219f4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3220,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T14:58:35Z",
+      "side": 0,
+      "message": "Same as above.",
+      "revId": "ba7a1db286dbdc4d88a949b2a1dd659686b40b31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
