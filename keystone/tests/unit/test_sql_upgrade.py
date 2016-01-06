@@ -815,6 +815,36 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
 
+    def test_project_domain_id_column_nullable(self):
+        self.upgrade(86)
+        session = self.Session()
+
+        project = {
+            'id': uuid.uuid4().hex,
+            'is_domain': False,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+
+        self.assertRaises(
+            db_exception.DBError,
+            self.insert_dict,
+            session,
+            'project',
+            project)
+
+        self.upgrade(87)
+        # It is now possible to insert a project with no domain_id
+        self.insert_dict(session, 'project', project)
+        project_table = sqlalchemy.Table(
+            'project', self.metadata, autoload=True)
+        query = session.query(project_table).filter_by(id=project['id'])
+        project_from_db = query.all()[0]
+
+        self.assertIn('null', project_from_db)
+
+        session.close()
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
