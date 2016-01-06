@@ -1431,6 +1431,14 @@ class RoleManager(manager.Manager):
         notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
 
+    # TODO(ayoung): Add notification
+    def create_implied_role(self, prior_role_id, implied_role_id):
+        implied_role = self.driver.get_role(implied_role_id)
+        self.driver.get_role(prior_role_id)
+        if implied_role['name'] == CONF.assignment.root_role:
+            raise exception.InvalidImpliedRole(role_id=implied_role_id)
+        return self.driver.create_implied_role(prior_role_id, implied_role_id)
+
 
 # The RoleDriverBase class is the set of driver methods from earlier
 # drivers that we still support, that have not been removed or modified. This

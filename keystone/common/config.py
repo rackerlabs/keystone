@@ -378,6 +378,10 @@ FILE_OPTIONS = {
                         'keystone.assignment namespace. Only an SQL driver is '
                         'supplied.',
                    default='sql'),
+        cfg.StrOpt('root_role', default='admin',
+                   help='A role that is not allowed to be an implied '
+                   'role, as it is the root of Role inference DAG.'),
+
     ],
     'resource': [
         cfg.StrOpt('driver',
