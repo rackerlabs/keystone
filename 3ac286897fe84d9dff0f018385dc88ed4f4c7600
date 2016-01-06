@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_049eae06",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T19:44:00Z",
+      "side": 0,
+      "message": "I would have deleted this line and used role[\u0027id\u0027] everywhere because saving 4 characters isn\u0027t a great justification for copying a value",
+      "revId": "3ac286897fe84d9dff0f018385dc88ed4f4c7600",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
