@@ -19,6 +19,80 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_87e62042",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "rather than use a magic number, reference a variable. Where does 4 come from?",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_07af907d",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "suggest rename to _generate_app_response. method names should be verbs.",
+      "range": {
+        "startLine": 50,
+        "startChar": 9,
+        "endLine": 50,
+        "endChar": 21
+      },
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a7bec4ab",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "suggest rename to _assert_failure . method names should be verbs.",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_67c0cc50",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "There should be a TODO to change the tests so that our end-to-end tests don\u0027t check that an exception was raised and check the response instead.",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_c7a658ad",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 6
@@ -30,6 +104,160 @@
       "writtenOn": "2016-01-06T20:10:00Z",
       "side": 1,
       "message": "The i_* convention really threw me off. Talked to Stanek in IRC and we assume this is supposed to convey \"inner/inline class\" variables that would otherwise stomp on _middleware_failure(self, ..., *args, **kwargs) ?\n\nEither way, inline comment for future generations!",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_07aa3085",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "raised\n\nalso, add a . since this is confusing.",
+      "range": {
+        "startLine": 78,
+        "startChar": 71,
+        "endLine": 78,
+        "endChar": 77
+      },
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e77a7c23",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "http_client has constants for 500, etc.",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2737344e",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "_generate_middleware_response",
+      "range": {
+        "startLine": 87,
+        "startChar": 9,
+        "endLine": 87,
+        "endChar": 28
+      },
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_070b107e",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "name should be a verb.",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_47158899",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "what\u0027s a successful middleware?",
+      "range": {
+        "startLine": 93,
+        "startChar": 54,
+        "endLine": 93,
+        "endChar": 64
+      },
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b2a7e4a5",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "suggest use post_json.",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_72a72cbd",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "why does this have path\u003d\u0027/auth/tokens\u0027? The original version didn\u0027t do it.",
+      "revId": "720f0ab70637de88180322b8148d567d56e67036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d257f855",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T20:33:41Z",
+      "side": 1,
+      "message": "it\u0027s not obvious where the \"4\" magic number is coming from.",
       "revId": "720f0ab70637de88180322b8148d567d56e67036",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
