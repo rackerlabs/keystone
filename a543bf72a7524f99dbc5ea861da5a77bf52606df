@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_c64d01c5",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T17:27:23Z",
+      "side": 1,
+      "message": "double backticks for a literal",
+      "revId": "a543bf72a7524f99dbc5ea861da5a77bf52606df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_86caa919",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T17:27:23Z",
+      "side": 1,
+      "message": "same",
+      "revId": "a543bf72a7524f99dbc5ea861da5a77bf52606df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_06df99d9",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T17:27:23Z",
+      "side": 1,
+      "message": "Suggestion to avoid ending a sentence with \"of\":\n\n  You can opt-out of multiple events.",
+      "revId": "a543bf72a7524f99dbc5ea861da5a77bf52606df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_86f1496d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T17:27:23Z",
+      "side": 1,
+      "message": "\"This will...\"",
+      "revId": "a543bf72a7524f99dbc5ea861da5a77bf52606df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e6f6055c",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T17:27:23Z",
+      "side": 1,
+      "message": "docstr summary lines should be one line and end with a period, see pep257",
+      "revId": "a543bf72a7524f99dbc5ea861da5a77bf52606df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
