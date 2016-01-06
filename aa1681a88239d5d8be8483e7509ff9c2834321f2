@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_c770980d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:13:13Z",
+      "side": 1,
+      "message": "where is\n\n  GET /role_inferences\n\nAlso, we may\u0027ve missed an API to return all the effective roles for a given prior role.",
+      "range": {
+        "startLine": 79,
+        "startChar": 53,
+        "endLine": 79,
+        "endChar": 55
+      },
+      "revId": "aa1681a88239d5d8be8483e7509ff9c2834321f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_47f1086a",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:13:13Z",
+      "side": 1,
+      "message": "is the HEAD call on the API spec?",
+      "range": {
+        "startLine": 93,
+        "startChar": 47,
+        "endLine": 93,
+        "endChar": 49
+      },
+      "revId": "aa1681a88239d5d8be8483e7509ff9c2834321f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
