@@ -23,6 +23,7 @@ from keystone import resource as keystone_resource
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+NULL_DOMAIN_ID = 'null'
 
 
 class Resource(keystone_resource.ResourceDriverV9):
@@ -61,6 +62,15 @@ class Resource(keystone_resource.ResourceDriverV9):
 
     @driver_hints.truncated
     def list_projects(self, hints):
+        # If there is a filter on domain_id and the value is None, then to
+        # ensure that the sql filtering works correctly, we need to patch
+        # the value to be NULL_DOMAIN_ID. This is safe to do here since we
+        # know we are able to satisfy any filter of this type in the call to
+        # filter_limit_query() below, which will remove the filter from the
+        # hints (hence ensuring our substitution is not exposed to the caller).
+        for f in hints.filters:
+            if (f['name'] == 'domain_id' and f['value'] is None):
+                f['value'] = NULL_DOMAIN_ID
         with sql.transaction() as session:
             query = session.query(Project)
             project_refs = sql.filter_limit_query(Project, query, hints)
@@ -147,22 +157,42 @@ class Resource(keystone_resource.ResourceDriverV9):
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
     def create_project(self, tenant_id, tenant):
+        def _ensure_domain_id(tenant):
+            if 'domain_id' not in tenant or tenant['domain_id'] is None:
+                new_tenant = tenant.copy()
+                new_tenant['domain_id'] = NULL_DOMAIN_ID
+                return new_tenant
+            else:
+                return tenant
+
         tenant['name'] = clean.project_name(tenant['name'])
+        new_tenant = _ensure_domain_id(tenant)
         with sql.transaction() as session:
-            tenant_ref = Project.from_dict(tenant)
+            tenant_ref = Project.from_dict(new_tenant)
             session.add(tenant_ref)
             return tenant_ref.to_dict()
 
     @sql.handle_conflicts(conflict_type='project')
     def update_project(self, tenant_id, tenant):
+        def _ensure_domain_id(tenant):
+            if 'domain_id' in tenant and tenant['domain_id'] is None:
+                new_tenant = tenant.copy()
+                new_tenant['domain_id'] = NULL_DOMAIN_ID
+                return new_tenant
+            else:
+                return tenant
+
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
 
+        update_tenant = _ensure_domain_id(tenant)
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
             old_project_dict = tenant_ref.to_dict()
-            for k in tenant:
-                old_project_dict[k] = tenant[k]
+            for k in update_tenant:
+                old_project_dict[k] = update_tenant[k]
+            if old_project_dict['domain_id'] is None:
+                old_project_dict['domain_id'] = NULL_DOMAIN_ID
             new_project = Project.from_dict(old_project_dict)
             for attr in Project.attributes:
                 if attr != 'id':
@@ -252,13 +282,27 @@ class Domain(sql.ModelBase, sql.DictBase):
 
 
 class Project(sql.ModelBase, sql.DictBase):
+    # NOTE(henry-nash): From the manager and above perspective, the domain_id
+    # is nullable.  However, to ensure uniqueness in multi-process
+    # configurations, it is better to still use the sql uniqueness constraint.
+    # Since the support for a nullable component of a uniqueness constraint
+    # across different sql databases is mixed, we instead store a special value
+    # to represent null, as defined in NULL_DOMAIN_ID above.
+
+    def to_dict(self, include_extra_dict=False):
+        d = super(Project, self).to_dict(
+            include_extra_dict=include_extra_dict)
+        if d['domain_id'] == NULL_DOMAIN_ID:
+            d['domain_id'] = None
+        return d
+
     __tablename__ = 'project'
     attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
                   'parent_id', 'is_domain']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
-                           nullable=False)
+                           server_default=NULL_DOMAIN_ID)
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
