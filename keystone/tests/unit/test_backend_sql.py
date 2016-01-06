@@ -411,6 +411,52 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # roles assignments.
         self.assertThat(user_domains, matchers.HasLength(0))
 
+    def test_storing_null_domain_id_in_project_ref(self):
+        """Test the special storage of domain_id=None in sql resource driver.
+
+        The resource driver uses a special value in place of None for domain_id
+        in the project record. This shouldn't escape the driver. Hence we test
+        the interface to ensure that you can store a domain_id of None, and
+        that any special value used inside the driver does not escape through
+        the interface.
+
+        """
+        spoiler_project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        self.resource_api.create_project(spoiler_project['id'],
+                                         spoiler_project)
+
+        # First let's create a project with a None domain_id and make sure we
+        # can read it back.
+        project = unit.new_project_ref(domain_id=None, is_domain=True)
+        project = self.resource_api.create_project(project['id'], project)
+        ref = self.resource_api.get_project(project['id'])
+        self.assertDictEqual(project, ref)
+
+        # Can we get it by name?
+        ref = self.resource_api.get_project_by_name(project['name'], None)
+        self.assertDictEqual(project, ref)
+
+        # Can we filter for it?
+        hints = driver_hints.Hints()
+        hints.add_filter('domain_id', None)
+        refs = self.resource_api.list_projects(hints)
+        self.assertThat(refs, matchers.HasLength(1))
+        self.assertDictEqual(project, refs[0])
+
+        # Can we update it?
+        project['name'] = uuid.uuid4().hex
+        self.resource_api.update_project(project['id'], project)
+        ref = self.resource_api.get_project(project['id'])
+        self.assertDictEqual(project, ref)
+
+        # Finally, make sure we can delete it
+        project['enabled'] = False
+        self.resource_api.update_project(project['id'], project)
+        self.resource_api.delete_project(project['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          project['id'])
+
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
