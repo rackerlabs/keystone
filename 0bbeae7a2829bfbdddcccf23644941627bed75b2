@@ -76,6 +76,47 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_a7eb24db",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:09:09Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa69d971_31aaef1a",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_07dc7044",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:09:09Z",
+      "side": 1,
+      "message": "could list the ID after the entity to clearly dictate which id represents each entity.",
+      "range": {
+        "startLine": 265,
+        "startChar": 42,
+        "endLine": 265,
+        "endChar": 77
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_1078b2f1",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 14
@@ -127,6 +168,70 @@
       "writtenOn": "2015-12-29T21:37:35Z",
       "side": 1,
       "message": "I think we\u0027ll need to catch whatever exception is raised when the new constraint can\u0027t be applied and print a useful message that explains why it\u0027s failing and what to do about it.",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e76b5c1c",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_unique_constraint_endpoint.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:09:09Z",
+      "side": 1,
+      "message": "Yes, the test_endpoint_unique_constraint_fails_if_duplicates test case in this patch exposes that. Maybe the test case can assert that a useful error message is logged.",
+      "parentUuid": "fa69d971_114fab93",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_478b481f",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:09:09Z",
+      "side": 1,
+      "message": "why do these need to change?",
+      "range": {
+        "startLine": 441,
+        "startChar": 55,
+        "endLine": 441,
+        "endChar": 64
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_07347047",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:09:09Z",
+      "side": 1,
+      "message": "this service doesn\u0027t seem to be effecting the outcome of the test, right? Before the test passed without having this service, now we need it?",
+      "range": {
+        "startLine": 555,
+        "startChar": 8,
+        "endLine": 557,
+        "endChar": 57
+      },
       "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
