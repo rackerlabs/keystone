@@ -1,0 +1,10 @@
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 06 Jan 2016 06:46:33 +0000
+Reviewed-on: https://review.openstack.org/263155
+Project: openstack/keystone
+Branch: refs/heads/master
