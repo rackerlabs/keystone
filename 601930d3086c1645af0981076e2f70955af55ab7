@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_5e31d958",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T19:15:42Z",
+      "side": 1,
+      "message": "We should allow empty body as we\u0027ve already establish that in v2.0. So we would break backward compatibility if we dont\u0027. I think what Brant is saying is that we don\u0027t need the \"allow_empty\u003dTrue\" here. We need to do that in schema.py and validator.py. For example,\n\n  region_create \u003d {\n    \u0027type\u0027: \u0027object\u0027,\n    \u0027properties\u0027: _region_properties,\n    \u0027additionalProperties\u0027: True,\n    \u0027allowEmpty\u0027: True\n  }",
+      "parentUuid": "1a26ad4f_a2a7694e",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_0555e71b",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 4
