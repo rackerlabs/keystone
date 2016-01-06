@@ -93,6 +93,24 @@
       "revId": "27c617032171290c9872474cf1fb5b74a2ec5bb1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_257729a1",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T21:50:50Z",
+      "side": 1,
+      "message": "This file does not need to be listed here because there are no test cases in it.\n\nSimilarly, just because the tests import from keystone.common.config doesn\u0027t mean keystone/common/config.py should appear here.",
+      "parentUuid": "1a7b0d38_9eacb236",
+      "revId": "27c617032171290c9872474cf1fb5b74a2ec5bb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

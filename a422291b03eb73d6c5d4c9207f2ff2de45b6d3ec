@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_c5adede9",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T21:50:50Z",
+      "side": 0,
+      "message": "Whatever modules that contain tests using this method which were previously failing may be added to the the tox.ini py3 job if they are now passing.\n\nThis module should not be added.",
+      "revId": "a422291b03eb73d6c5d4c9207f2ff2de45b6d3ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
