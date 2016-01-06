@@ -1,0 +1,386 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_6529b289",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": ", and",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e516024b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "the role, group, project, and domain names are also included, not just the user names",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_857f06df",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "this code is more complicated than it needs to be and it\u0027s impossible to understand. Change the manager so that it always returns a project_entity, domain_entity, user_entity so that there doesn\u0027t have to be so much branching and duplication.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_6563f242",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "put the entire expression in ().\n\n (\u0027/projects/%s\u0027...",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_17458d44",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "tox -e cover shows that this new code is not tested, so there\u0027s a testcase missing.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_576d45ca",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "this line is not tested",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_05c3168a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "rather than put the ( at the end wrap the whole expression in (): (\u0027include_names in params and",
+      "range": {
+        "startLine": 644,
+        "startChar": 54,
+        "endLine": 644,
+        "endChar": 55
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_45e90eb6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "entities\u0027 names",
+      "range": {
+        "startLine": 789,
+        "startChar": 44,
+        "endLine": 789,
+        "endChar": 59
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_652e92fc",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "assignments\n\nAlso, this should return a list rather than a generator so that it works the same in both cases.",
+      "range": {
+        "startLine": 817,
+        "startChar": 45,
+        "endLine": 817,
+        "endChar": 51
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e57a82bc",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "assignments",
+      "range": {
+        "startLine": 820,
+        "startChar": 29,
+        "endLine": 820,
+        "endChar": 35
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b7a121fa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "entities",
+      "range": {
+        "startLine": 822,
+        "startChar": 16,
+        "endLine": 822,
+        "endChar": 31
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_85506633",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "This review would be easier to understand if the caching change was separated out into a separate review.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_651bf281",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "no need to create a dictionary here, just have\n\n user_entities \u003d {}\n group_entities \u003d {}\n ...\n\nthen references don\u0027t need to be so long.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_97297d8c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "this is extra-indented.",
+      "range": {
+        "startLine": 832,
+        "startChar": 16,
+        "endLine": 832,
+        "endChar": 20
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_f7b8f912",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "tox -e cover shows that this case isn\u0027t tested, so a testcase is missing.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7743a913",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "not tested.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_174fcd37",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "not tested.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_3771b176",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "not tested (maybe this is tested and the cover tool isn\u0027t working right?)",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a5ac8a8c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "There driver interface isn\u0027t changing, so this change is not needed.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a58faa73",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-06T15:30:34Z",
+      "side": 1,
+      "message": "this test should be moved to test_backend and then skip the test in test_backend_ldap",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
