@@ -22,6 +22,24 @@
       "revId": "05fa5fd95652a362f775222d4e92e96e2318a94c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a4456243",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_switch_index_order_in_token_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T19:30:22Z",
+      "side": 1,
+      "message": "For writes, certainly. Not sure about reads (might depend on if they\u0027re trying to hit this index or not?).",
+      "parentUuid": "fa69d971_e1702f42",
+      "revId": "05fa5fd95652a362f775222d4e92e96e2318a94c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
