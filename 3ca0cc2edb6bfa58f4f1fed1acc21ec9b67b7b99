@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_a1f6b45a",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_implied_roles.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T19:24:00Z",
+      "side": 1,
+      "message": "Why can\u0027t we reuse the role table and add the additional columns? Implied roles are essentially \"roles\". Having two different table for roles doesn\u0027t seem all that intuitive.",
+      "range": {
+        "startLine": 29,
+        "startChar": 9,
+        "endLine": 29,
+        "endChar": 21
+      },
+      "revId": "3ca0cc2edb6bfa58f4f1fed1acc21ec9b67b7b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
