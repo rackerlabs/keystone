@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_68e65845",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T22:23:37Z",
+      "side": 1,
+      "message": "(nit) missing a newline -\u003e http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_280860d9",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T22:23:37Z",
+      "side": 1,
+      "message": "Since we are changing the driver interface do we need to version bump. I realize it\u0027s backward compatible.",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_2e2ca849",
         "filename": "keystone/tests/unit/test_credential.py",
         "patchSetId": 9
@@ -66,6 +100,24 @@
       "side": 1,
       "message": "if this fails for python3, then this is another issue we should fix, we are going to support both python2 and python3 for unittest, anyway, i am fine with as is.",
       "parentUuid": "5a710552_ceff2433",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_88eb8cdb",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T22:23:37Z",
+      "side": 1,
+      "message": "If we do leave this here then we need a TODO comment saying that it should be merged with the file Steve mentioned.",
+      "parentUuid": "5a710552_e63769ae",
       "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
