@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_12c910ac",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3675,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:19:41Z",
+      "side": 1,
+      "message": "Could we compare the entire dictionary here? They should be the same.",
+      "range": {
+        "startLine": 3675,
+        "startChar": 13,
+        "endLine": 3675,
+        "endChar": 24
+      },
+      "revId": "bc6c4d87b13456e004adc3f9fad8ac96528371a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d2c7f893",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3679,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:19:41Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 3679,
+        "startChar": 13,
+        "endLine": 3679,
+        "endChar": 24
+      },
+      "revId": "bc6c4d87b13456e004adc3f9fad8ac96528371a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
