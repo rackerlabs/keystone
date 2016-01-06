@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_722c0c99",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:20:55Z",
+      "side": 1,
+      "message": "whenever I see \"_and_\" in the method name, I smell opportunity for code refactoring",
+      "range": {
+        "startLine": 597,
+        "startChar": 27,
+        "endLine": 597,
+        "endChar": 31
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_72888c71",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:20:55Z",
+      "side": 1,
+      "message": "thought we are deprecating writable LDAP work, no?",
+      "range": {
+        "startLine": 99,
+        "startChar": 64,
+        "endLine": 99,
+        "endChar": 66
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_52d30860",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:20:55Z",
+      "side": 1,
+      "message": "why would there be conflicts in listing?",
+      "range": {
+        "startLine": 100,
+        "startChar": 9,
+        "endLine": 100,
+        "endChar": 25
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_32cc54ba",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:20:55Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 109,
+        "startChar": 9,
+        "endLine": 109,
+        "endChar": 25
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b2b84412",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:20:55Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 118,
+        "startChar": 9,
+        "endLine": 118,
+        "endChar": 25
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_1257d0ca",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T20:20:55Z",
+      "side": 1,
+      "message": "why is this configurable?",
+      "range": {
+        "startLine": 304,
+        "startChar": 21,
+        "endLine": 304,
+        "endChar": 32
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
