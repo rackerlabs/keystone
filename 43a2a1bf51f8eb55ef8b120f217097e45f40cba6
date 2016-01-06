@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_73188ed3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 128
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "This is a good summary, but nothing says why these changes are being made and why they are necessary.",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_11fe0eae",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -25,6 +42,57 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_33ea1675",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "(nit) _ensure_domain_id may be a better name since this isn\u0027t just check None, but that it also exists.\n\nAlso why is the param named role when a tenant is passed in? Due to scoping this works on accident?",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b3a4c64a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "Why is this copied?",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_731e4e71",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "Is this actually needed? Won\u0027t your use of _ensure_domain_id_not_none foce update_tenant to contain a domain_id and because of that old_project_dict will have one too?",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_3176b270",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -42,6 +110,74 @@
         "endLine": 284,
         "endChar": 36
       },
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e51ef15d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "Is this needed? Why is this column still nullable?",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2585e958",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "(nit) renaming to name_updated so it\u0027s a better indicator that this is a boolean value and it makes the \u0027if\u0027 statement on line 343 read better. Same goes for renaming update_domain.",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_e5f11102",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "We are making changes to this dictionary, but I don\u0027t see it being used anywhere.",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c5dbad7a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-06T21:53:09Z",
+      "side": 1,
+      "message": "Same here",
       "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
