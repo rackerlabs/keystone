@@ -34,6 +34,24 @@
       "revId": "9e4ce59f765103c0bf73b8aed437724ff597c7d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5b75602f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-06T22:48:35Z",
+      "side": 1,
+      "message": "Yes, assertValidRoleListReponse will check for both as Samuel indicated.",
+      "parentUuid": "7a740942_731e6471",
+      "revId": "9e4ce59f765103c0bf73b8aed437724ff597c7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
