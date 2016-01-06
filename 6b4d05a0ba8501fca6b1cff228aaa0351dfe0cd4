@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_45d9fd55",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-06T21:58:21Z",
+      "side": 1,
+      "message": "We\u0027ve kept the pep8 environment name for this long because it\u0027s muscle memory for so many of us. Why change it now? It\u0027s had far more than just pep8 checking for years.",
+      "revId": "6b4d05a0ba8501fca6b1cff228aaa0351dfe0cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
