@@ -101,6 +101,12 @@ class AssignmentTestHelperMixin(object):
                                   {'project': {'project': 3}},
                                   {'project': {'project': 3}}]
 
+        # A set of implied role specifications. In this case, prior role
+        # index 0 implies role index 1, and role 1 implies roles 2 and 3.
+
+        'roles': [{'role': 0, 'implied_roles': [1]},
+                  {'role': 1, 'implied_roles': [2, 3]}]
+
         # A list of groups and their members. In this case make users with
         # index 0 and 1 members of group with index 0. Users and Groups are
         # indexed in the order they appear in the 'entities' key above.
@@ -286,6 +292,23 @@ class AssignmentTestHelperMixin(object):
             reference_data[reference_index][shorthand_data[key]]['id'])
         return expanded_key, index_value
 
+    def create_implied_roles(self, implied_pattern, test_data):
+        """Create the implied roles specified in the test plan."""
+        for implied_spec in implied_pattern:
+            # Each implied role specification is a dict of the form:
+            #
+            # {'role': 0, 'implied_roles': list of roles}
+
+            prior_role = test_data['roles'][implied_spec['role']]['id']
+            if isinstance(implied_spec['implied_roles'], list):
+                for this_role in implied_spec['implied_roles']:
+                    implied_role = test_data['roles'][this_role]['id']
+                    self.role_api.create_implied_role(prior_role, implied_role)
+            else:
+                implied_role = (
+                    test_data['roles'][implied_spec['implied_roles']]['id'])
+                self.role_api.create_implied_role(prior_role, implied_role)
+
     def create_group_memberships(self, group_pattern, test_data):
         """Create the group memberships specified in the test plan."""
         for group_spec in group_pattern:
@@ -399,6 +422,8 @@ class AssignmentTestHelperMixin(object):
 
         """
         test_data = self.create_entities(test_plan['entities'])
+        if 'implied_roles' in test_plan:
+            self.create_implied_roles(test_plan['implied_roles'], test_data)
         if 'group_memberships' in test_plan:
             self.create_group_memberships(test_plan['group_memberships'],
                                           test_data)
@@ -6379,6 +6404,90 @@ class InheritanceTests(AssignmentTestHelperMixin):
         self.assertThat(user_ids, matchers.HasLength(4))
         for x in range(0, 4):
             self.assertIn(test_data['users'][x]['id'], user_ids)
+
+
+class ImpliedRoleTests(AssignmentTestHelperMixin):
+
+    def test_role_assignments_simple_tree_of_implied_roles(self):
+        test_plan = {
+            'entities': {'domains': {'users': 1, 'projects': 1},
+                         'roles': 4},
+            # Two level tree of implied roles
+            'implied_roles': [{'role': 0, 'implied_roles': [1]},
+                              {'role': 1, 'implied_roles': [2, 3]}],
+            'assignments': [{'user': 0, 'role': 0, 'project': 0}],
+            'tests': [
+                # List all direct assignments for user[0], this should just
+                # show the one top level role assignment
+                {'params': {'user': 0},
+                 'results': [{'user': 0, 'role': 0, 'project': 0}]},
+                # Now the effective ones - so the implied roles should be
+                # expanded out
+                {'params': {'user': 0, 'effective': True},
+                 'results': [{'user': 0, 'role': 0, 'project': 0},
+                             {'user': 0, 'role': 1, 'project': 0,
+                              'indirect': {'role': 0}},
+                             {'user': 0, 'role': 2, 'project': 0,
+                              'indirect': {'role': 1}},
+                             {'user': 0, 'role': 3, 'project': 0,
+                              'indirect': {'role': 1}}]},
+            ]
+        }
+        self.execute_assignment_plan(test_plan)
+
+    def test_role_assignments_directed_graph_of_implied_roles(self):
+        test_plan = {
+            'entities': {'domains': {'users': 1, 'projects': 1},
+                         'roles': 6},
+            # Two level tree of implied roles, where one of the roles at the
+            # bottom is implied by more than one top level role
+            'implied_roles': [{'role': 0, 'implied_roles': [1, 2]},
+                              {'role': 1, 'implied_roles': [3, 4]},
+                              {'role': 5, 'implied_roles': [4]}],
+            # The use gets both top level roles
+            'assignments': [{'user': 0, 'role': 0, 'project': 0},
+                            {'user': 0, 'role': 5, 'project': 0}],
+            'tests': [
+                # The implied roles should be expanded out and there should be
+                # two entries for the role that had two different prior roles.
+                {'params': {'user': 0, 'effective': True},
+                 'results': [{'user': 0, 'role': 0, 'project': 0},
+                             {'user': 0, 'role': 5, 'project': 0},
+                             {'user': 0, 'role': 1, 'project': 0,
+                              'indirect': {'role': 0}},
+                             {'user': 0, 'role': 2, 'project': 0,
+                              'indirect': {'role': 0}},
+                             {'user': 0, 'role': 3, 'project': 0,
+                              'indirect': {'role': 1}},
+                             {'user': 0, 'role': 4, 'project': 0,
+                              'indirect': {'role': 1}},
+                             {'user': 0, 'role': 4, 'project': 0,
+                              'indirect': {'role': 5}}]},
+            ]
+        }
+        self.execute_assignment_plan(test_plan)
+
+    def test_role_assignments_implied_roles_filtered_by_role(self):
+        test_plan = {
+            'entities': {'domains': {'users': 1, 'projects': 2},
+                         'roles': 4},
+            # Two level tree of implied roles
+            'implied_roles': [{'role': 0, 'implied_roles': [1]},
+                              {'role': 1, 'implied_roles': [2, 3]}],
+            'assignments': [{'user': 0, 'role': 0, 'project': 0},
+                            {'user': 0, 'role': 3, 'project': 1}],
+            'tests': [
+                # List effective roles filtering by one of the implied roles,
+                # showing that the filter was implied post expansion of
+                # implied roles (and that non impled roles are included in
+                # the filter
+                {'params': {'role': 3, 'effective': True},
+                 'results': [{'user': 0, 'role': 3, 'project': 0,
+                              'indirect': {'role': 1}},
+                             {'user': 0, 'role': 3, 'project': 1}]},
+            ]
+        }
+        self.execute_assignment_plan(test_plan)
 
 
 class FilterTests(filtering.FilterTests):
