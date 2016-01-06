@@ -328,6 +328,83 @@ class RoleV3(controller.V3Controller):
         self.role_api.delete_role(role_id, initiator)
 
 
+@dependency.requires('role_api')
+class ImpliedRolesV3(controller.V3Controller):
+    """The V3 ImpliedRoles CRD APIs.  There is no Update."""
+
+    collection_name = 'implied_roles'
+    member_name = 'implied_role'
+
+    def _add_self_referential_link(self, context, ref):
+        links = ref.setdefault('links', {})
+        links['self'] = self.base_url(context) + '/' + ref['prior_role_id']
+
+    @controller.protected()
+    def get_implied_role(self, context, prior_role_id, implied_role_id):
+
+        ref = self.role_api.get_implied_role(prior_role_id, implied_role_id)
+        self._add_self_referential_link(context, ref)
+        return ref
+
+    @controller.protected()
+    def check_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.get_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def create_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.create_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def delete_implied_role(self, context, prior_role_id, implied_role_id):
+        self.role_api.delete_implied_role(prior_role_id, implied_role_id)
+
+    @controller.protected()
+    def list_implied_roles(self, context, prior_role_id):
+        ref = self.role_api.list_implied_roles(prior_role_id)
+        implied_roles = [r['implied_role_id'] for r in ref]
+        results = {'prior_role_id': prior_role_id,
+                   'implied_roles': implied_roles}
+
+        return results
+
+    @controller.protected()
+    def list_role_inference_rules(self, context):
+        refs = self.role_api.list_role_inference_rules()
+        role_dict = {role_ref['id']: role_ref
+                     for role_ref in self.role_api.list_roles()}
+
+        rules = dict()
+        template = 'http://identity:35357/v3/roles/%s'
+        for ref in refs:
+            implied_role_id = ref['implied_role_id']
+            implied = rules.get(ref['prior_role_id'], [])
+            implied.append(
+                {
+                    'id': implied_role_id,
+                    'link': {
+                        'self': template % ref['implied_role_id']
+                    },
+                    'name': role_dict[implied_role_id]['name']
+                }
+            )
+            rules[ref['prior_role_id']] = implied
+
+        inferences = []
+        for prior_id, implied in rules.items():
+            inferences.append({
+                'prior_role': {
+                    'id': prior_id,
+                    'links': {
+                        'self': template % prior_id
+                    },
+                    'name': role_dict[prior_id]['name']
+                },
+                'implies': implied
+            })
+        results = {'role_inferences': inferences}
+        return results
+
+
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',
                      'role_api')
 class GrantAssignmentV3(controller.V3Controller):
@@ -480,6 +557,13 @@ class RoleAssignmentV3(controller.V3Controller):
          'role_id': role_id,
          'indirect': {'project_id': parent_id}}
 
+        or, for a role that was implied by a prior role:
+
+        {'user_id': user_id,
+         'project_id': project_id,
+         'role_id': role_id,
+         'indirect': {'role_id': prior role_id}}
+
         It is possible to deduce if a role assignment came from group
         membership if it has both 'user_id' in the main body of the dict and
         'group_id' in the 'indirect' subdict, as well as it is possible to
@@ -547,7 +631,16 @@ class RoleAssignmentV3(controller.V3Controller):
             formatted_link += '/groups/%s' % entity['group_id']
 
         formatted_entity['role'] = {'id': entity['role_id']}
-        formatted_link += '/roles/%s' % entity['role_id']
+        prior_role_link = ''
+        if 'role_id' in entity.get('indirect', {}):
+            formatted_link += '/roles/%s' % entity['indirect']['role_id']
+            prior_role_link = (
+                '/prior_role/%(prior)s/implies/%(implied)s' % {
+                    'prior': entity['role_id'],
+                    'implied': entity['indirect']['role_id']
+                })
+        else:
+            formatted_link += '/roles/%s' % entity['role_id']
 
         if inherited_assignment:
             formatted_entity['scope']['OS-INHERIT:inherited_to'] = (
@@ -557,6 +650,9 @@ class RoleAssignmentV3(controller.V3Controller):
 
         formatted_entity['links']['assignment'] = self.base_url(context,
                                                                 formatted_link)
+        if prior_role_link:
+            formatted_entity['links']['prior_role'] = (
+                self.base_url(context, prior_role_link))
 
         return formatted_entity
 
