@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_720bacd6",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:22:43Z",
+      "side": 1,
+      "message": "nit: add a period, if you have another patch coming.",
+      "range": {
+        "startLine": 589,
+        "startChar": 58,
+        "endLine": 589,
+        "endChar": 60
+      },
+      "revId": "4787edf3744f23ee3085ed249f2a2e78908bf9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_c4395243",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 17
@@ -104,6 +127,29 @@
       "writtenOn": "2015-12-29T19:28:31Z",
       "side": 1,
       "message": "You should be able to test calling Token.__init__ twice. Override kvs.get_key_value_store to return a mock.Mock and check if configure() is called again.",
+      "revId": "4787edf3744f23ee3085ed249f2a2e78908bf9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_72c08c50",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:22:43Z",
+      "side": 1,
+      "message": "it would be help to know what race condition is being avoided here.",
+      "range": {
+        "startLine": 55,
+        "startChar": 31,
+        "endLine": 55,
+        "endChar": 51
+      },
       "revId": "4787edf3744f23ee3085ed249f2a2e78908bf9fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
