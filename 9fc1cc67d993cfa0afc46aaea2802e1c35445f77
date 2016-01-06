@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_320e948c",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-06T20:33:28Z",
+      "side": 1,
+      "message": "nit: could add another ec2 type credential and ensure we get two entries back.",
+      "revId": "9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_6ee71041",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 9
