@@ -230,6 +230,9 @@ FILE_OPTIONS = {
     'os_inherit': [
         cfg.BoolOpt('enabled', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='In the O release, this option will be '
+                                      'removed and this portion of the API '
+                                      'will be always enabled.',
                     help='role-assignment inheritance to projects from '
                          'owning domain or from projects higher in the '
                          'hierarchy can be optionally disabled. In the '
@@ -519,6 +522,9 @@ FILE_OPTIONS = {
         cfg.BoolOpt('enabled',
                     default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The endpoint policy extension should '
+                                      'always be enabled. This option will be '
+                                      'removed in the O release.',
                     help='Enable endpoint_policy functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
@@ -742,38 +748,82 @@ FILE_OPTIONS = {
 
         cfg.StrOpt('role_tree_dn',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP role driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal. This option will be '
+                                     'removed in the O release.',
                    help='Search base for roles. '
                         'Defaults to the suffix value.'),
         cfg.StrOpt('role_filter',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP role driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal. This option will be '
+                                     'removed in the O release.',
                    help='LDAP search filter for roles.'),
         cfg.StrOpt('role_objectclass', default='organizationalRole',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP role driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal. This option will be '
+                                     'removed in the O release.',
                    help='LDAP objectclass for roles.'),
         cfg.StrOpt('role_id_attribute', default='cn',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP role driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal. This option will be '
+                                     'removed in the O release.',
                    help='LDAP attribute mapped to role id.'),
         cfg.StrOpt('role_name_attribute', default='ou',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP role driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal. This option will be '
+                                     'removed in the O release.',
                    help='LDAP attribute mapped to role name.'),
         cfg.StrOpt('role_member_attribute', default='roleOccupant',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP role driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal. This option will be '
+                                     'removed in the O release.',
                    help='LDAP attribute mapped to role membership.'),
         cfg.ListOpt('role_attribute_ignore', default=[],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP role driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal. This option will be '
+                                      'removed in the O release.',
                     help='List of attributes stripped off the role on '
                          'update.'),
         cfg.BoolOpt('role_allow_create', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP role driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal. This option will be '
+                                      'removed in the O release.',
                     help='Allow role creation in LDAP backend.'),
         cfg.BoolOpt('role_allow_update', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP role driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal. This option will be '
+                                      'removed in the O release.',
                     help='Allow role update in LDAP backend.'),
         cfg.BoolOpt('role_allow_delete', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP role driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal. This option will be '
+                                      'removed in the O release.',
                     help='Allow role deletion in LDAP backend.'),
         cfg.ListOpt('role_additional_attribute_mapping',
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP role driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal. This option will be '
+                                      'removed in the O release.',
                     default=[],
                     help='Additional attribute mappings for roles. Attribute '
                          'mapping format is <ldap_attr>:<user_attr>, where '
