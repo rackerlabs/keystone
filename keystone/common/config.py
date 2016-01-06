@@ -230,6 +230,9 @@ FILE_OPTIONS = {
     'os_inherit': [
         cfg.BoolOpt('enabled', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='In the future, this option will be '
+                                      'removed and this portion of the API '
+                                      'will be always enabled.',
                     help='role-assignment inheritance to projects from '
                          'owning domain or from projects higher in the '
                          'hierarchy can be optionally disabled. In the '
@@ -519,6 +522,8 @@ FILE_OPTIONS = {
         cfg.BoolOpt('enabled',
                     default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The endpoint policy extension should '
+                                      'always be enabled.',
                     help='Enable endpoint_policy functionality.'),
         cfg.StrOpt('driver',
                    default='sql',
@@ -645,75 +650,117 @@ FILE_OPTIONS = {
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_tree_dn', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='Search base for projects. '
                         'Defaults to the suffix value.'),
         cfg.StrOpt('project_filter',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_filter', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP search filter for projects.'),
         cfg.StrOpt('project_objectclass', default='groupOfNames',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_objectclass', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP objectclass for projects.'),
         cfg.StrOpt('project_id_attribute', default='cn',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_id_attribute', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to project id.'),
         cfg.StrOpt('project_member_attribute', default='member',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_member_attribute', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to project membership for '
                         'user.'),
         cfg.StrOpt('project_name_attribute', default='ou',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_name_attribute', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to project name.'),
         cfg.StrOpt('project_desc_attribute', default='description',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_desc_attribute', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to project description.'),
         cfg.StrOpt('project_enabled_attribute', default='enabled',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_enabled_attribute', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to project enabled.'),
         cfg.StrOpt('project_domain_id_attribute',
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_domain_id_attribute', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    default='businessCategory',
                    help='LDAP attribute mapped to project domain_id.'),
         cfg.ListOpt('project_attribute_ignore', default=[],
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_attribute_ignore', group='ldap')],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='List of attributes stripped off the project on '
                          'update.'),
         cfg.BoolOpt('project_allow_create', default=True,
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_allow_create', group='ldap')],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='Allow project creation in LDAP backend.'),
         cfg.BoolOpt('project_allow_update', default=True,
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_allow_update', group='ldap')],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='Allow project update in LDAP backend.'),
         cfg.BoolOpt('project_allow_delete', default=True,
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_allow_delete', group='ldap')],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='Allow project deletion in LDAP backend.'),
         cfg.BoolOpt('project_enabled_emulation', default=False,
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_enabled_emulation', group='ldap')],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='If true, Keystone uses an alternative method to '
                          'determine if a project is enabled or not by '
                          'checking if they are a member of the '
@@ -722,6 +769,9 @@ FILE_OPTIONS = {
                    deprecated_opts=[cfg.DeprecatedOpt(
                        'tenant_enabled_emulation_dn', group='ldap')],
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='DN of the group entry to hold enabled projects when '
                         'using enabled emulation.'),
         cfg.BoolOpt('project_enabled_emulation_use_group_config',
@@ -733,6 +783,9 @@ FILE_OPTIONS = {
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_additional_attribute_mapping', group='ldap')],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     default=[],
                     help='Additional attribute mappings for projects. '
                          'Attribute mapping format is '
@@ -742,38 +795,71 @@ FILE_OPTIONS = {
 
         cfg.StrOpt('role_tree_dn',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='Search base for roles. '
                         'Defaults to the suffix value.'),
         cfg.StrOpt('role_filter',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP search filter for roles.'),
         cfg.StrOpt('role_objectclass', default='organizationalRole',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP objectclass for roles.'),
         cfg.StrOpt('role_id_attribute', default='cn',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to role id.'),
         cfg.StrOpt('role_name_attribute', default='ou',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to role name.'),
         cfg.StrOpt('role_member_attribute', default='roleOccupant',
                    deprecated_for_removal=True,
+                   deprecated_reason='The LDAP assignment driver and its '
+                                     'configuration options are deprecated '
+                                     'for removal.',
                    help='LDAP attribute mapped to role membership.'),
         cfg.ListOpt('role_attribute_ignore', default=[],
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='List of attributes stripped off the role on '
                          'update.'),
         cfg.BoolOpt('role_allow_create', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='Allow role creation in LDAP backend.'),
         cfg.BoolOpt('role_allow_update', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='Allow role update in LDAP backend.'),
         cfg.BoolOpt('role_allow_delete', default=True,
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     help='Allow role deletion in LDAP backend.'),
         cfg.ListOpt('role_additional_attribute_mapping',
                     deprecated_for_removal=True,
+                    deprecated_reason='The LDAP assignment driver and its '
+                                      'configuration options are deprecated '
+                                      'for removal.',
                     default=[],
                     help='Additional attribute mappings for roles. Attribute '
                          'mapping format is <ldap_attr>:<user_attr>, where '
