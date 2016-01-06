@@ -114,7 +114,12 @@ class FederationDriverBase(object):
     def create_idp(self, idp_id, idp):
         """Create an identity provider.
 
-        :returns: idp_ref
+        :param idp_id: ID of idp object
+        :type idp_id: string
+        :param idp: idp object
+        :type idp: dict
+        :returns: idp ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -123,6 +128,8 @@ class FederationDriverBase(object):
     def delete_idp(self, idp_id):
         """Delete an identity provider.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
 
@@ -135,6 +142,8 @@ class FederationDriverBase(object):
 
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
+        :returns: list of idp refs
+        :rtype: list of dicts
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -143,8 +152,12 @@ class FederationDriverBase(object):
     def get_idp(self, idp_id):
         """Get an identity provider by ID.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
+        :returns: idp ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -153,8 +166,12 @@ class FederationDriverBase(object):
     def get_idp_from_remote_id(self, remote_id):
         """Get an identity provider by remote ID.
 
+        :param remote_id: ID of remote
+        :type idp_id: string
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
+        :returns: idp ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -163,8 +180,14 @@ class FederationDriverBase(object):
     def update_idp(self, idp_id, idp):
         """Update an identity provider by ID.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
+        :param idp: idp object
+        :type idp: dict
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
+        :returns: idp ref
+        :rtype: dict<
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -173,8 +196,16 @@ class FederationDriverBase(object):
     def create_protocol(self, idp_id, protocol_id, protocol):
         """Add an IdP-Protocol configuration.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
+        :param protocol_id: ID of protocol  object
+        :type protocol_id: string
+        :param protocol: protocol object
+        :type protocol: dict
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
+        :returns: protocol ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -183,10 +214,18 @@ class FederationDriverBase(object):
     def update_protocol(self, idp_id, protocol_id, protocol):
         """Change an IdP-Protocol configuration.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
+        :param protocol_id: ID of protocol  object
+        :type protocol_id: string
+        :param protocol: protocol object
+        :type protocol: dict
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
         :raises keystone.exception.FederatedProtocolNotFound: If the federated
             protocol cannot be found.
+        :returns: protocol ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -195,10 +234,16 @@ class FederationDriverBase(object):
     def get_protocol(self, idp_id, protocol_id):
         """Get an IdP-Protocol configuration.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
+        :param protocol_id: ID of protocol  object
+        :type protocol_id: string
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
         :raises keystone.exception.FederatedProtocolNotFound: If the federated
             protocol cannot be found.
+        :returns: protocol ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -207,8 +252,12 @@ class FederationDriverBase(object):
     def list_protocols(self, idp_id):
         """List an IdP's supported protocols.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
+        :returns: list of protocol ref
+        :rtype: list of dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -217,6 +266,10 @@ class FederationDriverBase(object):
     def delete_protocol(self, idp_id, protocol_id):
         """Delete an IdP-Protocol configuration.
 
+        :param idp_id: ID of idp object
+        :type idp_id: string
+        :param protocol_id: ID of protocol  object
+        :type protocol_id: string
         :raises keystone.exception.IdentityProviderNotFound: If the IdP
             doesn't exist.
         :raises keystone.exception.FederatedProtocolNotFound: If the federated
@@ -231,7 +284,8 @@ class FederationDriverBase(object):
 
         :param mapping_ref: mapping ref with mapping name
         :type mapping_ref: dict
-        :returns: mapping_ref
+        :returns: mapping ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -255,7 +309,8 @@ class FederationDriverBase(object):
         :type mapping_id: string
         :param mapping_ref: new mapping ref
         :type mapping_ref: dict
-        :returns: mapping_ref
+        :returns: mapping ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -264,8 +319,8 @@ class FederationDriverBase(object):
     def list_mappings(self):
         """List all mappings.
 
-        returns: list of mappings
-
+        returns: list of mapping refs
+        :rtype: list of dicts
         """
         raise exception.NotImplemented()  # pragma: no cover
 
@@ -276,7 +331,8 @@ class FederationDriverBase(object):
 
         :param mapping_id: id of mapping to get
         :type mapping_ref: string
-        :returns: mapping_ref
+        :returns: mapping ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -293,7 +349,8 @@ class FederationDriverBase(object):
             doesn't exist.
         :raises keystone.exception.FederatedProtocolNotFound: If the federated
             protocol cannot be found.
-        :returns: mapping_ref
+        :returns: mapping ref
+        :rtype: dict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -307,7 +364,7 @@ class FederationDriverBase(object):
         :param sp: service prvider object
         :type sp: dict
 
-        :returns: sp_ref
+        :returns: service provider ref
         :rtype: dict
 
         """
@@ -330,7 +387,7 @@ class FederationDriverBase(object):
     def list_sps(self):
         """List all service providers.
 
-        :returns List of sp_ref objects
+        :returns List of service provider ref objects
         :rtype: list of dicts
 
         """
@@ -343,7 +400,9 @@ class FederationDriverBase(object):
         :param sp_id: id of the service provider
         :type sp_id: string
 
-        :returns: sp_ref
+        :returns: service provider ref
+        :rtype: dict
+
         :raises keystone.exception.ServiceProviderNotFound: If the service
             provider doesn't exist.
 
@@ -359,7 +418,7 @@ class FederationDriverBase(object):
         :param sp: service prvider object
         :type sp: dict
 
-        :returns: sp_ref
+        :returns: service provider ref
         :rtype: dict
 
         :raises keystone.exception.ServiceProviderNotFound: If the service
