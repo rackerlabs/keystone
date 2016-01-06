@@ -1,0 +1,22 @@
+Code-Review+1: zouyee <zounengren@cmss.chinamobile.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+1: venkatamahesh <venkatamaheshkotha@gmail.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: werner mendizabal <nonameentername@gmail.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Code-Review+1: Yang Shengming <yang.shengming@99cloud.net>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: zhurong <aaronzhu1121@gmail.com>
+Code-Review+1: Toshiya Shiga <tos-shiga@yk.jp.nec.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 06 Jan 2016 08:14:43 +0000
+Reviewed-on: https://review.openstack.org/238291
+Project: openstack/keystone
+Branch: refs/heads/master
