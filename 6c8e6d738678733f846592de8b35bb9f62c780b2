@@ -381,6 +381,23 @@
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_605c2419",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1459,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-07T03:28:02Z",
+      "side": 1,
+      "message": "camelCase? suggest how about \"expected \u003d\"",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
