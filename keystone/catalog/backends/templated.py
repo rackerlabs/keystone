@@ -293,3 +293,24 @@ class Catalog(core.CatalogDriverV9):
 
     def delete_endpoint_group_association_by_project(self, project_id):
         raise exception.NotImplemented()
+
+    def associate_project_with_sp(self, project_id, sp_id):
+        raise exception.NotImplemented()
+
+    def get_project_service_provider_association(self, project_id, sp_id):
+        raise exception.NotImplemented()
+
+    def delete_project_service_provider_association(self, project_id, sp_id):
+        raise exception.NotImplemented()
+
+    def delete_service_provider_association_by_project(self, project_id):
+        raise exception.NotImplemented()
+
+    def delete_association_by_service_provider(self, sp_id):
+        raise exception.NotImplemented()
+
+    def list_project_service_providers(self, project_id):
+        raise exception.NotImplemented()
+
+    def list_service_provider_projects(self, sp_id):
+        raise exception.NotImplemented()
