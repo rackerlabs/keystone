@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_20edb325",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T14:59:52Z",
+      "side": 1,
+      "message": "\"enabled by default.\" \n\nThis mostly says \"what\" is happening versus giving the reason. How much reason do we need to give?",
+      "range": {
+        "startLine": 235,
+        "startChar": 54,
+        "endLine": 235,
+        "endChar": 61
+      },
+      "revId": "2e171ef795921c6de418a973147ae60e0b238beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_80c33f8a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T14:59:52Z",
+      "side": 1,
+      "message": "As a deployer, why should I have the endpoint policy extension enabled?",
+      "range": {
+        "startLine": 525,
+        "startChar": 39,
+        "endLine": 526,
+        "endChar": 56
+      },
+      "revId": "2e171ef795921c6de418a973147ae60e0b238beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_406b0786",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T14:59:52Z",
+      "side": 1,
+      "message": "As an operator, this doesn\u0027t give me much of a reason *why* the LDAP role driver is being deprecated. I think this comment applies to most of these additions.",
+      "range": {
+        "startLine": 751,
+        "startChar": 38,
+        "endLine": 753,
+        "endChar": 49
+      },
+      "revId": "2e171ef795921c6de418a973147ae60e0b238beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
