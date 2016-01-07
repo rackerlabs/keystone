@@ -505,6 +505,22 @@ V3_JSON_HOME_RESOURCES = {
     {
         'href-template': '/OS-EP-FILTER/projects/{project_id}/endpoints',
         'href-vars': {'project_id': json_home.Parameters.PROJECT_ID, }},
+    _build_ep_filter_rel(resource_name='project_service_provider'):
+    {
+        'href-template': ('/OS-EP-FILTER/projects/{project_id}'
+                          '/service_providers/{sp_id}'),
+        'href-vars': {'sp_id': SP_ID_PARAMETER_RELATION,
+                      'project_id': json_home.Parameters.PROJECT_ID, }},
+    _build_ep_filter_rel(resource_name='project_service_providers'):
+    {
+        'href-template': ('/OS-EP-FILTER/projects/{project_id}'
+                          '/service_providers'),
+        'href-vars': {'sp_id': SP_ID_PARAMETER_RELATION,
+                      'project_id': json_home.Parameters.PROJECT_ID, }},
+    _build_ep_filter_rel(resource_name='project_service_providers'):
+    {
+        'href-template': '/OS-EP-FILTER/service_providers/{sp_id}/projects',
+        'href-vars': {'sp_id': SP_ID_PARAMETER_RELATION}},
     _build_ep_filter_rel(
         resource_name='projects_associated_with_endpoint_group'):
     {
