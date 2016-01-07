@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_ef5d3549",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-07T23:32:36Z",
+      "side": 1,
+      "message": "Set",
+      "range": {
+        "startLine": 316,
+        "startChar": 35,
+        "endLine": 316,
+        "endChar": 39
+      },
+      "revId": "1c5fa36c0caa43c43bc523604d34bfbe708401bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0f5be955",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-07T23:32:36Z",
+      "side": 1,
+      "message": "to be raised",
+      "range": {
+        "startLine": 317,
+        "startChar": 12,
+        "endLine": 317,
+        "endChar": 21
+      },
+      "revId": "1c5fa36c0caa43c43bc523604d34bfbe708401bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4f3fa1d6",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-07T23:32:36Z",
+      "side": 1,
+      "message": "-\u003e an auth context that contains",
+      "range": {
+        "startLine": 318,
+        "startChar": 18,
+        "endLine": 318,
+        "endChar": 50
+      },
+      "revId": "1c5fa36c0caa43c43bc523604d34bfbe708401bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
