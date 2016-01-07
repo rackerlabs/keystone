@@ -292,6 +292,24 @@
       "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ee1e9e5e",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-07T20:31:05Z",
+      "side": 1,
+      "message": "Haha maybe i need glasses ....",
+      "parentUuid": "fa69d971_92574025",
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
