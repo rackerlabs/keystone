@@ -16,6 +16,24 @@
       "revId": "a422291b03eb73d6c5d4c9207f2ff2de45b6d3ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d66ef7fe",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 10485
+      },
+      "writtenOn": "2016-01-07T07:06:58Z",
+      "side": 0,
+      "message": "I tried to find modules that contain tests using this method but we can not add them in tox as of now due to other py3 dependencies. Thanks",
+      "parentUuid": "fa69d971_c5adede9",
+      "revId": "a422291b03eb73d6c5d4c9207f2ff2de45b6d3ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
