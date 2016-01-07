@@ -507,8 +507,12 @@ class ProjectValidationTestCase(unit.BaseTestCase):
             self.create_project_validator.validate(request_to_validate)
 
     def test_validate_project_request_with_invalid_domain_id_fails(self):
-        """Exception is raised when `domain_id` as a non-id value."""
-        for domain_id in [False, 'fake_project']:
+        """Validate invalid domain id.
+
+        Exception is raised when `domain_id` is not a string or
+        contains illegal characters.
+        """
+        for domain_id in [False, 'fake@domain.openstack']:
             request_to_validate = {'name': self.project_name,
                                    'domain_id': domain_id}
             self.assertRaises(exception.SchemaValidationError,
