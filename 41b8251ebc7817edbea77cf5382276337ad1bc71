@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_5f7d1ee6",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T18:50:09Z",
+      "side": 1,
+      "message": "is this suppose to be a dn?",
+      "range": {
+        "startLine": 414,
+        "startChar": 31,
+        "endLine": 414,
+        "endChar": 35
+      },
+      "revId": "41b8251ebc7817edbea77cf5382276337ad1bc71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
