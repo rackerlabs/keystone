@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_8a692028",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3311,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-07T14:27:50Z",
+      "side": 1,
+      "message": "You could use assertRaises and catch the error. Then put a todo saying what is happening, and why.",
+      "range": {
+        "startLine": 3307,
+        "startChar": 8,
+        "endLine": 3311,
+        "endChar": 30
+      },
+      "revId": "1b2489d3ff7c4c2c3d6009c8d65be9beb5966099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
