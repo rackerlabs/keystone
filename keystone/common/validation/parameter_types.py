@@ -40,7 +40,7 @@ id_string = {
     'maxLength': 64,
     # TODO(lbragstad): Find a way to make this configurable such that the end
     # user chooses how much control they want over id_strings with a regex
-    'pattern': '^[a-zA-Z0-9-]+$'
+    'pattern': '^[a-zA-Z0-9-_]+$'
 }
 
 description = {
