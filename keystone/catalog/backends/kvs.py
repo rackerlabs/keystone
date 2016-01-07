@@ -369,3 +369,82 @@ class Catalog(kvs.Base, catalog.CatalogDriverV8):
 
         """
         pass
+
+        # Service Provider filtering
+
+    def associate_project_with_sp(self, project_id, sp_id):
+        """Associate a service provider with a project.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :param sp_id: identity of the service provider to check
+        :type sp_id: string
+        :returns: None
+
+        """
+        pass
+
+    def get_project_service_provider_association(self, project_id, sp_id):
+        """Get association object for a project and service provider.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :param sp_id: identity of the service provider to check
+        :type sp_id: string
+        :returns: instance of association between service provider and  project
+
+        """
+        pass
+
+    def delete_project_service_provider_association(self, project_id, sp_id):
+        """Delete association between a project and a service provider.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :param sp_id: identity of the service provider to check
+        :type sp_id: string
+        :returns: None
+
+        """
+        pass
+
+    def delete_service_provider_association_by_project(self, project_id):
+        """Delete all associations identified by a project_id.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :returns: None
+
+        """
+
+        pass
+
+    def delete_association_by_service_provider(self, sp_id):
+        """Delete all associations identified by a sp_id.
+
+        :param sp_id: identity of the service provider to check
+        :type sp_id: string
+        :returns: None
+
+        """
+        pass
+
+    def list_project_service_providers(self, project_id):
+        """List service providers associated with a project.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :returns: list of service providers associated with a project
+
+        """
+        pass
+
+    def list_service_provider_projects(self, sp_id):
+        """List service providers associated with a project.
+
+        :param sp_id: identity of the service provider to check
+        :type sp_id: string
+        :returns: list of projects associated with a service provider
+
+        """
+        pass

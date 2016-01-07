@@ -546,6 +546,59 @@ class Catalog(catalog.CatalogDriverV8):
             query = query.filter_by(project_id=project_id)
             query.delete()
 
+    # Service Provider filtering
+
+    def delete_service_provider_association_by_project(self, project_id):
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(ProjectServiceProvider)
+            query = query.filter_by(project_id=project_id)
+            query.delete(synchronize_session=False)
+
+    def delete_association_by_service_provider(self, sp_id):
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(ProjectServiceProvider)
+            query = query.filter_by(service_provider_id=sp_id)
+            query.delete(synchronize_session=False)
+
+    def associate_project_with_sp(self, project_id, sp_id):
+        session = sql.get_session()
+        with session.begin():
+            service_provider_project_ref = ProjectServiceProvider(
+                project_id=project_id, service_provider_id=sp_id)
+            session.add(service_provider_project_ref)
+
+    def get_project_service_provider_association(self, project_id, sp_id):
+        session = sql.get_session()
+        association_ref = session.query(ProjectServiceProvider).get(
+            (project_id, sp_id))
+        if association_ref is None:
+            raise exception.NotFound("Service Provider association was "
+                                     "not found")
+        return association_ref.to_dict()
+
+    def delete_project_service_provider_association(self, project_id, sp_id):
+        session = sql.get_session()
+        with session.begin():
+            association_ref = session.query(ProjectServiceProvider).get(
+                (project_id, sp_id))
+            session.delete(association_ref)
+
+    def list_project_service_providers(self, project_id):
+        session = sql.get_session()
+        query = session.query(ProjectServiceProvider)
+        query = query.filter_by(project_id=project_id)
+        service_providers_ref = query.all()
+        return [ref.to_dict() for ref in service_providers_ref]
+
+    def list_service_provider_projects(self, sp_id):
+        session = sql.get_session()
+        query = session.query(ProjectServiceProvider)
+        query = query.filter_by(service_provider_id=sp_id)
+        projects_ref = query.all()
+        return [ref.to_dict() for ref in projects_ref]
+
 
 class ProjectEndpoint(sql.ModelBase, sql.ModelDictMixin):
     """project-endpoint relationship table."""
@@ -583,3 +636,16 @@ class ProjectEndpointGroupMembership(sql.ModelBase, sql.ModelDictMixin):
     project_id = sql.Column(sql.String(64), nullable=False)
     __table_args__ = (sql.PrimaryKeyConstraint('endpoint_group_id',
                                                'project_id'), {})
+
+
+class ProjectServiceProvider(sql.ModelBase, sql.ModelDictMixin):
+    """Service providers and projects associations table"""
+
+    __tablename__ = 'project_service_provider'
+    attributes = ['project_id', 'service_provider_id']
+    project_id = sql.Column(sql.String(64),
+                            primary_key=True,
+                            nullable=False)
+    service_provider_id = sql.Column(sql.String(64),
+                                     primary_key=True,
+                                     nullable=False)
