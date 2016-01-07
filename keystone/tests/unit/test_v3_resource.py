@@ -162,8 +162,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assignment_api.add_user_to_project(project2['id'],
                                                 user2['id'])
 
-        # First check a user in that domain can authenticate. The v2 user
-        # cannot authenticate because they exist outside the default domain.
+        # First check a user in that domain can authenticate..
         body = {
             'auth': {
                 'passwordCredentials': {
@@ -174,8 +173,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             }
         }
         self.admin_request(
-            path='/v2.0/tokens', method='POST', body=body,
-            expected_status=http_client.UNAUTHORIZED)
+            path='/v2.0/tokens', method='POST', body=body)
 
         auth_data = self.build_authentication_request(
             user_id=user2['id'],
