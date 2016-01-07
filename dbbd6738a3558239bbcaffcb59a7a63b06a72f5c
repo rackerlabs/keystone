@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_95a63cac",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-07T03:03:17Z",
+      "side": 1,
+      "message": "I guess these I can just create another patch to remove.",
+      "parentUuid": "fa69d971_afcc4f89",
+      "range": {
+        "startLine": 653,
+        "startChar": 19,
+        "endLine": 655,
+        "endChar": 52
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_af1e8f09",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -82,6 +106,30 @@
       "writtenOn": "2016-01-07T01:57:14Z",
       "side": 1,
       "message": "this should be \u0027role driver\u0027, same with all the other options in this group below",
+      "range": {
+        "startLine": 798,
+        "startChar": 47,
+        "endLine": 798,
+        "endChar": 64
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_15b9eccb",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-07T03:03:17Z",
+      "side": 1,
+      "message": "Oops, got copy and paste happy.  Thanks!",
+      "parentUuid": "fa69d971_af1e8f09",
       "range": {
         "startLine": 798,
         "startChar": 47,
