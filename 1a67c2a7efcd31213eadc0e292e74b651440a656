@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_69bdc801",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-07T21:00:57Z",
+      "side": 0,
+      "message": "This test should be updated to expect a 204 No Content, which I think would be:\n\n  expected_status\u003dhttp_client.NO_CONTENT\n\nAnd furthermore, all of these expected_status\u003dexception.* are reaching into our implementation to validatate our implementation... and should use http_client.* (a third party package) instead.",
+      "revId": "1a67c2a7efcd31213eadc0e292e74b651440a656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
