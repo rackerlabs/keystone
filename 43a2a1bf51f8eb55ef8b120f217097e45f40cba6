@@ -307,6 +307,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_c03950f3",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:56:48Z",
+      "side": 1,
+      "message": "not sure if I follow... In the whole life, the column was not nullable. But since the previous patch, it will be nullable. So, we need this check",
+      "parentUuid": "fa69d971_8057d856",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_2585e958",
         "filename": "keystone/resource/core.py",
         "patchSetId": 128
@@ -318,6 +336,24 @@
       "writtenOn": "2016-01-06T21:53:09Z",
       "side": 1,
       "message": "(nit) renaming to name_updated so it\u0027s a better indicator that this is a boolean value and it makes the \u0027if\u0027 statement on line 343 read better. Same goes for renaming update_domain.",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_00ca081b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:56:48Z",
+      "side": 1,
+      "message": "actually, this whole block is not necessary anymore, since we\u0027re back to the enforcement of the constraint at the backend",
+      "parentUuid": "fa69d971_2585e958",
       "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
