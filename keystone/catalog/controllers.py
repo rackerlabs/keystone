@@ -613,3 +613,80 @@ class ProjectEndpointGroupV3Controller(controller.V3Controller):
                    'project_id': ref['project_id']})
         ref.setdefault('links', {})
         ref['links']['self'] = url
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ProjectServiceProviderV3Controller(controller.V3Controller):
+
+    member_name = 'service_provider'
+    collection_name = 'service_providers'
+
+    def __init__(self):
+        super(ProjectServiceProviderV3Controller, self).__init__()
+        notifications.register_event_callback(
+            notifications.ACTIONS.deleted, 'project',
+            self._on_project_or_service_provider_delete)
+        notifications.register_event_callback(
+            notifications.ACTIONS.deleted, 'service_provider',
+            self._on_project_or_service_provider_delete)
+
+    def _on_project_or_service_provider_delete(self, service, resource_type,
+                                               operation, payload):
+        project_or_sp_id = payload['resource_info']
+        if resource_type == 'project':
+            self.catalog_api.delete_service_provider_association_by_project(
+                project_or_sp_id)
+        else:
+            self.catalog_api.delete_association_by_service_provider(
+                project_or_sp_id)
+
+    @classmethod
+    def _add_self_referential_link(cls, context, ref):
+        pass
+
+    @controller.protected()
+    def create_service_provider_association(self, context, project_id, sp_id):
+        self.resource_api.get_project(project_id)
+        self.federation_api.get_sp(sp_id)
+        self.catalog_api.associate_project_with_sp(project_id, sp_id)
+
+    @controller.protected()
+    def check_service_provider_association(self, context, project_id, sp_id):
+        self.resource_api.get_project(project_id)
+        self.federation_api.get_sp(sp_id)
+        self.catalog_api.get_project_service_provider_association(
+            project_id, sp_id)
+        wsgi.render_response(status=(204, 'No Content'))
+
+    @controller.protected()
+    def delete_service_provider_association(self, context, project_id, sp_id):
+        self.resource_api.get_project(project_id)
+        self.federation_api.get_sp(sp_id)
+        self.catalog_api.delete_project_service_provider_association(
+            project_id, sp_id)
+
+    @controller.protected()
+    def list_project_service_providers(self, context, project_id):
+        self.resource_api.get_project(project_id)
+        service_providers = (
+            self.catalog_api.list_service_providers_associated_with_project(
+                project_id))
+        return ProjectServiceProviderV3Controller.wrap_collection(
+            context, service_providers)
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ServiceProviderProjectV3Controller(ProjectServiceProviderV3Controller):
+    member_name = "project"
+    collection_name = "projects"
+
+    @controller.protected()
+    def list_service_providers_projects(self, context, sp_id):
+        self.federation_api.get_sp(sp_id)
+        refs = (
+            self.catalog_api.list_projects_associated_with_service_provider(
+                sp_id))
+        projects = [self.resource_api.get_project(
+            ref['project_id']) for ref in refs]
+        return resource.controllers.ProjectV3.wrap_collection(
+            context, projects)
