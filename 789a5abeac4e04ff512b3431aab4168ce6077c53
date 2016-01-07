@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_e1a6d60d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T05:39:56Z",
+      "side": 1,
+      "message": "Any reason why this style was chosen over having a list? \n\n    notification_opt_out \u003d identity.user.created, identity.role.created\n\nSimilar to https://github.com/openstack/keystone/blob/a44a29a66fb03495bb50b61416d2ba623af9582d/keystone/common/config.py#L611-L613",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_01d3ea60",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T05:39:56Z",
+      "side": 1,
+      "message": "unless we plan to use opt_out in another place, we might not need this variable. We could just do something like: \n\n    notification \u003d SERVICE + \u0027.\u0027 + resource_type + \u0027.\u0027 + operation\n    if notification in CONF.notification_opt_out:\n        return",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c1db924d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T05:39:56Z",
+      "side": 1,
+      "message": "Since this is pretty similar to the above, would we be able to move this into a more common spot so there is less duplicate logic?",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
