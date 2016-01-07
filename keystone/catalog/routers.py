@@ -71,6 +71,7 @@ class Routers(wsgi.RoutersBase):
     PATH_ENDPOINT_GROUPS = '/endpoint_groups/{endpoint_group_id}'
     PATH_ENDPOINT_GROUP_PROJECTS = PATH_ENDPOINT_GROUPS + (
         '/projects/{project_id}')
+    PATH_PROJECT_SP = '/projects/{project_id}/service_providers/{sp_id}'
 
     def append_v3_routers(self, mapper, routers):
         regions_controller = controllers.RegionV3()
@@ -78,6 +79,10 @@ class Routers(wsgi.RoutersBase):
         endpoint_group_controller = controllers.EndpointGroupV3Controller()
         project_endpoint_group_controller = (
             controllers.ProjectEndpointGroupV3Controller())
+        project_service_provider_controller = (
+            controllers.ProjectServiceProviderV3Controller())
+        service_provider_project_controller = (
+            controllers.ServiceProviderProjectV3Controller())
         routers.append(router.Router(regions_controller,
                                      'regions', 'region',
                                      resource_descriptions=self.v3_resources))
@@ -175,6 +180,42 @@ class Routers(wsgi.RoutersBase):
             path=self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS + (
                 '/endpoints'),
             get_action='list_endpoints_associated_with_endpoint_group',
+            rel=build_resource_relation(
+                resource_name='endpoints_in_endpoint_group'),
+            path_vars={
+                'endpoint_group_id': ENDPOINT_GROUP_PARAMETER_RELATION
+            })
+
+        # Service Providers association with projects
+
+        # TODO(marek-denis): Replace path strings with variables
+        self._add_resource(
+            mapper, project_service_provider_controller,
+            path=('/OS-EP-FILTER/projects/{project_id}'
+                  '/service_providers/{sp_id}'),
+            put_action='create_service_provider_association',
+            head_action='check_service_provider_association',
+            delete_action='delete_service_provider_association',
+            rel=build_resource_relation(
+                resource_name='endpoints_in_endpoint_group'),
+            path_vars={
+                'endpoint_group_id': ENDPOINT_GROUP_PARAMETER_RELATION
+            })
+
+        self._add_resource(
+            mapper, project_service_provider_controller,
+            path='/OS-EP-FILTER/projects/{project_id}/service_providers',
+            get_action='list_project_service_providers',
+            rel=build_resource_relation(
+                resource_name='endpoints_in_endpoint_group'),
+            path_vars={
+                'endpoint_group_id': ENDPOINT_GROUP_PARAMETER_RELATION
+            })
+
+        self._add_resource(
+            mapper, service_provider_project_controller,
+            path='/OS-EP-FILTER/service_providers/{sp_id}/projects',
+            get_action='list_service_providers_projects',
             rel=build_resource_relation(
                 resource_name='endpoints_in_endpoint_group'),
             path_vars={

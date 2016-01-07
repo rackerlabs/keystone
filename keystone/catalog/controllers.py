@@ -613,3 +613,66 @@ class ProjectEndpointGroupV3Controller(controller.V3Controller):
                    'project_id': ref['project_id']})
         ref.setdefault('links', {})
         ref['links']['self'] = url
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ProjectServiceProviderV3Controller(controller.V3Controller):
+
+    member_name = 'service_provider'
+    collection_name = 'service_providers'
+
+    @classmethod
+    def _add_self_referential_link(cls, context, ref):
+        url = ('/OS-EP-FILTER/projects/%(project_id)s'
+               '/service_providers/%(service_provider_id)s' % {
+                   'project_id': ref['project_id'],
+                   'service_provider_id': ref['service_provider_id']})
+        ref.setdefault('links', {})
+        ref['links']['self'] = url
+
+    @controller.protected()
+    def create_service_provider_association(self, context, project_id, sp_id):
+        self.resource_api.get_project(project_id)
+        self.federation_api.get_sp(sp_id)
+        self.catalog_api.associate_project_with_sp(project_id, sp_id)
+
+    @controller.protected()
+    def check_service_provider_association(self, context, project_id, sp_id):
+        self.resource_api.get_project(project_id)
+        self.federation_api.get_sp(sp_id)
+        ref = self.catalog_api.get_project_service_provider_association(
+            project_id, sp_id)
+
+        response = ProjectServiceProviderV3Controller.wrap_member(context, ref)
+        wsgi.render_response(body=response, status=(204, 'No Content'))
+
+    @controller.protected()
+    def delete_service_provider_association(self, context, project_id, sp_id):
+        self.resource_api.get_project(project_id)
+        self.federation_api.get_sp(sp_id)
+        self.catalog_api.delete_project_service_provider_association(
+            project_id, sp_id)
+
+    @controller.protected()
+    def list_project_service_providers(self, context, project_id):
+        self.resource_api.get_project(project_id)
+        service_providers = (
+            self.catalog_api.list_service_providers_associated_with_project(
+                project_id))
+        return ProjectServiceProviderV3Controller.wrap_collection(
+            context, service_providers)
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ServiceProviderProjectV3Controller(ProjectServiceProviderV3Controller):
+    member_name = "project"
+    collection_name = "projects"
+
+    @controller.protected()
+    def list_service_providers_projects(self, context, sp_id):
+        self.federation_api.get_sp(sp_id)
+        projects = (
+            self.catalog_api.list_projects_associated_with_service_provider(
+                sp_id))
+        return ServiceProviderProjectV3Controller.wrap_collection(
+            context, projects)
