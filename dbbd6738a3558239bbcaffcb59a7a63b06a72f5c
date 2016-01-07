@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_0fbd5bd7",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-07T01:59:00Z",
+      "side": 1,
+      "message": "this will be removed in the \u0027O\u0027 release",
+      "range": {
+        "startLine": 233,
+        "startChar": 20,
+        "endLine": 235,
+        "endChar": 64
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_efb567ec",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-07T01:59:00Z",
+      "side": 1,
+      "message": "this will be removed in the \u0027O\u0027 release",
+      "range": {
+        "startLine": 525,
+        "startChar": 20,
+        "endLine": 526,
+        "endChar": 59
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_afcc4f89",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-07T01:59:00Z",
+      "side": 1,
+      "message": "this will be removed in the \u0027M\u0027 release",
+      "range": {
+        "startLine": 653,
+        "startChar": 19,
+        "endLine": 655,
+        "endChar": 52
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_af1e8f09",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -18,6 +87,29 @@
         "startChar": 47,
         "endLine": 798,
         "endChar": 64
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8f986b79",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-07T01:59:00Z",
+      "side": 1,
+      "message": "these will be removed in the \u0027O\u0027 release, we forgot to deprecate this driver earlier when we split assignment into assignment and role",
+      "range": {
+        "startLine": 798,
+        "startChar": 19,
+        "endLine": 800,
+        "endChar": 52
       },
       "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
