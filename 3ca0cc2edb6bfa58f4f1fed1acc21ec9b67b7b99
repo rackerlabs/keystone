@@ -22,6 +22,30 @@
       "revId": "3ca0cc2edb6bfa58f4f1fed1acc21ec9b67b7b99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7bdcc074",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_implied_roles.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-07T15:17:21Z",
+      "side": 1,
+      "message": "It is a many-to-many relationship.  Can\u0027t do that in a single table.",
+      "parentUuid": "fa69d971_a1f6b45a",
+      "range": {
+        "startLine": 29,
+        "startChar": 9,
+        "endLine": 29,
+        "endChar": 21
+      },
+      "revId": "3ca0cc2edb6bfa58f4f1fed1acc21ec9b67b7b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
