@@ -129,6 +129,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_4f6916f8",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-07T00:50:34Z",
+      "side": 1,
+      "message": "Boris is right, it\u0027s unrelated. However I think what it demonstrates is that we don\u0027t use trust_ref or unscoped anywhere in this function.",
+      "parentUuid": "fa69d971_d9674de7",
+      "range": {
+        "startLine": 68,
+        "startChar": 31,
+        "endLine": 68,
+        "endChar": 37
+      },
+      "revId": "83b3947729c460fc3d991c07f89560f73c1a9c6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a7b0d38_c0b86ce8",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 1
