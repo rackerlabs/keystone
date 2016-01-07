@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_7b3920d8",
+        "filename": "keystone/delegation/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T15:16:50Z",
+      "side": 0,
+      "message": "unrelated change?",
+      "revId": "6e597f421db256fa0d31ee90470d1f3ff851b73e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

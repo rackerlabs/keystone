@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_1b78248f",
+        "filename": "keystone/delegation/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T15:16:50Z",
+      "side": 1,
+      "message": "Python six is a third-party library and should be grouped in the same imports as oslo. See: \n\nhttps://github.com/openstack/keystone/blob/7f485562f9fd9c44dabf779f4c32951dbac55885/keystone/common/wsgi.py#L25-L34 \n\nfor an example.",
+      "revId": "529a12d4dc3e73ff7d53e57e8690f65f21706029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_1b86e465",
+        "filename": "keystone/delegation/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T15:16:50Z",
+      "side": 1,
+      "message": "suggest adding a period to the end of the summary to be consistent with pep257 - https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings",
+      "range": {
+        "startLine": 27,
+        "startChar": 49,
+        "endLine": 27,
+        "endChar": 59
+      },
+      "revId": "529a12d4dc3e73ff7d53e57e8690f65f21706029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_db7fec64",
+        "filename": "keystone/delegation/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T15:16:50Z",
+      "side": 1,
+      "message": "Should we docstring these?",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 33,
+        "endChar": 75
+      },
+      "revId": "529a12d4dc3e73ff7d53e57e8690f65f21706029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
