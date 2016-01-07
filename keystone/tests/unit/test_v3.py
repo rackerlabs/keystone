@@ -534,7 +534,10 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def head(self, path, expected_status=http_client.NO_CONTENT, **kwargs):
         r = self.v3_request(path, method='HEAD',
                             expected_status=expected_status, **kwargs)
-        self.assertEqual('', r.body)
+        # According to pep-3333, the body of the response should be always
+        # `Bytestrings`. See:
+        # https://www.python.org/dev/peps/pep-3333/#a-note-on-string-types
+        self.assertEqual(b'', r.body)
         return r
 
     def post(self, path, expected_status=http_client.CREATED, **kwargs):

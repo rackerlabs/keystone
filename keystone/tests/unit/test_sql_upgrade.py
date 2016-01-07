@@ -681,6 +681,15 @@ class SqlUpgradeTests(SqlMigrateBase):
         role_entry = session.execute(statement).fetchone()
         self.assertEqual(NULL_DOMAIN_ID, role_entry[0])
 
+    def test_add_service_provider_project_association(self):
+        def assert_tables_columns_exist():
+            self.assertTableColumns('project_service_provider',
+                                    ['service_provider_id', 'project_id'])
+
+        self.assertTableDoesNotExist('project_service_provider')
+        self.upgrade(89)
+        assert_tables_columns_exist()
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
