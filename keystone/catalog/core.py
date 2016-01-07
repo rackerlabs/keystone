@@ -119,7 +119,7 @@ def check_endpoint_url(url):
 
 
 @dependency.provider('catalog_api')
-@dependency.requires('resource_api')
+@dependency.requires('federation_api', 'resource_api')
 class Manager(manager.Manager):
     """Default pivot point for the Catalog backend.
 
@@ -381,6 +381,37 @@ class Manager(manager.Manager):
                     filtered_endpoints[endpoint_ref['id']] = endpoint_ref
 
         return filtered_endpoints
+
+    # Service Providers filtering
+    def list_project_service_providers(self, project_id):
+        """List all service providers associated with a project"""
+        refs = self.driver.list_project_service_providers(project_id)
+        filtered_sps = []
+        for ref in refs:
+            try:
+                sp = self.federation_api.get_sp(
+                    ref['service_provider_id'])
+                filtered_sps.append(sp)
+            except exception.ServiceProviderNotFound:
+                # TODO(marek-denis): Handle this situation, preferably Remove
+                # association from the backend
+                pass
+        return filtered_sps
+
+    def list_service_provider_projects(self, sp_id):
+        """List all projects associated with a service provider"""
+        refs = self.driver.list_service_provider_projects(sp_id)
+        filtered_projects = []
+
+        for ref in refs:
+            try:
+                project = self.resource_api.get_project(ref['project_id'])
+                filtered_projects.append(project)
+            except exception.ProjectNotFound:
+                # TODO(marek-denis): Handle this situation, preferably Remove
+                # association from the backend
+                pass
+        return filtered_projects
 
 
 @six.add_metaclass(abc.ABCMeta)
