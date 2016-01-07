@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_b33ed127",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:19:26Z",
+      "side": 1,
+      "message": "I think this should still work in sqlite....deleting an FK can\u0027t be checked, but I think additions are OK....if not, need to just out a yucky if clause ahead of it",
+      "range": {
+        "startLine": 779,
+        "startChar": 8,
+        "endLine": 780,
+        "endChar": 78
+      },
+      "revId": "6bb1b86222221e5de931f4e5d6afd04fd9bbd0ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
