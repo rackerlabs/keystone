@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_128270c8",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "it was a typo, removed!",
+      "parentUuid": "fa69d971_7f1e2571",
+      "range": {
+        "startLine": 190,
+        "startChar": 20,
+        "endLine": 190,
+        "endChar": 21
+      },
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_cad50de5",
         "filename": "keystone/federation/core.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-06T15:11:51Z",
       "side": 1,
       "message": "extra space",
+      "range": {
+        "startLine": 219,
+        "startChar": 43,
+        "endLine": 219,
+        "endChar": 44
+      },
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b271240e",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_cad50de5",
       "range": {
         "startLine": 219,
         "startChar": 43,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_12d030c8",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_caec2dbd",
+      "range": {
+        "startLine": 239,
+        "startChar": 43,
+        "endLine": 239,
+        "endChar": 44
+      },
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_ca43cdad",
         "filename": "keystone/federation/core.py",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2016-01-06T15:11:51Z",
       "side": 1,
       "message": "extra space",
+      "range": {
+        "startLine": 271,
+        "startChar": 43,
+        "endLine": 271,
+        "endChar": 44
+      },
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d2de18dc",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_ca43cdad",
       "range": {
         "startLine": 271,
         "startChar": 43,
@@ -111,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_d28cd8db",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_aaa9b925",
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_45226ea4",
         "filename": "keystone/federation/core.py",
         "patchSetId": 3
@@ -128,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_b27b64bd",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_45226ea4",
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_45a7ce0a",
         "filename": "keystone/federation/core.py",
         "patchSetId": 3
@@ -139,6 +271,24 @@
       "writtenOn": "2016-01-06T15:11:51Z",
       "side": 1,
       "message": ":raises keystone.exception.ServiceProviderNotFound: If the service provider cannot be found.\nhttps://github.com/openstack/keystone/blob/19d753bfb43c6344af69a6dba9dcc43119cd8433/keystone/federation/backends/sql.py#L338",
+      "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_92574025",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-07T20:29:32Z",
+      "side": 1,
+      "message": "actually...that\u0027s specified a few lines down...",
+      "parentUuid": "fa69d971_45a7ce0a",
       "revId": "56f10c134b27a10536d09350ae0a709591b717b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
