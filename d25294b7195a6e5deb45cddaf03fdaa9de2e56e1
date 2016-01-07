@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_258ce534",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T14:49:34Z",
+      "side": 1,
+      "message": "What is unnecessary? We should add whatever that is to the commit title.",
+      "range": {
+        "startLine": 7,
+        "startChar": 12,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "d25294b7195a6e5deb45cddaf03fdaa9de2e56e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_855d914a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-07T14:49:34Z",
+      "side": 1,
+      "message": "Before this was separating arguments, now this will make what is returned from sql.UniqueConstraint a tuple. It looks like it\u0027s done in the sqlalchemy documentation but I don\u0027t see it explained.",
+      "range": {
+        "startLine": 243,
+        "startChar": 50,
+        "endLine": 243,
+        "endChar": 51
+      },
+      "revId": "d25294b7195a6e5deb45cddaf03fdaa9de2e56e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
