@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_af1e8f09",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-07T01:57:14Z",
+      "side": 1,
+      "message": "this should be \u0027role driver\u0027, same with all the other options in this group below",
+      "range": {
+        "startLine": 798,
+        "startChar": 47,
+        "endLine": 798,
+        "endChar": 64
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
