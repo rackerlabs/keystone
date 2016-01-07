@@ -154,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_e036d44f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-07T03:52:02Z",
+      "side": 1,
+      "message": "Ah, I see. I wonder if there is a pattern to simplify this.",
+      "parentUuid": "fa69d971_3531905a",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_731e4e71",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -265,6 +283,24 @@
       "side": 1,
       "message": "it is only nullable now, preparing for root projects acting as domains, that will have no domain_id. This patch was split into two and the part that makes it null is here: https://review.openstack.org/#/c/264533/",
       "parentUuid": "fa69d971_e51ef15d",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8057d856",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-07T03:52:02Z",
+      "side": 1,
+      "message": "OK. So really that patch should remove this code?",
+      "parentUuid": "fa69d971_f5277860",
       "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
