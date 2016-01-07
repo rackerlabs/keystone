@@ -1,0 +1,11 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Toshiya Shiga <tos-shiga@yk.jp.nec.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review-1: David Stanek <dstanek@dstanek.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 07 Jan 2016 00:21:09 +0000
+Reviewed-on: https://review.openstack.org/235214
+Project: openstack/keystone
+Branch: refs/heads/master
