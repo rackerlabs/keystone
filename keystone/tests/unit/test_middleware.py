@@ -106,7 +106,7 @@ class JsonBodyMiddlewareTest(unit.TestCase):
                            method='POST')
         resp = middleware.JsonBodyMiddleware(None).process_request(req)
         self.assertEqual(http_client.BAD_REQUEST, resp.status_int)
-        self.assertTrue('valid JSON object' in resp.json['error']['message'])
+        self.assertIn('valid JSON object', resp.json['error']['message'])
 
     def test_no_content_type(self):
         req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
