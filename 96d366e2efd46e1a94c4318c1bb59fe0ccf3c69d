@@ -58,6 +58,24 @@
       "revId": "96d366e2efd46e1a94c4318c1bb59fe0ccf3c69d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d80fe42c",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-07T19:40:10Z",
+      "side": 1,
+      "message": "As long as the those are the only valid properties, then I think it would be beneficial. Let me know and I\u0027ll update this patch.",
+      "parentUuid": "fa69d971_dff4ae88",
+      "revId": "96d366e2efd46e1a94c4318c1bb59fe0ccf3c69d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
