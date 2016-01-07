@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_494828b3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-07T07:30:15Z",
+      "side": 1,
+      "message": "Nevermind, I see https://review.openstack.org/#/c/231872/ covers that.  So no need to add the deprecated_reason for anything getting removed in M.",
+      "parentUuid": "fa69d971_95a63cac",
+      "range": {
+        "startLine": 653,
+        "startChar": 19,
+        "endLine": 655,
+        "endChar": 52
+      },
+      "revId": "dbbd6738a3558239bbcaffcb59a7a63b06a72f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_af1e8f09",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
