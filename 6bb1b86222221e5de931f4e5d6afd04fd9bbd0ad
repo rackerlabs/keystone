@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa69d971_e96c58d2",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_implied_roles.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-07T21:05:10Z",
+      "side": 1,
+      "message": "oops",
+      "revId": "6bb1b86222221e5de931f4e5d6afd04fd9bbd0ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b33ed127",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 5
