@@ -3309,7 +3309,3 @@ class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
         # We shouldn't get here...if we do, it means someone has implemented
         # filtering, so we can remove this test override.
         self.assertTrue(False)
-
-    @wip('Waiting on bug #1521772 to be fixed')
-    def test_groups_for_user_exact_filtered(self):
-        super(LdapFilterTests, self).test_groups_for_user_exact_filtered()
