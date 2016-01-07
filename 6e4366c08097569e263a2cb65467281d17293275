@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_5e4a0757",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-07T16:34:23Z",
+      "side": 1,
+      "message": "The refactoring is internal to the method.  This method is a facade for the various pieces.  In the future, they can be exposed separately if required.",
+      "parentUuid": "fa69d971_722c0c99",
+      "range": {
+        "startLine": 597,
+        "startChar": 27,
+        "endLine": 597,
+        "endChar": 31
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_72888c71",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_3bc085e0",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-07T16:34:23Z",
+      "side": 1,
+      "message": "We are.  These are skipping the tests for LDAP, otherwise they get run and LDAP will fail.",
+      "parentUuid": "fa69d971_72888c71",
+      "range": {
+        "startLine": 99,
+        "startChar": 64,
+        "endLine": 99,
+        "endChar": 66
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_52d30860",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2016-01-06T20:20:55Z",
       "side": 1,
       "message": "why would there be conflicts in listing?",
+      "range": {
+        "startLine": 100,
+        "startChar": 9,
+        "endLine": 100,
+        "endChar": 25
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_bbac7536",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-07T16:34:23Z",
+      "side": 1,
+      "message": "Good point.  THere should not be.  Will remove",
+      "parentUuid": "fa69d971_52d30860",
       "range": {
         "startLine": 100,
         "startChar": 9,
@@ -128,6 +200,30 @@
       "writtenOn": "2016-01-06T20:20:55Z",
       "side": 1,
       "message": "why is this configurable?",
+      "range": {
+        "startLine": 304,
+        "startChar": 21,
+        "endLine": 304,
+        "endChar": 32
+      },
+      "revId": "6e4366c08097569e263a2cb65467281d17293275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5b2e99a6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-07T16:34:23Z",
+      "side": 1,
+      "message": "This is how the feature would be enabled/disabled as a kill switch.  Also, in the future, we may decide to expand the role inference rules in the policy file instead or as well.",
+      "parentUuid": "fa69d971_1257d0ca",
       "range": {
         "startLine": 304,
         "startChar": 21,
