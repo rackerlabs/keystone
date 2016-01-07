@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_52921af7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 128
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "ok. I\u0027ll explain that",
+      "parentUuid": "fa69d971_73188ed3",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_11fe0eae",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -30,6 +48,30 @@
       "writtenOn": "2016-01-06T07:46:02Z",
       "side": 1,
       "message": "see slight modified wording in where you copied this from...that explains this a little better...",
+      "range": {
+        "startLine": 59,
+        "startChar": 10,
+        "endLine": 64,
+        "endChar": 36
+      },
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_15d32c61",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_11fe0eae",
       "range": {
         "startLine": 59,
         "startChar": 10,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_554a0456",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "Done. It was a copy-paste errror",
+      "parentUuid": "fa69d971_33ea1675",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b3a4c64a",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_3531905a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "they\u0027re different. see lines 155 and 172",
+      "parentUuid": "fa69d971_b3a4c64a",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_731e4e71",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -87,6 +165,24 @@
       "writtenOn": "2016-01-06T21:53:09Z",
       "side": 1,
       "message": "Is this actually needed? Won\u0027t your use of _ensure_domain_id_not_none foce update_tenant to contain a domain_id and because of that old_project_dict will have one too?",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_957f1c14",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "actually, no... because it comes from update_tenant, that did not come from DB, so it does not necesseraly have a domain_id, if it is not being updated.",
+      "parentUuid": "fa69d971_731e4e71",
       "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_f5cbf8a1",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_3176b270",
+      "range": {
+        "startLine": 284,
+        "startChar": 28,
+        "endLine": 284,
+        "endChar": 36
+      },
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_e51ef15d",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 128
@@ -127,6 +247,24 @@
       "writtenOn": "2016-01-06T21:53:09Z",
       "side": 1,
       "message": "Is this needed? Why is this column still nullable?",
+      "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_f5277860",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 128
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-07T03:37:02Z",
+      "side": 1,
+      "message": "it is only nullable now, preparing for root projects acting as domains, that will have no domain_id. This patch was split into two and the part that makes it null is here: https://review.openstack.org/#/c/264533/",
+      "parentUuid": "fa69d971_e51ef15d",
       "revId": "43a2a1bf51f8eb55ef8b120f217097e45f40cba6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
