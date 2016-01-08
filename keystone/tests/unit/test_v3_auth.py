@@ -1062,6 +1062,70 @@ class TokenAPITests(object):
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
 
+    def test_trust_token_is_invalid_when_trustee_domain_disabled(self):
+        # create a new domain
+        new_domain_ref = unit.new_domain_ref()
+        self.resource_api.create_domain(new_domain_ref['id'], new_domain_ref)
+
+        # create a new project
+        new_project_ref = unit.new_project_ref(domain_id=new_domain_ref['id'])
+        self.resource_api.create_project(new_project_ref['id'],
+                                         new_project_ref)
+
+        # create a new user to be the trustee
+        trustee_ref = unit.create_user(self.identity_api,
+                                       domain_id=new_domain_ref['id'])
+
+        # issue trustee a grant on the new domain
+        self.assignment_api.create_grant(
+            self.role['id'],
+            user_id=trustee_ref['id'],
+            domain_id=new_domain_ref['id'])
+
+        # issue trustor a grant on the new domain
+        self.assignment_api.create_grant(
+            self.role['id'],
+            user_id=self.user_id,
+            domain_id=new_domain_ref['id'])
+
+        # issue trustor a grant on the new project
+        self.assignment_api.create_grant(
+            self.role['id'],
+            user_id=self.user_id,
+            project_id=new_project_ref['id'])
+
+        # establish a trust between the trustor and the trustee on the project
+        trust_ref = unit.new_trust_ref(trustor_user_id=self.user_id,
+                                       trustee_user_id=trustee_ref['id'],
+                                       expires=dict(minutes=1),
+                                       project_id=new_project_ref['id'],
+                                       impersonation=True,
+                                       role_ids=[self.role['id']])
+
+        resp = self.post('/OS-TRUST/trusts', body={'trust': trust_ref})
+        self.assertValidTrustResponse(resp, trust_ref)
+        trust_id = resp.json_body['trust']['id']
+
+        # get a trust-scoped token as the trustee
+        trust_auth_data = self.build_authentication_request(
+            user_id=trustee_ref['id'],
+            password=trustee_ref['password'],
+            trust_id=trust_id)
+        trust_scoped_token = self.get_requested_token(trust_auth_data)
+
+        # ensure the trustee's trust-scoped token is valid
+        self._validate_token(trust_scoped_token)
+
+        # disable the trustee's domain
+        disable_body = {'domain': {'enabled': False}}
+        self.patch(
+            '/domains/%(domain_id)s' % {'domain_id': new_domain_ref['id']},
+            body=disable_body)
+
+        # ensure the trustee's trust-scoped token is invalid
+        self._validate_token(trust_scoped_token,
+                             expected_status=http_client.NOT_FOUND)
+
     def test_trust_scoped_token_invalid_after_changing_trustee_password(self):
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
