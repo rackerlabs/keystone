@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_ec03c674",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T13:17:14Z",
+      "side": 1,
+      "message": "yes, just mixed english and portuguese here... hehe. Done",
+      "parentUuid": "fa69d971_ad72570f",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b815b740",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-05T21:16:40Z",
       "side": 1,
       "message": "nit: end the comment with a period.",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2c4ebec1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3186,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T13:17:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_b815b740",
       "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_8c4faabd",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3204,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T13:17:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_185ac32a",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b86a97b1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 10
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_cc5cc27f",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3224,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T13:17:14Z",
+      "side": 1,
+      "message": "no, we use the premise that after this method is called, no project with these ids will exist in db. That\u0027s pretty much the convention in delete list methods around",
+      "parentUuid": "fa69d971_b86a97b1",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_78b73f3a",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 10
@@ -81,6 +153,24 @@
       "writtenOn": "2016-01-05T21:16:40Z",
       "side": 1,
       "message": "same comment as previous.",
+      "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_8cd6cac1",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T13:17:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_78b73f3a",
       "revId": "c82d09b4e876cfde1bd8f6b8558009b4b20a6069",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
