@@ -1,0 +1,15 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Toshiya Shiga <tos-shiga@yk.jp.nec.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: bruce-benjamin <bruce.benjamin@jhuapl.edu>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 08 Jan 2016 21:56:09 +0000
+Reviewed-on: https://review.openstack.org/260731
+Project: openstack/keystone
+Branch: refs/heads/master
