@@ -1,0 +1,10 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 08 Jan 2016 04:16:49 +0000
+Reviewed-on: https://review.openstack.org/263113
+Project: openstack/keystone
+Branch: refs/heads/master
