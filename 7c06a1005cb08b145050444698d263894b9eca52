@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_cbb49336",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T22:45:21Z",
+      "side": 1,
+      "message": "Haha thanks brant, it makes sense why you are linking that doc.",
+      "parentUuid": "fa69d971_6538363e",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_82d3e037",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 8
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "if this is only needed at line 206 then do the conversion at line 206. No need to make trusted_issuer and the config setting also binary when it should be text.",
       "parentUuid": "fa69d971_82d3e037",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_56cdaab5",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T22:45:21Z",
+      "side": 1,
+      "message": "haha it took me all day to find out that trused_issuer needs to be binary too.  It is saved into the config and is pulled out of the config in tokenless_auth.py _build_idp_id() where it is hashed.",
+      "parentUuid": "fa69d971_6586f6dc",
       "revId": "7c06a1005cb08b145050444698d263894b9eca52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
