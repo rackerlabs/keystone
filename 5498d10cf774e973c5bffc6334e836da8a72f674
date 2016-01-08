@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_a42cf74a",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T16:30:04Z",
+      "side": 1,
+      "message": "What is this for ? Do we really need it ?",
+      "range": {
+        "startLine": 86,
+        "startChar": 5,
+        "endLine": 86,
+        "endChar": 20
+      },
+      "revId": "5498d10cf774e973c5bffc6334e836da8a72f674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
