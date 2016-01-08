@@ -46,6 +46,30 @@
       "revId": "5498d10cf774e973c5bffc6334e836da8a72f674",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ba77329e",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T17:00:13Z",
+      "side": 1,
+      "message": "You\u0027re correct, without it:\n\nWARNING:test command found but not installed in testenv\n    cmd: /usr/local/bin/flake8\n    env: /home/samuel/workspace/keystone/.tox/pep8",
+      "parentUuid": "fa69d971_24f9e780",
+      "range": {
+        "startLine": 86,
+        "startChar": 5,
+        "endLine": 86,
+        "endChar": 20
+      },
+      "revId": "5498d10cf774e973c5bffc6334e836da8a72f674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
