@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_d78bea1c",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T14:06:25Z",
+      "side": 1,
+      "message": "I improved the ordering of sections and only kept the configuration by tox in the next patch set. Thanks for the feedback. I think now it\u0027s much clear and easy with the next version.",
+      "parentUuid": "7a740942_9dd97df5",
+      "revId": "e1098b6fa7de94973cdb1ad2c1da9a382e923522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_8496a14a",
         "filename": "doc/source/devref/development.environment.rst",
         "patchSetId": 2
