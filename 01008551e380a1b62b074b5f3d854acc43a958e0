@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_75e0f3fa",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T15:26:50Z",
+      "side": 1,
+      "message": "(nit) IdP\n\nAlso in other places in this doc",
+      "range": {
+        "startLine": 117,
+        "startChar": 29,
+        "endLine": 117,
+        "endChar": 32
+      },
+      "revId": "01008551e380a1b62b074b5f3d854acc43a958e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_95d00755",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T15:26:50Z",
+      "side": 1,
+      "message": "(nit) remote IdP?",
+      "revId": "01008551e380a1b62b074b5f3d854acc43a958e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_95e9e71c",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T15:26:50Z",
+      "side": 1,
+      "message": "(nit) double spaced",
+      "range": {
+        "startLine": 201,
+        "startChar": 42,
+        "endLine": 201,
+        "endChar": 43
+      },
+      "revId": "01008551e380a1b62b074b5f3d854acc43a958e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_95880724",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-08T15:26:50Z",
+      "side": 1,
+      "message": "This is changing the driver interface.\nAlso, L539 isn\u0027t in implementing it this way.",
+      "revId": "01008551e380a1b62b074b5f3d854acc43a958e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
