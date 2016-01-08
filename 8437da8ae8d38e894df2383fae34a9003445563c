@@ -22,6 +22,30 @@
       "revId": "8437da8ae8d38e894df2383fae34a9003445563c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d5548222",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T00:30:23Z",
+      "side": 1,
+      "message": "the proposal of the patch was to change only the resource ones... I think we can do this in a follow-up. Makes sense?",
+      "parentUuid": "fa69d971_3ad06dc9",
+      "range": {
+        "startLine": 62,
+        "startChar": 13,
+        "endLine": 62,
+        "endChar": 22
+      },
+      "revId": "8437da8ae8d38e894df2383fae34a9003445563c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
