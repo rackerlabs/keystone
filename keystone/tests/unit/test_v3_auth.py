@@ -202,7 +202,7 @@ class TokenAPITests(object):
             token=CONF.admin_token,
             expected_status=http_client.UNAUTHORIZED)
 
-    def test_v3_v2_intermix_non_default_project_failed(self):
+    def test_v3_v2_intermix_non_default_project_success(self):
         # self.project is in a non-default domain
         v3_token = self.get_requested_token(self.build_authentication_request(
             user_id=self.default_domain_user['id'],
@@ -213,10 +213,9 @@ class TokenAPITests(object):
         self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
-            expected_status=http_client.UNAUTHORIZED)
+            token=CONF.admin_token)
 
-    def test_v3_v2_intermix_non_default_user_failed(self):
+    def test_v3_v2_intermix_non_default_user_success(self):
         self.assignment_api.create_grant(
             self.role['id'],
             user_id=self.user['id'],
@@ -232,8 +231,7 @@ class TokenAPITests(object):
         self.admin_request(
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
-            token=CONF.admin_token,
-            expected_status=http_client.UNAUTHORIZED)
+            token=CONF.admin_token)
 
     def test_v3_v2_intermix_domain_scope_failed(self):
         self.assignment_api.create_grant(
