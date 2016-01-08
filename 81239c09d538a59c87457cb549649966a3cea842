@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_84a2134a",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-08T16:37:59Z",
+      "side": 1,
+      "message": "This comment doesn\u0027t make any sense. the result of uuid.uuid4().hex.encode(\u0027utf-8\u0027) is bytes:\n\n \u003e\u003e\u003e uuid.uuid4().hex.encode(\u0027utf-8\u0027)\n b\u0027784010e6ca7a43db9d5b7fa1d125dc8f\u0027\n\nIs not be able to iterate a good thing?\n\nAlso, I can iterate over a byte string.",
+      "revId": "81239c09d538a59c87457cb549649966a3cea842",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
