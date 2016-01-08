@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_bb51ae10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_e7d91cf4",
+      "range": {
+        "startLine": 15,
+        "startChar": 26,
+        "endLine": 15,
+        "endChar": 61
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_dfc6ff15",
         "filename": "keystone/common/config.py",
         "patchSetId": 25
@@ -59,6 +83,24 @@
       "writtenOn": "2015-12-29T20:58:34Z",
       "side": 1,
       "message": "suggest add some text saying that the ability to move entities between domains will be removed in a future release.",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_3b3e1eb9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_dfc6ff15",
       "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -112,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_bbba0ebf",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_276f34fd",
+      "range": {
+        "startLine": 901,
+        "startChar": 12,
+        "endLine": 906,
+        "endChar": 17
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_5148c35b",
         "filename": "keystone/resource/core.py",
         "patchSetId": 25
@@ -147,6 +213,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_fb4ac6ab",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "it is checked at the controller: https://github.com/openstack/keystone/blob/81cfed9d1ca4e16c5194a458bd7295f53fb88c99/keystone/common/controller.py#L706",
+      "parentUuid": "fa69d971_5148c35b",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_1f06d720",
         "filename": "keystone/resource/core.py",
         "patchSetId": 25
@@ -158,6 +242,30 @@
       "writtenOn": "2015-12-29T20:58:34Z",
       "side": 1,
       "message": "(nit) remove the ,s or the (). either one is adequate.",
+      "range": {
+        "startLine": 210,
+        "startChar": 22,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5bd0b2c9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_1f06d720",
       "range": {
         "startLine": 210,
         "startChar": 22,
@@ -187,6 +295,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_9bedca90",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_31342fdd",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_11d56b42",
         "filename": "keystone/resource/core.py",
         "patchSetId": 25
@@ -204,6 +330,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_de3330f5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "that was the best one I found. The other candidate would be Forbidden. Isn\u0027t ValidationError better?",
+      "parentUuid": "fa69d971_11d56b42",
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_926180d5",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 25
@@ -215,6 +359,30 @@
       "writtenOn": "2016-01-06T20:17:45Z",
       "side": 1,
       "message": "suggest removing this piece and then adding a new test named: \n\n    def test_move_root_project_between_domains_succeeds(self):",
+      "range": {
+        "startLine": 890,
+        "startChar": 26,
+        "endLine": 890,
+        "endChar": 34
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_febab409",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 890,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-08T04:12:12Z",
+      "side": 1,
+      "message": "I added the other test. However, I prefer to keep the \"not_root\" piece to make it more specific, differing, for example from the one above.",
+      "parentUuid": "fa69d971_926180d5",
       "range": {
         "startLine": 890,
         "startChar": 26,
