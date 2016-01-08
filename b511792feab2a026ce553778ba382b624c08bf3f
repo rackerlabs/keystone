@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_5df4fb85",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3428,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T14:43:34Z",
+      "side": 1,
+      "message": "nit what about assertDictEqual here?",
+      "range": {
+        "startLine": 3428,
+        "startChar": 13,
+        "endLine": 3428,
+        "endChar": 24
+      },
+      "revId": "b511792feab2a026ce553778ba382b624c08bf3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_fd4e0fc0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3432,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T14:43:34Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 3432,
+        "startChar": 13,
+        "endLine": 3432,
+        "endChar": 24
+      },
+      "revId": "b511792feab2a026ce553778ba382b624c08bf3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
