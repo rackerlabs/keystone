@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_75b916ec",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T00:26:28Z",
+      "side": 1,
+      "message": "This may be because some other test is creating domains using a similar pattern. A better pattern may just be \u0027\u0027domain-\u0027 + uuid.uuid4().hex",
+      "parentUuid": "fa69d971_e787dcb2",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_51d6dff1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -60,6 +78,40 @@
         "endLine": 4135,
         "endChar": 35
       },
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_15d8daee",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2801,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T00:26:28Z",
+      "side": 1,
+      "message": "At first glance this is strange to me. Why isn\u0027t this being called automatically?",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d5e1e29b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3176,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T00:26:28Z",
+      "side": 1,
+      "message": "Same here",
       "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
