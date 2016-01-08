@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_6e9ca05d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-08T16:02:30Z",
+      "side": 0,
+      "message": "We didn\u0027t actually write this file, we generated it with sphinx-quickstart. I\u0027d prefer to just run the latest version of sphinx-quickstart to get up to date.",
+      "revId": "7f485562f9fd9c44dabf779f4c32951dbac55885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
