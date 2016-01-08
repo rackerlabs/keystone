@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_a3f2a398",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-08T20:48:35Z",
+      "side": 0,
+      "message": "Note for reviewers, Trust tokens never worked by ID out of the default domain. So maintaining that behavior here.\n\nIt seems a little idiosyncratic but it is consistent with previous behavior(s). This is another case of V2 really needs to stop being used long term.",
+      "revId": "bf54eada0f56e4e391265b8b312cd24f9e9e190c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
