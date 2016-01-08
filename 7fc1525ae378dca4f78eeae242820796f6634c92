@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_55a3b24f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T00:29:15Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa69d971_276f34fd",
+      "range": {
+        "startLine": 901,
+        "startChar": 12,
+        "endLine": 906,
+        "endChar": 17
+      },
+      "revId": "7fc1525ae378dca4f78eeae242820796f6634c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_5148c35b",
         "filename": "keystone/resource/core.py",
         "patchSetId": 25
