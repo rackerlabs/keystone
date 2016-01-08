@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_179f2904",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T23:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_77e0e5cc",
+      "revId": "a110831a88d63fccc808da17c0b559ec12d0605d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b7d65def",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_17440972",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T23:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_b7d65def",
+      "revId": "a110831a88d63fccc808da17c0b559ec12d0605d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_d7267115",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-08T22:53:29Z",
       "side": 1,
       "message": "\" It is saved into the config and is pulled out of the config in tokenless_auth.py _build_idp_id()  where it is hashed.\" -- when keystone starts the config option isn\u0027t going to be set to a binary string, it\u0027ll be set to a text string. So the config option in the test here should be set to a text string and then converted to binary in _build_idp_id().",
+      "revId": "a110831a88d63fccc808da17c0b559ec12d0605d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_574a8184",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T23:02:47Z",
+      "side": 1,
+      "message": "Okay i will change it there.",
+      "parentUuid": "fa69d971_d7267115",
       "revId": "a110831a88d63fccc808da17c0b559ec12d0605d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
