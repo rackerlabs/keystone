@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_42b408f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T18:08:07Z",
+      "side": 1,
+      "message": "This is not a blueprint. It should reference \"python3\"",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c26c789e",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T18:08:07Z",
+      "side": 1,
+      "message": "i think this is just a part of the WSGI spec and not a webtest thing.",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_82d3e037",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-08T18:08:07Z",
+      "side": 1,
+      "message": "this should mention hashlib instead of just hashing because as written it sounds like you can\u0027t use text for a dictionary key",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
