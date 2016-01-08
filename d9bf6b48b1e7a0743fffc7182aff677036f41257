@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_e992fff5",
+        "filename": "releasenotes/notes/revert-v2-token-issued-for-non-default-domain-25ea5337f158ef13.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-08T03:44:34Z",
+      "side": 1,
+      "message": "fixes:\n  - \u003e\n    [`bug 1527759 \u003chttps://bugs.launchpad.net/keystone/+bug/1527759\u003e`_]\n    Reverted the change that ...",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 58
+      },
+      "revId": "d9bf6b48b1e7a0743fffc7182aff677036f41257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
