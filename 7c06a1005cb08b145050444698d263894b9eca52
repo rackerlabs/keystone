@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_6538363e",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-08T18:36:44Z",
+      "side": 1,
+      "message": "yes, it\u0027s the wsgi spec that requires binary_type for the body, reference reference https://www.python.org/dev/peps/pep-3333/#unicode-issues",
+      "parentUuid": "fa69d971_c26c789e",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_82d3e037",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2016-01-08T18:08:07Z",
       "side": 1,
       "message": "this should mention hashlib instead of just hashing because as written it sounds like you can\u0027t use text for a dictionary key",
+      "revId": "7c06a1005cb08b145050444698d263894b9eca52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_6586f6dc",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-08T18:36:44Z",
+      "side": 1,
+      "message": "if this is only needed at line 206 then do the conversion at line 206. No need to make trusted_issuer and the config setting also binary when it should be text.",
+      "parentUuid": "fa69d971_82d3e037",
       "revId": "7c06a1005cb08b145050444698d263894b9eca52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
