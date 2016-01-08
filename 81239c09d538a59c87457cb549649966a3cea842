@@ -16,6 +16,24 @@
       "revId": "81239c09d538a59c87457cb549649966a3cea842",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9f1b3d80",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-08T18:00:56Z",
+      "side": 1,
+      "message": "yes you are right, i was reading their error wrong. \n\nIterator \u003clist_iterator object at 0x7fb1953482b0\u003e returned a non-\u003cclass \u0027bytes\u0027\u003e ...",
+      "parentUuid": "fa69d971_84a2134a",
+      "revId": "81239c09d538a59c87457cb549649966a3cea842",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
