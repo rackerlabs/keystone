@@ -40,7 +40,9 @@ class MiddlewareRequestTestBase(unit.TestCase):
     def _application(self):
         """A base wsgi application that returns a simple response."""
         def app(environ, start_response):
-            body = uuid.uuid4().hex
+            # WSGI requires the body of the response to be bytes
+            # rather than a str in Python3
+            body = uuid.uuid4().hex.encode('utf-8')
             resp_headers = [('Content-Type', 'text/html; charset=utf8'),
                             ('Content-Length', str(len(body)))]
             start_response('200 OK', resp_headers)
@@ -191,7 +193,9 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
 
     def setUp(self):
         super(AuthContextMiddlewareTest, self).setUp()
-        self.client_issuer = uuid.uuid4().hex
+        # client_issuer and trusted_issuer both are encoded because
+        # you can't hash unicode objects with hashlib.
+        self.client_issuer = uuid.uuid4().hex.encode('utf-8')
         self.untrusted_client_issuer = uuid.uuid4().hex
         self.trusted_issuer = self.client_issuer
         self.config_fixture.config(group='tokenless_auth',
