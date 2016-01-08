@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_25855eac",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-08T18:46:40Z",
+      "side": 1,
+      "message": "This is more readable than having a list. Since users may opt-out of many different notifications, this method makes it easier to see what they are opting out of.",
+      "parentUuid": "fa69d971_e1a6d60d",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_01d3ea60",
         "filename": "keystone/notifications.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_8563ea19",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-08T18:46:40Z",
+      "side": 1,
+      "message": "Makes sense. I will update as soon as I get feedback on this patch in general.",
+      "parentUuid": "fa69d971_01d3ea60",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_c1db924d",
         "filename": "keystone/notifications.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-07T05:39:56Z",
       "side": 1,
       "message": "Since this is pretty similar to the above, would we be able to move this into a more common spot so there is less duplicate logic?",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_c506c21f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-08T18:46:40Z",
+      "side": 1,
+      "message": "Will do as soon as I get feedback on this patch in general concerning guang-yee\u0027s comment.",
+      "parentUuid": "fa69d971_c1db924d",
       "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
