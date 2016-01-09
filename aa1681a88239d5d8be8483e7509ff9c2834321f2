@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_ee21574e",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-09T08:30:59Z",
+      "side": 1,
+      "message": "agreed GET /role_inferences is missing. and the spec doesn\u0027t mention getting all implied roles for a given prior role (if that\u0027s what you meant).\n\nIn fact I wonder whether we just have GET /role_inferences that takes a filter parameter of ?implied_role\u003dx as well as ?prior_role\u003dx rather than have the individual GET APIs ??",
+      "parentUuid": "fa69d971_c770980d",
+      "range": {
+        "startLine": 79,
+        "startChar": 53,
+        "endLine": 79,
+        "endChar": 55
+      },
+      "revId": "aa1681a88239d5d8be8483e7509ff9c2834321f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_47f1086a",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 35
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-06T20:13:13Z",
       "side": 1,
       "message": "is the HEAD call on the API spec?",
+      "range": {
+        "startLine": 93,
+        "startChar": 47,
+        "endLine": 93,
+        "endChar": 49
+      },
+      "revId": "aa1681a88239d5d8be8483e7509ff9c2834321f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0e1f0b09",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-09T08:30:59Z",
+      "side": 1,
+      "message": "This does seem to be missing.....",
+      "parentUuid": "fa69d971_47f1086a",
       "range": {
         "startLine": 93,
         "startChar": 47,
