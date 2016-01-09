@@ -1,0 +1,8 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 09 Jan 2016 04:52:25 +0000
+Reviewed-on: https://review.openstack.org/264259
+Project: openstack/keystone
+Branch: refs/heads/master
