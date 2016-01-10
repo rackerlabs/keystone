@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_7000dd66",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-10T07:58:35Z",
+      "side": 1,
+      "message": "unnecessary change?",
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_303ee528",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-10T07:58:35Z",
+      "side": 1,
+      "message": "careful with this change, i think a lot of tests uses this function",
+      "range": {
+        "startLine": 128,
+        "startChar": 4,
+        "endLine": 128,
+        "endChar": 42
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5032795f",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-10T07:58:35Z",
+      "side": 1,
+      "message": "i think these two are redundant, the code below will fail if these aren\u0027t passing, but not a big deal",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 55
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_70377d4d",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-10T07:58:35Z",
+      "side": 1,
+      "message": "We are potentially losing coverage by removing the check against the actual code:\n\n\n  self.assertEqual(expected_status, r.status_code)\n\nwhere expected_status\u003dhttp_client.BAD_REQUEST",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 67
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
