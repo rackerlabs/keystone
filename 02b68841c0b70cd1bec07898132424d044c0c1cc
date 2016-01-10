@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_f01a8dc5",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 19197
+      },
+      "writtenOn": "2016-01-10T08:35:36Z",
+      "side": 1,
+      "message": "pointed out in the previous patch that two empty lines are needed after import\nhttp://docs.openstack.org/developer/hacking/#import-order-template",
+      "parentUuid": "fa69d971_7000dd66",
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_303ee528",
         "filename": "keystone/tests/unit/rest.py",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2016-01-10T07:58:35Z",
       "side": 1,
       "message": "careful with this change, i think a lot of tests uses this function",
+      "range": {
+        "startLine": 128,
+        "startChar": 4,
+        "endLine": 128,
+        "endChar": 42
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_90c8f123",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 19197
+      },
+      "writtenOn": "2016-01-10T08:35:36Z",
+      "side": 1,
+      "message": "I\u0027m aware of that. I checked all the usages, which either already checked expected_status, or in self.restful_request, that should not care the status code, but only if this is valid error response.\n\nso it\u0027s actually not necessary to check expected_status in this function, because it\u0027s already checked in self.request, then in app.request, which is handled by webtest",
+      "parentUuid": "fa69d971_303ee528",
       "range": {
         "startLine": 128,
         "startChar": 4,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_b0cdf532",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 19197
+      },
+      "writtenOn": "2016-01-10T08:35:36Z",
+      "side": 1,
+      "message": "right, I did copy/paste. I\u0027ll remove this in next commit",
+      "parentUuid": "fa69d971_5032795f",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 55
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_70377d4d",
         "filename": "keystone/tests/unit/rest.py",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2016-01-10T07:58:35Z",
       "side": 1,
       "message": "We are potentially losing coverage by removing the check against the actual code:\n\n\n  self.assertEqual(expected_status, r.status_code)\n\nwhere expected_status\u003dhttp_client.BAD_REQUEST",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 67
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_70ea1d76",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 19197
+      },
+      "writtenOn": "2016-01-10T08:35:36Z",
+      "side": 1,
+      "message": "As mentioned above, r.status_code is checked in self.request, then in webtest, so this should not be a problem.\n\nThe problem I met is that a test posted something and the expected status is not 400, but `requestful_request` doesn\u0027t call assertValidErrorResponse with an `expected_status`, (also, test_v2, test_v3 override `assertValidErrorResponse`, losing `expected_status`).",
+      "parentUuid": "fa69d971_70377d4d",
       "range": {
         "startLine": 135,
         "startChar": 8,
