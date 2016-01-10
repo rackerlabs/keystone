@@ -47,6 +47,7 @@ from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
 
+
 CRED_TYPE_EC2 = 'ec2'
 
 
