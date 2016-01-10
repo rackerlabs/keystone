@@ -440,21 +440,25 @@ class TestCredentialEc2(CredentialBaseTestCase):
         r = self.get(uri)
         cred_list = r.result['credentials']
         self.assertEqual(1, len(cred_list))
-        self.assertThat(r.result['links']['self'],
-                        matchers.EndsWith(uri))
+        self.assertThat(r.result['links']['self'], matchers.EndsWith(uri))
 
-        # non-EC2 credentials won't be fetched
+    def test_ec2_cannot_list_non_ec2_credentials(self):
+        uri = self._get_ec2_cred_uri()
         non_ec2_cred = unit.new_credential_ref(
             user_id=self.user_id,
             project_id=self.project_id)
         non_ec2_cred['type'] = uuid.uuid4().hex
-        self.credential_api.create_credential(non_ec2_cred['id'],
-                                              non_ec2_cred)
+        self.credential_api.create_credential(non_ec2_cred['id'], non_ec2_cred)
         r = self.get(uri)
-        cred_list_2 = r.result['credentials']
-        # still one element because non-EC2 credentials are not returned.
-        self.assertEqual(1, len(cred_list_2))
-        self.assertEqual(cred_list[0], cred_list_2[0])
+        cred_list = r.result['credentials']
+        # non-EC2 credentials are not returned.
+        self.assertEqual(0, len(cred_list))
+
+        # add an EC2 credential
+        self._get_ec2_cred()
+        r = self.get(uri)
+        cred_list = r.result['credentials']
+        self.assertEqual(1, len(cred_list))
 
     def test_ec2_delete_credential(self):
         """Test ec2 credential deletion."""
