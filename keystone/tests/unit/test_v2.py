@@ -31,11 +31,6 @@ CONF = cfg.CONF
 
 
 class CoreApiTests(object):
-    def assertValidError(self, error):
-        self.assertIsNotNone(error.get('code'))
-        self.assertIsNotNone(error.get('title'))
-        self.assertIsNotNone(error.get('message'))
-
     def assertValidVersion(self, version):
         self.assertIsNotNone(version)
         self.assertIsNotNone(version.get('id'))
@@ -1004,11 +999,6 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
 
     def assertNoRoles(self, r):
         self.assertEqual([], r['roles'])
-
-    def assertValidErrorResponse(self, r):
-        self.assertIsNotNone(r.result.get('error'))
-        self.assertValidError(r.result['error'])
-        self.assertEqual(r.result['error']['code'], r.status_code)
 
     def assertValidExtension(self, extension, expected):
         super(V2TestCase, self).assertValidExtension(extension)

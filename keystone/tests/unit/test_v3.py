@@ -400,14 +400,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         return self.v3_request(path, method='DELETE',
                                expected_status=expected_status, **kwargs)
 
-    def assertValidErrorResponse(self, r):
-        resp = r.result
-        self.assertIsNotNone(resp.get('error'))
-        self.assertIsNotNone(resp['error'].get('code'))
-        self.assertIsNotNone(resp['error'].get('title'))
-        self.assertIsNotNone(resp['error'].get('message'))
-        self.assertEqual(int(resp['error']['code']), r.status_code)
-
     def assertValidListLinks(self, links, resource_url=None):
         self.assertIsNotNone(links)
         self.assertIsNotNone(links.get('self'))

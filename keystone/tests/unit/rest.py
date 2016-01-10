@@ -125,17 +125,14 @@ class RestfulTestCase(unit.TestCase):
         """Ensures that response headers appear as expected."""
         self.assertIn('X-Auth-Token', response.headers.get('Vary'))
 
-    def assertValidErrorResponse(self, response,
-                                 expected_status=http_client.BAD_REQUEST):
-        """Verify that the error response is valid.
-
-        Subclasses can override this function based on the expected response.
-
-        """
-        self.assertEqual(expected_status, response.status_code)
-        error = response.result['error']
-        self.assertEqual(response.status_code, error['code'])
-        self.assertIsNotNone(error.get('title'))
+    def assertValidErrorResponse(self, r):
+        """Verify that the error response is valid."""
+        resp = r.result
+        self.assertIsNotNone(resp.get('error'))
+        self.assertIsNotNone(resp['error'].get('code'))
+        self.assertIsNotNone(resp['error'].get('title'))
+        self.assertIsNotNone(resp['error'].get('message'))
+        self.assertEqual(int(resp['error']['code']), r.status_code)
 
     def _to_content_type(self, body, headers, content_type=None):
         """Attempt to encode JSON and XML automatically."""
