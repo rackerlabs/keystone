@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_f56fadc1",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-11T19:01:27Z",
+      "side": 1,
+      "message": "is this also part of the bug report? seems like you\u0027re trying to fix two problems at once?",
+      "range": {
+        "startLine": 69,
+        "startChar": 12,
+        "endLine": 69,
+        "endChar": 55
+      },
+      "revId": "b2c7a9af7cf726c925b7144a5ec77165543d89ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
