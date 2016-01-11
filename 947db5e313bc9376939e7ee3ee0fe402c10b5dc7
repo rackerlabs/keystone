@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_22cd0666",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-11T20:05:25Z",
+      "side": 1,
+      "message": "valid*",
+      "range": {
+        "startLine": 189,
+        "startChar": 65,
+        "endLine": 189,
+        "endChar": 71
+      },
+      "revId": "947db5e313bc9376939e7ee3ee0fe402c10b5dc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
