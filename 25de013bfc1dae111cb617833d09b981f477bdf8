@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_be4cbf42",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_service_provider_filtering_tables.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-11T17:17:50Z",
+      "side": 1,
+      "message": "This should be changed to 088 as 087 has already merged.",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9ec21b52",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-11T17:17:50Z",
+      "side": 1,
+      "message": "Was this code taken from somewhere else that already had a copyright?",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7e9c076a",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-11T17:17:50Z",
+      "side": 1,
+      "message": "(nit) add newline",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2b7accf1",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-11T17:17:50Z",
+      "side": 1,
+      "message": "I haven\u0027t tried it locally yet, but one possible reason for the test failures is that you are building two relations for \u0027project_service_providers\u0027 and I don\u0027t think you can do that.",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
