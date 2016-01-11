@@ -79,6 +79,24 @@
       "revId": "01008551e380a1b62b074b5f3d854acc43a958e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2b23a157",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:13:16Z",
+      "side": 1,
+      "message": "So the driver interface hasn\u0027t actually changed....just our abstract method was wrong! Which I then copied to L539 on an earlier patch!!!  I\u0027ll fix that separately.",
+      "parentUuid": "fa69d971_95880724",
+      "revId": "01008551e380a1b62b074b5f3d854acc43a958e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
