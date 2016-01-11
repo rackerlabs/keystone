@@ -16,6 +16,24 @@
       "revId": "2774d53355cdfc1c7b5d518fc4a5426d03d4f922",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a8beb762",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:02:05Z",
+      "side": 1,
+      "message": "I think that\u0027s a good idea. Once these merge, I\u0027ll come back in and extract this from the V9 drivers we have done.",
+      "parentUuid": "fa69d971_e8f02f93",
+      "revId": "2774d53355cdfc1c7b5d518fc4a5426d03d4f922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
