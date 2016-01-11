@@ -3616,6 +3616,13 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         self.assertEqual(3, r.result.get('trust').get('remaining_uses'))
 
 
+class TestTrustWithFernetTokenProvider(TrustAPIBehavior):
+    def config_overrides(self):
+        super(TestTrustWithFernetTokenProvider, self).config_overrides()
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+        self.config_fixture.config(group='token', provider='fernet')
+
+
 class TestTrustWithUuidTokenProvider(TrustAPIBehavior):
     def config_overrides(self):
         super(TestTrustWithUuidTokenProvider, self).config_overrides()
