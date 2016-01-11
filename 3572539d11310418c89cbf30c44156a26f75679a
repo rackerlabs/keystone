@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_b2d3afd4",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2016-01-11T08:27:32Z",
+      "side": 1,
+      "message": "https://docs.python.org/3/library/logging.html#logging.warning\nhttps://bugs.launchpad.net/keystone/+bug/1508442\n\ns/LOG.warn/LOG.warning",
+      "revId": "3572539d11310418c89cbf30c44156a26f75679a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_72da17ea",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2016-01-11T08:27:32Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "3572539d11310418c89cbf30c44156a26f75679a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
