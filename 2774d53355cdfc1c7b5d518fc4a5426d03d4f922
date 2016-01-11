@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_e8f02f93",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-11T20:59:34Z",
+      "side": 1,
+      "message": "Shouldn\u0027t these be common code? Seem like a common pattern across all drivers.",
+      "revId": "2774d53355cdfc1c7b5d518fc4a5426d03d4f922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
