@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_007fb3e0",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-11T13:37:08Z",
+      "side": 1,
+      "message": "nit: Provider",
+      "range": {
+        "startLine": 577,
+        "startChar": 46,
+        "endLine": 577,
+        "endChar": 54
+      },
+      "revId": "cfe2e60540ac45df0074c7f3f7bef99cb49b7e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d3e9771b",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-11T13:37:08Z",
+      "side": 1,
+      "message": "Why this is whole tests are commented? This should be removed?",
+      "range": {
+        "startLine": 294,
+        "startChar": 1,
+        "endLine": 1275,
+        "endChar": 24
+      },
+      "revId": "cfe2e60540ac45df0074c7f3f7bef99cb49b7e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
