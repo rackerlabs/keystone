@@ -1,0 +1,10 @@
+Code-Review+1: Vivek Dhayaal <vivekdhayaal@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 11 Jan 2016 04:24:20 +0000
+Reviewed-on: https://review.openstack.org/265632
+Project: openstack/keystone
+Branch: refs/heads/master
