@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_5cfb6f7b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-11T03:53:34Z",
+      "side": 1,
+      "message": "@Brant, Guang, I understand your concern and I understand your approach to address this issue.\n\nThe problem is current code logic will not allow empty request body since the bug and fixing from Liberty.\n\npls see: https://review.openstack.org/#/c/195903/\n\n\nAlso, pls check the current code logic, https://github.com/openstack/keystone/blob/master/keystone/common/validation/__init__.py#L57-L65\n\n\nI am happy to revert the change from liberty if you agree the fixing in the liberty is not correct enough and there should be some trade-off between the un-helpful message thrown from jsonchema and the leverage of the allow empty ability from jsonschema.",
+      "parentUuid": "fa69d971_249bb267",
+      "revId": "601930d3086c1645af0981076e2f70955af55ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_0555e71b",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 4
