@@ -3616,6 +3616,12 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         self.assertEqual(3, r.result.get('trust').get('remaining_uses'))
 
 
+class TestTrustWithUuidTokenProvider(TrustAPIBehavior):
+    def config_overrides(self):
+        super(TestTrustWithUuidTokenProvider, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
+
 class TestAPIProtectionWithoutAuthContextMiddleware(test_v3.RestfulTestCase):
     def test_api_protection_with_no_auth_context_in_env(self):
         auth_data = self.build_authentication_request(
