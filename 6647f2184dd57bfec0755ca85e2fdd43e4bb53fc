@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_16c28453",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_update_project_name_constraint.py",
+        "patchSetId": 129
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:39:40Z",
+      "side": 1,
+      "message": "would it really be called the same thing?",
+      "range": {
+        "startLine": 54,
+        "startChar": 34,
+        "endLine": 54,
+        "endChar": 62
+      },
+      "revId": "6647f2184dd57bfec0755ca85e2fdd43e4bb53fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_363d48c4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 129
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:39:40Z",
+      "side": 1,
+      "message": "should remove this bit, since all projects acting as domains are (currently) top level projects",
+      "range": {
+        "startLine": 97,
+        "startChar": 14,
+        "endLine": 97,
+        "endChar": 61
+      },
+      "revId": "6647f2184dd57bfec0755ca85e2fdd43e4bb53fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_763f4087",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 129
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:39:40Z",
+      "side": 1,
+      "message": "this is duplicated in this dict",
+      "range": {
+        "startLine": 853,
+        "startChar": 12,
+        "endLine": 853,
+        "endChar": 30
+      },
+      "revId": "6647f2184dd57bfec0755ca85e2fdd43e4bb53fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_969af460",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 129
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:39:40Z",
+      "side": 1,
+      "message": "If we haven\u0027t updated the constraints for sqlite, I\u0027m actually confused as to why this works....",
+      "range": {
+        "startLine": 861,
+        "startChar": 10,
+        "endLine": 862,
+        "endChar": 63
+      },
+      "revId": "6647f2184dd57bfec0755ca85e2fdd43e4bb53fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
