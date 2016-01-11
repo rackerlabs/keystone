@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_7c0bd324",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-11T03:27:16Z",
+      "side": 0,
+      "message": "@Dolph, these testcases were used to be restful testcases, test the behavior of API invocation IMO. \n\nAfter enforcing schema validation, the API will not be called at all, the exception has been caught by jsonschema instead [1].\n\nThis testcase is redundant since we have added the testcase to test the exception raised by jsonshema, any propriety except the proprieties defined in `identity_provider_properties`[3] will raise the bad request exception.  \n\n[1] https://review.openstack.org/#/c/262663/5/keystone/tests/unit/test_v3_federation.py\n[2] https://review.openstack.org/#/c/262663/5/keystone/tests/unit/test_validation.py@1904\n[3] https://review.openstack.org/#/c/262663/5/keystone/federation/schema.py",
+      "parentUuid": "fa69d971_6a98a11c",
+      "revId": "ba7a1db286dbdc4d88a949b2a1dd659686b40b31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_aa9219f4",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-06T14:58:35Z",
       "side": 0,
       "message": "Same as above.",
+      "revId": "ba7a1db286dbdc4d88a949b2a1dd659686b40b31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_7c599334",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3220,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-11T03:27:16Z",
+      "side": 0,
+      "message": "same here.",
+      "parentUuid": "fa69d971_aa9219f4",
       "revId": "ba7a1db286dbdc4d88a949b2a1dd659686b40b31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
