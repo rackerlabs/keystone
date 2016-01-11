@@ -61,6 +61,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_a5aefc2b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-11T12:32:08Z",
+      "side": 1,
+      "message": "Using UUID is always a good idea. Although this should run fine, keeping things simple and explicit is always a good practice.\n\nAlso I would not create 20 domains. Just create 5 or so to keep the running time under check.\n\nThe \"Get 2 entries\" section would need some change if this is changed to UUID.",
+      "parentUuid": "fa69d971_75b916ec",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_51d6dff1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -95,6 +113,29 @@
       "writtenOn": "2016-01-08T00:26:28Z",
       "side": 1,
       "message": "At first glance this is strange to me. Why isn\u0027t this being called automatically?",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_9042183d",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2803,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-11T12:32:08Z",
+      "side": 1,
+      "message": "This should not be needed!",
+      "range": {
+        "startLine": 2803,
+        "startChar": 0,
+        "endLine": 2803,
+        "endChar": 0
+      },
       "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
