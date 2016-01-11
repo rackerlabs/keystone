@@ -22,6 +22,30 @@
       "revId": "d446a4e2971b9a7c8f19e3865f3614141ce98012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a291f648",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3910,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-11T20:04:03Z",
+      "side": 0,
+      "message": "We separated these out because they are more of a crud assertion than an authentication assertion. The authentication assertion is kept on line 3917.",
+      "parentUuid": "fa69d971_55e4793a",
+      "range": {
+        "startLine": 3904,
+        "startChar": 0,
+        "endLine": 3910,
+        "endChar": 50
+      },
+      "revId": "d446a4e2971b9a7c8f19e3865f3614141ce98012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
