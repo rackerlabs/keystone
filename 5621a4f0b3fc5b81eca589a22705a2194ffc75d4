@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_6bcf5929",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:22:31Z",
+      "side": 1,
+      "message": "I don\u0027t really understand this comment....",
+      "range": {
+        "startLine": 52,
+        "startChar": 10,
+        "endLine": 53,
+        "endChar": 55
+      },
+      "revId": "5621a4f0b3fc5b81eca589a22705a2194ffc75d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2b05e144",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T21:22:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t these both raise an exception with a V8 driver? Since you have not  overridden this test in the legacy test class, I don\u0027t understand how the legacy test can pass",
+      "range": {
+        "startLine": 585,
+        "startChar": 8,
+        "endLine": 592,
+        "endChar": 17
+      },
+      "revId": "5621a4f0b3fc5b81eca589a22705a2194ffc75d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
