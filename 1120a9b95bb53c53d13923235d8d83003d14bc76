@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_2c737b4f",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T22:32:47Z",
+      "side": 1,
+      "message": "Well, given that we already create all the routes this way, it seemed more obvious change to override just one entry point to do it this way.  And, we get some re-use benefit since I know at least one other place where we could have used this override ability rather than create the routes by hand.",
+      "parentUuid": "fa69d971_2a641bb7",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 17
+      },
+      "revId": "1120a9b95bb53c53d13923235d8d83003d14bc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_cac69f9b",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_0cad5788",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T22:32:47Z",
+      "side": 1,
+      "message": "I think that\u0027s a fair point, I\u0027ll add some.",
+      "parentUuid": "fa69d971_cac69f9b",
+      "range": {
+        "startLine": 2306,
+        "startChar": 13,
+        "endLine": 2306,
+        "endChar": 47
+      },
+      "revId": "1120a9b95bb53c53d13923235d8d83003d14bc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_7f5f3741",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 8
@@ -59,6 +107,30 @@
       "writtenOn": "2016-01-11T12:04:12Z",
       "side": 1,
       "message": "Just a small nit: this line could be written after creating global_role2 so that while doing the check for the correct number of number of roles returned you don\u0027t to have to manually add two.",
+      "range": {
+        "startLine": 2328,
+        "startChar": 8,
+        "endLine": 2328,
+        "endChar": 29
+      },
+      "revId": "1120a9b95bb53c53d13923235d8d83003d14bc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_2caa9b71",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2328,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-11T22:32:47Z",
+      "side": 1,
+      "message": "will fix.",
+      "parentUuid": "fa69d971_7f5f3741",
       "range": {
         "startLine": 2328,
         "startChar": 8,
