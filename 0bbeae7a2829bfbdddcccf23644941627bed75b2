@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_8429b339",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_314e6fc2",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b1d01fcb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 14
@@ -36,6 +60,24 @@
       "writtenOn": "2015-12-29T21:37:35Z",
       "side": 1,
       "message": "this should be done in a separate commit so that it\u0027s easier for reviewers to tell which tests this is referring to.",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_049b8373",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "not sure if why understand why we need to separate this. The tests were ok, but now they do not pass the constraint created on this patch and had to be removed.",
+      "parentUuid": "fa69d971_b1d01fcb",
       "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -77,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_64827f02",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "True... Looks like it is just a hack used everywhere to transform it into a tuple",
+      "parentUuid": "fa69d971_849b4172",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_31aaef1a",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 14
@@ -112,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_e1785380",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "Done. Just moved it to the backend",
+      "parentUuid": "fa69d971_a7eb24db",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_07dc7044",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 14
@@ -123,6 +201,30 @@
       "writtenOn": "2016-01-06T20:09:09Z",
       "side": 1,
       "message": "could list the ID after the entity to clearly dictate which id represents each entity.",
+      "range": {
+        "startLine": 265,
+        "startChar": 42,
+        "endLine": 265,
+        "endChar": 77
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_618d437b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "We\u0027d need to do an extra query to get the ID, I don\u0027t think it is worth that",
+      "parentUuid": "fa69d971_07dc7044",
       "range": {
         "startLine": 265,
         "startChar": 42,
@@ -175,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_21bbcbe6",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_unique_constraint_endpoint.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_9174fbcf",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_114fab93",
         "filename": "keystone/common/sql/migrate_repo/versions/087_add_unique_constraint_endpoint.py",
         "patchSetId": 14
@@ -204,6 +324,24 @@
       "side": 1,
       "message": "Yes, the test_endpoint_unique_constraint_fails_if_duplicates test case in this patch exposes that. Maybe the test case can assert that a useful error message is logged.",
       "parentUuid": "fa69d971_114fab93",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4166ff51",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_unique_constraint_endpoint.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_e76b5c1c",
       "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -245,6 +383,30 @@
       "side": 1,
       "message": "Seems like if the changes are needed they should be in a different commit.",
       "parentUuid": "fa69d971_478b481f",
+      "range": {
+        "startLine": 441,
+        "startChar": 55,
+        "endLine": 441,
+        "endChar": 64
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_a47957fe",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "they need to change because they create duplicate endpoints, and they were broken by the new constraint.",
+      "parentUuid": "fa69d971_049d1159",
       "range": {
         "startLine": 441,
         "startChar": 55,
@@ -304,6 +466,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_e4e50fa8",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "that\u0027s because this test is supposed to create 3 endpoints, and with the constraint, we cannot have more than 3 endpoints for service in a region.",
+      "parentUuid": "fa69d971_04ebd1b1",
+      "range": {
+        "startLine": 555,
+        "startChar": 8,
+        "endLine": 557,
+        "endChar": 57
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_844581b4",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 14
@@ -321,6 +507,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_7a708c40",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "no... removed",
+      "parentUuid": "fa69d971_844581b4",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_111d6b73",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 14
@@ -332,6 +536,24 @@
       "writtenOn": "2015-12-29T21:37:35Z",
       "side": 1,
       "message": "this should be in test_backends. We don\u0027t have to go through the whole request stack to validate this behavior.",
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0159e734",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-11T20:02:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_111d6b73",
       "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
