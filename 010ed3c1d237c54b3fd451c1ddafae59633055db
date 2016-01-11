@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_35ef851f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3271,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-11T19:10:30Z",
+      "side": 1,
+      "message": "unrelated, but OK",
+      "range": {
+        "startLine": 3271,
+        "startChar": 8,
+        "endLine": 3271,
+        "endChar": 78
+      },
+      "revId": "010ed3c1d237c54b3fd451c1ddafae59633055db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b5f7f5d1",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-11T19:10:30Z",
+      "side": 1,
+      "message": "are these needed? they don\u0027t seem to be exercised or checked",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 31
+      },
+      "revId": "010ed3c1d237c54b3fd451c1ddafae59633055db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_f559edfd",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-11T19:10:30Z",
+      "side": 1,
+      "message": "this is already enabled by default: https://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L2011",
+      "range": {
+        "startLine": 34,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 63
+      },
+      "revId": "010ed3c1d237c54b3fd451c1ddafae59633055db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_957d111e",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-11T19:10:30Z",
+      "side": 1,
+      "message": "new test, but alright i guess",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 50
+      },
+      "revId": "010ed3c1d237c54b3fd451c1ddafae59633055db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

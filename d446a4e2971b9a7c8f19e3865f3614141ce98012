@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_55e4793a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3910,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-11T19:10:30Z",
+      "side": 0,
+      "message": "why were these deleted?",
+      "range": {
+        "startLine": 3904,
+        "startChar": 0,
+        "endLine": 3910,
+        "endChar": 50
+      },
+      "revId": "d446a4e2971b9a7c8f19e3865f3614141ce98012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
