@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_c8176ba1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-11T20:59:14Z",
+      "side": 1,
+      "message": "Seem like a common pattern. Wonder if we can have a common utility at its base class.",
+      "revId": "10f27107b5a386796b867310476d0656a21224f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
