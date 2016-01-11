@@ -2773,46 +2773,85 @@ class TestTrustOptional(test_v3.RestfulTestCase):
                              expected_status=http_client.FORBIDDEN)
 
 
-class TestTrustRedelegation(test_v3.RestfulTestCase):
-    """Redelegation valid and secure
-
-    Redelegation is a hierarchical structure of trusts between initial trustor
-    and a group of users allowed to impersonate trustor and act in his name.
-    Hierarchy is created in a process of trusting already trusted permissions
-    and organized as an adjacency list using 'redelegated_trust_id' field.
-    Redelegation is valid if each subsequent trust in a chain passes 'not more'
-    permissions than being redelegated.
-
-    Trust constraints are:
-     * roles - set of roles trusted by trustor
-     * expiration_time
-     * allow_redelegation - a flag
-     * redelegation_count - decreasing value restricting length of trust chain
-     * remaining_uses - DISALLOWED when allow_redelegation == True
-
-    Trust becomes invalid in case:
-     * trust roles were revoked from trustor
-     * one of the users in the delegation chain was disabled or deleted
-     * expiration time passed
-     * one of the parent trusts has become invalid
-     * one of the parent trusts was deleted
-
-    """
+class TrustAPIBehavior(test_v3.RestfulTestCase):
 
     def config_overrides(self):
-        super(TestTrustRedelegation, self).config_overrides()
+        super(TrustAPIBehavior, self).config_overrides()
         self.config_fixture.config(
             group='trust',
-            enabled=True,
             allow_redelegation=True,
             max_redelegation_count=10
         )
 
+    def setup_trust_chain(self):
+        # Create trust chain
+        self.user_chain = list()
+        self.trust_chain = list()
+        for _ in range(3):
+            user = unit.create_user(self.identity_api,
+                                    domain_id=self.domain_id)
+            self.user_chain.append(user)
+
+        # trustor->trustee
+        trustee = self.user_chain[0]
+        trust_ref = unit.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=trustee['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+        trust_ref.update(
+            allow_redelegation=True,
+            redelegation_count=3)
+
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': trust_ref})
+
+        trust = self.assertValidTrustResponse(r)
+        auth_data = self.build_authentication_request(
+            user_id=trustee['id'],
+            password=trustee['password'],
+            trust_id=trust['id'])
+        trust_token = self.get_requested_token(auth_data)
+        self.trust_chain.append(trust)
+
+        for trustee in self.user_chain[1:]:
+            trust_ref = unit.new_trust_ref(
+                trustor_user_id=self.user_id,
+                trustee_user_id=trustee['id'],
+                project_id=self.project_id,
+                impersonation=True,
+                role_ids=[self.role_id])
+            trust_ref.update(
+                allow_redelegation=True)
+            r = self.post('/OS-TRUST/trusts',
+                          body={'trust': trust_ref},
+                          token=trust_token)
+            trust = self.assertValidTrustResponse(r)
+            auth_data = self.build_authentication_request(
+                user_id=trustee['id'],
+                password=trustee['password'],
+                trust_id=trust['id'])
+            trust_token = self.get_requested_token(auth_data)
+            self.trust_chain.append(trust)
+
+        trustee = self.user_chain[-1]
+        trust = self.trust_chain[-1]
+        auth_data = self.build_authentication_request(
+            user_id=trustee['id'],
+            password=trustee['password'],
+            trust_id=trust['id'])
+
+        self.last_token = self.get_requested_token(auth_data)
+
     def setUp(self):
-        super(TestTrustRedelegation, self).setUp()
-        # Create a trustee to delegate stuff to
+        super(TrustAPIBehavior, self).setUp()
+
+        # create a trustee to delegate stuff to
         self.trustee_user = unit.create_user(self.identity_api,
                                              domain_id=self.domain_id)
+        self.trustee_user_id = self.trustee_user['id']
 
         # trustor->trustee
         self.redelegated_trust_ref = unit.new_trust_ref(
@@ -2833,6 +2872,10 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             role_ids=[self.role_id],
             allow_redelegation=True)
 
+        self.setup_trust_chain()
+
+    # testing utility methods specific to trusts
+
     def _get_trust_token(self, trust):
         trust_id = trust['id']
         auth_data = self.build_authentication_request(
@@ -2841,6 +2884,44 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             trust_id=trust_id)
         trust_token = self.get_requested_token(auth_data)
         return trust_token
+
+    def assert_user_authenticate(self, user):
+        auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password']
+        )
+        r = self.v3_create_token(auth_data)
+        self.assertValidTokenResponse(r)
+
+    def assertTrustTokensRevoked(self, trust_id):
+        revocation_response = self.get('/OS-REVOKE/events')
+        revocation_events = revocation_response.json_body['events']
+        found = False
+        for event in revocation_events:
+            if event.get('OS-TRUST:trust_id') == trust_id:
+                found = True
+        self.assertTrue(found, 'event with trust_id %s not found in list' %
+                        trust_id)
+
+    def assert_trust_tokens_revoked(self, trust_id):
+        trustee = self.user_chain[0]
+        auth_data = self.build_authentication_request(
+            user_id=trustee['id'],
+            password=trustee['password']
+        )
+        r = self.v3_create_token(auth_data)
+        self.assertValidTokenResponse(r)
+
+        revocation_response = self.get('/OS-REVOKE/events')
+        revocation_events = revocation_response.json_body['events']
+        found = False
+        for event in revocation_events:
+            if event.get('OS-TRUST:trust_id') == trust_id:
+                found = True
+        self.assertTrue(found, 'event with trust_id %s not found in list' %
+                        trust_id)
+
+    # testing for redelegation scenarios
 
     def test_depleted_redelegation_count_error(self):
         self.redelegated_trust_ref['redelegation_count'] = 0
@@ -3043,106 +3124,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
                   token=trust_token,
                   expected_status=http_client.FORBIDDEN)
 
-
-class TestTrustChain(test_v3.RestfulTestCase):
-
-    def config_overrides(self):
-        super(TestTrustChain, self).config_overrides()
-        self.config_fixture.config(
-            group='trust',
-            enabled=True,
-            allow_redelegation=True,
-            max_redelegation_count=10
-        )
-
-    def setUp(self):
-        super(TestTrustChain, self).setUp()
-        # Create trust chain
-        self.user_chain = list()
-        self.trust_chain = list()
-        for _ in range(3):
-            user = unit.create_user(self.identity_api,
-                                    domain_id=self.domain_id)
-            self.user_chain.append(user)
-
-        # trustor->trustee
-        trustee = self.user_chain[0]
-        trust_ref = unit.new_trust_ref(
-            trustor_user_id=self.user_id,
-            trustee_user_id=trustee['id'],
-            project_id=self.project_id,
-            impersonation=True,
-            expires=dict(minutes=1),
-            role_ids=[self.role_id])
-        trust_ref.update(
-            allow_redelegation=True,
-            redelegation_count=3)
-
-        r = self.post('/OS-TRUST/trusts',
-                      body={'trust': trust_ref})
-
-        trust = self.assertValidTrustResponse(r)
-        auth_data = self.build_authentication_request(
-            user_id=trustee['id'],
-            password=trustee['password'],
-            trust_id=trust['id'])
-        trust_token = self.get_requested_token(auth_data)
-        self.trust_chain.append(trust)
-
-        for trustee in self.user_chain[1:]:
-            trust_ref = unit.new_trust_ref(
-                trustor_user_id=self.user_id,
-                trustee_user_id=trustee['id'],
-                project_id=self.project_id,
-                impersonation=True,
-                role_ids=[self.role_id])
-            trust_ref.update(
-                allow_redelegation=True)
-            r = self.post('/OS-TRUST/trusts',
-                          body={'trust': trust_ref},
-                          token=trust_token)
-            trust = self.assertValidTrustResponse(r)
-            auth_data = self.build_authentication_request(
-                user_id=trustee['id'],
-                password=trustee['password'],
-                trust_id=trust['id'])
-            trust_token = self.get_requested_token(auth_data)
-            self.trust_chain.append(trust)
-
-        trustee = self.user_chain[-1]
-        trust = self.trust_chain[-1]
-        auth_data = self.build_authentication_request(
-            user_id=trustee['id'],
-            password=trustee['password'],
-            trust_id=trust['id'])
-
-        self.last_token = self.get_requested_token(auth_data)
-
-    def assert_user_authenticate(self, user):
-        auth_data = self.build_authentication_request(
-            user_id=user['id'],
-            password=user['password']
-        )
-        r = self.v3_create_token(auth_data)
-        self.assertValidTokenResponse(r)
-
-    def assert_trust_tokens_revoked(self, trust_id):
-        trustee = self.user_chain[0]
-        auth_data = self.build_authentication_request(
-            user_id=trustee['id'],
-            password=trustee['password']
-        )
-        r = self.v3_create_token(auth_data)
-        self.assertValidTokenResponse(r)
-
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
+        # trust chaining test cases
 
     def test_delete_trust_cascade(self):
         self.assert_user_authenticate(self.user_chain[0])
@@ -3198,26 +3180,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
             headers = {'X-Subject-Token': self.last_token}
             self.head('/auth/tokens', headers=headers,
                       expected_status=http_client.FORBIDDEN)
-
-
-class TestTrustAuth(test_v3.RestfulTestCase):
-
-    def config_overrides(self):
-        super(TestTrustAuth, self).config_overrides()
-        self.config_fixture.config(group='revoke', driver='kvs')
-        self.config_fixture.config(
-            group='token',
-            provider='pki',
-            revoke_by_id=False)
-        self.config_fixture.config(group='trust', enabled=True)
-
-    def setUp(self):
-        super(TestTrustAuth, self).setUp()
-
-        # create a trustee to delegate stuff to
-        self.trustee_user = unit.create_user(self.identity_api,
-                                             domain_id=self.domain_id)
-        self.trustee_user_id = self.trustee_user['id']
+    # trust authentication test cases
 
     def test_create_unscoped_trust(self):
         ref = unit.new_trust_ref(
@@ -3451,16 +3414,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data,
                                  expected_status=http_client.FORBIDDEN)
 
-    def assertTrustTokensRevoked(self, trust_id):
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
-
     def test_delete_trust_revokes_tokens(self):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
@@ -3487,10 +3440,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
                   expected_status=http_client.NOT_FOUND)
         self.assertTrustTokensRevoked(trust_id)
 
-    def disable_user(self, user):
-        user['enabled'] = False
-        self.identity_api.update_user(user['id'], user)
-
     def test_trust_get_token_fails_if_trustor_disabled(self):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
@@ -3510,7 +3459,8 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             trust_id=trust['id'])
         self.v3_create_token(auth_data)
 
-        self.disable_user(self.user)
+        self.user['enabled'] = False
+        self.identity_api.update_user(self.user['id'], self.user)
 
         auth_data = self.build_authentication_request(
             user_id=self.trustee_user['id'],
@@ -3538,7 +3488,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             trust_id=trust['id'])
         self.v3_create_token(auth_data)
 
-        self.disable_user(self.trustee_user)
+        self.trustee_user['enabled'] = False
+        self.identity_api.update_user(self.trustee_user['id'],
+                                      self.trustee_user)
 
         auth_data = self.build_authentication_request(
             user_id=self.trustee_user['id'],
