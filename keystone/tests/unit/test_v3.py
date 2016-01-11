@@ -1094,6 +1094,23 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         return entity
 
+    # Service providers (federation)
+
+    def assertValidServiceProvider(self, entity, ref=None, *args, **kwargs):
+
+        attributes = frozenset(['auth_url', 'id', 'enabled', 'description',
+                                'links', 'relay_state_prefix', 'sp_url'])
+        for attribute in attributes:
+            self.assertIsNotNone(entity.get(attribute))
+
+    def assertValidServiceProviderListResponse(self, resp, *args, **kwargs):
+        return self.assertValidListResponse(
+            resp,
+            'service_providers',
+            self.assertValidServiceProvider,
+            *args,
+            **kwargs)
+
     def build_external_auth_request(self, remote_user,
                                     remote_domain=None, auth_data=None,
                                     kerberos=False):
