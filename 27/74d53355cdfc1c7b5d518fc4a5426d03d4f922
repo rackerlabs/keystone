@@ -1,0 +1,11 @@
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Henrique Truta <henrique@lsd.ufcg.edu.br>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 12 Jan 2016 11:19:17 +0000
+Reviewed-on: https://review.openstack.org/262307
+Project: openstack/keystone
+Branch: refs/heads/master
