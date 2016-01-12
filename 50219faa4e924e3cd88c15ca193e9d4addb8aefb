@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_b09a2713",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-12T20:40:59Z",
+      "side": 1,
+      "message": "can you reference this blueprint \u0027bp python3\u0027",
+      "revId": "50219faa4e924e3cd88c15ca193e9d4addb8aefb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_cbf28a9a",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-12T20:40:59Z",
+      "side": 1,
+      "message": "this is breaking a test because you can\u0027t do json.loads(bytes)",
+      "range": {
+        "startLine": 36,
+        "startChar": 35,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "50219faa4e924e3cd88c15ca193e9d4addb8aefb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_1021b34d",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-12T20:40:59Z",
+      "side": 1,
+      "message": "if you are changing the test you need the changed what is expected after the test runs.\n\nexpected_json \u003d b\u0027{\"field\":\"value\"}\u0027",
+      "range": {
+        "startLine": 153,
+        "startChar": 24,
+        "endLine": 153,
+        "endChar": 43
+      },
+      "revId": "50219faa4e924e3cd88c15ca193e9d4addb8aefb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
