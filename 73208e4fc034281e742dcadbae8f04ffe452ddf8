@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_5735dcd7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-12T22:33:44Z",
+      "side": 1,
+      "message": "I didn\u0027t think cross system dependencies were bad at the manager layers?",
+      "parentUuid": "da6ed579_3435c6f6",
+      "revId": "73208e4fc034281e742dcadbae8f04ffe452ddf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_0cf4cc58",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
