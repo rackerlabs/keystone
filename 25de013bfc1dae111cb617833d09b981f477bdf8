@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_2b5a6184",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_service_provider_filtering_tables.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-12T13:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_fd2ae12b",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_9ec21b52",
         "filename": "keystone/tests/unit/test_service_provider_filtering.py",
         "patchSetId": 9
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_ab773101",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-12T13:09:36Z",
+      "side": 1,
+      "message": "no.",
+      "parentUuid": "fa69d971_9ec21b52",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_7e9c076a",
         "filename": "keystone/tests/unit/test_service_provider_filtering.py",
         "patchSetId": 9
@@ -65,6 +101,24 @@
       "writtenOn": "2016-01-11T17:17:50Z",
       "side": 1,
       "message": "(nit) add newline",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_cb74e5fe",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-12T13:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_7e9c076a",
       "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +171,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_2b0ca193",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-12T13:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_7deef1ed",
+      "range": {
+        "startLine": 831,
+        "startChar": 21,
+        "endLine": 831,
+        "endChar": 23
+      },
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_2b7accf1",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 9
@@ -128,6 +206,24 @@
       "writtenOn": "2016-01-11T17:17:50Z",
       "side": 1,
       "message": "I haven\u0027t tried it locally yet, but one possible reason for the test failures is that you are building two relations for \u0027project_service_providers\u0027 and I don\u0027t think you can do that.",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_88f35373",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-12T13:09:36Z",
+      "side": 1,
+      "message": "yeah, my bad, but fixing this didn\u0027t help much with JSON home thing.",
+      "parentUuid": "fa69d971_2b7accf1",
       "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
