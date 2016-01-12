@@ -29,3 +29,39 @@ class FederatedIdentityProviderTestsV8(
             driver='keystone.federation.V8_backends.sql.Federation')
         self.use_specific_sql_driver_version(
             'keystone.federation', 'backends', 'V8_')
+
+
+class MappingCRUDTestsV8(
+        test_v3_federation.MappingCRUDTests):
+    """Test that a V8 driver still passes the same tests.
+
+    We use the SQL driver as an example of a V8 legacy driver.
+
+    """
+
+    def config_overrides(self):
+        super(MappingCRUDTestsV8, self).config_overrides()
+        # V8 SQL specific driver overrides
+        self.config_fixture.config(
+            group='federation',
+            driver='keystone.federation.V8_backends.sql.Federation')
+        self.use_specific_sql_driver_version(
+            'keystone.federation', 'backends', 'V8_')
+
+
+class ServiceProviderTestsV8(
+        test_v3_federation.ServiceProviderTests):
+    """Test that a V8 driver still passes the same tests.
+
+    We use the SQL driver as an example of a V8 legacy driver.
+
+    """
+
+    def config_overrides(self):
+        super(ServiceProviderTestsV8, self).config_overrides()
+        # V8 SQL specific driver overrides
+        self.config_fixture.config(
+            group='federation',
+            driver='keystone.federation.V8_backends.sql.Federation')
+        self.use_specific_sql_driver_version(
+            'keystone.federation', 'backends', 'V8_')
