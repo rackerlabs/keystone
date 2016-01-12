@@ -34,6 +34,23 @@
       "revId": "2774d53355cdfc1c7b5d518fc4a5426d03d4f922",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_37f17bce",
+        "filename": "releasenotes/notes/v9FederationDriver-cbebcf5f97e1eae2.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-12T06:55:26Z",
+      "side": 1,
+      "message": "mention that we created a v9 driver too?",
+      "revId": "2774d53355cdfc1c7b5d518fc4a5426d03d4f922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
