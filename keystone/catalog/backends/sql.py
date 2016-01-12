@@ -122,7 +122,7 @@ class Catalog(catalog.CatalogDriverV8):
             self._get_region(session, parent_region_id)
 
     def _has_endpoints(self, session, region, root_region):
-        if region.endpoints is not None and len(region.endpoints) > 0:
+        if region.endpoints is not None and len(region.endpoints):
             return True
 
         q = session.query(Region)

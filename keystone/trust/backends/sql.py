@@ -99,7 +99,7 @@ class Trust(trust.TrustDriverV8):
                 if remaining_uses is None:
                     # unlimited uses, do nothing
                     break
-                elif remaining_uses > 0:
+                elif remaining_uses:
                     # NOTE(morganfainberg): use an optimistic locking method
                     # to ensure we only ever update a trust that has the
                     # expected number of remaining uses.
