@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_3acaa9a2",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T14:15:34Z",
+      "side": 1,
+      "message": "Does anything rely on the ability to have a negative value?",
+      "revId": "e401ba16a15ee66055b88dab3640ee4d62c288f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_1a700572",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T14:15:34Z",
+      "side": 1,
+      "message": "This is definitely not as readable",
+      "revId": "e401ba16a15ee66055b88dab3640ee4d62c288f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
