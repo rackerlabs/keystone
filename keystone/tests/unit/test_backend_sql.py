@@ -739,8 +739,7 @@ class SqlModuleInitialization(unit.TestCase):
     @mock.patch.object(options, 'set_defaults')
     def test_initialize_module(self, set_defaults, CONF):
         sql.initialize()
-        set_defaults.assert_called_with(CONF,
-                                        connection='sqlite:///keystone.db')
+        set_defaults.assert_called_with(CONF, connection='sqlite://:memory:')
 
 
 class SqlCredential(SqlTests):

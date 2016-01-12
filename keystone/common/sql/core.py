@@ -71,7 +71,7 @@ def initialize():
     """Initialize the module."""
     db_options.set_defaults(
         CONF,
-        connection="sqlite:///keystone.db")
+        connection="sqlite://:memory:")
 
 
 def initialize_decorator(init):
