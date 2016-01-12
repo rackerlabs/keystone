@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_6681554a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T20:58:51Z",
+      "side": 1,
+      "message": "Suggest \u0027Adds an explicit utils import in test_v3_protection.py\n\nDue to the way tox runs and loads the Python code before running tests this issue was not noticed. When running these tests under nose, where it only loads the specified tests, this problem appears.\u0027",
+      "revId": "9bc81bcc8e66ba5d86f571af3939aa5f6f26935a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
