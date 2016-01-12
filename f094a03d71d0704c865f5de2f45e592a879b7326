@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_28dd8742",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T12:49:23Z",
+      "side": 1,
+      "message": "(nit) It would be better to make clear it is a log message. At first look, I thought this was the exception message. Also, as this is a constant, use uppercase.\n\nWhat about _CONFLICT_LOG_MSG",
+      "revId": "f094a03d71d0704c865f5de2f45e592a879b7326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
