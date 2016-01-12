@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "da6ed579_8e94bb37",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4105,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T13:41:42Z",
+      "side": 1,
+      "message": "(nit) you may use %d as the replacement is a decimal value",
+      "range": {
+        "startLine": 4105,
+        "startChar": 33,
+        "endLine": 4105,
+        "endChar": 35
+      },
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_318ecb79",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -79,6 +102,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_6e7947fc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T13:41:42Z",
+      "side": 1,
+      "message": "Agree with comments. Try dstanek\u0027s suggestion. Also, a smaller number of domains should suffice.",
+      "parentUuid": "fa69d971_a5aefc2b",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_51d6dff1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -113,6 +154,24 @@
       "writtenOn": "2016-01-08T00:26:28Z",
       "side": 1,
       "message": "At first glance this is strange to me. Why isn\u0027t this being called automatically?",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d9c11f30",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2801,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T13:41:42Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa69d971_15d8daee",
       "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
