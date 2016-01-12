@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_5435dad7",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2873,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-12T22:07:49Z",
+      "side": 1,
+      "message": "This still allows redelegation, just like the trust above?",
+      "range": {
+        "startLine": 2873,
+        "startChar": 12,
+        "endLine": 2873,
+        "endChar": 36
+      },
+      "revId": "54365beb6ba8e83f1412a4b763cbdfcf1e944c8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
