@@ -684,7 +684,7 @@ class CADFNotificationsForEntities(NotificationsForEntities):
                                            cadftaxonomy.SECURITY_DOMAIN)
 
 
-class V2Notifications(BaseNotificationTest):
+class V2Notifications(BaseNotificationTest, test_v3.RestfulTestCase):
 
     def setUp(self):
         super(V2Notifications, self).setUp()
