@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_e3300e0a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-12T01:44:14Z",
+      "side": 1,
+      "message": "Not sure i understand this....and can\u0027t see that get_project takes an is_domain parameter anyway...",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 329,
+        "endChar": 69
+      },
+      "revId": "aaf2a9267ceb69ac283fb8d391026bcff5f6ed81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_83ffd233",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-12T01:44:14Z",
+      "side": 1,
+      "message": "don\u0027t we need to call _get_domain_from_project() ?",
+      "range": {
+        "startLine": 668,
+        "startChar": 15,
+        "endLine": 668,
+        "endChar": 32
+      },
+      "revId": "aaf2a9267ceb69ac283fb8d391026bcff5f6ed81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
