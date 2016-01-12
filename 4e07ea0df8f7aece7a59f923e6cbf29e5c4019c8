@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_48bb1b73",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T13:00:26Z",
+      "side": 1,
+      "message": "(nit) unneeded blank line ?",
+      "range": {
+        "startLine": 1100,
+        "startChar": 0,
+        "endLine": 1100,
+        "endChar": 0
+      },
+      "revId": "4e07ea0df8f7aece7a59f923e6cbf29e5c4019c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_cb3145ee",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T13:00:26Z",
+      "side": 1,
+      "message": "It\u0027d be nice to check the types of this too using schemas. I remember Lance was doing this work for token validations.",
+      "revId": "4e07ea0df8f7aece7a59f923e6cbf29e5c4019c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
