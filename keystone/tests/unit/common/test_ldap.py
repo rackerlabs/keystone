@@ -19,6 +19,7 @@ import fixtures
 import ldap.dn
 import mock
 from oslo_config import cfg
+from oslo_config import fixture as config_fixture
 from testtools import matchers
 
 from keystone.common import driver_hints
@@ -204,6 +205,7 @@ class LDAPDeleteTreeTest(unit.TestCase):
 
     def setUp(self):
         super(LDAPDeleteTreeTest, self).setUp()
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
         ks_ldap.register_handler('fake://',
                                  fakeldap.FakeLdapNoSubtreeDelete)
@@ -283,8 +285,12 @@ class LDAPDeleteTreeTest(unit.TestCase):
                           conn.search_s, grandchild_dn, ldap.SCOPE_BASE)
 
 
-class SslTlsTest(unit.TestCase):
+class SslTlsTest(unit.BaseTestCase):
     """Tests for the SSL/TLS functionality in keystone.common.ldap.core."""
+
+    def setUp(self):
+        super(SslTlsTest, self).setUp()
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
     @mock.patch.object(ks_ldap.core.KeystoneLDAPHandler, 'simple_bind_s')
     @mock.patch.object(ldap.ldapobject.LDAPObject, 'start_tls_s')
@@ -497,11 +503,12 @@ class CommonLdapTestCase(unit.BaseTestCase):
             self.assertEqual(user_name, py_result[0][1]['user_name'][0])
 
 
-class LDAPFilterQueryCompositionTest(unit.TestCase):
+class LDAPFilterQueryCompositionTest(unit.BaseTestCase):
     """These test cases test LDAP filter generation."""
 
     def setUp(self):
         super(LDAPFilterQueryCompositionTest, self).setUp()
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
         self.base_ldap = ks_ldap.BaseLdap(self.config_fixture.conf)
 
