@@ -30,7 +30,6 @@ WARNING::
 """
 
 import copy
-import json
 import uuid
 
 from migrate.versioning import api as versioning_api
@@ -39,6 +38,8 @@ from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import session as db_session
+from oslo_serialization import jsonutils as json
+import six
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
 from sqlalchemy import schema
@@ -744,7 +745,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             f = service_table.c.id == service_id
             s = sqlalchemy.select(cols).where(f)
             service = session.execute(s).fetchone()
-            return json.loads(service.extra)
+            return json.loads(six.b(service.extra))
 
         for service_id, exp_extra, msg in services:
             extra = fetch_service_extra(service_id)

@@ -200,7 +200,7 @@ class OAuth1(object):
             token_dict['authorizing_user_id'] = user_id
             token_dict['verifier'] = ''.join(random.sample(core.VERIFIER_CHARS,
                                                            8))
-            token_dict['role_ids'] = jsonutils.dumps(role_ids)
+            token_dict['role_ids'] = jsonutils.dump_as_bytes(role_ids)
 
             new_token = RequestToken.from_dict(token_dict)
             for attr in RequestToken.attributes:

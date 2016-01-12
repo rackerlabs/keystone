@@ -149,8 +149,8 @@ class UtilsTestCase(unit.BaseTestCase):
 
     def test_pki_encoder(self):
         data = {'field': 'value'}
-        json = jsonutils.dumps(data, cls=common_utils.PKIEncoder)
-        expected_json = '{"field":"value"}'
+        json = jsonutils.dump_as_bytes(data, cls=common_utils.PKIEncoder)
+        expected_json = b'{"field":"value"}'
         self.assertEqual(expected_json, json)
 
     def test_url_safe_check(self):

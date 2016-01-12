@@ -178,9 +178,9 @@ def convert_ec2_to_v3_credential(ec2credential):
     return {'id': hash_access_key(ec2credential.access),
             'user_id': ec2credential.user_id,
             'project_id': ec2credential.tenant_id,
-            'blob': jsonutils.dumps(blob),
+            'blob': jsonutils.dump_as_bytes(blob),
             'type': 'ec2',
-            'extra': jsonutils.dumps({})}
+            'extra': jsonutils.dump_as_bytes({})}
 
 
 def convert_v3_to_ec2_credential(credential):

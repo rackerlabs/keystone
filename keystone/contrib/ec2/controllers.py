@@ -182,7 +182,7 @@ class Ec2ControllerCommon(object):
         credential_id = utils.hash_access_key(blob['access'])
         cred_ref = {'user_id': user_id,
                     'project_id': tenant_id,
-                    'blob': jsonutils.dumps(blob),
+                    'blob': jsonutils.dump_as_bytes(blob),
                     'id': credential_id,
                     'type': 'ec2'}
         self.credential_api.create_credential(credential_id, cred_ref)
