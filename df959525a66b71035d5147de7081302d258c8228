@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_fe2ae57d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 6239,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-12T01:50:05Z",
+      "side": 1,
+      "message": "I really, really don\u0027t like this.  If we let this merge, then until you get your full implementation patch merged we have reduced out testing coverage.  This cannot be the right approach.",
+      "range": {
+        "startLine": 6239,
+        "startChar": 4,
+        "endLine": 6239,
+        "endChar": 65
+      },
+      "revId": "df959525a66b71035d5147de7081302d258c8228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
