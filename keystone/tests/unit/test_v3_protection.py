@@ -606,8 +606,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.resource_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = unit.new_domain_ref()
         self.resource_api.create_domain(self.domainB['id'], self.domainB)
-        self.admin_domain = unit.new_domain_ref(id='admin_domain_id',
-                                                name='Admin_domain')
+        self.admin_domain = unit.new_domain_ref()
         self.resource_api.create_domain(self.admin_domain['id'],
                                         self.admin_domain)
 
