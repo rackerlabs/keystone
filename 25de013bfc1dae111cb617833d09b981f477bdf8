@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_fd2ae12b",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_service_provider_filtering_tables.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-12T08:26:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa69d971_be4cbf42",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_9ec21b52",
         "filename": "keystone/tests/unit/test_service_provider_filtering.py",
         "patchSetId": 9
@@ -47,6 +65,52 @@
       "writtenOn": "2016-01-11T17:17:50Z",
       "side": 1,
       "message": "(nit) add newline",
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_fde181ff",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-12T08:26:24Z",
+      "side": 1,
+      "message": "use the function in the patch you rebased this patch on",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 12
+      },
+      "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7deef1ed",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-12T08:26:24Z",
+      "side": 1,
+      "message": "88",
+      "range": {
+        "startLine": 831,
+        "startChar": 21,
+        "endLine": 831,
+        "endChar": 23
+      },
       "revId": "25de013bfc1dae111cb617833d09b981f477bdf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
