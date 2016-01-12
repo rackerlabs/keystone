@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_e67465fe",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T21:20:41Z",
+      "side": 1,
+      "message": "(nit) you could say \"links \u003d ref.setdefault(\u0027links\u0027, {})\" to make the next line shorter.",
+      "revId": "3d8069a01d533f27ebc3b5b01887f90adf74f06f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c62041fa",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T21:20:41Z",
+      "side": 1,
+      "message": "(nit) you could use setdefault here like you did in _add_self_referential_link to avoid line 391 entirely.",
+      "revId": "3d8069a01d533f27ebc3b5b01887f90adf74f06f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_0655f94e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T21:20:41Z",
+      "side": 1,
+      "message": "Instead of iteritems use items unless you really have a lots of keys (hundreds?)",
+      "revId": "3d8069a01d533f27ebc3b5b01887f90adf74f06f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
