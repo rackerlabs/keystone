@@ -245,7 +245,7 @@ class KeyValueStore(object):
         # when it comes to the backends, memcache's cache store is not more
         # refined than 1 second, therefore we must build in at least a 1
         # second overlap.  `lock_timeout` of 0 means locks never expire.
-        if config_args['lock_timeout'] > 0:
+        if config_args['lock_timeout']:
             config_args['lock_timeout'] += LOCK_WINDOW
 
         for argument, value in config_args.items():

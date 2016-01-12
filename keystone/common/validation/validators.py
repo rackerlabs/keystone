@@ -43,7 +43,7 @@ class SchemaValidator(object):
         except jsonschema.ValidationError as ex:
             # NOTE: For whole OpenStack message consistency, this error
             # message has been written in a format consistent with WSME.
-            if len(ex.path) > 0:
+            if len(ex.path):
                 # NOTE(lbragstad): Here we could think about using iter_errors
                 # as a method of providing invalid parameters back to the
                 # user.

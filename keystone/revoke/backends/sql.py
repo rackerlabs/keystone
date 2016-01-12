@@ -63,7 +63,7 @@ class Revoke(revoke.RevokeDriverV8):
         session = sql.get_session()
         dialect = session.bind.dialect.name
         batch_size = self._flush_batch_size(dialect)
-        if batch_size > 0:
+        if batch_size:
             query = session.query(RevocationEvent.id)
             query = query.filter(RevocationEvent.revoked_at < oldest)
             query = query.limit(batch_size).subquery()

@@ -392,7 +392,7 @@ class CheckForLoggingIssues(BaseASTChecker):
         for peer in peers:
             if isinstance(peer, ast.Raise):
                 if (isinstance(peer.type, ast.Call) and
-                        len(peer.type.args) > 0 and
+                        len(peer.type.args) and
                         isinstance(peer.type.args[0], ast.Name) and
                         name in (a.id for a in peer.type.args)):
                     return True

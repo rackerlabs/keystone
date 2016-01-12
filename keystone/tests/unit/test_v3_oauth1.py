@@ -357,7 +357,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
 
     def test_list_and_delete_access_tokens(self):
         self.test_oauth_flow()
-        # List access_tokens should be > 0
+        # List access_tokens should be greater than zero
         resp = self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens'
                         % {'user_id': self.user_id})
         entities = resp.result['access_tokens']
