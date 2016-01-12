@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_e69c656b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-12T21:05:49Z",
+      "side": 1,
+      "message": "Should add a little note about why you are making the change or why those arguments no longer need to be explicitly passed in.",
+      "revId": "9d02b980a229f1ccdef34462ddc07b97de307507",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
