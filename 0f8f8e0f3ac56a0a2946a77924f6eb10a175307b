@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_e3256eae",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-12T01:01:39Z",
+      "side": 1,
+      "message": "Need to add list_role_inference_rules() method here?",
+      "revId": "0f8f8e0f3ac56a0a2946a77924f6eb10a175307b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
