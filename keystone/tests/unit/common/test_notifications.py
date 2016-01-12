@@ -202,7 +202,7 @@ class NotificationsTestCase(unit.BaseTestCase):
             mocked.assert_called_once_with(*expected_args)
 
 
-class BaseNotificationTest(test_v3.RestfulTestCase):
+class BaseNotificationTest(unit.TestCase):
 
     def setUp(self):
         super(BaseNotificationTest, self).setUp()
@@ -651,7 +651,7 @@ class CADFNotificationsForEntities(NotificationsForEntities):
                                            cadftaxonomy.SECURITY_DOMAIN)
 
 
-class V2Notifications(BaseNotificationTest):
+class V2Notifications(BaseNotificationTest, test_v3.RestfulTestCase):
 
     def setUp(self):
         super(V2Notifications, self).setUp()
