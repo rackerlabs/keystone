@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_3435c6f6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-12T22:32:13Z",
+      "side": 1,
+      "message": "Using notifications or using assignment?",
+      "parentUuid": "fa69d971_ac7fc0dd",
+      "revId": "73208e4fc034281e742dcadbae8f04ffe452ddf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_0cf4cc58",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -47,6 +65,24 @@
       "writtenOn": "2016-01-11T14:37:32Z",
       "side": 1,
       "message": "This is unfortunate because it makes using notifications a little more messy. Is update project used so much that always invalidating would be bad?",
+      "revId": "73208e4fc034281e742dcadbae8f04ffe452ddf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f415ee48",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-12T22:32:13Z",
+      "side": 1,
+      "message": "We only care if the project id is updated, right? Because that would affect assignments.",
+      "parentUuid": "fa69d971_2ce2f0a0",
       "revId": "73208e4fc034281e742dcadbae8f04ffe452ddf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
