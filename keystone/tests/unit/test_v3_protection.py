@@ -112,7 +112,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
     def _set_policy(self, new_policy):
         with open(self.tmpfilename, "w") as policyfile:
-            policyfile.write(jsonutils.dumps(new_policy))
+            policyfile.write(jsonutils.dump_as_bytes(new_policy))
 
     def test_list_users_unprotected(self):
         """GET /users (unprotected)

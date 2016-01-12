@@ -558,7 +558,7 @@ class Auth(controller.V3Controller):
             if not (expires and isinstance(expires, six.text_type)):
                 t['expires'] = utils.isotime(expires)
         data = {'revoked': tokens}
-        json_data = jsonutils.dumps(data)
+        json_data = jsonutils.dump_as_bytes(data)
         signed_text = cms.cms_sign_text(json_data,
                                         CONF.signing.certfile,
                                         CONF.signing.keyfile)

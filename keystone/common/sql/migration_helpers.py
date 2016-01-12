@@ -51,9 +51,9 @@ def get_default_domain():
         'id': CONF.identity.default_domain_id,
         'name': 'Default',
         'enabled': True,
-        'extra': jsonutils.dumps({'description': 'Owns users and tenants '
-                                                 '(i.e. projects) available '
-                                                 'on Identity API v2.'})}
+        'extra': jsonutils.dump_as_bytes({
+            'description': 'Owns users and tenants (i.e. projects) available '
+                           'on Identity API v2.'})}
 
 
 #  Different RDBMSs use different schemes for naming the Foreign Key

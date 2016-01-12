@@ -33,7 +33,7 @@ def upgrade(migrate_engine):
         # Default the name to empty string
         extra_dict['name'] = ''
         new_values = {
-            'extra': jsonutils.dumps(extra_dict),
+            'extra': jsonutils.dump_as_bytes(extra_dict),
         }
         f = service_table.c.id == service.id
         update = service_table.update().where(f).values(new_values)

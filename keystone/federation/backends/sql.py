@@ -116,7 +116,8 @@ class MappingModel(sql.ModelBase, sql.DictBase):
     @classmethod
     def from_dict(cls, dictionary):
         new_dictionary = dictionary.copy()
-        new_dictionary['rules'] = jsonutils.dumps(new_dictionary['rules'])
+        new_dictionary['rules'] = jsonutils.dump_as_bytes(
+            new_dictionary['rules'])
         return cls(**new_dictionary)
 
     def to_dict(self):

@@ -90,7 +90,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
     def _set_policy(self, new_policy):
         with open(self.tmpfilename, "w") as policyfile:
-            policyfile.write(jsonutils.dumps(new_policy))
+            policyfile.write(jsonutils.dump_as_bytes(new_policy))
 
     def test_list_users_filtered_by_domain(self):
         """GET /users?domain_id=mydomain (filtered)

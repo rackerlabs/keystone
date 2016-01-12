@@ -581,7 +581,7 @@ class AuthTokenTests(OAuthFlowTests):
         self.config_fixture.config(group='oslo_policy',
                                    policy_file=self.tmpfilename)
         with open(self.tmpfilename, "w") as policyfile:
-            policyfile.write(jsonutils.dumps(new_policy))
+            policyfile.write(jsonutils.dump_as_bytes(new_policy))
 
     def test_trust_token_cannot_authorize_request_token(self):
         trust_token = self._create_trust_get_token()

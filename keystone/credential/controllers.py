@@ -55,7 +55,7 @@ class CredentialV3(controller.V3Controller):
             # tokens when authentication via ec2tokens happens
             if trust_id is not None:
                 blob['trust_id'] = trust_id
-                ret_ref['blob'] = jsonutils.dumps(blob)
+                ret_ref['blob'] = jsonutils.dump_as_bytes(blob)
             return ret_ref
         else:
             return super(CredentialV3, self)._assign_unique_id(ref)
@@ -76,7 +76,7 @@ class CredentialV3(controller.V3Controller):
         blob = ref.get('blob')
         if isinstance(blob, dict):
             new_ref = ref.copy()
-            new_ref['blob'] = jsonutils.dumps(blob)
+            new_ref['blob'] = jsonutils.dump_as_bytes(blob)
             return new_ref
         else:
             return ref
