@@ -43,7 +43,8 @@ class Provider(common.BaseProvider):
             # produces unicode.  This can be removed if the client returns
             # str()
             # TODO(ayoung): Make to a byte_str for Python3
-            token_json = jsonutils.dumps(token_data, cls=utils.PKIEncoder)
+            token_json = jsonutils.dump_as_bytes(token_data,
+                                                 cls=utils.PKIEncoder)
             token_id = str(cms.cms_sign_token(token_json,
                                               CONF.signing.certfile,
                                               CONF.signing.keyfile))

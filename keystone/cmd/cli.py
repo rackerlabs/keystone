@@ -723,7 +723,7 @@ class MappingEngineTester(BaseApp):
         assertion = MappingEngineTester.read_file(CONF.command.input)
         assertion = MappingEngineTester.normalize_assertion(assertion)
         rp = mapping_engine.RuleProcessor(rules['rules'])
-        print(jsonutils.dumps(rp.process(assertion), indent=2))
+        print(jsonutils.dump_as_bytes(rp.process(assertion), indent=2))
 
     @classmethod
     def add_argument_parser(cls, subparsers):

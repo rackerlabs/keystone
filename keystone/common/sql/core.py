@@ -112,7 +112,7 @@ class JsonBlob(sql_types.TypeDecorator):
     impl = sql.Text
 
     def process_bind_param(self, value, dialect):
-        return jsonutils.dumps(value)
+        return jsonutils.dump_as_bytes(value)
 
     def process_result_value(self, value, dialect):
         return jsonutils.loads(value)
