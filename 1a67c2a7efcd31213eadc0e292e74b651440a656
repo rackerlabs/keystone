@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_c2e4bf3c",
+        "filename": "keystone/tests/unit/test_v3_controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-12T15:25:36Z",
+      "side": 0,
+      "message": "It would be nice to add correspondent test cases somewhere else, to demonstrate jsonschema is catching these cases, as per your commit message",
+      "revId": "1a67c2a7efcd31213eadc0e292e74b651440a656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
