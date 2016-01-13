@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_59eb9313",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T21:05:39Z",
+      "side": 1,
+      "message": "this comment presumably refers to the assert above? If so, probably place it before that asset and rephrase to say something like \"test that querying....\"",
+      "range": {
+        "startLine": 553,
+        "startChar": 9,
+        "endLine": 554,
+        "endChar": 39
+      },
+      "revId": "000fc9fd1c08c744ae66a106ad8266e54919eb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f93927d8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T21:05:39Z",
+      "side": 1,
+      "message": "do you have to do this before the asserts below? the order in the test suggests yes, but I doubt that is the case...and what is the testing anyway?",
+      "range": {
+        "startLine": 582,
+        "startChar": 8,
+        "endLine": 584,
+        "endChar": 17
+      },
+      "revId": "000fc9fd1c08c744ae66a106ad8266e54919eb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
