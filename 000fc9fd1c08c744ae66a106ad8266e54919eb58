@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "da6ed579_48473777",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T23:12:33Z",
+      "side": 1,
+      "message": "As discussed, this is not safe to do with since this will cause issues with a V8 driver.  An easy fix would be to ONLY set the cache for get_project_by_name here if is_domain\u003dFalse",
+      "range": {
+        "startLine": 211,
+        "startChar": 59,
+        "endLine": 211,
+        "endChar": 75
+      },
+      "revId": "000fc9fd1c08c744ae66a106ad8266e54919eb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_59eb9313",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 43
