@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da6ed579_44809146",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-01-13T18:15:46Z",
+      "side": 1,
+      "message": "I\u0027m really not sure about the use case.\n\nKeystone provides different channels for notification.\n\ne.g notification_driver\u003dmessagingv2, log\n\nBasically this opts out of every channel.  Ideally you want to opt out of messagingv2(rabbit) channel to avoid overloading, but you want all the events in log.\n\nWhat should be the usecase?\n   1) Opt out of certain event for all the channels \n   2) Opt out of certain event for some channel\n\nLooks like you are going for 1).",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_e1a6d60d",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 9
