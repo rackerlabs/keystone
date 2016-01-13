@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_e1998a20",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "You can remove marketing materials from new files.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7c21c19e",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "I believe our existing convention is to use merely \u0027id\u0027 as the PK in the table itself, and use the longer form (\u0027identity_id\u0027 only as a FK name).",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5c939da3",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "This is nullable in other table definitions? I would have assumed it was non-nullable default\u003d\u0027{}\u0027.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5c65ddde",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "So this would be \u0027id\u0027 as well. I\u0027m also wondering if this is necessary, as the \u0027password_id\u0027 will be never be exposed to the API. Rather, a composite key on domain_id, user_name, password? And maybe expires_at?",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_dcc0ede2",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "This could just be \u0027name\u0027? I don\u0027t think we use \u0027user_name\u0027 anywhere in v3, it\u0027s more like user.name.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c1324610",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "Let\u0027s keep this as a \u0027domain_id\u0027 for now, since that\u0027s the only use case we\u0027ll have for it in Mitaka.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_dc9f8db2",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "256, not 255?",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5c6f1d92",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "Same as above, this can just be \u0027id\u0027.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_9c86f511",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "++ You might get (wrongly) called out for using CASCADE on these, but that\u0027s because we have really confusing conventions around FKs. We don\u0027t allow FKs to cross backends (for example, default_project_id does not have a FK to the resource backend), because we must assume that the other backend might not be SQL. But within a backend, standard best practices should apply (like using CASCADE here).",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_219002ec",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7c45416e",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "I like that you separated the schema migration from the data migration, BTW. Much easier to work with failed migrations!",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_bc7ad9ef",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T15:01:46Z",
+      "side": 1,
+      "message": "Faster migrations FTW, but with thousands of users, you\u0027d need to batch this, right? Maybe add a TODO at least? We have an example of batching sqlalchemy queries if you grep for token_flush\u0027s implementation in the token backend.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
