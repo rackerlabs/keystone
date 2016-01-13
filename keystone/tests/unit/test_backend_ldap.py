@@ -28,6 +28,7 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import cache
+from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
 from keystone import exception
@@ -3072,3 +3073,101 @@ class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
         # The LDAP identity driver currently does not support filtering on the
         # listing users for a given group, so will fail this test.
         super(LdapFilterTests, self).test_list_users_in_group_exact_filtered()
+
+
+class DomainSpecificIdentityLimit(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        sqldb = self.useFixture(database.Database())
+        super(DomainSpecificIdentityLimit, self).setUp()
+
+        self.ldapdb = self.useFixture(ldapdb.LDAPDatabase())
+
+        self.load_backends()
+        sqldb.recreate()
+
+        self.setup_initial_domains()
+        self.enable_multi_domain()
+
+        self.ldapdb.clear()
+        self.load_fixtures(default_fixtures)
+
+        self.create_users_across_domains()
+
+        _assert_backends(self,
+                         assignment='sql',
+                         identity={
+                             None: 'sql',
+                             self.domains['domain_default']['id']: 'ldap',
+                             self.domains['domain1']['id']: 'ldap',
+                         },
+                         resource='sql')
+
+    def create_users_across_domains(self):
+        # after this there will be 5 + len(default_fixtures.USERS) users in the
+        # default domain
+        for i in range(6):
+            unit.create_user(self.identity_api,
+                             self.domains['domain_default']['id'])
+        for i in range(6):
+            unit.create_user(self.identity_api, self.domains['domain1']['id'])
+
+    def setup_initial_domains(self):
+        def create_domain(domain):
+            try:
+                ref = self.resource_api.create_domain(
+                    domain['id'], domain)
+            except exception.Conflict:
+                ref = (
+                    self.resource_api.get_domain_by_name(domain['name']))
+            return ref
+
+        self.domains = {}
+        self.domains['domain1'] = create_domain(
+                {'id': uuid.uuid4().hex, 'name': 'domain1'})
+        self.domains['domain_default'] = create_domain(
+            resource.calc_default_domain())
+
+    def enable_multi_domain(self):
+        """Enable the chosen form of multi domain configuration support.
+
+        This method enables the file-based configuration support. Child classes
+        that wish to use the database domain configuration support should
+        override this method and set the appropriate config_fixture option.
+
+        """
+        self.config_fixture.config(
+            group='identity', domain_specific_drivers_enabled=True,
+            domain_config_dir=unit.TESTCONF + '/domain_configs_multi_ldap')
+        self.config_fixture.config(group='identity_mapping',
+                                   backward_compatible_ids=False)
+
+    def test_unlimited_list(self):
+        # default domain
+        users = self.identity_api.list_users(
+            domain_scope=self.domains['domain_default']['id'],
+            hints=None)
+        self.assertThat(users,
+                        matchers.HasLength(6 + len(default_fixtures.USERS)))
+
+        # domain1
+        users = self.identity_api.list_users(
+            domain_scope=self.domains['domain1']['id'],
+            hints=None)
+        self.assertThat(users, matchers.HasLength(6))
+
+    def test_default_list_limit(self):
+        hints = driver_hints.Hints()
+        hints.add_filter('domain_id', self.domains['domain_default']['id'])
+        users = self.identity_api.list_users(
+            domain_scope=self.domains['domain_default']['id'],
+            hints=hints)
+        self.assertThat(users, matchers.HasLength(5))
+
+    def test_override_list_limit(self):
+        hints = driver_hints.Hints()
+        hints.add_filter('domain_id', self.domains['domain1']['id'])
+        users = self.identity_api.list_users(
+            domain_scope=self.domains['domain1']['id'],
+            hints=hints)
+        self.assertThat(users, matchers.HasLength(3))
