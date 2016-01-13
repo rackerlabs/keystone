@@ -16,6 +16,24 @@
       "revId": "25574806a201c0ddaf20ee389a9599cfbdfa5230",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_8f678724",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T17:29:27Z",
+      "side": 1,
+      "message": "what Dave means is that this looks like an extra blank line at the end of the file. pep8 guidance only allows one blank line",
+      "parentUuid": "da6ed579_105f4e0f",
+      "revId": "25574806a201c0ddaf20ee389a9599cfbdfa5230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
