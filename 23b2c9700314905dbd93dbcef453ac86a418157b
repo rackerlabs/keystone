@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_8a7d35e9",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-13T17:47:54Z",
+      "side": 0,
+      "message": "This is introducing a regression wherein two or more projects, users, etc, may share the same name in v2. Names are no longer globally unique in the v2 API.",
+      "revId": "23b2c9700314905dbd93dbcef453ac86a418157b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
