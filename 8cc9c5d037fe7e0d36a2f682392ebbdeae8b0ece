@@ -22,6 +22,30 @@
       "revId": "8cc9c5d037fe7e0d36a2f682392ebbdeae8b0ece",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_2ade893f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T17:36:30Z",
+      "side": 1,
+      "message": "so the old method is briefly documented in configuration.rst.  I\u0027ll be writing more doc on this since I plan to make the v3cloudsample the standard policy file in Mitaka....",
+      "parentUuid": "da6ed579_36acc5ec",
+      "range": {
+        "startLine": 11,
+        "startChar": 46,
+        "endLine": 12,
+        "endChar": 51
+      },
+      "revId": "8cc9c5d037fe7e0d36a2f682392ebbdeae8b0ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
