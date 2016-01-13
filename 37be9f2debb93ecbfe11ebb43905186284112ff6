@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_c1ab181c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-13T16:59:49Z",
+      "side": 1,
+      "message": "this comment is not longer relevant.  THe call is outside this function to filter now",
+      "revId": "37be9f2debb93ecbfe11ebb43905186284112ff6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_e17dfcb1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-13T16:59:49Z",
+      "side": 1,
+      "message": "move this comment to the calling function",
+      "revId": "37be9f2debb93ecbfe11ebb43905186284112ff6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
