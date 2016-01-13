@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_9804aac0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-13T19:45:13Z",
+      "side": 1,
+      "message": "leave the issue_v2 and issue_v3_token functions, make them private, and call them from a wrapper.  It should b clear in the diff that the logic is not changing.",
+      "revId": "4e58a5a7c0205f874416e726fd142fe7ef9d236b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_abd6f9ee",
         "filename": "keystone/token/provider.py",
         "patchSetId": 11
