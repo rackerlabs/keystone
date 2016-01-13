@@ -22,6 +22,29 @@
       "revId": "54365beb6ba8e83f1412a4b763cbdfcf1e944c8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_9807ca1b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-13T20:00:43Z",
+      "side": 1,
+      "message": "This asserts that the token scoped to the \u0027last_trust\u0027 in the chain isn\u0027t found. We can add another assertion to valid that the last trust in the chain was actually deleted, too. \n\n    self.get(\u0027/OS-TRUST/trusts/%(trust_id)s\u0027 % {\n        \u0027trust_id\u0027: self.trust_chain[1][\u0027id\u0027]})\n    # assert that the trust_chain[1] isn\u0027t found.",
+      "range": {
+        "startLine": 3134,
+        "startChar": 8,
+        "endLine": 3136,
+        "endChar": 56
+      },
+      "revId": "54365beb6ba8e83f1412a4b763cbdfcf1e944c8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
