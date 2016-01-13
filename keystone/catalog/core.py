@@ -375,7 +375,7 @@ class Manager(manager.Manager):
             endpoint_refs = self.get_endpoints_filtered_by_endpoint_group(
                 endpoint_group['id'])
             # now check if any endpoints for current endpoint group are not
-            # contained in the list of filtered endpoints
+            # contained in the list of filtered endpoints.
             for endpoint_ref in endpoint_refs:
                 if endpoint_ref['id'] not in filtered_endpoints:
                     filtered_endpoints[endpoint_ref['id']] = endpoint_ref
@@ -399,7 +399,7 @@ class CatalogDriverV8(object):
 
         while parent_region_id:
             # NOTE(wanghong): check before getting parent region can ensure no
-            # self circle
+            # self circle.
             if parent_region_id == root_region_id:
                 raise exception.CircularRegionHierarchyError(
                     parent_region_id=parent_region_id)
@@ -891,3 +891,4 @@ class CatalogDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
 Driver = manager.create_legacy_driver(CatalogDriverV8)
+
