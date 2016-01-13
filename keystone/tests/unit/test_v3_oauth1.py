@@ -32,6 +32,7 @@ from keystone.tests import unit
 from keystone.tests.unit.common import test_notifications
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
+from keystone.tests.unit.utils import wip
 
 
 CONF = cfg.CONF
@@ -134,6 +135,7 @@ class ConsumerCRUDTests(OAuth1Tests):
     def test_consumer_create_none_desc_1(self):
         self._consumer_create()
 
+    @wip("empty request body doesn't work due to bug 1501740")
     def test_consumer_create_none_desc_2(self):
         self._consumer_create(description_flag=False)
 
@@ -237,6 +239,7 @@ class ConsumerCRUDTests(OAuth1Tests):
         normalized_field2_name = 'weird_some_field'
         self.assertEqual(field2_value, consumer[normalized_field2_name])
 
+    @wip("empty request body doesn't work due to bug 1501740")
     def test_consumer_create_no_description(self):
         resp = self.post(self.CONSUMER_URL, body={'consumer': {}})
         consumer = resp.result['consumer']
