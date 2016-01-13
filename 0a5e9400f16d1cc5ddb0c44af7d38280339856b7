@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_fc4ff1ba",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "nit: PRvoider/Prvoider",
+      "range": {
+        "startLine": 577,
+        "startChar": 46,
+        "endLine": 577,
+        "endChar": 54
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_13aaf870",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "(204, \u0027No Content\u0027) is the default status, no need to override here.\n\n\nAnd according to the code here, you can just remove this line of code.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/common/wsgi.py#L270-L271",
+      "range": {
+        "startLine": 655,
+        "startChar": 29,
+        "endLine": 655,
+        "endChar": 55
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_4143b642",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "this API is list service provider by the project id, so it might be better to rename it as \"list_service_providers_project\"?",
+      "range": {
+        "startLine": 665,
+        "startChar": 8,
+        "endLine": 665,
+        "endChar": 38
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c1d48621",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "class ProjectServiceProviderV3Controller has ready define the dependency, does it really need to define the @dependency again? at least \u0027federation_api\u0027, \u0027resource_api\u0027 can be removed here.",
+      "range": {
+        "startLine": 675,
+        "startChar": 41,
+        "endLine": 675,
+        "endChar": 75
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_61927a59",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "list projects actually.",
+      "range": {
+        "startLine": 680,
+        "startChar": 8,
+        "endLine": 680,
+        "endChar": 29
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_a17152e2",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "all these APIs should define an abstractmethod, and provide V9 version driver interface for these change to support the legacy backend driver.",
+      "range": {
+        "startLine": 386,
+        "startChar": 4,
+        "endLine": 386,
+        "endChar": 38
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_dc622dad",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "these check is redundant since sp_id or project_id have been checked in controller layer.\n\nyou cannot create a project / service provide association where project or service provide not exists. And delete project or service provide will remove the association as well.",
+      "range": {
+        "startLine": 395,
+        "startChar": 0,
+        "endLine": 397,
+        "endChar": 47
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7cb541ec",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "same here, this is needn\u0027t.",
+      "range": {
+        "startLine": 409,
+        "startChar": 0,
+        "endLine": 411,
+        "endChar": 38
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_bcb739d7",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_service_provider_filtering_tables.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "the table name should be changed, it\u0027s not endpoint filter table.",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 28
+      },
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_bc13b9b7",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T13:46:12Z",
+      "side": 1,
+      "message": "add the docstring here for consistency?",
+      "revId": "0a5e9400f16d1cc5ddb0c44af7d38280339856b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
