@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_702101fb",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T03:00:33Z",
+      "side": 1,
+      "message": "So there is some subtlety as to why ignoring hints here will still allow the new test you have added to pass (one might initially think they would fail) - and more generally cause problems with V8 drivers. The subtlety is, of course, that the hints remain unsatisfied and the controllerV3 wrapper will apply the filters any unsatisfied filters at the end. It may be worth adding a comment to this effect.",
+      "range": {
+        "startLine": 458,
+        "startChar": 8,
+        "endLine": 458,
+        "endChar": 30
+      },
+      "revId": "f95ecfce7402d282da9cb6090c0a7f57f4489f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
