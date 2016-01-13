@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_ad492562",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T22:26:12Z",
+      "side": 1,
+      "message": "sorry, that\u0027s incorrect.  I think if we are only going to filter by role at the end, then list_role_assignments_for_actor() never needs to filter by role_id, so that can stripped out of it (i.e. it never passes role_id into the de\u003driver.list_role_assignments()",
+      "parentUuid": "da6ed579_2258e489",
+      "range": {
+        "startLine": 769,
+        "startChar": 8,
+        "endLine": 769,
+        "endChar": 29
+      },
+      "revId": "411f9da4f0305a30b6a89635c443ab80d5956373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_220a247a",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 17
