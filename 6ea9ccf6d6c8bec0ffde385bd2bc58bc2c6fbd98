@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_ceded86c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T20:31:31Z",
+      "side": 1,
+      "message": "if we have moved the filtering, need to change this comment too...",
+      "range": {
+        "startLine": 619,
+        "startChar": 14,
+        "endLine": 620,
+        "endChar": 33
+      },
+      "revId": "6ea9ccf6d6c8bec0ffde385bd2bc58bc2c6fbd98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_33392142",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T20:31:31Z",
+      "side": 1,
+      "message": "So you removed some logic here form my version. While this will still give the correct answer, it means you are retrieving more rows that you need....even when you are not using implied roles....I might agree that calling list_prior_roles might be more costly that simply not using a role filter..but if infer roles are off, then we should pass in the filter.\n\nAs an aside, if you REALLY do want to just wait till the end to do role filtering, no need to set fillter_role_Id....just don\u0027t pass a role_id into the call to list_role_assignments_for_actor()",
+      "revId": "6ea9ccf6d6c8bec0ffde385bd2bc58bc2c6fbd98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_2e869413",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1532,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T20:31:31Z",
+      "side": 1,
+      "message": "I think that IF we drop the intermediate filtering step, then we don\u0027t need this method....",
+      "range": {
+        "startLine": 1532,
+        "startChar": 8,
+        "endLine": 1532,
+        "endChar": 43
+      },
+      "revId": "6ea9ccf6d6c8bec0ffde385bd2bc58bc2c6fbd98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
