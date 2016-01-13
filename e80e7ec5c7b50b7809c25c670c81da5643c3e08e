@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_d64e8e95",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-13T13:14:10Z",
+      "side": 1,
+      "message": "Why you need to remove this code? This not looks like just a schema validation, sounds more to a schema change. can you add the reason on the commit message?",
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
