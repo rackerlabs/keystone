@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_79da174e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T21:09:30Z",
+      "side": 1,
+      "message": "did you work out why this wasn\u0027t failing the legacy tests...(before you overrode them, I mean)?",
+      "range": {
+        "startLine": 573,
+        "startChar": 8,
+        "endLine": 580,
+        "endChar": 17
+      },
+      "revId": "000fc9fd1c08c744ae66a106ad8266e54919eb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f93927d8",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 43
