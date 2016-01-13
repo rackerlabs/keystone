@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_105f4e0f",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T12:23:07Z",
+      "side": 1,
+      "message": "pls revert it back!",
+      "revId": "25574806a201c0ddaf20ee389a9599cfbdfa5230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
