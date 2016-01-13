@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_db4549b3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-13T17:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_e13d8c2b",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_8f7103e3",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -125,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_c1fd583b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-13T17:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_3828b532",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_2f5ecf45",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -154,6 +190,24 @@
       "side": 1,
       "message": "++\n\nI noticed we also do that in the later use of SimplePagedResultsControl",
       "parentUuid": "7a740942_2f5ecf45",
+      "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_61ecac8f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-13T17:18:09Z",
+      "side": 1,
+      "message": "because nothing works without it.",
+      "parentUuid": "fa69d971_d8239954",
       "revId": "b471ee8440fd2fa5cdaa05c080f021edd28ba04c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
