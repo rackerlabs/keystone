@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_2258e489",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T22:20:03Z",
+      "side": 1,
+      "message": "nit: no need to even define this parameter...just don\u0027t need to pass anything in to list_role_assignments_for_actor()",
+      "range": {
+        "startLine": 769,
+        "startChar": 8,
+        "endLine": 769,
+        "endChar": 29
+      },
+      "revId": "411f9da4f0305a30b6a89635c443ab80d5956373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_220a247a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T22:20:03Z",
+      "side": 1,
+      "message": "nit: you can just not pass anything in here, it defaults to None",
+      "range": {
+        "startLine": 782,
+        "startChar": 12,
+        "endLine": 782,
+        "endChar": 34
+      },
+      "revId": "411f9da4f0305a30b6a89635c443ab80d5956373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_02260015",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T22:20:03Z",
+      "side": 1,
+      "message": "nit: you can just not pass anything in here, it defaults to None",
+      "range": {
+        "startLine": 792,
+        "startChar": 20,
+        "endLine": 792,
+        "endChar": 42
+      },
+      "revId": "411f9da4f0305a30b6a89635c443ab80d5956373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_82ce702c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1591,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-13T22:20:03Z",
+      "side": 1,
+      "message": "should remove this",
+      "range": {
+        "startLine": 1590,
+        "startChar": 8,
+        "endLine": 1591,
+        "endChar": 17
+      },
+      "revId": "411f9da4f0305a30b6a89635c443ab80d5956373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
