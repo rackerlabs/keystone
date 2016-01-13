@@ -16,6 +16,24 @@
       "revId": "1a67c2a7efcd31213eadc0e292e74b651440a656",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_26191489",
+        "filename": "keystone/tests/unit/test_v3_controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-13T01:47:59Z",
+      "side": 0,
+      "message": "@Samuel, this has been covered, see this one for example:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_validation.py#L1904-L1913\n\nAny schema definition which doesn\u0027t allow to update the extra properties should have a testcase like this!",
+      "parentUuid": "da6ed579_c2e4bf3c",
+      "revId": "1a67c2a7efcd31213eadc0e292e74b651440a656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
