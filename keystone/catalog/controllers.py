@@ -140,7 +140,7 @@ class Endpoint(controller.V2Controller):
 
         # we should check publicurl, adminurl, internalurl
         # if invalid, we should raise an exception to reject
-        # the request
+        # the request.
         for interface in INTERFACES:
             interface_url = endpoint.get(interface + 'url')
             if interface_url:

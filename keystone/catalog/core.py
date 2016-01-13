@@ -891,3 +891,4 @@ class CatalogDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
 Driver = manager.create_legacy_driver(CatalogDriverV8)
+
