@@ -34,6 +34,23 @@
       "revId": "1a67c2a7efcd31213eadc0e292e74b651440a656",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c7d49621",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-13T13:55:29Z",
+      "side": 0,
+      "message": "why is this removed?",
+      "revId": "1a67c2a7efcd31213eadc0e292e74b651440a656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
