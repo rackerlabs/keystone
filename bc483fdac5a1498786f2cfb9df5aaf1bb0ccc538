@@ -22,6 +22,30 @@
       "revId": "bc483fdac5a1498786f2cfb9df5aaf1bb0ccc538",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f20fcc36",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-14T16:32:51Z",
+      "side": 0,
+      "message": "Good catch. I just rebased and tried running the CI checks. Thanks!",
+      "parentUuid": "da6ed579_43a85177",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 78
+      },
+      "revId": "bc483fdac5a1498786f2cfb9df5aaf1bb0ccc538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
