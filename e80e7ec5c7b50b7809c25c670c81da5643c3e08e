@@ -34,6 +34,70 @@
       "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f804b84a",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T01:40:20Z",
+      "side": 1,
+      "message": "i think, since the SQL column can be nullable, this is OK.\n\n  description \u003d sql.Column(sql.String(64), nullable\u003dTrue)\n\nadditionally, the client sets description\u003dNone anyway.\n\nhttps://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/v3/contrib/oauth1/consumers.py#L35-L38",
+      "parentUuid": "da6ed579_f87ef817",
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f87918c9",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T01:40:20Z",
+      "side": 1,
+      "message": "hmm, this is definitely a change in behaviour, we should figure out how to allow empty requests bodies for some API calls",
+      "range": {
+        "startLine": 242,
+        "startChar": 4,
+        "endLine": 242,
+        "endChar": 62
+      },
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_b8564028",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2025,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T01:40:20Z",
+      "side": 1,
+      "message": "can you add a test that tries to update the ID as well?",
+      "range": {
+        "startLine": 2025,
+        "startChar": 0,
+        "endLine": 2025,
+        "endChar": 50
+      },
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
