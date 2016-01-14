@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_a3e4addf",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T14:59:31Z",
+      "side": 1,
+      "message": "let the proposal bot make this change",
+      "revId": "8a17bc1ab0d2ca8e6106e6ee8c16048994da651e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_43bff1a9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T14:59:31Z",
+      "side": 1,
+      "message": "add a comment here too",
+      "range": {
+        "startLine": 1878,
+        "startChar": 8,
+        "endLine": 1878,
+        "endChar": 66
+      },
+      "revId": "8a17bc1ab0d2ca8e6106e6ee8c16048994da651e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
