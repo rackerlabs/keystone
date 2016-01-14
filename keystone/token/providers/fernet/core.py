@@ -25,7 +25,7 @@ from keystone.token.providers.fernet import token_formatters as tf
 CONF = cfg.CONF
 
 
-@dependency.requires('trust_api')
+@dependency.requires('trust_api', 'oauth_api')
 class Provider(common.BaseProvider):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
@@ -207,14 +207,15 @@ class Provider(common.BaseProvider):
             (user_id, methods,
              audit_ids, domain_id,
              project_id, trust_id,
-             federated_info, created_at,
+             federated_info,
+             access_token_id, created_at,
              expires_at) = self.token_formatter.validate_token(token_ref)
         except exception.ValidationError:
             raise exception.TokenNotFound(token_id=token_ref)
 
-        if trust_id or domain_id or federated_info:
+        if trust_id or domain_id or federated_info or access_token_id:
             msg = _('This is not a v2.0 Fernet token. Use v3 for trust, '
-                    'domain, or federated tokens.')
+                    'domain, federated tokens, or OAuth1 authentication.')
             raise exception.Unauthorized(msg)
 
         v3_token_data = self.v3_token_data_helper.get_token_data(
@@ -241,7 +242,7 @@ class Provider(common.BaseProvider):
         """
         try:
             (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-                federated_info, created_at, expires_at) = (
+                federated_info, access_token_id, created_at, expires_at) = (
                     self.token_formatter.validate_token(token))
         except exception.ValidationError:
             raise exception.TokenNotFound(token_id=token)
@@ -258,6 +259,10 @@ class Provider(common.BaseProvider):
         if trust_id:
             trust_ref = self.trust_api.get_trust(trust_id)
 
+        access_token = None
+        if access_token_id:
+            access_token = self.oauth_api.get_access_token(access_token_id)
+
         return self.v3_token_data_helper.get_token_data(
             user_id,
             method_names=methods,
@@ -267,6 +272,7 @@ class Provider(common.BaseProvider):
             expires=expires_at,
             trust=trust_ref,
             token=token_dict,
+            access_token=access_token,
             audit_info=audit_ids)
 
     def _get_token_id(self, token_data):
@@ -285,7 +291,9 @@ class Provider(common.BaseProvider):
             domain_id=token_data['token'].get('domain', {}).get('id'),
             project_id=token_data['token'].get('project', {}).get('id'),
             trust_id=token_data['token'].get('OS-TRUST:trust', {}).get('id'),
-            federated_info=self._build_federated_info(token_data)
+            federated_info=self._build_federated_info(token_data),
+            access_token_id=token_data['token'].get('OS-OAUTH1',
+                                                    {}).get('access_token_id')
         )
 
     @property
