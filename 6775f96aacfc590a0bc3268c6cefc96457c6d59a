@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_cd98d41e",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-14T23:04:30Z",
+      "side": 1,
+      "message": "Does this need to be included in more than one place? Like in each object level? Or does this apply all the way \"down\"?",
+      "revId": "6775f96aacfc590a0bc3268c6cefc96457c6d59a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
