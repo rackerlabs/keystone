@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_8db3f3e8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-14T06:22:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_e11ec85e",
+      "revId": "f5a9a39cdc420dd0078a0282656dfc537110efde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_615418ca",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-30T16:55:15Z",
       "side": 1,
       "message": "Could use a loop for this: \n\n    # assign roles for domain1 and domain2\n    for domain_id in [domain1[\u0027id\u0027], domain2[\u0027id\u0027]]:\n        self.assignment_api.create_grant(group_id\u003dgroup[\u0027id\u0027],\n            domain_id\u003ddomain_id,\n            role_id\u003drole[\u0027id\u0027])\n        self.assignment_api.create_grant(user_id\u003duser[\u0027id\u0027],\n            domain_id\u003ddomain_id,\n            role_id\u003drole[\u0027id\u0027])",
+      "revId": "f5a9a39cdc420dd0078a0282656dfc537110efde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_0dc06329",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4290,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-14T06:22:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_615418ca",
       "revId": "f5a9a39cdc420dd0078a0282656dfc537110efde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
