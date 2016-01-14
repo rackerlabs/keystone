@@ -12,3 +12,9 @@ catalog.RegionOne.compute.adminURL = http://localhost:8774/v1.1/$(tenant_id)s
 catalog.RegionOne.compute.internalURL = http://localhost:8774/v1.1/$(tenant_id)s
 catalog.RegionOne.compute.name = 'Compute Service'
 catalog.RegionOne.compute.id = 2
+
+# fake image service that has a bad publicURL
+catalog.RegionOne.image.publicURL = http://localhost:9292/v1/%(not_found)s
+catalog.RegionOne.image.adminURL = http://localhost:9292/v1
+catalog.RegionOne.image.internalURL = http://localhost:9292/v1
+catalog.RegionOne.image.name = Image Service
