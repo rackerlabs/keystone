@@ -95,8 +95,11 @@ def token_to_auth_context(token):
 
     if token.oauth_scoped:
         auth_context['is_delegated_auth'] = True
-    auth_context['consumer_id'] = token.oauth_consumer_id
-    auth_context['access_token_id'] = token.oauth_access_token_id
+        auth_context['consumer_id'] = token.oauth_consumer_id
+        auth_context['access_token_id'] = token.oauth_access_token_id
+    else:
+        auth_context['consumer_id'] = None
+        auth_context['access_token_id'] = None
 
     if token.is_federated_user:
         auth_context['group_ids'] = token.federation_group_ids
