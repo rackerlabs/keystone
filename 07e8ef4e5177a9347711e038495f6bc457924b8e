@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_f9128756",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_e1998a20",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_7c21c19e",
         "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-13T15:01:46Z",
       "side": 1,
       "message": "I believe our existing convention is to use merely \u0027id\u0027 as the PK in the table itself, and use the longer form (\u0027identity_id\u0027 only as a FK name).",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_594f136b",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_7c21c19e",
       "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_196c3bcf",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_5c939da3",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_5c65ddde",
         "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2016-01-13T15:01:46Z",
       "side": 1,
       "message": "So this would be \u0027id\u0027 as well. I\u0027m also wondering if this is necessary, as the \u0027password_id\u0027 will be never be exposed to the API. Rather, a composite key on domain_id, user_name, password? And maybe expires_at?",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d9cc636c",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_5c65ddde",
       "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_d9d30303",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_dcc0ede2",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_c1324610",
         "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2016-01-13T15:01:46Z",
       "side": 1,
       "message": "Let\u0027s keep this as a \u0027domain_id\u0027 for now, since that\u0027s the only use case we\u0027ll have for it in Mitaka.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f9d047f8",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_c1324610",
       "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_790bf78e",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_dc9f8db2",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_5c6f1d92",
         "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
         "patchSetId": 15
@@ -132,6 +258,24 @@
       "writtenOn": "2016-01-13T15:01:46Z",
       "side": 1,
       "message": "Same as above, this can just be \u0027id\u0027.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_3901ff6a",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_add_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_5c6f1d92",
       "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_597b93f5",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Thanks :)",
+      "parentUuid": "da6ed579_7c45416e",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_bc7ad9ef",
         "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 15
@@ -200,6 +362,24 @@
       "writtenOn": "2016-01-13T15:01:46Z",
       "side": 1,
       "message": "Faster migrations FTW, but with thousands of users, you\u0027d need to batch this, right? Maybe add a TODO at least? We have an example of batching sqlalchemy queries if you grep for token_flush\u0027s implementation in the token backend.",
+      "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_dc98d1c2",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-14T16:08:34Z",
+      "side": 1,
+      "message": "Good point, I\u0027ll make a TODO note for this.",
+      "parentUuid": "da6ed579_bc7ad9ef",
       "revId": "07e8ef4e5177a9347711e038495f6bc457924b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
