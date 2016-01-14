@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_ce01ef07",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T00:21:36Z",
+      "side": 1,
+      "message": "maybe something like the following would be a bit clearer:\n\nThe is_domain attribute is not recognised by earlier drivers than V9 - and they will discard any value passed. Such drivers will only return results from get_project_by_name() if the request paramater is_domain is False. Hence we only pre-load the cache for get_project_by_name for projects created with is_domain\u003dFalse, to avoid pre-loading the cache with a project that an earlier driver than V9 driver cannot return.",
+      "range": {
+        "startLine": 211,
+        "startChar": 18,
+        "endLine": 213,
+        "endChar": 64
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_4255d3f7",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T00:21:36Z",
+      "side": 1,
+      "message": "in V9 and later drivers",
+      "range": {
+        "startLine": 53,
+        "startChar": 39,
+        "endLine": 53,
+        "endChar": 55
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_829d0bbe",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T00:21:36Z",
+      "side": 1,
+      "message": "this is still clear as mud....",
+      "range": {
+        "startLine": 54,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 62
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_22af7fe3",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T00:21:36Z",
+      "side": 1,
+      "message": "but this one does have a domain id....still confused",
+      "range": {
+        "startLine": 55,
+        "startChar": 40,
+        "endLine": 55,
+        "endChar": 67
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
