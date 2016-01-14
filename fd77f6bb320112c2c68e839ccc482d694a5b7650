@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_410de88e",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "\"x in self.template.keys()\" is the same as \"x in self.template\"",
+      "parentUuid": "ba8a016a_0e4e55c1",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_418408d3",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "What is incorrect about it?",
+      "parentUuid": "7a740942_91c3888a",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba8a016a_69c59b3b",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 8
@@ -65,6 +101,24 @@
       "writtenOn": "2015-12-09T17:54:49Z",
       "side": 1,
       "message": "I see nothing wrong in this code. The data is coming from the templated catalog in Keystone.\n\nEach entry in the template file has the following format:\n\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.id \u003d \u003cservice_id\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.description \u003d \u003cservice_description\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.publicURL \u003d \u003cservice_publicURL\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.internalURL \u003d \u003cservice_internalURL\u003e\n  catalog.\u003cregion_id\u003e.\u003cservice_type\u003e.adminURL \u003d \u003cservice_adminURL\u003e\n\nself.templates contains everything after \"catalog.\" and structured as explained above.",
+      "parentUuid": "ba8a016a_69c59b3b",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_41e9687f",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "Exactly. The inner \"for\" loop here is getting \u0027{service_type: {key: value}}\u0027 from the region.",
       "parentUuid": "ba8a016a_69c59b3b",
       "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -141,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_d8fa22bd",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "With these changes the tests will fail since templated catalogs no longer implement the writable methods.",
+      "parentUuid": "ba8a016a_29b47333",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_1242d23e",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 8
@@ -176,6 +248,41 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_9ee1ffd2",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "Done - this was for a test that never happened",
+      "parentUuid": "ba8a016a_a937034c",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_3e36d352",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "The duplication was not necessary and was an artifact of looking at what the catalog returned.",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_72446e1a",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 8
@@ -204,6 +311,24 @@
       "writtenOn": "2015-11-23T14:12:06Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "fa1b9901_72446e1a",
+      "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_9de6dcb2",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T04:40:39Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "fa1b9901_72446e1a",
       "revId": "fd77f6bb320112c2c68e839ccc482d694a5b7650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
