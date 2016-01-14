@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_928e90ce",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1278,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T16:29:44Z",
+      "side": 1,
+      "message": "You need to add a wrapper here for your new method.  Then you need to decide if it does nothing or raises a specific error. Which ever it does you need to make sure the manager works with a legacy V8 driver (as does any test you write)....see the failure in legacy_drivers from the jenkins run",
+      "revId": "0c6af80596ab84abf02d38c83e848d5ab5f2124f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
