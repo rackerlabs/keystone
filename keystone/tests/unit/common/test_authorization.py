@@ -118,6 +118,20 @@ class TestTokenToAuthContext(unit.BaseTestCase):
 
         self.assertItemsEqual(group_ids, auth_context['group_ids'])
 
+    def test_token_is_oauth_scoped(self):
+        token_data = test_token_provider.SAMPLE_V3_TOKEN
+        access_token_id = uuid.uuid4().hex
+        consumer_id = uuid.uuid4().hex
+        token_data['token']['OS-OAUTH1'] = {'access_token_id': access_token_id,
+                                            'consumer_id': consumer_id}
+        token = token_model.KeystoneToken(token_id=uuid.uuid4().hex,
+                                          token_data=token_data)
+
+        auth_context = authorization.token_to_auth_context(token)
+
+        self.assertEqual(auth_context['access_token_id'], access_token_id)
+        self.assertEqual(auth_context['consumer_id'], consumer_id)
+
     def test_token_is_not_KeystoneToken_raises_exception(self):
         # If the token isn't a KeystoneToken then an UnexpectedError exception
         # is raised.
