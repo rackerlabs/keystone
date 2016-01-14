@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_a44a8024",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T12:52:27Z",
+      "side": 1,
+      "message": "newly created role.",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "fbb79425bb3c5f8d5fef15b37165d48cf08198f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_2467704e",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T12:52:27Z",
+      "side": 1,
+      "message": "worth to add a note here, the command will fail if any of ``user``, ``project`` and ``role`` exists.\n\nit cannot boostrap (create) role/project for an existed user, same for other combination.",
+      "revId": "fbb79425bb3c5f8d5fef15b37165d48cf08198f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
