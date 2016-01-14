@@ -1,0 +1,8 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 14 Jan 2016 08:46:02 +0000
+Reviewed-on: https://review.openstack.org/259792
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
