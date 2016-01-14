@@ -22,6 +22,30 @@
       "revId": "9c6c24f35717bd0a9271c975f75e0dc3419b7203",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_6d28e4e2",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-14T14:37:20Z",
+      "side": 1,
+      "message": "related. There was no `hints` in get_all. Now there is.",
+      "parentUuid": "da6ed579_0d06081d",
+      "range": {
+        "startLine": 268,
+        "startChar": 8,
+        "endLine": 269,
+        "endChar": 55
+      },
+      "revId": "9c6c24f35717bd0a9271c975f75e0dc3419b7203",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
