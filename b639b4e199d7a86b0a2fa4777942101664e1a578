@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_7bbe8266",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-14T02:32:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_ce01ef07",
+      "range": {
+        "startLine": 211,
+        "startChar": 18,
+        "endLine": 213,
+        "endChar": 64
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_4255d3f7",
         "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
         "patchSetId": 44
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_967b0df5",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-14T02:32:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_829d0bbe",
+      "range": {
+        "startLine": 54,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 62
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_22af7fe3",
         "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
         "patchSetId": 44
@@ -82,6 +130,30 @@
       "writtenOn": "2016-01-14T00:21:36Z",
       "side": 1,
       "message": "but this one does have a domain id....still confused",
+      "range": {
+        "startLine": 55,
+        "startChar": 40,
+        "endLine": 55,
+        "endChar": 67
+      },
+      "revId": "b639b4e199d7a86b0a2fa4777942101664e1a578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_b68091c1",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-14T02:32:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_22af7fe3",
       "range": {
         "startLine": 55,
         "startChar": 40,
