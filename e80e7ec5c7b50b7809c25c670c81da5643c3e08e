@@ -16,6 +16,24 @@
       "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f87ef817",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T01:28:43Z",
+      "side": 1,
+      "message": "per my understanding, these code block itself is meaningless, it just restrict the `desc` cannot be an empty. This is not true and not consistent with other implementation across the keystone project.\n\nInstead, I do the following in the schema definition to consistent with other entities, such as identity. \n\n \u0027description\u0027: validation.nullable(parameter_types.description)\n\n\nBut good catch! let\u0027s see what others wanna say about this.",
+      "parentUuid": "da6ed579_d64e8e95",
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
