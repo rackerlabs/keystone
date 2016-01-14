@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_504b542a",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T06:51:28Z",
+      "side": 1,
+      "message": "these changes could go in a separate commit for easier reviewing.",
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_10ff1cab",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T06:51:28Z",
+      "side": 1,
+      "message": "bah - no service id for templated eh. yay crappy pycadf audits",
+      "range": {
+        "startLine": 137,
+        "startChar": 26,
+        "endLine": 137,
+        "endChar": 38
+      },
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d08f4428",
+        "filename": "releasenotes/notes/impl-templated-catalog-1d8f6333726b34f8.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T06:51:28Z",
+      "side": 1,
+      "message": "... functionality for the KVS catalog backend has been reimplemented to use data from the templated backend.",
+      "range": {
+        "startLine": 5,
+        "startChar": 41,
+        "endLine": 5,
+        "endChar": 54
+      },
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_b0917049",
+        "filename": "releasenotes/notes/impl-templated-catalog-1d8f6333726b34f8.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-14T06:51:28Z",
+      "side": 1,
+      "message": "\"create entity\" too",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
