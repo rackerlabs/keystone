@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_a777c69e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1279,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T20:07:58Z",
+      "side": 1,
+      "message": "you need to add wrapper for delete_domain_assignments here....see my comment on previous patch",
+      "revId": "3209924a6697acee2ba9a752d9c46829636b0592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
