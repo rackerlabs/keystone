@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_419edb07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_6529b289",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_e516024b",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
@@ -36,6 +60,24 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "the role, group, project, and domain names are also included, not just the user names",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_61a19f45",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_e516024b",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_fc44584a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "I will do this in a separate patch.",
+      "parentUuid": "fa69d971_857f06df",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_6563f242",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 19
@@ -70,6 +130,24 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "put the entire expression in ().\n\n (\u0027/projects/%s\u0027...",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_5c7004a4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_6563f242",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_35e1c02d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_17458d44",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_576d45ca",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 19
@@ -110,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_f5e6c842",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_576d45ca",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_05c3168a",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 19
@@ -121,6 +235,30 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "rather than put the ( at the end wrap the whole expression in (): (\u0027include_names in params and",
+      "range": {
+        "startLine": 644,
+        "startChar": 54,
+        "endLine": 644,
+        "endChar": 55
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_2d14f54a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_05c3168a",
       "range": {
         "startLine": 644,
         "startChar": 54,
@@ -156,6 +294,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_b2b3644c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_45e90eb6",
+      "range": {
+        "startLine": 789,
+        "startChar": 44,
+        "endLine": 789,
+        "endChar": 59
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_652e92fc",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -167,6 +329,30 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "assignments\n\nAlso, this should return a list rather than a generator so that it works the same in both cases.",
+      "range": {
+        "startLine": 817,
+        "startChar": 45,
+        "endLine": 817,
+        "endChar": 51
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_38cc35ba",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_652e92fc",
       "range": {
         "startLine": 817,
         "startChar": 45,
@@ -202,6 +388,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_b8b82512",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_e57a82bc",
+      "range": {
+        "startLine": 820,
+        "startChar": 29,
+        "endLine": 820,
+        "endChar": 35
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_b7a121fa",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -213,6 +423,30 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "entities",
+      "range": {
+        "startLine": 822,
+        "startChar": 16,
+        "endLine": 822,
+        "endChar": 31
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_583a499a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_b7a121fa",
       "range": {
         "startLine": 822,
         "startChar": 16,
@@ -242,6 +476,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_d875d963",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Since everyone was pushing towards efficiency I think it may need to stay in a single patch :(",
+      "parentUuid": "fa69d971_85506633",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_651bf281",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -253,6 +505,24 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "no need to create a dictionary here, just have\n\n user_entities \u003d {}\n group_entities \u003d {}\n ...\n\nthen references don\u0027t need to be so long.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_52854857",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_651bf281",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -282,6 +552,53 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_92ac208d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_97297d8c",
+      "range": {
+        "startLine": 832,
+        "startChar": 16,
+        "endLine": 832,
+        "endChar": 20
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b304f849",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "change the name for dave, sorry i forgot to in PS 16",
+      "range": {
+        "startLine": 846,
+        "startChar": 12,
+        "endLine": 846,
+        "endChar": 18
+      },
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_f7b8f912",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -293,6 +610,24 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "tox -e cover shows that this case isn\u0027t tested, so a testcase is missing.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_b8eb45db",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Since i am not creating multiple entities it is not hitting this code.  I will create a test to fix this.  Thank you Brant",
+      "parentUuid": "fa69d971_f7b8f912",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -316,6 +651,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_108b6a69",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_7743a913",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_174fcd37",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -327,6 +680,24 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "not tested.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_18b3710b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_174fcd37",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -350,6 +721,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_f8cc5d8a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Ha I wish i could say it was that way. but you are correct.",
+      "parentUuid": "fa69d971_3771b176",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a5ac8a8c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -361,6 +750,24 @@
       "writtenOn": "2016-01-06T15:30:34Z",
       "side": 1,
       "message": "There driver interface isn\u0027t changing, so this change is not needed.",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_78a70dbd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_a5ac8a8c",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -384,6 +791,24 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_81661328",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Thanks, I was wondering if this was the correct way of doing this.",
+      "parentUuid": "fa69d971_a58faa73",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_605c2419",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 19
@@ -395,6 +820,24 @@
       "writtenOn": "2016-01-07T03:28:02Z",
       "side": 1,
       "message": "camelCase? suggest how about \"expected \u003d\"",
+      "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_61f16a95",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1459,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-14T21:19:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_605c2419",
       "revId": "6c8e6d738678733f846592de8b35bb9f62c780b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
