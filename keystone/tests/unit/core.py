@@ -541,7 +541,7 @@ class TestCase(BaseTestCase):
                 ('keystone.tests.unit.test_kvs.'
                  'KVSBackendForcedKeyMangleFixture'),
                 'keystone.tests.unit.test_kvs.KVSBackendFixture'])
-        self.config_fixture.config(group='revoke', driver='kvs')
+        self.config_fixture.config(group='revoke', driver='sql')
         self.config_fixture.config(
             group='signing', certfile=signing_certfile,
             keyfile=signing_keyfile,
