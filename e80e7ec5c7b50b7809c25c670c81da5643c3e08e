@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_7b8a021d",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T01:58:51Z",
+      "side": 1,
+      "message": "yep, the only difference i can see is that before the change, the `desc` cannot be an empty string (\u0027\u0027), it will be convert to be None.\n\nafter removing this block and enforcing via the schema, empty string is allowed, this sound okay to me since this will make it consistent with other entities, and looks like there is no reason empty string should be banned at all.",
+      "parentUuid": "da6ed579_f804b84a",
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f87918c9",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 3
@@ -78,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_7b91a246",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T01:58:51Z",
+      "side": 1,
+      "message": "@stevemar, fix is here, I am just waiting for other\u0027s input after changing the approach to fix the bug. https://review.openstack.org/#/c/237448/",
+      "parentUuid": "da6ed579_f87918c9",
+      "range": {
+        "startLine": 242,
+        "startChar": 4,
+        "endLine": 242,
+        "endChar": 62
+      },
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_b8564028",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
@@ -89,6 +131,30 @@
       "writtenOn": "2016-01-14T01:40:20Z",
       "side": 1,
       "message": "can you add a test that tries to update the ID as well?",
+      "range": {
+        "startLine": 2025,
+        "startChar": 0,
+        "endLine": 2025,
+        "endChar": 50
+      },
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_dbbf6ea8",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2025,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T01:58:51Z",
+      "side": 1,
+      "message": "will do, i think this should not be allowed.",
+      "parentUuid": "da6ed579_b8564028",
       "range": {
         "startLine": 2025,
         "startChar": 0,
