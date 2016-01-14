@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_ed0a7889",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-14T22:57:25Z",
+      "side": 1,
+      "message": "actually this is already tested in the backend/role/test_sql.py that is part of this patch",
+      "parentUuid": "da6ed579_0cad5788",
+      "range": {
+        "startLine": 2306,
+        "startChar": 13,
+        "endLine": 2306,
+        "endChar": 47
+      },
+      "revId": "1120a9b95bb53c53d13923235d8d83003d14bc76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_7f5f3741",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 8
