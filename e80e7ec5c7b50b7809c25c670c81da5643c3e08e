@@ -164,6 +164,30 @@
       "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_4c58a28a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2025,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-14T03:53:15Z",
+      "side": 1,
+      "message": "oh, schema validation should not take care of it, this has been handled by V3Controller. So, the ID could be passed and couldn\u0027t be banned by jsonschema. :(\n\nhttps://github.com/openstack/keystone/blob/master/keystone/oauth1/controllers.py#L67\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L662-L665",
+      "parentUuid": "da6ed579_dbbf6ea8",
+      "range": {
+        "startLine": 2025,
+        "startChar": 0,
+        "endLine": 2025,
+        "endChar": 50
+      },
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
