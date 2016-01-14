@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_dba2dcfb",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T19:05:46Z",
+      "side": 1,
+      "message": "Back when this was started there were two separate reviews, but they eventually got merged. One made the templated backend work exactly as it had previously by moving KVS code into templated.py. The second patch removed most of that code and replaced the implementations. Reviewers didn\u0027t like the fact that the first review added code that was deleted in the second.",
+      "parentUuid": "da6ed579_504b542a",
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_10ff1cab",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 11
@@ -65,6 +83,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_f62257a2",
+        "filename": "releasenotes/notes/impl-templated-catalog-1d8f6333726b34f8.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T19:05:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_d08f4428",
+      "range": {
+        "startLine": 5,
+        "startChar": 41,
+        "endLine": 5,
+        "endChar": 54
+      },
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_b0917049",
         "filename": "releasenotes/notes/impl-templated-catalog-1d8f6333726b34f8.yaml",
         "patchSetId": 11
@@ -76,6 +118,30 @@
       "writtenOn": "2016-01-14T06:51:28Z",
       "side": 1,
       "message": "\"create entity\" too",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "6c6867a6d7eb6d3bc1e381ac68ede79f4f06a476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d61dd362",
+        "filename": "releasenotes/notes/impl-templated-catalog-1d8f6333726b34f8.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-14T19:05:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_b0917049",
       "range": {
         "startLine": 8,
         "startChar": 4,
