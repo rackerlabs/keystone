@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_ef70270d",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-15T03:07:41Z",
+      "side": 1,
+      "message": "maybe just `repeated_remote_id` here is enough to prove the fix. \n\nDo we need to assert the error message here like what you did in test_v3_federation.py?",
+      "revId": "d9e7bc2c692298bca3bb9abff4195fce28df3c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
