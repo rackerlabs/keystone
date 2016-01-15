@@ -30,6 +30,7 @@ from keystone.common import sql
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
 from keystone.tests import unit
+from keystone.tests.unit.assignment import test_backends as assignment_tests
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
@@ -172,7 +173,8 @@ class SqlModels(SqlTests):
         self.assertExpectedSchema('user_group_membership', cols)
 
 
-class SqlIdentity(SqlTests, test_backend.IdentityTests):
+class SqlIdentity(SqlTests, test_backend.IdentityTests,
+                  assignment_tests.AssignmentTests):
     def test_password_hashed(self):
         session = sql.get_session()
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
@@ -607,11 +609,11 @@ class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass
 
 
-class SqlInheritance(SqlTests, test_backend.InheritanceTests):
+class SqlInheritance(SqlTests, assignment_tests.InheritanceTests):
     pass
 
 
-class SqlImpliedRoles(SqlTests, test_backend.ImpliedRoleTests):
+class SqlImpliedRoles(SqlTests, assignment_tests.ImpliedRoleTests):
     pass
 
 
