@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_5e4d6398",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-15T06:36:59Z",
+      "side": 1,
+      "message": "you need to do a deepcopy here, or you\u0027re going to overwrite the test data and fail a random test, like test_token_is_project_scoped_with_trust",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 56
+      },
+      "revId": "2bc19e53209889ed5533bde10e8f2dd0eddec1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
