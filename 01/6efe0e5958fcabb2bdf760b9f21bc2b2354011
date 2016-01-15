@@ -1,0 +1,11 @@
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: melissaml <ma.lei@99cloud.net>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 15 Jan 2016 23:33:21 +0000
+Reviewed-on: https://review.openstack.org/265236
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
