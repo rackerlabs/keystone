@@ -16,6 +16,29 @@
       "revId": "3209924a6697acee2ba9a752d9c46829636b0592",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_340af48a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-15T16:05:09Z",
+      "side": 1,
+      "message": "toss up a reason why too",
+      "range": {
+        "startLine": 942,
+        "startChar": 8,
+        "endLine": 945,
+        "endChar": 71
+      },
+      "revId": "3209924a6697acee2ba9a752d9c46829636b0592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
