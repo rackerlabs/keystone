@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_1c8b6020",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-15T13:26:20Z",
+      "side": 1,
+      "message": "I completely agree with this, it isn\u0027t obvious why we are overriding this testcases.",
+      "parentUuid": "da6ed579_0fafbb2a",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 58
+      },
+      "revId": "d9e7bc2c692298bca3bb9abff4195fce28df3c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_ef70270d",
         "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
         "patchSetId": 4
@@ -54,6 +78,23 @@
       "side": 1,
       "message": "oh, you did this intentionally to bypass the issue from legacy driver interface, forgot it!",
       "parentUuid": "da6ed579_ef70270d",
+      "revId": "d9e7bc2c692298bca3bb9abff4195fce28df3c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_3c8e642e",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-15T13:26:20Z",
+      "side": 1,
+      "message": "Same here",
       "revId": "d9e7bc2c692298bca3bb9abff4195fce28df3c85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
