@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_893723fe",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-15T07:17:27Z",
+      "side": 1,
+      "message": "need to cover the case that [\u0027OS-OAUTH1\u0027][\u0027access_token_id\u0027] is not set, then auth_context[\u0027consumer_id\u0027] and auth_context[\u0027access_token_id\u0027] is None accordingly.",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 71
+      },
+      "revId": "217906b1928137af82a7e37e5f9dcf2e155f4d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_899ba317",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-15T07:17:27Z",
+      "side": 1,
+      "message": "pls switch the order, the signature should be (expected, observed)",
+      "range": {
+        "startLine": 132,
+        "startChar": 25,
+        "endLine": 132,
+        "endChar": 73
+      },
+      "revId": "217906b1928137af82a7e37e5f9dcf2e155f4d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_49a12b45",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-15T07:17:27Z",
+      "side": 1,
+      "message": "same here.",
+      "range": {
+        "startLine": 133,
+        "startChar": 25,
+        "endLine": 133,
+        "endChar": 65
+      },
+      "revId": "217906b1928137af82a7e37e5f9dcf2e155f4d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
