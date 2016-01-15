@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_92a754bc",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-15T03:29:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_d64e8e95",
+      "revId": "e80e7ec5c7b50b7809c25c670c81da5643c3e08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f87918c9",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 3
