@@ -141,6 +141,24 @@
       "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_1dc7c365",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-15T21:11:00Z",
+      "side": 1,
+      "message": "I would be more fine with it is memcache_pool wasn\u0027t recommended. I\u0027m still baffled that anyone would use memcached for tokens.",
+      "parentUuid": "da6ed579_7cf61c5e",
+      "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
