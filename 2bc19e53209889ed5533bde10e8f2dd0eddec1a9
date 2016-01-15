@@ -22,6 +22,30 @@
       "revId": "2bc19e53209889ed5533bde10e8f2dd0eddec1a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_158573cd",
+        "filename": "keystone/tests/unit/common/test_authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-15T14:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_5e4d6398",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 56
+      },
+      "revId": "2bc19e53209889ed5533bde10e8f2dd0eddec1a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
