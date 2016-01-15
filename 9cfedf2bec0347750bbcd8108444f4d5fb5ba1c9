@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_9ee764ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_43583588",
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_03e55da6",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2016-01-15T00:22:51Z",
       "side": 1,
       "message": "nit: missing comma if you really want it to look realistic :-)",
+      "range": {
+        "startLine": 1417,
+        "startChar": 33,
+        "endLine": 1417,
+        "endChar": 34
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_3ea8b876",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1417,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_03e55da6",
       "range": {
         "startLine": 1417,
         "startChar": 33,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_fe0a2089",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Not really.  self._assert_valid_group_and_option() checks to see if any group passed in by the caller is valid. In this method, we might be called to list all groups/options....so the group really should exist...if it doesn\u0027t it\u0027s a coding error (e.g. our internal whitelist has got out of sync with our conf options)",
+      "parentUuid": "da6ed579_63af792a",
+      "range": {
+        "startLine": 1428,
+        "startChar": 12,
+        "endLine": 1428,
+        "endChar": 34
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_e37fe9dd",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2016-01-15T00:22:51Z",
       "side": 1,
       "message": "shouldn\u0027t these be \u0027get_action\u0027 instead of \u0027get_head_action\u0027? HEAD usually return no content.",
+      "range": {
+        "startLine": 94,
+        "startChar": 12,
+        "endLine": 94,
+        "endChar": 28
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5efc8c6f",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_e37fe9dd",
       "range": {
         "startLine": 94,
         "startChar": 12,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_7ef7108b",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_23d661f1",
+      "range": {
+        "startLine": 101,
+        "startChar": 12,
+        "endLine": 101,
+        "endChar": 27
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_434355b2",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 6
@@ -134,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_1ef2949a",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_434355b2",
+      "range": {
+        "startLine": 112,
+        "startChar": 12,
+        "endLine": 112,
+        "endChar": 28
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_5e456c43",
         "filename": "keystone/tests/unit/test_v3_domain_config.py",
         "patchSetId": 6
@@ -145,6 +283,30 @@
       "writtenOn": "2016-01-15T00:22:51Z",
       "side": 1,
       "message": "GET only, according to the API spec",
+      "range": {
+        "startLine": 406,
+        "startChar": 18,
+        "endLine": 406,
+        "endChar": 29
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_9e34444a",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T00:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_5e456c43",
       "range": {
         "startLine": 406,
         "startChar": 18,
