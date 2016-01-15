@@ -1,0 +1,10 @@
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 15 Jan 2016 10:52:58 +0000
+Reviewed-on: https://review.openstack.org/256101
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
