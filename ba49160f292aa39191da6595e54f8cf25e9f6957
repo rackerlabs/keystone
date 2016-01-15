@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_63889ec7",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-15T22:25:13Z",
+      "side": 1,
+      "message": "If we get https://review.openstack.org/#/c/158442/ merged we won\u0027t have to fix this file.",
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_8308322f",
+        "filename": "keystone/tests/unit/test_service_provider_filtering.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-15T22:25:13Z",
+      "side": 1,
+      "message": "Is there a plan to reuse this class? Right now it doesn\u0027t seem that useful.",
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
