@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_d94ce49f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1524,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-15T19:32:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_e3003236",
+      "range": {
+        "startLine": 1524,
+        "startChar": 8,
+        "endLine": 1524,
+        "endChar": 48
+      },
+      "revId": "a4d07ccd293f38a40e1224eee120e7e68357283b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_bb66ec4e",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 19
@@ -82,6 +106,30 @@
       "writtenOn": "2016-01-15T11:05:45Z",
       "side": 1,
       "message": "might need to add a comment to say why it returns `[]` instead of raise NotImplemented() here.",
+      "range": {
+        "startLine": 109,
+        "startChar": 8,
+        "endLine": 109,
+        "endChar": 17
+      },
+      "revId": "a4d07ccd293f38a40e1224eee120e7e68357283b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_29304de8",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-15T19:32:31Z",
+      "side": 1,
+      "message": "Done.  Making it raise to be consistent with the others.",
+      "parentUuid": "da6ed579_bb66ec4e",
       "range": {
         "startLine": 109,
         "startChar": 8,
@@ -128,6 +176,30 @@
       "writtenOn": "2016-01-15T11:05:45Z",
       "side": 1,
       "message": "pls remove this, this is not needed since you have defined both of them are part of the PK.\n\naccording to the ISO standard, the PK itself should be uniqueness.",
+      "range": {
+        "startLine": 146,
+        "startChar": 3,
+        "endLine": 147,
+        "endChar": 69
+      },
+      "revId": "a4d07ccd293f38a40e1224eee120e7e68357283b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_8997f939",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-15T19:32:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_47c90fab",
       "range": {
         "startLine": 146,
         "startChar": 3,
