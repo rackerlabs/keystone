@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "da6ed579_0fafbb2a",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-15T03:13:58Z",
+      "side": 1,
+      "message": "maybe add some text here to explain why we are overriding, e.g.:\n\nV9 drivers and later augment the conflict message with additional information, which won\u0027t be present if we are running a V8 driver - so override the newer tests to just ensure a conflict message is raised.",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 58
+      },
+      "revId": "d9e7bc2c692298bca3bb9abff4195fce28df3c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_ef70270d",
         "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
         "patchSetId": 4
