@@ -1,0 +1,11 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Thomas Hsiao <thomas.hsiao@hp.com>
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 15 Jan 2016 19:24:41 +0000
+Reviewed-on: https://review.openstack.org/233070
+Project: openstack/keystone
+Branch: refs/heads/master
