@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_5ce478aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-15T13:34:13Z",
+      "side": 1,
+      "message": "Bug is now marked as Won\u0027t Fix, so this closes-bug doesn\u0027t make sense anymore.",
+      "parentUuid": "fa963961_57a63dc2",
+      "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_a0727147",
         "filename": "keystone/token/persistence/backends/memcache.py",
         "patchSetId": 3
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "1af86dd1_69aa8f1b",
+      "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7cf61c5e",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-15T13:34:13Z",
+      "side": 1,
+      "message": "Perhaps we only need to update this and people should be fine with the deprecation",
+      "parentUuid": "da20952f_dba90c26",
       "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
