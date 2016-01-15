@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_43583588",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "Do we need \u0027DocImpact\u0027?",
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_03e55da6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1417,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "nit: missing comma if you really want it to look realistic :-)",
+      "range": {
+        "startLine": 1417,
+        "startChar": 33,
+        "endLine": 1417,
+        "endChar": 34
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_63af792a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "the self._assert_valid_group_and_option() at line 1434 should\u0027ve checked this already right?",
+      "range": {
+        "startLine": 1428,
+        "startChar": 12,
+        "endLine": 1428,
+        "endChar": 34
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_e37fe9dd",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "shouldn\u0027t these be \u0027get_action\u0027 instead of \u0027get_head_action\u0027? HEAD usually return no content.",
+      "range": {
+        "startLine": 94,
+        "startChar": 12,
+        "endLine": 94,
+        "endChar": 28
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_23d661f1",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 101,
+        "startChar": 12,
+        "endLine": 101,
+        "endChar": 27
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_434355b2",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 112,
+        "startChar": 12,
+        "endLine": 112,
+        "endChar": 28
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5e456c43",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-15T00:22:51Z",
+      "side": 1,
+      "message": "GET only, according to the API spec",
+      "range": {
+        "startLine": 406,
+        "startChar": 18,
+        "endLine": 406,
+        "endChar": 29
+      },
+      "revId": "9cfedf2bec0347750bbcd8108444f4d5fb5ba1c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
