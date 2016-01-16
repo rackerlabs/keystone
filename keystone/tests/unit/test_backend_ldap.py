@@ -38,6 +38,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
+from keystone.tests.unit.resource import test_backends as resource_core
 from keystone.tests.unit import test_backend
 from keystone.tests.unit.utils import wip
 
@@ -119,7 +120,8 @@ def create_group_container(identity_api):
 
 
 class BaseLDAPIdentity(test_backend.IdentityTests,
-                       assignment_core.AssignmentTests):
+                       assignment_core.AssignmentTests,
+                       resource_core.ResourceTests):
 
     def setUp(self):
         super(BaseLDAPIdentity, self).setUp()

@@ -33,6 +33,7 @@ from keystone.tests import unit
 from keystone.tests.unit.assignment import test_backends as core_assignment
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.resource import test_backends as resource_core
 from keystone.tests.unit import test_backend
 from keystone.token.persistence.backends import sql as token_sql
 
@@ -174,7 +175,8 @@ class SqlModels(SqlTests):
 
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests,
-                  core_assignment.AssignmentTests):
+                  core_assignment.AssignmentTests,
+                  resource_core.ResourceTests):
     def test_password_hashed(self):
         session = sql.get_session()
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
