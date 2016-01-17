@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_542ad62d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-17T14:45:48Z",
+      "side": 1,
+      "message": "or oauth1 authentication..",
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_19cb3774",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-17T14:45:48Z",
+      "side": 1,
+      "message": "looks like `access_token_id` should be included in the method signature, and also need the desc about `access_token_id` in the docstring.",
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_54f736f5",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-17T14:45:48Z",
+      "side": 1,
+      "message": "should not say it\u0027s always `unscoped` here, this is unrelated though.",
+      "range": {
+        "startLine": 250,
+        "startChar": 26,
+        "endLine": 250,
+        "endChar": 34
+      },
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f4950a88",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-17T14:45:48Z",
+      "side": 1,
+      "message": "...federated_info, access_token_id)",
+      "range": {
+        "startLine": 255,
+        "startChar": 34,
+        "endLine": 255,
+        "endChar": 48
+      },
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
