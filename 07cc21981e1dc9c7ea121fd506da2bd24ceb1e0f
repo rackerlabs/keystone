@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba63e191_343415dd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T22:14:24Z",
+      "side": 1,
+      "message": "nit: these must be role references?",
+      "range": {
+        "startLine": 597,
+        "startChar": 33,
+        "endLine": 597,
+        "endChar": 37
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_f4251dae",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T22:14:24Z",
+      "side": 1,
+      "message": "nit: missing a period at the end of the doc string.",
+      "range": {
+        "startLine": 598,
+        "startChar": 30,
+        "endLine": 598,
+        "endChar": 35
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_74684dbb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T22:14:24Z",
+      "side": 1,
+      "message": "Is refs a list of references?",
+      "range": {
+        "startLine": 600,
+        "startChar": 12,
+        "endLine": 600,
+        "endChar": 16
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_a3da1177",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 24
@@ -18,6 +87,52 @@
         "startChar": 8,
         "endLine": 645,
         "endChar": 70
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5400a9aa",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T22:14:24Z",
+      "side": 1,
+      "message": "nit: this section could be moved up under the class definition for better readability.",
+      "range": {
+        "startLine": 143,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 50
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_f4b51dd0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 6465,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T22:14:24Z",
+      "side": 1,
+      "message": "user*",
+      "range": {
+        "startLine": 6465,
+        "startChar": 18,
+        "endLine": 6465,
+        "endChar": 21
       },
       "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
