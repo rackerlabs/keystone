@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_eebf4efa",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-18T16:12:18Z",
+      "side": 1,
+      "message": "do I get it right that we don\u0027t remove this table further and leave it as is?",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 55
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_ae9ab66c",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-18T16:12:18Z",
+      "side": 1,
+      "message": "why do you need to run this?",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_ee918e9b",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -41,6 +87,52 @@
         "startChar": 47,
         "endLine": 45,
         "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_1f23eea8",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-18T16:12:18Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 45,
+        "startChar": 47,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_9fb4be35",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-18T16:12:18Z",
+      "side": 1,
+      "message": "++ to Lance\u0027s question above, but more general. Why is it `passwords` and not `password`?",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 64
       },
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
