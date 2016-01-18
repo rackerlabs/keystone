@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_bf68a2bb",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T15:44:36Z",
+      "side": 1,
+      "message": "This is all adding more config, the tests will pass with or without this, right?",
+      "range": {
+        "startLine": 511,
+        "startChar": 8,
+        "endLine": 511,
+        "endChar": 74
+      },
+      "revId": "cc554d3be341b5fc1d35d68e47a22d733d4ed4d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
