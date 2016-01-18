@@ -70,6 +70,30 @@
       "revId": "8a7c2d0caab56793692a4cdf857af2f78db02125",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_be43066c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-18T21:32:55Z",
+      "side": 1,
+      "message": "Agreed.  I will make those changes now. Thank you for pointing that out",
+      "parentUuid": "ba63e191_1e7ed2e4",
+      "range": {
+        "startLine": 822,
+        "startChar": 8,
+        "endLine": 822,
+        "endChar": 64
+      },
+      "revId": "8a7c2d0caab56793692a4cdf857af2f78db02125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
