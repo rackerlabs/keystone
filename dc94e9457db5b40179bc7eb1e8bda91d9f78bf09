@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_5c742fce",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 52
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "miss `identity:check_implied_role` here.",
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_bc49ab90",
+        "filename": "etc/policy.json",
+        "patchSetId": 52
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "miss `identity:check_implied_role` here.",
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_1c7eb7ae",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 52
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "miss `identity:check_implied_role` here.",
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_796d85cb",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "change this to:\n          return ImpliedRolesV3.wrap_member(\n            context, ref)\n\nfor consistency, and help to avoid the calling of the private method from V3Controller.",
+      "range": {
+        "startLine": 346,
+        "startChar": 8,
+        "endLine": 346,
+        "endChar": 53
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_b99a1dc4",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2179,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "wrap this in one line.",
+      "range": {
+        "startLine": 2177,
+        "startChar": 0,
+        "endLine": 2179,
+        "endChar": 31
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_99a959e2",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2186,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "change this to:\n  self.assertEqual(prior[\u0027id\u0027], r.result[\u0027prior_role_id\u0027])\n\nthe signature is (expected, observed)",
+      "range": {
+        "startLine": 2186,
+        "startChar": 8,
+        "endLine": 2186,
+        "endChar": 64
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_59ac41ed",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2196,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "this could be split into three patches, so that it\u0027s easier to identify where is the failure comes from if there is something wrong.",
+      "range": {
+        "startLine": 2196,
+        "startChar": 8,
+        "endLine": 2196,
+        "endChar": 30
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f9b8952c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2210,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "remove \u0027r\u003d\u0027 if it\u0027s not used at all.",
+      "range": {
+        "startLine": 2210,
+        "startChar": 8,
+        "endLine": 2210,
+        "endChar": 12
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d986f164",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "why nothing returned? looks like you have created implied roles, this should get back the implied role you have created, and should verify the implied role afterwards.",
+      "range": {
+        "startLine": 2212,
+        "startChar": 21,
+        "endLine": 2212,
+        "endChar": 59
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_39962d95",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2213,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "remove \u0027r\u003d\u0027 if it\u0027s not used at all.",
+      "range": {
+        "startLine": 2213,
+        "startChar": 8,
+        "endLine": 2213,
+        "endChar": 12
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5993e1a3",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "wrap this in one line.",
+      "range": {
+        "startLine": 486,
+        "startChar": 0,
+        "endLine": 488,
+        "endChar": 31
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_dc86df64",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T07:50:11Z",
+      "side": 1,
+      "message": "why override the default config? good as it is if you think this is necessary.",
+      "range": {
+        "startLine": 513,
+        "startChar": 8,
+        "endLine": 513,
+        "endChar": 67
+      },
+      "revId": "dc94e9457db5b40179bc7eb1e8bda91d9f78bf09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
