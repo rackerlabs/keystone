@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_5ec52a59",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T21:19:58Z",
+      "side": 1,
+      "message": "Reply to your comment on the previous patch:\n\nAgreed, list_role_assignments doesn\u0027t cache....but all the get_\u003centity\u003e() methods do - e.g. get_user, get_domain, get_group, get_role....and isn\u0027t it those entities that you are essentially caching here?",
+      "range": {
+        "startLine": 822,
+        "startChar": 8,
+        "endLine": 822,
+        "endChar": 64
+      },
+      "revId": "8a7c2d0caab56793692a4cdf857af2f78db02125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
