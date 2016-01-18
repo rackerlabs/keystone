@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_f0b5f17d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-18T16:39:25Z",
+      "side": 1,
+      "message": "Good point, I think I should add this check right in this patch.",
+      "parentUuid": "fa69d971_43ba15e3",
+      "range": {
+        "startLine": 437,
+        "startChar": 4,
+        "endLine": 437,
+        "endChar": 19
+      },
+      "revId": "7ab45049c35ee50e478f9b22a6d2cd2da201ffdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_a300b1ab",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-30T21:15:23Z",
       "side": 1,
       "message": "for completeness, it might be good to check that path1 has been updated",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 50
+      },
+      "revId": "7ab45049c35ee50e478f9b22a6d2cd2da201ffdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_1070c5db",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-18T16:39:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_a300b1ab",
       "range": {
         "startLine": 130,
         "startChar": 8,
