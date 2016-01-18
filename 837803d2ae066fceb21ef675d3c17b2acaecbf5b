@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_502f1d3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done.  Also removed from \"althought\" to the end of the line as that is no longer true: more consistent to just throw for all calls to the LDAP driver.",
+      "parentUuid": "da6ed579_fc4883ce",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 12
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f8d734bd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 22
@@ -84,6 +108,30 @@
       "writtenOn": "2016-01-18T04:35:12Z",
       "side": 1,
       "message": "prior_role_id",
+      "range": {
+        "startLine": 1508,
+        "startChar": 34,
+        "endLine": 1508,
+        "endChar": 47
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7076e13f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_f8d734bd",
       "range": {
         "startLine": 1508,
         "startChar": 34,
@@ -119,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_308f0925",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_78cb441f",
+      "range": {
+        "startLine": 1518,
+        "startChar": 33,
+        "endLine": 1518,
+        "endChar": 41
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_d8da70e9",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 22
@@ -130,6 +202,30 @@
       "writtenOn": "2016-01-18T04:35:12Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 1519,
+        "startChar": 40,
+        "endLine": 1519,
+        "endChar": 45
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5092bd4c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_d8da70e9",
       "range": {
         "startLine": 1519,
         "startChar": 40,
@@ -205,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_13476f78",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_c4884fc9",
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_a4543b21",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 22
@@ -222,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_ce412a3b",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_a4543b21",
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_c83055a1",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 22
@@ -233,6 +365,24 @@
       "writtenOn": "2016-01-18T09:18:15Z",
       "side": 1,
       "message": "how is that different from default to_dict() method? include_extra_dict is False by default. If there is a reason for reimplementing this class please add some comment explaining it.",
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_a944f0b6",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-18T15:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_c83055a1",
       "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
