@@ -45,6 +45,30 @@
       "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_7d927b59",
+        "filename": "keystone/tests/unit/ksfixtures/auth_plugins.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-18T19:01:19Z",
+      "side": 1,
+      "message": "It\u0027s probably a bad name, but it is tracking the methods that already exist in auth.controllers.AUTH_METHODS. That way in the cleanup I can restore them.\n\nMaybe this could be more clear if I just used a copy...",
+      "parentUuid": "da6ed579_2947a078",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 18
+      },
+      "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
