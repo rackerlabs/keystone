@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_e348098a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T21:16:58Z",
+      "side": 1,
+      "message": "nit: re-load/pre-load",
+      "range": {
+        "startLine": 215,
+        "startChar": 18,
+        "endLine": 215,
+        "endChar": 20
+      },
+      "revId": "db26b921a116e0b59ee857105431149feb132b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_7ef90ec8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T21:16:58Z",
+      "side": 1,
+      "message": "Just an idea...I know that everyone who reviews this asks why we don\u0027t have is_domain\u003dFalse here to avoid changing the callers (and the reason being the MEMOIZE).  An alternative would be to create an internal method _get_project_by_name that is called here...and THAT method has the MEMOIZE around it.  Would have to change the sets/invlaidates elsewhere in this file to match, but then no changes would be required to the callers",
+      "range": {
+        "startLine": 661,
+        "startChar": 4,
+        "endLine": 662,
+        "endChar": 69
+      },
+      "revId": "db26b921a116e0b59ee857105431149feb132b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
