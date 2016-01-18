@@ -219,6 +219,23 @@
       "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c83055a1",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-01-18T09:18:15Z",
+      "side": 1,
+      "message": "how is that different from default to_dict() method? include_extra_dict is False by default. If there is a reason for reimplementing this class please add some comment explaining it.",
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
