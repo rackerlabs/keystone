@@ -34,6 +34,24 @@
       "revId": "625fdc154c42168e4f9d4aa79b6c02134cb60189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_687cf820",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2016-01-18T20:36:53Z",
+      "side": 1,
+      "message": "This change is *on top* of that change.",
+      "parentUuid": "ba63e191_6820784a",
+      "revId": "625fdc154c42168e4f9d4aa79b6c02134cb60189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
