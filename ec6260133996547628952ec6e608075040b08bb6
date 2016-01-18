@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_82ceee58",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-18T18:45:09Z",
+      "side": 1,
+      "message": "It may be beneficial to use getpass if we don\u0027t already.... that way there is no commandline history of passwords",
+      "revId": "ec6260133996547628952ec6e608075040b08bb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
