@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_9d4aaa54",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 1943,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T04:00:26Z",
+      "side": 1,
+      "message": "pls revert this change, bot will update this.",
+      "range": {
+        "startLine": 1943,
+        "startChar": 0,
+        "endLine": 1943,
+        "endChar": 18
+      },
+      "revId": "4eda516122e3da5c4252bff24dabf42c858095d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_98acf88d",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T04:00:26Z",
+      "side": 1,
+      "message": "nice! you catch this!",
+      "revId": "4eda516122e3da5c4252bff24dabf42c858095d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
