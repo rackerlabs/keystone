@@ -22,7 +22,6 @@ from keystone.common import utils
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit import test_backend
 from keystone.tests.unit.token import test_backends as token_tests
 
 
