@@ -19,6 +19,116 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_c2783692",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T08:39:36Z",
+      "side": 1,
+      "message": "yes, this is gating, all the change from this file can be removed now.",
+      "parentUuid": "da6ed579_63889ec7",
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_67571ccb",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T08:39:36Z",
+      "side": 1,
+      "message": "remove the extra space to align with APIs defined below.",
+      "range": {
+        "startLine": 373,
+        "startChar": 4,
+        "endLine": 373,
+        "endChar": 8
+      },
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_0703c010",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T08:39:36Z",
+      "side": 1,
+      "message": "I still think this is not necessary, good as it is if you think these handling has it\u0027s value.\n\nsomething I did like this,\nhttps://review.openstack.org/#/c/250032/2/keystone/catalog/core.py@367\n\nand I even try to add the testcase to test this,\nhttps://review.openstack.org/#/c/259627/\n\nBut eventually, I think user will not able to enter the situation.",
+      "range": {
+        "startLine": 395,
+        "startChar": 0,
+        "endLine": 397,
+        "endChar": 47
+      },
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_42e4460c",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T08:39:36Z",
+      "side": 1,
+      "message": "these backends change should based on the V9 version of catalog driver interface.\n\nexample: https://review.openstack.org/#/c/262082/",
+      "range": {
+        "startLine": 922,
+        "startChar": 0,
+        "endLine": 922,
+        "endChar": 53
+      },
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_02b64e3d",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-18T08:39:36Z",
+      "side": 1,
+      "message": "the path should be changed, what\u0027s doing here is irrelevant with endpoint filter and should not be I think.",
+      "range": {
+        "startLine": 196,
+        "startChar": 19,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "ba49160f292aa39191da6595e54f8cf25e9f6957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_8308322f",
         "filename": "keystone/tests/unit/test_service_provider_filtering.py",
         "patchSetId": 12
