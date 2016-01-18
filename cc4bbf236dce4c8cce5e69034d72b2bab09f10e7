@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_13730a4f",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T05:51:21Z",
+      "side": 1,
+      "message": "should we state that this admin project will be in the default domain?",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 7
+      },
+      "revId": "cc4bbf236dce4c8cce5e69034d72b2bab09f10e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
