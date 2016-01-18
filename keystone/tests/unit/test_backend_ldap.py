@@ -34,12 +34,12 @@ from keystone.identity.mapping_backends import mapping as map
 from keystone import resource
 from keystone.tests import unit
 from keystone.tests.unit.backend.assignment import core as assignment_core
+from keystone.tests.unit.backend.identity import core as identity_core
 from keystone.tests.unit.backend.resource import core as resource_core
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
-from keystone.tests.unit import test_backend
 from keystone.tests.unit.utils import wip
 
 
@@ -119,7 +119,7 @@ def create_group_container(identity_api):
                     ('ou', ['Groups'])])
 
 
-class BaseLDAPIdentity(test_backend.IdentityTests,
+class BaseLDAPIdentity(identity_core.IdentityTests,
                        assignment_core.AssignmentTests,
                        resource_core.ResourceTests):
 
@@ -551,7 +551,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests,
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        user = self.new_user_ref(domain_id=test_backend.DEFAULT_DOMAIN_ID)
+        user = self.new_user_ref(domain_id=identity_core.DEFAULT_DOMAIN_ID)
 
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
@@ -655,7 +655,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests,
         self.assertEqual(new_domain_id, domains[0]['id'])
 
     def test_authenticate_requires_simple_bind(self):
-        user = self.new_user_ref(domain_id=test_backend.DEFAULT_DOMAIN_ID)
+        user = self.new_user_ref(domain_id=identity_core.DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 user['id'])
@@ -671,10 +671,10 @@ class BaseLDAPIdentity(test_backend.IdentityTests,
                           password=None)
 
     # (spzala)The group and domain crud tests below override the standard ones
-    # in test_backend.py so that we can exclude the update name test, since we
-    # do not yet support the update of either group or domain names with LDAP.
-    # In the tests below, the update is demonstrated by updating description.
-    # Refer to bug 1136403 for more detail.
+    # in unit.backend.identity.core so that we can exclude the update name
+    # test, since we do not yet support the update of either group or domain
+    # names with LDAP. In the tests below, the update is demonstrated by
+    # updating description. Refer to bug 1136403 for more detail.
     def test_group_crud(self):
         group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
         group = self.identity_api.create_group(group)
@@ -2015,7 +2015,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.assertEqual('Foo Bar', user_ref['name'])
 
 
-class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
+class LDAPLimitTests(unit.TestCase, identity_core.LimitTests):
     def setUp(self):
         super(LDAPLimitTests, self).setUp()
 
@@ -2023,7 +2023,7 @@ class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
         self.useFixture(database.Database())
         self.load_backends()
 
-        test_backend.LimitTests.setUp(self)
+        identity_core.LimitTests.setUp(self)
 
         self.load_fixtures(default_fixtures)
         _assert_backends(self,
@@ -2305,10 +2305,10 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, unit.SQLDriverOverrides,
                           domain)
 
     def test_get_and_remove_role_grant_by_group_and_domain(self):
-        # TODO(henry-nash): We should really rewrite the tests in test_backend
-        # to be more flexible as to where the domains are sourced from, so
-        # that we would not need to override such tests here. This is raised
-        # as bug 1373865.
+        # TODO(henry-nash): We should really rewrite the tests in
+        # unit.backend.identity.core to be more flexible as to where the
+        # domains are sourced from, so that we would not need to override
+        # such tests here. This is raised as bug 1373865.
         new_domain = self._get_domain_fixture()
         new_group = unit.new_group_ref(domain_id=new_domain['id'],)
         new_group = self.identity_api.create_group(new_group)
@@ -3269,7 +3269,7 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             'domain2')
 
 
-class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
+class LdapFilterTests(identity_core.FilterTests, unit.TestCase):
 
     def setUp(self):
         super(LdapFilterTests, self).setUp()

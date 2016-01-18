@@ -32,13 +32,13 @@ from keystone.identity.backends import sql as identity_sql
 from keystone.tests import unit
 from keystone.tests.unit.backend.assignment import core as core_assignment
 from keystone.tests.unit.backend.catalog import core as catalog_core
+from keystone.tests.unit.backend.identity import core as identity_core
 from keystone.tests.unit.backend.policy import core as policy_core
 from keystone.tests.unit.backend.resource import core as resource_core
 from keystone.tests.unit.backend.token import core as token_core
 from keystone.tests.unit.backend.trust import core as trust_core
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit import test_backend
 from keystone.token.persistence.backends import sql as token_sql
 
 
@@ -178,7 +178,7 @@ class SqlModels(SqlTests):
         self.assertExpectedSchema('user_group_membership', cols)
 
 
-class SqlIdentity(SqlTests, test_backend.IdentityTests,
+class SqlIdentity(SqlTests, identity_core.IdentityTests,
                   core_assignment.AssignmentTests,
                   resource_core.ResourceTests):
     def test_password_hashed(self):
@@ -625,7 +625,7 @@ class SqlTokenCacheInvalidation(SqlTests, token_core.TokenCacheInvalidation):
         self._create_test_data()
 
 
-class SqlFilterTests(SqlTests, test_backend.FilterTests):
+class SqlFilterTests(SqlTests, identity_core.FilterTests):
 
     def _get_user_name_field_size(self):
         return identity_sql.User.name.type.length
@@ -643,9 +643,10 @@ class SqlFilterTests(SqlTests, test_backend.FilterTests):
         del self.domain1
 
     def test_list_entities_filtered_by_domain(self):
-        # NOTE(henry-nash): This method is here rather than in test_backend
-        # since any domain filtering with LDAP is handled by the manager
-        # layer (and is already tested elsewhere) not at the driver level.
+        # NOTE(henry-nash): This method is here rather than in
+        # unit.backend.identity.core since any domain filtering with LDAP is
+        # handled by the manager layer (and is already tested elsewhere) not
+        # at the driver level.
         self.addCleanup(self.clean_up_entities)
         self.domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(self.domain1['id'], self.domain1)
@@ -699,10 +700,10 @@ class SqlFilterTests(SqlTests, test_backend.FilterTests):
         self.assertTrue(len(groups) > 0)
 
 
-class SqlLimitTests(SqlTests, test_backend.LimitTests):
+class SqlLimitTests(SqlTests, identity_core.LimitTests):
     def setUp(self):
         super(SqlLimitTests, self).setUp()
-        test_backend.LimitTests.setUp(self)
+        identity_core.LimitTests.setUp(self)
 
 
 class FakeTable(sql.ModelBase):
