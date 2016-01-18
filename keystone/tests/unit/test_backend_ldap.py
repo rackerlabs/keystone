@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-# Copyright 2012 OpenStack Foundation
-# Copyright 2013 IBM Corp.
-#
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -37,11 +34,11 @@ from keystone import resource
 from keystone.tests import unit
 from keystone.tests.unit.assignment import test_backends as assignment_tests
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit.identity import test_backends as identity_tests
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
 from keystone.tests.unit.resource import test_backends as resource_tests
-from keystone.tests.unit import test_backend
 from keystone.tests.unit.utils import wip
 
 
@@ -121,7 +118,7 @@ def create_group_container(identity_api):
                     ('ou', ['Groups'])])
 
 
-class BaseLDAPIdentity(test_backend.IdentityTests,
+class BaseLDAPIdentity(identity_tests.IdentityTests,
                        assignment_tests.AssignmentTests,
                        resource_tests.ResourceTests):
 
@@ -586,7 +583,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests,
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        user = self.new_user_ref(domain_id=test_backend.DEFAULT_DOMAIN_ID)
+        user = self.new_user_ref(domain_id=identity_tests.DEFAULT_DOMAIN_ID)
 
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
@@ -683,12 +680,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests,
         domain_ids = []
         for domain in domains:
             domain_ids.append(domain.get('id'))
-        self.assertIn(test_backend.DEFAULT_DOMAIN_ID, domain_ids)
+        self.assertIn(identity_tests.DEFAULT_DOMAIN_ID, domain_ids)
         self.assertIn(domain1['id'], domain_ids)
         self.assertIn(domain2['id'], domain_ids)
 
     def test_authenticate_requires_simple_bind(self):
-        user = self.new_user_ref(domain_id=test_backend.DEFAULT_DOMAIN_ID)
+        user = self.new_user_ref(domain_id=identity_tests.DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 user['id'])
@@ -704,10 +701,10 @@ class BaseLDAPIdentity(test_backend.IdentityTests,
                           password=None)
 
     # (spzala)The group and domain crud tests below override the standard ones
-    # in test_backend.py so that we can exclude the update name test, since we
-    # do not yet support the update of either group or domain names with LDAP.
-    # In the tests below, the update is demonstrated by updating description.
-    # Refer to bug 1136403 for more detail.
+    # in unit.identity.test_backends so that we can exclude the update name
+    # test, since we do not yet support the update of either group or domain
+    # names with LDAP. In the tests below, the update is demonstrated by
+    # updating description. Refer to bug 1136403 for more detail.
     @mock.patch.object(versionutils, 'report_deprecated_feature')
     def test_group_crud(self, mock_deprecator):
         # NOTE(stevemar): As of the Mitaka release, we now check for calls that
@@ -1845,7 +1842,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.assertEqual('Foo Bar', user_ref['name'])
 
 
-class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
+class LDAPLimitTests(unit.TestCase, identity_tests.LimitTests):
     def setUp(self):
         super(LDAPLimitTests, self).setUp()
 
@@ -1854,7 +1851,7 @@ class LDAPLimitTests(unit.TestCase, test_backend.LimitTests):
         self.useFixture(database.Database(self.sql_driver_version_overrides))
         self.load_backends()
         self.load_fixtures(default_fixtures)
-        test_backend.LimitTests.setUp(self)
+        identity_tests.LimitTests.setUp(self)
         _assert_backends(self, identity='ldap')
 
     def config_overrides(self):
@@ -3030,7 +3027,7 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             'domain2')
 
 
-class LdapFilterTests(test_backend.FilterTests, unit.TestCase):
+class LdapFilterTests(identity_tests.FilterTests, unit.TestCase):
 
     def setUp(self):
         super(LdapFilterTests, self).setUp()
