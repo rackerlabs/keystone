@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_a3da1177",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T20:55:51Z",
+      "side": 1,
+      "message": "nit: if we arrive here, we know we have to filter by role_id",
+      "range": {
+        "startLine": 645,
+        "startChar": 8,
+        "endLine": 645,
+        "endChar": 70
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
