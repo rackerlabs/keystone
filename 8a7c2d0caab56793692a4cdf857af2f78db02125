@@ -46,6 +46,30 @@
       "revId": "8a7c2d0caab56793692a4cdf857af2f78db02125",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_1e7ed2e4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T21:25:51Z",
+      "side": 1,
+      "message": "So my argument would be: we\u0027re overcomplicating this code by adding caching that won\u0027t gain us anything.....so we should remove the caching here are rely on our existing caching!  I know stevemar was concerned over the performance here, so be interested in his view.",
+      "parentUuid": "ba63e191_7ea34e9f",
+      "range": {
+        "startLine": 822,
+        "startChar": 8,
+        "endLine": 822,
+        "endChar": 64
+      },
+      "revId": "8a7c2d0caab56793692a4cdf857af2f78db02125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
