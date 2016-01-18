@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_3103d211",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T17:57:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_37070883",
+      "range": {
+        "startLine": 17,
+        "startChar": 22,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_77ed80b6",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-18T12:45:22Z",
       "side": 1,
       "message": "Actually, \"Implements:\" as this one is the last on this bp, right?",
+      "range": {
+        "startLine": 20,
+        "startChar": 1,
+        "endLine": 20,
+        "endChar": 20
+      },
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_dcfe0d05",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T17:57:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_77ed80b6",
       "range": {
         "startLine": 20,
         "startChar": 1,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_9c565505",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T17:57:42Z",
+      "side": 1,
+      "message": "oops, left the old code there! Nixed.",
+      "parentUuid": "da6ed579_b7aa18d1",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_779a6070",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -76,6 +142,30 @@
       "writtenOn": "2016-01-18T12:45:22Z",
       "side": 1,
       "message": "Doesn\u0027t this sound like we would be expanding membership?",
+      "range": {
+        "startLine": 798,
+        "startChar": 25,
+        "endLine": 798,
+        "endChar": 35
+      },
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_bca9d9e1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T17:57:42Z",
+      "side": 1,
+      "message": "yeah, I\u0027ll tweak!",
+      "parentUuid": "da6ed579_779a6070",
       "range": {
         "startLine": 798,
         "startChar": 25,
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_5c68ddba",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T17:57:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_d7af8c7b",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f7597036",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 3
@@ -133,6 +241,24 @@
       "writtenOn": "2016-01-18T12:45:22Z",
       "side": 1,
       "message": "(nit) perhaps adding \u0027inherited\u0027 to the test name would make it more meaningful?",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_3cee49ed",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6486,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T17:57:42Z",
+      "side": 1,
+      "message": "since this is in the inheritance class, I was leaving that out - but since the norm appears to be to included it, I think your suggestion is correct. Fixed.",
+      "parentUuid": "da6ed579_f7597036",
       "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
