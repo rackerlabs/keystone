@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_f22535ae",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-18T19:39:53Z",
+      "side": 1,
+      "message": "change to linters",
+      "range": {
+        "startLine": 4,
+        "startChar": 20,
+        "endLine": 4,
+        "endChar": 24
+      },
+      "revId": "8c900d94d04a85530b5ab694e2e3c0442c5da369",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_d20d9138",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-18T19:39:53Z",
+      "side": 1,
+      "message": "Can you add\n\n echo \"Use tox -e linters instead\"",
+      "revId": "8c900d94d04a85530b5ab694e2e3c0442c5da369",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
