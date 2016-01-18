@@ -1,0 +1,5 @@
+---
+deprecations:
+  - The token memcache and memcache_pool persistence
+    backends have been deprecated in favor of using
+    Fernet tokens (which require no persistence).
