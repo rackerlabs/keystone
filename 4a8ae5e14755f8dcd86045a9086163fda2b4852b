@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_b313035c",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-18T14:58:47Z",
+      "side": 1,
+      "message": "exists instead of existes\n\nhere and below",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 49
+      },
+      "revId": "4a8ae5e14755f8dcd86045a9086163fda2b4852b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
