@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_732fcba1",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T15:06:13Z",
+      "side": 1,
+      "message": "Isn\u0027t the following the established convention for \u0027extra\u0027? \n\n\n    from keystone.common import sql as ks_sql\n    ....\n    sql.Column(\u0027extra\u0027, ks_sql.JsonBlob.impl),\n\n\n\nhttps://github.com/openstack/keystone/blob/1baa32afd0b43887125e35cfba4597556fc187df/keystone/common/sql/migrate_repo/versions/044_icehouse.py#L49",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_ee918e9b",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T15:06:13Z",
+      "side": 1,
+      "message": "Just curious - why do we need the domain_id for passwords? Do we expect users to have passwords for different domains in the future?",
+      "range": {
+        "startLine": 45,
+        "startChar": 47,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_8ebed2fd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T15:06:13Z",
+      "side": 1,
+      "message": "Will there ever be more than one element in this list?",
+      "range": {
+        "startLine": 45,
+        "startChar": 33,
+        "endLine": 45,
+        "endChar": 36
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_6ed6fe28",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T15:06:13Z",
+      "side": 1,
+      "message": "We will need to add a test for upgrading to 89 too, right?",
+      "range": {
+        "startLine": 833,
+        "startChar": 8,
+        "endLine": 833,
+        "endChar": 24
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
