@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_80722810",
+        "filename": "keystone/tests/unit/backend/policy/test_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-18T13:39:55Z",
+      "side": 1,
+      "message": "We have a funny habit of doing this.",
+      "revId": "9bc3b65eb9264ec767fefe91f588b597698997d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
