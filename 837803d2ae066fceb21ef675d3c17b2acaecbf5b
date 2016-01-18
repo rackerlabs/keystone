@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_fc4883ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-18T07:39:54Z",
+      "side": 1,
+      "message": "\u0027cause you can\u0027t update a role inference...",
+      "parentUuid": "da6ed579_9c806748",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 12
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f8d734bd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 22
