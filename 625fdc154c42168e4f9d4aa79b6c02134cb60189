@@ -16,6 +16,24 @@
       "revId": "625fdc154c42168e4f9d4aa79b6c02134cb60189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_c8af2493",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-18T20:35:54Z",
+      "side": 1,
+      "message": "oops, wrong comment - the change that\u0027s referenced doesn\u0027t remove the bandit jobs.",
+      "parentUuid": "ba63e191_6820784a",
+      "revId": "625fdc154c42168e4f9d4aa79b6c02134cb60189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
