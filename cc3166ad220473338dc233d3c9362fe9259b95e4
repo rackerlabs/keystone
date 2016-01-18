@@ -1,0 +1,141 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_37070883",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "implements",
+      "range": {
+        "startLine": 17,
+        "startChar": 22,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_77ed80b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "Actually, \"Implements:\" as this one is the last on this bp, right?",
+      "range": {
+        "startLine": 20,
+        "startChar": 1,
+        "endLine": 20,
+        "endChar": 20
+      },
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_b7aa18d1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "These 2 lines are dead code :-)",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_779a6070",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "Doesn\u0027t this sound like we would be expanding membership?",
+      "range": {
+        "startLine": 798,
+        "startChar": 25,
+        "endLine": 798,
+        "endChar": 35
+      },
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_178f6424",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "Nice explanation :))",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d7af8c7b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "besides this supports multiple values",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f7597036",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6486,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-18T12:45:22Z",
+      "side": 1,
+      "message": "(nit) perhaps adding \u0027inherited\u0027 to the test name would make it more meaningful?",
+      "revId": "cc3166ad220473338dc233d3c9362fe9259b95e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
