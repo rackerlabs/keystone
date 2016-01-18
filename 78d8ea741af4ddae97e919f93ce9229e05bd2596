@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_85acb5ee",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-18T20:15:18Z",
+      "side": 1,
+      "message": "I think i am confused on how the cache works.  To my knowledge, i thought the cache is only used for get_role(). https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L1297 \n\nList_role_assignments calls the driver directly, where does it handle the cache.  Thank you Henry",
+      "parentUuid": "da6ed579_b5b48b82",
+      "range": {
+        "startLine": 822,
+        "startChar": 8,
+        "endLine": 822,
+        "endChar": 64
+      },
+      "revId": "78d8ea741af4ddae97e919f93ce9229e05bd2596",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_55542f20",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 26
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-16T00:09:06Z",
       "side": 1,
       "message": "not quite clear what this is doing that the test above is not....",
+      "range": {
+        "startLine": 4161,
+        "startChar": 8,
+        "endLine": 4161,
+        "endChar": 53
+      },
+      "revId": "78d8ea741af4ddae97e919f93ce9229e05bd2596",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_856fd591",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 4161,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-18T20:15:18Z",
+      "side": 1,
+      "message": "Yes your right that is confusing. The bottom tests domain scope while the top tests project scope.  It was brought over from test_backend_sql.py since i didn\u0027t know where to exclude ldap test.  I will clean it up and add comment so it makes much more sense.",
+      "parentUuid": "da6ed579_55542f20",
       "range": {
         "startLine": 4161,
         "startChar": 8,
