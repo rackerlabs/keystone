@@ -33,6 +33,7 @@ from keystone.tests import unit
 from keystone.tests.unit.backend.assignment import core as core_assignment
 from keystone.tests.unit.backend.resource import core as resource_core
 from keystone.tests.unit.backend.token import core as token_core
+from keystone.tests.unit.backend.trust import core as trust_core
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
@@ -417,7 +418,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests,
         self.assertThat(user_domains, matchers.HasLength(0))
 
 
-class SqlTrust(SqlTests, test_backend.TrustTests):
+class SqlTrust(SqlTests, trust_core.TrustTests):
     pass
 
 
