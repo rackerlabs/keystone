@@ -19,16 +19,16 @@ from six.moves import zip
 
 from keystone import catalog
 from keystone.tests import unit
+from keystone.tests.unit.backend.catalog import core as catalog_core
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit import test_backend
 
 
 BROKEN_WRITE_FUNCTIONALITY_MSG = ("Templated backend doesn't correctly "
                                   "implement write operations")
 
 
-class TestTemplatedCatalog(unit.TestCase, test_backend.CatalogTests):
+class TestTemplatedCatalog(unit.TestCase, catalog_core.CatalogTests):
 
     DEFAULT_FIXTURE = {
         'RegionOne': {
@@ -160,7 +160,7 @@ class TestTemplatedCatalog(unit.TestCase, test_backend.CatalogTests):
         self.skipTest("Templated backend doesn't support filtering")
 
     # NOTE(dstanek): the following methods have been overridden
-    # from test_backend.CatalogTests
+    # from unit.backend.catalog.core.CatalogTests
 
     def test_region_crud(self):
         self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)

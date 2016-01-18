@@ -21,8 +21,8 @@ import six
 from keystone.common import utils
 from keystone import exception
 from keystone.tests import unit
+from keystone.tests.unit.backend.catalog import core as catalog_core
 from keystone.tests.unit.backend.token import core as token_core
-from keystone.tests.unit import test_backend
 
 
 CONF = cfg.CONF
@@ -104,7 +104,7 @@ class KvsToken(unit.TestCase, token_core.TokenTests):
         self.assertEqual(expected_user_token_list, user_token_list)
 
 
-class KvsCatalog(unit.TestCase, test_backend.CatalogTests):
+class KvsCatalog(unit.TestCase, catalog_core.CatalogTests):
     def setUp(self):
         super(KvsCatalog, self).setUp()
         self.load_backends()
@@ -120,7 +120,8 @@ class KvsCatalog(unit.TestCase, test_backend.CatalogTests):
             {'RegionFoo': {'service_bar': {'foo': 'bar'}}})
 
     def test_get_catalog_returns_not_found(self):
-        # FIXME(dolph): this test should be moved up to test_backend
+        # FIXME(dolph): this test should be moved up to
+        # unit.backend.catalog.core
         # FIXME(dolph): exceptions should be UserNotFound and ProjectNotFound
         self.assertRaises(exception.NotFound,
                           self.catalog_api.get_catalog,

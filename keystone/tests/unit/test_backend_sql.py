@@ -31,6 +31,7 @@ from keystone import exception
 from keystone.identity.backends import sql as identity_sql
 from keystone.tests import unit
 from keystone.tests.unit.backend.assignment import core as core_assignment
+from keystone.tests.unit.backend.catalog import core as catalog_core
 from keystone.tests.unit.backend.resource import core as resource_core
 from keystone.tests.unit.backend.token import core as token_core
 from keystone.tests.unit.backend.trust import core as trust_core
@@ -517,7 +518,7 @@ class SqlToken(SqlTests, token_core.TokenTests):
         self.assertEqual({'batch_size': 1000}, mysql_strategy.keywords)
 
 
-class SqlCatalog(SqlTests, test_backend.CatalogTests):
+class SqlCatalog(SqlTests, catalog_core.CatalogTests):
 
     _legacy_endpoint_id_in_endpoint = True
     _enabled_default_to_true_when_creating_endpoint = True
