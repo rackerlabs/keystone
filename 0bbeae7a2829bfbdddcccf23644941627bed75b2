@@ -490,6 +490,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_c248668a",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-18T18:50:44Z",
+      "side": 1,
+      "message": "Why is it creating three? If I delete that they the test still works fine.",
+      "parentUuid": "fa69d971_e4e50fa8",
+      "range": {
+        "startLine": 555,
+        "startChar": 8,
+        "endLine": 557,
+        "endChar": 57
+      },
+      "revId": "0bbeae7a2829bfbdddcccf23644941627bed75b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_844581b4",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 14
