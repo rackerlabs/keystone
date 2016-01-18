@@ -35,6 +35,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.resource import test_backends as resource_tests
 from keystone.tests.unit import test_backend
+from keystone.tests.unit.token import test_backends as token_tests
 from keystone.token.persistence.backends import sql as token_sql
 
 
@@ -420,7 +421,7 @@ class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
 
 
-class SqlToken(SqlTests, test_backend.TokenTests):
+class SqlToken(SqlTests, token_tests.TokenTests):
     def test_token_revocation_list_uses_right_columns(self):
         # This query used to be heavy with too many columns. We want
         # to make sure it is only running with the minimum columns
@@ -615,7 +616,7 @@ class SqlInheritance(SqlTests, assignment_tests.InheritanceTests):
     pass
 
 
-class SqlTokenCacheInvalidation(SqlTests, test_backend.TokenCacheInvalidation):
+class SqlTokenCacheInvalidation(SqlTests, token_tests.TokenCacheInvalidation):
     def setUp(self):
         super(SqlTokenCacheInvalidation, self).setUp()
         self._create_test_data()
