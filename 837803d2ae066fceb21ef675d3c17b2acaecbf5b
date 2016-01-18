@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_b8453cb4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "CRD",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 12
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_f8d734bd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "prior_role_id",
+      "range": {
+        "startLine": 1508,
+        "startChar": 34,
+        "endLine": 1508,
+        "endChar": 47
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_78cb441f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "use prior_role_id for consistency",
+      "range": {
+        "startLine": 1518,
+        "startChar": 33,
+        "endLine": 1518,
+        "endChar": 41
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_d8da70e9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1519,
+        "startChar": 40,
+        "endLine": 1519,
+        "endChar": 45
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_189ec807",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1577,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "prior_role_id",
+      "range": {
+        "startLine": 1577,
+        "startChar": 34,
+        "endLine": 1577,
+        "endChar": 47
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_589440e7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1580,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "use prior_role_id for consistency",
+      "range": {
+        "startLine": 1580,
+        "startChar": 33,
+        "endLine": 1580,
+        "endChar": 41
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c4884fc9",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "nit: } not aligned with opening bracket, remove extra space",
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_a4543b21",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:35:12Z",
+      "side": 1,
+      "message": "nit: why not assign a query variable to split the code into multiple lines? Seems more readable that way.",
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
