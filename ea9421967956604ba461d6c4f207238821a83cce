@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_5d63b641",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T14:35:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_542ad62d",
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_19cb3774",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-17T14:45:48Z",
       "side": 1,
       "message": "looks like `access_token_id` should be included in the method signature, and also need the desc about `access_token_id` in the docstring.",
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_9d2a8e8f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T14:35:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_19cb3774",
       "revId": "ea9421967956604ba461d6c4f207238821a83cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_1d3e9eda",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T14:35:31Z",
+      "side": 1,
+      "message": "Yeah, this can be addressed in a separate commit.",
+      "parentUuid": "da6ed579_54f736f5",
+      "range": {
+        "startLine": 250,
+        "startChar": 26,
+        "endLine": 250,
+        "endChar": 34
+      },
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f4950a88",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
@@ -70,6 +130,30 @@
       "writtenOn": "2016-01-17T14:45:48Z",
       "side": 1,
       "message": "...federated_info, access_token_id)",
+      "range": {
+        "startLine": 255,
+        "startChar": 34,
+        "endLine": 255,
+        "endChar": 48
+      },
+      "revId": "ea9421967956604ba461d6c4f207238821a83cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_5d3416fa",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-18T14:35:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_f4950a88",
       "range": {
         "startLine": 255,
         "startChar": 34,
