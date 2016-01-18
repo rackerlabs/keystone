@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_f31c3715",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-18T04:50:01Z",
+      "side": 1,
+      "message": "nice",
+      "range": {
+        "startLine": 136,
+        "startChar": 16,
+        "endLine": 136,
+        "endChar": 21
+      },
+      "revId": "38bb860c0704b3842b0039f669beb078e56ebb84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
