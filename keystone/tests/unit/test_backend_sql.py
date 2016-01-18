@@ -32,6 +32,7 @@ from keystone.identity.backends import sql as identity_sql
 from keystone.tests import unit
 from keystone.tests.unit.backend.assignment import core as core_assignment
 from keystone.tests.unit.backend.catalog import core as catalog_core
+from keystone.tests.unit.backend.policy import core as policy_core
 from keystone.tests.unit.backend.resource import core as resource_core
 from keystone.tests.unit.backend.token import core as token_core
 from keystone.tests.unit.backend.trust import core as trust_core
@@ -610,7 +611,7 @@ class SqlCatalog(SqlTests, catalog_core.CatalogTests):
                           region['id'])
 
 
-class SqlPolicy(SqlTests, test_backend.PolicyTests):
+class SqlPolicy(SqlTests, policy_core.PolicyTests):
     pass
 
 
