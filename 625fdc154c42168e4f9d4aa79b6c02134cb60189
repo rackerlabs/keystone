@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_6820784a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-18T20:35:23Z",
+      "side": 1,
+      "message": "This can depend-on Ia258be08c1b474e23c871826f8c4cd079fb56c04",
+      "revId": "625fdc154c42168e4f9d4aa79b6c02134cb60189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
