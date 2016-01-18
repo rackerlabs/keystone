@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_9c806748",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-18T07:24:14Z",
+      "side": 1,
+      "message": "why remove the U?",
+      "parentUuid": "da6ed579_b8453cb4",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 12
+      },
+      "revId": "837803d2ae066fceb21ef675d3c17b2acaecbf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_f8d734bd",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 22
