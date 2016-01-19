@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_2c87c2b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T15:44:52Z",
+      "side": 1,
+      "message": "But you are not just adding the specific fields that blueprint mentions. You are adding the entire entity, right? If that\u0027s the intention I think the name should be changed and the blueprint updated.",
+      "parentUuid": "ba63e191_0b018bae",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ff0395b6",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 29
