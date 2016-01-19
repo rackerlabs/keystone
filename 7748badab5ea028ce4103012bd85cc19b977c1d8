@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_b03a43cc",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T05:29:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_c90df88f",
+      "revId": "7748badab5ea028ce4103012bd85cc19b977c1d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_9770b941",
         "filename": "releasenotes/notes/deprecate-ldap-write-7915944a1767c8eb.yaml",
         "patchSetId": 1
