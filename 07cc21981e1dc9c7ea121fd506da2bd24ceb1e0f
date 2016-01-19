@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_14c78a13",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-19T01:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_343415dd",
+      "range": {
+        "startLine": 597,
+        "startChar": 33,
+        "endLine": 597,
+        "endChar": 37
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_f4251dae",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 24
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-18T22:14:24Z",
       "side": 1,
       "message": "nit: missing a period at the end of the doc string.",
+      "range": {
+        "startLine": 598,
+        "startChar": 30,
+        "endLine": 598,
+        "endChar": 35
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_34cc0e35",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-19T01:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_f4251dae",
       "range": {
         "startLine": 598,
         "startChar": 30,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_d4d012cc",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-19T01:40:18Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "ba63e191_74684dbb",
+      "range": {
+        "startLine": 600,
+        "startChar": 12,
+        "endLine": 600,
+        "endChar": 16
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_a3da1177",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 24
@@ -82,6 +154,30 @@
       "writtenOn": "2016-01-18T20:55:51Z",
       "side": 1,
       "message": "nit: if we arrive here, we know we have to filter by role_id",
+      "range": {
+        "startLine": 645,
+        "startChar": 8,
+        "endLine": 645,
+        "endChar": 70
+      },
+      "revId": "07cc21981e1dc9c7ea121fd506da2bd24ceb1e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_54e502a6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-19T01:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_a3da1177",
       "range": {
         "startLine": 645,
         "startChar": 8,
