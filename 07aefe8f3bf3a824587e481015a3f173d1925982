@@ -22,6 +22,30 @@
       "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_eb82db51",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T21:51:15Z",
+      "side": 0,
+      "message": "Ah, that\u0027s a good question. I may have meant that to be a separate commit.",
+      "parentUuid": "da6ed579_045883f9",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 134,
+        "endChar": 44
+      },
+      "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
