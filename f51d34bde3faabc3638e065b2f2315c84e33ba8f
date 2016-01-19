@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_56d2aa01",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T22:23:51Z",
+      "side": 1,
+      "message": "Steve its down here :)",
+      "range": {
+        "startLine": 536,
+        "startChar": 16,
+        "endLine": 536,
+        "endChar": 30
+      },
+      "revId": "f51d34bde3faabc3638e065b2f2315c84e33ba8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_cb01176c",
         "filename": "releasenotes/notes/list_role_assignment_names-33aedc1e521230b6.yaml",
         "patchSetId": 32
@@ -36,6 +59,30 @@
       "writtenOn": "2016-01-19T22:11:40Z",
       "side": 1,
       "message": "actually writing out the API would be good \"(GET /role_assignments?include_names\u003dTrue)\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 29,
+        "endLine": 5,
+        "endChar": 50
+      },
+      "revId": "f51d34bde3faabc3638e065b2f2315c84e33ba8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_76cd6e5c",
+        "filename": "releasenotes/notes/list_role_assignment_names-33aedc1e521230b6.yaml",
+        "patchSetId": 32
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T22:23:51Z",
+      "side": 1,
+      "message": "will do on a follow on patch",
+      "parentUuid": "ba63e191_cb01176c",
       "range": {
         "startLine": 5,
         "startChar": 29,
