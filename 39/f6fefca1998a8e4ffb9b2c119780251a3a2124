@@ -1,0 +1,10 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 19 Jan 2016 17:45:29 +0000
+Reviewed-on: https://review.openstack.org/265024
+Project: openstack/keystone
+Branch: refs/heads/master
