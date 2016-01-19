@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_de9021ef",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-19T09:33:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_10b9a579",
+      "range": {
+        "startLine": 162,
+        "startChar": 20,
+        "endLine": 162,
+        "endChar": 26
+      },
+      "revId": "e5960f14c49be092df68b8dfa255f39307c25945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_702fc1a1",
         "filename": "doc/source/developing.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-18T14:50:30Z",
       "side": 1,
       "message": "The contract piece should just remove whatever isn\u0027t needed anymore. Nova makes it so that the contraction migration doesn\u0027t actually run unless all the data is out of the old columns, right?",
+      "range": {
+        "startLine": 174,
+        "startChar": 69,
+        "endLine": 174,
+        "endChar": 77
+      },
+      "revId": "e5960f14c49be092df68b8dfa255f39307c25945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_1e8799b6",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-19T09:33:16Z",
+      "side": 1,
+      "message": "Yes, I think they, as a rule, fill the old columns with null values before they delete them. I\u0027ll add this here, it may be a good advice.",
+      "parentUuid": "da6ed579_702fc1a1",
       "range": {
         "startLine": 174,
         "startChar": 69,
