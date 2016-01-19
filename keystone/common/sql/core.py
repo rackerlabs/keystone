@@ -18,6 +18,7 @@ Before using this module, call initialize(). This has to be done before
 CONF() because it sets up configuration options.
 
 """
+import binascii
 import contextlib
 import functools
 
@@ -30,6 +31,7 @@ from oslo_log import log
 from oslo_serialization import jsonutils
 import six
 import sqlalchemy as sql
+from sqlalchemy.dialects import postgresql
 from sqlalchemy.ext import declarative
 from sqlalchemy.orm.attributes import flag_modified, InstrumentedAttribute
 from sqlalchemy import types as sql_types
@@ -116,6 +118,71 @@ class JsonBlob(sql_types.TypeDecorator):
 
     def process_result_value(self, value, dialect):
         return jsonutils.loads(value)
+
+
+class BinaryHex(sql_types.TypeDecorator):
+    """Type which converts hex strings to binary strings
+    Uses BYTEA in PostgreSQL and BINARY or RAW for other DB's which support
+    them. Otherwise uses CHAR(64), storing stringified hex values.
+
+    This class accepts and returns values in hex format, which is the same
+    format used across the keystone project.
+
+    """
+
+    impl = sql_types.CHAR
+
+    def load_dialect_impl(self, dialect):
+        if dialect.name == 'postgresql':
+            return dialect.type_descriptor(postgresql.BYTEA(32))
+        elif dialect.name in ('mysql', 'mssql', 'oracle', 'sybase'):
+            return dialect.type_descriptor(sql_types.BINARY(32))
+        else:
+            return dialect.type_descriptor(sql_types.CHAR(64))
+
+    def process_bind_param(self, value, dialect):
+        """Process value in string hex format."""
+        if value is None:
+            return None
+        elif dialect.name in (
+                'postgresql', 'mysql', 'mssql', 'oracle', 'sybase'):
+            return binascii.unhexlify(value)
+        else:  # ensure this is a hex string
+            return value
+
+    def process_result_value(self, value, dialect):
+        """Process result and return value in string hex format."""
+        if value is None:
+            return None
+        elif dialect.name in (
+                'postgresql', 'mysql', 'mssql', 'oracle', 'sybase'):
+            return binascii.hexlify(value)
+        else:
+            return value
+
+
+class CopyColumn(Column):
+    """A column which value defaults to another column's value.
+
+    This may be used for backwards compatibility when introducing new column
+    types and new column names.
+
+    """
+
+    def __init__(self, *args, **kwargs):
+        """Takes one extra argument - the column parameter name to copy.
+
+        :param copy: The name of the parameter to copy values from.
+
+        """
+        if 'copy' in kwargs:
+            copied_column_name = kwargs.pop('copy')
+
+            def copy_column(context):
+                return context.current_parameters[copied_column_name]
+            kwargs['default'] = kwargs['onupdate'] = copy_column
+
+        super(CopyColumn, self).__init__(*args, **kwargs)
 
 
 class DictBase(models.ModelBase):

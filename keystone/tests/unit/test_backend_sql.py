@@ -161,8 +161,11 @@ class SqlModels(SqlTests):
     def test_role_assignment_model(self):
         cols = (('type', sql.Enum, None),
                 ('actor_id', sql.String, 64),
+                ('actor_id_bin', sql.BinaryHex, None),
                 ('target_id', sql.String, 64),
+                ('target_id_bin', sql.BinaryHex, None),
                 ('role_id', sql.String, 64),
+                ('role_id_bin', sql.BinaryHex, None),
                 ('inherited', sql.Boolean, False))
         self.assertExpectedSchema('assignment', cols)
 
