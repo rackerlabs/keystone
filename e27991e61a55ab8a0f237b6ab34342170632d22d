@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_f5d0adcb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-19T05:15:38Z",
+      "side": 1,
+      "message": "I was thinking backend should hold the check logic, but currently there is no such check logic.",
+      "parentUuid": "ba63e191_15aa21d5",
+      "range": {
+        "startLine": 1507,
+        "startChar": 4,
+        "endLine": 1510,
+        "endChar": 60
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_95e4d13b",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 26
