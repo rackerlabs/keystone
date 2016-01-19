@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_0899751f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2016-01-19T21:46:04Z",
+      "side": 1,
+      "message": "Use six.moves for that.",
+      "revId": "88f2f5746758dccc3106642b86434663e412675a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_68b1118f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2016-01-19T21:46:04Z",
+      "side": 1,
+      "message": "O_O",
+      "revId": "88f2f5746758dccc3106642b86434663e412675a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
