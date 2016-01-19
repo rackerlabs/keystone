@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_42e8bd7c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-19T16:09:03Z",
+      "side": 1,
+      "message": "not leaf, since if you had 3 levels of implied role, even the middle level would need to be duplicated.",
+      "parentUuid": "ba63e191_9c25c7ac",
+      "range": {
+        "startLine": 603,
+        "startChar": 36,
+        "endLine": 603,
+        "endChar": 40
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_bc820b51",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
@@ -133,6 +157,24 @@
       "writtenOn": "2016-01-19T13:32:23Z",
       "side": 1,
       "message": "Not if CONF.token.infer_roles is set to False. What about:\n\n    role_id_filtered \u003d role_id if not CONF.token.infer_roles else None\n\nAnd then the last filtering at line 803 would check:\n\n    if not role_id_filtered:\n        ...\n\nOtherwise we need to remove the logic of role filtering from other methods above ....",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_a21739a2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-19T16:09:03Z",
+      "side": 1,
+      "message": "So the original code I wrote did indeed say that (see: https://review.openstack.org/#/c/264260/8/keystone/assignment/core.py)...in fact it went further....however, after discussion we agreed that given filtering by role_id was probably a low-frequency occurrence, then moving all the role filtering to the end probably made sense and would lead to more reliable code (i.e. less number of different paths).\n\nHowever, I agree 0 if we stick to this, we should remove the filtering by role from list_role_assignments_for_actor() since it is not needed - probably a suitable thing to come back in and refactor once this has merged if required.",
+      "parentUuid": "ba63e191_fc2f239f",
       "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
