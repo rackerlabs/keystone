@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_f915e348",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T17:11:54Z",
+      "side": 1,
+      "message": "Would it be useful to state that it will be removed in O ?",
+      "revId": "54475262a13d0e92b7e399c429c7ccb878ea9f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_6435cad8",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T17:11:54Z",
+      "side": 1,
+      "message": "Could also be done as a wrapper :-)",
+      "revId": "54475262a13d0e92b7e399c429c7ccb878ea9f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_24835258",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T17:11:54Z",
+      "side": 1,
+      "message": "I\u0027d prefer: \"this includes the following operations:\"\n\nNo need for such as since you\u0027re listing all ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 47,
+        "endLine": 10,
+        "endChar": 65
+      },
+      "revId": "54475262a13d0e92b7e399c429c7ccb878ea9f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
