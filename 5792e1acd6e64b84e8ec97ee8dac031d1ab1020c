@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_3147004d",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T22:38:11Z",
+      "side": 1,
+      "message": "nit: this can be pulled out into a consumer_properties variable and shared with the consumer_update dictionary.",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 6
+      },
+      "revId": "5792e1acd6e64b84e8ec97ee8dac031d1ab1020c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_f185e858",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2043,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T22:38:11Z",
+      "side": 1,
+      "message": "nit: _request_with_no_parameters(",
+      "range": {
+        "startLine": 2043,
+        "startChar": 39,
+        "endLine": 2043,
+        "endChar": 52
+      },
+      "revId": "5792e1acd6e64b84e8ec97ee8dac031d1ab1020c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_51971490",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2054,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T22:38:11Z",
+      "side": 1,
+      "message": "could also add integer/float types to this list.",
+      "range": {
+        "startLine": 2054,
+        "startChar": 30,
+        "endLine": 2054,
+        "endChar": 52
+      },
+      "revId": "5792e1acd6e64b84e8ec97ee8dac031d1ab1020c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
