@@ -3043,21 +3043,37 @@ class TestTrustChain(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(TestTrustChain, self).setUp()
-        # Create trust chain
-        self.user_chain = list()
+        """Create a trust chain using redelegation.
+
+        A trust chain is a series of trusts that are redelegated. For example,
+        self.user_list consists of userA, userB, and userC. The first trust in
+        the trust chain is going to be established between self.user and userA,
+        call it trustA. Then, userA is going to obtain a trust scoped token
+        using trustA, and with that token create a trust between userA and userB
+        called trustB. This pattern will continue with userB creating a trust
+        with userC.
+        So the trust chain should look something like:
+            trustA -> trustB -> trustC
+        Where:
+            self.user is trusting userA with trustA
+            userA is trusting userB with trustB
+            userB is trusting userC with trustC
+
+        """
+        self.user_list = list()
         self.trust_chain = list()
         for _ in range(3):
             user = unit.create_user(self.identity_api,
                                     domain_id=self.domain_id)
-            self.user_chain.append(user)
+            self.user_list.append(user)
 
-        # trustor->trustee
-        trustee = self.user_chain[0]
+        # trustor->trustee redelegation without impersonation
+        trustee = self.user_list[0]
         trust_ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=trustee['id'],
             project_id=self.project_id,
-            impersonation=True,
+            impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
         trust_ref.update(
@@ -3075,15 +3091,20 @@ class TestTrustChain(test_v3.RestfulTestCase):
         trust_token = self.get_requested_token(auth_data)
         self.trust_chain.append(trust)
 
-        for trustee in self.user_chain[1:]:
+        # Set trustor and redelegated_trust_id for next trust in the chain
+        next_trustor_id = trustee['id']
+        redelegated_trust_id = trust['id']
+
+        for trustee in self.user_list[1:]:
             trust_ref = unit.new_trust_ref(
-                trustor_user_id=self.user_id,
+                trustor_user_id=next_trustor_id,
                 trustee_user_id=trustee['id'],
                 project_id=self.project_id,
-                impersonation=True,
+                impersonation=False,
                 role_ids=[self.role_id])
             trust_ref.update(
-                allow_redelegation=True)
+                allow_redelegation=True,
+                redelegated_trust_id=redelegated_trust_id)
             r = self.post('/OS-TRUST/trusts',
                           body={'trust': trust_ref},
                           token=trust_token)
@@ -3094,8 +3115,10 @@ class TestTrustChain(test_v3.RestfulTestCase):
                 trust_id=trust['id'])
             trust_token = self.get_requested_token(auth_data)
             self.trust_chain.append(trust)
+            next_trustor_id = trustee['id']
+            redelegated_trust_id = trust['id']
 
-        trustee = self.user_chain[-1]
+        trustee = self.user_list[-1]
         trust = self.trust_chain[-1]
         auth_data = self.build_authentication_request(
             user_id=trustee['id'],
@@ -3113,7 +3136,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
         self.assertValidTokenResponse(r)
 
     def assert_trust_tokens_revoked(self, trust_id):
-        trustee = self.user_chain[0]
+        trustee = self.user_list[0]
         auth_data = self.build_authentication_request(
             user_id=trustee['id'],
             password=trustee['password']
@@ -3131,7 +3154,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
                         trust_id)
 
     def test_delete_trust_cascade(self):
-        self.assert_user_authenticate(self.user_chain[0])
+        self.assert_user_authenticate(self.user_list[0])
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': self.trust_chain[0]['id']})
 
@@ -3141,30 +3164,47 @@ class TestTrustChain(test_v3.RestfulTestCase):
         self.assert_trust_tokens_revoked(self.trust_chain[0]['id'])
 
     def test_delete_broken_chain(self):
-        self.assert_user_authenticate(self.user_chain[0])
-        self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
-            'trust_id': self.trust_chain[1]['id']})
-
+        self.assert_user_authenticate(self.user_list[0])
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': self.trust_chain[0]['id']})
 
+        auth_data = self.build_authentication_request(
+            user_id=self.user_list[0]['id'],
+            password=self.user_list[0]['password'])
+
+        auth_token = self.get_requested_token(auth_data)
+
+        self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
+            'trust_id': self.trust_chain[1]['id']},
+            token=auth_token,
+            expected_status=http_client.NOT_FOUND)
+
     def test_trustor_roles_revoked(self):
-        self.assert_user_authenticate(self.user_chain[0])
+        self.assert_user_authenticate(self.user_list[0])
 
         self.assignment_api.remove_role_from_user_and_project(
             self.user_id, self.project_id, self.role_id
         )
 
+        trustee = self.user_list[-1]
         auth_data = self.build_authentication_request(
-            token=self.last_token,
+            user_id=trustee['id'],
+            password=trustee['password'])
+
+        token = self.get_requested_token(auth_data)
+
+        auth_data = self.build_authentication_request(
+            token=token,
             trust_id=self.trust_chain[-1]['id'])
+
+        # Trustee has no delegated roles
         self.v3_create_token(auth_data,
-                             expected_status=http_client.NOT_FOUND)
+                             expected_status=http_client.FORBIDDEN)
 
     def test_intermediate_user_disabled(self):
-        self.assert_user_authenticate(self.user_chain[0])
+        self.assert_user_authenticate(self.user_list[0])
 
-        disabled = self.user_chain[0]
+        disabled = self.user_list[0]
         disabled['enabled'] = False
         self.identity_api.update_user(disabled['id'], disabled)
 
@@ -3175,9 +3215,9 @@ class TestTrustChain(test_v3.RestfulTestCase):
                       expected_status=http_client.FORBIDDEN)
 
     def test_intermediate_user_deleted(self):
-        self.assert_user_authenticate(self.user_chain[0])
+        self.assert_user_authenticate(self.user_list[0])
 
-        self.identity_api.delete_user(self.user_chain[0]['id'])
+        self.identity_api.delete_user(self.user_list[0]['id'])
 
         # Bypass policy enforcement
         with mock.patch.object(rules, 'enforce', return_value=True):
