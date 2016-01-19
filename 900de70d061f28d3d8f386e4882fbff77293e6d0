@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_77c4c53f",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T03:45:21Z",
+      "side": 1,
+      "message": "same comment as in the previous patch set",
+      "range": {
+        "startLine": 143,
+        "startChar": 3,
+        "endLine": 148,
+        "endChar": 50
+      },
+      "revId": "900de70d061f28d3d8f386e4882fbff77293e6d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
