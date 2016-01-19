@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_051cfe75",
+        "filename": "keystone/tests/unit/ksfixtures/appserver.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-01-19T21:26:47Z",
+      "side": 1,
+      "message": "can you please explain this syntax to me  **{opt_name: self.port}  I have to admit I have never seen this before",
+      "revId": "65303461dc179cecd1ef95e749f1eecd669dafbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
