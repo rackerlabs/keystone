@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_17d6a9c5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1261,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-19T03:50:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_973139ef",
+      "revId": "f4695a116cb13b569c255bbc32133e3f088544c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_7755a5c4",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 7
