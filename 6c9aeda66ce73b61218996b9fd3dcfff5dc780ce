@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_c7903f98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:59:12Z",
+      "side": 1,
+      "message": "I guess i don\u0027t know what you are trying to ask.  The only difference is what i am doing is formatting the entity inside list_role_assignments() -\u003e This is being done to make the code more readable in _format_entity(), otherwise i would need to add 11 new keys inside the returned role assignment. Something like this: https://review.openstack.org/#/c/249958/8/keystone/assignment/core.py .  This is what _format_entity() would look like: https://review.openstack.org/#/c/249958/8/keystone/assignment/controllers.py\n\nDo you think i should go back to adding the keys inside list_role_assignments()?   Thanks David.",
+      "parentUuid": "ba63e191_2c87c2b6",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ff0395b6",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 29
