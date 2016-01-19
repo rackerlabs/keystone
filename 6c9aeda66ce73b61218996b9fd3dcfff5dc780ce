@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_bef20d99",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T09:31:16Z",
+      "side": 1,
+      "message": "AFAICT, this will give you the exact same as the block above...",
+      "range": {
+        "startLine": 532,
+        "startChar": 12,
+        "endLine": 534,
+        "endChar": 64
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5e3af137",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T09:31:16Z",
+      "side": 1,
+      "message": "this looks like the same as on line 544",
+      "range": {
+        "startLine": 540,
+        "startChar": 16,
+        "endLine": 540,
+        "endChar": 78
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_3e413d0c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T09:31:16Z",
+      "side": 1,
+      "message": "this should be something like _format_entity, since they are not all roles",
+      "range": {
+        "startLine": 824,
+        "startChar": 12,
+        "endLine": 824,
+        "endChar": 29
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9e0aa9d1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T09:31:16Z",
+      "side": 1,
+      "message": "this should be like the others below:\n\n  new_entity[\u0027user_entity\u0027] \u003d _format_role_data(_user)",
+      "range": {
+        "startLine": 842,
+        "startChar": 20,
+        "endLine": 842,
+        "endChar": 61
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
