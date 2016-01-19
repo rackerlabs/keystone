@@ -25,6 +25,98 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_169c44bf",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "It\u0027s a bummer that we have to add this in here. We\u0027ve been trying not to propagate the bad patterns. Lance is correct that this isn\u0027t using the right column type.",
+      "parentUuid": "da6ed579_732fcba1",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_b6f45887",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "password_identity?",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_1613e4b9",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "Are we doing to start implementing IdP like password rules? This might open a large can of worms.",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9626f4cc",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "Does a federated user not need a domain_id?",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_b647781c",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "You don\u0027t need this.",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_eebf4efa",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -48,6 +140,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_968a74be",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "good question",
+      "parentUuid": "da6ed579_eebf4efa",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 55
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_ae9ab66c",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -59,6 +175,30 @@
       "writtenOn": "2016-01-18T16:12:18Z",
       "side": 1,
       "message": "why do you need to run this?",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5694fce0",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "another good question",
+      "parentUuid": "da6ed579_ae9ab66c",
       "range": {
         "startLine": 30,
         "startChar": 4,
@@ -117,6 +257,23 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_d6122c62",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "i don\u0027t think you need this",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_9fb4be35",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 24
@@ -134,6 +291,23 @@
         "endLine": 39,
         "endChar": 64
       },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_1906b7ce",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T17:00:10Z",
+      "side": 1,
+      "message": "What happens with all these properties for a federated user? Do they still get the correct value?",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
