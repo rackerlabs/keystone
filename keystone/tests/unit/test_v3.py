@@ -546,11 +546,32 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
         unscoped_properties = {
-            'audit_ids': {'type': ['array']},
-            'bind': {'type': ['object']},
+            'audit_ids': {
+                'type': 'array',
+                'items': {
+                    'type': 'string',
+                },
+                'minItems': 1,
+                'maxItems': 2,
+            },
+            'bind': {
+                'type': 'object',
+                'properties': {
+                    'kerberos': {
+                        'type': 'string',
+                    },
+                },
+                'required': ['kerberos', ],
+                'additionalProperties': False,
+            },
             'expires_at': {'type': ['string']},
             'issued_at': {'type': ['string']},
-            'methods': {'type': ['array']},
+            'methods': {
+                'type': 'array',
+                'items': {
+                    'type': 'string',
+                },
+            },
             'user': {
                 'type': ['object'],
                 'required': ['id', 'name', 'domain'],
@@ -563,9 +584,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                             'id': {'type': ['string']},
                             'name': {'type': ['string']}
                         },
-                        'required': ['id', 'name']
+                        'required': ['id', 'name'],
+                        'additonalProperties': False,
                     }
-                }
+                },
+                'additionalProperties': False,
             }
         }
         unscoped_token_schema = {
