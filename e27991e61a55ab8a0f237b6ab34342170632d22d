@@ -2,6 +2,126 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba63e191_8abb3972",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "Don\u0027t we need a check call for implied roles ?",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9c25c7ac",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "for each leaf implied role right ?",
+      "range": {
+        "startLine": 603,
+        "startChar": 36,
+        "endLine": 603,
+        "endChar": 40
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_bc820b51",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "henrynash: indirect helping again :) we made a great decision adding this",
+      "range": {
+        "startLine": 614,
+        "startChar": 47,
+        "endLine": 614,
+        "endChar": 55
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9c87070f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "I like this algorithm using cache, this way we avoid to check for implied roles of a given role multiple times",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_3ca4dba4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "(nit) double space",
+      "range": {
+        "startLine": 645,
+        "startChar": 31,
+        "endLine": 645,
+        "endChar": 33
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_fc2f239f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "Not if CONF.token.infer_roles is set to False. What about:\n\n    role_id_filtered \u003d role_id if not CONF.token.infer_roles else None\n\nAnd then the last filtering at line 803 would check:\n\n    if not role_id_filtered:\n        ...\n\nOtherwise we need to remove the logic of role filtering from other methods above ....",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_15aa21d5",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
@@ -49,6 +169,121 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_3f3b6dd3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "I agree with Steve here",
+      "parentUuid": "ba63e191_15aa21d5",
+      "range": {
+        "startLine": 1507,
+        "startChar": 4,
+        "endLine": 1510,
+        "endChar": 60
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_df79f194",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "(nit) ID",
+      "range": {
+        "startLine": 1519,
+        "startChar": 51,
+        "endLine": 1519,
+        "endChar": 53
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_bf375daf",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1572,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "It would be nice to add a more meaningful message, such as:\n\n    Instances of the v8 assignment drivers do not support implied roles mechanism. Please provide a driver which implements the v9 version of the assignment driver signature.",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9f5db9eb",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "Same here, what about a more meaningful message ?\n\n    LDAP does not support implied roles.",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_ffadd588",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "Do we really need to ? Also, isn\u0027t the bad role specified in the foreignkey constraint violation ?",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_7f0c8594",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "We may also use query.one() and treat the case of an exception, reraising ImpliedRoleNotFound",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_95e4d13b",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 26
@@ -60,6 +295,30 @@
       "writtenOn": "2016-01-19T04:55:53Z",
       "side": 1,
       "message": "is this needed? i thought it\u0027s mixed in with sql.DictBase now?",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 16
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5ff741d3",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba63e191_95e4d13b",
       "range": {
         "startLine": 135,
         "startChar": 0,
@@ -89,6 +348,46 @@
         "endLine": 306,
         "endChar": 70
       },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_aa607d36",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 6433,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "This, and others in this file, doesnt\u0027 need to be a list when containing a single element. See L308",
+      "range": {
+        "startLine": 6433,
+        "startChar": 59,
+        "endLine": 6433,
+        "endChar": 62
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_aabcfd6c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 6579,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T13:32:23Z",
+      "side": 1,
+      "message": "Please add a test for cyclic reference when creating implied roles",
       "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
