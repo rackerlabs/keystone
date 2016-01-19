@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_290a7bd3",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-19T00:52:54Z",
+      "side": 0,
+      "message": "Lets delete the role LDAP backend as well. The original email that was sent announcing the deprecate explicitly called out role as well as assignment/resource/etc.\n\nThe \"holding on\" for the 2 cycle deprecation for LDAP role seems quite pointless.",
+      "parentUuid": "ba63e191_2e1da173",
+      "revId": "1baa32afd0b43887125e35cfba4597556fc187df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_4eaa551b",
         "filename": "setup.cfg",
         "patchSetId": 15
