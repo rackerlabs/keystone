@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_0b018bae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:26:23Z",
+      "side": 1,
+      "message": "This is what the blue print states; https://github.com/openstack/keystone-specs/blob/master/specs/mitaka/list-assignment-names.rst#proposed-change",
+      "parentUuid": "ba63e191_9faa99d3",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ff0395b6",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-19T13:13:36Z",
       "side": 1,
       "message": "Should this actually be \"in entity.get(\"indirect\", {})\" ?",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_2097c991",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:26:23Z",
+      "side": 1,
+      "message": "isn\u0027t indirect covered at L528? Sorry if this is confusing. I am trying to make it more clear but this method is not giving me much room to play.",
+      "parentUuid": "ba63e191_ff0395b6",
       "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_91828551",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:26:23Z",
+      "side": 1,
+      "message": "yes hopefully it will :-) in the block on line 532 the entity contains \u0027project_id\u0027 where here it contains the entire formatted entity.  since the response contains about 10 more attributes the entity needs to be formatted before it gets to this method. Otherwise this method will be more confusing than it already is.",
+      "parentUuid": "ba63e191_bef20d99",
+      "range": {
+        "startLine": 532,
+        "startChar": 12,
+        "endLine": 534,
+        "endChar": 64
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_5e3af137",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 29
@@ -70,6 +130,30 @@
       "writtenOn": "2016-01-19T09:31:16Z",
       "side": 1,
       "message": "this looks like the same as on line 544",
+      "range": {
+        "startLine": 540,
+        "startChar": 16,
+        "endLine": 540,
+        "endChar": 78
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_b18d4933",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:26:23Z",
+      "side": 1,
+      "message": "The above answer is pretty much the same here.  Is it wrong to be formatting the entity before hand so it does not clutter this method?",
+      "parentUuid": "ba63e191_5e3af137",
       "range": {
         "startLine": 540,
         "startChar": 16,
@@ -145,6 +229,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_f1c1812f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:26:23Z",
+      "side": 1,
+      "message": "good call! i missed that one :-)",
+      "parentUuid": "ba63e191_9e0aa9d1",
+      "range": {
+        "startLine": 842,
+        "startChar": 20,
+        "endLine": 842,
+        "endChar": 61
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_9f037973",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 29
@@ -156,6 +264,24 @@
       "writtenOn": "2016-01-19T13:13:36Z",
       "side": 1,
       "message": "I doubt this is able to actually cover all of the \"if\" statements in the code. Have you check to see what coverage says?",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_2014a942",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 4105,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T15:26:23Z",
+      "side": 1,
+      "message": "last time i checked it was 2 commits ago,  i will check now and get back to you! Thanks.",
+      "parentUuid": "ba63e191_9f037973",
       "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
