@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba63e191_9faa99d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T13:13:36Z",
+      "side": 1,
+      "message": "Why include_names? You are including so much more.",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_ff0395b6",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T13:13:36Z",
+      "side": 1,
+      "message": "Should this actually be \"in entity.get(\"indirect\", {})\" ?",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_bef20d99",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 29
@@ -48,6 +82,23 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_df949138",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T13:13:36Z",
+      "side": 1,
+      "message": "misnamed. you are not getting names, but rather full entities",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_3e413d0c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 29
@@ -88,6 +139,23 @@
         "endLine": 842,
         "endChar": 61
       },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9f037973",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 4105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T13:13:36Z",
+      "side": 1,
+      "message": "I doubt this is able to actually cover all of the \"if\" statements in the code. Have you check to see what coverage says?",
       "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
