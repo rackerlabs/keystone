@@ -372,6 +372,16 @@ class V3TokenDataHelper(object):
                                              token_project_id)
             filtered_roles = []
             if CONF.trust.enabled and trust:
+                trust_chain = self.trust_api.get_trust_pedigree(trust['id'])
+                t_roles = self.assignment_api.get_roles_for_user_and_project(
+                    trust_chain[-1]['trustor_user_id'],
+                    trust_chain[-1]['project_id'])
+              
+                roles_id = [x['id'] for x in roles]
+                for r in t_roles:
+                    if not r in roles_id:
+                        roles.append(self.role_api.get_role(r))
+
                 for trust_role in trust['roles']:
                     match_roles = [x for x in roles
                                    if x['id'] == trust_role['id']]

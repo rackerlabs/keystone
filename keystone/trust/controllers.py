@@ -173,9 +173,14 @@ class TrustV3(controller.V3Controller):
                 _('At least one role should be specified.'))
 
     def _get_user_role(self, trust):
+        original_trust = trust.copy()
+        while original_trust.get('redelegated_trust_id'):
+            original_trust = self.trust_api.get_trust(
+                    original_trust['redelegated_trust_id'])
+            
         if not self._attribute_is_empty(trust, 'project_id'):
             return self.assignment_api.get_roles_for_user_and_project(
-                trust['trustor_user_id'], trust['project_id'])
+                original_trust['trustor_user_id'], original_trust['project_id'])
         else:
             return []
 

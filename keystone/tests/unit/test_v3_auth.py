@@ -3057,7 +3057,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
             trustor_user_id=self.user_id,
             trustee_user_id=trustee['id'],
             project_id=self.project_id,
-            impersonation=True,
+            impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
         trust_ref.update(
@@ -3074,16 +3074,19 @@ class TestTrustChain(test_v3.RestfulTestCase):
             trust_id=trust['id'])
         trust_token = self.get_requested_token(auth_data)
         self.trust_chain.append(trust)
+        trustor_id = trustee['id']
+        redelegated_trust_id = trust['id']
 
         for trustee in self.user_chain[1:]:
             trust_ref = unit.new_trust_ref(
-                trustor_user_id=self.user_id,
+                trustor_user_id=trustor_id,
                 trustee_user_id=trustee['id'],
                 project_id=self.project_id,
-                impersonation=True,
+                impersonation=False,
                 role_ids=[self.role_id])
             trust_ref.update(
-                allow_redelegation=True)
+                allow_redelegation=True,
+                redelegated_trust_id=redelegated_trust_id)
             r = self.post('/OS-TRUST/trusts',
                           body={'trust': trust_ref},
                           token=trust_token)
@@ -3094,6 +3097,8 @@ class TestTrustChain(test_v3.RestfulTestCase):
                 trust_id=trust['id'])
             trust_token = self.get_requested_token(auth_data)
             self.trust_chain.append(trust)
+            trustor_id = trustee['id']
+            redelegated_trust_id = trust['id']
 
         trustee = self.user_chain[-1]
         trust = self.trust_chain[-1]
