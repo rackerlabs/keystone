@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_a5e8927d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3047,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "We should improve the naming of this variable. I don\u0027t think we are creating a chain of users, we just have a list of users.\n\n    self.user_list \u003d list()",
+      "range": {
+        "startLine": 3047,
+        "startChar": 13,
+        "endLine": 3047,
+        "endChar": 23
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_65b13a8f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3048,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "This is a chain of trusts because self.trust_chain[1] is created from token from self.trust_chain[0]\u0027s trust.",
+      "range": {
+        "startLine": 3048,
+        "startChar": 13,
+        "endLine": 3048,
+        "endChar": 24
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_08edf524",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3054,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "We should update this comment to be a little more descriptive. This reference is creating a trust between self.user (who is an admin, right?) and the first user in the list of users that we created.\n\nWe are also *not* allowing impersonation, which would make tokens generated from this trust seem like they came from self.user.",
+      "range": {
+        "startLine": 3054,
+        "startChar": 10,
+        "endLine": 3054,
+        "endChar": 26
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_280479be",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3078,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "So, now we are going to create a trust with the token from the first trust in the chain.",
+      "range": {
+        "startLine": 3077,
+        "startChar": 8,
+        "endLine": 3078,
+        "endChar": 42
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_e888a124",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "This is a list of trusts references if trust[\u0027id\u0027] is the id of a trust that has been redelegated, right?",
+      "range": {
+        "startLine": 375,
+        "startChar": 16,
+        "endLine": 375,
+        "endChar": 27
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_e88f4121",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "Is the last trust in the `trust_chain` always `trust`?",
+      "range": {
+        "startLine": 377,
+        "startChar": 20,
+        "endLine": 377,
+        "endChar": 35
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_48452db1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-19T21:41:34Z",
+      "side": 1,
+      "message": "So, this makes it so that if the trust has a role that the user doesn\u0027t already have, it add it?",
+      "range": {
+        "startLine": 380,
+        "startChar": 16,
+        "endLine": 383,
+        "endChar": 63
+      },
+      "revId": "996f2c944716b40f64e14f18de340286b8d20904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
