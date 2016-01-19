@@ -146,6 +146,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_6a4a73c7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T17:54:37Z",
+      "side": 1,
+      "message": "++ yeah making this a set would help",
+      "parentUuid": "ba63e191_1f90d742",
+      "range": {
+        "startLine": 638,
+        "startChar": 20,
+        "endLine": 638,
+        "endChar": 58
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_5f4c0f70",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
@@ -180,6 +204,30 @@
       "writtenOn": "2016-01-19T17:42:30Z",
       "side": 1,
       "message": "ref_results could contain duplicates right? Say we have two prior roles A and B and they both imply the same role: A -\u003e C and B -\u003e C.",
+      "range": {
+        "startLine": 642,
+        "startChar": 15,
+        "endLine": 642,
+        "endChar": 26
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_cafeff37",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-19T17:54:37Z",
+      "side": 1,
+      "message": "Yes, it may return duplicates. The caller must be careful about it. For example, see get_roles_for_user_and_project which remove any duplicates.",
+      "parentUuid": "ba63e191_9f8a87be",
       "range": {
         "startLine": 642,
         "startChar": 15,
