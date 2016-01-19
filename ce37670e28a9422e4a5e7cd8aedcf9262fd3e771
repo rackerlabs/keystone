@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_dc747b9d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T23:02:51Z",
+      "side": 1,
+      "message": "At first i thought this what here because it was the type of the variable rather than part of the description so i was going to toss up this doc. http://www.sphinx-doc.org/en/stable/domains.html#info-field-lists\n\nWhy do I even question you Brant?",
+      "range": {
+        "startLine": 272,
+        "startChar": 26,
+        "endLine": 272,
+        "endChar": 30
+      },
+      "revId": "ce37670e28a9422e4a5e7cd8aedcf9262fd3e771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
