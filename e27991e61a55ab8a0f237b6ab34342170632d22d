@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_15aa21d5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T04:55:53Z",
+      "side": 1,
+      "message": "does this not raise a RoleNotFound exception when it doesn\u0027t exist? \n\n  :raises: keystone.exception.RoleNotFound: If the role doesn\u0027t exist.",
+      "range": {
+        "startLine": 1507,
+        "startChar": 4,
+        "endLine": 1510,
+        "endChar": 60
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_95e4d13b",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T04:55:53Z",
+      "side": 1,
+      "message": "is this needed? i thought it\u0027s mixed in with sql.DictBase now?",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 16
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_55873961",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T04:55:53Z",
+      "side": 1,
+      "message": "bump this over by 4 spaces",
+      "range": {
+        "startLine": 306,
+        "startChar": 20,
+        "endLine": 306,
+        "endChar": 70
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
