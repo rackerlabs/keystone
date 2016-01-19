@@ -81,7 +81,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
-class Catalog(catalog.CatalogDriverV8):
+class Catalog(catalog.CatalogDriverV9):
     # Regions
     def list_regions(self, hints):
         session = sql.get_session()
