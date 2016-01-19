@@ -21,6 +21,7 @@ import itertools
 from oslo_cache import core as oslo_cache
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 import six
 
 from keystone.common import cache
@@ -136,6 +137,13 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.catalog.driver)
+        # Make sure it is a driver version we support, and if it is a legacy
+        # driver, then wrap it.
+        if isinstance(self.driver, CatalogDriverV8):
+            self.driver = V9CatalogWrapperForV8Driver(self.driver)
+        elif not isinstance(self.driver, CatalogDriverV9):
+            raise exception.UnsupportedDriverVersion(
+                driver=CONF.catalog.driver)
 
     def create_region(self, region_ref, initiator=None):
         # Check duplicate ID
@@ -382,9 +390,17 @@ class Manager(manager.Manager):
 
         return filtered_endpoints
 
+# The CatalogDriverBase class is the set of driver methods from earlier
+# drivers that we still support, that have not been removed or modified. This
+# class is then used to created the augmented V8 and V9 version abstract driver
+# classes, without having to duplicate a lot of abstract method signatures.
+# If you remove a method from V9, then move the abstact methods from this Base
+# class to the V8 class. Do not modify any of the method signatures in the Base
+# class - changes should only be made in the V8 and subsequent classes.
+
 
 @six.add_metaclass(abc.ABCMeta)
-class CatalogDriverV8(object):
+class CatalogDriverBase(object):
     """Interface description for the Catalog driver."""
 
     def _get_list_limit(self):
@@ -889,5 +905,174 @@ class CatalogDriverV8(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+
+class CatalogDriverV8(CatalogDriverBase):
+    """Removed or redefined methods from V8.
+
+    Move the abstract methods of any methods removed or modified in later
+    versions of the driver from CatalogDriverBase to here. We maintain this
+    so that legacy drivers, which will be a subclass of CatalogDriverV8, can
+    still reference them.
+
+    """
+
+    pass
+
+
+class CatalogDriverV9(CatalogDriverBase):
+    """New or redefined methods from V8.
+
+    Add any new V9 abstract methods (or those with modified signatures) to
+    this class.
+
+    """
+
+    pass
+
+
+class V9CatalogWrapperForV8Driver(CatalogDriverV9):
+    """Wrapper class to supported a V8 legacy driver.
+
+    In order to support legacy drivers without having to make the manager code
+    driver-version aware, we wrap legacy drivers so that they look like the
+    latest version. For the various changes made in a new driver, here are the
+    actions needed in this wrapper:
+
+    Method removed from new driver - remove the call-through method from this
+                                     class, since the manager will no longer be
+                                     calling it.
+    Method signature (or meaning) changed - wrap the old method in a new
+                                            signature here, and munge the input
+                                            and output parameters accordingly.
+    New method added to new driver - add a method to implement the new
+                                     functionality here if possible. If that is
+                                     not possible, then return NotImplemented,
+                                     since we do not guarantee to support new
+                                     functionality with legacy drivers.
+
+    """
+
+    @versionutils.deprecated(
+        as_of=versionutils.deprecated.MITAKA,
+        what='keystone.catalog.CatalogDriverV8',
+        in_favor_of='keystone.catalog.CatalogDriverV9',
+        remove_in=+2)
+    def __init__(self, wrapped_driver):
+        self.driver = wrapped_driver
+
+    def create_region(self, region_ref):
+        return self.driver.create_region(region_ref)
+
+    def list_regions(self, hints):
+        return self.driver.list_regions(hints)
+
+    def get_region(self, region_id):
+        return self.driver.get_region(region_id)
+
+    def update_region(self, region_id, region_ref):
+        return self.driver.update_region(region_id, region_ref)
+
+    def delete_region(self, region_id):
+        self.driver.delete_region(region_id)
+
+    def create_service(self, service_id, service_ref):
+        return self.driver.create_service(service_id, service_ref)
+
+    def list_services(self, hints):
+        return self.driver.list_services(hints)
+
+    def get_service(self, service_id):
+        return self.driver.get_service(service_id)
+
+    def update_service(self, service_id, service_ref):
+        return self.driver.update_service(service_id, service_ref)
+
+    def delete_service(self, service_id):
+        self.driver.delete_service(service_id)
+
+    def create_endpoint(self, endpoint_id, endpoint_ref):
+        return self.driver.create_endpoint(endpoint_id, endpoint_ref)
+
+    def get_endpoint(self, endpoint_id):
+        return self.driver.get_endpoint(endpoint_id)
+
+    def list_endpoints(self, hints):
+        return self.driver.list_endpoints(hints)
+
+    def update_endpoint(self, endpoint_id, endpoint_ref):
+        return self.driver.update_endpoint(endpoint_id, endpoint_ref)
+
+    def delete_endpoint(self, endpoint_id):
+        self.driver.delete_endpoint(endpoint_id)
+
+    def get_catalog(self, user_id, tenant_id):
+        return self.driver.get_catalog(user_id, tenant_id)
+
+    def get_v3_catalog(self, user_id, tenant_id):
+        return self.driver.get_v3_catalog(user_id, tenant_id)
+
+    def add_endpoint_to_project(self, endpoint_id, project_id):
+        self.driver.add_endpoint_to_project(endpoint_id, project_id)
+
+    def remove_endpoint_from_project(self, endpoint_id, project_id):
+        self.driver.remove_endpoint_from_project(endpoint_id,
+                                                 project_id)
+
+    def check_endpoint_in_project(self, endpoint_id, project_id):
+        self.driver.check_endpoint_in_project(endpoint_id, project_id)
+
+    def list_endpoints_for_project(self, project_id):
+        return self.driver.list_endpoints_for_project(project_id)
+
+    def list_projects_for_endpoint(self, endpoint_id):
+        return self.driver.list_projects_for_endpoint(endpoint_id)
+
+    def delete_association_by_endpoint(self, endpoint_id):
+        self.driver.delete_association_by_endpoint(endpoint_id)
+
+    def delete_association_by_project(self, project_id):
+        self.driver.delete_association_by_project(project_id)
+
+    def create_endpoint_group(self, endpoint_group):
+        return self.driver.create_endpoint_group(endpoint_group)
+
+    def get_endpoint_group(self, endpoint_group_id):
+        return self.driver.get_endpoint_group(endpoint_group_id)
+
+    def update_endpoint_group(self, endpoint_group_id, endpoint_group):
+        return self.driver.update_endpoint_group(endpoint_group_id,
+                                                 endpoint_group)
+
+    def delete_endpoint_group(self, endpoint_group_id):
+        self.driver.delete_endpoint_group(endpoint_group_id)
+
+    def add_endpoint_group_to_project(self, endpoint_group_id, project_id):
+        self.driver.add_endpoint_group_to_project(endpoint_group_id,
+                                                  project_id)
+
+    def get_endpoint_group_in_project(self, endpoint_group_id, project_id):
+        return self.driver.get_endpoint_group_in_project(endpoint_group_id,
+                                                         project_id)
+
+    def list_endpoint_groups(self):
+        return self.driver.list_endpoint_groups()
+
+    def list_endpoint_groups_for_project(self, project_id):
+        return self.driver.list_endpoint_groups_for_project(project_id)
+
+    def list_projects_associated_with_endpoint_group(self, endpoint_group_id):
+        return self.driver.list_projects_associated_with_endpoint_group(
+            endpoint_group_id)
+
+    def remove_endpoint_group_from_project(self, endpoint_group_id,
+                                           project_id):
+        self.driver.remove_endpoint_group_from_project(
+            endpoint_group_id,
+            project_id)
+
+    def delete_endpoint_group_association_by_project(self, project_id):
+        self.driver.delete_endpoint_group_association_by_project(
+            project_id)
 
 Driver = manager.create_legacy_driver(CatalogDriverV8)
