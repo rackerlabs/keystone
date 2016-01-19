@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_475a0f85",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T15:55:48Z",
+      "side": 1,
+      "message": "Samuel - See https://review.openstack.org/#/c/269725/",
+      "parentUuid": "da6ed579_50b40bf1",
+      "revId": "7d1c7ff305e8f4ce3fdc5ce2478d2bef4ddc1edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_30ccf788",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 2
