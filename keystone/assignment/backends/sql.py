@@ -389,14 +389,23 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
                  AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN,
                  name='type'),
         nullable=False)
-    actor_id = sql.Column(sql.String(64), nullable=False)
-    target_id = sql.Column(sql.String(64), nullable=False)
-    role_id = sql.Column(sql.String(64), nullable=False)
+    if CONF.sql.backward_compatible:
+        # TODO(xek): remove in Newton cycle
+        actor_id = sql.Column(sql.String(64), nullable=False)
+        target_id = sql.Column(sql.String(64), nullable=False)
+        role_id = sql.Column(sql.String(64), nullable=False)
+        actor_id_bin = sql.CopyColumn(sql.BinaryHex(), copy='actor_id')
+        target_id_bin = sql.CopyColumn(sql.BinaryHex(), copy='target_id')
+        role_id_bin = sql.CopyColumn(sql.BinaryHex(), copy='role_id')
+    else:
+        actor_id = sql.Column('actor_id_bin', sql.UUID(), nullable=False)
+        target_id = sql.Column('target_id_bin', sql.UUID(), nullable=False)
+        role_id = sql.Column('role_id_bin', sql.UUID(), nullable=False)
     inherited = sql.Column(sql.Boolean, default=False, nullable=False)
     __table_args__ = (
-        sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id', 'role_id',
-                                 'inherited'),
-        sql.Index('ix_actor_id', 'actor_id'),
+        sql.PrimaryKeyConstraint(
+            type, actor_id, target_id, role_id, inherited),
+        sql.Index('ix_actor_id', actor_id),
     )
 
     def to_dict(self):

@@ -525,6 +525,14 @@ FILE_OPTIONS = {
                    help='Entrypoint for the endpoint policy backend driver in '
                         'the keystone.endpoint_policy namespace.'),
     ],
+    'sql': [
+        cfg.BoolOpt('backward_compatible',
+                    default=True,
+                    help='Flag used in rolling upgrades of SQL databases. You '
+                         'can set this flag to False only after running the '
+                         'contraction scripts. Check the release notes if '
+                         'there are any incompatible changes.'),
+    ],
     'ldap': [
         cfg.StrOpt('url', default='ldap://localhost',
                    help='URL for connecting to the LDAP server.'),
