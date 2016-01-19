@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_aa8f1d22",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-19T13:27:05Z",
+      "side": 1,
+      "message": "I verified the returned message and I agree that we don\u0027t need repeat the message here. https://github.com/openstack/oslo.log/blob/master/oslo_log/versionutils.py#L135\n\nI\u0027ll fix it in the next patch.",
+      "parentUuid": "ba63e191_7f9fa503",
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_f6059479",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
