@@ -16,6 +16,24 @@
       "revId": "65303461dc179cecd1ef95e749f1eecd669dafbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_0b516f0e",
+        "filename": "keystone/tests/unit/ksfixtures/appserver.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T21:50:19Z",
+      "side": 1,
+      "message": "It just takes advantage of the **kwargs syntax, but the dictionary is created using a dict literal instead of a variable.",
+      "parentUuid": "ba63e191_051cfe75",
+      "revId": "65303461dc179cecd1ef95e749f1eecd669dafbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
