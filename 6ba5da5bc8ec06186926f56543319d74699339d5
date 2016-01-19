@@ -16,6 +16,24 @@
       "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_e269b18c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-19T16:03:41Z",
+      "side": 1,
+      "message": "Resource is still dependant on assignment. Assignment is not dependant on identity anymore because LDAP is gone.",
+      "parentUuid": "ba63e191_0a6ae980",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
