@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_9f3b67d1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T17:26:58Z",
+      "side": 1,
+      "message": "this is the first time using the \"deprecated_reason\" option in oslo,config, i wanted to be a bit conservative since warnings will also be give in the functions.",
+      "parentUuid": "ba63e191_f915e348",
+      "revId": "54475262a13d0e92b7e399c429c7ccb878ea9f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_6435cad8",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-19T17:11:54Z",
       "side": 1,
       "message": "Could also be done as a wrapper :-)",
+      "revId": "54475262a13d0e92b7e399c429c7ccb878ea9f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_df09df2d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T17:26:58Z",
+      "side": 1,
+      "message": "wrappers were harder to validate with mock, so i went with this",
+      "parentUuid": "ba63e191_6435cad8",
       "revId": "54475262a13d0e92b7e399c429c7ccb878ea9f0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
