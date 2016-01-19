@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_fc76433d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-19T13:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_5993e15b",
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_19748933",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_dc949f38",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-19T13:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_19748933",
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_3cb05b43",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-19T12:52:09Z",
       "side": 1,
       "message": "Do we need to say that it\u0027s not being removed?",
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_dfa011f7",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-19T13:06:23Z",
+      "side": 1,
+      "message": "I think we need to say that since it will have a different behavior.",
+      "parentUuid": "ba63e191_3cb05b43",
       "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -111,6 +165,24 @@
       "writtenOn": "2016-01-19T12:52:09Z",
       "side": 1,
       "message": "remove \u0027as well\u0027",
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_7f7c8572",
+        "filename": "releasenotes/notes/deprecate-v2-apis-894284c17be881d2.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-19T13:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_bcd0cb54",
       "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
