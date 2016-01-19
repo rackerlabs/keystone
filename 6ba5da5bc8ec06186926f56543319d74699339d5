@@ -34,6 +34,24 @@
       "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_903b5cd1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T16:12:41Z",
+      "side": 1,
+      "message": "We just talked about doing this in a follow up patch. I\u0027m happy with that.",
+      "parentUuid": "ba63e191_e269b18c",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
