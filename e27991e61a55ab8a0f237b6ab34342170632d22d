@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_cad5b143",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T13:26:55Z",
+      "side": 0,
+      "message": "Is this OK to remove now? And if so can we remove the default_assignment_driver methods?",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
