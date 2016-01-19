@@ -20,6 +20,7 @@ CONF() because it sets up configuration options.
 """
 import contextlib
 import functools
+import uuid
 
 from oslo_config import cfg
 from oslo_db import exception as db_exception
@@ -30,6 +31,7 @@ from oslo_log import log
 from oslo_serialization import jsonutils
 import six
 import sqlalchemy as sql
+from sqlalchemy.dialects import postgresql
 from sqlalchemy.ext import declarative
 from sqlalchemy.orm.attributes import flag_modified, InstrumentedAttribute
 from sqlalchemy import types as sql_types
@@ -116,6 +118,72 @@ class JsonBlob(sql_types.TypeDecorator):
 
     def process_result_value(self, value, dialect):
         return jsonutils.loads(value)
+
+
+class UUID(sql_types.TypeDecorator):
+    """Platform-independent UUID type.
+
+    Uses Postgresql's UUID type and BINARY or RAW for other DB's which support
+    them. Otherwise uses CHAR(32), storing UUID as stringified hex values.
+
+    This class accepts and returns values in hex format, which is the same
+    format used across the keystone project.
+
+    """
+
+    impl = sql_types.CHAR
+
+    def load_dialect_impl(self, dialect):
+        if dialect.name == 'postgresql':
+            return dialect.type_descriptor(postgresql.UUID())
+        elif dialect.name in ('mysql', 'mssql', 'oracle', 'sybase'):
+            return dialect.type_descriptor(sql_types.BINARY(16))
+        else:
+            return dialect.type_descriptor(sql_types.CHAR(32))
+
+    def process_bind_param(self, value, dialect):
+        """Process value in string hex format."""
+        if value is None:
+            return None
+        elif dialect.name == 'postgresql':
+            return str(uuid.UUID(value))
+        elif dialect.name in ('mysql', 'mssql', 'oracle', 'sybase'):
+            return uuid.UUID(value).bytes
+        else:  # ensure this is a hex string
+            return uuid.UUID(value).hex
+
+    def process_result_value(self, value, dialect):
+        """Process result and return value in string hex format."""
+        if value is None:
+            return None
+        elif dialect.name in ('mysql', 'mssql', 'oracle', 'sybase'):
+            return uuid.UUID(bytes=value).hex
+        else:
+            return uuid.UUID(value).hex
+
+
+class CopyColumn(Column):
+    """A column which value defaults to another column's value.
+
+    This may be used for backwards compatibility when introducing new column
+    types and new column names.
+
+    """
+
+    def __init__(self, *args, **kwargs):
+        """Takes one extra argument - the column to copy.
+
+        :param copy: The :class:`.Column` instance to copy values from.
+
+        """
+        copied_column_name = kwargs.pop('copy').name
+
+        def copy_column(context):
+            return context.current_parameters[copied_column_name]
+
+        kwargs['default'] = kwargs['onupdate'] = copy_column
+
+        super(CopyColumn, self).__init__(*args, **kwargs)
 
 
 class DictBase(models.ModelBase):
