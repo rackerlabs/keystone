@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_7f9fa503",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T13:15:14Z",
+      "side": 1,
+      "message": "versionutils uses a different message for this case so if you think that\u0027s not sufficient we should fix it there.",
+      "parentUuid": "ba63e191_dfa011f7",
+      "revId": "25e4a56cc8700a8040c00159726102fa97fed296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_f6059479",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
