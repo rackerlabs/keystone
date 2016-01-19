@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_b6221800",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T16:48:16Z",
+      "side": 1,
+      "message": "this is removed in the follow up when the ldap backend for role is removed",
+      "parentUuid": "ba63e191_b35a2a4f",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_96b03445",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 18
@@ -168,6 +186,24 @@
       "writtenOn": "2016-01-19T16:44:29Z",
       "side": 1,
       "message": "The note should also say that the default config value has changed for the assignment driver.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_3664e847",
+        "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T16:48:16Z",
+      "side": 1,
+      "message": "good call",
+      "parentUuid": "ba63e191_36a5c8b4",
       "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
