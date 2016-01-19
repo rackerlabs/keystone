@@ -39,6 +39,30 @@
       "revId": "f4695a116cb13b569c255bbc32133e3f088544c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_571741a3",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-19T03:49:10Z",
+      "side": 1,
+      "message": "..because this is in the v2 auth controller....",
+      "parentUuid": "ba63e191_7755a5c4",
+      "range": {
+        "startLine": 372,
+        "startChar": 25,
+        "endLine": 372,
+        "endChar": 31
+      },
+      "revId": "f4695a116cb13b569c255bbc32133e3f088544c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
