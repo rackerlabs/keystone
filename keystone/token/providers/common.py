@@ -372,6 +372,20 @@ class V3TokenDataHelper(object):
                                              token_project_id)
             filtered_roles = []
             if CONF.trust.enabled and trust:
+                trust_chain = self.trust_api.get_trust_pedigree(trust['id'])
+                # Trustor roles
+                t_roles = self.assignment_api.get_roles_for_user_and_project(
+                    trust_chain[-1]['trustor_user_id'],
+                    trust_chain[-1]['project_id'])
+
+                roles_id = [x['id'] for x in roles]
+                trust_role_ids = [x['id'] for x in trust['roles']]
+                # Verify that roles belongs to trust and avoid adding
+                # duplicate roles
+                for r in t_roles:
+                    if r in trust_role_ids and r not in roles_id:
+                        roles.append(self.role_api.get_role(r))
+
                 for trust_role in trust['roles']:
                     match_roles = [x for x in roles
                                    if x['id'] == trust_role['id']]
