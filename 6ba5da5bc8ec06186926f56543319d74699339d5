@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba63e191_53fdee38",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "change \"SQL\" to \"sql\", since that\u0027s the string they have to use.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_33995a20",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "Change \"SQL\" to \"sql\" since that\u0027s the string they have to use.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_0a6ae980",
         "filename": "keystone/common/config.py",
         "patchSetId": 18
@@ -49,6 +83,91 @@
       "side": 1,
       "message": "We just talked about doing this in a follow up patch. I\u0027m happy with that.",
       "parentUuid": "ba63e191_e269b18c",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_b35a2a4f",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "Apparently this test is invalid, so we should be getting rid of it.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_96b03445",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "we should continue to assert what the other backends are, just for documentation.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_d641cc0c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "why does this need to be done twice? Add a comment.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_566ddc96",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1782,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "This should assert the type of all backends to serve as documentation. This comment applies for all the _assert_backends() changes.",
+      "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_36a5c8b4",
+        "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 1,
+      "message": "The note should also say that the default config value has changed for the assignment driver.",
       "revId": "6ba5da5bc8ec06186926f56543319d74699339d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

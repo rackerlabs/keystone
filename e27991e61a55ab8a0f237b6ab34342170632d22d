@@ -16,6 +16,23 @@
       "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_53f3ae9e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-19T16:44:29Z",
+      "side": 0,
+      "message": "We never deprecated this functionality so we shouldn\u0027t be removing it. A deployment might be relying on this for their custom driver.",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
