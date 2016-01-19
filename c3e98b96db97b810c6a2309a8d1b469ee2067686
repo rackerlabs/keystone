@@ -154,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_861ebb61",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-19T19:49:53Z",
+      "side": 1,
+      "message": "I ask because of the property-based way that User is using. I don\u0027t know what is returned by User.domain_id now for federated users.",
+      "parentUuid": "ba63e191_cdf4d688",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_b647781c",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 24
