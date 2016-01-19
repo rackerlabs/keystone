@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_2e1da173",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T00:40:15Z",
+      "side": 0,
+      "message": "undo this change",
+      "revId": "1baa32afd0b43887125e35cfba4597556fc187df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_4eaa551b",
+        "filename": "setup.cfg",
+        "patchSetId": 15
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-19T00:40:15Z",
+      "side": 0,
+      "message": "we can\u0027t remove this one yet, it was never deprecated",
+      "range": {
+        "startLine": 139,
+        "startChar": 4,
+        "endLine": 139,
+        "endChar": 54
+      },
+      "revId": "1baa32afd0b43887125e35cfba4597556fc187df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
