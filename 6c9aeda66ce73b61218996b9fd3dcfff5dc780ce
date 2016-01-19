@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_4bef6e87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T20:41:28Z",
+      "side": 1,
+      "message": "Yes you are right the intention is do what the BP specifies. I will do that now.",
+      "parentUuid": "ba63e191_c7903f98",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ff0395b6",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 29
@@ -219,6 +237,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_501639a8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T20:41:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_df949138",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_3e413d0c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 29
@@ -230,6 +266,30 @@
       "writtenOn": "2016-01-19T09:31:16Z",
       "side": 1,
       "message": "this should be something like _format_entity, since they are not all roles",
+      "range": {
+        "startLine": 824,
+        "startChar": 12,
+        "endLine": 824,
+        "endChar": 29
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_301385ba",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T20:41:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_3e413d0c",
       "range": {
         "startLine": 824,
         "startChar": 12,
@@ -289,6 +349,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_704a5dc7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T20:41:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_f1c1812f",
+      "range": {
+        "startLine": 842,
+        "startChar": 20,
+        "endLine": 842,
+        "endChar": 61
+      },
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_9f037973",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 29
@@ -318,6 +402,24 @@
       "side": 1,
       "message": "last time i checked it was 2 commits ago,  i will check now and get back to you! Thanks.",
       "parentUuid": "ba63e191_9f037973",
+      "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_ebc0a27e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 4105,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-19T20:41:28Z",
+      "side": 1,
+      "message": "Yeah. still 100% Just yellow on the last \u0027elif\u0027 in core.py (that block is covered though)",
+      "parentUuid": "ba63e191_2014a942",
       "revId": "6c9aeda66ce73b61218996b9fd3dcfff5dc780ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
