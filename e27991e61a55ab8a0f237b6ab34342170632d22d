@@ -240,6 +240,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_452a0080",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-19T17:58:38Z",
+      "side": 1,
+      "message": "..and we have an explicit test for this, see:test_role_assignments_directed_graph_of_implied_roles() in test_backend.py",
+      "parentUuid": "ba63e191_cafeff37",
+      "range": {
+        "startLine": 642,
+        "startChar": 15,
+        "endLine": 642,
+        "endChar": 26
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_3ca4dba4",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
