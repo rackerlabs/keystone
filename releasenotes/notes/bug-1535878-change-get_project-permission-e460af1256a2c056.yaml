@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    [`bug 1535878 <https://bugs.launchpad.net/keystone/+bug/1535878>`_]
+    Earlier to issue GET /project/{project_id} a user needed
+    at least project_admin level of permission. Now it can be
+    called by having any role on the project.
