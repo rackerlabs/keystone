@@ -34,6 +34,24 @@
       "revId": "65303461dc179cecd1ef95e749f1eecd669dafbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d90b717c",
+        "filename": "keystone/tests/unit/ksfixtures/appserver.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-01-20T16:08:45Z",
+      "side": 1,
+      "message": "Thanks. I had never seen it used that way :-).",
+      "parentUuid": "ba63e191_0b516f0e",
+      "revId": "65303461dc179cecd1ef95e749f1eecd669dafbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
