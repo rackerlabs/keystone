@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_3c4f1b94",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T16:24:40Z",
+      "side": 1,
+      "message": "maybe look into query.one_or_none(),  you might be able to get away from using the \u0027try except\u0027 http://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.one_or_none",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 29
+      },
+      "revId": "63ffee173ec537f3d712105fd68e88288a785cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_1ceed78b",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T16:24:40Z",
+      "side": 1,
+      "message": "quick question.  If _get_implied_role() returns query.one() are we going to need the first item in the ref? I notices none of the tests are hitting this method so i wasn\u0027t able to test this out..",
+      "range": {
+        "startLine": 129,
+        "startChar": 22,
+        "endLine": 129,
+        "endChar": 25
+      },
+      "revId": "63ffee173ec537f3d712105fd68e88288a785cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
