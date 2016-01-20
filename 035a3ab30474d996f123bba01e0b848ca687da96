@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_d85d607a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_47a52f02",
+      "range": {
+        "startLine": 977,
+        "startChar": 8,
+        "endLine": 977,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_27ad9be9",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-19T15:51:49Z",
       "side": 1,
       "message": "don\u0027t need return here....",
+      "range": {
+        "startLine": 1007,
+        "startChar": 8,
+        "endLine": 1007,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_98504860",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_27ad9be9",
       "range": {
         "startLine": 1007,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_588f30cc",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_2794bb89",
+      "range": {
+        "startLine": 1016,
+        "startChar": 8,
+        "endLine": 1016,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_6781534a",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2016-01-19T15:51:49Z",
       "side": 1,
       "message": "don\u0027t need return here....",
+      "range": {
+        "startLine": 1019,
+        "startChar": 8,
+        "endLine": 1019,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_18c0d8df",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_6781534a",
       "range": {
         "startLine": 1019,
         "startChar": 8,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_d8b9e07a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_87e9e71c",
+      "range": {
+        "startLine": 1032,
+        "startChar": 8,
+        "endLine": 1032,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_47f3ef0a",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2016-01-19T15:51:49Z",
       "side": 1,
       "message": "don\u0027t need return here....",
+      "range": {
+        "startLine": 1035,
+        "startChar": 8,
+        "endLine": 1035,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_58a65054",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_47f3ef0a",
       "range": {
         "startLine": 1035,
         "startChar": 8,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_987368e7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_c7e7df3e",
+      "range": {
+        "startLine": 1048,
+        "startChar": 8,
+        "endLine": 1048,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_a763cbb0",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -174,6 +342,30 @@
       "writtenOn": "2016-01-19T15:51:49Z",
       "side": 1,
       "message": "don\u0027t need return here....",
+      "range": {
+        "startLine": 1051,
+        "startChar": 8,
+        "endLine": 1051,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_780d543d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_a763cbb0",
       "range": {
         "startLine": 1051,
         "startChar": 8,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_133bd99d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "hmm, I have trouble to address this comments, where is this duplicated? more details about this?",
+      "parentUuid": "ba63e191_27703b72",
+      "range": {
+        "startLine": 1054,
+        "startChar": 8,
+        "endLine": 1056,
+        "endChar": 68
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_4741af0a",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -220,6 +436,30 @@
       "writtenOn": "2016-01-19T15:51:49Z",
       "side": 1,
       "message": "don\u0027t need return here....",
+      "range": {
+        "startLine": 1070,
+        "startChar": 8,
+        "endLine": 1070,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_d83ec0d9",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1070,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_4741af0a",
       "range": {
         "startLine": 1070,
         "startChar": 8,
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_7826b4cf",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_c7befffe",
+      "range": {
+        "startLine": 1075,
+        "startChar": 8,
+        "endLine": 1075,
+        "endChar": 14
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_4c6d5603",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 3
@@ -266,6 +530,30 @@
       "writtenOn": "2016-01-19T15:51:49Z",
       "side": 1,
       "message": "In case we ever modified this....I guess technically this should b V9 and you should override the test in the legacy test class to make it V8 - but this would break at this point, so we would know it....so I\u0027m OK either way.",
+      "range": {
+        "startLine": 4941,
+        "startChar": 41,
+        "endLine": 4941,
+        "endChar": 45
+      },
+      "revId": "035a3ab30474d996f123bba01e0b848ca687da96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_eeee5e8a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4941,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T03:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_4c6d5603",
       "range": {
         "startLine": 4941,
         "startChar": 41,
