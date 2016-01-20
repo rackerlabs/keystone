@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_3bd07853",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-20T19:03:54Z",
+      "side": 1,
+      "message": "This sentence does not need to be in parens.",
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9be4043c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-20T19:03:54Z",
+      "side": 1,
+      "message": "This sentence does not need to be in parens.",
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
