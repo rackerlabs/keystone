@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_d55b372d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3083,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T15:49:56Z",
+      "side": 1,
+      "message": "I don\u0027t think this ends up being circular, this just iterates through and creates a trust for each user in the chain.",
+      "parentUuid": "9a68dd71_4a72537e",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_6af5d781",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
