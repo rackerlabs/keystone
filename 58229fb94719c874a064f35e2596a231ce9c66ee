@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_01313c05",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "irrelevant, duplicated \u0027each\u0027 here.",
+      "range": {
+        "startLine": 479,
+        "startChar": 31,
+        "endLine": 479,
+        "endChar": 35
+      },
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_336a931b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "this confuse me a little, why not make ref[\u0027inherited_to_projects\u0027] bool? any other options beside \u0027projects\u0027 and \u0027None\u0027, irrelevant though!",
+      "range": {
+        "startLine": 577,
+        "startChar": 11,
+        "endLine": 577,
+        "endChar": 57
+      },
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_e151880f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "could you pls add a testcase for this code block?",
+      "range": {
+        "startLine": 758,
+        "startChar": 0,
+        "endLine": 763,
+        "endChar": 48
+      },
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_fd487a5d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "I personally think add some docstring like @L663~L694 would be helpful, so it will be clear that `source_from_group_ids` is not bool but list instead.",
+      "range": {
+        "startLine": 846,
+        "startChar": 8,
+        "endLine": 854,
+        "endChar": 68
+      },
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_10a8d61e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "nit: sourced_from_group_ids/source_from_group_ids",
+      "range": {
+        "startLine": 142,
+        "startChar": 39,
+        "endLine": 142,
+        "endChar": 61
+      },
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_07bb890f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2087,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "I doubt the validity of this testcase. I can modify the test plan for `test_list_role_assignment_using_sourced_groups_with_domains` randomly. But this testcase can always pass.\n\nI guess how the testcase is overridden is not correct, if this is a real issue there are many testcases should be updated!\n\ndiff --git a/keystone/tests/unit/test_backend.py b/keystone/tests/unit/test_backend.py\nindex d576b43..8158121 100644\n--- a/keystone/tests/unit/test_backend.py\n+++ b/keystone/tests/unit/test_backend.py\n@@ -2022,10 +2022,12 @@ class IdentityTests(AssignmentTestHelperMixin):\n\n     def test_list_role_assignment_using_sourced_groups_with_domains(self):\n         \"\"\"Test listing domain assignments when restricted by source groups.\"\"\"\n+        import pdb\n+        pdb.set_trace()\n         test_plan \u003d {\n             # A domain with 3 users, 3 groups, 3 projects, a second domain,\n             # plus 3 roles.\n-            \u0027entities\u0027: {\u0027domains\u0027: [{\u0027users\u0027: 3, \u0027groups\u0027: 3, \u0027projects\u0027: 3},\n+            \u0027entities\u0027: {\u0027domains\u0027: [{\u0027users\u0027: 3, \u0027groups\u0027: 300, \u0027projects\u0027: 3},\n                                      1],\n                          \u0027roles\u0027: 3},\n             # Users 0 \u0026 1 are in the group 0, User 0 also in group 1\n@@ -2051,7 +2053,7 @@ class IdentityTests(AssignmentTestHelperMixin):\n                 # Adding a role a filter should further restrict the entries\n                 {\u0027params\u0027: {\u0027source_from_group_ids\u0027: [0, 1], \u0027role\u0027: 1,\n                             \u0027effective\u0027: True},\n-                 \u0027results\u0027: [{\u0027group\u0027: 0, \u0027role\u0027: 1, \u0027domain\u0027: 1},\n+                 \u0027results\u0027: [{\u0027group\u0027: 0, \u0027role\u0027: 1222, \u0027domain\u0027: 1},\n                              ]},\n             ]\n         }\n\n\n$ python -m unittest keystone.tests.unit.test_backend_ldap.LdapIdentitySqlAssignment.test_list_role_assignment_using_sourced_groups_with_domains\n.\n----------------------------------------------------------------------\nRan 1 test in 0.352s\n\nOK",
+      "range": {
+        "startLine": 2084,
+        "startChar": 8,
+        "endLine": 2087,
+        "endChar": 71
+      },
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_b34ec6bf",
+        "filename": "releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-20T09:51:37Z",
+      "side": 1,
+      "message": "Does some methods are removed could be defined as a feature? anyone know what\u0027s the feature is from this note? \n\nI\u0027d rather say cleanup, remove duplicated code or the reason behind this instead.",
+      "revId": "58229fb94719c874a064f35e2596a231ce9c66ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
