@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_6ff4a9f1",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-20T04:02:20Z",
+      "side": 1,
+      "message": "adding a test for this would be all kinds of awesome",
+      "range": {
+        "startLine": 97,
+        "startChar": 12,
+        "endLine": 102,
+        "endChar": 32
+      },
+      "revId": "b3c81e968708cd9a19f46ce661fe6d42833d856c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_4f93e5a3",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-20T04:02:20Z",
+      "side": 1,
+      "message": "no way to get rid of this code?",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 16
+      },
+      "revId": "b3c81e968708cd9a19f46ce661fe6d42833d856c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
