@@ -175,6 +175,52 @@
       "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e5924357",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:29:36Z",
+      "side": 1,
+      "message": "nit: move this down to where it is used on line 77",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_259e1b57",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:29:36Z",
+      "side": 1,
+      "message": "nit: same comment as previous",
+      "range": {
+        "startLine": 446,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 38
+      },
+      "revId": "02b68841c0b70cd1bec07898132424d044c0c1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
