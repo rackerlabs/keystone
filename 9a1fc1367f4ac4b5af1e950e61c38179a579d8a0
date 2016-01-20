@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_95ffff33",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3046,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T15:58:48Z",
+      "side": 1,
+      "message": "We should take the opportunity to update and clarify all the code in this setUp. \n\nWhat is a trust chain?\n\nA trust chain is a series of trusts that are redelegated. For example, self.user_list consists of userA, userB, and userC. The first trust in the trust chain is going to be established between self.user and userA, call it trustA. Then, userA is going to obtain a trust scoped token using trustA, and with that token create a trust between userA and userB called trustB. This pattern will continue with userB creating a trust with userC.\n\nSo the trust chain should look something like: \n\n    trustA -\u003e trustB -\u003e trustC \n\nWhere: \n\n    self.user is trusting userA with trustA\n    userA is trusting userB with trustB\n    userB is trusting userC with trustC",
+      "range": {
+        "startLine": 3046,
+        "startChar": 7,
+        "endLine": 3046,
+        "endChar": 28
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_0a553bc5",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4
@@ -13,6 +36,29 @@
       "writtenOn": "2016-01-20T12:21:00Z",
       "side": 1,
       "message": "This is weird: is this trustor or trustee id?",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7525abc0",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3080,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T15:58:48Z",
+      "side": 1,
+      "message": "This is what creates trustB and trustC for the other two users in the user list.",
+      "range": {
+        "startLine": 3080,
+        "startChar": 7,
+        "endLine": 3080,
+        "endChar": 42
+      },
       "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
