@@ -65,6 +65,87 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_7fa45ea5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "++ \n\nThis is not being called because of the get_head_action problem I mention in routers. If you fix that you notice that this is supposed to be a classmethod and you get unbound method _add_self_referential_link() must be called with ImpliedRolesV3 instance as first argument\n\nfixing both of these samuel is correct the link points to a self with only one url, not the two expected from get_implied_roles \n\nAlso it returns only the ids NOT the full body as per the spec: https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#get-role-inference-rule",
+      "parentUuid": "ba63e191_88224500",
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_cce84a7f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "self?",
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_9f1cb214",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "the spec says this returns data: https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#create-role-inference-rule",
+      "range": {
+        "startLine": 354,
+        "startChar": 22,
+        "endLine": 354,
+        "endChar": 41
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_bf41760d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "this does not wrap the response as specified at https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#list-implied-roles-for-role nor does it include the role information as per spec and per list_role_inference_rules",
+      "range": {
+        "startLine": 365,
+        "startChar": 20,
+        "endLine": 365,
+        "endChar": 33
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_68035143",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 55
@@ -81,6 +162,122 @@
         "startChar": 8,
         "endLine": 376,
         "endChar": 16
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_eca2ee4a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "agreed, why did you do it this way when you use base_url above?",
+      "parentUuid": "ba63e191_68035143",
+      "range": {
+        "startLine": 376,
+        "startChar": 8,
+        "endLine": 376,
+        "endChar": 16
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_ec866eda",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "ROLE_ID",
+      "range": {
+        "startLine": 84,
+        "startChar": 54,
+        "endLine": 84,
+        "endChar": 67
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_a2f5ddcb",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "you have misunderstood get_head_action. It maps the function to BOTH get and head. In this case it means that GET is not being mapped.",
+      "range": {
+        "startLine": 93,
+        "startChar": 27,
+        "endLine": 93,
+        "endChar": 29
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_0c618239",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "ROLE_ID for both. \n\nThe prior and implied role ids are not new concepts they refer to the existing concept of a role id.",
+      "range": {
+        "startLine": 99,
+        "startChar": 45,
+        "endLine": 99,
+        "endChar": 55
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_2c7d66e7",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T01:22:02Z",
+      "side": 1,
+      "message": "still weird to me that this is on a completely different path.",
+      "range": {
+        "startLine": 104,
+        "startChar": 19,
+        "endLine": 104,
+        "endChar": 34
       },
       "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
