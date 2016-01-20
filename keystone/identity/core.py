@@ -509,6 +509,7 @@ class Manager(manager.Manager):
         self.event_callbacks = {
             notifications.ACTIONS.deleted: {
                 'domain': [self._domain_deleted],
+                'project': [self._set_default_project_to_none],
             },
         }
 
@@ -538,6 +539,24 @@ class Manager(manager.Manager):
                            'contents for %(domainid)s, continuing with '
                            'cleanup.'),
                           {'userid': user['id'], 'domainid': domain_id})
+
+    def _set_default_project_to_none(self, service, resource_type, operation,
+                                     payload):
+        project_id = payload['resource_info']
+        hints = driver_hints.Hints()
+        user_detailed_list = (
+            self.driver.list_users_with_default_project_id(project_id, hints))
+        if user_detailed_list is not None:
+            project_user_ids = [x.get('id') for x in user_detailed_list]
+            # set default project to None if project has been removed
+            for user_id in project_user_ids:
+                try:
+                    self.update_user(user_id, {'default_project_id': None})
+                except exception.UserNotFound:
+                    LOG.debug(('User %(user)s not found when deleting project '
+                               'contents for %(project)s, continuing with '
+                               'cleanup.'),
+                              {'user': user_id, 'project': project_id})
 
     # Domain ID normalization methods
 
