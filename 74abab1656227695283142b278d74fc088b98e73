@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_495d61e8",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T21:16:05Z",
+      "side": 1,
+      "message": "nit: could amend to this. \n\n\u0027The creation of projects acting as domains is not allowed in v2 because v2 isn\u0027t not domain aware outside of the default domain.\u0027",
+      "range": {
+        "startLine": 94,
+        "startChar": 34,
+        "endLine": 94,
+        "endChar": 35
+      },
+      "revId": "74abab1656227695283142b278d74fc088b98e73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
