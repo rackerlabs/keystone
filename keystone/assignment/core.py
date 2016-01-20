@@ -225,6 +225,17 @@ class Manager(manager.Manager):
                           role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
+    def remove_project_from_user(self, payload):
+        # Remove tanent from a user once the tanent is deleted
+
+        user_id = payload['user_id']
+        user = payload.copy()
+        user['id'] = user.pop('user_id')
+        if 'project_id' in user:
+            user['default_project_id'] = user.pop('project_id')
+            user['default_project_id'] = None
+        self.identity_api.update_user(user_id, user)
+
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
     def list_projects_for_user(self, user_id, hints=None):
