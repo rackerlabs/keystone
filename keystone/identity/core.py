@@ -915,6 +915,10 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    def set_default_project_to_none(self, user_id):
+        # set default project to None if project has been removed
+        self.update_user(user_id, {'default_project_id': None})
+
     @domains_configured
     @exception_translated('user')
     def delete_user(self, user_id, initiator=None):
