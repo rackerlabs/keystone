@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_cee721ab",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "don\u0027t think this one\u0027s in the API spec\n\nhttps://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst\n\nWe\u0027ll need to amend the API spec or remove it here.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 27
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6ef9554d",
+        "filename": "etc/policy.json",
+        "patchSetId": 55
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "Not in the API spec\n\nhttps://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst",
+      "range": {
+        "startLine": 84,
+        "startChar": 5,
+        "endLine": 84,
+        "endChar": 56
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_883b2538",
         "filename": "etc/policy.json",
         "patchSetId": 55
@@ -41,6 +87,52 @@
         "startChar": 0,
         "endLine": 85,
         "endChar": 4
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_8e8929cd",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 55
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "Not in the API spec\n\nhttps://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 63
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c241353b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "These are used to build the \u0027links\u0027. I suspect you\u0027ll have to manipulate them individually as your links various. i.e. your collection_name would be just \u0027role_inference\u0027.",
+      "range": {
+        "startLine": 335,
+        "startChar": 4,
+        "endLine": 336,
+        "endChar": 32
       },
       "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -77,6 +169,24 @@
       "side": 1,
       "message": "++ \n\nThis is not being called because of the get_head_action problem I mention in routers. If you fix that you notice that this is supposed to be a classmethod and you get unbound method _add_self_referential_link() must be called with ImpliedRolesV3 instance as first argument\n\nfixing both of these samuel is correct the link points to a self with only one url, not the two expected from get_implied_roles \n\nAlso it returns only the ids NOT the full body as per the spec: https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#get-role-inference-rule",
       "parentUuid": "ba63e191_88224500",
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a25f610d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba63e191_7fa45ea5",
       "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -216,6 +326,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a21761ec",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "why? PRIOR_ROLE_ID is in json_home.",
+      "parentUuid": "ba63e191_ec866eda",
+      "range": {
+        "startLine": 84,
+        "startChar": 54,
+        "endLine": 84,
+        "endChar": 67
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_a2f5ddcb",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 55
@@ -227,6 +361,30 @@
       "writtenOn": "2016-01-20T01:22:02Z",
       "side": 1,
       "message": "you have misunderstood get_head_action. It maps the function to BOTH get and head. In this case it means that GET is not being mapped.",
+      "range": {
+        "startLine": 93,
+        "startChar": 27,
+        "endLine": 93,
+        "endChar": 29
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_420545c0",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:10:25Z",
+      "side": 1,
+      "message": "++, besides, check_implied_roles is not on the API spec.\n\nhttps://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst\n\nMay want to remove it for now.",
+      "parentUuid": "ba63e191_a2f5ddcb",
       "range": {
         "startLine": 93,
         "startChar": 27,
