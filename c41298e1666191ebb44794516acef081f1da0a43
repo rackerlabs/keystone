@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_ece788aa",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T20:13:07Z",
+      "side": 1,
+      "message": "should this be a query string?",
+      "range": {
+        "startLine": 39,
+        "startChar": 90,
+        "endLine": 39,
+        "endChar": 98
+      },
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ec43086b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T20:13:07Z",
+      "side": 1,
+      "message": "This seems like a lot of duplicate code with the above update_project method. We should try and consolidate this.",
+      "range": {
+        "startLine": 310,
+        "startChar": 4,
+        "endLine": 318,
+        "endChar": 50
+      },
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c73e1fb8",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T20:13:07Z",
+      "side": 1,
+      "message": "We should also make sure the projects in the hierarchy were actually updated.",
+      "range": {
+        "startLine": 1092,
+        "startChar": 7,
+        "endLine": 1092,
+        "endChar": 51
+      },
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
