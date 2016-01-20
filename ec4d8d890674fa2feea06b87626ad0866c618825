@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a94e5dbf",
+        "filename": "bandit.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T21:23:59Z",
+      "side": 1,
+      "message": "++ I\u0027d like to stick to a convention if we can.",
+      "parentUuid": "da6ed579_a4f38d9d",
+      "range": {
+        "startLine": 102,
+        "startChar": 23,
+        "endLine": 102,
+        "endChar": 52
+      },
+      "revId": "ec4d8d890674fa2feea06b87626ad0866c618825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_35b7ce87",
         "filename": "bandit.yaml",
         "patchSetId": 1
