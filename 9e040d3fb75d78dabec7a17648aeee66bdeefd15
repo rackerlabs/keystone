@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_acce7081",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-20T20:01:53Z",
+      "side": 1,
+      "message": "i think we still want to return `value` if it\u0027s correct, something like:\n\nfrom uuid import UUID\ntry:\n    uuid.UUID(value)\n    #my_uuid is valid and you can use it\n    return value\nexcept ValueError:\n    #do what you need when my_uuid is not a uuid",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "9e040d3fb75d78dabec7a17648aeee66bdeefd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
