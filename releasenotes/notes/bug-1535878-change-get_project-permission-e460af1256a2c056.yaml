@@ -1,0 +1,4 @@
+---
+fixes:
+  - GET /project/{project_id} can now be called by
+    a user with any role on that project.
