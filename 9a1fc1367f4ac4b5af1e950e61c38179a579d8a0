@@ -409,6 +409,24 @@
       "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7876f63f",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:50:07Z",
+      "side": 1,
+      "message": "We would need to have some mechanism that returned the original trustor of the chain in order to not loop through each redelegated trust. As far as I know, I don\u0027t think that exists.\n\nWe need to protect against the case where trusts are created between user1, user2, and user3. If user1 was the original trustor, the old logic doesn\u0027t actually return the roles for user1, only user2.\n\nWhile this might not be as performant, the behavior is correct.",
+      "parentUuid": "9a68dd71_a2b6813b",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
