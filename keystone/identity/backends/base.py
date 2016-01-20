@@ -222,6 +222,20 @@ class IdentityDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def list_users_with_default_project_id(self, project_id, hints):
+        """List users with project id.
+
+        :param str project_id: project ID
+        :param hints: filter hints which the driver should
+                      implement if at all possible
+
+        :type hints: keystone.common.driver_hints.Hints
+
+        :returns: a list of users or an empty list.
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def list_users_in_group(self, group_id, hints):
         """List users in a group.
 
