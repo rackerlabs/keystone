@@ -100,6 +100,75 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_bfac5dee",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T16:38:54Z",
+      "side": 1,
+      "message": "nit: these are the trustor roles on a project.",
+      "range": {
+        "startLine": 376,
+        "startChar": 16,
+        "endLine": 376,
+        "endChar": 23
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_bfcbfd71",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T16:38:54Z",
+      "side": 1,
+      "message": "This will need to verify that we aren\u0027t adding all roles from the trustor to the trustee on a project. We should check that the roles being appended here are only coming from the trust.",
+      "range": {
+        "startLine": 380,
+        "startChar": 16,
+        "endLine": 383,
+        "endChar": 63
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_bcf6abd5",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T16:38:54Z",
+      "side": 1,
+      "message": "nit: we should rename this to be more specific. What user are we talking about here, the trustor or the trustee?",
+      "range": {
+        "startLine": 175,
+        "startChar": 13,
+        "endLine": 175,
+        "endChar": 17
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_6af5d781",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
