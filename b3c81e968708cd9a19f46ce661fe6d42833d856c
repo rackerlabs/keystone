@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_323cd4c7",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T04:37:27Z",
+      "side": 1,
+      "message": "I did plan to add this, however passing random role_id doesn\u0027t trigger the foreignkey error.\n\nmaybe SQLite does not support FK correctly?\n\nA workaround would be to manually execute a check if both role_id is valid before creating implied_role record",
+      "parentUuid": "ba63e191_6ff4a9f1",
+      "range": {
+        "startLine": 97,
+        "startChar": 12,
+        "endLine": 102,
+        "endChar": 32
+      },
+      "revId": "b3c81e968708cd9a19f46ce661fe6d42833d856c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_4f93e5a3",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-20T04:02:20Z",
       "side": 1,
       "message": "no way to get rid of this code?",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 16
+      },
+      "revId": "b3c81e968708cd9a19f46ce661fe6d42833d856c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_3215b43f",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T04:37:27Z",
+      "side": 1,
+      "message": "I was planning to delete it, however this line would fail:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L141\n\nthe self.extra would be missing.. the from_dict() needs to be removed as well so that it would use the Dictbase.from_dict() to initialize the extra attribute.\n\nwe could drop both methods, but it would include an \"extra\" attribute that will be set to empty dict.",
+      "parentUuid": "ba63e191_4f93e5a3",
       "range": {
         "startLine": 137,
         "startChar": 0,
