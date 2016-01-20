@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_ffba8ee0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T01:11:57Z",
+      "side": 1,
+      "message": "interesting, this already got changed and nothing is broken,",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_dfa22a4b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T01:11:57Z",
+      "side": 1,
+      "message": "good catch on adding this here to make it match the old driver",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_bf6df605",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T01:11:57Z",
+      "side": 1,
+      "message": "I am thinking if we should keep this ResourceDriverBase, because when we have newer version later ResourceDriverV10..11, we have to copy this code again.\n\nIf we\u0027re keeping it here,  add a NOTE that we can move this back to DriverBase when we no longer support V8.",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
