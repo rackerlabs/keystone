@@ -362,6 +362,10 @@ class V9IdentityWrapperForV8Driver(IdentityDriverV9):
     def list_users(self, hints):
         return self.driver.list_users(hints)
 
+    def list_users_with_default_project_id(self, project_id, hints):
+        return self.driver.list_users_with_default_project_id(project_id,
+                                                              hints)
+
     def list_users_in_group(self, group_id, hints):
         return self.driver.list_users_in_group(group_id, hints)
 

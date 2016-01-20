@@ -229,6 +229,14 @@ class Identity(base.IdentityDriverV9):
             user_refs = sql.filter_limit_query(User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
+    def list_users_with_default_project_id(self, project_id, hints):
+        with sql.session_for_read() as session:
+            query = session.query(User)
+            query = query.filter(sqlalchemy.and_(
+                                 User.default_project_id == project_id))
+            user_refs = sql.filter_limit_query(User, query, hints)
+            return [base.filter_user(x.to_dict()) for x in user_refs]
+
     def _get_user(self, session, user_id):
         user_ref = session.query(User).get(user_id)
         if not user_ref:
