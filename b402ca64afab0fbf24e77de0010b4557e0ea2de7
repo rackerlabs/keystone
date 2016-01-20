@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_2cb03bdd",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3070,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T21:59:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_981deabf",
+      "range": {
+        "startLine": 3070,
+        "startChar": 10,
+        "endLine": 3070,
+        "endChar": 61
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_7877d602",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a9773d01",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3082,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T21:59:39Z",
+      "side": 1,
+      "message": "The first trust in the chain is created differently, it does not use a trusted token and it sets up redelegation_count.",
+      "parentUuid": "9a68dd71_7877d602",
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_db103c51",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -53,6 +95,30 @@
       "writtenOn": "2016-01-20T19:05:16Z",
       "side": 1,
       "message": "this is essentially the magic piece that makes the trust chain possible.",
+      "range": {
+        "startLine": 3094,
+        "startChar": 8,
+        "endLine": 3096,
+        "endChar": 42
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_8c17e7a2",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3096,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T21:59:39Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "9a68dd71_db103c51",
       "range": {
         "startLine": 3094,
         "startChar": 8,
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_0ca1b794",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3106,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T21:59:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_fb40a009",
+      "range": {
+        "startLine": 3106,
+        "startChar": 16,
+        "endLine": 3106,
+        "endChar": 39
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_fb25005c",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -99,6 +189,30 @@
       "writtenOn": "2016-01-20T19:05:16Z",
       "side": 1,
       "message": "nit: This is grabbing the last user in the chain and validating that because the original trustor\u0027s role was revoked on self.project_id, the trust chain is no longer valid. Right?",
+      "range": {
+        "startLine": 3189,
+        "startChar": 8,
+        "endLine": 3189,
+        "endChar": 36
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ec546355",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3189,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T21:59:39Z",
+      "side": 1,
+      "message": "Correct.",
+      "parentUuid": "9a68dd71_fb25005c",
       "range": {
         "startLine": 3189,
         "startChar": 8,
