@@ -22,6 +22,99 @@
       "revId": "9e040d3fb75d78dabec7a17648aeee66bdeefd15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_bdf1b3cf",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T22:44:19Z",
+      "side": 1,
+      "message": "++ tested this out and it didn\u0027t blow up my machine like it did for Jenkins",
+      "parentUuid": "9a68dd71_acce7081",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "9e040d3fb75d78dabec7a17648aeee66bdeefd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9d870f61",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T22:44:19Z",
+      "side": 1,
+      "message": "bumm import",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "9e040d3fb75d78dabec7a17648aeee66bdeefd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9d94ef37",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T22:44:19Z",
+      "side": 1,
+      "message": "we are going to need to remove this if you are going with Steves change.",
+      "range": {
+        "startLine": 42,
+        "startChar": 24,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "9e040d3fb75d78dabec7a17648aeee66bdeefd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_1df6bf8f",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T22:44:19Z",
+      "side": 1,
+      "message": "do we need the double quotes in the test? tested and it works fine",
+      "range": {
+        "startLine": 43,
+        "startChar": 20,
+        "endLine": 43,
+        "endChar": 21
+      },
+      "revId": "9e040d3fb75d78dabec7a17648aeee66bdeefd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
