@@ -193,6 +193,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_d8f602d7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T18:45:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_5f4c0f70",
+      "range": {
+        "startLine": 640,
+        "startChar": 16,
+        "endLine": 640,
+        "endChar": 21
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_9f8a87be",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
