@@ -1,0 +1,8 @@
+---
+fixes:
+  - >
+    [`bug 1535878 <https://bugs.launchpad.net/keystone/+bug/1535878>`_]
+    Originally to perform GET /project/{project_id} the v3cloudsample policy
+    file required a user to have at least project admin level of permission.
+    The sample has been updated to allow it to be performed by any user who has
+    a role on the project.
