@@ -287,6 +287,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_2c3c7fc7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_3ca4dba4",
+      "range": {
+        "startLine": 645,
+        "startChar": 31,
+        "endLine": 645,
+        "endChar": 33
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_fc2f239f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
@@ -417,6 +441,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_9dacba36",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "It could raise ImpliedRoleNotFound if the combination does not exist. \n\nFixed the backend and added test",
+      "parentUuid": "ba63e191_24903243",
+      "range": {
+        "startLine": 1507,
+        "startChar": 4,
+        "endLine": 1510,
+        "endChar": 60
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_df79f194",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
@@ -428,6 +476,30 @@
       "writtenOn": "2016-01-19T13:32:23Z",
       "side": 1,
       "message": "(nit) ID",
+      "range": {
+        "startLine": 1519,
+        "startChar": 51,
+        "endLine": 1519,
+        "endChar": 53
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_1d644a47",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_df79f194",
       "range": {
         "startLine": 1519,
         "startChar": 51,
@@ -474,6 +546,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_a2fe3d36",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "I\u0027ll skip this comment, this file is going to be dropped anyway in this release.\n\nhttps://review.openstack.org/#/c/269385/",
+      "parentUuid": "ba63e191_9f5db9eb",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ffadd588",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 26
@@ -491,6 +581,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_6c0a7723",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "not quite, it is not clear which FK failed.\n\nI noticed a bug, the session is not passed, it should be _get_role(session, prior_role_id)",
+      "parentUuid": "ba63e191_ffadd588",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_7f0c8594",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 26
@@ -502,6 +610,24 @@
       "writtenOn": "2016-01-19T13:32:23Z",
       "side": 1,
       "message": "We may also use query.one() and treat the case of an exception, reraising ImpliedRoleNotFound",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_ee797efd",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "good suggestion, cleaner code. Done",
+      "parentUuid": "ba63e191_7f0c8594",
       "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -543,6 +669,30 @@
       "side": 1,
       "message": "++",
       "parentUuid": "ba63e191_95e4d13b",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 16
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_4e544a20",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "I think this line would fail if we don\u0027t override this method:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L141",
+      "parentUuid": "ba63e191_5ff741d3",
       "range": {
         "startLine": 135,
         "startChar": 0,
@@ -602,6 +752,54 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_ce011a6c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "I am afraid to do that, there might be to many indention to fix :)",
+      "parentUuid": "ba63e191_bf5aeb4e",
+      "range": {
+        "startLine": 306,
+        "startChar": 20,
+        "endLine": 306,
+        "endChar": 70
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_429421e1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_55873961",
+      "range": {
+        "startLine": 306,
+        "startChar": 20,
+        "endLine": 306,
+        "endChar": 70
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_aa607d36",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 26
@@ -613,6 +811,30 @@
       "writtenOn": "2016-01-19T13:32:23Z",
       "side": 1,
       "message": "This, and others in this file, doesnt\u0027 need to be a list when containing a single element. See L308",
+      "range": {
+        "startLine": 6433,
+        "startChar": 59,
+        "endLine": 6433,
+        "endChar": 62
+      },
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5db5e22e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 6433,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "I guess it makes sense to not use a list here so that the code path for L308 will be exercised.\n\nFixed in the follow-up patch, and applied to other sample data as well.",
+      "parentUuid": "ba63e191_aa607d36",
       "range": {
         "startLine": 6433,
         "startChar": 59,
@@ -654,6 +876,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "ba63e191_aabcfd6c",
+      "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_ceb35ae8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 6579,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-20T03:50:46Z",
+      "side": 1,
+      "message": "ayoung is working on circular deps in a separate patch",
+      "parentUuid": "ba63e191_1689a426",
       "revId": "e27991e61a55ab8a0f237b6ab34342170632d22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
