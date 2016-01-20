@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_981deabf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3070,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T19:05:16Z",
+      "side": 1,
+      "message": "nit: we could lay out the steps in a way that ties back to the overall description above.\n\n    # create a trust between self.user and the first user in the self.user_list",
+      "range": {
+        "startLine": 3070,
+        "startChar": 10,
+        "endLine": 3070,
+        "endChar": 61
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7877d602",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3082,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T19:05:16Z",
+      "side": 1,
+      "message": "nit: could remove this line and refactor: \n\n    # create a trust between self.user and the first user in self.user_list\n    trustee \u003d self.user_list[0]\n    trust_ref \u003d unit.new_trust_ref(\n        trustor_user_id\u003dself.user_id,\n        trustee_user_id\u003dtrustee[\u0027id\u0027],\n        project_id\u003dself.project_id,\n        impersonation\u003dFalse,\n        expires\u003ddict(minutes\u003d1),\n        role_ids\u003d[self.role_id])\n    trust_ref.update(\n        allow_redelegation\u003dTrue,\n        redelegation_count\u003d3)\n    r \u003d self.post(\u0027/OS-TRUST/trusts\u0027,\n                      body\u003d{\u0027trust\u0027: trust_ref})\n    trust \u003d self.assertValidTrustResponse(r)\n\n\n    # save the trust as the first trust in the self.trust_chain\n    self.trust_chain.append(trust)\n\n\n    # get a trust scoped token as the first user in the chain\n    auth_data \u003d self.build_authentication_request(\n            user_id\u003dtrustee[\u0027id\u0027],\n            password\u003dtrustee[\u0027password\u0027],\n            trust_id\u003dtrust[\u0027id\u0027])\n    trust_token \u003d self.get_requested_token(auth_data)",
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_db103c51",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3096,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T19:05:16Z",
+      "side": 1,
+      "message": "this is essentially the magic piece that makes the trust chain possible.",
+      "range": {
+        "startLine": 3094,
+        "startChar": 8,
+        "endLine": 3096,
+        "endChar": 42
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_fb40a009",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T19:05:16Z",
+      "side": 1,
+      "message": "nit: I should have caught this before, but this should be included into the call above: \n\n    trust_ref \u003d unit.new_trust_ref(\n        trustor_user_id\u003dnext_trustor_id,\n        trustee_user_id\u003dtrustee[\u0027id\u0027],\n        project_id\u003dself.project_id,\n        impersonation\u003dFalse,\n        role_ids\u003d[self.role_id],\n        allow_redelegation\u003dTrue)\n\nActually - could we just incorporate the redelegated_trust_id into new_trust_ref, too? That way we just end up with one call to new_trust_ref for everything we need? \n\n        trust_ref \u003d unit.new_trust_ref(\n            trustor_user_id\u003dnext_trustor_id,\n            trustee_user_id\u003dtrustee[\u0027id\u0027],\n            project_id\u003dself.project_id,\n            impersonation\u003dFalse,\n            role_ids\u003d[self.role_id],\n            allow_redelegation\u003dTrue,\n            redelegated_trust_id\u003dredelegated_trust_id)",
+      "range": {
+        "startLine": 3106,
+        "startChar": 16,
+        "endLine": 3106,
+        "endChar": 39
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_fb25005c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T19:05:16Z",
+      "side": 1,
+      "message": "nit: This is grabbing the last user in the chain and validating that because the original trustor\u0027s role was revoked on self.project_id, the trust chain is no longer valid. Right?",
+      "range": {
+        "startLine": 3189,
+        "startChar": 8,
+        "endLine": 3189,
+        "endChar": 36
+      },
+      "revId": "b402ca64afab0fbf24e77de0010b4557e0ea2de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
