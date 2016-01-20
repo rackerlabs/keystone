@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_e9b9cced",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T15:01:45Z",
+      "side": 1,
+      "message": "what about this one?",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 22
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ffba8ee0",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
