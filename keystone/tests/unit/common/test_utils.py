@@ -36,6 +36,19 @@ class UtilsTestCase(unit.BaseTestCase):
         super(UtilsTestCase, self).setUp()
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
+    def test_resource_uuid(self):
+        uuid_str = '536e28c2017e405e89b25a1ed777b952'
+        self.assertEqual(common_utils.resource_uuid(uuid_str), uuid_str)
+
+        uuid_str = ("536e28c2017e405e89b25a1ed777b952."
+                    "f13de678ac714bb1b7d1e9a007c10db5")
+        transformed_id = '4639a24ba3c15c23a4ca8b29d5f3026b'
+        self.assertEqual(common_utils.resource_uuid(uuid_str), transformed_id)
+
+        invalid_input = "invalid_input"*6
+        self.assertRaises(ValueError, common_utils.resource_uuid,
+                          invalid_input)
+
     def test_hash(self):
         password = 'right'
         wrong = 'wrongwrong'  # Two wrongs don't make a right
