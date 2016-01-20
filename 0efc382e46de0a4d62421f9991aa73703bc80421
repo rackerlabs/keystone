@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_2635bc45",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-20T21:00:48Z",
+      "side": 1,
+      "message": "You can drop this part of the rule, since this is guaranteed to match if you project check matches",
+      "range": {
+        "startLine": 41,
+        "startChar": 101,
+        "endLine": 41,
+        "endChar": 142
+      },
+      "revId": "0efc382e46de0a4d62421f9991aa73703bc80421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
