@@ -73,6 +73,54 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_1866cded",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 11782
+      },
+      "writtenOn": "2016-01-20T22:58:10Z",
+      "side": 1,
+      "message": "I think it was added in this way since we are adding it to Kilo, which doesn\u0027t accept conf.\u003c\u003e variables.",
+      "parentUuid": "3a7e1126_ec9a40c5",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 49
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7837c9b0",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 11782
+      },
+      "writtenOn": "2016-01-20T22:58:10Z",
+      "side": 1,
+      "message": "I would even use \"posix_groups \u003d true/false\" instead of specifying the key - there cannot be any other values but \"dn\" and \"id\" for the user_ref.",
+      "parentUuid": "3a7e1126_1fdc4511",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 49
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_3fe1019b",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 1
