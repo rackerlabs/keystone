@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_1f0569c1",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T16:27:45Z",
+      "side": 1,
+      "message": "or query.first() http://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.first\n\nI just realized query.one_or_none() will still throw an exception.",
+      "parentUuid": "9a68dd71_3c4f1b94",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 29
+      },
+      "revId": "63ffee173ec537f3d712105fd68e88288a785cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_1ceed78b",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 3
