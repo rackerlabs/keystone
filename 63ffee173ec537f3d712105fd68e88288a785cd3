@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_f3ce8eb3",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-20T17:33:34Z",
+      "side": 1,
+      "message": "okay, that works for me. just wondering your input. and python error catching is so light weight its not really a big deal.  thanks!",
+      "parentUuid": "9a68dd71_08ff7102",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 29
+      },
+      "revId": "63ffee173ec537f3d712105fd68e88288a785cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_1ceed78b",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 3
