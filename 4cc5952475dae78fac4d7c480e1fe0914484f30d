@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_65041315",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-20T18:20:40Z",
+      "side": 1,
+      "message": "Can you please make this error instead of debug. Driver misconfiguration is a serious problem.",
+      "range": {
+        "startLine": 640,
+        "startChar": 12,
+        "endLine": 640,
+        "endChar": 21
+      },
+      "revId": "4cc5952475dae78fac4d7c480e1fe0914484f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
