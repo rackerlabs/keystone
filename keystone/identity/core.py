@@ -490,6 +490,7 @@ class Manager(manager.Manager):
         self.event_callbacks = {
             notifications.ACTIONS.deleted: {
                 'domain': [self._domain_deleted],
+                'project': [self._set_default_project_to_none],
             },
         }
 
@@ -520,8 +521,13 @@ class Manager(manager.Manager):
                            'cleanup.'),
                           {'userid': user['id'], 'domainid': domain_id})
 
-    # Domain ID normalization methods
+    def _set_default_project_to_none(self, service, resource_type, operation,
+                                     payload):
+        project_id = payload['resource_info']
+        hints = driver_hints.Hints()
+        self.driver.unset_default_project_id(project_id, hints)
 
+    # Domain ID normalization methods
     def _set_domain_id_and_mapping(self, ref, domain_id, driver,
                                    entity_type):
         """Patch the domain_id/public_id into the resulting entity(ies).

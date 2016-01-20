@@ -1505,7 +1505,6 @@ class ResourceTests(object):
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictEqual(updated_project_ref, project_ref)
 
-    @test_utils.wip('waiting for fix to bug #1523369')
     def test_delete_project_clears_default_project_id(self):
         project = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
@@ -1515,12 +1514,13 @@ class ResourceTests(object):
         user = self.identity_api.create_user(user)
         user = self.identity_api.get_user(user['id'])
         self.assertIsNotNone(user['default_project_id'])
-
+        print('%r' % user)
         self.resource_api.delete_project(project['id'])
         user = self.identity_api.get_user(user['id'])
-        self.assertIsNone(user['default_project_id'])
+        print('AFTER')
+        print('%r' % user)
+        self.assertFalse('default_project_id' in user)
 
-    @test_utils.wip('waiting for fix to bug #1523369')
     def test_delete_project_with_roles_clears_default_project_id(self):
         project = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
@@ -1536,7 +1536,7 @@ class ResourceTests(object):
 
         self.resource_api.delete_project(project['id'])
         user = self.identity_api.get_user(user['id'])
-        self.assertIsNone(user['default_project_id'])
+        self.assertFalse('default_project_id' in user)
 
 
 class ResourceDriverTests(object):
