@@ -6424,13 +6424,46 @@ class InheritanceTests(AssignmentTestHelperMixin):
 
 class ImpliedRoleTests(AssignmentTestHelperMixin):
 
+    def test_implied_role_crd(self):
+        prior_role_ref = unit.new_role_ref()
+        self.role_api.create_role(prior_role_ref['id'], prior_role_ref)
+        implied_role_ref = unit.new_role_ref()
+        self.role_api.create_role(implied_role_ref['id'], implied_role_ref)
+
+        self.role_api.create_implied_role(
+            prior_role_ref['id'],
+            implied_role_ref['id'])
+        implied_role = self.role_api.get_implied_role(
+            prior_role_ref['id'],
+            implied_role_ref['id'])
+        expected_implied_role_ref = {
+            'prior_role_id': prior_role_ref['id'],
+            'implied_role_id': implied_role_ref['id']}
+        self.assertDictContainsSubset(
+            expected_implied_role_ref,
+            implied_role)
+
+        self.role_api.delete_implied_role(
+            prior_role_ref['id'],
+            implied_role_ref['id'])
+        self.assertRaises(exception.ImpliedRoleNotFound,
+                          self.role_api.get_implied_role,
+                          uuid.uuid4().hex,
+                          uuid.uuid4().hex)
+
+    def test_delete_implied_role_returns_not_found(self):
+        self.assertRaises(exception.ImpliedRoleNotFound,
+                          self.role_api.delete_implied_role,
+                          uuid.uuid4().hex,
+                          uuid.uuid4().hex)
+
     def test_role_assignments_simple_tree_of_implied_roles(self):
         """Test that implied roles are expanded out."""
         test_plan = {
             'entities': {'domains': {'users': 1, 'projects': 1},
                          'roles': 4},
             # Three level tree of implied roles
-            'implied_roles': [{'role': 0, 'implied_roles': [1]},
+            'implied_roles': [{'role': 0, 'implied_roles': 1},
                               {'role': 1, 'implied_roles': [2, 3]}],
             'assignments': [{'user': 0, 'role': 0, 'project': 0}],
             'tests': [
@@ -6461,7 +6494,7 @@ class ImpliedRoleTests(AssignmentTestHelperMixin):
             # bottom is implied by more than one top level role
             'implied_roles': [{'role': 0, 'implied_roles': [1, 2]},
                               {'role': 1, 'implied_roles': [3, 4]},
-                              {'role': 5, 'implied_roles': [4]}],
+                              {'role': 5, 'implied_roles': 4}],
             # The use gets both top level roles
             'assignments': [{'user': 0, 'role': 0, 'project': 0},
                             {'user': 0, 'role': 5, 'project': 0}],
@@ -6502,7 +6535,7 @@ class ImpliedRoleTests(AssignmentTestHelperMixin):
             'entities': {'domains': {'users': 1, 'projects': 2},
                          'roles': 4},
             # Three level tree of implied roles
-            'implied_roles': [{'role': 0, 'implied_roles': [1]},
+            'implied_roles': [{'role': 0, 'implied_roles': 1},
                               {'role': 1, 'implied_roles': [2, 3]}],
             'assignments': [{'user': 0, 'role': 0, 'project': 0},
                             {'user': 0, 'role': 3, 'project': 1}],
@@ -6525,7 +6558,7 @@ class ImpliedRoleTests(AssignmentTestHelperMixin):
             'entities': {'domains': {'users': 1},
                          'roles': 4},
             # Three level tree of implied roles
-            'implied_roles': [{'role': 0, 'implied_roles': [1]},
+            'implied_roles': [{'role': 0, 'implied_roles': 1},
                               {'role': 1, 'implied_roles': [2, 3]}],
             'assignments': [{'user': 0, 'role': 0, 'domain': 0}],
             'tests': [
@@ -6553,7 +6586,7 @@ class ImpliedRoleTests(AssignmentTestHelperMixin):
             'entities': {'domains': {'users': 1, 'projects': 1},
                          'roles': 4},
             # Simply one level of implied roles
-            'implied_roles': [{'role': 0, 'implied_roles': [1]}],
+            'implied_roles': [{'role': 0, 'implied_roles': 1}],
             # Assign to top level role as an inherited assignment to the
             # domain
             'assignments': [{'user': 0, 'role': 0, 'domain': 0,
