@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_997c1922",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3046,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Good description, will use for a doc string explaining the setup for this test class.",
+      "parentUuid": "9a68dd71_95ffff33",
+      "range": {
+        "startLine": 3046,
+        "startChar": 7,
+        "endLine": 3046,
+        "endChar": 28
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_0a553bc5",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4
@@ -59,6 +83,24 @@
       "writtenOn": "2016-01-20T12:21:00Z",
       "side": 1,
       "message": "This is weird: is this trustor or trustee id?",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9574dfcf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3077,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Added comment.",
+      "parentUuid": "9a68dd71_0a553bc5",
       "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -141,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_e248f92f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3083,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "For a redelegated trust, the trustee becomes the trustor.",
+      "parentUuid": "9a68dd71_68c14d2e",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_bfac5dee",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 4
@@ -152,6 +212,30 @@
       "writtenOn": "2016-01-20T16:38:54Z",
       "side": 1,
       "message": "nit: these are the trustor roles on a project.",
+      "range": {
+        "startLine": 376,
+        "startChar": 16,
+        "endLine": 376,
+        "endChar": 23
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_62096995",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_bfac5dee",
       "range": {
         "startLine": 376,
         "startChar": 16,
@@ -187,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_c2d135fd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_bfcbfd71",
+      "range": {
+        "startLine": 380,
+        "startChar": 16,
+        "endLine": 383,
+        "endChar": 63
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_bcf6abd5",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
@@ -198,6 +306,30 @@
       "writtenOn": "2016-01-20T16:38:54Z",
       "side": 1,
       "message": "nit: we should rename this to be more specific. What user are we talking about here, the trustor or the trustee?",
+      "range": {
+        "startLine": 175,
+        "startChar": 13,
+        "endLine": 175,
+        "endChar": 17
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a2ef61af",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_bcf6abd5",
       "range": {
         "startLine": 175,
         "startChar": 13,
@@ -227,6 +359,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_42d54a41",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Right, that is the indented behavior, _get_user_role() should return the list of roles for the trustor. This list will be used on method _require_trustor_has_role_in_project to ensure that the trustor still has the assignment to the roles in the trust.",
+      "parentUuid": "9a68dd71_6af5d781",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_aaec2f90",
         "filename": "keystone/trust/core.py",
         "patchSetId": 4
@@ -238,6 +388,24 @@
       "writtenOn": "2016-01-20T12:21:00Z",
       "side": 1,
       "message": "This improves readability, but also spams backend with requests by id.\nDoesn\u0027t look a good trade-off for me...",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a2b6813b",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-20T18:38:10Z",
+      "side": 1,
+      "message": "Well, list_trust_for_trustor would only return trust created by the trustor. If the trustor was redelegating a trust, then we would not get the full trust chain. A redelegation can be multiple levels deep.",
+      "parentUuid": "9a68dd71_aaec2f90",
       "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
