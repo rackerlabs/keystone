@@ -67,6 +67,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_17c50c3b",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "Okay, I\u0027ll make this change in the next patch.  Thanks.",
+      "parentUuid": "da6ed579_732fcba1",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_b6f45887",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 24
@@ -102,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_57038442",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "So what do you think Dolph?  My preference would be to keep the password name, but I do see David\u0027s point.",
+      "parentUuid": "ba63e191_6d592a5a",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_1613e4b9",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 24
@@ -113,6 +155,24 @@
       "writtenOn": "2016-01-19T17:00:10Z",
       "side": 1,
       "message": "Are we doing to start implementing IdP like password rules? This might open a large can of worms.",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_d763f418",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "We\u0027re not implementing IdP password rules in this spec, but this would allow it to easily be added in the future should we decide to do that.",
+      "parentUuid": "ba63e191_1613e4b9",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +249,24 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_3754d01f",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "I know, but I get an error when running tests locally if it\u0027s not there.  I\u0027ll remove it later.",
+      "parentUuid": "ba63e191_b647781c",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_eebf4efa",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -223,6 +301,30 @@
       "writtenOn": "2016-01-19T17:00:10Z",
       "side": 1,
       "message": "good question",
+      "parentUuid": "da6ed579_eebf4efa",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 55
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_e923c0a5",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "Correct, we\u0027re leaving the user table there in order to support rolling upgrades:\nhttp://specs.openstack.org/openstack/keystone-specs/specs/mitaka/online-schema-migration.html\n\nIt will be removed in the next version.",
       "parentUuid": "da6ed579_eebf4efa",
       "range": {
         "startLine": 22,
@@ -283,6 +385,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_299f98b5",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "During development, I was running the upgrade script several times and just wanted to ensure I wasn\u0027t migrated duplicate data.  I will probably remove this later, but it\u0027s not hurting anything keeping here.",
+      "parentUuid": "da6ed579_ae9ab66c",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_ee918e9b",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -329,6 +455,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_c9f35c09",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "Yes, I believe that is a valid use case.  That users could belong to multiple domains and have multiple credentials.",
+      "parentUuid": "da6ed579_ee918e9b",
+      "range": {
+        "startLine": 45,
+        "startChar": 47,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_d6122c62",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -340,6 +490,24 @@
       "writtenOn": "2016-01-19T17:00:10Z",
       "side": 1,
       "message": "i don\u0027t think you need this",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_69ba700c",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "As I mentioned, I was getting an error if I didn\u0027t have a downgrade method.  I\u0027ll remove it later, but it\u0027s not hurting anything keeping it here.",
+      "parentUuid": "ba63e191_d6122c62",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -369,6 +537,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_89732480",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "It\u0027s passwords because we are expecting a collection of passwords in order to support multiple credentials.",
+      "parentUuid": "da6ed579_9fb4be35",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 64
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_1906b7ce",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 24
@@ -380,6 +572,24 @@
       "writtenOn": "2016-01-19T17:00:10Z",
       "side": 1,
       "message": "What happens with all these properties for a federated user? Do they still get the correct value?",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_e9eae0ab",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "That wouldn\u0027t get set and the passwords collection would be set to None.",
+      "parentUuid": "ba63e191_1906b7ce",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -409,6 +619,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_49a0cc9f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "Yes, there could be for multiple credentials.  However, currently we are only expect a 1 to 1 relationship between identity and password.",
+      "parentUuid": "da6ed579_8ebed2fd",
+      "range": {
+        "startLine": 45,
+        "startChar": 33,
+        "endLine": 45,
+        "endChar": 36
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_6ed6fe28",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 24
@@ -420,6 +654,30 @@
       "writtenOn": "2016-01-18T15:06:13Z",
       "side": 1,
       "message": "We will need to add a test for upgrading to 89 too, right?",
+      "range": {
+        "startLine": 833,
+        "startChar": 8,
+        "endLine": 833,
+        "endChar": 24
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_a9f4e886",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-20T00:04:38Z",
+      "side": 1,
+      "message": "Good catch, I\u0027ll add this test in the next patch.",
+      "parentUuid": "da6ed579_6ed6fe28",
       "range": {
         "startLine": 833,
         "startChar": 8,
