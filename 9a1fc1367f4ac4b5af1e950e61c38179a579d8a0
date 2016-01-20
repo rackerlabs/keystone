@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_8db0538d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18784
+      },
+      "writtenOn": "2016-01-20T17:14:05Z",
+      "side": 1,
+      "message": "impersonation",
+      "range": {
+        "startLine": 11,
+        "startChar": 31,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_95ffff33",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4
