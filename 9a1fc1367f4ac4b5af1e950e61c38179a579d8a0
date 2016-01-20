@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_0a553bc5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3077,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-20T12:21:00Z",
+      "side": 1,
+      "message": "This is weird: is this trustor or trustee id?",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4a72537e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3083,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-20T12:21:00Z",
+      "side": 1,
+      "message": "Here you are: a circular trust",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6af5d781",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-20T12:21:00Z",
+      "side": 1,
+      "message": "This is broken. Here is an example:\ntrust[roles] \u003d\u003d [role1]\noriginal_trust[roles] \u003d\u003d [role1, role2, .., roleN]\nroleN wasn\u0027t delegated by trust, but it still be in the result.",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_aaec2f90",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-20T12:21:00Z",
+      "side": 1,
+      "message": "This improves readability, but also spams backend with requests by id.\nDoesn\u0027t look a good trade-off for me...",
+      "revId": "9a1fc1367f4ac4b5af1e950e61c38179a579d8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
