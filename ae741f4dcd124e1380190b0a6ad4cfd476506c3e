@@ -350,6 +350,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_f84bb929",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-01-20T23:01:50Z",
+      "side": 1,
+      "message": "It was added to json_home. It\u0027s for discovery i want to know what sort of value this resource takes, and it takes a role id the same as every other value of role id through out keystone. It is not a new type.",
+      "parentUuid": "9a68dd71_a21761ec",
+      "range": {
+        "startLine": 84,
+        "startChar": 54,
+        "endLine": 84,
+        "endChar": 67
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_a2f5ddcb",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 55
