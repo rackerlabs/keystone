@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_05d197cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:40:45Z",
+      "side": 1,
+      "message": "nit: region ID*",
+      "range": {
+        "startLine": 10,
+        "startChar": 37,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d837e2e1",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:40:45Z",
+      "side": 1,
+      "message": "how is this different than the old check?",
+      "range": {
+        "startLine": 51,
+        "startChar": 12,
+        "endLine": 51,
+        "endChar": 46
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_784b565a",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:40:45Z",
+      "side": 1,
+      "message": "We could add a comment here saying that this is what makes us able to validate empty dictionaries.",
+      "range": {
+        "startLine": 56,
+        "startChar": 20,
+        "endLine": 56,
+        "endChar": 44
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a5552b1e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-20T18:40:45Z",
+      "side": 1,
+      "message": "do we need to test this with update?",
+      "range": {
+        "startLine": 903,
+        "startChar": 13,
+        "endLine": 903,
+        "endChar": 36
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
