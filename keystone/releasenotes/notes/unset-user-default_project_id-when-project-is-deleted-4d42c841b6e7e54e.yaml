@@ -1,0 +1,7 @@
+fixes:
+  - |
+    [`bug 1523369 <https://bugs.launchpad.net/keystone/+bug/1523369>`_]
+    Currently when a project is deleted, the project ID details still exist
+    for users who default_project_id maps to project ID deleted. User data is
+    update in the backend, however changes my not be visible until memcache
+    end of life.
