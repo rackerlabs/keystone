@@ -361,7 +361,15 @@ class Manager(manager.Manager):
         project_user_ids = (
             self.assignment_api.list_user_ids_for_project(project_id))
         for user_id in project_user_ids:
-            payload = {'user_id': user_id, 'project_id': project_id}
+            try:
+                payload = {'user_id': user_id, 'project_id': project_id}
+                self.assignment_api.remove_project_from_user(payload)
+            except exception.NotFound:
+                msg = _LW('Unable to remove user %(project)s from '
+                          '%(user)s.')
+                LOG.warning(msg, {'project': project_id,
+                                  'user': user_id})
+
             self._emit_invalidate_user_project_tokens_notification(payload)
         ret = self.driver.delete_project(project_id)
         self.assignment_api.delete_project_assignments(project_id)
