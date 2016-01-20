@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_424d4571",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-20T18:07:15Z",
+      "side": 1,
+      "message": "the proposal of this patch was to replace only the resource directory ones... the ones on this module were only renamed because it broke some tests. I intend to do this one in follow-up patches, as well as the assignment directory.",
+      "parentUuid": "9a68dd71_e9b9cced",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 22
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ffba8ee0",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
@@ -70,6 +94,24 @@
       "writtenOn": "2016-01-20T01:11:57Z",
       "side": 1,
       "message": "I am thinking if we should keep this ResourceDriverBase, because when we have newer version later ResourceDriverV10..11, we have to copy this code again.\n\nIf we\u0027re keeping it here,  add a NOTE that we can move this back to DriverBase when we no longer support V8.",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_42822554",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-20T18:07:15Z",
+      "side": 1,
+      "message": "That\u0027s the default behaviour for all driver methods that change, right? I think Henry Nash has explained this in the class docstrings",
+      "parentUuid": "ba63e191_bf6df605",
       "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
