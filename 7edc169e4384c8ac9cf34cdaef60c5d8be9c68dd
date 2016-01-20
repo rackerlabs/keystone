@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_91f94550",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-20T19:49:20Z",
+      "side": 1,
+      "message": "I am 100% against adding in options like this. We can\u0027t ever make it default False and no one except edge cases will opt in to it. This \"fix\" still feels like a change for speculative benefits.\n\nIf we are doing this we should be looking at how we can handle the current uses while maintaining the efficiency gains. I also would like to have clear proof of these efficiency gains. \n\nSorry to be hard on this proposal but I\u0027m not convinced this is a win due to both added complexity and the relative edge case it is solving. The tokens being stored in the DB is soon to be the non-recommended method, moving to Fernet removes the bulk of data that keystone has to manage in the DB. I would rather see focus on the rolling schema migrations and other SQL-specific [fix the joins, stop hitting the db 400000 times for the same object in the same request] than muck with the datatypes in the schema for the sake of minor index efficiency gains and minor storage gains.",
+      "revId": "7edc169e4384c8ac9cf34cdaef60c5d8be9c68dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
