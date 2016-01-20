@@ -488,6 +488,7 @@ class Manager(manager.Manager):
         for user_id in project_user_ids:
             payload = {'user_id': user_id, 'project_id': project_id}
             self._emit_invalidate_user_project_tokens_notification(payload)
+        notifications.Audit.deleted(self._PROJECT, project_id, initiator)
 
     def _post_delete_cleanup_project(self, project_id, project,
                                      initiator=None):
@@ -496,7 +497,6 @@ class Manager(manager.Manager):
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
         self.credential_api.delete_credentials_for_project(project_id)
-        notifications.Audit.deleted(self._PROJECT, project_id, initiator)
         # Invalidate user role assignments cache region, as it may
         # be caching role assignments where the target is
         # the specified project

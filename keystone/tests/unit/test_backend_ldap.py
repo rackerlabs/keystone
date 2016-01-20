@@ -2662,6 +2662,15 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
                           self.resource_api.get_domain,
                           domain['id'])
 
+    def test_delete_project_with_user_added(self):
+        domain = unit.new_domain_ref()
+        project = unit.new_project_ref(domain_id=domain['id'])
+        user = unit.new_user_ref(domain_id=domain['id'], project_id=project['id'])
+        self.resource_api.create_domain(domain['id'], domain)
+        self.resource_api.create_project(project['id'], project)
+        self.identity_api.create_user(user)
+        self.resource_api.delete_project(project['id'])
+
     def test_user_enabled_ignored_disable_error(self):
         # Override.
         self.skipTest("Doesn't apply since LDAP config has no affect on the "
