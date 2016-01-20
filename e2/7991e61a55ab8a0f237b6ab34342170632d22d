@@ -1,0 +1,12 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review-1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: guang-yee <guang.yee@hpe.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 20 Jan 2016 00:58:54 +0000
+Reviewed-on: https://review.openstack.org/264260
+Project: openstack/keystone
+Branch: refs/heads/master
