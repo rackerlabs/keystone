@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_411c2cc1",
+        "filename": "keystone/tests/functional/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:51:40Z",
+      "side": 1,
+      "message": "Do you think all of these would be common enough to live in keystone/tests/common/auth.py ? They are auth specific.",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 85,
+        "endChar": 47
+      },
+      "revId": "e04758e50ab4be22e25a8927861cb0afdf4124ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
