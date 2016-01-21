@@ -91,6 +91,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_1fcc8e34",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:23:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6ed579_732fcba1",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_b6f45887",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 24
@@ -197,6 +221,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_6d735a16",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:23:20Z",
+      "side": 1,
+      "message": "expires_at is used to allow password credentials to expire",
+      "parentUuid": "9a68dd71_e7d775bd",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_9626f4cc",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 24
@@ -278,6 +320,24 @@
       "writtenOn": "2016-01-20T00:04:38Z",
       "side": 1,
       "message": "I know, but I get an error when running tests locally if it\u0027s not there.  I\u0027ll remove it later.",
+      "parentUuid": "ba63e191_b647781c",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_8d556e51",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:23:20Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "ba63e191_b647781c",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -549,6 +609,24 @@
       "writtenOn": "2016-01-20T00:04:38Z",
       "side": 1,
       "message": "As I mentioned, I was getting an error if I didn\u0027t have a downgrade method.  I\u0027ll remove it later, but it\u0027s not hurting anything keeping it here.",
+      "parentUuid": "ba63e191_d6122c62",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_add712be",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:23:20Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "ba63e191_d6122c62",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
