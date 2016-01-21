@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_2c71f2e0",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T14:57:54Z",
+      "side": 1,
+      "message": "Is this change relevant to what you are doing? So not you are saying is if a None is found in the kwargs, we\u0027ll validate it and give the user a bad error message.\n\nhttp://paste.openstack.org/show/484579/\n\nThat paste also shows that the tests are broken because of the .pop() calls.",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ac5e4210",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T14:57:54Z",
+      "side": 1,
+      "message": "You are changing a global and not setting it back to it\u0027s original state. Maybe you want a copy?",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ecabdad4",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T14:57:54Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
