@@ -69,6 +69,24 @@
       "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b0cd2cb9",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T16:59:49Z",
+      "side": 1,
+      "message": "The ID is an id_string (http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/validation/parameter_types.py#n37) so most characters including the \u003c\u003e in my suggestion will work",
+      "parentUuid": "9a68dd71_b55d1e7b",
+      "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
