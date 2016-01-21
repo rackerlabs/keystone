@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_ed12ea08",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T18:16:20Z",
+      "side": 0,
+      "message": "We could keep this test behavior but just remove the assertRaises part.",
+      "range": {
+        "startLine": 509,
+        "startChar": 7,
+        "endLine": 511,
+        "endChar": 49
+      },
+      "revId": "7f485562f9fd9c44dabf779f4c32951dbac55885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
