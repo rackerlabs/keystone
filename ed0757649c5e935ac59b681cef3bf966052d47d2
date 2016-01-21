@@ -51,6 +51,24 @@
       "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b55d1e7b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-21T16:54:36Z",
+      "side": 1,
+      "message": "So of course this is an ID (not a name) - and we don\u0027t let callers  make up their own IDs. However, this seems a sensible idea, I like it.\n\nWe can chose something that is in the reserved characters of: https://review.openstack.org/#/c/257376/",
+      "parentUuid": "9a68dd71_07ede424",
+      "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
