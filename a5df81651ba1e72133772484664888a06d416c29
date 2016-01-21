@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_1fd8b71c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T22:28:26Z",
+      "side": 1,
+      "message": "Does this only apply if impersonation is being used on the trust?",
+      "range": {
+        "startLine": 385,
+        "startChar": 16,
+        "endLine": 387,
+        "endChar": 63
+      },
+      "revId": "a5df81651ba1e72133772484664888a06d416c29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
