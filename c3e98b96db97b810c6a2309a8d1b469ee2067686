@@ -647,6 +647,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_8f50fe5f",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T20:30:41Z",
+      "side": 1,
+      "message": "This makes sense to me if we want to tie together multiple user accounts into a single profile. For instance, user XXX-YYY-ZZZ-UUID (identity) maps back to (dstanek @ home), (david.stanek @ work) and a federated login. The opposite of single-signon.",
+      "parentUuid": "9a68dd71_b9575001",
+      "range": {
+        "startLine": 45,
+        "startChar": 47,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_d6122c62",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
