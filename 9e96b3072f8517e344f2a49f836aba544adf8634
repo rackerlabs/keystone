@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_166e99c9",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T02:52:19Z",
+      "side": 1,
+      "message": "so, the condition of kwargs.get(resource_to_validate) will not all the body to be empty, but this change will allow it to be empty.",
+      "parentUuid": "9a68dd71_d837e2e1",
+      "range": {
+        "startLine": 51,
+        "startChar": 12,
+        "endLine": 51,
+        "endChar": 46
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_784b565a",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 5
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_d6dd6171",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T02:52:19Z",
+      "side": 1,
+      "message": "L55-57 was added to support internal API call, it will  never happen if call by CURL.",
+      "parentUuid": "9a68dd71_784b565a",
+      "range": {
+        "startLine": 56,
+        "startChar": 20,
+        "endLine": 56,
+        "endChar": 44
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a5552b1e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 5
@@ -82,6 +130,30 @@
       "writtenOn": "2016-01-20T18:40:45Z",
       "side": 1,
       "message": "do we need to test this with update?",
+      "range": {
+        "startLine": 903,
+        "startChar": 13,
+        "endLine": 903,
+        "endChar": 36
+      },
+      "revId": "9e96b3072f8517e344f2a49f836aba544adf8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_56d09153",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T02:52:19Z",
+      "side": 1,
+      "message": "i just thought that update with empty body is not make sense, but this should be allowed from here and let this be  controlled by schema definition instead.",
+      "parentUuid": "9a68dd71_a5552b1e",
       "range": {
         "startLine": 903,
         "startChar": 13,
