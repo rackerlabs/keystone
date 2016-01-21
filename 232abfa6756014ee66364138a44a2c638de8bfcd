@@ -108,6 +108,78 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_cd44c675",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:26:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_a412f2b2",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 59
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_8d5fae40",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:26:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_a245ebb3",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 59
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4d30d601",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:26:15Z",
+      "side": 1,
+      "message": "Changed my mind, added the model in sql.py",
+      "parentUuid": "9a68dd71_049f22b5",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 59
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a44d1274",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 26
@@ -142,6 +214,30 @@
       "writtenOn": "2016-01-21T16:02:36Z",
       "side": 1,
       "message": "The downgrade method is needed there when doing local testing and I don\u0027t think it was hurting anything by leaving it there. However, I did remove it.",
+      "parentUuid": "9a68dd71_a44d1274",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 8
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6d2b5a95",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:26:15Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "9a68dd71_a44d1274",
       "range": {
         "startLine": 57,
@@ -356,6 +452,30 @@
       "side": 1,
       "message": "Why 2 test cases? This is testing the user model which is made up of 2 tables.",
       "parentUuid": "9a68dd71_84148ef5",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 51
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ad08722e",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T18:26:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_42bd0f67",
       "range": {
         "startLine": 131,
         "startChar": 0,
