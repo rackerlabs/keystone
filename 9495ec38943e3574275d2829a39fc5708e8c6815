@@ -39,6 +39,23 @@
       "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7b9f9550",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-01-21T17:24:25Z",
+      "side": 1,
+      "message": "I think it is worth mentioning what the previous behavior was in the release note so folks have better context on what changed",
+      "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
