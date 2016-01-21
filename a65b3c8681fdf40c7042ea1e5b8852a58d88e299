@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_605e2feb",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-21T01:46:47Z",
+      "side": 1,
+      "message": "this should actually be 64",
+      "range": {
+        "startLine": 61,
+        "startChar": 66,
+        "endLine": 61,
+        "endChar": 68
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_40144bf4",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-21T01:46:47Z",
+      "side": 1,
+      "message": "would be good to have a comment explaining how you determined the transformed_id",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_40e20b05",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-21T01:46:47Z",
+      "side": 1,
+      "message": "looks like this test is failing:\n\n2016-01-20 23:08:17.983 | testtools.testresult.real._StringException: Traceback (most recent call last):\n2016-01-20 23:08:17.983 |   File \"/home/jenkins/workspace/gate-keystone-python34/keystone/common/utils.py\", line 54, in resource_uuid\n2016-01-20 23:08:17.983 |     uuid.UUID(value)\n2016-01-20 23:08:17.983 |   File \"/usr/lib/python3.4/uuid.py\", line 137, in __init__\n2016-01-20 23:08:17.983 |     raise ValueError(\u0027badly formed hexadecimal UUID string\u0027)\n2016-01-20 23:08:17.984 | ValueError: badly formed hexadecimal UUID string\n2016-01-20 23:08:17.984 | \n2016-01-20 23:08:17.984 | During handling of the above exception, another exception occurred:\n2016-01-20 23:08:17.984 | \n2016-01-20 23:08:17.984 | Traceback (most recent call last):\n2016-01-20 23:08:17.984 |   File \"/home/jenkins/workspace/gate-keystone-python34/keystone/tests/unit/common/test_utils.py\", line 46, in test_resource_uuid\n2016-01-20 23:08:17.985 |     self.assertEqual(common_utils.resource_uuid(uuid_str), transformed_id)\n2016-01-20 23:08:17.985 |   File \"/home/jenkins/workspace/gate-keystone-python34/keystone/common/utils.py\", line 60, in resource_uuid\n2016-01-20 23:08:17.985 |     return uuid.uuid5(RESOURCE_ID_NAMESPACE, value).hex\n2016-01-20 23:08:17.985 |   File \"/usr/lib/python3.4/uuid.py\", line 617, in uuid5\n2016-01-20 23:08:17.985 |     hash \u003d sha1(namespace.bytes + bytes(name, \"utf-8\")).digest()\n2016-01-20 23:08:17.985 | TypeError: encoding or errors without a string argument",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 78
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
