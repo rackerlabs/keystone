@@ -145,6 +145,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_8c1b3e1b",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T14:52:09Z",
+      "side": 1,
+      "message": "We have CONF scope available here - is this something that we are going to backport to Kilo? The bug isn\u0027t tagged with any backport potentials.",
+      "parentUuid": "9a68dd71_8f96dd4a",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 49
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_3fe1019b",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 1
