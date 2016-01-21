@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_56ddf112",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T03:01:53Z",
+      "side": 1,
+      "message": "does it make sense to have this be a query string? \n\n    DELETE /v3/projects/{project_id}?cascade",
+      "range": {
+        "startLine": 40,
+        "startChar": 92,
+        "endLine": 40,
+        "endChar": 99
+      },
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_f6ce6559",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T03:01:53Z",
+      "side": 1,
+      "message": "This is a straight copy/paste from the method above - can we consolidate?",
+      "range": {
+        "startLine": 314,
+        "startChar": 4,
+        "endLine": 319,
+        "endChar": 61
+      },
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
