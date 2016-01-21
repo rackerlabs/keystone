@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_b44f7b91",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T09:55:32Z",
+      "side": 1,
+      "message": "If you pass the value in this way, it\u0027s \u002732\u0027 instead of \u002765\u0027.\n\nvalue will be assigned to hex, code from uuid, \n  \n     if len(hex) !\u003d 32:\n                raise ValueError(\u0027badly formed hexadecimal UUID string\u0027)",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 28
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_605e2feb",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
@@ -18,6 +41,46 @@
         "startChar": 66,
         "endLine": 61,
         "endChar": 68
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d76c719e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T09:55:32Z",
+      "side": 1,
+      "message": "remove this line to consistent with the code from L511-L514.",
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d70311b7",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T09:55:32Z",
+      "side": 1,
+      "message": "change to:\n  self.assertEqual(uuid_str, common_utils.resource_uuid(uuid_str)",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 72
       },
       "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -48,6 +111,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_7714a5f4",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T09:55:32Z",
+      "side": 1,
+      "message": "++ i have no idea where is this coming from.",
+      "parentUuid": "9a68dd71_40144bf4",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_40e20b05",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 5
@@ -59,6 +146,29 @@
       "writtenOn": "2016-01-21T01:46:47Z",
       "side": 1,
       "message": "looks like this test is failing:\n\n2016-01-20 23:08:17.983 | testtools.testresult.real._StringException: Traceback (most recent call last):\n2016-01-20 23:08:17.983 |   File \"/home/jenkins/workspace/gate-keystone-python34/keystone/common/utils.py\", line 54, in resource_uuid\n2016-01-20 23:08:17.983 |     uuid.UUID(value)\n2016-01-20 23:08:17.983 |   File \"/usr/lib/python3.4/uuid.py\", line 137, in __init__\n2016-01-20 23:08:17.983 |     raise ValueError(\u0027badly formed hexadecimal UUID string\u0027)\n2016-01-20 23:08:17.984 | ValueError: badly formed hexadecimal UUID string\n2016-01-20 23:08:17.984 | \n2016-01-20 23:08:17.984 | During handling of the above exception, another exception occurred:\n2016-01-20 23:08:17.984 | \n2016-01-20 23:08:17.984 | Traceback (most recent call last):\n2016-01-20 23:08:17.984 |   File \"/home/jenkins/workspace/gate-keystone-python34/keystone/tests/unit/common/test_utils.py\", line 46, in test_resource_uuid\n2016-01-20 23:08:17.985 |     self.assertEqual(common_utils.resource_uuid(uuid_str), transformed_id)\n2016-01-20 23:08:17.985 |   File \"/home/jenkins/workspace/gate-keystone-python34/keystone/common/utils.py\", line 60, in resource_uuid\n2016-01-20 23:08:17.985 |     return uuid.uuid5(RESOURCE_ID_NAMESPACE, value).hex\n2016-01-20 23:08:17.985 |   File \"/usr/lib/python3.4/uuid.py\", line 617, in uuid5\n2016-01-20 23:08:17.985 |     hash \u003d sha1(namespace.bytes + bytes(name, \"utf-8\")).digest()\n2016-01-20 23:08:17.985 | TypeError: encoding or errors without a string argument",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 78
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_57dde140",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-21T09:55:32Z",
+      "side": 1,
+      "message": "change to:\n self.assertEqual(transformed_id, common_utils.resource_uuid(uuid_str)\n\nthe signature is (expected, observed)",
       "range": {
         "startLine": 46,
         "startChar": 8,
