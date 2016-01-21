@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_bf32cb0e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T22:35:39Z",
+      "side": 1,
+      "message": "nit: end sentence with a period.",
+      "range": {
+        "startLine": 4205,
+        "startChar": 54,
+        "endLine": 4205,
+        "endChar": 65
+      },
+      "revId": "feca7e9358f42e291b520e9a2980dd9acef73112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7f3c53e2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T22:35:39Z",
+      "side": 1,
+      "message": "by default",
+      "range": {
+        "startLine": 4208,
+        "startChar": 37,
+        "endLine": 4208,
+        "endChar": 74
+      },
+      "revId": "feca7e9358f42e291b520e9a2980dd9acef73112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_bf964bee",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T22:35:39Z",
+      "side": 1,
+      "message": "nit: role_assignment_without_names",
+      "range": {
+        "startLine": 4233,
+        "startChar": 8,
+        "endLine": 4233,
+        "endChar": 18
+      },
+      "revId": "feca7e9358f42e291b520e9a2980dd9acef73112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_3f8b3bc5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4238,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T22:35:39Z",
+      "side": 1,
+      "message": "same comment here - just helps the readability a bit",
+      "range": {
+        "startLine": 4238,
+        "startChar": 8,
+        "endLine": 4238,
+        "endChar": 18
+      },
+      "revId": "feca7e9358f42e291b520e9a2980dd9acef73112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
