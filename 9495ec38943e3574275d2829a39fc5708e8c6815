@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_d58f7221",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-21T16:54:07Z",
+      "side": 1,
+      "message": "[`bug 1535878 \u003chttps://bugs.launchpad.net/keystone/+bug/1535878\u003e`_]\n\ndon\u0027t forget to reference the bug. Reference: https://github.com/openstack/keystone/blob/master/releasenotes/notes/bug-1490804-de58a9606edb31eb.yaml#L4",
+      "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
