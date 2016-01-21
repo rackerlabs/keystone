@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_ec73dae5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:01:03Z",
+      "side": 1,
+      "message": "Cloud add: \n\n    Related-Bug: #1506473\n\nSince it contains context about 9fc1cc67d993cfa0afc46aaea2802e1c35445f77",
+      "revId": "b469688809430a36e93aaf025d797d8d8e1c47be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_873559db",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:01:03Z",
+      "side": 1,
+      "message": "This entire test shows a behavior that is already tested in test_credential.py, is there anyway we can consolidate the behavior and keep setUp specific stuff in a test class that inherits/tests the behavior?",
+      "range": {
+        "startLine": 445,
+        "startChar": 4,
+        "endLine": 461,
+        "endChar": 43
+      },
+      "revId": "b469688809430a36e93aaf025d797d8d8e1c47be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
