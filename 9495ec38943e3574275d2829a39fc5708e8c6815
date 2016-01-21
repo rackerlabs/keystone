@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_9b0fe9e0",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-21T17:21:58Z",
+      "side": 1,
+      "message": "as was mentioned by Vivek, on the earlier patch, given how important the get_project() call is, it might be worth adding a negative check for a user with a project token for the wrong project. (we do already check that a user with a domain token with a different domain cannot call get_project in an earlier test in this class)",
+      "range": {
+        "startLine": 1387,
+        "startChar": 8,
+        "endLine": 1387,
+        "endChar": 48
+      },
+      "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_d58f7221",
         "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
         "patchSetId": 3
