@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a245ebb3",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:29:48Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a68dd71_a412f2b2",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 59
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a44d1274",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 26
@@ -111,6 +135,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_e250c360",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:29:48Z",
+      "side": 1,
+      "message": "i\u0027m OK with this for not, but a future refactoring may be to introduce a rename or probably even better to introduce a new abstraction",
+      "parentUuid": "9a68dd71_49230fbe",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 10
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_84148ef5",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 26
@@ -122,6 +170,30 @@
       "writtenOn": "2016-01-21T07:27:23Z",
       "side": 1,
       "message": "this should be a different testcase since `password` and \u0027identity\u0027 is in the same level.",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 51
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_42bd0f67",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:29:48Z",
+      "side": 1,
+      "message": "Also the federated_identity table needs a test.",
+      "parentUuid": "9a68dd71_84148ef5",
       "range": {
         "startLine": 131,
         "startChar": 0,
