@@ -193,6 +193,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_27726dae",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:02:26Z",
+      "side": 1,
+      "message": "Yes. I\u0027ve rather us not have to support old-style in our code if we don\u0027t have to support it in Kilo. This will just get rewritten to the new way anyway once someone comes along and sees it the old style.",
+      "parentUuid": "9a68dd71_4c646621",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 49
+      },
+      "revId": "362a2cbedf2771fbd55a8cf3f999698814cb3d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_3fe1019b",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 1
