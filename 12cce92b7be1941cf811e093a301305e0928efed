@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_23cb3320",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-01-21T19:04:58Z",
+      "side": 1,
+      "message": "This is not enough. The migration is complex and should be tested more thoroughly. Values of each field should be tested.",
+      "range": {
+        "startLine": 874,
+        "startChar": 8,
+        "endLine": 874,
+        "endChar": 63
+      },
+      "revId": "12cce92b7be1941cf811e093a301305e0928efed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
