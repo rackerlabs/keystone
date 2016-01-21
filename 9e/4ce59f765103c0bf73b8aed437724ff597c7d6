@@ -1,0 +1,10 @@
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Workflow+1: henry-nash <henryn@linux.vnet.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 21 Jan 2016 04:13:08 +0000
+Reviewed-on: https://review.openstack.org/253219
+Project: openstack/keystone
+Branch: refs/heads/master
