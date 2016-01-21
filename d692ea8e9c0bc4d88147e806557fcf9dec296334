@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_276d8898",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "nit: DBOperationNotAllowed*\n\nThis could be addressed in a separate patch, just a readability thing.",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_271b481d",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "End this with a period to be consistent with the ones below.",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 44
+      },
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6721404d",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "End this with a period to be consistent with the ones below.",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 51
+      },
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_07be44d4",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "End this with a period to be consistent with the ones below.",
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_67cf0080",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "End this with a period to be consistent with the ones below.",
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c7b34ce8",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "nit: this entire inline comment could be included in the docstring above.",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 125,
+        "endChar": 87
+      },
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_47d75ced",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "nit: do not allow things to be added here unless approved via an out of band process?",
+      "range": {
+        "startLine": 128,
+        "startChar": 12,
+        "endLine": 128,
+        "endChar": 72
+      },
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4773dc15",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:21:44Z",
+      "side": 1,
+      "message": "Note that this will change the next time we have a migration collapse.",
+      "range": {
+        "startLine": 133,
+        "startChar": 23,
+        "endLine": 133,
+        "endChar": 25
+      },
+      "revId": "d692ea8e9c0bc4d88147e806557fcf9dec296334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
