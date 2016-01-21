@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_077de96d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "This commit message does a good job of explaining what the change is doing - but it would be nice to have a little more detail as to *why* we need it.",
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a28c0b80",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 28
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "Can we add a comment here saying that this is going to be moved in a future release of osprofiler (according to Boris and Morgan\u0027s conversation a couple patch sets back) ?",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 60
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_67a5c5b3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "nit: If set to True, OSProfiler will trace requests providing performance results. If False, the profiler is bypassed completely.\n\nOr something along those lines. Trying to make the help text a little more descriptive.",
+      "range": {
+        "startLine": 1150,
+        "startChar": 26,
+        "endLine": 1150,
+        "endChar": 67
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_27f7cdf6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1152,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "nit: If False, the profiler won\u0027t trace SQL requests.",
+      "range": {
+        "startLine": 1152,
+        "startChar": 35,
+        "endLine": 1152,
+        "endChar": 61
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_87aeb983",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "Is this ever suppose to be changed? What type of value is it suppose to be. Is it suppose to be generated?",
+      "range": {
+        "startLine": 1154,
+        "startChar": 25,
+        "endLine": 1155,
+        "endChar": 34
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_075ba988",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "This should have a docstring detailing it\u0027s purpose and usage (even though it may be obvious).",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 32
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e7f45588",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "Can be replaced with the specific location of the config file?",
+      "range": {
+        "startLine": 36,
+        "startChar": 18,
+        "endLine": 36,
+        "endChar": 31
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_076e4901",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "nit: \"Traces provided from the profiler can only be subscribed to using the same HMAC keys that are configured in Keystone\u0027s configuration file under the [profiler] section.",
+      "range": {
+        "startLine": 34,
+        "startChar": 42,
+        "endLine": 36,
+        "endChar": 54
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_674e2598",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "This sentence could probably be removed.",
+      "range": {
+        "startLine": 37,
+        "startChar": 18,
+        "endLine": 38,
+        "endChar": 40
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_273fcdd7",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "This sentence is subjective to how people setup their Keystone deployments. I would remove it. I would keep the information to \"how do I subscribe to requests?\" and \"how can I shut this off?\".",
+      "range": {
+        "startLine": 38,
+        "startChar": 41,
+        "endLine": 40,
+        "endChar": 29
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e26443e6",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T15:19:05Z",
+      "side": 1,
+      "message": "This could be commented - saying what profiler is doing.\n\n    # Setup performance profiling for keystone if enabled.\n    profiler.setup(name)",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
