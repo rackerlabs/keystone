@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_8abb3572",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2016-01-21T08:39:40Z",
+      "side": 1,
+      "message": "now that the negative test case is removed, would it make sense to add a new negative test like \u0027test_user_with_no_role_get_project\u0027 ?",
+      "revId": "6c7e761edaa6982a95b0091cbf3bc17c71f02331",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
