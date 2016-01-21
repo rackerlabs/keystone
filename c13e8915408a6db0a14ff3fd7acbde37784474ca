@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_bdb18a91",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 28
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:41:48Z",
+      "side": 1,
+      "message": "I still don\u0027t like the fact that this in the default pipelines",
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a28c0b80",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 28
@@ -88,6 +105,23 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_7d21d2fa",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:41:48Z",
+      "side": 1,
+      "message": "Do you really want a default? It seems that this is something a deployer should be forced to set.",
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_87aeb983",
         "filename": "keystone/common/config.py",
         "patchSetId": 28
@@ -128,6 +162,23 @@
         "endLine": 26,
         "endChar": 32
       },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_1d8776d8",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:41:48Z",
+      "side": 1,
+      "message": "Why is this not internationalized?",
       "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -237,6 +288,30 @@
       "writtenOn": "2016-01-21T15:19:05Z",
       "side": 1,
       "message": "This could be commented - saying what profiler is doing.\n\n    # Setup performance profiling for keystone if enabled.\n    profiler.setup(name)",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_fde8627e",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:41:48Z",
+      "side": 1,
+      "message": "or just have a better name than profiler.",
+      "parentUuid": "9a68dd71_e26443e6",
       "range": {
         "startLine": 57,
         "startChar": 4,
