@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_60d06f54",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-21T01:39:18Z",
+      "side": 0,
+      "message": "we should find an alternative here, rather than removing the test",
+      "range": {
+        "startLine": 441,
+        "startChar": 8,
+        "endLine": 441,
+        "endChar": 61
+      },
+      "revId": "d78fcc361e006c97163bee2d3fe04eb5aa2880e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
