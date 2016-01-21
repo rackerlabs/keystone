@@ -33,6 +33,24 @@
       "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_07ede424",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T16:14:35Z",
+      "side": 1,
+      "message": "++ I think that\u0027s a good idea. Are there specific characters we can include that we don\u0027t allow in names? I don\u0027t think there are but thought I\u0027d ask anyway.",
+      "parentUuid": "9a68dd71_e4bc4e6e",
+      "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
