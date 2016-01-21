@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a3f5e3cb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3217,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-21T19:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_c49caa5f",
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_c20d7f3f",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 7
@@ -66,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9e36f2e5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3287,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-21T19:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_c486eada",
+      "range": {
+        "startLine": 3286,
+        "startChar": 8,
+        "endLine": 3287,
+        "endChar": 51
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_dd479e1b",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 7
@@ -77,6 +119,30 @@
       "writtenOn": "2016-01-21T15:39:21Z",
       "side": 1,
       "message": "Sweet, we could do this check for everyone in the user_list, right?",
+      "range": {
+        "startLine": 3319,
+        "startChar": 8,
+        "endLine": 3321,
+        "endChar": 67
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7efa1ebf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3321,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-21T19:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_dd479e1b",
       "range": {
         "startLine": 3319,
         "startChar": 8,
@@ -136,6 +202,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9e9fd24f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-21T19:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_ddcd5e5e",
+      "range": {
+        "startLine": 376,
+        "startChar": 16,
+        "endLine": 376,
+        "endChar": 31
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_bd274a11",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 7
@@ -171,6 +261,30 @@
       "side": 1,
       "message": "That\u0027s because it has the narrowest scope",
       "parentUuid": "9a68dd71_bd274a11",
+      "range": {
+        "startLine": 378,
+        "startChar": 20,
+        "endLine": 379,
+        "endChar": 50
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_de01ca6b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-21T19:31:37Z",
+      "side": 1,
+      "message": "Yes, the last trust on the chain belongs to the originator of the trusted role on a given project.",
+      "parentUuid": "9a68dd71_448f5acc",
       "range": {
         "startLine": 378,
         "startChar": 20,
