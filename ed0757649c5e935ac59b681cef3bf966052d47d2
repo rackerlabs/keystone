@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_048c0234",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_project_domain_id_defaults_to_null_string.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T16:08:50Z",
+      "side": 1,
+      "message": "(nit) should be a newline here",
+      "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e4bc4e6e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T16:08:50Z",
+      "side": 1,
+      "message": "Would it be possible to make this a string that is impossible for a user to use? Something like \"\u003c\u003cnull\u003e\u003e\" would make it so that nobody would accidentally create a domain with our magic ID.",
+      "revId": "ed0757649c5e935ac59b681cef3bf966052d47d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
