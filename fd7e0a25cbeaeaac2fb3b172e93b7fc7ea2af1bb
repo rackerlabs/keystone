@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_002dc545",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-21T18:37:00Z",
+      "side": 1,
+      "message": "ok. I can do that in a follow-up patch",
+      "parentUuid": "9a68dd71_714931d0",
+      "range": {
+        "startLine": 278,
+        "startChar": 3,
+        "endLine": 278,
+        "endChar": 79
+      },
+      "revId": "fd7e0a25cbeaeaac2fb3b172e93b7fc7ea2af1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_40f2ddd3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-21T18:37:00Z",
+      "side": 1,
+      "message": "need to change here too",
+      "range": {
+        "startLine": 311,
+        "startChar": 17,
+        "endLine": 311,
+        "endChar": 44
+      },
+      "revId": "fd7e0a25cbeaeaac2fb3b172e93b7fc7ea2af1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ac41903b",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -36,6 +83,30 @@
       "writtenOn": "2016-01-20T20:01:54Z",
       "side": 1,
       "message": "nit: possible method name improvement\n\n    def _only_allow_enabled_to_update_cascade()",
+      "range": {
+        "startLine": 321,
+        "startChar": 8,
+        "endLine": 321,
+        "endChar": 35
+      },
+      "revId": "fd7e0a25cbeaeaac2fb3b172e93b7fc7ea2af1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_601601f3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-21T18:37:00Z",
+      "side": 1,
+      "message": "nice suggestion",
+      "parentUuid": "9a68dd71_ac41903b",
       "range": {
         "startLine": 321,
         "startChar": 8,
