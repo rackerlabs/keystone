@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_518628ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-21T21:47:48Z",
+      "side": 1,
+      "message": "remember that the policy.json file is used for v3 as well. It just represents a simple \"the cloud admin does everything\" policy model",
+      "parentUuid": "9a68dd71_c37c9774",
+      "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_9b0fe9e0",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
