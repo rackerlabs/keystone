@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_b18a1bbe",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T14:47:47Z",
+      "side": 1,
+      "message": "We should add a docstring for this.",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 25
+      },
+      "revId": "0ad924e7dba90ed0face42ad5268f53f310c5ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_71ab431e",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T14:47:47Z",
+      "side": 1,
+      "message": "Can we import this from a common place? That way we don\u0027t assume we have the right one here.",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 65
+      },
+      "revId": "0ad924e7dba90ed0face42ad5268f53f310c5ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_cc3b76d0",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T14:47:47Z",
+      "side": 1,
+      "message": "For context - this is invalid because it exceed the maximum lenght of 64, right? Maybe we can showcase that with something like: \n\n    # This input is invalid because it is greater than 64 characters\n    invalid_input \u003d \u0027z\u0027 * 65",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 51,
+        "endChar": 43
+      },
+      "revId": "0ad924e7dba90ed0face42ad5268f53f310c5ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
