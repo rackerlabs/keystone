@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_76f35574",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-21T03:05:45Z",
+      "side": 1,
+      "message": "Can\u0027t this be done by writing the test to expect the specific exception with a note/fixme saying that it needs to be addressed (these usually link to a bug report, too).",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "5b5cb35a00fb242deb6fcb4c961c6baf566cdbe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_ffbabc09",
         "filename": "keystone/tests/unit/utils.py",
         "patchSetId": 1
