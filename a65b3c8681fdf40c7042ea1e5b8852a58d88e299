@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_555634d3",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-21T11:58:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_d70311b7",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 72
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_40144bf4",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 5
@@ -135,6 +159,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_7551f8d7",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-21T11:58:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_40144bf4",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_40e20b05",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 5
@@ -169,6 +217,30 @@
       "writtenOn": "2016-01-21T09:55:32Z",
       "side": 1,
       "message": "change to:\n self.assertEqual(transformed_id, common_utils.resource_uuid(uuid_str)\n\nthe signature is (expected, observed)",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 78
+      },
+      "revId": "a65b3c8681fdf40c7042ea1e5b8852a58d88e299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b56e9094",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-21T11:58:53Z",
+      "side": 1,
+      "message": "Looks like the function uuid.uuid5 itself takes care of converting a string/unicode type in PY34 to bytes. So no need to check in our code. Just pass along the input to the function.",
+      "parentUuid": "9a68dd71_40e20b05",
       "range": {
         "startLine": 46,
         "startChar": 8,
