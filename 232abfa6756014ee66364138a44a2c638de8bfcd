@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_e118c086",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "Nit, I may change it if there is another patch",
+      "parentUuid": "9a68dd71_c4a606c1",
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a412f2b2",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 26
@@ -66,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_049f22b5",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "I\u0027m just adding the table here. When I start working on #2 \"Shadow LDAP and federated users\", which will be a different patch, I\u0027ll create the model in sql.py",
+      "parentUuid": "9a68dd71_a412f2b2",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 59
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a44d1274",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 26
@@ -89,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_c444aa1c",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "The downgrade method is needed there when doing local testing and I don\u0027t think it was hurting anything by leaving it there. However, I did remove it.",
+      "parentUuid": "9a68dd71_a44d1274",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 8
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_84732eb1",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 26
@@ -100,6 +166,30 @@
       "writtenOn": "2016-01-21T07:27:23Z",
       "side": 1,
       "message": "here too, pls remove it!",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 8
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e45e8ee8",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_84732eb1",
       "range": {
         "startLine": 64,
         "startChar": 0,
@@ -159,6 +249,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_040962dd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "It doesn\u0027t look weird to me.  The user model is simply made up of 2 tables identity and password.",
+      "parentUuid": "9a68dd71_49230fbe",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 10
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_84148ef5",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 26
@@ -193,6 +307,54 @@
       "writtenOn": "2016-01-21T15:29:48Z",
       "side": 1,
       "message": "Also the federated_identity table needs a test.",
+      "parentUuid": "9a68dd71_84148ef5",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 51
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e488ce24",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "I\u0027ll add the federated_identity table when I start working on #2 \"Shadow LDAP and federated users\", which will be a different patch. Once I create the model in sql.py, I\u0027ll add the test case here.",
+      "parentUuid": "9a68dd71_42bd0f67",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 51
+      },
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_841c7214",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T16:02:36Z",
+      "side": 1,
+      "message": "Why 2 test cases? This is testing the user model which is made up of 2 tables.",
       "parentUuid": "9a68dd71_84148ef5",
       "range": {
         "startLine": 131,
