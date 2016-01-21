@@ -179,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_e7d775bd",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:20:28Z",
+      "side": 1,
+      "message": "Keystone definitely doesn\u0027t want to do that. What is this column for?",
+      "parentUuid": "ba63e191_d763f418",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_9626f4cc",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 24
@@ -479,6 +497,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_02587731",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:20:28Z",
+      "side": 1,
+      "message": "This is a little strange since we don\u0027t do that now. I don\u0027t see this feature listed in the agreed upon spec.",
+      "parentUuid": "ba63e191_c9f35c09",
+      "range": {
+        "startLine": 45,
+        "startChar": 47,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_d6122c62",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -561,6 +603,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_82e8e711",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:20:28Z",
+      "side": 1,
+      "message": "Where did we document that we are doing this?",
+      "parentUuid": "ba63e191_89732480",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 64
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_1906b7ce",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 24
@@ -590,6 +656,24 @@
       "side": 1,
       "message": "That wouldn\u0027t get set and the passwords collection would be set to None.",
       "parentUuid": "ba63e191_1906b7ce",
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a2516bda",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-21T15:20:28Z",
+      "side": 1,
+      "message": "Do these return the same values for federated users as before this change?",
+      "parentUuid": "ba63e191_e9eae0ab",
       "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
