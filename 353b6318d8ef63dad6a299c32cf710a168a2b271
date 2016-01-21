@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_80fa15bc",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-21T18:34:26Z",
+      "side": 1,
+      "message": "That was defined in the spec. We did that to specifically enforce a new policy rule",
+      "parentUuid": "9a68dd71_56ddf112",
+      "range": {
+        "startLine": 40,
+        "startChar": 92,
+        "endLine": 40,
+        "endChar": 99
+      },
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_f6ce6559",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-21T03:01:53Z",
       "side": 1,
       "message": "This is a straight copy/paste from the method above - can we consolidate?",
+      "range": {
+        "startLine": 314,
+        "startChar": 4,
+        "endLine": 319,
+        "endChar": 61
+      },
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e05bd1f4",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-21T18:34:26Z",
+      "side": 1,
+      "message": "Is it possible to add such a route to call that method with this different parameter: https://review.openstack.org/#/c/244248/11/keystone/resource/routers.py ?",
+      "parentUuid": "9a68dd71_f6ce6559",
       "range": {
         "startLine": 314,
         "startChar": 4,
