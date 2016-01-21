@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_c49caa5f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3217,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-21T16:12:18Z",
+      "side": 1,
+      "message": "This has missed my attention: you redefine trustee here.\nMaybe rename it to \"next_trustee\" then?",
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_c20d7f3f",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 7
@@ -13,6 +30,30 @@
       "writtenOn": "2016-01-21T15:39:21Z",
       "side": 1,
       "message": "So, this deletes the trust between self.user and the first user in the user_list.\n\nIs it possible to do a GET on all the trusts in the trust chain to validate they were deleted (in a cascading order)? Technically, they would all be deleted - right?",
+      "range": {
+        "startLine": 3286,
+        "startChar": 8,
+        "endLine": 3287,
+        "endChar": 51
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c486eada",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3287,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-21T16:12:18Z",
+      "side": 1,
+      "message": "Yes, delete is cascaded",
+      "parentUuid": "9a68dd71_c20d7f3f",
       "range": {
         "startLine": 3286,
         "startChar": 8,
@@ -71,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_84ac7236",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-21T16:12:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a68dd71_ddcd5e5e",
+      "range": {
+        "startLine": 376,
+        "startChar": 16,
+        "endLine": 376,
+        "endChar": 31
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_bd274a11",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 7
@@ -82,6 +147,30 @@
       "writtenOn": "2016-01-21T15:39:21Z",
       "side": 1,
       "message": "nit: why do we grab the last trust in the chain?",
+      "range": {
+        "startLine": 378,
+        "startChar": 20,
+        "endLine": 379,
+        "endChar": 50
+      },
+      "revId": "991c884ef9eae8ae957f49e49f9997e65055d2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_448f5acc",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-21T16:12:18Z",
+      "side": 1,
+      "message": "That\u0027s because it has the narrowest scope",
+      "parentUuid": "9a68dd71_bd274a11",
       "range": {
         "startLine": 378,
         "startChar": 20,
