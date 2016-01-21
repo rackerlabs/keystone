@@ -623,6 +623,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_b9575001",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T19:34:07Z",
+      "side": 1,
+      "message": "Supporting one user, multiple credentials is in the spec.  However, the spec doesn\u0027t specifically call out that the domain_id be in the password table, but to me it makes more sense there than in the identity table.",
+      "parentUuid": "9a68dd71_63d7ebed",
+      "range": {
+        "startLine": 45,
+        "startChar": 47,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_d6122c62",
         "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
         "patchSetId": 24
@@ -759,6 +783,30 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "9a68dd71_82e8e711",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 64
+      },
+      "revId": "c3e98b96db97b810c6a2309a8d1b469ee2067686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_f95e28e8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-21T19:34:07Z",
+      "side": 1,
+      "message": "The specs do call out refactoring the user table into an identity table and a locally managed password table. And its a one to many relationship (identity to password) to support one user, multiple credentials.",
+      "parentUuid": "9a68dd71_43f3c79e",
       "range": {
         "startLine": 39,
         "startChar": 4,
