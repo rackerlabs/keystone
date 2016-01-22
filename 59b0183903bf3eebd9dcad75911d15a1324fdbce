@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_d849a761",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-22T17:23:59Z",
+      "side": 1,
+      "message": "Why not prevent on the creation ?",
+      "revId": "59b0183903bf3eebd9dcad75911d15a1324fdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d81be771",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-22T17:23:59Z",
+      "side": 1,
+      "message": "Please add a LOG here, as we do for hierarchical projects if we find a circular reference. See https://github.com/openstack/keystone/blob/fc3c719/keystone/resource/core.py#L608-L610",
+      "revId": "59b0183903bf3eebd9dcad75911d15a1324fdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
