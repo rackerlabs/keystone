@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_8cf54358",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T13:53:24Z",
+      "side": 1,
+      "message": "my bad, i missed some points around this!",
+      "parentUuid": "9a68dd71_a8384ea1",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 28
+      },
+      "revId": "0ad924e7dba90ed0face42ad5268f53f310c5ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_71ab431e",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 6
