@@ -101,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_3eceab82",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-22T18:10:34Z",
+      "side": 1,
+      "message": "Tom, thanks for the exact words! It was very helpful. :)",
+      "parentUuid": "9a68dd71_d58f7221",
+      "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_7b9f9550",
         "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
         "patchSetId": 3
@@ -112,6 +130,24 @@
       "writtenOn": "2016-01-21T17:24:25Z",
       "side": 1,
       "message": "I think it is worth mentioning what the previous behavior was in the release note so folks have better context on what changed",
+      "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_5ea91f8f",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-22T18:10:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_7b9f9550",
       "revId": "9495ec38943e3574275d2829a39fc5708e8c6815",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
