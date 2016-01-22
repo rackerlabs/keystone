@@ -22,6 +22,30 @@
       "revId": "4389abbc7afaad00c6a9f25d2b2ebe43283fbf01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_a6e051fb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4403,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-22T20:12:08Z",
+      "side": 1,
+      "message": "It happens in keystone/auth/controllers.py revocation_list() where it does\n\n t[\u0027expires\u0027] \u003d utils.isotime(expires)\n\nIf it did utils.isotime(expires, subsecond\u003dTrue) then the timestamp wouldn\u0027t be truncated.",
+      "parentUuid": "9a68dd71_8f1a107c",
+      "range": {
+        "startLine": 4403,
+        "startChar": 12,
+        "endLine": 4403,
+        "endChar": 35
+      },
+      "revId": "4389abbc7afaad00c6a9f25d2b2ebe43283fbf01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
