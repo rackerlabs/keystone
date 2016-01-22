@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_6db4a8d0",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T01:47:42Z",
+      "side": 1,
+      "message": "@dstanek: there are two cases here, body is not passed at all (None), body is passed as empty.\n\nper the previous discussion, I am going to just relax it from here to validate it through jsonschema if body is empty.\n\nso, the trade-off here is it will possibly throw some bad message for some entities where empty body is not allowed, but will also not impact the functionality where empty body is *do* allowed, such as `region` and `consumer`.\n\nyep, you hit the point since you know the history!",
+      "parentUuid": "9a68dd71_2c71f2e0",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ac5e4210",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_ed473849",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T01:47:42Z",
+      "side": 1,
+      "message": "yes! you catch it!",
+      "parentUuid": "9a68dd71_ac5e4210",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ecabdad4",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-21T14:57:54Z",
       "side": 1,
       "message": "Same here",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6d7268af",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T01:47:42Z",
+      "side": 1,
+      "message": "sure, will do the update!",
+      "parentUuid": "9a68dd71_ecabdad4",
       "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
