@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_72c8dca8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T16:54:43Z",
+      "side": 1,
+      "message": "I don\u0027t think we need to avoid putting the refs into the token.  This just prevents an endless loop on lookup.  We can do more elsewhere to prevent cycles if we so desire.  \"checked_role_refs was actually a list of role_ids\" would still reqwuire logive to prevent following the same path multiple times.",
+      "parentUuid": "9a68dd71_869696ee",
+      "range": {
+        "startLine": 630,
+        "startChar": 23,
+        "endLine": 630,
+        "endChar": 55
+      },
+      "revId": "f3af24613c7dee8ee8a7b50472d74ce779747a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_86c8d623",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-22T06:56:48Z",
       "side": 1,
       "message": "so i guess a question is whether we should see this in the results or not...i..e should the circular reference itself appear? see comment in the core.py file.",
+      "range": {
+        "startLine": 6475,
+        "startChar": 30,
+        "endLine": 6476,
+        "endChar": 54
+      },
+      "revId": "f3af24613c7dee8ee8a7b50472d74ce779747a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d20c28ef",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6476,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T16:54:43Z",
+      "side": 1,
+      "message": "Not on this patch.  Treat this as a bug fix, and anything more should be a change to the spec first.",
+      "parentUuid": "9a68dd71_86c8d623",
       "range": {
         "startLine": 6475,
         "startChar": 30,
