@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_cbf0ee69",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T20:54:50Z",
+      "side": 1,
+      "message": "These two now *have* to be in this order, right? Since admin_token_auth sets whether or not the admin token is set and the build_auth_context consumes that output.",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 81
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e67ba98a",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T20:54:50Z",
+      "side": 1,
+      "message": "This is only an admin request iff the token matches the conf.ADMIN_TOKEN. I think that should be highlighted in the comment - \n\nhttps://github.com/openstack/keystone/blob/master/keystone/middleware/core.py#L51-L63",
+      "range": {
+        "startLine": 53,
+        "startChar": 12,
+        "endLine": 54,
+        "endChar": 39
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_cbbeae64",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T20:54:50Z",
+      "side": 1,
+      "message": "This could still be an admin token, but not the conf.ADMIN_TOKEN.",
+      "range": {
+        "startLine": 59,
+        "startChar": 14,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
