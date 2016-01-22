@@ -31,6 +31,9 @@ def load_backends():
     # Configure and build the cache
     cache.configure_cache()
     cache.configure_cache(region=catalog.COMPUTED_CATALOG_REGION)
+    cache.apply_invalidation_proxy(
+        region=catalog.COMPUTED_CATALOG_REGION,
+        region_name=catalog.COMPUTED_CATALOG_REGION.name)
     cache.configure_cache(region=assignment.COMPUTED_ASSIGNMENTS_REGION)
     cache.apply_invalidation_proxy(
         region=assignment.COMPUTED_ASSIGNMENTS_REGION,
