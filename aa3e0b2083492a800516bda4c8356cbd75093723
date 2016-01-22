@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_28b51030",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-22T19:20:28Z",
+      "side": 1,
+      "message": "Invalidate is a region/in-memory construct. This means we cannot use this invalidation across multiple processes.\n\nsee https://bitbucket.org/zzzeek/dogpile.cache/src/c6913eb143b24b4a886124ff0da5c935ea34e3ac/dogpile/cache/region.py?at\u003dmaster\u0026fileviewer\u003dfile-view-default#region.py-304:347\n\nI think I have a way to work around this issue, but i\u0027ll need a few minutes and it will involve a dogpile proxy. Doable but this it not the right way unfortunately.",
+      "revId": "aa3e0b2083492a800516bda4c8356cbd75093723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
