@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_b5b399e8",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-22T19:00:10Z",
+      "side": 1,
+      "message": "I would recommend adding a comment with what you are doing here. \"Test user can\u0027t access project they don\u0027t have a role in\" - or something like that.",
+      "revId": "97e7ae1dee40dcc27036f90ed9682a609222986f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
