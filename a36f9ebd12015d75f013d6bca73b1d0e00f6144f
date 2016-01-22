@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_3cf0e990",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-22T23:28:33Z",
+      "side": 1,
+      "message": "This isn\u0027t role-specific, so maybe we should move it up top where other things could use it, and drop dsr from the name... \"admin_of_filtered_domain\"?",
+      "revId": "a36f9ebd12015d75f013d6bca73b1d0e00f6144f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7cd0a11f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-22T23:28:33Z",
+      "side": 1,
+      "message": "also not role-specific... \"project_admin_in_filtered_domain\" or the more accurate \"admin_of_project_in_filtered_domain\"?",
+      "revId": "a36f9ebd12015d75f013d6bca73b1d0e00f6144f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
