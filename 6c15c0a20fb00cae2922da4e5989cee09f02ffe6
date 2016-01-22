@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_5d24c95e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T17:11:48Z",
+      "side": 1,
+      "message": "nit: this name could be a little more descriptive in that it\u0027s actually a copy.",
+      "range": {
+        "startLine": 167,
+        "startChar": 8,
+        "endLine": 167,
+        "endChar": 21
+      },
+      "revId": "6c15c0a20fb00cae2922da4e5989cee09f02ffe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7d298d36",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T17:11:48Z",
+      "side": 1,
+      "message": "same comment here",
+      "range": {
+        "startLine": 184,
+        "startChar": 8,
+        "endLine": 184,
+        "endChar": 21
+      },
+      "revId": "6c15c0a20fb00cae2922da4e5989cee09f02ffe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
