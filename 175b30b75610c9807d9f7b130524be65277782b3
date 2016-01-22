@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_0f7f0016",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T15:18:19Z",
+      "side": 1,
+      "message": "nice, thanks!",
+      "range": {
+        "startLine": 153,
+        "startChar": 23,
+        "endLine": 154,
+        "endChar": 46
+      },
+      "revId": "175b30b75610c9807d9f7b130524be65277782b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
