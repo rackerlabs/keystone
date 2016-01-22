@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a8384ea1",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T02:13:20Z",
+      "side": 1,
+      "message": "this is hex string, not hex, per the code from uuid, it should be 32 instead of 64.\n\ncode from uuid, \n  \n     if len(hex) !\u003d 32:\n                raise ValueError(\u0027badly formed hexadecimal UUID string\u0027)",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 28
+      },
+      "revId": "0ad924e7dba90ed0face42ad5268f53f310c5ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_71ab431e",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 6
