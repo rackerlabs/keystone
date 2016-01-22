@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_f4b4c135",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-22T14:56:46Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a68dd71_5938663d",
+      "range": {
+        "startLine": 60,
+        "startChar": 25,
+        "endLine": 60,
+        "endChar": 28
+      },
+      "revId": "c205dbd196a322a89dd04888492f7e48acdd6346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_39db3251",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 7
@@ -107,6 +131,30 @@
       "side": 1,
       "message": "This is so that we can use non-ascii characters in our tests.",
       "parentUuid": "9a68dd71_39db3251",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c205dbd196a322a89dd04888492f7e48acdd6346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_399d720a",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-22T14:56:46Z",
+      "side": 1,
+      "message": "I have never notice this up there, in any of the tests. lol This is good to know. Thanks\n\nhttps://github.com/openstack/keystone/blob/eca91ab69781c1fcc526f13ec5cc9bc48d62e4eb/releasenotes/source/conf.py#L1\n\nhttps://github.com/openstack/keystone/blob/a4adca6c50ff5a6f75b7933b29e6a59b0234b3f5/keystone/tests/unit/test_wsgi.py#L1",
+      "parentUuid": "9a68dd71_f97efa17",
       "range": {
         "startLine": 1,
         "startChar": 0,
