@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_af282f87",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-22T16:32:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_c4a606c1",
+      "revId": "232abfa6756014ee66364138a44a2c638de8bfcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_a412f2b2",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 26
