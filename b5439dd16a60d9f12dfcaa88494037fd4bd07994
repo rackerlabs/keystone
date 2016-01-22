@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_7360d401",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-22T22:14:38Z",
+      "side": 1,
+      "message": "Although I\u0027m Ok with it as it as, you might consider this block of code (which is repeated twice more below) as something to break out into maybe _populate_role_info(role)....",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 353,
+        "endChar": 18
+      },
+      "revId": "b5439dd16a60d9f12dfcaa88494037fd4bd07994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
