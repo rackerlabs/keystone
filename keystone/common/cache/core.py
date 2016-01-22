@@ -13,11 +13,14 @@
 # under the License.
 
 """Keystone Caching Layer Implementation."""
+import hashlib
+import time
 
 import dogpile.cache
+from dogpile.cache import api
+from dogpile.cache import proxy
 from oslo_cache import core as cache
 from oslo_config import cfg
-
 
 CONF = cfg.CONF
 CACHE_REGION = cache.create_region()
@@ -52,3 +55,66 @@ dogpile.cache.register_backend(
     'keystone.cache.memcache_pool',
     'keystone.common.cache.backends.memcache_pool',
     'PooledMemcachedBackend')
+
+
+# TODO(morganfainberg): Move this logic up into oslo.cache directly
+# so we can handle region-wide invalidations or alternatively propose
+# a fix to dogpile.cache to make region-wide invalidates possible to
+# work across distributed processes.
+class _RegionInvalidateProxy(proxy.ProxyBackend):
+    """A CacheProxy that enabled cross-process region-wide invalidation.
+
+    In a distributed system, it is not currently possible to do a region-wide
+    invalidation without it being isolated to a given process. This proxy
+    is a baseclass that is a helper to change the expiration passed up from
+    the backend in the same way that the
+    class:`dogpile.cache.CacheRegion` `invalidate` method works.
+    """
+
+    expiration_region_key = None
+    _region = None
+
+    def get(self, key):
+        """Check the invalidated time key and override if appropriate."""
+        value = super(_RegionInvalidateProxy, self).get(key)
+        invalidated_time = super(_RegionInvalidateProxy, self).get(
+            self.expiration_region_key)
+        # NOTE(morganfainberg): Check to see if the value's creation time
+        # is older than the invalidated time, return NO_VALUE as if the
+        # item from cache is no longer available
+        if (value is not api.NO_VALUE and
+                value.metadata['ct'] < invalidated_time):
+            return api.NO_VALUE
+        return value
+
+    def get_multi(self, keys):
+        """Check the invalidated time key and override if appropriate."""
+        values = super(_RegionInvalidateProxy, self).get_multi(keys)
+        invalidated_time = super(_RegionInvalidateProxy, self).get(
+            self.expiration_region_key)
+        for idx, value in enumerate(values):
+            # NOTE(morganfainberg): Check to see if the value's creation time
+            # is older than the invalidated time, return NO_VALUE as if the
+            # item from cache is no longer available.
+            if (value is not api.NO_VALUE and
+                    value.metadata['ct'] < invalidated_time):
+                values[idx] = api.NO_VALUE
+        return values
+
+    def invalidate(self):
+        self._region.set(self.expiration_region_key, time.time())
+
+
+def apply_invalidation_proxy(region, region_name):
+    """Construct proxy with the region name defined and apply to the region"""
+    hasher = hashlib.sha1()
+    hasher.update('_RegionExpiration.%s' % region_name)
+
+    class InvalidationProxy(_RegionInvalidateProxy):
+        expiration_region_key = hasher.hexdigest()
+
+    proxy = InvalidationProxy()
+    region.wrap(proxy)
+    region.invalidate = proxy.invalidate
+    setattr(region, "invalidate", proxy.invalidate)
+    setattr(proxy, '_region', region)
