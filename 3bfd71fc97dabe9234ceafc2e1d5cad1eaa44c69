@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_eb2709c8",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-22T13:03:40Z",
+      "side": 1,
+      "message": "I don\u0027t buy that this method doesn\u0027t need to handle a corner case because it\u0027s handled by the caller. You can\u0027t trust that it will always be handled properly. Each method should protect itself.",
+      "parentUuid": "9a68dd71_50892725",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ac5e4210",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
