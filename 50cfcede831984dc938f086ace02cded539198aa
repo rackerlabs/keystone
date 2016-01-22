@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_c501c9b0",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T15:46:33Z",
+      "side": 1,
+      "message": "Sorry, I should have been a little more clear. What I meant to say was that it could be incorporated into Steve\u0027s comment below. \n\n    # NOTE(stevermar): This UUID must stay the same, forever, across\n    # all of keystone to preserve its value as a URN namespace, which is\n    # used for ID transformation.",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 48,
+        "endChar": 18
+      },
+      "revId": "50cfcede831984dc938f086ace02cded539198aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
