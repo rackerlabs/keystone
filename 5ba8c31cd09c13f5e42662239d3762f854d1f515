@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_c12d2fff",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-22T20:48:04Z",
+      "side": 1,
+      "message": "pass can be removed",
+      "revId": "5ba8c31cd09c13f5e42662239d3762f854d1f515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
