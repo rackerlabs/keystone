@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_8dd47c20",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-22T01:41:25Z",
+      "side": 1,
+      "message": "hmm, user_tree_dn maybe?",
+      "range": {
+        "startLine": 441,
+        "startChar": 32,
+        "endLine": 441,
+        "endChar": 38
+      },
+      "revId": "e4234172f8047c3a876b5b2acb77cbbddc2c2f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
