@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_8110975a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-22T20:55:34Z",
+      "side": 1,
+      "message": "nit: this would be better as next_role_id in case we ever change what we set the next role id from....",
+      "range": {
+        "startLine": 633,
+        "startChar": 57,
+        "endLine": 633,
+        "endChar": 76
+      },
+      "revId": "e382f66057ccb9d0aa15f7ce29d7b0b3095d72d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
