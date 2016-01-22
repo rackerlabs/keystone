@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_50892725",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T11:15:34Z",
+      "side": 1,
+      "message": "to answer your question from http://paste.openstack.org/show/484579/, user will never get that situation since it\u0027s not a valid json format, it will catch by other code before the schema got actually validated.\n\nsee: http://paste.openstack.org/show/484660/\n\nL58 is possible since it is only happened for internal API call instead of CURL.\n\nThe testcase to check body is not passed has been covered by this testcase:\n test_create_entity_no_request_body_with_decorator.",
+      "parentUuid": "9a68dd71_6db4a8d0",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ac5e4210",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_3aec928e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T11:15:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_ac5e4210",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ecabdad4",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -100,6 +136,24 @@
       "writtenOn": "2016-01-22T01:47:42Z",
       "side": 1,
       "message": "sure, will do the update!",
+      "parentUuid": "9a68dd71_ecabdad4",
+      "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_fafefa36",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-22T11:15:34Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "9a68dd71_ecabdad4",
       "revId": "3bfd71fc97dabe9234ceafc2e1d5cad1eaa44c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
