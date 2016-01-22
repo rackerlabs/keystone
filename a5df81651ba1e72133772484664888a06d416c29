@@ -22,6 +22,30 @@
       "revId": "a5df81651ba1e72133772484664888a06d416c29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_2f7affbd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T16:46:13Z",
+      "side": 1,
+      "message": "Actually - this makes sense.\n\nI think we need a follow on patch to detail some of this behavior. For example - consider the following case: \n\nUser A creates an *impersonated* trust with User B as the trustee, with role 1 on project 1. User A also has roles 1 and 2 and project 1, but they are only giving User B role 1. Even though impersonation is set to True, User B will only get role 1 on project 1 despite the fact they are suppose to impersonate User A.\n\nNot saying this need to be addressed in this patch - just marking it for discussion. Do we want to allow impersonation to be true impersonation between User A and User B where User B will actually get all roles that User A has on a project, i.e. making it so that impersonated trusts don\u0027t have roles specified? \n\nMidcycle topic?",
+      "parentUuid": "9a68dd71_1fd8b71c",
+      "range": {
+        "startLine": 385,
+        "startChar": 16,
+        "endLine": 387,
+        "endChar": 63
+      },
+      "revId": "a5df81651ba1e72133772484664888a06d416c29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
