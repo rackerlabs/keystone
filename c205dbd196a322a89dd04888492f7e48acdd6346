@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_39db3251",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-22T14:44:43Z",
+      "side": 1,
+      "message": "whats this for?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c205dbd196a322a89dd04888492f7e48acdd6346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
