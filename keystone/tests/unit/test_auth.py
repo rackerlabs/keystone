@@ -624,10 +624,6 @@ class AuthWithToken(AuthTest):
 
             revoke_events = self.revoke_api.list_events()
             self.assertThat(revoke_events, matchers.HasLength(1))
-            revoke_event = revoke_events[0].to_dict()
-            self.assertIn('expires_at', revoke_event)
-            self.assertEqual(unscoped_token_2['access']['token']['expires'],
-                             revoke_event['expires_at'])
 
             self.assertRaises(exception.TokenNotFound,
                               self.token_provider_api.validate_v2_token,
@@ -655,10 +651,6 @@ class AuthWithToken(AuthTest):
 
             revoke_events = self.revoke_api.list_events()
             self.assertThat(revoke_events, matchers.HasLength(2))
-            revoke_event = revoke_events[1].to_dict()
-            self.assertIn('expires_at', revoke_event)
-            self.assertEqual(unscoped_token_2['access']['token']['expires'],
-                             revoke_event['expires_at'])
 
             self.assertRaises(exception.TokenNotFound,
                               self.token_provider_api.validate_v2_token,
