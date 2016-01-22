@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_37232958",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-22T21:40:56Z",
+      "side": 1,
+      "message": "This bug is not closed if there are follow up patches needed.",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_e9b9cced",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 7
@@ -60,6 +77,30 @@
       "writtenOn": "2016-01-22T16:05:01Z",
       "side": 1,
       "message": "if we are changing this, why do we not handle this like we are doing for get_project_by_name in terms of the wrapper?",
+      "range": {
+        "startLine": 39,
+        "startChar": 26,
+        "endLine": 39,
+        "endChar": 36
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_97ea15ab",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-22T21:40:56Z",
+      "side": 1,
+      "message": "That\u0027s a good question.",
+      "parentUuid": "9a68dd71_e95387e0",
       "range": {
         "startLine": 39,
         "startChar": 26,
@@ -239,6 +280,30 @@
       "writtenOn": "2016-01-22T16:05:01Z",
       "side": 1,
       "message": "to make it obvious why we are doing this, maybe use tenant_name here",
+      "range": {
+        "startLine": 999,
+        "startChar": 47,
+        "endLine": 999,
+        "endChar": 59
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_f774b136",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-22T21:40:56Z",
+      "side": 1,
+      "message": "The only issue with that is the adapters are supposed to be the latest interface. So if something uses kwargs using the V9 interface they\u0027d be broken.",
+      "parentUuid": "9a68dd71_09161bf1",
       "range": {
         "startLine": 999,
         "startChar": 47,
