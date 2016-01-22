@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_16263d15",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1930,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-22T14:39:46Z",
+      "side": 1,
+      "message": "random trailing white space",
+      "range": {
+        "startLine": 1930,
+        "startChar": 73,
+        "endLine": 1930,
+        "endChar": 74
+      },
+      "revId": "07a866a3b1bf6f7ab56331ad1f1c18ef9d71d524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
