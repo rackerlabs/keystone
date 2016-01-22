@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_5bcf5556",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "Better to add to the API spec./",
+      "parentUuid": "9a68dd71_cee721ab",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 27
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9becedc8",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_88f48587",
+      "range": {
+        "startLine": 81,
+        "startChar": 59,
+        "endLine": 81,
+        "endChar": 61
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_6ef9554d",
         "filename": "etc/policy.json",
         "patchSetId": 55
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_bb04517e",
+        "filename": "etc/policy.json",
+        "patchSetId": 55
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_883b2538",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 4
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_8e8929cd",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 55
@@ -128,6 +200,30 @@
       "writtenOn": "2016-01-20T18:10:25Z",
       "side": 1,
       "message": "These are used to build the \u0027links\u0027. I suspect you\u0027ll have to manipulate them individually as your links various. i.e. your collection_name would be just \u0027role_inference\u0027.",
+      "range": {
+        "startLine": 335,
+        "startChar": 4,
+        "endLine": 336,
+        "endChar": 32
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4b92f958",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_c241353b",
       "range": {
         "startLine": 335,
         "startChar": 4,
@@ -444,6 +540,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_8ce1eb00",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_0c618239",
+      "range": {
+        "startLine": 99,
+        "startChar": 45,
+        "endLine": 99,
+        "endChar": 55
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_2c7d66e7",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 55
@@ -467,6 +587,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_acbb8fe4",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "The reason is that the data returned is much simpler and different from the other path; this is just the  rules, based on IDs.",
+      "parentUuid": "ba63e191_2c7d66e7",
+      "range": {
+        "startLine": 104,
+        "startChar": 19,
+        "endLine": 104,
+        "endChar": 34
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_688a71c1",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 55
@@ -478,6 +622,30 @@
       "writtenOn": "2016-01-19T21:46:35Z",
       "side": 1,
       "message": "prior_role_link ? Only prior_link seems meaningless",
+      "range": {
+        "startLine": 1295,
+        "startChar": 29,
+        "endLine": 1295,
+        "endChar": 39
+      },
+      "revId": "ae741f4dcd124e1380190b0a6ad4cfd476506c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4be4390c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-22T03:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba63e191_688a71c1",
       "range": {
         "startLine": 1295,
         "startChar": 29,
