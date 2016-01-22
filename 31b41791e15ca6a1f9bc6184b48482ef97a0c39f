@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_972f9ef5",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-22T11:09:00Z",
+      "side": 1,
+      "message": "I think both are the ideal, at a minimum, the migration should happen in the contract script, before contracting the schema. keystone-manage command is nice to have, so that the operator can migrate chunks of data while normally operating the service.\n\nThe API has to at least be aware that data should be retrieved or read from more than one place, to maintain consistency.",
+      "parentUuid": "9a68dd71_31e9791b",
+      "range": {
+        "startLine": 145,
+        "startChar": 5,
+        "endLine": 146,
+        "endChar": 67
+      },
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_115d55e9",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -111,6 +135,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9507911b",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-22T11:09:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_2a96c94c",
+      "range": {
+        "startLine": 164,
+        "startChar": 73,
+        "endLine": 164,
+        "endChar": 78
+      },
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_9be4043c",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -122,6 +170,24 @@
       "writtenOn": "2016-01-20T19:03:54Z",
       "side": 1,
       "message": "This sentence does not need to be in parens.",
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_50004701",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-22T11:09:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_9be4043c",
       "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -151,6 +217,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_61cff07f",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-22T11:09:00Z",
+      "side": 1,
+      "message": "ok :)",
+      "parentUuid": "9a68dd71_3105f9c1",
+      "range": {
+        "startLine": 173,
+        "startChar": 2,
+        "endLine": 175,
+        "endChar": 9
+      },
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_b120094b",
         "filename": "doc/source/devref/online_schema_migration_examples.rst",
         "patchSetId": 3
@@ -162,6 +252,30 @@
       "writtenOn": "2016-01-20T19:42:04Z",
       "side": 1,
       "message": "With the same schema? Or a different schema? Wouldn\u0027t it be different if we were taking certain nodes out of the rotation to update their schema?",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 8
+      },
+      "revId": "31b41791e15ca6a1f9bc6184b48482ef97a0c39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_f55a8d4f",
+        "filename": "doc/source/devref/online_schema_migration_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2016-01-22T11:09:00Z",
+      "side": 1,
+      "message": "The schema is modified on the database, so after taking the first node out of the rotation, we upgrade it, update the schema and start it. At this point we are running different versions with the same, updated schema.",
+      "parentUuid": "9a68dd71_b120094b",
       "range": {
         "startLine": 8,
         "startChar": 4,
