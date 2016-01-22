@@ -16,6 +16,24 @@
       "revId": "61200957c44f13d354f48e8ee09e8e05f52eebb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9723f5a6",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-22T21:23:37Z",
+      "side": 1,
+      "message": "reference: http://docs.openstack.org/developer/oslo.i18n/guidelines.html#adding-variables-to-translated-messages",
+      "parentUuid": "9a68dd71_dcce722d",
+      "revId": "61200957c44f13d354f48e8ee09e8e05f52eebb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
