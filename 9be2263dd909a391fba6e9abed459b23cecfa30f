@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_86d7644a",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-22T13:07:30Z",
+      "side": 1,
+      "message": "This comment is confusing.",
+      "revId": "9be2263dd909a391fba6e9abed459b23cecfa30f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c646bc4e",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-22T13:07:30Z",
+      "side": 1,
+      "message": "We don\u0027t need the extra clarification because it\u0027s just saying what the code does. The original comment clarifies why.",
+      "revId": "9be2263dd909a391fba6e9abed459b23cecfa30f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
