@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_f9ccba6b",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T14:48:05Z",
+      "side": 1,
+      "message": "nit: this could be collapsed into steve comment below",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "c205dbd196a322a89dd04888492f7e48acdd6346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_5938663d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T14:48:05Z",
+      "side": 1,
+      "message": "I completely missed this last time - how come we\u0027re using \"\"\" here instead of \u0027 or \" which is the convention used everywhere else?",
+      "range": {
+        "startLine": 60,
+        "startChar": 25,
+        "endLine": 60,
+        "endChar": 28
+      },
+      "revId": "c205dbd196a322a89dd04888492f7e48acdd6346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_39db3251",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 7
@@ -36,6 +82,30 @@
       "writtenOn": "2016-01-22T14:46:22Z",
       "side": 1,
       "message": "For line number 52.",
+      "parentUuid": "9a68dd71_39db3251",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c205dbd196a322a89dd04888492f7e48acdd6346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_f97efa17",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T14:48:05Z",
+      "side": 1,
+      "message": "This is so that we can use non-ascii characters in our tests.",
       "parentUuid": "9a68dd71_39db3251",
       "range": {
         "startLine": 1,
