@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_8f1a107c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4403,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-22T15:23:48Z",
+      "side": 1,
+      "message": "This is done because its done in the revoke api somewhere?",
+      "range": {
+        "startLine": 4403,
+        "startChar": 12,
+        "endLine": 4403,
+        "endChar": 35
+      },
+      "revId": "4389abbc7afaad00c6a9f25d2b2ebe43283fbf01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
