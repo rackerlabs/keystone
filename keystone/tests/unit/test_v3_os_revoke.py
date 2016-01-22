@@ -71,19 +71,6 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         links = resp.json_body['links']
         self.assertThat(links['self'], matchers.EndsWith(revoked_list_url))
 
-    def test_revoked_token_in_list(self):
-        user_id = uuid.uuid4().hex
-        expires_at = provider.default_expire_time()
-        sample = self._blank_event()
-        sample['user_id'] = six.text_type(user_id)
-        sample['expires_at'] = six.text_type(utils.isotime(expires_at))
-        before_time = timeutils.utcnow()
-        self.revoke_api.revoke_by_expiration(user_id, expires_at)
-        resp = self.get('/OS-REVOKE/events')
-        events = resp.json_body['events']
-        self.assertEqual(1, len(events))
-        self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
-
     def test_disabled_project_in_list(self):
         project_id = uuid.uuid4().hex
         sample = dict()

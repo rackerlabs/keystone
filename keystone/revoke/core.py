@@ -158,20 +158,6 @@ class Manager(manager.Manager):
                     'current request is aborted.')
             raise exception.UnexpectedError(exception=msg)
 
-    @versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
-                             remove_in=0)
-    def revoke_by_expiration(self, user_id, expires_at,
-                             domain_id=None, project_id=None):
-
-        self._assert_not_domain_and_project_scoped(domain_id=domain_id,
-                                                   project_id=project_id)
-
-        self.revoke(
-            model.RevokeEvent(user_id=user_id,
-                              expires_at=expires_at,
-                              domain_id=domain_id,
-                              project_id=project_id))
-
     def revoke_by_audit_id(self, audit_id):
         self.revoke(model.RevokeEvent(audit_id=audit_id))
 
