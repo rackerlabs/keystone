@@ -22,6 +22,30 @@
       "revId": "9096786950b5bbe7698eb0b3163c7d9b2dab4515",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_1c688a86",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-22T21:03:17Z",
+      "side": 1,
+      "message": "we clearly need hacking checks for this",
+      "parentUuid": "9a68dd71_9c7f9a65",
+      "range": {
+        "startLine": 46,
+        "startChar": 7,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "9096786950b5bbe7698eb0b3163c7d9b2dab4515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
