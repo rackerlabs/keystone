@@ -1,0 +1,11 @@
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Yatin Kumbhare <yatinkumbhare@gmail.com>
+Code-Review+1: Ajaya Agrawal <ajku.agr@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 22 Jan 2016 00:11:58 +0000
+Reviewed-on: https://review.openstack.org/265809
+Project: openstack/keystone
+Branch: refs/heads/master
