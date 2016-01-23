@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_1c9160f1",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-23T03:56:55Z",
+      "side": 1,
+      "message": "Correct. It is up to the deployer to set this up",
+      "parentUuid": "da6ed579_44809146",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_e1a6d60d",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 9
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9c80f0c0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-23T03:56:55Z",
+      "side": 1,
+      "message": "I added a new function called \u0027_check_notification_opt_out\u0027 which which is documented.",
+      "parentUuid": "9a68dd71_40c97d77",
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_01d3ea60",
         "filename": "keystone/notifications.py",
         "patchSetId": 9
@@ -117,6 +153,30 @@
       "writtenOn": "2016-01-21T19:29:57Z",
       "side": 1,
       "message": "Also may i suggest building the \"event\" string like its done on Line 442",
+      "range": {
+        "startLine": 462,
+        "startChar": 12,
+        "endLine": 462,
+        "endChar": 59
+      },
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7c941c42",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-23T03:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_8040d5a6",
       "range": {
         "startLine": 462,
         "startChar": 12,
@@ -187,6 +247,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_3c49c4b7",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-23T03:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_e37f5b64",
+      "range": {
+        "startLine": 217,
+        "startChar": 56,
+        "endLine": 217,
+        "endChar": 68
+      },
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_1e09a2dd",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 9
@@ -210,6 +294,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9cceb02b",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-23T03:56:55Z",
+      "side": 1,
+      "message": "Hey Tom, Items are opted-out of by event_type. I think its because you didn\u0027t change the event_type as seen in line 244.",
+      "parentUuid": "9a68dd71_1e09a2dd",
+      "range": {
+        "startLine": 240,
+        "startChar": 17,
+        "endLine": 240,
+        "endChar": 34
+      },
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_43918798",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 9
@@ -221,6 +329,30 @@
       "writtenOn": "2016-01-21T19:29:57Z",
       "side": 1,
       "message": "_get_notifier",
+      "range": {
+        "startLine": 248,
+        "startChar": 56,
+        "endLine": 248,
+        "endChar": 68
+      },
+      "revId": "789a5abeac4e04ff512b3431aab4168ce6077c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_7cdadce9",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-01-23T03:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_43918798",
       "range": {
         "startLine": 248,
         "startChar": 56,
