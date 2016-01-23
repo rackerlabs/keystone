@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_05c820a7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-23T12:08:22Z",
+      "side": 0,
+      "message": "Why remove these gets? This is how we enforce RI",
+      "revId": "8500d76e354b797e0f094127a7b7a1a264a3b646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
