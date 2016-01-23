@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_102dc194",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-23T07:22:25Z",
+      "side": 0,
+      "message": "where is this testcase got covered? this testcase is created to test that request body is not passed at all but was missed after refactoring.\n\n\n[1] self._assert_call_entity_method_fails(self.update_entity,\n                                      uuid.uuid4().hex)\n\npls not that it is different with this after refactoring.\n\n[2] self.update_entity(uuid.uuid4().hex, self.invalid_entity)\n\n\n\n[1] throw index error as following\n\u003e /opt/stack/keystone/keystone/common/validation/__init__.py(67)wrapper()\n-\u003e except IndexError:\n\n\nwhile [2] throw \n\n\u003e /opt/stack/keystone/keystone/common/validation/__init__.py(63)wrapper()\n-\u003e raise exception.ValidationError(",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 63
+      },
+      "revId": "7766a4af6f0cfb845583c41f514209b0d146be5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
