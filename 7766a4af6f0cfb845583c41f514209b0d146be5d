@@ -22,6 +22,30 @@
       "revId": "7766a4af6f0cfb845583c41f514209b0d146be5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_2156792a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-23T11:35:28Z",
+      "side": 0,
+      "message": "keystone.tests.unit.test_validation.ValidatedDecoratorTests.test_calling_create_without_an_entity_fails causes the index error to be raised.",
+      "parentUuid": "9a68dd71_102dc194",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 63
+      },
+      "revId": "7766a4af6f0cfb845583c41f514209b0d146be5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
