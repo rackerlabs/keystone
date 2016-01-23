@@ -34,6 +34,47 @@
       "revId": "61200957c44f13d354f48e8ee09e8e05f52eebb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_725d2546",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-23T06:01:29Z",
+      "side": 1,
+      "message": "++\n\nshow the length of value in the error message might be helpful.",
+      "parentUuid": "9a68dd71_9723f5a6",
+      "revId": "61200957c44f13d354f48e8ee09e8e05f52eebb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_12a8691f",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-23T06:01:29Z",
+      "side": 1,
+      "message": "non_ascii_chars?",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 18
+      },
+      "revId": "61200957c44f13d354f48e8ee09e8e05f52eebb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
