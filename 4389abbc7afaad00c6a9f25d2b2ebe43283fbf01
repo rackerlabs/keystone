@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_dc9668ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-23T03:53:36Z",
+      "side": 1,
+      "message": "(nit) s/in the revocation list//\n\nNo need for the duplication.",
+      "revId": "4389abbc7afaad00c6a9f25d2b2ebe43283fbf01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_8f1a107c",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
