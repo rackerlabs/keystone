@@ -1,0 +1,14 @@
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: zhanglinglong <zhang.linglong@99cloud.net>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Hidekazu Nakamura <hid-nakamura@vf.jp.nec.com>
+Code-Review+1: chenxing <chenxingcampus@outlook.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 23 Jan 2016 10:43:31 +0000
+Reviewed-on: https://review.openstack.org/218711
+Project: openstack/keystone
+Branch: refs/heads/master
