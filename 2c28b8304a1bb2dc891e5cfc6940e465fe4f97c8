@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_719195f0",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T09:50:42Z",
+      "side": 1,
+      "message": "same here, this will cause the token schema grew by itself, and will fail to catch the creep data.\n\nI did a hack (valid domain after valid project response) and confirm this would happen if the testcase is run together.\n\nhttp://paste.openstack.org/show/484773/",
+      "range": {
+        "startLine": 647,
+        "startChar": 0,
+        "endLine": 664,
+        "endChar": 9
+      },
+      "revId": "2c28b8304a1bb2dc891e5cfc6940e465fe4f97c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_1c0d3a37",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 4
@@ -13,6 +36,29 @@
       "writtenOn": "2016-01-19T20:37:21Z",
       "side": 1,
       "message": "This looks like a substantial improvement in validation. Very nice!",
+      "revId": "2c28b8304a1bb2dc891e5cfc6940e465fe4f97c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_51c331ed",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T09:50:42Z",
+      "side": 1,
+      "message": "seems pointless too since `required` has been defined, but good as it is.",
+      "range": {
+        "startLine": 699,
+        "startChar": 0,
+        "endLine": 700,
+        "endChar": 45
+      },
       "revId": "2c28b8304a1bb2dc891e5cfc6940e465fe4f97c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -48,6 +94,23 @@
       "side": 1,
       "message": "Exactly. Validation would fail if anything is found beyond what is described in the schema.",
       "parentUuid": "ba63e191_1c13fa0e",
+      "revId": "2c28b8304a1bb2dc891e5cfc6940e465fe4f97c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_11b93979",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T09:50:42Z",
+      "side": 1,
+      "message": "Is it possible to add a negative testcase to test that there is creep data in the token response and jsonschema could capture this issue?",
       "revId": "2c28b8304a1bb2dc891e5cfc6940e465fe4f97c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
