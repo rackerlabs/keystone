@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_1f294537",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-24T00:07:03Z",
+      "side": 1,
+      "message": "This needs to be removed [comment[]",
+      "revId": "e43053827d8cb032d71448ad5570b99d39fb591f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
