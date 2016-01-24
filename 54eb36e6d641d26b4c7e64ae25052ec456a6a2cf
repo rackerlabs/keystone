@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_18d5d61a",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_project_domain_id_defaults_to_null_string.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-24T18:32:36Z",
+      "side": 1,
+      "message": "Can we import this from keystone.resource? Otherwise there are two places where this constant is present.",
+      "range": {
+        "startLine": 17,
+        "startChar": 17,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_38c1ba54",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-24T18:32:36Z",
+      "side": 1,
+      "message": "Can we use _encode_domain_id here?",
+      "range": {
+        "startLine": 175,
+        "startChar": 20,
+        "endLine": 175,
+        "endChar": 37
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_786732b7",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-24T18:32:36Z",
+      "side": 1,
+      "message": "Since we are doing the decoding in core.py, do we need a different to_dict() here? We can very well pass a dict containing NULL domain to the core and it will deal it.",
+      "range": {
+        "startLine": 272,
+        "startChar": 8,
+        "endLine": 272,
+        "endChar": 15
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_78c3b257",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-24T18:32:36Z",
+      "side": 1,
+      "message": "Even if dict.copy() is shallow copying why are we doing this?",
+      "range": {
+        "startLine": 684,
+        "startChar": 21,
+        "endLine": 684,
+        "endChar": 30
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_58534ee2",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-24T18:32:36Z",
+      "side": 1,
+      "message": "Would it be a good idea to add some project into a domain other than NULL and do a list projects afterwards? Similarly add one more project to NULL domain and assert for length \u003d\u003d2.",
+      "range": {
+        "startLine": 441,
+        "startChar": 14,
+        "endLine": 441,
+        "endChar": 24
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
