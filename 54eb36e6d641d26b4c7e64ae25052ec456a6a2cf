@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_d8e41ee1",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_project_domain_id_defaults_to_null_string.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T18:51:21Z",
+      "side": 1,
+      "message": "We could, but in general we don\u0027t like to do that - otherwise some future change on NULL_DOMAIN_ID would change a specific \"set in time\u0027 migration script.",
+      "parentUuid": "9a68dd71_18d5d61a",
+      "range": {
+        "startLine": 17,
+        "startChar": 17,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_38c1ba54",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-24T18:32:36Z",
       "side": 1,
       "message": "Can we use _encode_domain_id here?",
+      "range": {
+        "startLine": 175,
+        "startChar": 20,
+        "endLine": 175,
+        "endChar": 37
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b8f7ea89",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T18:51:21Z",
+      "side": 1,
+      "message": "I think you could, yes...good idea.",
+      "parentUuid": "9a68dd71_38c1ba54",
       "range": {
         "startLine": 175,
         "startChar": 20,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_b8d04af7",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T18:51:21Z",
+      "side": 1,
+      "message": "we are not decoding in core for V9 drivers and later - only for V8 legacy drivers - so we should be doing it here.",
+      "parentUuid": "9a68dd71_786732b7",
+      "range": {
+        "startLine": 272,
+        "startChar": 8,
+        "endLine": 272,
+        "endChar": 15
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_78c3b257",
         "filename": "keystone/resource/core.py",
         "patchSetId": 15
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_78edf2b5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T18:51:21Z",
+      "side": 1,
+      "message": "since otherwise we might be changing a dict passed in by the caller...and they should never know we have made a substitution....",
+      "parentUuid": "9a68dd71_78c3b257",
+      "range": {
+        "startLine": 684,
+        "startChar": 21,
+        "endLine": 684,
+        "endChar": 30
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_58534ee2",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 15
@@ -105,6 +201,30 @@
       "writtenOn": "2016-01-24T18:32:36Z",
       "side": 1,
       "message": "Would it be a good idea to add some project into a domain other than NULL and do a list projects afterwards? Similarly add one more project to NULL domain and assert for length \u003d\u003d2.",
+      "range": {
+        "startLine": 441,
+        "startChar": 14,
+        "endLine": 441,
+        "endChar": 24
+      },
+      "revId": "54eb36e6d641d26b4c7e64ae25052ec456a6a2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b83e0a26",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T18:51:21Z",
+      "side": 1,
+      "message": "I think it would, yes.  good idea.",
+      "parentUuid": "9a68dd71_58534ee2",
       "range": {
         "startLine": 441,
         "startChar": 14,
