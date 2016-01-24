@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_d8389ef0",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T19:25:16Z",
+      "side": 1,
+      "message": "It\u0027s true, it isn\u0027t role specific, but I think it aids readability having it here and \"specific\" to the role apis below.",
+      "parentUuid": "9a68dd71_3cf0e990",
+      "revId": "a36f9ebd12015d75f013d6bca73b1d0e00f6144f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_7cd0a11f",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-22T23:28:33Z",
       "side": 1,
       "message": "also not role-specific... \"project_admin_in_filtered_domain\" or the more accurate \"admin_of_project_in_filtered_domain\"?",
+      "revId": "a36f9ebd12015d75f013d6bca73b1d0e00f6144f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_982786c9",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-24T19:25:16Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "9a68dd71_7cd0a11f",
       "revId": "a36f9ebd12015d75f013d6bca73b1d0e00f6144f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
