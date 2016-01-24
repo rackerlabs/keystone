@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_6e4c54c8",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T08:25:17Z",
+      "side": 1,
+      "message": "maybe this can be added dynamically as what you did in L672~L682 when this is actually needed? Since the NOTE in L125 state it clearly that it\u0027s `common token properties`.\n\nmaybe I misunderstand your note.",
+      "parentUuid": "9a68dd71_5496c43f",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 10
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_283e59da",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 5
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "Unfortunately, we are unable to use this format checker provided by the jsonschema library because the implementation of the checker relies on https://pypi.python.org/pypi/strict-rfc3339/ which is GPL, and is forbidden from being included as an OpenStack requirement.\n\nhttps://github.com/openstack/requirements#for-new-requirements",
       "parentUuid": "9a68dd71_283e59da",
+      "range": {
+        "startLine": 146,
+        "startChar": 31,
+        "endLine": 146,
+        "endChar": 39
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4e9cf00e",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T08:25:17Z",
+      "side": 1,
+      "message": "true, double confirmed, thanks for the info. cool if we can use it but ... :(",
+      "parentUuid": "9a68dd71_3491d047",
       "range": {
         "startLine": 146,
         "startChar": 31,
@@ -183,6 +231,75 @@
         "startChar": 39,
         "endLine": 163,
         "endChar": 47
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_0e7038db",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T08:25:17Z",
+      "side": 1,
+      "message": "out of scope, \u0027optional\u0027 is pointless here, isn\u0027t that the properties that is not required should be optional?",
+      "range": {
+        "startLine": 593,
+        "startChar": 13,
+        "endLine": 593,
+        "endChar": 21
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_91e2092e",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T08:25:17Z",
+      "side": 1,
+      "message": "it is changing the class level token_properties, so any testcase that will validate the project scope token later will have the domain info defined in the schema, this will make it inaccuate to detect the data creep.\n\nI made the same mistake as this, a copy will help in this case?",
+      "range": {
+        "startLine": 671,
+        "startChar": 0,
+        "endLine": 683,
+        "endChar": 60
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_0e47d877",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-24T08:25:17Z",
+      "side": 1,
+      "message": "this looks like could be removed as well, the testcase can pass without this. Good as it.",
+      "range": {
+        "startLine": 690,
+        "startChar": 12,
+        "endLine": 690,
+        "endChar": 44
       },
       "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
