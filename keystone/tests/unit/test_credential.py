@@ -48,7 +48,7 @@ class RestfulTestCases(rest.RestfulTestCase):
 
     def test_ec2_cannot_get_non_ec2_credential(self):
         access_key = uuid.uuid4().hex
-        cred_id = utils.hash_access_key(access_key)
+        cred_id = utils.hash_access_key(access_key.encode('utf-8'))
         non_ec2_cred = unit.new_credential_ref(
             user_id=self.user_id,
             project_id=self.project_id)
