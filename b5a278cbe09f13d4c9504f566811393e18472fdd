@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_c1616a06",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T16:03:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_6e4c54c8",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 10
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_283e59da",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 5
@@ -261,6 +285,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a12eb689",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T16:03:24Z",
+      "side": 1,
+      "message": "It is needed here. Some unscoped token tests do have bind cases - keystone.tests.unit.test_v3_auth.TestAuthKerberos.test_unscoped_bind_with_remote_user for example.",
+      "parentUuid": "9a68dd71_0e7038db",
+      "range": {
+        "startLine": 593,
+        "startChar": 13,
+        "endLine": 593,
+        "endChar": 21
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_91e2092e",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 5
@@ -284,6 +332,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_a1d556e5",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T16:03:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_91e2092e",
+      "range": {
+        "startLine": 671,
+        "startChar": 0,
+        "endLine": 683,
+        "endChar": 60
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_0e47d877",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 5
@@ -295,6 +367,30 @@
       "writtenOn": "2016-01-24T08:25:17Z",
       "side": 1,
       "message": "this looks like could be removed as well, the testcase can pass without this. Good as it.",
+      "range": {
+        "startLine": 690,
+        "startChar": 12,
+        "endLine": 690,
+        "endChar": 44
+      },
+      "revId": "b5a278cbe09f13d4c9504f566811393e18472fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6150be32",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T16:03:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_0e47d877",
       "range": {
         "startLine": 690,
         "startChar": 12,
