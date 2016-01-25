@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_17e7d740",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "ack, will add the appropriate section",
+      "parentUuid": "9a68dd71_077de96d",
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_bdb18a91",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-21T15:41:48Z",
       "side": 1,
       "message": "I still don\u0027t like the fact that this in the default pipelines",
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_129fe55f",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 28
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "David, the profit of placing osprofiler middleware here is to make profiling process easier for users. During the request passing through middleware, it will simply check if osprofiler is turned on of off. If it\u0027s turned off, request will be processed with our any modifications - and will have no impact on performance as well (except one \"if\" condition.)",
+      "parentUuid": "9a68dd71_bdb18a91",
       "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_5280fdf4",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 28
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "will read their conversation and check. Thank you sir!",
+      "parentUuid": "9a68dd71_a28c0b80",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 60
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_67a5c5b3",
         "filename": "keystone/common/config.py",
         "patchSetId": 28
@@ -70,6 +130,30 @@
       "writtenOn": "2016-01-21T15:19:05Z",
       "side": 1,
       "message": "nit: If set to True, OSProfiler will trace requests providing performance results. If False, the profiler is bypassed completely.\n\nOr something along those lines. Trying to make the help text a little more descriptive.",
+      "range": {
+        "startLine": 1150,
+        "startChar": 26,
+        "endLine": 1150,
+        "endChar": 67
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b2b299e3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "in fact all this part will be replaced with importing needed options from osprofiler after release with https://review.openstack.org/#/c/269059/ will be cut.",
+      "parentUuid": "9a68dd71_67a5c5b3",
       "range": {
         "startLine": 1150,
         "startChar": 26,
@@ -168,6 +252,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_72c98158",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "9a68dd71_075ba988",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 32
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_1d8776d8",
         "filename": "keystone/common/profiler.py",
         "patchSetId": 28
@@ -179,6 +287,24 @@
       "writtenOn": "2016-01-21T15:41:48Z",
       "side": 1,
       "message": "Why is this not internationalized?",
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_12c4c53d",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "Simply because I forgot to do it :) Will fix.",
+      "parentUuid": "9a68dd71_1d8776d8",
       "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -231,6 +357,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_72d0a1f6",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "ok, wil fix",
+      "parentUuid": "9a68dd71_e7f45588",
+      "range": {
+        "startLine": 36,
+        "startChar": 18,
+        "endLine": 36,
+        "endChar": 31
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_674e2598",
         "filename": "keystone/common/profiler.py",
         "patchSetId": 28
@@ -254,6 +404,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_92fd1570",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "ok, will either remove or rephrase it.",
+      "parentUuid": "9a68dd71_674e2598",
+      "range": {
+        "startLine": 37,
+        "startChar": 18,
+        "endLine": 38,
+        "endChar": 40
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_273fcdd7",
         "filename": "keystone/common/profiler.py",
         "patchSetId": 28
@@ -265,6 +439,30 @@
       "writtenOn": "2016-01-21T15:19:05Z",
       "side": 1,
       "message": "This sentence is subjective to how people setup their Keystone deployments. I would remove it. I would keep the information to \"how do I subscribe to requests?\" and \"how can I shut this off?\".",
+      "range": {
+        "startLine": 38,
+        "startChar": 41,
+        "endLine": 40,
+        "endChar": 29
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b20e198a",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "ok, we can remove it here I believe",
+      "parentUuid": "9a68dd71_273fcdd7",
       "range": {
         "startLine": 38,
         "startChar": 41,
@@ -312,6 +510,30 @@
       "side": 1,
       "message": "or just have a better name than profiler.",
       "parentUuid": "9a68dd71_e26443e6",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_122045f6",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:25:50Z",
+      "side": 1,
+      "message": "ack, will probably do both",
+      "parentUuid": "9a68dd71_fde8627e",
       "range": {
         "startLine": 57,
         "startChar": 4,
