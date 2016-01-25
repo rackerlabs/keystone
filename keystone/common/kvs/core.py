@@ -24,6 +24,7 @@ from dogpile.cache import util as dogpile_util
 from dogpile.core import nameregistry
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_utils import importutils
 
 from keystone import exception
@@ -87,11 +88,17 @@ class LockTimeout(exception.UnexpectedError):
     debug_message_format = _('Lock Timeout occurred for key, %(target)s')
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone key-value-store common code',
+    remove_in=+2)
 class KeyValueStore(object):
     """Basic KVS manager object to support Keystone Key-Value-Store systems.
 
     This manager also supports the concept of locking a given key resource to
     allow for a guaranteed atomic transaction to the backend.
+
+    Deprecated as of Mitaka.
     """
 
     def __init__(self, kvs_region):
