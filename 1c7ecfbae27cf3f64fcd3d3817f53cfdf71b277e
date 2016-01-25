@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_5ecd6c83",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_drop_project_domain_id_fk.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-25T07:36:27Z",
+      "side": 1,
+      "message": "the FK should remain and be remapped to project.id.\n\nLikely the easiest way to manage this is to insert a known id row \"__keystone_root_domain__\" and have that refer to itself as the domain_id. the driver can then just strip out/add in the special id for id\u003dNone as appropriate/on returns.\n\nThis comment is based on the convo i had with henrynash in IRC.",
+      "revId": "1c7ecfbae27cf3f64fcd3d3817f53cfdf71b277e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
