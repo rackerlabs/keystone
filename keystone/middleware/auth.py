@@ -183,6 +183,7 @@ class AuthContextMiddleware(wsgi.Middleware):
         request_context.user_domain = auth_context.get('user_domain_id')
         request_context.project_domain = auth_context.get('project_domain_id')
         request_context.is_admin = request.environ.get('is_admin', False)
+        request_context.update_store()
 
         LOG.debug('RBAC: auth_context: %s', auth_context)
         request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context
