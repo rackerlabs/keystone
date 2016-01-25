@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_6f50a532",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-25T16:22:26Z",
+      "side": 1,
+      "message": "I can\u0027t seem to find the negative test cases. Could you add a test validating that the validation fails when an extra attribute is in the token.",
+      "revId": "89e081fb987d876f4abae6080420c58f2e2ccd9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
