@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_4df11f94",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-25T20:40:25Z",
+      "side": 1,
+      "message": "Lance - The filters can remain in the original order. There\u0027s compatibility code in keystone/middleware/auth.py.",
+      "parentUuid": "9a68dd71_cbf0ee69",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 81
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_e67ba98a",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 11
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_2d7f0be1",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-25T20:40:25Z",
+      "side": 1,
+      "message": "Lance - It\u0027s an admin request if some previous filter says that it is. The filters are configurable so this filter doesn\u0027t know what the previous filter used as the criteria. So the comment is accurate as-is.",
+      "parentUuid": "9a68dd71_e67ba98a",
+      "range": {
+        "startLine": 53,
+        "startChar": 12,
+        "endLine": 54,
+        "endChar": 39
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_cbbeae64",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 11
@@ -59,6 +107,30 @@
       "writtenOn": "2016-01-22T20:54:50Z",
       "side": 1,
       "message": "This could still be an admin token, but not the conf.ADMIN_TOKEN.",
+      "range": {
+        "startLine": 59,
+        "startChar": 14,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_edd253d0",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-25T20:40:25Z",
+      "side": 1,
+      "message": "Lance - Actually, it could be the admin token. This is why line 78 checks for admin token.",
+      "parentUuid": "9a68dd71_cbbeae64",
       "range": {
         "startLine": 59,
         "startChar": 14,
