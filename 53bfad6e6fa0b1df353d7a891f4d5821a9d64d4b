@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_4e64bab7",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-25T19:39:51Z",
+      "side": 1,
+      "message": "Sure. next patchset.",
+      "parentUuid": "9a68dd71_73c72764",
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_f3a9d790",
         "filename": "keystone/common/cache/_context_cache.py",
         "patchSetId": 2
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_2e6146a9",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-25T19:39:51Z",
+      "side": 1,
+      "message": "This change set has nothing to do with cross-thread caching. This is in place so we capture any queries to the backend and cache it local to the request itself.\n\nWhat this means is that if we ask for .get_domain(domain_id), it will only ever happen a single time for the request as the rest of the time it will reference the value stored in context.get_current() [thread.local]. The only exception to this is if an invalidation of the cache occurs (an explicit update to domain_id/domain/etc) as that would pop the underlying cache as well we clear our thread.local at the same time if it has been cached.\n\nThe crossworker invalidations is a different changeset.",
+      "parentUuid": "9a68dd71_f3a9d790",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 46
+      },
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_b3e03f2a",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 2
@@ -53,6 +95,30 @@
       "writtenOn": "2016-01-25T19:13:02Z",
       "side": 1,
       "message": "Maybe we can add a link/todo for this?",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ae753664",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-25T19:39:51Z",
+      "side": 1,
+      "message": "not sure how we can move this, something to discuss.",
+      "parentUuid": "9a68dd71_b3e03f2a",
       "range": {
         "startLine": 33,
         "startChar": 4,
