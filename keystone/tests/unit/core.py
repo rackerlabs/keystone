@@ -30,6 +30,8 @@ import warnings
 import fixtures
 from oslo_config import cfg
 from oslo_config import fixture as config_fixture
+from oslo_context import context as oslo_context
+from oslo_context import fixture as oslo_ctx_fixture
 from oslo_log import fixture as log_fixture
 from oslo_log import log
 from oslo_utils import timeutils
@@ -492,6 +494,15 @@ class BaseTestCase(oslotest.BaseTestCase):
                                 module='^keystone\\.')
         warnings.simplefilter('error', exc.SAWarning)
         self.addCleanup(warnings.resetwarnings)
+        # Ensure we have an empty threadlocal context at the start of each
+        # test.
+        self._assert_context_thread_local_is_empty()
+        self.useFixture(oslo_ctx_fixture.ClearRequestContext())
+
+    def _assert_context_thread_local_is_empty(self):
+        current = oslo_context.get_current()
+        if current != None:
+            raise AssertionError('Request Store is not None (unclean cache)')
 
     def cleanup_instance(self, *names):
         """Create a function suitable for use with self.addCleanup.
