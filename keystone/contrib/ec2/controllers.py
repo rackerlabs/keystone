@@ -181,7 +181,9 @@ class Ec2ControllerCommon(object):
         blob = {'access': uuid.uuid4().hex,
                 'secret': uuid.uuid4().hex,
                 'trust_id': trust_id}
-        credential_id = utils.hash_access_key(blob['access'])
+        # blob['access'] is encoded because you can't hash unicode objects
+        # with hashlib.
+        credential_id = utils.hash_access_key(blob['access'].encode('utf-8'))
         cred_ref = {'user_id': user_id,
                     'project_id': tenant_id,
                     'blob': jsonutils.dumps(blob),
@@ -253,7 +255,10 @@ class Ec2ControllerCommon(object):
             or when the credential type is not ec2
         :returns: credential: dict of ec2 credential.
         """
-        ec2_credential_id = utils.hash_access_key(credential_id)
+        # `credential_id` is encoded because you can't hash unicode objects
+        # with hashlib.
+        ec2_credential_id = utils.hash_access_key(
+            credential_id.encode('utf-8'))
         cred = self.credential_api.get_credential(ec2_credential_id)
         if not cred or cred['type'] != CRED_TYPE_EC2:
             raise exception.Unauthorized(

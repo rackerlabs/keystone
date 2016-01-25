@@ -23,12 +23,12 @@ from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit import rest
+from keystone.tests.unit import test_v2
 
 CRED_TYPE_EC2 = controllers.CRED_TYPE_EC2
 
 
-class V2CredentialTestCase(rest.RestfulTestCase):
+class V2CredentialTestCase(test_v2.RestfulTestCase):
     def setUp(self):
         super(V2CredentialTestCase, self).setUp()
         self.user_id = self.user_foo['id']
@@ -48,7 +48,9 @@ class V2CredentialTestCase(rest.RestfulTestCase):
 
     def test_ec2_cannot_get_non_ec2_credential(self):
         access_key = uuid.uuid4().hex
-        cred_id = utils.hash_access_key(access_key)
+        # `access_key` is encoded because you can't hash unicode objects
+        # with hashlib.
+        cred_id = utils.hash_access_key(access_key.encode('utf-8'))
         non_ec2_cred = unit.new_credential_ref(
             user_id=self.user_id,
             project_id=self.project_id)
