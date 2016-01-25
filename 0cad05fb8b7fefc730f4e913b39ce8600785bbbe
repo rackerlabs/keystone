@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_13dfcb3a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T19:10:25Z",
+      "side": 1,
+      "message": "nit: \n\nIf redelegated_trust_id is set, then we must traverse the trust_chain in order to determine who the original trustor is. We need to do this because the user ID of the original trustor helps us determine scope in the redelegated context.",
+      "range": {
+        "startLine": 360,
+        "startChar": 49,
+        "endLine": 361,
+        "endChar": 47
+      },
+      "revId": "0cad05fb8b7fefc730f4e913b39ce8600785bbbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
