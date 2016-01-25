@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_73c72764",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T19:13:02Z",
+      "side": 1,
+      "message": "nit: throw a new line in here between the license and the imports.",
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_f3a9d790",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T19:13:02Z",
+      "side": 1,
+      "message": "So; the reason we have this is to make sure we can proxy cache invalidations across threads, right?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 46
+      },
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b3e03f2a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-25T19:13:02Z",
+      "side": 1,
+      "message": "Maybe we can add a link/todo for this?",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
