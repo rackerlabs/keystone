@@ -145,7 +145,7 @@ class RestfulTestCase(unit.TestCase):
             headers['Accept'] = 'application/json'
             if body:
                 headers['Content-Type'] = 'application/json'
-                return jsonutils.dumps(body)
+                return jsonutils.dump_as_bytes(body)
 
     def _from_content_type(self, response, content_type=None):
         """Attempt to decode JSON and XML automatically, if detected."""
