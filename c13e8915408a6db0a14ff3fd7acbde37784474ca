@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_1281258f",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 28
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-01-25T09:31:44Z",
+      "side": 1,
+      "message": "A-ha, went through the comments on #20 patch set. I believe it was meant to remove configurations (HMAC keys, enabled param) from the *.ini files - as previously osprofiler did not digest other forms of these params passing. Now it can do it due to https://github.com/openstack/osprofiler/commit/cabf79d44c77a9259481cabfa888e99730fb40b0 commit, so we can get rid of ugly parameters passing. Although this section is still 100% needed, as we\u0027re modifying the Keystone ini file, and all middleware need to be described here.\n\nCheers,\nDina",
+      "parentUuid": "9a68dd71_5280fdf4",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 60
+      },
+      "revId": "c13e8915408a6db0a14ff3fd7acbde37784474ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_67a5c5b3",
         "filename": "keystone/common/config.py",
         "patchSetId": 28
