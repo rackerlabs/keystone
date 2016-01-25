@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_94e98ab9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 140
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-01-25T05:21:42Z",
+      "side": 1,
+      "message": "neat! We could make this a classmethod so that we are not binding this method to every instance of this class.",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 179,
+        "endChar": 30
+      },
+      "revId": "3d670ba2c9373855c3aba1a8260ed6a58d925d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
