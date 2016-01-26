@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_cf138c5b",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_revoke_convert_datetime_to_integer.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-26T16:57:55Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the TZ be UTC already? Either way, can you expand on \"messed with\"? Otherwise, this smells is launching a nuke based on assumptions, and that\u0027s not good diplomacy.",
+      "revId": "94d61dd4862b5921eb504e4b27474c2fb597eb56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ec4a2327",
+        "filename": "keystone/common/sql/migrate_repo/versions/087_revoke_convert_datetime_to_integer.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-26T16:57:55Z",
+      "side": 1,
+      "message": "This bit is going to fail against online migrations tests!",
+      "revId": "94d61dd4862b5921eb504e4b27474c2fb597eb56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
