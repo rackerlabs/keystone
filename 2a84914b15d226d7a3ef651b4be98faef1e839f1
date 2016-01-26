@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_6778b22c",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T05:57:19Z",
+      "side": 1,
+      "message": "should be 255 to be backward compatible. see:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/role_backends/sql.py#L159",
+      "range": {
+        "startLine": 91,
+        "startChar": 36,
+        "endLine": 91,
+        "endChar": 49
+      },
+      "revId": "2a84914b15d226d7a3ef651b4be98faef1e839f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_db7b78f3",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 5
