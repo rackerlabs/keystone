@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_8aa36b00",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T06:27:16Z",
+      "side": 1,
+      "message": "So this should be above line 1302 I believe since it calls driver create role on that line.",
+      "range": {
+        "startLine": 1304,
+        "startChar": 8,
+        "endLine": 1304,
+        "endChar": 52
+      },
+      "revId": "001b05bb299a44bef5d2d96699a2fa1f08559cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
