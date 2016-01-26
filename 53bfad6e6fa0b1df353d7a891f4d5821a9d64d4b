@@ -107,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_0ebbf976",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:25:19Z",
+      "side": 1,
+      "message": "Awesome explanation; thanks! That would make a great docstring.",
+      "parentUuid": "9a68dd71_2e6146a9",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 46
+      },
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_b3e03f2a",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 2
