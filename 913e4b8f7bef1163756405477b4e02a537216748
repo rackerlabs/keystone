@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_25861b14",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 141
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T14:53:51Z",
+      "side": 1,
+      "message": "this name is too generic. _generate_project_name_conflict_message() would be better",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 179,
+        "endChar": 30
+      },
+      "revId": "913e4b8f7bef1163756405477b4e02a537216748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_25029b70",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 141
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T14:53:51Z",
+      "side": 1,
+      "message": "you could put the domain name here",
+      "range": {
+        "startLine": 186,
+        "startChar": 31,
+        "endLine": 186,
+        "endChar": 37
+      },
+      "revId": "913e4b8f7bef1163756405477b4e02a537216748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_05343748",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 141
+      },
+      "lineNbr": 2469,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T14:53:51Z",
+      "side": 1,
+      "message": "nit: as",
+      "range": {
+        "startLine": 2469,
+        "startChar": 54,
+        "endLine": 2469,
+        "endChar": 55
+      },
+      "revId": "913e4b8f7bef1163756405477b4e02a537216748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_0511975d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 141
+      },
+      "lineNbr": 2505,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T14:53:51Z",
+      "side": 1,
+      "message": "we should be able to create this inside project2 (when it\u0027s in fact acting as a domain). I think it is worth to have a comment saying that here",
+      "range": {
+        "startLine": 2505,
+        "startChar": 5,
+        "endLine": 2505,
+        "endChar": 67
+      },
+      "revId": "913e4b8f7bef1163756405477b4e02a537216748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
