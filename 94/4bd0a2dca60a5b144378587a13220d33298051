@@ -1,0 +1,14 @@
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: gordon chung <gord@live.ca>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 26 Jan 2016 00:43:00 +0000
+Reviewed-on: https://review.openstack.org/252182
+Project: openstack/keystone
+Branch: refs/heads/master
