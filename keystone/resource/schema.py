@@ -26,7 +26,8 @@ _project_properties = {
     'name': {
         'type': 'string',
         'minLength': 1,
-        'maxLength': 64
+        'maxLength': 64,
+        'pattern': '[\S+]'
     }
 }
 
@@ -54,7 +55,8 @@ _domain_properties = {
     'name': {
         'type': 'string',
         'minLength': 1,
-        'maxLength': 64
+        'maxLength': 64,
+        'pattern': '[\S+]'
     }
 }
 
