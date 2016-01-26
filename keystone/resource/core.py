@@ -512,6 +512,7 @@ class Manager(manager.Manager):
             self._raise_reserved_character_exception('Domain', domain['name'])
 
         self.assert_domain_not_federated(domain_id, domain)
+        domain['name'] = clean.domain_name(domain['name'])
         domain.setdefault('enabled', True)
         domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.create_domain(domain_id, domain)
