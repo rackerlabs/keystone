@@ -56,6 +56,24 @@
       "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_0f0be47e",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T19:09:02Z",
+      "side": 1,
+      "message": "I talked to Morgan in IRC about this and this had to be refactored to resolve circular dependencies: \n\nrevoke.core -\u003e imports common.cache and common.cache._context_proxy can\u0027t import revoke.model (since revoke.core is imported from __init__",
+      "parentUuid": "9a68dd71_c2405538",
+      "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
