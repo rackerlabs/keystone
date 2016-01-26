@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_c954f122",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-26T16:53:15Z",
+      "side": 1,
+      "message": "I see the need for a rename, but I\u0027m not really a fan of renaming this test class to be so similar to rest.RestfulTestCase. If something else references this new class, that\u0027s going to be really confusing.",
+      "revId": "f7a7f438dffa1a61e750e02b09066266aa0fa320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
