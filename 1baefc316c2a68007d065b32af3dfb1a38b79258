@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_bbac849f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 60
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "make all these admin only to start",
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_7b7a8c25",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 60
@@ -72,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_bbba1609",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 60
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "Done.  Techincally, only the",
+      "parentUuid": "9a68dd71_7b7a8c25",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 63
+      },
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_211ce269",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 60
@@ -83,6 +124,30 @@
       "writtenOn": "2016-01-26T11:51:02Z",
       "side": 1,
       "message": "this method doesn\u0027t look like is used anywhere, this is the only place I can grep out this method.",
+      "range": {
+        "startLine": 336,
+        "startChar": 0,
+        "endLine": 341,
+        "endChar": 67
+      },
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_76783590",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "yep, vestige. gone",
+      "parentUuid": "9a68dd71_211ce269",
       "range": {
         "startLine": 336,
         "startChar": 0,
@@ -135,6 +200,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_f66425e6",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "not yet.  don\u0027t expect so many that we will need to filter.  If we get there, it will be a different review",
+      "parentUuid": "9a68dd71_e0b80dca",
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_f02451b3",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 60
@@ -146,6 +229,30 @@
       "writtenOn": "2016-01-26T11:51:02Z",
       "side": 1,
       "message": "those code could be extracted into a common method so that no duplication here and there.",
+      "range": {
+        "startLine": 440,
+        "startChar": 27,
+        "endLine": 447,
+        "endChar": 17
+      },
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_96b8492c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "they are really close, but different.  There is certainly some refactoring that could be done here, though.",
+      "parentUuid": "9a68dd71_f02451b3",
       "range": {
         "startLine": 440,
         "startChar": 27,
@@ -175,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_d6956188",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "PUT when you know the whole path ahead of time, which we do here since we know both role_ids that compose the URL",
+      "parentUuid": "9a68dd71_bbb1e4e1",
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_1fe1eed0",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 60
@@ -186,6 +311,30 @@
       "writtenOn": "2016-01-26T11:51:02Z",
       "side": 1,
       "message": "ha, the prior role id will appear two times after expansion.",
+      "range": {
+        "startLine": 564,
+        "startChar": 0,
+        "endLine": 565,
+        "endChar": 45
+      },
+      "revId": "1baefc316c2a68007d065b32af3dfb1a38b79258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b6e30d33",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-26T20:58:41Z",
+      "side": 1,
+      "message": "yes, but the role itself will only appear once.  One will be a different role with a link to the prior in the \u0027indirect\u0027 section",
+      "parentUuid": "9a68dd71_1fe1eed0",
       "range": {
         "startLine": 564,
         "startChar": 0,
