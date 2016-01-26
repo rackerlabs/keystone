@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a68dd71_2aeeffb4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T06:49:39Z",
+      "side": 1,
+      "message": "What about checking the role name on an update?",
+      "range": {
+        "startLine": 1314,
+        "startChar": 8,
+        "endLine": 1314,
+        "endChar": 52
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ca2963f4",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -25,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_ea7c67ed",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T06:49:39Z",
+      "side": 1,
+      "message": "What about calling clean on the update of a group name?",
+      "range": {
+        "startLine": 983,
+        "startChar": 8,
+        "endLine": 983,
+        "endChar": 51
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_8a336b62",
         "filename": "keystone/resource/core.py",
         "patchSetId": 8
@@ -40,6 +86,29 @@
         "startLine": 515,
         "startChar": 8,
         "endLine": 515,
+        "endChar": 58
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ea630740",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T06:49:39Z",
+      "side": 1,
+      "message": "check here too?",
+      "range": {
+        "startLine": 554,
+        "startChar": 8,
+        "endLine": 554,
         "endChar": 58
       },
       "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
