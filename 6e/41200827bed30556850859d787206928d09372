@@ -1,0 +1,10 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 26 Jan 2016 03:26:16 +0000
+Reviewed-on: https://review.openstack.org/266396
+Project: openstack/keystone
+Branch: refs/heads/master
