@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_db7b78f3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2443,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-26T05:12:04Z",
+      "side": 1,
+      "message": "This should probably be name\u003d\u0027 \u0027 not name\u003d\u0027\u0027, checking to ensure we\u0027re looking for a space-only string vs an empty-string isn\u0027t different but it looks like the bug is related to \u0027 \u0027 not \u0027\u0027 as \u0027 \u0027 evaluates to a \"true\" value compared to \u0027\u0027 evaluating to a \"false\" value.\n\nThis might also need to be tested twice, once each of the name\u003d\u0027\u0027 and name\u003d\u0027 \u0027.",
+      "revId": "2a84914b15d226d7a3ef651b4be98faef1e839f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_fb7e7ce2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2465,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-26T05:12:04Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "2a84914b15d226d7a3ef651b4be98faef1e839f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_9b8180c5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2487,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-26T05:12:04Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "2a84914b15d226d7a3ef651b4be98faef1e839f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
