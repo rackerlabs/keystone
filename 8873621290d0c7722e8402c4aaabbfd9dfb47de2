@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_e6948445",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-26T16:32:28Z",
+      "side": 1,
+      "message": "Yes, I meant to re-create the authors here - quite right.",
+      "parentUuid": "9a68dd71_03866ab9",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "8873621290d0c7722e8402c4aaabbfd9dfb47de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_83c01ae2",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 1
