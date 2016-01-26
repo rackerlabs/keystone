@@ -2439,6 +2439,76 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertTrue(ref['is_domain'])
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
+    def test_create_domain_blank_name_fails(self):
+        domain = unit.new_domain_ref(name='')
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_domain,
+                          domain)
+
+    def test_create_domain_long_name_fails(self):
+        domain = unit.new_domain_ref(name='a' * 65)
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_domain,
+                          domain)
+
+    def test_create_domain_invalid_name_fails(self):
+        domain = unit.new_domain_ref(name=None)
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_domain,
+                          domain)
+        domain = unit.new_domain_ref(name=123)
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_domain,
+                          domain)
+
+    def test_create_role_blank_name_fails(self):
+        role = unit.new_role_ref(name='')
+        self.assertRaises(exception.ValidationError,
+                          self.role_api.create_role,
+                          role)
+
+    def test_create_role_long_name_fails(self):
+        role = unit.new_role_ref(name='a' * 256)
+        self.assertRaises(exception.ValidationError,
+                          self.role_api.create_role,
+                          role)
+
+    def test_create_role_invalid_name_fails(self):
+        role = unit.new_role_ref(name=None)
+        self.assertRaises(exception.ValidationError,
+                          self.role_api.create_role,
+                          role)
+        role = unit.new_role_ref(name=123)
+        self.assertRaises(exception.ValidationError,
+                          self.role_api.create_role,
+                          role)
+
+    def test_create_group_blank_name_fails(self):
+        group = unit.new_group_ref(name='',
+                                   domain_id=DEFAULT_DOMAIN_ID)
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_group,
+                          group)
+
+    def test_create_group_long_name_fails(self):
+        group = unit.new_group_ref(name='a' * 65,
+                                   domain_id=DEFAULT_DOMAIN_ID)
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_group,
+                          group)
+
+    def test_create_group_invalid_name_fails(self):
+        group = unit.new_group_ref(name=None,
+                                   domain_id=DEFAULT_DOMAIN_ID)
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_group,
+                          group)
+        group = unit.new_group_ref(name=123,
+                                   domain_id=DEFAULT_DOMAIN_ID)
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_group,
+                          group)
+
     @unit.skip_if_no_multiple_domains_support
     @test_utils.wip('waiting for sub projects acting as domains support')
     def test_is_domain_sub_project_has_parent_domain_id(self):
