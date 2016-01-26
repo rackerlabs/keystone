@@ -14,11 +14,13 @@ from keystone.common import validation
 from keystone.common.validation import parameter_types
 
 
-# NOTE(lhcheng): the max length is not applicable since it is specific
-# to the SQL backend, LDAP does not have length limitation.
-_identity_name = {
+# In the V3 version, we use jsonschme to validate the name's length.
+
+_group_name = {
     'type': 'string',
-    'minLength': 1
+    'minLength': 1,
+    'maxLength': 64,
+    'pattern': '[\S+]'
 }
 
 _user_properties = {
@@ -26,7 +28,7 @@ _user_properties = {
     'description': validation.nullable(parameter_types.description),
     'domain_id': parameter_types.id_string,
     'enabled': parameter_types.boolean,
-    'name': _identity_name,
+    'name': parameter_types.name,
     'password': {
         'type': ['string', 'null']
     }
@@ -49,7 +51,7 @@ user_update = {
 _group_properties = {
     'description': validation.nullable(parameter_types.description),
     'domain_id': parameter_types.id_string,
-    'name': _identity_name
+    'name': _group_name
 }
 
 group_create = {
