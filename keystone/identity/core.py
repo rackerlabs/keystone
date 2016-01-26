@@ -934,6 +934,7 @@ class Manager(manager.Manager):
     @exception_translated('group')
     def create_group(self, group_ref, initiator=None):
         group = group_ref.copy()
+        group['name'] = clean.group_name(group['name'])
         group.setdefault('description', '')
         domain_id = group['domain_id']
         self.resource_api.get_domain(domain_id)
