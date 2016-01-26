@@ -934,6 +934,7 @@ class Manager(manager.Manager):
     @exception_translated('group')
     def create_group(self, group_ref, initiator=None):
         group = group_ref.copy()
+        group['name'] = clean.group_name(group['name'])
         group.setdefault('description', '')
         domain_id = group['domain_id']
         self.resource_api.get_domain(domain_id)
@@ -979,6 +980,7 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
         group = self._clear_domain_id_if_domain_unaware(driver, group)
+        group['name'] = clean.group_name(group['name'])
         ref = driver.update_group(entity_id, group)
         self.get_group.invalidate(self, group_id)
         notifications.Audit.updated(self._GROUP, group_id, initiator)
