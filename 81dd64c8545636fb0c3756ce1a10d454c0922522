@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_97be10d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T18:39:10Z",
+      "side": 1,
+      "message": "you\u0027re right",
+      "parentUuid": "9a68dd71_37232958",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_e9b9cced",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 7
@@ -113,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9735b0f8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T18:39:10Z",
+      "side": 1,
+      "message": "It\u0027s odd, but the driver signature already has \"project_id\": https://review.openstack.org/#/c/248295/7/keystone/resource/core.py@820 and manager calls it positionally, so there is no need to put this in a new driver version",
+      "parentUuid": "9a68dd71_97ea15ab",
+      "range": {
+        "startLine": 39,
+        "startChar": 26,
+        "endLine": 39,
+        "endChar": 36
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_4972d37c",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 7
@@ -124,6 +166,30 @@
       "writtenOn": "2016-01-22T16:05:01Z",
       "side": 1,
       "message": "and here",
+      "range": {
+        "startLine": 141,
+        "startChar": 29,
+        "endLine": 141,
+        "endChar": 48
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_0cc9b2ac",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T18:39:10Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "9a68dd71_4972d37c",
       "range": {
         "startLine": 141,
         "startChar": 29,
@@ -159,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_ccc39a89",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T18:39:10Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "9a68dd71_49f973c6",
+      "range": {
+        "startLine": 149,
+        "startChar": 29,
+        "endLine": 149,
+        "endChar": 48
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_09fffbaa",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 7
@@ -182,6 +272,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_ecc0de7e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T18:39:10Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "9a68dd71_09fffbaa",
+      "range": {
+        "startLine": 166,
+        "startChar": 29,
+        "endLine": 166,
+        "endChar": 39
+      },
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba63e191_ffba8ee0",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
@@ -193,6 +307,24 @@
       "writtenOn": "2016-01-20T01:11:57Z",
       "side": 1,
       "message": "interesting, this already got changed and nothing is broken,",
+      "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_b7c31438",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T18:39:10Z",
+      "side": 1,
+      "message": "this should be because nobody calls it as a kwarg (although they could)",
+      "parentUuid": "ba63e191_ffba8ee0",
       "revId": "81dd64c8545636fb0c3756ce1a10d454c0922522",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
