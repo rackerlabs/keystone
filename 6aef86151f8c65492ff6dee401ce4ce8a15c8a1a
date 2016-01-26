@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_4d94ad43",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T07:22:00Z",
+      "side": 1,
+      "message": "Does the jsonschema check for a name of one whitespace character?  Appears it only checks for len \u003e 0.",
+      "parentUuid": "9a68dd71_ca2963f4",
+      "range": {
+        "startLine": 937,
+        "startChar": 8,
+        "endLine": 937,
+        "endChar": 55
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ea7c67ed",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
