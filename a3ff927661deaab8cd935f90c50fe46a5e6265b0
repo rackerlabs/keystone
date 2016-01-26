@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_f370cede",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:20:35Z",
+      "side": 1,
+      "message": "This means that passwords will be unique to each user in a given domain, right? What if a user has two passwords?",
+      "range": {
+        "startLine": 37,
+        "startChar": 20,
+        "endLine": 37,
+        "endChar": 24
+      },
+      "revId": "a3ff927661deaab8cd935f90c50fe46a5e6265b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_aed98d85",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:20:35Z",
+      "side": 1,
+      "message": "This wipes out the entire identity table prior to loading anything into it. What happens if a migration is run twice?\n\n\n    1.) user table contains users A, B, and C\n    2.) migration wipes identity table\n    3.) migration moves users A, B, and C to identity table\n    4.) users A and B are modified and the changes are persisted in the identity table\n    5.) a new user is added to the identity able, call it D\n    6.) something terrible happens\n    7.) We run this migration again, losing user D and the changes to A and B\n\nIs that something we can hit?",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 37
+      },
+      "revId": "a3ff927661deaab8cd935f90c50fe46a5e6265b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ce3f2186",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_migrate_data_to_identity_and_password_tables.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:20:35Z",
+      "side": 1,
+      "message": "Same comment applies here.",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 37
+      },
+      "revId": "a3ff927661deaab8cd935f90c50fe46a5e6265b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_8e71297a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:20:35Z",
+      "side": 1,
+      "message": "unrelated whitespace change?",
+      "revId": "a3ff927661deaab8cd935f90c50fe46a5e6265b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_6ea9557b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:20:35Z",
+      "side": 1,
+      "message": "nit: We can wrap statements in () to avoid using \\",
+      "range": {
+        "startLine": 221,
+        "startChar": 68,
+        "endLine": 221,
+        "endChar": 69
+      },
+      "revId": "a3ff927661deaab8cd935f90c50fe46a5e6265b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
