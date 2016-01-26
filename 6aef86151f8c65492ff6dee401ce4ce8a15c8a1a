@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_ca93a3ff",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-26T06:54:24Z",
+      "side": 1,
+      "message": "no need to do this, it has been checked in control layer by jsonschema.",
+      "parentUuid": "9a68dd71_ea7c67ed",
+      "range": {
+        "startLine": 983,
+        "startChar": 8,
+        "endLine": 983,
+        "endChar": 51
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_8a336b62",
         "filename": "keystone/resource/core.py",
         "patchSetId": 8
@@ -105,6 +129,30 @@
       "writtenOn": "2016-01-26T06:49:39Z",
       "side": 1,
       "message": "check here too?",
+      "range": {
+        "startLine": 554,
+        "startChar": 8,
+        "endLine": 554,
+        "endChar": 58
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_4a8813c7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-26T06:54:24Z",
+      "side": 1,
+      "message": "same here, really unnecessary.",
+      "parentUuid": "9a68dd71_ea630740",
       "range": {
         "startLine": 554,
         "startChar": 8,
