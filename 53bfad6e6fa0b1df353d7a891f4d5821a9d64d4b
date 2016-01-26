@@ -37,6 +37,29 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_b66b43f0",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-26T03:51:20Z",
+      "side": 1,
+      "message": "could make this a global constant so it\u0027s more easily referenced\n\n\n  _IDENTITY_ID\u003d127\n\nor something like that",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 18
+      },
+      "revId": "53bfad6e6fa0b1df353d7a891f4d5821a9d64d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_f3a9d790",
         "filename": "keystone/common/cache/_context_cache.py",
         "patchSetId": 2
