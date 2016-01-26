@@ -150,10 +150,6 @@ class ValidatedDecoratorTests(unit.BaseTestCase):
         self.create_entity(self.valid_entity)
 
     @expected_validation_failure
-    def test_calling_create_with_invalid_entity_arg_fails(self):
-        self.create_entity(self.invalid_entity)
-
-    @expected_validation_failure
     def test_calling_create_with_empty_entity_arg_fails(self):
         self.create_entity({})
 
