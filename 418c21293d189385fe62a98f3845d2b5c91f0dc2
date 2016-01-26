@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_7a259808",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-26T11:55:13Z",
+      "side": 1,
+      "message": "why change here?",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "418c21293d189385fe62a98f3845d2b5c91f0dc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_3ae400ab",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2442,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-26T11:55:13Z",
+      "side": 1,
+      "message": "this is not a good place to hold these testcases, suggest to move to test_validation.py.",
+      "revId": "418c21293d189385fe62a98f3845d2b5c91f0dc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
