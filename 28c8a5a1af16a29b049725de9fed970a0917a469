@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_1bc7d064",
+        "filename": "keystone/common/clean.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-26T04:58:27Z",
+      "side": 1,
+      "message": "This now imposes a max role name length of 64 where as the SQL backend permitted 255 before.  So this is a backward incompatible change.",
+      "range": {
+        "startLine": 91,
+        "startChar": 11,
+        "endLine": 91,
+        "endChar": 35
+      },
+      "revId": "28c8a5a1af16a29b049725de9fed970a0917a469",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
