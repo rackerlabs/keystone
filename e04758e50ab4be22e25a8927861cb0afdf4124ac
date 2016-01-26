@@ -22,6 +22,29 @@
       "revId": "e04758e50ab4be22e25a8927861cb0afdf4124ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_208f0576",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-26T03:49:05Z",
+      "side": 1,
+      "message": "you can remove this in a follow on patch",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 28
+      },
+      "revId": "e04758e50ab4be22e25a8927861cb0afdf4124ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
