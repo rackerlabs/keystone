@@ -85,3 +85,7 @@ def user_enabled(enabled):
 
 def group_name(name):
     return check_name('Group', name)
+
+
+def role_name(name):
+    return check_name('Role', name, max_length=64)
