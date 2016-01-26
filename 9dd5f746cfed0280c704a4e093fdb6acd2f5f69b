@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_ee154549",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:29:56Z",
+      "side": 1,
+      "message": "I think I\u0027m good with this direction.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_e20f992c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:29:56Z",
+      "side": 1,
+      "message": "Could add: \n\n    Partial-Bug: 1489061",
+      "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c2405538",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-26T14:29:56Z",
+      "side": 1,
+      "message": "Just curious - how come all this stuff had to be moved?",
+      "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
