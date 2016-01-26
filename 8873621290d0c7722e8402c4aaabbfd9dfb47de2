@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_03866ab9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T16:31:17Z",
+      "side": 1,
+      "message": "good catch to split it this way. Guess it makes me a co-author of this patch, right?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "8873621290d0c7722e8402c4aaabbfd9dfb47de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_83c01ae2",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T16:31:17Z",
+      "side": 1,
+      "message": "I\u0027m not sure if this methods should be aware of any manager logic, but wouldn\u0027t it be better if we did some set of the parent_id here? For example, if we pass domain_id\u003dNone and is_domain\u003dTrue, we can easily set the parent_id to None. It would remove a lot of tests changes.",
+      "range": {
+        "startLine": 321,
+        "startChar": 6,
+        "endLine": 321,
+        "endChar": 21
+      },
+      "revId": "8873621290d0c7722e8402c4aaabbfd9dfb47de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_663654b6",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T16:31:17Z",
+      "side": 1,
+      "message": "this line looks useless",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 47
+      },
+      "revId": "8873621290d0c7722e8402c4aaabbfd9dfb47de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_26dcdc45",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-26T16:31:17Z",
+      "side": 1,
+      "message": "Do we need do add extra tests to update and delete, doing the operation in the project and checking it at the domain?",
+      "revId": "8873621290d0c7722e8402c4aaabbfd9dfb47de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
