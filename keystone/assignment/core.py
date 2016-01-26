@@ -23,6 +23,7 @@ from oslo_log import versionutils
 import six
 
 from keystone.common import cache
+from keystone.common import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -1300,6 +1301,7 @@ class RoleManager(manager.Manager):
     def create_role(self, role_id, role, initiator=None):
         ret = self.driver.create_role(role_id, role)
         notifications.Audit.created(self._ROLE, role_id, initiator)
+        role['name'] = clean.role_name(role['name'])
         if MEMOIZE.should_cache(ret):
             self.get_role.set(ret, self, role_id)
         return ret
