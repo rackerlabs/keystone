@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_ca2963f4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-26T06:47:49Z",
+      "side": 1,
+      "message": "remove this, `group` only exists in V3, this is implemented in the controller layer.\nsee: \nhttps://github.com/openstack/keystone/blob/master/keystone/identity/controllers.py#L299-L300",
+      "range": {
+        "startLine": 937,
+        "startChar": 8,
+        "endLine": 937,
+        "endChar": 55
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_8a336b62",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-26T06:47:49Z",
+      "side": 1,
+      "message": "same here, remove it, this is implemented in control layer by jsonschema.",
+      "range": {
+        "startLine": 515,
+        "startChar": 8,
+        "endLine": 515,
+        "endChar": 58
+      },
+      "revId": "6aef86151f8c65492ff6dee401ce4ce8a15c8a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
