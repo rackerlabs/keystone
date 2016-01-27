@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_2e94b935",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-27T16:01:52Z",
+      "side": 1,
+      "message": "why return above but not here?",
+      "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_6eaab172",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-27T16:01:52Z",
+      "side": 1,
+      "message": "why return above but not here?",
+      "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
