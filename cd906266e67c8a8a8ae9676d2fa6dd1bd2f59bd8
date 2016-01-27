@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_348879e7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-27T23:12:24Z",
+      "side": 1,
+      "message": "Can be added.",
+      "parentUuid": "7a5de9d1_0f5c5424",
+      "range": {
+        "startLine": 100,
+        "startChar": 4,
+        "endLine": 100,
+        "endChar": 33
+      },
+      "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_2e94b935",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 24
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_5412d5b5",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-27T23:12:24Z",
+      "side": 1,
+      "message": "instance.attr \u003d \u003cvalue\u003e  does not return a value\n\n_hard_invalidated is explicitly set to None and we don\u0027t want api.NO_VALUE to be passed so we can be sure \"is not None\" works.",
+      "parentUuid": "7a5de9d1_2e94b935",
+      "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_6eaab172",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 24
@@ -53,6 +95,24 @@
       "writtenOn": "2016-01-27T16:01:52Z",
       "side": 1,
       "message": "why return above but not here?",
+      "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_f423c103",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-27T23:12:24Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "7a5de9d1_6eaab172",
       "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
