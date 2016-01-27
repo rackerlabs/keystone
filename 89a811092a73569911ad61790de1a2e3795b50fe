@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_6c6f2f93",
+        "filename": "keystone/catalog/V8_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-27T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_c4438f6b",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "89a811092a73569911ad61790de1a2e3795b50fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_bf56a204",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-20T15:29:39Z",
       "side": 1,
       "message": "This seems like good information that could be placed inside the doc string for the CatalogDriverBase class.",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 399,
+        "endChar": 71
+      },
+      "revId": "89a811092a73569911ad61790de1a2e3795b50fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_2caa9771",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-27T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_bf56a204",
       "range": {
         "startLine": 393,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_cc2ae3e7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-27T10:49:54Z",
+      "side": 1,
+      "message": "yep, the new added or redefined methods that are different from V8 should be here.",
+      "parentUuid": "9a68dd71_3fb9522f",
+      "range": {
+        "startLine": 926,
+        "startChar": 12,
+        "endLine": 926,
+        "endChar": 15
+      },
+      "revId": "89a811092a73569911ad61790de1a2e3795b50fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_1fd56e42",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 5
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_0f2f8da2",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-27T10:49:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_1fd56e42",
+      "range": {
+        "startLine": 946,
+        "startChar": 64,
+        "endLine": 946,
+        "endChar": 69
+      },
+      "revId": "89a811092a73569911ad61790de1a2e3795b50fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_df2a762c",
         "filename": "keystone/tests/unit/backend/legacy_drivers/catalog/V8/sql.py",
         "patchSetId": 5
@@ -105,6 +201,30 @@
       "writtenOn": "2016-01-20T15:29:39Z",
       "side": 1,
       "message": "are we going to use entrypoints for these in our setup.cfg?",
+      "range": {
+        "startLine": 31,
+        "startChar": 20,
+        "endLine": 31,
+        "endChar": 60
+      },
+      "revId": "89a811092a73569911ad61790de1a2e3795b50fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_1abeedff",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/catalog/V8/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-27T10:49:54Z",
+      "side": 1,
+      "message": "I think so, we should config the setup.cfg to use the V8 driver.",
+      "parentUuid": "9a68dd71_df2a762c",
       "range": {
         "startLine": 31,
         "startChar": 20,
