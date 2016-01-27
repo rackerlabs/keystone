@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_60f2b59c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T18:57:54Z",
+      "side": 1,
+      "message": "fomats",
+      "range": {
+        "startLine": 127,
+        "startChar": 66,
+        "endLine": 127,
+        "endChar": 72
+      },
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_20eefd8b",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T18:57:54Z",
+      "side": 1,
+      "message": "I don\u0027t think token binding has anything to do with the scope. This should be part of the general token properties.",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_c0ada932",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T18:57:54Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment.",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_4068d9f5",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T18:57:54Z",
+      "side": 1,
+      "message": "if token_properties was a global then there wouldn\u0027t be any confusion.",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_60587557",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T18:57:54Z",
+      "side": 1,
+      "message": "since there\u0027s only 1 allowed type remove []. Same comment applies to all the type values.",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
