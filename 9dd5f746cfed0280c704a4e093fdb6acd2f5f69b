@@ -42,6 +42,23 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_c97b9f7a",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-27T16:10:46Z",
+      "side": 1,
+      "message": "change to NOTE(morgan): do not implement these.",
+      "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_c2405538",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 3
