@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a5de9d1_0f5c5424",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-27T17:27:41Z",
+      "side": 1,
+      "message": "as per my comment on the previous patch - doing caching on list_role_assignments() would catch more calls (although would result in a larger cache size)",
+      "range": {
+        "startLine": 100,
+        "startChar": 4,
+        "endLine": 100,
+        "endChar": 33
+      },
+      "revId": "cd906266e67c8a8a8ae9676d2fa6dd1bd2f59bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_2e94b935",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 24
