@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_73128eb6",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-27T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_60f2b59c",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_20eefd8b",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
       "writtenOn": "2016-01-27T18:57:54Z",
       "side": 1,
       "message": "I don\u0027t think token binding has anything to do with the scope. This should be part of the general token properties.",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_5e467924",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-27T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_20eefd8b",
       "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_fe13a55a",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-27T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_c0ada932",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_4068d9f5",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 7
@@ -76,6 +130,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_4acf97b0",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-27T20:37:58Z",
+      "side": 1,
+      "message": "Unfortunately, since we share it across test cases - then we would have some tests asserting scope with the wrong properties. Which is why we need to make a copy per test case.",
+      "parentUuid": "7a5de9d1_4068d9f5",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_60587557",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 7
@@ -87,6 +159,24 @@
       "writtenOn": "2016-01-27T18:57:54Z",
       "side": 1,
       "message": "since there\u0027s only 1 allowed type remove []. Same comment applies to all the type values.",
+      "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_fe41653a",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-27T20:37:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_60587557",
       "revId": "14506bc2187e7cecfa02634a7db07599945eff3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
