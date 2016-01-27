@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_116eafc9",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 61
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-27T22:24:23Z",
+      "side": 1,
+      "message": "admin_or_cloud_admin is being removed via https://review.openstack.org/#/c/273193",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_04266ece",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-27T22:24:23Z",
+      "side": 1,
+      "message": "The \"prior_\" here (and throughout) is not good REST in my opinion. At least not optimal. These are \"roles\", and should use that existing noun.\n\nAnd you should have a way to trace these relationships in both directions, not just one.\n\nI would suggest:\n\nGET /role?implied_by\u003d{role_id}\nGET /role?implies\u003d{role_id}",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7fa1efa8",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-27T22:24:23Z",
+      "side": 1,
+      "message": "continuing the comment above, these would be:\n\nPATCH /role/{role_id} adding or removing things from new \"implied_by\" and \"implies\" elements in the json for a role to create and delete these relationships. Or POST /role_inferences and DELETE /role_inferences/{role_inference_id}.\n\nYou may not have a replacement for check_implied_role... Instead, call GET /role?implies\u003d{role_id} and parse the response to see whether what you\u0027re looking for is there. Or you could GET /role_inferences?prior_role\u003d{role_id}\u0026implied_role\u003d{role_id} and expect 404 if that doesn\u0027t exist.\n\nGET /role/{role_id} would replace get_implied_role",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7104c314",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-27T22:24:23Z",
+      "side": 1,
+      "message": "It\u0027s not good REST to be able to list this here but create/update/delete with a totally different path structure. If you\u0027re creating/deleting above, where you\u0027re also listing and getting, then you don\u0027t need this. If you move the create/delete down here, then the get/list could move here as well. But we should be consistent.",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
