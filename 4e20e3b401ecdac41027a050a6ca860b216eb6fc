@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_bf1d2768",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T21:47:31Z",
+      "side": 1,
+      "message": "The function doesn\u0027t require a note since there\u0027s a docstring.",
+      "revId": "4e20e3b401ecdac41027a050a6ca860b216eb6fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_24236abf",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T21:47:31Z",
+      "side": 1,
+      "message": "the name of this function should be generate_base_token_properties_schema . The full token schema includes more than just the properties.\n\nAlternatively, have this return the full base schema, which would make more sense.",
+      "revId": "4e20e3b401ecdac41027a050a6ca860b216eb6fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_bf4be758",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T21:47:31Z",
+      "side": 1,
+      "message": "suggest don\u0027t have a new variable.",
+      "revId": "4e20e3b401ecdac41027a050a6ca860b216eb6fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7f824f54",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T21:47:31Z",
+      "side": 1,
+      "message": "suggest pass a parameter to generate_base_token_schema() to generate a schema that allows domains.\n\n self.generate_base_token_schema(allow_domain\u003dTrue)\n\nthen if allow_domain add the domain stuff.",
+      "revId": "4e20e3b401ecdac41027a050a6ca860b216eb6fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_bf6207d7",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T21:47:31Z",
+      "side": 1,
+      "message": "suggest use update() then there won\u0027t be as much duplication.",
+      "revId": "4e20e3b401ecdac41027a050a6ca860b216eb6fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
