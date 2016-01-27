@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_df55831d",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 61
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "is there a patch to amend the API spec for this new API?",
+      "range": {
+        "startLine": 81,
+        "startChar": 9,
+        "endLine": 81,
+        "endChar": 27
+      },
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_116eafc9",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 61
@@ -47,6 +70,52 @@
       "writtenOn": "2016-01-27T22:24:23Z",
       "side": 1,
       "message": "admin_or_cloud_admin is being removed via https://review.openstack.org/#/c/273193",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_117c6f71",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "prior_role_id? just to be consistent with the others. Also, is prior_id even be used here?",
+      "range": {
+        "startLine": 345,
+        "startChar": 45,
+        "endLine": 345,
+        "endChar": 53
+      },
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_1141cf0b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "why can\u0027t we just pass prior_role in there instead of passing bit and pieces?",
+      "range": {
+        "startLine": 361,
+        "startChar": 30,
+        "endLine": 361,
+        "endChar": 58
+      },
       "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_91585f58",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "I think we should remove this restriction altogether. Role name has no meaning. \u0027admin\u0027 means only what the particular policy.json want it to mean.",
+      "parentUuid": "7a5de9d1_3fca97a2",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_04266ece",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 61
@@ -81,6 +168,24 @@
       "writtenOn": "2016-01-27T22:24:23Z",
       "side": 1,
       "message": "The \"prior_\" here (and throughout) is not good REST in my opinion. At least not optimal. These are \"roles\", and should use that existing noun.\n\nAnd you should have a way to trace these relationships in both directions, not just one.\n\nI would suggest:\n\nGET /role?implied_by\u003d{role_id}\nGET /role?implies\u003d{role_id}",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_11122f63",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "too late to change the spec would it?",
+      "parentUuid": "7a5de9d1_04266ece",
       "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +220,52 @@
       "writtenOn": "2016-01-27T22:24:23Z",
       "side": 1,
       "message": "It\u0027s not good REST to be able to list this here but create/update/delete with a totally different path structure. If you\u0027re creating/deleting above, where you\u0027re also listing and getting, then you don\u0027t need this. If you move the create/delete down here, then the get/list could move here as well. But we should be consistent.",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7404b114",
+        "filename": "keystone/exception.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "why not?",
+      "range": {
+        "startLine": 293,
+        "startChar": 62,
+        "endLine": 293,
+        "endChar": 64
+      },
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_74eef123",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-01-27T22:53:05Z",
+      "side": 1,
+      "message": "move this method up prior to line 510 so its easier to read the rest of the test code",
+      "range": {
+        "startLine": 524,
+        "startChar": 8,
+        "endLine": 524,
+        "endChar": 46
+      },
       "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
