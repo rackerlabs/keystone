@@ -328,18 +328,16 @@ class Manager(manager.Manager):
             self._disable_project(tenant_id)
 
         ret = self.driver.update_project(tenant_id, tenant)
-        notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
                                             original_tenant['domain_id'])
-
         if ('domain_id' in tenant and
            tenant['domain_id'] != original_tenant['domain_id']):
             # If the project's domain_id has been updated, invalidate user
             # role assignments cache region, as it may be caching inherited
             # assignments from the old domain to the specified project
             assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
+        notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
@@ -362,10 +360,10 @@ class Manager(manager.Manager):
             payload = {'user_id': user_id, 'project_id': tenant_id}
             self._emit_invalidate_user_project_tokens_notification(payload)
         ret = self.driver.delete_project(tenant_id)
-        self.assignment_api.delete_project_assignments(tenant_id)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
+        self.assignment_api.delete_project_assignments(tenant_id)
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
 
@@ -565,6 +563,8 @@ class Manager(manager.Manager):
         if 'enabled' in domain:
             domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
+        self.get_domain.invalidate(self, domain_id)
+        self.get_domain_by_name.invalidate(self, original_domain['name'])
         notifications.Audit.updated(self._DOMAIN, domain_id, initiator)
         # disable owned users & projects when the API user specifically set
         #     enabled=False
@@ -573,8 +573,6 @@ class Manager(manager.Manager):
             notifications.Audit.disabled(self._DOMAIN, domain_id, initiator,
                                          public=False)
 
-        self.get_domain.invalidate(self, domain_id)
-        self.get_domain_by_name.invalidate(self, original_domain['name'])
         return ret
 
     def delete_domain(self, domain_id, initiator=None):
@@ -603,9 +601,9 @@ class Manager(manager.Manager):
         # to the backend to delete all assignments for this domain.
         # (see Bug #1277847)
         self.driver.delete_domain(domain_id)
-        notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
+        notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
 
         # Invalidate user role assignments cache region, as it may be caching
         # role assignments where the target is the specified domain
