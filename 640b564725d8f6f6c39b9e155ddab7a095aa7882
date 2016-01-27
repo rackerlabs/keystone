@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_8e54cd54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-27T19:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_012a2c90",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_981f3b5b",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 4
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_eae76310",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-27T19:02:18Z",
+      "side": 1,
+      "message": "Yes, I think so. I\u0027ve added that to my patch.",
+      "parentUuid": "fa1b9901_6c567f07",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_6c7bdf7b",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_2f04b07c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-27T19:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_6c7bdf7b",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_3a67f026",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -117,6 +171,24 @@
       "writtenOn": "2015-05-07T13:50:27Z",
       "side": 1,
       "message": "(nit): missing a dot in the end of the sentence",
+      "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8fd8441f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-27T19:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aca2d91_3a67f026",
       "revId": "640b564725d8f6f6c39b9e155ddab7a095aa7882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
