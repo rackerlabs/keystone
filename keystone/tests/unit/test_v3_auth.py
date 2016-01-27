@@ -2928,25 +2928,29 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user['id'],
             project_id=self.project_id,
-            impersonation=True,
+            impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id],
             allow_redelegation=True)
 
+        # Create a second trustee to redelegate trust
+        self.trustee_user_2 = unit.create_user(self.identity_api,
+                                               domain_id=self.domain_id)
+
         # trustor->trustee (no redelegation)
         self.chained_trust_ref = unit.new_trust_ref(
-            trustor_user_id=self.user_id,
-            trustee_user_id=self.trustee_user['id'],
+            trustor_user_id=self.trustee_user['id'],
+            trustee_user_id=self.trustee_user_2['id'],
             project_id=self.project_id,
-            impersonation=True,
+            impersonation=False,
             role_ids=[self.role_id],
             allow_redelegation=True)
 
-    def _get_trust_token(self, trust):
+    def _get_trust_token(self, trust, trustee_user):
         trust_id = trust['id']
         auth_data = self.build_authentication_request(
-            user_id=self.trustee_user['id'],
-            password=self.trustee_user['password'],
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
             trust_id=trust_id)
         trust_token = self.get_requested_token(auth_data)
         return trust_token
@@ -2956,9 +2960,10 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Attempt to create a redelegated trust.
+        self.chained_trust_ref['redelegated_trust_id'] = trust['id']
         self.post('/OS-TRUST/trusts',
                   body={'trust': self.chained_trust_ref},
                   token=trust_token,
@@ -2968,13 +2973,14 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Attempt to create a redelegated trust with incorrect
         # redelegation_count.
         correct = trust['redelegation_count'] - 1
         incorrect = correct - 1
         self.chained_trust_ref['redelegation_count'] = incorrect
+        self.chained_trust_ref['redelegated_trust_id'] = trust['id']
         self.post('/OS-TRUST/trusts',
                   body={'trust': self.chained_trust_ref},
                   token=trust_token,
@@ -2991,7 +2997,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Attempt to create a redelegated trust supposed to last longer
         # than the parent trust: let's give it 10 minutes (>1 minute).
@@ -3001,7 +3007,9 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             project_id=self.project_id,
             impersonation=True,
             expires=dict(minutes=10),
-            role_ids=[self.role_id])
+            role_ids=[self.role_id],
+            redelegated_trust_id=trust['id'])
+
         self.post('/OS-TRUST/trusts',
                   body={'trust': too_long_live_chained_trust_ref},
                   token=trust_token,
@@ -3011,12 +3019,13 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Attempt to create a redelegated trust with remaining_uses defined.
         # It must fail according to specification: remaining_uses must be
         # omitted for trust redelegation. Any number here.
         self.chained_trust_ref['remaining_uses'] = 5
+        self.chained_trust_ref['redelegated_trust_id'] = trust['id']
         self.post('/OS-TRUST/trusts',
                   body={'trust': self.chained_trust_ref},
                   token=trust_token,
@@ -3044,9 +3053,10 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         trust_role_id_set = set(r['id'] for r in trust['roles'])
         self.assertEqual(role_id_set, trust_role_id_set)
 
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Chain second trust with roles subset
+        self.chained_trust_ref['redelegated_trust_id'] = trust['id']
         self.chained_trust_ref['expires_at'] = (
             datetime.datetime.utcnow().replace(year=2030).strftime(
                 unit.TIME_FORMAT))
@@ -3066,7 +3076,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user['id'],
             project_id=self.project_id,
-            impersonation=True,
+            impersonation=False,
             expires=dict(minutes=1),
             role_names=[self.role['name']],
             allow_redelegation=True)
@@ -3076,15 +3086,16 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
                       body={'trust': ref})
         trust = self.assertValidTrustResponse(r)
         # Ensure we can get a token with this trust
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
         # Chain second trust with roles subset
         ref = unit.new_trust_ref(
-            trustor_user_id=self.user_id,
-            trustee_user_id=self.trustee_user['id'],
+            trustor_user_id=self.trustee_user['id'],
+            trustee_user_id=self.trustee_user_2['id'],
             project_id=self.project_id,
-            impersonation=True,
+            impersonation=False,
             role_names=[self.role['name']],
-            allow_redelegation=True)
+            allow_redelegation=True,
+            redelegated_trust_id=trust['id'])
         ref['expires_at'] = datetime.datetime.utcnow().replace(
             year=2030).strftime(unit.TIME_FORMAT)
         r = self.post('/OS-TRUST/trusts',
@@ -3092,13 +3103,13 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
                       token=trust_token)
         trust = self.assertValidTrustResponse(r)
         # Ensure we can get a token with this trust
-        self._get_trust_token(trust)
+        self._get_trust_token(trust, self.trustee_user_2)
 
     def test_redelegate_new_role_fails(self):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Build second trust with a role not in parent's roles
         role = unit.new_role_ref()
@@ -3111,12 +3122,13 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         # Try to chain a trust with the role not from parent trust
         self.chained_trust_ref['roles'] = [{'id': role['id']}]
 
-        # Bypass policy enforcement
-        with mock.patch.object(rules, 'enforce', return_value=True):
-            self.post('/OS-TRUST/trusts',
-                      body={'trust': self.chained_trust_ref},
-                      token=trust_token,
-                      expected_status=http_client.FORBIDDEN)
+        # Set redelegated trust id
+        self.chained_trust_ref['redelegated_trust_id'] = trust['id']
+
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': self.chained_trust_ref},
+                  token=trust_token,
+                  expected_status=http_client.FORBIDDEN)
 
     def test_redelegation_terminator(self):
         self.redelegated_trust_ref['expires_at'] = (
@@ -3125,9 +3137,10 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
         trust = self.assertValidTrustResponse(r)
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user)
 
         # Build second trust - the terminator
+        self.chained_trust_ref['redelegated_trust_id'] = trust['id']
         self.chained_trust_ref['expires_at'] = (
             datetime.datetime.utcnow().replace(year=2030).strftime(
                 unit.TIME_FORMAT))
@@ -3144,7 +3157,7 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         # to be set to 0, while allow_redelegation is removed
         self.assertNotIn('allow_redelegation', trust)
         self.assertEqual(0, trust['redelegation_count'])
-        trust_token = self._get_trust_token(trust)
+        trust_token = self._get_trust_token(trust, self.trustee_user_2)
 
         # Build third trust, same as second
         self.post('/OS-TRUST/trusts',
