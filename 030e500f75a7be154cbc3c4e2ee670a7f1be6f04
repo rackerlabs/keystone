@@ -39,6 +39,30 @@
       "revId": "030e500f75a7be154cbc3c4e2ee670a7f1be6f04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_3efe1d6c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4212,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-01-27T20:41:55Z",
+      "side": 1,
+      "message": "actually, I\u0027d suggest passing the assignment itself, instead of the list.",
+      "parentUuid": "7a5de9d1_b3e7a63f",
+      "range": {
+        "startLine": 4212,
+        "startChar": 42,
+        "endLine": 4212,
+        "endChar": 52
+      },
+      "revId": "030e500f75a7be154cbc3c4e2ee670a7f1be6f04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
