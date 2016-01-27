@@ -34,6 +34,24 @@
       "revId": "f509f75201d73dd2dbc51c1f9a1e44939b4eb0d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_3e7cdd71",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-27T20:29:48Z",
+      "side": 1,
+      "message": "I would actually expect this to be moved in between the invalidates. So it would be delete project -\u003e invalidate then delete assignments -\u003e invalidate.",
+      "parentUuid": "7a5de9d1_339f3605",
+      "revId": "f509f75201d73dd2dbc51c1f9a1e44939b4eb0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
