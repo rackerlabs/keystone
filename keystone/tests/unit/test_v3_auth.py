@@ -37,6 +37,7 @@ from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -3143,6 +3144,220 @@ class TestTrustOptional(test_v3.RestfulTestCase):
             trust_id=uuid.uuid4().hex)
         self.v3_create_token(auth_data,
                              expected_status=http_client.FORBIDDEN)
+
+
+class TestTrustImpersonation(test_v3.RestfulTestCase):
+    """Impersonation with trust.
+
+    Impersonation allows the trustor to optionally delegate impersonation
+    abilities to the trustee. To services validating the token, the trustee
+    will appear as the trustor, although the token will also contain
+    the impersonation object to indicate that this behavior is in effect.
+
+    """
+
+    def config_overrides(self):
+        super(TestTrustImpersonation, self).config_overrides()
+        self.config_fixture.config(
+            group='trust',
+            enabled=True,
+            allow_redelegation=True,
+            max_redelegation_count=3
+        )
+
+    def setUp(self):
+        super(TestTrustImpersonation, self).setUp()
+        # Create a trustee
+        self.trustee_user = unit.create_user(self.identity_api,
+                                             domain_id=self.domain_id)
+
+        # trustor->trustee
+        self.trust_ref = unit.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id],
+            allow_redelegation=True)
+
+        # Create trust
+        resp = self.post('/OS-TRUST/trusts',
+                         body={'trust': self.trust_ref},
+                         expected_status=http_client.CREATED)
+        self.trust = self.assertValidTrustResponse(resp)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=self.trust['id'])
+        self.trust_token = self.get_requested_token(auth_data)
+
+    def test_token_attributes_on_impersonated_token(self):
+        response = self.get('/auth/tokens',
+                            headers={'X-Subject-Token': self.trust_token},
+                            expected_status=http_client.OK)
+        resp_json = json.loads(response.body)
+        # Assert user on trusted token equals the trustor
+        self.assertEqual(self.user['id'], resp_json['token']['user']['id'])
+        self.assertEqual(self.user['name'], resp_json['token']['user']['name'])
+
+        # Assert role on trusted token
+        self.assertEqual(self.role['id'], resp_json['token']['roles'][0]['id'])
+        self.assertEqual(self.role['name'],
+                         resp_json['token']['roles'][0]['name'])
+
+        # Assert trustor and trustee on trusted token
+        self.assertEqual(
+            self.user['id'],
+            resp_json['token']['OS-TRUST:trust']['trustor_user']['id'])
+        self.assertEqual(
+            self.trustee_user['id'],
+            resp_json['token']['OS-TRUST:trust']['trustee_user']['id'])
+
+    def test_trustee_access_level(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'])
+
+        # Get trustee token to make admin calls
+        trustee_token = self.get_requested_token(auth_data)
+
+        # Trustee user should not be allowed to make admin request
+        self.get('/users',
+                 token=trustee_token,
+                 expected_status=http_client.FORBIDDEN)
+
+        # Verify that trust token can list users
+        self.get('/users',
+                 token=self.trust_token,
+                 expected_status=http_client.OK)
+
+    @test_utils.wip('This will fail because of bug #1534834. Attempt to '
+                    'bypass creating a new trust using impersonation.')
+    def test_trust_creation_bypass_policy(self):
+        """Creating trust bypassing policy.
+
+        Attempt to create a new trust with a trust token using
+        impersonation and setting trustor on trust to match the original
+        trustor's id.
+
+        """
+        # Create a trustee
+        trustee_user_2 = unit.create_user(self.identity_api,
+                                          domain_id=self.domain_id)
+        # trustor->trustee
+        trust_ref = unit.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=trustee_user_2['id'],
+            project_id=self.project_id,
+            impersonation=False,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id],
+            allow_redelegation=False,
+            redelegated_trust_id=self.trust['id'])
+
+        # Attempt to create trust with trust token using impersonation
+        # FIXME(jorge_munoz): This should return forbidden, but returns
+        # a valid 200 OK. Bug 1534834
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': trust_ref},
+                  token=self.trust_token,
+                  expected_status=http_client.FORBIDDEN)
+
+    def test_trust_creation_with_impersonated_token(self):
+        # Create a trustee
+        trustee_user_2 = unit.create_user(self.identity_api,
+                                          domain_id=self.domain_id)
+        # trustor->trustee
+        trust_ref = unit.new_trust_ref(
+            trustor_user_id=self.trustee_user['id'],
+            trustee_user_id=trustee_user_2['id'],
+            project_id=self.project_id,
+            impersonation=False,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id],
+            allow_redelegation=False,
+            redelegated_trust_id=self.trust['id'])
+
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': trust_ref},
+                  token=self.trust_token,
+                  expected_status=http_client.FORBIDDEN)
+
+    @test_utils.wip('User on impersonated token does not match original '
+                    'trustor')
+    def test_impersonating_after_redelegated_trust(self):
+        """Test impersonation after redelegation.
+
+        Attempt to impersonate after a redelegated chain of trust. The user
+        on the impersonated token should match the trustor of the original
+        trust.
+
+        """
+        # Update trust_ref for redelegation
+        self.trust_ref['impersonation'] = False
+
+        # Create redelegated trust
+        resp = self.post('/OS-TRUST/trusts',
+                         body={'trust': self.trust_ref},
+                         expected_status=http_client.CREATED)
+        trust = self.assertValidTrustResponse(resp)
+
+        # Get trusted token
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        trust_token = self.get_requested_token(auth_data)
+
+        # Create second trustee for impersonation
+        trustee_user_2 = unit.create_user(self.identity_api,
+                                          domain_id=self.domain_id)
+
+        # Trust for impersonation after a redelegated trust
+        trust_ref_2 = unit.new_trust_ref(
+            trustor_user_id=self.trustee_user['id'],
+            trustee_user_id=trustee_user_2['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id],
+            allow_redelegation=False,
+            redelegated_trust_id=trust['id'])
+
+        # Create trust for impersonation
+        resp = self.post('/OS-TRUST/trusts',
+                         body={'trust': trust_ref_2},
+                         token=trust_token,
+                         expected_status=http_client.CREATED)
+        trust_2 = self.assertValidTrustResponse(resp)
+
+        # Get impersonated trusted token
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user_2['id'],
+            password=trustee_user_2['password'],
+            trust_id=trust_2['id'])
+        trust_token = self.get_requested_token(auth_data)
+
+        # Validate impersonated token
+        response = self.get('/auth/tokens',
+                            headers={'X-Subject-Token': trust_token},
+                            expected_status=http_client.OK)
+        resp_json = json.loads(response.body)
+
+        # Assert user on trusted token equals the original trustor
+        # FIXME(jorge_munoz): User on token should should match the original
+        # trustor.
+        self.assertEqual(self.user['id'], resp_json['token']['user']['id'])
+        self.assertEqual(self.user['name'], resp_json['token']['user']['name'])
+
+        # Assert trustor and trustee on impersonated token
+        self.assertEqual(
+            self.trustee_user['id'],
+            resp_json['token']['OS-TRUST:trust']['trustor_user']['id'])
+        self.assertEqual(
+            trustee_user_2['id'],
+            resp_json['token']['OS-TRUST:trust']['trustee_user']['id'])
 
 
 class TestTrustRedelegation(test_v3.RestfulTestCase):
