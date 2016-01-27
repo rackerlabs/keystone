@@ -42,6 +42,23 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_09d3f739",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-27T16:14:16Z",
+      "side": 1,
+      "message": "If this is not supposed to be used explicitly, it may be good to log something at least.",
+      "revId": "9dd5f746cfed0280c704a4e093fdb6acd2f5f69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_c97b9f7a",
         "filename": "keystone/common/cache/_context_cache.py",
         "patchSetId": 3
