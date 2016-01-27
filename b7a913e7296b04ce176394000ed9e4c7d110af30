@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_31cf2bb2",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-27T22:18:30Z",
+      "side": 1,
+      "message": "I find the term \"node\" confusing here...what\u0027s the rationale for that?",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 20
+      },
+      "revId": "b7a913e7296b04ce176394000ed9e4c7d110af30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_df3103ee",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 13
