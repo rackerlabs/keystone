@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_1e87a1b6",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T20:48:46Z",
+      "side": 1,
+      "message": "Can\u0027t this be class-scoped? (or global)",
+      "revId": "9abbe5edcd4ccb55948aaab724c316ad6be0dba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7e4a5585",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T20:48:46Z",
+      "side": 1,
+      "message": "This note is unnecessary since it\u0027s explaining basic python.",
+      "revId": "9abbe5edcd4ccb55948aaab724c316ad6be0dba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_be2f6da0",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T20:48:46Z",
+      "side": 1,
+      "message": "comments from the previous patch set\n\n if token_properties was a global then there wouldn\u0027t be any confusion.\n\nI guess this comment was confusing... I meant that if token_properties was a global variable there wouldn\u0027t be a need for a note since it would be obvious why it needed to be copied. I thought the reason for the note is because the use of self made it confusing why copy is needed, since normally things referenced using self are instance variables which you wouldn\u0027t need to protect.",
+      "revId": "9abbe5edcd4ccb55948aaab724c316ad6be0dba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_5e49998a",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T20:48:46Z",
+      "side": 1,
+      "message": "remove \"should\"",
+      "revId": "9abbe5edcd4ccb55948aaab724c316ad6be0dba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_dea7c94d",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-27T20:48:46Z",
+      "side": 1,
+      "message": "this has to be a list",
+      "revId": "9abbe5edcd4ccb55948aaab724c316ad6be0dba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
