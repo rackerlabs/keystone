@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_293cb392",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-27T16:10:46Z",
+      "side": 1,
+      "message": "We could, instead, cache on list_role_assignments(). This would increase cache size (since this returns more data), but nearly all out role assignment reads end up calling this method (including a direct API)",
+      "range": {
+        "startLine": 103,
+        "startChar": 5,
+        "endLine": 103,
+        "endChar": 33
+      },
+      "revId": "91442edfdddaa812be1b17459e872de9c689547e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
