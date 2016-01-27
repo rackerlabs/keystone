@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_5f9e7357",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-27T21:58:37Z",
+      "side": 1,
+      "message": "so there is no spec (i can find for this). I think there is a perfectly legitimate case for this to improve performance of assignments in hierarchies. Maybe raise a defect to that affect and ties this set to that?",
+      "range": {
+        "startLine": 13,
+        "startChar": 14,
+        "endLine": 13,
+        "endChar": 38
+      },
+      "revId": "b7a913e7296b04ce176394000ed9e4c7d110af30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_df3103ee",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-27T21:58:37Z",
+      "side": 1,
+      "message": "for completness, you might as well check node.path2 as well",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 36
+      },
+      "revId": "b7a913e7296b04ce176394000ed9e4c7d110af30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_df48235e",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-27T21:58:37Z",
+      "side": 1,
+      "message": "is there a reason to execute raw sql here? we try and avoid that...",
+      "range": {
+        "startLine": 107,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 71
+      },
+      "revId": "b7a913e7296b04ce176394000ed9e4c7d110af30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
