@@ -173,7 +173,19 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         }
         if domain_scoped:
             token_properties['catalog'] = {'type': 'array'}
-            token_properties['roles'] = {'type': 'array'}
+            token_properties['roles'] = {
+                'type': 'array',
+                'items': {
+                    'type': 'object',
+                    'properties': {
+                        'id': {'type': 'string', },
+                        'name': {'type': 'string', },
+                    },
+                    'required': ['id', 'name', ],
+                    'additionalProperties': False,
+                },
+                'minItems': 1,
+            }
             token_properties['domain'] = {
                 'domain': {
                     'type': 'object',
@@ -196,7 +208,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         }
 
         if domain_scoped:
-            token_schema['required'].append('domain')
+            token_schema['required'].extend(['domain', 'roles'])
             token_schema['optional'].append('catalog')
 
         return token_schema
