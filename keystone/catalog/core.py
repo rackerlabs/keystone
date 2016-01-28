@@ -1217,4 +1217,12 @@ class V9CatalogWrapperForV8Driver(CatalogDriverV9):
     def list_service_provider_projects(self, sp_id):
         raise exception.NotImplemented()  # pragma: no cover
 
+    # Service providers groups CRUD
+
+    def create_service_providers_group(self, id, sp_group):
+        raise exception.NotImplemented()  # pragma: no cover
+
+    def get_service_providers_group(self, context, service_providers_group_id):
+        raise exception.NotImplemented()  # pragma: no cover
+
 Driver = manager.create_legacy_driver(CatalogDriverV8)
