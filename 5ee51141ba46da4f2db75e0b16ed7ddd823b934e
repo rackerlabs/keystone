@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_5c02cc0c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T18:40:59Z",
+      "side": 1,
+      "message": "suggest remove \"token\" prefix. The function name makes this redundant.",
+      "revId": "5ee51141ba46da4f2db75e0b16ed7ddd823b934e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_37e84910",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T18:40:59Z",
+      "side": 1,
+      "message": "suggest add the type of the elements: \u0027items\u0027: {\u0027type\u0027: \u0027string\u0027}\n\nAlso, \u0027minItems\u0027: 1 since you\u0027re required to have a role.",
+      "revId": "5ee51141ba46da4f2db75e0b16ed7ddd823b934e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_fc31380c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T18:40:59Z",
+      "side": 1,
+      "message": "also add roles",
+      "revId": "5ee51141ba46da4f2db75e0b16ed7ddd823b934e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
