@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_19ba26c1",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2016-01-28T18:42:49Z",
+      "side": 1,
+      "message": "actually, the code execution flow is not interrupted when the project_id is not found, so I don\u0027t see why this should be logged as an error.",
+      "parentUuid": "7a5de9d1_6bc0237d",
+      "range": {
+        "startLine": 179,
+        "startChar": 24,
+        "endLine": 179,
+        "endChar": 31
+      },
+      "revId": "1d0d4e458f88598200b28cbbc5f8dafeab592e3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_cb827752",
         "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
         "patchSetId": 17
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_b96d1206",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2016-01-28T18:42:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_cb827752",
+      "revId": "1d0d4e458f88598200b28cbbc5f8dafeab592e3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_eb3ad397",
         "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
         "patchSetId": 17
@@ -53,6 +95,24 @@
       "writtenOn": "2016-01-28T16:58:37Z",
       "side": 1,
       "message": "ditto",
+      "revId": "1d0d4e458f88598200b28cbbc5f8dafeab592e3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_d9700edf",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2016-01-28T18:42:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_eb3ad397",
       "revId": "1d0d4e458f88598200b28cbbc5f8dafeab592e3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_7978fac4",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3226,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2016-01-28T18:42:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_8b0f9fe0",
+      "range": {
+        "startLine": 3226,
+        "startChar": 23,
+        "endLine": 3226,
+        "endChar": 31
+      },
+      "revId": "1d0d4e458f88598200b28cbbc5f8dafeab592e3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_cba117ab",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 17
@@ -93,6 +177,30 @@
       "writtenOn": "2016-01-28T16:58:37Z",
       "side": 1,
       "message": "What warning is this ? Would it be useful to check something on the message too ?",
+      "range": {
+        "startLine": 3244,
+        "startChar": 37,
+        "endLine": 3244,
+        "endChar": 44
+      },
+      "revId": "1d0d4e458f88598200b28cbbc5f8dafeab592e3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_57ff05aa",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3244,
+      "author": {
+        "id": 15742
+      },
+      "writtenOn": "2016-01-28T18:42:49Z",
+      "side": 1,
+      "message": "I guess the test docstring suffices to identify the issued warning. what do you think?",
+      "parentUuid": "7a5de9d1_cba117ab",
       "range": {
         "startLine": 3244,
         "startChar": 37,
