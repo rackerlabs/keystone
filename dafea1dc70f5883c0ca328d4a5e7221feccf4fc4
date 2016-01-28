@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_99bda86a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-28T23:10:59Z",
+      "side": 1,
+      "message": "As per Brant\u0027s comment, it may make sense to catch possible exceptions of these two invalidations.",
+      "revId": "dafea1dc70f5883c0ca328d4a5e7221feccf4fc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
