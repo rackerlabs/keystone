@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_30fffaab",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:35:03Z",
+      "side": 1,
+      "message": "Isn\u0027t this the pattern we\u0027ve been using so far ? FOr example L47 identity:change_password and",
+      "parentUuid": "9a68dd71_ece788aa",
+      "range": {
+        "startLine": 39,
+        "startChar": 90,
+        "endLine": 39,
+        "endChar": 98
+      },
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_ec43086b",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 5
@@ -48,6 +72,47 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_a5b40af2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:35:03Z",
+      "side": 1,
+      "message": "++\n\nIt\u0027s actually the same code but the cascade\u003dTrue parameter to update_project call",
+      "parentUuid": "9a68dd71_ec43086b",
+      "range": {
+        "startLine": 310,
+        "startChar": 4,
+        "endLine": 318,
+        "endChar": 50
+      },
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a5440a74",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:35:03Z",
+      "side": 1,
+      "message": "There is a project controller being created at L93, we shouldn\u0027t need another controller instance just to register this operation.",
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_c73e1fb8",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 5
@@ -59,6 +124,30 @@
       "writtenOn": "2016-01-20T20:13:07Z",
       "side": 1,
       "message": "We should also make sure the projects in the hierarchy were actually updated.",
+      "range": {
+        "startLine": 1092,
+        "startChar": 7,
+        "endLine": 1092,
+        "endChar": 51
+      },
+      "revId": "c41298e1666191ebb44794516acef081f1da0a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_104c3e6f",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:35:03Z",
+      "side": 1,
+      "message": "We aren\u0027t creating a project hierarchy, which we should. Also add tests for the exceptional cases.",
+      "parentUuid": "9a68dd71_c73e1fb8",
       "range": {
         "startLine": 1092,
         "startChar": 7,
