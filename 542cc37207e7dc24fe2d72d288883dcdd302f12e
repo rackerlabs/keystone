@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_9b87150f",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-28T05:30:12Z",
+      "side": 1,
+      "message": "this change is irrelevant, pls revert this change.\n\nkeystone has ldap backend beside the SQL, i think lhcheng\u0027s comments is still valid.\n\nIf you think this should be changed, pls propose another review!",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "542cc37207e7dc24fe2d72d288883dcdd302f12e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_9bb5d5ce",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-28T05:30:12Z",
+      "side": 1,
+      "message": "these testcases itself it good, but they are irrelevant with the fixing here.\n\nAgain, if you think these testcases is needed but missed, pls propose another review!",
+      "range": {
+        "startLine": 453,
+        "startChar": 0,
+        "endLine": 460,
+        "endChar": 46
+      },
+      "revId": "542cc37207e7dc24fe2d72d288883dcdd302f12e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
