@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_cc4f1191",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-28T07:51:43Z",
+      "side": 1,
+      "message": "Is it better to move SP ID relation into `common/json_home.py` so that we can just use it without importing something from federation.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "2badcb7deb9730c34044bcb25eedfa4c28469a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
