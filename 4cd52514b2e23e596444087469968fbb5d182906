@@ -22,6 +22,30 @@
       "revId": "4cd52514b2e23e596444087469968fbb5d182906",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_6c510b62",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T22:20:55Z",
+      "side": 1,
+      "message": "Nice, waiting on jenkins this time just to be sure",
+      "parentUuid": "7a5de9d1_2cef93b1",
+      "range": {
+        "startLine": 196,
+        "startChar": 16,
+        "endLine": 196,
+        "endChar": 26
+      },
+      "revId": "4cd52514b2e23e596444087469968fbb5d182906",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
