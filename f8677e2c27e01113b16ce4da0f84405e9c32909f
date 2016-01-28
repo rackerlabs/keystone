@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_bb55341e",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-28T02:47:28Z",
+      "side": 1,
+      "message": "json home issue is caused by this wrong relation, it should be linked to federation SP ID rather than here.\n\nwill fix it later.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 75
+      },
+      "revId": "f8677e2c27e01113b16ce4da0f84405e9c32909f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
