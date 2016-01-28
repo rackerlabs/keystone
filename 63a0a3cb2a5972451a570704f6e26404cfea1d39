@@ -2,6 +2,132 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a5de9d1_1bd8d31c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "change \"don\u0027t\" to \"the user doesn\u0027t\"",
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_bb2c1f03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "change to \"accept an empty\"",
+      "range": {
+        "startLine": 16,
+        "startChar": 41,
+        "endLine": 16,
+        "endChar": 53
+      },
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_3bfa6f76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "change to \"relaxes\"",
+      "range": {
+        "startLine": 16,
+        "startChar": 10,
+        "endLine": 16,
+        "endChar": 15
+      },
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7b36a753",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "remove \"the\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 55,
+        "endLine": 17,
+        "endChar": 58
+      },
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_9b392344",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "change to \"can\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 15,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_3b602f01",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "change \"not given\" to \"None\"",
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_04cf4e80",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 13
@@ -13,6 +139,23 @@
       "writtenOn": "2016-01-27T21:46:12Z",
       "side": 1,
       "message": "Proper logic. Allows \u0027\u0027.",
+      "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_661daa0e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T21:31:55Z",
+      "side": 1,
+      "message": "rather than copy the global and then use the global, use the copy instead.",
       "revId": "63a0a3cb2a5972451a570704f6e26404cfea1d39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
