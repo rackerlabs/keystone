@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_e71c3479",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 69
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T22:45:50Z",
+      "side": 1,
+      "message": "These need to be updated to /roles/ too",
+      "range": {
+        "startLine": 76,
+        "startChar": 67,
+        "endLine": 76,
+        "endChar": 71
+      },
+      "revId": "bfc1c73640df92bed9bb9a4de11d891db75d0dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
