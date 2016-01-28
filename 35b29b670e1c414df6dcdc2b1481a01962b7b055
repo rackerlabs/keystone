@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a5de9d1_ac9dc35a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-28T22:17:20Z",
+      "side": 1,
+      "message": "why are do get project instead of using it from L362",
+      "range": {
+        "startLine": 392,
+        "startChar": 8,
+        "endLine": 392,
+        "endChar": 52
+      },
+      "revId": "35b29b670e1c414df6dcdc2b1481a01962b7b055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8cb1e7e3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-28T22:17:20Z",
+      "side": 1,
+      "message": "http://paste.openstack.org/show/485333/\n\nSo me and Samuel looked at your code and were able to optimize it.  We still are concerned that the role assignments are removed before the projects are deleted, since there is a chance that when you are deleting the projects the operation fails then you are left with projects with no role assignments.",
+      "range": {
+        "startLine": 394,
+        "startChar": 8,
+        "endLine": 435,
+        "endChar": 55
+      },
+      "revId": "35b29b670e1c414df6dcdc2b1481a01962b7b055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_6c6fcb92",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 16
