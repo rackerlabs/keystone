@@ -76,6 +76,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_6aee0824",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 61
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:06:13Z",
+      "side": 1,
+      "message": "I\u0027ll rebase once that merges",
+      "parentUuid": "7a5de9d1_116eafc9",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_117c6f71",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 61
@@ -210,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_aad8801e",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:06:13Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "7a5de9d1_d420054c",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_7fa1efa8",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 61
@@ -227,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_2a033075",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:06:13Z",
+      "side": 1,
+      "message": "yeah, this will work.  We don\u0027t need a different start to the URL..not sure why I thought we did.",
+      "parentUuid": "7a5de9d1_7fa1efa8",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_7104c314",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 61
@@ -238,6 +292,24 @@
       "writtenOn": "2016-01-27T22:24:23Z",
       "side": 1,
       "message": "It\u0027s not good REST to be able to list this here but create/update/delete with a totally different path structure. If you\u0027re creating/deleting above, where you\u0027re also listing and getting, then you don\u0027t need this. If you move the create/delete down here, then the get/list could move here as well. But we should be consistent.",
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_2aec90c6",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:06:13Z",
+      "side": 1,
+      "message": "The structure of the resource here is different from above.  This API is probably superfluous, but it is the only way to display all of the rules.",
+      "parentUuid": "7a5de9d1_7104c314",
       "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
