@@ -16,6 +16,24 @@
       "revId": "8a5343c8c219b011d122d3d8951ad541358887be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_e8bc0e6e",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-28T19:48:25Z",
+      "side": 1,
+      "message": "++ maybe that can be addressed in a separate patch/bug, since this bug only deals with token data creep?",
+      "parentUuid": "7a5de9d1_284f86be",
+      "revId": "8a5343c8c219b011d122d3d8951ad541358887be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
