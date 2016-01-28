@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_9677ed01",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:35:00Z",
+      "side": 1,
+      "message": "its prior_id everywhere, but...funny here it is not needed.  Removing.",
+      "parentUuid": "7a5de9d1_117c6f71",
+      "range": {
+        "startLine": 345,
+        "startChar": 45,
+        "endLine": 345,
+        "endChar": 53
+      },
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_1141cf0b",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 61
@@ -128,6 +152,30 @@
       "writtenOn": "2016-01-27T22:53:05Z",
       "side": 1,
       "message": "why can\u0027t we just pass prior_role in there instead of passing bit and pieces?",
+      "range": {
+        "startLine": 361,
+        "startChar": 30,
+        "endLine": 361,
+        "endChar": 58
+      },
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_76659143",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:35:00Z",
+      "side": 1,
+      "message": "tried to favor not querying more times than needed, but then to fall back to encapsulating the query closest to where it was used,.",
+      "parentUuid": "7a5de9d1_1141cf0b",
       "range": {
         "startLine": 361,
         "startChar": 30,
@@ -350,6 +398,30 @@
       "writtenOn": "2016-01-27T22:53:05Z",
       "side": 1,
       "message": "move this method up prior to line 510 so its easier to read the rest of the test code",
+      "range": {
+        "startLine": 524,
+        "startChar": 8,
+        "endLine": 524,
+        "endChar": 46
+      },
+      "revId": "d52d9524d84a04230235887ec316afb8fdd3c1dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_567975fb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-28T03:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_74eef123",
       "range": {
         "startLine": 524,
         "startChar": 8,
