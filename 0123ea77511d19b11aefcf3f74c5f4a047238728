@@ -140,6 +140,52 @@
       "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_55fffa33",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-28T20:35:32Z",
+      "side": 1,
+      "message": "remove request?",
+      "range": {
+        "startLine": 77,
+        "startChar": 40,
+        "endLine": 77,
+        "endChar": 47
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_55793a2e",
+        "filename": "releasenotes/notes/admin_token-a5678d712783c145.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-28T20:35:32Z",
+      "side": 1,
+      "message": "include a link to the bug",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 78
+      },
+      "revId": "0123ea77511d19b11aefcf3f74c5f4a047238728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
