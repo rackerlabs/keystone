@@ -150,6 +150,10 @@ MAPPING_ID_PARAM_RELATION = json_home.build_v3_extension_parameter_relation(
 SP_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
     'OS-FEDERATION', '1.0', 'sp_id')
 
+SP_GROUP_ID_PARAMETER_RELATION = (
+    json_home.build_v3_extension_parameter_relation(
+        'OS-EP-FILTER', '1.0', 'service_providers_group_id'))
+
 CONSUMER_ID_PARAMETER_RELATION = (
     json_home.build_v3_extension_parameter_relation(
         'OS-OAUTH1', '1.0', 'consumer_id'))
@@ -538,6 +542,22 @@ V3_JSON_HOME_RESOURCES = {
     {
         'href-template': '/OS-EP-FILTER/service_providers/{sp_id}/projects',
         'href-vars': {'sp_id': SP_ID_PARAMETER_RELATION},
+        'hints': {'status': 'experimental'}},
+
+    # Service providers group
+
+    _build_ep_filter_rel(resource_name='service_providers_groups'):
+    {
+        'href': '/OS-EP-FILTER/service_providers_groups',
+        'hints': {'status': 'experimental'}},
+
+    _build_ep_filter_rel(resource_name='service_providers_groups'):
+    {
+        'href-template': ('/OS-EP-FILTER/service_providers_groups/'
+                          '{service_providers_group_id}'),
+        'href-vars': {
+            'service_providers_group_id': SP_GROUP_ID_PARAMETER_RELATION
+        },
         'hints': {'status': 'experimental'}},
     _build_ep_filter_rel(
         resource_name='projects_associated_with_endpoint_group'):
