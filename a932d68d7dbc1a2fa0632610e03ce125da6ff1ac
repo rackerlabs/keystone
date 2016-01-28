@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_59a09043",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1433,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-01-28T23:14:29Z",
+      "side": 1,
+      "message": "Great job. I love the comments for each test. Very readable!!!",
+      "revId": "a932d68d7dbc1a2fa0632610e03ce125da6ff1ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_392274ba",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1458,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-01-28T23:14:29Z",
+      "side": 1,
+      "message": "I really like how you use read_status_OK to control what to test",
+      "revId": "a932d68d7dbc1a2fa0632610e03ce125da6ff1ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
