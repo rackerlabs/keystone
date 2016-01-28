@@ -16,6 +16,24 @@
       "revId": "f7a7f438dffa1a61e750e02b09066266aa0fa320",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a2bc196d",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-28T09:43:48Z",
+      "side": 1,
+      "message": "yep, thanks for catching this!",
+      "parentUuid": "9a68dd71_c954f122",
+      "revId": "f7a7f438dffa1a61e750e02b09066266aa0fa320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
