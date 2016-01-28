@@ -16,6 +16,24 @@
       "revId": "35b29b670e1c414df6dcdc2b1481a01962b7b055",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_0ccad76d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 3292,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T22:15:35Z",
+      "side": 1,
+      "message": "Tom has an idea of a great test and he\u0027s going to implement it. He will be able to submit it in a couple of minutes, ok?",
+      "parentUuid": "7a5de9d1_6c6fcb92",
+      "revId": "35b29b670e1c414df6dcdc2b1481a01962b7b055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
