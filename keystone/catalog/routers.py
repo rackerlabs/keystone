@@ -34,6 +34,8 @@ ENDPOINT_GROUP_PARAMETER_RELATION = build_parameter_relation(
     parameter_name='endpoint_group_id')
 
 SP_ID_PARAMETER_RELATION = federation_routers.SP_ID_PARAMETER_RELATION
+SP_GROUP_PARAMETER_RELATION = build_parameter_relation(
+    parameter_name='service_providers_group_id')
 
 
 class Routers(wsgi.RoutersBase):
@@ -74,6 +76,16 @@ class Routers(wsgi.RoutersBase):
         DELETE /OS-EP-FILTER/projects/{project_id}/service_providers/{sp_id}
         GET /OS-EP-FILTER/service_providers/{sp_id}/projects
 
+        POST /OS-EP-FILTER/service_providers_groups
+        GET /OS-EP-FILTER/service_providers_groups/{service_providers_group_id}
+        HEAD /OS-EP-FILTER/service_providers_groups/
+            {service_providers_group_id}
+        PATCH /OS-EP-FILTER/service_providers_groups/
+            {service_providers_group_id}
+        DELETE /OS-EP-FILTER/service_providers_groups/
+            service_providers_group_id}
+        GET /OS-EP-FILTER/service_providers_groups
+
     """
 
     PATH_PREFIX = '/OS-EP-FILTER'
@@ -93,6 +105,8 @@ class Routers(wsgi.RoutersBase):
             controllers.ProjectServiceProviderV3Controller())
         service_provider_project_controller = (
             controllers.ServiceProviderProjectV3Controller())
+        service_providers_group_controller = (
+            controllers.ServiceProvidersGroup())
         routers.append(router.Router(regions_controller,
                                      'regions', 'region',
                                      resource_descriptions=self.v3_resources))
@@ -234,4 +248,30 @@ class Routers(wsgi.RoutersBase):
             status=json_home.Status.EXPERIMENTAL,
             path_vars={
                 'sp_id': SP_ID_PARAMETER_RELATION,
+            })
+
+        # Service Providers Groups CRUD operations
+
+        self._add_resource(
+            mapper, service_providers_group_controller,
+            path='/OS-EP-FILTER/service_providers_groups',
+            post_action='create_service_providers_group',
+            get_action='list_service_providers_groups',
+            rel=build_resource_relation(
+                resource_name='service_providers_groups'),
+            status=json_home.Status.EXPERIMENTAL,)
+
+        self._add_resource(
+            mapper, service_providers_group_controller,
+            path=('/OS-EP-FILTER/service_providers_groups/'
+                  '{service_providers_group_id}'),
+            get_action='get_service_providers_group',
+            head_action='check_service_providers_group',
+            patch_action='update_service_providers_group',
+            delete_action='delete_service_providers_group',
+            rel=build_resource_relation(
+                resource_name='service_providers_groups'),
+            status=json_home.Status.EXPERIMENTAL,
+            path_vars={
+                'service_providers_group_id': SP_GROUP_PARAMETER_RELATION,
             })
