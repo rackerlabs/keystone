@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_a87cd672",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-01-28T19:32:06Z",
+      "side": 1,
+      "message": "suggest remove \"token\" prefix. The function name makes this redundant.",
+      "revId": "c6b6366b94ec07101c705583f8d5fc413dd8a01f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
