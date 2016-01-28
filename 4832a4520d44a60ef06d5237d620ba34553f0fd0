@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_72decc40",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-01-28T20:08:09Z",
+      "side": 1,
+      "message": "Using a leading underscore method from a library is frowned on. This means \"private\" and could disappear. I know it makes the code smaller but you might be stuck with parse -\u003e list -\u003e edit \u003e unparse. Or you could do: (a,b,c,...) \u003d urllib.parse.urlparse() and then pass all of them to unparse().",
+      "revId": "4832a4520d44a60ef06d5237d620ba34553f0fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_5292b058",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-01-28T20:08:09Z",
+      "side": 1,
+      "message": "does this need to be touched? Is this not always lower case from the network stack?",
+      "revId": "4832a4520d44a60ef06d5237d620ba34553f0fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_1273d84e",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-01-28T20:08:09Z",
+      "side": 1,
+      "message": "Is there no way to fix this when the CONF is loaded? This avoids needing to munge the same records for every single request. Not a big deal, but might help if the problem occurs elsewhere in the code.",
+      "revId": "4832a4520d44a60ef06d5237d620ba34553f0fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_b205247b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3352,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-01-28T20:08:09Z",
+      "side": 1,
+      "message": "Isn\u0027t this test at the wrong level? Shouldn\u0027t you be directly testing ``_get_sso_origin_host()``?",
+      "revId": "4832a4520d44a60ef06d5237d620ba34553f0fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
