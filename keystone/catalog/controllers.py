@@ -682,3 +682,55 @@ class ServiceProviderProjectV3Controller(ProjectServiceProviderV3Controller):
         projects = self.catalog_api.list_service_provider_projects(sp_id)
         return ServiceProviderProjectV3Controller.wrap_collection(
             context, projects)
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ServiceProvidersGroup(controller.V3Controller):
+
+    member_name = "service_providers_group"
+    collection_name = "service_providers_groups"
+
+    @controller.protected()
+    def create_service_providers_group(self, context, service_providers_group):
+        """Creates an Service Providers Group."""
+        ref = self._assign_unique_id(self._normalize_dict(
+            service_providers_group))
+        ref = self.catalog_api.create_service_providers_group(ref['id'], ref)
+        return ServiceProvidersGroup.wrap_member(
+            context, ref)
+
+    @controller.protected()
+    def get_service_providers_group(self, context, service_providers_group_id):
+        ref = self.catalog_api.get_service_providers_group(
+            service_providers_group_id)
+        return ServiceProvidersGroup.wrap_member(context, ref)
+
+    @controller.protected()
+    def check_service_providers_group(self,
+                                      context,
+                                      service_providers_group_id):
+        self.catalog_api.get_service_providers_group(
+            service_providers_group_id)
+        wsgi.render_response(status=(204, 'No Content'))
+
+    @controller.protected()
+    def update_service_providers_group(self,
+                                       context,
+                                       service_providers_group_id,
+                                       service_providers_group):
+        self.catalog_api.get_service_providers_group(
+            service_providers_group_id)
+        ref = self.catalog_api.update_service_providers_group(
+            service_providers_group_id, service_providers_group)
+        return ServiceProvidersGroup.wrap_member(context, ref)
+
+    @controller.protected()
+    def delete_service_providers_group(self, context,
+                                       service_providers_group_id):
+        self.catalog_api.delete_service_providers_group(
+            service_providers_group_id)
+
+    @controller.protected()
+    def list_service_providers_groups(self, context):
+        ref = self.catalog_api.list_service_providers_groups()
+        return ServiceProvidersGroup.wrap_collection(context, ref)

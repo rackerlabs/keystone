@@ -690,6 +690,21 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(89)
         assert_tables_columns_exist()
 
+    def test_add_service_providers_group(self):
+        """Test adding service providers groups tables."""
+        self.assertTableDoesNotExist('service_providers_group')
+        self.assertTableDoesNotExist('service_providers_group_members')
+        self.upgrade(90)
+        self.assertTableExists('service_providers_group')
+        self.assertTableExists('service_providers_group_members')
+
+        self.assertTableColumns('service_providers_group',
+                                ['id', 'name', 'description'])
+
+        self.assertTableColumns('service_providers_group_members',
+                                ['service_providers_group_id',
+                                 'service_provider_id'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

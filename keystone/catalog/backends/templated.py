@@ -314,3 +314,18 @@ class Catalog(core.CatalogDriverV9):
 
     def list_service_provider_projects(self, sp_id):
         raise exception.NotImplemented()
+
+    def create_service_providers_group(self, id, sp_group):
+        raise exception.NotImplemented()
+
+    def get_service_providers_group(self, sp_group_id):
+        raise exception.NotImplemented()
+
+    def update_service_providers_group(self, sp_group_id, sp_group):
+        raise exception.NotImplemented()
+
+    def delete_service_providers_group(self, sp_group_id):
+        raise exception.NotImplemented()
+
+    def list_service_providers_groups(self):
+        raise exception.NotImplemented()

@@ -599,6 +599,119 @@ class Catalog(catalog.CatalogDriverV9):
         projects_ref = query.all()
         return [ref.to_dict() for ref in projects_ref]
 
+    # Service providers groups CRUD operations
+
+    def _get_service_providers_group(self, session, sp_group_id):
+        sp_group_ref = session.query(ServiceProvidersGroup).get(sp_group_id)
+        if sp_group_ref is None:
+            raise exception.NotFound("Service providers group was "
+                                     "not found")
+        return sp_group_ref
+
+    def _get_service_providers_groups_providers(self, session, sp_group_id):
+        sp_group_members = session.query(ServiceProvidersGroupMembership)
+        sp_group_members = sp_group_members.filter_by(
+            service_providers_group_id=sp_group_id)
+        sp_group_members = sp_group_members.all()
+        return sp_group_members
+
+    def _get_service_providers_group_dict(self, session, sp_group_id):
+        sp_group_ref = self._get_service_providers_group(session, sp_group_id)
+
+        service_providers_ref = self._get_service_providers_groups_providers(
+            session, sp_group_id)
+
+        service_providers_id = [sp.service_provider_id for sp
+                                in service_providers_ref]
+
+        sp_group_ref = sp_group_ref.to_dict()
+        sp_group_ref['service_providers'] = service_providers_id
+        return sp_group_ref
+
+    def create_service_providers_group(self, id, sp_group):
+        session = sql.get_session()
+        with session.begin():
+            sp_group_ref = ServiceProvidersGroup(
+                id=id,
+                name=sp_group['name'],
+                description=sp_group['description'])
+            session.add(sp_group_ref)
+
+            sp_group_dict = sp_group_ref.to_dict()
+            sp_group_dict['service_providers'] = []
+
+            for sp_id in sp_group['service_providers']:
+                ref = ServiceProvidersGroupMembership(
+                    service_providers_group_id=id,
+                    service_provider_id=sp_id)
+                sp_group_dict['service_providers'].append(
+                    ref.service_provider_id)
+                session.add(ref)
+            return sp_group_dict
+
+    def get_service_providers_group(self, sp_group_id):
+        session = sql.get_session()
+        return self._get_service_providers_group_dict(session, sp_group_id)
+
+    def update_service_providers_group(self, sp_group_id, sp_group):
+        session = sql.get_session()
+        with session.begin():
+            sp_group_ref = self._get_service_providers_group(session,
+                                                             sp_group_id)
+            for attribute in ['name', 'description']:
+                if attribute in sp_group:
+                    sp_group_ref.attribute = sp_group[attribute]
+
+            cur_filter_members = session.query(
+                ServiceProvidersGroupMembership).filter_by(
+                    service_providers_group_id=sp_group_id)
+            cur_filter_members = set([sp.service_provider_id for sp in
+                                      cur_filter_members])
+
+            req_filter_members = set(sp_group.get('service_providers', []))
+
+            to_be_deleted_members = cur_filter_members.difference(
+                req_filter_members)
+
+            for member in to_be_deleted_members:
+                q = session.query(ServiceProvidersGroupMembership)
+                q = q.filter_by(service_providers_group_id=sp_group_id,
+                                service_provider_id=member)
+                q.delete()
+
+            to_be_added_members = req_filter_members.difference(
+                cur_filter_members)
+
+            for member in to_be_added_members:
+                ref = ServiceProvidersGroupMembership(
+                    service_providers_group_id=sp_group_id,
+                    service_provider_id=member)
+                session.add(ref)
+
+        return sp_group_ref.to_dict()
+
+    def delete_service_providers_group(self, sp_group_id):
+        session = sql.get_session()
+        with session.begin():
+            # NOTE(marek-denis): There is no need to delete corresponding group
+            # members from
+            # service_providers_group_members table as particular members are
+            # tied by ForeignKey constraint
+
+            sp_ref = session.query(ServiceProvidersGroup).get(sp_group_id)
+            session.delete(sp_ref)
+
+    def list_service_providers_groups(self):
+        session = sql.get_session()
+
+        result = []
+        with session.begin():
+            sp_groups_ids = session.query(ServiceProvidersGroup)
+            for sp_group_id in sp_groups_ids:
+                result.append(self._get_service_providers_group_dict(
+                    session, sp_group_id.id))
+        return result
+
 
 class ProjectEndpoint(sql.ModelBase, sql.ModelDictMixin):
     """project-endpoint relationship table."""
@@ -608,6 +721,7 @@ class ProjectEndpoint(sql.ModelBase, sql.ModelDictMixin):
     endpoint_id = sql.Column(sql.String(64),
                              primary_key=True,
                              nullable=False)
+
     project_id = sql.Column(sql.String(64),
                             primary_key=True,
                             nullable=False)
@@ -652,3 +766,29 @@ class ProjectServiceProvider(sql.ModelBase, sql.ModelDictMixin):
                                                     ondelete='CASCADE'),
                                      primary_key=True,
                                      nullable=False)
+
+
+class ServiceProvidersGroup(sql.ModelBase, sql.ModelDictMixin):
+    """Service providers group  table."""
+
+    __tablename__ = 'service_providers_group'
+    attributes = ['id', 'name', 'description']
+
+    id = sql.Column(sql.String(64), primary_key=True)
+    name = sql.Column(sql.String(255), nullable=False)
+    description = sql.Column(sql.Text, nullable=True)
+
+
+class ServiceProvidersGroupMembership(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'service_providers_group_members'
+    attributes = ['service_providers_group_id', 'service_provider_id']
+
+    service_providers_group_id = sql.Column(
+        sql.String(64), sql.ForeignKey('service_providers_group.id'),
+        nullable=False)
+    service_provider_id = sql.Column(
+        sql.String(64), sql.ForeignKey('service_provider.id'), nullable=False)
+
+    __table_args__ = (
+        sql.PrimaryKeyConstraint('service_providers_group_id',
+                                 'service_provider_id'), {})
