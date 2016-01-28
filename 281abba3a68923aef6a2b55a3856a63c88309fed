@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_0345e415",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "nit: version",
+      "range": {
+        "startLine": 10,
+        "startChar": 35,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_43099cdc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "nit: schema",
+      "range": {
+        "startLine": 11,
+        "startChar": 31,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8368f488",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "nit: them. So",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 11,
+        "endChar": 8
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_e30f68df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "nit: file and then",
+      "range": {
+        "startLine": 14,
+        "startChar": 8,
+        "endLine": 14,
+        "endChar": 16
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a3fad0bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "nit: schema",
+      "range": {
+        "startLine": 16,
+        "startChar": 34,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_03e164fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "schema",
+      "range": {
+        "startLine": 17,
+        "startChar": 18,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_e3e768e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-28T13:43:56Z",
+      "side": 1,
+      "message": "This is confuse, can you rewrite this? Something like:\n\nIn Mitaka, Keystone are deprecating the LDAP backend support for Idendity and Assignment.",
+      "range": {
+        "startLine": 17,
+        "startChar": 30,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "281abba3a68923aef6a2b55a3856a63c88309fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
