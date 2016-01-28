@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_347399b3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:10:53Z",
+      "side": 1,
+      "message": "It needs a comment explaining what does this case actually catches.",
+      "revId": "19eebba36451c494486785d8912d098fb26674b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_b41d49bf",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2661,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:10:53Z",
+      "side": 1,
+      "message": "grandparent/parent/parent_project would make it easier to understand",
+      "range": {
+        "startLine": 2661,
+        "startChar": 8,
+        "endLine": 2661,
+        "endChar": 16
+      },
+      "revId": "19eebba36451c494486785d8912d098fb26674b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_7c78f32b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2687,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:10:53Z",
+      "side": 1,
+      "message": "grandparent ?",
+      "range": {
+        "startLine": 2687,
+        "startChar": 8,
+        "endLine": 2687,
+        "endChar": 16
+      },
+      "revId": "19eebba36451c494486785d8912d098fb26674b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_9c992f71",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2688,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:10:53Z",
+      "side": 1,
+      "message": "parent ?",
+      "range": {
+        "startLine": 2688,
+        "startChar": 8,
+        "endLine": 2688,
+        "endChar": 16
+      },
+      "revId": "19eebba36451c494486785d8912d098fb26674b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_1fbf71fc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2695,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T16:10:53Z",
+      "side": 1,
+      "message": "Calling project2 as parent will also make it easier to understand subtree[0] is the grandchild.",
+      "revId": "19eebba36451c494486785d8912d098fb26674b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
