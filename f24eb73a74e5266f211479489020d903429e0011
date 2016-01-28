@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a5de9d1_ed5527c6",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-28T09:03:19Z",
+      "side": 1,
+      "message": "jsonschema",
+      "range": {
+        "startLine": 17,
+        "startChar": 28,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "f24eb73a74e5266f211479489020d903429e0011",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ed9f675d",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-01-28T09:03:19Z",
+      "side": 1,
+      "message": "_group_name is only used once (here), so might as well just include the values of _group_name here instead",
+      "range": {
+        "startLine": 54,
+        "startChar": 12,
+        "endLine": 54,
+        "endChar": 23
+      },
+      "revId": "f24eb73a74e5266f211479489020d903429e0011",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_ed4be757",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 15
