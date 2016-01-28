@@ -117,6 +117,40 @@
       "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_11f200d3",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T17:12:44Z",
+      "side": 1,
+      "message": "Just use the ProjectV3 controller being created at L93, do not create another instance to only route this operation",
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_71ca5470",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1194,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T17:12:44Z",
+      "side": 1,
+      "message": "Parhps calling them parent and child would make it easier to understand.",
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
