@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_b1d44cbd",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T17:22:25Z",
+      "side": 1,
+      "message": "Remove this rule as it is no longer used",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_f198841d",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T17:22:25Z",
+      "side": 1,
+      "message": "Why not check all the project dict rather than just the ID ?",
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_f13404fc",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T17:22:25Z",
+      "side": 1,
+      "message": "Would be nice to test that an admin cannot GET project for another project which he isn\u0027t scoped to. This helps to ensure we are not suffering of the global admin problem here.",
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_510dd83c",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-28T17:22:25Z",
+      "side": 1,
+      "message": "s/project_admin/project admin\n\nproject_admin looks to be the name of a role ? Why the underscore?",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 26
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
