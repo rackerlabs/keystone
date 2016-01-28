@@ -3349,6 +3349,15 @@ class WebSSOTests(FederatedTokenTests):
         resp = self.api.federated_sso_auth(context, self.PROTOCOL)
         self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
 
+    def test_federated_sso_auth_case_sensitivity(self):
+        environment = {self.REMOTE_ID_ATTR: self.REMOTE_IDS[0]}
+        context = {'environment': environment}
+        upper_case_origin = urllib.parse.quote_plus('http://HORIZON.com')
+        query_string = {'origin': upper_case_origin}
+        self._inject_assertion(context, 'EMPLOYEE_ASSERTION', query_string)
+        resp = self.api.federated_sso_auth(context, self.PROTOCOL)
+        self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
+
     def test_federated_sso_auth_with_protocol_specific_remote_id(self):
         self.config_fixture.config(
             group=self.PROTOCOL,
