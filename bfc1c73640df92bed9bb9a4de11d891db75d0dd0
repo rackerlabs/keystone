@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a5de9d1_4c8befc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 69
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-28T23:22:31Z",
+      "side": 1,
+      "message": "s/Iplied/Implied/",
+      "revId": "bfc1c73640df92bed9bb9a4de11d891db75d0dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_e71c3479",
         "filename": "doc/source/policy_mapping.rst",
         "patchSetId": 69
@@ -19,6 +36,23 @@
         "endLine": 76,
         "endChar": 71
       },
+      "revId": "bfc1c73640df92bed9bb9a4de11d891db75d0dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_0c7977f6",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 69
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-01-28T23:22:31Z",
+      "side": 1,
+      "message": "get_role and list_roles (above) are restricted to admins. If you don\u0027t restrict get_implied_role, list_implied_roles,  list_role_inference_rules, and check_implied_role to admins as well, then you\u0027ve given non-admins a way to bypass the get_role and list_roles checks to get role information.\n\nIt\u0027s also inconsistent with the other policy.json file in this patch.\n\nIf we\u0027re sure we want to let anyone query role information, then we should open that up for get_role and list_roles as well. One way or the other, these need to be consistent.",
       "revId": "bfc1c73640df92bed9bb9a4de11d891db75d0dd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
