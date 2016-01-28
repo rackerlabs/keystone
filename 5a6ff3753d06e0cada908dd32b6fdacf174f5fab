@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_9a3052ea",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-28T15:42:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_34b079f4",
+      "revId": "5a6ff3753d06e0cada908dd32b6fdacf174f5fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_54889522",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-27T23:09:58Z",
       "side": 1,
       "message": "suggest use token_properties.update() for all these.",
+      "revId": "5a6ff3753d06e0cada908dd32b6fdacf174f5fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_9afff2a9",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-28T15:42:22Z",
+      "side": 1,
+      "message": "These dictionaries in token_properties aren\u0027t created yet - so we don\u0027t have anything to update.",
+      "parentUuid": "7a5de9d1_54889522",
       "revId": "5a6ff3753d06e0cada908dd32b6fdacf174f5fab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
