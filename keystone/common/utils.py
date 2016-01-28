@@ -559,3 +559,11 @@ def list_url_unsafe_chars(name):
         if i in URL_RESERVED_CHARS:
             reserved_chars += i
     return reserved_chars
+
+
+def lower_case_hostname(url):
+    """Change the URL's hostname to lowercase"""
+    parsed = moves.urllib.parse.urlparse(url)
+    # Note: _replace method for named tuples is public and defined in docs
+    replaced = parsed._replace(netloc=parsed.netloc.lower())
+    return moves.urllib.parse.urlunparse(replaced)
