@@ -682,3 +682,11 @@ class ServiceProviderProjectV3Controller(ProjectServiceProviderV3Controller):
         projects = self.catalog_api.list_service_provider_projects(sp_id)
         return ServiceProviderProjectV3Controller.wrap_collection(
             context, projects)
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ServiceProvidersGroup(controller.V3Controller):
+
+    @controller.protected()
+    def create_service_providers_group(self):
+        pass
