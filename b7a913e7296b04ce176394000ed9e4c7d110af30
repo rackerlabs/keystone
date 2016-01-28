@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_b400e9ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-01-28T17:41:51Z",
+      "side": 1,
+      "message": "The spec for the following blueprint materialize-project-hierarchy is http://specs.openstack.org/openstack/keystone-specs/specs/backlog/materialize-project-hierarchy.html\n\nThis patch implements the very basic abstraction allowing to store required data in the right way.",
+      "parentUuid": "7a5de9d1_5f9e7357",
+      "range": {
+        "startLine": 13,
+        "startChar": 14,
+        "endLine": 13,
+        "endChar": 38
+      },
+      "revId": "b7a913e7296b04ce176394000ed9e4c7d110af30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_31cf2bb2",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 13
