@@ -16,6 +16,24 @@
       "revId": "fe14d330c7a5528a7a78c0445567845d62d3b2c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_f55626d1",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-28T20:25:11Z",
+      "side": 1,
+      "message": "Nvm, done in the following patch.",
+      "parentUuid": "7a5de9d1_55937aa3",
+      "revId": "fe14d330c7a5528a7a78c0445567845d62d3b2c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
