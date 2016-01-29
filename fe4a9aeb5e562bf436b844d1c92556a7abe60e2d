@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_1ee08f28",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-29T18:13:54Z",
+      "side": 1,
+      "message": "Why not just import the module here?",
+      "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_3e4b0b2c",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-29T18:13:54Z",
+      "side": 1,
+      "message": "Should this be:\n\n  fn_info \u003d \u0027.\u0027.join([f.__class__.__name__, f.__name__])",
+      "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
