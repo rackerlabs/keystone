@@ -134,7 +134,14 @@ class TrustV3(controller.V3Controller):
                 raise exception.Forbidden(
                     _('Redelegation allowed for delegated by trust only'))
 
-            redelegated_trust = self.trust_api.get_trust(src_trust_id)
+            trust_chain = self.trust_api.get_trust_pedigree(src_trust_id)
+            redelegated_trust = trust_chain[0]
+
+            # Impersonation case
+            original_trust = trust_chain[-1]
+            if original_trust['impersonation']:
+                raise exception.Forbidden(
+                    _('Cannot create trust using an impersonated token'))
         else:
             redelegated_trust = None
 

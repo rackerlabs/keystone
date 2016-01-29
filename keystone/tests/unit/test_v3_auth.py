@@ -37,7 +37,6 @@ from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 CONF = cfg.CONF
 
@@ -3046,8 +3045,6 @@ class TestTrustImpersonation(test_v3.RestfulTestCase):
                  token=self.trust_token,
                  expected_status=http_client.OK)
 
-    @test_utils.wip('This will fail because of bug #1534834. There is no real'
-                    'use case for creating a new trust using impersonation.')
     def test_trust_creation_with_trust_token(self):
         """Attempt to create a new trust with a trust token using
         impersonation and setting trustor on trust to match the original
@@ -3068,8 +3065,6 @@ class TestTrustImpersonation(test_v3.RestfulTestCase):
             redelegated_trust_id=self.trust['id'])
 
         # Attempt to create trust with trust token using impersonation
-        # FIXME(jorge_munoz) This should return forbidden, but returns
-        # a valid 200 OK. Bug 1534834
         self.post('/OS-TRUST/trusts',
                   body={'trust': trust_ref},
                   token=self.trust_token,
