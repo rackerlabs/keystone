@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_ae44a61a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-29T19:36:59Z",
+      "side": 0,
+      "message": "I assume cache.configure_cache_region would write to region.is_configured, so you need to capture that value before making this call? inline comment to prevent a refactor would be nice.",
+      "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
