@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_0a736d16",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 72
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-01-29T16:46:40Z",
+      "side": 1,
+      "message": "changing due to consistency complaint",
+      "revId": "09b78428e8d9b7292812c78b9501688455a3a6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
