@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_709d2709",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-29T22:29:52Z",
+      "side": 1,
+      "message": "We can\u0027t create a \"redelegated trust\" using an impersonated token, right? Or does this apply to all trusts?",
+      "revId": "e2368078439da9bb9d766da64f3c752e60c02df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
