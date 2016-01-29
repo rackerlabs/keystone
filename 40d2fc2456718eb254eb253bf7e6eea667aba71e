@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_d30190b0",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-01-29T17:52:48Z",
+      "side": 1,
+      "message": "I didn\u0027t know this would work without an explicit \u0027pass\u0027",
+      "revId": "40d2fc2456718eb254eb253bf7e6eea667aba71e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
