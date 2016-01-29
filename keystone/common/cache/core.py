@@ -32,8 +32,26 @@ def configure_cache(region=None):
 def get_memoization_decorator(group, expiration_group=None, region=None):
     if region is None:
         region = CACHE_REGION
-    return cache.get_memoization_decorator(CONF, region, group,
-                                           expiration_group=expiration_group)
+    dogpile_decorator = cache.get_memoization_decorator(
+        CONF, region, group, expiration_group=expiration_group)
+
+    class safe_invalidate_cache(object):
+
+        def __call__(self, _callable):
+            decorated_method = dogpile_decorator(_callable)
+            def invalidate(*args, **kwargs):
+                try:
+                    return original_invalidate(*args, **kwargs)
+                except Exception as e:
+                    pass  # TODO(dstanek): log this!
+            original_invalidate = decorated_method.invalidate
+            decorated_method.invalidate = invalidate
+            return decorated_method
+
+        def __getattr__(self, name):
+            return getattr(dogpile_decorator, name)
+
+    return safe_invalidate_cache()
 
 
 # NOTE(stevemar): When memcache_pool, mongo and noop backends are removed
