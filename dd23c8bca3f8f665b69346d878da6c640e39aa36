@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_f3edacb7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-01-29T17:53:43Z",
+      "side": 1,
+      "message": "sorry i did a rebase on your project because you had merge conflicts.... i didn\u0027t run the linter after i did a rebase:/ and this line is too long.  80 \u003e 79",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 80
+      },
+      "revId": "dd23c8bca3f8f665b69346d878da6c640e39aa36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
