@@ -13,11 +13,15 @@
 # under the License.
 
 import functools
+import inspect
+import time
+import types
 
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import importutils
 from oslo_utils import reflection
+import six
 import stevedore
 
 from keystone.i18n import _
@@ -85,6 +89,78 @@ def load_driver(namespace, driver_name, *args):
     return driver
 
 
+class _TraceMeta(type):
+    """A metaclass that, in trace mode, will log entry and exit of methods.
+
+    This metaclass automatically wraps all methods on the class when
+    instantiated with a decorator that will log entry/exit from a method
+    when keystone is run in Trace log level.
+    """
+
+    @staticmethod
+    def wrapper(f):
+        # NOTE(morganfainberg): Omit "cls" and "self" when printing trace logs
+        # the index can be calculated at wrap time rather than at runtime.
+        argspec = inspect.getargspec(f)
+        if argspec.args[0] in ('self', 'cls'):
+            arg_idx = 1
+        else:
+            arg_idx = 2
+
+        @functools.wraps(f)
+        def wrapped(*args, **kwargs):
+            exc = None
+            t = time.time()
+            fn_info = None
+            do_trace = LOG.logger.getEffectiveLevel() <= log.TRACE
+            ret_val = None
+            try:
+                if do_trace:
+                    fn_info = '.'.join([f.__class__.__name__, f.__name__])
+                    LOG.trace('Call %s' % fn_info)
+                ret_val = f(*args, **kwargs)
+            except Exception as e:  # nosec
+                exc = e
+                raise
+            finally:
+                if do_trace:
+                    subst = {
+                        'run_time': (time.time() - t),
+                        'passed_args': ', '.join([
+                            ', '.join([repr(a)
+                                       for a in args[arg_idx:]]),
+                            ', '.join(['%(k)s=%(v)r' % {'k': k, 'v': v}
+                                       for k, v in kwargs.items()]),
+                        ]),
+                        'function': fn_info,
+                        'exception': exc,
+                        'ret_val': ret_val,
+                    }
+                    if exc is not None:
+                        msg = ('[%(run_time)s] %(function)s'
+                               '(%(passed_args)s) => raised '
+                               '%(exception)r') % subst
+                    else:
+                        # TODO(morganfainberg): find a way to indicate if this
+                        # was a cache hit or cache miss.
+                        msg = ('[%(run_time)s] %(function)s'
+                               '(%(passed_args)s) => %(ret_val)r') % subst
+                    LOG.trace(msg)
+            return ret_val
+        return wrapped
+
+    def __new__(meta, classname, bases, class_dict):
+        final_cls_dict = {}
+        for attr_name, attr in class_dict.items():
+            # NOTE(morganfainberg):
+            if (isinstance(attr, types.FunctionType) and
+                    not attr_name.startswith('_')):
+                attr = _TraceMeta.wrapper(attr)
+            final_cls_dict[attr_name] = attr
+        return type.__new__(meta, classname, bases, final_cls_dict)
+
+
+@six.add_metaclass(_TraceMeta)
 class Manager(object):
     """Base class for intermediary request layer.
 
