@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_0a9b6d73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-01-29T16:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_c796d8ef",
+      "revId": "9355ba2f51cdb568ddb530499eb7d142b9b37d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_a70ddc38",
         "filename": "keystone/common/utils.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_c7678e4b",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-01-29T16:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_a70ddc38",
+      "revId": "9355ba2f51cdb568ddb530499eb7d142b9b37d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_47974848",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-28T22:44:14Z",
       "side": 1,
       "message": "This code can be simpler still.\n\n    context \u003d {\n        \u0027query_string\u0027: {\n            \u0027origin\u0027: \"http://HORIZON.com\",\n        },\n    }\n    host \u003d self.api._get_sso_origin_host(context)\n    self.assertEqual(\"http://horizon.com\", host)\n\nThen duplicate this with a lower case string too.",
+      "revId": "9355ba2f51cdb568ddb530499eb7d142b9b37d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ea8e1178",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3352,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-01-29T16:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_47974848",
       "revId": "9355ba2f51cdb568ddb530499eb7d142b9b37d1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
