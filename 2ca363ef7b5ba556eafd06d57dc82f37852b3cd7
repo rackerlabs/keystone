@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_f8c34b55",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-01-29T17:25:43Z",
+      "side": 1,
+      "message": "Done. Created a separate mapping_id_string dict for validating only mapping_ids.",
+      "parentUuid": "9a68dd71_ab893528",
+      "revId": "2ca363ef7b5ba556eafd06d57dc82f37852b3cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_cd260668",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 4
@@ -66,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_1898a777",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-01-29T17:25:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a68dd71_ebc96d79",
+      "range": {
+        "startLine": 509,
+        "startChar": 8,
+        "endLine": 509,
+        "endChar": 67
+      },
+      "revId": "2ca363ef7b5ba556eafd06d57dc82f37852b3cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_4d5696d3",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 4
@@ -77,6 +119,30 @@
       "writtenOn": "2016-01-21T18:13:58Z",
       "side": 1,
       "message": "so the illegal characters here are the \u0027@\u0027 and the \u0027.\u0027 right?",
+      "range": {
+        "startLine": 515,
+        "startChar": 38,
+        "endLine": 515,
+        "endChar": 55
+      },
+      "revId": "2ca363ef7b5ba556eafd06d57dc82f37852b3cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_b88f1329",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-01-29T17:25:43Z",
+      "side": 1,
+      "message": "Kept this test as it is after all..",
+      "parentUuid": "9a68dd71_4d5696d3",
       "range": {
         "startLine": 515,
         "startChar": 38,
