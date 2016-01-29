@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_070fe937",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-01-29T15:45:38Z",
+      "side": 1,
+      "message": "What unique constraint do you want to add it to?  I don\u0027t think it belongs in the one below because that would allow a username to exist (and be active) for domain_id.",
+      "revId": "0db7322ff55f0351ecefae35928cd5db83345484",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
