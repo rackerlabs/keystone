@@ -1,0 +1,10 @@
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 29 Jan 2016 19:11:15 +0000
+Reviewed-on: https://review.openstack.org/267051
+Project: openstack/keystone
+Branch: refs/heads/master
