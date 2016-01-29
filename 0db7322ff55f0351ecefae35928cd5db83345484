@@ -16,6 +16,24 @@
       "revId": "0db7322ff55f0351ecefae35928cd5db83345484",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_676b3af2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-01-29T16:35:02Z",
+      "side": 1,
+      "message": "Good point, you\u0027re right the name needs to be unique for all \"active\" users.  I think this would require a separate check.  And since we are not actually implementing any expires_at functionality in this patch, I\u0027m going to remove the column for now.",
+      "parentUuid": "7a5de9d1_070fe937",
+      "revId": "0db7322ff55f0351ecefae35928cd5db83345484",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
