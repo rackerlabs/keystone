@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_d0ce5b2d",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-29T22:28:02Z",
+      "side": 1,
+      "message": "are there any other characters we should include here? why do we limit this at all, \n\nmaybe we should change the common one on line 43 to allow underscore too?\n\nmore info here: https://perishablepress.com/stop-using-unsafe-characters-in-urls/",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 33
+      },
+      "revId": "b81a8266d1e6248ca759d51ef1a003423887ee8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
