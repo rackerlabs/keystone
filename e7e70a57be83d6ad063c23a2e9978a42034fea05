@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_d8568f29",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-01-29T17:35:50Z",
+      "side": 1,
+      "message": "It does not necessary do the same thing as line 755 here?\n\ntrust_id \u003d token_ref.get(\u0027trust_id\u0027)",
+      "revId": "e7e70a57be83d6ad063c23a2e9978a42034fea05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
