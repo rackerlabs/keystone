@@ -13,11 +13,14 @@
 # under the License.
 
 import functools
+import time
+from types import FunctionType
 
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import importutils
 from oslo_utils import reflection
+import six
 import stevedore
 
 from keystone.i18n import _
@@ -85,6 +88,63 @@ def load_driver(namespace, driver_name, *args):
     return driver
 
 
+class _TraceMeta(type):
+    """A metaclass that, in trace mode, will log entry and exit of methods.
+
+    This metaclass automatically wraps all methods on the class when
+    instantiated with a decorator that will log entry/exit from a method
+    when keystone is run in Trace log level.
+    """
+
+    @staticmethod
+    def wrapper(f):
+        @functools.wraps(f)
+        def wrapped(*args, **kwargs):
+            exc = None
+            t = time.time()
+            fn_info = None
+            do_trace = LOG.logger.getEffectiveLevel() <= log.TRACE
+            try:
+                if do_trace:
+                    fn_info = '.'.join([f.__name__, f.__class__.name])
+                    LOG.trace('Call %s' % fn_info)
+                ret_val = f(*args, **kwargs)
+            except Exception as e:  # nosec
+                exc = e
+                raise
+            finally:
+                if do_trace:
+                    subst = {
+                        'rt': (time.time() - t),
+                        'passed_args': ', '.join([
+                            ', '.join(args),
+                            ', '.join(['%(k)s=%(v)r' % {'k': k, 'v': v}
+                                       for k, v in kwargs.items()]),
+                        ]),
+                        'function': fn_info,
+                        'exception': exc,
+                    }
+                    if exc is not None:
+                        msg = ('[%(rt)s] %(function)s'
+                               '(%(passed_args)s) => raised '
+                               '%(exception)r') % subst
+                    else:
+                        msg = ('[%(rt)s] %(function)s'
+                               '(%(passed_args)s) => %(ret_val)r') % subst
+                    LOG.trace(msg)
+            return ret_val
+        return wrapped
+
+    def __new__(meta, classname, bases, class_dict):
+        final_cls_dict = {}
+        for attr_name, attr in class_dict.items():
+            if type(attr) == FunctionType and not attr_name.startswith('_'):
+                attr = _TraceMeta.wrapper(attr)
+            final_cls_dict[attr_name] = attr
+        return type.__new__(meta, classname, bases, final_cls_dict)
+
+
+@six.add_metaclass(_TraceMeta)
 class Manager(object):
     """Base class for intermediary request layer.
 
