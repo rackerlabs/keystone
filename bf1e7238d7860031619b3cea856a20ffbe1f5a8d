@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_931478a0",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-01-29T17:55:16Z",
+      "side": 1,
+      "message": "Direct is still a little bit confusing but I have no suitable substitute...",
+      "revId": "bf1e7238d7860031619b3cea856a20ffbe1f5a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
