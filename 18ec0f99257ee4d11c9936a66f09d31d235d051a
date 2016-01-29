@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_6019f987",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-29T09:33:49Z",
+      "side": 1,
+      "message": "still WIP?",
+      "range": {
+        "startLine": 690,
+        "startChar": 4,
+        "endLine": 692,
+        "endChar": 12
+      },
+      "revId": "18ec0f99257ee4d11c9936a66f09d31d235d051a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
