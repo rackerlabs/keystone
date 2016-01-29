@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_6b7780d3",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-29T19:45:43Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a5de9d1_1ee08f28",
+      "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_3e4b0b2c",
         "filename": "keystone/common/manager.py",
         "patchSetId": 1
@@ -30,6 +48,57 @@
       "writtenOn": "2016-01-29T18:13:54Z",
       "side": 1,
       "message": "Should this be:\n\n  fn_info \u003d \u0027.\u0027.join([f.__class__.__name__, f.__name__])",
+      "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ee0b7e8c",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-29T19:45:43Z",
+      "side": 1,
+      "message": "rt -\u003e runtime",
+      "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ae01066c",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-29T19:45:43Z",
+      "side": 1,
+      "message": "++",
+      "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_4ed412eb",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-01-29T19:45:43Z",
+      "side": 1,
+      "message": "where does ret_val come from?",
       "revId": "fe4a9aeb5e562bf436b844d1c92556a7abe60e2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
