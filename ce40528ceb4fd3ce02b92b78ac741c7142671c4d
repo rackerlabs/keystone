@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_ce7f9715",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-30T03:25:09Z",
+      "side": 1,
+      "message": "whitespace issue",
+      "range": {
+        "startLine": 80,
+        "startChar": 31,
+        "endLine": 80,
+        "endChar": 35
+      },
+      "revId": "ce40528ceb4fd3ce02b92b78ac741c7142671c4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
