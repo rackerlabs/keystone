@@ -25,6 +25,78 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_3df0e790",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-30T00:06:44Z",
+      "side": 1,
+      "message": "I don\u0027t know if we can just drop it without deprecating.\n\nIt might break for some operators that might have already been using this rule.",
+      "parentUuid": "7a5de9d1_b1d44cbd",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_5d44c3b5",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-30T00:06:44Z",
+      "side": 1,
+      "message": "I don\u0027t know if we can just drop without deprecation.\n\nIf an operator is re-using this, it would just fail for them.",
+      "parentUuid": "7a5de9d1_b1d44cbd",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_9df79b8a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-01-30T00:06:44Z",
+      "side": 1,
+      "message": "I don\u0027t know if we can just drop it without deprecating.\n\nIt might break for some operators that might have already been using this rule.",
+      "parentUuid": "7a5de9d1_b1d44cbd",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_f198841d",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 5
