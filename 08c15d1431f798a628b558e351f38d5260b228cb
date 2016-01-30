@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_3501d3af",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-30T17:37:23Z",
+      "side": 1,
+      "message": "Will do this next patch, didn\u0027t want to try via the web interface.",
+      "parentUuid": "7a5de9d1_4e573258",
+      "revId": "08c15d1431f798a628b558e351f38d5260b228cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_cec9e227",
         "filename": "keystone/common/manager.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_75fbcbc1",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-30T17:37:23Z",
+      "side": 1,
+      "message": "In Next.",
+      "parentUuid": "7a5de9d1_cec9e227",
+      "revId": "08c15d1431f798a628b558e351f38d5260b228cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_aed4a6bc",
         "filename": "keystone/common/manager.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-29T19:46:51Z",
       "side": 1,
       "message": "ret_val is not in subst",
+      "revId": "08c15d1431f798a628b558e351f38d5260b228cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_95f8c7c4",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-01-30T17:37:23Z",
+      "side": 1,
+      "message": "In Next",
+      "parentUuid": "7a5de9d1_aed4a6bc",
       "revId": "08c15d1431f798a628b558e351f38d5260b228cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
