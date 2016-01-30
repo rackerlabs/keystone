@@ -16,6 +16,23 @@
       "revId": "bf1e7238d7860031619b3cea856a20ffbe1f5a8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_cee477e1",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-01-30T03:32:31Z",
+      "side": 1,
+      "message": "remove this line to pass linters",
+      "revId": "bf1e7238d7860031619b3cea856a20ffbe1f5a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
