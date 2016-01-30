@@ -16,6 +16,24 @@
       "revId": "cb43726646f95e7bb42365473bfa27688f97b135",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_83b17849",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-01-30T01:40:16Z",
+      "side": 1,
+      "message": "Well, I was thinking that it would just be:\nif trust[\u0027impersonation\u0027]: raise\nand remove the code to get the chain of trust, because in which scenario would we want a user with a trusted token(user impersonating a trustor) to create a trust. So the logic would be, if this is a delegated auth and impersonation is set to true on the trust for create return forbidden. Please correct me if I\u0027m wrong on my logic.",
+      "parentUuid": "7a5de9d1_a0a26a97",
+      "revId": "cb43726646f95e7bb42365473bfa27688f97b135",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
