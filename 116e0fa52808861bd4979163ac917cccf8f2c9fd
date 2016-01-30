@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_24044716",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-30T13:35:39Z",
+      "side": 0,
+      "message": "Not quite sure about this. We are removing revoke_by_expiration function and remove the testcase that calls `_revoke_by_expiration` too.\n\nAre we going to remove `_revoke_by_expiration` @ L269 as well?",
+      "range": {
+        "startLine": 341,
+        "startChar": 21,
+        "endLine": 341,
+        "endChar": 64
+      },
+      "revId": "116e0fa52808861bd4979163ac917cccf8f2c9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
