@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_01c33dee",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-01-30T10:57:47Z",
+      "side": 1,
+      "message": "If introduce `entity_update_optional_body` like `entity_create_optional_body` on master branch, then we can get rid of `global` from this testcase too.",
+      "range": {
+        "startLine": 183,
+        "startChar": 4,
+        "endLine": 190,
+        "endChar": 46
+      },
+      "revId": "01b89c6195fa90b8d91406851ee52979fe038b37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
