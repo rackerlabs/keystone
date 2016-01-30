@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_dabd0e69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-01-30T16:32:33Z",
+      "side": 1,
+      "message": "So does this patch actually fix this problem? I think it only ensures we raise an error (or am I missing the obvious)?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 45
+      },
+      "revId": "2a2ffe4906dcf435948c33e74f2c5556b67264ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
