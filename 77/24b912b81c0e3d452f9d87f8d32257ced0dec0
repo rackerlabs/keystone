@@ -1,0 +1,8 @@
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sun, 31 Jan 2016 23:15:32 +0000
+Reviewed-on: https://review.openstack.org/265023
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
