@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_ce242c0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-01T23:48:54Z",
+      "side": 1,
+      "message": "we are postponing the spec and implementation to later release: https://review.openstack.org/274079",
+      "parentUuid": "7a5de9d1_c938aed5",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 46
+      },
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_57d3fa5f",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 56
