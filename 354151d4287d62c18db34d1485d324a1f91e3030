@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_33668b2a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-01T23:27:44Z",
+      "side": 1,
+      "message": "My opinion is we can remove rules from the sample policy file. I don\u0027t think operators would be affected by this. If they customize their policy file then they\u0027re not using the sample.",
+      "parentUuid": "7a5de9d1_9df79b8a",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_f198841d",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 5
@@ -108,6 +132,24 @@
       "writtenOn": "2016-01-28T17:22:25Z",
       "side": 1,
       "message": "Why not check all the project dict rather than just the ID ?",
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_b30fdb35",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-01T23:27:44Z",
+      "side": 1,
+      "message": "There\u0027s no need to check anything since the get would fail if the test fails.",
+      "parentUuid": "7a5de9d1_f198841d",
       "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -131,6 +173,29 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_0e0b2425",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-01T23:27:44Z",
+      "side": 1,
+      "message": "change \"Earlier\" to \"Originally\"\n\nchange \"issue\" to \"perform\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 11
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_510dd83c",
         "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
         "patchSetId": 5
@@ -148,6 +213,23 @@
         "endLine": 6,
         "endChar": 26
       },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ce38acd5",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-01T23:27:44Z",
+      "side": 1,
+      "message": "This needs to be updated to say that this only applies when using the sample policy file since a deployment might have updated their policy file to allow this already.",
       "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
