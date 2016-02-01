@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_c938aed5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-01T20:47:27Z",
+      "side": 1,
+      "message": "The user table will be removed in a subsequent release.  I\u0027m  leaving it there in order to support rolling upgrades:\nhttp://specs.openstack.org/openstack/keystone-specs/specs/mitaka/online-schema-migration.html",
+      "parentUuid": "7a5de9d1_b7482eb4",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 46
+      },
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_57d3fa5f",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 56
@@ -53,6 +77,30 @@
       "writtenOn": "2016-02-01T20:31:28Z",
       "side": 1,
       "message": "Shouldn\u0027t this class name be identity too?\n\nAnd, is the User table still going to be used? If it isn\u0027t, you should drop it, or mention in the commit message that it\u0027ll be dropped in follow-up patches",
+      "range": {
+        "startLine": 32,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 10
+      },
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_095a46f2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-01T20:47:27Z",
+      "side": 1,
+      "message": "The user table is not going to be used. In order to support rolling upgrades, we shouldn\u0027t drop any tables or columns...\nhttp://specs.openstack.org/openstack/keystone-specs/specs/mitaka/online-schema-migration.html \n\nThere already is a class named Identity, so I didn\u0027t want to conflict with that and wanted to avoid doing too much refactoring in this patch as we are only changing the underlying tables and not the API.",
+      "parentUuid": "7a5de9d1_7732b6a8",
       "range": {
         "startLine": 32,
         "startChar": 6,
@@ -111,6 +159,30 @@
       "writtenOn": "2016-02-01T20:31:28Z",
       "side": 1,
       "message": "as we are creating two new entities, shouldn\u0027t we have identity and password model?",
+      "range": {
+        "startLine": 125,
+        "startChar": 12,
+        "endLine": 125,
+        "endChar": 19
+      },
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_29a4e2b7",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-01T20:47:27Z",
+      "side": 1,
+      "message": "This test tests the user model, which is now made up of 2 tables (identity and password).",
+      "parentUuid": "7a5de9d1_b7710e0e",
       "range": {
         "startLine": 125,
         "startChar": 12,
