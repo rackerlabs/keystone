@@ -61,13 +61,9 @@ class V2TokenDataHelper(object):
 
         # Maintain Trust Data
         if 'OS-TRUST:trust' in v3_token:
-            v3_trust_data = v3_token['OS-TRUST:trust']
-            token_data['trust'] = {
-                'trustee_user_id': v3_trust_data['trustee_user']['id'],
-                'id': v3_trust_data['id'],
-                'trustor_user_id': v3_trust_data['trustor_user']['id'],
-                'impersonation': v3_trust_data['impersonation']
-            }
+            msg = ('Unable to validate trust-scoped tokens using version v2.0 '
+                   'API.')
+            raise exception.Unauthorized(msg)
 
         # Set user roles
         user['roles'] = []
