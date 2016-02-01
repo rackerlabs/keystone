@@ -38,6 +38,7 @@ class User(sql.ModelBase, sql.DictBase):
     enabled = sql.Column(sql.Boolean)
     default_project_id = sql.Column(sql.String(64))
     passwords = orm.relationship('Password', backref='identity')
+    federated_ids = orm.relationship('FederatedIdentity', backref='identity')
 
     # name property
     @hybrid_property
@@ -110,6 +111,20 @@ class Password(sql.ModelBase, sql.DictBase):
     name = sql.Column(sql.String(255), nullable=False)
     password = sql.Column(sql.String(255))
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
+
+
+class FederatedIdentity(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'federated_identity'
+    attributes = ['id', 'identity_id', 'idp_id', 'protocol_id', 'unique_id',
+                  'display_name']
+    id = sql.Column(sql.String(64), primary_key=True)
+    identity_id = sql.Column(sql.String(64),
+                             sql.ForeignKey('identity.id'))
+    idp_id = sql.Column(sql.String(64),
+                        sql.ForeignKey('identity_provider.id'))
+    protocol_id = sql.Column(sql.String(64), nullable=False)
+    unique_id = sql.Column(sql.String(255), nullable=False)
+    display_name = sql.Column(sql.String(255), nullable=True)
 
 
 class Group(sql.ModelBase, sql.DictBase):
