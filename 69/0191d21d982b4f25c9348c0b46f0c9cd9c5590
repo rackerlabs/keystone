@@ -1,0 +1,10 @@
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 01 Feb 2016 08:54:11 +0000
+Reviewed-on: https://review.openstack.org/274437
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
