@@ -111,6 +111,7 @@ class UserAuthInfo(object):
     def __init__(self):
         self.user_id = None
         self.password = None
+        self.passcode = None
         self.user_ref = None
         self.METHOD_NAME = None
 
@@ -165,6 +166,7 @@ class UserAuthInfo(object):
             raise exception.ValidationError(attribute='id or name',
                                             target='user')
         self.password = user_info.get('password')
+        self.passcode = user_info.get('passcode')
         try:
             if user_name:
                 if 'domain' not in user_info:
