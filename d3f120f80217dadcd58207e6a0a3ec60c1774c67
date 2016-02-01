@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a5de9d1_ddf6288e",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-01T22:26:15Z",
+      "side": 1,
+      "message": "the only issue i found was that sometimes i\u0027d get comms when there is no content: \n\n  [0.000458955764771] function.invalidate_revocation_list(, ) \u003d\u003e None",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 27
+      },
+      "revId": "d3f120f80217dadcd58207e6a0a3ec60c1774c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_de4acd54",
         "filename": "keystone/common/manager.py",
         "patchSetId": 5
