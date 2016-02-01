@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_8c99647b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-02-01T21:09:50Z",
+      "side": 1,
+      "message": "https://bugs.launchpad.net/keystone/+bug/1410029",
+      "range": {
+        "startLine": 171,
+        "startChar": 9,
+        "endLine": 171,
+        "endChar": 25
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_2c0870d9",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-02-01T21:09:50Z",
+      "side": 1,
+      "message": "What happens if project_ids is an empty list. Please write a test case for that.",
+      "range": {
+        "startLine": 172,
+        "startChar": 33,
+        "endLine": 172,
+        "endChar": 37
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_eca9f890",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-02-01T21:09:50Z",
+      "side": 1,
+      "message": "I agree that we should delete everything atomically. I am against using synchronize_session\u003d\u0027fetch\u0027 because it will do a select for every row before deleting. I am saying let\u0027s delete without using this and catch exception if any and then remove the rows pertaining to the exception and retry.\n\nreference:\nhttp://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.delete",
+      "range": {
+        "startLine": 181,
+        "startChar": 18,
+        "endLine": 181,
+        "endChar": 24
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ac4ea038",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 3241,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-02-01T21:09:50Z",
+      "side": 1,
+      "message": "Should this be a list in stead of a tuple?",
+      "range": {
+        "startLine": 3241,
+        "startChar": 24,
+        "endLine": 3241,
+        "endChar": 35
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
