@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_3100ce65",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-01T19:33:23Z",
+      "side": 1,
+      "message": "Not sure this is really worth doing (Open to it?) because using keystone to autogen certs is probably the wrong choice.",
+      "revId": "099fc0756639354a434dafb9f08df17724b20fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_d1d4daec",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-01T19:33:23Z",
+      "side": 1,
+      "message": "Don\u0027t add more into the PKI stuff. PKI tokens are deprecated and use of pkisetup was discouraged anyway.",
+      "revId": "099fc0756639354a434dafb9f08df17724b20fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
