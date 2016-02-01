@@ -397,6 +397,17 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
     return blob, credential
 
 
+def new_totp_credential(user_id, project_id=None):
+    blob = {
+        'secret': uuid.uuid4().hex
+    }
+    credential = new_credential_ref(user_id=user_id,
+                                    project_id=project_id,
+                                    blob=json.dumps(blob),
+                                    type='totp')
+    return blob, credential
+
+
 def new_role_ref(**kwargs):
     ref = {
         'id': uuid.uuid4().hex,
