@@ -13,9 +13,14 @@
 # under the License.
 
 from keystone.common import driver_hints
+from oslo_config import cfg
+
 from keystone.common import sql
 from keystone import credential
 from keystone import exception
+
+
+CONF = cfg.CONF
 
 
 class CredentialModel(sql.ModelBase, sql.DictBase):
@@ -106,3 +111,6 @@ class Credential(credential.CredentialDriverV8):
             query = session.query(CredentialModel)
             query = query.filter_by(user_id=user_id)
             query.delete()
+
+    def _get_list_limit(self):
+        return CONF.resource.list_limit or CONF.list_limit
