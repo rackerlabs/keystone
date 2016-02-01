@@ -14,6 +14,7 @@
 
 from __future__ import absolute_import
 import atexit
+import base64
 import datetime
 import functools
 import hashlib
@@ -394,6 +395,17 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
                                     blob=json.dumps(blob),
                                     type='ec2',
                                     **kwargs)
+    return blob, credential
+
+
+def new_totp_credential(user_id, project_id=None):
+    blob = {
+        'secret': uuid.uuid4().hex
+    }
+    credential = new_credential_ref(user_id=user_id,
+                                    project_id=project_id,
+                                    blob=json.dumps(blob),
+                                    type='totp')
     return blob, credential
 
 

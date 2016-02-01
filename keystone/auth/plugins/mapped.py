@@ -115,7 +115,7 @@ def handle_unscoped_token(context, auth_payload, auth_context,
         auth_context[federation_constants.PROTOCOL] = protocol
 
     def build_local_user_context(auth_context, mapped_properties):
-        user_info = auth_plugins.UserAuthInfo.create(mapped_properties,
+        user_info = auth_plugins.PasswordUserInfo.create(mapped_properties,
                                                      METHOD_NAME)
         auth_context['user_id'] = user_info.user_id
 
