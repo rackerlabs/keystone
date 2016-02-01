@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_db3df48f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-02-01T11:30:38Z",
+      "side": 1,
+      "message": "This line will throw an exception of no project exists with ids given in project_ids.\n\nWhy do we need handle_conflicts decorator here? If I remember correctly there is a bug report in which the task is to get rid of conflict decorator in deletes.",
+      "range": {
+        "startLine": 176,
+        "startChar": 12,
+        "endLine": 176,
+        "endChar": 31
+      },
+      "revId": "09c6d8199a32f70822c4c06642c696d2d8538706",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_dbc2d4e8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2016-02-01T11:30:38Z",
+      "side": 1,
+      "message": "Since this will do a select before deleting every time. Why not try to delete and if there is an exception catch it and retry it. In a normal scenario this will be more efficient, I think.",
+      "range": {
+        "startLine": 181,
+        "startChar": 25,
+        "endLine": 181,
+        "endChar": 44
+      },
+      "revId": "09c6d8199a32f70822c4c06642c696d2d8538706",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
