@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_22f7258c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-01T16:47:54Z",
+      "side": 1,
+      "message": "this line does not throw any exception. See the test case for it. The test case creates an \"in\" clause.\n\nAbout the handle_conflicts, as the common delete_project uses, I don\u0027t see a reason why not to use this. Do you have the bug link?",
+      "parentUuid": "7a5de9d1_db3df48f",
+      "range": {
+        "startLine": 176,
+        "startChar": 12,
+        "endLine": 176,
+        "endChar": 31
+      },
+      "revId": "09c6d8199a32f70822c4c06642c696d2d8538706",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_dbc2d4e8",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 21
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-01T11:30:38Z",
       "side": 1,
       "message": "Since this will do a select before deleting every time. Why not try to delete and if there is an exception catch it and retry it. In a normal scenario this will be more efficient, I think.",
+      "range": {
+        "startLine": 181,
+        "startChar": 25,
+        "endLine": 181,
+        "endChar": 44
+      },
+      "revId": "09c6d8199a32f70822c4c06642c696d2d8538706",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_420b417d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-01T16:47:54Z",
+      "side": 1,
+      "message": "we only did it this way to make the delete an atomic operation, so we don\u0027t need to go several ways in the db. there is no point in making one request per time",
+      "parentUuid": "7a5de9d1_dbc2d4e8",
       "range": {
         "startLine": 181,
         "startChar": 25,
