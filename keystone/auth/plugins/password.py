@@ -27,7 +27,8 @@ class Password(auth.AuthMethodHandler):
 
     def authenticate(self, context, auth_payload, auth_context):
         """Try to authenticate against the identity backend."""
-        user_info = auth_plugins.UserAuthInfo.create(auth_payload, METHOD_NAME)
+        user_info = auth_plugins.UserAuthInfo.create(auth_payload,
+                                                     METHOD_NAME)
 
         try:
             self.identity_api.authenticate(
