@@ -30,6 +30,7 @@ from testtools import testcase
 
 from keystone import auth
 from keystone.common import utils
+from keystone.common.totp import get_totp_token
 from keystone.contrib.revoke import routers
 from keystone import exception
 from keystone.policy.backends import rules
@@ -4456,3 +4457,48 @@ class TestAuthFernetTokenProvider(TestAuth):
         # Bind not current supported by Fernet, see bug 1433311.
         self.v3_create_token(auth_data,
                              expected_status=http_client.NOT_IMPLEMENTED)
+
+
+class TestAuthTOTP(test_v3.RestfulTestCase):
+    def setUp(self):
+        super(TestAuthTOTP, self).setUp()
+        auth.controllers.load_auth_methods()
+
+        blob, ref = unit.new_totp_credential(
+            user_id=self.default_domain_user['id'],
+            project_id=self.default_domain_project['id'])
+
+        self.secret = blob['secret']
+
+        r = self.post('/credentials', body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+
+    def tearDown(self):
+        super(TestAuthTOTP, self).tearDown()
+        cred_from_credential_api = (
+            self.credential_api
+            .list_credentials_for_user(
+                self.default_domain_user['id'], type='totp'))
+
+        self.delete(
+            '/credentials/{credential_id}'.format(
+                credential_id=cred_from_credential_api[0]['id']),
+            expected_status=http_client.NO_CONTENT)
+
+    def test_auth_with_valid_passcode(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.default_domain_user['id'],
+            passcode=get_totp_token(self.secret),
+            project_id=self.project['id'])
+
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.CREATED)
+
+    def test_auth_with_invalid_passcode(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.default_domain_user['id'],
+            passcode='000000',
+            project_id=self.project['id'])
+
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.UNAUTHORIZED)
