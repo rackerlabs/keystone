@@ -24,6 +24,7 @@ from keystone.assignment import routers as assignment_routers
 from keystone.auth import routers as auth_routers
 from keystone.catalog import routers as catalog_routers
 from keystone.common import wsgi
+from keystone.compat.aws import s3
 from keystone.credential import routers as credential_routers
 from keystone.endpoint_policy import routers as endpoint_policy_routers
 from keystone.federation import routers as federation_routers
@@ -102,6 +103,7 @@ def admin_app_factory(global_conf, **local_conf):
                                  token_routers.Router(),
                                  resource_routers.Admin(),
                                  admin_crud.Router(),
+                                 s3.Routers(),
                                  routers.VersionV2('admin'),
                                  routers.Extension()])
 
@@ -141,6 +143,7 @@ def v3_app_factory(global_conf, **local_conf):
                        revoke_routers,
                        federation_routers,
                        oauth1_routers,
+                       s3,
                        # TODO(morganfainberg): Remove the simple_cert router
                        # when PKI and PKIZ tokens are removed.
                        simple_cert_ext]

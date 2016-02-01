@@ -14,7 +14,7 @@
 
 import uuid
 
-from keystone.contrib import s3
+from keystone.compat.aws import s3
 from keystone import exception
 from keystone.tests import unit
 
