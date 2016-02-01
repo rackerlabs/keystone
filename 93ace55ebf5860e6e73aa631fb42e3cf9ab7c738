@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_7eadd999",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-01T07:40:08Z",
+      "side": 1,
+      "message": "why mix those testcases with what you are want to address in this patch? generally speaking, the testcase added is to prove your fixing, so that we can keep it focused.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 53
+      },
+      "revId": "93ace55ebf5860e6e73aa631fb42e3cf9ab7c738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_be3271a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-01T07:40:08Z",
+      "side": 1,
+      "message": "yep, it has been deprecated but not removed yet. I am not fan of changing the behavior that keystone still supports.",
+      "range": {
+        "startLine": 17,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 29
+      },
+      "revId": "93ace55ebf5860e6e73aa631fb42e3cf9ab7c738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
