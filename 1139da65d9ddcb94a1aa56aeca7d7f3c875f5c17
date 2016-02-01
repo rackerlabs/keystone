@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_82d5abe5",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-01T22:12:12Z",
+      "side": 1,
+      "message": "wrong copyright",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "1139da65d9ddcb94a1aa56aeca7d7f3c875f5c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a2fb0778",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-01T22:12:12Z",
+      "side": 1,
+      "message": "use module level imports only, not class level\n\nalso, it\u0027s not used since you are using auth_plugins",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 46
+      },
+      "revId": "1139da65d9ddcb94a1aa56aeca7d7f3c875f5c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_e2581f8c",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-01T22:12:12Z",
+      "side": 1,
+      "message": "switch up copyright",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "1139da65d9ddcb94a1aa56aeca7d7f3c875f5c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a27a27bb",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-01T22:12:12Z",
+      "side": 1,
+      "message": "definitely needs a module level docstring explaining what\u0027s going on and how this all works",
+      "revId": "1139da65d9ddcb94a1aa56aeca7d7f3c875f5c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
