@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_41e6fc15",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-01T08:06:44Z",
+      "side": 0,
+      "message": "See other comment on hell of hand-rolled reverts. I\u0027ll circle back up on these.",
+      "parentUuid": "7a5de9d1_346a23ef",
+      "range": {
+        "startLine": 616,
+        "startChar": 12,
+        "endLine": 619,
+        "endChar": 49
+      },
+      "revId": "9dfad21201251364c6d205e8e79813bfe78e6107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_d46aafec",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-01T07:12:58Z",
       "side": 0,
       "message": "this check was removed in liberty",
+      "range": {
+        "startLine": 624,
+        "startChar": 12,
+        "endLine": 630,
+        "endChar": 53
+      },
+      "revId": "9dfad21201251364c6d205e8e79813bfe78e6107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_e1f048cb",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-01T08:06:44Z",
+      "side": 0,
+      "message": "Same",
+      "parentUuid": "7a5de9d1_d46aafec",
       "range": {
         "startLine": 624,
         "startChar": 12,

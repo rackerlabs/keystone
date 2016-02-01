@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_e1192823",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-01T08:06:44Z",
+      "side": 1,
+      "message": "This series of hand-rolled-backports have been nightmarish.",
+      "parentUuid": "7a5de9d1_1497e7ec",
+      "range": {
+        "startLine": 230,
+        "startChar": 4,
+        "endLine": 243,
+        "endChar": 18
+      },
+      "revId": "8dc64fadff809897f1fe3809644c64d9136fc19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_b48853c6",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-01T07:12:58Z",
       "side": 1,
       "message": "this comment doesn\u0027t line up with https://review.openstack.org/#/c/265023/4/keystone/tests/unit/test_v3_assignment.py",
+      "range": {
+        "startLine": 208,
+        "startChar": 8,
+        "endLine": 209,
+        "endChar": 24
+      },
+      "revId": "8dc64fadff809897f1fe3809644c64d9136fc19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_81df1439",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-01T08:06:44Z",
+      "side": 1,
+      "message": "Again, hand-rolled fixes. None of these were even close to clean cherry-picks and have had minor modifications abound since the volume of stuff. This is the original comment, the liberty one was a minor update from the web to fix the comment.",
+      "parentUuid": "7a5de9d1_b48853c6",
       "range": {
         "startLine": 208,
         "startChar": 8,
