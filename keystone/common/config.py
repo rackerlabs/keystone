@@ -24,7 +24,7 @@ import passlib.utils
 from keystone import exception
 
 
-_DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'oauth1']
+_DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'oauth1', 'totp']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
 _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
@@ -765,6 +765,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('oauth1',
                    help='Entrypoint for the oAuth1.0 auth plugin module in '
                         'the keystone.auth.oauth1 namespace.'),
+        cfg.StrOpt('totp',
+                   help='Entrypoint for the totp auth plugin module in '
+                        'the keystone.auth.totp namespace.'),
     ],
     'tokenless_auth': [
         cfg.MultiStrOpt('trusted_issuer', default=[],
