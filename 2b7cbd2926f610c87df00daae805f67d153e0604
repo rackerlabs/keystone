@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_677de1e6",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "this line can be removed - \n\nhttp://logs.openstack.org/01/274901/2/check/gate-keystone-linters/ee75f02/console.html",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8776dd04",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "This can be indented under auth_payload, like: \n\n    auth_payload,\n    METHOD_NAME)\n\nhttp://logs.openstack.org/01/274901/2/check/gate-keystone-linters/ee75f02/console.html",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_275e0977",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "We have to attempt to catch something here.",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_874d7dc6",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "we could probably remove this.",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a7f8b94a",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "nit: we should add an additional doc string for what this method returns.",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_c73e1529",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "this is missing whitespace around the operator.\n\nhttp://logs.openstack.org/01/274901/2/check/gate-keystone-linters/ee75f02/console.html",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_67f2c171",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "nit: we should add an additional doc string for what this method returns.",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_c78855c9",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:07:08Z",
+      "side": 1,
+      "message": "nit: this is missing whitespace around the arithmetic operator (/).",
+      "revId": "2b7cbd2926f610c87df00daae805f67d153e0604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
