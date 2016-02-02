@@ -1,4 +1,12 @@
 ---
+upgrade:
+  - >
+    The ``keystone-paste.ini`` file must be updated to remove middleware filters
+    and their use in ``[pipeline:api_v3]``, ``[pipeline:api_public]``,
+    and ``[pipeline:api_admin]``. Remove ``[filter:admin_token_auth]``. See the
+    sample `keystone-paste.ini
+    <https://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone-paste.ini>`_
+    file for guidance.
 deprecations:
   - >
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
@@ -13,3 +21,7 @@ deprecations:
     create group, delete user, delete group, update user, update group,
     add user to group, and remove user from group. These operations will be
     removed in the 'O' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, the use of ``admin_token_auth`` is deprecated in favor
+    of using the ``keystone-manage bootstrap`` cli.
