@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_b3f6f88c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-02T00:53:52Z",
+      "side": 1,
+      "message": "I share Brant\u0027s opinion here",
+      "parentUuid": "7a5de9d1_33668b2a",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_f198841d",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 5
@@ -150,6 +174,24 @@
       "side": 1,
       "message": "There\u0027s no need to check anything since the get would fail if the test fails.",
       "parentUuid": "7a5de9d1_f198841d",
+      "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_33e3e8da",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-02T00:53:52Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "7a5de9d1_b30fdb35",
       "revId": "354151d4287d62c18db34d1485d324a1f91e3030",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
