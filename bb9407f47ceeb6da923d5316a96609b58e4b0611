@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_e7ac7137",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2965,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:13:31Z",
+      "side": 1,
+      "message": "nit; end this doc string with a period.",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_4a4c6c76",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3039,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:13:31Z",
+      "side": 1,
+      "message": "I like the comments but maybe we should convert them to say \"why\" a particular behavior is observed.",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ea6438e6",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3047,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:13:31Z",
+      "side": 1,
+      "message": "This is just proving that the trust allows the trustee an ability he didn\u0027t have before - right?",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_07118d5d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3052,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:13:31Z",
+      "side": 1,
+      "message": "suggest breaking this comment up such that it has a topic and a body. \n\n    \"\"\"Ensure creating a trust with impersonation bypasses policy.\n\n    More stuff about the test case.\n\n    \"\"\"\"",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a702f909",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3071,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:13:31Z",
+      "side": 1,
+      "message": "nit: add a : after (jorge_munoz):",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ea0f582c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3072,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-02T22:13:31Z",
+      "side": 1,
+      "message": "++ thanks for adding the context!",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
