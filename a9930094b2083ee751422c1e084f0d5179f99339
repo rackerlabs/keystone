@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_74803f8c",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-02T16:23:40Z",
+      "side": 1,
+      "message": "This might still produce errant (, ) strings.",
+      "range": {
+        "startLine": 132,
+        "startChar": 24,
+        "endLine": 137,
+        "endChar": 27
+      },
+      "revId": "a9930094b2083ee751422c1e084f0d5179f99339",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
