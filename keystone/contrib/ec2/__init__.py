@@ -12,7 +12,5 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.contrib.ec2 import controllers  # noqa
-from keystone.contrib.ec2.core import *  # noqa
 from keystone.contrib.ec2.routers import Ec2Extension  # noqa
 from keystone.contrib.ec2.routers import Ec2ExtensionV3  # noqa
