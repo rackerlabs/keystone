@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_e8b9b97a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-02T15:29:09Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be named \u0027filters\u0027?",
+      "range": {
+        "startLine": 317,
+        "startChar": 27,
+        "endLine": 317,
+        "endChar": 32
+      },
+      "revId": "205e8ab25d014749c1412ba1c2359b0c8ebb60da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8994c744",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-02T15:29:09Z",
+      "side": 1,
+      "message": "this should be the equality operator. what if the name was cool_cascade... Also you are filter protecting just \u0027cascade\u0027 not any string that contains \u0027cascade\u0027",
+      "range": {
+        "startLine": 319,
+        "startChar": 25,
+        "endLine": 319,
+        "endChar": 27
+      },
+      "revId": "205e8ab25d014749c1412ba1c2359b0c8ebb60da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_23937251",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-02T15:29:09Z",
+      "side": 1,
+      "message": ").filters",
+      "range": {
+        "startLine": 347,
+        "startChar": 61,
+        "endLine": 347,
+        "endChar": 62
+      },
+      "revId": "205e8ab25d014749c1412ba1c2359b0c8ebb60da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8394a644",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-02T15:29:09Z",
+      "side": 1,
+      "message": "maybe some list comprehension could be used instead of _get_cascade()  \n\ncascade \u003d bool([True for hint in hints if hint[\u0027name\u0027] \u003d\u003d \u0027cascade\u0027]) # Also add a comment explaining what its doing",
+      "revId": "205e8ab25d014749c1412ba1c2359b0c8ebb60da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
