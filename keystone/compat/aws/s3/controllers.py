@@ -23,12 +23,14 @@ from keystone import compat
 
 
 _s3_core = extras.try_import('keystone.compat.aws.s3._s3_core')
+_ec2_core = extras.try_import('keystone.compat.aws.ec2._ec2_core')
 
 
 # NOTE(morganfainberg): This is to support the case where for legal reasons
 # S3 compat core cannot be installed on the disk. This pattern should
-# never be replicated outside of the keystone.compat tree.
-if _s3_core:
+# never be replicated outside of the keystone.compat tree. Both EC2 and S3
+# need to be available for S3 to work.
+if _ec2_core and _s3_core:
     S3Controller = _s3_core.S3Controller
 else:
     S3Controller = compat._AllMethodsForbiddenControllerV2

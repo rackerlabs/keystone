@@ -32,6 +32,16 @@ Glance to list images needed to perform the requested task.
 
 """
 
+# NOTE(morganfainberg): This code has been split out into it's own file so
+# it can be removed for some deplpyers that require no AWS compat code
+# on-disk in their OpenStack deployments due to legal concerns. This whole
+# module should eventually be spun out into it's own "extras" module and
+# loaded in via an entry point. For now to address the legal concerns, the
+# products that require it can simply remove this file which will cause the
+# APIs that call into these function to return an HTTP 403 (forbidden) in
+# all cases.
+
+
 import abc
 import sys
 import uuid
