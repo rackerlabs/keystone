@@ -114,6 +114,40 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_b7f564cc",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-02T14:03:53Z",
+      "side": 1,
+      "message": "just a heads up. there was some debate around \u0027extra\u0027.\nWhat\u0027s gonna be kept there?",
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_d7b26006",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-02T14:03:53Z",
+      "side": 1,
+      "message": "why not make a proper FK to domain.id ?",
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_7732b6a8",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 56
