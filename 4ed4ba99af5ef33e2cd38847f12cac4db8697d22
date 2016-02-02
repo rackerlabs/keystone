@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_2903530f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-02T15:21:36Z",
+      "side": 1,
+      "message": "At the mid-cycle we did talk about deleting it and I think we decided not to...at least in this patch.",
+      "parentUuid": "7a5de9d1_3fc3a939",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 46
+      },
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_57d3fa5f",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 56
@@ -108,6 +132,24 @@
       "writtenOn": "2016-02-01T20:31:28Z",
       "side": 1,
       "message": "Suggestion: Put this table creation and its corresponding tests to another patch, to reduce the approval time and ease the reviews. This current patch would be ok with the data migration and the backend support",
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_ee29c138",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-02T15:21:36Z",
+      "side": 1,
+      "message": "I disagree. I think having the table creation and the model changes in the same review is the right way to go.",
+      "parentUuid": "7a5de9d1_57d3fa5f",
       "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -131,6 +173,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_2ebef9d4",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-02T15:21:36Z",
+      "side": 1,
+      "message": "This is just being moved here from the existing user table. It\u0027s not a new column.",
+      "parentUuid": "7a5de9d1_b7f564cc",
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_d7b26006",
         "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
         "patchSetId": 56
@@ -142,6 +202,24 @@
       "writtenOn": "2016-02-02T14:03:53Z",
       "side": 1,
       "message": "why not make a proper FK to domain.id ?",
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_0eb53dcf",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_identity_and_password_tables.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-02T15:21:36Z",
+      "side": 1,
+      "message": "It\u0027s isn\u0027t a foreign key now",
+      "parentUuid": "7a5de9d1_d7b26006",
       "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -195,6 +273,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_0e5f7d76",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-02T15:21:36Z",
+      "side": 1,
+      "message": "I agree with Ron. That would be a possible refactoring, but even then I think that\u0027s a stretch and more of a partial rewrite.",
+      "parentUuid": "7a5de9d1_095a46f2",
+      "range": {
+        "startLine": 32,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 10
+      },
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_c9e67c43",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 56
@@ -224,6 +326,24 @@
       "side": 1,
       "message": "Just to allow for passwords with stronger encryption.",
       "parentUuid": "7a5de9d1_c9e67c43",
+      "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_eea2214b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-02T15:21:36Z",
+      "side": 1,
+      "message": "Is there a hash that needs to be this size? Even sha512 should be able to easily fit in the old size.",
+      "parentUuid": "7a5de9d1_56f1c069",
       "revId": "4ed4ba99af5ef33e2cd38847f12cac4db8697d22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
