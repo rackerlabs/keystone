@@ -117,6 +117,30 @@
       "revId": "d3f120f80217dadcd58207e6a0a3ec60c1774c67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_59bd6500",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-02T01:54:26Z",
+      "side": 1,
+      "message": "I think this is copy/paste error, fixed in next.",
+      "parentUuid": "7a5de9d1_0ca7c2aa",
+      "range": {
+        "startLine": 155,
+        "startChar": 12,
+        "endLine": 155,
+        "endChar": 35
+      },
+      "revId": "d3f120f80217dadcd58207e6a0a3ec60c1774c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
