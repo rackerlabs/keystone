@@ -10,7 +10,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import log
+from oslo_log import versionutils
+
 from keystone.auth.plugins import mapped
+from keystone.i18n import _LW
+
+LOG = log.getLogger(__name__)
 
 
 class Saml2(mapped.Mapped):
@@ -25,4 +31,7 @@ class Saml2(mapped.Mapped):
 
     """
 
-    pass
+    versionutils.report_deprecated_feature(
+        LOG,
+        _LW('SAML2 authentication method is deprecated as of Mitaka in '
+            'favor of mapped.Mapped and may be removed in O.'))
