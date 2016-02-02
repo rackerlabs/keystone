@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_86a12d96",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-02T08:11:44Z",
+      "side": 0,
+      "message": "this option will be removed when we remove eventlet.\n\nlooks like it wasn\u0027t marked as deprecated",
+      "range": {
+        "startLine": 311,
+        "startChar": 8,
+        "endLine": 313,
+        "endChar": 60
+      },
+      "revId": "ebe82fcd21116f4bdae9dc97407e04f5184dc9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_46dfb5d5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-02T08:11:44Z",
+      "side": 0,
+      "message": "this option should be deprecated, not removed, refer to bug https://bugs.launchpad.net/keystone/+bug/1540794",
+      "range": {
+        "startLine": 338,
+        "startChar": 8,
+        "endLine": 340,
+        "endChar": 65
+      },
+      "revId": "ebe82fcd21116f4bdae9dc97407e04f5184dc9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
