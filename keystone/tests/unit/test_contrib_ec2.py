@@ -16,7 +16,7 @@ import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 
-from keystone.contrib.ec2 import controllers
+from keystone.compat.aws.ec2 import controllers
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
