@@ -13,3 +13,9 @@ deprecations:
     create group, delete user, delete group, update user, update group,
     add user to group, and remove user from group. These operations will be
     removed in the 'O' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, keystone.auth.plugins.saml2.Saml2 auth plugin
+    has been deprecated.  Since the Saml2 plugin is just a wrapper for
+    keystone.auth.plugins.mapped.Mapped the fallout from using the wrong plugin
+    will be minimal.
