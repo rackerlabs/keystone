@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_14c9bdac",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-02T21:26:44Z",
+      "side": 1,
+      "message": "why can\u0027t this test continue to use validate_v3_token anymore? The next test is the same thing for v2 and it\u0027s able to call validate_v2_token rather than validate_non_persistent_token.",
+      "revId": "43f47e20abcebdf7f42aa8f569066b110972a154",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
