@@ -22,6 +22,30 @@
       "revId": "18e926410214149a3655543aae97e193c4a4b528",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_f3cb10a2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-02T00:34:59Z",
+      "side": 1,
+      "message": "Probably, but this does not invalidate this patch. Feel free to propose in a separate test.",
+      "parentUuid": "7a5de9d1_e7fb7845",
+      "range": {
+        "startLine": 196,
+        "startChar": 16,
+        "endLine": 196,
+        "endChar": 25
+      },
+      "revId": "18e926410214149a3655543aae97e193c4a4b528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
