@@ -35,7 +35,7 @@ import hmac
 import six
 
 from keystone.common import utils
-from keystone.contrib.ec2 import controllers
+from keystone.compat.aws.ec2 import controllers
 from keystone import exception
 from keystone.i18n import _
 
