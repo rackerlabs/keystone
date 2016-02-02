@@ -38,6 +38,12 @@ This approach to federation supports keystone as a Service Provider, consuming
 identity properties issued by an external Identity Provider, such as SAML
 assertions or OpenID Connect claims.
 
+: .. WARNING::
+
+    `saml2` has been deprecated as of the Mitaka release. Support for utilizing
+    `saml2` will be removed as of the O-release. The recommended Identety
+    provider is `mapped`.
+
 Federated users are not mirrored in the keystone identity backend
 (for example, using the SQL driver). The external Identity Provider is
 responsible for authenticating users, and communicates the result of
