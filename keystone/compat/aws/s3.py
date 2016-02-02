@@ -31,7 +31,7 @@ from keystone.common import extension
 from keystone.common import json_home
 from keystone.common import utils
 from keystone.common import wsgi
-from keystone.contrib.ec2 import controllers
+from keystone.compat.aws.ec2 import controllers
 from keystone import exception
 from keystone.i18n import _
 
