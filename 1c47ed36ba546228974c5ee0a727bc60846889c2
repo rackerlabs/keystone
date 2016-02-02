@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_eea8e1dd",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-02T15:13:23Z",
+      "side": 1,
+      "message": "We need to add x509 tokenless auth headers in here too\n\nSee https://github.com/openstack/keystone/blob/af399474b2e67b023225a8abffe8933af40c1548/doc/source/configure_tokenless_x509.rst#scope-information",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 20
+      },
+      "revId": "1c47ed36ba546228974c5ee0a727bc60846889c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
