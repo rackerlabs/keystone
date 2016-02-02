@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_5961e5d1",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-02T01:53:52Z",
+      "side": 1,
+      "message": "i also want to add an identifier here. i don\u0027t like that it isn\u0027t a clear info that it\u0027s a trace. the bogus (, ) is likely just an artifact of the join(s). not too terrible to cleanup.",
+      "parentUuid": "7a5de9d1_ddf6288e",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 27
+      },
+      "revId": "d3f120f80217dadcd58207e6a0a3ec60c1774c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_de4acd54",
         "filename": "keystone/common/manager.py",
         "patchSetId": 5
