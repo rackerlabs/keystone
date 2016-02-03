@@ -46,6 +46,30 @@
       "revId": "fdfe9d424f3634976323a749a0b756efdf7a84e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_35aab7d5",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-03T15:56:21Z",
+      "side": 1,
+      "message": "See the previous reno entries with the same verbiage. (entry above this one).",
+      "parentUuid": "5a5ae5dd_3220929b",
+      "range": {
+        "startLine": 12,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 40
+      },
+      "revId": "fdfe9d424f3634976323a749a0b756efdf7a84e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
