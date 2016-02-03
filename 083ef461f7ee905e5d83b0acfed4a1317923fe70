@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1783fbcd",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T17:46:53Z",
+      "side": 1,
+      "message": "doesn\u0027t hurt to be more specific\n\n  what\u003d\u0027keystone.auth.plugins.saml2.Saml2\u0027\n  in_favor_of\u003d\u0027keystone.auth.plugins.mapped.Mapped\u0027",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 37
+      },
+      "revId": "083ef461f7ee905e5d83b0acfed4a1317923fe70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
