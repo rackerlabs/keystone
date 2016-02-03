@@ -16,6 +16,29 @@
       "revId": "e41e5ff047d80116d5e6b7a5cdb6e5602eb5d41c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_60413d0b",
+        "filename": "releasenotes/notes/allow_deleting_by_project_assignment_type-baf72cf6df2d9c87.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T21:08:46Z",
+      "side": 1,
+      "message": "use the \"fixes\" topic, also this will fail the gate due to improper syntax. use:\n\n  fixes:\n    - \u003e\n    [`bug 1440107 \u003chttps://bugs.launchpad.net/keystone/+bug/1440107\u003e`_]",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 9
+      },
+      "revId": "e41e5ff047d80116d5e6b7a5cdb6e5602eb5d41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
