@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_803b1eeb",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-03T19:22:33Z",
+      "side": 1,
+      "message": "Same message as from the other extension-\u003ecore [basically] before I worked on this. Figured the words should stay mostly consistent.",
+      "parentUuid": "5a5ae5dd_fd207df9",
+      "range": {
+        "startLine": 28,
+        "startChar": 17,
+        "endLine": 31,
+        "endChar": 68
+      },
+      "revId": "fdfe9d424f3634976323a749a0b756efdf7a84e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_7d26f217",
         "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
         "patchSetId": 2
