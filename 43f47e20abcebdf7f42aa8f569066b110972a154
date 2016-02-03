@@ -16,6 +16,24 @@
       "revId": "43f47e20abcebdf7f42aa8f569066b110972a154",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_795c9825",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-03T22:10:40Z",
+      "side": 1,
+      "message": "It doesn\u0027t use valdiate_v3_token anymore because validate_v3_token is specific to tokens that have been persisted in the backend. The validate_v2_token method hasn\u0027t been consolidated yet so it still uses the validate_v2_token method because that actually uses keystone/token/providers/fernet/core.py:Provider.validate_v2_token, not keystone/token/providers/common.py:Provider.validate_v2_token.\n\nA later patch in this series consolidates the validate_v2_token to be used in the same way v3 uses it.",
+      "parentUuid": "7a5de9d1_14c9bdac",
+      "revId": "43f47e20abcebdf7f42aa8f569066b110972a154",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
