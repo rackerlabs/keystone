@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_7d26f217",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-03T07:13:30Z",
+      "side": 1,
+      "message": "\"must\" it be updated at this upgrade? Or will the extension stubs still work, albeit issuing deprecated messages, and are we just saying that they should do this ahead of its eventual removal?",
+      "range": {
+        "startLine": 12,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 40
+      },
+      "revId": "fdfe9d424f3634976323a749a0b756efdf7a84e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
