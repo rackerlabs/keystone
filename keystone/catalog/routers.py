@@ -107,6 +107,8 @@ class Routers(wsgi.RoutersBase):
             controllers.ServiceProviderProjectV3Controller())
         service_providers_group_controller = (
             controllers.ServiceProvidersGroup())
+        project_service_providers_group_controller = (
+            controllers.ServiceProvidersGroupProjectAssociation())
         routers.append(router.Router(regions_controller,
                                      'regions', 'region',
                                      resource_descriptions=self.v3_resources))
@@ -275,3 +277,22 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'service_providers_group_id': SP_GROUP_PARAMETER_RELATION,
             })
+
+        # Service providers group associations with projects
+
+        self._add_resource(
+            mapper, project_service_providers_group_controller,
+            path=('/OS-EP-FILTER/service_providers_groups/'
+                  '{service_providers_group_id}/projects/{project_id}'),
+            put_action='create_sp_group_project_association',
+            get_action='get_sp_group_project_association',
+            head_action='check_sp_group_project_association',
+            delete_action='delete_sp_group_project_association',
+            rel=build_resource_relation(
+                resource_name='service_providers_groups_project'),
+            status=json_home.Status.EXPERIMENTAL,
+            path_vars={
+                'service_providers_group_id': SP_GROUP_PARAMETER_RELATION,
+                'project_id': json_home.Parameters.PROJECT_ID,
+            }
+        )

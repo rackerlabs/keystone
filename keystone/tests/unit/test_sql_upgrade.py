@@ -705,6 +705,18 @@ class SqlUpgradeTests(SqlMigrateBase):
                                 ['service_providers_group_id',
                                  'service_provider_id'])
 
+    def test_associate_sp_group_with_projects(self):
+        """Test adding 'service_providers_group_members' to the db schema."""
+        table_name = 'service_providers_group_project_association'
+
+        self.assertTableDoesNotExist(table_name)
+        self.upgrade(91)
+        self.assertTableExists(table_name)
+
+        self.assertTableColumns(table_name,
+                                ['service_providers_group',
+                                 'project'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
