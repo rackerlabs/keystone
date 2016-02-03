@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_b92a472b",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-02-03T01:25:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_8e25bf5d",
+      "range": {
+        "startLine": 566,
+        "startChar": 4,
+        "endLine": 566,
+        "endChar": 15
+      },
+      "revId": "0d6c7c00a7c6a4f60bfe3e87e202cb97791d4abd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_aeb8bbe6",
         "filename": "keystone/common/utils.py",
         "patchSetId": 4
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "Actually, parsed_host is a NamedTuple. The method _replace() is actually public and defined in the documentation. A comment would be a good idea.",
       "parentUuid": "5a5ae5dd_aeb8bbe6",
+      "range": {
+        "startLine": 567,
+        "startChar": 27,
+        "endLine": 567,
+        "endChar": 35
+      },
+      "revId": "0d6c7c00a7c6a4f60bfe3e87e202cb97791d4abd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_5920f349",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-02-03T01:25:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_4ef8277d",
       "range": {
         "startLine": 567,
         "startChar": 27,
