@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0fcf5280",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-03T23:04:39Z",
+      "side": 1,
+      "message": "you mean \"to remove admin_token_auth\"? Are there others that should also be removed, and if so what are they and why would they be lumped into this otherwise admin_token_auth-specific patch?",
+      "revId": "8287e428a3670734aebfe47d55c1a8d10685bfdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
