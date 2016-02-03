@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d4b9d32f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:29:26Z",
+      "side": 1,
+      "message": "would probably reverse the order of these and drop the not...",
+      "revId": "f9bdfecf6831b45a4030e2c234f9e52da59e2cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f45f2f0c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:29:26Z",
+      "side": 1,
+      "message": "YESSSSSSSS$$$$$!!!",
+      "revId": "f9bdfecf6831b45a4030e2c234f9e52da59e2cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
