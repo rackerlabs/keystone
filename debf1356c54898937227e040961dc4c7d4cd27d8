@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_739062ed",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_federated_identity_tables.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T08:35:28Z",
+      "side": 1,
+      "message": "there is already a table called identity from migration 88",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "debf1356c54898937227e040961dc4c7d4cd27d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
