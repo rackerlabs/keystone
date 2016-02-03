@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_cf55d51d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-03T14:40:32Z",
+      "side": 1,
+      "message": "using \u0027\\\u0027 is frowned upon try wrapping this in parenthesis.",
+      "range": {
+        "startLine": 263,
+        "startChar": 65,
+        "endLine": 263,
+        "endChar": 66
+      },
+      "revId": "4d5ab8bd33f3b2f85d7a696f4d7b328757e307d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9252a612",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-03T14:40:32Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be moved to AssignmentDriverV8?",
+      "range": {
+        "startLine": 1124,
+        "startChar": 8,
+        "endLine": 1124,
+        "endChar": 34
+      },
+      "revId": "4d5ab8bd33f3b2f85d7a696f4d7b328757e307d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d2c57e5b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4351,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-03T14:40:32Z",
+      "side": 1,
+      "message": "should this test be in test_v3_assignment()?  Great test btw, this looks awesome!",
+      "range": {
+        "startLine": 4351,
+        "startChar": 8,
+        "endLine": 4351,
+        "endChar": 54
+      },
+      "revId": "4d5ab8bd33f3b2f85d7a696f4d7b328757e307d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d2557e1d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4362,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-03T14:40:32Z",
+      "side": 1,
+      "message": "nit: Capitalize the first letter of the comment",
+      "range": {
+        "startLine": 4362,
+        "startChar": 10,
+        "endLine": 4362,
+        "endChar": 11
+      },
+      "revId": "4d5ab8bd33f3b2f85d7a696f4d7b328757e307d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
