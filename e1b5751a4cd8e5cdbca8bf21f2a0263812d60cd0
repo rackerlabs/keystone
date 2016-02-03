@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c4bab36e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 73
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T05:40:29Z",
+      "side": 1,
+      "message": "Implied",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
