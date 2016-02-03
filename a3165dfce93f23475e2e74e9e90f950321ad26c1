@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_145562c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T01:57:52Z",
+      "side": 1,
+      "message": "deprecate* saml2 auth plugin",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "a3165dfce93f23475e2e74e9e90f950321ad26c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_746ff692",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T01:57:52Z",
+      "side": 1,
+      "message": "reference bp: deprecated-as-of-mitaka",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 10,
+        "endChar": 24
+      },
+      "revId": "a3165dfce93f23475e2e74e9e90f950321ad26c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_14bec2ff",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T01:57:52Z",
+      "side": 1,
+      "message": "for classes, it\u0027s probably easier to use versionutils.deprecated decorator, like this:\n\nhttps://github.com/openstack/keystone/blob/8bfb9aa303ff6741197e5114ec64e9a17b23ab57/keystone/common/cache/backends/memcache_pool.py#L22-L26",
+      "revId": "a3165dfce93f23475e2e74e9e90f950321ad26c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
