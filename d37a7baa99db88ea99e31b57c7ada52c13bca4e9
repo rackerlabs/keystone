@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c06831f8",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-03T21:28:24Z",
+      "side": 1,
+      "message": "I love these types of deprecation messages.  Keeps folks out of trouble and nudges them to do the right thing :-)",
+      "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
