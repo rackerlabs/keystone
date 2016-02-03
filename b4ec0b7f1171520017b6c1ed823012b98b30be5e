@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_4ed8221e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T03:57:15Z",
+      "side": 1,
+      "message": "according to the code, it will use either HTTP_HOST or SERVER_NAME and SERVER_PORT. SCRIPT_NAME is added at the end",
+      "parentUuid": "7a5de9d1_719fe3b4",
+      "range": {
+        "startLine": 13,
+        "startChar": 47,
+        "endLine": 13,
+        "endChar": 64
+      },
+      "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_51e8a716",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 17
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_ee030e75",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T03:57:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_51e8a716",
+      "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_71eda324",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 17
@@ -53,6 +95,24 @@
       "writtenOn": "2016-02-02T21:05:57Z",
       "side": 1,
       "message": "revert the unrelated whitespace change on the previous line.",
+      "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_aefd1670",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T03:57:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_71eda324",
       "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_6ef87e7d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T03:57:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_91029fb3",
+      "range": {
+        "startLine": 383,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 30
+      },
+      "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_31b88be5",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 17
@@ -93,6 +177,24 @@
       "writtenOn": "2016-02-02T21:05:57Z",
       "side": 1,
       "message": "this needs to be indented. if the user specifies public_endpoint or admin_endpoint, that\u0027s the value that needs to be used, and it shouldn\u0027t be modified in any way.",
+      "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_8e3cda30",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T03:57:15Z",
+      "side": 1,
+      "message": "not sure why you want to keep the default ports as all of the normalization schemes remove them. But sure, I can make this indented.",
+      "parentUuid": "7a5de9d1_31b88be5",
       "revId": "b4ec0b7f1171520017b6c1ed823012b98b30be5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
