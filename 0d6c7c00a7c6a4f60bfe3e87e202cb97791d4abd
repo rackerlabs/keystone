@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_8e25bf5d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T00:56:06Z",
+      "side": 1,
+      "message": "parsed_host doesn\u0027t sound right. How about just \u0027parsed\u0027?",
+      "range": {
+        "startLine": 566,
+        "startChar": 4,
+        "endLine": 566,
+        "endChar": 15
+      },
+      "revId": "0d6c7c00a7c6a4f60bfe3e87e202cb97791d4abd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_aeb8bbe6",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-03T00:56:06Z",
+      "side": 1,
+      "message": "should not be calling a private method. How about this?\n\no \u003d moves.urllib.parse.urlparse(url)\nnetloc \u003d o.netloc.lower()\nreturn moves.urllib.parse.urlunparse(\n    (o.scheme, netloc, o.path, o.params, o.query, o.fragment))",
+      "range": {
+        "startLine": 567,
+        "startChar": 27,
+        "endLine": 567,
+        "endChar": 35
+      },
+      "revId": "0d6c7c00a7c6a4f60bfe3e87e202cb97791d4abd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
