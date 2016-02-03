@@ -22,6 +22,30 @@
       "revId": "e06142fa6d7cce48f88d32c0720d48182cec5323",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d079ff30",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-03T12:21:13Z",
+      "side": 1,
+      "message": "We had discussed on the IRC in the last days, and we decided to change to use a query string instead of a new API call.\nWe sent a patch to fix the documentation: https://review.openstack.org/#/c/274836/",
+      "parentUuid": "5a5ae5dd_ad3c2f30",
+      "range": {
+        "startLine": 1069,
+        "startChar": 37,
+        "endLine": 1069,
+        "endChar": 38
+      },
+      "revId": "e06142fa6d7cce48f88d32c0720d48182cec5323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
