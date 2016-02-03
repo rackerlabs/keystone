@@ -1377,8 +1377,9 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
             domain_id=domain_id, project_ids=project_ids,
             inherited_to_projects=inherited_to_projects)
 
-    def delete_project_assignments(self, project_id):
-        self.driver.delete_project_assignments(project_id)
+    def delete_project_assignments(self, project_id, assignment_type=None):
+        self.driver.delete_project_assignments(
+            project_id, assignment_type=assignment_type)
 
     def delete_role_assignments(self, role_id):
         self.driver.delete_role_assignments(role_id)

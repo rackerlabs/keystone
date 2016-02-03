@@ -4348,6 +4348,66 @@ class IdentityTests(AssignmentTestHelperMixin):
             include_names=False)
         assert_does_not_contain_names(role_assign_without_names)
 
+    def test_delete_project_assignments_filter_by_type(self):
+        """Test deleting project assignments passing assignment_type as
+        an argument.
+
+        Test plan:
+        * Create one project, one user, one group and two roles;
+        * Grant first role to the group on project;
+        * Grant second role to the user on project;
+        * Delete project assignments passing assignment_type=USER_PROJECT;
+        * Delete project assignments passing assignment_type=GROUP_PROJECT;
+        """
+        # create project:
+        project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID)
+        project = self.resource_api.create_project(project['id'], project)
+        # create group:
+        group = unit.new_group_ref(domain_id=DEFAULT_DOMAIN_ID)
+        group = self.identity_api.create_group(group)
+        # create user:
+        user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
+        user = self.identity_api.create_user(user)
+        # create roles:
+        roles = [unit.new_role_ref(), unit.new_role_ref()]
+        for role in roles:
+            role = self.role_api.create_role(role['id'], role)
+        # assign first role to group:
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         project_id=project['id'],
+                                         role_id=roles[0]['id'])
+        # assign second role to user:
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         project_id=project['id'],
+                                         role_id=roles[1]['id'])
+        # make sure they were assigned:
+        group_role_assignments = self.assignment_api.list_role_assignments(
+            role_id=roles[0]['id'])
+        self.assertThat(group_role_assignments, matchers.HasLength(1))
+        user_role_assignments = self.assignment_api.list_role_assignments(
+            role_id=roles[1]['id'])
+        self.assertThat(user_role_assignments, matchers.HasLength(1))
+        # delete passing assignment_type=GROUP_PROJECT
+        self.assignment_api.delete_project_assignments(
+            project_id=project['id'],
+            assignment_type="GroupProject")
+        # make sure it was deleted:
+        group_role_assignments = self.assignment_api.list_role_assignments(
+            role_id=roles[0]['id'])
+        self.assertThat(group_role_assignments, matchers.HasLength(0))
+        # make sure there is only one assignment left:
+        user_role_assignments = self.assignment_api.list_role_assignments(
+            role_id=roles[1]['id'])
+        self.assertThat(user_role_assignments, matchers.HasLength(1))
+        # delete passing assignment_type=USER_PROJECT
+        self.assignment_api.delete_project_assignments(
+            project_id=project['id'],
+            assignment_type="UserProject")
+        # make sure there is no assignment left:
+        user_role_assignments = self.assignment_api.list_role_assignments(
+            role_id=roles[1]['id'])
+        self.assertThat(user_role_assignments, matchers.HasLength(0))
+
 
 class TokenTests(object):
     def _create_token_id(self):
