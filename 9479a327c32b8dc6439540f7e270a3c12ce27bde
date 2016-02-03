@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_967923ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "uniqueness",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_994dd474",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "If domain_id is set, are we returning only domain specific roles, or domain specific plus global?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_964a8382",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1683,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "this seems quite chatty.  Do we really need to makethe call to default a single field on every function?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_160d333e",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "shouldn\u0027t from_dict handle the default?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_59099c2b",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "can\u0027t to_dict do the defaulting?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f91ac86d",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "++",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d94b4c58",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "what does this do?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_59a51c02",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "I assume this is for adding the domain_id as a query param where it was not there before?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_7981f849",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "Do we want to leave this as nullable, or migrate, default, and make it non-nullable?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_59cafca2",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "specific",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_795d78e8",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "Would not mind seeing these checks pulled out as assert functions.",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d96cac9e",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "make this a separate test.",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_99d39438",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2591,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-03T22:13:47Z",
+      "side": 1,
+      "message": "This is pretty long.  Split up, so if anything fails, we know which step it was.",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
