@@ -712,6 +712,32 @@ class Catalog(catalog.CatalogDriverV9):
                     session, sp_group_id.id))
         return result
 
+    # Service providers group project associations
+
+    def create_sp_group_project_association(self, sp_group_id, project_id):
+        session = sql.get_session()
+        with session.begin():
+            ref = ServiceProvidersGroupProjectAssoc(
+                service_providers_group=sp_group_id,
+                project=project_id)
+            session.add(ref)
+
+    def get_sp_group_project_association(self, sp_group_id, project_id):
+        session = sql.get_session()
+        sp_group_ref = session.query(ServiceProvidersGroupProjectAssoc).get(
+            (sp_group_id, project_id))
+        if sp_group_ref is None:
+            raise exception.NotFound("Service providers group association was "
+                                     "not found")
+        return sp_group_ref.to_dict()
+
+    def delete_sp_group_project_association(self, sp_group_id, project_id):
+        session = sql.get_session()
+        with session.begin():
+            sp_ref = session.query(ServiceProvidersGroupProjectAssoc).get(
+                (sp_group_id, project_id))
+            session.delete(sp_ref)
+
 
 class ProjectEndpoint(sql.ModelBase, sql.ModelDictMixin):
     """project-endpoint relationship table."""
@@ -777,6 +803,24 @@ class ServiceProvidersGroup(sql.ModelBase, sql.ModelDictMixin):
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(255), nullable=False)
     description = sql.Column(sql.Text, nullable=True)
+
+
+class ServiceProvidersGroupProjectAssoc(sql.ModelBase, sql.ModelDictMixin):
+    """Service providers group project associations."""
+
+    __tablename__ = 'service_providers_group_project_association'
+    attributes = ['service_providers_group', 'project']
+
+    service_providers_group = sql.Column(
+        sql.String(64),
+        sql.ForeignKey('service_providers_group.id'),
+        primary_key=True)
+
+    project = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
+                         primary_key=True)
+
+    _table_args__ = (
+        sql.PrimaryKeyConstraint('service_providers_group', 'project'), {})
 
 
 class ServiceProvidersGroupMembership(sql.ModelBase, sql.ModelDictMixin):
