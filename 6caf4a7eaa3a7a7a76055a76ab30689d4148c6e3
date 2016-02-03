@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_5daa1672",
+        "filename": "keystone/contrib/simple_cert/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-03T07:09:27Z",
+      "side": 1,
+      "message": "nice: tells you what you have to do....",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 32,
+        "endChar": 27
+      },
+      "revId": "6caf4a7eaa3a7a7a76055a76ab30689d4148c6e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
