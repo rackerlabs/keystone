@@ -22,6 +22,75 @@
       "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9d92ce56",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 1458,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T07:17:32Z",
+      "side": 1,
+      "message": "this isn\u0027t used til later and can be moved down a few lines",
+      "range": {
+        "startLine": 1458,
+        "startChar": 8,
+        "endLine": 1458,
+        "endChar": 43
+      },
+      "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1dbb3ec6",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T07:17:32Z",
+      "side": 1,
+      "message": "nice use of experimental",
+      "range": {
+        "startLine": 82,
+        "startChar": 19,
+        "endLine": 82,
+        "endChar": 48
+      },
+      "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_3d771a04",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T07:17:32Z",
+      "side": 1,
+      "message": "these are copy and paste of test_v3_assignment. suggest creating a common class in test_v3_assignment to expose those functions and mix them in here, no reason for code duplication",
+      "range": {
+        "startLine": 484,
+        "startChar": 0,
+        "endLine": 498,
+        "endChar": 24
+      },
+      "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
