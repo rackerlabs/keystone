@@ -71,6 +71,40 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_baba0be0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-03T18:21:56Z",
+      "side": 1,
+      "message": "make this a listopt, one role is insufficient if we are using this pattern.",
+      "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_172d3aa7",
+        "filename": "keystone/exception.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-03T18:21:56Z",
+      "side": 1,
+      "message": "\"cannot be an implied roles\" is incorrect grammar (NIT). Please fix in a followup",
+      "revId": "e1b5751a4cd8e5cdbca8bf21f2a0263812d60cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_3d771a04",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 73
