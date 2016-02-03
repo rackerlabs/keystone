@@ -1121,16 +1121,6 @@ class AssignmentDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def delete_project_assignments(self, project_id):
-        """Deletes all assignments for a project.
-
-        :raises keystone.exception.ProjectNotFound: If the project doesn't
-            exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
     def delete_role_assignments(self, role_id):
         """Deletes all assignments for a role."""
         raise exception.NotImplemented()  # pragma: no cover
@@ -1280,6 +1270,16 @@ class AssignmentDriverV8(AssignmentDriverBase):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
+    def delete_project_assignments(self, project_id):
+        """Deletes all assignments for a project.
+
+        :raises keystone.exception.ProjectNotFound: If the project doesn't
+            exist.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
 
 class AssignmentDriverV9(AssignmentDriverBase):
     """New or redefined methods from V8.
@@ -1289,7 +1289,17 @@ class AssignmentDriverV9(AssignmentDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def delete_project_assignments(self, project_id, assignment_type=None):
+        """Deletes all assignments for a project.
+
+        :param assignment_type: specify the type of the assignment in the
+            delete (i.e. USER_PROJECT or GROUP_PROJECT)
+        :raises keystone.exception.ProjectNotFound: If the project doesn't
+            exist.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
@@ -1377,7 +1387,7 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
             domain_id=domain_id, project_ids=project_ids,
             inherited_to_projects=inherited_to_projects)
 
-    def delete_project_assignments(self, project_id):
+    def delete_project_assignments(self, project_id, assignment_type=None):
         self.driver.delete_project_assignments(project_id)
 
     def delete_role_assignments(self, role_id):

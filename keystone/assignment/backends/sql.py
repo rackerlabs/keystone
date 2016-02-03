@@ -254,10 +254,16 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
 
             return [denormalize_role(ref) for ref in query.all()]
 
-    def delete_project_assignments(self, project_id):
+    def delete_project_assignments(self, project_id,
+                                   assignment_type=None):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(target_id=project_id)
+
+            if (assignment_type == AssignmentType.USER_PROJECT or
+                    assignment_type == AssignmentType.GROUP_PROJECT):
+                q = q.filter_by(type=assignment_type)
+
             q.delete(False)
 
     def delete_role_assignments(self, role_id):

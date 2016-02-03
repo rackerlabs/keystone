@@ -1,0 +1,6 @@
+---
+features:
+    [`bug 1440107 <https://bugs.launchpad.net/keystone/+bug/1440107>`_]
+    Assignment type (USER_PROJECT or GROUP_PROJECT) has been added as a
+    parameter when deleting project assignments through
+    delete_project_assignments() in the assignments backend.
