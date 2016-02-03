@@ -559,6 +559,20 @@ V3_JSON_HOME_RESOURCES = {
             'service_providers_group_id': SP_GROUP_ID_PARAMETER_RELATION
         },
         'hints': {'status': 'experimental'}},
+
+    _build_ep_filter_rel(resource_name='service_providers_groups_project'):
+    {
+        'href-template': (
+            '/OS-EP-FILTER/service_providers_groups/'
+            '{service_providers_group_id}/projects/{project_id}'),
+        'href-vars': {
+            'service_providers_group_id': SP_GROUP_ID_PARAMETER_RELATION,
+            'project_id': json_home.Parameters.PROJECT_ID,
+        },
+        'hints': {'status': 'experimental'}
+    },
+
+
     _build_ep_filter_rel(
         resource_name='projects_associated_with_endpoint_group'):
     {

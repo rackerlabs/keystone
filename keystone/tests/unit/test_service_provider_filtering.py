@@ -493,3 +493,136 @@ class ServiceProvidersGroupTestCase(EndpointFilterTestCase):
         sp_groups = self.get('/OS-EP-FILTER/service_providers_groups')
         self.assertEqual(len(sp_groups_ref),
                          len(sp_groups.result['service_providers_groups']))
+
+
+class ServiceProvidersGroupProjectAssocTestCase(EndpointFilterTestCase):
+
+    SERVICE_PROVIDER_ID = 'ACME'
+    SP_AUTH_URL = ('http://beta.com:5000/v3/OS-FEDERATION/identity_providers'
+                   '/BETA/protocols/saml2/auth')
+
+    def setUp(self):
+        super(ServiceProvidersGroupProjectAssocTestCase, self).setUp()
+
+        # Create a service provider
+        service_provider = {
+            'auth_url': self.SP_AUTH_URL,
+            'enabled': True,
+            'description': uuid.uuid4().hex,
+            'sp_url': self.SP_AUTH_URL,
+            'relay_state_prefix': CONF.saml.relay_state_prefix
+        }
+
+        url = '/OS-FEDERATION/service_providers/' + self.SERVICE_PROVIDER_ID
+        self.put(url, body={'service_provider': service_provider},
+                 expected_status=http_client.CREATED)
+
+        # Create a service providers group
+        self.sp_group_ref = self.new_sp_group()
+        r = self.post('/OS-EP-FILTER/service_providers_groups',
+                      body={'service_providers_group': self.sp_group_ref})
+        self.sp_group_id = r.result['service_providers_group']['id']
+
+    def new_sp_group(self, service_providers=None):
+        ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+
+        if service_providers:
+            ref['service_providers'] = service_providers
+        else:
+            ref['service_providers'] = [self.SERVICE_PROVIDER_ID]
+
+        return ref
+
+    def test_create_sp_group_project_association(self):
+        """Create service providers project association.
+
+        Create proper association between a service providers group and a
+        project. Expect successful HTTP 204 No Content status code.
+
+        """
+        url = ('/OS-EP-FILTER/service_providers_groups/%(sp_group)s/'
+               'projects/%(project)s')
+        url = url % {
+            'sp_group': self.sp_group_id,
+            'project': self.default_domain_project_id
+        }
+
+        self.put(url, expected_status=http_client.NO_CONTENT)
+
+    def test_create_sp_group_project_assoc_expect_fail(self):
+        """Test associating non existing objects.
+
+        Server should reurn HTTP 404 upon request on either project or
+        service providesr group that does not exist.
+
+        Excercise 3 cases:
+        1) Associate existing sevice providesr group with non existing project
+        2) Associate non existing service providers group with existing project
+        3) Associate service providers group and a project where neither exist.
+
+        In each of the cases expected status code is HTTP 404
+
+        """
+        url = ('/OS-EP-FILTER/service_providers_groups/%(sp_group)s/'
+               'projects/%(project)s')
+
+        url_1 = url % {
+            'sp_group': self.sp_group_id,
+            'project': uuid.uuid4().hex
+        }
+        self.put(url_1, expected_status=http_client.NOT_FOUND)
+
+        url_2 = url % {
+            'sp_group': uuid.uuid4().hex,
+            'project': self.default_domain_project_id
+        }
+        self.put(url_2, expected_status=http_client.NOT_FOUND)
+
+        url_3 = url % {
+            'sp_group': uuid.uuid4().hex,
+            'project': uuid.uuid4().hex
+        }
+        self.put(url_3, expected_status=http_client.NOT_FOUND)
+
+    def test_get_service_providers_project_assoc(self):
+        """Test fetching existing service providers project associations."""
+        url = ('/OS-EP-FILTER/service_providers_groups/%(sp_group)s/'
+               'projects/%(project)s')
+        url = url % {
+            'sp_group': self.sp_group_id,
+            'project': self.default_domain_project_id
+        }
+
+        self.put(url, expected_status=http_client.NO_CONTENT)
+        self.get(url)
+
+    def test_head_service_providers_project_assoc(self):
+
+        url = ('/OS-EP-FILTER/service_providers_groups/%(sp_group)s/'
+               'projects/%(project)s')
+        url = url % {
+            'sp_group': self.sp_group_id,
+            'project': self.default_domain_project_id
+        }
+
+        self.put(url, expected_status=http_client.NO_CONTENT)
+        self.head(url, expected_status=http_client.NO_CONTENT)
+
+    def test_delete_service_providers_project_assoc(self):
+        url = ('/OS-EP-FILTER/service_providers_groups/%(sp_group)s/'
+               'projects/%(project)s')
+        url = url % {
+            'sp_group': self.sp_group_id,
+            'project': self.default_domain_project_id
+        }
+
+        self.put(url, expected_status=http_client.NO_CONTENT)
+        self.get(url)
+
+        self.delete(url)
+
+        self.get(url, expected_status=http_client.NOT_FOUND)
