@@ -734,3 +734,20 @@ class ServiceProvidersGroup(controller.V3Controller):
     def list_service_providers_groups(self, context):
         ref = self.catalog_api.list_service_providers_groups()
         return ServiceProvidersGroup.wrap_collection(context, ref)
+
+
+@dependency.requires('catalog_api', 'federation_api', 'resource_api')
+class ServiceProvidersGroupProjectAssociation(controller.V3Controller):
+
+    member_name = 'null'
+    collection_name = 'null'
+
+    def create_sp_group_project_association(self, context,
+                                            service_providers_group_id,
+                                            project_id):
+        project = self.resource_api.get_project(project_id)
+        sp_group = self.catalog_api.get_service_providers_group(
+            service_providers_group_id)
+        self.catalog_api.create_sp_group_project_association(
+            service_providers_group_id, project_id)
+        return resource.controllers.ProjectV3.wrap_member(context, project)

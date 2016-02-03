@@ -712,6 +712,16 @@ class Catalog(catalog.CatalogDriverV9):
                     session, sp_group_id.id))
         return result
 
+    # Service providers group project associations
+
+    def create_sp_group_project_association(self, sp_group_id, project_id):
+        session = sql.get_session()
+        with session.begin():
+            ref = SPGroupProjectAssociation(
+                service_providers_group_id=sp_group_id,
+                project_id=project_id)
+            session.add(ref)
+
 
 class ProjectEndpoint(sql.ModelBase, sql.ModelDictMixin):
     """project-endpoint relationship table."""
@@ -792,3 +802,5 @@ class ServiceProvidersGroupMembership(sql.ModelBase, sql.ModelDictMixin):
     __table_args__ = (
         sql.PrimaryKeyConstraint('service_providers_group_id',
                                  'service_provider_id'), {})
+
+
