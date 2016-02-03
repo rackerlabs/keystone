@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ad3c2f30",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-02-03T10:17:57Z",
+      "side": 1,
+      "message": "is it ok that you put \u0027?\u0027 instead of \u0027/\u0027 ?\n\nhttps://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#enable-or-disable-subtree",
+      "range": {
+        "startLine": 1069,
+        "startChar": 37,
+        "endLine": 1069,
+        "endChar": 38
+      },
+      "revId": "e06142fa6d7cce48f88d32c0720d48182cec5323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
