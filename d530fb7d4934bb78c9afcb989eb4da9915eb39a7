@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_8009de2e",
+        "filename": "keystone/contrib/ec2/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-03T19:00:50Z",
+      "side": 1,
+      "message": "you need to do:\n\n  from keystone.i18n import _",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "d530fb7d4934bb78c9afcb989eb4da9915eb39a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
