@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_37c5d68d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-03T18:02:02Z",
+      "side": 1,
+      "message": "You just need to add a filter here to check the type is one of AssignmentType.USER_PROJECT or AssignmentType.GROUP_PROJECT. Something like a filter using:\n\n    RoleAssignment.type.in_((AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT))",
+      "revId": "e41e5ff047d80116d5e6b7a5cdb6e5602eb5d41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
