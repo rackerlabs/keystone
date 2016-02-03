@@ -9,9 +9,9 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.0b2.dev256\n"
+"Project-Id-Version: keystone 9.0.0.0b3.dev99\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2016-01-18 05:50+0000\n"
+"POT-Creation-Date: 2016-02-03 05:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,10 +156,6 @@ msgstr "사용자 이름을 변경할 수 없음"
 #, python-format
 msgid "Cannot create project with parent: %(project_id)s"
 msgstr "상위로 프로젝트를 작성할 수 없음: %(project_id)s"
-
-#, python-format
-msgid "Cannot duplicate name %s"
-msgstr "%s 이름을 복제할 수 없습니다."
 
 msgid "Cannot list request tokens with a token issued via delegation."
 msgstr "위임을 통해 발행된 토큰으로 요청 토큰을 나열할 수 없습니다."
@@ -350,9 +346,6 @@ msgid ""
 msgstr ""
 "%(domain)s 도메인에 이미 정의된 구성이 있음 - 다음 파일을 무시하십시오. "
 "%(file)s."
-
-msgid "Domains are read-only against LDAP"
-msgstr "LDAP에 대한 도메인이 읽기 전용입니다."
 
 msgid "Duplicate Entry"
 msgstr "중복 항목"
@@ -714,10 +707,6 @@ msgid ""
 msgstr ""
 "%(requested_count)d의 요청된 재위임 깊이가 허용되는 %(max_count)d보다 깊음"
 
-#, python-format
-msgid "Role %s not found"
-msgstr "%s 역할을 찾을 수 없음"
-
 msgid ""
 "Running keystone via eventlet is deprecated as of Kilo in favor of running "
 "in a WSGI server (e.g. mod_wsgi). Support for keystone under eventlet will "
@@ -917,11 +906,6 @@ msgid "Unable to find valid groups while using mapping %(mapping_id)s"
 msgstr "%(mapping_id)s 맵핑을 사용하는 중에 올바른 그룹을 찾을 수 없음 "
 
 #, python-format
-msgid ""
-"Unable to get a connection from pool id %(id)s after %(seconds)s seconds."
-msgstr "풀 id %(id)s에서 %(seconds)s분 후에 연결할 수 없습니다."
-
-#, python-format
 msgid "Unable to locate domain config directory: %s"
 msgstr "%s: 도메인 설정 디렉토리를 찾을 수 없습니다."
 
@@ -989,12 +973,6 @@ msgstr "SAML 어설션을 작성할 때 프로젝트 범위 지정 토큰 사용
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr "사용자 %(u_id)s이(는) 테넌트 %(t_id)s에 대한 권한이 없습니다. "
-
-#, python-format
-msgid "User %(user_id)s already has role %(role_id)s in tenant %(tenant_id)s"
-msgstr ""
-"사용자 %(user_id)s이(가) 테넌트 %(tenant_id)s에서 역할 %(role_id)s을(를) 이"
-"미 가집니다. "
 
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"

@@ -13,13 +13,13 @@
 # Raildo Mascena <raildom@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.0b2.dev256\n"
+"Project-Id-Version: keystone 9.0.0.0b3.dev99\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2016-01-18 05:50+0000\n"
+"POT-Creation-Date: 2016-02-03 05:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-11-16 05:53+0000\n"
+"PO-Revision-Date: 2015-11-16 05:52+0000\n"
 "Last-Translator: Raildo Mascena <raildom@gmail.com>\n"
 "Language: pt-BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -177,10 +177,6 @@ msgstr "Não é possível criar um endpoint com uma URL inválida: %(url)s"
 #, python-format
 msgid "Cannot create project with parent: %(project_id)s"
 msgstr "Não é possível criar o projeto com o pai: %(project_id)s"
-
-#, python-format
-msgid "Cannot duplicate name %s"
-msgstr "Não é possível duplicar o nome %s"
 
 msgid "Cannot list request tokens with a token issued via delegation."
 msgstr ""
@@ -392,9 +388,6 @@ msgstr "O domínio não pode ser chamado %s"
 msgid "Domain cannot have ID %s"
 msgstr "O domínio não pode ter o ID de %s"
 
-msgid "Domain grants not supported by LDAP"
-msgstr "Permissões de domínio não é suportado pelo LDAP"
-
 #, python-format
 msgid "Domain is disabled: %s"
 msgstr "O domínio está desativado: %s"
@@ -409,9 +402,6 @@ msgid ""
 msgstr ""
 "Domínio: %(domain)s já possui uma configuração definida - ignorando arquivo: "
 "%(file)s."
-
-msgid "Domains are read-only against LDAP"
-msgstr "Domínios são somente leitura no LDAP"
 
 msgid "Duplicate Entry"
 msgstr "Entrada Duplicada"
@@ -656,9 +646,6 @@ msgstr "Exclusão de LDAP %s"
 msgid "LDAP %s update"
 msgstr "Atualização de LDAP %s"
 
-msgid "LDAP does not support projects with is_domain flag enabled"
-msgstr "LDAP não suporta projetos com a flag is_domain abilitada"
-
 #, python-format
 msgid "Lock Timeout occurred for key, %(target)s"
 msgstr "Ocorreu um tempo limite de bloqueio para a chave, %(target)s"
@@ -830,10 +817,6 @@ msgid ""
 msgstr ""
 "Profundidade da nova delegação solicitada de %(requested_count)d é maior que "
 "a %(max_count)d permitida"
-
-#, python-format
-msgid "Role %s not found"
-msgstr "Role %s não localizada"
 
 msgid ""
 "Running keystone via eventlet is deprecated as of Kilo in favor of running "
@@ -1058,13 +1041,6 @@ msgstr ""
 "%(mapping_id)s"
 
 #, python-format
-msgid ""
-"Unable to get a connection from pool id %(id)s after %(seconds)s seconds."
-msgstr ""
-"Não é possível obter uma conexão do ID do conjunto %(id)s após %(seconds)s "
-"segundos."
-
-#, python-format
 msgid "Unable to locate domain config directory: %s"
 msgstr "Não é possível localizar diretório de configuração de domínio: %s"
 
@@ -1137,11 +1113,6 @@ msgstr ""
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr "Usuário %(u_id)s  não está autorizado para o tenant %(t_id)s"
-
-#, python-format
-msgid "User %(user_id)s already has role %(role_id)s in tenant %(tenant_id)s"
-msgstr ""
-"Usuário %(user_id)s já possui a função %(role_id)s no locatário %(tenant_id)s"
 
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"

@@ -10,9 +10,9 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.0b2.dev256\n"
+"Project-Id-Version: keystone 9.0.0.0b3.dev99\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2016-01-18 05:50+0000\n"
+"POT-Creation-Date: 2016-02-03 05:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -165,10 +165,6 @@ msgstr "Невозможно изменить имя пользователя"
 #, python-format
 msgid "Cannot create project with parent: %(project_id)s"
 msgstr "Не удается создать проект с родительским объектом: %(project_id)s"
-
-#, python-format
-msgid "Cannot duplicate name %s"
-msgstr "Невозможно копировать имя %s"
 
 msgid "Cannot list request tokens with a token issued via delegation."
 msgstr ""
@@ -370,9 +366,6 @@ msgid ""
 "%(file)s."
 msgstr ""
 "У домена %(domain)s уже определена конфигурация - файл пропущен: %(file)s."
-
-msgid "Domains are read-only against LDAP"
-msgstr "Домены доступны только для чтения в LDAP"
 
 msgid "Duplicate Entry"
 msgstr "Дубликат записи"
@@ -750,10 +743,6 @@ msgstr ""
 "Запрошенная глубина изменения делегирования %(requested_count)d превышает "
 "разрешенную %(max_count)d"
 
-#, python-format
-msgid "Role %s not found"
-msgstr "Роль %s не найдена"
-
 msgid ""
 "Running keystone via eventlet is deprecated as of Kilo in favor of running "
 "in a WSGI server (e.g. mod_wsgi). Support for keystone under eventlet will "
@@ -964,12 +953,6 @@ msgstr ""
 "%(mapping_id)s"
 
 #, python-format
-msgid ""
-"Unable to get a connection from pool id %(id)s after %(seconds)s seconds."
-msgstr ""
-"Не удалось получить соединение из пула с ИД %(id)s за %(seconds)s секунд."
-
-#, python-format
 msgid "Unable to locate domain config directory: %s"
 msgstr "Не удалось найти каталог конфигурации домена: %s"
 
@@ -1039,12 +1022,6 @@ msgstr "Использовать локальный ключ проекта пр
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr "У пользователя %(u_id)s нет доступа к арендатору %(t_id)s"
-
-#, python-format
-msgid "User %(user_id)s already has role %(role_id)s in tenant %(tenant_id)s"
-msgstr ""
-"Пользователю %(user_id)s уже присвоена роль %(role_id)s в арендаторе "
-"%(tenant_id)s"
 
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
