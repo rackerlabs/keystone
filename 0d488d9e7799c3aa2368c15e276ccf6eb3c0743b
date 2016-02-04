@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2fefa088",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T06:36:05Z",
+      "side": 1,
+      "message": "might be \u0027O\u0027 release.",
+      "range": {
+        "startLine": 327,
+        "startChar": 65,
+        "endLine": 327,
+        "endChar": 66
+      },
+      "revId": "0d488d9e7799c3aa2368c15e276ccf6eb3c0743b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_cffe0c38",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T06:36:05Z",
+      "side": 1,
+      "message": "same here.",
+      "range": {
+        "startLine": 350,
+        "startChar": 65,
+        "endLine": 350,
+        "endChar": 66
+      },
+      "revId": "0d488d9e7799c3aa2368c15e276ccf6eb3c0743b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
