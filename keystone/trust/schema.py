@@ -32,13 +32,14 @@ _trust_properties = {
     'allow_redelegation': {
         'type': ['boolean', 'null']
     },
+    'redelegated_trust_id': validation.nullable(parameter_types.id_string),
     'redelegation_count': {
         'type': ['integer', 'null'],
         'minimum': 0
     },
     # TODO(lbragstad): Need to find a better way to do this. We should be
     # checking that a role is a list of IDs and/or names.
-    'roles': validation.add_array_type(parameter_types.id_string)
+    'roles': validation.add_array_type(parameter_types.id_string),
 }
 
 trust_create = {
