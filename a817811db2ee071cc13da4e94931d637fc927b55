@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_45fae676",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_unique_constraint_endpoint.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "The specific exception should be caught so that we don\u0027t misreport what the problem was.",
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_25000aaa",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_unique_constraint_endpoint.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "change to \"on\"",
+      "range": {
+        "startLine": 35,
+        "startChar": 34,
+        "endLine": 35,
+        "endChar": 36
+      },
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2546cabf",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_add_unique_constraint_endpoint.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "change this to just raise to reraise the exception.",
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c0d1e458",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "what about adding a unique constraint requires changing this? This should be explained in the commit message if it\u0027s really necessary.",
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c02d6447",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "this should be in test_backend.CatalogTests so that the behavior is forced on all the backend implementations.",
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a0862811",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "suggest change to \"attribute\"",
+      "range": {
+        "startLine": 850,
+        "startChar": 38,
+        "endLine": 850,
+        "endChar": 55
+      },
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c0900446",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T15:00:02Z",
+      "side": 1,
+      "message": "There should also be a test that shows that an error is logged if the database before the migration contains duplicate endpoints.",
+      "revId": "a817811db2ee071cc13da4e94931d637fc927b55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
