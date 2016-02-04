@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_390a6522",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-02-04T20:16:51Z",
+      "side": 1,
+      "message": "keystone doesn\u0027t return any other header other than \nX-Auth-Token and  X-Openstack-Request-Id to any clients. Why do you want to expose those headers that are not returned?\n\nSame for allow headers, why do you want to allow those headers other than X-Auth-Token and X-Openstack-Request-Id",
+      "revId": "5a96686abcd1f6dbf553a9ddf9bea5aa56600ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
