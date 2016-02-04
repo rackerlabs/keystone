@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d319b27a",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T19:26:27Z",
+      "side": 1,
+      "message": "See my comment regarding s3, they apply here too: https://review.openstack.org/#/c/274973/",
+      "revId": "ec3cf82869a537cae2cb722a52ebdb75f8d064d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
