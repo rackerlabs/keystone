@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_658602bb",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-04T16:42:44Z",
+      "side": 1,
+      "message": "nice. I remember it now. The bug doesn\u0027t seem to have great acceptance so far. I think we should keep this until some agreement is made on the bug.",
+      "parentUuid": "7a5de9d1_8c99647b",
+      "range": {
+        "startLine": 171,
+        "startChar": 9,
+        "endLine": 171,
+        "endChar": 25
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_2c0870d9",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 22
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-01T21:09:50Z",
       "side": 1,
       "message": "What happens if project_ids is an empty list. Please write a test case for that.",
+      "range": {
+        "startLine": 172,
+        "startChar": 33,
+        "endLine": 172,
+        "endChar": 37
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0064dce1",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-04T16:42:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_2c0870d9",
       "range": {
         "startLine": 172,
         "startChar": 33,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_406ad4b4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-04T16:42:44Z",
+      "side": 1,
+      "message": "doesn\u0027t look like it does a select for each row. AFAIK, it does one bulk query and bulk deletes the result. I\u0027ve search the code, and saw that the use of synchronize_session\u003dFalse is more common, so I\u0027m changing it, as we no longer use the session",
+      "parentUuid": "7a5de9d1_eca9f890",
+      "range": {
+        "startLine": 181,
+        "startChar": 18,
+        "endLine": 181,
+        "endChar": 24
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_ac4ea038",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 22
@@ -82,6 +154,30 @@
       "writtenOn": "2016-02-01T21:09:50Z",
       "side": 1,
       "message": "Should this be a list in stead of a tuple?",
+      "range": {
+        "startLine": 3241,
+        "startChar": 24,
+        "endLine": 3241,
+        "endChar": 35
+      },
+      "revId": "2af56327d5c97feb5289d746e37a2c45da1fc428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9847ee1c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 3241,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-04T16:42:44Z",
+      "side": 1,
+      "message": "it doesn\u0027t actually make difference, as long as we\u0027re passing an iterable",
+      "parentUuid": "7a5de9d1_ac4ea038",
       "range": {
         "startLine": 3241,
         "startChar": 24,
