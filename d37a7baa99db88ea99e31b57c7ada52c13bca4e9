@@ -69,6 +69,24 @@
       "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_fe210eb5",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-04T22:09:55Z",
+      "side": 1,
+      "message": "policy.json for deny. That is the answer. This is the best way to do it.\n\nI am against making this optional if we support it in keystone. policy.json deny is the easiest/best way to ensure no one accesses it.",
+      "parentUuid": "5a5ae5dd_9467a024",
+      "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
