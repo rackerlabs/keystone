@@ -1,0 +1,9 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Workflow+1: Dave Chen <dave.jungler@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 04 Feb 2016 18:48:54 +0000
+Reviewed-on: https://review.openstack.org/196877
+Project: openstack/keystone
+Branch: refs/heads/master
