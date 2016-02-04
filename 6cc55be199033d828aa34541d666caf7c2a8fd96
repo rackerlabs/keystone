@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d9cd7e5e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-04T05:22:21Z",
+      "side": 1,
+      "message": "\"hmac_keys\" is this meant to be a listOpt? or multistropt?\n\nrecommend moving this to hmac_key if it is not meant to be multiple entries, I would also prefer is OSProfiler supplied these options instead of needing to embed them in keystone itself.\n\nI also would prefer this to be a \"None\" default and if it is unset, profiling does not occur, this is for \"sane defaults\". It should require explicit setup of a key, not a default insecure/known key that anyone can read out of the source repo..",
+      "revId": "6cc55be199033d828aa34541d666caf7c2a8fd96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
