@@ -15,6 +15,7 @@
 import functools
 import sys
 
+import extras
 from oslo_config import cfg
 from oslo_log import log
 from paste import deploy
@@ -24,7 +25,6 @@ from keystone.assignment import routers as assignment_routers
 from keystone.auth import routers as auth_routers
 from keystone.catalog import routers as catalog_routers
 from keystone.common import wsgi
-from keystone.compat.aws import s3
 from keystone.credential import routers as credential_routers
 from keystone.endpoint_policy import routers as endpoint_policy_routers
 from keystone.federation import routers as federation_routers
@@ -42,6 +42,8 @@ from keystone.v2_crud import user_crud
 from keystone.version import controllers
 from keystone.version import routers
 
+
+s3 = extras.try_import('keystone.compat.aws.s3')
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
@@ -97,15 +99,21 @@ def public_app_factory(global_conf, **local_conf):
 @warn_local_conf
 def admin_app_factory(global_conf, **local_conf):
     controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [identity_routers.Admin(),
-                                 assignment_routers.Admin(),
-                                 token_routers.Router(),
-                                 resource_routers.Admin(),
-                                 admin_crud.Router(),
-                                 s3.Routers(),
-                                 routers.VersionV2('admin'),
-                                 routers.Extension()])
+
+    all_routers = [
+        identity_routers.Admin(),
+        assignment_routers.Admin(),
+        token_routers.Router(),
+        resource_routers.Admin(),
+        admin_crud.Router(),
+        routers.VersionV2('admin'),
+        routers.Extension(),
+    ]
+
+    if s3:
+        all_routers.append(s3.Routers())
+
+    return wsgi.ComposingRouter(routes.Mapper(), all_routers)
 
 
 @fail_gracefully
@@ -143,10 +151,12 @@ def v3_app_factory(global_conf, **local_conf):
                        revoke_routers,
                        federation_routers,
                        oauth1_routers,
-                       s3,
                        # TODO(morganfainberg): Remove the simple_cert router
                        # when PKI and PKIZ tokens are removed.
                        simple_cert_ext]
+
+    if s3:
+        all_api_routers.append(s3)
 
     if CONF.trust.enabled:
         all_api_routers.append(trust_routers)
