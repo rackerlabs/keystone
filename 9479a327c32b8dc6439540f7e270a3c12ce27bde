@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_ea78962d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T06:58:36Z",
+      "side": 1,
+      "message": "domain specific only",
+      "parentUuid": "5a5ae5dd_994dd474",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_964a8382",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 17
