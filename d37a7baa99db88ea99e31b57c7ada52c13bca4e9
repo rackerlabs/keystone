@@ -16,6 +16,23 @@
       "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_483c2de2",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T19:25:14Z",
+      "side": 1,
+      "message": "When we had a product (and there are still some OpenStack products in IBM), we were told by our lawyers to remove this module and not provide the s3 compatibility layer. Can we make this optional (as in, do a try import and then don\u0027t add to the composing router if it\u0027s not available)?",
+      "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
