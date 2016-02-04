@@ -38,7 +38,10 @@ _trust_properties = {
     },
     # TODO(lbragstad): Need to find a better way to do this. We should be
     # checking that a role is a list of IDs and/or names.
-    'roles': validation.add_array_type(parameter_types.id_string)
+    'roles': validation.add_array_type(parameter_types.id_string),
+    'redelegated_trust_id': {
+        'type': ['string', 'null']
+    }
 }
 
 trust_create = {
