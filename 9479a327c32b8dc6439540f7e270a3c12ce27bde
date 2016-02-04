@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_40642b21",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_967923ff",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_994dd474",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 17
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_eac65648",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1683,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "Agreed it is chatty, but seem clean this way - and this is only for people using the legacy driver interface (for which, in general, we say there could be performance ramifications)",
+      "parentUuid": "5a5ae5dd_964a8382",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_160d333e",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 17
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_4f3bf3d1",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "Damn good idea! Done.",
+      "parentUuid": "5a5ae5dd_160d333e",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_59099c2b",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 17
@@ -99,6 +153,24 @@
       "writtenOn": "2016-02-03T22:13:47Z",
       "side": 1,
       "message": "can\u0027t to_dict do the defaulting?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_8030e302",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "It does....",
+      "parentUuid": "5a5ae5dd_59099c2b",
       "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_8adc8213",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "It allows you to use the standard v3 router setup and override one of the standard methods",
+      "parentUuid": "5a5ae5dd_d94b4c58",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_59a51c02",
         "filename": "keystone/common/router.py",
         "patchSetId": 17
@@ -150,6 +240,24 @@
       "writtenOn": "2016-02-03T22:13:47Z",
       "side": 1,
       "message": "I assume this is for adding the domain_id as a query param where it was not there before?",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ea509660",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "well, this is adding the standard ability to override one of the methods....which we use to override the list method to add the domain_id query param. We need to do it this way so that we end up calling the same list_roles method that is checked in the policy file AFTER adding in the domain_id filter default setting",
+      "parentUuid": "5a5ae5dd_59a51c02",
       "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_8fa56b05",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "good catch, it should not be nullable",
+      "parentUuid": "5a5ae5dd_7981f849",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_59cafca2",
         "filename": "keystone/tests/unit/backend/role/test_sql.py",
         "patchSetId": 17
@@ -184,6 +310,24 @@
       "writtenOn": "2016-02-03T22:13:47Z",
       "side": 1,
       "message": "specific",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_942a562b",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_59cafca2",
       "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -224,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_34d0421f",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "So i did try splitting it up, but due to the all the status required, it turned out more complex than it is now....",
+      "parentUuid": "5a5ae5dd_d96cac9e",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_99d39438",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 17
@@ -235,6 +397,24 @@
       "writtenOn": "2016-02-03T22:13:47Z",
       "side": 1,
       "message": "This is pretty long.  Split up, so if anything fails, we know which step it was.",
+      "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_578620ba",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2591,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-04T14:22:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_99d39438",
       "revId": "9479a327c32b8dc6439540f7e270a3c12ce27bde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
