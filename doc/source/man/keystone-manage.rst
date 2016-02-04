@@ -48,9 +48,9 @@ Available commands:
 * ``fernet_setup``: Setup a Fernet key repository.
 * ``mapping_purge``: Purge the identity mapping table.
 * ``mapping_engine``: Test your federation mapping rules.
-* ``pki_setup``: Initialize the certificates used to sign tokens.
+* ``pki_setup``: Initialize the certificates used to sign tokens. **deprecated**
 * ``saml_idp_metadata``: Generate identity provider metadata.
-* ``ssl_setup``: Generate certificates for SSL.
+* ``ssl_setup``: Generate certificates for SSL. **deprecated**
 * ``token_flush``: Purge expired tokens.
 
 OPTIONS

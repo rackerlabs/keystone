@@ -20,6 +20,7 @@ import uuid
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 import pbr.version
 
@@ -320,6 +321,10 @@ class PKISetup(BaseCertificateSetup):
 
     @classmethod
     def main(cls):
+        versionutils.report_deprecated_feature(
+        LOG,
+        _LW('keystone-manage pki_setup is deprecated as of Mitaka in '
+            'favor of not using PKI tokens and may be removed in O release.'))
         LOG.warning(_LW('keystone-manage pki_setup is not recommended for '
                         'production use.'))
         keystone_user_id, keystone_group_id = cls.get_user_group()
@@ -339,6 +344,10 @@ class SSLSetup(BaseCertificateSetup):
 
     @classmethod
     def main(cls):
+        versionutils.report_deprecated_feature(
+        LOG,
+        _LW('keystone-manage ssl_setup is deprecated as of Mitaka in '
+            'favor of not using PKI tokens and may be removed in O release.'))
         LOG.warning(_LW('keystone-manage ssl_setup is not recommended for '
                         'production use.'))
         keystone_user_id, keystone_group_id = cls.get_user_group()
