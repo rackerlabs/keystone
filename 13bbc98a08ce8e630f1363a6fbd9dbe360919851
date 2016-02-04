@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d796754b",
+        "filename": "releasenotes/notes/bug-1519210-de76097c974f9c93.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-04T23:26:48Z",
+      "side": 1,
+      "message": "need to update this section and remove the rest",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 8
+      },
+      "revId": "13bbc98a08ce8e630f1363a6fbd9dbe360919851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
