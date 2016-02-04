@@ -51,6 +51,24 @@
       "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9467a024",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-04T21:03:08Z",
+      "side": 1,
+      "message": "See the follow-on patch for an example: https://review.openstack.org/276444",
+      "parentUuid": "5a5ae5dd_737a3ef3",
+      "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
