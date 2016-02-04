@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_efe748e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-02-04T06:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_c7227a01",
+      "revId": "c830260bba86e87b2a255ea59119d1c619af7bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_672146fb",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_ef99886f",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-02-04T06:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_672146fb",
+      "revId": "c830260bba86e87b2a255ea59119d1c619af7bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_02164055",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 10
@@ -47,6 +83,30 @@
       "writtenOn": "2016-02-04T04:27:25Z",
       "side": 1,
       "message": "we should also add the authentication success event type",
+      "range": {
+        "startLine": 431,
+        "startChar": 4,
+        "endLine": 433,
+        "endChar": 48
+      },
+      "revId": "c830260bba86e87b2a255ea59119d1c619af7bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0fb424cf",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-02-04T06:29:23Z",
+      "side": 1,
+      "message": "\"event_type\": \"identity.authenticate\"\n\"action\": \"authenticate\", \"outcome\": \"success\"",
+      "parentUuid": "5a5ae5dd_02164055",
       "range": {
         "startLine": 431,
         "startChar": 4,
