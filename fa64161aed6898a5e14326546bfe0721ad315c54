@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ecdd1643",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T05:52:44Z",
+      "side": 1,
+      "message": "this should be \u0027service_providers_group_id\u0027",
+      "range": {
+        "startLine": 155,
+        "startChar": 31,
+        "endLine": 155,
+        "endChar": 56
+      },
+      "revId": "fa64161aed6898a5e14326546bfe0721ad315c54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_4799aa1e",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T05:52:44Z",
+      "side": 1,
+      "message": "this is `groups` instead of `group`, and should use \u0027href\u0027 instead.",
+      "range": {
+        "startLine": 535,
+        "startChar": 58,
+        "endLine": 535,
+        "endChar": 63
+      },
+      "revId": "fa64161aed6898a5e14326546bfe0721ad315c54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c7911a54",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T05:52:44Z",
+      "side": 1,
+      "message": "this doesn\u0027t needed here, since there is nothing to replace in the template.",
+      "range": {
+        "startLine": 537,
+        "startChar": 12,
+        "endLine": 537,
+        "endChar": 72
+      },
+      "revId": "fa64161aed6898a5e14326546bfe0721ad315c54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_87724248",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T05:52:44Z",
+      "side": 1,
+      "message": "need to define another resource relation for `list_service_providers_groups` separately.",
+      "range": {
+        "startLine": 533,
+        "startChar": 3,
+        "endLine": 539,
+        "endChar": 45
+      },
+      "revId": "fa64161aed6898a5e14326546bfe0721ad315c54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_cc0ffa2c",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-04T05:52:44Z",
+      "side": 1,
+      "message": "needn\u0027t the extra whitespace here.",
+      "revId": "fa64161aed6898a5e14326546bfe0721ad315c54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
