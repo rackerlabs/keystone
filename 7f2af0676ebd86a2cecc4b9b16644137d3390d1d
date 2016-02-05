@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_23dbf9ed",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T09:46:19Z",
+      "side": 1,
+      "message": "Do we really need this for delete? Both `DBDuplicateEntry` and `IntegrityError` from this decorator are for creating (store). It state clearly from the exception message.",
+      "range": {
+        "startLine": 171,
+        "startChar": 4,
+        "endLine": 171,
+        "endChar": 50
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_08285a99",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T09:46:19Z",
+      "side": 1,
+      "message": "what\u0027s the point of this change? pls remove this method from here since it has been removed from V8 driver.",
+      "range": {
+        "startLine": 697,
+        "startChar": 0,
+        "endLine": 706,
+        "endChar": 60
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_83918d49",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 3214,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T09:46:19Z",
+      "side": 1,
+      "message": "better to say what the expected result instead of just say the method is called.",
+      "range": {
+        "startLine": 3214,
+        "startChar": 38,
+        "endLine": 3214,
+        "endChar": 67
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_e3bf21a8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 3232,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T09:46:19Z",
+      "side": 1,
+      "message": "Does this could be fell into \"no_existing_project_id\" in the following testcase?",
+      "range": {
+        "startLine": 3232,
+        "startChar": 8,
+        "endLine": 3232,
+        "endChar": 61
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
