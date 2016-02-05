@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9b856808",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4380,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T14:53:12Z",
+      "side": 1,
+      "message": "nit: \n\n    def test_audit_id_only_with_no_tokens(self):",
+      "revId": "d1a980939b2057e2a117a7961f3cca4d6b56f258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
