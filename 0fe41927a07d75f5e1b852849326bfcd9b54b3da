@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f704c34a",
+        "filename": "releasenotes/notes/implied-roles-026f401adc0f7fb6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-05T08:22:25Z",
+      "side": 1,
+      "message": "the multiple use/meaning of \"assign\" here and earlier is confusing.",
+      "range": {
+        "startLine": 8,
+        "startChar": 21,
+        "endLine": 8,
+        "endChar": 55
+      },
+      "revId": "0fe41927a07d75f5e1b852849326bfcd9b54b3da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b7facb41",
+        "filename": "releasenotes/notes/implied-roles-026f401adc0f7fb6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-05T08:22:25Z",
+      "side": 1,
+      "message": "what process? Maybe something like:\n\"Any role can act as a prior role, even one that is itself an implied role, allowing multiple levels of inference.\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "0fe41927a07d75f5e1b852849326bfcd9b54b3da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_7733f314",
+        "filename": "releasenotes/notes/implied-roles-026f401adc0f7fb6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-05T08:22:25Z",
+      "side": 1,
+      "message": "How about something like:\n\"At token generation time, user/group assignments of roles that have implied roles will be expanded to also include such roles in the token\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 35
+      },
+      "revId": "0fe41927a07d75f5e1b852849326bfcd9b54b3da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
