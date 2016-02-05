@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b5a89078",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T01:12:49Z",
+      "side": 1,
+      "message": "The test_v2 version of RestfulTestCase only has one additional role assignment: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v2.py#L984 \n\nIs that used here or should we just keep it as rest.RestfulTestCase?",
+      "revId": "1407e0eb06f4bf7bc8dbe9da43af409dbb668a3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
