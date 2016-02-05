@@ -34,6 +34,24 @@
       "revId": "f89e9202c19cf632e82c97274051c1e4f0b488a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9e47b1bb",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T03:07:08Z",
+      "side": 1,
+      "message": "as talked in irc, federation need the cert for signing, but it would be a little heavy to provide a command dedicated for that. We could document it on how to generate those certs and keys instead.",
+      "parentUuid": "5a5ae5dd_3ecd5db7",
+      "revId": "f89e9202c19cf632e82c97274051c1e4f0b488a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
