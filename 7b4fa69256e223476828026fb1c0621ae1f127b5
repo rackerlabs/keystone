@@ -33,6 +33,24 @@
       "revId": "7b4fa69256e223476828026fb1c0621ae1f127b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_5ba5a29f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-05T20:14:15Z",
+      "side": 1,
+      "message": "always hitting below the belt",
+      "parentUuid": "5a5ae5dd_f8a7b4ba",
+      "revId": "7b4fa69256e223476828026fb1c0621ae1f127b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
