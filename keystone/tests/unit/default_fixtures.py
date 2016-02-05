@@ -63,6 +63,7 @@ USERS = [
         'tenants': ['bar'],
         'enabled': True,
         'email': 'foo@bar.com',
+        'description': 'foo user',
     }, {
         'id': 'two',
         'name': 'TWO',
@@ -72,6 +73,7 @@ USERS = [
         'default_project_id': 'baz',
         'tenants': ['baz'],
         'email': 'two@three.com',
+        'description': 'two user',
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
@@ -81,6 +83,7 @@ USERS = [
         'default_project_id': 'baz',
         'tenants': ['baz'],
         'email': 'bad@guy.com',
+        'description': 'badguy user',
     }, {
         'id': 'sna',
         'name': 'SNA',
@@ -89,6 +92,7 @@ USERS = [
         'enabled': True,
         'tenants': ['bar'],
         'email': 'sna@snl.coom',
+        'description': 'sna user',
     }
 ]
 
