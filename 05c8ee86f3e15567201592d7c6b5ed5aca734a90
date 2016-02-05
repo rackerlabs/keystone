@@ -22,6 +22,121 @@
       "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a2c35088",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T16:43:15Z",
+      "side": 1,
+      "message": "What is the point of passing in the action?  If someone passes in the action\u003d\u0027enabled\u0027  the error is going to be confusing since it will read:\n\n\u0027cannot enable project 23544356 since its subtree contains enabled projects\u0027",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a24a7024",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T16:43:15Z",
+      "side": 1,
+      "message": "Maybe add some comments in here on everything that is going on.",
+      "range": {
+        "startLine": 350,
+        "startChar": 8,
+        "endLine": 360,
+        "endChar": 73
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c20c4cee",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T16:43:15Z",
+      "side": 1,
+      "message": "comment: get reversed list of project subtree",
+      "range": {
+        "startLine": 379,
+        "startChar": 12,
+        "endLine": 379,
+        "endChar": 74
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_62feb8af",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T16:43:15Z",
+      "side": 1,
+      "message": "shouldn\u0027t we add the abstract delete_project() here since you are redefining the method?",
+      "range": {
+        "startLine": 983,
+        "startChar": 6,
+        "endLine": 983,
+        "endChar": 22
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c223ec56",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T16:43:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1005,
+        "startChar": 6,
+        "endLine": 1005,
+        "endChar": 22
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
