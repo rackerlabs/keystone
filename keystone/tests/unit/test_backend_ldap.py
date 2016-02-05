@@ -1362,14 +1362,14 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_user_extra_attribute_mapping(self):
         self.config_fixture.config(
             group='ldap',
-            user_additional_attribute_mapping=['description:name'])
+            user_additional_attribute_mapping=['displayName:description'])
         self.load_backends()
         user = self.new_user_ref(name='EXTRA_ATTRIBUTES',
                                  password='extra',
                                  domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
-        self.assertThat([user['name']], matchers.Equals(attrs['description']))
+        self.assertThat([user['description']], matchers.Equals(attrs['displayName']))
 
     def test_user_extra_attribute_mapping_description_is_returned(self):
         # Given a mapping like description:description, the description is

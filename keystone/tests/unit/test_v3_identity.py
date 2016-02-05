@@ -557,7 +557,7 @@ class IdentityV3toV2MethodsTestCase(unit.TestCase):
         Omits all optional components.
         """
         ref = unit.new_user_ref(**kwargs)
-        # description is already omitted
+        del ref['description']
         del ref['email']
         del ref['enabled']
         del ref['password']
