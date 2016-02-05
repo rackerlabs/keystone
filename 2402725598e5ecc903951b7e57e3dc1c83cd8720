@@ -22,6 +22,29 @@
       "revId": "2402725598e5ecc903951b7e57e3dc1c83cd8720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f42841e4",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T08:54:26Z",
+      "side": 1,
+      "message": "Based on the code here, `audit_ids` should be always presented.\nhttps://review.openstack.org/#/c/197647/28/keystone/token/providers/common.py@117\n\nJust do it as what you did for V3.\n\n audit_ids \u003d token_data[\u0027access\u0027][\u0027token\u0027][\u0027audit_ids\u0027]\n\nAnd get rid of the `if` condition below.",
+      "range": {
+        "startLine": 186,
+        "startChar": 20,
+        "endLine": 186,
+        "endChar": 66
+      },
+      "revId": "2402725598e5ecc903951b7e57e3dc1c83cd8720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
