@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f525a808",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T01:17:13Z",
+      "side": 1,
+      "message": "Can we deprecate this? This might have been required for PKI but does it make sense to deprecate this only because we deprecate PKI?",
+      "revId": "f89e9202c19cf632e82c97274051c1e4f0b488a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
