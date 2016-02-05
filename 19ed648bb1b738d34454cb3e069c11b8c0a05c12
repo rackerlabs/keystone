@@ -33,6 +33,93 @@
       "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_de220952",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T02:57:57Z",
+      "side": 1,
+      "message": "it is mentioned in passing in certain spots, but it\u0027s definitely something that can be improved",
+      "parentUuid": "5a5ae5dd_d86f8129",
+      "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1e80a1f6",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T02:57:57Z",
+      "side": 1,
+      "message": "Try to keep the text consistent with the other notes, how about something like this:\n\n  [`blueprint deprecated-as-of-mitaka \u003chttps://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka\u003e`_]\n  As of the Mitaka release, the auth plugin\n  ``keystone.auth.plugins.saml2.Saml2`` has\n  been deprecated. It is recommended to use\n  ``keystone.auth.plugins.mapped.Mapped`` instead.\n  The ``saml2`` plugin will be removed in the \u0027O\u0027 release.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 39
+      },
+      "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_dee9a9e7",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T02:57:57Z",
+      "side": 1,
+      "message": "wrap this with `` so it formats nicely",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 18,
+        "endChar": 63
+      },
+      "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9eefb1e8",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T02:57:57Z",
+      "side": 1,
+      "message": "this is an opinion, try to stick to facts in the release notes",
+      "range": {
+        "startLine": 20,
+        "startChar": 40,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
