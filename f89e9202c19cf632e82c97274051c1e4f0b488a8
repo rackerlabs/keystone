@@ -16,6 +16,24 @@
       "revId": "f89e9202c19cf632e82c97274051c1e4f0b488a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_3ecd5db7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T02:50:35Z",
+      "side": 1,
+      "message": "what\u0027s the case for keeping it around? davechen mentioned it could also be useful for federation. i\u0027m okay with keeping things around if there\u0027s a usecase",
+      "parentUuid": "5a5ae5dd_f525a808",
+      "revId": "f89e9202c19cf632e82c97274051c1e4f0b488a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
