@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_fbe32ed7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:21:57Z",
+      "side": 1,
+      "message": "user_description_attribute",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_25044516",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -41,6 +64,29 @@
         "startChar": 124,
         "endLine": 9,
         "endChar": 128
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_bbe936b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:21:57Z",
+      "side": 1,
+      "message": "user_\u003cattribute\u003e_attribute",
+      "range": {
+        "startLine": 9,
+        "startChar": 85,
+        "endLine": 9,
+        "endChar": 106
       },
       "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -82,6 +128,87 @@
       "writtenOn": "2016-02-05T19:23:31Z",
       "side": 1,
       "message": "Can you shorten these to 72 characters?",
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_5bd36204",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:21:57Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a5ae5dd_c514514e",
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_fb31ee5a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:21:57Z",
+      "side": 1,
+      "message": "Why displayName ? Shouldn\u0027t this be the LDAP \u0027description\u0027 attribute ?",
+      "range": {
+        "startLine": 1745,
+        "startChar": 31,
+        "endLine": 1745,
+        "endChar": 42
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1b472abd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:21:57Z",
+      "side": 1,
+      "message": "Shouldn\u0027t default be None, i.e no description?\n\nDoes this mean a user who doesn\u0027t have a description will have its description read as \u0027description\u0027 from a GET /v3/users call ?",
+      "range": {
+        "startLine": 604,
+        "startChar": 57,
+        "endLine": 604,
+        "endChar": 70
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_7bdadee9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1372,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:21:57Z",
+      "side": 1,
+      "message": "Why are you changing this existing test ? If you want to do it here, please add the description attr without removing name",
       "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
