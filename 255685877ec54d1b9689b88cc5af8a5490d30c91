@@ -46,6 +46,30 @@
       "revId": "255685877ec54d1b9689b88cc5af8a5490d30c91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_786744e9",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T19:27:58Z",
+      "side": 1,
+      "message": "I am setting up devstack right now to try it out",
+      "parentUuid": "5a5ae5dd_658b1dc4",
+      "range": {
+        "startLine": 53,
+        "startChar": 69,
+        "endLine": 53,
+        "endChar": 71
+      },
+      "revId": "255685877ec54d1b9689b88cc5af8a5490d30c91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
