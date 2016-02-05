@@ -68,6 +68,30 @@
       "revId": "0fe41927a07d75f5e1b852849326bfcd9b54b3da",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_725b01f7",
+        "filename": "releasenotes/notes/implied-roles-026f401adc0f7fb6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T08:28:08Z",
+      "side": 1,
+      "message": "this works for me, i\u0027ll remove the entire sentence and use this",
+      "parentUuid": "5a5ae5dd_7733f314",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 35
+      },
+      "revId": "0fe41927a07d75f5e1b852849326bfcd9b54b3da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
