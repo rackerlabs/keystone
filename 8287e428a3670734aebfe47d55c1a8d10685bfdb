@@ -34,6 +34,24 @@
       "revId": "8287e428a3670734aebfe47d55c1a8d10685bfdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b853a538",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-05T02:06:18Z",
+      "side": 1,
+      "message": "got it.",
+      "parentUuid": "5a5ae5dd_7786a166",
+      "revId": "8287e428a3670734aebfe47d55c1a8d10685bfdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
