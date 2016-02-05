@@ -1,0 +1,14 @@
+---
+features:
+  - Role inference rules can be added to indicate when
+    the assignment of one role implies the assignment
+    of another.  The rules are of the form
+    `prior_role` implies `implied_role`.  If a role
+    explicitly assigned to a user is a prior role, any
+    token that would show that role will also show all
+    implied roles for that prior role.  This process will
+    continue, evaluating additional rules such that one
+    implied rule can imply additional roles.  The expansion
+    of implied roles is controlled by a configuration option.
+
+    
