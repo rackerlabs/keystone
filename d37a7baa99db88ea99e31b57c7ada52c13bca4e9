@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a5ae5dd_3e155d48",
+        "filename": "keystone/compat/aws/s3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-05T03:17:40Z",
+      "side": 1,
+      "message": "this may not say anything about aws or buckets, but it looks very similar to what is posted here: http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html#signature-v4-examples-python",
+      "range": {
+        "startLine": 126,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 47
+      },
+      "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_c06831f8",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 2
