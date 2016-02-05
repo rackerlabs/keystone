@@ -48,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_7812e458",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-05T21:21:23Z",
+      "side": 1,
+      "message": "user_description_attribute",
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_25044516",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -175,6 +192,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_768bd5c3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-05T21:21:23Z",
+      "side": 1,
+      "message": "No. It illustrates the exact use-case why this bug has been filed \u0026 fixed: allow mapping of a AD \u0027displayName\u0027 attribute keystone user.description (see the section before: \u0027In case of Active Directory...\u0027)",
+      "parentUuid": "5a5ae5dd_fb31ee5a",
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_1b472abd",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -192,6 +227,24 @@
         "endLine": 604,
         "endChar": 70
       },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d1a73309",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-05T21:21:23Z",
+      "side": 1,
+      "message": "No. It simply means that when no user_description_attribute configuration has been set in the keystone.con (or domain specific .conf), it will fallback to the default attribute name \u0027description\u0027.",
+      "parentUuid": "5a5ae5dd_1b472abd",
       "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
