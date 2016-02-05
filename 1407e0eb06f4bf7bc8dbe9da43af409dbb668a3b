@@ -16,6 +16,24 @@
       "revId": "1407e0eb06f4bf7bc8dbe9da43af409dbb668a3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_18cf592a",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T01:59:03Z",
+      "side": 1,
+      "message": "I notice that, I changed the base class since it\u0027s more accurate and we can inherent the common codes from the `test_v2.RestfulTestCase` rather that implement here by itself.  Currently no, but might be in the future.",
+      "parentUuid": "5a5ae5dd_b5a89078",
+      "revId": "1407e0eb06f4bf7bc8dbe9da43af409dbb668a3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
