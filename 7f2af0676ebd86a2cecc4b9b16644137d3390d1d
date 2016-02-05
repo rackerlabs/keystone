@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_00c34539",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-05T14:37:44Z",
+      "side": 1,
+      "message": "Hi Dave, look at my answer for this in the previous patchset",
+      "parentUuid": "5a5ae5dd_23dbf9ed",
+      "range": {
+        "startLine": 171,
+        "startChar": 4,
+        "endLine": 171,
+        "endChar": 50
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_08285a99",
         "filename": "keystone/resource/core.py",
         "patchSetId": 23
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-05T09:46:19Z",
       "side": 1,
       "message": "what\u0027s the point of this change? pls remove this method from here since it has been removed from V8 driver.",
+      "range": {
+        "startLine": 697,
+        "startChar": 0,
+        "endLine": 706,
+        "endChar": 60
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_60f8f97b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-05T14:37:44Z",
+      "side": 1,
+      "message": "you\u0027re right. this should be some rebase problem",
+      "parentUuid": "5a5ae5dd_08285a99",
       "range": {
         "startLine": 697,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_80cf3528",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 3214,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-05T14:37:44Z",
+      "side": 1,
+      "message": "ok. will do",
+      "parentUuid": "5a5ae5dd_83918d49",
+      "range": {
+        "startLine": 3214,
+        "startChar": 38,
+        "endLine": 3214,
+        "endChar": 67
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_e3bf21a8",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 23
@@ -82,6 +154,30 @@
       "writtenOn": "2016-02-05T09:46:19Z",
       "side": 1,
       "message": "Does this could be fell into \"no_existing_project_id\" in the following testcase?",
+      "range": {
+        "startLine": 3232,
+        "startChar": 8,
+        "endLine": 3232,
+        "endChar": 61
+      },
+      "revId": "7f2af0676ebd86a2cecc4b9b16644137d3390d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_60547952",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 3232,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-05T14:37:44Z",
+      "side": 1,
+      "message": "actually, I think it makes more sense staying here, since this has no error. both of them make sense, though",
+      "parentUuid": "5a5ae5dd_e3bf21a8",
       "range": {
         "startLine": 3232,
         "startChar": 8,
