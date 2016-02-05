@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1833d963",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T01:56:08Z",
+      "side": 1,
+      "message": "nit: could clarify this with the actual class path\n\n    keystone.auth.plugins.mapped:Mapped",
+      "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d86f8129",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T01:56:08Z",
+      "side": 1,
+      "message": "Just curious - do we have any docs that state the Mapped plugin supports saml2?",
+      "revId": "19ed648bb1b738d34454cb3e069c11b8c0a05c12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
