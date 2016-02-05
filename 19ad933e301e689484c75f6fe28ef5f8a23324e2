@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_56ec99f2",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-05T20:41:48Z",
+      "side": 1,
+      "message": "Testing the number is a very weak test in my opinion. Why are you not just getting the response and making sure it contains what is expected? There is a lot of code here and I don\u0027t see the value.",
+      "revId": "19ad933e301e689484c75f6fe28ef5f8a23324e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
