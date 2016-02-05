@@ -70,6 +70,23 @@
       "revId": "255685877ec54d1b9689b88cc5af8a5490d30c91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_27d9a522",
+        "filename": "releasenotes/notes/bug-1519210-de76097c974f9c93.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-05T22:03:58Z",
+      "side": 1,
+      "message": "suggest: \"using the\" instead of \"in the\" since they may have to use it multiple times",
+      "revId": "255685877ec54d1b9689b88cc5af8a5490d30c91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
