@@ -16,6 +16,24 @@
       "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ded3e902",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-05T03:02:45Z",
+      "side": 0,
+      "message": "How so? The endpoints are being used in Application.base_url() if they are configured in Keystone. This patch just simplify the code. This only case this will not work is both \u0027request\u0027 and \u0027context\u0027 are None, which is impossible.",
+      "parentUuid": "5a5ae5dd_989109f4",
+      "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
