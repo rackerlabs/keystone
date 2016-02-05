@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f8057410",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T19:23:31Z",
+      "side": 1,
+      "message": "LDAP",
+      "range": {
+        "startLine": 7,
+        "startChar": 50,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_25044516",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T19:23:31Z",
+      "side": 1,
+      "message": "LDAP",
+      "range": {
+        "startLine": 9,
+        "startChar": 124,
+        "endLine": 9,
+        "endChar": 128
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_45014105",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T19:23:31Z",
+      "side": 1,
+      "message": "LDAP",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c514514e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T19:23:31Z",
+      "side": 1,
+      "message": "Can you shorten these to 72 characters?",
+      "revId": "b90cf1b5489966602ab2f39b6bb6471c13fcbf97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
