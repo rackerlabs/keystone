@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_c239b5a5",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-02-05T13:50:39Z",
+      "side": 1,
+      "message": "That\u0027s true (and way more simple). Thanks, Samuel. A new patchset is on the way.",
+      "parentUuid": "5a5ae5dd_37c5d68d",
+      "revId": "e41e5ff047d80116d5e6b7a5cdb6e5602eb5d41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_60413d0b",
         "filename": "releasenotes/notes/allow_deleting_by_project_assignment_type-baf72cf6df2d9c87.yaml",
         "patchSetId": 2
