@@ -86,6 +86,24 @@
       "revId": "6353d5eed43c1df7cf5fa46454d51e7f15464127",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_16a8618c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1372,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-05T20:41:20Z",
+      "side": 1,
+      "message": "Samuel, I think this has to be changed because description is no longer an additional attribute so it had to be changed to displayName.",
+      "parentUuid": "5a5ae5dd_3ba54646",
+      "revId": "6353d5eed43c1df7cf5fa46454d51e7f15464127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
