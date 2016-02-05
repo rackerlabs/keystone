@@ -1362,18 +1362,39 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_user_extra_attribute_mapping(self):
         self.config_fixture.config(
             group='ldap',
-            user_additional_attribute_mapping=['description:name'])
+            user_additional_attribute_mapping=['displayName:name'])
         self.load_backends()
         user = self.new_user_ref(name='EXTRA_ATTRIBUTES',
                                  password='extra',
                                  domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
-        self.assertThat([user['name']], matchers.Equals(attrs['description']))
+        self.assertThat([user['name']], matchers.Equals(attrs['displayName']))
+
+    def test_user_description_attribute_mapping(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_description_attribute='displayName')
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+                                 displayName=uuid.uuid4().hex)
+        user.pop('description')
+        description = user['displayName']
+        user = self.identity_api.create_user(user)
+        res = self.identity_api.driver.user.get_all()
+
+        new_user = [u for u in res if u['id'] == user['id']][0]
+        self.assertThat(new_user['description'], matchers.Equals(description))
 
     def test_user_extra_attribute_mapping_description_is_returned(self):
         # Given a mapping like description:description, the description is
         # returned.
+
+        # TODO(rudolfvriend): the result of this test is misleading, since it
+        # doesn't test the general mapping behavior due to the unfortunate
+        # description:description test mapping which just happens to pass
+        # because of a coding issue.
 
         self.config_fixture.config(
             group='ldap',
