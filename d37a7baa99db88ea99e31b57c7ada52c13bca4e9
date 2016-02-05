@@ -87,6 +87,24 @@
       "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f50b6828",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-05T01:27:56Z",
+      "side": 1,
+      "message": "++. I think you can also deny access for certain APIs at Apache using \u003cLocationMatch ..\u003e Deny from all \u003c/LocationMatch\u003e.",
+      "parentUuid": "5a5ae5dd_fe210eb5",
+      "revId": "d37a7baa99db88ea99e31b57c7ada52c13bca4e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
