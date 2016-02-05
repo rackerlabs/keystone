@@ -1686,7 +1686,7 @@ entries in the Keystone configuration file are:
 
   [ldap]
   user_id_attribute = uidNumber
-  user_name_attribute = cn
+  user_name_attribute = sn
 
 
 There is a set of allowed actions per object type that you can modify depending
@@ -1741,7 +1741,7 @@ specified classes in the LDAP module so you can configure them like:
   [ldap]
   user_objectclass          = person
   user_id_attribute         = cn
-  user_name_attribute       = cn
+  user_name_attribute       = sn
   user_mail_attribute       = mail
   user_enabled_attribute    = userAccountControl
   user_enabled_mask         = 2
