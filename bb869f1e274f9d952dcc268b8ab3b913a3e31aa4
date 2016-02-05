@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d137334b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T21:16:16Z",
+      "side": 1,
+      "message": "Following the pattern in assignment SQL, this should be project_ids\n\nSee a method name and parameters as reference:\n\nhttps://github.com/openstack/keystone/blob/9f99a0b/keystone/assignment/backends/sql.py#L74\n\nhttps://github.com/openstack/keystone/blob/9f99a0b/keystone/assignment/backends/sql.py#L198-L201\n\nAnd actually it is project_ids in the driver signature, this would make the manager fail if it called the driver with a named argument",
+      "range": {
+        "startLine": 172,
+        "startChar": 39,
+        "endLine": 172,
+        "endChar": 51
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f1134fb6",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3225,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T21:16:16Z",
+      "side": 1,
+      "message": "(nit) ID",
+      "range": {
+        "startLine": 3225,
+        "startChar": 25,
+        "endLine": 3225,
+        "endChar": 27
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_314c87c7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3242,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T21:16:16Z",
+      "side": 1,
+      "message": "(nit) \"a non existing ID in project_ids, which is logged\" sounds more accurate for you ?",
+      "range": {
+        "startLine": 3241,
+        "startChar": 65,
+        "endLine": 3242,
+        "endChar": 46
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_7128bfe2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3247,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T21:16:16Z",
+      "side": 1,
+      "message": "(nit) ID",
+      "range": {
+        "startLine": 3247,
+        "startChar": 25,
+        "endLine": 3247,
+        "endChar": 27
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_514903b6",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3251,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T21:16:16Z",
+      "side": 1,
+      "message": "How do we know the expected warning was the one thrown here ?",
+      "range": {
+        "startLine": 3251,
+        "startChar": 37,
+        "endLine": 3251,
+        "endChar": 44
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
