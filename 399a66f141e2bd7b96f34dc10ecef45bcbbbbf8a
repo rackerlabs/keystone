@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_989109f4",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T02:00:43Z",
+      "side": 0,
+      "message": "I don\u0027t think Brant\u0027s comment from patch set 18 about backwards compat was addressed here.",
+      "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
