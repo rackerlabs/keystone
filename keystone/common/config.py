@@ -623,7 +623,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('user_id_attribute', default='cn',
                    help='LDAP attribute mapped to user id. '
                         'WARNING: must not be a multivalued attribute.'),
-        cfg.StrOpt('user_name_attribute', default='sn',
+        cfg.StrOpt('user_name_attribute', default='cn',
                    help='LDAP attribute mapped to user name.'),
         cfg.StrOpt('user_mail_attribute', default='mail',
                    help='LDAP attribute mapped to user email.'),
