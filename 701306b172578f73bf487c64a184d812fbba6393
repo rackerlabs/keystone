@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9b29e839",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4342,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T14:50:35Z",
+      "side": 1,
+      "message": "The PKI and PKIz token providers have been deprecated. Does this call rely on anything that might be removed as part of that deprecation? Do we have an equivalent call we can make to get this list that doesn\u0027t rely on OS-PKI?",
+      "revId": "701306b172578f73bf487c64a184d812fbba6393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
