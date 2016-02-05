@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b6e4eddf",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 1943,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "No need to update this manually",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b63e2d89",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "++ Thanks for keeping this test",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_366a3d82",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "(nit) unrelated rename ? I am fine with doing this for keeping consistency, however we need to rename V2CredentialEc2Controller below too.",
+      "range": {
+        "startLine": 32,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b6238d57",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "What\u0027s going on here ? lot\u0027s of commented code",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_961f7107",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2034,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "Do we need this comment here ?",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_96cd3187",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "Yeah, need to investigate :-)",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_96a21198",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:44:54Z",
+      "side": 1,
+      "message": "I know you copied this from the previous code, but why not use skip here and add the text as the reason of skipping ?",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
