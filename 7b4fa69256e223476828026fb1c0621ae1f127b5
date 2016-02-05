@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_67dd5ddf",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-05T22:13:37Z",
+      "side": 1,
+      "message": "I originally used \"\" as the default, but I thought it was too tricky. Tricky because \"\" in any string (including another empty string) is True. Since I always provide a message I didn\u0027t think adding a \u0027if msg\u0027 line (instead of defaulting to empty) was worth it.",
+      "parentUuid": "5a5ae5dd_476701b7",
+      "range": {
+        "startLine": 110,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 37
+      },
+      "revId": "7b4fa69256e223476828026fb1c0621ae1f127b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_f8a7b4ba",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
@@ -89,6 +113,24 @@
       "side": 1,
       "message": "too soon? Sorry...",
       "parentUuid": "5a5ae5dd_f8a7b4ba",
+      "revId": "7b4fa69256e223476828026fb1c0621ae1f127b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_67047d49",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-05T22:13:37Z",
+      "side": 1,
+      "message": "It\u0027s too soon until we get a quarterback. So it\u0027s always too soon",
+      "parentUuid": "5a5ae5dd_b154f7fd",
       "revId": "7b4fa69256e223476828026fb1c0621ae1f127b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
