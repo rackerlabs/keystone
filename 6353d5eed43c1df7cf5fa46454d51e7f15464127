@@ -104,6 +104,24 @@
       "revId": "6353d5eed43c1df7cf5fa46454d51e7f15464127",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f664a522",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1372,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-05T20:51:53Z",
+      "side": 1,
+      "message": "In the previous test, I understand L1365 as mapping the LDAP \"description\" to keystone user\u0027s \"name\".\n\nNow it\u0027s mapping LDAP\u0027s \"displayName\" on keystone user\u0027s \"description\". I don\u0027t see why the previous test should fail\n\nAm I missing something ?",
+      "parentUuid": "5a5ae5dd_16a8618c",
+      "revId": "6353d5eed43c1df7cf5fa46454d51e7f15464127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
