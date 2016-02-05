@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f51fe805",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T01:06:49Z",
+      "side": 1,
+      "message": "we will be doing this for everything that inherits from RestfulTestCase. That seems a little heavy if we only want to use it for the v2 credential API.",
+      "revId": "7b22c7084efdea02e6e19315f8176eabb3216df8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
