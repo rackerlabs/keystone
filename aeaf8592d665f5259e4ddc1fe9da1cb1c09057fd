@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_deb20994",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-05T03:15:39Z",
+      "side": 1,
+      "message": "++",
+      "revId": "aeaf8592d665f5259e4ddc1fe9da1cb1c09057fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
