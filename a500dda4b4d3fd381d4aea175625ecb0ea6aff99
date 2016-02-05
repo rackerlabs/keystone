@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_f8f7dd88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T01:54:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_55eb5c13",
+      "revId": "a500dda4b4d3fd381d4aea175625ecb0ea6aff99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_b55090d5",
         "filename": "keystone/tests/unit/test_credential.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-05T01:04:12Z",
       "side": 1,
       "message": "Should this class name include ec2 somewhere since these tests are ec2 specific?\n\nOtherwise - these tests look like a clean copy from test_contrib_ec2.py",
+      "revId": "a500dda4b4d3fd381d4aea175625ecb0ea6aff99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_18fc3971",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-05T01:54:23Z",
+      "side": 1,
+      "message": "yes, this is just a copy of \u0027test_contrib_ec2.py\u0027, the name didn\u0027t include \u0027ec2\u0027 since we only have ec2 APIs for V2.",
+      "parentUuid": "5a5ae5dd_b55090d5",
       "revId": "a500dda4b4d3fd381d4aea175625ecb0ea6aff99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
