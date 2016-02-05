@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_8775f8fa",
+        "filename": "releasenotes/notes/migration_squash-f655329ddad7fc2a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-05T22:46:41Z",
+      "side": 1,
+      "message": "I am not sure we need a release note for this. but *meh*",
+      "revId": "df629c2eef0d4c0451f46eb2a0973e15ca67f456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
