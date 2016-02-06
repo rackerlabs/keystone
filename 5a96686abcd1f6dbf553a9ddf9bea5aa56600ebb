@@ -16,6 +16,24 @@
       "revId": "5a96686abcd1f6dbf553a9ddf9bea5aa56600ebb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0938323c",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-06T11:00:21Z",
+      "side": 1,
+      "message": "Hi Haneef, the rest are x509 tokenless auth headers.\n\nSee https://github.com/openstack/keystone/blob/af399474b2e67b023225a8abffe8933af40c1548/doc/source/configure_tokenless_x509.rst#scope-information",
+      "parentUuid": "5a5ae5dd_390a6522",
+      "revId": "5a96686abcd1f6dbf553a9ddf9bea5aa56600ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
