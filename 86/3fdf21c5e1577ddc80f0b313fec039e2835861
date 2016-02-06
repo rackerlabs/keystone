@@ -1,0 +1,10 @@
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 06 Feb 2016 03:47:46 +0000
+Reviewed-on: https://review.openstack.org/275333
+Project: openstack/keystone
+Branch: refs/heads/master
