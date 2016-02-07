@@ -403,8 +403,11 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    help='Entrypoint for the assignment backend driver in the '
                         'keystone.assignment namespace. Only an SQL driver is '
-                        'supplied.',
-                   default='sql'),
+                        'supplied. If an assignment driver is not '
+                        'specified, the identity driver will choose the '
+                        'assignment driver (driver selection based on '
+                        '`[identity]/driver` option is deprecated and will be '
+                        'removed in the "O" release).'),
         cfg.StrOpt('root_role', default='admin',
                    help='A role that is not allowed to be an implied '
                    'role, as it is the root of role inference directed '
