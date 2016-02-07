@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
+
 from keystone import assignment
 from keystone import auth
 from keystone import catalog
@@ -26,8 +28,15 @@ from keystone import token
 from keystone import trust
 
 
+CONF = cfg.CONF
+
+
 def load_backends():
 
+    # NOTE(morganfainberg): Keystone's caching is enabled by default with the
+    # backend being defaulted to dogpile.cache.null [no caching], this is
+    # in support of the request-local caching.
+    CONF.set_default(name='enabled', default='True', group='cache')
     # Configure and build the cache
     cache.configure_cache()
     cache.configure_cache(region=catalog.COMPUTED_CATALOG_REGION)
