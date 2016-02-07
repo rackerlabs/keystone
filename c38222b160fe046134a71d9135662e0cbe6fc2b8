@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ccbc5fbd",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1957,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-07T08:06:11Z",
+      "side": 1,
+      "message": "I\u0027m not sure if the space is allowed",
+      "range": {
+        "startLine": 1957,
+        "startChar": 25,
+        "endLine": 1957,
+        "endChar": 27
+      },
+      "revId": "c38222b160fe046134a71d9135662e0cbe6fc2b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2cce5363",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-07T08:06:11Z",
+      "side": 1,
+      "message": "Not sure if python-ldap allows the space",
+      "range": {
+        "startLine": 293,
+        "startChar": 33,
+        "endLine": 293,
+        "endChar": 34
+      },
+      "revId": "c38222b160fe046134a71d9135662e0cbe6fc2b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
