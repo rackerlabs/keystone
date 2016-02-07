@@ -1251,3 +1251,18 @@ def set_middleware_defaults():
                                     'DELETE',
                                     'PATCH']
                      )
+
+
+def update_cache_defaults():
+    """Update oslo.cache defaults."""
+    # Oslo.cache is always enabled by default for request-local caching
+
+    # TODO(morganfainberg): Fix this to not use internal interface when
+    # oslo.cache has proper interface added. This is is just a bad way to
+    # do this.
+    opts = cache._opts.list_opts()
+    for opt_list in opts:
+        if opt_list[0] == 'cache':
+            for o in opt_list[1]:
+                if o.name == 'enabled':
+                    o.default = True
