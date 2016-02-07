@@ -11,16 +11,17 @@
 # 颜海峰 <yanheven@gmail.com>, 2014
 # Lucas Palm <lapalm@us.ibm.com>, 2015. #zanata
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Lucas Palm <lapalm@us.ibm.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.0.0b2.dev256\n"
+"Project-Id-Version: keystone 9.0.0.0b3.dev141\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2016-01-18 05:50+0000\n"
+"POT-Creation-Date: 2016-02-06 06:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-09-03 12:54+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"PO-Revision-Date: 2016-02-03 07:02+0000\n"
+"Last-Translator: Lucas Palm <lapalm@us.ibm.com>\n"
 "Language: zh-CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.0\n"
@@ -134,6 +135,12 @@ msgstr "正在尝试将 OS-FEDERATION 令牌与 V2 身份服务配合使用，�
 msgid "Authentication plugin error."
 msgstr "认证插件错误"
 
+#, python-format
+msgid ""
+"Backend `%(backend)s` is not a valid memcached backend. Valid backends: "
+"%(backend_list)s"
+msgstr "后端“%(backend)s”不是有效的 memcached 后端。有效后端：%(backend_list)s"
+
 msgid "Cannot authorize a request token with a token issued via delegation."
 msgstr "无法对带有通过代理发出的令牌的请求令牌授权。"
 
@@ -144,9 +151,6 @@ msgstr "无法更改 %(option_name)s %(attr)s"
 msgid "Cannot change Domain ID"
 msgstr "无法更改域标识"
 
-msgid "Cannot change consumer secret"
-msgstr "不能改变用户密码"
-
 msgid "Cannot change user ID"
 msgstr "无法更改用户标识"
 
@@ -154,12 +158,12 @@ msgid "Cannot change user name"
 msgstr "无法更改用户名"
 
 #, python-format
-msgid "Cannot create project with parent: %(project_id)s"
-msgstr "无法创建具有父代的项目：%(project_id)s"
+msgid "Cannot create an endpoint with an invalid URL: %(url)s"
+msgstr "无法创建具有无效 URL %(url)s 的端点"
 
 #, python-format
-msgid "Cannot duplicate name %s"
-msgstr "不能重复名称 %s"
+msgid "Cannot create project with parent: %(project_id)s"
+msgstr "无法创建具有父代的项目：%(project_id)s"
 
 msgid "Cannot list request tokens with a token issued via delegation."
 msgstr "无法列示带有通过代理发出的令牌的请求令牌。"
@@ -196,6 +200,10 @@ msgid ""
 msgstr "将有效过滤器、域过滤器和继承的过滤器进行组合将始终产生空列表。"
 
 #, python-format
+msgid "Config API entity at /domains/%s/config"
+msgstr "在 /domains/%s/config 配置 API 实体"
+
+#, python-format
 msgid "Conflict occurred attempting to store %(type)s - %(details)s"
 msgstr "尝试存储 %(type)s 时发生冲突 - %(details)s"
 
@@ -210,6 +218,13 @@ msgstr "找不到使用者"
 msgid ""
 "Could not change immutable attribute(s) '%(attributes)s' in target %(target)s"
 msgstr "未能更改目标 %(target)s 中的不可变属性 %(attributes)s  "
+
+#, python-format
+msgid ""
+"Could not determine Identity Provider ID. The configuration option "
+"%(issuer_attribute)s was not found in the request environment."
+msgstr ""
+"未能确定身份提供者标识。在请求环境中找不到配置选项 %(issuer_attribute)s。"
 
 #, python-format
 msgid ""
@@ -309,6 +324,14 @@ msgstr "找不到版本：%(version)s"
 msgid "Could not find: %(target)s"
 msgstr "找不到 %(target)s"
 
+msgid ""
+"Could not map user while setting ephemeral user identity. Either mapping "
+"rules must specify user id/name or REMOTE_USER environment variable must be "
+"set."
+msgstr ""
+"设置临时用户身份时未能映射用户。映射规则必须指定用户标识/用户名，或者必须设"
+"置 REMOTE_USER 环境变量。"
+
 msgid "Could not validate the access token"
 msgstr "未能验证访问令牌"
 
@@ -344,9 +367,6 @@ msgid ""
 "%(file)s."
 msgstr "域 %(domain)s 已定义配置 - 正在忽略以下文件：%(file)s。"
 
-msgid "Domains are read-only against LDAP"
-msgstr "对于 LDAP，域为只读"
-
 msgid "Duplicate Entry"
 msgstr "重复条目"
 
@@ -381,6 +401,18 @@ msgstr "请确保设置了配置选项 idp_sso_endpoint。"
 msgid ""
 "Error parsing configuration file for domain: %(domain)s, file: %(file)s."
 msgstr "解析域 %(domain)s 的配置文件时出错，文件为 %(file)s。"
+
+#, python-format
+msgid "Error while opening file %(path)s: %(err)s"
+msgstr "打开文件 %(path)s 时出错：%(err)s"
+
+#, python-format
+msgid "Error while parsing line: '%(line)s': %(err)s"
+msgstr "解析行“%(line)s”时出错：%(err)s"
+
+#, python-format
+msgid "Error while parsing rules %(path)s: %(err)s"
+msgstr "解析规则 %(path)s 时出错：%(err)s"
 
 #, python-format
 msgid "Error while reading metadata file, %(reason)s"
@@ -589,6 +621,9 @@ msgstr "必须指定 domain 或 project"
 msgid "Name field is required and cannot be empty"
 msgstr "名称字段是必填字段，不能为空"
 
+msgid "Neither Project Domain ID nor Project Domain Name was provided."
+msgstr "既未提供项目域标识，也未提供项目域名。"
+
 msgid ""
 "No Authorization headers found, cannot proceed with OAuth related calls, if "
 "running under HTTPd or Apache, ensure WSGIPassAuthorization is set to On."
@@ -638,8 +673,18 @@ msgid "Project (%s)"
 msgstr "项目 (%s)"
 
 #, python-format
+msgid "Project ID not found: %(t_id)s"
+msgstr "找不到项目标识：%(t_id)s"
+
+msgid "Project field is required and cannot be empty."
+msgstr "项目字段是必填字段，不得为空。"
+
+#, python-format
 msgid "Project is disabled: %s"
 msgstr "项目已禁用：%s"
+
+msgid "Query string is not UTF-8 encoded"
+msgstr "查询字符串不是采用 UTF-8 编码"
 
 msgid "Redelegation allowed for delegated by trust only"
 msgstr "仅允许对“委派者”信任进行重新委派"
@@ -680,10 +725,6 @@ msgid ""
 "Requested redelegation depth of %(requested_count)d is greater than allowed "
 "%(max_count)d"
 msgstr "请求的重新委派深度 %(requested_count)d 超过允许的 %(max_count)d"
-
-#, python-format
-msgid "Role %s not found"
-msgstr "找不到角色 %s"
 
 msgid ""
 "Running keystone via eventlet is deprecated as of Kilo in favor of running "
@@ -729,6 +770,14 @@ msgstr ""
 "字符串长度过长.字符串'%(string)s' 的长度超过列限制 %(type)s(字符"
 "(%(length)d))."
 
+msgid ""
+"The 'expires_at' must not be before now. The server could not comply with "
+"the request since it is either malformed or otherwise incorrect. The client "
+"is assumed to be in error."
+msgstr ""
+"“expires_at”不得早于现在。服务器未能遵从请求，因为它的格式不正确，或者其他方"
+"面不正确。客户机被认为发生错误。"
+
 msgid "The --all option cannot be used with the --domain-name option"
 msgstr "--all 选项不能与 --domain-name 选项配合使用"
 
@@ -756,6 +805,12 @@ msgid ""
 "misconfiguration."
 msgstr ""
 "已请求的证书不可用。可能此服务器未使用 PKI 令牌，或者这是因为配置错误。"
+
+msgid "The configured token provider does not support bind authentication."
+msgstr "所配置的令牌提供者不支持绑定认证。"
+
+msgid "The creation of projects acting as domains is not allowed yet."
+msgstr "尚不允许创建充当域的项目。"
 
 #, python-format
 msgid ""
@@ -826,6 +881,9 @@ msgstr "令牌属于另一用户"
 msgid "Token does not belong to specified tenant."
 msgstr "令牌不属于指定的租户。"
 
+msgid "Token version is unrecognizable or unsupported."
+msgstr "令牌版本不可识别或者不受支持。"
+
 msgid "Trustee has no delegated roles."
 msgstr "托管人没有任何已委派的角色。"
 
@@ -872,11 +930,6 @@ msgstr "无法删除区域 %(region_id)s，因为它或它的子区域具有关�
 #, python-format
 msgid "Unable to find valid groups while using mapping %(mapping_id)s"
 msgstr "使用映射 %(mapping_id)s 时，找不到有效组"
-
-#, python-format
-msgid ""
-"Unable to get a connection from pool id %(id)s after %(seconds)s seconds."
-msgstr "在 %(seconds)s 秒之后，无法根据池标识 %(id)s 获取连接。"
 
 #, python-format
 msgid "Unable to locate domain config directory: %s"
@@ -935,6 +988,9 @@ msgstr "令牌版本 %s 未知"
 msgid "Unregistered dependency: %(name)s for %(targets)s"
 msgstr "已针对 %(targets)s 注销依赖关系 %(name)s"
 
+msgid "Update of `is_domain` is not allowed."
+msgstr "不允许更新“is_domain”。"
+
 msgid "Update of `parent_id` is not allowed."
 msgstr "不允许更新“parent_id”。"
 
@@ -944,10 +1000,6 @@ msgstr "当尝试创建 SAML 断言时，请使用项目范围的令牌"
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr "没有授权给用户%(u_id)s项目%(t_id)s的权限"
-
-#, python-format
-msgid "User %(user_id)s already has role %(role_id)s in tenant %(tenant_id)s"
-msgstr "在租户 %(tenant_id)s 中，用户 %(user_id)s 已具有角色 %(role_id)s"
 
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
@@ -968,6 +1020,13 @@ msgstr "在组“%(group_id)s”中找不到用户“%(user_id)s”"
 msgid "User IDs do not match"
 msgstr "用户ID不匹配"
 
+msgid ""
+"User auth cannot be built due to missing either user id, or user name with "
+"domain id, or user name with domain name."
+msgstr ""
+"由于缺少用户标识、具有域标识的用户名或者具有域名的用户名，因此无法构建用户认"
+"证。"
+
 #, python-format
 msgid "User is disabled: %s"
 msgstr "用户已禁用：%s"
@@ -980,6 +1039,9 @@ msgstr "用户不是受托人。"
 
 msgid "User not found"
 msgstr "找不到用户"
+
+msgid "User roles not supported: tenant_id required"
+msgstr "用户角色不受支持：需要 tenant_id"
 
 #, python-format
 msgid "User type %s not supported"
@@ -1084,3 +1146,9 @@ msgstr "tls_cacertfile %s 未找到或者不是一个文件"
 #, python-format
 msgid "token reference must be a KeystoneToken type, got: %s"
 msgstr "令牌引用必须为 KeystoneToken 类型，但收到：%s"
+
+#, python-format
+msgid ""
+"validated expected to find %(param_name)r in function signature for "
+"%(func_name)r."
+msgstr "已验证期望在 %(func_name)r 的函数特征符中查找 %(param_name)r。"
