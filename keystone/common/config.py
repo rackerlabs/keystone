@@ -1216,3 +1216,9 @@ def list_opts():
     :returns: a list of (group_name, opts) tuples
     """
     return list(FILE_OPTIONS.items())
+
+
+def update_opt_defaults():
+    """Update oslo.config defaults."""
+    # Oslo.cache is always enabled by default for request-local caching
+    cfg.set_defaults(name='enabled', default=True, group='cache')
