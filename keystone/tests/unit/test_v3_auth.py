@@ -3604,7 +3604,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
         with mock.patch.object(rules, 'enforce', return_value=True):
             headers = {'X-Subject-Token': self.last_token}
             self.head('/auth/tokens', headers=headers,
-                      expected_status=http_client.FORBIDDEN)
+                      expected_status=http_client.NOT_FOUND)
 
     def test_intermediate_user_deleted(self):
         self.assert_user_authenticate(self.user_list[0])
@@ -3615,7 +3615,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
         with mock.patch.object(rules, 'enforce', return_value=True):
             headers = {'X-Subject-Token': self.last_token}
             self.head('/auth/tokens', headers=headers,
-                      expected_status=http_client.FORBIDDEN)
+                      expected_status=http_client.NOT_FOUND)
 
 
 class TestTrustAuth(test_v3.RestfulTestCase):

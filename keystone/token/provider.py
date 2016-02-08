@@ -269,20 +269,26 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def _validate_token(self, token_id):
-        if not token_id:
-            raise exception.TokenNotFound(_('No token in the request'))
+        try:
+            if not token_id:
+                raise exception.TokenNotFound(_('No token in the request'))
 
-        if not self._needs_persistence:
-            # NOTE(lbragstad): This will validate v2 and v3 non-persistent
-            # tokens.
-            return self.driver.validate_non_persistent_token(token_id)
-        token_ref = self._persistence.get_token(token_id)
-        version = self.get_token_version(token_ref)
-        if version == self.V3:
-            return self.driver.validate_v3_token(token_ref)
-        elif version == self.V2:
-            return self.driver.validate_v2_token(token_ref)
-        raise exception.UnsupportedTokenVersionException()
+            if not self._needs_persistence:
+                # NOTE(lbragstad): This will validate v2 and v3 non-persistent
+                # tokens.
+                return self.driver.validate_non_persistent_token(token_id)
+            token_ref = self._persistence.get_token(token_id)
+            version = self.get_token_version(token_ref)
+            if version == self.V3:
+                return self.driver.validate_v3_token(token_ref)
+            elif version == self.V2:
+                return self.driver.validate_v2_token(token_ref)
+            raise exception.UnsupportedTokenVersionException()
+        except exception.Forbidden:
+            # FIXME(lbragstad): According to the API spec, keystone
+            # shouldn't be returning 401 for invalid tokens.
+            # See bug 1541621 for more details.
+            raise exception.TokenNotFound(token_id=token_id)
 
     @MEMOIZE
     def _validate_v2_token(self, token_id):

@@ -472,16 +472,16 @@ class V3TokenDataHelper(object):
         if token_data.get('project'):
             self._populate_is_admin_project(token_data)
         self._populate_user(token_data, user_id, trust)
-        self._populate_roles(token_data, user_id, domain_id, project_id, trust,
-                             access_token)
+        self._populate_roles(token_data, user_id, domain_id, project_id,
+                             trust, access_token)
         self._populate_audit_info(token_data, audit_info)
 
         if include_catalog:
             self._populate_service_catalog(token_data, user_id, domain_id,
                                            project_id, trust)
         self._populate_service_providers(token_data)
-        self._populate_token_dates(token_data, expires=expires, trust=trust,
-                                   issued_at=issued_at)
+        self._populate_token_dates(token_data, expires=expires,
+                                   trust=trust, issued_at=issued_at)
         self._populate_oauth_section(token_data, access_token)
         return {'token': token_data}
 
