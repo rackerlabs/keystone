@@ -45,6 +45,30 @@
       "revId": "9d3b676b1f17fb42fe92a421948ebaa597ba2d24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_39bad70b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-08T23:42:27Z",
+      "side": 1,
+      "message": "Good catch. I\u0027ll do a follow up patch to fix these.",
+      "parentUuid": "5a5ae5dd_f25b0c84",
+      "range": {
+        "startLine": 553,
+        "startChar": 42,
+        "endLine": 553,
+        "endChar": 50
+      },
+      "revId": "9d3b676b1f17fb42fe92a421948ebaa597ba2d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
