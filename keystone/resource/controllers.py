@@ -21,6 +21,7 @@ from oslo_config import cfg
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import v3_to_v2
 from keystone.common import validation
 from keystone.common import wsgi
 from keystone import exception
@@ -45,7 +46,7 @@ class Tenant(controller.V2Controller):
 
         tenant_refs = self.resource_api.list_projects_in_domain(
             CONF.identity.default_domain_id)
-        tenant_refs = [self.v3_to_v2_project(tenant_ref)
+        tenant_refs = [v3_to_v2.convert_project(tenant_ref)
                        for tenant_ref in tenant_refs
                        if not tenant_ref.get('is_domain')]
         params = {
@@ -67,14 +68,14 @@ class Tenant(controller.V2Controller):
         self.assert_admin(context)
         ref = self.resource_api.get_project(tenant_id)
         self._assert_not_is_domain_project(tenant_id, ref)
-        return {'tenant': self.v3_to_v2_project(ref)}
+        return {'tenant': v3_to_v2.convert_project(ref)}
 
     def _get_project_by_name(self, tenant_name):
         # Projects acting as a domain should not be visible via v2
         ref = self.resource_api.get_project_by_name(
             tenant_name, CONF.identity.default_domain_id)
         self._assert_not_is_domain_project(ref['id'], ref)
-        return {'tenant': self.v3_to_v2_project(ref)}
+        return {'tenant': v3_to_v2.convert_project(ref)}
 
     # CRUD Extension
     @controller.v2_deprecated
@@ -97,7 +98,7 @@ class Tenant(controller.V2Controller):
             tenant_ref['id'],
             self._normalize_domain_id(context, tenant_ref),
             initiator)
-        return {'tenant': self.v3_to_v2_project(tenant)}
+        return {'tenant': v3_to_v2.convert_project(tenant)}
 
     @controller.v2_deprecated
     def update_project(self, context, tenant_id, tenant):
@@ -111,7 +112,7 @@ class Tenant(controller.V2Controller):
         initiator = notifications._get_request_audit_info(context)
         tenant_ref = self.resource_api.update_project(
             tenant_id, clean_tenant, initiator)
-        return {'tenant': self.v3_to_v2_project(tenant_ref)}
+        return {'tenant': v3_to_v2.convert_project(tenant_ref)}
 
     @controller.v2_deprecated
     def delete_project(self, context, tenant_id):

@@ -17,6 +17,7 @@ from six.moves import http_client
 from six.moves import range
 
 from keystone.common import controller
+from keystone.common import v3_to_v2
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
@@ -1178,11 +1179,11 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
         ref_no_domain = {'other_data': other_data}
         expected_ref = ref_no_domain.copy()
 
-        updated_ref = controller.V2Controller.filter_domain_id(ref)
+        updated_ref = v3_to_v2.filter_domain_id(ref)
         self.assertIs(ref, updated_ref)
         self.assertDictEqual(expected_ref, ref)
         # Make sure we don't error/muck up data if domain_id isn't present
-        updated_ref = controller.V2Controller.filter_domain_id(ref_no_domain)
+        updated_ref = v3_to_v2.filter_domain_id(ref_no_domain)
         self.assertIs(ref_no_domain, updated_ref)
         self.assertDictEqual(expected_ref, ref_no_domain)
 
@@ -1205,11 +1206,11 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
                                   'other_data': other_data}
         default_domain_ref = {'domain': {'id': 'default'},
                               'other_data': other_data}
-        updated_ref = controller.V2Controller.filter_domain(default_domain_ref)
+        updated_ref = v3_to_v2.filter_domain(default_domain_ref)
         self.assertNotIn('domain', updated_ref)
         self.assertNotIn(
             'domain',
-            controller.V2Controller.filter_domain(non_default_domain_ref))
+            v3_to_v2.filter_domain(non_default_domain_ref))
 
     def test_v2controller_filter_project_parent_id(self):
         # V2.0 is not project hierarchy aware, ensure parent_id is popped off.
@@ -1221,11 +1222,11 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
         ref_no_parent = {'other_data': other_data}
         expected_ref = ref_no_parent.copy()
 
-        updated_ref = controller.V2Controller.filter_project_parent_id(ref)
+        updated_ref = v3_to_v2.filter_project_parent_id(ref)
         self.assertIs(ref, updated_ref)
         self.assertDictEqual(expected_ref, ref)
         # Make sure we don't error/muck up data if parent_id isn't present
-        updated_ref = controller.V2Controller.filter_project_parent_id(
+        updated_ref = v3_to_v2.filter_project_parent_id(
             ref_no_parent)
         self.assertIs(ref_no_parent, updated_ref)
         self.assertDictEqual(expected_ref, ref_no_parent)
@@ -1243,16 +1244,13 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
         del self.project3['enabled']
         del self.project3['description']
 
-        updated_project1 = controller.V2Controller.v3_to_v2_project(
-            self.project1)
+        updated_project1 = v3_to_v2.convert_project(self.project1)
         self.assertIs(self.project1, updated_project1)
         self.assertDictEqual(self.expected_project, self.project1)
-        updated_project2 = controller.V2Controller.v3_to_v2_project(
-            self.project2)
+        updated_project2 = v3_to_v2.convert_project(self.project2)
         self.assertIs(self.project2, updated_project2)
         self.assertDictEqual(self.expected_project, self.project2)
-        updated_project3 = controller.V2Controller.v3_to_v2_project(
-            self.project3)
+        updated_project3 = v3_to_v2.convert_project(self.project3)
         self.assertIs(self.project3, updated_project3)
         self.assertDictEqual(self.expected_project, self.project2)
 
@@ -1266,7 +1264,7 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
         for p in project_list:
             del p['enabled']
             del p['description']
-        updated_list = controller.V2Controller.v3_to_v2_project(project_list)
+        updated_list = v3_to_v2.convert_project(project_list)
 
         self.assertEqual(len(updated_list), len(project_list))
 
