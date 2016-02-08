@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_cb667bba",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-08T06:01:15Z",
+      "side": 1,
+      "message": "no longer",
+      "range": {
+        "startLine": 37,
+        "startChar": 25,
+        "endLine": 37,
+        "endChar": 33
+      },
+      "revId": "f4f36660ff68e201c63fd38fda1103f7ee1dac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
