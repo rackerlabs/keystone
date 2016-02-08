@@ -16,6 +16,24 @@
       "revId": "6cc55be199033d828aa34541d666caf7c2a8fd96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_dee857b5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-02-08T18:50:13Z",
+      "side": 1,
+      "message": "Morgan, the profiling is turned off by default by enabled\u003dFalse option... It would not trace anything by deaf;t, and tracing will require changing the config file and services restarting.",
+      "parentUuid": "5a5ae5dd_d9cd7e5e",
+      "revId": "6cc55be199033d828aa34541d666caf7c2a8fd96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
