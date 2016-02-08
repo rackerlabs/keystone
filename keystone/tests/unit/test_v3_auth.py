@@ -956,6 +956,36 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
         super(TestFernetTokenAPIs, self).setUp()
         self.doSetUp()
 
+    def test_remove_all_roles_from_scope_result_in_404(self):
+        # setup a new user for authentication
+        new_user = unit.create_user(self.identity_api,
+                                    domain_id=self.domain['id'])
+        path = '/projects/%s/users/%s/roles/%s' % (
+                self.project['id'], new_user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            user_id=new_user['id'],
+            password=new_user['password'],
+            project_id=self.project['id'])
+        resp = self.v3_create_token(auth_data)
+        subject_token_id = resp.headers.get('X-Subject-Token')
+        subject_token = resp.result
+
+        # make sure the project-scoped token is valid
+        headers = {'X-Subject-Token': subject_token_id}
+        r = self.get('/auth/tokens', headers=headers)
+        self.assertValidProjectScopedTokenResponse(r)
+
+        # remove the roles from the user for the given scope
+        path = '/projects/%s/users/%s/roles/%s' % (
+            self.project['id'], new_user['id'], self.role['id'])
+        self.delete(path=path)
+
+        # token validation should now result in 404
+        self.get('/auth/tokens', headers=headers,
+                 expected_status=http_client.NOT_FOUND)
+
 
 class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
     """Test token revoke using v3 Identity API by token owner and admin."""
