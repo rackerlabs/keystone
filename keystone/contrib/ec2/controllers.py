@@ -43,6 +43,7 @@ import six
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import v3_to_v2
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
@@ -275,7 +276,7 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
         # The token provider does not explicitly care about user_ref version
         # in this case, but the data is stored in the token itself and should
         # match the version
-        user_ref = self.v3_to_v2_user(user_ref)
+        user_ref = v3_to_v2.convert_user(user_ref)
         auth_token_data = dict(user=user_ref,
                                tenant=tenant_ref,
                                metadata=metadata_ref,

@@ -21,7 +21,7 @@ from oslo_config import cfg
 from six.moves import http_client
 from testtools import matchers
 
-from keystone.common import controller
+from keystone.common import v3_to_v2
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
@@ -605,24 +605,24 @@ class IdentityV3toV2MethodsTestCase(unit.TestCase):
                                            'name': user_id,
                                            'username': user_id}
 
-    def test_v3_to_v2_user_method(self):
+    def test_v3_to_v2_user_function(self):
 
-        updated_user1 = controller.V2Controller.v3_to_v2_user(self.user1)
+        updated_user1 = v3_to_v2.convert_user(self.user1)
         self.assertIs(self.user1, updated_user1)
         self.assertDictEqual(self.expected_user, self.user1)
-        updated_user2 = controller.V2Controller.v3_to_v2_user(self.user2)
+        updated_user2 = v3_to_v2.convert_user(self.user2)
         self.assertIs(self.user2, updated_user2)
         self.assertDictEqual(self.expected_user_no_tenant_id, self.user2)
-        updated_user3 = controller.V2Controller.v3_to_v2_user(self.user3)
+        updated_user3 = v3_to_v2.convert_user(self.user3)
         self.assertIs(self.user3, updated_user3)
         self.assertDictEqual(self.expected_user, self.user3)
-        updated_user4 = controller.V2Controller.v3_to_v2_user(self.user4)
+        updated_user4 = v3_to_v2.convert_user(self.user4)
         self.assertIs(self.user4, updated_user4)
         self.assertDictEqual(self.expected_user_no_tenant_id, self.user4)
 
-    def test_v3_to_v2_user_method_list(self):
+    def test_v3_to_v2_user_function_list(self):
         user_list = [self.user1, self.user2, self.user3, self.user4]
-        updated_list = controller.V2Controller.v3_to_v2_user(user_list)
+        updated_list = v3_to_v2.convert_user(user_list)
 
         self.assertEqual(len(user_list), len(updated_list))
 

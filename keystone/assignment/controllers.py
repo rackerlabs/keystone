@@ -26,6 +26,7 @@ from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import v3_to_v2
 from keystone.common import validation
 from keystone.common import wsgi
 from keystone import exception
@@ -55,7 +56,7 @@ class TenantAssignment(controller.V2Controller):
 
         tenant_refs = (
             self.assignment_api.list_projects_for_user(token_ref.user_id))
-        tenant_refs = [self.v3_to_v2_project(ref) for ref in tenant_refs
+        tenant_refs = [v3_to_v2.convert_project(ref) for ref in tenant_refs
                        if ref['domain_id'] == CONF.identity.default_domain_id]
         params = {
             'limit': context['query_string'].get('limit'),
@@ -78,7 +79,7 @@ class TenantAssignment(controller.V2Controller):
                 LOG.debug(message,
                           {'user_id': user_id, 'project_id': tenant_id})
             else:
-                user_refs.append(self.v3_to_v2_user(user_ref))
+                user_refs.append(v3_to_v2.convert_user(user_ref))
         return {'users': user_refs}
 
 
