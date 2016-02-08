@@ -28,12 +28,7 @@ _region_properties = {
     }
 }
 
-region_create = {
-    'type': 'object',
-    'properties': _region_properties,
-    'additionalProperties': True
-    # NOTE(lbragstad): No parameters are required for creating regions.
-}
+region_create = '#/definitions/catalog/operations/region_create'
 
 region_update = {
     'type': 'object',

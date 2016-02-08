@@ -1,0 +1,39 @@
+
+$schema: 'http://json-schema.org/schema#'
+id: http://openstack.org/schemas/identity-keystone.json
+title: Keystone Schema
+description: JSONSchema
+definitions:
+  types:
+    name:
+      type: string
+      minLength: 1
+      maxLength: 255
+  assignment:
+    operations:
+      role_create:
+        type: object
+        properties:
+          name:
+            $ref: '#/definitions/types/name'
+        required: [name]
+        additionalProperties: true
+      role_update:
+        type: object
+        properties:
+          name:
+            $ref: '#/definitions/types/name'
+        minProperties: 1
+  catalog:
+    operations:
+      region_create:
+        type: object
+        properties:
+          description:
+            type: [string, null]
+          id:
+            # NOTE(lbragstad): Regions use ID differently. The user can specify
+            # the ID or it will be generated automatically.
+            type: string
+          parent_region_id:
+            type: [string, null]

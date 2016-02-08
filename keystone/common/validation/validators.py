@@ -12,9 +12,13 @@
 """Internal implementation of request body validating middleware."""
 
 import jsonschema
+import yaml
 
 from keystone import exception
 from keystone.i18n import _
+
+
+SCHEMA = yaml.safe_load(open('schema.yaml'))
 
 
 class SchemaValidator(object):
@@ -31,11 +35,18 @@ class SchemaValidator(object):
         # would be handy if we needed to check for something the jsonschema
         # didn't by default. See the Nova V3 validator for details on how this
         # is done.
+
+        if isinstance(schema, str):
+            s = SCHEMA.copy()
+            s['$ref'] = schema
+        else:
+            s = schema
+
         validators = {}
         validator_cls = jsonschema.validators.extend(self.validator_org,
                                                      validators)
         fc = jsonschema.FormatChecker()
-        self.validator = validator_cls(schema, format_checker=fc)
+        self.validator = validator_cls(s, format_checker=fc)
 
     def validate(self, *args, **kwargs):
         try:

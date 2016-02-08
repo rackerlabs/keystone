@@ -10,23 +10,5 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.common.validation import parameter_types
-
-
-_role_properties = {
-    'name': parameter_types.name
-}
-
-role_create = {
-    'type': 'object',
-    'properties': _role_properties,
-    'required': ['name'],
-    'additionalProperties': True
-}
-
-role_update = {
-    'type': 'object',
-    'properties': _role_properties,
-    'minProperties': 1,
-    'additionalProperties': True
-}
+role_create = '#/definitions/assignment/operations/role_create'
+role_update = '#/definitions/assignment/operations/role_update'
