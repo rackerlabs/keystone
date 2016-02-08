@@ -316,6 +316,18 @@ class RequestHandlerMiddlewareTest(test_backend_sql.SqlTests,
         req = self._do_middleware_request(headers=headers)
         self.assertEqual({}, req.environ.get(middleware.PARAMS_ENV, {}))
 
+    def test_url_normalize_trailing_slash_normalization(self):
+        """Tests /v2.0/tokens and /v2.0/tokens/ normalized URLs match."""
+        req1 = self._do_middleware_request(path='/v2.0/tokens')
+        req2 = self._do_middleware_request(path='/v2.0/tokens/')
+        self.assertEqual(req1.path_url, req2.path_url)
+        self.assertEqual('http://localhost/v2.0/tokens', req1.path_url)
+
+    def test_url_normalize_rewrite_empty_path(self):
+        """Tests empty path is rewritten to root."""
+        req = self._do_middleware_request(path='')
+        self.assertEqual('http://localhost/', req.path_url)
+
     def test_context_already_exists(self):
         stub_value = uuid.uuid4().hex
         env = {authorization.AUTH_CONTEXT_ENV: stub_value}

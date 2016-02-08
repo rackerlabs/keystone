@@ -671,6 +671,7 @@ class _RequestHandler(Middleware, _AuthContextRequestHandler):
     def __init__(self, application):
         super(_RequestHandler, self).__init__(application)
         self._process_methods = [
+            self._process_request_for_url_normalization,
             self._process_request_for_auth_context,
             self._process_request_for_token_auth,
             self._process_request_for_json_body,
@@ -681,6 +682,16 @@ class _RequestHandler(Middleware, _AuthContextRequestHandler):
             response = meth(request)
             if response:
                 return response
+
+    def _process_request_for_url_normalization(self, request):
+        """Normalizes URLs."""
+        # Removes a trailing slash from the given path, if any.
+        if (len(request.environ['PATH_INFO']) > 1 and
+                request.environ['PATH_INFO'][-1] == '/'):
+            request.environ['PATH_INFO'] = request.environ['PATH_INFO'][:-1]
+        # Rewrites path to root if no path is given.
+        elif not request.environ['PATH_INFO']:
+            request.environ['PATH_INFO'] = '/'
 
     def _process_request_for_json_body(self, request):
         """Method to allow arguments to be passed as serialized JSON.

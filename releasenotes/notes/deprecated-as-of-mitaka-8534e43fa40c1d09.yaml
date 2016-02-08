@@ -49,3 +49,9 @@ deprecations:
     now always run for any request Keystone gets. It may safely be removed from the
     paste-ini file. The compatability stub will be removed from the keystone
     code base in the "O" release.
+      - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, the ``url_normalize`` middleware is deprecated as it is
+    now always run for any request Keystone gets. It may safely be removed from the
+    paste-ini file. The compatability stub will be removed from the keystone
+    code base in the "O" release.
