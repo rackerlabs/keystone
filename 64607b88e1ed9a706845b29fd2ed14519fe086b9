@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_19005265",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "stores",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_79f14694",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "extras / migration / attribute",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d93dda2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "s/on/on the/",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f981b6c3",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "(nit) add newline here",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_19d372d6",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "What happens if there is a large number of trusts?",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_b98c9eda",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "f?",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f46c5dd1",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-08T16:30:15Z",
+      "side": 1,
+      "message": "Should this be an id_string?",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
