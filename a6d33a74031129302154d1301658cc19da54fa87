@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a0da3615",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2587,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T10:27:08Z",
+      "side": 1,
+      "message": "nice",
+      "range": {
+        "startLine": 2587,
+        "startChar": 56,
+        "endLine": 2587,
+        "endChar": 59
+      },
+      "revId": "a6d33a74031129302154d1301658cc19da54fa87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_34768bd7",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2608,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T10:27:08Z",
+      "side": 1,
+      "message": "how do you know this, if no token is returned? does it raise an exception or just return empty?",
+      "range": {
+        "startLine": 2608,
+        "startChar": 10,
+        "endLine": 2608,
+        "endChar": 51
+      },
+      "revId": "a6d33a74031129302154d1301658cc19da54fa87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
