@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_4380108b",
+        "filename": "keystone/compat/aws/s3/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-08T18:36:36Z",
+      "side": 1,
+      "message": "See other comment. You are correct, but it\u0027s what we have done until now.",
+      "parentUuid": "5a5ae5dd_342e75fb",
+      "revId": "d6f6ec402c64f48bf18439b74038d898e68fb684",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_efac83a0",
         "filename": "keystone/version/service.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-08T17:25:30Z",
       "side": 1,
       "message": "the s3 code appears to be v2-specific (e.g. relying on the v2 version of the EC2 controller). So should this really be included here?",
+      "revId": "d6f6ec402c64f48bf18439b74038d898e68fb684",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a3aea42b",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-08T18:36:36Z",
+      "side": 1,
+      "message": "Replicating the code as it sits before correcting it. Correct, i\u0027ll have a fix down the chain to create a proper V3 router.",
+      "parentUuid": "5a5ae5dd_efac83a0",
       "revId": "d6f6ec402c64f48bf18439b74038d898e68fb684",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
