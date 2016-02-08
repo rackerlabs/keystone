@@ -25,6 +25,7 @@ import wsgiref.util
 from oslo_config import cfg
 import oslo_i18n
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslo_utils import strutils
@@ -578,6 +579,9 @@ class ExtensionRouter(Router):
     Expects to be subclassed.
     """
 
+    @versionutils.deprecated(as_of=versionutils.deprecated.MITAKA,
+                             what='Keystone Extensions',
+                             remove_in=+2)
     def __init__(self, application, mapper=None):
         if mapper is None:
             mapper = routes.Mapper()
