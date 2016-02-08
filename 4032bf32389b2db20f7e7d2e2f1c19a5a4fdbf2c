@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_4ea4b049",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2612,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T21:02:10Z",
+      "side": 1,
+      "message": "I think you mean \u0027token\u0027 here....",
+      "range": {
+        "startLine": 2612,
+        "startChar": 24,
+        "endLine": 2612,
+        "endChar": 29
+      },
+      "revId": "4032bf32389b2db20f7e7d2e2f1c19a5a4fdbf2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
