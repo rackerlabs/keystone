@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0e022fb5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1211,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-02-08T23:23:54Z",
+      "side": 1,
+      "message": "meh, looks ugly... any suggestions?",
+      "revId": "4605d6fcca45506ec9567d117312280b09cb88d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
