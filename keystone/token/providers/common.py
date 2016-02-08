@@ -18,9 +18,9 @@ from oslo_serialization import jsonutils
 import six
 from six.moves.urllib import parse
 
-from keystone.common import controller as common_controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import v3_to_v2
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.i18n import _, _LE
@@ -50,14 +50,13 @@ class V2TokenDataHelper(object):
             # v3 token_data does not contain all tenant attributes
             tenant = self.resource_api.get_project(
                 v3_token['project']['id'])
-            token['tenant'] = common_controller.V2Controller.filter_domain_id(
-                tenant)
+            token['tenant'] = v3_to_v2.filter_domain_id(tenant)
         token_data['token'] = token
 
         # Build v2 user
         v3_user = v3_token['user']
 
-        user = common_controller.V2Controller.v3_to_v2_user(v3_user)
+        user = v3_to_v2.convert_user(v3_user)
 
         # Maintain Trust Data
         if 'OS-TRUST:trust' in v3_token:
