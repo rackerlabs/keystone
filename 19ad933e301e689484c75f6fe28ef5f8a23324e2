@@ -16,6 +16,24 @@
       "revId": "19ad933e301e689484c75f6fe28ef5f8a23324e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_57a46906",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T10:31:47Z",
+      "side": 1,
+      "message": "So for the projects this test adds, we do (see lines 924-929 for example). Here, I\u0027m just making this test is resilient to whatever data that may be created by init of the rest case test methods (so if it changes, this test doesn\u0027t break)",
+      "parentUuid": "5a5ae5dd_56ec99f2",
+      "revId": "19ad933e301e689484c75f6fe28ef5f8a23324e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
