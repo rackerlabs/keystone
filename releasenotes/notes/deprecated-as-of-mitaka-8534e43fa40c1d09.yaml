@@ -31,3 +31,8 @@ deprecations:
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
     As of the Mitaka release, the use of ``admin_token_auth`` is deprecated in favor
     of using the ``keystone-manage bootstrap`` cli.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, the ``ExtensionRouter`` and ``V3ExtensionRouter`` are
+    deprecated. Keystone nolonger has extensions and all extensions in-tree have been
+    made to always be available.
