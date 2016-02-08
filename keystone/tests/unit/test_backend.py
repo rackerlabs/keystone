@@ -2767,6 +2767,48 @@ class IdentityTests(AssignmentTestHelperMixin):
                           self.resource_api.list_projects_in_subtree,
                           uuid.uuid4().hex)
 
+    def test_list_projects_in_subtree_large(self):
+        """Check project hierarchy is returned correctly in large tree.
+
+        With a large hierarchy we need to enforce the projects
+        are returned in the correct order (illustrated bellow).
+
+        Tree we will create::
+               +------p1------+
+               |              |
+            +---p3---+      +-p2-+
+            |        |      |    |
+            p7    +-p6-+   p5    p4
+            |     |    |
+            p10   p9   p8
+                  |
+                 p11
+        """
+        # create a hierarchy with 3 levels (p1, p2, p4)
+        p1, p2, p4 = self._create_projects_hierarchy(hierarchy_size=3)
+        # Add subproject (p5) to p2
+        p5 = self._create_projects_hierarchy(
+            hierarchy_size=1, parent_project_id=p2['id'])[0]
+        # Add subprojects (p3, p6, p8) to p1
+        p3, p6, p8 = self._create_projects_hierarchy(
+            hierarchy_size=3, parent_project_id=p1['id'])
+        # Add subprojects (p9, p11) to p6
+        p9, p11 = self._create_projects_hierarchy(
+            hierarchy_size=2, parent_project_id=p6['id'])
+        # Add subprojects (p7, p10) to p3
+        p7, p10 = self._create_projects_hierarchy(
+            hierarchy_size=2, parent_project_id=p3['id'])
+
+        expected_projects = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11]
+        # Append the parent to the subtree
+        prjs_hierarchy = ([p1] + self.resource_api.list_projects_in_subtree(
+                          p1['id']))
+        # Assert tree is returned with the correct number of
+        # projects and in the correct order
+        self.assertThat(prjs_hierarchy, matchers.HasLength(11))
+        for index, prj in enumerate(prjs_hierarchy):
+            self.assertDictEqual(prj, expected_projects[index])
+
     def test_list_project_parents(self):
         projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=3)
         project1 = projects_hierarchy[0]
