@@ -3,8 +3,8 @@ upgrade:
   - >
     The ``keystone-paste.ini`` file must be updated to remove middleware filters
     and their use in ``[pipeline:api_v3]``, ``[pipeline:api_public]``,
-    and ``[pipeline:api_admin]``. Remove ``[filter:admin_token_auth]``. See the
-    sample `keystone-paste.ini
+    and ``[pipeline:api_admin]``. Remove ``[filter:admin_token_auth]`` and
+    ``[filter:json_body]``. See the sample `keystone-paste.ini
     <https://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone-paste.ini>`_
     file for guidance.
 deprecations:
@@ -31,3 +31,9 @@ deprecations:
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
     As of the Mitaka release, the use of ``admin_token_auth`` is deprecated in favor
     of using the ``keystone-manage bootstrap`` cli.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, the ``json_body`` middleware is deprecated as it is
+    now always run for any request Keystone gets. It may safely be removed from the
+    paste-ini file. The compatability stub will be removed from the keystone
+    code base in the "O" release.

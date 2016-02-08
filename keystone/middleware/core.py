@@ -15,10 +15,8 @@
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
-from oslo_serialization import jsonutils
 
 from keystone.common import wsgi
-from keystone import exception
 from keystone.i18n import _
 
 
@@ -98,54 +96,15 @@ class PostParamsMiddleware(wsgi.Middleware):
 
 
 class JsonBodyMiddleware(wsgi.Middleware):
-    """Middleware to allow method arguments to be passed as serialized JSON.
-
-    Accepting arguments as JSON is useful for accepting data that may be more
-    complex than simple primitives.
-
-    Filters out the parameters `self`, `context` and anything beginning with
-    an underscore.
-
-    """
-
-    def process_request(self, request):
-        # Abort early if we don't have any work to do
-        params_json = request.body
-        if not params_json:
-            return
-
-        # Reject unrecognized content types. Empty string indicates
-        # the client did not explicitly set the header
-        if request.content_type not in ('application/json', ''):
-            e = exception.ValidationError(attribute='application/json',
-                                          target='Content-Type header')
-            return wsgi.render_exception(e, request=request)
-
-        params_parsed = {}
-        try:
-            params_parsed = jsonutils.loads(params_json)
-        except ValueError:
-            e = exception.ValidationError(attribute='valid JSON',
-                                          target='request body')
-            return wsgi.render_exception(e, request=request)
-        finally:
-            if not params_parsed:
-                params_parsed = {}
-
-        if not isinstance(params_parsed, dict):
-            e = exception.ValidationError(attribute='valid JSON object',
-                                          target='request body')
-            return wsgi.render_exception(e, request=request)
-
-        params = {}
-        for k, v in params_parsed.items():
-            if k in ('self', 'context'):
-                continue
-            if k.startswith('_'):
-                continue
-            params[k] = v
-
-        request.environ[PARAMS_ENV] = params
+    def __init__(self, application):
+        super(JsonBodyMiddleware, self).__init__(application)
+        msg = _("Remove json_body from the paste file, the "
+                "json_body middleware is now built into the main "
+                "request handler. Update the "
+                "[pipeline:admin_api], and "
+                "[pipeline:public_api] sections in keystone-paste.ini "
+                "accordingly, as it will be removed in the O release.")
+        versionutils.report_deprecated_feature(LOG, msg)
 
 
 class NormalizingFilter(wsgi.Middleware):

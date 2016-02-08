@@ -487,6 +487,69 @@ class Debug(Middleware):
             yield part
 
 
+@dependency.requires('token_provider_api')
+class _RequestHandler(Middleware):
+    """Middleware that handles required actions for every request.
+
+    This class encodes the AuthContext Building, JSON Body, and URL
+    normalization. Any/all functions that are required for every request should
+    be handled by the ``process_request`` method.
+
+    This middleware will be applied internally and is not expected to be
+    included in the paste-ini file.
+    """
+
+    def process_request(self, request):
+        return self._process_request_for_json_body(request)
+
+    def _process_request_for_json_body(self, request):
+        """Method to allow arguments to be passed as serialized JSON.
+
+        Accepting arguments as JSON is useful for accepting data that may be
+        more complex than simple primitives.
+
+        Filters out the parameters `self`, `context` and anything beginning
+        with an underscore.
+        """
+        # Abort early if we don't have any work to do
+        params_json = request.body
+        if not params_json:
+            return
+
+        # Reject unrecognized content types. Empty string indicates
+        # the client did not explicitly set the header
+        if request.content_type not in ('application/json', ''):
+            e = exception.ValidationError(attribute='application/json',
+                                          target='Content-Type header')
+            return render_exception(e, request=request)
+
+        params_parsed = {}
+        try:
+            params_parsed = jsonutils.loads(params_json)
+        except ValueError:
+            e = exception.ValidationError(attribute='valid JSON',
+                                          target='request body')
+            return render_exception(e, request=request)
+        finally:
+            if not params_parsed:
+                params_parsed = {}
+
+        if not isinstance(params_parsed, dict):
+            e = exception.ValidationError(attribute='valid JSON object',
+                                          target='request body')
+            return render_exception(e, request=request)
+
+        params = {}
+        for k, v in params_parsed.items():
+            if k in ('self', 'context'):
+                continue
+            if k.startswith('_'):
+                continue
+            params[k] = v
+
+        request.environ[PARAMS_ENV] = params
+
+
 class Router(object):
     """WSGI middleware that maps incoming requests to WSGI apps."""
 

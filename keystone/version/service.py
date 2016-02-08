@@ -86,43 +86,49 @@ def warn_local_conf(f):
 @warn_local_conf
 def public_app_factory(global_conf, **local_conf):
     controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [assignment_routers.Public(),
-                                 token_routers.Router(),
-                                 ec2_routers.Ec2ExtensionV2(),
-                                 user_crud.Router(),
-                                 routers.VersionV2('public'),
-                                 routers.Extension(False)])
+    return wsgi._RequestHandler(
+        wsgi.ComposingRouter(routes.Mapper(),
+                             [assignment_routers.Public(),
+                              token_routers.Router(),
+                              ec2_routers.Ec2ExtensionV2(),
+                              user_crud.Router(),
+                              routers.VersionV2('public'),
+                              routers.Extension(False)]))
 
 
 @fail_gracefully
 @warn_local_conf
 def admin_app_factory(global_conf, **local_conf):
     controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [identity_routers.Admin(),
-                                 assignment_routers.Admin(),
-                                 token_routers.Router(),
-                                 resource_routers.Admin(),
-                                 admin_crud.Router(),
-                                 ec2_routers.Ec2ExtensionV2(),
-                                 s3_routers.Routers(),
-                                 routers.VersionV2('admin'),
-                                 routers.Extension()])
+    return wsgi._RequestHandler(
+        wsgi.ComposingRouter(routes.Mapper(),
+                             [identity_routers.Admin(),
+                              assignment_routers.Admin(),
+                              token_routers.Router(),
+                              resource_routers.Admin(),
+                              admin_crud.Router(),
+                              ec2_routers.Ec2ExtensionV2(),
+                              s3_routers.Routers(),
+                              routers.VersionV2('admin'),
+                              routers.Extension()]))
 
 
 @fail_gracefully
 @warn_local_conf
 def public_version_app_factory(global_conf, **local_conf):
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('public')])
+    return wsgi._RequestHandler(
+        wsgi.ComposingRouter(
+            routes.Mapper(),
+            [routers.Versions('public')]))
 
 
 @fail_gracefully
 @warn_local_conf
 def admin_version_app_factory(global_conf, **local_conf):
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('admin')])
+    return wsgi._RequestHandler(
+        wsgi.ComposingRouter(
+            routes.Mapper(),
+            [routers.Versions('admin')]))
 
 
 @fail_gracefully
@@ -165,4 +171,4 @@ def v3_app_factory(global_conf, **local_conf):
 
     # Add in the v3 version api
     sub_routers.append(routers.VersionV3('public', _routers))
-    return wsgi.ComposingRouter(mapper, sub_routers)
+    return wsgi._RequestHandler(wsgi.ComposingRouter(mapper, sub_routers))
