@@ -182,7 +182,7 @@ class TokenAPITests(object):
             method='GET',
             path='/v2.0/tokens/%s' % v3_token,
             token=self.get_admin_token(),
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=http_client.NOT_FOUND)
 
     def test_v3_v2_intermix_non_default_project_succeed(self):
         # self.project is in a non-default domain
@@ -231,7 +231,7 @@ class TokenAPITests(object):
             path='/v2.0/tokens/%s' % v3_token,
             token=self.get_admin_token(),
             method='GET',
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=http_client.NOT_FOUND)
 
     def test_v3_v2_unscoped_token_intermix(self):
         r = self.v3_create_token(self.build_authentication_request(
@@ -955,6 +955,35 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
     def setUp(self):
         super(TestFernetTokenAPIs, self).setUp()
         self.doSetUp()
+
+    def test_remove_all_roles_from_scope_result_in_404(self):
+        # setup a new user for authentication
+        new_user = unit.create_user(self.identity_api,
+                                    domain_id=self.domain['id'])
+        path = '/projects/%s/users/%s/roles/%s' % (
+            self.project['id'], new_user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            user_id=new_user['id'],
+            password=new_user['password'],
+            project_id=self.project['id'])
+        resp = self.v3_create_token(auth_data)
+        subject_token_id = resp.headers.get('X-Subject-Token')
+
+        # make sure the project-scoped token is valid
+        headers = {'X-Subject-Token': subject_token_id}
+        r = self.get('/auth/tokens', headers=headers)
+        self.assertValidProjectScopedTokenResponse(r)
+
+        # remove the roles from the user for the given scope
+        path = '/projects/%s/users/%s/roles/%s' % (
+            self.project['id'], new_user['id'], self.role['id'])
+        self.delete(path=path)
+
+        # token validation should now result in 404
+        self.get('/auth/tokens', headers=headers,
+                 expected_status=http_client.NOT_FOUND)
 
 
 class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
@@ -4586,11 +4615,11 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase):
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
 
-    def test_v2_validate_domain_scoped_token_returns_unauthorized(self):
+    def test_v2_validate_domain_scoped_token_returns_not_found(self):
         """Test raised exception when validating a domain scoped token.
 
         Test that validating an domain scoped token in v2.0
-        returns unauthorized.
+        returns token not found.
         """
         # Grant user access to domain
         self.assignment_api.create_grant(self.role['id'],
@@ -4598,7 +4627,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase):
                                          domain_id=self.domain['id'])
 
         scoped_token = self._get_domain_scoped_token()
-        self.assertRaises(exception.Unauthorized,
+        self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_v2_token,
                           scoped_token)
 
@@ -4606,11 +4635,11 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase):
         """Test raised exception when validating a trust scoped token.
 
         Test that validating an trust scoped token in v2.0 returns
-        unauthorized.
+        token not found.
         """
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
-        self.assertRaises(exception.Unauthorized,
+        self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_v2_token,
                           trust_scoped_token)
 

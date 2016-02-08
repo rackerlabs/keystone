@@ -2413,7 +2413,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         """
         r = self._issue_unscoped_token()
         token_id = r.headers.get('X-Subject-Token')
-        self.assertRaises(exception.Unauthorized,
+        self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_v2_token,
                           token_id=token_id)
 

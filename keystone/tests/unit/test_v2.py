@@ -1014,7 +1014,8 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
     def assertNoRoles(self, r):
         self.assertEqual([], r['roles'])
 
-    def assertValidErrorResponse(self, r):
+    def assertValidErrorResponse(self, r,
+                                 expected_status=http_client.BAD_REQUEST):
         self.assertIsNotNone(r.result.get('error'))
         self.assertValidError(r.result['error'])
         self.assertEqual(r.result['error']['code'], r.status_code)
@@ -1560,3 +1561,31 @@ class TestFernetTokenProviderV2(RestfulTestCase):
         rescoped_expiration = resp.result['access']['token']['expires']
         self.assertNotEqual(original_token, rescoped_token)
         self.assertEqual(original_expiration, rescoped_expiration)
+
+    def test_remove_roles_from_scope_result_in_404(self):
+        project_ref = self.new_project_ref()
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        self.assignment_api.add_role_to_user_and_project(
+            self.user_foo['id'], project_ref['id'], self.role_member['id'])
+        subject_token = self.get_scoped_token(tenant_id=project_ref['id'])
+
+        # make sure we have a good scoped token
+        path = ('/v2.0/tokens/%s?belongsTo=%s' % (subject_token,
+                project_ref['id']))
+        self.admin_request(
+            method='GET',
+            path=path,
+            token=self.get_admin_token(),
+            expected_status=http_client.OK)
+
+        # now remove the role from the scope
+        self.assignment_api.remove_role_from_user_and_project(
+            self.user_foo['id'], project_ref['id'], self.role_member['id'])
+
+        # we should be getting a 404 since user no longer have any role on
+        # the scope
+        self.admin_request(
+            method='GET',
+            path=path,
+            token=self.get_admin_token(),
+            expected_status=http_client.NOT_FOUND)

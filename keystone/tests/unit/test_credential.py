@@ -62,7 +62,8 @@ class V2CredentialEc2TestCase(rest.RestfulTestCase):
                             path=path,
                             expected_status=http_client.UNAUTHORIZED)
 
-    def assertValidErrorResponse(self, r):
+    def assertValidErrorResponse(self, r,
+                                 expected_status=http_client.BAD_REQUEST):
         # FIXME(wwwjfy): it's copied from test_v3.py. The logic of this method
         # in test_v2.py and test_v3.py (both are inherited from rest.py) has no
         # difference, so they should be refactored into one place. Also, the
