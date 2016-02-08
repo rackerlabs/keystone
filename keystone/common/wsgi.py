@@ -52,6 +52,12 @@ CONTEXT_ENV = 'openstack.context'
 # Environment variable used to pass the request params
 PARAMS_ENV = 'openstack.params'
 
+# Header used to transmit the auth token
+AUTH_TOKEN_HEADER = 'X-Auth-Token'
+
+# Header used to transmit the subject token
+SUBJECT_TOKEN_HEADER = 'X-Subject-Token'
+
 JSON_ENCODE_CONTENT_TYPES = set(['application/json',
                                  'application/json-home'])
 
@@ -499,8 +505,18 @@ class _RequestHandler(Middleware):
     included in the paste-ini file.
     """
 
+    def __init__(self, application):
+        super(_RequestHandler, self).__init__(application)
+        self._process_methods = [
+            self._process_request_for_token_auth,
+            self._process_request_for_json_body,
+        ]
+
     def process_request(self, request):
-        return self._process_request_for_json_body(request)
+        for meth in self._process_methods:
+            response = meth(request)
+            if response:
+                return response
 
     def _process_request_for_json_body(self, request):
         """Method to allow arguments to be passed as serialized JSON.
@@ -548,6 +564,14 @@ class _RequestHandler(Middleware):
             params[k] = v
 
         request.environ[PARAMS_ENV] = params
+
+    def _process_request_for_token_auth(self, request):
+        token = request.headers.get(AUTH_TOKEN_HEADER)
+        context = request.environ.get(CONTEXT_ENV, {})
+        context['token_id'] = token
+        if SUBJECT_TOKEN_HEADER in request.headers:
+            context['subject_token_id'] = request.headers[SUBJECT_TOKEN_HEADER]
+        request.environ[CONTEXT_ENV] = context
 
 
 class Router(object):

@@ -24,11 +24,11 @@ CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Header used to transmit the auth token
-AUTH_TOKEN_HEADER = 'X-Auth-Token'
+AUTH_TOKEN_HEADER = wsgi.AUTH_TOKEN_HEADER
 
 
 # Header used to transmit the subject token
-SUBJECT_TOKEN_HEADER = 'X-Subject-Token'
+SUBJECT_TOKEN_HEADER = wsgi.SUBJECT_TOKEN_HEADER
 
 
 # Environment variable used to pass the request context
@@ -40,13 +40,15 @@ PARAMS_ENV = wsgi.PARAMS_ENV
 
 
 class TokenAuthMiddleware(wsgi.Middleware):
-    def process_request(self, request):
-        token = request.headers.get(AUTH_TOKEN_HEADER)
-        context = request.environ.get(CONTEXT_ENV, {})
-        context['token_id'] = token
-        if SUBJECT_TOKEN_HEADER in request.headers:
-            context['subject_token_id'] = request.headers[SUBJECT_TOKEN_HEADER]
-        request.environ[CONTEXT_ENV] = context
+    def __init__(self, application):
+        super(TokenAuthMiddleware, self).__init__(application)
+        msg = _("Remove token_auth from the paste file, the "
+                "token_auth middleware is now built into the main "
+                "request handler. Update the "
+                "[pipeline:admin_api], and "
+                "[pipeline:public_api] sections in keystone-paste.ini "
+                "accordingly, as it will be removed in the O release.")
+        versionutils.report_deprecated_feature(LOG, msg)
 
 
 class AdminTokenAuthMiddleware(wsgi.Middleware):

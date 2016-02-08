@@ -100,17 +100,6 @@ class MiddlewareRequestTestBase(unit.TestCase):
         return self._do_middleware_response(*args, **kwargs).request
 
 
-class TokenAuthMiddlewareTest(MiddlewareRequestTestBase):
-
-    MIDDLEWARE_CLASS = middleware.TokenAuthMiddleware
-
-    def test_request(self):
-        headers = {middleware.AUTH_TOKEN_HEADER: 'MAGIC'}
-        req = self._do_middleware_request(headers=headers)
-        context = req.environ[middleware.CONTEXT_ENV]
-        self.assertEqual('MAGIC', context['token_id'])
-
-
 class AdminTokenAuthMiddlewareTest(MiddlewareRequestTestBase):
 
     MIDDLEWARE_CLASS = middleware.AdminTokenAuthMiddleware
@@ -138,6 +127,12 @@ class PostParamsMiddlewareTest(MiddlewareRequestTestBase):
 class RequestHandlerMiddlewareTest(MiddlewareRequestTestBase):
 
     MIDDLEWARE_CLASS = wsgi._RequestHandler
+
+    def test_request_token_handler(self):
+        headers = {middleware.AUTH_TOKEN_HEADER: 'MAGIC'}
+        req = self._do_middleware_request(headers=headers)
+        context = req.environ[middleware.CONTEXT_ENV]
+        self.assertEqual('MAGIC', context['token_id'])
 
     def test_json_body_request_with_params(self):
         headers = {'Content-Type': 'application/json'}
