@@ -1,0 +1,9 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Dave Walker <email@daviey.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 08 Feb 2016 23:33:21 +0000
+Reviewed-on: https://review.openstack.org/225373
+Project: openstack/keystone
+Branch: refs/heads/stable/kilo
