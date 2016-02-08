@@ -124,70 +124,13 @@ class PostParamsMiddlewareTest(MiddlewareRequestTestBase):
         self.assertEqual({"arg1": "one"}, req.environ[middleware.PARAMS_ENV])
 
 
-class RequestHandlerMiddlewareTest(MiddlewareRequestTestBase):
+class RequestHandlerMiddlewareTest(test_backend_sql.SqlTests,
+                                   MiddlewareRequestTestBase):
 
     MIDDLEWARE_CLASS = wsgi._RequestHandler
 
-    def test_request_token_handler(self):
-        headers = {middleware.AUTH_TOKEN_HEADER: 'MAGIC'}
-        req = self._do_middleware_request(headers=headers)
-        context = req.environ[middleware.CONTEXT_ENV]
-        self.assertEqual('MAGIC', context['token_id'])
-
-    def test_json_body_request_with_params(self):
-        headers = {'Content-Type': 'application/json'}
-        params = '{"arg1": "one", "arg2": ["a"]}'
-        req = self._do_middleware_request(params=params,
-                                          headers=headers,
-                                          method='post')
-        self.assertEqual({"arg1": "one", "arg2": ["a"]},
-                         req.environ[middleware.PARAMS_ENV])
-
-    def test_json_body_malformed_json(self):
-        headers = {'Content-Type': 'application/json'}
-        self._do_middleware_response(params='{"arg1": "on',
-                                     headers=headers,
-                                     method='post',
-                                     status=http_client.BAD_REQUEST)
-
-    def test_json_body_not_dict_body(self):
-        headers = {'Content-Type': 'application/json'}
-        resp = self._do_middleware_response(params='42',
-                                            headers=headers,
-                                            method='post',
-                                            status=http_client.BAD_REQUEST)
-
-        self.assertIn('valid JSON object', resp.json['error']['message'])
-
-    def test_json_body_no_content_type(self):
-        headers = {'Content-Type': ''}
-        params = '{"arg1": "one", "arg2": ["a"]}'
-        req = self._do_middleware_request(params=params,
-                                          headers=headers,
-                                          method='post')
-        self.assertEqual({"arg1": "one", "arg2": ["a"]},
-                         req.environ[middleware.PARAMS_ENV])
-
-    def test_json_body_unrecognized_content_type(self):
-        headers = {'Content-Type': 'text/plain'}
-        self._do_middleware_response(params='{"arg1": "one", "arg2": ["a"]}',
-                                     headers=headers,
-                                     method='post',
-                                     status=http_client.BAD_REQUEST)
-
-    def test_json_body_unrecognized_content_type_without_body(self):
-        headers = {'Content-Type': 'text/plain'}
-        req = self._do_middleware_request(headers=headers)
-        self.assertEqual({}, req.environ.get(middleware.PARAMS_ENV, {}))
-
-
-class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
-                                MiddlewareRequestTestBase):
-
-    MIDDLEWARE_CLASS = middleware.AuthContextMiddleware
-
     def setUp(self):
-        super(AuthContextMiddlewareTest, self).setUp()
+        super(RequestHandlerMiddlewareTest, self).setUp()
         self.client_issuer = uuid.uuid4().hex
         self.untrusted_client_issuer = uuid.uuid4().hex
         self.trusted_issuer = self.client_issuer
@@ -326,6 +269,52 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         else:
             context = middleware.AuthContextMiddleware('Tokenless_auth_test')
         return context
+
+    def test_json_body_request_with_params(self):
+        headers = {'Content-Type': 'application/json'}
+        params = '{"arg1": "one", "arg2": ["a"]}'
+        req = self._do_middleware_request(params=params,
+                                          headers=headers,
+                                          method='post')
+        self.assertEqual({"arg1": "one", "arg2": ["a"]},
+                         req.environ[middleware.PARAMS_ENV])
+
+    def test_json_body_malformed_json(self):
+        headers = {'Content-Type': 'application/json'}
+        self._do_middleware_response(params='{"arg1": "on',
+                                     headers=headers,
+                                     method='post',
+                                     status=http_client.BAD_REQUEST)
+
+    def test_json_body_not_dict_body(self):
+        headers = {'Content-Type': 'application/json'}
+        resp = self._do_middleware_response(params='42',
+                                            headers=headers,
+                                            method='post',
+                                            status=http_client.BAD_REQUEST)
+
+        self.assertIn('valid JSON object', resp.json['error']['message'])
+
+    def test_json_body_no_content_type(self):
+        headers = {'Content-Type': ''}
+        params = '{"arg1": "one", "arg2": ["a"]}'
+        req = self._do_middleware_request(params=params,
+                                          headers=headers,
+                                          method='post')
+        self.assertEqual({"arg1": "one", "arg2": ["a"]},
+                         req.environ[middleware.PARAMS_ENV])
+
+    def test_json_body_unrecognized_content_type(self):
+        headers = {'Content-Type': 'text/plain'}
+        self._do_middleware_response(params='{"arg1": "one", "arg2": ["a"]}',
+                                     headers=headers,
+                                     method='post',
+                                     status=http_client.BAD_REQUEST)
+
+    def test_json_body_unrecognized_content_type_without_body(self):
+        headers = {'Content-Type': 'text/plain'}
+        req = self._do_middleware_request(headers=headers)
+        self.assertEqual({}, req.environ.get(middleware.PARAMS_ENV, {}))
 
     def test_context_already_exists(self):
         stub_value = uuid.uuid4().hex

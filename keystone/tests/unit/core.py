@@ -46,12 +46,12 @@ from testtools import testcase
 from keystone.common import environment  # noqa
 environment.use_eventlet()
 
-from keystone import auth
 from keystone.common import config
 from keystone.common import dependency
 from keystone.common.kvs import core as kvs_core
 from keystone.common import sql
 from keystone import exception
+from keystone.models import auth_info as auth_info_model
 from keystone import notifications
 from keystone.policy.backends import rules
 from keystone.server import common
@@ -771,8 +771,8 @@ class TestCase(BaseTestCase):
         return service.loadapp(self._paste_config(config), name=name)
 
     def clear_auth_plugin_registry(self):
-        auth.controllers.AUTH_METHODS.clear()
-        auth.controllers.AUTH_PLUGINS_LOADED = False
+        auth_info_model.AUTH_METHODS.clear()
+        auth_info_model.AUTH_PLUGINS_LOADED = False
 
     def assertCloseEnoughForGovernmentWork(self, a, b, delta=3):
         """Asserts that two datetimes are nearly equal within a small delta.

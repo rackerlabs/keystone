@@ -32,6 +32,7 @@ from keystone import auth
 from keystone.common import utils
 from keystone.contrib.revoke import routers
 from keystone import exception
+from keystone.models import auth_info as auth_info_model
 from keystone.policy.backends import rules
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
@@ -50,7 +51,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
         auth_data = {'identity': {}}
         auth_data['identity']['token'] = {'id': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
+                          auth_info_model.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -59,7 +60,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
         auth_data['abc'] = {'test': 'test'}
         auth_data = {'identity': auth_data}
         self.assertRaises(exception.AuthMethodNotSupported,
-                          auth.controllers.AuthInfo.create,
+                          auth_info_model.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -67,7 +68,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
         auth_data = {'methods': ['password']}
         auth_data = {'identity': auth_data}
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
+                          auth_info_model.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -77,7 +78,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
             password='test',
             project_name='abc')['auth']
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
+                          auth_info_model.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -88,7 +89,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
             project_name='test',
             domain_name='test')['auth']
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
+                          auth_info_model.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -100,7 +101,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
         auth_data['identity']['methods'] = ['password', 'token',
                                             'password', 'password']
         context = None
-        auth_info = auth.controllers.AuthInfo.create(context, auth_data)
+        auth_info = auth_info_model.AuthInfo.create(context, auth_data)
         self.assertEqual(['password', 'token'],
                          auth_info.get_method_names())
 
@@ -109,7 +110,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
             user_id='test',
             password='test')['auth']
         context = None
-        auth_info = auth.controllers.AuthInfo.create(context, auth_data)
+        auth_info = auth_info_model.AuthInfo.create(context, auth_data)
 
         method_name = uuid.uuid4().hex
         self.assertRaises(exception.ValidationError,
@@ -2774,7 +2775,7 @@ class TestAuth(test_v3.RestfulTestCase):
         auth_data['identity']['methods'] = ["password", "external"]
         auth_data['identity']['external'] = {}
         api = auth.controllers.Auth()
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth_info_model.AuthInfo(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.assertRaises(exception.Unauthorized,
                           api.authenticate,

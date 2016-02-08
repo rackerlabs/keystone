@@ -383,7 +383,7 @@ class AuthTokenTests(OAuthFlowTests):
     def test_keystone_token_is_valid(self):
         self.test_oauth_flow()
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         r = self.get('/auth/tokens', headers=headers)
         self.assertValidTokenResponse(r, self.user)
 
@@ -415,7 +415,7 @@ class AuthTokenTests(OAuthFlowTests):
 
         # Check Keystone Token no longer exists
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         self.get('/auth/tokens', headers=headers,
                  expected_status=http_client.NOT_FOUND)
 
@@ -436,7 +436,7 @@ class AuthTokenTests(OAuthFlowTests):
 
         # Check Keystone Token no longer exists
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.NOT_FOUND)
 
@@ -445,7 +445,7 @@ class AuthTokenTests(OAuthFlowTests):
 
         # delegated keystone token exists
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         r = self.get('/auth/tokens', headers=headers)
         self.assertValidTokenResponse(r, self.user)
 
@@ -455,7 +455,7 @@ class AuthTokenTests(OAuthFlowTests):
             body={'user': user})
 
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         self.admin_request(path='/auth/tokens', headers=headers,
                            method='GET', expected_status=http_client.NOT_FOUND)
 
@@ -464,7 +464,7 @@ class AuthTokenTests(OAuthFlowTests):
 
         # delegated keystone token exists
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         r = self.get('/auth/tokens', headers=headers)
         self.assertValidTokenResponse(r, self.user)
 
@@ -472,7 +472,7 @@ class AuthTokenTests(OAuthFlowTests):
             'project_id': self.project_id})
 
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
+                   'X-Auth-Token': self.get_admin_token()}
         self.admin_request(path='/auth/tokens', headers=headers,
                            method='GET', expected_status=http_client.NOT_FOUND)
 

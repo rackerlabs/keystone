@@ -18,6 +18,7 @@ import mock
 
 from keystone import auth
 from keystone import exception
+from keystone.models import auth_info as auth_info_model
 from keystone.tests import unit
 
 
@@ -61,7 +62,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_data[method_name] = {'test': 'test'}
         auth_data = {'identity': auth_data}
         self.assertRaises(exception.AuthMethodNotSupported,
-                          auth.controllers.AuthInfo.create,
+                          auth_info_model.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -70,7 +71,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_data[METHOD_NAME] = {
             'test': 'test'}
         auth_data = {'identity': auth_data}
-        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
+        auth_info = auth_info_model.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         try:
             self.api.authenticate({'environment': {}}, auth_info, auth_context)
@@ -85,7 +86,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_data[METHOD_NAME] = {
             'response': EXPECTED_RESPONSE}
         auth_data = {'identity': auth_data}
-        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
+        auth_info = auth_info_model.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.api.authenticate({'environment': {}}, auth_info, auth_context)
         self.assertEqual(DEMO_USER_ID, auth_context['user_id'])
@@ -95,7 +96,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_data[METHOD_NAME] = {
             'response': uuid.uuid4().hex}
         auth_data = {'identity': auth_data}
-        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
+        auth_info = auth_info_model.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.assertRaises(exception.Unauthorized,
                           self.api.authenticate,
@@ -109,7 +110,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             methods=['external', 'external'])
         self.clear_auth_plugin_registry()
         auth.controllers.load_auth_methods()
-        self.assertIn('external', auth.controllers.AUTH_METHODS)
+        self.assertIn('external', auth_info_model.AUTH_METHODS)
 
 
 class TestAuthPluginDynamicOptions(TestAuthPlugin):
@@ -153,7 +154,7 @@ class TestMapped(unit.TestCase):
                     method_name: {'protocol': method_name},
                 }
             }
-            auth_info = auth.controllers.AuthInfo.create(context, auth_data)
+            auth_info = auth_info_model.AuthInfo.create(context, auth_data)
             auth_context = {'extras': {},
                             'method_names': [],
                             'user_id': uuid.uuid4().hex}
@@ -174,7 +175,7 @@ class TestMapped(unit.TestCase):
             # method name with payload
             auth_data[method_name] = {'protocol': method_name}
             auth_data = {'identity': auth_data}
-            auth_info = auth.controllers.AuthInfo.create(None, auth_data)
+            auth_info = auth_info_model.AuthInfo.create(None, auth_data)
             auth_context = {'extras': {},
                             'method_names': [],
                             'user_id': uuid.uuid4().hex}

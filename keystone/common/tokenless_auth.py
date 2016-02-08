@@ -18,12 +18,12 @@ import hashlib
 from oslo_config import cfg
 from oslo_log import log
 
-from keystone.auth import controllers
 from keystone.common import dependency
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.federation import utils
 from keystone.i18n import _
+from keystone.models import auth_info as auth_info_model
 
 
 CONF = cfg.CONF
@@ -92,7 +92,7 @@ class TokenlessAuthHelper(object):
         auth['scope'] = self._build_scope_info()
 
         # NOTE(chioleong): We'll let AuthInfo validate the scope for us
-        auth_info = controllers.AuthInfo.create({}, auth, scope_only=True)
+        auth_info = auth_info_model.AuthInfo.create({}, auth, scope_only=True)
         return auth_info.get_scope()
 
     def get_mapped_user(self, project_id=None, domain_id=None):

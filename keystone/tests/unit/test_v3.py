@@ -22,12 +22,13 @@ from six.moves import http_client
 from testtools import matchers
 import webtest
 
-from keystone import auth
 from keystone.common import authorization
 from keystone.common import cache
 from keystone.common.validation import validators
+from keystone.common import wsgi
 from keystone import exception
 from keystone import middleware
+from keystone.models import auth_info as auth_info_model
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import rest
@@ -1296,7 +1297,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             auth_data = self.build_authentication_request(
                 kerberos=kerberos)['auth']
         no_context = None
-        auth_info = auth.controllers.AuthInfo.create(no_context, auth_data)
+        auth_info = auth_info_model.AuthInfo.create(no_context, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         return context, auth_info, auth_context
 
@@ -1323,7 +1324,7 @@ class AuthContextMiddlewareAdminTokenTestCase(RestfulTestCase):
             start_response('200 OK', headers)
             return [body]
 
-        app = webtest.TestApp(middleware.AuthContextMiddleware(application),
+        app = webtest.TestApp(wsgi._RequestHandler(application),
                               extra_environ=extra_environ)
         resp = app.get('/', headers={middleware.AUTH_TOKEN_HEADER: token})
         self.assertEqual('body', resp.text)  # just to make sure it worked
@@ -1337,9 +1338,9 @@ class AuthContextMiddlewareAdminTokenTestCase(RestfulTestCase):
         self.assertDictEqual({}, auth_context)
 
 
-# NOTE(gyee): test AuthContextMiddleware here instead of test_middleware.py
-# because we need the token
-class AuthContextMiddlewareTestCase(RestfulTestCase):
+# NOTE(gyee): test AuthContextMiddleware/RequestHandler here instead of
+# test_middleware.py because we need the token
+class RequestHandlerTestCase(RestfulTestCase):
 
     def _middleware_request(self, token, extra_environ=None):
 
@@ -1350,11 +1351,17 @@ class AuthContextMiddlewareTestCase(RestfulTestCase):
             start_response('200 OK', headers)
             return [body]
 
-        app = webtest.TestApp(middleware.AuthContextMiddleware(application),
+        app = webtest.TestApp(wsgi._RequestHandler(application),
                               extra_environ=extra_environ)
-        resp = app.get('/', headers={middleware.AUTH_TOKEN_HEADER: token})
+        resp = app.get('/', headers={wsgi.AUTH_TOKEN_HEADER: token})
         self.assertEqual('body', resp.text)  # just to make sure it worked
         return resp.request
+
+    def test_request_token_handler(self):
+        admin_token = self.get_scoped_token()
+        req = self._middleware_request(admin_token)
+        context = req.environ[middleware.CONTEXT_ENV]
+        self.assertEqual(admin_token, context['token_id'])
 
     def test_auth_context_build_by_middleware(self):
         # test to make sure AuthContextMiddleware successful build the auth
