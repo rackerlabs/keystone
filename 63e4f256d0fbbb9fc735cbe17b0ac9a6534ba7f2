@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_68cc20bb",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T11:38:47Z",
+      "side": 1,
+      "message": "nit: I think why (as others commented) this is confusing is because by choosing to keep the example extra attribute as displayName, a review thinks it is directly to do with this change. If it where mobileNumber of something else, this wouldn\u0027t be confusing",
+      "range": {
+        "startLine": 1365,
+        "startChar": 48,
+        "endLine": 1365,
+        "endChar": 59
+      },
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c89e7462",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T11:38:47Z",
+      "side": 1,
+      "message": "I\u0027d like to see a test that has the description in bot haha extra_attribute_mapping and explicitly in the new user)_description_attribute - to make sure such a duplicate setup is benign. The reason is that this will be the case if the admin sets up the new admin and forgets to remove the old one.",
+      "range": {
+        "startLine": 1401,
+        "startChar": 48,
+        "endLine": 1401,
+        "endChar": 71
+      },
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_28f868c2",
+        "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T11:38:47Z",
+      "side": 1,
+      "message": "Presumably, today, if people want to map a description, it will be in the extra_attribute_mapping? Maybe we should advise them that they can take it out of there now.",
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
