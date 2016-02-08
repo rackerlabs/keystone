@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_6d5af2f3",
+        "filename": "releasenotes/notes/extensions-to-core-a0d270d216d47276.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-08T11:17:23Z",
+      "side": 1,
+      "message": "So I still don\u0027t like this wording - since it implies I MUST do this to make the update work....which I don\u0027t think is true.  However, I agree this matches the wording of other extension removals....I\u0027ll raise a separate patch to tone down this wording",
+      "range": {
+        "startLine": 12,
+        "startChar": 31,
+        "endLine": 12,
+        "endChar": 51
+      },
+      "revId": "f75f7e872fc17ded3572fb8863987e1e1f2495a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
