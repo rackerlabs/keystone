@@ -20,6 +20,7 @@ from testtools import matchers
 
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -2649,3 +2650,37 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
         r = self.get('/roles?domain_id=%s' % self.domainA['id'])
         self.assertValidRoleListResponse(r, expected_length=1)
         self.assertRoleInListResponse(r, self.domainA_role2)
+
+    @utils.wip('This will fail because of bug #1543318.')
+    def test_trusts_from_implied_role(self):
+        self._create_three_roles()
+        self._create_implied_role(self.role_list[0], self.role_list[1])
+        self._create_implied_role(self.role_list[1], self.role_list[2])
+        self._assign_top_role_to_user_on_project(self.user, self.project)
+
+        # Create a trustee and assign the prior role to her
+        trustee = unit.create_user(self.identity_api, domain_id=self.domain_id)
+        ref = unit.new_trust_ref(
+            trustor_user_id=self.user['id'],
+            trustee_user_id=trustee['id'],
+            project_id=self.project['id'],
+            role_ids=[self.role_list[0]['id']])
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = r.result['trust']
+
+        # Only the role that was specified is in the trust, NOT implied roles
+        self.assertEqual(self.role_list[0]['id'], trust['roles'][0]['id'])
+        self.assertThat(trust['roles'], matchers.HasLength(1))
+
+        # Authenticate as the trustee
+        auth_data = self.build_authentication_request(
+            user_id=trustee['id'],
+            password=trustee['password'],
+            trust_id=trust['id'])
+        r = self.v3_create_token(auth_data)
+        token = r.result['token']
+
+        # FIXME(stevemar): See bug 1543318: Only one role appears in the
+        # token, it should have all the implied roles.
+        self.assertEqual(self.role_list[0]['id'], token['roles'][0]['id'])
+        self.assertThat(token['roles'], matchers.HasLength(1))
