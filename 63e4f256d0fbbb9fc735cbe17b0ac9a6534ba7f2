@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_792f143f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-08T12:37:31Z",
+      "side": 1,
+      "message": "Not sure if I understand your comment. The current test covers  the case where \u0027user_addtitonal_attribute_mapping \u003d description:description\u0027 and \u0027user_description_attribute \u003d description\u0027.\nSetting \u0027user_additional_attribute_mapping\u0027 to anything else will be ignored because of bug 1336769. \nSo I see no potential negative interference with the new user_description_attribute extension, even if set to a conflicting mapping since only user_description_attribute will be evaulated after LDAP get.\nFixing 1336769 (and the test) makes no sense, since LDAP write has been deprecated.\nDid I mis anything?",
+      "parentUuid": "5a5ae5dd_c89e7462",
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_28f868c2",
         "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
         "patchSetId": 7
@@ -59,6 +77,24 @@
       "writtenOn": "2016-02-08T11:38:47Z",
       "side": 1,
       "message": "Presumably, today, if people want to map a description, it will be in the extra_attribute_mapping? Maybe we should advise them that they can take it out of there now.",
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_fe7a0abc",
+        "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-08T12:37:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_28f868c2",
       "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
