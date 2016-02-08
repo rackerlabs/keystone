@@ -403,7 +403,7 @@ class AuthWithToken(AuthTest):
             })
         unscoped_token_id = r['access']['token']['id']
         self.assertRaises(
-            exception.Unauthorized,
+            exception.TokenNotFound,
             self.controller.validate_token,
             dict(is_admin=True, query_string={'belongsTo': 'BAR'}),
             token_id=unscoped_token_id)
@@ -418,13 +418,13 @@ class AuthWithToken(AuthTest):
         scoped_token_id = scoped_token['access']['token']['id']
 
         self.assertRaises(
-            exception.Unauthorized,
+            exception.TokenNotFound,
             self.controller.validate_token,
             dict(is_admin=True, query_string={'belongsTo': 'me'}),
             token_id=scoped_token_id)
 
         self.assertRaises(
-            exception.Unauthorized,
+            exception.TokenNotFound,
             self.controller.validate_token,
             dict(is_admin=True, query_string={'belongsTo': 'BAR'}),
             token_id=scoped_token_id)

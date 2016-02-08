@@ -191,7 +191,10 @@ class RestfulTestCase(unit.TestCase):
         # we can save some code & improve coverage by always doing this
         if (method != 'HEAD' and
                 response.status_code >= http_client.BAD_REQUEST):
-            self.assertValidErrorResponse(response)
+            expected_status = kwargs.get('expected_status',
+                                         http_client.BAD_REQUEST)
+            self.assertValidErrorResponse(response,
+                                          expected_status=expected_status)
 
         # Contains the decoded response.body
         return response

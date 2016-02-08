@@ -240,7 +240,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.post('/OS-TRUST/trusts', body={'trust': ref},
                   expected_status=http_client.NOT_FOUND)
 
-    def test_validate_trust_scoped_token_against_v2_returns_unauthorized(self):
+    def test_validate_trust_scoped_token_against_v2_returns_not_found(self):
         # create a new trust
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
@@ -266,7 +266,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
             path=path, token=self.get_admin_token(),
-            method='GET', expected_status=http_client.UNAUTHORIZED)
+            method='GET', expected_status=http_client.NOT_FOUND)
 
     def test_v3_v2_intermix_trustor_not_in_default_domain_failed(self):
         # get a project-scoped token
@@ -301,7 +301,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
             path=path, token=self.get_admin_token(),
-            method='GET', expected_status=http_client.UNAUTHORIZED)
+            method='GET', expected_status=http_client.NOT_FOUND)
 
     def test_v3_v2_intermix_project_not_in_default_domain_failed(self):
         # create a trustee in default domain to delegate stuff to
@@ -341,7 +341,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
             path=path, token=self.get_admin_token(),
-            method='GET', expected_status=http_client.UNAUTHORIZED)
+            method='GET', expected_status=http_client.NOT_FOUND)
 
     def test_exercise_trust_scoped_token_without_impersonation(self):
         # create a new trust

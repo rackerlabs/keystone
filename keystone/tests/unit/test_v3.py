@@ -553,7 +553,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         return self.v3_request(path, method='DELETE',
                                expected_status=expected_status, **kwargs)
 
-    def assertValidErrorResponse(self, r):
+    def assertValidErrorResponse(self, r,
+                                 expected_status=http_client.BAD_REQUEST):
         resp = r.result
         self.assertIsNotNone(resp.get('error'))
         self.assertIsNotNone(resp['error'].get('code'))
