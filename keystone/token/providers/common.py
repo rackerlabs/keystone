@@ -407,7 +407,11 @@ class V3TokenDataHelper(object):
                                 'user_id': user_id,
                                 'domain_id': token_domain_id}
                 LOG.debug(msg)
-                raise exception.Unauthorized(msg)
+                # FIXME(lbragstad): According to the API spec, keystone
+                # shouldn't be returning 401 for tokens that don't have roles.
+                # See bug 1541621 for more details.
+                # raise exception.Unauthorized(msg)
+                raise exception.NotFound()
 
             token_data['roles'] = filtered_roles
 
