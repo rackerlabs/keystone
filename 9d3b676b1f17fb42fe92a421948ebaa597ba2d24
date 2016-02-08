@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f25b0c84",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-08T17:32:14Z",
+      "side": 1,
+      "message": "specified",
+      "range": {
+        "startLine": 553,
+        "startChar": 42,
+        "endLine": 553,
+        "endChar": 50
+      },
+      "revId": "9d3b676b1f17fb42fe92a421948ebaa597ba2d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_32cd2431",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-08T17:32:14Z",
+      "side": 1,
+      "message": "LDAP",
+      "range": {
+        "startLine": 553,
+        "startChar": 25,
+        "endLine": 553,
+        "endChar": 29
+      },
+      "revId": "9d3b676b1f17fb42fe92a421948ebaa597ba2d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
