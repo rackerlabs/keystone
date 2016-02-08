@@ -34,6 +34,24 @@
       "revId": "5a96686abcd1f6dbf553a9ddf9bea5aa56600ebb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2fe37bda",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-02-08T17:11:36Z",
+      "side": 1,
+      "message": "Isn\u0027t expose headers means allow these headers to be returned?  Keystone never returns those headers.\n\nAlso X509 is for client certs. To invoke any operation via client certs, you need a client cert.  CORS is for cross domain and the request is originating from browser.Is the browser going to use client cert?  Or do you except the client cert to be  installed in the  browser?\n\nKeystone being a security service should not blindly open up everything by default.  It should be closed by default and  should be open for specific use case. I will be happy to remove my -1, if we can present a concrete use case on how this will be used with CORS.\n\nStill it didn\u0027t answer the question, how is this going to be help if keystone is configured to run under Apache?",
+      "parentUuid": "5a5ae5dd_0938323c",
+      "revId": "5a96686abcd1f6dbf553a9ddf9bea5aa56600ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
