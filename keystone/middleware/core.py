@@ -110,14 +110,12 @@ class JsonBodyMiddleware(wsgi.Middleware):
 
 
 class NormalizingFilter(wsgi.Middleware):
-    """Middleware filter to handle URL normalization."""
-
-    def process_request(self, request):
-        """Normalizes URLs."""
-        # Removes a trailing slash from the given path, if any.
-        if (len(request.environ['PATH_INFO']) > 1 and
-                request.environ['PATH_INFO'][-1] == '/'):
-            request.environ['PATH_INFO'] = request.environ['PATH_INFO'][:-1]
-        # Rewrites path to root if no path is given.
-        elif not request.environ['PATH_INFO']:
-            request.environ['PATH_INFO'] = '/'
+    def __init__(self, application):
+        super(NormalizingFilter, self).__init__(application)
+        msg = _("Remove url_normalize from the paste file, the "
+                "url_normalize middleware is now built into the main "
+                "request handler. Update the "
+                "[pipeline:admin_api], and "
+                "[pipeline:public_api] sections in keystone-paste.ini "
+                "accordingly, as it will be removed in the O release.")
+        versionutils.report_deprecated_feature(LOG, msg)
