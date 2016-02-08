@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_7656755d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2965,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-08T22:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_e7ac7137",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_4a4c6c76",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_9688d1c6",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3047,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-08T22:22:14Z",
+      "side": 1,
+      "message": "Yes, trusting the trustee user with the admin role. This verifies that the trustee has the ability to do admin calls now.",
+      "parentUuid": "7a5de9d1_ea6438e6",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_07118d5d",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_b66aadeb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3052,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-08T22:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_07118d5d",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_a702f909",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -81,6 +135,24 @@
       "writtenOn": "2016-02-02T22:13:31Z",
       "side": 1,
       "message": "nit: add a : after (jorge_munoz):",
+      "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_d66f29fa",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3071,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-08T22:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_a702f909",
       "revId": "bb9407f47ceeb6da923d5316a96609b58e4b0611",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
