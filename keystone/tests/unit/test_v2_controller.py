@@ -17,6 +17,7 @@ import copy
 import uuid
 
 from keystone.assignment import controllers as assignment_controllers
+from keystone.common import v3_to_v2
 from keystone import exception
 from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit
@@ -100,7 +101,7 @@ class TenantTestCase(unit.TestCase):
         project = unit.new_project_ref(domain_id='default',
                                        is_domain=True)
         project_ref = self.resource_api.create_project(project['id'], project)
-        return self.tenant_controller.v3_to_v2_project(project_ref)
+        return v3_to_v2.convert_project(project_ref)
 
     def test_get_is_domain_project_not_found(self):
         """Test that get project does not return is_domain projects."""

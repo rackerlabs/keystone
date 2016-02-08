@@ -19,6 +19,7 @@ from oslo_log import log
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import v3_to_v2
 from keystone.common import validation
 from keystone import exception
 from keystone.i18n import _, _LW
@@ -37,7 +38,7 @@ class User(controller.V2Controller):
     def get_user(self, context, user_id):
         self.assert_admin(context)
         ref = self.identity_api.get_user(user_id)
-        return {'user': self.v3_to_v2_user(ref)}
+        return {'user': v3_to_v2.convert_user(ref)}
 
     @controller.v2_deprecated
     def get_users(self, context):
@@ -50,20 +51,20 @@ class User(controller.V2Controller):
         self.assert_admin(context)
         user_list = self.identity_api.list_users(
             CONF.identity.default_domain_id)
-        return {'users': self.v3_to_v2_user(user_list)}
+        return {'users': v3_to_v2.convert_user(user_list)}
 
     @controller.v2_deprecated
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
         ref = self.identity_api.get_user_by_name(
             user_name, CONF.identity.default_domain_id)
-        return {'user': self.v3_to_v2_user(ref)}
+        return {'user': v3_to_v2.convert_user(ref)}
 
     # CRUD extension
     @controller.v2_deprecated
     def create_user(self, context, user):
         user = self._normalize_OSKSADM_password_on_request(user)
-        user = self.normalize_username_in_request(user)
+        user = v3_to_v2.normalize_username_in_request(user)
         user = self._normalize_dict(user)
         self.assert_admin(context)
 
@@ -83,7 +84,7 @@ class User(controller.V2Controller):
         # The manager layer will generate the unique ID for users
         user_ref = self._normalize_domain_id(context, user.copy())
         initiator = notifications._get_request_audit_info(context)
-        new_user_ref = self.v3_to_v2_user(
+        new_user_ref = v3_to_v2.convert_user(
             self.identity_api.create_user(user_ref, initiator))
 
         if default_project_id is not None:
@@ -94,7 +95,7 @@ class User(controller.V2Controller):
     @controller.v2_deprecated
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
-        user = self.normalize_username_in_request(user)
+        user = v3_to_v2.normalize_username_in_request(user)
         self.assert_admin(context)
 
         if 'enabled' in user and not isinstance(user['enabled'], bool):
@@ -105,7 +106,7 @@ class User(controller.V2Controller):
         if default_project_id is not None:
             user['default_project_id'] = default_project_id
 
-        old_user_ref = self.v3_to_v2_user(
+        old_user_ref = v3_to_v2.convert_user(
             self.identity_api.get_user(user_id))
 
         # Check whether a tenant is being added or changed for the user.
@@ -122,7 +123,7 @@ class User(controller.V2Controller):
             self.resource_api.get_project(default_project_id)
 
         initiator = notifications._get_request_audit_info(context)
-        user_ref = self.v3_to_v2_user(
+        user_ref = v3_to_v2.convert_user(
             self.identity_api.update_user(user_id, user, initiator))
 
         # If 'tenantId' is in either ref, we might need to add or remove the
