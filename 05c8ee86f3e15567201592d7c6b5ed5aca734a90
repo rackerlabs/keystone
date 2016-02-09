@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_75ba6fc2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-09T14:08:47Z",
+      "side": 1,
+      "message": "Ahh i didn\u0027t see it on L380 (and i commented a line above it lol).  Thanks steve. That makes sense that you are passing in the action of `delete`.",
+      "parentUuid": "5a5ae5dd_1c049bc4",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_a24a7024",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
