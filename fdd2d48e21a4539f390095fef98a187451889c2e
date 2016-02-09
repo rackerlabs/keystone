@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_e838d53f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_effc5874",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_4fcb2c1f",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-02T16:53:26Z",
       "side": 1,
       "message": "You don\u0027t do any of this to enable SSL when running keystone under apache / uwsgi / whatever. Apache on a distro typically provides a default certificate that you override for which there\u0027s already plenty of docs.\n\nThis section now describes how to generate a certificate using keystone-manage ssl_setup , which is useless without eventlet support.",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_68738516",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "i think we can clean this up in another patch, once we decide the fate of the ssl_setup command",
+      "parentUuid": "7a5de9d1_4fcb2c1f",
       "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_681ce5c1",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 19
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "i\u0027ll revert this change",
+      "parentUuid": "7a5de9d1_ef10d85b",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_ea1e865e",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 19
@@ -81,6 +135,24 @@
       "writtenOn": "2016-02-02T16:53:26Z",
       "side": 1,
       "message": "removing compute_port is not backwards compatible.",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_88da81e8",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "i undid this change",
+      "parentUuid": "7a5de9d1_ea1e865e",
       "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_6854e520",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_2a36deb4",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_6a75b630",
         "filename": "keystone/tests/unit/catalog/test_core.py",
         "patchSetId": 19
@@ -115,6 +205,24 @@
       "writtenOn": "2016-02-02T16:53:26Z",
       "side": 1,
       "message": "having to change the test is showing that this patch isn\u0027t backwards-compatible.",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_bc122257",
+        "filename": "keystone/tests/unit/catalog/test_core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "reverted",
+      "parentUuid": "7a5de9d1_6a75b630",
       "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -144,6 +252,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_3c81524e",
+        "filename": "releasenotes/notes/eventlet-removal-50e168e35cad83a0.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_aa25ee0a",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 45
+      },
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_0ad522b8",
         "filename": "tox.ini",
         "patchSetId": 19
@@ -155,6 +287,24 @@
       "writtenOn": "2016-02-02T16:53:26Z",
       "side": 1,
       "message": "no need to add these since the directory is already included below.",
+      "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9c8c0681",
+        "filename": "tox.ini",
+        "patchSetId": 19
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T08:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_0ad522b8",
       "revId": "fdd2d48e21a4539f390095fef98a187451889c2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
