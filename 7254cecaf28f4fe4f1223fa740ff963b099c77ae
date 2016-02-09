@@ -93,6 +93,30 @@
       "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_585bed2e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-09T12:47:31Z",
+      "side": 1,
+      "message": "What I meant is that this whole method should be in identity/core.py not in assignment/core.py",
+      "parentUuid": "5a5ae5dd_f2767ad7",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 52
+      },
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
