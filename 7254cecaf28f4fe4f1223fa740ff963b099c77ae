@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a5ae5dd_e869a226",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:31:07Z",
+      "side": 1,
+      "message": "I\u0027d suggest using explicit variables that are more descriptive of what we need from the payload dictionary: \n\n    def remove_project_from_user(self, user_id, project_id):\n\nThe variable name `payload` is ambiguous.",
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_fcc89aaa",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -114,6 +131,41 @@
         "endLine": 237,
         "endChar": 52
       },
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c83e2629",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:31:07Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a5ae5dd_585bed2e",
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_68cb721f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:31:07Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to build a special payload just for this. I think passing the user_id and project_id to remove_project_from_user() is fine.",
       "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
