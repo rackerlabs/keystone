@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_16e8fc15",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T04:32:42Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a5ae5dd_d137334b",
+      "range": {
+        "startLine": 172,
+        "startChar": 39,
+        "endLine": 172,
+        "endChar": 51
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_16c6bc16",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T04:32:42Z",
+      "side": 1,
+      "message": "you can also mention that project IDs that are not found, then no exception is raised, but rather logged.\n\n\"If a project ID in the list of project_ids is not found in the backend, no exception is raised, but a message is logged.\"",
+      "range": {
+        "startLine": 989,
+        "startChar": 8,
+        "endLine": 991,
+        "endChar": 35
+      },
+      "revId": "bb869f1e274f9d952dcc268b8ab3b913a3e31aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_f1134fb6",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 24
