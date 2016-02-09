@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_741cd613",
+        "filename": "doc/source/sample_config.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T00:09:00Z",
+      "side": 1,
+      "message": "not sure why this link isn\u0027t loading, it works for nova (http://docs.openstack.org/developer/nova/_static/nova.conf.sample) i think it depends on actually being on the real docs server",
+      "range": {
+        "startLine": 10,
+        "startChar": 47,
+        "endLine": 10,
+        "endChar": 91
+      },
+      "revId": "15668ded095f9dcee85ffcd228d6ad7fb27d9d38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
