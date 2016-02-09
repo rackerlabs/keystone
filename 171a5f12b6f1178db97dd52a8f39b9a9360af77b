@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_93d086cb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3319,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-09T18:58:19Z",
+      "side": 1,
+      "message": "trustor_user_id\u003dself.user_id if you want to redelegate initial trust",
+      "revId": "171a5f12b6f1178db97dd52a8f39b9a9360af77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
