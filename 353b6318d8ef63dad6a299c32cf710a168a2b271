@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_bcf46787",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:18:15Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a68dd71_3b8706d9",
+      "range": {
+        "startLine": 40,
+        "startChar": 92,
+        "endLine": 40,
+        "endChar": 99
+      },
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_f6ce6559",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 11
@@ -120,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_9c25eb0b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:18:15Z",
+      "side": 1,
+      "message": "lance, it\u0027s not a straight copy/paste, it has different arguments",
+      "parentUuid": "9a68dd71_e05bd1f4",
+      "range": {
+        "startLine": 314,
+        "startChar": 4,
+        "endLine": 319,
+        "endChar": 61
+      },
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_11f200d3",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 11
@@ -131,6 +179,24 @@
       "writtenOn": "2016-01-28T17:12:44Z",
       "side": 1,
       "message": "Just use the ProjectV3 controller being created at L93, do not create another instance to only route this operation",
+      "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1c781bf8",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:18:15Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a5de9d1_11f200d3",
       "revId": "353b6318d8ef63dad6a299c32cf710a168a2b271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
