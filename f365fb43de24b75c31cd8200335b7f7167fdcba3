@@ -25,6 +25,40 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_7dd032f8",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T03:07:21Z",
+      "side": 1,
+      "message": "Is the logger needed?",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_dd8606db",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T03:07:21Z",
+      "side": 1,
+      "message": "You don\u0027t want a continue here, you likely want a break, it is expensive to try every credential even if the first one passes.",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_67af412c",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 3
@@ -42,6 +76,47 @@
         "endLine": 56,
         "endChar": 33
       },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_5dee96b5",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T03:07:21Z",
+      "side": 1,
+      "message": "Please comment why you\u0027re passing on any/all exceptions.\n\nSuggest if LOG is to be used, add a debug line here? or maybe TRACE level.",
+      "parentUuid": "5a5ae5dd_67af412c",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 33
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_5d4536b1",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T03:07:21Z",
+      "side": 1,
+      "message": "Why raise an assertion error just to catch it a few lines down? Just raise Unauthorized",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +157,30 @@
       "writtenOn": "2016-02-09T02:30:40Z",
       "side": 1,
       "message": "so, same comment as previous patch set; we\u0027ll be maintaining this code, and this is doing very specific non-obvious operations. I would have no idea how to begin to debug this if a new bug came up.\n\ncan you add comments that explain what the code is doing? or a link to sample implementation/docs?",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9d508e60",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T03:07:21Z",
+      "side": 1,
+      "message": "is unicode correct or is six.text_type correct?",
+      "parentUuid": "5a5ae5dd_82aeebe5",
       "range": {
         "startLine": 37,
         "startChar": 4,
