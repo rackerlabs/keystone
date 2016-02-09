@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c7a2b54b",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T02:30:40Z",
+      "side": 1,
+      "message": "no reason for the rename",
+      "range": {
+        "startLine": 18,
+        "startChar": 34,
+        "endLine": 18,
+        "endChar": 49
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_67af412c",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T02:30:40Z",
+      "side": 1,
+      "message": "bandit is making the gate fail here. this needs a better exception, or a #nosec comment for why this is OK",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 33
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_e2231fa6",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T02:30:40Z",
+      "side": 1,
+      "message": "nit: 2 spaces",
+      "range": {
+        "startLine": 35,
+        "startChar": 24,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_82aeebe5",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T02:30:40Z",
+      "side": 1,
+      "message": "so, same comment as previous patch set; we\u0027ll be maintaining this code, and this is doing very specific non-obvious operations. I would have no idea how to begin to debug this if a new bug came up.\n\ncan you add comments that explain what the code is doing? or a link to sample implementation/docs?",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_62b5ef2f",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T02:30:40Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 50,
+        "startChar": 11,
+        "endLine": 50,
+        "endChar": 70
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
