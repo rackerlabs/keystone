@@ -34,6 +34,24 @@
       "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_ae82f8c6",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T20:22:24Z",
+      "side": 0,
+      "message": "I think Brant was saying that this no longer uses CONF.public_endpoint.",
+      "parentUuid": "5a5ae5dd_ded3e902",
+      "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
