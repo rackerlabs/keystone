@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_546c3a36",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4354,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T00:17:20Z",
+      "side": 1,
+      "message": "we try to avoid mentioning the bug in the comment, we can already track the history using git and the commit message. otherwise the tests will be littered with these references",
+      "range": {
+        "startLine": 4354,
+        "startChar": 56,
+        "endLine": 4354,
+        "endChar": 73
+      },
+      "revId": "14b055514d21c4a096fdcd2f94a14a0f7c5b68a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
