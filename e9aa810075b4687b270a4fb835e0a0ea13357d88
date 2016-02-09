@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1917cd55",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:01:36Z",
+      "side": 1,
+      "message": "use project not prj",
+      "range": {
+        "startLine": 385,
+        "startChar": 16,
+        "endLine": 385,
+        "endChar": 19
+      },
+      "revId": "e9aa810075b4687b270a4fb835e0a0ea13357d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_3935e9f6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:01:36Z",
+      "side": 1,
+      "message": "why not just call _cleanup_project and issue the delete last?",
+      "range": {
+        "startLine": 389,
+        "startChar": 12,
+        "endLine": 400,
+        "endChar": 77
+      },
+      "revId": "e9aa810075b4687b270a4fb835e0a0ea13357d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1904adc4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:01:36Z",
+      "side": 1,
+      "message": "should this be in cleanup too?",
+      "range": {
+        "startLine": 402,
+        "startChar": 12,
+        "endLine": 405,
+        "endChar": 63
+      },
+      "revId": "e9aa810075b4687b270a4fb835e0a0ea13357d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
