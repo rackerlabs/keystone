@@ -1,0 +1,9 @@
+Code-Review+2: Jamie Lennox <jamielennox@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 09 Feb 2016 04:45:56 +0000
+Reviewed-on: https://review.openstack.org/277574
+Project: openstack/keystone
+Branch: refs/heads/master
