@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_42755330",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T02:37:43Z",
+      "side": 1,
+      "message": "too many leading spaces",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 6
+      },
+      "revId": "4c624d6da88533a64c374ee046be00777bb6ae09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
