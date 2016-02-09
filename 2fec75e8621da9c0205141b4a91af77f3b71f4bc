@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_88f10e98",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-09T14:52:05Z",
+      "side": 1,
+      "message": "Okay I saw it on another deprecation. will get rid of it",
+      "parentUuid": "5a5ae5dd_15a45b06",
+      "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_752a6f80",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_e8f522cb",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-09T14:52:05Z",
+      "side": 1,
+      "message": ":\\",
+      "parentUuid": "5a5ae5dd_752a6f80",
+      "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_f5473f1b",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2016-02-09T14:04:32Z",
       "side": 1,
       "message": "This section mentions and shows the saml2 auth method. It should be fixed to show mapped.",
+      "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a61c3b6b",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-09T14:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_f5473f1b",
       "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
