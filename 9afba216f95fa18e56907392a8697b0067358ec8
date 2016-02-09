@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_bcaf822a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-02-09T08:49:01Z",
+      "side": 1,
+      "message": "nit: \"funcionality\" \u003d\u003e \"functionality\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 46,
+        "endLine": 10,
+        "endChar": 58
+      },
+      "revId": "9afba216f95fa18e56907392a8697b0067358ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
