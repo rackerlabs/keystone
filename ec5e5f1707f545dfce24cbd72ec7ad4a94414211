@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0b0e78e5",
+        "filename": "doc/source/sample_config.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:40:07Z",
+      "side": 0,
+      "message": "worst case, why not just link to g.o.o? I don\u0027t think we should remove this all together. We should replace it with something.",
+      "revId": "ec5e5f1707f545dfce24cbd72ec7ad4a94414211",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
