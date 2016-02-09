@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_583a2dcf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_19005265",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_79f14694",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-08T16:30:15Z",
       "side": 1,
       "message": "extras / migration / attribute",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_7837e9e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_79f14694",
       "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_1834b5dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_d93dda2b",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_f981b6c3",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2016-02-08T16:30:15Z",
       "side": 1,
       "message": "(nit) add newline here",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_383171ed",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_f981b6c3",
       "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_58af8de3",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "It would take some time to parse through all the trust. Is there a way in keystone to do inline migration in batch format?",
+      "parentUuid": "5a5ae5dd_19d372d6",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_b98c9eda",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 2
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_f851990f",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_b98c9eda",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_f46c5dd1",
         "filename": "keystone/trust/schema.py",
         "patchSetId": 2
@@ -115,6 +223,24 @@
       "writtenOn": "2016-02-08T16:30:15Z",
       "side": 1,
       "message": "Should this be an id_string?",
+      "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_18b9152f",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-09T18:29:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_f46c5dd1",
       "revId": "64607b88e1ed9a706845b29fd2ed14519fe086b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
