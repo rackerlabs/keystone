@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_1c049bc4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:05:19Z",
+      "side": 1,
+      "message": "tom, other functions were calling this with, and expected the message to be disabled; by making this change, we are allowing for the change on line 380, to pass in delete, and not affect the methods that don\u0027t have this argument defined.",
+      "parentUuid": "5a5ae5dd_a2c35088",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_a24a7024",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
@@ -59,6 +83,30 @@
       "writtenOn": "2016-02-05T16:43:15Z",
       "side": 1,
       "message": "Maybe add some comments in here on everything that is going on.",
+      "range": {
+        "startLine": 350,
+        "startChar": 8,
+        "endLine": 360,
+        "endChar": 73
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_9cf88bc6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:05:19Z",
+      "side": 1,
+      "message": "this is copy and paste of what was going on before, and it\u0027s pretty self explanatory",
+      "parentUuid": "5a5ae5dd_a24a7024",
       "range": {
         "startLine": 350,
         "startChar": 8,
@@ -87,6 +135,75 @@
         "startChar": 12,
         "endLine": 379,
         "endChar": 74
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_fce09ffc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:05:19Z",
+      "side": 1,
+      "message": "use project, no need to shorten",
+      "range": {
+        "startLine": 385,
+        "startChar": 16,
+        "endLine": 385,
+        "endChar": 19
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_bc1c6714",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:05:19Z",
+      "side": 1,
+      "message": "same comment as ps18, use _cleanup and call \nself.driver.delete after it",
+      "range": {
+        "startLine": 389,
+        "startChar": 12,
+        "endLine": 400,
+        "endChar": 77
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_1cd25b35",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T05:05:19Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in the cleanup?",
+      "range": {
+        "startLine": 402,
+        "startChar": 12,
+        "endLine": 405,
+        "endChar": 63
       },
       "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
