@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_15a45b06",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-09T14:04:32Z",
+      "side": 1,
+      "message": "I don\u0027t know that you need this block at all.",
+      "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_752a6f80",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-09T14:04:32Z",
+      "side": 1,
+      "message": "Identity",
+      "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f5473f1b",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-09T14:04:32Z",
+      "side": 1,
+      "message": "This section mentions and shows the saml2 auth method. It should be fixed to show mapped.",
+      "revId": "2fec75e8621da9c0205141b4a91af77f3b71f4bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
