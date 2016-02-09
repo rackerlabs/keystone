@@ -52,6 +52,24 @@
       "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_21585956",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-09T20:53:25Z",
+      "side": 0,
+      "message": "Yes it does. See line #832 on the right, which passed in \u0027public\u0027 as endpoint_type. Application.base_url() will make use of it. See line #374. It will look to use CONF[\u0027public_endpoint\u0027] first, if configured. Otherwise, it will derive the base url from the request environment.",
+      "parentUuid": "3a57f1b5_ae82f8c6",
+      "revId": "399a66f141e2bd7b96f34dc10ecef45bcbbbbf8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
