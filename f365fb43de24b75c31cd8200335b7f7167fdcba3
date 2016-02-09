@@ -163,6 +163,23 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_88190e25",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:24:20Z",
+      "side": 1,
+      "message": "is TOTP an example of HMAC or an implementation?",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_e2231fa6",
         "filename": "keystone/totp/core.py",
         "patchSetId": 3
@@ -180,6 +197,24 @@
         "endLine": 35,
         "endChar": 26
       },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a8edeaf0",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:24:20Z",
+      "side": 1,
+      "message": "We should also add a return docstring",
+      "parentUuid": "5a5ae5dd_e2231fa6",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -251,6 +286,23 @@
         "endLine": 42,
         "endChar": 35
       },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_68be12d6",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:24:20Z",
+      "side": 1,
+      "message": "We should add a return doc string.",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
