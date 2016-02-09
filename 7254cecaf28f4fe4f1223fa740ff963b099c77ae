@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_b24d62c6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-09T12:34:12Z",
+      "side": 1,
+      "message": "I will change to project.",
+      "parentUuid": "5a5ae5dd_fcc89aaa",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
+      },
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_dcd91e85",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-09T08:27:58Z",
       "side": 1,
       "message": "I\u0027m not sure why this is in assignment - since it is not changing any assignments (we already delete all the assignments for a project being deleted). I think what you are doing is deleting thev value in  default project attribute of the user entity? In which case this should be in identity. Also, you should consider using the project deletion message for such communication (see the way identity traps the delete domain message at the top of the controller)",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 52
+      },
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_f2767ad7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-09T12:34:12Z",
+      "side": 1,
+      "message": "\u003e Also, you should consider using the project deletion message for such communication (see the way identity traps the delete domain message at the top of the controller)\n\nThanks for your comment. \nDo you mean it is good to add comments in code? like mentioned below. Or improve the warning message in LOG.warning?\n# NOTE(morganfainberg): This is not a critical error it\n# just means that the project cannot be removed from\n# the user information.\n# This could occur if roles aren\u0027t found\n# or if the user is invalid or if there are no roles\n# for the user on that project.",
+      "parentUuid": "5a5ae5dd_dcd91e85",
       "range": {
         "startLine": 228,
         "startChar": 0,
