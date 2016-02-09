@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a57f1b5_2b9fda60",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-09T20:01:39Z",
+      "side": 1,
+      "message": "suggest refactor UserInfo into BaseUserInfo, PasswordUserInfo, and TOTPUserInfo. They are really different payloads with some commonalities.",
+      "range": {
+        "startLine": 114,
+        "startChar": 13,
+        "endLine": 114,
+        "endChar": 21
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_c7a2b54b",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 3
@@ -36,6 +59,52 @@
       "writtenOn": "2016-02-09T03:07:21Z",
       "side": 1,
       "message": "Is the logger needed?",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_0bbbfec5",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-09T20:01:39Z",
+      "side": 1,
+      "message": "this needs to be documented, which includes the expectation for data-at-rest protection. Otherwise, this will not pass compliance.",
+      "range": {
+        "startLine": 44,
+        "startChar": 37,
+        "endLine": 44,
+        "endChar": 43
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_6b6dd231",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-09T20:01:39Z",
+      "side": 1,
+      "message": "need to address the data-at-rest protection concern here. I thought we\u0027ve agreed on a configurable data encryption key in keystone.conf and use it to decrypt the secret read from the database.",
+      "range": {
+        "startLine": 51,
+        "startChar": 34,
+        "endLine": 51,
+        "endChar": 60
+      },
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -280,6 +349,30 @@
       "side": 1,
       "message": "I know it\u0027s not much code but i don\u0027t want to maintain this. \n\nThere are a number of libraries that support totp in python including (apparently) cryptography and we should consume it.",
       "parentUuid": "5a5ae5dd_9d508e60",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_ab9e6a05",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-09T20:01:39Z",
+      "side": 1,
+      "message": "Can\u0027t we leverage this?\n\nhttps://cryptography.io/en/latest/hazmat/primitives/twofactor/",
+      "parentUuid": "5a5ae5dd_2d935f51",
       "range": {
         "startLine": 37,
         "startChar": 4,
