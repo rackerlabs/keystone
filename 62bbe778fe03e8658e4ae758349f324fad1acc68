@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_544afa28",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T00:07:06Z",
+      "side": 1,
+      "message": "We may want to only apply the URL normalizer here at the end of the chain",
+      "range": {
+        "startLine": 119,
+        "startChar": 11,
+        "endLine": 122,
+        "endChar": 42
+      },
+      "revId": "62bbe778fe03e8658e4ae758349f324fad1acc68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_34517ed9",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T00:07:06Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 128,
+        "startChar": 4,
+        "endLine": 131,
+        "endChar": 41
+      },
+      "revId": "62bbe778fe03e8658e4ae758349f324fad1acc68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
