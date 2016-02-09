@@ -123,6 +123,46 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_0d2a23e8",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-02-09T07:36:54Z",
+      "side": 1,
+      "message": "where\u0027s this used?",
+      "range": {
+        "startLine": 116,
+        "startChar": 48,
+        "endLine": 116,
+        "endChar": 58
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_0db543cf",
+        "filename": "keystone/totp/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-02-09T07:36:54Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be in keystone/totp. the root directory like this has typically been for backends. This should at least be in utils or common.",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_e2231fa6",
         "filename": "keystone/totp/core.py",
         "patchSetId": 3
@@ -181,6 +221,30 @@
       "side": 1,
       "message": "is unicode correct or is six.text_type correct?",
       "parentUuid": "5a5ae5dd_82aeebe5",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2d935f51",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-02-09T07:36:54Z",
+      "side": 1,
+      "message": "I know it\u0027s not much code but i don\u0027t want to maintain this. \n\nThere are a number of libraries that support totp in python including (apparently) cryptography and we should consume it.",
+      "parentUuid": "5a5ae5dd_9d508e60",
       "range": {
         "startLine": 37,
         "startChar": 4,
