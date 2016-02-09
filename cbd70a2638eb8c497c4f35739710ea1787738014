@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_edba3dc0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2528,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-09T18:18:31Z",
+      "side": 1,
+      "message": "This should be just \u0027parent_id\u0027 and not \u0027parent_project_id\u0027\nThe same comment apply for every other reference here.",
+      "range": {
+        "startLine": 2528,
+        "startChar": 35,
+        "endLine": 2528,
+        "endChar": 52
+      },
+      "revId": "cbd70a2638eb8c497c4f35739710ea1787738014",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
