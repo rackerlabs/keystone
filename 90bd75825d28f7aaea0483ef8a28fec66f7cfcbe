@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c2b4da83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "wrong bug: 1523369",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_82da62e8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "this should be a private method, prefix with an underscore _remove_default_project_from_user",
+      "range": {
+        "startLine": 228,
+        "startChar": 8,
+        "endLine": 228,
+        "endChar": 32
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_8225820b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "project",
+      "range": {
+        "startLine": 229,
+        "startChar": 45,
+        "endLine": 229,
+        "endChar": 51
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_e20f9686",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "project",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a208be2e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "if copying, use copy.deepcopy()",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 29
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_a250be5f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "i don\u0027t get the point of this, you are setting it, to the tenant value, then setting it to None.",
+      "range": {
+        "startLine": 235,
+        "startChar": 12,
+        "endLine": 236,
+        "endChar": 45
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_c2105a5c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "you may be able to get away with a fairly minimal function, like:\n\ndef _set_default_project_to_none(self, user_id)\n    # set default project to None if project has been removed\n    self.identity_api.update_user(user_id, {\u0027default_project_id\u0027: None})\n\nalso, i\u0027m not clear on why this has to exist in this file, and no in resource/core.py",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 52
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_e2eb1677",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "might just be easier to pass in the args you need",
+      "range": {
+        "startLine": 366,
+        "startChar": 61,
+        "endLine": 366,
+        "endChar": 68
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2d2a7f7f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T07:18:08Z",
+      "side": 1,
+      "message": "what\u0027s the point of the try/except? we know the project being deleted, and project_user_ids should only return valid users",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 38
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
