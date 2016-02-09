@@ -22,6 +22,30 @@
       "revId": "5abf85d55b80b595c546187fd7a2fbe1f9f8006e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_22cb7720",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-09T02:44:13Z",
+      "side": 1,
+      "message": "Yeah I\u0027m thinking this can disappear.",
+      "parentUuid": "5a5ae5dd_cbc5e90a",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 44
+      },
+      "revId": "5abf85d55b80b595c546187fd7a2fbe1f9f8006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
