@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ab2ba493",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:50:45Z",
+      "side": 1,
+      "message": "add: \n\n    Related-Bug: 1543318",
+      "revId": "c96ec89f5cd50129b697efe80fdac5937a2750d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_ebac3c37",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2597,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-09T14:50:45Z",
+      "side": 1,
+      "message": "implied*",
+      "revId": "c96ec89f5cd50129b697efe80fdac5937a2750d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
