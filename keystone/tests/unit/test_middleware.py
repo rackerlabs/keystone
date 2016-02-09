@@ -115,15 +115,6 @@ class AdminTokenAuthMiddlewareTest(MiddlewareRequestTestBase):
         self.assertFalse(req.environ[middleware.CONTEXT_ENV]['is_admin'])
 
 
-class PostParamsMiddlewareTest(MiddlewareRequestTestBase):
-
-    MIDDLEWARE_CLASS = middleware.PostParamsMiddleware
-
-    def test_request_with_params(self):
-        req = self._do_middleware_request(params='arg1=one', method='post')
-        self.assertEqual({"arg1": "one"}, req.environ[middleware.PARAMS_ENV])
-
-
 class RequestHandlerMiddlewareTest(test_backend_sql.SqlTests,
                                    MiddlewareRequestTestBase):
 
