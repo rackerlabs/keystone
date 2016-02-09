@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_41a7954f",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-09T20:51:55Z",
+      "side": 1,
+      "message": "this should be egg:oslo.middleware#cors_extension",
+      "revId": "16be798a2e74f90fce84bd4ce9fddfdb2e8e420c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_617731d5",
+        "filename": "setup.cfg",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-09T20:51:55Z",
+      "side": 1,
+      "message": "no need to have this in keystone since it\u0027s provided by oslo.middleware.",
+      "revId": "16be798a2e74f90fce84bd4ce9fddfdb2e8e420c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
