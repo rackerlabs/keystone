@@ -22,6 +22,29 @@
       "revId": "14b055514d21c4a096fdcd2f94a14a0f7c5b68a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_311f4bb9",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4383,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-09T01:34:26Z",
+      "side": 1,
+      "message": "xrange doesn\u0027t work in py3",
+      "range": {
+        "startLine": 4383,
+        "startChar": 8,
+        "endLine": 4383,
+        "endChar": 27
+      },
+      "revId": "14b055514d21c4a096fdcd2f94a14a0f7c5b68a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
