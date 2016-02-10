@@ -122,15 +122,26 @@ class SqlModels(SqlTests):
 
         self.assertItemsEqual(expected_schema, actual_schema)
 
-    def test_user_model(self):
+    def test_identity_model(self):
         cols = (('id', sql.String, 64),
-                ('name', sql.String, 255),
-                ('password', sql.String, 128),
-                ('domain_id', sql.String, 64),
                 ('default_project_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None))
+        self.assertExpectedSchema('identity', cols)
+
+    def test_user_model(self):
+        cols = (('id', sql.String, 64),
+                ('identity_id', sql.String, 64),
+                ('name', sql.String, 255),
+                ('domain_id', sql.String, 64))
         self.assertExpectedSchema('user', cols)
+
+    def test_password_model(self):
+        cols = (('id', sql.String, 64),
+                ('user_id', sql.String, 64),
+                ('password', sql.String, 128),
+                ('expires_at', sql.DateTime, None))
+        self.assertExpectedSchema('password', cols)
 
     def test_group_model(self):
         cols = (('id', sql.String, 64),
@@ -306,7 +317,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
         user = self.identity_api.create_user(user)
         session = sql.get_session()
-        query = session.query(identity_sql.User)
+        query = session.query(identity_sql.UserIdentity)
         query = query.filter_by(id=user['id'])
         raw_user_ref = query.one()
         self.assertIsNone(raw_user_ref.default_project_id)
@@ -624,7 +635,7 @@ class SqlTokenCacheInvalidation(SqlTests, test_backend.TokenCacheInvalidation):
 class SqlFilterTests(SqlTests, test_backend.FilterTests):
 
     def _get_user_name_field_size(self):
-        return identity_sql.User.name.type.length
+        return identity_sql.UserIdentity.name.type.length
 
     def clean_up_entities(self):
         """Clean up entity test data from Filter Test Cases."""
