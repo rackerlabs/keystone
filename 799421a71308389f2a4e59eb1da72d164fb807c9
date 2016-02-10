@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_06c5fd8c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T17:15:52Z",
+      "side": 1,
+      "message": "If we have R1 -\u003e R2 -\u003e R3, then a user U with R1 on a project P would get, from effective call:\n\n    U, P, R1\n    U, P, R2\n    U, P, R3\n\nMeaning that implied roles are included in the token. However, domain specific roles can\u0027t be in the token as they don\u0027t appear in the policy (as they aren\u0027t global). Is this correct ?",
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_86ffad00",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 900,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T17:15:52Z",
+      "side": 1,
+      "message": "Maybe add some doc on domain roles here ?",
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_50096b2b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 6916,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T17:15:52Z",
+      "side": 1,
+      "message": "Maybe we could mention it\u0027s also a implied roles test ?\n\n    test_role_assignments_domain_specific_and_implied_roles",
+      "range": {
+        "startLine": 6916,
+        "startChar": 8,
+        "endLine": 6916,
+        "endChar": 51
+      },
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
