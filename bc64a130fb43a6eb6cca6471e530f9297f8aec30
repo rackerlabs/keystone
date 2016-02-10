@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_2969f7be",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-10T15:03:36Z",
+      "side": 1,
+      "message": "this needs to be the configured values not some defaults.",
+      "revId": "bc64a130fb43a6eb6cca6471e530f9297f8aec30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_0953dbe2",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-10T15:03:36Z",
+      "side": 1,
+      "message": "public_endpoint and admin_endpoint need to be configurable.",
+      "revId": "bc64a130fb43a6eb6cca6471e530f9297f8aec30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_699fef03",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-10T15:03:36Z",
+      "side": 1,
+      "message": "This isn\u0027t going to result in a valid endpoint now, since keystone doesn\u0027t listen on http://localhost",
+      "revId": "bc64a130fb43a6eb6cca6471e530f9297f8aec30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
