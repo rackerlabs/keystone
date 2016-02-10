@@ -162,16 +162,21 @@ class Provider(common.BaseProvider):
         except exception.ValidationError:
             raise exception.TokenNotFound(token_id=token_ref)
 
-        if trust_id or domain_id or federated_info:
-            msg = _('This is not a v2.0 Fernet token. Use v3 for trust, '
-                    'domain, or federated tokens.')
+        if domain_id or federated_info:
+            msg = _('This is not a v2.0 Fernet token. Use v3 for domain'
+                    'and federated tokens.')
             raise exception.Unauthorized(msg)
+
+        trust_ref = None
+        if trust_id:
+            trust_ref = self.trust_api.get_trust(trust_id)
 
         v3_token_data = self.v3_token_data_helper.get_token_data(
             user_id,
             methods,
             project_id=project_id,
             expires=expires_at,
+            trust=trust_ref,
             issued_at=created_at,
             token=token_ref,
             include_catalog=False,
@@ -192,8 +197,10 @@ class Provider(common.BaseProvider):
             if parent_audit_id:
                 methods.append('token')
         project_id = token_data['access']['token'].get('tenant', {}).get('id')
+        trust_id = token_data['access'].get('trust', {}).get('id')
+        # NOTE(lbragstad): Version 2.0 doesn't support domain-scoped tokens or
+        # federation, so always set these to None.
         domain_id = None
-        trust_id = None
         federated_info = None
         return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
                 trust_id, federated_info)
