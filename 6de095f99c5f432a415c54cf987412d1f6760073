@@ -22,6 +22,30 @@
       "revId": "6de095f99c5f432a415c54cf987412d1f6760073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_f6e725e2",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-10T20:42:06Z",
+      "side": 1,
+      "message": "While in many ways its a nit I do however think this should be fixed so that the comment is not confusing/misleading. These files are hard enough for new folks to read without having to fight misleading comments.",
+      "parentUuid": "3a57f1b5_b35f7f40",
+      "range": {
+        "startLine": 91,
+        "startChar": 21,
+        "endLine": 91,
+        "endChar": 28
+      },
+      "revId": "6de095f99c5f432a415c54cf987412d1f6760073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
