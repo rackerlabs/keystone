@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_820019ac",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:20:52Z",
+      "side": 1,
+      "message": "I have changed to explicit variables. \ndef set_default_project_to_none(self, user_id)",
+      "parentUuid": "5a5ae5dd_e869a226",
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_fcc89aaa",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -155,6 +173,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_82eed9ea",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:20:52Z",
+      "side": 1,
+      "message": "Moved the method to identity and changed the method name to \"set_default_project_to_none\".",
+      "parentUuid": "5a5ae5dd_585bed2e",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 52
+      },
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_68cb721f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -183,6 +225,42 @@
       "writtenOn": "2016-02-10T06:03:00Z",
       "side": 1,
       "message": "as written, I agree with you - however, if we move this to identity, then we should probably use the delete project event to trigger it (in the same way we currently use the delete domain event)",
+      "parentUuid": "5a5ae5dd_68cb721f",
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_42bb01c5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:20:52Z",
+      "side": 1,
+      "message": "Moved the method to Identity.",
+      "parentUuid": "3a57f1b5_f1aafd84",
+      "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a2a3d59d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:20:52Z",
+      "side": 1,
+      "message": "Yes. I have not used payload dictionary any more. I have used explicit variables.\nself.identity_api.set_default_project_to_none(user_id)",
       "parentUuid": "5a5ae5dd_68cb721f",
       "revId": "7254cecaf28f4fe4f1223fa740ff963b099c77ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
