@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_22dda514",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "I have moved this method to Identity.",
+      "parentUuid": "5a5ae5dd_82da62e8",
+      "range": {
+        "startLine": 228,
+        "startChar": 8,
+        "endLine": 228,
+        "endChar": 32
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_8225820b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -94,6 +118,54 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_e2fd4d6f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "This line does not exist any more.",
+      "parentUuid": "5a5ae5dd_e20f9686",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_2204c57c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "This line does not exist any more.",
+      "parentUuid": "5a5ae5dd_8225820b",
+      "range": {
+        "startLine": 229,
+        "startChar": 45,
+        "endLine": 229,
+        "endChar": 51
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_a208be2e",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2016-02-09T07:18:08Z",
       "side": 1,
       "message": "if copying, use copy.deepcopy()",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 29
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_2d627fae",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_a208be2e",
       "range": {
         "startLine": 232,
         "startChar": 8,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_82efb9af",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_a250be5f",
+      "range": {
+        "startLine": 235,
+        "startChar": 12,
+        "endLine": 236,
+        "endChar": 45
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_c2105a5c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -151,6 +271,30 @@
       "writtenOn": "2016-02-09T07:18:08Z",
       "side": 1,
       "message": "you may be able to get away with a fairly minimal function, like:\n\ndef _set_default_project_to_none(self, user_id)\n    # set default project to None if project has been removed\n    self.identity_api.update_user(user_id, {\u0027default_project_id\u0027: None})\n\nalso, i\u0027m not clear on why this has to exist in this file, and no in resource/core.py",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 52
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_e2346d4b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "Done\nMoved this method to identity.",
+      "parentUuid": "5a5ae5dd_c2105a5c",
       "range": {
         "startLine": 228,
         "startChar": 0,
@@ -186,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_c2237104",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "Done\nUsed explicit variables.",
+      "parentUuid": "5a5ae5dd_e2eb1677",
+      "range": {
+        "startLine": 366,
+        "startChar": 61,
+        "endLine": 366,
+        "endChar": 68
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_2d2a7f7f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
@@ -197,6 +365,30 @@
       "writtenOn": "2016-02-09T07:18:08Z",
       "side": 1,
       "message": "what\u0027s the point of the try/except? we know the project being deleted, and project_user_ids should only return valid users",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 38
+      },
+      "revId": "90bd75825d28f7aaea0483ef8a28fec66f7cfcbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_2263651c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-02-10T08:19:36Z",
+      "side": 1,
+      "message": "try is implemented here as for few cases in tox testing, it\u0027s exception handling was not done for test_backend_ldap.\n\"Could not find user:\" error occurs. added comment in code for the same.",
+      "parentUuid": "5a5ae5dd_2d2a7f7f",
       "range": {
         "startLine": 367,
         "startChar": 12,
