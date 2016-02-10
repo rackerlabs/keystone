@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_4c30ec9e",
+        "filename": "releasenotes/notes/remove-trust-auth-support-from-v2-de316c9ba46d556d.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T21:16:41Z",
+      "side": 1,
+      "message": "This should be \u0027validate\u0027, obtain is only possible from v3",
+      "range": {
+        "startLine": 3,
+        "startChar": 19,
+        "endLine": 3,
+        "endChar": 25
+      },
+      "revId": "66bfce8f70d93fd58d421b5651c5b83f28102639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
