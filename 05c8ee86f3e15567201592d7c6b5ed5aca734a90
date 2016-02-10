@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a5ae5dd_282dff94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_dbd0db21",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 76
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_a2c35088",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
@@ -166,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_1bbd4f68",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_c20c4cee",
+      "range": {
+        "startLine": 379,
+        "startChar": 12,
+        "endLine": 379,
+        "endChar": 74
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_fce09ffc",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
@@ -177,6 +225,30 @@
       "writtenOn": "2016-02-09T05:05:19Z",
       "side": 1,
       "message": "use project, no need to shorten",
+      "range": {
+        "startLine": 385,
+        "startChar": 16,
+        "endLine": 385,
+        "endChar": 19
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_3b35abf6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "we already have a \"project\" variable in this method.",
+      "parentUuid": "5a5ae5dd_fce09ffc",
       "range": {
         "startLine": 385,
         "startChar": 16,
@@ -212,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_a678a2c5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_bc1c6714",
+      "range": {
+        "startLine": 389,
+        "startChar": 12,
+        "endLine": 400,
+        "endChar": 77
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_1cd25b35",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
@@ -223,6 +319,30 @@
       "writtenOn": "2016-02-09T05:05:19Z",
       "side": 1,
       "message": "shouldn\u0027t this be in the cleanup?",
+      "range": {
+        "startLine": 402,
+        "startChar": 12,
+        "endLine": 405,
+        "endChar": 63
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c6735ee6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_1cd25b35",
       "range": {
         "startLine": 402,
         "startChar": 12,
@@ -258,6 +378,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_46352ef5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "this method was only changed in the manager layer. Versioning here only applies for driver changes. The delete_method on the driver layer was not changed.",
+      "parentUuid": "5a5ae5dd_62feb8af",
+      "range": {
+        "startLine": 983,
+        "startChar": 6,
+        "endLine": 983,
+        "endChar": 22
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_c223ec56",
         "filename": "keystone/resource/core.py",
         "patchSetId": 21
@@ -269,6 +413,30 @@
       "writtenOn": "2016-02-05T16:43:15Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 1005,
+        "startChar": 6,
+        "endLine": 1005,
+        "endChar": 22
+      },
+      "revId": "05c8ee86f3e15567201592d7c6b5ed5aca734a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_e63bfae9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-10T19:49:50Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "5a5ae5dd_c223ec56",
       "range": {
         "startLine": 1005,
         "startChar": 6,
