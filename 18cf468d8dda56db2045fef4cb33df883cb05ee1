@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_662b9131",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T17:16:49Z",
+      "side": 1,
+      "message": "I guess it stands for \"domain specific roles\", but will certainly confuse people",
+      "parentUuid": "3a57f1b5_24035944",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_d76235d8",
         "filename": "releasenotes/notes/DomainSpecificRoles-fc5dd2ef74a1442c.yaml",
         "patchSetId": 15
