@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_8c426f3d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 1943,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_b6e4eddf",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_b63e2d89",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 19
@@ -59,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_6ce37334",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:39:00Z",
+      "side": 1,
+      "message": "I don\u0027t remember changing this. This almost seems unrelated?",
+      "parentUuid": "5a5ae5dd_366a3d82",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_b6238d57",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 19
@@ -76,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_ec5be3f4",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:39:00Z",
+      "side": 1,
+      "message": "Yes, this is left over from working through failing tests.",
+      "parentUuid": "5a5ae5dd_b6238d57",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_961f7107",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 19
@@ -87,6 +141,24 @@
       "writtenOn": "2016-02-05T20:44:54Z",
       "side": 1,
       "message": "Do we need this comment here ?",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_cc0f07e0",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2034,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:39:00Z",
+      "side": 1,
+      "message": "I would think so because it explains why we are switching to the UUID provider to run these tests.",
+      "parentUuid": "5a5ae5dd_961f7107",
       "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
       "writtenOn": "2016-02-05T20:44:54Z",
       "side": 1,
       "message": "I know you copied this from the previous code, but why not use skip here and add the text as the reason of skipping ?",
+      "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_0c2d1f46",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_96a21198",
       "revId": "3796bfc200a3442d243776424e576856a4b71bb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
