@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_c4bb65c3",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-10T16:00:48Z",
+      "side": 1,
+      "message": "This is the first time I have seen None used in these rules.  Will we be providing documentation that explains these new domain_admin rules?  I always felt that policy was hard for folks to embrace because the json does not allow comments and people would have a hard time finding documentation that explains the policy syntax and semantics",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_24035944",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-10T16:00:48Z",
+      "side": 1,
+      "message": "what is a dsr grant?",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_d76235d8",
+        "filename": "releasenotes/notes/DomainSpecificRoles-fc5dd2ef74a1442c.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-10T16:00:48Z",
+      "side": 1,
+      "message": "So what would be a huge help here is if the release note provided a URL link to something that provides a description of the new domain_admin rules you added.  Since we cannot put comments in the policy file we need documentation that explains these new rules and this dos needs to be very easy to find.",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
