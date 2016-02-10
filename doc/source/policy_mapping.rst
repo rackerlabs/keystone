@@ -101,6 +101,7 @@ identity:validate_token_head                               HEAD /v2.0/tokens/{to
 identity:revocation_list                                   - GET /v2.0/tokens/revoked
                                                            - GET /v3/auth/tokens/OS-PKI/revoked
 identity:revoke_token                                      DELETE /v3/auth/tokens
+
 identity:create_trust                                      POST /v3/OS-TRUST/trusts
 identity:list_trusts                                       GET /v3/OS-TRUST/trusts
 identity:list_roles_for_trust                              GET /v3/OS-TRUST/trusts/{trust_id}/roles

@@ -519,7 +519,7 @@ class TestCase(BaseTestCase):
         return []
 
     def _policy_fixture(self):
-        return ksfixtures.Policy(dirs.etc('policy.json'), self.config_fixture)
+        return ksfixtures.Policy(dirs.etc('policy.yaml'), self.config_fixture)
 
     def config_overrides(self):
         # NOTE(morganfainberg): enforce config_overrides can only ever be
@@ -529,9 +529,7 @@ class TestCase(BaseTestCase):
 
         signing_certfile = 'examples/pki/certs/signing_cert.pem'
         signing_keyfile = 'examples/pki/private/signing_key.pem'
-
         self.useFixture(self._policy_fixture())
-
         self.config_fixture.config(
             # TODO(morganfainberg): Make Cache Testing a separate test case
             # in tempest, and move it out of the base unit tests.

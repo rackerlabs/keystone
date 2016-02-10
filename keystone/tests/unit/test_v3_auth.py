@@ -963,7 +963,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                                          domain_id=self.domainA['id'])
 
     def _policy_fixture(self):
-        return ksfixtures.Policy(unit.dirs.etc('policy.v3cloudsample.json'),
+        return ksfixtures.Policy(unit.dirs.etc('policy.v3cloudsample.yaml'),
                                  self.config_fixture)
 
     def test_user_revokes_own_token(self):
