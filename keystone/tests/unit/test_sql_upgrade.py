@@ -225,6 +225,50 @@ class SqlMigrateBase(unit.SQLDriverOverrides, unit.TestCase):
         else:
             raise AssertionError('Table "%s" already exists' % table_name)
 
+    def assertTableCountsMatch(self, table1_name, table2_name):
+        try:
+            table1 = self.select_table(table1_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table1_name)
+        try:
+            table2 = self.select_table(table2_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table2_name)
+        session = self.Session()
+        table1_count = session.execute(table1.count()).scalar()
+        table2_count = session.execute(table2.count()).scalar()
+        if table1_count != table2_count:
+            raise AssertionError('Table counts do not match: {0} ({1}), {2} '
+                                 '({3})'.format(table1_name, table1_count,
+                                                table2_name, table2_count))
+
+    def assertTableValuesMatch(self, table1_name, table1_join_id, table1_cols,
+                               table2_name, table2_join_id, table2_cols,
+                               max_row_count):
+        self.assertTableCountsMatch(table1_name, table2_name)
+        table1 = sqlalchemy.Table(table1_name, self.metadata, autoload=True)
+        table2 = sqlalchemy.Table(table2_name, self.metadata, autoload=True)
+        stmt = (
+            sqlalchemy.select([table1, table2], use_labels=True)
+            .select_from(table1.join(table2, table1.c[table1_join_id] ==
+                                     table2.c[table2_join_id]))
+        )
+        rows = stmt.execute()
+        row_count = 0
+        for row in rows:
+            if row_count >= max_row_count:
+                break
+            for i in range(0, len(table1_cols)):
+                table1_column_name = table1_name + "_" + table1_cols[i]
+                table2_column_name = table2_name + "_" + table2_cols[i]
+                if row[table1_column_name] != row[table2_column_name]:
+                    raise AssertionError('Values do not match {0}: {1}, {2}: '
+                                         '{3}'.format(table1_column_name,
+                                                      row[table1_column_name],
+                                                      table2_column_name,
+                                                      row[table2_column_name]))
+            row_count += 1
+
     def upgrade(self, *args, **kwargs):
         self._migrate(*args, **kwargs)
 
@@ -680,6 +724,48 @@ class SqlUpgradeTests(SqlMigrateBase):
         statement = sqlalchemy.select(cols).where(filter)
         role_entry = session.execute(statement).fetchone()
         self.assertEqual(NULL_DOMAIN_ID, role_entry[0])
+
+    def test_create_identity_user_password_tables(self):
+        identity_table = 'identity'
+        user_table = 'user'
+        password_table = 'password'
+        self.upgrade(88)
+        self.assertTableDoesNotExist(identity_table)
+        self.assertTableDoesNotExist(password_table)
+        self.upgrade(89)
+        self.assertTableColumns(identity_table,
+                                ['id',
+                                 'extra',
+                                 'enabled',
+                                 'default_project_id',
+                                 'domain_id',
+                                 'name',
+                                 'password'])
+        self.upgrade(90)
+        self.assertTableColumns(user_table,
+                                ['id',
+                                 'identity_id',
+                                 'domain_id',
+                                 'name'])
+        self.assertTableColumns(password_table,
+                                ['id',
+                                 'user_id',
+                                 'password',
+                                 'expires_at'])
+
+    def test_migrate_user_password_tables(self):
+        identity_table = 'identity'
+        user_table = 'user'
+        password_table = 'password'
+        self.upgrade(91)
+        self.assertTableCountsMatch(identity_table, user_table)
+        self.assertTableCountsMatch(identity_table, password_table)
+
+        join_id = 'id'
+        columns = ['name', 'domain_id']
+        self.assertTableValuesMatch(identity_table, join_id, columns,
+                                    user_table, 'identity_id', columns,
+                                    max_row_count=1000)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
