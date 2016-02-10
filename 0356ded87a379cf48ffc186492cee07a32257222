@@ -113,6 +113,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_2089fa26",
+        "filename": "keystone/tests/unit/config_files/domain_configs_multi_ldap/keystone.Default.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 12980
+      },
+      "writtenOn": "2016-02-10T19:17:34Z",
+      "side": 1,
+      "message": "I believe [DEFAULT] is not supported in the domain-specific config file.\nEven SQL-based domain-specific config only support [Identity] and [ldap].",
+      "parentUuid": "3a57f1b5_20d1fa57",
+      "range": {
+        "startLine": 8,
+        "startChar": 13,
+        "endLine": 8,
+        "endChar": 14
+      },
+      "revId": "0356ded87a379cf48ffc186492cee07a32257222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_ec5a032a",
         "filename": "keystone/tests/unit/config_files/domain_configs_multi_ldap/keystone.domain1.conf",
         "patchSetId": 4
