@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_764b635a",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "This is not a complete sentence.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_165c6f24",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "I\u0027m not so sure this should be a docstring. I think it may be better to take the original note and make it a Python comment.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_d637b7e1",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "comma before the but and returns is misspelled.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_33317d0c",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1264,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "We can probably just get rid of this paragraph.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_53367904",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1278,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_f343e56a",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "This isn\u0027t a complete sentence.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_137241e6",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "s/Test/Test that/",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_93a7114f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "Might be worth rethinking this. Beyond the function name this really doesn\u0027t have much to do with random_urlsafe_str. It really seems to just be about taking unicode text and making urlsafe bytes.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_d3ffc932",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "Should be something more like \"Consume one use of a trust.\" The \"what a trust is created....\" seems like it belongs with the sentence below.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_73e5b5a6",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T05:01:12Z",
+      "side": 1,
+      "message": "This is not a complete sentence.",
+      "revId": "fe04369e434f10dc53e825b1a181f67ff3205c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
