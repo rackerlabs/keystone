@@ -1196,6 +1196,7 @@ class IdentityDriverV8(object):
     @abc.abstractmethod
     def authenticate(self, user_id, password):
         """Authenticate a given user and password.
+
         :returns: user_ref
         :raises AssertionError: If user or password is invalid.
         """
