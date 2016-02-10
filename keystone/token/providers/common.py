@@ -285,7 +285,7 @@ class V3TokenDataHelper(object):
                                   user_id=None):
         """Populate roles basing on provided groups and project/domain
 
-        Used for ephemeral users with dynamically assigned groups.
+        Used for federated users with dynamically assigned groups.
         This method does not return anything, yet it modifies token_data in
         place.
 

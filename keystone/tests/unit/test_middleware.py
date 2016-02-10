@@ -287,13 +287,13 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
             'rules': mapped_rules
         }
 
-    def _assert_tokenless_auth_context(self, context, ephemeral_user=False):
+    def _assert_tokenless_auth_context(self, context, federated_user=False):
         self.assertIsNotNone(context)
         self.assertEqual(self.project_id, context['project_id'])
         self.assertIn(self.role_name, context['roles'])
-        if ephemeral_user:
+        if federated_user:
             self.assertEqual(self.group['id'], context['group_ids'][0])
-            self.assertEqual('ephemeral',
+            self.assertEqual('federated',
                              context[federation_constants.PROTOCOL])
             self.assertEqual(self.idp_id,
                              context[federation_constants.IDENTITY_PROVIDER])
@@ -629,47 +629,52 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
                                  extra_environ=env,
                                  status=404)
 
-    def test_ephemeral_success(self):
+    def test_federated_success(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
         env['HTTP_X_PROJECT_NAME'] = self.project_name
         env['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
         env['SSL_CLIENT_USER_NAME'] = self.user['name']
         self.config_fixture.config(group='tokenless_auth',
-                                   protocol='ephemeral')
-        self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+                                   protocol='federated')
+        self.protocol_id = 'federated'
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self._assert_tokenless_auth_context(context, ephemeral_user=True)
+        self._assert_tokenless_auth_context(context, federated_user=True)
 
-    def test_ephemeral_with_default_user_type_success(self):
+    def test_federated_with_default_user_type_success(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
         env['HTTP_X_PROJECT_NAME'] = self.project_name
         env['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
         env['SSL_CLIENT_USER_NAME'] = self.user['name']
         self.config_fixture.config(group='tokenless_auth',
-                                   protocol='ephemeral')
-        self.protocol_id = 'ephemeral'
+                                   protocol='federated')
+        self.protocol_id = 'federated'
         # this mapping does not have the user type defined
-        # and it should defaults to 'ephemeral' which is
+        # and it should defaults to 'federated' which is
         # the expected type for the test case.
         mapping = copy.deepcopy(
-            mapping_fixtures.MAPPING_FOR_DEFAULT_EPHEMERAL_USER)
+            mapping_fixtures.MAPPING_FOR_DEFAULT_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self._assert_tokenless_auth_context(context, ephemeral_user=True)
+        self._assert_tokenless_auth_context(context, federated_user=True)
 
+<<<<<<< HEAD
     def test_ephemeral_any_user_success(self):
         """Verify ephemeral user does not need a specified user.
 
+=======
+    def test_federated_any_user_success(self):
+        """Federated user does not need a specified user
+>>>>>>> ab27f7d... Shadow users - Shadow federated users
         Keystone is not looking to match the user, but a corresponding group.
         """
         env = {}
@@ -678,26 +683,26 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         env['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
         env['SSL_CLIENT_USER_NAME'] = uuid.uuid4().hex
         self.config_fixture.config(group='tokenless_auth',
-                                   protocol='ephemeral')
-        self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+                                   protocol='federated')
+        self.protocol_id = 'federated'
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self._assert_tokenless_auth_context(context, ephemeral_user=True)
+        self._assert_tokenless_auth_context(context, federated_user=True)
 
-    def test_ephemeral_invalid_scope_fail(self):
+    def test_federated_invalid_scope_fail(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
         env['HTTP_X_PROJECT_NAME'] = uuid.uuid4().hex
         env['HTTP_X_PROJECT_DOMAIN_NAME'] = uuid.uuid4().hex
         env['SSL_CLIENT_USER_NAME'] = self.user['name']
         self.config_fixture.config(group='tokenless_auth',
-                                   protocol='ephemeral')
-        self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+                                   protocol='federated')
+        self.protocol_id = 'federated'
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
@@ -705,27 +710,32 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
                                  extra_environ=env,
                                  status=401)
 
-    def test_ephemeral_no_group_found_fail(self):
+    def test_federated_no_group_found_fail(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
         env['HTTP_X_PROJECT_NAME'] = self.project_name
         env['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
         env['SSL_CLIENT_USER_NAME'] = self.user['name']
         self.config_fixture.config(group='tokenless_auth',
-                                   protocol='ephemeral')
-        self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+                                   protocol='federated')
+        self.protocol_id = 'federated'
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = uuid.uuid4().hex
         self._load_mapping_rules(mapping)
 
         self._middleware_failure(exception.MappedGroupNotFound,
                                  extra_environ=env)
 
+<<<<<<< HEAD
     def test_ephemeral_incorrect_mapping_fail(self):
         """Test ephemeral user picking up the non-ephemeral user mapping.
 
+=======
+    def test_federated_incorrect_mapping_fail(self):
+        """Federated user picks up the non-federated user mapping.
+>>>>>>> ab27f7d... Shadow users - Shadow federated users
         Looking up the mapping with protocol Id 'x509' will load up
-        the non-ephemeral user mapping, results unauthenticated.
+        the non-federated user mapping, results unauthenticated.
         """
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
@@ -736,7 +746,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='x509')
         self.protocol_id = 'x509'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = uuid.uuid4().hex
         self._load_mapping_rules(mapping)
 

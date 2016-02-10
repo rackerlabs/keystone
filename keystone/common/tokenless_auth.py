@@ -98,9 +98,9 @@ class TokenlessAuthHelper(object):
     def get_mapped_user(self, project_id=None, domain_id=None):
         """Map client certificate to an existing user.
 
-        If user is ephemeral, there is no validation on the user himself;
+        If user is federated, there is no validation on the user himself;
         however it will be mapped to a corresponding group(s) and the scope
-        of this ephemeral user is the same as what is assigned to the group.
+        of this federated user is the same as what is assigned to the group.
 
         :param project_id:  Project scope of the mapped user.
         :param domain_id: Domain scope of the mapped user.
@@ -126,10 +126,10 @@ class TokenlessAuthHelper(object):
             user_domain_id = None
             user_domain_name = None
 
-        # if user is ephemeral type, we don't care if the user exists
+        # if user is federated type, we don't care if the user exists
         # or not, but just care if the mapped group(s) is valid.
-        if user_type == utils.UserType.EPHEMERAL:
-            user_ref = {'type': utils.UserType.EPHEMERAL}
+        if user_type == utils.UserType.FEDERATED:
+            user_ref = {'type': utils.UserType.FEDERATED}
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_in_backend(group_ids,
                                              mapping_id,

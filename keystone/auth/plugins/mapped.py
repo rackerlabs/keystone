@@ -103,10 +103,10 @@ def handle_scoped_token(context, auth_payload, auth_context, token_ref,
 def handle_unscoped_token(context, auth_payload, auth_context,
                           resource_api, federation_api, identity_api):
 
-    def is_ephemeral_user(mapped_properties):
-        return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
+    def is_federated_user(mapped_properties):
+        return mapped_properties['user']['type'] == utils.UserType.FEDERATED
 
-    def build_ephemeral_user_context(auth_context, user, mapped_properties,
+    def build_federated_user_context(auth_context, user, mapped_properties,
                                      identity_provider, protocol):
         auth_context['user_id'] = user['id']
         auth_context['group_ids'] = mapped_properties['group_ids']
@@ -131,7 +131,7 @@ def handle_unscoped_token(context, auth_payload, auth_context,
     token_id = None
     # NOTE(marek-denis): This variable is set to None and there is a
     # possibility that it will be used in the CADF notification. This means
-    # operation will not be mapped to any user (even ephemeral).
+    # operation will not be mapped to any user (even federated).
     user_id = None
 
     try:
@@ -139,12 +139,19 @@ def handle_unscoped_token(context, auth_payload, auth_context,
             identity_provider, protocol, assertion, resource_api,
             federation_api, identity_api)
 
-        if is_ephemeral_user(mapped_properties):
-            user = setup_username(context, mapped_properties)
+        if is_federated_user(mapped_properties):
+            temp_user = setup_username(context, mapped_properties)
+            federated_dict = {
+                'idp_id': identity_provider,
+                'protocol_id': protocol,
+                'unique_id': temp_user['id'],
+                'display_name': temp_user['name']
+            }
+            user = identity_api.shadow_federated_user(federated_dict)
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_cardinality(group_ids, mapping_id)
-            build_ephemeral_user_context(auth_context, user,
+            build_federated_user_context(auth_context, user,
                                          mapped_properties,
                                          identity_provider, protocol)
         else:
@@ -233,7 +240,7 @@ def setup_username(context, mapped_properties):
     user_name = user.get('name') or context['environment'].get('REMOTE_USER')
 
     if not any([user_id, user_name]):
-        msg = _("Could not map user while setting ephemeral user identity. "
+        msg = _("Could not map user while setting federated user identity. "
                 "Either mapping rules must specify user id/name or "
                 "REMOTE_USER environment variable must be set.")
         raise exception.Unauthorized(msg)

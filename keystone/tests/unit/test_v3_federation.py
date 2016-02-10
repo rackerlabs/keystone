@@ -2253,7 +2253,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
          - Set mapping rules for existing IdP with an empty whitelist
            that whould discard any values from the assertion
          - Try issuing unscoped token, expect server to raise
-           ``exception.MissingGroups`` as no groups were matched and ephemeral
+           ``exception.MissingGroups`` as no groups were matched and federated
            user does not have any group assigned.
 
         """
@@ -2314,7 +2314,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
          - Create group ``EXISTS``
          - Set mapping rules for existing IdP with an empty whitelist
            that whould discard any values from the assertion
-         - Issue an unscoped token and make sure ephemeral user is a member of
+         - Issue an unscoped token and make sure federated user is a member of
            two groups.
 
         """

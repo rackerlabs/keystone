@@ -114,10 +114,10 @@ class AuthContextMiddleware(wsgi.Middleware):
             project_id,
             domain_id)
 
-        # NOTE(gyee): if it is an ephemeral user, the
+        # NOTE(gyee): if it is a federated user, the
         # given X.509 SSL client cert does not need to map to
         # an existing user.
-        if user_ref['type'] == utils.UserType.EPHEMERAL:
+        if user_ref['type'] == utils.UserType.FEDERATED:
             auth_context = {}
             auth_context['group_ids'] = user_ref['group_ids']
             auth_context[federation_constants.IDENTITY_PROVIDER] = (
