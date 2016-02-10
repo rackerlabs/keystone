@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_84d794be",
+        "filename": "releasenotes/notes/bug-1535878-change-get_project-permission-e460af1256a2c056.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8912
+      },
+      "writtenOn": "2016-02-10T23:36:53Z",
+      "side": 1,
+      "message": "s/Origionally/Originally",
+      "revId": "8e33202edbd50cf3cde8a1b441e46cbfdaf1eba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
