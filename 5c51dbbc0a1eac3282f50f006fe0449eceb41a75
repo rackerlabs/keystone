@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_e03be2e9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-10T19:37:50Z",
+      "side": 1,
+      "message": "Still don\u0027t understand why not.",
+      "revId": "5c51dbbc0a1eac3282f50f006fe0449eceb41a75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
