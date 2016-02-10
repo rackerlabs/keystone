@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_66770a3b",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T19:39:43Z",
+      "side": 1,
+      "message": "As discussed on IRC (samueldmq, krotscheck, gyee), we still need the tokenless auth headers, as in patchset 9",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 77
+      },
+      "revId": "55b056fa9e5d776b00b666ca74fa56461f2b4dfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
