@@ -16,6 +16,115 @@
       "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_20758cf8",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T16:30:08Z",
+      "side": 1,
+      "message": "I think it would be easier to read if these would be below the 5 rules just below, because these are actually using them",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 70
+      },
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_570f25e1",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1627,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T16:30:08Z",
+      "side": 1,
+      "message": "Maybe add \"self._domain_role_management_cases(self.domainB[\u0027id\u0027])\" too ?",
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_972cbd4b",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1659,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T16:30:08Z",
+      "side": 1,
+      "message": "(nit) roles",
+      "range": {
+        "startLine": 1659,
+        "startChar": 41,
+        "endLine": 1659,
+        "endChar": 47
+      },
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_371e290d",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1663,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T16:30:08Z",
+      "side": 1,
+      "message": "(nit) able",
+      "range": {
+        "startLine": 1663,
+        "startChar": 32,
+        "endLine": 1663,
+        "endChar": 37
+      },
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_f71731eb",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1671,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T16:30:08Z",
+      "side": 1,
+      "message": "What does this expected\u003dexception.ForbiddenAction.code mean here ?\nShouldn\u0027t he be able to do such op in his domain?\n\nPlease add a comment",
+      "range": {
+        "startLine": 1671,
+        "startChar": 21,
+        "endLine": 1671,
+        "endChar": 51
+      },
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
