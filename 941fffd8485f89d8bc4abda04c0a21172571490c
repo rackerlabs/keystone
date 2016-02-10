@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a57f1b5_b0369f01",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:03:44Z",
+      "side": 1,
+      "message": "all of this doesn\u0027t need to be in the\n\n    with sql.session_for_read() as session: \n\ndoes it?",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_8b825851",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-10T17:03:44Z",
+      "side": 1,
+      "message": "same comment here - these don\u0027t have to be in the context of the sql.session do they?\n\nI imagine that we only use the sql.session context to make calls to the backend. Once we have the data we need we don\u0027t need to be in the context anymore do we?",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_1ca86476",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 4
