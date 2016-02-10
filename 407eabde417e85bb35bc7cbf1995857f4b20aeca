@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_d5b466f3",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T18:39:01Z",
+      "side": 1,
+      "message": "Hmm, what about another case where a domain role is made global ? (and fail)",
+      "revId": "407eabde417e85bb35bc7cbf1995857f4b20aeca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
