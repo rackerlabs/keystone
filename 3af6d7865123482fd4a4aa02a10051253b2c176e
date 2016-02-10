@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_ba268bb8",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-10T13:46:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_00266968",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 7
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_e01d4d10",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-10T03:35:35Z",
       "side": 1,
       "message": "how about: \"O\" release\n\nit\u0027s more consistent with what we\u0027ve been saying",
+      "range": {
+        "startLine": 42,
+        "startChar": 42,
+        "endLine": 42,
+        "endChar": 51
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_5a6677ee",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-10T13:46:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_e01d4d10",
       "range": {
         "startLine": 42,
         "startChar": 42,
@@ -87,6 +135,30 @@
         "startChar": 0,
         "endLine": 43,
         "endChar": 45
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_fa62c3d7",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-10T13:46:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_801a5916",
+      "range": {
+        "startLine": 42,
+        "startChar": 69,
+        "endLine": 43,
+        "endChar": 8
       },
       "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
