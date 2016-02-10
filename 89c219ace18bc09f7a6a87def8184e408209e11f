@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_5335ebf4",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T20:32:35Z",
+      "side": 1,
+      "message": "This comment is confusing. Since it just explains what the code is doing I suggest just removing it.",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_13169355",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T20:32:35Z",
+      "side": 1,
+      "message": "Why call out V8 and V9? This just means we have to fix this comment in the future.",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_160d2137",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T20:32:35Z",
+      "side": 1,
+      "message": "(nit) unnecessary",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b6144d44",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T20:32:35Z",
+      "side": 1,
+      "message": "(nit) unnecessary",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_763575d8",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T20:32:35Z",
+      "side": 1,
+      "message": "These are not the correct paths.",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_569f19b4",
+        "filename": "releasenotes/notes/v9CatalogDriver-cd64dcd2d5360891.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-10T20:32:35Z",
+      "side": 1,
+      "message": "Why do we not state this in the upgrade section?",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
