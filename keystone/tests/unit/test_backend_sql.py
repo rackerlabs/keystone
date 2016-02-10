@@ -123,16 +123,6 @@ class SqlModels(SqlTests):
 
         self.assertItemsEqual(expected_schema, actual_schema)
 
-    def test_user_model(self):
-        cols = (('id', sql.String, 64),
-                ('name', sql.String, 255),
-                ('password', sql.String, 128),
-                ('domain_id', sql.String, 64),
-                ('default_project_id', sql.String, 64),
-                ('enabled', sql.Boolean, None),
-                ('extra', sql.JsonBlob, None))
-        self.assertExpectedSchema('user', cols)
-
     def test_group_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
