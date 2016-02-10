@@ -1,0 +1,343 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_a303cdb7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "We shouldn\u0027t need this logic here. If domain_id filter is not in the driver_hints, the driver must know it doesn\u0027t need to filter on it. I don\u0027t see the point of this code",
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_632b95ec",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "Would it be better to have this comment with the NULL_DOMAIN_ID definition ?",
+      "range": {
+        "startLine": 168,
+        "startChar": 4,
+        "endLine": 173,
+        "endChar": 60
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_83cc9136",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "(nit) no need for the trailing comma",
+      "range": {
+        "startLine": 198,
+        "startChar": 62,
+        "endLine": 198,
+        "endChar": 64
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_43ed398a",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "We don\u0027t need this, see my comment on the controller",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 68
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_e302253e",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "We don\u0027t need these changes, see my comment on the controller",
+      "range": {
+        "startLine": 23,
+        "startChar": 31,
+        "endLine": 23,
+        "endChar": 33
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a3066d1e",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "(nit) specific",
+      "range": {
+        "startLine": 43,
+        "startChar": 42,
+        "endLine": 43,
+        "endChar": 49
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_fe371ae1",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "It would be better to test with a different ID to make sure the conflict exception is from the name+domain_id and not from the ID",
+      "range": {
+        "startLine": 47,
+        "startChar": 37,
+        "endLine": 47,
+        "endChar": 42
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_5e82ee53",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "why don\u0027t we just update the role1 ref we have already ?",
+      "range": {
+        "startLine": 60,
+        "startChar": 16,
+        "endLine": 60,
+        "endChar": 33
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_7ea00af5",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "(nit) s/and/to ?",
+      "range": {
+        "startLine": 70,
+        "startChar": 14,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_1e7c7671",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "same comment as line 60",
+      "range": {
+        "startLine": 72,
+        "startChar": 16,
+        "endLine": 72,
+        "endChar": 33
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_1ae31fa5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "(nit) single quotas for consistency",
+      "range": {
+        "startLine": 838,
+        "startChar": 38,
+        "endLine": 838,
+        "endChar": 44
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_ba952be5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "ditto, single quotes for consistency",
+      "range": {
+        "startLine": 860,
+        "startChar": 38,
+        "endLine": 860,
+        "endChar": 44
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_babc4b6d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "filter ?",
+      "range": {
+        "startLine": 862,
+        "startChar": 8,
+        "endLine": 862,
+        "endChar": 9
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_3ab13b90",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "statement ?",
+      "range": {
+        "startLine": 863,
+        "startChar": 8,
+        "endLine": 863,
+        "endChar": 9
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_ba4a0b82",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-10T14:11:11Z",
+      "side": 1,
+      "message": "maybe put in a constant ?",
+      "range": {
+        "startLine": 865,
+        "startChar": 25,
+        "endLine": 865,
+        "endChar": 35
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
