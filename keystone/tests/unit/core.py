@@ -528,7 +528,7 @@ class TestCase(BaseTestCase):
         signing_certfile = 'examples/pki/certs/signing_cert.pem'
         signing_keyfile = 'examples/pki/private/signing_key.pem'
         self.config_fixture.config(group='oslo_policy',
-                                   policy_file=dirs.etc('policy.json'))
+                                   policy_file=dirs.etc('policy.yaml'))
         self.config_fixture.config(
             # TODO(morganfainberg): Make Cache Testing a separate test case
             # in tempest, and move it out of the base unit tests.

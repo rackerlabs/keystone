@@ -332,7 +332,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
 
 class IdentityTestPolicySample(test_v3.RestfulTestCase):
-    """Test policy enforcement of the policy.json file."""
+    """Test policy enforcement of the policy.yaml file."""
 
     def load_sample_data(self):
         self._populate_default_domain()
@@ -590,7 +590,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         rules.reset()
         self.config_fixture.config(
             group='oslo_policy',
-            policy_file=unit.dirs.etc('policy.v3cloudsample.json'))
+            policy_file=unit.dirs.etc('policy.v3cloudsample.yaml'))
 
         self.config_fixture.config(
             group='resource',

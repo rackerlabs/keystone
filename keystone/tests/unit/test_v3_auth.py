@@ -966,7 +966,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         super(TestTokenRevokeSelfAndAdmin, self).config_overrides()
         self.config_fixture.config(
             group='oslo_policy',
-            policy_file=unit.dirs.etc('policy.v3cloudsample.json'))
+            policy_file=unit.dirs.etc('policy.v3cloudsample.yaml'))
 
     def test_user_revokes_own_token(self):
         user_token = self.get_requested_token(
