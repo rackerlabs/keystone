@@ -33,6 +33,7 @@ from keystone import exception
 from keystone.models import token_model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone import token
 from keystone.token import provider
@@ -1155,7 +1156,7 @@ class AuthWithTrust(AuthTest):
         request_body = _build_user_auth(token={'id': trust_token_id},
                                         tenant_id=self.tenant_bar['id'])
         self.assertRaises(
-            exception.Unauthorized,
+            exception.Forbidden,
             self.controller.authenticate, {}, request_body)
 
     def test_delete_trust_revokes_token(self):
@@ -1258,6 +1259,34 @@ class AuthWithTrust(AuthTest):
         self.assertRaises(
             exception.Unauthorized,
             self.controller.authenticate, {}, request_body)
+
+
+class FernetAuthWithTrust(AuthWithTrust):
+    def setUp(self):
+        super(FernetAuthWithTrust, self).setUp()
+
+    def config_overrides(self):
+        super(FernetAuthWithTrust, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    # TODO(lbragstad): We should incorporate this version with the one in
+    # AuthWithTrust since they test the same behavior, just in different ways.
+    def test_delete_trust_revokes_token(self):
+        unscoped_token = self.get_unscoped_token(self.trustor['name'])
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+        context = self._create_auth_context(
+            unscoped_token['access']['token']['id'])
+        auth_response = self.fetch_v2_token_from_trust(new_trust)
+        token = auth_response['access']['token']['id']
+        self.token_provider_api.validate_v2_token(token)
+        self.trust_controller.delete_trust(context, trust_id=new_trust['id'])
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token)
+
+    def test_delete_tokens_for_user_invalidates_tokens_from_trust(self):
+        self.skipTest('Fernet tokens are not persisted.')
 
 
 class TokenExpirationTest(AuthTest):
