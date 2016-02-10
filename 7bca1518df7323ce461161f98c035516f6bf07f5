@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_86600d37",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-10T17:25:00Z",
+      "side": 1,
+      "message": "lets split the policy scoping between domain and global role inference rules.",
+      "parentUuid": "3a57f1b5_da81fc90",
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_20758cf8",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 16
