@@ -89,6 +89,8 @@ class FilterTests(object):
     def _create_one_entity(self, entity_type, domain_id, name):
         new_entity = {'name': name,
                       'domain_id': domain_id}
+        if entity_type == 'user':
+            new_entity['password'] = uuid.uuid4().hex
         if entity_type in ['user', 'group']:
             # The manager layer creates the ID for users and groups
             new_entity = self._create_entity(entity_type)(new_entity)
