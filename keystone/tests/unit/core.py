@@ -519,7 +519,7 @@ class TestCase(BaseTestCase):
         return []
 
     def _policy_fixture(self):
-        return ksfixtures.Policy(dirs.etc('policy.json'), self.config_fixture)
+        return ksfixtures.Policy(dirs.etc('policy.yaml'), self.config_fixture)
 
     def config_overrides(self):
         # NOTE(morganfainberg): enforce config_overrides can only ever be

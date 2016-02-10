@@ -330,7 +330,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
 
 class IdentityTestPolicySample(test_v3.RestfulTestCase):
-    """Test policy enforcement of the policy.json file."""
+    """Test policy enforcement of the policy.yaml file."""
 
     def load_sample_data(self):
         self._populate_default_domain()
@@ -558,8 +558,10 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
                                       test_v3.AssignmentTestMixin):
     """Test policy enforcement of the sample v3 cloud policy file."""
 
+    POLICY_FILE = 'policy.v3cloudsample.yaml'
+
     def _policy_fixture(self):
-        return ksfixtures.Policy(unit.dirs.etc('policy.v3cloudsample.json'),
+        return ksfixtures.Policy(unit.dirs.etc(self.POLICY_FILE),
                                  self.config_fixture)
 
     def setUp(self):
@@ -1555,3 +1557,10 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             project_id=self.admin_project['id'])
 
         self._role_management_cases()
+
+
+class IdentityTestv3CloudPolicySampleJson(test_v3.RestfulTestCase,
+                                          test_v3.AssignmentTestMixin):
+    """Test policy enforcement of the sample v3 cloud policy file."""
+
+    POLICY_FILE = 'policy.v3cloudsample.json'

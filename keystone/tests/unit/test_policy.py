@@ -19,6 +19,7 @@ import os
 from oslo_policy import policy as common_policy
 import six
 from testtools import matchers
+import yaml
 
 from keystone import exception
 from keystone.policy.backends import rules
@@ -55,7 +56,7 @@ class PolicyFileTestCase(unit.TestCase):
     def test_invalid_policy_raises_error(self):
         action = "example:test"
         empty_credentials = {}
-        invalid_json = '{"example:test": [],}'
+        invalid_json = '{"example:test": [ }'
         with open(self.tmpfilename, "w") as policyfile:
             policyfile.write(invalid_json)
         self.assertRaises(ValueError, rules.enforce,
@@ -174,10 +175,10 @@ class DefaultPolicyTestCase(unit.TestCase):
                           self.credentials, "example:noexist", {})
 
 
-class PolicyJsonTestCase(unit.TestCase):
+class PolicySampleDataTestCase(unit.TestCase):
 
     def _load_entries(self, filename):
-        return set(json.load(open(filename)))
+        return set(yaml.safe_load(open(filename)))
 
     def test_json_examples_have_matching_entries(self):
         policy_keys = self._load_entries(unit.dirs.etc('policy.json'))
@@ -229,3 +230,17 @@ class PolicyJsonTestCase(unit.TestCase):
 
         doc_targets = list(read_doc_targets())
         self.assertItemsEqual(policy_keys, doc_targets + policy_rule_keys)
+
+    def test_yaml_same_as_json(self):
+        # The policy*.yaml and corresponding policy*.json have the same
+        # contents
+        policy_json = json.load(open(unit.dirs.etc('policy.json')))
+        policy_yaml = yaml.safe_load(open(unit.dirs.etc('policy.yaml')))
+        self.assertDictEqual(policy_json, policy_yaml)
+
+        cloudpolicy_json = json.load(open(unit.dirs.etc(
+            'policy.v3cloudsample.json')))
+        cloudpolicy_yaml = yaml.safe_load(open(unit.dirs.etc(
+            'policy.v3cloudsample.yaml')))
+        self.maxDiff = None
+        self.assertDictEqual(cloudpolicy_json, cloudpolicy_yaml)
