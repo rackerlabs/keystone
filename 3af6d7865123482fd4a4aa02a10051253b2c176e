@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_00266968",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T03:35:35Z",
+      "side": 1,
+      "message": "use double backticks here, and for all the others in this paragraph",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 7
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_e01d4d10",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T03:35:35Z",
+      "side": 1,
+      "message": "how about: \"O\" release\n\nit\u0027s more consistent with what we\u0027ve been saying",
+      "range": {
+        "startLine": 42,
+        "startChar": 42,
+        "endLine": 42,
+        "endChar": 51
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_801a5916",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T03:35:35Z",
+      "side": 1,
+      "message": "it\u0027s not an identity provider, it\u0027s an authentication plugin",
+      "range": {
+        "startLine": 42,
+        "startChar": 69,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a000b5ab",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T03:35:35Z",
+      "side": 1,
+      "message": "Put this closer to line 94 it\u0027s more related to that content. \nAlso, use the NOTE block to make it more highlighted.\n\nhow about this wording:\n\n.. NOTE::\n\nThe ``saml2`` authentication plugin has been deprecated as of the Mitaka release. Support for the ``saml2`` authentication plugin will be removed in the \"O\" release. The recommended authentication plugin to use is ``mapped``, which supports SAML.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 45
+      },
+      "revId": "3af6d7865123482fd4a4aa02a10051253b2c176e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
