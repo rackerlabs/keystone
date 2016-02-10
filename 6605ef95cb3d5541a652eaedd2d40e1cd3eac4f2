@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_222b65ed",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T08:10:30Z",
+      "side": 1,
+      "message": "project?",
+      "range": {
+        "startLine": 371,
+        "startChar": 44,
+        "endLine": 371,
+        "endChar": 48
+      },
+      "revId": "6605ef95cb3d5541a652eaedd2d40e1cd3eac4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a2267514",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T08:10:30Z",
+      "side": 1,
+      "message": "how about something more descriptive: \"Attempted to remove default_project %(project) from user %(user)s , but user could not be found.\"",
+      "range": {
+        "startLine": 371,
+        "startChar": 26,
+        "endLine": 372,
+        "endChar": 37
+      },
+      "revId": "6605ef95cb3d5541a652eaedd2d40e1cd3eac4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
