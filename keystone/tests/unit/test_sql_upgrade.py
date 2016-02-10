@@ -225,6 +225,23 @@ class SqlMigrateBase(unit.SQLDriverOverrides, unit.TestCase):
         else:
             raise AssertionError('Table "%s" already exists' % table_name)
 
+    def assertTableCountsMatch(self, table1_name, table2_name):
+        try:
+            table1 = self.select_table(table1_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table1_name)
+        try:
+            table2 = self.select_table(table2_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table2_name)
+        session = self.Session()
+        table1_count = session.execute(table1.count()).scalar()
+        table2_count = session.execute(table2.count()).scalar()
+        if table1_count != table2_count:
+            raise AssertionError('Table counts do not match: {0} ({1}), {2} '
+                                 '({3})'.format(table1_name, table1_count,
+                                                table2_name, table2_count))
+
     def upgrade(self, *args, **kwargs):
         self._migrate(*args, **kwargs)
 
@@ -699,6 +716,33 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertIn(NULL_DOMAIN_ID, project_from_db)
 
         session.close()
+
+    def test_add_local_user_and_password_tables(self):
+        local_user_table = 'local_user'
+        password_table = 'password'
+        self.upgrade(89)
+        self.assertTableDoesNotExist(local_user_table)
+        self.assertTableDoesNotExist(password_table)
+        self.upgrade(90)
+        self.assertTableColumns(local_user_table,
+                                ['id',
+                                 'user_id',
+                                 'domain_id',
+                                 'name'])
+        self.assertTableColumns(password_table,
+                                ['id',
+                                 'local_user_id',
+                                 'password',
+                                 'expires_at'])
+
+    def test_migrate_data_to_local_user_and_password_tables(self):
+        user_table_name = 'user'
+        local_user_table_name = 'local_user'
+        password_table_name = 'password'
+        self.upgrade(91)
+        self.assertTableCountsMatch(user_table_name, local_user_table_name)
+        self.assertTableCountsMatch(local_user_table_name, password_table_name)
+        # TODO(rderose): add test to compare data before and after migration
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
