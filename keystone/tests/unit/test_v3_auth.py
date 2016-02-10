@@ -4602,17 +4602,13 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase):
                           self.token_provider_api.validate_v2_token,
                           scoped_token)
 
+    # TODO(lbragstad): This is not a fernet-specific test. Move this into the
+    # TokenAPITests class.
     def test_v2_validate_trust_scoped_token(self):
-        """Test raised exception when validating a trust scoped token.
-
-        Test that validating an trust scoped token in v2.0 returns
-        unauthorized.
-        """
+        """Test validating a trust-scoped token against v2.0 is successful."""
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
-        self.assertRaises(exception.Unauthorized,
-                          self.token_provider_api.validate_v2_token,
-                          trust_scoped_token)
+        self.token_provider_api.validate_v2_token(trust_scoped_token)
 
 
 class TestAuthFernetTokenProvider(TestAuth):

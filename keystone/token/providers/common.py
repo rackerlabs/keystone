@@ -79,11 +79,6 @@ class V2TokenDataHelper(object):
 
         user = common_controller.V2Controller.v3_to_v2_user(v3_user)
 
-        if 'OS-TRUST:trust' in v3_token:
-            msg = ('Unable to validate trust-scoped tokens using version v2.0 '
-                   'API.')
-            raise exception.Unauthorized(msg)
-
         if 'OS-OAUTH1' in v3_token:
             msg = ('Unable to validate Oauth tokens using the version v2.0 '
                    'API.')
@@ -713,9 +708,8 @@ class BaseProvider(provider.Provider):
 
             trust_id = token_data['access'].get('trust', {}).get('id')
             if trust_id:
-                msg = ('Unable to validate trust-scoped tokens using version '
-                       'v2.0 API.')
-                raise exception.Unauthorized(msg)
+                # token trust validation
+                self.trust_api.get_trust(trust_id)
 
             return token_data
         except exception.ValidationError:
@@ -747,7 +741,10 @@ class BaseProvider(provider.Provider):
                                                     user_id, project_id,
                                                     domain_id)
         if trust_id:
-            trust_ref = self.trust_api.get_trust(trust_id)
+            try:
+                trust_ref = self.trust_api.get_trust(trust_id)
+            except exception.TrustNotFound:
+                raise exception.TokenNotFound(token_id=token_id)
 
         access_token = None
         if access_token_id:
