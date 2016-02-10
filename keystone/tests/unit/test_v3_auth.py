@@ -1067,7 +1067,6 @@ class TokenAPITests(object):
         self.get('/auth/tokens', headers=headers,
                  expected_status=http_client.NOT_FOUND)
 
-
 class TokenDataTests(object):
     """Test the data in specific token types."""
 
@@ -4662,6 +4661,9 @@ class TestTrustAuthPKIZTokenProvider(TrustAPIBehavior, TestTrustChain):
                                    enabled=True)
 
 
+
+
+        
 class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
     def config_overrides(self):
         super(TestTrustAuthFernetTokenProvider, self).config_overrides()
@@ -4718,6 +4720,12 @@ class TestAuthFernetTokenProvider(TestAuth):
         # Bind not current supported by Fernet, see bug 1433311.
         self.v3_create_token(auth_data,
                              expected_status=http_client.NOT_IMPLEMENTED)
+
+    def test_v2_validate_trust_scoped_token(self):
+        """Test validating a trust-scoped token against v2.0 is successful."""
+        trustee_user, trust = self._create_trust()
+        trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
+        self.token_provider_api.validate_v2_token(trust_scoped_token)
 
 
 class TestAuthTOTP(test_v3.RestfulTestCase):
