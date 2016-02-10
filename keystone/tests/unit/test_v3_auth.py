@@ -3451,13 +3451,13 @@ class TestTrustChain(test_v3.RestfulTestCase):
                                     domain_id=self.domain_id)
             self.user_list.append(user)
 
-        # trustor->trustee redelegation without impersonation
+        # trustor->trustee redelegation with impersonation
         trustee = self.user_list[0]
         trust_ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=trustee['id'],
             project_id=self.project_id,
-            impersonation=False,
+            impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id],
             allow_redelegation=True,
@@ -3477,20 +3477,15 @@ class TestTrustChain(test_v3.RestfulTestCase):
         trust_token = self.get_requested_token(auth_data)
         self.trust_chain.append(trust)
 
-        # Set trustor and redelegated_trust_id for next trust in the chain
-        next_trustor_id = trustee['id']
-        redelegated_trust_id = trust['id']
-
         # Loop through the user to create a chain of redelegated trust.
         for next_trustee in self.user_list[1:]:
             trust_ref = unit.new_trust_ref(
-                trustor_user_id=next_trustor_id,
+                trustor_user_id=self.user_id,
                 trustee_user_id=next_trustee['id'],
                 project_id=self.project_id,
-                impersonation=False,
+                impersonation=True,
                 role_ids=[self.role_id],
-                allow_redelegation=True,
-                redelegated_trust_id=redelegated_trust_id)
+                allow_redelegation=True)
             r = self.post('/OS-TRUST/trusts',
                           body={'trust': trust_ref},
                           token=trust_token)
@@ -3501,8 +3496,6 @@ class TestTrustChain(test_v3.RestfulTestCase):
                 trust_id=trust['id'])
             trust_token = self.get_requested_token(auth_data)
             self.trust_chain.append(trust)
-            next_trustor_id = next_trustee['id']
-            redelegated_trust_id = trust['id']
 
         trustee = self.user_list[-1]
         trust = self.trust_chain[-1]
@@ -3562,7 +3555,8 @@ class TestTrustChain(test_v3.RestfulTestCase):
 
             auth_token = self.get_requested_token(auth_data)
 
-            self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
+            # Assert chained trust have been deleted
+            self.get('/OS-TRUST/trusts/%(trust_id)s' % {
                 'trust_id': self.trust_chain[i + 1]['id']},
                 token=auth_token,
                 expected_status=http_client.NOT_FOUND)
