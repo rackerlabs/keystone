@@ -31,6 +31,7 @@ CONF = cfg.CONF
 
 
 @dependency.requires('identity_api')
+@dependency.requires('revoke_api')
 @dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
@@ -176,6 +177,7 @@ class Manager(manager.Manager):
         Recursively remove given and redelegated trusts
         """
         trust = self.driver.get_trust(trust_id)
+        self.revoke_api.revoke_by_user(trust['trustor_user_id'])
         trusts = self.driver.list_trusts_for_trustor(
             trust['trustor_user_id'])
 
