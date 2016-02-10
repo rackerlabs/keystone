@@ -17,6 +17,7 @@ import datetime
 import itertools
 import json
 import operator
+import time
 import uuid
 
 from keystoneclient.common import cms
@@ -480,12 +481,10 @@ class TokenAPITests(object):
 
     def test_v2_validate_trust_scoped_token(self):
         # Test that validating an trust scoped token in v2.0 returns
-        # unauthorized.
+        # authorized.
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
-        self.assertRaises(exception.Unauthorized,
-                          self.token_provider_api.validate_v2_token,
-                          trust_scoped_token)
+        self.token_provider_api.validate_v2_token(trust_scoped_token)
 
     def test_default_fixture_scope_token(self):
         self.assertIsNotNone(self.get_scoped_token())
@@ -4153,6 +4152,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust_id})
         headers = {'X-Subject-Token': trust_token}
+        time.sleep(1)
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.NOT_FOUND)
         self.assertTrustTokensRevoked(trust_id)
@@ -4447,7 +4447,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
         self.assert_user_authenticate(self.user_list[0])
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': self.trust_chain[0]['id']})
-
+        time.sleep(1)
         headers = {'X-Subject-Token': self.last_token}
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.NOT_FOUND)
@@ -4719,6 +4719,42 @@ class TestAuthFernetTokenProvider(TestAuth):
         # Bind not current supported by Fernet, see bug 1433311.
         self.v3_create_token(auth_data,
                              expected_status=http_client.NOT_IMPLEMENTED)
+
+    # TODO(ayoung): These three functions is copied code, but the class that
+    # origianlly implemented them is not a baseclass.  Deduplicate
+    def _create_trust(self, impersonation=False):
+        # Create a trustee user
+        trustee_user = unit.create_user(self.identity_api,
+                                        domain_id=self.domain_id)
+        ref = unit.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=impersonation,
+            role_ids=[self.role_id])
+
+        # Create a trust
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        return (trustee_user, trust)
+
+    def _get_trust_scoped_token(self, trustee_user, trust):
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        return self._make_auth_request(auth_data)
+
+    def _make_auth_request(self, auth_data):
+        resp = self.post('/auth/tokens', body=auth_data)
+        token = resp.headers.get('X-Subject-Token')
+        return token
+
+    def test_v2_validate_trust_scoped_token(self):
+        """Test validating a trust-scoped token against v2.0 is successful."""
+        trustee_user, trust = self._create_trust()
+        trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
+        self.token_provider_api.validate_v2_token(trust_scoped_token)
 
 
 class TestAuthTOTP(test_v3.RestfulTestCase):

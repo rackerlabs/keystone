@@ -1,0 +1,4 @@
+---
+features:
+  - The Fernet provider now support authentication of trust-scoped tokens
+    against version 2.0.
