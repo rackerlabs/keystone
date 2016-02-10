@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a57f1b5_6234fddd",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3237,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T07:52:16Z",
+      "side": 1,
+      "message": "needs to be updated, bug is invalid",
+      "range": {
+        "startLine": 3235,
+        "startChar": 4,
+        "endLine": 3237,
+        "endChar": 48
+      },
+      "revId": "171a5f12b6f1178db97dd52a8f39b9a9360af77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_42522115",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T07:52:16Z",
+      "side": 1,
+      "message": "needs to be updated with correct response",
+      "range": {
+        "startLine": 3259,
+        "startChar": 8,
+        "endLine": 3265,
+        "endChar": 56
+      },
+      "revId": "171a5f12b6f1178db97dd52a8f39b9a9360af77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_274a9784",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3289,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T07:52:16Z",
+      "side": 1,
+      "message": "this too?",
+      "range": {
+        "startLine": 3287,
+        "startChar": 4,
+        "endLine": 3289,
+        "endChar": 57
+      },
+      "revId": "171a5f12b6f1178db97dd52a8f39b9a9360af77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_93d086cb",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 7
@@ -13,6 +82,29 @@
       "writtenOn": "2016-02-09T18:58:19Z",
       "side": 1,
       "message": "trustor_user_id\u003dself.user_id if you want to redelegate initial trust",
+      "revId": "171a5f12b6f1178db97dd52a8f39b9a9360af77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_8248195d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3352,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-10T07:52:16Z",
+      "side": 1,
+      "message": "also needs to be updated",
+      "range": {
+        "startLine": 3348,
+        "startChar": 8,
+        "endLine": 3352,
+        "endChar": 79
+      },
       "revId": "171a5f12b6f1178db97dd52a8f39b9a9360af77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
