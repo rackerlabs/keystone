@@ -201,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_615614d4",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3078,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-10T19:57:12Z",
+      "side": 1,
+      "message": "mock should be good enough. All we care is the right parameter got passed into the driver. We don\u0027t need anything else. We are not testing the driver behavior, we just need to test what\u0027s changed in this patch. Unit tests should be more focused.",
+      "parentUuid": "3a57f1b5_20d49a1e",
+      "range": {
+        "startLine": 3078,
+        "startChar": 1,
+        "endLine": 3078,
+        "endChar": 74
+      },
+      "revId": "0356ded87a379cf48ffc186492cee07a32257222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_604cd270",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 4
