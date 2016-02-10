@@ -152,8 +152,10 @@ class Provider(common.BaseProvider):
             if parent_audit_id:
                 methods.append('token')
         project_id = token_data['access']['token'].get('tenant', {}).get('id')
+        trust_id = token_data['access'].get('trust', {}).get('id')
+        # NOTE(lbragstad): Version 2.0 doesn't support domain-scoped tokens,
+        # federation, or OAUTH1 tokens so always set these to None.
         domain_id = None
-        trust_id = None
         access_token_id = None
         federated_info = None
         return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
