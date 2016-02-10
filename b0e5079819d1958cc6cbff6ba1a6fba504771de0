@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_f0bbb70c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Ah, but the point is that is DOES need to filter on it - since, we say in the API that if we default to list only global roles if not domain_id filter is given. And global roles means role.domain_id\u003d\u003dNone",
+      "parentUuid": "3a57f1b5_a303cdb7",
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_632b95ec",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 18
@@ -30,6 +48,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "Would it be better to have this comment with the NULL_DOMAIN_ID definition ?",
+      "range": {
+        "startLine": 168,
+        "startChar": 4,
+        "endLine": 173,
+        "endChar": 60
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_f00097ac",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "when I first wrote this I did not realise we had to intercept the filters (so there was no use of NULL_DOMAIN_ID outside of this class)....but since we do, I think you are right. I\u0027ll move it.",
+      "parentUuid": "3a57f1b5_632b95ec",
       "range": {
         "startLine": 168,
         "startChar": 4,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_10cbf354",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_83cc9136",
+      "range": {
+        "startLine": 198,
+        "startChar": 62,
+        "endLine": 198,
+        "endChar": 64
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_43ed398a",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 18
@@ -76,6 +142,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "We don\u0027t need this, see my comment on the controller",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 68
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_30f62f90",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "I think we do...see my reply (on the controller) :-)",
+      "parentUuid": "3a57f1b5_43ed398a",
       "range": {
         "startLine": 75,
         "startChar": 0,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_f0ef37ae",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "I think we do...see my reply (on the controller) :-)",
+      "parentUuid": "3a57f1b5_e302253e",
+      "range": {
+        "startLine": 23,
+        "startChar": 31,
+        "endLine": 23,
+        "endChar": 33
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_a3066d1e",
         "filename": "keystone/tests/unit/backend/role/test_sql.py",
         "patchSetId": 18
@@ -122,6 +236,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "(nit) specific",
+      "range": {
+        "startLine": 43,
+        "startChar": 42,
+        "endLine": 43,
+        "endChar": 49
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_3024ef0b",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_a3066d1e",
       "range": {
         "startLine": 43,
         "startChar": 42,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_90604337",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_fe371ae1",
+      "range": {
+        "startLine": 47,
+        "startChar": 37,
+        "endLine": 47,
+        "endChar": 42
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_5e82ee53",
         "filename": "keystone/tests/unit/backend/role/test_sql.py",
         "patchSetId": 18
@@ -168,6 +330,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "why don\u0027t we just update the role1 ref we have already ?",
+      "range": {
+        "startLine": 60,
+        "startChar": 16,
+        "endLine": 60,
+        "endChar": 33
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b0f3ff72",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "It\u0027s fair cop, guv.  Fixed.",
+      "parentUuid": "3a57f1b5_5e82ee53",
       "range": {
         "startLine": 60,
         "startChar": 16,
@@ -203,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_50440b73",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_7ea00af5",
+      "range": {
+        "startLine": 70,
+        "startChar": 14,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_1e7c7671",
         "filename": "keystone/tests/unit/backend/role/test_sql.py",
         "patchSetId": 18
@@ -214,6 +424,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "same comment as line 60",
+      "range": {
+        "startLine": 72,
+        "startChar": 16,
+        "endLine": 72,
+        "endChar": 33
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b04f7f91",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_1e7c7671",
       "range": {
         "startLine": 72,
         "startChar": 16,
@@ -249,6 +483,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_70402757",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_1ae31fa5",
+      "range": {
+        "startLine": 838,
+        "startChar": 38,
+        "endLine": 838,
+        "endChar": 44
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_ba952be5",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
@@ -260,6 +518,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "ditto, single quotes for consistency",
+      "range": {
+        "startLine": 860,
+        "startChar": 38,
+        "endLine": 860,
+        "endChar": 44
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_0b42e83e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_ba952be5",
       "range": {
         "startLine": 860,
         "startChar": 38,
@@ -295,6 +577,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_4ba54002",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_babc4b6d",
+      "range": {
+        "startLine": 862,
+        "startChar": 8,
+        "endLine": 862,
+        "endChar": 9
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_3ab13b90",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
@@ -318,6 +624,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_2bad64e9",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_3ab13b90",
+      "range": {
+        "startLine": 863,
+        "startChar": 8,
+        "endLine": 863,
+        "endChar": 9
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_ba4a0b82",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
@@ -329,6 +659,30 @@
       "writtenOn": "2016-02-10T14:11:11Z",
       "side": 1,
       "message": "maybe put in a constant ?",
+      "range": {
+        "startLine": 865,
+        "startChar": 25,
+        "endLine": 865,
+        "endChar": 35
+      },
+      "revId": "b0e5079819d1958cc6cbff6ba1a6fba504771de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_cb1a9017",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-10T17:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_ba4a0b82",
       "range": {
         "startLine": 865,
         "startChar": 25,
