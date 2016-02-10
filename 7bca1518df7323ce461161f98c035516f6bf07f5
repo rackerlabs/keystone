@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_da81fc90",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-10T16:26:12Z",
+      "side": 1,
+      "message": "These new roles and rules such as domain_admin_matches_filter_on_list_domain_roles need to be thoroughly explained with easy to read documentation and referenced in the release notes.  If not, no one will take the time to understand this stuff and learn how to modify/leverage it. To the untrained eye this stuff is not easy to consume",
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
