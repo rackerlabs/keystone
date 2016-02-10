@@ -1236,8 +1236,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self._assign_protocol_to_idp(expected_status=http_client.CREATED)
 
     def test_protocol_composite_pk(self):
-        """Test whether Keystone let's add two entities with identical
-        names, however attached to different IdPs.
+        """Test Keystone can add two entities of same names with different IdPs
 
         1. Add IdP and assign it protocol with predefined name
         2. Add another IdP and assign it a protocol with same name.
