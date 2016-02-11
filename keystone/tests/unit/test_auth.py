@@ -844,6 +844,8 @@ class AuthWithRemoteUser(AuthTest):
         self.assertNotIn('bind', token['access']['token'])
 
 
+# TODO(lbragstad): There isn't anything v2.0 specific about these tests and
+# they can be collapsed into keystone.tests.unit.test_v3_auth.py:TestTrustAuth
 class AuthWithTrust(AuthTest):
     def setUp(self):
         super(AuthWithTrust, self).setUp()
@@ -986,9 +988,9 @@ class AuthWithTrust(AuthTest):
         self.assertEqual(self.trustor['id'], new_trust['trustor_user_id'])
         self.assertEqual(self.trustee['id'], new_trust['trustee_user_id'])
         self.assertIs(new_trust['impersonation'], True)
-        auth_response = self.fetch_v2_token_from_trust(new_trust)
-        token_user = auth_response['access']['user']
-        self.assertEqual(token_user['id'], new_trust['trustor_user_id'])
+        auth_response = self.fetch_v3_token_from_trust(new_trust, self.trustee)
+        token_user_id = auth_response.json_body['token']['user']['id']
+        self.assertEqual(token_user_id, new_trust['trustor_user_id'])
 
     def test_get_trust(self):
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
@@ -1023,18 +1025,18 @@ class AuthWithTrust(AuthTest):
         self.assertEqual(self.trustor['id'], new_trust['trustor_user_id'])
         self.assertEqual(self.trustee['id'], new_trust['trustee_user_id'])
         self.assertIs(new_trust['impersonation'], False)
-        auth_response = self.fetch_v2_token_from_trust(new_trust)
-        token_user = auth_response['access']['user']
-        self.assertEqual(token_user['id'], new_trust['trustee_user_id'])
+        auth_response = self.fetch_v3_token_from_trust(new_trust, self.trustee)
+        token_user = auth_response.json_body['token']['user']['id']
+        self.assertEqual(token_user, new_trust['trustee_user_id'])
 
     def test_create_trust_impersonation(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
         self.assertEqual(self.trustor['id'], new_trust['trustor_user_id'])
         self.assertEqual(self.trustee['id'], new_trust['trustee_user_id'])
         self.assertIs(new_trust['impersonation'], True)
-        auth_response = self.fetch_v2_token_from_trust(new_trust)
-        token_user = auth_response['access']['user']
-        self.assertEqual(token_user['id'], new_trust['trustor_user_id'])
+        auth_response = self.fetch_v3_token_from_trust(new_trust, self.trustee)
+        token_user = auth_response.json_body['token']['user']['id']
+        self.assertEqual(token_user, new_trust['trustor_user_id'])
 
     def test_token_from_trust_wrong_user_fails(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
@@ -1123,47 +1125,36 @@ class AuthWithTrust(AuthTest):
             {'environment': {},
              'query_string': {}}, v3_token_data)
 
-    def test_token_from_trust(self):
+    def test_authenticate_for_v2_trust_scoped_token_fails(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        auth_response = self.fetch_v2_token_from_trust(new_trust)
-
-        self.assertIsNotNone(auth_response)
-        self.assertEqual(2,
-                         len(auth_response['access']['metadata']['roles']),
-                         "user_foo has three roles, but the token should"
-                         " only get the two roles specified in the trust.")
-
-    def assert_token_count_for_trust(self, trust, expected_value):
-        tokens = self.token_provider_api._persistence._list_tokens(
-            self.trustee['id'], trust_id=trust['id'])
-        token_count = len(tokens)
-        self.assertEqual(expected_value, token_count)
-
-    def test_delete_tokens_for_user_invalidates_tokens_from_trust(self):
-        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        self.assert_token_count_for_trust(new_trust, 0)
-        self.fetch_v2_token_from_trust(new_trust)
-        self.assert_token_count_for_trust(new_trust, 1)
-        self.token_provider_api._persistence.delete_tokens_for_user(
-            self.trustee['id'])
-        self.assert_token_count_for_trust(new_trust, 0)
+        self.assertRaises(exception.Forbidden,
+                          self.fetch_v2_token_from_trust,
+                          new_trust)
 
     def test_token_from_trust_cant_get_another_token(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        auth_response = self.fetch_v2_token_from_trust(new_trust)
-        trust_token_id = auth_response['access']['token']['id']
-        request_body = _build_user_auth(token={'id': trust_token_id},
-                                        tenant_id=self.tenant_bar['id'])
+        auth_response = self.fetch_v3_token_from_trust(new_trust, self.trustee)
+        trust_token_id = auth_response.headers.get('X-Subject-Token')
+        context = {'environment': {},
+                   'query_string': {}}
+        v3_req_with_trust = {
+            "identity": {
+                "methods": ["token"],
+                "token": {"id": trust_token_id}},
+            "scope": {
+                "OS-TRUST:trust": {"id": new_trust['id']}}}
         self.assertRaises(
-            exception.Unauthorized,
-            self.controller.authenticate, {}, request_body)
+            exception.Forbidden,
+            self.auth_v3_controller.authenticate_for_token,
+            context,
+            v3_req_with_trust)
 
     def test_delete_trust_revokes_token(self):
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
         context = self._create_auth_context(
             unscoped_token['access']['token']['id'])
-        self.fetch_v2_token_from_trust(new_trust)
+        self.fetch_v3_token_from_trust(new_trust, self.trustee)
         trust_id = new_trust['id']
         tokens = self.token_provider_api._persistence._list_tokens(
             self.trustor['id'],

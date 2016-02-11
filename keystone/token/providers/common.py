@@ -711,12 +711,6 @@ class BaseProvider(provider.Provider):
                 token_data = self.v2_token_data_helper.v3_to_v2_token(
                     token_data)
 
-            trust_id = token_data['access'].get('trust', {}).get('id')
-            if trust_id:
-                msg = ('Unable to validate trust-scoped tokens using version '
-                       'v2.0 API.')
-                raise exception.Unauthorized(msg)
-
             return token_data
         except exception.ValidationError:
             LOG.exception(_LE('Failed to validate token'))
