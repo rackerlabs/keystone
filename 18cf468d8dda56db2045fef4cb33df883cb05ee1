@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a57f1b5_d093f84d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T07:48:23Z",
+      "side": 1,
+      "message": "you use \u0027dsr\u0027 here too",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_c4bb65c3",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 15
@@ -66,6 +83,47 @@
       "side": 1,
       "message": "oops, sorry, I meant to spell that one out too....",
       "parentUuid": "3a57f1b5_662b9131",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_5079482e",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T07:48:23Z",
+      "side": 1,
+      "message": "i\u0027d say drop the \"specific\" -- \"domain_admin_for_domain_role_grants\"",
+      "parentUuid": "3a57f1b5_c6c84577",
+      "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_50a06890",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T07:48:23Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 109,
+        "startChar": 23,
+        "endLine": 109,
+        "endChar": 26
+      },
       "revId": "18cf468d8dda56db2045fef4cb33df883cb05ee1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
