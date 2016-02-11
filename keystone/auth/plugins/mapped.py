@@ -140,7 +140,12 @@ def handle_unscoped_token(context, auth_payload, auth_context,
             federation_api, identity_api)
 
         if is_ephemeral_user(mapped_properties):
-            user = setup_username(context, mapped_properties)
+            unique_id, display_name = (
+                get_user_unique_id_and_display_name(context, mapped_properties)
+            )
+            user = identity_api.shadow_federated_user(identity_provider,
+                                                      protocol, unique_id,
+                                                      display_name)
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_cardinality(group_ids, mapping_id)
@@ -201,49 +206,34 @@ def apply_mapping_filter(identity_provider, protocol, assertion,
     return mapped_properties, mapping_id
 
 
-def setup_username(context, mapped_properties):
-    """Setup federated username.
+def get_user_unique_id_and_display_name(context, mapped_properties):
+    """Gets federated user unique id and display name.
 
-    Function covers all the cases for properly setting user id, a primary
-    identifier for identity objects. Initial version of the mapping engine
-    assumed user is identified by ``name`` and his ``id`` is built from the
-    name. We, however need to be able to accept local rules that identify user
-    by either id or name/domain.
-
-    The following use-cases are covered:
-
-    1) If neither user_name nor user_id is set raise exception.Unauthorized
-    2) If user_id is set and user_name not, set user_name equal to user_id
-    3) If user_id is not set and user_name is, set user_id as url safe version
-       of user_name.
+    The id and name are mapped to unique_id and display_name. This method
+    handles the case where the id is not supplied. And in that case assumes the
+    user can be identified by the name.
 
     :param context: authentication context
     :param mapped_properties: Properties issued by a RuleProcessor.
     :type: dictionary
 
-    :raises keystone.exception.Unauthorized: If neither `user_name` nor
-        `user_id` is set.
-    :returns: dictionary with user identification
-    :rtype: dict
+    :raises keystone.exception.Unauthorized: If `name` and `id` is not set.
+    :returns: tuple of unique_id and display_name
+    :rtype: tuple
 
     """
     user = mapped_properties['user']
-
-    user_id = user.get('id')
-    user_name = user.get('name') or context['environment'].get('REMOTE_USER')
-
-    if not any([user_id, user_name]):
-        msg = _("Could not map user while setting ephemeral user identity. "
+    unique_id = user.get('id')
+    display_name = (
+        user.get('name') or context['environment'].get('REMOTE_USER')
+    )
+    if not any([unique_id, display_name]):
+        msg = _("Could not map user while setting federated user identity. "
                 "Either mapping rules must specify user id/name or "
                 "REMOTE_USER environment variable must be set.")
         raise exception.Unauthorized(msg)
-
-    elif not user_name:
-        user['name'] = user_id
-
-    elif not user_id:
-        user_id = user_name
-
-    user['id'] = parse.quote(user_id)
-
-    return user
+    elif not unique_id:
+        unique_id = display_name
+        display_name = None
+    unique_id = parse.quote(unique_id)
+    return (unique_id, display_name)
