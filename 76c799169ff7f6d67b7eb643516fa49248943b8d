@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_af3832f0",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-11T20:58:54Z",
+      "side": 1,
+      "message": "Move this to authorize.py so we can keep it non-controller specific.",
+      "revId": "76c799169ff7f6d67b7eb643516fa49248943b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_cf2d6ea9",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-11T20:58:54Z",
+      "side": 1,
+      "message": "drop this comment, and extract this method to a top level.",
+      "revId": "76c799169ff7f6d67b7eb643516fa49248943b8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
