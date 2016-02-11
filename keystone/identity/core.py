@@ -1459,3 +1459,43 @@ class MappingDriverV8(object):
 
 
 MappingDriver = manager.create_legacy_driver(MappingDriverV8)
+
+
+@dependency.provider('shadow_users_api')
+class ShadowUsers(manager.Manager):
+    """Default pivot point for the Shadow Users backend."""
+
+    driver_namespace = 'keystone.identity.shadow_users'
+
+    def __init__(self):
+        super(ShadowUsers, self).__init__('sql')
+
+
+@six.add_metaclass(abc.ABCMeta)
+class ShadowUsersDriverV8(object):
+    """Interface description for an Shadow Users driver."""
+
+    @abc.abstractmethod
+    def get_federated_user(self, idp_id, unique_id):
+        """Returns the local user
+
+        :param idp_id: The identity provider ID
+        :param unique_id: The unique ID for...
+        :returns dict: Containing the user reference if found...
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_federated_user(self, federated_dict, user_id=None):
+        """Create a new local user with the federated identity
+
+        :param dict federated_dict: Reference to the federated identity
+        :param user_id: ...
+        :returns dict: Containing the user reference if found...
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+
+ShadowUsersDriver = manager.create_legacy_driver(ShadowUsersDriverV8)
