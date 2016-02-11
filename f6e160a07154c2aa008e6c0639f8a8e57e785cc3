@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_c541030d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T02:31:33Z",
+      "side": 1,
+      "message": "Actually, I\u0027d rather have this information in the log message. If one wants, for example, a procedure that automatically disables and then deletes it, he\u0027ll be able to specifically know which operation failed. Let\u0027s put information on the logs :)",
+      "parentUuid": "3a57f1b5_98d133d0",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_98b053df",
         "filename": "keystone/resource/core.py",
         "patchSetId": 24
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-11T01:37:59Z",
       "side": 1,
       "message": "root (singular) in this case",
+      "range": {
+        "startLine": 384,
+        "startChar": 21,
+        "endLine": 384,
+        "endChar": 26
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c55823fd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T02:31:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_98b053df",
       "range": {
         "startLine": 384,
         "startChar": 21,
