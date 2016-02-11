@@ -52,6 +52,7 @@ def load_backends():
         federation_api=federation.Manager(),
         id_generator_api=identity.generator.Manager(),
         id_mapping_api=identity.MappingManager(),
+        shadow_users_api=identity.ShadowUsersManager(),
         identity_api=identity.Manager(),
         oauth_api=oauth1.Manager(),
         policy_api=policy.Manager(),

@@ -770,6 +770,19 @@ class SqlUpgradeTests(SqlMigrateBase):
                                     password_table, join_id, columns,
                                     max_row_count=1000)
 
+    def test_create_federated_identity_table(self):
+        federated_identity_table = 'federated_identity'
+        self.upgrade(91)
+        self.assertTableDoesNotExist(federated_identity_table)
+        self.upgrade(92)
+        self.assertTableColumns(federated_identity_table,
+                                ['id',
+                                 'identity_id',
+                                 'idp_id',
+                                 'protocol_id',
+                                 'unique_id',
+                                 'display_name'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
