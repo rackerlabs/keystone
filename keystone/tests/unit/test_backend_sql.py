@@ -143,6 +143,15 @@ class SqlModels(SqlTests):
                 ('expires_at', sql.DateTime, None))
         self.assertExpectedSchema('password', cols)
 
+    def test_federated_identity_model(self):
+        cols = (('id', sql.String, 64),
+                ('identity_id', sql.String, 64),
+                ('idp_id', sql.String, 64),
+                ('protocol_id', sql.String, 64),
+                ('unique_id', sql.String, 255),
+                ('display_name', sql.String, 255))
+        self.assertExpectedSchema('federated_identity', cols)
+
     def test_group_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
