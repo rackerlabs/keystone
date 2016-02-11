@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_f847e01a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T16:00:06Z",
+      "side": 1,
+      "message": "It\u0027s also possible to simply use False boolean, but may be addressed in a followup patch",
+      "revId": "469bdb761258226f5de330fe15c4989ba5000ae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
