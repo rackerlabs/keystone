@@ -483,6 +483,12 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.credential_api.get_credential(credential2['id'])
         self.assertDictEqual(credential2, r)
 
+    # shadow user tests
+    def test_shadow_federated_user(self):
+        federated_dict = unit.new_federated_user_ref()
+        user_dict = self.identity_api.shadow_federated_user(federated_dict)
+        self.assertIsNotNone(user_dict["id"])
+
     # group crud tests
 
     def test_create_group(self):
