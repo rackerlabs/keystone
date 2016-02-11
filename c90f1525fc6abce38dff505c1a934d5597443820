@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_833e788a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T17:47:39Z",
+      "side": 1,
+      "message": "I thought this was a little over complicated than it had to be.  I made it a little more efficent here ( http://paste.openstack.org/show/486739 )  in \"example 1\" it is more efficient but harder to read and \"example 2\" is a little easier to read than example 1, but a little less efficient. \n\nbtw you don\u0027t need to choose either i just thought i was over complicating it",
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_7cef6b87",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T17:47:39Z",
+      "side": 1,
+      "message": "is this here to check if they passed in a null project_id?",
+      "range": {
+        "startLine": 324,
+        "startChar": 59,
+        "endLine": 324,
+        "endChar": 69
+      },
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_bce88311",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T17:47:39Z",
+      "side": 1,
+      "message": "can this be in the above \u0027if\u0027 block? If so you can removed the declaration of \u0027subtree\u0027",
+      "range": {
+        "startLine": 329,
+        "startChar": 7,
+        "endLine": 330,
+        "endChar": 68
+      },
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_042beb83",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T17:47:39Z",
+      "side": 1,
+      "message": "thanks for adding this!",
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_41d8f51d",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T17:47:39Z",
+      "side": 1,
+      "message": "does this cover anything different from \"test_update_large_project_cascade\" ? Is there anyway we can combine the two?",
+      "range": {
+        "startLine": 1042,
+        "startChar": 8,
+        "endLine": 1042,
+        "endChar": 35
+      },
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_615e5147",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1068,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T17:47:39Z",
+      "side": 1,
+      "message": "maybe add \"Call ``PATCH /projects/{project_id}?cascade``\" to docstring",
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
