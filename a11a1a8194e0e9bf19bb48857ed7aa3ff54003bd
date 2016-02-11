@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_9ad9fd24",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-11T17:07:18Z",
+      "side": 1,
+      "message": "Need to add \"It will be removed in the \u0027O\u0027 release.\" for consistency with the code and the other release notes here.",
+      "revId": "a11a1a8194e0e9bf19bb48857ed7aa3ff54003bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
