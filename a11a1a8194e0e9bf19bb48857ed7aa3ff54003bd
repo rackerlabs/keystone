@@ -16,6 +16,24 @@
       "revId": "a11a1a8194e0e9bf19bb48857ed7aa3ff54003bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_be32a6f0",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-11T19:16:11Z",
+      "side": 1,
+      "message": "We don\u0027t have to worry too much about the contents of the release notes at this point. We\u0027ll be going through them before the release and cleaning up anything.",
+      "parentUuid": "3a57f1b5_9ad9fd24",
+      "revId": "a11a1a8194e0e9bf19bb48857ed7aa3ff54003bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
