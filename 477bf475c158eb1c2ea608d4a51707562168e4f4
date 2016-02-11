@@ -19,6 +19,42 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_14cab94e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:24:28Z",
+      "side": 1,
+      "message": "During delete a grant, keystone will revoke tokens that was accessible by this grant. As you can see here: https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L343-L369\n\nSo, this revoke_by_grant will call the _emit_invalidate_grant_token_persistence https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L292\n\nSince, fernet tokens are not persistence, I think this part of code will raise this error. \n\nSo we don\u0027t have to change the status for unauthorized, but handle with this revocation issue related to fernet tokens.",
+      "parentUuid": "3a57f1b5_931603f0",
+      "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_8e7bff8b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:24:28Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be changed.\n\nIt\u0027s a unauthorized, because during the delete_grant",
+      "parentUuid": "3a57f1b5_931603f0",
+      "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_53d72b23",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 22
@@ -30,6 +66,24 @@
       "writtenOn": "2016-02-10T20:17:25Z",
       "side": 1,
       "message": "Same?",
+      "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_34e575db",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:24:28Z",
+      "side": 1,
+      "message": "Same comment as above and for the others tests.",
+      "parentUuid": "3a57f1b5_53d72b23",
       "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2016-02-10T20:17:25Z",
       "side": 1,
       "message": "WIP?",
+      "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_54ea71ad",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:24:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a57f1b5_b3cf7f7e",
       "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
