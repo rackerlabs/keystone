@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_09414938",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-11T18:33:50Z",
+      "side": 1,
+      "message": "I think we should make the changes higher up.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/token/provider.py#L304\n\nJust catch all Unauthorized, log them, and re-raise TokenNotFound.",
+      "range": {
+        "startLine": 414,
+        "startChar": 63,
+        "endLine": 414,
+        "endChar": 64
+      },
+      "revId": "ef9abdbf5c11450ad1c964004eb7ed5f9e608785",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
