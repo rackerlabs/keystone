@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_700d648f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T07:56:14Z",
+      "side": 1,
+      "message": "that sounds correct to me...",
+      "parentUuid": "3a57f1b5_06c5fd8c",
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_86ffad00",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 15
@@ -52,6 +70,29 @@
         "startChar": 8,
         "endLine": 6916,
         "endChar": 51
+      },
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_70b7a486",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T07:56:14Z",
+      "side": 1,
+      "message": "i didn\u0027t think we were allowing this...\n\ni get roles and implied roles, that gives us finer control.\ni get domain roles, and why they shouldn\u0027t appear in the token.\n\nif a DSR carries no authorization (it\u0027s not in the token), then it shouldn\u0027t be able to imply authorization?",
+      "range": {
+        "startLine": 682,
+        "startChar": 8,
+        "endLine": 683,
+        "endChar": 15
       },
       "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",

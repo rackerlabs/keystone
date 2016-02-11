@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_104bd0b1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T07:56:14Z",
+      "side": 0,
+      "message": "why change this?",
+      "range": {
+        "startLine": 825,
+        "startChar": 8,
+        "endLine": 825,
+        "endChar": 19
+      },
+      "revId": "7bca1518df7323ce461161f98c035516f6bf07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
