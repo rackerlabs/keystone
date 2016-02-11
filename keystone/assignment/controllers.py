@@ -23,9 +23,9 @@ from oslo_log import log
 from six.moves import urllib
 
 from keystone.assignment import schema
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
-from keystone.common import utils
 from keystone.common import validation
 from keystone.common import wsgi
 from keystone import exception
@@ -51,7 +51,7 @@ class TenantAssignment(controller.V2Controller):
         Doesn't care about token scopedness.
 
         """
-        token_ref = utils.get_token_ref(context)
+        token_ref = authorization.get_token_ref(context)
 
         tenant_refs = (
             self.assignment_api.list_projects_for_user(token_ref.user_id))
@@ -267,7 +267,7 @@ class ProjectAssignmentV3(controller.V3Controller):
         super(ProjectAssignmentV3, self).__init__()
         self.get_member_from_driver = self.resource_api.get_project
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @controller.filterprotected(filters=['domain_id', 'enabled', 'name'])
     def list_user_projects(self, context, filters, user_id):
         hints = ProjectAssignmentV3.build_driver_hints(context, filters)
         refs = self.assignment_api.list_projects_for_user(user_id,
@@ -339,11 +339,11 @@ class RoleV3(controller.V3Controller):
         else:
             return self.list_roles(context)
 
-    @controller.filterprotected('name', 'domain_id')
+    @controller.filterprotected(filters=['name', 'domain_id'])
     def list_roles(self, context, filters):
         return self._list_roles(context, filters)
 
-    @controller.filterprotected('name', 'domain_id')
+    @controller.filterprotected(filters=['name', 'domain_id'])
     def list_domain_roles(self, context, filters):
         return self._list_roles(context, filters)
 
@@ -922,9 +922,10 @@ class RoleAssignmentV3(controller.V3Controller):
 
         return self.wrap_collection(context, formatted_refs)
 
-    @controller.filterprotected('group.id', 'role.id',
-                                'scope.domain.id', 'scope.project.id',
-                                'scope.OS-INHERIT:inherited_to', 'user.id')
+    @controller.filterprotected(
+        filters=['group.id', 'role.id',
+                 'scope.domain.id', 'scope.project.id',
+                 'scope.OS-INHERIT:inherited_to', 'user.id'])
     def list_role_assignments(self, context, filters):
         return self._list_role_assignments(context, filters)
 
@@ -943,10 +944,11 @@ class RoleAssignmentV3(controller.V3Controller):
 
         self.check_protection(context, protection_info, ref)
 
-    @controller.filterprotected('group.id', 'role.id',
-                                'scope.domain.id', 'scope.project.id',
-                                'scope.OS-INHERIT:inherited_to', 'user.id',
-                                callback=_check_list_tree_protection)
+    @controller.filterprotected(
+        filters=['group.id', 'role.id',
+                 'scope.domain.id', 'scope.project.id',
+                 'scope.OS-INHERIT:inherited_to', 'user.id'],
+        callback=_check_list_tree_protection)
     def list_role_assignments_for_tree(self, context, filters):
         if not context['query_string'].get('scope.project.id'):
             msg = _('scope.project.id must be specified if include_subtree '
