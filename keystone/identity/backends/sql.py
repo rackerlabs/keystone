@@ -39,6 +39,8 @@ class UserIdentity(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
     users = orm.relationship('User', backref='identity')
+    federated_identities = orm.relationship('FederatedIdentity',
+                                            backref='identity')
 
     # name property
     @hybrid_property
@@ -128,6 +130,21 @@ class Password(sql.ModelBase, sql.DictBase):
                          sql.ForeignKey('user.id'))
     password = sql.Column(sql.String(128))
     expires_at = sql.Column(sql.DateTime())
+
+
+class FederatedIdentity(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'federated_identity'
+    attributes = ['id', 'identity_id', 'idp_id', 'protocol_id', 'unique_id',
+                  'display_name']
+    id = sql.Column(sql.String(64), primary_key=True)
+    identity_id = sql.Column(sql.String(64),
+                             sql.ForeignKey('identity.id'))
+    idp_id = sql.Column(sql.String(64),
+                        sql.ForeignKey('identity_provider.id'))
+    protocol_id = sql.Column(sql.String(64), nullable=False)
+    unique_id = sql.Column(sql.String(255), nullable=False)
+    display_name = sql.Column(sql.String(255), nullable=True)
+    __table_args__ = (sql.UniqueConstraint('idp_id', 'unique_id'), {})
 
 
 class Group(sql.ModelBase, sql.DictBase):
