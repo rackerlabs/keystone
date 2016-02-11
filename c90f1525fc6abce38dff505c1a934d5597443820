@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_71069f87",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:08:00Z",
+      "side": 1,
+      "message": "Thanks for the suggestions, I\u0027d rather the second option, a code more readable would be better, since we can\u0027t have a huge subtree, so the code will not be so inefficient.",
+      "parentUuid": "3a57f1b5_833e788a",
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_7cef6b87",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 12
@@ -30,6 +48,30 @@
       "writtenOn": "2016-02-11T17:47:39Z",
       "side": 1,
       "message": "is this here to check if they passed in a null project_id?",
+      "range": {
+        "startLine": 324,
+        "startChar": 59,
+        "endLine": 324,
+        "endChar": 69
+      },
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b14737bb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:08:00Z",
+      "side": 1,
+      "message": "yes. Thinking a little more about it, maybe we don\u0027t need this check...",
+      "parentUuid": "3a57f1b5_7cef6b87",
       "range": {
         "startLine": 324,
         "startChar": 59,
@@ -105,6 +147,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_d153d337",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:08:00Z",
+      "side": 1,
+      "message": "In fact, it is just a simple case and here its grant a \u0027normal\u0027 role assignment, in test_update_large_project_cascade, its grant a inherited role assignment.",
+      "parentUuid": "3a57f1b5_41d8f51d",
+      "range": {
+        "startLine": 1042,
+        "startChar": 8,
+        "endLine": 1042,
+        "endChar": 35
+      },
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_615e5147",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 12
@@ -116,6 +182,24 @@
       "writtenOn": "2016-02-11T17:47:39Z",
       "side": 1,
       "message": "maybe add \"Call ``PATCH /projects/{project_id}?cascade``\" to docstring",
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_71653f1c",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1068,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-11T20:08:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_615e5147",
       "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
