@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_a24e2494",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-11T12:44:31Z",
+      "side": 1,
+      "message": "it is good to have more details in the logs, but adding a parameter just for that seems like an overkill here. The HTTP method should be enough to figure out what went wrong.",
+      "parentUuid": "3a57f1b5_c541030d",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_98b053df",
         "filename": "keystone/resource/core.py",
         "patchSetId": 24
