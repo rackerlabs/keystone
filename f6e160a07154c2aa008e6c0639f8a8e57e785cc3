@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_1cc75746",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_058b82c4",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_a54e2e94",
         "filename": "keystone/resource/core.py",
         "patchSetId": 24
@@ -108,6 +132,24 @@
       "writtenOn": "2016-02-11T13:02:34Z",
       "side": 1,
       "message": "Why would you ever not pass a subtree_list? I think it should always be passed in.",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_3c7d736e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T14:07:54Z",
+      "side": 1,
+      "message": "in case the caller didn\u0027t need the subtree yet (like in the update), we can keep this variable local",
+      "parentUuid": "3a57f1b5_a54e2e94",
       "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -178,6 +220,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_1c3757e4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T14:07:54Z",
+      "side": 1,
+      "message": "actually, it can\u0027t... we use both lists in the code below. One only with the ids, and other with the project refs themselves",
+      "parentUuid": "3a57f1b5_283775e4",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_28ac55ec",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 24
@@ -195,6 +255,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_3cb1f3e1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2536,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_28ac55ec",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_48f431f1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 24
@@ -206,6 +284,24 @@
       "writtenOn": "2016-02-11T13:02:34Z",
       "side": 1,
       "message": "Newline above this.",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_1c6f5793",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3388,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-11T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_48f431f1",
       "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
