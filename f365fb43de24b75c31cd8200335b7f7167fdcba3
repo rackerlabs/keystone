@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_972d56aa",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_2b9fda60",
+      "range": {
+        "startLine": 114,
+        "startChar": 13,
+        "endLine": 114,
+        "endChar": 21
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_c7a2b54b",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_9d01f7b1",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_c7a2b54b",
+      "range": {
+        "startLine": 18,
+        "startChar": 34,
+        "endLine": 18,
+        "endChar": 49
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_7dd032f8",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 3
@@ -59,6 +107,24 @@
       "writtenOn": "2016-02-09T03:07:21Z",
       "side": 1,
       "message": "Is the logger needed?",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_fd1fcb05",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_7dd032f8",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -111,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_5d013f04",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "We had agreed to split MFA into 3 separate specs:\n\n1. totp\n2. encryption of credentials\n3. enforcement of MFA\n\nThis pull request only addresses totp.  Encryption of credentials will be done later.",
+      "parentUuid": "3a57f1b5_6b6dd231",
+      "range": {
+        "startLine": 51,
+        "startChar": 34,
+        "endLine": 51,
+        "endChar": 60
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_dd8606db",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 3
@@ -122,6 +212,24 @@
       "writtenOn": "2016-02-09T03:07:21Z",
       "side": 1,
       "message": "You don\u0027t want a continue here, you likely want a break, it is expensive to try every credential even if the first one passes.",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_7d3e7b8d",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_dd8606db",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +283,54 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_68a31bb3",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_5dee96b5",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 33
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_5d97ffeb",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_67af412c",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 33
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_5d4536b1",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 3
@@ -186,6 +342,24 @@
       "writtenOn": "2016-02-09T03:07:21Z",
       "side": 1,
       "message": "Why raise an assertion error just to catch it a few lines down? Just raise Unauthorized",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a874b335",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_5d4536b1",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -215,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_bae2b92d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "I had to use add this to be able to add the credentials api in the auth/plugins/totp.py\n\n\u0027Credential\u0027 object has no attribute \u0027_get_list_limit\u0027\nTraceback (most recent call last):\n  File \"keystone/common/wsgi.py\", line 247, in __call__\n    result \u003d method(context, **params)\n  File \"keystone/auth/controllers.py\", line 396, in authenticate_for_token\n    self.authenticate(context, auth_info, auth_context)\n  File \"keystone/auth/controllers.py\", line 520, in authenticate\n    auth_context)\n  File \"keystone/auth/plugins/totp.py\", line 45, in authenticate\n    credentials \u003d self.credential_api.list_credentials(hints\u003dhints)\n  File \"keystone/common/manager.py\", line 58, in wrapper\n    list_limit \u003d self.driver._get_list_limit()\nAttributeError: \u0027Credential\u0027 object has no attribute \u0027_get_list_limit\u0027",
+      "parentUuid": "5a5ae5dd_0d2a23e8",
+      "range": {
+        "startLine": 116,
+        "startChar": 48,
+        "endLine": 116,
+        "endChar": 58
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_0db543cf",
         "filename": "keystone/totp/__init__.py",
         "patchSetId": 3
@@ -232,6 +430,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_7abd21b6",
+        "filename": "keystone/totp/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_0db543cf",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_88190e25",
         "filename": "keystone/totp/core.py",
         "patchSetId": 3
@@ -243,6 +459,24 @@
       "writtenOn": "2016-02-09T14:24:20Z",
       "side": 1,
       "message": "is TOTP an example of HMAC or an implementation?",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_71c9bf25",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_88190e25",
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -284,6 +518,48 @@
       "side": 1,
       "message": "We should also add a return docstring",
       "parentUuid": "5a5ae5dd_e2231fa6",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_f1560f5b",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_a8edeaf0",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_515da377",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_e2231fa6",
+      "range": {
+        "startLine": 35,
+        "startChar": 24,
+        "endLine": 35,
+        "endChar": 26
+      },
       "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -385,6 +661,102 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_11dbabed",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_ab9e6a05",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_319d870a",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_82aeebe5",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_f1ddafe0",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_2d935f51",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_51d4c3bb",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_9d508e60",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_68be12d6",
         "filename": "keystone/totp/core.py",
         "patchSetId": 3
@@ -402,6 +774,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_b1e3b7a3",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_68be12d6",
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_62b5ef2f",
         "filename": "keystone/totp/core.py",
         "patchSetId": 3
@@ -413,6 +803,30 @@
       "writtenOn": "2016-02-09T02:30:40Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 50,
+        "startChar": 11,
+        "endLine": 50,
+        "endChar": 70
+      },
+      "revId": "f365fb43de24b75c31cd8200335b7f7167fdcba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_71f0df67",
+        "filename": "keystone/totp/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-11T20:05:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a5ae5dd_62b5ef2f",
       "range": {
         "startLine": 50,
         "startChar": 11,
