@@ -35,6 +35,8 @@ class User(sql.ModelBase, sql.DictBase):
     local_user = orm.relationship('LocalUser', uselist=False,
                                   single_parent=True,
                                   cascade='all,delete-orphan', backref='user')
+    federated_identities = orm.relationship('FederatedIdentity',
+                                            backref='identity')
 
     # name property
     @hybrid_property
@@ -120,6 +122,21 @@ class Password(sql.ModelBase, sql.DictBase):
     local_user_id = sql.Column(sql.Integer, sql.ForeignKey('local_user.id',
                                ondelete='CASCADE'))
     password = sql.Column(sql.String(128))
+
+
+class FederatedIdentity(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'federated_identity'
+    attributes = ['id', 'identity_id', 'idp_id', 'protocol_id', 'unique_id',
+                  'display_name']
+    id = sql.Column(sql.String(64), primary_key=True)
+    identity_id = sql.Column(sql.String(64),
+                             sql.ForeignKey('identity.id'))
+    idp_id = sql.Column(sql.String(64),
+                        sql.ForeignKey('identity_provider.id'))
+    protocol_id = sql.Column(sql.String(64), nullable=False)
+    unique_id = sql.Column(sql.String(255), nullable=False)
+    display_name = sql.Column(sql.String(255), nullable=True)
+    __table_args__ = (sql.UniqueConstraint('idp_id', 'unique_id'), {})
 
 
 class Group(sql.ModelBase, sql.DictBase):
