@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_40a38b00",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-11T22:03:25Z",
+      "side": 1,
+      "message": "yeah i had to pull the code down and manually go though it the list comprehensions are really cool but when there are a couple in a row it starts to get confusing.",
+      "parentUuid": "3a57f1b5_71069f87",
+      "revId": "c90f1525fc6abce38dff505c1a934d5597443820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_7cef6b87",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 12
