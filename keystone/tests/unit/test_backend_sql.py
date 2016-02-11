@@ -144,6 +144,15 @@ class SqlModels(SqlTests):
                 ('expires_at', sql.DateTime, None))
         self.assertExpectedSchema('password', cols)
 
+    def test_federated_identity_model(self):
+        cols = (('id', sql.String, 64),
+                ('identity_id', sql.String, 64),
+                ('idp_id', sql.String, 64),
+                ('protocol_id', sql.String, 64),
+                ('unique_id', sql.String, 255),
+                ('display_name', sql.String, 255))
+        self.assertExpectedSchema('federated_identity', cols)
+
     def test_group_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
@@ -224,6 +233,23 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # assign a new ID with the same name, but this time in uppercase
         ref['name'] = ref['name'].upper()
         self.identity_api.create_user(ref)
+
+    def test_create_federated_user_unique_constraint(self):
+        federated_dict = unit.new_federated_identity_ref()
+        user_dict = self.shadow_users_api.create_federated_user(federated_dict)
+        user_dict = self.identity_api.get_user(user_dict["id"])
+        self.assertIsNotNone(user_dict["id"])
+        self.assertRaises(exception.Conflict,
+                          self.shadow_users_api.create_federated_user,
+                          federated_dict)
+
+    def test_get_federated_user(self):
+        federated_dict = unit.new_federated_identity_ref()
+        user_dict_create = self.shadow_users_api.create_federated_user(
+            federated_dict)
+        user_dict_get = self.shadow_users_api.get_federated_user(
+            federated_dict["idp_id"], federated_dict["unique_id"])
+        self.assertItemsEqual(user_dict_create, user_dict_get)
 
     def test_create_project_case_sensitivity(self):
         # project name case sensitivity is down to the fact that it is marked
