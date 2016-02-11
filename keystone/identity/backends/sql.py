@@ -12,7 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from sqlalchemy import and_
+import sqlalchemy
+
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
@@ -35,6 +36,9 @@ class User(sql.ModelBase, sql.DictBase):
     local_user = orm.relationship('LocalUser', uselist=False,
                                   single_parent=True,
                                   cascade='all,delete-orphan', backref='user')
+    federated_users = orm.relationship('FederatedUser', single_parent=True,
+                                       cascade='all,delete-orphan',
+                                       backref='user')
 
     # name property
     @hybrid_property
@@ -124,6 +128,26 @@ class Password(sql.ModelBase, sql.DictBase):
     local_user_id = sql.Column(sql.Integer, sql.ForeignKey('local_user.id',
                                ondelete='CASCADE'))
     password = sql.Column(sql.String(128))
+
+
+class FederatedUser(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'federated_user'
+    attributes = ['id', 'user_id', 'idp_id', 'protocol_id', 'unique_id',
+                  'display_name']
+    id = sql.Column(sql.Integer, primary_key=True)
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                                                        ondelete='CASCADE'))
+    idp_id = sql.Column(sql.String(64), sql.ForeignKey('identity_provider.id',
+                                                       ondelete='CASCADE'))
+    protocol_id = sql.Column(sql.String(64), nullable=False)
+    unique_id = sql.Column(sql.String(255), nullable=False)
+    display_name = sql.Column(sql.String(255), nullable=True)
+    __table_args__ = (
+        sql.UniqueConstraint('idp_id', 'protocol_id', 'unique_id'),
+        sqlalchemy.ForeignKeyConstraint(['protocol_id', 'idp_id'],
+                                        ['federation_protocol.id',
+                                         'federation_protocol.idp_id'])
+    )
 
 
 class Group(sql.ModelBase, sql.DictBase):
@@ -219,8 +243,8 @@ class Identity(identity.IdentityDriverV8):
     def get_user_by_name(self, user_name, domain_id):
         session = sql.get_session()
         query = session.query(User).join(LocalUser)
-        query = query.filter(and_(LocalUser.name == user_name,
-                                  LocalUser.domain_id == domain_id))
+        query = query.filter(sqlalchemy.and_(LocalUser.name == user_name,
+                                             LocalUser.domain_id == domain_id))
         try:
             user_ref = query.one()
         except sql.NotFound:
