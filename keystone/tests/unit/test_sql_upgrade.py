@@ -816,6 +816,19 @@ class SqlUpgradeTests(SqlMigrateBase):
                                          password_table)
         self.assertListEqual(expected_users, actual_users)
 
+    def test_add_federated_user_table(self):
+        federated_user_table = 'federated_user'
+        self.upgrade(91)
+        self.assertTableDoesNotExist(federated_user_table)
+        self.upgrade(92)
+        self.assertTableColumns(federated_user_table,
+                                ['id',
+                                 'user_id',
+                                 'idp_id',
+                                 'protocol_id',
+                                 'unique_id',
+                                 'display_name'])
+
 
 class VersionTests(SqlMigrateBase):
 
