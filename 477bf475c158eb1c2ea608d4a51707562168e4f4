@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_f4b27d93",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-11T20:30:55Z",
+      "side": 1,
+      "message": "The user running the test should still have authorization to make the call to validate the role list being empty. self.user[\u0027id\u0027] should be a different user here, then, and that should be a separate (previous) patch so you don\u0027t have to change the tests like this.",
+      "parentUuid": "3a57f1b5_8e7bff8b",
+      "revId": "477bf475c158eb1c2ea608d4a51707562168e4f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_53d72b23",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 22
