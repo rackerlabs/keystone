@@ -99,7 +99,7 @@ class IdentityProvider(_ControllerBase):
         response = IdentityProvider.wrap_member(context, idp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
-    @controller.filterprotected('id', 'enabled')
+    @controller.filterprotected(filters=['id', 'enabled'])
     def list_identity_providers(self, context, filters):
         hints = self.build_driver_hints(context, filters)
         ref = self.federation_api.list_idps(hints=hints)
@@ -480,7 +480,7 @@ class ServiceProvider(_ControllerBase):
         response = ServiceProvider.wrap_member(context, sp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
-    @controller.filterprotected('id', 'enabled')
+    @controller.filterprotected(filters=['id', 'enabled'])
     def list_service_providers(self, context, filters):
         hints = self.build_driver_hints(context, filters)
         ref = self.federation_api.list_sps(hints=hints)
