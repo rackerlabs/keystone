@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_114bab2b",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:02:40Z",
+      "side": 1,
+      "message": "admin_api",
+      "range": {
+        "startLine": 68,
+        "startChar": 27,
+        "endLine": 68,
+        "endChar": 36
+      },
+      "revId": "3dc8c73c3d8ae5057dc71dd4dadec7c84d30fceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b153b7e1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:02:40Z",
+      "side": 1,
+      "message": "public_api",
+      "range": {
+        "startLine": 68,
+        "startChar": 53,
+        "endLine": 68,
+        "endChar": 63
+      },
+      "revId": "3dc8c73c3d8ae5057dc71dd4dadec7c84d30fceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b1f09792",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:02:40Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 62
+      },
+      "revId": "3dc8c73c3d8ae5057dc71dd4dadec7c84d30fceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_31334764",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:02:40Z",
+      "side": 1,
+      "message": "public_api",
+      "range": {
+        "startLine": 5,
+        "startChar": 56,
+        "endLine": 5,
+        "endChar": 66
+      },
+      "revId": "3dc8c73c3d8ae5057dc71dd4dadec7c84d30fceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_5138433d",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:02:40Z",
+      "side": 1,
+      "message": "admin_api",
+      "range": {
+        "startLine": 6,
+        "startChar": 20,
+        "endLine": 6,
+        "endChar": 29
+      },
+      "revId": "3dc8c73c3d8ae5057dc71dd4dadec7c84d30fceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_717bfff5",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:02:40Z",
+      "side": 1,
+      "message": "(nit) CLI",
+      "revId": "3dc8c73c3d8ae5057dc71dd4dadec7c84d30fceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
