@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_98d133d0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T01:37:59Z",
+      "side": 1,
+      "message": "Is there any other way to re-use this method without the need of a string parameter to only be put in the error message ?\n\nWhat about changing the error message to:\n\n    \"Project %(project_id)s contains enabled projects in its subtree\"\n\nThe action is obvious from the API being used:\n\n    DELETE /projects/x\n    Forbidden: Project X contains enabled projects in its subtree\n\n    UPDATE /projects/x (disable)\n    Forbidden: Project X contains enabled projects in its subtree\n\nWhat do you think ?",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_98b053df",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T01:37:59Z",
+      "side": 1,
+      "message": "root (singular) in this case",
+      "range": {
+        "startLine": 384,
+        "startChar": 21,
+        "endLine": 384,
+        "endChar": 26
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
