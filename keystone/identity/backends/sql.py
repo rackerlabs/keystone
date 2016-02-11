@@ -39,6 +39,8 @@ class UserIdentity(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
     users = orm.relationship('User', backref='identity')
+    federated_identities = orm.relationship('FederatedIdentity',
+                                            backref='identity')
 
     # name property
     @hybrid_property
@@ -130,6 +132,21 @@ class Password(sql.ModelBase, sql.DictBase):
     expires_at = sql.Column(sql.DateTime())
 
 
+class FederatedIdentity(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'federated_identity'
+    attributes = ['id', 'identity_id', 'idp_id', 'protocol_id', 'unique_id',
+                  'display_name']
+    id = sql.Column(sql.String(64), primary_key=True)
+    identity_id = sql.Column(sql.String(64),
+                             sql.ForeignKey('identity.id'))
+    idp_id = sql.Column(sql.String(64),
+                        sql.ForeignKey('identity_provider.id'))
+    protocol_id = sql.Column(sql.String(64), nullable=False)
+    unique_id = sql.Column(sql.String(255), nullable=False)
+    display_name = sql.Column(sql.String(255), nullable=True)
+    __table_args__ = (sql.UniqueConstraint('idp_id', 'unique_id'), {})
+
+
 class Group(sql.ModelBase, sql.DictBase):
     __tablename__ = 'group'
     attributes = ['id', 'name', 'domain_id', 'description']
@@ -211,6 +228,20 @@ class Identity(identity.IdentityDriverV8):
             user_ref.users[0].passwords[0].id = uuid.uuid4().hex
         return user_ref
 
+    @sql.handle_conflicts(conflict_type='federated_identity')
+    def create_federated_user(self, federated_dict):
+        user = {
+            'id': uuid.uuid4().hex,
+            'enabled': True
+        }
+        session = sql.get_session()
+        with session.begin():
+            federated_ref = FederatedIdentity.from_dict(federated_dict, False)
+            user_ref = UserIdentity.from_dict(user)
+            user_ref.federated_identities.append(federated_ref)
+            session.add(user_ref)
+        return identity.filter_user(user_ref.to_dict())
+
     @driver_hints.truncated
     def list_users(self, hints):
         session = sql.get_session()
@@ -237,6 +268,18 @@ class Identity(identity.IdentityDriverV8):
             user_ref = query.one()
         except sql.NotFound:
             raise exception.UserNotFound(user_id=user_name)
+        return identity.filter_user(user_ref.to_dict())
+
+    def get_federated_user(self, idp_id, unique_id):
+        session = sql.get_session()
+        query = session.query(UserIdentity).outerjoin(User).outerjoin(Password)
+        query = query.join(FederatedIdentity)
+        query = query.filter(FederatedIdentity.idp_id == idp_id)
+        query = query.filter(FederatedIdentity.unique_id == unique_id)
+        try:
+            user_ref = query.one()
+        except sql.NotFound:
+            raise exception.UserNotFound(user_id=unique_id)
         return identity.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='identity')
