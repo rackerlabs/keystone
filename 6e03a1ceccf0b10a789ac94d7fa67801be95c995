@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_71bb14e6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-11T13:51:00Z",
+      "side": 1,
+      "message": "s/delete/disable",
+      "range": {
+        "startLine": 329,
+        "startChar": 37,
+        "endLine": 329,
+        "endChar": 43
+      },
+      "revId": "6e03a1ceccf0b10a789ac94d7fa67801be95c995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_91a570b6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-11T13:51:00Z",
+      "side": 1,
+      "message": "s/disable/delete",
+      "revId": "6e03a1ceccf0b10a789ac94d7fa67801be95c995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
