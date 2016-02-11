@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_c6aa8519",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-11T17:34:34Z",
+      "side": 1,
+      "message": "yep, that is correct. Say R1 was a domain specific role, then only R2 and R3 would end up in the token",
+      "parentUuid": "3a57f1b5_06c5fd8c",
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_86ffad00",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 15
@@ -48,6 +66,24 @@
       "writtenOn": "2016-02-10T17:15:52Z",
       "side": 1,
       "message": "Maybe add some doc on domain roles here ?",
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_e8df0b67",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 900,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-11T17:34:34Z",
+      "side": 1,
+      "message": "I didn\u0027t on the basis that we don\u0027t mention implied roles either!",
+      "parentUuid": "3a57f1b5_86ffad00",
       "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -77,6 +113,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_c8fecfad",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 6916,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-11T17:34:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_50096b2b",
+      "range": {
+        "startLine": 6916,
+        "startChar": 8,
+        "endLine": 6916,
+        "endChar": 51
+      },
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_70b7a486",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 15
@@ -88,6 +148,30 @@
       "writtenOn": "2016-02-11T07:56:14Z",
       "side": 1,
       "message": "i didn\u0027t think we were allowing this...\n\ni get roles and implied roles, that gives us finer control.\ni get domain roles, and why they shouldn\u0027t appear in the token.\n\nif a DSR carries no authorization (it\u0027s not in the token), then it shouldn\u0027t be able to imply authorization?",
+      "range": {
+        "startLine": 682,
+        "startChar": 8,
+        "endLine": 683,
+        "endChar": 15
+      },
+      "revId": "799421a71308389f2a4e59eb1da72d164fb807c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c8ed6fb8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-11T17:34:34Z",
+      "side": 1,
+      "message": "I\u0027m not sure why a role or implied_role should be treated any different if it is implied by a DSR....which is all I\u0027m doing here. If DSR R1 implies a standard role R2, the R2 (only) goes in the token. If R2 now is actually an implied role itself to R3, then R2 and R3 should go in the token,",
+      "parentUuid": "3a57f1b5_70b7a486",
       "range": {
         "startLine": 682,
         "startChar": 8,
