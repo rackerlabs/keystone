@@ -449,7 +449,7 @@ def exception_translated(exception_type):
 @notifications.listener
 @dependency.provider('identity_api')
 @dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
-                     'resource_api', 'revoke_api')
+                     'resource_api', 'revoke_api', 'shadow_users_api')
 class Manager(manager.Manager):
     """Default pivot point for the Identity backend.
 
@@ -1174,6 +1174,17 @@ class Manager(manager.Manager):
         update_dict = {'password': new_password}
         self.update_user(user_id, update_dict)
 
+    @MEMOIZE
+    def shadow_federated_user(self, federated_dict):
+        user_dict = {}
+        try:
+            user_dict = self.shadow_users_api.get_federated_user(
+                federated_dict["idp_id"], federated_dict["unique_id"])
+        except exception.UserNotFound:
+            user_dict = self.shadow_users_api.create_federated_user(
+                federated_dict)
+        return user_dict
+
 
 @six.add_metaclass(abc.ABCMeta)
 class IdentityDriverV8(object):
@@ -1473,3 +1484,40 @@ class MappingDriverV8(object):
 
 
 MappingDriver = manager.create_legacy_driver(MappingDriverV8)
+
+
+@dependency.provider('shadow_users_api')
+class ShadowUsersManager(manager.Manager):
+    """Default pivot point for the Shadow Users backend."""
+
+    driver_namespace = 'keystone.identity.shadow_users'
+
+    def __init__(self):
+        super(ShadowUsersManager, self).__init__('sql')
+
+
+@six.add_metaclass(abc.ABCMeta)
+class ShadowUsersDriver(object):
+    """Interface description for an Shadow Users driver."""
+
+    @abc.abstractmethod
+    def get_federated_user(self, idp_id, unique_id):
+        """Returns the local user
+
+        :param idp_id: The identity provider ID
+        :param unique_id: The unique ID for...
+        :returns dict: Containing the user reference if found...
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_federated_user(self, federated_dict, user_id=None):
+        """Create a new local user with the federated identity
+
+        :param dict federated_dict: Reference to the federated identity
+        :param user_id: ...
+        :returns dict: Containing the user reference if found...
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
