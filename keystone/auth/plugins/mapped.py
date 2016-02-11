@@ -140,7 +140,14 @@ def handle_unscoped_token(context, auth_payload, auth_context,
             federation_api, identity_api)
 
         if is_ephemeral_user(mapped_properties):
-            user = setup_username(context, mapped_properties)
+            temp_user = setup_username(context, mapped_properties)
+            federated_dict = {
+                'idp_id': identity_provider,
+                'protocol_id': protocol,
+                'unique_id': temp_user['id'],
+                'display_name': temp_user['name']
+            }
+            user = identity_api.shadow_federated_user(federated_dict)
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_cardinality(group_ids, mapping_id)
