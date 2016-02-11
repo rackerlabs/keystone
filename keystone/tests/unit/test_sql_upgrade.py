@@ -845,6 +845,19 @@ class SqlUpgradeTests(SqlMigrateBase):
         implied_roles = self.role_api.list_implied_roles(role_id_list[0])
         self.assertThat(implied_roles, matchers.HasLength(0))
 
+    def test_add_federated_user_table(self):
+        federated_user_table = 'federated_user'
+        self.upgrade(92)
+        self.assertTableDoesNotExist(federated_user_table)
+        self.upgrade(93)
+        self.assertTableColumns(federated_user_table,
+                                ['id',
+                                 'user_id',
+                                 'idp_id',
+                                 'protocol_id',
+                                 'unique_id',
+                                 'display_name'])
+
 
 class VersionTests(SqlMigrateBase):
 
