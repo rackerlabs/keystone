@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_3b24885e",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-11T20:15:14Z",
+      "side": 1,
+      "message": "I think it would be easier to read if these were ordered in a way that rules that use others appear after them ?",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 115
+      },
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
