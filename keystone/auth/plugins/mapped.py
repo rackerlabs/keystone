@@ -140,7 +140,15 @@ def handle_unscoped_token(context, auth_payload, auth_context,
             federation_api, identity_api)
 
         if is_ephemeral_user(mapped_properties):
-            user = setup_username(context, mapped_properties)
+            unique_id, display_name = _get_user_unique_id_and_display_name(
+                context, mapped_properties)
+            federated_dict = {
+                'idp_id': identity_provider,
+                'protocol_id': protocol,
+                'unique_id': unique_id,
+                'display_name': user_name
+            }
+            user = identity_api.shadow_federated_user(federated_dict)
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_cardinality(group_ids, mapping_id)
@@ -201,7 +209,7 @@ def apply_mapping_filter(identity_provider, protocol, assertion,
     return mapped_properties, mapping_id
 
 
-def setup_username(context, mapped_properties):
+def _get_user_unique_id_and_display_name(context, mapped_properties):
     """Setup federated username.
 
     Function covers all the cases for properly setting user id, a primary
@@ -239,11 +247,11 @@ def setup_username(context, mapped_properties):
         raise exception.Unauthorized(msg)
 
     elif not user_name:
-        user['name'] = user_id
+        user_name = user_id
 
     elif not user_id:
         user_id = user_name
 
-    user['id'] = parse.quote(user_id)
+    user_id = parse.quote(user_id)
 
-    return user
+    return (user_id, user_name)
