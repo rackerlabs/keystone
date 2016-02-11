@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_348015f7",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-11T20:22:34Z",
+      "side": 1,
+      "message": "i don\u0027t think we need this, we use entrypoints in setup.cfg now.\n\ni think we can remove most of the [auth] block actually..",
+      "range": {
+        "startLine": 768,
+        "startChar": 8,
+        "endLine": 770,
+        "endChar": 61
+      },
+      "revId": "d5f23b1bcb55f57471ff583efd7b54b319db65cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
