@@ -73,6 +73,47 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_058b82c4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-11T13:02:34Z",
+      "side": 1,
+      "message": "I think an alternative would be to have this method just do the check and not worry about the messaging. Let the caller, that knows the operation to perform, deal with the messaging.",
+      "parentUuid": "3a57f1b5_a24e2494",
+      "range": {
+        "startLine": 279,
+        "startChar": 60,
+        "endLine": 279,
+        "endChar": 76
+      },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a54e2e94",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-11T13:02:34Z",
+      "side": 1,
+      "message": "Why would you ever not pass a subtree_list? I think it should always be passed in.",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_98b053df",
         "filename": "keystone/resource/core.py",
         "patchSetId": 24
@@ -114,6 +155,57 @@
         "endLine": 384,
         "endChar": 26
       },
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_283775e4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-11T13:02:34Z",
+      "side": 1,
+      "message": "Can this be a generator expression instead of a list comprehension? It seems like a waste to build a new list here.",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_28ac55ec",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2536,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-11T13:02:34Z",
+      "side": 1,
+      "message": "Put \"(optional)\" is the description part, at the end. Event better than saying optional is to say what the default is.",
+      "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_48f431f1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3388,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-11T13:02:34Z",
+      "side": 1,
+      "message": "Newline above this.",
       "revId": "f6e160a07154c2aa008e6c0639f8a8e57e785cc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
