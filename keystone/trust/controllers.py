@@ -18,6 +18,7 @@ from oslo_utils import timeutils
 import six
 
 from keystone import assignment
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
@@ -55,7 +56,7 @@ class TrustV3(controller.V3Controller):
 
     def _get_user_id(self, context):
         try:
-            token_ref = utils.get_token_ref(context)
+            token_ref = authorization.get_token_ref(context)
         except exception.Unauthorized:
             return None
         return token_ref.user_id

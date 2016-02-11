@@ -34,14 +34,13 @@ import six
 import webob.dec
 import webob.exc
 
+from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import json_home
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
-from keystone.i18n import _LI
 from keystone.i18n import _LW
-from keystone.models import token_model
 
 
 CONF = cfg.CONF
@@ -58,58 +57,7 @@ JSON_ENCODE_CONTENT_TYPES = set(['application/json',
 
 
 def validate_token_bind(context, token_ref):
-    bind_mode = CONF.token.enforce_token_bind
-
-    if bind_mode == 'disabled':
-        return
-
-    if not isinstance(token_ref, token_model.KeystoneToken):
-        raise exception.UnexpectedError(_('token reference must be a '
-                                          'KeystoneToken type, got: %s') %
-                                        type(token_ref))
-    bind = token_ref.bind
-
-    # permissive and strict modes don't require there to be a bind
-    permissive = bind_mode in ('permissive', 'strict')
-
-    if not bind:
-        if permissive:
-            # no bind provided and none required
-            return
-        else:
-            LOG.info(_LI("No bind information present in token"))
-            raise exception.Unauthorized()
-
-    # get the named mode if bind_mode is not one of the known
-    name = None if permissive or bind_mode == 'required' else bind_mode
-
-    if name and name not in bind:
-        LOG.info(_LI("Named bind mode %s not in bind information"), name)
-        raise exception.Unauthorized()
-
-    for bind_type, identifier in bind.items():
-        if bind_type == 'kerberos':
-            if not (context['environment'].get('AUTH_TYPE', '').lower()
-                    == 'negotiate'):
-                LOG.info(_LI("Kerberos credentials required and not present"))
-                raise exception.Unauthorized()
-
-            if not context['environment'].get('REMOTE_USER') == identifier:
-                LOG.info(_LI("Kerberos credentials do not match "
-                             "those in bind"))
-                raise exception.Unauthorized()
-
-            LOG.info(_LI("Kerberos bind authentication successful"))
-
-        elif bind_mode == 'permissive':
-            LOG.debug(("Ignoring unknown bind for permissive mode: "
-                       "{%(bind_type)s: %(identifier)s}"),
-                      {'bind_type': bind_type, 'identifier': identifier})
-        else:
-            LOG.info(_LI("Couldn't verify unknown bind: "
-                         "{%(bind_type)s: %(identifier)s}"),
-                     {'bind_type': bind_type, 'identifier': identifier})
-            raise exception.Unauthorized()
+    authorization.validate_token_bind(context, token_ref)
 
 
 def best_match_language(req):
@@ -307,7 +255,7 @@ class Application(BaseApplication):
 
         """
         if not context['is_admin']:
-            user_token_ref = utils.get_token_ref(context)
+            user_token_ref = authorization.get_token_ref(context)
 
             validate_token_bind(context, user_token_ref)
             creds = copy.deepcopy(user_token_ref.metadata)
@@ -364,7 +312,7 @@ class Application(BaseApplication):
             LOG.debug(('will not lookup trust as the request auth token is '
                        'either absent or it is the system admin token'))
             return None
-        token_ref = utils.get_token_ref(context)
+        token_ref = authorization.get_token_ref(context)
         return token_ref.trust_id
 
     @classmethod
