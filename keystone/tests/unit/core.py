@@ -336,6 +336,22 @@ def new_user_ref(domain_id, project_id=None, **kwargs):
     return ref
 
 
+def new_federated_identity_ref(idp_id=None, protocol_id=None, **kwargs):
+    ref = {
+        'id': uuid.uuid4().hex,
+        'idp_id': uuid.uuid4().hex,
+        'protocol_id': uuid.uuid4().hex,
+        'unique_id': uuid.uuid4().hex,
+        'display_name': uuid.uuid4().hex,
+    }
+    if idp_id:
+        ref['idp_id'] = idp_id
+    if protocol_id:
+        ref['protocol_id'] = protocol_id
+    ref.update(kwargs)
+    return ref
+
+
 def new_group_ref(domain_id, **kwargs):
     ref = {
         'id': uuid.uuid4().hex,
