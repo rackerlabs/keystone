@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_30681387",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-12T02:47:32Z",
+      "side": 1,
+      "message": "suggest moving this part to the front to short-circuit the evaluation so it may saved us a potential DB read in _role_is_global().",
+      "range": {
+        "startLine": 675,
+        "startChar": 20,
+        "endLine": 675,
+        "endChar": 62
+      },
+      "revId": "66c83f9621a8074c86fa37958b5225f8898df3b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
