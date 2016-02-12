@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_3ff8bbc2",
+        "filename": "releasenotes/notes/catalog_project_id-519f5a70f9f7c4c6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-02-12T17:55:54Z",
+      "side": 1,
+      "message": "Nit:  I would consider updating this to mention that the term tenant has been deprecated in favor of projects which is the preferred term going forward",
+      "revId": "6800b2ea665d9e70a135a49ef15410f6e72cf08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
