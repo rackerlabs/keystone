@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_f9579823",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2615,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-12T21:32:41Z",
+      "side": 1,
+      "message": "Can also add\n\n        for role in token[\u0027roles\u0027]:\n            self.assertIn(role, self.role_list)\n\n        for role  in self.role_list:\n            self.assertIn(role, token[\u0027roles\u0027])",
+      "revId": "3df2b2d8988c81cbac227732e0783664c8db104e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
