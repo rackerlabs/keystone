@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_703a0bce",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4353,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T02:39:21Z",
+      "side": 1,
+      "message": "(nit) ID",
+      "range": {
+        "startLine": 4353,
+        "startChar": 41,
+        "endLine": 4353,
+        "endChar": 43
+      },
+      "revId": "75610f81f31c24ef0e83e54de6226e98619378ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_303013e8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4357,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T02:39:21Z",
+      "side": 1,
+      "message": "ID",
+      "range": {
+        "startLine": 4357,
+        "startChar": 54,
+        "endLine": 4357,
+        "endChar": 56
+      },
+      "revId": "75610f81f31c24ef0e83e54de6226e98619378ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_d09dffbc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4418,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T02:39:21Z",
+      "side": 1,
+      "message": "Please check the roles that remained",
+      "revId": "75610f81f31c24ef0e83e54de6226e98619378ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
