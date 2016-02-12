@@ -198,6 +198,30 @@
       "revId": "238a792499163c6231fd1cac0f0d08447897810b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_58e05196",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T08:26:42Z",
+      "side": 1,
+      "message": "OK, so want to make sure I understand which way round you prefer this....you felt it was better to have these \"lower level\" rules after where they are referenced (i.e. the api actions above this block) - so I did indeed move them here. That reference-before-definition is true of these lower-level urls too ( I think)....or were you thinking a different order is better?",
+      "parentUuid": "3a57f1b5_3b24885e",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 115
+      },
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
