@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_909bdc65",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-12T19:04:24Z",
+      "side": 1,
+      "message": "cool! i didn\u0027t realize it was a refactor of the above method.",
+      "parentUuid": "3a57f1b5_70b3c00a",
+      "range": {
+        "startLine": 327,
+        "startChar": 16,
+        "endLine": 330,
+        "endChar": 49
+      },
+      "revId": "c25786a50aab54048e34d73f97b46c16d079ac9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_44eb7813",
         "filename": "keystone/resource/core.py",
         "patchSetId": 30
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "actually, we have. It is the \u0027test_cannot_delete_project_cascade_with_enabled_child\u0027 test",
       "parentUuid": "3a57f1b5_44eb7813",
+      "range": {
+        "startLine": 392,
+        "startChar": 16,
+        "endLine": 395,
+        "endChar": 49
+      },
+      "revId": "c25786a50aab54048e34d73f97b46c16d079ac9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_10a84c76",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-12T19:04:24Z",
+      "side": 1,
+      "message": "thanks!",
+      "parentUuid": "3a57f1b5_e580548d",
       "range": {
         "startLine": 392,
         "startChar": 16,
