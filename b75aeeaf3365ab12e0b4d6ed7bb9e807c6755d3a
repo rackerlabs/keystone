@@ -95,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_4ada9e4d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T16:13:41Z",
+      "side": 1,
+      "message": "Yes this is OK, because it uses _get_domain",
+      "parentUuid": "3a57f1b5_fe0f9336",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 31
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_6a18ba1e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T16:13:41Z",
+      "side": 1,
+      "message": "Yes this is OK, because it uses _get_domain",
+      "parentUuid": "3a57f1b5_fe0f9336",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 31
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_3ef0cb66",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 24
