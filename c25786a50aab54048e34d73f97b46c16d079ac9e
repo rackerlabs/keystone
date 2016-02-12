@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_70b3c00a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-12T19:00:19Z",
+      "side": 1,
+      "message": "Yes. Here it is: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_backend.py#L3480",
+      "parentUuid": "3a57f1b5_700e60e6",
+      "range": {
+        "startLine": 327,
+        "startChar": 16,
+        "endLine": 330,
+        "endChar": 49
+      },
+      "revId": "c25786a50aab54048e34d73f97b46c16d079ac9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_44eb7813",
         "filename": "keystone/resource/core.py",
         "patchSetId": 30
