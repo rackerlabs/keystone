@@ -222,6 +222,30 @@
       "revId": "238a792499163c6231fd1cac0f0d08447897810b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_dbad1b9c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T08:45:20Z",
+      "side": 1,
+      "message": "I\u0027ve changed it to what I *think* you meant! Let me know if didn\u0027t quite follow your line of reasoning.",
+      "parentUuid": "3a57f1b5_58e05196",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 115
+      },
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
