@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a57f1b5_700e60e6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-12T18:56:40Z",
+      "side": 1,
+      "message": "Is there a test for this?",
+      "range": {
+        "startLine": 327,
+        "startChar": 16,
+        "endLine": 330,
+        "endChar": 49
+      },
+      "revId": "c25786a50aab54048e34d73f97b46c16d079ac9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_44eb7813",
         "filename": "keystone/resource/core.py",
         "patchSetId": 30
