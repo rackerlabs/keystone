@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_00026c0b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3586,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T01:30:02Z",
+      "side": 1,
+      "message": "And then these methods have now 2 setup calls: the one from this class which is ran by the test framework and this explicit call.\n\nI am not sure how much it is buying us to put these tests together",
+      "range": {
+        "startLine": 3586,
+        "startChar": 0,
+        "endLine": 3586,
+        "endChar": 32
+      },
+      "revId": "c35d7691cbacb642c0544b7195a02405d5d9dbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_9b280d88",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3668,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T01:30:02Z",
+      "side": 1,
+      "message": "Also, there are still other separate classes",
+      "range": {
+        "startLine": 3668,
+        "startChar": 0,
+        "endLine": 3668,
+        "endChar": 45
+      },
+      "revId": "c35d7691cbacb642c0544b7195a02405d5d9dbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
