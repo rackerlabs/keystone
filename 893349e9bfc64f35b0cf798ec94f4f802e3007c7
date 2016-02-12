@@ -70,6 +70,30 @@
       "revId": "893349e9bfc64f35b0cf798ec94f4f802e3007c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_85b2c0e3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-12T18:36:02Z",
+      "side": 1,
+      "message": "i\u0027d go with \"prohibited_implied_role\"\n\nfor the other ListOpt options, we don\u0027t pluralize the word (see notification_driver)",
+      "parentUuid": "3a57f1b5_c288ae73",
+      "range": {
+        "startLine": 408,
+        "startChar": 21,
+        "endLine": 408,
+        "endChar": 30
+      },
+      "revId": "893349e9bfc64f35b0cf798ec94f4f802e3007c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
