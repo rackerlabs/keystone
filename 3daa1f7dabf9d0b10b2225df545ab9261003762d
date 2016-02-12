@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_f0e490ac",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2702,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T19:47:11Z",
+      "side": 1,
+      "message": "check the parent has been disabled too",
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_70e740ac",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2713,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T19:47:11Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
