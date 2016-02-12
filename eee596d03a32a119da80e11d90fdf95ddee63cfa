@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_57fd53b2",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_identity_table_from_user_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-12T21:57:20Z",
+      "side": 1,
+      "message": "nit: this file could almost be: \n\n    089_rename_user_table_to_identity_table.py\n\ntook me a few minutes to figure out what was going on ;)",
+      "revId": "eee596d03a32a119da80e11d90fdf95ddee63cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
