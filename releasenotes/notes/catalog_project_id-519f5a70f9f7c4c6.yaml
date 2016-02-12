@@ -1,0 +1,5 @@
+---
+features:
+  - Keystone supports $(project_id)s in the catalog. It works the
+    same as $(tenant_id)s.
+
