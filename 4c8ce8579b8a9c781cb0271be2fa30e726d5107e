@@ -22,6 +22,30 @@
       "revId": "4c8ce8579b8a9c781cb0271be2fa30e726d5107e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_dead099c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T09:06:15Z",
+      "side": 1,
+      "message": "So I really don\u0027t want to stop deployers defining these rules in policy files (more specifically, the ability to do it without modifying code). The common policy scenario is never going to work for keystone without modification (which is expected, I believe, from the common policy scenario), we are the odd ball from that point of view.\n\nWhat I will do is re-oder the above to make it flow a bit more logically...",
+      "parentUuid": "3a57f1b5_104dd7c3",
+      "range": {
+        "startLine": 104,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 89
+      },
+      "revId": "4c8ce8579b8a9c781cb0271be2fa30e726d5107e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
