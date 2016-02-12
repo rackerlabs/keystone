@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_e580548d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-12T18:46:26Z",
+      "side": 1,
+      "message": "actually, we have. It is the \u0027test_cannot_delete_project_cascade_with_enabled_child\u0027 test",
+      "parentUuid": "3a57f1b5_44eb7813",
+      "range": {
+        "startLine": 392,
+        "startChar": 16,
+        "endLine": 395,
+        "endChar": 49
+      },
+      "revId": "c25786a50aab54048e34d73f97b46c16d079ac9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_846ad07f",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 30
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-12T15:03:40Z",
       "side": 1,
       "message": "this test looks like it is disabling a project and not deleting it",
+      "range": {
+        "startLine": 3424,
+        "startChar": 20,
+        "endLine": 3424,
+        "endChar": 26
+      },
+      "revId": "c25786a50aab54048e34d73f97b46c16d079ac9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a566dc27",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 3424,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-12T18:46:26Z",
+      "side": 1,
+      "message": "I disagree. We only disable part of the hierarchy to have an enabled project in the middle. The main part is trying to delete, and after it, ensuring no project was deleted.",
+      "parentUuid": "3a57f1b5_846ad07f",
       "range": {
         "startLine": 3424,
         "startChar": 20,
