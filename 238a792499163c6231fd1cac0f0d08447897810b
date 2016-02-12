@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_524b4f2a",
+        "filename": "etc/policy.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T07:36:16Z",
+      "side": 1,
+      "message": "agreed!",
+      "parentUuid": "3a57f1b5_10f077c8",
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_90978739",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 17
@@ -30,6 +48,30 @@
       "writtenOn": "2016-02-12T02:57:07Z",
       "side": 1,
       "message": "why can\u0027t we just use rule:admin_and_matching_domain_id?",
+      "range": {
+        "startLine": 84,
+        "startChar": 53,
+        "endLine": 84,
+        "endChar": 74
+      },
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_723f6b87",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T07:36:16Z",
+      "side": 1,
+      "message": "see comment below",
+      "parentUuid": "3a57f1b5_90978739",
       "range": {
         "startLine": 84,
         "startChar": 53,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_32c7b397",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T07:36:16Z",
+      "side": 1,
+      "message": "so for global roles, a project admin has always been able to get and list them  (they can\u0027t create/update/delete them, of course). So the same should be true for domain roles - the project admin should be able to get and list those for their own domain (but again, not create/update/delete them)",
+      "parentUuid": "3a57f1b5_f0c11b55",
+      "range": {
+        "startLine": 89,
+        "startChar": 73,
+        "endLine": 89,
+        "endChar": 119
+      },
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_30a9f37b",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 17
@@ -76,6 +142,30 @@
       "writtenOn": "2016-02-12T02:57:07Z",
       "side": 1,
       "message": "I don\u0027t understand this complexity. Isn\u0027t filtering has always been done at the code level instead of policy level?",
+      "range": {
+        "startLine": 90,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 138
+      },
+      "revId": "238a792499163c6231fd1cac0f0d08447897810b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_b23963a6",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T07:36:16Z",
+      "side": 1,
+      "message": "no, filtering protection has always been done in policy",
+      "parentUuid": "3a57f1b5_30a9f37b",
       "range": {
         "startLine": 90,
         "startChar": 4,
