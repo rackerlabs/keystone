@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_51c9e657",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2581,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T20:16:32Z",
+      "side": 0,
+      "message": "Re-add this line, it\u0027s making pep8 to fail",
+      "range": {
+        "startLine": 2581,
+        "startChar": 0,
+        "endLine": 2581,
+        "endChar": 0
+      },
+      "revId": "3eb718b9dca5e15b5b9154ecdf5b7cd512d76607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

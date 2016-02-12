@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_919bde65",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2683,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T20:16:32Z",
+      "side": 1,
+      "message": "Nice! We could just use a @wip annotation here and get this test exposing the bug merged",
+      "revId": "c5e88a4e7d855fc076e0144dc08a213025cfc4d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
