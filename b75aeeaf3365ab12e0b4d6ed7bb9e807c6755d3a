@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_6d969f40",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "So this is the unique domain that has domain_id filed pointed to itself",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_0de5abda",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "doubled \u0027an interim\u0027",
+      "range": {
+        "startLine": 46,
+        "startChar": 10,
+        "endLine": 46,
+        "endChar": 20
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_feda334a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "This needs to address the hidden_ref too",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 31
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_3ef0cb66",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "This neeeds to address the hiden_ref",
+      "range": {
+        "startLine": 197,
+        "startChar": 8,
+        "endLine": 197,
+        "endChar": 32
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_fe32335d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1068,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "This neeeds to address the hiden_ref",
+      "range": {
+        "startLine": 1068,
+        "startChar": 8,
+        "endLine": 1068,
+        "endChar": 20
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_5ec10753",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1071,
+        "startChar": 8,
+        "endLine": 1071,
+        "endChar": 29
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_1eb70ff6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1074,
+        "startChar": 8,
+        "endLine": 1074,
+        "endChar": 18
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_feb1d301",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1077,
+        "startChar": 8,
+        "endLine": 1077,
+        "endChar": 26
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_decdf785",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1080,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1080,
+        "startChar": 8,
+        "endLine": 1080,
+        "endChar": 21
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_9e71bf46",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1083,
+        "startChar": 8,
+        "endLine": 1083,
+        "endChar": 21
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_7eaba375",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1109,
+        "startChar": 8,
+        "endLine": 1109,
+        "endChar": 40
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_9ebf7fa9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1126,
+        "startChar": 8,
+        "endLine": 1126,
+        "endChar": 22
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_fee473e0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1129,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1129,
+        "startChar": 8,
+        "endLine": 1129,
+        "endChar": 32
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_7ed96321",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1135,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T14:32:12Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1135,
+        "startChar": 8,
+        "endLine": 1135,
+        "endChar": 32
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
