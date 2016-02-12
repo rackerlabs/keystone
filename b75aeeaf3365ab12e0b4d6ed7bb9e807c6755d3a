@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_fe0f9336",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T14:35:44Z",
+      "side": 1,
+      "message": "I think this is OK...and we test for the in test_backend_sql.py",
+      "parentUuid": "3a57f1b5_feda334a",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 31
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_3ef0cb66",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 24
@@ -82,6 +106,30 @@
       "writtenOn": "2016-02-12T14:32:12Z",
       "side": 1,
       "message": "This neeeds to address the hiden_ref",
+      "range": {
+        "startLine": 197,
+        "startChar": 8,
+        "endLine": 197,
+        "endChar": 32
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_9e01bf08",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T14:35:44Z",
+      "side": 1,
+      "message": "Ah...this is a new methods since I wrote this patch!!! will address",
+      "parentUuid": "3a57f1b5_3ef0cb66",
       "range": {
         "startLine": 197,
         "startChar": 8,
