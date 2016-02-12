@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_3b3e928c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3586,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-12T17:01:29Z",
+      "side": 1,
+      "message": "The purpose of the patch is to simplify the testing for the fernet token provider and have trust redelegation/impersonation/chained workflow test coverage which is not in the TestFernetProvider trust test cases. I do agree that having two setup is not ideal, so what I can do is refactor the TestTrustAuth into the TrustAPIBehavior and leave the TestTrustChain as its own class which has an expensive setup.",
+      "parentUuid": "3a57f1b5_00026c0b",
+      "range": {
+        "startLine": 3586,
+        "startChar": 0,
+        "endLine": 3586,
+        "endChar": 32
+      },
+      "revId": "c35d7691cbacb642c0544b7195a02405d5d9dbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_9b280d88",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 2
