@@ -1,0 +1,10 @@
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 12 Feb 2016 21:53:02 +0000
+Reviewed-on: https://review.openstack.org/244149
+Project: openstack/keystone
+Branch: refs/heads/master
