@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_63db27ed",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T04:07:22Z",
+      "side": 1,
+      "message": "(nit) remove _\n\n(nit) add a period at the end",
+      "range": {
+        "startLine": 601,
+        "startChar": 19,
+        "endLine": 601,
+        "endChar": 20
+      },
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_03a91324",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T04:07:22Z",
+      "side": 1,
+      "message": "self.assertTrue(store.is_configured)",
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c601c906",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T04:07:22Z",
+      "side": 1,
+      "message": "self.assertFalse(store.is_configured)",
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_e33877f1",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T04:07:22Z",
+      "side": 1,
+      "message": "I don\u0027t see what this test is buying us; test above already shows the method is called twice",
+      "range": {
+        "startLine": 613,
+        "startChar": 0,
+        "endLine": 613,
+        "endChar": 46
+      },
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_a3eb5f77",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T04:07:22Z",
+      "side": 1,
+      "message": "(nit) capitalize",
+      "range": {
+        "startLine": 614,
+        "startChar": 11,
+        "endLine": 614,
+        "endChar": 12
+      },
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
