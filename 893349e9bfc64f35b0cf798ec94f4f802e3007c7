@@ -46,6 +46,30 @@
       "revId": "893349e9bfc64f35b0cf798ec94f4f802e3007c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c288ae73",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-12T18:10:43Z",
+      "side": 1,
+      "message": "prohibited_implied_roles  is fine.  We can change this now until milestone 3 which is coming up",
+      "parentUuid": "3a57f1b5_ff4303ad",
+      "range": {
+        "startLine": 408,
+        "startChar": 21,
+        "endLine": 408,
+        "endChar": 30
+      },
+      "revId": "893349e9bfc64f35b0cf798ec94f4f802e3007c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
