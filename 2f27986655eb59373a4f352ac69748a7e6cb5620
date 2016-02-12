@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_0dc84ba7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T13:42:58Z",
+      "side": 1,
+      "message": "This was happening after the project deletion in the previous code, and now it\u0027s before\n\nI don\u0027t think we want to invalidate caches/remove all the stuff if the projects can\u0027t be removed for some reason?",
+      "range": {
+        "startLine": 355,
+        "startChar": 8,
+        "endLine": 364,
+        "endChar": 59
+      },
+      "revId": "2f27986655eb59373a4f352ac69748a7e6cb5620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
