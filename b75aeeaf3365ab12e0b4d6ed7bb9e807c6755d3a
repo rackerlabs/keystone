@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a57f1b5_005b25f7",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T17:00:03Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "3a57f1b5_6d969f40",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_0de5abda",
         "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
         "patchSetId": 24
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-12T14:32:12Z",
       "side": 1,
       "message": "doubled \u0027an interim\u0027",
+      "range": {
+        "startLine": 46,
+        "startChar": 10,
+        "endLine": 46,
+        "endChar": 20
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c0718d77",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T17:00:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_0de5abda",
       "range": {
         "startLine": 46,
         "startChar": 10,
@@ -201,6 +249,30 @@
       "writtenOn": "2016-02-12T14:32:12Z",
       "side": 1,
       "message": "This neeeds to address the hiden_ref",
+      "range": {
+        "startLine": 1068,
+        "startChar": 8,
+        "endLine": 1068,
+        "endChar": 20
+      },
+      "revId": "b75aeeaf3365ab12e0b4d6ed7bb9e807c6755d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_c0cd0d86",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1068,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-12T17:00:03Z",
+      "side": 1,
+      "message": "I think these are all OK, since a V8 driver will not have the hidden rows.",
+      "parentUuid": "3a57f1b5_fe32335d",
       "range": {
         "startLine": 1068,
         "startChar": 8,
