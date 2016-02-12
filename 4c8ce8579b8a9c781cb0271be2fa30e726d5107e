@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_104dd7c3",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-12T03:05:23Z",
+      "side": 1,
+      "message": "Ouch! My head hurts trying to wrap around this. Should we move this logic to the code instead? With plenty of inline comments of course. Also, I am not sure how the \"Common Policy Scenario\" people feels about this one. Looks like they are push policy.json to contain only rules and public (namespaced) APIs. I could be wrong though. Just need to be clear on the direction.",
+      "range": {
+        "startLine": 104,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 89
+      },
+      "revId": "4c8ce8579b8a9c781cb0271be2fa30e726d5107e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
