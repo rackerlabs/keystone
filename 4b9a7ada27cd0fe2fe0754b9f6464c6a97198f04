@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_64cc7b6a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T13:16:37Z",
+      "side": 1,
+      "message": "(nit) IMO this comment is not necessary, it\u0027s clear by the method name",
+      "range": {
+        "startLine": 283,
+        "startChar": 8,
+        "endLine": 283,
+        "endChar": 58
+      },
+      "revId": "4b9a7ada27cd0fe2fe0754b9f6464c6a97198f04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_041907d7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-12T13:16:37Z",
+      "side": 1,
+      "message": "What is this code doing here ? Isn\u0027t this patch for recursive deletion ? This method is update_project",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 332,
+        "endChar": 0
+      },
+      "revId": "4b9a7ada27cd0fe2fe0754b9f6464c6a97198f04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
