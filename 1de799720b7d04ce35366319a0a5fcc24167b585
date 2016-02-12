@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_83242360",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-12T03:38:18Z",
+      "side": 1,
+      "message": "Do this as two migrations.  The first creates the column, the second migrates the data.  Othewise, if the migrate fails, the table will be in an unstable state.",
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_63f9e7c6",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-12T03:38:18Z",
+      "side": 1,
+      "message": "extras",
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
