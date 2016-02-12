@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_7caf167d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-12T21:45:59Z",
+      "side": 1,
+      "message": "extra newline here?",
+      "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a57f1b5_1c44e2b4",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3418,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-12T21:45:59Z",
+      "side": 1,
+      "message": "Is this documented in a bug? If so, we should add it to the wip message.\n\n     @test_utils.wip(\u0027Cannot redelegate with impersonation\u003dFalse, see bug # for more info\u0027) \n\nor something of that nature.",
+      "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
