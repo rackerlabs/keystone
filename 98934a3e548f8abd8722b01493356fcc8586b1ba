@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a54edaf_2c5297de",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2621,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-02-13T05:07:10Z",
+      "side": 1,
+      "message": "I assume you mean \"the user\"?",
+      "range": {
+        "startLine": 2621,
+        "startChar": 56,
+        "endLine": 2621,
+        "endChar": 59
+      },
+      "revId": "98934a3e548f8abd8722b01493356fcc8586b1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
