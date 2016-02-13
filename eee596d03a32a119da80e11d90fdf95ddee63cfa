@@ -16,6 +16,24 @@
       "revId": "eee596d03a32a119da80e11d90fdf95ddee63cfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a54edaf_3d463fc0",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_identity_table_from_user_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-13T11:30:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_57fd53b2",
+      "revId": "eee596d03a32a119da80e11d90fdf95ddee63cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
