@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_900382b8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1511,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:31:28Z",
+      "side": 1,
+      "message": "we don\u0027t need to create a legacy driver, this is a new driver for v9, so creating a compatibility driver for v8 is not necessary.\n\nwe do however need to create the \"create_federated_user\u0027 and \"get_federated_user\" functions in the ShadowUsers class",
+      "range": {
+        "startLine": 1484,
+        "startChar": 0,
+        "endLine": 1511,
+        "endChar": 69
+      },
+      "revId": "0ba849ee940f305063365560b018c40de2505e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f02ace2b",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:31:28Z",
+      "side": 1,
+      "message": "eek, don\u0027t import class names, just the modules #NoMoreJava",
+      "range": {
+        "startLine": 18,
+        "startChar": 43,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "0ba849ee940f305063365560b018c40de2505e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
