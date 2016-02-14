@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_7b5fbf0e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T08:15:16Z",
+      "side": 1,
+      "message": "could have just added this to the end",
+      "range": {
+        "startLine": 326,
+        "startChar": 40,
+        "endLine": 326,
+        "endChar": 55
+      },
+      "revId": "9602f38db8ed3993d59978e2d8e1651066b504c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
