@@ -45,6 +45,30 @@
       "revId": "0ba849ee940f305063365560b018c40de2505e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_dea514b6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T17:52:25Z",
+      "side": 1,
+      "message": "This may be a dumb question, but why not?  I don\u0027t need everything in that module, only these classes.  And didn\u0027t want to have to prefix when using the classes, e.g. sql_model.FederatedIdentity...  Is it just to reduce the number of imports from 4 lines to 1?",
+      "parentUuid": "dae33548_f02ace2b",
+      "range": {
+        "startLine": 18,
+        "startChar": 43,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "0ba849ee940f305063365560b018c40de2505e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
