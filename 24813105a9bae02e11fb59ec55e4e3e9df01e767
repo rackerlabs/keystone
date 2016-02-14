@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_e38e8126",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T16:35:01Z",
+      "side": 1,
+      "message": "The unique index is added back in the new user table; no longer needed in this table.",
+      "parentUuid": "dae33548_751d10bd",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_1020129b",
         "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
         "patchSetId": 13
@@ -94,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_c3937d4e",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T16:35:01Z",
+      "side": 1,
+      "message": "The password column is already nullable",
+      "parentUuid": "dae33548_1020129b",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 46
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_b5c038e2",
         "filename": "keystone/common/sql/migrate_repo/versions/090_add_user_and_password_tables.py",
         "patchSetId": 13
@@ -105,6 +153,24 @@
       "writtenOn": "2016-02-14T07:22:05Z",
       "side": 1,
       "message": "i wasn\u0027t clear on why we were adding a password table, instead of having it be a column like it was in the old table (https://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/067_kilo.py#L165), but this kinda explains it... for future work here i guess?",
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e3b5e1d0",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_user_and_password_tables.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T16:35:01Z",
+      "side": 1,
+      "message": "Yes, to accommodate future use cases, such as supporting multiple passwords and rules around password history.",
+      "parentUuid": "dae33548_b5c038e2",
       "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +223,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_23e7c9e5",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T16:35:01Z",
+      "side": 1,
+      "message": "There is a comment here stating that the columns will be dropped in a later release:\nhttps://review.openstack.org/#/c/278570/13/keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py\n\nDo we really need to test for them as they are no longer needed?",
+      "parentUuid": "dae33548_d0818a4f",
+      "range": {
+        "startLine": 125,
+        "startChar": 8,
+        "endLine": 125,
+        "endChar": 27
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d036aab3",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 13
@@ -168,6 +258,30 @@
       "writtenOn": "2016-02-14T07:22:05Z",
       "side": 1,
       "message": "what data is it actually migrating?\n\ni think we\u0027re missing some cases, where default_project_id is created, and extras is used, and where a user lives in a non-default domain",
+      "range": {
+        "startLine": 756,
+        "startChar": 4,
+        "endLine": 756,
+        "endChar": 48
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_63f8b17d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T16:35:01Z",
+      "side": 1,
+      "message": "The data in the old user table (now identity table) is being moved to new user and password tables. The default_project_id and extra columns remain in the parent identity table. While we\u0027re separating this data out now to support future uses cases, the user behavior hasn\u0027t changed in this patch.",
+      "parentUuid": "dae33548_d036aab3",
       "range": {
         "startLine": 756,
         "startChar": 4,
