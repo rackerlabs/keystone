@@ -692,3 +692,21 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertListEqual([], mapped_properties['group_names'])
         self.assertItemsEqual(['210mlk', '321cba'],
                               mapped_properties['group_ids'])
+
+    def test_rule_engine_unicode(self):
+        """Test mapping engine when group_ids is explicitly set.
+
+        If the group ids list has only one group,
+        test if the transformation is done correctly
+
+        """
+        mapping = mapping_fixtures.MAPPING_LARGE
+        assertion = mapping_fixtures.UNICODE_NAME_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+
+        fn = assertion.get('FirstName')
+        ln = assertion.get('LastName')
+        full_name = '%s %s' % (fn, ln)
+        user_name = values.get('user', {}).get('name')
+        self.assertEqual(full_name, user_name)

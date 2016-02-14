@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -1437,4 +1439,12 @@ GROUP_IDS_ASSERTION_ONLY_ONE_GROUP = {
     'name': 'opilotte',
     'group_ids': '321cba',
     'group': '210mlk'
+}
+
+UNICODE_NAME_ASSERTION = {
+    'Email': 'jon@example.com',
+    'UserName': 'jonkare',
+    'FirstName': 'Jon Kåre',
+    'LastName': 'Hellån',
+    'orgPersonType': 'Admin;Chief'
 }
