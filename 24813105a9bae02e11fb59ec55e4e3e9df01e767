@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_5ec10480",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T17:23:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_f00dae38",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 64
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_9549b4d3",
         "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
         "patchSetId": 13
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-14T07:22:05Z",
       "side": 1,
       "message": "i feel this check is unnecessary, but harmless",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 35
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2344e972",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T17:23:27Z",
+      "side": 1,
+      "message": "Agree, it\u0027s not needed, but was useful during dev testing and as you say, is harmless",
+      "parentUuid": "dae33548_9549b4d3",
       "range": {
         "startLine": 23,
         "startChar": 4,
@@ -200,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_bebe50fd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T17:23:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_906262d7",
+      "range": {
+        "startLine": 207,
+        "startChar": 8,
+        "endLine": 207,
+        "endChar": 28
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d0818a4f",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 13
@@ -281,6 +353,30 @@
       "writtenOn": "2016-02-14T16:35:01Z",
       "side": 1,
       "message": "The data in the old user table (now identity table) is being moved to new user and password tables. The default_project_id and extra columns remain in the parent identity table. While we\u0027re separating this data out now to support future uses cases, the user behavior hasn\u0027t changed in this patch.",
+      "parentUuid": "dae33548_d036aab3",
+      "range": {
+        "startLine": 756,
+        "startChar": 4,
+        "endLine": 756,
+        "endChar": 48
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_fe3618b3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-14T17:23:27Z",
+      "side": 1,
+      "message": "Also, renamed this test to be more clear",
       "parentUuid": "dae33548_d036aab3",
       "range": {
         "startLine": 756,
