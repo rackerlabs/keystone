@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_303c362f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:50:57Z",
+      "side": 1,
+      "message": "how about:\n\nif \u0027enabled\u0027 not in project:\n  raise exception.ValidationError(\n    message\u003d_(\u0027Cascade update is only allowed for enabled attribute.\u0027))\n\n?\n\nalso, i don\u0027t agree with checking the original_project.... \n\nregardless of the state of my parent project, i want to cascade it down to the children. if parent is enabled already, but some children aren\u0027t, then i want to cascade the enable to all my subprojects, regardless of my status.",
+      "range": {
+        "startLine": 349,
+        "startChar": 8,
+        "endLine": 354,
+        "endChar": 56
+      },
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9020a2f9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:50:57Z",
+      "side": 1,
+      "message": "may want to add a comment that all this does is emit a notification / call back, and doesn\u0027t actually update the project",
+      "range": {
+        "startLine": 365,
+        "startChar": 16,
+        "endLine": 365,
+        "endChar": 50
+      },
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_f0e490ac",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 10
