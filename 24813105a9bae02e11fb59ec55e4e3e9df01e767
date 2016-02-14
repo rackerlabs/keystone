@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_f00dae38",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "it may help to add as comments the columns of the resulting identity table -- i was wondering what happened to the default_project_id, extra and enabled columns in migration 90, only to realize they are here, like:\n\n# the identity table will have the following columns:\n# id, extra, default_project_id, enabled\n# to be dropped: domain_id, name",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 64
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9549b4d3",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "i feel this check is unnecessary, but harmless",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 35
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_751d10bd",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "what about adding these indexes back?",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_1020129b",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "what about the password column? https://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/067_kilo.py#L165",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 46
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b5c038e2",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_user_and_password_tables.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "i wasn\u0027t clear on why we were adding a password table, instead of having it be a column like it was in the old table (https://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/067_kilo.py#L165), but this kinda explains it... for future work here i guess?",
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_906262d7",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "this needs a comment describing what\u0027s going on, it\u0027s non-obvious",
+      "range": {
+        "startLine": 207,
+        "startChar": 8,
+        "endLine": 207,
+        "endChar": 28
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d0818a4f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "shouldn\u0027t this have domain_id and name and password, those were only set to null? i didn\u0027t see that they were dropped",
+      "range": {
+        "startLine": 125,
+        "startChar": 8,
+        "endLine": 125,
+        "endChar": 27
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d036aab3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-14T07:22:05Z",
+      "side": 1,
+      "message": "what data is it actually migrating?\n\ni think we\u0027re missing some cases, where default_project_id is created, and extras is used, and where a user lives in a non-default domain",
+      "range": {
+        "startLine": 756,
+        "startChar": 4,
+        "endLine": 756,
+        "endChar": 48
+      },
+      "revId": "24813105a9bae02e11fb59ec55e4e3e9df01e767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
