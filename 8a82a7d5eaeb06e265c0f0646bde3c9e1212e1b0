@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_03055cc1",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-15T06:15:16Z",
+      "side": 1,
+      "message": "this should be with the other 3rd party imports",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 46
+      },
+      "revId": "8a82a7d5eaeb06e265c0f0646bde3c9e1212e1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e3a5d8b5",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-15T06:15:16Z",
+      "side": 1,
+      "message": "won\u0027t this always be true, cause of line 829?",
+      "range": {
+        "startLine": 830,
+        "startChar": 8,
+        "endLine": 830,
+        "endChar": 36
+      },
+      "revId": "8a82a7d5eaeb06e265c0f0646bde3c9e1212e1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_63926859",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-15T06:15:16Z",
+      "side": 1,
+      "message": "took me way too long to figure out that we\u0027re doing the substitutions in base_url still, and handling the else block there.",
+      "range": {
+        "startLine": 831,
+        "startChar": 48,
+        "endLine": 831,
+        "endChar": 56
+      },
+      "revId": "8a82a7d5eaeb06e265c0f0646bde3c9e1212e1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
