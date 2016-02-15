@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_6394ff36",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "I *think* it is still valid, since projects acting as a domain, will point there project.domain_id at this row.",
+      "parentUuid": "dae33548_407f36aa",
+      "range": {
+        "startLine": 24,
+        "startChar": 68,
+        "endLine": 25,
+        "endChar": 64
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_17fa95bd",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 27
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-15T21:30:06Z",
       "side": 1,
       "message": "Might be worth it to add a commment saying the hidden attribute was decoded in the to_dict call",
+      "range": {
+        "startLine": 179,
+        "startChar": 43,
+        "endLine": 179,
+        "endChar": 50
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8304a37e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_17fa95bd",
       "range": {
         "startLine": 179,
         "startChar": 43,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_03cb7354",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "it\u0027s just a matter of getting to the code - it\u0027s part of the resource manager, that we can\u0027t easily get at from here.",
+      "parentUuid": "dae33548_37c23934",
+      "range": {
+        "startLine": 299,
+        "startChar": 0,
+        "endLine": 304,
+        "endChar": 16
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_6ac174e4",
         "filename": "keystone/resource/core.py",
         "patchSetId": 27
@@ -105,6 +177,30 @@
       "writtenOn": "2016-02-15T21:30:06Z",
       "side": 1,
       "message": "This ensures that a regular project CANNOT have a None domain_id! Might be worth it do add a note here ?",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 58
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e3ce4f59",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_6ac174e4",
       "range": {
         "startLine": 131,
         "startChar": 0,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_23d95722",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_5777fd39",
+      "range": {
+        "startLine": 723,
+        "startChar": 0,
+        "endLine": 723,
+        "endChar": 67
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_6a3174a2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 27
@@ -151,6 +271,30 @@
       "writtenOn": "2016-02-15T21:30:06Z",
       "side": 1,
       "message": "I think this need to be decoded, and a project with \"null\" domain_id maybe the parent of others.",
+      "range": {
+        "startLine": 1164,
+        "startChar": 0,
+        "endLine": 1165,
+        "endChar": 59
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_638d1f31",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1165,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "I think you are right...",
+      "parentUuid": "dae33548_6a3174a2",
       "range": {
         "startLine": 1164,
         "startChar": 0,
@@ -180,6 +324,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_c3e7cbe2",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2598,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "no...see commit comment....this test was incorrectly written",
+      "parentUuid": "dae33548_6a94d436",
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_ca99a070",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 27
@@ -191,6 +353,24 @@
       "writtenOn": "2016-02-15T21:30:06Z",
       "side": 1,
       "message": "ditto",
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_03d25300",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2618,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T22:41:57Z",
+      "side": 1,
+      "message": "ditto :-)",
+      "parentUuid": "dae33548_ca99a070",
       "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
