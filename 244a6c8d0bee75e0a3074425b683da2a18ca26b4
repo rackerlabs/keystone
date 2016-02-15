@@ -34,6 +34,42 @@
       "revId": "244a6c8d0bee75e0a3074425b683da2a18ca26b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_5a07271c",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-15T18:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_3accec34",
+      "revId": "244a6c8d0bee75e0a3074425b683da2a18ca26b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_1a0d9f3e",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-15T18:39:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_e29e0a62",
+      "revId": "244a6c8d0bee75e0a3074425b683da2a18ca26b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
