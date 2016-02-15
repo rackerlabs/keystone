@@ -16,6 +16,24 @@
       "revId": "1ab71987ab1cf43ab9b4d7be34c4e520ba705c56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_48e8f810",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-15T21:51:00Z",
+      "side": 1,
+      "message": "Ah what I get for editing in gerrit interface :P",
+      "parentUuid": "dae33548_6de22ed7",
+      "revId": "1ab71987ab1cf43ab9b4d7be34c4e520ba705c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
