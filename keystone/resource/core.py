@@ -367,6 +367,17 @@ class Manager(manager.Manager):
         assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def delete_project(self, project_id, initiator=None, cascade=False):
+        """Deletes one project or a subtree.
+
+        :param cascade: If true, the specified project and all it's
+                        sub-projects are deleted. Otherwise, only the specified
+                        project is deleted.
+        :type cascade: boolean
+
+        :raises keystone.exception.validationError: if project is a domain
+        :raises keystone.exception.Forbidden: if project is not a leaf
+
+        """
         # Use the driver directly to prevent using old cached value.
         project = self.driver.get_project(project_id)
         if project['is_domain'] and project['enabled']:
