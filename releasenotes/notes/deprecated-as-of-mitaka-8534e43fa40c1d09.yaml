@@ -1,12 +1,6 @@
 ---
 upgrade:
   - >
-    The ``keystone-paste.ini`` file must be updated to remove middleware filters
-    and their use in ``[pipeline:api_v3]``, ``[pipeline:public_api]``,
-    and ``[pipeline:admin_api]``. Remove ``[filter:admin_token_auth]``. See the
-    sample `keystone-paste.ini
-    <https://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone-paste.ini>`_
-    file for guidance.
 deprecations:
   - >
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
