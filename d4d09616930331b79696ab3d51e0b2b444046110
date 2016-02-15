@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0eae052e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T17:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_1578dbf1",
+      "revId": "d4d09616930331b79696ab3d51e0b2b444046110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_b0c77d44",
         "filename": "keystone/resource/core.py",
         "patchSetId": 27
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0e6ba51f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T17:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_b0c77d44",
+      "range": {
+        "startLine": 314,
+        "startChar": 12,
+        "endLine": 314,
+        "endChar": 67
+      },
+      "revId": "d4d09616930331b79696ab3d51e0b2b444046110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d58953cc",
         "filename": "keystone/resource/core.py",
         "patchSetId": 27
@@ -53,6 +95,30 @@
       "writtenOn": "2016-02-15T15:58:42Z",
       "side": 1,
       "message": "I would think this should be at the start of this block",
+      "range": {
+        "startLine": 328,
+        "startChar": 0,
+        "endLine": 333,
+        "endChar": 24
+      },
+      "revId": "d4d09616930331b79696ab3d51e0b2b444046110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_ee5ac182",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T17:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_d58953cc",
       "range": {
         "startLine": 328,
         "startChar": 0,
