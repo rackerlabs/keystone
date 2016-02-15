@@ -93,6 +93,30 @@
       "revId": "0ba849ee940f305063365560b018c40de2505e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_4f3b0bec",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-15T02:22:54Z",
+      "side": 1,
+      "message": "Ah, I see.  Thanks Steve.",
+      "parentUuid": "dae33548_5910fe4e",
+      "range": {
+        "startLine": 18,
+        "startChar": 43,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "0ba849ee940f305063365560b018c40de2505e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
