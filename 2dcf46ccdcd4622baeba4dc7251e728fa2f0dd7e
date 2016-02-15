@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0b00b733",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-15T19:01:27Z",
+      "side": 1,
+      "message": "That is the way it should be.",
+      "parentUuid": "3a57f1b5_7caf167d",
+      "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_1c44e2b4",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2016-02-15T18:33:43Z",
       "side": 1,
       "message": "This is not a second trust in the chain - it\u0027s just one more regular trust: it doesn\u0027t transfer the scope from the initial trustor down the chain, it creates a trust, that delegates scope assigned to the 1st trustee.",
+      "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_85f31073",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3459,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-15T19:01:27Z",
+      "side": 1,
+      "message": "Ok, so should we even allow creating a trust that sets allow_redelegation\u003dTrue and impersonation\u003dFalse?",
+      "parentUuid": "dae33548_1adc7fe3",
       "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
