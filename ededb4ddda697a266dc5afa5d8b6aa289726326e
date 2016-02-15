@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_511ef2ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9061
+      },
+      "writtenOn": "2016-02-15T17:21:37Z",
+      "side": 1,
+      "message": "s/undepreate/undeprecate/",
+      "revId": "ededb4ddda697a266dc5afa5d8b6aa289726326e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_b1881e24",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 1
