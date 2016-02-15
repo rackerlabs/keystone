@@ -33,6 +33,23 @@
       "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_1adc7fe3",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3459,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-15T18:33:43Z",
+      "side": 1,
+      "message": "This is not a second trust in the chain - it\u0027s just one more regular trust: it doesn\u0027t transfer the scope from the initial trustor down the chain, it creates a trust, that delegates scope assigned to the 1st trustee.",
+      "revId": "2dcf46ccdcd4622baeba4dc7251e728fa2f0dd7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
