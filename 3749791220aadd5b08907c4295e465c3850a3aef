@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_4a6d9097",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-15T20:52:34Z",
+      "side": 1,
+      "message": "should be _LW not _ and moving it down into the LOG.warning() call itself will fix the pep8 error",
+      "revId": "3749791220aadd5b08907c4295e465c3850a3aef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
