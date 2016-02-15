@@ -36,6 +36,57 @@
     },
     {
       "key": {
+        "uuid": "dae33548_b1a13eac",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-15T17:23:51Z",
+      "side": 1,
+      "message": "missing a space here and the other 2 lines.",
+      "revId": "ededb4ddda697a266dc5afa5d8b6aa289726326e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_71fdf639",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-15T17:23:51Z",
+      "side": 1,
+      "message": "I suggest this: \"The admin_auth_token middleware presents a security risk and should be removed from the [pipeline:api_v3], [pipeline:admin_api], and [pipeline:public_api] sections of your paste ini file.\"",
+      "revId": "ededb4ddda697a266dc5afa5d8b6aa289726326e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b1ddbe16",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-15T17:23:51Z",
+      "side": 1,
+      "message": "s/the/The/",
+      "revId": "ededb4ddda697a266dc5afa5d8b6aa289726326e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_b1881e24",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 1
@@ -53,6 +104,23 @@
         "endLine": 66,
         "endChar": 31
       },
+      "revId": "ededb4ddda697a266dc5afa5d8b6aa289726326e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f182a6ff",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-15T17:23:51Z",
+      "side": 1,
+      "message": "s/pasts/paste/",
       "revId": "ededb4ddda697a266dc5afa5d8b6aa289726326e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
