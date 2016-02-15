@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_799b10ca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-15T23:46:45Z",
+      "side": 1,
+      "message": "should this end with a period?",
+      "range": {
+        "startLine": 369,
+        "startChar": 12,
+        "endLine": 370,
+        "endChar": 43
+      },
+      "revId": "18701a2a849903e475d006e0dc68ac5b68b0a6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
