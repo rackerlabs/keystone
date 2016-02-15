@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_86ca07a0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T14:10:02Z",
+      "side": 1,
+      "message": "actually, what we are doing is checking if other attribute than \u0027enabled\u0027 was provided and is being updated. See that we only compare with the original if the attribute is NOT the \u0027enabled\u0027.  The enabled attribute of the children is updated regardless of the parent status.",
+      "parentUuid": "dae33548_303c362f",
+      "range": {
+        "startLine": 349,
+        "startChar": 8,
+        "endLine": 354,
+        "endChar": 56
+      },
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_9020a2f9",
         "filename": "keystone/resource/core.py",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-14T07:50:57Z",
       "side": 1,
       "message": "may want to add a comment that all this does is emit a notification / call back, and doesn\u0027t actually update the project",
+      "range": {
+        "startLine": 365,
+        "startChar": 16,
+        "endLine": 365,
+        "endChar": 50
+      },
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c6c40f94",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T14:10:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_9020a2f9",
       "range": {
         "startLine": 365,
         "startChar": 16,
@@ -101,6 +149,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_e6ef93ae",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2702,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T14:10:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_560b1c2a",
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_70e740ac",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 10
@@ -130,6 +196,24 @@
       "side": 1,
       "message": "same here",
       "parentUuid": "3a57f1b5_70e740ac",
+      "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a63c6b30",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2713,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-15T14:10:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_16b92415",
       "revId": "3daa1f7dabf9d0b10b2225df545ab9261003762d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
