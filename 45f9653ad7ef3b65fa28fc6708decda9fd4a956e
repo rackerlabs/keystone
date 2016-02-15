@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_407f36aa",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "I didn\u0027t quite get this comment ? project.domain_id has a FK to domain.id\n\nThis way, this comment is valid for _generate_root_domain below, not to this",
+      "range": {
+        "startLine": 24,
+        "startChar": 68,
+        "endLine": 25,
+        "endChar": 64
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_17fa95bd",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "Might be worth it to add a commment saying the hidden attribute was decoded in the to_dict call",
+      "range": {
+        "startLine": 179,
+        "startChar": 43,
+        "endLine": 179,
+        "endChar": 50
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_57041dbf",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "hence being encoded here",
+      "range": {
+        "startLine": 182,
+        "startChar": 36,
+        "endLine": 182,
+        "endChar": 53
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_37c23934",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "Why do we need this here, since we already have the _encode_domain_id and _decode_domain_id at manager level?",
+      "range": {
+        "startLine": 299,
+        "startChar": 0,
+        "endLine": 304,
+        "endChar": 16
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_6ac174e4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "This ensures that a regular project CANNOT have a None domain_id! Might be worth it do add a note here ?",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 58
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_5777fd39",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "What about specifying we\u0027re talking about drivers starting from v9?",
+      "range": {
+        "startLine": 723,
+        "startChar": 0,
+        "endLine": 723,
+        "endChar": 67
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_6a3174a2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1165,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "I think this need to be decoded, and a project with \"null\" domain_id maybe the parent of others.",
+      "range": {
+        "startLine": 1164,
+        "startChar": 0,
+        "endLine": 1165,
+        "endChar": 59
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_6a94d436",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2598,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "unrelated change ?",
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_ca99a070",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2618,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-15T21:30:06Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
