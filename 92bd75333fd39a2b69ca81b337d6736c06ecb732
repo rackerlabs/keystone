@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_856310b1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-15T18:48:51Z",
+      "side": 1,
+      "message": "let\u0027s remove the first 2 sentences here. The first is redundant and the second is partly redundant, partly true-but-only-if-you\u0027re-not-using-the-preferred-keystone-manage-CLI.",
+      "revId": "92bd75333fd39a2b69ca81b337d6736c06ecb732",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c5cfd8ae",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-15T18:48:51Z",
+      "side": 1,
+      "message": "s/admin_auth_token/admin_token_auth/  (my bad, I typed that wrong in my previous comment).",
+      "revId": "92bd75333fd39a2b69ca81b337d6736c06ecb732",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
