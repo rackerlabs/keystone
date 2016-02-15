@@ -16,6 +16,23 @@
       "revId": "3749791220aadd5b08907c4295e465c3850a3aef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_eaf624d6",
+        "filename": "releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-15T20:53:10Z",
+      "side": 1,
+      "message": "REmove the \"upgrade:\" and \"- \u003e\" lines as well.",
+      "revId": "3749791220aadd5b08907c4295e465c3850a3aef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
