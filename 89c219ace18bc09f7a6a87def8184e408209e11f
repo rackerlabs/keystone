@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_32b550cd",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T03:48:06Z",
+      "side": 1,
+      "message": "removed, Done.",
+      "parentUuid": "3a57f1b5_5335ebf4",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_13169355",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-10T20:32:35Z",
       "side": 1,
       "message": "Why call out V8 and V9? This just means we have to fix this comment in the future.",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9596c692",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T03:48:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_13169355",
       "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_927c1c22",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T03:48:06Z",
+      "side": 1,
+      "message": "remove this, Done",
+      "parentUuid": "3a57f1b5_160d2137",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_b6144d44",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2016-02-10T20:32:35Z",
       "side": 1,
       "message": "(nit) unnecessary",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_7279982f",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T03:48:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_b6144d44",
       "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_329ef056",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T03:48:06Z",
+      "side": 1,
+      "message": "The path is correct,\n\u003e\u003e\u003e from keystone.catalog import CatalogDriverV8\n\u003e\u003e\u003e from keystone.catalog import CatalogDriverV9\n\u003e\u003e\u003e",
+      "parentUuid": "3a57f1b5_763575d8",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_569f19b4",
         "filename": "releasenotes/notes/v9CatalogDriver-cd64dcd2d5360891.yaml",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2016-02-10T20:32:35Z",
       "side": 1,
       "message": "Why do we not state this in the upgrade section?",
+      "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_75c18280",
+        "filename": "releasenotes/notes/v9CatalogDriver-cd64dcd2d5360891.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T03:48:06Z",
+      "side": 1,
+      "message": "It was written as this to align with the existed releasenotes, such as \"V9ResourceDriver-26716f97c0cc1a80.yaml\".\n\nI think this could also be fallen into `deprecations` category, can we let it as this and address it with other similar notes if necessary?",
+      "parentUuid": "3a57f1b5_569f19b4",
       "revId": "89c219ace18bc09f7a6a87def8184e408209e11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
