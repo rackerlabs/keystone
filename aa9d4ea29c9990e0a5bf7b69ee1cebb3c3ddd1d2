@@ -1,0 +1,232 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_fe628f15",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "The whitespace here is not necessary, good as it is.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_290e7f34",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "add NOTE before \u0027(\u0027",
+      "range": {
+        "startLine": 270,
+        "startChar": 4,
+        "endLine": 270,
+        "endChar": 6
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c95553c7",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "The initial docstring is more accurate, the changed docstring confuse me a little, \"consumer secret\" should be included in the dict of \"consumer_ref\".",
+      "range": {
+        "startLine": 250,
+        "startChar": 32,
+        "endLine": 250,
+        "endChar": 77
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_89022b3d",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "Just a question, does the change like this (whitespace) is relevant with rule H405? I am worried that we need ton of change like this if you want one more blank line here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_245ce624",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1262,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "This is testcase, prefer to add the test purpose here. The code here is not used to fetch the md5-based token, this can be elaborated a little.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_44412a0b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_04ba82e1",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2585,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "the docstring here cannot be simply split to two parts like this.\n\nThe summary line is not accurate at all. The name of the testcase told you what\u0027s this testcase is about -\"test_root_role_as_implied_role_forbidden\".",
+      "range": {
+        "startLine": 2579,
+        "startChar": 11,
+        "endLine": 2585,
+        "endChar": 13
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_440c8a94",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "Test ...",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_64238e06",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0479e2fc",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0460c234",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "ambiguous summary.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e4995e21",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-15T08:38:37Z",
+      "side": 1,
+      "message": "I don\u0027t know what the method for from this summary. This line could be change to something like below.\n\n\n :return: the tuples in the format (token_id, token_expiry)\n :rtype: list",
+      "range": {
+        "startLine": 141,
+        "startChar": 11,
+        "endLine": 141,
+        "endChar": 52
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
