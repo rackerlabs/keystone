@@ -1,0 +1,180 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_e4a0f045",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "you could include the rstrip into this regex -- /*$",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e43c70e4",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "this just seems like a lot of work for almost no gain. This should be handled by wsgiref.util.application_uri and not by all applications.\n\nAlso, this should be pulled out into a function so that it\u0027s easier to test.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_efa6090f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "assigning a value to separator on the previous line and then resetting it here is confusing. suggest just pass \u0027:\u0027 to partition.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_eff449f3",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "_ indicates this is not a public function so we can\u0027t use it in keystone.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0fe40d0b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "if context was passed in then this will mutate it, which can make things confusing for functions that don\u0027t expect the context to be modified. Make a copy of the context if it was passed in before modifying it.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_afdec10e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "Application.base_url should handle this situation for us, too. Change Application.base_url to work when \u0027environment\u0027 not in context. Then this code can be simpler and also work correctly.\n\nThis should have been using public_endpoint and not localhost:\u003cpublic_port\u003e if public_endpoint is set.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_4fe295a0",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "can we pick a random string for this? This is dangerous since it\u0027s too easy for the test to pass even when the code is wrong.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8a300ba0",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "I wonder if we need to test this -- we don\u0027t need to have tests in keystone that verify that wsgiref.util.application_uri() works as designed, only that we\u0027re calling it correctly.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0a487b2c",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "would we ever see a SCRIPT_NAME of /identity? Shouldn\u0027t it always be /v2.0 or /v3? If this isn\u0027t realistic, change it to be what we\u0027d expect.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_cab853e8",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T16:21:23Z",
+      "side": 1,
+      "message": "this needs to be clear what \"it\" is. This applies to the other places \"it\" is used.",
+      "range": {
+        "startLine": 274,
+        "startChar": 20,
+        "endLine": 274,
+        "endChar": 22
+      },
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
