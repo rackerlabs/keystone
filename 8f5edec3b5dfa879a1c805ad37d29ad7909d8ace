@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_afefe185",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T16:14:42Z",
+      "side": 1,
+      "message": "add a space after the period",
+      "range": {
+        "startLine": 789,
+        "startChar": 49,
+        "endLine": 789,
+        "endChar": 50
+      },
+      "revId": "8f5edec3b5dfa879a1c805ad37d29ad7909d8ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0a3ebbb7",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T16:14:42Z",
+      "side": 1,
+      "message": "use no*\n\ns/not/no",
+      "range": {
+        "startLine": 2113,
+        "startChar": 57,
+        "endLine": 2113,
+        "endChar": 60
+      },
+      "revId": "8f5edec3b5dfa879a1c805ad37d29ad7909d8ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_aa27cfb4",
+        "filename": "releasenotes/notes/bug_1526462-df9a3f3974d9040f.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T16:14:42Z",
+      "side": 1,
+      "message": "you can remove all other sections, just leave this one:\n\n---\nfixes:\n  - \u003e\n    [`bug 1526462 \u003chttps://bugs.launchpad.net/keystone/+bug/1526462\u003e`_]\n    Better support for posixGroups with OpenDirectory and UNIX LDAPs.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 6
+      },
+      "revId": "8f5edec3b5dfa879a1c805ad37d29ad7909d8ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
