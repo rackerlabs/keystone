@@ -68,6 +68,30 @@
       "revId": "8f5edec3b5dfa879a1c805ad37d29ad7909d8ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e1e3bd03",
+        "filename": "releasenotes/notes/bug_1526462-df9a3f3974d9040f.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-16T16:46:34Z",
+      "side": 1,
+      "message": "Strange. I\u0027ve done it in the online editor...",
+      "parentUuid": "dae33548_aa27cfb4",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 6
+      },
+      "revId": "8f5edec3b5dfa879a1c805ad37d29ad7909d8ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
