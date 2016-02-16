@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_e9b72984",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T15:50:02Z",
+      "side": 1,
+      "message": "Would be handy to say what the behavior is going to be in the future.",
+      "revId": "27c4cbc9f7565ee978525de0053a1ae5f15de633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
