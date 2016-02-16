@@ -2,6 +2,103 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_0f799af6",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:33:23Z",
+      "side": 1,
+      "message": "remove \"of\"",
+      "range": {
+        "startLine": 252,
+        "startChar": 28,
+        "endLine": 252,
+        "endChar": 30
+      },
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_6fd5c6b7",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:33:23Z",
+      "side": 1,
+      "message": "_send_notification",
+      "range": {
+        "startLine": 177,
+        "startChar": 16,
+        "endLine": 177,
+        "endChar": 33
+      },
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8f6e4aff",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:33:23Z",
+      "side": 1,
+      "message": "This isn\u0027t a test, it\u0027s a class that\u0027s used for testing. It doesn\u0027t ensure anything.",
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8f13ea65",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:33:23Z",
+      "side": 1,
+      "message": "this docstring doesn\u0027t describe what the test does anymore. The original docstring was correct.",
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_6f166656",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:33:23Z",
+      "side": 1,
+      "message": "this docstring doesn\u0027t describe what the test does anymore. The original docstring was correct.",
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_9c5ec110",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 5
@@ -19,6 +116,23 @@
         "endLine": 2579,
         "endChar": 31
       },
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c23b09d0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:33:23Z",
+      "side": 1,
+      "message": "The docstring needs to continue to say that this is for use with random_urlsafe_str.",
       "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
