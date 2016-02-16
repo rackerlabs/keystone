@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_dc15e99b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T02:01:36Z",
+      "side": 1,
+      "message": "Could just mention it does use underscore rather than camel case pattern.",
+      "revId": "b3a78840a0d9423c86f3f283ae45e6c07abc0590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
