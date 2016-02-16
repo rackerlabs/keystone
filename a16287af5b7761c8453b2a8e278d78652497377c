@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_466276ae",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "Should be nice to have them in a comment above this block rather than repeating for every API",
+      "range": {
+        "startLine": 76,
+        "startChar": 83,
+        "endLine": 76,
+        "endChar": 115
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_46d43646",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "domain_id\u003d{domain_id}",
+      "range": {
+        "startLine": 77,
+        "startChar": 73,
+        "endLine": 77,
+        "endChar": 82
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_26ddb20e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "Couldn\u0027t use \u0027params\u0027 here ?",
+      "range": {
+        "startLine": 335,
+        "startChar": 12,
+        "endLine": 335,
+        "endChar": 35
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_06d86e1c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "and here ?",
+      "range": {
+        "startLine": 337,
+        "startChar": 11,
+        "endLine": 337,
+        "endChar": 34
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a6e9c282",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "That doesn\u0027t matter, we only need to check on the existing role anyways because that is the entity we are operating on, so that\u0027s what define what policy entry to enforce",
+      "range": {
+        "startLine": 365,
+        "startChar": 10,
+        "endLine": 366,
+        "endChar": 18
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_49cba71e",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1619,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "Maybe assert they can\u0027t do that for another domain too ?",
+      "range": {
+        "startLine": 1603,
+        "startChar": 0,
+        "endLine": 1619,
+        "endChar": 72
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e9039b40",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1628,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-16T19:48:04Z",
+      "side": 1,
+      "message": "Maybe try in another domain too to show it is works regardless the domain being used ?",
+      "range": {
+        "startLine": 1622,
+        "startChar": 0,
+        "endLine": 1628,
+        "endChar": 62
+      },
+      "revId": "a16287af5b7761c8453b2a8e278d78652497377c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
