@@ -404,3 +404,40 @@ class TestTrustOperations(test_v3.RestfulTestCase):
                          resp_body['user']['domain']['name'])
         self.assertEqual(self.project['id'], resp_body['project']['id'])
         self.assertEqual(self.project['name'], resp_body['project']['name'])
+
+    def test_trust_when_role_is_subsequently_removed(self):
+        # Add an additional role to the trustor on the project
+        role1 = unit.new_role_ref()
+        self.role_api.create_role(role1['id'], role1)
+        self.assignment_api.create_grant(user_id=self.user_id,
+                                         project_id=self.project_id,
+                                         role_id=role1['id'])
+
+        # Create a new trust, with two roles delegated
+        ref = unit.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=False,
+            expires=dict(minutes=1),
+            role_ids=[role1['id'], self.role_id])
+        resp = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(resp)
+
+        # Now, before we use the trust to get a token, unassign one of the
+        # roles from the trustor.
+        self.assignment_api.delete_grant(user_id=self.user_id,
+                                         project_id=self.project_id,
+                                         role_id=role1['id'])
+        # Get a trust-scoped token as the trustee
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+
+        # We should be able to still get a token, but it should only contain
+        # the single remaining role
+        # FIXME (henry-nash): Due to defect 1546039 if any of the roles have
+        # been unassigned, the token creation fails.
+        resp = self.v3_create_token(auth_data,
+                                    expected_status=http_client.FORBIDDEN)
