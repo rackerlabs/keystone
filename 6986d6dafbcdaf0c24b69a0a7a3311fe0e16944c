@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_35bb2c10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T14:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_35784d2b",
+      "range": {
+        "startLine": 9,
+        "startChar": 59,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "6986d6dafbcdaf0c24b69a0a7a3311fe0e16944c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_55cb5153",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2016-02-16T14:20:44Z",
       "side": 1,
       "message": "why change text to body?",
+      "revId": "6986d6dafbcdaf0c24b69a0a7a3311fe0e16944c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f5c0a47e",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T14:33:40Z",
+      "side": 1,
+      "message": "There is an upcoming change I am working on to set a charset on our responses. Webob will not encode our bytes as text because we don\u0027t tell it what charset to use.",
+      "parentUuid": "dae33548_55cb5153",
       "revId": "6986d6dafbcdaf0c24b69a0a7a3311fe0e16944c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
