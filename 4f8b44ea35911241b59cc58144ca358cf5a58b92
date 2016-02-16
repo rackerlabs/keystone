@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_e6c58a8e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:19:02Z",
+      "side": 1,
+      "message": "To make this call cacheable (and it should be @MEMOIZE\u0027d I think), the arguments need to be primitives (not a dict).",
+      "revId": "4f8b44ea35911241b59cc58144ca358cf5a58b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
