@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "dae33548_49ba87c1",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:59:41Z",
+      "side": 1,
+      "message": "If we\u0027re not pursuing minimal downtime migrations, we can just drop these in a subsequent migration (not need to make them nullable).",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_662cda02",
         "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
         "patchSetId": 14
@@ -64,6 +81,57 @@
       "writtenOn": "2016-02-16T19:48:39Z",
       "side": 1,
       "message": "What about the indexes? Do they need to be added back in?",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_09f99f4d",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_user_and_password_data.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:59:41Z",
+      "side": 1,
+      "message": "If this is an offline migration, then we don\u0027t need idempotence here. Simplify! :D",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a9b7d384",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_user_and_password_data.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:59:41Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2c4d916c",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_user_and_password_data.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:59:41Z",
+      "side": 1,
+      "message": "_dict implies this is a {}, not a []\n\nMaybe \"password_values \u003d []\" instead?",
       "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
