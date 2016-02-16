@@ -1,0 +1,256 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_7c7dbd1b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "pls revert this change.",
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_fc126db3",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "double space here.",
+      "range": {
+        "startLine": 772,
+        "startChar": 30,
+        "endLine": 772,
+        "endChar": 32
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3f6fa7c6",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "I am lost here, what\u0027s this table could be used for?",
+      "range": {
+        "startLine": 774,
+        "startChar": 21,
+        "endLine": 774,
+        "endChar": 44
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9c736115",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "add docstring for this class to consistent with others.",
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_7f692fbe",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "shouldn\u0027t this \"project id\"?",
+      "range": {
+        "startLine": 784,
+        "startChar": 49,
+        "endLine": 784,
+        "endChar": 68
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9f8cf380",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "remove these dependencies, they are not used anywhere.",
+      "range": {
+        "startLine": 687,
+        "startChar": 36,
+        "endLine": 687,
+        "endChar": 68
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_ff37ffad",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "we can define json schema for create/update API, this could be done in another review.",
+      "range": {
+        "startLine": 694,
+        "startChar": 4,
+        "endLine": 694,
+        "endChar": 79
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_7fde4f6e",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "wrap these code in one line.",
+      "range": {
+        "startLine": 699,
+        "startChar": 8,
+        "endLine": 700,
+        "endChar": 25
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_5fe38b05",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "and abstract methods:\n\n    def update_service_providers_group(...)\n    def delete_service_providers_group(...)\n    def create_service_providers_group(...)\n    def get... \n\nhere.",
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9fffd3a9",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1226,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "miss:\n    def update_service_providers_group(...)\n\nand\n    def delete_service_providers_group(...)",
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3f84c7d2",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "miss \u0027{\u0027,\n\nchange this to \u0027{service_providers_group_id}\u0027",
+      "range": {
+        "startLine": 86,
+        "startChar": 12,
+        "endLine": 86,
+        "endChar": 39
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_1f5e2376",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_service_providers_groups.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T02:54:37Z",
+      "side": 1,
+      "message": "*service_providers_group_members* table",
+      "range": {
+        "startLine": 22,
+        "startChar": 35,
+        "endLine": 22,
+        "endChar": 67
+      },
+      "revId": "4e6367c24629f04b2c1d0f44d02f4e64b6e1b3e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
