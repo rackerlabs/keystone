@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_e2544d22",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:57:28Z",
+      "side": 1,
+      "message": "change the name to group_members_are_ids and default to False.",
+      "revId": "0b98b3162cf2f3eba08021b50cdd1ad21a3afb25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_62167d56",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:57:28Z",
+      "side": 1,
+      "message": "This should say\n\n If the members of the group objectclass are user IDs rather\n than DNs, set this to true. This is the case when using\n posixGroup as the group objectclass and OpenDirectory.",
+      "revId": "0b98b3162cf2f3eba08021b50cdd1ad21a3afb25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e27d6db2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T22:57:28Z",
+      "side": 1,
+      "message": "change to \"true\" since this is what the help text says.",
+      "range": {
+        "startLine": 788,
+        "startChar": 36,
+        "endLine": 788,
+        "endChar": 40
+      },
+      "revId": "0b98b3162cf2f3eba08021b50cdd1ad21a3afb25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
