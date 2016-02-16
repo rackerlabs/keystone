@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_0d2890e1",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T17:59:52Z",
+      "side": 1,
+      "message": "there is no oauth v8 driver either",
+      "range": {
+        "startLine": 177,
+        "startChar": 1,
+        "endLine": 177,
+        "endChar": 43
+      },
+      "revId": "ae6afeff7a06ebfb502f60b7b6310cc32a15d7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
