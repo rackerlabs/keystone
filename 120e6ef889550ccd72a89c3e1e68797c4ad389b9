@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_a2d71cec",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T03:30:33Z",
+      "side": 1,
+      "message": "add the abstract methods in keystone.catalog.CatalogDriverV9 and V9CatalogWrapperForV8Driver(...) to support stable backend driver interface.",
+      "range": {
+        "startLine": 717,
+        "startChar": 0,
+        "endLine": 739,
+        "endChar": 34
+      },
+      "revId": "120e6ef889550ccd72a89c3e1e68797c4ad389b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a2ba7c08",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T03:30:33Z",
+      "side": 1,
+      "message": "why not do this in class ServiceProvidersGroupMembership(sql.ModelBase, sql.ModelDictMixin)? \n\nCould the class ServiceProvidersGroupMembership(...) be used for another purpose?\n\nIn the table of `service_providers_group_members`, one sp id is mapped to one sp group id, is that really necessary?",
+      "revId": "120e6ef889550ccd72a89c3e1e68797c4ad389b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a2ff1ca9",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T03:30:33Z",
+      "side": 1,
+      "message": "change this to [\u0027service_providers_group_id\u0027, \u0027project_id\u0027].",
+      "range": {
+        "startLine": 812,
+        "startChar": 46,
+        "endLine": 812,
+        "endChar": 53
+      },
+      "revId": "120e6ef889550ccd72a89c3e1e68797c4ad389b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_4283b004",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T03:30:33Z",
+      "side": 1,
+      "message": "with project",
+      "range": {
+        "startLine": 281,
+        "startChar": 52,
+        "endLine": 281,
+        "endChar": 60
+      },
+      "revId": "120e6ef889550ccd72a89c3e1e68797c4ad389b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
