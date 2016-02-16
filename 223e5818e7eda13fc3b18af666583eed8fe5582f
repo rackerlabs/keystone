@@ -70,6 +70,29 @@
     },
     {
       "key": {
+        "uuid": "dae33548_427a59f2",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T22:47:49Z",
+      "side": 1,
+      "message": "looks like this isnt py3 compatible \n\nlet\u0027s use ascii_lowercase",
+      "range": {
+        "startLine": 46,
+        "startChar": 29,
+        "endLine": 46,
+        "endChar": 45
+      },
+      "revId": "223e5818e7eda13fc3b18af666583eed8fe5582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_1d839999",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 23
