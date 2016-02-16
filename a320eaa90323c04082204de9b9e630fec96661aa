@@ -22,6 +22,30 @@
       "revId": "a320eaa90323c04082204de9b9e630fec96661aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0f740dcd",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T16:12:31Z",
+      "side": 0,
+      "message": "the API spec has been moved into the main identity_api spec, and I think we moved this to the graveyard?",
+      "parentUuid": "dae33548_efb569ee",
+      "range": {
+        "startLine": 1087,
+        "startChar": 0,
+        "endLine": 1089,
+        "endChar": 34
+      },
+      "revId": "a320eaa90323c04082204de9b9e630fec96661aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
