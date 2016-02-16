@@ -409,9 +409,9 @@ class V3TokenDataHelper(object):
                                    if x['id'] == trust_role['role_id']]
                     if match_roles:
                         filtered_roles.append(match_roles[0])
-                    else:
-                        raise exception.Forbidden(
-                            _('Trustee has no delegated roles.'))
+                if not filtered_roles:
+                    raise exception.Forbidden(
+                        _('Trustee has no delegated roles.'))
             else:
                 for role in roles:
                     filtered_roles.append({'id': role['id'],

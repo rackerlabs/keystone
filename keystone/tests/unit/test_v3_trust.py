@@ -15,6 +15,7 @@ import uuid
 
 from oslo_config import cfg
 from six.moves import http_client
+from testtools import matchers
 
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
@@ -437,7 +438,8 @@ class TestTrustOperations(test_v3.RestfulTestCase):
 
         # We should be able to still get a token, but it should only contain
         # the single remaining role
-        # FIXME (henry-nash): Due to defect 1546039 if any of the roles have
-        # been unassigned, the token creation fails.
-        resp = self.v3_create_token(auth_data,
-                                    expected_status=http_client.FORBIDDEN)
+        resp = self.v3_create_token(auth_data)
+        resp_body = resp.json_body['token']
+        self.assertValidProjectScopedTokenResponse(resp, self.trustee_user)
+        self.assertThat(resp_body['roles'], matchers.HasLength(1))
+        self.assertEqual(resp_body['roles'][0]['id'], self.role_id)
