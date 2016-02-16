@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_862abe2a",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:27:57Z",
+      "side": 1,
+      "message": "the migration shouldn\u0027t need to be idempotent - we don\u0027t expect to run them more than once.",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_46643648",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-16T19:27:57Z",
+      "side": 1,
+      "message": "with L46, do we need L31-38, L48-54?",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_4df481f1",
         "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_user_and_password_data.py",
         "patchSetId": 14
