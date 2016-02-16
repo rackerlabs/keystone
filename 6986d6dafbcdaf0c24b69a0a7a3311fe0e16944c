@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_35784d2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T14:20:44Z",
+      "side": 1,
+      "message": "bytes",
+      "range": {
+        "startLine": 9,
+        "startChar": 59,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "6986d6dafbcdaf0c24b69a0a7a3311fe0e16944c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_55cb5153",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T14:20:44Z",
+      "side": 1,
+      "message": "why change text to body?",
+      "revId": "6986d6dafbcdaf0c24b69a0a7a3311fe0e16944c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
