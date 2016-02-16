@@ -495,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_a9352adb",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T13:15:45Z",
+      "side": 1,
+      "message": "actually, not sure that is required, since we are not pointing the parent_id at  the hidden row, just the domain_id FK",
+      "parentUuid": "dae33548_e6d3e136",
+      "range": {
+        "startLine": 500,
+        "startChar": 12,
+        "endLine": 501,
+        "endChar": 60
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_5369b124",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 27
@@ -530,6 +554,30 @@
       "side": 1,
       "message": "ageed",
       "parentUuid": "dae33548_5369b124",
+      "range": {
+        "startLine": 503,
+        "startChar": 12,
+        "endLine": 505,
+        "endChar": 37
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e94d7273",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T13:15:45Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "dae33548_c6d69d26",
       "range": {
         "startLine": 503,
         "startChar": 12,
