@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_9f5eb310",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T02:21:12Z",
+      "side": 1,
+      "message": "minor rephrasing suggestion:\n\n\"If true, the specified project and all it\u0027s sub-projects are deleted. Otherwise, only the specified project is deleted.\"",
+      "range": {
+        "startLine": 372,
+        "startChar": 24,
+        "endLine": 373,
+        "endChar": 46
+      },
+      "revId": "a412639043cd6211796027683bd4bca45ec9b558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_3cb175e2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
