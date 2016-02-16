@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_9c02410a",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T02:15:54Z",
+      "side": 1,
+      "message": "it wouldn\u0027t be too much more effort to create an \"admin_token_fixture\" instead of having \"ADMIN\" hardcoded everywhere, like:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/ksfixtures/policy.py",
+      "range": {
+        "startLine": 120,
+        "startChar": 25,
+        "endLine": 120,
+        "endChar": 30
+      },
+      "revId": "f65c2886a8f19ecd665bf30fdcef9a249125f198",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
