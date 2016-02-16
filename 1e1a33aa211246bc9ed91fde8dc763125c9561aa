@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_d5b120e3",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-16T14:52:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a5ae5dd_16cbf354",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 37
+      },
+      "revId": "1e1a33aa211246bc9ed91fde8dc763125c9561aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_560c0b94",
         "filename": "etc/policy.json",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-03T21:58:20Z",
       "side": 1,
       "message": "i prefer \"identity_admin\" instead of \"identity_admin_required\" for a role name, less typing and conveys the same message",
+      "range": {
+        "startLine": 5,
+        "startChar": 37,
+        "endLine": 5,
+        "endChar": 60
+      },
+      "revId": "1e1a33aa211246bc9ed91fde8dc763125c9561aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_95895829",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-02-16T14:52:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a5ae5dd_560c0b94",
       "range": {
         "startLine": 5,
         "startChar": 37,
