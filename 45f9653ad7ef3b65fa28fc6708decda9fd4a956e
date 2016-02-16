@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_09453616",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_add_root_of_all_domains.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T13:17:42Z",
+      "side": 1,
+      "message": "exactly - it\u0027s in: https://review.openstack.org/#/c/231289/",
+      "parentUuid": "dae33548_c6021d09",
+      "range": {
+        "startLine": 24,
+        "startChar": 68,
+        "endLine": 25,
+        "endChar": 64
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_17fa95bd",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 27
