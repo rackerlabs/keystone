@@ -354,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_466e0d97",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T13:02:27Z",
+      "side": 1,
+      "message": "So it was skipped since it contains new methods not supported by V8.",
+      "parentUuid": "dae33548_13a3a950",
+      "range": {
+        "startLine": 44,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 56
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_6a94d436",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 27
@@ -447,6 +471,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_e6d3e136",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T13:02:27Z",
+      "side": 1,
+      "message": "yep, seems a good idea.",
+      "parentUuid": "dae33548_7c5647d3",
+      "range": {
+        "startLine": 500,
+        "startChar": 12,
+        "endLine": 501,
+        "endChar": 60
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_5369b124",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 27
@@ -458,6 +506,30 @@
       "writtenOn": "2016-02-16T12:55:55Z",
       "side": 1,
       "message": "same here",
+      "range": {
+        "startLine": 503,
+        "startChar": 12,
+        "endLine": 505,
+        "endChar": 37
+      },
+      "revId": "45f9653ad7ef3b65fa28fc6708decda9fd4a956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c6d69d26",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T13:02:27Z",
+      "side": 1,
+      "message": "ageed",
+      "parentUuid": "dae33548_5369b124",
       "range": {
         "startLine": 503,
         "startChar": 12,
