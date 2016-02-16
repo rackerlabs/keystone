@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_452d4345",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-16T23:07:24Z",
+      "side": 1,
+      "message": "maybe \"http://keystone-public.example.com:5000/v3\"",
+      "range": {
+        "startLine": 311,
+        "startChar": 25,
+        "endLine": 311,
+        "endChar": 60
+      },
+      "revId": "976673d67cb2d53c08af1ebfec53508147975960",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
