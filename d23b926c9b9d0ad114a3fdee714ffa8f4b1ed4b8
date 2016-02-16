@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_54bea9d4",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T17:11:56Z",
+      "side": 1,
+      "message": "This is now failing because of TypeError: callback() missing 1 required positional argument: \u0027payload\u0027 -- not because it\u0027s using an unbound method. The fact that this had to change is showing that using an unbound method as a callback doesn\u0027t fail on py3 like it did on py27. (Maybe the test needs to be specific to the version)",
+      "revId": "d23b926c9b9d0ad114a3fdee714ffa8f4b1ed4b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
