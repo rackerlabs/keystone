@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "dae33548_46d71623",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T19:48:39Z",
+      "side": 1,
+      "message": "What is this for?",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_46643648",
         "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
         "patchSetId": 14
@@ -30,6 +47,23 @@
       "writtenOn": "2016-02-16T19:27:57Z",
       "side": 1,
       "message": "with L46, do we need L31-38, L48-54?",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_662cda02",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T19:48:39Z",
+      "side": 1,
+      "message": "What about the indexes? Do they need to be added back in?",
       "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -77,6 +111,57 @@
         "endLine": 52,
         "endChar": 54
       },
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_49f28770",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T19:48:39Z",
+      "side": 1,
+      "message": "Why is this in here?",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_29fe2337",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T19:48:39Z",
+      "side": 1,
+      "message": "or this...",
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_497d67e6",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-16T19:48:39Z",
+      "side": 1,
+      "message": "Is there anything that will depend on this returning domain_id, password, etc?",
       "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
