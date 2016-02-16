@@ -22,6 +22,30 @@
       "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_88000e03",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_user_and_password_data.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-16T18:06:05Z",
+      "side": 1,
+      "message": "Nice catch Steve :)  I was using the identity_id so that I could easily test the password migration.  I think this should actually be okay, what is your concern?",
+      "parentUuid": "dae33548_4df481f1",
+      "range": {
+        "startLine": 52,
+        "startChar": 36,
+        "endLine": 52,
+        "endChar": 54
+      },
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
