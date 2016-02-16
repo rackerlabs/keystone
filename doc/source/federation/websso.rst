@@ -298,3 +298,14 @@ automatically set that choice to be highlighted by default.
 .. code-block:: python
 
   WEBSSO_INITIAL_CHOICE = "credentials"
+
+7. (Optional) Specify an additional WebSSO Keystone URL if needed
+
+Set `WEBSSO_KEYSTONE_URL` option in horizon's local_settings.py for multi-network
+deployments where `OPENSTACK_KEYSTONE_URL` is not accessible from the external
+identity provider. This URL will take precedence over `OPENSTACK_KEYSTONE_URL`
+for websso authentication if the login choice is an external identity provider.
+
+.. code-block:: python
+
+  WEBSSO_KEYSTONE_URL = "http://keystone-public.example.com:5000/v3"
