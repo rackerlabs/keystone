@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_97af9393",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T17:19:54Z",
+      "side": 1,
+      "message": "this doesn\u0027t belong in configuration.rst since there\u0027s no configuration being described here.",
+      "revId": "fa16be916e930bf6df8d5dab3cd9e2dc32334070",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
