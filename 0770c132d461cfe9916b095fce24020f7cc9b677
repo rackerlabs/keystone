@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_e2cac419",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T03:40:51Z",
+      "side": 1,
+      "message": "suggested reword: \n\n\"If \u0027group_objectclass\u0027 has been set to \u0027posixGroup\u0027 (which is commonly used by UNIX environments and OpenDirectory), it is recommended to set this option to True. By doing so, user IDs are not expected to be full DNs.\"\n\nmaybe someone has a better suggestion.",
+      "range": {
+        "startLine": 785,
+        "startChar": 26,
+        "endLine": 788,
+        "endChar": 71
+      },
+      "revId": "0770c132d461cfe9916b095fce24020f7cc9b677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3f0175af",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T03:40:51Z",
+      "side": 1,
+      "message": "undo this change, it seems unrelated",
+      "range": {
+        "startLine": 182,
+        "startChar": 8,
+        "endLine": 182,
+        "endChar": 74
+      },
+      "revId": "0770c132d461cfe9916b095fce24020f7cc9b677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_02d1a857",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T03:40:51Z",
+      "side": 1,
+      "message": "no*",
+      "range": {
+        "startLine": 2113,
+        "startChar": 57,
+        "endLine": 2113,
+        "endChar": 60
+      },
+      "revId": "0770c132d461cfe9916b095fce24020f7cc9b677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e27c84ed",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T03:40:51Z",
+      "side": 1,
+      "message": "the ()\u0027s here are not necessary",
+      "range": {
+        "startLine": 2179,
+        "startChar": 15,
+        "endLine": 2179,
+        "endChar": 42
+      },
+      "revId": "0770c132d461cfe9916b095fce24020f7cc9b677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
