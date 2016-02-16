@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_4df481f1",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_user_and_password_data.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T06:27:20Z",
+      "side": 1,
+      "message": "i think having this as a random uuid was the right move",
+      "range": {
+        "startLine": 52,
+        "startChar": 36,
+        "endLine": 52,
+        "endChar": 54
+      },
+      "revId": "9048e88bed22108f1547c14b88d959246ac4a029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
