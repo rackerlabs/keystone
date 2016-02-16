@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_d27800c7",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T21:19:38Z",
+      "side": 1,
+      "message": "There should be simple unit tests specifically for this function in keystone/tests/unit/common/test_utils.py",
+      "revId": "223e5818e7eda13fc3b18af666583eed8fe5582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d2b12091",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T21:19:38Z",
+      "side": 1,
+      "message": "remove this line.",
+      "revId": "223e5818e7eda13fc3b18af666583eed8fe5582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_32c04ce0",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T21:19:38Z",
+      "side": 1,
+      "message": "this should be elif, no need to lowercase the schema again.",
+      "revId": "223e5818e7eda13fc3b18af666583eed8fe5582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_7d390541",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T21:19:38Z",
+      "side": 1,
+      "message": "you could avoid some duplication here by doing\n\n env \u003d None\n if request:\n   env \u003d request.environ\n elif context and \u0027environment\u0027 in context:\n   env \u003d context[\u0027environment\u0027]\n local_context \u003d {}\n if env:\n   local_context[\u0027environment\u0027] \u003d env",
+      "revId": "223e5818e7eda13fc3b18af666583eed8fe5582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_1d839999",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-16T21:19:38Z",
+      "side": 1,
+      "message": "the comment should say why this is important to do.",
+      "revId": "223e5818e7eda13fc3b18af666583eed8fe5582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
