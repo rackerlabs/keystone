@@ -59,6 +59,14 @@ class UtilsTestCase(unit.BaseTestCase):
         self.assertRaises(ValueError, common_utils.resource_uuid,
                           invalid_input)
 
+        # 64 length unicode, to mimic what is returned from mappind_id backend
+        uuid_str = unicode('536e28c2017e405e89b25a1ed777b952'
+                           'f13de678ac714bb1b7d1e9a007c10db5')
+        resource_id_namespace = common_utils.RESOURCE_ID_NAMESPACE
+        encoded = uuid_str.encode('utf-8')
+        transformed_id = uuid.uuid5(resource_id_namespace, encoded).hex
+        self.assertEqual(transformed_id, common_utils.resource_uuid(uuid_str))
+
     def test_hash(self):
         password = 'right'
         wrong = 'wrongwrong'  # Two wrongs don't make a right
