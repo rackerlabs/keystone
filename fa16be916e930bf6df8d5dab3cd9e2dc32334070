@@ -16,6 +16,24 @@
       "revId": "fa16be916e930bf6df8d5dab3cd9e2dc32334070",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d2580935",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-16T17:31:08Z",
+      "side": 1,
+      "message": "I tend to agree with you, not sure if we just remove it completely?",
+      "parentUuid": "dae33548_97af9393",
+      "revId": "fa16be916e930bf6df8d5dab3cd9e2dc32334070",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
