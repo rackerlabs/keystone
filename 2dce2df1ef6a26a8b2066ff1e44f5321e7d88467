@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_c9ece591",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T15:40:13Z",
+      "side": 1,
+      "message": "suggestion: we could also get a token here and assert that it has 2 roles",
+      "range": {
+        "startLine": 426,
+        "startChar": 8,
+        "endLine": 426,
+        "endChar": 51
+      },
+      "revId": "2dce2df1ef6a26a8b2066ff1e44f5321e7d88467",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
