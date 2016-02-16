@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_ec03a940",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-16T20:14:29Z",
+      "side": 1,
+      "message": "nit: rename it to filtered_results",
+      "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
