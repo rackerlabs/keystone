@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_9916d3ef",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_fe628f15",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_290e7f34",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -30,6 +48,30 @@
       "writtenOn": "2016-02-15T08:38:37Z",
       "side": 1,
       "message": "add NOTE before \u0027(\u0027",
+      "range": {
+        "startLine": 270,
+        "startChar": 4,
+        "endLine": 270,
+        "endChar": 6
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_19048415",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_290e7f34",
       "range": {
         "startLine": 270,
         "startChar": 4,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_d9921b4b",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_c95553c7",
+      "range": {
+        "startLine": 250,
+        "startChar": 32,
+        "endLine": 250,
+        "endChar": 77
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_89022b3d",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 4
@@ -76,6 +142,24 @@
       "writtenOn": "2016-02-15T08:38:37Z",
       "side": 1,
       "message": "Just a question, does the change like this (whitespace) is relevant with rule H405? I am worried that we need ton of change like this if you want one more blank line here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_99fff3a9",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "No, this blank line is not related to H405.  However, as I go through the files, I noticed, sometimes there is a blank line before the closing \"\"\", but not other.  I removed these blank lines where applicable for this defect.",
+      "parentUuid": "dae33548_89022b3d",
       "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_590f2b2e",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1262,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Changing to: \"Test fetching revocation list with md5-based tokens.\"",
+      "parentUuid": "dae33548_245ce624",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_44412a0b",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 4
@@ -110,6 +212,24 @@
       "writtenOn": "2016-02-15T08:38:37Z",
       "side": 1,
       "message": "same here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b91e3761",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_44412a0b",
       "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_f9371fae",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2585,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_04ba82e1",
+      "range": {
+        "startLine": 2579,
+        "startChar": 11,
+        "endLine": 2585,
+        "endChar": 13
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_440c8a94",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 4
@@ -150,6 +294,24 @@
       "writtenOn": "2016-02-15T08:38:37Z",
       "side": 1,
       "message": "Test ...",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f9743f9d",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_440c8a94",
       "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_d977bb9d",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_64238e06",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_0479e2fc",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 4
@@ -184,6 +364,24 @@
       "writtenOn": "2016-02-15T08:38:37Z",
       "side": 1,
       "message": "same here.",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_396fc7c6",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_0479e2fc",
       "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_1972c3ad",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_0460c234",
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_e4995e21",
         "filename": "keystone/token/persistence/backends/kvs.py",
         "patchSetId": 4
@@ -218,6 +434,30 @@
       "writtenOn": "2016-02-15T08:38:37Z",
       "side": 1,
       "message": "I don\u0027t know what the method for from this summary. This line could be change to something like below.\n\n\n :return: the tuples in the format (token_id, token_expiry)\n :rtype: list",
+      "range": {
+        "startLine": 141,
+        "startChar": 11,
+        "endLine": 141,
+        "endChar": 52
+      },
+      "revId": "aa9d4ea29c9990e0a5bf7b69ee1cebb3c3ddd1d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_593d6bba",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-02-16T01:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_e4995e21",
       "range": {
         "startLine": 141,
         "startChar": 11,
