@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_9c5ec110",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2579,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-16T01:43:46Z",
+      "side": 1,
+      "message": "why not just \"root role\"?",
+      "range": {
+        "startLine": 2579,
+        "startChar": 16,
+        "endLine": 2579,
+        "endChar": 31
+      },
+      "revId": "04f92762106a2edfefd75b10add50e07d714c1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
