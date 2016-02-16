@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_a25a454e",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-16T22:55:31Z",
+      "side": 1,
+      "message": "don\u0027t like the length approach, but I can see why is being used in this test since an arbitrary number of is_domain projects is returned in the first calls that comes from the fixtures",
+      "range": {
+        "startLine": 924,
+        "startChar": 0,
+        "endLine": 925,
+        "endChar": 66
+      },
+      "revId": "e2f1bfa9a475f35c718463b0b83af553f84cbf2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
