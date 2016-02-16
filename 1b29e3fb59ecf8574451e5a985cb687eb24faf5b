@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_123c31c7",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_e4a0f045",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_e43c70e4",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-16T16:21:23Z",
       "side": 1,
       "message": "this just seems like a lot of work for almost no gain. This should be handled by wsgiref.util.application_uri and not by all applications.\n\nAlso, this should be pulled out into a function so that it\u0027s easier to test.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_7262ddae",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "I agree but wsgiref is not handling it right now. All the specs (OAUTH, EC2, S3, etc) which include url in the signature required standard ports to be stripped out. Till wsgiref fixed it, we need to do the normalization ourselves.\n\nI\u0027ll pull this out into a separate utility function.",
+      "parentUuid": "dae33548_e43c70e4",
       "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_72093ddd",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_efa6090f",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_eff449f3",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 22
@@ -64,6 +118,24 @@
       "writtenOn": "2016-02-16T16:21:23Z",
       "side": 1,
       "message": "_ indicates this is not a public function so we can\u0027t use it in keystone.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_524b59c9",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Per my understanding, _replace() is not actually an internal function. It has an underscore to prevent name collision. See\n\nhttps://docs.python.org/2/library/collections.html#collections.namedtuple",
+      "parentUuid": "dae33548_eff449f3",
       "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_52acf933",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_0fe40d0b",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_afdec10e",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 22
@@ -98,6 +188,24 @@
       "writtenOn": "2016-02-16T16:21:23Z",
       "side": 1,
       "message": "Application.base_url should handle this situation for us, too. Change Application.base_url to work when \u0027environment\u0027 not in context. Then this code can be simpler and also work correctly.\n\nThis should have been using public_endpoint and not localhost:\u003cpublic_port\u003e if public_endpoint is set.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0db25094",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "good point! I\u0027ll consolidate.",
+      "parentUuid": "dae33548_afdec10e",
       "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_266e5295",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_4fe295a0",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_8a300ba0",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 22
@@ -132,6 +258,24 @@
       "writtenOn": "2016-02-16T16:21:23Z",
       "side": 1,
       "message": "I wonder if we need to test this -- we don\u0027t need to have tests in keystone that verify that wsgiref.util.application_uri() works as designed, only that we\u0027re calling it correctly.",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c90fb72c",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "We are. See line 263 below.",
+      "parentUuid": "dae33548_8a300ba0",
       "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_062ceea9",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Yes, that\u0027s how it is being setup in devstack right now. You can either use the legacy URL or\n\n/identity/v3\n/identity/v2.0\n/identity_admin/v3\n/identity_admin/v2.0\n\nSee\n\nhttps://github.com/openstack-dev/devstack/blob/master/files/apache-keystone.template#L38\n\nIn fact, that\u0027s the direction we are heading, that we are using the standard HTTP/S ports and namespace each service in the SCRIPT_NAME. That way, we don\u0027t have to worry non-standard ports in production deployment. Much easier to deal with the networking and security folks.",
+      "parentUuid": "dae33548_0a487b2c",
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_cab853e8",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 22
@@ -166,6 +328,30 @@
       "writtenOn": "2016-02-16T16:21:23Z",
       "side": 1,
       "message": "this needs to be clear what \"it\" is. This applies to the other places \"it\" is used.",
+      "range": {
+        "startLine": 274,
+        "startChar": 20,
+        "endLine": 274,
+        "endChar": 22
+      },
+      "revId": "1b29e3fb59ecf8574451e5a985cb687eb24faf5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a92193a1",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-16T19:36:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_cab853e8",
       "range": {
         "startLine": 274,
         "startChar": 20,
