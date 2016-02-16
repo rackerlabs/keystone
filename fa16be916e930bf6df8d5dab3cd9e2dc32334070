@@ -34,6 +34,24 @@
       "revId": "fa16be916e930bf6df8d5dab3cd9e2dc32334070",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_92b7a1d7",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T17:38:47Z",
+      "side": 1,
+      "message": "we can do that in a seperate patch, let\u0027s just focus on removing extensions",
+      "parentUuid": "dae33548_d2580935",
+      "revId": "fa16be916e930bf6df8d5dab3cd9e2dc32334070",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
