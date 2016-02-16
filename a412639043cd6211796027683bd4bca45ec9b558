@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_3cb175e2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-02-16T02:12:27Z",
+      "side": 1,
+      "message": "should here insert the description of exception processing?",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 11
+      },
+      "revId": "a412639043cd6211796027683bd4bca45ec9b558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
