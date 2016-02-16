@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_efb569ee",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-16T16:03:32Z",
+      "side": 0,
+      "message": "why remove this? it was still applicable",
+      "range": {
+        "startLine": 1087,
+        "startChar": 0,
+        "endLine": 1089,
+        "endChar": 34
+      },
+      "revId": "a320eaa90323c04082204de9b9e630fec96661aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
