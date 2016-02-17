@@ -35,8 +35,15 @@ class Password(auth.AuthMethodHandler):
                 user_id=user_info.user_id,
                 password=user_info.password)
         except AssertionError:
-            # authentication failed because of invalid username or password
+            # authentication failed because of invalid password
             msg = _('Invalid username or password')
             raise exception.Unauthorized(msg)
+        except Exception:
+            if user_info.user_id is None:
+                # authentication failed because of invalid username or user id
+                msg = _('Invalid username or password')
+                raise exception.Unauthorized(msg)
+            else:
+                raise
 
         auth_context['user_id'] = user_info.user_id
