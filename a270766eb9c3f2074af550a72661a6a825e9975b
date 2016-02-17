@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_fd5062d6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T08:07:14Z",
+      "side": 1,
+      "message": "braces are unnecessary",
+      "range": {
+        "startLine": 676,
+        "startChar": 19,
+        "endLine": 676,
+        "endChar": 45
+      },
+      "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_ec03a940",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -13,6 +36,98 @@
       "writtenOn": "2016-02-16T20:14:29Z",
       "side": 1,
       "message": "nit: rename it to filtered_results",
+      "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_dde91ee8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T08:07:14Z",
+      "side": 1,
+      "message": "less code:\n\n  cleaned_list \u003d [ x for x in role_refs if _role_is_global(x[\u0027role_id\u0027]) ]",
+      "range": {
+        "startLine": 678,
+        "startChar": 8,
+        "endLine": 682,
+        "endChar": 29
+      },
+      "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_dd047e4b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T08:07:14Z",
+      "side": 1,
+      "message": "this already defaults to true and can be removed: https://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L1917",
+      "range": {
+        "startLine": 670,
+        "startChar": 8,
+        "endLine": 670,
+        "endChar": 67
+      },
+      "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_bdf7fa89",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T08:07:14Z",
+      "side": 1,
+      "message": "remove this along with line 182",
+      "range": {
+        "startLine": 46,
+        "startChar": 56,
+        "endLine": 46,
+        "endChar": 68
+      },
+      "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_bdd09af7",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T08:07:14Z",
+      "side": 1,
+      "message": "this line seems unnecessary - remove it",
+      "range": {
+        "startLine": 182,
+        "startChar": 12,
+        "endLine": 182,
+        "endChar": 71
+      },
       "revId": "a270766eb9c3f2074af550a72661a6a825e9975b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
