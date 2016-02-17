@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_e24a7625",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-17T10:01:56Z",
+      "side": 1,
+      "message": "so we do also support \u0027identity\u0027 to set the driver.....",
+      "range": {
+        "startLine": 1245,
+        "startChar": 11,
+        "endLine": 1245,
+        "endChar": 17
+      },
+      "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a2018e6c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-17T10:01:56Z",
+      "side": 1,
+      "message": "is this set anywhere?",
+      "range": {
+        "startLine": 1251,
+        "startChar": 8,
+        "endLine": 1251,
+        "endChar": 24
+      },
+      "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2251fed8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-17T10:01:56Z",
+      "side": 1,
+      "message": "if it is.......",
+      "range": {
+        "startLine": 1259,
+        "startChar": 64,
+        "endLine": 1259,
+        "endChar": 66
+      },
+      "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
