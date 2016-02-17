@@ -66,7 +66,8 @@ class DefaultDomain(Base):
     def _authenticate(self, remote_user, context):
         """Use remote_user to look up the user in the identity backend."""
         domain_id = CONF.identity.default_domain_id
-        user_ref = self.identity_api.get_user_by_name(remote_user, domain_id)
+        user_ref = self.identity_api.get_user_by_name_with_auth_notify(
+            context, remote_user, domain_id)
         return user_ref
 
 
@@ -87,7 +88,8 @@ class Domain(Base):
             domain_ref = self.resource_api.get_domain_by_name(domain_name)
             domain_id = domain_ref['id']
 
-        user_ref = self.identity_api.get_user_by_name(username, domain_id)
+        user_ref = self.identity_api.get_user_by_name_with_auth_notify(
+            context, username, domain_id)
         return user_ref
 
 

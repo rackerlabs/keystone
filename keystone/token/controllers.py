@@ -289,8 +289,8 @@ class Auth(controller.V2Controller):
                 raise exception.ValidationSizeError(attribute='username',
                                                     size=CONF.max_param_size)
             try:
-                user_ref = self.identity_api.get_user_by_name(
-                    username, CONF.identity.default_domain_id)
+                user_ref = self.identity_api.get_user_by_name_with_auth_notify(
+                    context, username, CONF.identity.default_domain_id)
                 user_id = user_ref['id']
             except exception.UserNotFound as e:
                 raise exception.Unauthorized(e)
@@ -324,8 +324,8 @@ class Auth(controller.V2Controller):
 
         username = environment['REMOTE_USER']
         try:
-            user_ref = self.identity_api.get_user_by_name(
-                username, CONF.identity.default_domain_id)
+            user_ref = self.identity_api.get_user_by_name_with_auth_notify(
+                context, username, CONF.identity.default_domain_id)
             user_id = user_ref['id']
         except exception.UserNotFound as e:
             raise exception.Unauthorized(e)

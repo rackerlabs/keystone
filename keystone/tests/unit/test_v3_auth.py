@@ -24,6 +24,8 @@ import mock
 from oslo_config import cfg
 from oslo_log import versionutils
 from oslo_utils import timeutils
+from pycadf import cadftaxonomy as taxonomy
+
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
@@ -3125,6 +3127,44 @@ class TestAuth(test_v3.RestfulTestCase):
                                    domain_name_url_safe='strict')
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
+
+    @mock.patch('keystone.notifications._send_audit_notification')
+    def test_auth_emit_notification_for_user_not_found(self, notify):
+        user_id = uuid.uuid4().hex
+        with mock.patch('keystone.identity.core.Manager.get_user_by_name',
+                        side_effect=exception.UserNotFound(user_id=user_id)):
+            api = auth.controllers.Auth()
+            auth_data = self.build_authentication_request(
+                user_id=user_id,
+                password=uuid.uuid4().hex
+            )
+            context = {'environment': {}}
+            auth_info = auth.controllers.AuthInfo.create(context,
+                                                         auth_data['auth'])
+            auth_context = {'extras': {}, 'method_names': []}
+            self.assertRaises(exception.Unauthorized,
+                              api.authenticate, context,
+                              auth_info, auth_context)
+            self.assertTrue(notify.called)
+            args, kwargs = notify.call_args
+            self.assertEqual(user_id, args[1].user_id)
+            self.assertEqual(taxonomy.OUTCOME_FAILURE, args[2])
+
+    @mock.patch('keystone.notifications._send_audit_notification')
+    def test_external_auth_emit_notification_for_user_not_found(self, notify):
+        user_id = uuid.uuid4().hex
+        with mock.patch('keystone.identity.core.Manager.get_user_by_name',
+                        side_effect=exception.UserNotFound(user_id=user_id)):
+            api = auth.controllers.Auth()
+            context, auth_info, auth_context = \
+                self.build_external_auth_request(user_id)
+            self.assertRaises(exception.Unauthorized,
+                              api.authenticate, context,
+                              auth_info, auth_context)
+            self.assertTrue(notify.called)
+            args, kwargs = notify.call_args
+            self.assertEqual(user_id, args[1].user_id)
+            self.assertEqual(taxonomy.OUTCOME_FAILURE, args[2])
 
 
 class TestAuthJSONExternal(test_v3.RestfulTestCase):

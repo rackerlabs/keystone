@@ -102,16 +102,17 @@ def convert_integer_to_method_list(method_int):
 class BaseUserInfo(object):
 
     @classmethod
-    def create(cls, auth_payload, method_name):
-        user_auth_info = cls()
+    def create(cls, auth_payload, method_name, context=None):
+        user_auth_info = cls(context=context)
         user_auth_info._validate_and_normalize_auth_data(auth_payload)
         user_auth_info.METHOD_NAME = method_name
         return user_auth_info
 
-    def __init__(self):
+    def __init__(self, context=None):
         self.user_id = None
         self.user_ref = None
         self.METHOD_NAME = None
+        self._context = context
 
     def _assert_domain_is_enabled(self, domain_ref):
         try:
@@ -169,10 +170,11 @@ class BaseUserInfo(object):
                     raise exception.ValidationError(attribute='domain',
                                                     target='user')
                 domain_ref = self._lookup_domain(user_info['domain'])
-                user_ref = self.identity_api.get_user_by_name(
-                    user_name, domain_ref['id'])
+                user_ref = self.identity_api.get_user_by_name_with_auth_notify(
+                    self._context, user_name, domain_ref['id'])
             else:
-                user_ref = self.identity_api.get_user(user_id)
+                user_ref = self.identity_api.get_user_with_auth_notify(
+                    self._context, user_id)
                 domain_ref = self.resource_api.get_domain(
                     user_ref['domain_id'])
                 self._assert_domain_is_enabled(domain_ref)
@@ -187,8 +189,8 @@ class BaseUserInfo(object):
 
 class UserAuthInfo(BaseUserInfo):
 
-    def __init__(self):
-        super(UserAuthInfo, self).__init__()
+    def __init__(self, context=None):
+        super(UserAuthInfo, self).__init__(context=context)
         self.password = None
 
     def _validate_and_normalize_auth_data(self, auth_payload):
@@ -200,8 +202,8 @@ class UserAuthInfo(BaseUserInfo):
 
 class TOTPUserInfo(BaseUserInfo):
 
-    def __init__(self):
-        super(TOTPUserInfo, self).__init__()
+    def __init__(self, context=None):
+        super(TOTPUserInfo, self).__init__(context=context)
         self.passcode = None
 
     def _validate_and_normalize_auth_data(self, auth_payload):

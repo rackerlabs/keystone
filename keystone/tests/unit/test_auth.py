@@ -22,6 +22,7 @@ import mock
 from oslo_config import cfg
 import oslo_utils.fixture
 from oslo_utils import timeutils
+from pycadf import cadftaxonomy as taxonomy
 import six
 from testtools import matchers
 
@@ -254,6 +255,39 @@ class AuthBadRequests(AuthTest):
         self.assertRaises(exception.Unauthorized,
                           self.controller.authenticate,
                           no_context, body_dict)
+
+    @mock.patch('keystone.notifications._send_audit_notification')
+    def test_local_auth_emit_notification_for_user_not_found(self, notify):
+        """Verify notifications is emitted if user not found"""
+        user_id = uuid.uuid4().hex
+        with mock.patch('keystone.identity.core.Manager.get_user_by_name',
+                        side_effect=exception.UserNotFound(user_id=user_id)):
+
+            # make sure local auth emit notification on user not found
+            body_dict = _build_user_auth(username=user_id,
+                                         password=uuid.uuid4().hex)
+            self.assertRaises(exception.Unauthorized,
+                              self.controller._authenticate_local,
+                              {}, body_dict)
+            self.assertTrue(notify.called)
+            args, kwargs = notify.call_args
+            self.assertEqual(user_id, args[1].user_id)
+            self.assertEqual(taxonomy.OUTCOME_FAILURE, args[2])
+
+    @mock.patch('keystone.notifications._send_audit_notification')
+    def test_external_auth_emit_notification_for_user_not_found(self, notify):
+        """Verify notifications is emitted if user not found"""
+        user_id = uuid.uuid4().hex
+        with mock.patch('keystone.identity.core.Manager.get_user_by_name',
+                        side_effect=exception.UserNotFound(user_id=user_id)):
+            context = {'environment': {'REMOTE_USER': user_id}}
+            self.assertRaises(exception.Unauthorized,
+                              self.controller._authenticate_external,
+                              context, {})
+            self.assertTrue(notify.called)
+            args, kwargs = notify.call_args
+            self.assertEqual(user_id, args[1].user_id)
+            self.assertEqual(taxonomy.OUTCOME_FAILURE, args[2])
 
 
 class AuthWithToken(AuthTest):

@@ -875,6 +875,10 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    @notifications.emit_event('authenticate')
+    def get_user_with_auth_notify(self, context, user_id):
+        return self.get_user(user_id)
+
     def assert_user_enabled(self, user_id, user=None):
         """Assert the user and the user's domain are enabled.
 
@@ -894,6 +898,10 @@ class Manager(manager.Manager):
         ref = driver.get_user_by_name(user_name, domain_id)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
+
+    @notifications.emit_event('authenticate')
+    def get_user_by_name_with_auth_notify(self, context, user_name, domain_id):
+        return self.get_user_by_name(user_name, domain_id)
 
     @domains_configured
     @exception_translated('user')
