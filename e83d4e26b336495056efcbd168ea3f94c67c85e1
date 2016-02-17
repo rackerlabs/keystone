@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_641e5260",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-17T19:03:16Z",
+      "side": 1,
+      "message": "Because this is used by delete project cascade (which need to be deleted from the leaf first) there needs to be a order where the parent node is not returned before the leaf node.\n\n\nWhich is why i searched in the tests to see if it was there....\n\n\nDo you think i should loop trough and see if it has a parent, and if it does make sure it is returned prior to its child in the list.",
+      "parentUuid": "dae33548_4a3cfec7",
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d0c6aa15",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 4
