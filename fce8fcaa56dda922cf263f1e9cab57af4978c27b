@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_3d064a1d",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-17T07:21:59Z",
+      "side": 1,
+      "message": "We should just emit the notification here. Long term, this code can use some refactoring.",
+      "revId": "fce8fcaa56dda922cf263f1e9cab57af4978c27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
