@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_240c453a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T20:39:36Z",
+      "side": 1,
+      "message": "should have said \"these 2 lines setting optionsin the \u0027ldap\u0027 group can be combined into a single call\":\n\n        self.config_fixture.config(group\u003d\u0027ldap\u0027, group_members_are_ids\u003dTrue,\n                                   group_member_attribute\u003d\u0027memberUID\u0027)",
+      "parentUuid": "dae33548_f0d97c58",
+      "revId": "4a4833f7742488c42ca401207c252cbbda796a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_707bac28",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 10
