@@ -33,9 +33,9 @@ CONF = cfg.CONF
 
 
 def _trustor_trustee_only(trust, user_id):
-    if (user_id != trust.get('trustee_user_id') and
-            user_id != trust.get('trustor_user_id')):
-                raise exception.Forbidden()
+    if user_id not in [trust.get('trustee_user_id'),
+                       trust.get('trustor_user_id')]:
+        raise exception.Forbidden()
 
 
 def _admin_trustor_only(context, trust, user_id):
