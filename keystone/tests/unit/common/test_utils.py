@@ -39,8 +39,9 @@ class UtilsTestCase(unit.BaseTestCase):
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
     def test_resource_uuid(self):
-        uuid_str = '536e28c2017e405e89b25a1ed777b952'
-        self.assertEqual(uuid_str, common_utils.resource_uuid(uuid_str))
+        # Basic uuid test, most IDs issued by keystone look like this:
+        value = six.text_type('536e28c2017e405e89b25a1ed777b952')
+        self.assertEqual(value, common_utils.resource_uuid(value))
 
         # Exact 64 length string.
         uuid_str = ('536e28c2017e405e89b25a1ed777b952'
@@ -64,11 +65,28 @@ class UtilsTestCase(unit.BaseTestCase):
         # backend.
         uuid_str = six.text_type('536e28c2017e405e89b25a1ed777b952'
                                  'f13de678ac714bb1b7d1e9a007c10db5')
+        # Reference to create expected values, will be used for remaining tests
         resource_id_namespace = common_utils.RESOURCE_ID_NAMESPACE
+
+        # Non-ASCII character test
+        value = u'ß' * 32
         if six.PY2:
-            uuid_str = uuid_str.encode('utf-8')
-        transformed_id = uuid.uuid5(resource_id_namespace, uuid_str).hex
-        self.assertEqual(transformed_id, common_utils.resource_uuid(uuid_str))
+            value = value.encode('utf-8')
+        expected_id = uuid.uuid5(resource_id_namespace, value).hex
+        self.assertEqual(expected_id, common_utils.resource_uuid(value))
+
+        # This input is invalid because its length is more than 64
+        value = six.text_type('x' * 65)
+        self.assertRaises(ValueError, common_utils.resource_uuid, value)
+
+        # 64 length unicode string, to mimic what is returned from mapping_id
+        # backend
+        value = six.text_type('536e28c2017e405e89b25a1ed777b952'
+                              'f13de678ac714bb1b7d1e9a007c10db5')
+        if six.PY2:
+            value = value.encode('utf-8')
+        expected_id = uuid.uuid5(resource_id_namespace, value).hex
+        self.assertEqual(expected_id, common_utils.resource_uuid(value))
 
     def test_hash(self):
         password = 'right'
