@@ -75,7 +75,7 @@ class AuthContextMiddleware(wsgi.Middleware):
         return None, None, False
 
     def _build_token_auth_context(self, request, token_id):
-        if token_id == CONF.admin_token:
+        if CONF.admin_token and token_id == CONF.admin_token:
             versionutils.report_deprecated_feature(
                 LOG,
                 _LW('Auth context checking for the admin token is deprecated '
