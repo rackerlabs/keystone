@@ -15,6 +15,7 @@
 import abc
 
 from oslo_config import cfg
+from oslo_config import types
 from oslo_log import log
 from oslo_log import versionutils
 import six
@@ -1232,6 +1233,44 @@ class DomainConfigManager(manager.Manager):
             for option in config[group]:
                 self._assert_valid_group_and_option(group, option)
 
+    def _assert_valid_config_option_types(self, config):
+        """Ensure the options in the config are valid.
+
+        This method is called to validate the request config in create and
+        update manager calls.
+
+        :param config: config structure being created or updated
+
+        """
+        if 'ldap' not in config:
+            # Only validate LDAP config values for now, since that is all
+            # we use for domain specific configs
+            pass
+
+        messages = []
+        oslo_config_type = None
+        for ldap_key, ldap_value in six.iteritems(config['ldap']):
+            try:
+                # Get the real value type from CONF, this is usually String,
+                # Bool, Port, Int...
+                opt_type = cfg.Opt(getattr(CONF.ldap, ldap_key)).type
+                oslo_type = getattr(types, opt_type.__repr__())
+                temp_type = oslo_type(ldap_value)
+                # call it to see if it's valid, and catch if it is
+                temp_type(ldap_value)
+            except (ValueError, AttributeError, TypeError):
+                messages.append(ldap_key)
+                if oslo_config_type:
+                    messages.append(' should be a: ' + opt_type.__repr__())
+                else:
+                    messages.append(' has an unrecognized value')
+
+        if messages:
+            msg = _('The following keys have invalid values: %(messages)s, '
+                    'refer to keystone.conf for details.') % {'messages':
+                                                              str(messages)}
+            raise exception.InvalidDomainConfig(reason=msg)
+
     def _assert_valid_group_and_option(self, group, option):
         """Ensure the combination of group and option is valid.
 
@@ -1343,6 +1382,7 @@ class DomainConfigManager(manager.Manager):
 
         """
         self._assert_valid_config(config)
+        self._assert_valid_config_option_types(config)
         whitelisted, sensitive = self._config_to_list(config)
         # Delete any existing config
         self.delete_config_options(domain_id)
@@ -1505,6 +1545,7 @@ class DomainConfigManager(manager.Manager):
             update_config = {group: config}
 
         _assert_valid_update(domain_id, update_config, group, option)
+        self._assert_valid_config_option_types(config)
 
         whitelisted, sensitive = self._config_to_list(update_config)
 

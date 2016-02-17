@@ -14,6 +14,7 @@ import copy
 import uuid
 
 from oslo_config import cfg
+from oslo_serialization import jsonutils
 from six.moves import http_client
 
 from keystone import exception
@@ -58,6 +59,32 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             'domain_id': invalid_domain_id}
         self.put(url, body={'config': self.config},
                  expected_status=exception.DomainNotFound.code)
+
+    def test_create_config_invalid_opt(self):
+        """Call ``PUT /domains/{domain_id}/config``
+
+        While creating Identity API-based domain config with an invalid domain
+        id provided, the request shall be rejected with a response, 404 domain
+        not found.
+        """
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        config = {'ldap': {'url': True,  # should be string
+                           'user_enabled_invert': 3,  # should be boolean
+                           # should be integer
+                           'pool_connection_lifetime': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        url = '/domains/%(domain_id)s/config' % {
+            'domain_id': domain['id']}
+        resp = self.put(url, body={'config': config},
+                        expected_status=exception.InvalidDomainConfig.code)
+
+        resp_data = jsonutils.loads(resp.body)
+        message = resp_data.get('error', {}).get('message')
+        self.assertIn('The following keys have invalid values:', message)
+        self.assertIn('pool_connection_lifetime', message)
+        self.assertIn('user_enabled_invert', message)
+        self.assertIn('url', message)
 
     def test_create_config_twice(self):
         """Check multiple creates don't throw error"""
