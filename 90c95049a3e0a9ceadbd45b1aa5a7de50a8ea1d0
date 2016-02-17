@@ -16,6 +16,24 @@
       "revId": "90c95049a3e0a9ceadbd45b1aa5a7de50a8ea1d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_58d04af6",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T22:27:30Z",
+      "side": 1,
+      "message": "This is on python3:\n\n \u003e\u003e\u003e uuid.uuid5(RESOURCE_ID_NAMESPACE, u\u0027something\u0027).hex\n \u0027d60c5d6757a05921aeeca652cc1c5a9f\u0027\n \u003e\u003e\u003e uuid.uuid5(RESOURCE_ID_NAMESPACE, (u\u0027something\u0027).encode(\u0027utf-8\u0027)).hex\n Traceback (most recent call last):\n   File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n   File \"/usr/lib/python3.4/uuid.py\", line 617, in uuid5\n     hash \u003d sha1(namespace.bytes + bytes(name, \"utf-8\")).digest()\n TypeError: encoding or errors without a string argument\n\nOn python3 this must be text.",
+      "parentUuid": "dae33548_3824665e",
+      "revId": "90c95049a3e0a9ceadbd45b1aa5a7de50a8ea1d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
