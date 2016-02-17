@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_bef6c2f6",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 57
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9e4f7e6a",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "I don\u0027t understand this. In the next migration things are copied from identity_table to local_identity_table. Either the copying is not needed or this Fk.\n\nThis is also inconsistent with what\u0027s in identity/backends/sql.py",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 74
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_fac22d33",
         "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
         "patchSetId": 16
@@ -25,6 +71,29 @@
     },
     {
       "key": {
+        "uuid": "dae33548_eb9d2a0b",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "same question as Dave\u0027s above.",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 72
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_e67c54b7",
         "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
         "patchSetId": 16
@@ -40,6 +109,29 @@
         "startLine": 39,
         "startChar": 8,
         "endLine": 39,
+        "endChar": 64
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3ec4725d",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "this is out of scope of the current blueprint",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
         "endChar": 64
       },
       "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
@@ -94,6 +186,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_9e065e84",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "there must be a testcase for this. Basically setting a password creates a local user. I am not sure that this is intentional decision and that it should be done this way.",
+      "parentUuid": "dae33548_062e98a4",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 55
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_7aa9fd8f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 16
@@ -133,6 +249,144 @@
         "startChar": 4,
         "endLine": 124,
         "endChar": 30
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c185a707",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "wha\u0027t this for?",
+      "range": {
+        "startLine": 245,
+        "startChar": 50,
+        "endLine": 245,
+        "endChar": 64
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_818f1f29",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "what\u0027s this for?",
+      "range": {
+        "startLine": 246,
+        "startChar": 44,
+        "endLine": 246,
+        "endChar": 58
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_61c77b64",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "what\u0027s this for?",
+      "range": {
+        "startLine": 247,
+        "startChar": 31,
+        "endLine": 247,
+        "endChar": 44
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_21c73397",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "Also, please add a docstring describing the method and some comments. My puny human mind took a lot of time to understand what\u0027s going on here.",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 270,
+        "endChar": 26
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0172ef7a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "fix these",
+      "range": {
+        "startLine": 730,
+        "startChar": 0,
+        "endLine": 731,
+        "endChar": 35
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_813eff89",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T12:59:18Z",
+      "side": 1,
+      "message": "fix these",
+      "range": {
+        "startLine": 758,
+        "startChar": 0,
+        "endLine": 759,
+        "endChar": 35
       },
       "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
