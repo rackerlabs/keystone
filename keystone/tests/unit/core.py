@@ -33,11 +33,14 @@ from oslo_config import fixture as config_fixture
 from oslo_log import fixture as log_fixture
 from oslo_log import log
 from oslo_utils import timeutils
-import oslotest.base as oslotest
+import oslotest.log
 from oslotest import mockpatch
+from oslotest import output
+from oslotest import timeout
 from paste.deploy import loadwsgi
 import six
 from sqlalchemy import exc
+import testtools
 from testtools import testcase
 
 # NOTE(ayoung)
@@ -477,7 +480,7 @@ def create_user(api, domain_id, **kwargs):
     return user
 
 
-class BaseTestCase(oslotest.BaseTestCase):
+class BaseTestCase(testtools.TestCase):
     """Light weight base test class.
 
     This is a placeholder that will eventually go away once the
@@ -488,6 +491,13 @@ class BaseTestCase(oslotest.BaseTestCase):
 
     def setUp(self):
         super(BaseTestCase, self).setUp()
+
+        self.useFixture(timeout.Timeout())
+        self.useFixture(output.CaptureOutput())
+        self.useFixture(oslotest.log.ConfigureLogging())
+        self.useFixture(fixtures.NestedTempfile())
+        self.useFixture(fixtures.TempHomeDir())
+
         self.useFixture(mockpatch.PatchObject(sys, 'exit',
                                               side_effect=UnexpectedExit))
         self.useFixture(log_fixture.get_logging_handle_error_fixture())
