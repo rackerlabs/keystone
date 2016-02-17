@@ -22,6 +22,30 @@
       "revId": "db703fc93486a67664b1dd1bdb91657661d06114",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_90b49d82",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T08:12:09Z",
+      "side": 1,
+      "message": "I missed that you are comparing them below.",
+      "parentUuid": "dae33548_f0724910",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 42
+      },
+      "revId": "db703fc93486a67664b1dd1bdb91657661d06114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
