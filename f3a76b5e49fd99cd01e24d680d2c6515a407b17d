@@ -22,6 +22,30 @@
       "revId": "f3a76b5e49fd99cd01e24d680d2c6515a407b17d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_16398ef2",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-17T14:57:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_96abde74",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 16
+      },
+      "revId": "f3a76b5e49fd99cd01e24d680d2c6515a407b17d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
