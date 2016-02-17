@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_539dffba",
+        "filename": "releasenotes/notes/DomainSpecificRoles-fc5dd2ef74a1442c.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T08:20:09Z",
+      "side": 1,
+      "message": "suggest you add why they will not appear in the token.",
+      "range": {
+        "startLine": 10,
+        "startChar": 48,
+        "endLine": 11,
+        "endChar": 49
+      },
+      "revId": "a4e9ea5fef805e0fb27be9d0e3be856021c772ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
