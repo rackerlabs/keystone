@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_d130f5ea",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 151
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T01:09:39Z",
+      "side": 1,
+      "message": "(nit) don\u0027t need \u0027or more\u0027",
+      "range": {
+        "startLine": 182,
+        "startChar": 53,
+        "endLine": 182,
+        "endChar": 61
+      },
+      "revId": "a3491fc855f70f934bd5f7227fda5732a67c08de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_1151bd0e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 151
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T01:09:39Z",
+      "side": 1,
+      "message": "(nit) ditto",
+      "range": {
+        "startLine": 186,
+        "startChar": 53,
+        "endLine": 186,
+        "endChar": 61
+      },
+      "revId": "a3491fc855f70f934bd5f7227fda5732a67c08de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_91d94d86",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 151
+      },
+      "lineNbr": 2618,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T01:09:39Z",
+      "side": 1,
+      "message": "(nit) project",
+      "range": {
+        "startLine": 2618,
+        "startChar": 10,
+        "endLine": 2618,
+        "endChar": 17
+      },
+      "revId": "a3491fc855f70f934bd5f7227fda5732a67c08de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
