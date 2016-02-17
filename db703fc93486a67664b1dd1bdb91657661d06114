@@ -70,6 +70,29 @@
       "revId": "db703fc93486a67664b1dd1bdb91657661d06114",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9e7bfef4",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T12:44:18Z",
+      "side": 1,
+      "message": "since the behavior on python2 is different with python3, we need update these code accordingly.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 71
+      },
+      "revId": "db703fc93486a67664b1dd1bdb91657661d06114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
