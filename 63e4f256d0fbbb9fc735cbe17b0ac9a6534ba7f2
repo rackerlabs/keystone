@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "dae33548_d4d0ccf8",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-17T12:01:07Z",
+      "side": 1,
+      "message": "probably good to be more specific on what the issue is.  Is this TODO meant to indicate that we should fix it? If so, maybe we should raise a bug for it?",
+      "range": {
+        "startLine": 1397,
+        "startChar": 23,
+        "endLine": 1397,
+        "endChar": 36
+      },
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_c89e7462",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 7
@@ -60,6 +83,24 @@
       "side": 1,
       "message": "Not sure if I understand your comment. The current test covers  the case where \u0027user_addtitonal_attribute_mapping \u003d description:description\u0027 and \u0027user_description_attribute \u003d description\u0027.\nSetting \u0027user_additional_attribute_mapping\u0027 to anything else will be ignored because of bug 1336769. \nSo I see no potential negative interference with the new user_description_attribute extension, even if set to a conflicting mapping since only user_description_attribute will be evaulated after LDAP get.\nFixing 1336769 (and the test) makes no sense, since LDAP write has been deprecated.\nDid I mis anything?",
       "parentUuid": "5a5ae5dd_c89e7462",
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b480a8f8",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-17T12:01:07Z",
+      "side": 1,
+      "message": "I didn\u0027t think LDAP write has been deprecated for user and groups? In addition, as far as I can tell, the existing extra_attribute_mapping IS used on get as well as create, so I think both will be evaluated (maybe I\u0027m misreading the code of the ldap calls in keystone/common/ldap/core.py). Further, Not quite sure of the relevance of bug 1336769...since the fix for this is a documentation fix to config.py.  I\u0027m sure I\u0027m just being dumb here and need more explanation!",
+      "parentUuid": "5a5ae5dd_792f143f",
       "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
