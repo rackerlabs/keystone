@@ -253,6 +253,42 @@ class AuthBadRequests(AuthTest):
                           self.controller.authenticate,
                           no_context, body_dict)
 
+    @mock.patch('keystone.notifications.send_auth_audit_notification')
+    def test_local_auth_emit_notification_for_user_not_found(self, notify):
+        """Verify notifications is emitted if user not found"""
+        user_id = uuid.uuid4().hex
+        self.controller.identity_api = mock.MagicMock()
+        self.controller.identity_api.get_user_by_name.side_effect = \
+            exception.UserNotFound(user_id=user_id)
+
+        # make sure local auth emit notification on user not found
+        body_dict = _build_user_auth(username=user_id,
+                                     password=uuid.uuid4().hex)
+        self.assertRaises(exception.Unauthorized,
+                          self.controller._authenticate_local,
+                          {}, body_dict)
+        self.assertTrue(notify.called)
+        args, kwargs = notify.call_args
+        self.assertEqual(user_id, args[1])
+        self.assertFalse(kwargs['success'])
+
+    @mock.patch('keystone.notifications.send_auth_audit_notification')
+    def test_external_auth_emit_notification_for_user_not_found(self, notify):
+        """Verify notifications is emitted if user not found"""
+        user_id = uuid.uuid4().hex
+        self.controller.identity_api = mock.MagicMock()
+        self.controller.identity_api.get_user_by_name.side_effect = \
+            exception.UserNotFound(user_id=user_id)
+        context = {'environment': {'REMOTE_USER': user_id}}
+
+        self.assertRaises(exception.Unauthorized,
+                          self.controller._authenticate_external,
+                          context, {})
+        self.assertTrue(notify.called)
+        args, kwargs = notify.call_args
+        self.assertEqual(user_id, args[1])
+        self.assertFalse(kwargs['success'])
+
 
 class AuthWithToken(AuthTest):
     def test_unscoped_token(self):

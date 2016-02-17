@@ -29,6 +29,7 @@ from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone import notifications
 from keystone.token import provider
 
 
@@ -293,6 +294,8 @@ class Auth(controller.V2Controller):
                     username, CONF.identity.default_domain_id)
                 user_id = user_ref['id']
             except exception.UserNotFound as e:
+                notifications.send_auth_audit_notification(
+                    context, username, success=False)
                 raise exception.Unauthorized(e)
 
         try:
@@ -328,6 +331,8 @@ class Auth(controller.V2Controller):
                 username, CONF.identity.default_domain_id)
             user_id = user_ref['id']
         except exception.UserNotFound as e:
+            notifications.send_auth_audit_notification(
+                context, username, success=False)
             raise exception.Unauthorized(e)
 
         metadata_ref = {}

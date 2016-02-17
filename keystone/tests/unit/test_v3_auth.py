@@ -3105,6 +3105,46 @@ class TestAuth(test_v3.RestfulTestCase):
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
+    @mock.patch('keystone.notifications.send_auth_audit_notification')
+    def test_auth_emit_notification_for_user_not_found(self, notify):
+        user_id = uuid.uuid4().hex
+        self.identity_api = mock.MagicMock()
+        self.identity_api.get_user_by_name.side_effect = \
+            exception.UserNotFound(user_id=user_id)
+        api = auth.controllers.Auth()
+        auth_data = self.build_authentication_request(
+            user_id=user_id,
+            password=uuid.uuid4().hex
+        )
+        context = {'environment': {}}
+        auth_info = auth.controllers.AuthInfo.create(context,
+                                                     auth_data['auth'])
+        auth_context = {'extras': {}, 'method_names': []}
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate, context,
+                          auth_info, auth_context)
+        self.assertTrue(notify.called)
+        args, kwargs = notify.call_args
+        self.assertEqual(user_id, args[1])
+        self.assertFalse(kwargs['success'])
+
+    @mock.patch('keystone.notifications.send_auth_audit_notification')
+    def test_external_auth_emit_notification_for_user_not_found(self, notify):
+        user_id = uuid.uuid4().hex
+        self.identity_api = mock.MagicMock()
+        self.identity_api.get_user_by_name.side_effect = \
+            exception.UserNotFound(user_id=user_id)
+        api = auth.controllers.Auth()
+        context, auth_info, auth_context = self.build_external_auth_request(
+            user_id)
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate, context,
+                          auth_info, auth_context)
+        self.assertTrue(notify.called)
+        args, kwargs = notify.call_args
+        self.assertEqual(user_id, args[1])
+        self.assertFalse(kwargs['success'])
+
 
 class TestAuthJSONExternal(test_v3.RestfulTestCase):
     content_type = 'json'

@@ -23,6 +23,7 @@ from keystone import auth
 from keystone.common import dependency
 from keystone import exception
 from keystone.i18n import _
+from keystone import notifications
 
 
 CONF = cfg.CONF
@@ -48,7 +49,9 @@ class Base(auth.AuthMethodHandler):
                 (context['environment'].get('AUTH_TYPE', '').lower()
                  == 'negotiate')):
                 auth_context['bind']['kerberos'] = user_ref['name']
-        except Exception:
+        except exception.UserNotFound:
+            notifications.send_auth_audit_notification(
+                context, REMOTE_USER, success=False)
             msg = _('Unable to lookup user %s') % (REMOTE_USER)
             raise exception.Unauthorized(msg)
 

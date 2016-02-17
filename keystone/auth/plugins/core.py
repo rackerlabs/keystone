@@ -20,6 +20,7 @@ import six
 
 from keystone.common import dependency
 from keystone import exception
+from keystone import notifications
 
 
 CONF = cfg.CONF
@@ -102,17 +103,18 @@ def convert_integer_to_method_list(method_int):
 class UserAuthInfo(object):
 
     @staticmethod
-    def create(auth_payload, method_name):
+    def create(auth_payload, method_name, context=None):
         user_auth_info = UserAuthInfo()
         user_auth_info._validate_and_normalize_auth_data(auth_payload)
         user_auth_info.METHOD_NAME = method_name
         return user_auth_info
 
-    def __init__(self):
+    def __init__(self, context=None):
         self.user_id = None
         self.password = None
         self.user_ref = None
         self.METHOD_NAME = None
+        self._context = context
 
     def _assert_domain_is_enabled(self, domain_ref):
         try:
@@ -180,6 +182,13 @@ class UserAuthInfo(object):
                 self._assert_domain_is_enabled(domain_ref)
         except exception.UserNotFound as e:
             LOG.exception(six.text_type(e))
+            # NOTE(gyee): audit_user can be either user_id or user_name,
+            # depending what's available. If user does not exist, we just
+            # need enough information in the audit so we can take approprate
+            # actions.
+            audit_user = user_id if user_id else user_name
+            notifications.send_auth_audit_notification(
+                self._context, audit_user, success=False)
             raise exception.Unauthorized(e)
         self._assert_user_is_enabled(user_ref)
         self.user_ref = user_ref

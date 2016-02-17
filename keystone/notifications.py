@@ -545,6 +545,7 @@ class CadfNotificationWrapper(object):
     """
 
     def __init__(self, operation):
+        # FIXME(gyee): not sure if we still need these
         self.action = operation
         self.event_type = '%s.%s' % (SERVICE, operation)
 
@@ -552,20 +553,14 @@ class CadfNotificationWrapper(object):
         @functools.wraps(f)
         def wrapper(wrapped_self, context, user_id, *args, **kwargs):
             """Always send a notification."""
-            initiator = _get_request_audit_info(context, user_id)
-            target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
             try:
                 result = f(wrapped_self, context, user_id, *args, **kwargs)
             except Exception:
                 # For authentication failure send a cadf event as well
-                _send_audit_notification(self.action, initiator,
-                                         taxonomy.OUTCOME_FAILURE,
-                                         target, self.event_type)
+                send_auth_audit_notification(context, user_id, success=False)
                 raise
             else:
-                _send_audit_notification(self.action, initiator,
-                                         taxonomy.OUTCOME_SUCCESS,
-                                         target, self.event_type)
+                send_auth_audit_notification(context, user_id, success=True)
                 return result
 
         return wrapper
@@ -780,6 +775,15 @@ def _check_notification_opt_out(event_type, outcome):
         return True
 
     return False
+
+
+def send_auth_audit_notification(context, user_id, success=True):
+    initiator = _get_request_audit_info(context, user_id)
+    target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
+    action = 'authenticate'
+    event_type = '%s.%s' % (SERVICE, action)
+    outcome = taxonomy.OUTCOME_SUCCESS if success else taxonomy.OUTCOME_FAILURE
+    _send_audit_notification(action, initiator, outcome, target, event_type)
 
 
 emit_event = CadfNotificationWrapper
