@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_da72c910",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T03:56:48Z",
+      "side": 1,
+      "message": "i\u0027d say this closes this specific bugs, i\u0027d prefer to not have long standing bugs that are never closed. if there\u0027s another issue, let\u0027s open a new bug",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 20
+      },
+      "revId": "ee136df46d837a6f90c3a23bbf834dd9bd7a7848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_fa4cedc9",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T03:56:48Z",
+      "side": 1,
+      "message": "unused import is unused",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 42
+      },
+      "revId": "ee136df46d837a6f90c3a23bbf834dd9bd7a7848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3ac93527",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T03:56:48Z",
+      "side": 1,
+      "message": "too many blank lines above",
+      "range": {
+        "startLine": 716,
+        "startChar": 0,
+        "endLine": 718,
+        "endChar": 52
+      },
+      "revId": "ee136df46d837a6f90c3a23bbf834dd9bd7a7848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
