@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_4756abce",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T21:11:33Z",
+      "side": 1,
+      "message": "since description is optional this shouldn\u0027t be in new_user_ref() because that affects all tests.",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c76abb80",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T21:11:33Z",
+      "side": 1,
+      "message": "let\u0027s not change all tests just for a change to ldap.",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_27128709",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T21:11:33Z",
+      "side": 1,
+      "message": "that this test is changing means that the proposed change ot the code is not backwards compatible. What if deployments were using description:name? That needs to continue to work.",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
