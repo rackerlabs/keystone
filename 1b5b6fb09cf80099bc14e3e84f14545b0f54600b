@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_d518aa20",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-17T20:04:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_d6d1e658",
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_3625b208",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2016-02-17T14:55:27Z",
       "side": 1,
       "message": "what does password have to do with any of these changes? Just test what you\u0027re changing.",
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_95c62298",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2181,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-17T20:04:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_f65cea7e",
       "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -92,6 +128,30 @@
         "startChar": 4,
         "endLine": 5,
         "endChar": 10
+      },
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f564ceb9",
+        "filename": "releasenotes/notes/bug_1526462-df9a3f3974d9040f.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-17T20:04:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_d6ef2685",
+      "range": {
+        "startLine": 5,
+        "startChar": 63,
+        "endLine": 5,
+        "endChar": 68
       },
       "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
