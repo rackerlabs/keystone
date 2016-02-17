@@ -22,6 +22,30 @@
       "revId": "976673d67cb2d53c08af1ebfec53508147975960",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a0696bfb",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 20398
+      },
+      "writtenOn": "2016-02-17T17:40:49Z",
+      "side": 1,
+      "message": "good idea!",
+      "parentUuid": "dae33548_452d4345",
+      "range": {
+        "startLine": 311,
+        "startChar": 25,
+        "endLine": 311,
+        "endChar": 60
+      },
+      "revId": "976673d67cb2d53c08af1ebfec53508147975960",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
