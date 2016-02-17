@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_cf565729",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-17T19:41:54Z",
+      "side": 1,
+      "message": "will do in a follow-up patch",
+      "parentUuid": "dae33548_9e281e88",
+      "revId": "d8a92f602fc66f2b9db017a48f9394b37c0213a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_2bb39299",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 13
@@ -66,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_8fb28f92",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-17T19:41:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_0f7b1ff6",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 58
+      },
+      "revId": "d8a92f602fc66f2b9db017a48f9394b37c0213a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_1e3d2ec4",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 13
@@ -83,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_af531338",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-17T19:41:54Z",
+      "side": 1,
+      "message": "will do in a follow-up patch",
+      "parentUuid": "dae33548_1e3d2ec4",
+      "revId": "d8a92f602fc66f2b9db017a48f9394b37c0213a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_9e9dbebe",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 13
@@ -94,6 +154,30 @@
       "writtenOn": "2016-02-17T12:34:08Z",
       "side": 1,
       "message": "Since disabling is a special case of update (some different logic is done around disabling entities, like different checks, etc), I\u0027d suggest making this method test_disable_domain_disables_is_domain_project\n\nAnd create another to update the name attribute called test_update_domain_updates_is_domain_project",
+      "range": {
+        "startLine": 189,
+        "startChar": 8,
+        "endLine": 189,
+        "endChar": 52
+      },
+      "revId": "d8a92f602fc66f2b9db017a48f9394b37c0213a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8f272fc9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-17T19:41:54Z",
+      "side": 1,
+      "message": "ok. will do in a follow-up patch",
+      "parentUuid": "dae33548_9e9dbebe",
       "range": {
         "startLine": 189,
         "startChar": 8,
