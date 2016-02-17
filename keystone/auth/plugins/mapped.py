@@ -117,6 +117,9 @@ def handle_unscoped_token(context, auth_payload, auth_context,
     def build_local_user_context(auth_context, mapped_properties):
         user_info = auth_plugins.UserAuthInfo.create(mapped_properties,
                                                      METHOD_NAME)
+        if user_info.user_id is None:
+            msg = _('User not found')
+            raise exception.Unauthorized(msg)
         auth_context['user_id'] = user_info.user_id
 
     assertion = extract_assertion_data(context)

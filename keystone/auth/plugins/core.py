@@ -180,7 +180,7 @@ class UserAuthInfo(object):
                 self._assert_domain_is_enabled(domain_ref)
         except exception.UserNotFound as e:
             LOG.exception(six.text_type(e))
-            raise exception.Unauthorized(e)
+            return
         self._assert_user_is_enabled(user_ref)
         self.user_ref = user_ref
         self.user_id = user_ref['id']
