@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_01b02f89",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T13:09:03Z",
+      "side": 1,
+      "message": "What are the consequences of having nullable display_name?",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 67
+      },
+      "revId": "4f8b44ea35911241b59cc58144ca358cf5a58b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_e6c58a8e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 17
