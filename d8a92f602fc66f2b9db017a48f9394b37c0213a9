@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0f7b1ff6",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T19:34:28Z",
+      "side": 1,
+      "message": "If both are null, use assertIsNone for both",
+      "parentUuid": "dae33548_2bb39299",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 58
+      },
+      "revId": "d8a92f602fc66f2b9db017a48f9394b37c0213a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_1e3d2ec4",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 13
