@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_31de8111",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 151
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T01:10:50Z",
+      "side": 1,
+      "message": "(nit) project",
+      "range": {
+        "startLine": 11,
+        "startChar": 46,
+        "endLine": 11,
+        "endChar": 53
+      },
+      "revId": "a3491fc855f70f934bd5f7227fda5732a67c08de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d130f5ea",
         "filename": "keystone/resource/core.py",
         "patchSetId": 151
