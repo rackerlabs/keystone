@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_fac22d33",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "shouldn\u0027t the `id` an uuid?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e67c54b7",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "\u0027password\u0027 is nullable, or else this will cause the migration fail.\n\n17460 TRACE keystone DBError: (pymysql.err.IntegrityError) (1048, u\"Column \u0027password\u0027 cannot be null\") [SQL: u\u0027INSERT INTO password (id, user_id, password) VALUES (%s, %s, %s), (%s, %s, %s), (%s, %s, %s), (%s, %s, %s), ...)",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 64
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a61fec06",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "[] is not a dict.",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_062e98a4",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "possible to add some testcases to verify the methods like this?",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 55
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_7aa9fd8f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "change the table name to \"local_identity\" to consistent with the upgrade scripts, change schema as well.\n\nhttps://review.openstack.org/#/c/278570/16/keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py@23",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 26
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9a94c143",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "same here.",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 124,
+        "endChar": 30
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_60ae6c99",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 1,
+      "message": "no need to assert this explicitly, it has been asserted within this method: assertTableValuesMatch(...).",
+      "range": {
+        "startLine": 761,
+        "startChar": 0,
+        "endLine": 762,
+        "endChar": 67
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

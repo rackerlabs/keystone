@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_b7a560a3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-17T06:59:10Z",
+      "side": 0,
+      "message": "Does that mean name needn\u0027t be unique within the domain in identity table anymore? uniqueness only needed when it is mapped into local identity?",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 68
+      },
+      "revId": "3eb718b9dca5e15b5b9154ecdf5b7cd512d76607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
