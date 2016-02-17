@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_3824665e",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T22:22:22Z",
+      "side": 1,
+      "message": "So in Python3 we want this to be test (aka unicode)?",
+      "revId": "90c95049a3e0a9ceadbd45b1aa5a7de50a8ea1d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
