@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_2de3a234",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-17T14:01:16Z",
+      "side": 1,
+      "message": "Do not pass hints. When you do list_credentials with passed hints, the manager will apply list_limit to the call. If list_limit is set to 20, then you will get back only 20 credentials. I don\u0027t think this is what you want.\n\nRead docstring of https://github.com/openstack/keystone/blob/master/keystone/common/manager.py#L33 for more information.",
+      "range": {
+        "startLine": 44,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 71
+      },
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
