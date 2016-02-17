@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_756c3e35",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T20:11:24Z",
+      "side": 1,
+      "message": "If delete project cascade is depending on the order that the projects are returned in then that\u0027s a bug in delete project cascade, because this method doesn\u0027t make any guarantees on the order.",
+      "parentUuid": "dae33548_641e5260",
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d0c6aa15",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 4
