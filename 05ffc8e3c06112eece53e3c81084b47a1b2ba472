@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_404dff3c",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-17T17:30:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_45b19146",
+      "revId": "05ffc8e3c06112eece53e3c81084b47a1b2ba472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_e57ee568",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_605003d5",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-17T17:30:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_e57ee568",
+      "revId": "05ffc8e3c06112eece53e3c81084b47a1b2ba472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_85e55939",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2016-02-17T17:10:52Z",
       "side": 1,
       "message": "QR",
+      "revId": "05ffc8e3c06112eece53e3c81084b47a1b2ba472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2071db76",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-17T17:30:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_85e55939",
       "revId": "05ffc8e3c06112eece53e3c81084b47a1b2ba472",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
