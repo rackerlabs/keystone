@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_de560f29",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T18:40:05Z",
+      "side": 1,
+      "message": "Why 2 docstrings ?",
+      "range": {
+        "startLine": 1043,
+        "startChar": 8,
+        "endLine": 1044,
+        "endChar": 55
+      },
+      "revId": "e61939f6a6cf536934925173b466a1dc01b8e39a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_410ce03a",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-17T18:40:05Z",
+      "side": 1,
+      "message": "please update projects_hierarchy for every         projects_hierarchy \u003d _create_projects_hierarchy call and make sure ALL projects are disabled here",
+      "revId": "e61939f6a6cf536934925173b466a1dc01b8e39a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
