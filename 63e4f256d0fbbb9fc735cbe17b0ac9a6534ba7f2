@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_4b737615",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-17T13:42:47Z",
+      "side": 1,
+      "message": "Hm. I hoped it was less confusing than before. Just had to take care that a \u0027extra\u0027 target attribute name was used. Since description isn\u0027t an extra attribute anymore after this fix, I chose displayName, as it is a pretty common setup for AD users and as such maybe represents a common use-case.",
+      "parentUuid": "5a5ae5dd_68cc20bb",
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d4d0ccf8",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 7
@@ -42,6 +60,24 @@
         "endLine": 1397,
         "endChar": 36
       },
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_5c57be25",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-17T13:42:47Z",
+      "side": 1,
+      "message": "The test somewhat suggests that it is testing general LDAP additional_attribute_mapping functionality for user.description. But it isn\u0027t and just happens to pass because of the unfortunate test mapping \u0027description:description\u0027. If you choose any non 1:1 mapping it will fail. See https://bugs.launchpad.net/keystone/+bug/1542417/comments/3 for details.\nTODO is meant in such a way, that the test probably should be made more robust (ie. use a \u0027my_description:description\u0027 mapping) in combination with adding general *_additional_attribute mapping support after LDAP reads (somewhere around https://github.com/openstack/keystone/blob/master/keystone/common/ldap/core.py#L1359). Or if the *_additional_attribute config is indeed meant to be for LDAP create only (which is not documented), dump the test when removing the other LDAP write artifacts.",
+      "parentUuid": "dae33548_d4d0ccf8",
       "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "I didn\u0027t think LDAP write has been deprecated for user and groups? In addition, as far as I can tell, the existing extra_attribute_mapping IS used on get as well as create, so I think both will be evaluated (maybe I\u0027m misreading the code of the ldap calls in keystone/common/ldap/core.py). Further, Not quite sure of the relevance of bug 1336769...since the fix for this is a documentation fix to config.py.  I\u0027m sure I\u0027m just being dumb here and need more explanation!",
       "parentUuid": "5a5ae5dd_792f143f",
+      "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d70d69e9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-17T13:42:47Z",
+      "side": 1,
+      "message": "At least that\u0027s how I interpreted https://github.com/openstack/keystone/blob/master/releasenotes/notes/deprecated-as-of-mitaka-8534e43fa40c1d09.yaml#L13.\n\nThe extra_attribute_mapping is used on get in the LDAP query. It is IGNORED in https://github.com/openstack/keystone/blob/master/keystone/common/ldap/core.py#L1323 (except for the \u0027special cases\u0027 where someone happens to use a 1:1 mapping of standard attribute names). Hence the mapping doesn\u0027t work in the cases where you actually want to map something not 1:1 on user retrieval from a LDAP backend (like mapping user.description to the LDAP backends displayName attribute).",
+      "parentUuid": "dae33548_b480a8f8",
       "revId": "63e4f256d0fbbb9fc735cbe17b0ac9a6534ba7f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
