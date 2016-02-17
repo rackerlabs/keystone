@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_b0d9ca59",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "If the original implementation was turned into a classmethod then the code wouldn\u0027t have to be copied to each subclass.",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_90748636",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Where is this actually used?",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_2de3a234",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 8
@@ -19,6 +53,227 @@
         "endLine": 44,
         "endChar": 71
       },
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_30c93a5a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Do we want this to be defaulted right now?",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_76c3ba57",
+        "filename": "keystone/common/totp/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Since there is nothing really common about  the totp code (and it\u0027s not much code) I\u0027m wondering if it should just like in the keystone.auth.plugins.topt module.",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_70d622f2",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Import order is incorrect.",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_50fafe75",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "This should be before the imports.",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_90f00693",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "TOTP?",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_10335663",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "data type?",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_100a3679",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_10cfd629",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Don\u0027t use \u0027str\u0027 because in Py2 it\u0027s a bytes type and in Py3 it\u0027s a text type. we need to be explicit.",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_10e6b6af",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Import order is incorrect",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d04bae85",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Are all of these things actually optional?",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d300d803",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4463,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "newline",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_73462c50",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4476,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "Never use teardowns. They are not guaranteed to correctly teardown a test. A clearup is.",
+      "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_738bcc68",
+        "filename": "setup.cfg",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-17T15:45:25Z",
+      "side": 1,
+      "message": "probably best to keep ordered",
       "revId": "5257c53a6a16896ddb1064d3be6c42f4475f64a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
