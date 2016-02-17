@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_58ae8ae6",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T22:22:12Z",
+      "side": 1,
+      "message": "this should have been u\u0027ß\u0027 from the beginning.",
+      "revId": "2e9beba414b1cdb06bb94f5a236aaf63678eabf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_98e2d22d",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T22:22:12Z",
+      "side": 1,
+      "message": "its",
+      "range": {
+        "startLine": 54,
+        "startChar": 40,
+        "endLine": 54,
+        "endChar": 44
+      },
+      "revId": "2e9beba414b1cdb06bb94f5a236aaf63678eabf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b85356e1",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T22:22:12Z",
+      "side": 1,
+      "message": "the mapping ID backend can return a string of any length \u003c 64 chars. What is returned depends on the backend. Also, the interface description doesn\u0027t say anything about whether the ID is unicode or not.",
+      "revId": "2e9beba414b1cdb06bb94f5a236aaf63678eabf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
