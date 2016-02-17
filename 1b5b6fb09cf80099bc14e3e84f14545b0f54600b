@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_d6d1e658",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T14:55:27Z",
+      "side": 1,
+      "message": "The behavior of the fake ldap implementation to change based on a config setting.\n\nI think it would be better to have normalize_dn ignore member that\u0027s not a valid DN.",
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3625b208",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T14:55:27Z",
+      "side": 1,
+      "message": "There\u0027s no need to do this and it\u0027s unnecessarily complicated. Create the group directly using LDAP operations rather than going through the manager. This is how the tests should be written anyways.",
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f65cea7e",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T14:55:27Z",
+      "side": 1,
+      "message": "what does password have to do with any of these changes? Just test what you\u0027re changing.",
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d6ef2685",
+        "filename": "releasenotes/notes/bug_1526462-df9a3f3974d9040f.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T14:55:27Z",
+      "side": 1,
+      "message": "change to \"when using the LDAP identity driver\".",
+      "range": {
+        "startLine": 5,
+        "startChar": 63,
+        "endLine": 5,
+        "endChar": 68
+      },
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d69606ef",
+        "filename": "releasenotes/notes/bug_1526462-df9a3f3974d9040f.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-17T14:55:27Z",
+      "side": 1,
+      "message": "remove \"Better\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 10
+      },
+      "revId": "1b5b6fb09cf80099bc14e3e84f14545b0f54600b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
