@@ -64,7 +64,10 @@
 # project entities to be moved between domains by updating their domain_id.
 # Allowing such movement is not recommended if the scope of a domain admin is
 # being restricted by use of an appropriate policy file (see
-# policy.v3cloudsample as an example). (boolean value)
+# policy.v3cloudsample as an example). This ability is deprecated and will be
+# removed in a future release. (boolean value)
+# This option is deprecated for removal.
+# Its value may be silently ignored in the future.
 #domain_id_immutable = true
 
 # If set to true, strict password length checking is performed for password
