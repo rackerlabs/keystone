@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_fd05d079",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-17T22:03:47Z",
+      "side": 1,
+      "message": "add a comment saying why you need it back, otherwise someone will just come by and remove it, thinking it\u0027s a dupe",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 16
+      },
+      "revId": "71268b1e6386879525d5931808589d4347348439",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
