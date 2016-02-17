@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_cf85c0cf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3460,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-17T16:45:28Z",
+      "side": 1,
+      "message": "Current master has impersonation\u003dTrue here.\n\nPlease rebase your changes.",
+      "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
