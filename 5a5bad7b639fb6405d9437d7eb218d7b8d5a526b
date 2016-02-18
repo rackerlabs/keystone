@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_b917a5a1",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T17:44:41Z",
+      "side": 1,
+      "message": "Corrupt*",
+      "range": {
+        "startLine": 92,
+        "startChar": 27,
+        "endLine": 92,
+        "endChar": 34
+      },
+      "revId": "5a5bad7b639fb6405d9437d7eb218d7b8d5a526b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b9ccc535",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T17:44:41Z",
+      "side": 1,
+      "message": "i like this",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 60
+      },
+      "revId": "5a5bad7b639fb6405d9437d7eb218d7b8d5a526b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_19e7b1ac",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T17:44:41Z",
+      "side": 1,
+      "message": "womp womp",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 47
+      },
+      "revId": "5a5bad7b639fb6405d9437d7eb218d7b8d5a526b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
