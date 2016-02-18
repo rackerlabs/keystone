@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_b92b2581",
+        "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T17:30:41Z",
+      "side": 1,
+      "message": "these still aren\u0027t backticks, it should be:\n\n  ``user_description_attribute``\n\nbut it\u0027s fine, before we release, i plan on cleaning up all the notes.",
+      "range": {
+        "startLine": 5,
+        "startChar": 24,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "448778a51126a79676e9f9ffcc9eaf4c06288a73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
