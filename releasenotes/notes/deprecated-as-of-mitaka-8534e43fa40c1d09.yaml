@@ -24,3 +24,9 @@ deprecations:
     As of the Mitaka release, the simple_cert_extension is deprecated since it
     is only used in support of the PKI and PKIz token formats.  It will be
     removed in the 'O' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    [`bug 1545789 <https://bugs.launchpad.net/keystone/+bug/1545789>`_]
+    Using the ``ADMIN_TOKEN`` has been deprecated in the Mitaka release in
+    favor of using the ``keystone-manage bootstrap`` CLI. It will be removed
+    in the 'O' release.

@@ -43,10 +43,17 @@ _DEPRECATE_EP_MSG = ('The option to enable the OS-ENDPOINT-POLICY extension '
                      'removed in the O release. The OS-ENDPOINT-POLICY '
                      'extension will be enabled by default.')
 
+_DEPRECATE_ADMIN_TOKEN_MSG = ('The option to use `admin_token` has been '
+                              'deprecated in the M release and will be '
+                              'removed in the O release. The command '
+                              '`keysotne-manage bootstrap` should be used '
+                              'to initialize keystone instead.')
 
 FILE_OPTIONS = {
     None: [
         cfg.StrOpt('admin_token', secret=True, default=None,
+                   deprecated_for_removal=True,
+                   deprecated_reason=_DEPRECATE_ADMIN_TOKEN_MSG,
                    help='A "shared secret" that can be used to bootstrap '
                         'Keystone. This "token" does not represent a user, '
                         'and carries no explicit authorization. If set '
