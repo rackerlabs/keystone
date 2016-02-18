@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_81485ace",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-18T23:36:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_010e0ae5",
+      "revId": "ef6f28504a9ed74b8622c45f9a6793d779e47650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_411f7209",
         "filename": "keystone/credential/backends/sql.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-18T23:26:29Z",
       "side": 1,
       "message": "I don\u0027t think these changes are needed anymore since list_credentials(hints) was changed to list_credentials_for_user",
+      "revId": "ef6f28504a9ed74b8622c45f9a6793d779e47650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_614556b2",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-18T23:36:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_411f7209",
       "revId": "ef6f28504a9ed74b8622c45f9a6793d779e47650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
