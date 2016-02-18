@@ -22,6 +22,30 @@
       "revId": "3eb718b9dca5e15b5b9154ecdf5b7cd512d76607",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_52349ddc",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T05:12:05Z",
+      "side": 0,
+      "message": "This is now being forced in the local_identity.",
+      "parentUuid": "dae33548_b7a560a3",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 68
+      },
+      "revId": "3eb718b9dca5e15b5b9154ecdf5b7cd512d76607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

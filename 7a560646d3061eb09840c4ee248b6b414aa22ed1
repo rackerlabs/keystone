@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_7e66cd2a",
+        "filename": "keystone/common/sql/migrate_repo/versions/089_rename_user_table_to_identity_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T05:12:05Z",
+      "side": 1,
+      "message": "We actually talked about this and I think we decided to drop them in this review, but in a later migration. It\u0027s still WIP so I\u0027m assuming that\u0027s coming soon.",
+      "parentUuid": "dae33548_bef6c2f6",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 57
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_9e4f7e6a",
         "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
         "patchSetId": 16
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_1e2a2190",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T05:12:05Z",
+      "side": 1,
+      "message": "This is to make a 1-to-1 relationship between the identity and local_identity. We decided that due to issues with how the users can currently use their UUID to auth, that we would just say only 1 local identity per user.",
+      "parentUuid": "dae33548_9e4f7e6a",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 74
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_fac22d33",
         "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
         "patchSetId": 16
@@ -59,6 +107,30 @@
       "writtenOn": "2016-02-17T06:59:10Z",
       "side": 1,
       "message": "shouldn\u0027t the `id` an uuid?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_be11755f",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T05:12:05Z",
+      "side": 1,
+      "message": "Nope. See above.",
+      "parentUuid": "dae33548_fac22d33",
       "range": {
         "startLine": 25,
         "startChar": 0,
@@ -163,6 +235,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_1e018106",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_identity_and_local_identity_password_tables.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T05:12:05Z",
+      "side": 1,
+      "message": "I don\u0027t think this is meant to show the type of the object, but rather the type of the objects in the list. I think \u0027local_indentity_dicts\u0027 would be clearer.",
+      "parentUuid": "dae33548_a61fec06",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_062e98a4",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 16
@@ -198,6 +294,30 @@
       "side": 1,
       "message": "there must be a testcase for this. Basically setting a password creates a local user. I am not sure that this is intentional decision and that it should be done this way.",
       "parentUuid": "dae33548_062e98a4",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 55
+      },
+      "revId": "7a560646d3061eb09840c4ee248b6b414aa22ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_9229058d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T05:12:05Z",
+      "side": 1,
+      "message": "This is intentional. These methods are designed to hide the extra tables from the code already using it. Definitely needs tests.",
+      "parentUuid": "dae33548_9e065e84",
       "range": {
         "startLine": 70,
         "startChar": 0,
