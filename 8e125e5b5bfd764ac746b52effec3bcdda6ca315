@@ -120,6 +120,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_a6703e0c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2016-02-18T10:18:19Z",
+      "side": 1,
+      "message": "Included these suggestions into the patch set 10",
+      "parentUuid": "da6ed579_6e7947fc",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_51d6dff1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -131,6 +149,30 @@
       "writtenOn": "2016-01-05T17:56:44Z",
       "side": 1,
       "message": "Should we be using `unfiltered_domains` here?",
+      "range": {
+        "startLine": 4135,
+        "startChar": 28,
+        "endLine": 4135,
+        "endChar": 35
+      },
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e69246f5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4135,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2016-02-18T10:18:19Z",
+      "side": 1,
+      "message": "Redesigned \u0027Get 2 entries\u0027 test in patch set 10 (filtered_domains is not used)",
+      "parentUuid": "fa69d971_51d6dff1",
       "range": {
         "startLine": 4135,
         "startChar": 28,
@@ -172,6 +214,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "fa69d971_15d8daee",
+      "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d18a5e63",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2801,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2016-02-18T10:18:19Z",
+      "side": 1,
+      "message": "This was used for running the test for multi-domain scenarios only (and fail with exception for non multi-domain). In patch set 10 I changed the main test in test_backend (added the check for multi-domain support), so now no changes are required to test_backend_ldap.",
+      "parentUuid": "da6ed579_d9c11f30",
       "revId": "8e125e5b5bfd764ac746b52effec3bcdda6ca315",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
