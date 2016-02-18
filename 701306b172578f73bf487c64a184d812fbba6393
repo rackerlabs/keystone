@@ -16,6 +16,24 @@
       "revId": "701306b172578f73bf487c64a184d812fbba6393",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2657e558",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-18T22:27:28Z",
+      "side": 1,
+      "message": "This isn\u0027t about the PKI token providers. It\u0027s about the revocation list.",
+      "parentUuid": "5a5ae5dd_9b29e839",
+      "revId": "701306b172578f73bf487c64a184d812fbba6393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
