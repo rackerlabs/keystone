@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_6d00b302",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "This method name doesn\u0027t look suggestive to me\n\nWhat about: _check_user_has_access_to_subtree",
+      "range": {
+        "startLine": 307,
+        "startChar": 8,
+        "endLine": 307,
+        "endChar": 28
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2d234bbe",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "\" of project %s\" could be a good addition of valuable info",
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a82bc980",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "every ?",
+      "range": {
+        "startLine": 320,
+        "startChar": 8,
+        "endLine": 320,
+        "endChar": 11
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e821519f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "in",
+      "range": {
+        "startLine": 320,
+        "startChar": 20,
+        "endLine": 320,
+        "endChar": 22
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a852a910",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "so the var should be called filters, not hints",
+      "range": {
+        "startLine": 338,
+        "startChar": 62,
+        "endLine": 338,
+        "endChar": 70
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e8a6710d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "any([hint[\u0027name\u0027] \u003d\u003d \u0027cascade\u0027] for hint in hints]\n\nlooks cleaner ?",
+      "range": {
+        "startLine": 341,
+        "startChar": 18,
+        "endLine": 341,
+        "endChar": 77
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0840f505",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "were",
+      "range": {
+        "startLine": 1083,
+        "startChar": 29,
+        "endLine": 1083,
+        "endChar": 32
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a863c9af",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-18T19:08:10Z",
+      "side": 1,
+      "message": "entire",
+      "range": {
+        "startLine": 1095,
+        "startChar": 18,
+        "endLine": 1095,
+        "endChar": 24
+      },
+      "revId": "3aa54b2e582f2b414d6cc683b17ed695e7126f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
