@@ -126,9 +126,8 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
     raise exception.MigrationNotProvided(package.__name__, path)
 
 
-def _sync_common_repo(version):
+def _sync_common_repo(version, init_version):
     abs_path = find_migrate_repo()
-    init_version = get_init_version()
     with sql.session_for_write() as session:
         engine = session.get_bind()
         _assert_not_schema_downgrade(version=version)
@@ -136,11 +135,12 @@ def _sync_common_repo(version):
                           init_version=init_version, sanity_check=False)
 
 
-def get_init_version(abs_path=None):
+def get_init_latest_version(abs_path=None):
     """Get the initial version of a migrate repository.
 
     :param abs_path: Absolute path to migrate repository.
-    :return:         initial version number or None, if DB is empty.
+    :return:         Return initial version number or None if DB is empty
+                     and latest version number in the repository as a tuple.
     """
     if abs_path is None:
         abs_path = find_migrate_repo()
@@ -152,10 +152,10 @@ def get_init_version(abs_path=None):
     oldest = int(min(repo.versions.versions))
 
     if oldest < 1:
-        return None
+        return None, repo.latest
 
     # The initial version is one less
-    return oldest - 1
+    return oldest - 1, repo.latest
 
 
 def _assert_not_schema_downgrade(extension=None, version=None):
@@ -171,7 +171,7 @@ def _assert_not_schema_downgrade(extension=None, version=None):
             pass
 
 
-def _sync_extension_repo(extension, version):
+def _sync_extension_repo(extension, version, init_version):
     if extension in MIGRATED_EXTENSIONS:
         raise exception.MigrationMovedFailure(extension=extension)
 
@@ -198,23 +198,28 @@ def _sync_extension_repo(extension, version):
             sys.exit(1)
 
         _assert_not_schema_downgrade(extension=extension, version=version)
-
-        init_version = get_init_version(abs_path=abs_path)
-
         migration.db_sync(engine, abs_path, version=version,
                           init_version=init_version, sanity_check=False)
 
 
 def sync_database_to_version(extension=None, version=None):
+
+    init_version, latest_version = get_init_latest_version()
+
+    if version > int(latest_version):
+        raise migration.exception.DbMigrationError(_(
+            "Invalid value for version. Latest migration "
+            "script in the repository is %d.") % int(latest_version))
+
     if not extension:
-        _sync_common_repo(version)
+        _sync_common_repo(version, init_version)
         # If version is greater than 0, it is for the common
         # repository only, and only that will be synchronized.
         if version is None:
             for default_extension in DEFAULT_EXTENSIONS:
                 _sync_extension_repo(default_extension, version)
     else:
-        _sync_extension_repo(extension, version)
+        _sync_extension_repo(extension, version, init_version)
 
 
 def get_db_version(extension=None):
@@ -222,7 +227,7 @@ def get_db_version(extension=None):
         with sql.session_for_write() as session:
             return migration.db_version(session.get_bind(),
                                         find_migrate_repo(),
-                                        get_init_version())
+                                        get_init_latest_version())
 
     try:
         package_name = '.'.join((contrib.__name__, extension))

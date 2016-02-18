@@ -20,10 +20,12 @@ import sys
 import uuid
 
 from oslo_config import cfg
+from oslo_db.sqlalchemy import migration
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
 import pbr.version
+import six
 
 from keystone.common import config
 from keystone.common import driver_hints
@@ -351,7 +353,7 @@ class DbSync(BaseApp):
     @classmethod
     def add_argument_parser(cls, subparsers):
         parser = super(DbSync, cls).add_argument_parser(subparsers)
-        parser.add_argument('version', default=None, nargs='?',
+        parser.add_argument('version', default=None, type=int, nargs='?',
                             help=('Migrate the database up to a specified '
                                   'version. If not provided, db_sync will '
                                   'migrate the database to the latest known '
@@ -368,7 +370,11 @@ class DbSync(BaseApp):
     def main():
         version = CONF.command.version
         extension = CONF.command.extension
-        migration_helpers.sync_database_to_version(extension, version)
+
+        try:
+            migration_helpers.sync_database_to_version(extension, version)
+        except migration.exception.DbMigrationError as error:
+            LOG.error(six.text_type(error))
 
 
 class DbVersion(BaseApp):

@@ -77,7 +77,8 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
     @property
     def INIT_VERSION(self):
-        return migration_helpers.get_init_version()
+        initial_version, _ = migration_helpers.get_init_latest_version()
+        return initial_version
 
     @property
     def REPOSITORY(self):
