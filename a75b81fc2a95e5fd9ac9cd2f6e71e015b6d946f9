@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_9c80cf8c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-18T18:24:18Z",
+      "side": 1,
+      "message": "there is DomainConfigManager.{whitelisted_options,sensitive_options}, maybe we should pull the sections from there",
+      "parentUuid": "dae33548_e24a7625",
+      "range": {
+        "startLine": 1245,
+        "startChar": 11,
+        "endLine": 1245,
+        "endChar": 17
+      },
+      "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_a2018e6c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
@@ -64,6 +88,29 @@
         "startChar": 64,
         "endLine": 1259,
         "endChar": 66
+      },
+      "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_878fd873",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-18T18:24:18Z",
+      "side": 1,
+      "message": "old docstring",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 19
       },
       "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
