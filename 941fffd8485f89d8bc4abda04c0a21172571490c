@@ -71,6 +71,41 @@
     },
     {
       "key": {
+        "uuid": "dae33548_34df2a3b",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10618
+      },
+      "writtenOn": "2016-02-18T14:19:23Z",
+      "side": 1,
+      "message": "Seems that this logic is required for \u0027cleanup\u0027 method which is used for tests (for create/delete context_manager). \n\nDon\u0027t know is it necessary, maybe we can create and configure one context_manager for tests and remove these methods.",
+      "parentUuid": "dae33548_71e712ac",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_74ad32e8",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 10618
+      },
+      "writtenOn": "2016-02-18T14:19:23Z",
+      "side": 1,
+      "message": "Seems that EngineFacade is not configured, it should use CONF options. \n\nPlease look the same part in Nova https://github.com/openstack/nova/blob/master/nova/db/sqlalchemy/api.py#L166-L168",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_f1a96225",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
