@@ -315,7 +315,7 @@ class ProjectV3(controller.V3Controller):
                 raise exception.Forbidden(message=msg)
 
     def _check_tree_protection(self, context, protection_info,
-                               project_id, project):
+                               project_id, project=None):
         """Check protection for update project for tree API.
         The policy rule might want to inspect if the user have access for
         every project in the subtree.
@@ -347,8 +347,15 @@ class ProjectV3(controller.V3Controller):
                                                initiator=initiator)
         return ProjectV3.wrap_member(context, ref)
 
+    @controller.filterprotected('cascade',
+                                callback=_check_tree_protection)
     @controller.protected()
-    def delete_project(self, context, project_id):
+    def delete_project(self, context, filters, project_id):
         initiator = notifications._get_request_audit_info(context)
+        filters = ProjectV3.build_driver_hints(context, filters).filters
+        # If cascade was passed as a filter in the API request, keystone will
+        # recursively delete a project tree
+        cascade = any(fil['name'] == 'cascade' for fil in filters)
         return self.resource_api.delete_project(project_id,
+                                                cascade=cascade,
                                                 initiator=initiator)
