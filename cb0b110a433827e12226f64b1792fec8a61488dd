@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_7a7b6f7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-18T09:06:57Z",
+      "side": 1,
+      "message": "remove this tag, this patch fixes the doc already.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 9
+      },
+      "revId": "cb0b110a433827e12226f64b1792fec8a61488dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3a50c70a",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-18T09:06:57Z",
+      "side": 1,
+      "message": "now we also has v9 driver, consider to include them in this doc as well.",
+      "range": {
+        "startLine": 162,
+        "startChar": 22,
+        "endLine": 162,
+        "endChar": 74
+      },
+      "revId": "cb0b110a433827e12226f64b1792fec8a61488dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f74ddac4",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-18T09:06:57Z",
+      "side": 1,
+      "message": "path is not correct, this should be keystone.endpoint_policy.core.EndpointPolicyDriverV8",
+      "range": {
+        "startLine": 169,
+        "startChar": 7,
+        "endLine": 169,
+        "endChar": 54
+      },
+      "revId": "cb0b110a433827e12226f64b1792fec8a61488dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_d7f6d65b",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-18T09:06:57Z",
+      "side": 1,
+      "message": "This driver doesn\u0027t exsit.",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 50
+      },
+      "revId": "cb0b110a433827e12226f64b1792fec8a61488dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
