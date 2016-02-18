@@ -158,6 +158,30 @@
       "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_eb3161a3",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2805,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-18T14:25:13Z",
+      "side": 1,
+      "message": "Can you explain? are you saying this will not return the full hierachy if the user does not have permission on some of the projects??\n\nAccording to the policy file the user has to be admin to list projects or be on that project [0], there is already a check to ensures the response fails if the user does not have access to all the projects. [1]\n\n[0] https://github.com/openstack/keystone/blob/922833c362aba22fd7614414ea68fbbc78cb020d/etc/policy.json#L37\n\n[1]\nhttps://review.openstack.org/#/c/243585/17/keystone/tests/unit/test_v3_resource.py",
+      "parentUuid": "dae33548_0581178f",
+      "range": {
+        "startLine": 2804,
+        "startChar": 51,
+        "endLine": 2805,
+        "endChar": 35
+      },
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
