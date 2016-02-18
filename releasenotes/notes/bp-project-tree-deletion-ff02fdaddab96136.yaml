@@ -1,0 +1,7 @@
+---
+features:
+  - >
+   ['blueprint project-tree-deletion <https://blueprints.launchpad.net/keystone/+spec/project-tree-deletion>'_]
+   Support the possibility to delete/disable a whole subtree,
+   where the children of the requested node will be also
+   deleted/disabled.
