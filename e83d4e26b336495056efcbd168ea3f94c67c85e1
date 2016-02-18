@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_5fe767ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-18T14:35:55Z",
+      "side": 1,
+      "message": "Samuel - The docs for the driver (and manager if it\u0027s overridden there) should be updated to specify the ordering of the returned list (if that\u0027s how we want it to work... I think it\u0027s fine).",
+      "parentUuid": "dae33548_25a1bbf8",
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_d0c6aa15",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 4
