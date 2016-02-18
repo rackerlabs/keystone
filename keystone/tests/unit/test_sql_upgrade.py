@@ -30,6 +30,7 @@ WARNING::
 """
 
 import json
+import sys
 import uuid
 
 import migrate
@@ -44,6 +45,7 @@ from sqlalchemy.engine import reflection
 import sqlalchemy.exc
 from testtools import matchers
 
+from keystone.cmd import cli
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import exception
@@ -1163,14 +1165,43 @@ class PostgreSQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.PostgreSQLOpportunisticFixture
 
 
-class VersionTests(SqlMigrateBase):
+class VersionTests(SqlMigrateBase, unit.TestCase):
 
     _initial_db_version = migration_helpers.get_init_version()
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(VersionTests, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def config(self, config_files):
+        CONF(args=['db_sync'], project='keystone',
+             default_config_files=config_files)
 
     def test_core_initial(self):
         """Get the version before migrated, it's the initial DB version."""
         version = migration_helpers.get_db_version()
         self.assertEqual(self._initial_db_version, version)
+
+    def test_dbsync_invalid_input(self):
+        self.assertRaises(exception.InvalidInputError,
+                          migration_helpers.sync_database_to_version,
+                          version=sys.maxsize + 1)
+
+    def test_assert_not_schema_downgrade(self):
+        self.upgrade(self.max_version)
+        self.assertRaises(db_exception.DbMigrationError,
+                          migration_helpers.sync_database_to_version,
+                          version=self.max_version - 1)
+
+    @mock.patch("oslo_db.sqlalchemy.migration.db_sync")
+    def test_script_not_present(self, db_sync):
+        db_sync.side_effect = db_exception.DbMigrationError()
+        self.upgrade(self.max_version)
+        self.assertRaises(db_exception.DbMigrationError,
+                          migration_helpers.sync_database_to_version,
+                          version=self.max_version + 1)
 
     def test_core_max(self):
         """When get the version after upgrading, it's the new version."""
@@ -1178,12 +1209,22 @@ class VersionTests(SqlMigrateBase):
         version = migration_helpers.get_db_version()
         self.assertEqual(self.max_version, version)
 
-    def test_assert_not_schema_downgrade(self):
-        self.upgrade(self.max_version)
-        self.assertRaises(
-            db_exception.DbMigrationError,
-            migration_helpers._sync_common_repo,
-            self.max_version - 1)
+    def test_add_argument_parser_non_integer_version(self):
+        CONF.clear()
+        config_files = self.config_files()
+        self.assertRaises(unit.UnexpectedExit, cli.main,
+                          ['keystone-manage', 'db_sync',
+                           'abcd'], config_files)
+
+    @mock.patch('keystone.common.sql.migration_helpers.'
+                'sync_database_to_version')
+    def test_add_argument_parser_integer_version(self, mock_sync_version):
+        CONF.clear()
+        config_files = self.config_files()
+        try:
+            cli.main(['keystone-manage', 'db_sync', '68'], config_files)
+        except Exception:
+            self.fail("Encountered an unexpected exception.")
 
     def test_extension_not_controlled(self):
         """When get the version before controlling, raises DbMigrationError."""

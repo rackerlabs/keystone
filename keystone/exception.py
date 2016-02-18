@@ -358,6 +358,10 @@ class VersionNotFound(NotFound):
     message_format = _("Could not find version: %(version)s")
 
 
+class InvalidInputError(Error):
+    message_format = _("Invalid input received: %(reason)s")
+
+
 class EndpointGroupNotFound(NotFound):
     message_format = _("Could not find Endpoint Group: %(endpoint_group_id)s")
 

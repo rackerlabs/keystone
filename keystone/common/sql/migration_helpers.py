@@ -206,6 +206,12 @@ def _sync_extension_repo(extension, version):
 
 
 def sync_database_to_version(extension=None, version=None):
+
+    if version > sys.maxsize:
+        msg = (_('Version should be less than '
+                 'or equal to %d.') % sys.maxsize)
+        raise exception.InvalidInputError(reason=msg)
+
     if not extension:
         _sync_common_repo(version)
         # If version is greater than 0, it is for the common
