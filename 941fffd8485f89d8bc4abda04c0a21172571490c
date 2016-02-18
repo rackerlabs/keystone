@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_d4f07ecb",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2016-02-18T14:19:13Z",
+      "side": 1,
+      "message": "But if we will use context manager directly we get something like:\n\n with sql._get_main_context_manager().reader.using(sql._CONTEXT): \n      *****\n\n\nlooks ugly",
+      "parentUuid": "dae33548_ac449d49",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_1ca86476",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 4
