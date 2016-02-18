@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_11bcc6b9",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2016-02-18T10:36:16Z",
+      "side": 1,
+      "message": "it does not unless you use a lazy loaded field, but looks like Endpoint.service relationship is joinedloaded at #280",
+      "parentUuid": "3a57f1b5_b0369f01",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_8b825851",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 4
@@ -30,6 +48,57 @@
       "writtenOn": "2016-02-10T17:03:44Z",
       "side": 1,
       "message": "same comment here - these don\u0027t have to be in the context of the sql.session do they?\n\nI imagine that we only use the sql.session context to make calls to the backend. Once we have the data we need we don\u0027t need to be in the context anymore do we?",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_71e712ac",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2016-02-18T10:36:16Z",
+      "side": 1,
+      "message": "I believe this is unnecessary - EngineFacade is already lazy initialized.\n\nWhy not just create a context manager instance here? E.g. in Nova: https://github.com/openstack/nova/blob/master/nova/db/sqlalchemy/api.py#L134-L135",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f1a96225",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2016-02-18T10:36:16Z",
+      "side": 1,
+      "message": "These two functions must not be needed, if you use the context managers methods directly",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_ac449d49",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2016-02-18T10:36:16Z",
+      "side": 1,
+      "message": "These are ok, but I like the point Mike brought in the comments: EngineFacade actually offers more flexibility, like independent transactions,  save points, offloading to asynchronous replicas.\n\nMaybe it makes more sense to use the context manager directly.",
       "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
