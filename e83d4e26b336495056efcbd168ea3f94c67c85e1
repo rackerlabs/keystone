@@ -224,6 +224,30 @@
       "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_11b2f3e4",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2805,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-18T15:14:42Z",
+      "side": 1,
+      "message": "oh whoops that second link I posted was the wrong one. \n\nYes exactly but with the link you posted is shows that even if a deployed messes with the policy file there is a check to make sure the user has permission to all the projects before they are returned.",
+      "parentUuid": "dae33548_faa009f6",
+      "range": {
+        "startLine": 2804,
+        "startChar": 51,
+        "endLine": 2805,
+        "endChar": 35
+      },
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
