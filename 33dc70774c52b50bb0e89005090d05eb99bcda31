@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_e64a4654",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-18T10:49:39Z",
+      "side": 1,
+      "message": "Hm. You haven\u0027t convinced me, since IMHO user.description isn\u0027t more optional than any of the other entity descriptions that are part of their respective new_\u003centity\u003e_ref implementations. And after all: all the tests are green even with this change.. But for the sake of getting on with this patch I\u0027ll remove it ;)",
+      "parentUuid": "dae33548_0b2adcda",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_c76abb80",
         "filename": "keystone/tests/unit/default_fixtures.py",
         "patchSetId": 8
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_06c00a4f",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-18T10:49:39Z",
+      "side": 1,
+      "message": "same here: description is part of the other entities fixtures.. but I\u0027ll remove it.",
+      "parentUuid": "dae33548_0b713c0f",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_27128709",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 8
@@ -83,6 +119,24 @@
       "writtenOn": "2016-02-17T21:11:33Z",
       "side": 1,
       "message": "that this test is changing means that the proposed change ot the code is not backwards compatible. What if deployments were using description:name? That needs to continue to work.",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_86c89a56",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-18T10:49:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_27128709",
       "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -112,6 +166,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_c6a4624c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-18T10:49:39Z",
+      "side": 1,
+      "message": "first I would need a hint if it is indeed expected behavior that *_additional_attributes is evaluated on CREATE only ;) Depending on the answer, we can either drop this test soon and  forget about it or invest in adding support for *_additional_attributes to https://github.com/openstack/keystone/blob/master/keystone/common/ldap/core.py#L1323 (but that would be another issue and is not directly related to this bugfix).",
+      "parentUuid": "dae33548_abd3f0d3",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_0b065c51",
         "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
         "patchSetId": 8
@@ -129,6 +201,24 @@
         "endLine": 5,
         "endChar": 52
       },
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_11e326da",
+        "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-02-18T10:49:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_0b065c51",
       "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
