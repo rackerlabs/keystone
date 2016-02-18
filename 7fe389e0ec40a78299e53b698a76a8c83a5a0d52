@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_f5ae7b2c",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:12:34Z",
+      "side": 1,
+      "message": "I\u0027m OK with keeping the proposed code around, it doesn\u0027t hurt. We can remove once OSC actually has support for TOTP",
+      "parentUuid": "dae33548_1524bf5b",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_75954b31",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_95660f28",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:12:34Z",
+      "side": 1,
+      "message": "I\u0027m OK with keeping the proposed code around, it doesn\u0027t hurt. We can remove once OSC actually has support for TOTP",
+      "parentUuid": "dae33548_75954b31",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_f5cf9b53",
         "filename": "keystone/common/totp/__init__.py",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2016-02-18T06:07:41Z",
       "side": 1,
       "message": "There\u0027s really no need to have common/totp. We should encapsulate everything we need in the plugin itself. By having code outside of the plugin, the plugin is no longer self-contained.",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_35f7435a",
+        "filename": "keystone/common/totp/__init__.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:12:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dae33548_f5cf9b53",
       "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
