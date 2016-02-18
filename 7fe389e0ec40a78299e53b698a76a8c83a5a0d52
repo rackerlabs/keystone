@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_88d3925f",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "add this doc to the index of else no one will be able to find it: https://github.com/openstack/keystone/blob/master/doc/source/index.rst",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0876626f",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "maybe make this link to: http://www.google.com/2step",
+      "range": {
+        "startLine": 23,
+        "startChar": 33,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a884960a",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "nit: use the space on the previous line",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 64
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_1524bf5b",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 12
@@ -31,6 +94,98 @@
       "side": 1,
       "message": "I\u0027m OK with keeping the proposed code around, it doesn\u0027t hurt. We can remove once OSC actually has support for TOTP",
       "parentUuid": "dae33548_1524bf5b",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e8c21e84",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "use backticks `` instead of single quotes, it\u0027ll emphasize that we\u0027re talking about the keystone auth concept now",
+      "range": {
+        "startLine": 44,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_481a2a18",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "Authenticate with TOTP",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 17
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c8aaba84",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "PIN*",
+      "range": {
+        "startLine": 97,
+        "startChar": 45,
+        "endLine": 97,
+        "endChar": 48
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_28c36658",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "Use the passcode and your user ID to authenticate using the ``totp`` method.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 62
+      },
       "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -72,6 +227,98 @@
     },
     {
       "key": {
+        "uuid": "dae33548_4876aa3e",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "nice",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 49
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c8e63ae7",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "just use \"user_info.user_id\" here and remove line 37, you already use \"user_info.user_id\" directly on line 61",
+      "range": {
+        "startLine": 40,
+        "startChar": 36,
+        "endLine": 40,
+        "endChar": 43
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_88071281",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "Corrupt*\n\nInclude user ID in the exception message too",
+      "range": {
+        "startLine": 52,
+        "startChar": 27,
+        "endLine": 52,
+        "endChar": 34
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_082ae2da",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "Want to say \"TOTP passcode\" to make it more obvious? I initially read this as password",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 49
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_f5cf9b53",
         "filename": "keystone/common/totp/__init__.py",
         "patchSetId": 12
@@ -107,6 +354,29 @@
     },
     {
       "key": {
+        "uuid": "dae33548_c808fa2a",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "let;s dump all this in the TOTP auth plugin and make \"get_totp_token\" private",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 37
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_354463b5",
         "filename": "keystone/tests/common/auth.py",
         "patchSetId": 12
@@ -118,6 +388,110 @@
       "writtenOn": "2016-02-18T06:07:41Z",
       "side": 1,
       "message": "The only difference between password_auth and totp_auth is the passcode so suggest to refactor the common code so they can share.",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_281b66cb",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dae33548_354463b5",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a8b81676",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "still needs more tests:\n\n1) auth with no credentials\n2) auth with multiple credentials for the user\n3) auth with user name + domain name instead of unique user ID\n4) the \"corrupt credential\" exception is not tested\n5) the entire \"get_totp_token\" function is not tested",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_e8d97ef4",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4668,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "make this plural, creds*, it\u0027s a list",
+      "range": {
+        "startLine": 4668,
+        "startChar": 8,
+        "endLine": 4668,
+        "endChar": 12
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_68cd6e30",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4671,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "nit: use %s to substitute a value as we\u0027ve been using that in most of our code",
+      "range": {
+        "startLine": 4671,
+        "startChar": 34,
+        "endLine": 4671,
+        "endChar": 44
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_a8ead671",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4671,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T06:36:29Z",
+      "side": 1,
+      "message": "why not loop through and delete all credentials instead of risking the index error with [0]",
+      "range": {
+        "startLine": 4671,
+        "startChar": 8,
+        "endLine": 4671,
+        "endChar": 60
+      },
       "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
