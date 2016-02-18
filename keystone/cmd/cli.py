@@ -20,6 +20,7 @@ import sys
 import uuid
 
 from oslo_config import cfg
+from oslo_db.sqlalchemy import migration
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
@@ -41,6 +42,8 @@ from keystone import token
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+MAX_INT = 0x7FFFFFFF
 
 
 class BaseApp(object):
@@ -229,7 +232,7 @@ class DbSync(BaseApp):
     @classmethod
     def add_argument_parser(cls, subparsers):
         parser = super(DbSync, cls).add_argument_parser(subparsers)
-        parser.add_argument('version', default=None, nargs='?',
+        parser.add_argument('version', default=None, type=int, nargs='?',
                             help=('Migrate the database up to a specified '
                                   'version. If not provided, db_sync will '
                                   'migrate the database to the latest known '
@@ -245,8 +248,21 @@ class DbSync(BaseApp):
     @staticmethod
     def main():
         version = CONF.command.version
+        if version >= MAX_INT:
+            sys.exit(_('Database schema version should'
+                       'be less than %d.') % MAX_INT)
         extension = CONF.command.extension
-        migration_helpers.sync_database_to_version(extension, version)
+
+        try:
+            migration_helpers.sync_database_to_version(extension, version)
+        except KeyError as e:
+            sys.exit(_('Invalid Migration version %(version)d.'
+                       'Next migration version should be '
+                       '%(expected_version)s.')
+                     % {'version': version,
+                        'expected_version': e.args[0]})
+        except migration.exception.DbMigrationError as db:
+            sys.exit(db)
 
 
 class DbVersion(BaseApp):

@@ -43,6 +43,7 @@ import sqlalchemy.exc
 from sqlalchemy import schema
 from testtools import matchers
 
+from keystone.cmd import cli
 from keystone.common import sql
 from keystone.common.sql import migrate_repo
 from keystone.common.sql import migration_helpers
@@ -990,6 +991,16 @@ class VersionTests(SqlMigrateBase):
 
     _initial_db_version = migrate_repo.DB_INIT_VERSION
 
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(VersionTests, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def config(self, config_files):
+        CONF(args=['db_sync'], project='keystone',
+             default_config_files=config_files)
+
     def test_core_initial(self):
         """Get the version before migrated, it's the initial DB version."""
         version = migration_helpers.get_db_version()
@@ -1001,12 +1012,19 @@ class VersionTests(SqlMigrateBase):
         version = migration_helpers.get_db_version()
         self.assertEqual(self.max_version, version)
 
+    def test_dbsync_invalid_input(self):
+        CONF.command.version = 93477755555556859645
+        self.assertRaises(unit.UnexpectedExit, cli.DbSync.main)
+
+    def test_dbsync_version_greater_than_current(self):
+        self.upgrade(self.max_version)
+        CONF.command.version = int(self.max_version) + 1
+        self.assertRaises(unit.UnexpectedExit, cli.DbSync.main)
+
     def test_assert_not_schema_downgrade(self):
         self.upgrade(self.max_version)
-        self.assertRaises(
-            db_exception.DbMigrationError,
-            migration_helpers._sync_common_repo,
-            self.max_version - 1)
+        CONF.command.version = self.max_version - 1
+        self.assertRaises(unit.UnexpectedExit, cli.DbSync.main)
 
     def test_extension_not_controlled(self):
         """When get the version before controlling, raises DbMigrationError."""
@@ -1026,3 +1044,6 @@ class VersionTests(SqlMigrateBase):
         self.assertRaises(exception.MigrationNotProvided,
                           migration_helpers.get_db_version,
                           extension='admin_crud')
+
+    def tearDown(self):
+        super(VersionTests, self).tearDown()
