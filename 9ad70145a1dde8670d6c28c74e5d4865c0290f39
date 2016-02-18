@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_5c16474c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 1410,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-18T18:00:09Z",
+      "side": 1,
+      "message": "Why can\u0027t we assume that a driver implements hints? Afaik all the drivers we had supported filtering.",
+      "range": {
+        "startLine": 1409,
+        "startChar": 8,
+        "endLine": 1410,
+        "endChar": 66
+      },
+      "revId": "9ad70145a1dde8670d6c28c74e5d4865c0290f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_3ca1c394",
+        "filename": "keystone/revoke/model.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-18T18:00:09Z",
+      "side": 1,
+      "message": "I wonder whether it should be project[\u0027id\u0027] if the project acts as domain",
+      "range": {
+        "startLine": 337,
+        "startChar": 8,
+        "endLine": 337,
+        "endChar": 61
+      },
+      "revId": "9ad70145a1dde8670d6c28c74e5d4865c0290f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
