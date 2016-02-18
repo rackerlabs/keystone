@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_61571726",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T23:08:02Z",
+      "side": 1,
+      "message": "nit: 2 spaces",
+      "range": {
+        "startLine": 59,
+        "startChar": 11,
+        "endLine": 59,
+        "endChar": 13
+      },
+      "revId": "5a5bad7b639fb6405d9437d7eb218d7b8d5a526b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_b917a5a1",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 13
@@ -18,6 +41,29 @@
         "startChar": 27,
         "endLine": 92,
         "endChar": 34
+      },
+      "revId": "5a5bad7b639fb6405d9437d7eb218d7b8d5a526b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_c145436f",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T23:08:02Z",
+      "side": 1,
+      "message": "i\u0027m not getting the purpose of those catch, what is potentially raising these errors? one of the credentials from the backend? or something from the cryptography library?",
+      "range": {
+        "startLine": 91,
+        "startChar": 12,
+        "endLine": 93,
+        "endChar": 62
       },
       "revId": "5a5bad7b639fb6405d9437d7eb218d7b8d5a526b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
