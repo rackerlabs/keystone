@@ -151,3 +151,13 @@
       sla:
         failure_rate:
           max: 0
+
+  KeystoneRoleAPIRallyTest.create_and_delete_implied_roles:
+    -
+      runner:
+        type: "constant"
+        times: 1
+        concurrency: 1
+      sla:
+        failure_rate:
+          max: 0

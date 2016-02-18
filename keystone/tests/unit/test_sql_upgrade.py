@@ -700,6 +700,14 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         session.close()
 
+    def test_implied_roles_fk_on_delete(self):
+        if self.engine.name == 'sqlite':
+            self.skipTest('sqlite backend doesn\'t handle '
+                          'foreign keys properly')
+        self.upgrade(90)
+        self.assertTrue(self.does_fk_exist('implied_role', 'prior_role_id'))
+        self.assertTrue(self.does_fk_exist('implied_role', 'implied_role_id'))
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
