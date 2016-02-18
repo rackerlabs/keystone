@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0b2adcda",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T07:03:33Z",
+      "side": 1,
+      "message": "++\n\njust add it to where you need it..\n\n  user_ref \u003d unit.new_user_ref(domain_id)\n  user_ref[\u0027description\u0027] \u003d some random string (uuid.uuid4().hex)",
+      "parentUuid": "dae33548_4756abce",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_c76abb80",
         "filename": "keystone/tests/unit/default_fixtures.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0b713c0f",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T07:03:33Z",
+      "side": 1,
+      "message": "agreed, this is a bit invasive, just change what you need for the tests",
+      "parentUuid": "dae33548_c76abb80",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_27128709",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 8
@@ -47,6 +83,52 @@
       "writtenOn": "2016-02-17T21:11:33Z",
       "side": 1,
       "message": "that this test is changing means that the proposed change ot the code is not backwards compatible. What if deployments were using description:name? That needs to continue to work.",
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_abd3f0d3",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T07:03:33Z",
+      "side": 1,
+      "message": "thank for agreeing to fix this test too ^_^",
+      "range": {
+        "startLine": 1394,
+        "startChar": 8,
+        "endLine": 1397,
+        "endChar": 36
+      },
+      "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0b065c51",
+        "filename": "releasenotes/notes/bug-1542417-d630b7886bb0b369.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-18T07:03:33Z",
+      "side": 1,
+      "message": "single quotes don\u0027t render into anything special when the docs are generated, i suggest you use a single backtick ( ` ) or double backtick instead",
+      "range": {
+        "startLine": 5,
+        "startChar": 24,
+        "endLine": 5,
+        "endChar": 52
+      },
       "revId": "33dc70774c52b50bb0e89005090d05eb99bcda31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
