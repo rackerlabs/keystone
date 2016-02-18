@@ -6,6 +6,7 @@ vendor
 .venv
 .update-venv/
 .tox
+.idea/
 keystone.egg-info/
 *.log
 .coverage
