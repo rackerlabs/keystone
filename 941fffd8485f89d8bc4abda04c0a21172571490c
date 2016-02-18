@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_67b3bd98",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-02-18T15:49:46Z",
+      "side": 1,
+      "message": "I don\u0027t think there\u0027s a need here for the global lazy _get_main_context_manager() singleton function.  You can have right at the module level, main_context_manager \u003d enginefacade.transaction_context(), which should not do anything except create the object.  Everything regarding configuration, setting up engines, etc. should be lazy initializing.",
+      "parentUuid": "dae33548_bf4313ae",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_f1a96225",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
@@ -170,6 +188,24 @@
       "side": 1,
       "message": "But if we will use context manager directly we get something like:\n\n with sql._get_main_context_manager().reader.using(sql._CONTEXT): \n      *****\n\n\nlooks ugly",
       "parentUuid": "dae33548_ac449d49",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8771a10e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-02-18T15:49:46Z",
+      "side": 1,
+      "message": "which part, the underscore, or just the two dotted names?  You can have a fixed module-scope transaction context in sql and just use that.  transaction_context() is lazy-initializing.  this could be sql.ctxmgr.reader.using(sql.CONTEXT).",
+      "parentUuid": "dae33548_d4f07ecb",
       "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
