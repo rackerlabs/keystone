@@ -200,6 +200,30 @@
       "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_faa009f6",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2805,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-18T14:41:41Z",
+      "side": 1,
+      "message": "Here\u0027s the code: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/resource/core.py#n568\n\nThe policy file that you point to is a sample policy file. The deployer can modify it to whatever they want in their deployment. (e.g., they could remove access for everyone if they want).\n\nThis is why we should have component-level driver tests rather than having multi-layer tests that go through the manager.",
+      "parentUuid": "dae33548_eb3161a3",
+      "range": {
+        "startLine": 2804,
+        "startChar": 51,
+        "endLine": 2805,
+        "endChar": 35
+      },
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
