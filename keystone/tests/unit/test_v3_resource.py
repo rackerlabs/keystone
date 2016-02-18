@@ -1220,6 +1220,54 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 'project_id': projects[0]['project']['id']},
             expected_status=http_client.FORBIDDEN)
 
+    def test_delete_large_project_cascade(self):
+        """Call ``DELETE /projects/{project_id}?cascade``.
+
+        Try update a large project with cascade true
+        Tree we will create::
+               +-p1-+
+               |    |
+              p5    p2
+               |    |
+              p6  +-p3-+
+                  |    |
+                  p7   p4
+        """
+        # create a hierarchy with 4 levels
+        projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=4)
+        p1_id = projects_hierarchy[0]['project']['id']
+        # Add the left branch to the hierarchy (p5, p6)
+        self._create_projects_hierarchy(hierarchy_size=2,
+                                        parent_id=p1_id)
+        # Add p7 to the hierarchy
+        p3_id = projects_hierarchy[2]['project']['id']
+        self._create_projects_hierarchy(hierarchy_size=1,
+                                        parent_id=p3_id)
+
+        # Assign a inherited role for the user on root project
+        self.put(self.build_role_assignment_link(
+            role_id=self.role_id, user_id=self.user_id,
+            project_id=p1_id, inherited_to_projects=True))
+
+        # Make the API call to disable the hierarchy on cascade
+        self.patch(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': p1_id},
+            body={'project': {'enabled': False}})
+
+        # make API call to delete the hierarchy on cascade
+        self.delete(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': p1_id})
+
+        # Try to make API call to get the projects
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          p1_id)
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          p3_id)
+
 
 class ResourceV3toV2MethodsTestCase(unit.TestCase):
     """Test domain V3 to V2 conversion methods."""
