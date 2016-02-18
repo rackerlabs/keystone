@@ -330,5 +330,13 @@ class ProjectV3(controller.V3Controller):
     @controller.cascadeprotected()
     def delete_project(self, context, project_id):
         initiator = notifications._get_request_audit_info(context)
+
+        # If `cascade` was passed as a filter in the API request, keystone will
+        # recursively delete a project tree
+        params = context['query_string']
+        cascade = ('cascade' in params and
+                   self.query_filter_is_true(params['cascade']))
+
         return self.resource_api.delete_project(project_id,
+                                                cascade=cascade,
                                                 initiator=initiator)
