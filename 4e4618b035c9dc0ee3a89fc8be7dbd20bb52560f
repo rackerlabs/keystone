@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_f14f8f68",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-18T15:09:58Z",
+      "side": 1,
+      "message": "nit: replace period with comma",
+      "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_91b3a34c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-18T15:09:58Z",
+      "side": 1,
+      "message": "Is there any test confirming redelegation not working with impersonation\u003dFalse?",
+      "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_cf85c0cf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
