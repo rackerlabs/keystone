@@ -351,7 +351,7 @@ class DbSync(BaseApp):
     @classmethod
     def add_argument_parser(cls, subparsers):
         parser = super(DbSync, cls).add_argument_parser(subparsers)
-        parser.add_argument('version', default=None, nargs='?',
+        parser.add_argument('version', default=None, type=int, nargs='?',
                             help=('Migrate the database up to a specified '
                                   'version. If not provided, db_sync will '
                                   'migrate the database to the latest known '
