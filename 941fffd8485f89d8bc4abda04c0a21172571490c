@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_bf4313ae",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2016-02-18T14:34:15Z",
+      "side": 1,
+      "message": "This actually must be fine: you don\u0027t need to call configure() explicitly, if you don\u0027t want to pass custom options. If not called, options from the confIg will be used implicitly https://github.com/openstack/oslo.db/blob/master/oslo_db/sqlalchemy/enginefacade.py#L317-L318",
+      "parentUuid": "dae33548_74ad32e8",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_f1a96225",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
