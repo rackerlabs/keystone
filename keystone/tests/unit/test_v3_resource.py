@@ -1372,6 +1372,93 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 'project_id': projects[0]['project']['id']},
             expected_status=http_client.FORBIDDEN)
 
+    def test_delete_project_branch_cascade(self):
+        """Call ``DELETE /projects/{project_id}?cascade``.
+
+        Try to delete a large project with cascade true
+        Tree we will create::
+               +-p1-+
+               |    |
+              p5    p2
+               |    |
+              p6  +-p3-+
+                  |    |
+                  p7   p4
+        """
+        # create a hierarchy with 4 levels
+        projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=4)
+        p1_id = projects_hierarchy[0]['project']['id']
+        # Add the left branch to the hierarchy (p5, p6)
+        self._create_projects_hierarchy(hierarchy_size=2,
+                                        parent_id=p1_id)
+        # Add p7 to the hierarchy
+        p3_id = projects_hierarchy[2]['project']['id']
+        self._create_projects_hierarchy(hierarchy_size=1,
+                                        parent_id=p3_id)
+
+        # Assign a inherited role for the user on root project
+        self.put(self.build_role_assignment_link(
+            role_id=self.role_id, user_id=self.user_id,
+            project_id=p1_id, inherited_to_projects=True))
+
+        # Make the API call to disable the hierarchy on cascade
+        self.patch(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': p1_id},
+            body={'project': {'enabled': False}})
+
+        # make API call to delete the hierarchy on cascade
+        self.delete(
+            '/projects/%(project_id)s?cascade' % {
+                'project_id': p1_id})
+
+        # Try to make API call to get the projects
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          p1_id)
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          p3_id)
+
+    def test_delete_project_cascade_false(self):
+        project = unit.new_project_ref(domain_id=self.domain['id'])
+        self.resource_api.create_project(project['id'], project)
+
+        self.delete('/projects/%(project_id)s?cascade=False' % {
+                    'project_id': project['id']})
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          project['id'])
+
+    def test_delete_project_branch_cascade_with_enabled_projects(self):
+        """Test the deletion of a project branch containing an enabled project.
+
+        Tree we will create::
+                p1
+                |
+                p2
+                |
+                p3
+                |
+                p4
+        """
+        projects_hierarchy = self._create_projects_hierarchy(hierarchy_size=3)
+        p2_id = projects_hierarchy[0]['project']['id']
+        p4_id = projects_hierarchy[3]['project']['id']
+
+        # Disabling just the leaf project
+        self.patch(
+            '/projects/%(project_id)s' % {
+                'project_id': p4_id},
+            body={'project': {'enabled': False}})
+
+        # try delete a subhierarchy
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_project,
+                          p2_id,
+                          cascade=True)
+
 
 class ResourceV3toV2MethodsTestCase(unit.TestCase):
     """Test domain V3 to V2 conversion methods."""

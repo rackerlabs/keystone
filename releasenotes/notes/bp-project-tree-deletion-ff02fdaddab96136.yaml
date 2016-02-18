@@ -1,0 +1,7 @@
+---
+features:
+  - >
+   ['blueprint project-tree-deletion <https://blueprints.launchpad.net/keystone/+spec/project-tree-deletion>'_]
+   Support the ability to perform a cascading delete or update of a project and its subprojects.
+   When performing a cascading updating, only the ``enabled`` attribute is supported. When
+   performing a cascading delete, all projects must first be disabled.
