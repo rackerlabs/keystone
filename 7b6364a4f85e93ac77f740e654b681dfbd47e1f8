@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_ab113006",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-18T06:51:37Z",
+      "side": 1,
+      "message": "I am OK with this as hints is really a list of hints.",
+      "parentUuid": "dae33548_3e76053e",
+      "revId": "7b6364a4f85e93ac77f740e654b681dfbd47e1f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_db7581fa",
         "filename": "keystone/tests/unit/config_files/domain_configs_multi_ldap/keystone.Default.conf",
         "patchSetId": 6
@@ -53,6 +71,24 @@
       "writtenOn": "2016-02-18T04:45:13Z",
       "side": 1,
       "message": "Why not use the original hints object that you are passing through. It would be updated by the list_users method.",
+      "revId": "7b6364a4f85e93ac77f740e654b681dfbd47e1f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2bc36058",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-18T06:51:37Z",
+      "side": 1,
+      "message": "I want to see the limit pass all the way to the LDAP driver.",
+      "parentUuid": "dae33548_5e8e692e",
       "revId": "7b6364a4f85e93ac77f740e654b681dfbd47e1f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
