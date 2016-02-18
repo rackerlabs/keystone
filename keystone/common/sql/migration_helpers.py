@@ -40,6 +40,7 @@ MIGRATED_EXTENSIONS = ['endpoint_policy',
                        'revoke',
                        'endpoint_filter'
                        ]
+MAX_INT = 0x7FFFFFFF
 
 
 #  Different RDBMSs use different schemes for naming the Foreign Key
@@ -206,15 +207,24 @@ def _sync_extension_repo(extension, version):
 
 
 def sync_database_to_version(extension=None, version=None):
-    if not extension:
-        _sync_common_repo(version)
-        # If version is greater than 0, it is for the common
-        # repository only, and only that will be synchronized.
-        if version is None:
-            for default_extension in DEFAULT_EXTENSIONS:
-                _sync_extension_repo(default_extension, version)
-    else:
-        _sync_extension_repo(extension, version)
+    if version > MAX_INT:
+        print(_('Version should be less than or equal to '
+                '%d.') % MAX_INT)
+        sys.exit(1)
+
+    try:
+        if not extension:
+            _sync_common_repo(version)
+            # If version is greater than 0, it is for the common
+            # repository only, and only that will be synchronized.
+            if version is None:
+                for default_extension in DEFAULT_EXTENSIONS:
+                    _sync_extension_repo(default_extension, version)
+        else:
+            _sync_extension_repo(extension, version)
+    except migration.exception.DbMigrationError as dbm_error:
+            print(six.text_type(dbm_error))
+            sys.exit(1)
 
 
 def get_db_version(extension=None):
