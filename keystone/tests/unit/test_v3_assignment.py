@@ -18,6 +18,7 @@ from six.moves import http_client
 from six.moves import range
 from testtools import matchers
 
+from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
@@ -2684,6 +2685,18 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
         for role in [self.role_list[1], self.role_list[2]]:
             self.assertIn(role, token['roles'])
         self.assertNotIn(self.role_list[0], token['roles'])
+
+    def test_delete_role_also_deletes_implied_role(self):
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        subrole = unit.new_role_ref()
+        self.role_api.create_role(subrole['id'], subrole)
+        self._create_implied_role(role, subrole)
+
+        self.role_api.delete_role(role['id'])
+        self.assertRaises(exception.RoleNotFound,
+                          self.role_api.get_role,
+                          subrole['id'])
 
 
 class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
