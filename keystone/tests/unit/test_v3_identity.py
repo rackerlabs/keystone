@@ -134,29 +134,45 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.config_fixture.config(group='identity',
                                    domain_specific_drivers_enabled=True)
 
-        # Create a user with a role on the domain so we can get a
-        # domain scoped token
-        domain = self.new_domain_ref()
+        # Create a new domain with a new project and user
+        domain = unit.new_domain_ref()
         self.resource_api.create_domain(domain['id'], domain)
+
+        project = unit.new_project_ref(domain_id=domain['id'])
+        self.resource_api.create_project(project['id'], project)
+
         user = self.new_user_ref(domain_id=domain['id'])
         password = user['password']
         user = self.identity_api.create_user(user)
         user['password'] = password
+
+        # Create both project and domain role grants for the user so we
+        # can get both project and domain scoped tokens
         self.assignment_api.create_grant(
             role_id=self.role_id, user_id=user['id'],
             domain_id=domain['id'])
+        self.assignment_api.create_grant(
+            role_id=self.role_id, user_id=user['id'],
+            project_id=project['id'])
 
-        ref = self.new_user_ref(domain_id=domain['id'])
-        ref_nd = ref.copy()
-        ref_nd.pop('domain_id')
-        auth = self.build_authentication_request(
+        dom_auth = self.build_authentication_request(
             user_id=user['id'],
             password=user['password'],
             domain_id=domain['id'])
+        project_auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=project['id'])
 
         # First try using a domain scoped token
         resource_url = '/users'
-        r = self.get(resource_url, auth=auth)
+        r = self.get(resource_url, auth=dom_auth)
+        self.assertValidUserListResponse(r, ref=user,
+                                         resource_url=resource_url)
+
+        # Now try using a project scoped token
+        resource_url = '/users'
+        r = self.get(resource_url, auth=project_auth)
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
 
@@ -166,10 +182,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get(resource_url)
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
-
-        # Now try the same thing without a domain token or filter,
-        # which should fail
-        r = self.get('/users', expected_status=exception.Unauthorized.code)
 
     def test_list_users_with_static_admin_token_and_multiple_backends(self):
         # domain-specific operations with the bootstrap ADMIN token is
