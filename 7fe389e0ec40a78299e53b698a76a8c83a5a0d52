@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_1524bf5b",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-18T06:07:41Z",
+      "side": 1,
+      "message": "No need to write code. Just use openstack CLI after this patch lands.\n\nhttps://review.openstack.org/#/c/279854/\n\nFor example:\n\n    openstack --os-auth-url http://localhost:35357/v3 --os-username admin --os-password secrete --os-user-domain-id default --os-project-name admin --os-project-domain-id default --os-identity-api-version 3 credential create --type totp --include-google-authenticator-provisioning-url demo test_credential_blah_blah\n\nOnce the credential is created in Keystone. You can then provision your Google Authenticator by copy-n-pasting the provisioning URL to your browser to pick up your QR code. Then scan the QR code with your phone.",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_75954b31",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-18T06:07:41Z",
+      "side": 1,
+      "message": "You can also use openstack CLI to test this after the keystoneauth patch lands.\n\nhttps://review.openstack.org/#/c/281086/\n\nFor example:\n\n  openstack --os-auth-type v3totp --os-auth-url http://localhost:35357/v3 --os-username admin --os-passcode 123456 --os-user-domain-id default --os-project-name admin --os-project-domain-id default --os-identity-api-version 3 token issue",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_f5cf9b53",
+        "filename": "keystone/common/totp/__init__.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-18T06:07:41Z",
+      "side": 1,
+      "message": "There\u0027s really no need to have common/totp. We should encapsulate everything we need in the plugin itself. By having code outside of the plugin, the plugin is no longer self-contained.",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_354463b5",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-18T06:07:41Z",
+      "side": 1,
+      "message": "The only difference between password_auth and totp_auth is the passcode so suggest to refactor the common code so they can share.",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
