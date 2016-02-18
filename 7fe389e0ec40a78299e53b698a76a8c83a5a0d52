@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_6f46027c",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_88d3925f",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_0876626f",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 12
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_ca6bbcb5",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_0876626f",
+      "range": {
+        "startLine": 23,
+        "startChar": 33,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_a884960a",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 12
@@ -53,6 +95,30 @@
       "writtenOn": "2016-02-18T06:36:29Z",
       "side": 1,
       "message": "nit: use the space on the previous line",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 64
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_cae0dc2b",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_a884960a",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -123,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_0abe44fe",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_e8c21e84",
+      "range": {
+        "startLine": 44,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_481a2a18",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 12
@@ -169,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_ea4fa031",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_c8aaba84",
+      "range": {
+        "startLine": 97,
+        "startChar": 45,
+        "endLine": 97,
+        "endChar": 48
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_28c36658",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 12
@@ -180,6 +294,30 @@
       "writtenOn": "2016-02-18T06:36:29Z",
       "side": 1,
       "message": "Use the passcode and your user ID to authenticate using the ``totp`` method.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 62
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2a0b48d7",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_28c36658",
       "range": {
         "startLine": 98,
         "startChar": 0,
@@ -273,6 +411,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_eaeb20da",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_c8e63ae7",
+      "range": {
+        "startLine": 40,
+        "startChar": 36,
+        "endLine": 40,
+        "endChar": 43
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_88071281",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 12
@@ -296,6 +458,47 @@
     },
     {
       "key": {
+        "uuid": "dae33548_caa61cad",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_88071281",
+      "range": {
+        "startLine": 52,
+        "startChar": 27,
+        "endLine": 52,
+        "endChar": 34
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_2aa7c8bd",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "yuck. i missed this earlier. gone.",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_082ae2da",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 12
@@ -307,6 +510,30 @@
       "writtenOn": "2016-02-18T06:36:29Z",
       "side": 1,
       "message": "Want to say \"TOTP passcode\" to make it more obvious? I initially read this as password",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 49
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0ac4843d",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_082ae2da",
       "range": {
         "startLine": 58,
         "startChar": 41,
@@ -354,6 +581,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_f47b0bbc",
+        "filename": "keystone/common/totp/__init__.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Yes, I mentioned that in a prior review. ( https://review.openstack.org/#/c/274901/8/keystone/common/totp/__init__.py ) Already in my next update.",
+      "parentUuid": "dae33548_35f7435a",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_c808fa2a",
         "filename": "keystone/common/totp/core.py",
         "patchSetId": 12
@@ -365,6 +610,30 @@
       "writtenOn": "2016-02-18T06:36:29Z",
       "side": 1,
       "message": "let;s dump all this in the TOTP auth plugin and make \"get_totp_token\" private",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 37
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_b45ce34b",
+        "filename": "keystone/common/totp/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dae33548_c808fa2a",
       "range": {
         "startLine": 23,
         "startChar": 0,
@@ -412,6 +681,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_341e1370",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Good call. I\u0027m not entirely in love with what I did, but I think it\u0027s better.",
+      "parentUuid": "dae33548_281b66cb",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_a8b81676",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 12
@@ -429,6 +716,24 @@
     },
     {
       "key": {
+        "uuid": "dae33548_054d9699",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Tests will be in a future patch. I\u0027m still working on them",
+      "parentUuid": "dae33548_a8b81676",
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_e8d97ef4",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 12
@@ -440,6 +745,30 @@
       "writtenOn": "2016-02-18T06:36:29Z",
       "side": 1,
       "message": "make this plural, creds*, it\u0027s a list",
+      "range": {
+        "startLine": 4668,
+        "startChar": 8,
+        "endLine": 4668,
+        "endChar": 12
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_af492a33",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4668,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "Oops. Looks like I shortened the name too much.",
+      "parentUuid": "dae33548_e8d97ef4",
       "range": {
         "startLine": 4668,
         "startChar": 8,
@@ -486,6 +815,30 @@
       "writtenOn": "2016-02-18T06:36:29Z",
       "side": 1,
       "message": "why not loop through and delete all credentials instead of risking the index error with [0]",
+      "range": {
+        "startLine": 4671,
+        "startChar": 8,
+        "endLine": 4671,
+        "endChar": 60
+      },
+      "revId": "7fe389e0ec40a78299e53b698a76a8c83a5a0d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_0f03f6b8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4671,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-18T13:37:01Z",
+      "side": 1,
+      "message": "good call",
+      "parentUuid": "dae33548_a8ead671",
       "range": {
         "startLine": 4671,
         "startChar": 8,
