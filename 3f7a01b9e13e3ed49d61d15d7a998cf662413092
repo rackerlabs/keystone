@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_4a094431",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T11:36:29Z",
+      "side": 1,
+      "message": "(nit) add a new blank line here",
+      "revId": "3f7a01b9e13e3ed49d61d15d7a998cf662413092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2ae7a0e5",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T11:36:29Z",
+      "side": 1,
+      "message": "fil looks very weird, what about just \u0027f\u0027 ?",
+      "range": {
+        "startLine": 344,
+        "startChar": 51,
+        "endLine": 344,
+        "endChar": 54
+      },
+      "revId": "3f7a01b9e13e3ed49d61d15d7a998cf662413092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
