@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_3656ccd2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-02-19T19:45:17Z",
+      "side": 1,
+      "message": "It is most the concept of REST, as \"cascade\" is not an entity of project. A query filter is more appropriated for this small deviation of the main flow",
+      "parentUuid": "bae84128_d06a081a",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_109110f1",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 18
