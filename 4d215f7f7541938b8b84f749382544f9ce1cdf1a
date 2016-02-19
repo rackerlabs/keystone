@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_bda5b8b6",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T12:06:26Z",
+      "side": 1,
+      "message": "I\u0027d prefer it to be done like this, rather than build driver_hints that IS NOT used as driver hints",
+      "range": {
+        "startLine": 258,
+        "startChar": 0,
+        "endLine": 261,
+        "endChar": 65
+      },
+      "revId": "4d215f7f7541938b8b84f749382544f9ce1cdf1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_7d73304e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T12:06:26Z",
+      "side": 1,
+      "message": "See comment in L258",
+      "range": {
+        "startLine": 342,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 72
+      },
+      "revId": "4d215f7f7541938b8b84f749382544f9ce1cdf1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_a09f4f5e",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T12:06:26Z",
+      "side": 1,
+      "message": "Needs another tes with ?cascade\u003dFalse",
+      "revId": "4d215f7f7541938b8b84f749382544f9ce1cdf1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
