@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_473e622a",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-19T00:48:00Z",
+      "side": 1,
+      "message": "This seems wrong to me, but can be cleaned up later. I think it\u0027s a little crappy to encode classes to specifically make the AuthInfo in plugins.core rather than within the plugin class itself. \n\nthat would be a lot more rearchitecting than is needed here though.",
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
