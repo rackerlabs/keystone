@@ -69,6 +69,24 @@
       "revId": "ef9abdbf5c11450ad1c964004eb7ed5f9e608785",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3f7ea7e4",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-19T18:06:05Z",
+      "side": 1,
+      "message": "Yep, that looks right. But we\u0027ll have to wrap that around the v3 validate call, too. \n\nSo - maybe here? https://github.com/openstack/keystone/blob/master/keystone/token/provider.py#L287",
+      "parentUuid": "bae84128_fc556d1d",
+      "revId": "ef9abdbf5c11450ad1c964004eb7ed5f9e608785",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
