@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_71821e54",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-19T20:04:11Z",
+      "side": 0,
+      "message": "But I like setting class variables randomly!",
+      "revId": "303f681b16fac01e56055a5d2a1004ce3716da63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
