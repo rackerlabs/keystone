@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_d06a081a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-19T19:28:24Z",
+      "side": 1,
+      "message": "ok... so seems the opinion of the API group is that it is better that way. Besides not having the {id} as the last part of the URL is there another reasoning behind the usage of query parameter?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_109110f1",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-19T19:28:24Z",
+      "side": 1,
+      "message": "delete, right?",
+      "range": {
+        "startLine": 361,
+        "startChar": 22,
+        "endLine": 361,
+        "endChar": 36
+      },
+      "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2bf309a0",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-19T19:28:24Z",
+      "side": 1,
+      "message": "need a test that tries to delete a branch with some projects still enabled.",
+      "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
