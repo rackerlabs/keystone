@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_0b2d65a7",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-19T19:39:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_109110f1",
+      "range": {
+        "startLine": 361,
+        "startChar": 22,
+        "endLine": 361,
+        "endChar": 36
+      },
+      "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_2bf309a0",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 18
@@ -59,6 +83,24 @@
       "writtenOn": "2016-02-19T19:28:24Z",
       "side": 1,
       "message": "need a test that tries to delete a branch with some projects still enabled.",
+      "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0b044515",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-19T19:39:33Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll add this test case.",
+      "parentUuid": "bae84128_2bf309a0",
       "revId": "62b95a8149093ded51bb3cdd2d241931f02d62d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
