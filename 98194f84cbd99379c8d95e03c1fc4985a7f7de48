@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_66b9c3e9",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-19T21:00:34Z",
+      "side": 1,
+      "message": "Leaving expires_at in for now.  If folks have a big issue with this, I\u0027ll take it out.",
+      "parentUuid": "bae84128_6b4a3185",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_7c20449c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
