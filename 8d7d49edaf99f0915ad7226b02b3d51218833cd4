@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_66ec23c8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-19T21:05:21Z",
+      "side": 0,
+      "message": "Some housekeeping, removing these methods as they didn\u0027t work and are no longer being used:\n* populate_user_table()\n* populate_tenant_table()\n* _mysql_check_all_tables_innodb()",
+      "range": {
+        "startLine": 703,
+        "startChar": 8,
+        "endLine": 703,
+        "endChar": 27
+      },
+      "revId": "8d7d49edaf99f0915ad7226b02b3d51218833cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
