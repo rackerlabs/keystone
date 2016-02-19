@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_efd14031",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-19T09:54:59Z",
+      "side": 1,
+      "message": "remove this method, this method has been consolidated into `_build_auth` above, and not used anywhere.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_296fb593",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 4731,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-19T09:54:59Z",
+      "side": 1,
+      "message": "seen from how it is authenticated, this is basically the same thing as `test_with_an_invalid_passcode_and_user_credentials`, \n\nIf we want to test the passcode is corrupted, generate the passcode and hack it instead.",
+      "range": {
+        "startLine": 4727,
+        "startChar": 0,
+        "endLine": 4731,
+        "endChar": 70
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_899361fa",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 4742,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-19T09:54:59Z",
+      "side": 1,
+      "message": "the existing user",
+      "range": {
+        "startLine": 4742,
+        "startChar": 36,
+        "endLine": 4742,
+        "endChar": 42
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_800336b8",
+        "filename": "releasenotes/notes/totp-40d93231714c6a20.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-19T09:54:59Z",
+      "side": 1,
+      "message": "link to \"auth-totp.rst\"?",
+      "range": {
+        "startLine": 8,
+        "startChar": 36,
+        "endLine": 8,
+        "endChar": 60
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
