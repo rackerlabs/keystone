@@ -244,6 +244,23 @@
       "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b6cadc9f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:44:36Z",
+      "side": 1,
+      "message": "This is the one thing I\u0027d like to see addressed: more testing!",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
