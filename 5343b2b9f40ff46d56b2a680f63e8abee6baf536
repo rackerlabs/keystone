@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_c0bff35e",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T05:51:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_aab9f3cd",
+      "range": {
+        "startLine": 41,
+        "startChar": 31,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_eab3fbe7",
         "filename": "doc/source/auth-totp.rst",
         "patchSetId": 15
@@ -111,6 +135,30 @@
     },
     {
       "key": {
+        "uuid": "dae33548_6076e7d9",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T05:51:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_4ae66717",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_6ac40b5f",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 15
@@ -127,6 +175,76 @@
         "startChar": 27,
         "endLine": 89,
         "endChar": 34
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_20433f6e",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T05:51:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_6ac40b5f",
+      "range": {
+        "startLine": 89,
+        "startChar": 27,
+        "endLine": 89,
+        "endChar": 34
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_23e6a9e8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 4705,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T05:51:05Z",
+      "side": 1,
+      "message": "let\u0027s combine these lists and do one delete",
+      "range": {
+        "startLine": 4697,
+        "startChar": 8,
+        "endLine": 4705,
+        "endChar": 57
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_23fd096f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 4719,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T05:51:05Z",
+      "side": 1,
+      "message": "this is the default",
+      "range": {
+        "startLine": 4719,
+        "startChar": 39,
+        "endLine": 4719,
+        "endChar": 46
       },
       "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
