@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_bcb00c8d",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-19T16:14:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_efd14031",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_296fb593",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 18
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_effc9840",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 4731,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-19T16:14:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_296fb593",
+      "range": {
+        "startLine": 4727,
+        "startChar": 0,
+        "endLine": 4731,
+        "endChar": 70
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_899361fa",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 18
@@ -59,6 +107,30 @@
       "writtenOn": "2016-02-19T09:54:59Z",
       "side": 1,
       "message": "the existing user",
+      "range": {
+        "startLine": 4742,
+        "startChar": 36,
+        "endLine": 4742,
+        "endChar": 42
+      },
+      "revId": "71214315c035938b4bc3b557c745c1be8443a0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_fc58d458",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 4742,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-19T16:14:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_899361fa",
       "range": {
         "startLine": 4742,
         "startChar": 36,
