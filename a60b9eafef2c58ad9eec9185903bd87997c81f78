@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_9e89b8cd",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-19T17:31:28Z",
+      "side": 1,
+      "message": "hm. couldn\u0027t we also do:\n\n  consumer_ref \u003d Consumer.from_dict(consumer)\n  consumer_ref.secret \u003d uuid.uuid4().hex\n\n? It would save a copy, which I\u0027m a fan of. /bikeshed",
+      "revId": "a60b9eafef2c58ad9eec9185903bd87997c81f78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
