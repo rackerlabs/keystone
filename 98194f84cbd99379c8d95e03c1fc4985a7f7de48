@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_eb02c13d",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "This ID column would not be exposed to the API, so Morgan suggested that we use auto incrementing integers here.",
+      "parentUuid": "bae84128_5c03c073",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_19d82a53",
         "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
         "patchSetId": 33
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-19T15:46:38Z",
       "side": 1,
       "message": "I see user table have them too and the constraint is also created on {domain_id,name} pair. If the reason for duplication of domain_id and name attributes here is the fact, that keystone will always reach local_user table while validating tokens and so on, and we want to avoid lookups in another table than it\u0027s fine. I\u0027d add a comment with this reasoning.",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0ba8c51e",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "The columns in the \"user\" table get removed.",
+      "parentUuid": "bae84128_19d82a53",
       "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_6b4a3185",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "Correct, it\u0027s for future use. I don\u0027t want to rabbit hole on things outside the scope of this patch so I\u0027d rather see this removed for now if there are any questions that cannot wait for Newton.",
+      "parentUuid": "bae84128_99c71a45",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_7c20449c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
@@ -64,6 +118,24 @@
       "writtenOn": "2016-02-19T15:46:38Z",
       "side": 1,
       "message": "i don\u0027t think this comment has too much of a value :-)",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cb09bd33",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "Somewhat ironic ^",
+      "parentUuid": "bae84128_7c20449c",
       "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_962518ad",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "We\u0027ve traditionally allowed users to be created in SQL without passwords, yes.",
+      "parentUuid": "bae84128_3c5ebce9",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_dceeb0eb",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_965cf826",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "The existing code is much easier to read than a chain of .get()s, IMO.\n\nIf you want to simplify things, methods \"return None\" by default in Python anyway, so you could just delete L82-83 without any consequence.",
+      "parentUuid": "bae84128_dceeb0eb",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_bc7c8c21",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
@@ -115,6 +223,24 @@
       "writtenOn": "2016-02-19T15:46:38Z",
       "side": 1,
       "message": "you can add a private method doing that.\n1) Cleaner code\n2) You will not repeat those lines",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_967358b1",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:42:33Z",
+      "side": 1,
+      "message": "A 3 line private method to replace 3 instances of 2 lines of trivial code is not a particularly beneficial refactor.",
+      "parentUuid": "bae84128_bc7c8c21",
       "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
