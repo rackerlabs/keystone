@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_dc03500e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:54:40Z",
+      "side": 1,
+      "message": "what attribute will be used here as a id in \u0027user_id\u0027 attribute in for instance a token?",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_9cd8a8f1",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:54:40Z",
+      "side": 1,
+      "message": "I am assuming this is the instance of the federated user.\nSo, here he has id type of String, whereas LocalUser\u0027s id is Integer. why?",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_1cc138e5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:54:40Z",
+      "side": 1,
+      "message": "add foreign key to Protocol table.",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3c319c0c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:54:40Z",
+      "side": 1,
+      "message": "unique_id across all user ids (including LocalUser\u0027s) ?",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8f37cce2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:54:40Z",
+      "side": 1,
+      "message": "makes sense, but keep in mind that unique_id will not be usable in user_id in token for instance. You would loose information then.",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8f650ce3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:54:40Z",
+      "side": 1,
+      "message": "\u0027...\u0027  ?",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
