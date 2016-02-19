@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_5c03c073",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "curious - since when we moved to integers?\nI am assuming this would be a new user_id for the rest of the services like nova,cinder?",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_19d82a53",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "I see user table have them too and the constraint is also created on {domain_id,name} pair. If the reason for duplication of domain_id and name attributes here is the fact, that keystone will always reach local_user table while validating tokens and so on, and we want to avoid lookups in another table than it\u0027s fine. I\u0027d add a comment with this reasoning.",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_99c71a45",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "was this added for a future use (i see clear use case for that)? I don\u0027t think shadow users are going to implement password/user expiration. \nIf we are still adding it for a future use I\u0027d vote for adding \u0027date_created\u0027 and \u0027expires_at\u0027 parameters in the local_user table.",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_7c20449c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "i don\u0027t think this comment has too much of a value :-)",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3c5ebce9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "can we have a situation where a local exists and he has no password or it\u0027s just handling a case where self.local_user was empty 3 lines before? If that\u0027s the case I\u0027d suggest appending Password()object right after the LocalUser() object was created:\n\nif not self.local_user:\n    self.local_user \u003d LocalUser()\n    self.local_user.passwords.append(Password())\n[...]",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_dceeb0eb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "you could also do:\n\nself.get(\u0027local_user\u0027,{}).get(\u0027domain_id\u0027,None)",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_bc7c8c21",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-19T15:46:38Z",
+      "side": 1,
+      "message": "you can add a private method doing that.\n1) Cleaner code\n2) You will not repeat those lines",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
