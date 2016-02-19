@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_9986e8b7",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1282,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-19T21:39:03Z",
+      "side": 1,
+      "message": "cascade_delete? what about \"test_delete_project_branch_cascade_with_enabled_projects\"",
+      "range": {
+        "startLine": 1282,
+        "startChar": 8,
+        "endLine": 1282,
+        "endChar": 41
+      },
+      "revId": "ad928e8ef877ad83c4737ca40cd9cd28c5248b45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
