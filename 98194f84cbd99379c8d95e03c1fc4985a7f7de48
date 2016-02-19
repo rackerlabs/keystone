@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_d9d87020",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_local_user_and_password_tables.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-19T21:32:22Z",
+      "side": 1,
+      "message": "yes, please remove it. It will definitely cause misunderstanding.",
+      "parentUuid": "bae84128_66b9c3e9",
+      "revId": "98194f84cbd99379c8d95e03c1fc4985a7f7de48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_7c20449c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
