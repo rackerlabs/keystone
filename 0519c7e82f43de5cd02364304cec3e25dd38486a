@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_dce21e9f",
+        "filename": "releasenotes/notes/bp-project-tree-deletion-ff02fdaddab96136.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T22:06:52Z",
+      "side": 1,
+      "message": "also supports enabling",
+      "range": {
+        "startLine": 5,
+        "startChar": 30,
+        "endLine": 5,
+        "endChar": 44
+      },
+      "revId": "0519c7e82f43de5cd02364304cec3e25dd38486a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_5cd60ec6",
+        "filename": "releasenotes/notes/bp-project-tree-deletion-ff02fdaddab96136.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T22:06:52Z",
+      "side": 1,
+      "message": "ability ?",
+      "range": {
+        "startLine": 5,
+        "startChar": 15,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "0519c7e82f43de5cd02364304cec3e25dd38486a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
