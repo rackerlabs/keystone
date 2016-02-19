@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "dae33548_aab9f3cd",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-19T01:20:51Z",
+      "side": 1,
+      "message": "Worth mentioning that secret must be at least 148 bits (16 bytes).",
+      "range": {
+        "startLine": 41,
+        "startChar": 31,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_eab3fbe7",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-19T01:20:51Z",
+      "side": 1,
+      "message": "base-32 encoded secret",
+      "range": {
+        "startLine": 59,
+        "startChar": 11,
+        "endLine": 59,
+        "endChar": 37
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_8ac34f38",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-19T01:20:51Z",
+      "side": 1,
+      "message": "Nice! You can also use the google url.",
+      "range": {
+        "startLine": 88,
+        "startChar": 11,
+        "endLine": 88,
+        "endChar": 17
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_473e622a",
         "filename": "keystone/auth/plugins/core.py",
         "patchSetId": 15
@@ -13,6 +82,52 @@
       "writtenOn": "2016-02-19T00:48:00Z",
       "side": 1,
       "message": "This seems wrong to me, but can be cleaned up later. I think it\u0027s a little crappy to encode classes to specifically make the AuthInfo in plugins.core rather than within the plugin class itself. \n\nthat would be a lot more rearchitecting than is needed here though.",
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_4ae66717",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-19T01:20:51Z",
+      "side": 1,
+      "message": "No need for this. If the secret is already base32 encoded, it should always be a multiple of 8. Otherwise, we have a problem with the encoder or it won\u0027t properly decoded.",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_6ac40b5f",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-19T01:20:51Z",
+      "side": 1,
+      "message": "you mean current or corrupt? How about this?\n\n  \u0027TOTP no match; credential id: %s, user_id: %s\u0027",
+      "range": {
+        "startLine": 89,
+        "startChar": 27,
+        "endLine": 89,
+        "endChar": 34
+      },
       "revId": "5343b2b9f40ff46d56b2a680f63e8abee6baf536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
