@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_4fb0398c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2699,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-19T10:27:36Z",
+      "side": 1,
+      "message": "FK\u0027s have to be enabled in sqlite connection fo this to be true",
+      "revId": "b7efd9a0c910b0e5fcbde7826aefe4fffd18911d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
