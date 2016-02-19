@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_bbf2e098",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T12:25:18Z",
+      "side": 1,
+      "message": "better to do as L345-347",
+      "range": {
+        "startLine": 359,
+        "startChar": 0,
+        "endLine": 362,
+        "endChar": 66
+      },
+      "revId": "3c93e490524dfb268d393e8caf2e7f046b95cc61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_db2fe4f4",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1270,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-19T12:25:18Z",
+      "side": 1,
+      "message": "Add a test for ?cascade\u003dFalse",
+      "revId": "3c93e490524dfb268d393e8caf2e7f046b95cc61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
