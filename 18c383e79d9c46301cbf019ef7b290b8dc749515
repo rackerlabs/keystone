@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_9ea9cc7e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T06:15:11Z",
+      "side": 1,
+      "message": "not necessary, this is the default",
+      "range": {
+        "startLine": 243,
+        "startChar": 63,
+        "endLine": 243,
+        "endChar": 78
+      },
+      "revId": "18c383e79d9c46301cbf019ef7b290b8dc749515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_5ec6244a",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-19T06:15:11Z",
+      "side": 1,
+      "message": "i think you want `project_auth` here",
+      "range": {
+        "startLine": 261,
+        "startChar": 8,
+        "endLine": 261,
+        "endChar": 17
+      },
+      "revId": "18c383e79d9c46301cbf019ef7b290b8dc749515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
