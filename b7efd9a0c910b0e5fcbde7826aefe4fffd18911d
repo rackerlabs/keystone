@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_410c7e94",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-19T14:49:28Z",
+      "side": 1,
+      "message": "if SQLite skip",
+      "revId": "b7efd9a0c910b0e5fcbde7826aefe4fffd18911d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_4fb0398c",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
