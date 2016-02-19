@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_166aa880",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "federated_user ?",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_dc03500e",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -13,6 +30,24 @@
       "writtenOn": "2016-02-19T15:54:40Z",
       "side": 1,
       "message": "what attribute will be used here as a id in \u0027user_id\u0027 attribute in for instance a token?",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_76d33439",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "The same as for SQL users.",
+      "parentUuid": "bae84128_dc03500e",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_16ef48e9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "++ This patch needs to be updated to match changes in the underlying patch.",
+      "parentUuid": "bae84128_9cd8a8f1",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_1cc138e5",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -47,6 +100,24 @@
       "writtenOn": "2016-02-19T15:54:40Z",
       "side": 1,
       "message": "add foreign key to Protocol table.",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b6b49cf2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bae84128_1cc138e5",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_16c62867",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "No, just as claimed by the mapping engine for this IdP + Protocol pair.",
+      "parentUuid": "bae84128_3c319c0c",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_8f37cce2",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -81,6 +170,41 @@
       "writtenOn": "2016-02-19T15:54:40Z",
       "side": 1,
       "message": "makes sense, but keep in mind that unique_id will not be usable in user_id in token for instance. You would loose information then.",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_16746833",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "Marek: correct.\n\nI also think this needs to be expanded to idp_id + protocol_id + unique_id, as the same IdP might return the same unique ID via two different protocols, and that should result in two different users (prior to account linking in Newton).",
+      "parentUuid": "bae84128_8f37cce2",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_d6a04093",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-19T19:50:28Z",
+      "side": 1,
+      "message": "@MEMOIZE this, it\u0027s very cacheable and will get a lot of calls",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
