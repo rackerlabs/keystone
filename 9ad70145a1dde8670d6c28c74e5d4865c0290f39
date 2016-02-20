@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_a38907cd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 1410,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-20T07:08:08Z",
+      "side": 1,
+      "message": "So first off, our driver guidelines say that supporting hints is optional, and second, the point of this wrapper is to support legacy drivers (and for sure there have been drivers in the past that did not support hints)",
+      "parentUuid": "dae33548_5c16474c",
+      "range": {
+        "startLine": 1409,
+        "startChar": 8,
+        "endLine": 1410,
+        "endChar": 66
+      },
+      "revId": "9ad70145a1dde8670d6c28c74e5d4865c0290f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_3ca1c394",
         "filename": "keystone/revoke/model.py",
         "patchSetId": 54
