@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_e8a59504",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-20T06:32:08Z",
+      "side": 1,
+      "message": "i feel this was the same setup at the update test? consider creating a common function to set up this tree",
+      "range": {
+        "startLine": 1226,
+        "startChar": 8,
+        "endLine": 1234,
+        "endChar": 25
+      },
+      "revId": "1065c72d6fdee3c6fe912670fc42ff886f560768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_68e86511",
+        "filename": "releasenotes/notes/bp-project-tree-deletion-ff02fdaddab96136.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-20T06:32:08Z",
+      "side": 1,
+      "message": "\"Support the ability to perform a cascading delete or update of a project and its subprojects. When performing a cascading updating, only the ``enabled`` attribute is supported. When performing a cascading delete, all projects must first be disabled.\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 26,
+        "endLine": 5,
+        "endChar": 56
+      },
+      "revId": "1065c72d6fdee3c6fe912670fc42ff886f560768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
