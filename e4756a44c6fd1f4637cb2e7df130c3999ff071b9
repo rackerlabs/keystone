@@ -16,6 +16,24 @@
       "revId": "e4756a44c6fd1f4637cb2e7df130c3999ff071b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_9f0eb632",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_implied_roles_fks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-02-20T14:15:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_6e1d0a73",
+      "revId": "e4756a44c6fd1f4637cb2e7df130c3999ff071b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
