@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_0811d952",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-20T06:24:20Z",
+      "side": 1,
+      "message": "you can replace all this with \"to\" since, the user not have access to a leaf project",
+      "range": {
+        "startLine": 312,
+        "startChar": 55,
+        "endLine": 313,
+        "endChar": 35
+      },
+      "revId": "6ce0c554fc11e64c35d0c60c894cbd527e82a164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0838b9d2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-20T06:24:20Z",
+      "side": 1,
+      "message": "I had to keep looking back at https://github.com/openstack/keystone/blob/master/keystone/common/controller.py to figure this out. it may be beneficial for other reviewers and authors if you added argument descriptions into the docstring. specifically for what \"protection_info\" is supposed to look like.",
+      "range": {
+        "startLine": 317,
+        "startChar": 0,
+        "endLine": 322,
+        "endChar": 37
+      },
+      "revId": "6ce0c554fc11e64c35d0c60c894cbd527e82a164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3d2dfda7",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-20T06:24:20Z",
+      "side": 1,
+      "message": "it always confuses me that this is only needed for the filterprotected call",
+      "range": {
+        "startLine": 337,
+        "startChar": 38,
+        "endLine": 337,
+        "endChar": 45
+      },
+      "revId": "6ce0c554fc11e64c35d0c60c894cbd527e82a164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
