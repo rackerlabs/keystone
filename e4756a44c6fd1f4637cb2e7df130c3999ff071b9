@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_6e1d0a73",
+        "filename": "keystone/common/sql/migrate_repo/versions/090_add_implied_roles_fks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-20T12:24:18Z",
+      "side": 1,
+      "message": "the file name could be more accurate, it\u0027s not adding fks, it\u0027s updating the fks to support `CASCADE` for update and delete.",
+      "revId": "e4756a44c6fd1f4637cb2e7df130c3999ff071b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
