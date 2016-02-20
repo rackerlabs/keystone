@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_3f568ad2",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-20T14:38:11Z",
+      "side": 1,
+      "message": "agreed. I\u0027ll send a follow patch fixing this.",
+      "parentUuid": "bae84128_e8a59504",
+      "range": {
+        "startLine": 1226,
+        "startChar": 8,
+        "endLine": 1234,
+        "endChar": 25
+      },
+      "revId": "1065c72d6fdee3c6fe912670fc42ff886f560768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_68e86511",
         "filename": "releasenotes/notes/bp-project-tree-deletion-ff02fdaddab96136.yaml",
         "patchSetId": 22
