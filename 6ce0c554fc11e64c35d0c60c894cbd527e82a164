@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_ae46f220",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-20T11:41:26Z",
+      "side": 1,
+      "message": "Because the call is PATCH /projects/{id}?cascade\n\nIs there a better way to do it in our current code ?",
+      "parentUuid": "bae84128_4e63e6dc",
+      "range": {
+        "startLine": 333,
+        "startChar": 16,
+        "endLine": 333,
+        "endChar": 31
+      },
+      "revId": "6ce0c554fc11e64c35d0c60c894cbd527e82a164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3d2dfda7",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 21
