@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_ae49d28d",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-20T12:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_166aa880",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_dc03500e",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -83,6 +101,42 @@
       "side": 1,
       "message": "++ This patch needs to be updated to match changes in the underlying patch.",
       "parentUuid": "bae84128_9cd8a8f1",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8e316e0e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-20T12:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_9cd8a8f1",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_4e59265a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-20T12:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_16ef48e9",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -205,6 +259,24 @@
       "writtenOn": "2016-02-19T19:50:28Z",
       "side": 1,
       "message": "@MEMOIZE this, it\u0027s very cacheable and will get a lot of calls",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_69522415",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-20T12:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_d6a04093",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
