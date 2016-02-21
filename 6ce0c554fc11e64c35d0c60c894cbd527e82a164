@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_4eebd4b0",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-21T11:33:15Z",
+      "side": 1,
+      "message": "So I\u0027m not quite clear exactly what we are trying to achieve. \n\n1) First, I am surprised (not saying it\u0027s wrong, just surprised) that we are going for the \"must have a role on every project in the tree\" in additional to whatever policy rule might be on the update api itself. In the past, we have always given tree operations a separate policy endpoint, so that they could be separately controlled.\n\n2) If what we want to do is just have different endpoint for update and update/cascade, then there are other examples of doing that using a wrapper method that then calls two separate methods (e.g. update and update_cascade), each of which are @controller.protected()\n\nMaybe you\u0027ve already thought through all of this....",
+      "parentUuid": "bae84128_dff67ed6",
+      "range": {
+        "startLine": 333,
+        "startChar": 16,
+        "endLine": 333,
+        "endChar": 31
+      },
+      "revId": "6ce0c554fc11e64c35d0c60c894cbd527e82a164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3d2dfda7",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 21
