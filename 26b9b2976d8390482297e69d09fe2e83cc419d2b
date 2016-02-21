@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_09a546b4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-21T13:03:14Z",
+      "side": 1,
+      "message": "The testcase will pass without your fix.\n\nThe testcase should test that `CASCADE` is applied for update and delete instead of assert that FKs exist.\nand should assert that it\u0027s not applied before upgrade(90).\n\nYou can refer to this patch I proposed long time ago although it was abandoned.\n\nhttps://review.openstack.org/#/c/179767/6/keystone/tests/unit/test_sql_upgrade.py",
+      "range": {
+        "startLine": 703,
+        "startChar": 0,
+        "endLine": 709,
+        "endChar": 78
+      },
+      "revId": "26b9b2976d8390482297e69d09fe2e83cc419d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
