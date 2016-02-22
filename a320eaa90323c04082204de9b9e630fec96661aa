@@ -70,6 +70,29 @@
       "revId": "a320eaa90323c04082204de9b9e630fec96661aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2a2c5caa",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-22T13:31:28Z",
+      "side": 0,
+      "message": "not sure if these info is needed or not, after this update it\u0027s not much clear when the inherit role was started and when this was fully baked.",
+      "range": {
+        "startLine": 1094,
+        "startChar": 0,
+        "endLine": 1095,
+        "endChar": 18
+      },
+      "revId": "a320eaa90323c04082204de9b9e630fec96661aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
