@@ -31,8 +31,10 @@ from testtools import testcase
 
 from keystone import auth
 from keystone.auth.plugins import totp
+from keystone.common import sql
 from keystone.common import utils
 from keystone.contrib.revoke import routers
+from keystone.credential.backends import sql as credential_sql
 from keystone import exception
 from keystone.policy.backends import rules
 from keystone.tests.common import auth as common_auth
@@ -4742,8 +4744,35 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
-    def test_with_a_corrupt_totp_credential(self):
-        self._make_credentials('totp', count=1, blob='0')
+    def test_a_valid_passcode_with_a_corrupt_credential_in_the_db(self):
+        # NOTE(dstanek): insert the credential directly into the database
+        # since we now prevent this in the controller
+        ref = unit.new_totp_credential(
+            user_id=self.default_domain_user['id'],
+            project_id=self.default_domain_project['id'],
+            blob='corrupt')  # lowercase isn't valid base32
+        session = sql.get_session()
+        with session.begin():
+            session.add(credential_sql.CredentialModel.from_dict(ref))
+
+        creds = self._make_credentials('totp')
+        secret = creds[-1]['blob']
+        auth_data = self._make_auth_data_by_id(
+            totp._generate_totp_passcode(secret))
+
+        self.v3_create_token(auth_data, expected_status=http_client.CREATED)
+
+    def test_an_invalid_passcode_with_a_corrupt_credential_in_the_db(self):
+        # NOTE(dstanek): insert the credential directly into the database
+        # since we now prevent this in the controller
+        ref = unit.new_totp_credential(
+            user_id=self.default_domain_user['id'],
+            project_id=self.default_domain_project['id'],
+            blob='corrupt')  # lowercase isn't valid base32
+        session = sql.get_session()
+        with session.begin():
+            session.add(credential_sql.CredentialModel.from_dict(ref))
+
         auth_data = self._make_auth_data_by_id('000000')
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)

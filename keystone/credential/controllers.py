@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
 import hashlib
 
 from oslo_serialization import jsonutils
@@ -22,6 +23,18 @@ from keystone.common import validation
 from keystone.credential import schema
 from keystone import exception
 from keystone.i18n import _
+
+
+def validate_totp(value):
+    try:
+        base64.b32decode(value)
+    except TypeError:
+        raise exception.ValidationError(
+            message=_('Invalid base32 blob in credential'))
+
+
+# NOTE(dstanek): maybe put this in stevedore?
+credential_validators = {'totp': validate_totp}
 
 
 @dependency.requires('credential_api')
@@ -63,6 +76,10 @@ class CredentialV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.credential_create, 'credential')
     def create_credential(self, context, credential):
+        if credential['type'] in credential_validators:
+            validator = credential_validators[credential['type']]
+            validator(credential['blob'])
+
         trust_id = self._get_trust_id_for_request(context)
         ref = self._assign_unique_id(self._normalize_dict(credential),
                                      trust_id)
@@ -98,6 +115,21 @@ class CredentialV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.credential_update, 'credential')
     def update_credential(self, context, credential_id, credential):
+        if ('type' in credential
+                and credential['type'] in credential_validators):
+            validator = credential_validators[credential['type']]
+            if 'blob' in credential:
+                validator(credential['blob'])
+            else:
+                ref = self.credential_api.get_credential(credential_id)
+                ref = self._blob_to_json(ref)
+                validator(ref['blob'])  # TODO(dstanek): better error message?
+        elif 'blob' in credential:
+            ref = self.credential_api.get_credential(credential_id)
+            if ref['type'] in credential_validators:
+                validator = credential_validators[ref['type']]
+                validator(credential['blob'])
+
         self._require_matching_id(credential_id, credential)
 
         ref = self.credential_api.update_credential(credential_id, credential)

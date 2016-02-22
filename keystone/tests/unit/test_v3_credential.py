@@ -476,3 +476,70 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           cred_from_credential_api[0]['id'])
+
+
+class TestTOTPCredentials(test_v3.RestfulTestCase):
+
+    def test_creating_with_a_valid_secret(self):
+        ref = unit.new_totp_credential(
+            self.user_id, project_id=self.project_id)
+        r = self.post('/credentials', body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+
+    def test_creating_with_an_invalid_secret(self):
+        ref = unit.new_totp_credential(
+            self.user_id, project_id=self.project_id)
+        ref['blob'] = 'abc'  # an invalid secret
+        self.post('/credentials',
+                  body={'credential': ref},
+                  expected_status=http_client.BAD_REQUEST)
+
+    def test_updating_with_a_valid_secret(self):
+        ref = unit.new_totp_credential(
+            self.user_id, project_id=self.project_id)
+        r = self.post('/credentials', body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+        ref = r.json['credential']
+
+        credential_id = ref.pop('id')
+        ref['user_id'] = uuid.uuid4().hex
+        r = self.patch('/credentials/%s' % credential_id,
+                       body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+
+    def test_updating_with_an_invalid_secret(self):
+        ref = unit.new_totp_credential(
+            self.user_id, project_id=self.project_id)
+        r = self.post('/credentials', body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+        ref = r.json['credential']
+
+        credential_id = ref.pop('id')
+        ref['blob'] = '000'
+        self.patch('/credentials/%s' % credential_id,
+                   body={'credential': ref},
+                   expected_status=http_client.BAD_REQUEST)
+
+    def test_updating_with_an_invalid_secret_no_type_specified(self):
+        ref = unit.new_totp_credential(
+            self.user_id, project_id=self.project_id)
+        r = self.post('/credentials', body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+        ref = r.json['credential']
+
+        new_ref = {'blob': '000'}
+        self.patch('/credentials/%s' % ref['id'],
+                   body={'credential': new_ref},
+                   expected_status=http_client.BAD_REQUEST)
+
+    def test_updating_with_an_invalid_secret_no_type_specified_fart(self):
+        ref = unit.new_credential_ref(user_id=self.user['id'],
+                                      project_id=self.project_id)
+        r = self.post('/credentials', body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+        ref = r.json['credential']
+
+        new_ref = {'type': 'totp'}
+        self.patch('/credentials/%s' % ref['id'],
+                   body={'credential': new_ref},
+                   expected_status=http_client.BAD_REQUEST)

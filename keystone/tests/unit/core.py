@@ -399,14 +399,16 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
     return blob, credential
 
 
+def new_totp_secret():
+    """Returns a 128 base32 encoded secret for TOTP authentication."""
+    return base64.b32encode(uuid.uuid4().bytes)
+
+
 def new_totp_credential(user_id, project_id=None, blob=None):
     if not blob:
-        blob = base64.b32encode(uuid.uuid4().hex).rstrip('=')
-    credential = new_credential_ref(user_id=user_id,
-                                    project_id=project_id,
-                                    blob=blob,
-                                    type='totp')
-    return credential
+        blob = new_totp_secret()
+    return new_credential_ref(
+        user_id, project_id=project_id, blob=blob, type='totp')
 
 
 def new_role_ref(**kwargs):
