@@ -382,11 +382,16 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
     return blob, credential
 
 
+def new_totp_secret():
+    """Returns a 128 base32 encoded secret for TOTP authentication."""
+    return base64.b32encode(uuid.uuid4().bytes)
+
+
 def new_totp_credential(user_id, project_id=None, blob=None):
     if not blob:
         # NOTE(notmorgan): 20 bytes of data from os.urandom for
         # a totp secret.
-        blob = base64.b32encode(os.urandom(20)).decode('utf-8')
+        blob = new_totp_secret()
     credential = new_credential_ref(user_id=user_id,
                                     project_id=project_id,
                                     blob=blob,
