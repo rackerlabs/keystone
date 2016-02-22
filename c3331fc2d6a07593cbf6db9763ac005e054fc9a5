@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_975add4e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-22T18:50:00Z",
+      "side": 1,
+      "message": "While having a role seems a reasonable requirement for listing them, I\u0027m not sure why having an arbitrary role on a given project should affect your ability to update it. However, I\u0027m Ok with this as a starting point.",
+      "parentUuid": "bae84128_dcc00c2d",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 62
+      },
+      "revId": "c3331fc2d6a07593cbf6db9763ac005e054fc9a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_a16403e5",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
