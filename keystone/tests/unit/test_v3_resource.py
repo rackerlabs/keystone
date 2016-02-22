@@ -1250,6 +1250,79 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             body={'project': {'enabled': False}},
             expected_status=exception.Forbidden.code)
 
+    @test_utils.wip('Bug in cascade operations')
+    def test_update_project_tree_cascade_without_enough_permissions(self):
+        projects = self._create_projects_hierarchy(hierarchy_size=3)
+        root_id = projects[0]['project']['id']
+
+        # Assign an inherited assignment with a random role
+        role = unit.new_role_ref()
+        role = self.role_api.create_role(role['id'], role)
+
+        assignment_url = self.build_role_assignment_link(
+            role_id=role['id'], user_id=self.user_id,
+            project_id=root_id, inherited_to_projects=True)
+
+        self.put(assignment_url)
+
+        # Assign admin role only on the root project
+        assignment_url = self.build_role_assignment_link(
+            role_id=self.role_id, user_id=self.user_id,
+            project_id=root_id)
+
+        self.put(assignment_url)
+
+        # The API call to disable the hierarchy on cascade should fail, since
+        # the user does not have admin on all projects, which is required in
+        # policy
+        self.patch(
+            '/projects/%(project_id)s?cascade' % {'project_id': root_id},
+            body={'project': {'enabled': False}},
+            expected_status=exception.Forbidden.code)
+
+    @test_utils.wip('Bug in cascade operations')
+    def test_delete_project_tree_cascade_without_enough_permissions(self):
+        projects = self._create_projects_hierarchy(hierarchy_size=3)
+        root_id = projects[0]['project']['id']
+
+        # Assign an inherited assignment with a random role
+        role = unit.new_role_ref()
+        role = self.role_api.create_role(role['id'], role)
+
+        assignment_url = self.build_role_assignment_link(
+            role_id=role['id'], user_id=self.user_id,
+            project_id=root_id, inherited_to_projects=True)
+
+        self.put(assignment_url)
+
+        # Assign inherited admin role on the root project
+        assignment_url = self.build_role_assignment_link(
+            role_id=self.role_id, user_id=self.user_id,
+            project_id=root_id, inherited_to_projects=True)
+
+        self.put(assignment_url)
+
+        # Disable all projects
+        self.patch(
+            '/projects/%(project_id)s?cascade' % {'project_id': root_id},
+            body={'project': {'enabled': False}})
+
+        # Remove admin inherited role assingment and add only on the root
+        self.delete(assignment_url)
+
+        assignment_url = self.build_role_assignment_link(
+            role_id=role['id'], user_id=self.user_id,
+            project_id=root_id)
+
+        self.put(assignment_url)
+
+        # Even though all projects in the hierarchy are disabled, the API call
+        # to delete the hierarchy on cascade should fail, since the user does
+        # not have admin on all projects, which is required in policy
+        self.delete(
+            '/projects/%(project_id)s?cascade' % {'project_id': root_id},
+            expected_status=exception.Forbidden.code)
+
     def test_update_project_cascade_false(self):
         """Call ``PATCH /projects/{project_id}?cascade=False``."""
         project = unit.new_project_ref(domain_id=self.domain['id'])
