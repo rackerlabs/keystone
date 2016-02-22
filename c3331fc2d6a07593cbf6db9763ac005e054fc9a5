@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_2635a9f6",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-22T17:57:31Z",
+      "side": 1,
+      "message": "nit: remove \"of a\"",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 13
+      },
+      "revId": "c3331fc2d6a07593cbf6db9763ac005e054fc9a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_065a254f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-22T17:57:31Z",
+      "side": 1,
+      "message": "I wonder if we need to actually do this bit, given that we\u0027re going to call the policy rule for each node anyway? Are we doing this to fail more quickly? There may be policy writers that want to be be able to say things like \"as long as you have role XYZ on the parent project, you can perform cascade operations to the subtree, even if you don\u0027t have a role on all of them\"\n\nOne idea, is that you pass \u0027cascade\u0027: True as part of the prep_info..that way the policy rule can make different decisions on the nodes vs the root.",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 62
+      },
+      "revId": "c3331fc2d6a07593cbf6db9763ac005e054fc9a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_a16403e5",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-22T17:57:31Z",
+      "side": 1,
+      "message": "is this going to work? Won\u0027t the policy engine try and match the project_id in the token with the one you are putting in prep.....and that will fail for all but the top level project the call was made with?\n\nIf the rule could check the cascade option (as indicated above) then the polci rule could ignore the project...although not sure if there are security issues with that",
+      "range": {
+        "startLine": 313,
+        "startChar": 20,
+        "endLine": 313,
+        "endChar": 61
+      },
+      "revId": "c3331fc2d6a07593cbf6db9763ac005e054fc9a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
