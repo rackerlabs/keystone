@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_6c895d26",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-22T14:57:37Z",
+      "side": 1,
+      "message": "Not clear about this, the federation_protocol table has an id, idp_id, and mapping_id.  Will research further...",
+      "parentUuid": "bae84128_b6b49cf2",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3c319c0c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -242,6 +260,24 @@
       "side": 1,
       "message": "Marek: correct.\n\nI also think this needs to be expanded to idp_id + protocol_id + unique_id, as the same IdP might return the same unique ID via two different protocols, and that should result in two different users (prior to account linking in Newton).",
       "parentUuid": "bae84128_8f37cce2",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2cf3d5d7",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-22T14:57:37Z",
+      "side": 1,
+      "message": "Why should it result in 2 users, it\u0027s the same user.  I wondering now if we even need the protocol_id?",
+      "parentUuid": "bae84128_16746833",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
