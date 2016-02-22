@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_3e50225d",
+        "filename": "releasenotes/notes/bp-project-tree-deletion-ff02fdaddab96136.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-02-22T11:47:43Z",
+      "side": 1,
+      "message": "maybe: all projects must be disabled first.",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 69
+      },
+      "revId": "76e679f24625e5770a83728670ca769c0c4a9b09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
