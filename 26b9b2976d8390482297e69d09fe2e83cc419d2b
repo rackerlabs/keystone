@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_005ce9eb",
+        "filename": "keystone/tests/functional/shared/test_roles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-22T06:35:46Z",
+      "side": 1,
+      "message": "this is deleting the implied role instead of delete role, the testcase here should test that delete role and the role implied by this role can also be deleted. i.e. cascade deletion.\n\n\nand since you also update the SQL to support cascade update, pls add another testcase to test update.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 69
+      },
+      "revId": "26b9b2976d8390482297e69d09fe2e83cc419d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_09a546b4",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
