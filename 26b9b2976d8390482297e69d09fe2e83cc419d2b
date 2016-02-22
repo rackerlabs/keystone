@@ -45,6 +45,23 @@
       "revId": "26b9b2976d8390482297e69d09fe2e83cc419d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_9b634adc",
+        "filename": "rally-jobs/plugins/roles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-22T06:58:39Z",
+      "side": 1,
+      "message": "Does this file relevant with the fixing here? I would agree  if it was testing the performance of creating implied role and delete the implied role by deleting the parent role. \n\nBut the rally job like this can be added without any code change in server, right?",
+      "revId": "26b9b2976d8390482297e69d09fe2e83cc419d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
