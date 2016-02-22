@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_74a5b4b3",
+        "filename": "releasenotes/notes/no-default-domain-2161ada44bf7a3f7.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-22T08:03:25Z",
+      "side": 1,
+      "message": "weird, `` is not supported here.\n\n  in \"\u003cunicode string\u003e\", line 3, column 5:\n      - ``keystone-manage db_sync`` will ...\n        ^",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 6
+      },
+      "revId": "b527e861dfc6642b11d2f61d2d7d7bf5ce0f4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
