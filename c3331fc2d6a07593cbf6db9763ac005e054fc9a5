@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_32903f43",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-22T19:05:05Z",
+      "side": 1,
+      "message": "We have this issue with the arbitrary role, I\u0027m working to fix it on the update cascade patch and then we can discuss to drop this part of the code.",
+      "parentUuid": "bae84128_975add4e",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 62
+      },
+      "revId": "c3331fc2d6a07593cbf6db9763ac005e054fc9a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_a16403e5",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
