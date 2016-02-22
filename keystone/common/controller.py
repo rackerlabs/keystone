@@ -249,6 +249,74 @@ def filterprotected(*filters, **callback):
     return _filterprotected
 
 
+def cascadeprotected():
+    """Wraps project tree API calls with role based access controls (RBAC).
+
+    When performing write or delete operations on a project, the option
+    `cascade` may be specified. In that case, the operation will be executed
+    for both the specified project and its subtree.
+
+    The of a cascade operation is the same of executing the same API for each
+    node in the tree separately.
+
+    That said, the policy check needs to be performed for every project in the
+    subtree, in addition to the specified project.
+
+    If `cascade` is not present as a query parameter, or the project does not
+    contain any subtree, the policy check is still performed on the specified
+    project.
+
+    """
+    def _cascadeprotected(f):
+        @functools.wraps(f)
+        def wrapper(self, context, **kwargs):
+            if 'is_admin' in context and context['is_admin']:
+                LOG.warning(_LW('RBAC: Bypassing authorization'))
+            else:
+                # First check permission on the tree's root
+                root_id = kwargs.get('project_id')
+                prep_info = {'f_name': f.__name__, 'input_attr': kwargs}
+                self.check_protection(context, prep_info)
+
+                params = context['query_string']
+                cascade = ('cascade' in params and
+                           self.query_filter_is_true(params['cascade']))
+
+                if not cascade:
+                    return f(self, context, **kwargs)
+
+                # Now check permission on every project in its subtree
+                subtree = self.resource_api.list_projects_in_subtree(root_id)
+
+                user_id = self.get_auth_context(context).get('user_id')
+                user_projects = (
+                    self.assignment_api.list_projects_for_user(user_id))
+                for project in subtree:
+                    if project not in user_projects:
+                        msg = _('Cannot perform cascade operation, because the'
+                                ' user %(user_id)s does not have access to the'
+                                ' whole subtree of project %(root_id)s.') % (
+                            {'user_id': user_id, 'root_id': root_id})
+                        raise exception.Forbidden(message=msg)
+
+                # NOTE(samueldmq): In update calls, the controller receives the
+                # project dict to update. In that case, update each subproject
+                # accordingly to make sure the same info is available at policy
+                # enforcement, as it was being done with multiple API calls.
+                updated_root = kwargs.get('project', {})
+                updated_root.pop('id', None)
+
+                for subproject in subtree:
+                    subproject.update(updated_root)
+                    prep_info['input_attr'] = {'project_id': subproject['id'],
+                                               'project': subproject}
+                    self.check_protection(context, prep_info)
+
+            return f(self, context, **kwargs)
+        return wrapper
+    return _cascadeprotected
+
+
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
