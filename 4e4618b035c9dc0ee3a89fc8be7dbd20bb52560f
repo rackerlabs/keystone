@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_77de3940",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-22T19:01:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_f14f8f68",
+      "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_91b3a34c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_1209bbdd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-22T19:01:15Z",
+      "side": 1,
+      "message": "Base on your previous comments, there is no way to test redelegation with impersonation to false. If trust A is created with redelegation set true and impersonation set to false and a user attempts to create a redelegated trust B with trust A scope token. Then that would just mean that the user would just be creating a regular trust. Maybe initial trust should not be allowed to be created with redelegation set to true and impersonation set to false. Please correct me if I\u0027m wrong.",
+      "parentUuid": "dae33548_91b3a34c",
+      "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_cf85c0cf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2016-02-17T16:45:28Z",
       "side": 1,
       "message": "Current master has impersonation\u003dTrue here.\n\nPlease rebase your changes.",
+      "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b721e14f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3460,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-22T19:01:15Z",
+      "side": 1,
+      "message": "This was a mistake by my part. I assumed that redelegation was possible without impersonation. Following patch changed this code.\nPatch: https://review.openstack.org/#/c/269824/\nThis will revert that change.",
+      "parentUuid": "dae33548_cf85c0cf",
       "revId": "4e4618b035c9dc0ee3a89fc8be7dbd20bb52560f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
