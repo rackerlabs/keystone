@@ -196,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_75ec7c8f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-22T16:03:34Z",
+      "side": 1,
+      "message": "actually, Protocol_id has a complex PK, so it would be hard to create a straighforward FK. I\u0027d say I am okay with a \u0027dangling\u0027 protocol_id without any references, but add a doc WHY we cannot do anything better AND change the code (as a part of this patch or bp) that would delete FederatedUser object upon Protocol deletion.",
+      "parentUuid": "bae84128_6c895d26",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3c319c0c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -225,6 +243,24 @@
       "side": 1,
       "message": "No, just as claimed by the mapping engine for this IdP + Protocol pair.",
       "parentUuid": "bae84128_3c319c0c",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f5eeccb2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-22T16:03:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bae84128_16c62867",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -278,6 +314,24 @@
       "side": 1,
       "message": "Why should it result in 2 users, it\u0027s the same user.  I wondering now if we even need the protocol_id?",
       "parentUuid": "bae84128_16746833",
+      "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_15225000",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-22T16:03:34Z",
+      "side": 1,
+      "message": "Dolph: idp_id + protocol+id + protocol_id ++\nRon: If you are using same e-mail address in two trusted IdPs you may end up with unique_id equal to same email address. But coming from more than one IdP means there are two users.",
+      "parentUuid": "bae84128_2cf3d5d7",
       "revId": "ae5cd966532b39b000e4f4081cf71fdb35a061d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
