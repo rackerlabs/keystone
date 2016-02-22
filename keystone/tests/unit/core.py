@@ -14,7 +14,6 @@
 
 from __future__ import absolute_import
 import atexit
-import base64
 import datetime
 import functools
 import hashlib
@@ -52,6 +51,7 @@ from keystone.common import config
 from keystone.common import dependency
 from keystone.common.kvs import core as kvs_core
 from keystone.common import sql
+from keystone.credential.algorithms import totp as totp_algorithm
 from keystone import exception
 from keystone import notifications
 from keystone.server import common
@@ -399,14 +399,9 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
     return blob, credential
 
 
-def new_totp_secret():
-    """Returns a 128 base32 encoded secret for TOTP authentication."""
-    return base64.b32encode(uuid.uuid4().bytes)
-
-
 def new_totp_credential(user_id, project_id=None, blob=None):
     if not blob:
-        blob = new_totp_secret()
+        blob = totp_algorithm.generate_secret()
     return new_credential_ref(
         user_id, project_id=project_id, blob=blob, type='totp')
 

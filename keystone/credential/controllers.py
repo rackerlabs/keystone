@@ -12,7 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import base64
 import hashlib
 
 from oslo_serialization import jsonutils
@@ -20,21 +19,14 @@ from oslo_serialization import jsonutils
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
+from keystone.credential.algorithms import totp
 from keystone.credential import schema
 from keystone import exception
 from keystone.i18n import _
 
 
-def validate_totp(value):
-    try:
-        base64.b32decode(value)
-    except TypeError:
-        raise exception.ValidationError(
-            message=_('Invalid base32 blob in credential'))
-
-
 # NOTE(dstanek): maybe put this in stevedore?
-credential_validators = {'totp': validate_totp}
+credential_validators = {'totp': totp.validate_secret}
 
 
 @dependency.requires('credential_api')

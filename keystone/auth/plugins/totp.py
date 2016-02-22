@@ -22,18 +22,12 @@ function to generate a one-time password. The timestamp typically increases in
 same secret key will be equal.
 """
 
-import base64
-import time
-
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.twofactor import totp as crypto_totp
 from oslo_log import log
-import six
 
 from keystone import auth
 from keystone.auth import plugins
 from keystone.common import dependency
+from keystone.credential.algorithms import totp as totp_algorithm
 from keystone import exception
 from keystone.i18n import _
 
@@ -41,28 +35,6 @@ from keystone.i18n import _
 METHOD_NAME = 'totp'
 
 LOG = log.getLogger(__name__)
-
-
-def _generate_totp_passcode(secret):
-    """Generate TOTP passcode.
-
-    :param bytes secret: A base32 encoded secret for the TOTP authentication
-    :returns: totp passcode as bytes
-    """
-    if isinstance(secret, six.text_type):
-        # NOTE(dstanek): since this may be coming from the JSON stored in the
-        # database it may be UTF-8 encoded
-        secret = secret.encode('utf-8')
-
-    # NOTE(nonameentername): cryptography takes a non base32 encoded value for
-    # TOTP. Add the correct padding to be able to base32 decode
-    while len(secret) % 8 != 0:
-        secret = secret + b'='
-
-    decoded = base64.b32decode(secret)
-    totp = crypto_totp.TOTP(
-        decoded, 6, hashes.SHA1(), 30, backend=default_backend())
-    return totp.generate(time.time())
 
 
 @dependency.requires('credential_api')
@@ -79,7 +51,7 @@ class TOTP(auth.AuthMethodHandler):
         valid_passcode = False
         for credential in credentials:
             try:
-                generated_passcode = _generate_totp_passcode(
+                generated_passcode = totp_algorithm.generate_passcode(
                     credential['blob'])
                 if auth_passcode == generated_passcode:
                     valid_passcode = True

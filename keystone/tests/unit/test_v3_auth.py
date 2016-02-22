@@ -30,10 +30,10 @@ from testtools import matchers
 from testtools import testcase
 
 from keystone import auth
-from keystone.auth.plugins import totp
 from keystone.common import sql
 from keystone.common import utils
 from keystone.contrib.revoke import routers
+from keystone.credential.algorithms import totp
 from keystone.credential.backends import sql as credential_sql
 from keystone import exception
 from keystone.policy.backends import rules
@@ -4728,8 +4728,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
     def test_with_a_valid_passcode(self):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
-        auth_data = self._make_auth_data_by_id(
-            totp._generate_totp_passcode(secret))
+        auth_data = self._make_auth_data_by_id(totp.generate_passcode(secret))
 
         self.v3_create_token(auth_data, expected_status=http_client.CREATED)
 
@@ -4758,7 +4757,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
         auth_data = self._make_auth_data_by_id(
-            totp._generate_totp_passcode(secret))
+            totp.generate_passcode(secret))
 
         self.v3_create_token(auth_data, expected_status=http_client.CREATED)
 
@@ -4782,8 +4781,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp', count=3)
         secret = creds[-1]['blob']
 
-        auth_data = self._make_auth_data_by_id(
-            totp._generate_totp_passcode(secret))
+        auth_data = self._make_auth_data_by_id(totp.generate_passcode(secret))
         self.v3_create_token(auth_data, expected_status=http_client.CREATED)
 
     def test_with_multiple_users(self):
@@ -4799,7 +4797,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         secret = creds[-1]['blob']
 
         auth_data = self._make_auth_data_by_id(
-            totp._generate_totp_passcode(secret), user_id=user['id'])
+            totp.generate_passcode(secret), user_id=user['id'])
         self.v3_create_token(auth_data, expected_status=http_client.CREATED)
 
     def test_with_multiple_users_and_invalid_credentials(self):
@@ -4824,7 +4822,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         secret = user2_creds[-1]['blob']
 
         auth_data = self._make_auth_data_by_id(
-            totp._generate_totp_passcode(secret), user_id=user_id)
+            totp.generate_passcode(secret), user_id=user_id)
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
@@ -4832,7 +4830,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
         auth_data = self._make_auth_data_by_name(
-            totp._generate_totp_passcode(secret),
+            totp.generate_passcode(secret),
             username=self.default_domain_user['name'],
             user_domain_id=self.default_domain_user['domain_id'])
 
